@@ -45,7 +45,7 @@ class SandboxEngine @Inject constructor(
     /**
      * 严格模式：仅允许白名单命令
      */
-    private fun checkStrictMode(rule: SandboxRule, packageName: String, command: String): CheckResult {
+    private suspend fun checkStrictMode(rule: SandboxRule, packageName: String, command: String): CheckResult {
         // 检查是否在白名单中
         val isWhitelisted = rule.commandWhitelist.any { pattern ->
             matchesPattern(command, pattern)
@@ -65,7 +65,7 @@ class SandboxEngine @Inject constructor(
     /**
      * 适中模式：禁止黑名单命令
      */
-    private fun checkModerateMode(rule: SandboxRule, packageName: String, command: String): CheckResult {
+    private suspend fun checkModerateMode(rule: SandboxRule, packageName: String, command: String): CheckResult {
         // 检查是否在黑名单中
         val isBlacklisted = rule.commandBlacklist.any { pattern ->
             matchesPattern(command, pattern)
@@ -85,7 +85,7 @@ class SandboxEngine @Inject constructor(
     /**
      * 宽松模式：仅拦截危险命令
      */
-    private fun checkPermissiveMode(rule: SandboxRule, packageName: String, command: String): CheckResult {
+    private suspend fun checkPermissiveMode(rule: SandboxRule, packageName: String, command: String): CheckResult {
         // 危险命令列表
         val dangerousCommands = listOf(
             "rm -rf /",

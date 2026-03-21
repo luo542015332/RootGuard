@@ -43,7 +43,8 @@ fun RootGuardNavHost(
                 onNavigateToModules = { navController.navigate(Screen.Modules.route) },
                 onNavigateToApps = { navController.navigate(Screen.Apps.route) },
                 onNavigateToLogs = { navController.navigate(Screen.Logs.route) },
-                onNavigateToSettings = { navController.navigate(Screen.Settings.route) }
+                onNavigateToSettings = { navController.navigate(Screen.Settings.route) },
+                onNavigateToInstall = { /* TODO: Implement if needed */ }
             )
         }
         composable(Screen.Modules.route) {

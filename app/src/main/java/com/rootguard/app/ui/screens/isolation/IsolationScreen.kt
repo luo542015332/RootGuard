@@ -3,6 +3,7 @@ package com.rootguard.app.ui.screens.isolation
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.clickable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
@@ -362,8 +363,7 @@ fun PresetButton(
     modifier: Modifier = Modifier
 ) {
     Card(
-        onClick = onClick,
-        modifier = modifier,
+        modifier = modifier.clickable(onClick = onClick),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.secondaryContainer
         )
@@ -436,10 +436,10 @@ fun IsolatedAppItem(
     onRemove: () -> Unit
 ) {
     Card(
-        onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp)
+            .clickable(onClick = onClick)
     ) {
         Row(
             modifier = Modifier
