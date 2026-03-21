@@ -147,7 +147,7 @@ class SandboxEngine @Inject constructor(
     /**
      * 严格模式路径检查
      */
-    private fun checkPathStrictMode(rule: SandboxRule, packageName: String, path: String): CheckResult {
+    private suspend fun checkPathStrictMode(rule: SandboxRule, packageName: String, path: String): CheckResult {
         // 检查是否在白名单中
         val isWhitelisted = rule.pathWhitelist.any { allowedPath ->
             path.startsWith(allowedPath)
@@ -167,7 +167,7 @@ class SandboxEngine @Inject constructor(
     /**
      * 适中模式路径检查
      */
-    private fun checkPathModerateMode(rule: SandboxRule, packageName: String, path: String): CheckResult {
+    private suspend fun checkPathModerateMode(rule: SandboxRule, packageName: String, path: String): CheckResult {
         // 检查是否在黑名单中
         val isBlacklisted = rule.pathBlacklist.any { blockedPath ->
             path.startsWith(blockedPath)
@@ -187,7 +187,7 @@ class SandboxEngine @Inject constructor(
     /**
      * 宽松模式路径检查
      */
-    private fun checkPathPermissiveMode(rule: SandboxRule, packageName: String, path: String): CheckResult {
+    private suspend fun checkPathPermissiveMode(rule: SandboxRule, packageName: String, path: String): CheckResult {
         // 危险路径列表
         val dangerousPaths = listOf(
             "/system/bin",

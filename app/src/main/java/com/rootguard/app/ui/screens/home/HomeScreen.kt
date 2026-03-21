@@ -493,7 +493,7 @@ fun SystemInfoCard(info: SystemInfo) {
             )
             
             // 分隔线
-            HorizontalDivider(
+            Divider(
                 modifier = Modifier.padding(vertical = 8.dp),
                 color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)
             )

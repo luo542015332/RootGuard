@@ -1,9 +1,12 @@
 package com.rootguard.app.data.model
 
+import kotlinx.serialization.Serializable
+
 /**
  * 应用隔离配置数据类
  * 用于配置针对特定应用的 Root 隐藏和隔离设置
  */
+@Serializable
 data class IsolationConfig(
     val packageName: String,
     val appName: String,
@@ -22,6 +25,7 @@ data class IsolationConfig(
 /**
  * 隔离级别枚举
  */
+@Serializable
 enum class IsolationLevel {
     NONE,           // 无隔离
     BASIC,          // 基础隔离 - 隐藏 Magisk 相关文件
@@ -49,6 +53,7 @@ enum class DetectionItem {
 /**
  * Sandbox 规则配置（Root 命令过滤和权限控制）
  */
+@Serializable
 data class SandboxRule(
     val packageName: String,
     val level: SandboxLevel = SandboxLevel.MODERATE,
@@ -61,6 +66,7 @@ data class SandboxRule(
 /**
  * Sandbox 隔离级别
  */
+@Serializable
 enum class SandboxLevel {
     STRICT,    // 严格模式：仅允许白名单命令和路径
     MODERATE,  // 适中模式：禁止黑名单，允许其他
@@ -71,6 +77,7 @@ enum class SandboxLevel {
 /**
  * 隔离事件类型
  */
+@Serializable
 enum class IsolationEventType {
     COMMAND_BLOCKED,      // 命令被拦截
     COMMAND_ALLOWED,      // 命令被允许
@@ -83,6 +90,7 @@ enum class IsolationEventType {
 /**
  * 隔离事件记录
  */
+@Serializable
 data class IsolationEvent(
     val packageName: String,
     val type: IsolationEventType,
@@ -95,6 +103,7 @@ data class IsolationEvent(
 /**
  * 隔离动作
  */
+@Serializable
 enum class IsolationAction {
     ALLOWED,    // 允许执行
     BLOCKED     // 拦截执行
