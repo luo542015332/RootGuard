@@ -25,18 +25,19 @@ jobs:
 
     - name: Auto increment version
       run: |
-        # 读取当前版本
-        versionCode=$(grep 'versionCode' app/build.gradle | grep -oP '\d+')
-        versionName=$(grep 'versionName' app/build.gradle | grep -oP '"[^"]+"')
+        # 读取当前版本 - 使用 sed 提取
+        versionCode=$(sed -n 's/.*versionCode \([0-9]*\).*/\1/p' app/build.gradle)
+        versionName=$(sed -n 's/.*versionName "\([^"]*\)".*/\1/p' app/build.gradle)
 
         # 增加版本号
         newVersionCode=$((versionCode + 1))
-        
-        # 提取主版本号和次版本号
-        majorMinor=$(echo $versionName | grep -oP '\d+\.\d+')
-        patch=$(echo $versionName | grep -oP '\d+$')
+
+        # 提取版本号各部分
+        major=$(echo $versionName | cut -d. -f1)
+        minor=$(echo $versionName | cut -d. -f2)
+        patch=$(echo $versionName | cut -d. -f3)
         newPatch=$((patch + 1))
-        newVersionName="$majorMinor.$newPatch"
+        newVersionName="$major.$minor.$newPatch"
 
         # 更新 build.gradle
         sed -i "s/versionCode $versionCode/versionCode $newVersionCode/" app/build.gradle
@@ -85,17 +86,17 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: PandaSU-APK-${{ env.VERSION_NAME }}
-        path: app/build/outputs/apk/debug/PandaSU-v1.3.0.apk
+        path: app/build/outputs/apk/debug/PandaSU-${{ env.VERSION_NAME }}.apk
         retention-days: 30
 
     - name: Create Release
       if: github.event.inputs.create_release == 'true' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release:'))
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: v1.3.0
-        name: PandaSU v1.3.0
+        tag_name: v${{ env.VERSION_NAME }}
+        name: PandaSU v${{ env.VERSION_NAME }}
         body: |
-          ## 📦 PandaSU v1.3.0
+          ## 📦 PandaSU v${{ env.VERSION_NAME }}
 
           ### 🐛 重要修复
           - 修复启动闪退问题 - 源代码未编译到 APK
@@ -103,7 +104,7 @@ jobs:
 
           ### 🔧 改进
           - 优化构建流程，确保源代码正确编译
-          - 更新版本号到 v1.3.0
+          - 更新版本号到 v${{ env.VERSION_NAME }}
 
           ### 📝 说明
           - 构建 #${{ github.run_number }}
@@ -111,7 +112,7 @@ jobs:
 
           ### 🐼 更新
           - 更新应用图标为可爱熊猫
-        files: app/build/outputs/apk/debug/PandaSU-v1.3.0.apk
+        files: app/build/outputs/apk/debug/PandaSU-${{ env.VERSION_NAME }}.apk
         draft: false
         prerelease: false
       env:
