@@ -32,6 +32,8 @@ jobs:
         echo "84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_SDK/licenses/android-sdk-preview-license"
         echo "d56f5187479451eabf01fb78af6dfcb131a6481e" > "$ANDROID_SDK/licenses/android-sdk-arm-dbt-license"
         echo "5f2486612d05b68866c7855eb1a0343f629d23c0" > "$ANDROID_SDK/licenses/google-android-ndk-license"
+        echo "33b6a2b646078cb45c015d0c9d53acdefd37b0d6" > "$ANDROID_SDK/licenses/google-android-ndk-license-2"
+        echo "859f298618e403a979e1189c89909e05d6128426" > "$ANDROID_SDK/licenses/google-android-play-services-license"
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
@@ -40,7 +42,7 @@ jobs:
       run: ./gradlew clean --no-daemon
 
     - name: Build Debug APK
-      run: ./gradlew assembleDebug --stacktrace --no-daemon
+      run: ./gradlew assembleDebug --stacktrace --no-daemon --info
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
