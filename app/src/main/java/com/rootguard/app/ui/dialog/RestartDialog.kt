@@ -62,7 +62,7 @@ fun RestartDialog(
                     }
                 )
                 
-                HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+                Divider(modifier = Modifier.padding(vertical = 8.dp))
                 
                 RestartOptionItem(
                     icon = Icons.Default.Settings,
@@ -74,7 +74,7 @@ fun RestartDialog(
                     }
                 )
                 
-                HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+                Divider(modifier = Modifier.padding(vertical = 8.dp))
                 
                 RestartOptionItem(
                     icon = Icons.Default.DeveloperMode,
@@ -86,7 +86,7 @@ fun RestartDialog(
                     }
                 )
                 
-                HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+                Divider(modifier = Modifier.padding(vertical = 8.dp))
                 
                 RestartOptionItem(
                     icon = Icons.Default.PowerSettingsNew,

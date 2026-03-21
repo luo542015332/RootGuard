@@ -6,7 +6,7 @@ import com.rootguard.app.ui.screens.apps.RootAccessStatus
 import com.rootguard.app.ui.screens.home.RootStatus
 import com.rootguard.app.ui.screens.home.SystemInfo
 import com.rootguard.app.ui.screens.logs.LogEntry
-import com.rootguard.app.ui.screens.logs.LogLevel
+import com.rootguard.app.data.magisk.LogLevel
 import com.rootguard.app.ui.screens.modules.ModuleItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -138,12 +138,7 @@ class MagiskRepository @Inject constructor(
             LogEntry(
                 id = log.id,
                 message = log.message,
-                level = when (log.level) {
-                    LogLevel.DEBUG -> com.rootguard.app.ui.screens.logs.LogLevel.DEBUG
-                    LogLevel.INFO -> com.rootguard.app.ui.screens.logs.LogLevel.INFO
-                    LogLevel.WARNING -> com.rootguard.app.ui.screens.logs.LogLevel.WARNING
-                    LogLevel.ERROR -> com.rootguard.app.ui.screens.logs.LogLevel.ERROR
-                },
+                level = log.level,
                 timestamp = log.timestamp
             )
         }
