@@ -75,22 +75,32 @@ class OneClickIsolationHelper @Inject constructor(
         val combined = "$packageName $appName".lowercase()
 
         return when {
-            // 金融类应用
+            // 金融类应用（最严格）
             financeKeywords.any { it in combined } -> AppCategory.FINANCE
-
-            // 社交类应用
-            socialKeywords.any { it in combined } -> AppCategory.SOCIAL
 
             // 游戏类应用
             gameKeywords.any { it in combined } -> AppCategory.GAME
 
-            // 系统工具类
+            // 社交类应用
+            socialKeywords.any { it in combined } -> AppCategory.SOCIAL
+
+            // 视频影音类应用
+            videoKeywords.any { it in combined } -> AppCategory.UTILITY
+
+            // 电商购物类应用
+            shoppingKeywords.any { it in combined } -> AppCategory.UTILITY
+
+            // 阅读教育类应用
+            educationKeywords.any { it in combined } -> AppCategory.UTILITY
+
+            // 系统工具类（跳过）
             systemToolKeywords.any { it in combined } -> AppCategory.SYSTEM_TOOL
 
             // 实用工具类
             utilityKeywords.any { it in combined } -> AppCategory.UTILITY
 
-            else -> AppCategory.UNKNOWN
+            // 其他所有用户应用都标记为社交类，进行基础隔离
+            else -> AppCategory.SOCIAL
         }
     }
 
@@ -261,40 +271,63 @@ class OneClickIsolationHelper @Inject constructor(
     companion object {
         // 金融类应用关键词
         private val financeKeywords = listOf(
-            "bank", "alipay", "wechat", "pay", "finance",
-            "银行", "支付宝", "支付", "金融", "证券",
-            "fund", "stock", "trading", "exchange",
-            "基金", "股票", "交易", "证券", "理财"
+            "bank", "alipay", "wechat", "pay", "finance", "wallet", "money", "credit", "debit",
+            "银行", "支付宝", "支付", "金融", "证券", "钱包", "理财", "账单", "转账", "余额",
+            "fund", "stock", "trading", "exchange", "investment", "储蓄", "loan",
+            "基金", "股票", "交易", "证券", "理财", "投资", "贷款", "保险"
         )
 
         // 社交类应用关键词
         private val socialKeywords = listOf(
-            "chat", "message", "social", "messenger",
-            "聊天", "社交", "消息", "通讯",
-            "qq", "weixin", "telegram", "whatsapp", "discord"
+            "chat", "message", "social", "messenger", "communicate", "talk", "video", "call",
+            "聊天", "社交", "消息", "通讯", "通话", "视频", "语音",
+            "qq", "weixin", "telegram", "whatsapp", "discord", "facebook", "instagram", "tiktok",
+            "抖音", "快手", "微博", "小红书", "b站", "bilibili", "豆瓣", "知乎"
         )
 
         // 游戏类应用关键词
         private val gameKeywords = listOf(
-            "game", "play", "arcade", "racing", "puzzle",
-            "游戏", "娱乐", "竞技", "休闲",
-            "minecraft", "pubg", "honor of kings", "王者荣耀"
+            "game", "play", "arcade", "racing", "puzzle", "rpg", "fps", "moba", "battle",
+            "游戏", "娱乐", "竞技", "休闲", "对战", "角色扮演", "射击",
+            "minecraft", "pubg", "honor of kings", "王者荣耀", "原神", "英雄联盟", "穿越火线",
+            "和平精英", "阴阳师", "崩坏", "第五人格", "明日方舟", "剑网3"
         )
 
         // 系统工具类应用关键词
         private val systemKeywords = listOf(
-            "system", "tool", "manager", "explorer", "file",
-            "系统", "工具", "管理", "文件", "资源管理器",
-            "task", "process", "cleaner", "optimizer",
-            "任务", "进程", "清理", "优化"
+            "system", "tool", "manager", "explorer", "file", "admin", "setup", "config",
+            "系统", "工具", "管理", "文件", "资源管理器", "设置", "配置",
+            "task", "process", "cleaner", "optimizer", "booster", "security",
+            "任务", "进程", "清理", "优化", "加速", "安全", "杀毒"
         )
 
         // 实用工具类应用关键词
         private val utilityKeywords = listOf(
-            "calculator", "calendar", "clock", "weather",
-            "计算器", "日历", "时钟", "天气",
-            "note", "memo", "camera", "photo",
-            "笔记", "备忘", "相机", "照片", "扫描"
+            "calculator", "calendar", "clock", "weather", "converter", "compass",
+            "计算器", "日历", "时钟", "天气", "转换器", "指南针",
+            "note", "memo", "camera", "photo", "scanner", "editor",
+            "笔记", "备忘", "相机", "照片", "扫描", "编辑器", "文档"
+        )
+
+        // 电商购物类关键词
+        private val shoppingKeywords = listOf(
+            "shop", "store", "buy", "cart", "mall", "market", "order", "delivery",
+            "商店", "购物", "买", "购物车", "商城", "订单", "配送",
+            "淘宝", "天猫", "京东", "拼多多", "唯品会", "苏宁", "国美"
+        )
+
+        // 视频影音类关键词
+        private val videoKeywords = listOf(
+            "video", "player", "music", "audio", "stream", "tv", "radio", "media",
+            "视频", "播放器", "音乐", "音频", "直播", "电视", "电台", "媒体",
+            "爱奇艺", "优酷", "腾讯视频", "芒果tv", "bilibili", "网易云音乐", "qq音乐"
+        )
+
+        // 阅读教育类关键词
+        private val educationKeywords = listOf(
+            "book", "read", "learn", "education", "study", "course", "tutorial", "dictionary",
+            "书", "阅读", "学习", "教育", "课程", "教程", "字典",
+            "微信读书", "掌阅", "得到", "知乎", "作业帮", "学习通"
         )
 
         private val systemToolKeywords = systemKeywords + listOf("root", "magisk", "superuser")
