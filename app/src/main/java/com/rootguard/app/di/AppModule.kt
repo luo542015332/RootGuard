@@ -19,39 +19,21 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideJson(): Json {
-        return Json { ignoreUnknownKeys = true }
-    }
+    fun provideJson(): Json = Json { ignoreUnknownKeys = true }
 
     @Provides
     @Singleton
-    fun provideMagiskProvider(
-        @ApplicationContext context: Context
-    ): MagiskProvider {
-        return MagiskProvider(context)
-    }
+    fun provideMagiskProvider(@ApplicationContext context: Context): MagiskProvider = MagiskProvider(context)
 
     @Provides
     @Singleton
-    fun provideMagiskRepository(
-        magiskProvider: MagiskProvider
-    ): MagiskRepository {
-        return MagiskRepository(magiskProvider)
-    }
+    fun provideMagiskRepository(magiskProvider: MagiskProvider): MagiskRepository = MagiskRepository(magiskProvider)
 
     @Provides
     @Singleton
-    fun provideSettingsDataStore(
-        @ApplicationContext context: Context
-    ): SettingsDataStore {
-        return SettingsDataStore(context)
-    }
+    fun provideSettingsDataStore(@ApplicationContext context: Context): SettingsDataStore = SettingsDataStore(context)
 
     @Provides
     @Singleton
-    fun provideRebootRepository(
-        @ApplicationContext context: Context
-    ): RebootRepository {
-        return RebootRepository(context)
-    }
+    fun provideRebootRepository(@ApplicationContext context: Context): RebootRepository = RebootRepository(context)
 }
