@@ -3,9 +3,6 @@ name: Build APK
 on:
   push:
     branches: [ main ]
-    paths-ignore:
-      - 'app/build.gradle'
-      - '.github/workflows/build.yml'
   workflow_dispatch:
     inputs:
       create_release:
@@ -23,32 +20,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Auto increment version
+    - name: Read version from build.gradle
       run: |
-        # 读取当前版本 - 使用 sed 提取
+        # 读取当前版本
         versionCode=$(sed -n 's/.*versionCode \([0-9]*\).*/\1/p' app/build.gradle)
         versionName=$(sed -n 's/.*versionName "\([^"]*\)".*/\1/p' app/build.gradle)
 
-        # 增加版本号
-        newVersionCode=$((versionCode + 1))
-
-        # 提取版本号各部分
-        major=$(echo $versionName | cut -d. -f1)
-        minor=$(echo $versionName | cut -d. -f2)
-        patch=$(echo $versionName | cut -d. -f3)
-        newPatch=$((patch + 1))
-        newVersionName="$major.$minor.$newPatch"
-
-        # 更新 build.gradle
-        sed -i "s/versionCode $versionCode/versionCode $newVersionCode/" app/build.gradle
-        sed -i "s/versionName \"$versionName\"/versionName \"$newVersionName\"/" app/build.gradle
-
-        # 更新 workflow 中的版本号
-        sed -i "s/v[0-9]\+\.[0-9]\+\.[0-9]\+/v$newVersionName/g" .github/workflows/build.yml
-
-        echo "New version: $newVersionName (code: $newVersionCode)"
-        echo "VERSION_NAME=$newVersionName" >> $GITHUB_ENV
-        echo "VERSION_CODE=$newVersionCode" >> $GITHUB_ENV
+        echo "Current version: $versionName (code: $versionCode)"
+        echo "VERSION_NAME=$versionName" >> $GITHUB_ENV
+        echo "VERSION_CODE=$versionCode" >> $GITHUB_ENV
 
     - name: Set up JDK 17
       uses: actions/setup-java@v4
@@ -99,12 +79,12 @@ jobs:
           ## 📦 PandaSU v${{ env.VERSION_NAME }}
 
           ### 🐛 重要修复
-          - 修复启动闪退问题 - 源代码未编译到 APK
-          - 修复项目目录结构混乱问题
+          - 修复自动更新功能的编译错误
+          - 添加应用内自动更新功能
 
           ### 🔧 改进
-          - 优化构建流程，确保源代码正确编译
-          - 更新版本号到 v${{ env.VERSION_NAME }}
+          - 优化构建流程
+          - 添加版本更新检测
 
           ### 📝 说明
           - 构建 #${{ github.run_number }}
