@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PNG 图标配置 -->
-<!-- 注意：实际图标文件在 mipmap-{density}/ic_launcher.png -->
-<!-- 这个文件只是为了兼容性，实际上会使用 PNG 文件 -->
+<!-- 使用位图引用方式兼容低版本 -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@android:drawable/ic_menu_gallery"
+    android:tint="#FF6200" />

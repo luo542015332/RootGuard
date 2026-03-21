@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 圆形图标文件位于: ic_launcher_round.png -->
-<!-- 此文件仅用于兼容，实际使用 PNG -->
+<!-- PNG 图标文件 - 48x48 -->
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@android:drawable/ic_menu_gallery"
+    android:tint="#FF6200" />
