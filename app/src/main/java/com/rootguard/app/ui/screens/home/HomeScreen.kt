@@ -1,5 +1,6 @@
 package com.rootguard.app.ui.screens.home
 
+import com.rootguard.app.BuildConfig
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
