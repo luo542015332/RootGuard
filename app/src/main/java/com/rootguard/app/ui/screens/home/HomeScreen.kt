@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rootguard.app.ui.dialog.ConfirmShutdownDialog
 import com.rootguard.app.ui.dialog.RestartDialog
+import com.rootguard.app.ui.dialog.UpdateDialog
 import com.rootguard.app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -39,11 +40,22 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    
+
+    // 版本信息
+    val currentVersion = "1.3.0" // 可以从 BuildConfig 读取
+
     // 重启对话框状态
     var showRestartDialog by remember { mutableStateOf(false) }
     var showShutdownConfirm by remember { mutableStateOf(false) }
-    
+
+    // 更新对话框状态
+    val updateState by viewModel.updateState.collectAsState()
+
+    // 启动时检查更新
+    LaunchedEffect(Unit) {
+        viewModel.checkForUpdates(currentVersion)
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -123,7 +135,24 @@ fun HomeScreen(
             onDismiss = { showShutdownConfirm = false }
         )
     }
+
+    // 更新对话框
+    when (val state = updateState) {
+        is UpdateState.UpdateAvailable -> {
+            UpdateDialog(
+                releaseInfo = state.releaseInfo,
+                currentVersion = currentVersion,
+                onDismiss = { viewModel.ignoreUpdate() },
+                onDownloadComplete = { viewModel.downloadAndInstall(state.releaseInfo) }
+            )
+        }
+        is UpdateState.Error -> {
+            // 可以显示错误提示
+        }
+        else -> {}
+    }
 }
+
 
 /**
  * 熊猫Logo组件
