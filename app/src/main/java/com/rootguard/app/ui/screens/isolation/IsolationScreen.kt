@@ -563,7 +563,7 @@ fun OneClickIsolationSection(
                 // 显示进度
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     LinearProgressIndicator(
-                        progress = { if (progress.total > 0) progress.current.toFloat() / progress.total else 0f },
+                        progress = if (progress.total > 0) progress.current.toFloat() / progress.total else 0f,
                         modifier = Modifier.fillMaxWidth()
                     )
                     Text(
