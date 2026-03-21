@@ -24,6 +24,7 @@ fun HomeScreen(
     onNavigateToApps: () -> Unit,
     onNavigateToLogs: () -> Unit,
     onNavigateToSettings: () -> Unit,
+    onNavigateToInstall: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -42,9 +43,6 @@ fun HomeScreen(
                     )
                 },
                 actions = {
-                    IconButton(onClick = { showRestartDialog = true }) {
-                        Icon(Icons.Default.RestartAlt, contentDescription = "重启")
-                    }
                     IconButton(onClick = onNavigateToSettings) {
                         Icon(Icons.Default.Settings, contentDescription = "设置")
                     }
@@ -78,7 +76,9 @@ fun HomeScreen(
                 FeatureGrid(
                     onModulesClick = onNavigateToModules,
                     onAppsClick = onNavigateToApps,
-                    onLogsClick = onNavigateToLogs
+                    onLogsClick = onNavigateToLogs,
+                    onRebootClick = { showRestartDialog = true },
+                    onInstallClick = onNavigateToInstall
                 )
             }
             
@@ -179,7 +179,9 @@ fun RootStatusCard(status: RootStatus) {
 fun FeatureGrid(
     onModulesClick: () -> Unit,
     onAppsClick: () -> Unit,
-    onLogsClick: () -> Unit
+    onLogsClick: () -> Unit,
+    onRebootClick: () -> Unit,
+    onInstallClick: () -> Unit
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Row(
@@ -213,12 +215,26 @@ fun FeatureGrid(
                 modifier = Modifier.weight(1f)
             )
             FeatureCard(
-                icon = Icons.Outlined.Security,
-                title = "安全",
-                subtitle = "权限检查",
-                onClick = { /* TODO */ },
+                icon = Icons.Outlined.RestartAlt,
+                title = "重启",
+                subtitle = "设备重启",
+                onClick = onRebootClick,
                 modifier = Modifier.weight(1f)
             )
+        }
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            FeatureCard(
+                icon = Icons.Outlined.SystemUpdate,
+                title = "安装",
+                subtitle = "KernelSU/Magisk",
+                onClick = onInstallClick,
+                modifier = Modifier.weight(1f)
+            )
+            // 占位，保持对称
+            Spacer(modifier = Modifier.weight(1f))
         }
     }
 }
