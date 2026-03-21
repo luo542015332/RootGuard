@@ -267,6 +267,7 @@ fun ColorDot(color: Color, label: String) {
     }
 }
 
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun ThemeCard(
     theme: PandaTheme,

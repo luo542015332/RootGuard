@@ -54,7 +54,7 @@ class LogsViewModel @Inject constructor(
 
     fun clearLogs() {
         viewModelScope.launch {
-            val success = clearLogs()
+            val success = clearLogsUseCase()
             if (success) {
                 _uiState.update { it.copy(logs = emptyList()) }
             }

@@ -138,7 +138,12 @@ class MagiskRepository @Inject constructor(
             LogEntry(
                 id = log.id,
                 message = log.message,
-                level = log.level,
+                level = when (log.level) {
+                    com.rootguard.app.data.magisk.LogLevel.DEBUG -> com.rootguard.app.ui.screens.logs.LogLevel.DEBUG
+                    com.rootguard.app.data.magisk.LogLevel.INFO -> com.rootguard.app.ui.screens.logs.LogLevel.INFO
+                    com.rootguard.app.data.magisk.LogLevel.WARNING -> com.rootguard.app.ui.screens.logs.LogLevel.WARNING
+                    com.rootguard.app.data.magisk.LogLevel.ERROR -> com.rootguard.app.ui.screens.logs.LogLevel.ERROR
+                },
                 timestamp = log.timestamp
             )
         }

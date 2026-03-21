@@ -223,6 +223,7 @@ fun FeatureGrid(
     }
 }
 
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
 @Composable
 fun FeatureCard(
     icon: androidx.compose.ui.graphics.vector.ImageVector,

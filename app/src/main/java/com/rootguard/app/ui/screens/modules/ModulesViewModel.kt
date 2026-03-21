@@ -72,7 +72,7 @@ class ModulesViewModel @Inject constructor(
         viewModelScope.launch {
             val module = _uiState.value.modules.find { it.id == moduleId }
             module?.let {
-                val success = toggleModule(it.id, !it.isEnabled)
+                val success = toggleModuleUseCase(it.id, !it.isEnabled)
                 if (success) {
                     _uiState.update { state ->
                         state.copy(
@@ -90,7 +90,7 @@ class ModulesViewModel @Inject constructor(
 
     fun uninstallModule(moduleId: String) {
         viewModelScope.launch {
-            val success = uninstallModule(moduleId)
+            val success = uninstallModuleUseCase(moduleId)
             if (success) {
                 _uiState.update { state ->
                     state.copy(
