@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+    inputs:
+      create_release:
+        description: 'Create a new release'
+        required: false
+        default: 'false'
 
 jobs:
   build:
@@ -28,11 +33,21 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
+    - name: Cache Gradle packages
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+
     - name: Clean Gradle Build
-      run: ./gradlew clean
+      run: ./gradlew clean --no-daemon
 
     - name: Build Debug APK
-      run: ./gradlew assembleDebug --stacktrace
+      run: ./gradlew assembleDebug --stacktrace --no-daemon
 
     - name: Rename APK
       run: mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/PandaSU-v1.1.${{ github.run_number }}.apk
@@ -40,15 +55,33 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: PandaSU-APK
+        name: PandaSU-APK-${{ github.run_number }}
         path: app/build/outputs/apk/debug/PandaSU-v1.1.${{ github.run_number }}.apk
+        retention-days: 30
 
     - name: Create Release
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      if: github.event.inputs.create_release == 'true' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release:'))
       uses: softprops/action-gh-release@v1
       with:
         tag_name: v1.1.${{ github.run_number }}
         name: PandaSU v1.1.${{ github.run_number }}
+        body: |
+          ## 📦 PandaSU v1.1.${{ github.run_number }}
+
+          ### ✨ 新功能
+          - 模块备份和恢复功能
+          - 应用类型筛选（系统/用户应用）
+          - 日志功能优化
+
+          ### 🐛 修复
+          - 修复日志提取闪退问题
+          - 修复变量名冲突问题
+
+          ### 📝 说明
+          - 构建 #${{ github.run_number }}
+          - 提交: ${{ github.sha }}
         files: app/build/outputs/apk/debug/PandaSU-v1.1.${{ github.run_number }}.apk
+        draft: false
+        prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
