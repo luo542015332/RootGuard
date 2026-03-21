@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import com.rootguard.app.data.model.DetectionItem
 import com.rootguard.app.data.model.IsolationConfig
 import com.rootguard.app.utils.Logger
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -18,7 +19,7 @@ import javax.inject.Singleton
  */
 @Singleton
 class RootHider @Inject constructor(
-    private val context: Context
+    @ApplicationContext private val context: Context
 ) {
     companion object {
         // 常见的 Root 检测路径
