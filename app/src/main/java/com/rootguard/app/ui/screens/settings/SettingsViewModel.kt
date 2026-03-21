@@ -22,8 +22,14 @@ data class SettingsUiState(
     val autoDenyUnknown: Boolean = false,
     val showNotifications: Boolean = true,
     val showFloatingDialog: Boolean = true,
-    val appVersion: String = "1.0.0",
-    val magiskVersion: String = "Unknown"
+    val checkModuleUpdates: Boolean = true,
+    val traditionalSuSupport: Boolean = true,
+    val kernelUnmountModules: Boolean = false,
+    val defaultUnmountModules: Boolean = false,
+    val webViewDebugging: Boolean = false,
+    val appVersion: String = "1.1.0",
+    val magiskVersion: String = "Unknown",
+    val kernelVersion: String = "Unknown"
 )
 
 @HiltViewModel
@@ -45,8 +51,9 @@ class SettingsViewModel @Inject constructor(
 
     private fun loadSettings() {
         viewModelScope.launch {
-            // 加载 Magisk 版本
+            // 加载 Magisk 版本和内核版本
             val magiskVersion = repository.getMagiskVersion()
+            val kernelVersion = repository.getKernelVersion()
             
             // 收集 DataStore 设置
             launch {
@@ -79,7 +86,42 @@ class SettingsViewModel @Inject constructor(
                 }
             }
             
-            _uiState.update { it.copy(magiskVersion = magiskVersion) }
+            launch {
+                settingsDataStore.checkModuleUpdates.collect { checkUpdates ->
+                    _uiState.update { it.copy(checkModuleUpdates = checkUpdates) }
+                }
+            }
+            
+            launch {
+                settingsDataStore.traditionalSuSupport.collect { suSupport ->
+                    _uiState.update { it.copy(traditionalSuSupport = suSupport) }
+                }
+            }
+            
+            launch {
+                settingsDataStore.kernelUnmountModules.collect { unmount ->
+                    _uiState.update { it.copy(kernelUnmountModules = unmount) }
+                }
+            }
+            
+            launch {
+                settingsDataStore.defaultUnmountModules.collect { defaultUnmount ->
+                    _uiState.update { it.copy(defaultUnmountModules = defaultUnmount) }
+                }
+            }
+            
+            launch {
+                settingsDataStore.webViewDebugging.collect { debugging ->
+                    _uiState.update { it.copy(webViewDebugging = debugging) }
+                }
+            }
+            
+            _uiState.update { 
+                it.copy(
+                    magiskVersion = magiskVersion,
+                    kernelVersion = kernelVersion
+                ) 
+            }
         }
     }
 
@@ -110,6 +152,36 @@ class SettingsViewModel @Inject constructor(
     fun setShowFloatingDialog(enabled: Boolean) {
         viewModelScope.launch {
             settingsDataStore.setShowFloatingDialog(enabled)
+        }
+    }
+    
+    fun setCheckModuleUpdates(enabled: Boolean) {
+        viewModelScope.launch {
+            settingsDataStore.setCheckModuleUpdates(enabled)
+        }
+    }
+    
+    fun setTraditionalSuSupport(enabled: Boolean) {
+        viewModelScope.launch {
+            settingsDataStore.setTraditionalSuSupport(enabled)
+        }
+    }
+    
+    fun setKernelUnmountModules(enabled: Boolean) {
+        viewModelScope.launch {
+            settingsDataStore.setKernelUnmountModules(enabled)
+        }
+    }
+    
+    fun setDefaultUnmountModules(enabled: Boolean) {
+        viewModelScope.launch {
+            settingsDataStore.setDefaultUnmountModules(enabled)
+        }
+    }
+    
+    fun setWebViewDebugging(enabled: Boolean) {
+        viewModelScope.launch {
+            settingsDataStore.setWebViewDebugging(enabled)
         }
     }
 

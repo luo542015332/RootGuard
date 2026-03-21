@@ -283,6 +283,38 @@ fun SystemInfoCard(info: SystemInfo) {
             InfoRow("设备型号", info.deviceModel)
             InfoRow("安全补丁", info.securityPatch)
             InfoRow("SELinux", info.selinuxStatus)
+            InfoRow("内核版本", info.kernelVersion)
+            
+            // 系统指纹信息（可折叠显示）
+            var showFingerprint by remember { mutableStateOf(false) }
+            Column {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { showFingerprint = !showFingerprint },
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = "系统指纹",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                    )
+                    Icon(
+                        imageVector = if (showFingerprint) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
+                        contentDescription = if (showFingerprint) "收起" else "展开",
+                        tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                    )
+                }
+                if (showFingerprint) {
+                    Text(
+                        text = info.systemFingerprint,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+                }
+            }
         }
     }
 }

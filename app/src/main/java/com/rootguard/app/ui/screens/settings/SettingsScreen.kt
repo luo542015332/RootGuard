@@ -81,6 +81,18 @@ fun SettingsScreen(
             }
             
             item {
+                SettingsSection(title = "模块") {
+                    SettingsSwitchItem(
+                        icon = Icons.Default.Update,
+                        title = "检查模块更新",
+                        subtitle = "在应用启动后自动检查是否有最新版",
+                        checked = uiState.checkModuleUpdates,
+                        onCheckedChange = { viewModel.setCheckModuleUpdates(it) }
+                    )
+                }
+            }
+            
+            item {
                 SettingsSection(title = "安全") {
                     SettingsSwitchItem(
                         icon = Icons.Default.Security,
@@ -113,6 +125,38 @@ fun SettingsScreen(
                             }
                         }
                     )
+                    
+                    SettingsSwitchItem(
+                        icon = Icons.Default.Terminal,
+                        title = "传统 su 命令支持",
+                        subtitle = "允许通过 /system/bin/su 获取 Root 权限",
+                        checked = uiState.traditionalSuSupport,
+                        onCheckedChange = { viewModel.setTraditionalSuSupport(it) }
+                    )
+                    
+                    SettingsSwitchItem(
+                        icon = Icons.Default.Memory,
+                        title = "内核处理卸载模块",
+                        subtitle = "在内核给需要的应用卸载模块",
+                        checked = uiState.kernelUnmountModules,
+                        onCheckedChange = { viewModel.setKernelUnmountModules(it) }
+                    )
+                    
+                    SettingsSwitchItem(
+                        icon = Icons.Default.FolderOff,
+                        title = "默认卸载模块",
+                        subtitle = "App Profile 中\"卸载模块\"的全局默认值",
+                        checked = uiState.defaultUnmountModules,
+                        onCheckedChange = { viewModel.setDefaultUnmountModules(it) }
+                    )
+                    
+                    SettingsSwitchItem(
+                        icon = Icons.Default.BugReport,
+                        title = "WebView 调试",
+                        subtitle = "可用于调试 WebUI，请仅在需要时启用",
+                        checked = uiState.webViewDebugging,
+                        onCheckedChange = { viewModel.setWebViewDebugging(it) }
+                    )
                 }
             }
             
@@ -140,6 +184,12 @@ fun SettingsScreen(
                         value = uiState.magiskVersion
                     )
                     
+                    SettingsInfoItem(
+                        icon = Icons.Default.Memory,
+                        title = "内核版本",
+                        value = uiState.kernelVersion
+                    )
+                    
                     SettingsClickableItem(
                         icon = Icons.Default.Update,
                         title = "检查更新",
@@ -149,6 +199,12 @@ fun SettingsScreen(
                     SettingsClickableItem(
                         icon = Icons.Default.BugReport,
                         title = "反馈问题",
+                        onClick = { /* TODO */ }
+                    )
+                    
+                    SettingsClickableItem(
+                        icon = Icons.Default.Delete,
+                        title = "卸载",
                         onClick = { /* TODO */ }
                     )
                 }

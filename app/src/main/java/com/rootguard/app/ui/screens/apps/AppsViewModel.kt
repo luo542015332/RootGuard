@@ -16,8 +16,10 @@ data class AppsUiState(
     val apps: List<AppItem> = emptyList(),
     val filteredApps: List<AppItem> = emptyList(),
     val searchQuery: String = "",
+    val filter: AppFilter = AppFilter.ALL,
     val grantedCount: Int = 0,
     val deniedCount: Int = 0,
+    val promptCount: Int = 0,
     val isLoading: Boolean = false
 )
 
@@ -50,44 +52,78 @@ class AppsViewModel @Inject constructor(
     private fun updateApps(apps: List<AppItem>) {
         val granted = apps.count { it.rootStatus == RootAccessStatus.GRANTED }
         val denied = apps.count { it.rootStatus == RootAccessStatus.DENIED }
+        val prompt = apps.count { it.rootStatus == RootAccessStatus.PROMPT }
         
         _uiState.update { state ->
-            val filtered = if (state.searchQuery.isBlank()) {
-                apps
-            } else {
-                apps.filter {
-                    it.name.contains(state.searchQuery, ignoreCase = true) ||
-                    it.packageName.contains(state.searchQuery, ignoreCase = true)
-                }
-            }
+            val filtered = applyFilters(apps, state.searchQuery, state.filter)
             
             state.copy(
                 apps = apps,
                 filteredApps = filtered,
                 grantedCount = granted,
                 deniedCount = denied,
+                promptCount = prompt,
                 isLoading = false
             )
         }
     }
+    
+    private fun applyFilters(apps: List<AppItem>, query: String, filter: AppFilter): List<AppItem> {
+        var result = apps
+        
+        // Apply search filter
+        if (query.isNotBlank()) {
+            result = result.filter {
+                it.name.contains(query, ignoreCase = true) ||
+                it.packageName.contains(query, ignoreCase = true)
+            }
+        }
+        
+        // Apply status filter
+        result = when (filter) {
+            AppFilter.ALL -> result
+            AppFilter.GRANTED -> result.filter { it.rootStatus == RootAccessStatus.GRANTED }
+            AppFilter.DENIED -> result.filter { it.rootStatus == RootAccessStatus.DENIED }
+            AppFilter.PROMPT -> result.filter { it.rootStatus == RootAccessStatus.PROMPT }
+        }
+        
+        return result
+    }
 
     fun search(query: String) {
         _uiState.update { state ->
-            val filtered = if (query.isBlank()) {
-                state.apps
-            } else {
-                state.apps.filter {
-                    it.name.contains(query, ignoreCase = true) ||
-                    it.packageName.contains(query, ignoreCase = true)
-                }
-            }
+            val filtered = applyFilters(state.apps, query, state.filter)
             state.copy(
                 searchQuery = query,
                 filteredApps = filtered
             )
         }
     }
+    
+    fun setFilter(filter: AppFilter) {
+        _uiState.update { state ->
+            val filtered = applyFilters(state.apps, state.searchQuery, filter)
+            state.copy(
+                filter = filter,
+                filteredApps = filtered
+            )
+        }
+    }
 
+    fun setRootAccess(packageName: String, newStatus: RootAccessStatus) {
+        viewModelScope.launch {
+            val success = setAppRootAccess(packageName, newStatus)
+            if (success) {
+                val updatedApps = _uiState.value.apps.map { a ->
+                    if (a.packageName == packageName) {
+                        a.copy(rootStatus = newStatus)
+                    } else a
+                }
+                updateApps(updatedApps)
+            }
+        }
+    }
+    
     fun toggleRootAccess(packageName: String) {
         viewModelScope.launch {
             val app = _uiState.value.apps.find { it.packageName == packageName }
@@ -97,16 +133,7 @@ class AppsViewModel @Inject constructor(
                     RootAccessStatus.DENIED -> RootAccessStatus.GRANTED
                     RootAccessStatus.PROMPT -> RootAccessStatus.GRANTED
                 }
-                
-                val success = setAppRootAccess(packageName, newStatus)
-                if (success) {
-                    val updatedApps = _uiState.value.apps.map { a ->
-                        if (a.packageName == packageName) {
-                            a.copy(rootStatus = newStatus)
-                        } else a
-                    }
-                    updateApps(updatedApps)
-                }
+                setRootAccess(packageName, newStatus)
             }
         }
     }

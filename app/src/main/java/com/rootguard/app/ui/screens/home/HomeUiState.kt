@@ -17,5 +17,7 @@ data class SystemInfo(
     val apiLevel: String = "Unknown",
     val deviceModel: String = "Unknown",
     val securityPatch: String = "Unknown",
-    val selinuxStatus: String = "Unknown"
+    val selinuxStatus: String = "Unknown",
+    val kernelVersion: String = "Unknown",
+    val systemFingerprint: String = "Unknown"
 )

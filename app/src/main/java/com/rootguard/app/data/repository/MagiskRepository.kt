@@ -90,32 +90,34 @@ class MagiskRepository @Inject constructor(
 
     /**
      * 获取应用列表及其 Root 权限状态
+     * 显示所有已安装应用，包括没有 Root 策略记录的应用
      */
     suspend fun getAppsWithRootStatus(): List<AppItem> = withContext(Dispatchers.IO) {
+        // 获取所有已安装应用
+        val allApps = magiskProvider.getAllInstalledApps()
+        // 获取已有的授权策略
         val policies = magiskProvider.getAppPolicies()
-        val packageManager = magiskProvider.context.packageManager
+        val policyMap = policies.associateBy { it.packageName }
         
-        policies.mapNotNull { policy ->
-            try {
-                val appInfo = packageManager.getApplicationInfo(policy.packageName, 0)
-                val appName = packageManager.getApplicationLabel(appInfo).toString()
-                
-                val status = when (policy.policy) {
-                    2 -> RootAccessStatus.GRANTED
-                    1 -> RootAccessStatus.DENIED
-                    else -> RootAccessStatus.PROMPT
-                }
-                
-                AppItem(
-                    packageName = policy.packageName,
-                    name = appName,
-                    rootStatus = status
-                )
-            } catch (e: Exception) {
-                // 应用可能已卸载
-                null
+        allApps.map { appInfo ->
+            val policy = policyMap[appInfo.packageName]
+            val status = when (policy?.policy) {
+                2 -> RootAccessStatus.GRANTED
+                1 -> RootAccessStatus.DENIED
+                else -> RootAccessStatus.PROMPT
             }
-        }.sortedBy { it.name }
+            
+            AppItem(
+                packageName = appInfo.packageName,
+                name = appInfo.appName,
+                rootStatus = status,
+                isSystemApp = appInfo.isSystemApp,
+                icon = appInfo.icon
+            )
+        }.sortedWith(
+            compareByDescending<AppItem> { it.rootStatus == RootAccessStatus.GRANTED }
+                .thenBy { it.name }
+        )
     }
 
     /**
@@ -170,17 +172,52 @@ class MagiskRepository @Inject constructor(
             val process = Runtime.getRuntime().exec("su -c getenforce")
             val status = process.inputStream.bufferedReader().readText().trim()
             process.waitFor()
-            status.ifEmpty { "Unknown" }
+            when {
+                status.isEmpty() -> "Unknown"
+                status.contains("Enforcing", ignoreCase = true) -> "Enforcing (强制)"
+                status.contains("Permissive", ignoreCase = true) -> "Permissive (宽容)"
+                status.contains("Disabled", ignoreCase = true) -> "Disabled (禁用)"
+                else -> status
+            }
         } catch (e: Exception) {
             "Unknown"
         }
+        
+        // 获取内核版本 - 尝试多种方法
+        val kernelVersion = try {
+            // 方法1: 通过 su 执行 uname
+            val process = Runtime.getRuntime().exec("su -c uname -r")
+            val version = process.inputStream.bufferedReader().readText().trim()
+            process.waitFor()
+            if (version.isNotEmpty() && !version.contains("not found")) {
+                version
+            } else {
+                throw Exception("Su uname failed")
+            }
+        } catch (e: Exception) {
+            try {
+                // 方法2: 直接执行 uname（某些设备可能不需要 su）
+                val process = Runtime.getRuntime().exec("uname -r")
+                val version = process.inputStream.bufferedReader().readText().trim()
+                process.waitFor()
+                if (version.isNotEmpty()) version else throw Exception("Uname failed")
+            } catch (e2: Exception) {
+                // 方法3: 从系统属性获取
+                System.getProperty("os.version") ?: "Unknown"
+            }
+        }
+        
+        // 获取系统指纹
+        val systemFingerprint = android.os.Build.FINGERPRINT ?: "Unknown"
         
         SystemInfo(
             androidVersion = "Android $androidVersion",
             apiLevel = "API $apiLevel",
             deviceModel = deviceModel,
             securityPatch = securityPatch,
-            selinuxStatus = selinuxStatus
+            selinuxStatus = selinuxStatus,
+            kernelVersion = kernelVersion,
+            systemFingerprint = systemFingerprint
         )
     }
 
@@ -189,6 +226,20 @@ class MagiskRepository @Inject constructor(
      */
     fun isMagiskInstalled(): Boolean {
         return magiskProvider.isMagiskInstalled()
+    }
+
+    /**
+     * 获取内核版本
+     */
+    suspend fun getKernelVersion(): String = withContext(Dispatchers.IO) {
+        try {
+            val process = Runtime.getRuntime().exec("su -c uname -r")
+            val version = process.inputStream.bufferedReader().readText().trim()
+            process.waitFor()
+            version.ifEmpty { System.getProperty("os.version") ?: "Unknown" }
+        } catch (e: Exception) {
+            System.getProperty("os.version") ?: "Unknown"
+        }
     }
 
     /**

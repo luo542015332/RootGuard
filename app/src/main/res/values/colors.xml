@@ -17,4 +17,7 @@
     <color name="status_rooted">#FF00C853</color>
     <color name="status_not_rooted">#FFFF1744</color>
     <color name="status_unknown">#FFFFA000</color>
+    
+    <!-- Launcher Icon Background -->
+    <color name="ic_launcher_background">#FF2D3436</color>
 </resources>

@@ -27,6 +27,11 @@ class SettingsDataStore @Inject constructor(
         val SHOW_NOTIFICATIONS = booleanPreferencesKey("show_notifications")
         val SHOW_FLOATING_DIALOG = booleanPreferencesKey("show_floating_dialog")
         val CURRENT_THEME = stringPreferencesKey("current_theme")
+        val CHECK_MODULE_UPDATES = booleanPreferencesKey("check_module_updates")
+        val TRADITIONAL_SU_SUPPORT = booleanPreferencesKey("traditional_su_support")
+        val KERNEL_UNMOUNT_MODULES = booleanPreferencesKey("kernel_unmount_modules")
+        val DEFAULT_UNMOUNT_MODULES = booleanPreferencesKey("default_unmount_modules")
+        val WEBVIEW_DEBUGGING = booleanPreferencesKey("webview_debugging")
     }
     
     val darkMode: Flow<Boolean> = dataStore.data
@@ -70,5 +75,45 @@ class SettingsDataStore @Inject constructor(
     
     suspend fun setCurrentTheme(themeId: String) {
         dataStore.edit { it[CURRENT_THEME] = themeId }
+    }
+    
+    // 模块更新检查
+    val checkModuleUpdates: Flow<Boolean> = dataStore.data
+        .map { it[CHECK_MODULE_UPDATES] ?: true }
+    
+    suspend fun setCheckModuleUpdates(enabled: Boolean) {
+        dataStore.edit { it[CHECK_MODULE_UPDATES] = enabled }
+    }
+    
+    // 传统 su 命令支持
+    val traditionalSuSupport: Flow<Boolean> = dataStore.data
+        .map { it[TRADITIONAL_SU_SUPPORT] ?: true }
+    
+    suspend fun setTraditionalSuSupport(enabled: Boolean) {
+        dataStore.edit { it[TRADITIONAL_SU_SUPPORT] = enabled }
+    }
+    
+    // 内核处理卸载模块
+    val kernelUnmountModules: Flow<Boolean> = dataStore.data
+        .map { it[KERNEL_UNMOUNT_MODULES] ?: false }
+    
+    suspend fun setKernelUnmountModules(enabled: Boolean) {
+        dataStore.edit { it[KERNEL_UNMOUNT_MODULES] = enabled }
+    }
+    
+    // 默认卸载模块
+    val defaultUnmountModules: Flow<Boolean> = dataStore.data
+        .map { it[DEFAULT_UNMOUNT_MODULES] ?: false }
+    
+    suspend fun setDefaultUnmountModules(enabled: Boolean) {
+        dataStore.edit { it[DEFAULT_UNMOUNT_MODULES] = enabled }
+    }
+    
+    // WebView 调试
+    val webViewDebugging: Flow<Boolean> = dataStore.data
+        .map { it[WEBVIEW_DEBUGGING] ?: false }
+    
+    suspend fun setWebViewDebugging(enabled: Boolean) {
+        dataStore.edit { it[WEBVIEW_DEBUGGING] = enabled }
     }
 }

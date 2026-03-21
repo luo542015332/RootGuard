@@ -244,6 +244,41 @@ class MagiskProvider @Inject constructor(
     }
 
     /**
+     * 获取所有已安装的应用（包括系统应用）
+     */
+    suspend fun getAllInstalledApps(): List<InstalledAppInfo> = withContext(Dispatchers.IO) {
+        val apps = mutableListOf<InstalledAppInfo>()
+        
+        try {
+            val pm = context.packageManager
+            val packages = pm.getInstalledApplications(0)
+            
+            packages.forEach { appInfo ->
+                try {
+                    val appName = pm.getApplicationLabel(appInfo).toString()
+                    val packageName = appInfo.packageName
+                    val isSystemApp = (appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0
+                    
+                    apps.add(
+                        InstalledAppInfo(
+                            packageName = packageName,
+                            appName = appName,
+                            isSystemApp = isSystemApp,
+                            icon = pm.getApplicationIcon(appInfo)
+                        )
+                    )
+                } catch (e: Exception) {
+                    // 跳过无法读取的应用
+                }
+            }
+        } catch (e: Exception) {
+            Logger.e("Failed to get installed apps", e)
+        }
+        
+        apps.sortedBy { it.appName }
+    }
+
+    /**
      * 设置应用的 Root 权限策略
      * policy: 0 = 询问, 1 = 拒绝, 2 = 允许
      */
@@ -377,6 +412,13 @@ data class AppPolicy(
     val policy: Int,        // 0 = 询问, 1 = 拒绝, 2 = 允许
     val logging: Int,
     val notification: Int
+)
+
+data class InstalledAppInfo(
+    val packageName: String,
+    val appName: String,
+    val isSystemApp: Boolean,
+    val icon: android.graphics.drawable.Drawable
 )
 
 data class MagiskLog(
