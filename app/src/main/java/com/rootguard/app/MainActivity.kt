@@ -9,18 +9,22 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.rootguard.app.data.local.SettingsDataStore
 import com.rootguard.app.ui.navigation.RootGuardNavHost
 import com.rootguard.app.ui.navigation.Screen
 import com.rootguard.app.ui.theme.RootGuardTheme
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.first
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    
+    @Inject
+    lateinit var settingsDataStore: SettingsDataStore
     
     companion object {
         const val EXTRA_MODULE_URI = "extra_module_uri"
@@ -37,22 +41,40 @@ class MainActivity : ComponentActivity() {
         setContent {
             val startDestination = remember { mutableStateOf(Screen.Home.route) }
             
-            // 如果有模块文件，跳转到模块页面
-            LaunchedEffect(moduleUri) {
+            // 读取主题设置
+            var themeId by remember { mutableStateOf("classic") }
+            var isDarkMode by remember { mutableStateOf(false) }
+            var useDynamicColors by remember { mutableStateOf(false) }
+            var isLoading by remember { mutableStateOf(true) }
+            
+            // 加载设置
+            LaunchedEffect(Unit) {
+                themeId = settingsDataStore.currentTheme.first()
+                isDarkMode = settingsDataStore.darkMode.first()
+                useDynamicColors = settingsDataStore.dynamicColors.first()
+                isLoading = false
+                
+                // 如果有模块文件，跳转到模块页面
                 if (moduleUri != null) {
                     startDestination.value = Screen.Modules.route
                 }
             }
             
-            RootGuardTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+            if (!isLoading) {
+                RootGuardTheme(
+                    darkTheme = isDarkMode,
+                    dynamicColor = useDynamicColors,
+                    themeId = themeId
                 ) {
-                    RootGuardNavHost(
-                        startDestination = startDestination.value,
-                        sharedModuleUri = moduleUri
-                    )
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        RootGuardNavHost(
+                            startDestination = startDestination.value,
+                            sharedModuleUri = moduleUri
+                        )
+                    }
                 }
             }
         }
