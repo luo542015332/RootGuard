@@ -49,14 +49,18 @@ jobs:
     - name: Build Debug APK
       run: ./gradlew assembleDebug --stacktrace --no-daemon
 
+    - name: Get Version Name
+      id: version
+      run: echo "version=$(grep 'versionName' app/build.gradle | awk '{print $2}' | tr -d '"')" >> $GITHUB_OUTPUT
+
     - name: Rename APK
-      run: mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/PandaSU-v1.3.1.apk
+      run: mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/PandaSU-${{ steps.version.outputs.version }}.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: PandaSU-APK-v1.3.1
-        path: app/build/outputs/apk/debug/PandaSU-v1.3.1.apk
+        name: PandaSU-APK-${{ steps.version.outputs.version }}
+        path: app/build/outputs/apk/debug/PandaSU-${{ steps.version.outputs.version }}.apk
         retention-days: 30
 
     - name: Create Release
