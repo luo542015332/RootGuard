@@ -38,7 +38,7 @@ jobs:
           echo "Latest build run ID: $RUN_ID"
 
           # 下载 artifact
-          gh run download $RUN_ID --repo luo542015332/RootGuard --name PandaSU-APK
+          gh run download $RUN_ID --repo luo542015332/RootGuard --name PandaSU-APK-v1.3.1
           
           # 检查文件是否存在
           ls -la app/build/outputs/apk/debug/
