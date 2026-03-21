@@ -89,5 +89,5 @@ lint-baseline.xml
 ehthumbs.db
 Thumbs.db
 
-# Ignore RootGuard directory (we copied files to root)
-RootGuard/
+# Ignore old RootGuard directory at project root (not to be confused with com.rootguard package)
+/RootGuard/
