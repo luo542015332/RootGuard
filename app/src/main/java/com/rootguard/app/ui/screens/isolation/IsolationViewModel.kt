@@ -4,10 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rootguard.app.data.local.IsolationDataStore
 import com.rootguard.app.data.magisk.RootHider
-import com.rootguard.app.data.model.IsolationConfig
-import com.rootguard.app.data.model.IsolationLevel
-import com.rootguard.app.data.model.IsolationPresets
+import com.rootguard.app.data.model.*
 import com.rootguard.app.utils.Logger
+import com.rootguard.app.utils.OneClickIsolationHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -22,13 +21,24 @@ data class IsolationUiState(
     val isolatedApps: List<IsolationConfig> = emptyList(),
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
-    val successMessage: String? = null
+    val successMessage: String? = null,
+    val showSandboxRules: Boolean = false,
+    val isolationStats: IsolationDataStore.SandboxStats = IsolationDataStore.SandboxStats(),
+    val oneClickProgress: OneClickProgress = OneClickProgress()
+)
+
+data class OneClickProgress(
+    val isRunning: Boolean = false,
+    val current: Int = 0,
+    val total: Int = 0,
+    val currentAppName: String = ""
 )
 
 @HiltViewModel
 class IsolationViewModel @Inject constructor(
     private val isolationDataStore: IsolationDataStore,
-    private val rootHider: RootHider
+    private val rootHider: RootHider,
+    private val oneClickIsolationHelper: OneClickIsolationHelper
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(IsolationUiState())
@@ -36,6 +46,7 @@ class IsolationViewModel @Inject constructor(
 
     init {
         loadSettings()
+        loadSandboxStats()
     }
 
     private fun loadSettings() {
@@ -52,6 +63,14 @@ class IsolationViewModel @Inject constructor(
                 isolationDataStore.isolationConfigs.collect { configs ->
                     _uiState.update { it.copy(isolatedApps = configs.filter { it.isEnabled }) }
                 }
+            }
+        }
+    }
+
+    private fun loadSandboxStats() {
+        viewModelScope.launch {
+            isolationDataStore.sandboxStats.collect { stats ->
+                _uiState.update { it.copy(isolationStats = stats) }
             }
         }
     }
@@ -247,4 +266,119 @@ class IsolationViewModel @Inject constructor(
     fun clearError() {
         _uiState.update { it.copy(errorMessage = null) }
     }
+
+    // ========== Sandbox 规则管理 ==========
+
+    /**
+     * 切换 Sandbox 规则显示
+     */
+    fun toggleSandboxRules() {
+        _uiState.update { it.copy(showSandboxRules = !it.showSandboxRules) }
+    }
+
+    /**
+     * 更新 Sandbox 规则
+     */
+    fun updateSandboxRule(sandboxRule: SandboxRule) {
+        val config = _uiState.value.currentConfig ?: return
+        _uiState.update {
+            it.copy(currentConfig = config.copy(sandboxRule = sandboxRule))
+        }
+    }
+
+    // ========== 一键智能隔离 ==========
+
+    /**
+     * 执行一键隔离
+     */
+    fun startOneClickIsolation(preset: OneClickIsolationPreset) {
+        viewModelScope.launch {
+            _uiState.update {
+                it.copy(
+                    oneClickProgress = OneClickProgress(isRunning = true, current = 0, total = 0)
+                )
+            }
+
+            try {
+                // 扫描已安装应用
+                val apps = oneClickIsolationHelper.scanInstalledApps()
+
+                _uiState.update {
+                    it.copy(oneClickProgress = it.oneClickProgress.copy(total = apps.size))
+                }
+
+                // 跳过系统应用
+                val userApps = apps.filterNot { it.isSystemApp }
+
+                // 生成隔离配置
+                val configs = userApps.mapIndexed { index, app ->
+                    _uiState.update {
+                        it.copy(
+                            oneClickProgress = it.oneClickProgress.copy(
+                                current = index + 1,
+                                currentAppName = app.appName
+                            )
+                        )
+                    }
+
+                    // 避免太快
+                    kotlinx.coroutines.delay(10)
+
+                    oneClickIsolationHelper.generateIsolationConfig(app, preset)
+                }
+
+                // 批量保存
+                isolationDataStore.saveIsolationConfigs(configs)
+
+                _uiState.update {
+                    it.copy(
+                        oneClickProgress = OneClickProgress(isRunning = false),
+                        successMessage = "已为 ${configs.size} 个应用创建隔离规则"
+                    )
+                }
+
+                Logger.d("One-click isolation completed: ${configs.size} configs created")
+            } catch (e: Exception) {
+                Logger.e("One-click isolation failed", e)
+                _uiState.update {
+                    it.copy(
+                        oneClickProgress = OneClickProgress(isRunning = false),
+                        errorMessage = "一键隔离失败: ${e.message}"
+                    )
+                }
+            }
+
+            clearMessageAfterDelay()
+        }
+    }
+
+    /**
+     * 重置一键隔离进度
+     */
+    fun resetOneClickProgress() {
+        _uiState.update {
+            it.copy(oneClickProgress = OneClickProgress())
+        }
+    }
+
+    // ========== 隔离日志 ==========
+
+    /**
+     * 清除隔离日志
+     */
+    fun clearIsolationLogs() {
+        viewModelScope.launch {
+            isolationDataStore.clearIsolationLogs()
+            _uiState.update {
+                it.copy(successMessage = "隔离日志已清除")
+            }
+            clearMessageAfterDelay()
+        }
+    }
+
+    /**
+     * 获取隔离事件流
+     */
+    fun getIsolationEvents() = isolationDataStore.isolationEvents
 }
+
