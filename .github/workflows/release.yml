@@ -38,7 +38,10 @@ jobs:
           echo "Latest build run ID: $RUN_ID"
 
           # 下载 artifact
-          gh run download $RUN_ID --repo luo542015332/RootGuard --name app
+          gh run download $RUN_ID --repo luo542015332/RootGuard --name PandaSU-APK
+          
+          # 检查文件是否存在
+          ls -la app/build/outputs/apk/debug/
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -48,7 +51,7 @@ jobs:
           tag_name: ${{ github.event.inputs.version || github.ref_name }}
           name: ${{ github.event.inputs.title || 'PandaSU Release' }}
           body: ${{ github.event.inputs.notes }}
-          files: app-debug.apk
+          files: app/build/outputs/apk/debug/app-debug.apk
           draft: false
           prerelease: false
         env:
