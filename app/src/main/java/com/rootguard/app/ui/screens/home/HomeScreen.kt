@@ -39,6 +39,7 @@ fun HomeScreen(
     onNavigateToInstall: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsState()
 
     // 版本信息
@@ -143,11 +144,51 @@ fun HomeScreen(
                 releaseInfo = state.releaseInfo,
                 currentVersion = currentVersion,
                 onDismiss = { viewModel.ignoreUpdate() },
-                onDownloadComplete = { viewModel.downloadAndInstall(state.releaseInfo) }
+                onUpdateClick = { viewModel.downloadAndInstall(state.releaseInfo, context) }
+            )
+        }
+        is UpdateState.Downloading -> {
+            // 显示下载进度对话框
+            AlertDialog(
+                onDismissRequest = { },
+                title = { Text("下载中") },
+                text = {
+                    Column {
+                        LinearProgressIndicator(
+                            progress = state.progress / 100f,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Text("${state.progress}%")
+                    }
+                },
+                confirmButton = { }
+            )
+        }
+        is UpdateState.DownloadComplete -> {
+            // 下载完成，可以自动安装或提示用户
+            AlertDialog(
+                onDismissRequest = { viewModel.ignoreUpdate() },
+                title = { Text("下载完成") },
+                text = { Text("APK 文件已下载完成，请到下载目录安装") },
+                confirmButton = {
+                    Button(onClick = { viewModel.ignoreUpdate() }) {
+                        Text("确定")
+                    }
+                }
             )
         }
         is UpdateState.Error -> {
-            // 可以显示错误提示
+            AlertDialog(
+                onDismissRequest = { viewModel.ignoreUpdate() },
+                title = { Text("错误") },
+                text = { Text(state.message) },
+                confirmButton = {
+                    Button(onClick = { viewModel.ignoreUpdate() }) {
+                        Text("确定")
+                    }
+                }
+            )
         }
         else -> {}
     }
