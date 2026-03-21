@@ -50,23 +50,23 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace --no-daemon
 
     - name: Rename APK
-      run: mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/PandaSU-v1.1.${{ github.run_number }}.apk
+      run: mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/PandaSU-v1.2.0.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: PandaSU-APK-${{ github.run_number }}
-        path: app/build/outputs/apk/debug/PandaSU-v1.1.${{ github.run_number }}.apk
+        name: PandaSU-APK-v1.2.0
+        path: app/build/outputs/apk/debug/PandaSU-v1.2.0.apk
         retention-days: 30
 
     - name: Create Release
       if: github.event.inputs.create_release == 'true' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release:'))
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: v1.1.${{ github.run_number }}
-        name: PandaSU v1.1.${{ github.run_number }}
+        tag_name: v1.2.0
+        name: PandaSU v1.2.0
         body: |
-          ## 📦 PandaSU v1.1.${{ github.run_number }}
+          ## 📦 PandaSU v1.2.0
 
           ### ✨ 新功能
           - 模块备份和恢复功能
@@ -80,7 +80,10 @@ jobs:
           ### 📝 说明
           - 构建 #${{ github.run_number }}
           - 提交: ${{ github.sha }}
-        files: app/build/outputs/apk/debug/PandaSU-v1.1.${{ github.run_number }}.apk
+
+          ### 🐼 更新
+          - 更新应用图标为可爱熊猫
+        files: app/build/outputs/apk/debug/PandaSU-v1.2.0.apk
         draft: false
         prerelease: false
       env:
