@@ -21,6 +21,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @Composable
 fun AppsScreen(
     onNavigateBack: () -> Unit,
+    onNavigateToIsolation: (String, String) -> Unit = { _, _ -> },
     viewModel: AppsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -31,7 +32,7 @@ fun AppsScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("超级用户授权管理") },
+                title = { Text("🛡️ 超级用户授权管理") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(Icons.Filled.ArrowBack, contentDescription = "返回")
@@ -195,6 +196,9 @@ fun AppsScreen(
                             app = app,
                             onStatusChange = { newStatus ->
                                 viewModel.setRootAccess(app.packageName, newStatus)
+                            },
+                            onIsolationClick = {
+                                onNavigateToIsolation(app.packageName, app.name)
                             }
                         )
                     }
@@ -237,140 +241,181 @@ fun StatCard(title: String, count: Int, color: androidx.compose.ui.graphics.Colo
 @Composable
 fun AppCard(
     app: AppItem,
-    onStatusChange: (RootAccessStatus) -> Unit
+    onStatusChange: (RootAccessStatus) -> Unit,
+    onIsolationClick: (() -> Unit)? = null
 ) {
     var showMenu by remember { mutableStateOf(false) }
     
     Card(
         modifier = Modifier.fillMaxWidth()
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            // App icon
-            AppIcon(
-                drawable = app.icon,
-                appName = app.name,
-                modifier = Modifier.size(48.dp)
-            )
-            
-            Column(modifier = Modifier.weight(1f)) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text(
-                        text = app.name,
-                        style = MaterialTheme.typography.titleMedium
-                    )
-                    if (app.isSystemApp) {
-                        Spacer(modifier = Modifier.width(4.dp))
+        Column {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(12.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                // App icon
+                AppIcon(
+                    drawable = app.icon,
+                    appName = app.name,
+                    modifier = Modifier.size(48.dp)
+                )
+                
+                Column(modifier = Modifier.weight(1f)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
-                            text = "系统",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.tertiary,
-                            modifier = Modifier
-                                .padding(horizontal = 4.dp)
+                            text = app.name,
+                            style = MaterialTheme.typography.titleMedium
+                        )
+                        if (app.isSystemApp) {
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "系统",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.tertiary,
+                                modifier = Modifier
+                                    .padding(horizontal = 4.dp)
+                            )
+                        }
+                        if (app.isIsolated) {
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "🛡️",
+                                style = MaterialTheme.typography.labelSmall
+                            )
+                        }
+                    }
+                    Text(
+                        text = app.packageName,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                    )
+                }
+                
+                // Status dropdown
+                Box {
+                    AssistChip(
+                        onClick = { showMenu = true },
+                        label = { 
+                            Text(
+                                when (app.rootStatus) {
+                                    RootAccessStatus.GRANTED -> "已授权"
+                                    RootAccessStatus.DENIED -> "已拒绝"
+                                    RootAccessStatus.PROMPT -> "待询问"
+                                }
+                            )
+                        },
+                        leadingIcon = {
+                            when (app.rootStatus) {
+                                RootAccessStatus.GRANTED -> {
+                                    Icon(
+                                        imageVector = Icons.Default.CheckCircle,
+                                        contentDescription = null,
+                                        modifier = Modifier.size(18.dp),
+                                        tint = MaterialTheme.colorScheme.primary
+                                    )
+                                }
+                                RootAccessStatus.DENIED -> {
+                                    Icon(
+                                        imageVector = Icons.Default.Cancel,
+                                        contentDescription = null,
+                                        modifier = Modifier.size(18.dp),
+                                        tint = MaterialTheme.colorScheme.error
+                                    )
+                                }
+                                RootAccessStatus.PROMPT -> {
+                                    Icon(
+                                        imageVector = Icons.Default.Help,
+                                        contentDescription = null,
+                                        modifier = Modifier.size(18.dp),
+                                        tint = MaterialTheme.colorScheme.tertiary
+                                    )
+                                }
+                            }
+                        }
+                    )
+                    
+                    DropdownMenu(
+                        expanded = showMenu,
+                        onDismissRequest = { showMenu = false }
+                    ) {
+                        DropdownMenuItem(
+                            text = { Text("允许") },
+                            leadingIcon = {
+                                Icon(
+                                    Icons.Default.CheckCircle,
+                                    contentDescription = null,
+                                    tint = MaterialTheme.colorScheme.primary
+                                )
+                            },
+                            onClick = {
+                                onStatusChange(RootAccessStatus.GRANTED)
+                                showMenu = false
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = { Text("拒绝") },
+                            leadingIcon = {
+                                Icon(
+                                    Icons.Default.Cancel,
+                                    contentDescription = null,
+                                    tint = MaterialTheme.colorScheme.error
+                                )
+                            },
+                            onClick = {
+                                onStatusChange(RootAccessStatus.DENIED)
+                                showMenu = false
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = { Text("询问") },
+                            leadingIcon = {
+                                Icon(
+                                    Icons.Default.Help,
+                                    contentDescription = null,
+                                    tint = MaterialTheme.colorScheme.tertiary
+                                )
+                            },
+                            onClick = {
+                                onStatusChange(RootAccessStatus.PROMPT)
+                                showMenu = false
+                            }
                         )
                     }
                 }
-                Text(
-                    text = app.packageName,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-                )
             }
             
-            // Status dropdown
-            Box {
-                AssistChip(
-                    onClick = { showMenu = true },
-                    label = { 
-                        Text(
-                            when (app.rootStatus) {
-                                RootAccessStatus.GRANTED -> "已授权"
-                                RootAccessStatus.DENIED -> "已拒绝"
-                                RootAccessStatus.PROMPT -> "待询问"
+            // 隔离设置按钮
+            if (onIsolationClick != null) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 12.dp, vertical = 4.dp),
+                    horizontalArrangement = Arrangement.End
+                ) {
+                    TextButton(
+                        onClick = onIsolationClick,
+                        colors = ButtonDefaults.textButtonColors(
+                            contentColor = if (app.isIsolated) {
+                                MaterialTheme.colorScheme.primary
+                            } else {
+                                MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                             }
                         )
-                    },
-                    leadingIcon = {
-                        when (app.rootStatus) {
-                            RootAccessStatus.GRANTED -> {
-                                Icon(
-                                    imageVector = Icons.Default.CheckCircle,
-                                    contentDescription = null,
-                                    modifier = Modifier.size(18.dp),
-                                    tint = MaterialTheme.colorScheme.primary
-                                )
-                            }
-                            RootAccessStatus.DENIED -> {
-                                Icon(
-                                    imageVector = Icons.Default.Cancel,
-                                    contentDescription = null,
-                                    modifier = Modifier.size(18.dp),
-                                    tint = MaterialTheme.colorScheme.error
-                                )
-                            }
-                            RootAccessStatus.PROMPT -> {
-                                Icon(
-                                    imageVector = Icons.Default.Help,
-                                    contentDescription = null,
-                                    modifier = Modifier.size(18.dp),
-                                    tint = MaterialTheme.colorScheme.tertiary
-                                )
-                            }
-                        }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Security,
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            if (app.isIsolated) "🛡️ 已隔离" else "隔离设置"
+                        )
                     }
-                )
-                
-                DropdownMenu(
-                    expanded = showMenu,
-                    onDismissRequest = { showMenu = false }
-                ) {
-                    DropdownMenuItem(
-                        text = { Text("允许") },
-                        leadingIcon = {
-                            Icon(
-                                Icons.Default.CheckCircle,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.primary
-                            )
-                        },
-                        onClick = {
-                            onStatusChange(RootAccessStatus.GRANTED)
-                            showMenu = false
-                        }
-                    )
-                    DropdownMenuItem(
-                        text = { Text("拒绝") },
-                        leadingIcon = {
-                            Icon(
-                                Icons.Default.Cancel,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.error
-                            )
-                        },
-                        onClick = {
-                            onStatusChange(RootAccessStatus.DENIED)
-                            showMenu = false
-                        }
-                    )
-                    DropdownMenuItem(
-                        text = { Text("询问") },
-                        leadingIcon = {
-                            Icon(
-                                Icons.Default.Help,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.tertiary
-                            )
-                        },
-                        onClick = {
-                            onStatusChange(RootAccessStatus.PROMPT)
-                            showMenu = false
-                        }
-                    )
                 }
             }
         }
@@ -411,7 +456,8 @@ data class AppItem(
     val name: String,
     val rootStatus: RootAccessStatus,
     val isSystemApp: Boolean = false,
-    val icon: android.graphics.drawable.Drawable? = null
+    val icon: android.graphics.drawable.Drawable? = null,
+    val isIsolated: Boolean = false
 )
 
 enum class RootAccessStatus {

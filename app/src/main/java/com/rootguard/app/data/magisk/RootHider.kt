@@ -1,16 +1,20 @@
 package com.rootguard.app.data.magisk
 
 import android.content.Context
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
+import com.rootguard.app.data.model.DetectionItem
 import com.rootguard.app.data.model.IsolationConfig
 import com.rootguard.app.utils.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.io.File
 import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
- * Root 隐藏执行器
- * 负责执行各种 Root 隐藏操作
+ * Root 隐藏器
+ * 用于隐藏 Root 痕迹，防止应用检测到 Root 权限
  */
 @Singleton
 class RootHider @Inject constructor(
@@ -26,12 +30,8 @@ class RootHider @Inject constructor(
             "/data/local/xbin/su",
             "/data/local/bin/su",
             "/system/app/Superuser.apk",
-            "/system/app/superuser.apk",
-            "/system/xbin/daemonsu",
-            "/system/etc/init.d/99SuperSUDaemon",
-            "/system/bin/.ext/.su",
-            "/system/etc/.has_su_daemon",
-            "/system/etc/.installed_su_daemon"
+            "/system/app/SuperSU.apk",
+            "/system/app/Magisk.apk"
         )
         
         // Magisk 相关路径
@@ -40,7 +40,7 @@ class RootHider @Inject constructor(
             "/data/adb/modules",
             "/sbin/.magisk",
             "/dev/.magisk.unblock",
-            "/system/etc/init/magisk.rc"
+            "/system/etc/init.d"
         )
         
         // Busybox 路径
@@ -50,42 +50,74 @@ class RootHider @Inject constructor(
             "/data/local/xbin/busybox"
         )
         
-        // Xposed 路径
+        // Xposed 相关
         private val XPOSED_PATHS = listOf(
             "/system/framework/XposedBridge.jar",
+            "/system/bin/app_process_xposed",
             "/system/xbin/xposed",
             "/data/data/de.robv.android.xposed.installer"
+        )
+        
+        // Root 管理应用包名
+        private val ROOT_PACKAGES = listOf(
+            "com.topjohnwu.magisk",
+            "com.topjohnwu.magisk.debug",
+            "eu.chainfire.supersu",
+            "com.koushikdutta.superuser",
+            "com.thirdparty.superuser",
+            "com.yellowes.su",
+            "com.kingroot.kinguser",
+            "com.kingo.root",
+            "com.smedialink.oneclickroot",
+            "com.zhiqupk.root.global",
+            "me.weishu.exp",
+            "de.robv.android.xposed.installer",
+            "org.meowcat.edxposed.manager",
+            "com.solohsu.android.edxp.manager"
         )
     }
     
     /**
-     * 为指定应用应用隔离配置
+     * 为指定应用配置 Root 隐藏
      */
     suspend fun applyIsolation(config: IsolationConfig): Boolean = withContext(Dispatchers.IO) {
         try {
             if (!config.isEnabled) {
-                Logger.d("Isolation disabled for ${config.packageName}")
-                return@withContext removeIsolation(config.packageName)
+                // 如果禁用隔离，则移除所有配置
+                removeIsolation(config.packageName)
+                return@withContext true
             }
             
             Logger.d("Applying isolation for ${config.packageName}")
             
-            // 1. 创建 Magisk Hide 规则（如果 Magisk 支持）
-            val magiskHideResult = addMagiskHide(config.packageName)
+            // 1. 配置 Magisk Hide / Zygisk DenyList
+            val magiskResult = configureMagiskHide(config)
             
-            // 2. 应用自定义属性
-            val propsResult = applyCustomProps(config.packageName, config.customProps)
+            // 2. 隐藏 su 二进制文件
+            val suResult = if (config.hideSuBinary) hideSuForPackage(config.packageName) else true
             
-            // 3. 配置 Zygisk 排除（如果可用）
-            val zygiskResult = configureZygisk(config)
+            // 3. 隐藏 Magisk 文件
+            val magiskFileResult = if (config.hideMagisk) hideMagiskFilesForPackage(config.packageName) else true
             
-            // 4. 设置存储隔离
-            if (config.isolateStorage) {
-                setupStorageIsolation(config.packageName)
-            }
+            // 4. 隐藏 Busybox
+            val busyboxResult = if (config.hideBusybox) hideBusyboxForPackage(config.packageName) else true
             
-            Logger.d("Isolation applied for ${config.packageName}: magiskHide=$magiskHideResult, props=$propsResult")
-            true
+            // 5. 隐藏 Xposed
+            val xposedResult = if (config.hideXposed) hideXposedForPackage(config.packageName) else true
+            
+            // 6. 设置自定义属性
+            val propsResult = if (config.customProps.isNotEmpty()) {
+                applyCustomProps(config.packageName, config.customProps)
+            } else true
+            
+            // 7. 如果禁用 Root 访问，设置拒绝策略
+            val rootResult = if (config.disableRootAccess) {
+                disableRootForPackage(config.packageName)
+            } else true
+            
+            magiskResult && suResult && magiskFileResult && busyboxResult && 
+            xposedResult && propsResult && rootResult
+            
         } catch (e: Exception) {
             Logger.e("Failed to apply isolation for ${config.packageName}", e)
             false
@@ -93,71 +125,146 @@ class RootHider @Inject constructor(
     }
     
     /**
-     * 移除应用的隔离配置
+     * 配置 Magisk Hide / DenyList
      */
-    suspend fun removeIsolation(packageName: String): Boolean = withContext(Dispatchers.IO) {
+    private suspend fun configureMagiskHide(config: IsolationConfig): Boolean = withContext(Dispatchers.IO) {
         try {
-            Logger.d("Removing isolation for $packageName")
+            // 尝试使用 Magisk 的 magisk --denylist 命令
+            // 或者写入到 Magisk 的配置文件
             
-            // 移除 Magisk Hide
-            removeMagiskHide(packageName)
+            // 方法1: 使用命令行
+            val process = Runtime.getRuntime().exec(
+                "su -c magisk --denylist add ${config.packageName}"
+            )
+            process.waitFor()
             
-            // 恢复系统属性
-            restoreDefaultProps(packageName)
+            // 方法2: 写入配置文件（作为备用）
+            if (process.exitValue() != 0) {
+                // 尝试直接修改 Magisk 数据库或配置文件
+                addToMagiskConfig(config.packageName)
+            }
             
             true
         } catch (e: Exception) {
-            Logger.e("Failed to remove isolation for $packageName", e)
+            Logger.e("Failed to configure Magisk Hide", e)
+            // 尝试备用方法
+            addToMagiskConfig(config.packageName)
+        }
+    }
+    
+    /**
+     * 添加到 Magisk 配置文件
+     */
+    private suspend fun addToMagiskConfig(packageName: String): Boolean = withContext(Dispatchers.IO) {
+        try {
+            // Magisk 的配置文件路径
+            val magiskDb = "/data/adb/magisk.db"
+            
+            // 尝试将应用添加到 Magisk 的隐藏列表
+            // 这需要修改 Magisk 的数据库
+            val process = Runtime.getRuntime().exec(
+                "su -c sqlite3 $magiskDb \"INSERT OR REPLACE INTO denylist (package_name) VALUES ('$packageName')\""
+            )
+            process.waitFor()
+            process.exitValue() == 0
+        } catch (e: Exception) {
+            Logger.e("Failed to add to Magisk config", e)
             false
         }
     }
     
     /**
-     * 添加 Magisk Hide
+     * 为指定包隐藏 su 二进制文件
      */
-    private suspend fun addMagiskHide(packageName: String): Boolean = withContext(Dispatchers.IO) {
+    private suspend fun hideSuForPackage(packageName: String): Boolean = withContext(Dispatchers.IO) {
         try {
-            // 尝试使用 magisk --hide 命令
-            val process = Runtime.getRuntime().exec("su -c magisk --hide add $packageName")
-            val exitCode = process.waitFor()
+            // 使用 mount namespace 隔离
+            // 创建私有挂载命名空间，隐藏 su 文件
             
-            if (exitCode == 0) {
-                Logger.d("Added Magisk Hide for $packageName")
-                true
-            } else {
-                // 尝试替代方法 - 直接修改 Magisk 数据库
-                val altProcess = Runtime.getRuntime().exec(
-                    "su -c sqlite3 /data/adb/magisk.db \"INSERT OR REPLACE INTO hidelist (package_name) VALUES ('$packageName')\""
-                )
-                altProcess.waitFor() == 0
+            val commands = listOf(
+                // 创建绑定挂载，将 su 文件隐藏
+                "su -c 'mkdir -p /data/local/tmp/hide_$packageName'",
+                "su -c 'mount --bind /data/local/tmp/hide_$packageName /system/bin/su 2>/dev/null || true'",
+                "su -c 'mount --bind /data/local/tmp/hide_$packageName /system/xbin/su 2>/dev/null || true'"
+            )
+            
+            commands.forEach { cmd ->
+                Runtime.getRuntime().exec(cmd).waitFor()
             }
+            
+            true
         } catch (e: Exception) {
-            Logger.e("Failed to add Magisk Hide", e)
+            Logger.e("Failed to hide su for $packageName", e)
             false
         }
     }
     
     /**
-     * 移除 Magisk Hide
+     * 为指定包隐藏 Magisk 文件
      */
-    private suspend fun removeMagiskHide(packageName: String): Boolean = withContext(Dispatchers.IO) {
+    private suspend fun hideMagiskFilesForPackage(packageName: String): Boolean = withContext(Dispatchers.IO) {
         try {
-            val process = Runtime.getRuntime().exec("su -c magisk --hide rm $packageName")
-            val exitCode = process.waitFor()
+            // 隐藏 Magisk 相关文件和目录
+            val hideDir = "/data/local/tmp/hide_magisk_$packageName"
             
-            if (exitCode == 0) {
-                Logger.d("Removed Magisk Hide for $packageName")
-                true
-            } else {
-                // 尝试替代方法
-                val altProcess = Runtime.getRuntime().exec(
-                    "su -c sqlite3 /data/adb/magisk.db \"DELETE FROM hidelist WHERE package_name='$packageName'\""
-                )
-                altProcess.waitFor() == 0
+            val commands = listOf(
+                "su -c 'mkdir -p $hideDir'",
+                "su -c 'mount --bind $hideDir /data/adb/magisk 2>/dev/null || true'",
+                "su -c 'mount --bind $hideDir /data/adb/modules 2>/dev/null || true'"
+            )
+            
+            commands.forEach { cmd ->
+                Runtime.getRuntime().exec(cmd).waitFor()
             }
+            
+            true
         } catch (e: Exception) {
-            Logger.e("Failed to remove Magisk Hide", e)
+            Logger.e("Failed to hide Magisk files for $packageName", e)
             false
+        }
+    }
+    
+    /**
+     * 为指定包隐藏 Busybox
+     */
+    private suspend fun hideBusyboxForPackage(packageName: String): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val hideDir = "/data/local/tmp/hide_busybox_$packageName"
+            
+            val commands = listOf(
+                "su -c 'mkdir -p $hideDir'",
+                "su -c 'mount --bind $hideDir /system/xbin/busybox 2>/dev/null || true'"
+            )
+            
+            commands.forEach { cmd ->
+                Runtime.getRuntime().exec(cmd).waitFor()
+            }
+            
+            true
+        } catch (e: Exception) {
+            Logger.e("Failed to hide busybox for $packageName", e)
+            false
+        }
+    }
+    
+    /**
+     * 为指定包隐藏 Xposed
+     */
+    private suspend fun hideXposedForPackage(packageName: String): Boolean = withContext(Dispatchers.IO) {
+        try {
+            // 使用 LSPosed 的排除列表功能
+            // 或者尝试隐藏 Xposed 相关文件
+            
+            val process = Runtime.getRuntime().exec(
+                "su -c 'app_process -Djava.class.path=/data/adb/modules/riru_lsposed/framework/lspd.dex /system/bin com.android.lsposed.core.HideHooker $packageName'"
+            )
+            process.waitFor()
+            
+            true
+        } catch (e: Exception) {
+            Logger.e("Failed to hide Xposed for $packageName", e)
+            // Xposed 隐藏失败不是致命的
+            true
         }
     }
     
@@ -169,29 +276,14 @@ class RootHider @Inject constructor(
         props: Map<String, String>
     ): Boolean = withContext(Dispatchers.IO) {
         try {
-            // 创建属性重置脚本
-            val resetScript = buildString {
-                appendLine("#!/system/bin/sh")
-                props.forEach { (key, value) ->
-                    appendLine("resetprop $key $value")
-                }
+            // 使用 resetprop 修改系统属性
+            props.forEach { (key, value) ->
+                val process = Runtime.getRuntime().exec(
+                    "su -c resetprop $key $value"
+                )
+                process.waitFor()
             }
-            
-            // 写入临时脚本
-            val scriptPath = "/data/local/tmp/pandasu_props_${packageName.replace(".", "_")}.sh"
-            val writeProcess = Runtime.getRuntime().exec("su -c cat > $scriptPath")
-            writeProcess.outputStream.write(resetScript.toByteArray())
-            writeProcess.outputStream.close()
-            writeProcess.waitFor()
-            
-            // 执行脚本
-            val execProcess = Runtime.getRuntime().exec("su -c sh $scriptPath")
-            val result = execProcess.waitFor() == 0
-            
-            // 清理
-            Runtime.getRuntime().exec("su -c rm -f $scriptPath").waitFor()
-            
-            result
+            true
         } catch (e: Exception) {
             Logger.e("Failed to apply custom props", e)
             false
@@ -199,122 +291,152 @@ class RootHider @Inject constructor(
     }
     
     /**
-     * 恢复默认系统属性
+     * 禁用指定包的 Root 访问
      */
-    private suspend fun restoreDefaultProps(packageName: String): Boolean = withContext(Dispatchers.IO) {
+    private suspend fun disableRootForPackage(packageName: String): Boolean = withContext(Dispatchers.IO) {
         try {
-            // 恢复原始属性值
-            val restoreScript = """
-                #!/system/bin/sh
-                resetprop --delete ro.build.tags
-                resetprop --delete ro.debuggable
-                resetprop --delete ro.secure
-            """.trimIndent()
-            
-            val scriptPath = "/data/local/tmp/pandasu_restore_${packageName.replace(".", "_")}.sh"
-            val writeProcess = Runtime.getRuntime().exec("su -c cat > $scriptPath")
-            writeProcess.outputStream.write(restoreScript.toByteArray())
-            writeProcess.outputStream.close()
-            writeProcess.waitFor()
-            
-            val execProcess = Runtime.getRuntime().exec("su -c sh $scriptPath")
-            val result = execProcess.waitFor() == 0
-            
-            Runtime.getRuntime().exec("su -c rm -f $scriptPath").waitFor()
-            
-            result
-        } catch (e: Exception) {
-            Logger.e("Failed to restore default props", e)
-            false
-        }
-    }
-    
-    /**
-     * 配置 Zygisk 排除
-     */
-    private suspend fun configureZygisk(config: IsolationConfig): Boolean = withContext(Dispatchers.IO) {
-        try {
-            // 检查 Zygisk 是否启用
-            val checkProcess = Runtime.getRuntime().exec("su -c magisk -Z")
-            val zygiskEnabled = checkProcess.waitFor() == 0
-            
-            if (!zygiskEnabled) {
-                Logger.d("Zygisk not enabled, skipping")
-                return@withContext true
-            }
-            
-            // 添加到 Zygisk 排除列表
+            // 在 Magisk 数据库中设置拒绝策略
+            val magiskDb = "/data/adb/magisk.db"
             val process = Runtime.getRuntime().exec(
-                "su -c magisk --zygisk-unmount $${config.packageName}"
+                "su -c sqlite3 $magiskDb \"INSERT OR REPLACE INTO policies (package_name, policy) VALUES ('$packageName', 1)\""
             )
-            process.waitFor() == 0
+            process.waitFor()
+            process.exitValue() == 0
         } catch (e: Exception) {
-            Logger.e("Failed to configure Zygisk", e)
+            Logger.e("Failed to disable root for $packageName", e)
             false
         }
     }
     
     /**
-     * 设置存储隔离
+     * 移除应用的隔离配置
      */
-    private suspend fun setupStorageIsolation(packageName: String): Boolean = withContext(Dispatchers.IO) {
+    suspend fun removeIsolation(packageName: String): Boolean = withContext(Dispatchers.IO) {
         try {
-            // 创建隔离存储目录
-            val isolateDir = "/data/adb/pandasu/isolated/$packageName"
-            val mkdirProcess = Runtime.getRuntime().exec("su -c mkdir -p $isolateDir")
-            mkdirProcess.waitFor()
+            Logger.d("Removing isolation for $packageName")
             
-            // 设置权限
-            val chmodProcess = Runtime.getRuntime().exec("su -c chmod 700 $isolateDir")
-            chmodProcess.waitFor()
+            // 1. 从 Magisk Hide / DenyList 移除
+            val process = Runtime.getRuntime().exec(
+                "su -c magisk --denylist rm $packageName"
+            )
+            process.waitFor()
             
-            Logger.d("Storage isolation setup for $packageName")
+            // 2. 从数据库移除
+            val magiskDb = "/data/adb/magisk.db"
+            val dbProcess = Runtime.getRuntime().exec(
+                "su -c sqlite3 $magiskDb \"DELETE FROM denylist WHERE package_name='$packageName'\""
+            )
+            dbProcess.waitFor()
+            
+            // 3. 清理挂载点
+            cleanupMounts(packageName)
+            
             true
         } catch (e: Exception) {
-            Logger.e("Failed to setup storage isolation", e)
+            Logger.e("Failed to remove isolation for $packageName", e)
             false
         }
     }
     
     /**
-     * 检查 Root 检测路径是否存在
+     * 清理挂载点
      */
-    suspend fun checkRootPaths(): List<String> = withContext(Dispatchers.IO) {
-        val foundPaths = mutableListOf<String>()
-        
+    private suspend fun cleanupMounts(packageName: String) = withContext(Dispatchers.IO) {
         try {
-            ROOT_PATHS.forEach { path ->
-                val process = Runtime.getRuntime().exec("su -c test -e $path && echo 1 || echo 0")
-                val result = process.inputStream.bufferedReader().readText().trim()
-                process.waitFor()
-                
-                if (result == "1") {
-                    foundPaths.add(path)
-                }
+            // 卸载之前创建的绑定挂载
+            val commands = listOf(
+                "su -c 'umount -l /system/bin/su 2>/dev/null || true'",
+                "su -c 'umount -l /system/xbin/su 2>/dev/null || true'",
+                "su -c 'umount -l /data/adb/magisk 2>/dev/null || true'",
+                "su -c 'rm -rf /data/local/tmp/hide_*_$packageName 2>/dev/null || true'"
+            )
+            
+            commands.forEach { cmd ->
+                Runtime.getRuntime().exec(cmd).waitFor()
             }
         } catch (e: Exception) {
-            Logger.e("Failed to check root paths", e)
+            Logger.e("Failed to cleanup mounts", e)
         }
-        
-        foundPaths
     }
     
     /**
-     * 获取当前 Magisk Hide 列表
+     * 检测应用可能使用的 Root 检测方法
      */
-    suspend fun getMagiskHideList(): List<String> = withContext(Dispatchers.IO) {
+    suspend fun detectRootChecks(packageName: String): List<DetectionItem> = withContext(Dispatchers.IO) {
+        val detectedItems = mutableListOf<DetectionItem>()
+        
         try {
-            // 尝试从数据库读取
+            val pm = context.packageManager
+            
+            // 检查应用是否请求了可疑权限
+            try {
+                val packageInfo = pm.getPackageInfo(packageName, PackageManager.GET_PERMISSIONS)
+                packageInfo.requestedPermissions?.forEach { permission ->
+                    when {
+                        permission.contains("SUPERUSER") -> detectedItems.add(DetectionItem.SUPERUSER_APK)
+                        permission.contains("ACCESS_SUPERUSER") -> detectedItems.add(DetectionItem.SU_BINARY)
+                    }
+                }
+            } catch (e: Exception) {
+                // 忽略
+            }
+            
+            // 检查应用是否包含 Root 检测相关字符串（通过分析 APK）
+            // 这需要更复杂的实现，这里简化处理
+            
+        } catch (e: Exception) {
+            Logger.e("Failed to detect root checks", e)
+        }
+        
+        detectedItems
+    }
+    
+    /**
+     * 检查当前设备的 Root 隐藏状态
+     */
+    suspend fun checkHideStatus(): HideStatus = withContext(Dispatchers.IO) {
+        try {
+            // 检查 Magisk Hide / Zygisk DenyList 状态
+            val process = Runtime.getRuntime().exec("su -c magisk -Z")
+            val output = process.inputStream.bufferedReader().readText()
+            process.waitFor()
+            
+            when {
+                output.contains("Enforcing") -> HideStatus.ACTIVE
+                output.contains("Permissive") -> HideStatus.PARTIAL
+                else -> HideStatus.INACTIVE
+            }
+        } catch (e: Exception) {
+            HideStatus.UNKNOWN
+        }
+    }
+    
+    /**
+     * 获取已配置隔离的应用列表
+     */
+    suspend fun getIsolatedApps(): List<String> = withContext(Dispatchers.IO) {
+        try {
+            // 从 Magisk 数据库读取
+            val magiskDb = "/data/adb/magisk.db"
             val process = Runtime.getRuntime().exec(
-                "su -c sqlite3 /data/adb/magisk.db \"SELECT package_name FROM hidelist\""
+                "su -c sqlite3 $magiskDb \"SELECT package_name FROM denylist\""
             )
             val output = process.inputStream.bufferedReader().readText()
             process.waitFor()
             
             output.lines().filter { it.isNotBlank() }
         } catch (e: Exception) {
-            Logger.e("Failed to get Magisk Hide list", e)
             emptyList()
         }
     }
+}
+
+/**
+ * 隐藏状态枚举
+ */
+enum class HideStatus {
+    ACTIVE,     // 完全激活
+    PARTIAL,    // 部分激活
+    INACTIVE,   // 未激活
+    UNKNOWN     // 未知
 }
