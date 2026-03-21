@@ -1,0 +1,55 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version (e.g., v1.3.1)'
+        required: true
+        default: 'v1.3.1'
+      title:
+        description: 'Release title'
+        required: true
+        default: 'PandaSU v1.3.1'
+      notes:
+        description: 'Release notes'
+        required: true
+        default: '🎉 PandaSU 发布'
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download APK from latest build
+        run: |
+          # 获取最新的 Actions run ID
+          RUN_ID=$(gh run list --repo luo542015332/RootGuard --workflow=build.yml --branch main --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "Latest build run ID: $RUN_ID"
+
+          # 下载 artifact
+          gh run download $RUN_ID --repo luo542015332/RootGuard --name app
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.inputs.version || github.ref_name }}
+          name: ${{ github.event.inputs.title || 'PandaSU Release' }}
+          body: ${{ github.event.inputs.notes }}
+          files: app-debug.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
