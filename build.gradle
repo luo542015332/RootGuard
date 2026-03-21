@@ -15,9 +15,3 @@ allprojects {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
-
-tasks.withType(JavaToolchainTask).configureEach {
-    javaToolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
