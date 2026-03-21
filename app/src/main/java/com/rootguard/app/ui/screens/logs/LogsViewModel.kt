@@ -1,0 +1,80 @@
+package com.rootguard.app.ui.screens.logs
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.rootguard.app.data.magisk.LogLevel as MagiskLogLevel
+import com.rootguard.app.domain.usecase.ClearLogsUseCase
+import com.rootguard.app.domain.usecase.GetLogsUseCase
+import com.rootguard.app.utils.Logger
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import javax.inject.Inject
+
+data class LogsUiState(
+    val logs: List<LogEntry> = emptyList(),
+    val isLoading: Boolean = false
+)
+
+@HiltViewModel
+class LogsViewModel @Inject constructor(
+    private val getLogs: GetLogsUseCase,
+    private val clearLogs: ClearLogsUseCase
+) : ViewModel() {
+
+    private val _uiState = MutableStateFlow(LogsUiState())
+    val uiState: StateFlow<LogsUiState> = _uiState.asStateFlow()
+
+    init {
+        loadLogs()
+    }
+
+    private fun loadLogs() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoading = true) }
+
+            try {
+                val logs = getLogs()
+                _uiState.update {
+                    it.copy(
+                        logs = logs,
+                        isLoading = false
+                    )
+                }
+            } catch (e: Exception) {
+                Logger.e("Failed to load logs", e)
+                // 发生错误时显示一条错误日志
+                val errorLog = LogEntry(
+                    id = "error_${System.currentTimeMillis()}",
+                    message = "无法加载日志: ${e.message}",
+                    level = LogLevel.ERROR,
+                    timestamp = SimpleDateFormat("MM-dd HH:mm:ss", java.util.Locale.getDefault()).format(Date())
+                )
+                _uiState.update {
+                    it.copy(
+                        logs = listOf(errorLog),
+                        isLoading = false
+                    )
+                }
+            }
+        }
+    }
+
+    fun refresh() {
+        loadLogs()
+    }
+
+    fun onClearLogs() {
+        viewModelScope.launch {
+            val success = clearLogs()
+            if (success) {
+                _uiState.update { it.copy(logs = emptyList()) }
+            }
+        }
+    }
+}
