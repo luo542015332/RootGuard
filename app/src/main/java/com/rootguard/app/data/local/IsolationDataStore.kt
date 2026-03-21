@@ -11,6 +11,7 @@ import com.rootguard.app.data.model.IsolationEventType
 import com.rootguard.app.utils.Logger
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -74,6 +75,13 @@ class IsolationDataStore @Inject constructor(
         } catch (e: Exception) {
             null
         }
+    }
+
+    /**
+     * 获取特定应用的隔离配置（同步版本）
+     */
+    suspend fun getConfigForAppSync(packageName: String): IsolationConfig? {
+        return getConfigForApp(packageName).first()
     }
     
     /**

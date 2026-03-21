@@ -24,7 +24,7 @@ class SandboxEngine @Inject constructor(
      */
     suspend fun checkCommand(packageName: String, command: String): CheckResult {
         // 获取应用的隔离配置
-        val config = isolationDataStore.getConfigForApp(packageName)
+        val config = isolationDataStore.getConfigForAppSync(packageName)
         val sandboxRule = config?.sandboxRule
 
         if (sandboxRule == null || sandboxRule.level == SandboxLevel.DISABLED) {
@@ -126,7 +126,7 @@ class SandboxEngine @Inject constructor(
      */
     suspend fun checkPathAccess(packageName: String, path: String): CheckResult {
         // 获取应用的隔离配置
-        val config = isolationDataStore.getConfigForApp(packageName)
+        val config = isolationDataStore.getConfigForAppSync(packageName)
         val sandboxRule = config?.sandboxRule
 
         if (sandboxRule == null || sandboxRule.level == SandboxLevel.DISABLED) {
