@@ -69,6 +69,24 @@ jobs:
         path: app/build/outputs/apk/debug/PandaSU-${{ env.VERSION_NAME }}.apk
         retention-days: 30
 
+    - name: Get download URL
+      id: download_url
+      run: |
+        # 获取 artifact download URL
+        echo "download_url=https://github.com/luo542015332/RootGuard/actions/runs/${{ github.run_id }}" >> $GITHUB_OUTPUT
+
+    - name: Summary with download link
+      run: |
+        echo "## ✅ 构建成功！" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**版本**: PandaSU v${{ env.VERSION_NAME }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📥 下载链接" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "[点击这里下载 APK](https://github.com/luo542015332/RootGuard/actions/runs/${{ github.run_id }})" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "> 💡 提示：进入链接后，向下滚动到 **Artifacts** 部分，点击 **PandaSU-APK-${{ env.VERSION_NAME }}** 下载" >> $GITHUB_STEP_SUMMARY
+
     - name: Create Release
       if: github.event.inputs.create_release == 'true' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release:'))
       uses: softprops/action-gh-release@v1
