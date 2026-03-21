@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">RootGuard</string>
+    <string name="app_name_zh">根守护</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">首页</string>
+    <string name="nav_modules">模块</string>
+    <string name="nav_apps">应用</string>
+    <string name="nav_logs">日志</string>
+    <string name="nav_settings">设置</string>
+    
+    <!-- Root Status -->
+    <string name="status_rooted">已获取 Root</string>
+    <string name="status_not_rooted">未获取 Root</string>
+    <string name="status_unknown">未知状态</string>
+    
+    <!-- Actions -->
+    <string name="action_grant">授权</string>
+    <string name="action_deny">拒绝</string>
+    <string name="action_install">安装</string>
+    <string name="action_uninstall">卸载</string>
+    <string name="action_enable">启用</string>
+    <string name="action_disable">禁用</string>
+    
+    <!-- Messages -->
+    <string name="msg_no_modules">暂无模块</string>
+    <string name="msg_no_apps">暂无应用</string>
+    <string name="msg_no_logs">暂无日志</string>
+    <string name="msg_root_request">请求 Root 权限</string>
+    
+    <!-- Settings -->
+    <string name="setting_dark_mode">深色模式</string>
+    <string name="setting_dynamic_colors">动态颜色</string>
+    <string name="setting_auto_deny">自动拒绝</string>
+    <string name="setting_notifications">通知</string>
+    
+    <!-- About -->
+    <string name="about_version">版本</string>
+    <string name="about_magisk_version">Magisk 版本</string>
+    <string name="about_check_update">检查更新</string>
+    <string name="about_feedback">反馈问题</string>
+</resources>

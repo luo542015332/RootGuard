@@ -1,0 +1,18 @@
+# RootGuard 安装命令
+# 复制以下命令到 PowerShell 运行
+
+# 1. 检查 ADB
+adb version
+
+# 2. 检查设备
+adb devices
+
+# 3. 安装 APK（覆盖安装）
+adb install -r "app/build/outputs/apk/debug/app-debug.apk"
+
+# 4. 启动应用
+adb shell am start -n com.rootguard.app/.MainActivity
+
+# 如果安装失败，先卸载再安装
+# adb uninstall com.rootguard.app
+# adb install "app/build/outputs/apk/debug/app-debug.apk"
