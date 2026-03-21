@@ -50,32 +50,31 @@ jobs:
       run: ./gradlew assembleDebug --stacktrace --no-daemon
 
     - name: Rename APK
-      run: mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/PandaSU-v1.2.0.apk
+      run: mv app/build/outputs/apk/debug/app-debug.apk app/build/outputs/apk/debug/PandaSU-v1.3.0.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: PandaSU-APK-v1.2.0
-        path: app/build/outputs/apk/debug/PandaSU-v1.2.0.apk
+        name: PandaSU-APK-v1.3.0
+        path: app/build/outputs/apk/debug/PandaSU-v1.3.0.apk
         retention-days: 30
 
     - name: Create Release
       if: github.event.inputs.create_release == 'true' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release:'))
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: v1.2.0
-        name: PandaSU v1.2.0
+        tag_name: v1.3.0
+        name: PandaSU v1.3.0
         body: |
-          ## 📦 PandaSU v1.2.0
+          ## 📦 PandaSU v1.3.0
 
-          ### ✨ 新功能
-          - 模块备份和恢复功能
-          - 应用类型筛选（系统/用户应用）
-          - 日志功能优化
+          ### 🐛 重要修复
+          - 修复启动闪退问题 - 源代码未编译到 APK
+          - 修复项目目录结构混乱问题
 
-          ### 🐛 修复
-          - 修复日志提取闪退问题
-          - 修复变量名冲突问题
+          ### 🔧 改进
+          - 优化构建流程，确保源代码正确编译
+          - 更新版本号到 v1.3.0
 
           ### 📝 说明
           - 构建 #${{ github.run_number }}
@@ -83,7 +82,7 @@ jobs:
 
           ### 🐼 更新
           - 更新应用图标为可爱熊猫
-        files: app/build/outputs/apk/debug/PandaSU-v1.2.0.apk
+        files: app/build/outputs/apk/debug/PandaSU-v1.3.0.apk
         draft: false
         prerelease: false
       env:

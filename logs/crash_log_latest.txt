@@ -1,0 +1,1468 @@
+﻿
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: Process: com.rootguard.app, PID: 10777
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: android.app.RemoteServiceException$ForegroundServiceDidNotStartInTimeE
+xception: Context.startForegroundService() did not then call Service.startForeground(): ServiceRecord{d98ca9f u0 com.ro
+otguard.app/.service.RootRequestMonitorService c:com.rootguard.app}
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.generateForegroundServiceDidNotStartInT
+imeException(ActivityThread.java:2649)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.throwRemoteServiceException(ActivityThr
+ead.java:2617)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mthrowRemoteServiceException(Un
+known Source:0)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:300
+3)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: Caused by: android.app.StackTrace: Last startServiceCommon() call for 
+this service was made here
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ContextImpl.startServiceCommon(ContextImpl.java:2066)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ContextImpl.startForegroundService(ContextImpl.java:20
+20)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.content.ContextWrapper.startForegroundService(ContextWrapp
+er.java:876)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.content.ContextWrapper.startForegroundService(ContextWrapp
+er.java:876)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at com.rootguard.app.receiver.BootReceiver.onReceive(BootReceiver.kt:
+20)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.handleReceiver(ActivityThread.java:5501
+)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleReceiver(Unknown Source:
+0)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:283
+9)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	... 7 more
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: Process: com.rootguard.app, PID: 13181
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0ac3XQK4WTOGqX
+6w==/base.apk"],nativeLibraryDirectories=[/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0ac3XQK4WTOGqX6w
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0a
+c3XQK4WTOGqX6w==/base.apk"],nativeLibraryDirectories=[/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0ac3
+XQK4WTOGqX6w==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	... 11 more
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: Process: com.rootguard.app, PID: 21521
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXNi9k4C20apB-U
+FQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXNi9k4C20apB-UFQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXN
+i9k4C20apB-UFQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXNi9
+k4C20apB-UFQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	... 11 more
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: Process: com.rootguard.app, PID: 23466
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHR
+TQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHRTQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOf
+HZXPgsI0_KHRTQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZ
+XPgsI0_KHRTQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	... 11 more
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: Process: com.rootguard.app, PID: 24047
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHR
+TQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHRTQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOf
+HZXPgsI0_KHRTQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZ
+XPgsI0_KHRTQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	... 11 more
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: Process: com.rootguard.app, PID: 24916
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHR
+TQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHRTQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOf
+HZXPgsI0_KHRTQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZ
+XPgsI0_KHRTQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	... 11 more
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: Process: com.rootguard.app, PID: 27921
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	... 11 more
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: Process: com.rootguard.app, PID: 27922
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	... 11 more
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: Process: com.rootguard.app, PID: 28870
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	... 11 more
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: Process: com.rootguard.app, PID: 29032
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	... 11 more
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: Process: com.rootguard.app, PID: 30755
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	... 11 more
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: Process: com.rootguard.app, PID: 1750
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSAucB5E_ECQWac
+qw==/base.apk"],nativeLibraryDirectories=[/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSAucB5E_ECQWacqw
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSA
+ucB5E_ECQWacqw==/base.apk"],nativeLibraryDirectories=[/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSAuc
+B5E_ECQWacqw==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	... 11 more
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: Process: com.rootguard.app, PID: 5935
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6STfhB89JrpJV
+bQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6STfhB89JrpJVbQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6
+STfhB89JrpJVbQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6ST
+fhB89JrpJVbQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	... 11 more
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: Process: com.rootguard.app, PID: 9881
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6STfhB89JrpJV
+bQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6STfhB89JrpJVbQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6
+STfhB89JrpJVbQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6ST
+fhB89JrpJVbQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 23:28:16.366  9881  9881 E AndroidRuntime: 	... 11 more
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: Process: com.rootguard.app, PID: 2096
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~Fwtc2SW49VKhigjqwnUpVg==/com.rootguard.app-GCqRJp1qwZYAMo6uFY1a
+sQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~Fwtc2SW49VKhigjqwnUpVg==/com.rootguard.app-GCqRJp1qwZYAMo6uFY1asQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~Fwtc2SW49VKhigjqwnUpVg==/com.rootguard.app-GCqRJp1q
+wZYAMo6uFY1asQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~Fwtc2SW49VKhigjqwnUpVg==/com.rootguard.app-GCqRJp1qwZ
+YAMo6uFY1asQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 23:28:34.857  2096  2096 E AndroidRuntime: 	... 11 more
+03-21 23:28:39.295  6701  6941 D InstallDependencyHelper: No missing dependency for com.rootguard.app
+03-21 23:28:39.304  6701  6909 I PackageManager: Update package com.rootguard.app code path from /data/app/~~Fwtc2SW49V
+KhigjqwnUpVg==/com.rootguard.app-GCqRJp1qwZYAMo6uFY1asQ== to /data/app/vmdl1447173514.tmp; Retain data and using new
+03-21 23:28:39.329  6701  6909 I AppsFilter: interaction: PackageSetting{f6340de com.android.microdroid.empty_payload/1
+0260} -> PackageSetting{b34064e com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.332  6701  6909 I AppsFilter: interaction: PackageSetting{9482044 bin.mt.termex/10271} -> PackageSetting
+{b34064e com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.334  6701  6909 I AppsFilter: interaction: PackageSetting{f6340de com.android.microdroid.empty_payload/1
+0260} -> PackageSetting{b34064e com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.335  6701  6909 I AppsFilter: interaction: PackageSetting{9482044 bin.mt.termex/10271} -> PackageSetting
+{b34064e com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.337  6701  6909 I AppsFilter: interaction: PackageSetting{f6340de com.android.microdroid.empty_payload/1
+0260} -> PackageSetting{cd3e5f0 com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.339  6701  6909 I AppsFilter: interaction: PackageSetting{9482044 bin.mt.termex/10271} -> PackageSetting
+{cd3e5f0 com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.342  6701  6909 I AppsFilter: interaction: PackageSetting{f6340de com.android.microdroid.empty_payload/1
+0260} -> PackageSetting{cd3e5f0 com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.343  6701  6909 I AppsFilter: interaction: PackageSetting{9482044 bin.mt.termex/10271} -> PackageSetting
+{cd3e5f0 com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.390  6701 23175 I BaselineProfile: com.rootguard.app dexmetadataFile does not exist.
+03-21 23:28:39.390  6701  6838 I ActivityManager: Force stopping com.rootguard.app appid=10343 user=-1: installPackageL
+I
+03-21 23:28:39.392  6701  6909 W PackageFreezer: Freeze package com.rootguard.app about 0.067 seconds for reason: insta
+llPackageLI
+03-21 23:28:39.392  6701  6909 I InstallationTiming: com.rootguard.app|null|168|44|18|1|0|1|10
+03-21 23:28:39.392  6701  6909 I PackageManager: installation completed for package:com.rootguard.app. Final code path:
+ /data/app/~~D12fQMACg5HBm42WSQK9BA==/com.rootguard.app-NyQvsaEv8njx94yJK9e5iA==
+03-21 23:28:39.394  6701  6909 I AppsFilter: interaction: PackageSetting{35df738 com.android.microdroid.empty_payload/1
+0260} -> PackageSetting{74b8fd6 com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.396  6701  6909 I AppsFilter: interaction: PackageSetting{10a544e bin.mt.termex/10271} -> PackageSetting
+{74b8fd6 com.rootguard.app/10343} BLOCKED
+03-21 23:28:39.769  6701  6909 I ActivityManager: Force stopping com.rootguard.app appid=10343 user=0: pkg removed
+03-21 23:28:39.800  7384  7384 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.800 10600 10600 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.800 14062 14062 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.800 14358 14358 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.801 12560 12560 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.801 25381 25381 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.801 25540 25540 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.801 21030 21030 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.802 13870 13870 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.802 18250 18250 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.802  7714  7714 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.802 16375 16375 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.802 11811 11811 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.802 11784 11784 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.803  9053  9053 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.803  8868  8868 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.803 12744 12744 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.804 13033 13033 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.804 20104 20104 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.805 12120 12120 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.805 12072 12072 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.805  8220  8220 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.805 12008 12008 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.805 11867 11867 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806 20836 20836 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  7917  7917 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  7945  7945 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806 12024 12024 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  8694  8694 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  7893  7893 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806 32701 32701 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  7764  7764 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  8007  8007 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  7977  7977 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.806  9410  9410 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807 27375 27375 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807  8138  8138 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807 25093 25093 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807 19380 19380 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807 12158 12158 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807 14898 14898 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807 12916 12916 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.807 30330 30330 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.808 19784 19784 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.808 12529 12529 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.808 25392 25392 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.809 15935 15935 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.809 11963 11963 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.809  7842  7842 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.809 32458 32458 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.809 12228 12228 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.810 27187 27187 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.810  9643  9643 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.810 16572 16572 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.810 26570 26570 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.811  7703  7703 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.811 13087 13087 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.811 12868 12868 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.811  7322  7322 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.812 22042 22042 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.813  9670  9670 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.813 30786 30786 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.814 19717 19717 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.814 16870 16870 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.815 18568 18568 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.815 12513 12513 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.816 22646 22646 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.816 26480 26480 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.816  7682  7682 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.817 18374 18374 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.817 13735 13735 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.820  2162  2162 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.821 18495 18495 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.821 14536 14536 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.823 12317 12317 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.823  3273  3273 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.823  9834  9834 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.823 19557 19557 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.824 19881 19881 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.825  4142  4142 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.825 12520 12520 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.828 18042 18042 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.828 17628 17628 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.829  7328  7328 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.830  7700  7700 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.830 15817 15817 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.831 20442 20442 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.834 12283 12283 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.838  8055  8055 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.845  7857  7857 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.845 22734 22734 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.846  8087  8087 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.846 15685 15685 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.849 22581 22581 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.850  8549  8549 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.854  5477  5477 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.858 16572 16572 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.858 10600 10600 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.858 14898 14898 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.858 25392 25392 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.859  8868  8868 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.859 13735 13735 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.859 12744 12744 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.860 25381 25381 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.860 13870 13870 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.860 30786 30786 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.861 27375 27375 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.861  7322  7322 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.862  9410  9410 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.862  7682  7682 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.862 12529 12529 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.862 15935 15935 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.862 19380 19380 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.863 25093 25093 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.863 22734 22734 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.863 12158 12158 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.863 12120 12120 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.863  3273  3273 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.863 12024 12024 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.864 11963 11963 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.864  8138  8138 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.864  8055  8055 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.864  7857  7857 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.865  7842  7842 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.865  7703  7703 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.866 18568 18568 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.866  8549  8549 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.866  9643  9643 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.866 14536 14536 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.866 30330 30330 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.867  9834  9834 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.867 12317 12317 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.867 26570 26570 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.867 17628 17628 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.867 12228 12228 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.867 12283 12283 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.868 15817 15817 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.869 12868 12868 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.870 20442 20442 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.871  8185  8185 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.871 19784 19784 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.871 22042 22042 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.872 19881 19881 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.872 12520 12520 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.872 19717 19717 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.873 27187 27187 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.873 22646 22646 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.873 12916 12916 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.874 18495 18495 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.875 12513 12513 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.875  9670  9670 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.875 19557 19557 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.878  2162  2162 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.879 15685 15685 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.879 22581 22581 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.880 25161 25161 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.880 18042 18042 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.881  7328  7328 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.881  7700  7700 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.881 17926 17926 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.882  5477  5477 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.885 25161 25161 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.897 16870 16870 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.898 17926 17926 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.908  6701  7022 W PackageConfigPersister: App-specific configuration not found for packageName: com.root
+guard.app and userId: 0
+03-21 23:28:39.909  4142  4142 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.909  6701  6701 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.909  6701  6701 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.911  7917  7917 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.912  7384  7384 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.912  8220  8220 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.912 14062 14062 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.912 12072 12072 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.912 21030 21030 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.912  8694  8694 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.912 18250 18250 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.913 11867 11867 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.913  7714  7714 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.914  7893  7893 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.914 11784 11784 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.915 20104 20104 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.918 14358 14358 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.918 20836 20836 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.919  6701  7132 D GreezeManager: uid: 10343  pkg:com.rootguard.app package added.
+03-21 23:28:39.920  7764  7764 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.920 13033 13033 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.920 12008 12008 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.922  8185  8185 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.922 13087 13087 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.924  8007  8007 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.924  9053  9053 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.924 11811 11811 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.925 12560 12560 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.925 25540 25540 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.925 16375 16375 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.937  7977  7977 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.946  6701  6834 I MiuiCompatModePackages: package com.rootguard.app updated, removing config
+03-21 23:28:39.946  6701  6701 I Telecom : CarModeTracker: Package com.rootguard.app is not tracked.: SSH.oR@Dyw
+03-21 23:28:39.947  6701  7254 D ShortcutService: replacing package: com.rootguard.app userId=0
+03-21 23:28:39.954  8087  8087 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.960 32701 32701 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.964  7945  7945 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.967 18374 18374 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:39.817  7659  7659 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.027 26480 26480 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.028  7659  7659 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.031  6701  6701 W AlarmManager: Package com.rootguard.app, uid 10343 lost permission to set exact alarms
+!
+03-21 23:28:40.138 32458 32458 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.138 10597 10597 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.139 10597 10597 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.170 11905 11905 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.266 11905 11905 D ActivityThread: Package [com.rootguard.app] reported as REPLACED, but missing applicat
+ion info. Assuming REMOVED.
+03-21 23:28:40.316  6701  8843 W AppOpService: (packageName=com.rootguard.app, userId=0)'s appop state for runtime op a
+ndroid:post_notification should not be set directly.
+03-21 23:28:40.797  6701  8843 W XSpaceManagerServiceImpl: checkXSpaceControl, from:bin.mt.plus, to:com.rootguard.app, 
+with act:android.intent.action.MAIN, callingUserId:0, toUserId:0
+03-21 23:28:41.633  6701  9501 W XSpaceManagerServiceImpl: checkXSpaceControl, from:bin.mt.plus, to:com.rootguard.app, 
+with act:android.intent.action.MAIN, callingUserId:0, toUserId:0
+03-21 23:28:41.634  6701  9501 I SecurityManagerService: isVirtualDisplayActive caller=bin.mt.plus~1000, target=com.roo
+tguard.app~10343~0
+03-21 23:28:41.635  6701  9501 I SecurityManagerService: isVirtualDisplayActive caller=bin.mt.plus~1000, target=com.roo
+tguard.app~10343~0
+03-21 23:28:41.643  6701  9501 D AurogonImmobulusMode: launch app processName = com.rootguard.app uid = 10343
+03-21 23:28:41.643  6701  9501 D WindowManager: Collecting in transition 152: ActivityRecord{15634728 u0 com.rootguard.
+app/.MainActivity init visibleRequested:false dc:null
+03-21 23:28:41.643  6701  9501 I ActivityStarterImpl: boost cold start activity for com.rootguard.app
+03-21 23:28:41.649  6701  9501 D WindowManager: Collecting in transition 152: Task{457afe6 #1006 type=standard A=10343:
+com.rootguard.app} init visibleRequested:false dc:Display{#0 state=ON size=1080x2400 ROTATION_0}
+03-21 23:28:41.650  6701  7286 D BarFollowAnimation:  CreateBarRunnable  mTask = Task{457afe6 #1006 type=standard A=103
+43:com.rootguard.app} mSurfaceControl = Surface(name=Task=1006#3005)/@0x2be2e41 currentPid = 6701 currentThread name = 
+BarFollowAnimation Thread currentThread id = 376
+03-21 23:28:41.650  6701  9501 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{457afe6 #1006 type=standard A=1
+0343:com.rootguard.app} shouldbeVisible:true isVisible:false isOnTop:true windowMode:1 preDisplayId:-1 displayId:0 mCap
+tionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:28:41.650  6701  9501 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{457afe6 #1006 type=standard A=1
+0343:com.rootguard.app} shouldbeVisible:true isVisible:false isOnTop:true windowMode:1 preDisplayId:-1 displayId:0 mCap
+tionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:28:41.651  6701  9501 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{457afe6 #1006 type=standard A=1
+0343:com.rootguard.app} shouldbeVisible:true isVisible:false isOnTop:true windowMode:1 preDisplayId:-1 displayId:0 mCap
+tionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:28:41.652  6701  9501 D MiuiFreeFormManagerService: onStartActivityInner as = Task{457afe6 #1006 type=standard
+ A=10343:com.rootguard.app} op = ActivityOptions(28192963), mPackageName=null, mAnimationType=-1, mStartX=0, mStartY=0,
+ mWidth=0, mHeight=0, mLaunchDisplayId=-1, mLaunchBoundsnull, mElementSurfaceTransition = null, activityOptionsInjector
+=ActivityOptionsInjector={freeformScale: -1.0 mIsNormalFreeForm: true}
+03-21 23:28:41.652  6701  9501 I ActivityTaskManager: moveTaskToFront: Task{457afe6 #1006 type=standard A=10343:com.roo
+tguard.app} caller trace:com.android.server.wm.TaskDisplayArea.onTaskMoved:461 com.android.server.wm.Task.updateTaskMov
+ement:1756 com.android.server.wm.TaskDisplayArea.positionChildTaskAt:425 com.android.server.wm.TaskDisplayArea.position
+ChildAt:386 com.android.server.wm.Task.moveToFront:6245 com.android.server.wm.Task.moveToFront:6215 com.android.server.
+wm.ActivityStarter.startActivityInner:2455 com.android.server.wm.ActivityStarter.startActivityUnchecked:1958 com.androi
+d.server.wm.ActivityStarter.executeRequest:1770 com.android.server.wm.ActivityStarter.execute:997 
+03-21 23:28:41.655  6701  9501 I WindowManager: Try to add startingWindow type = STARTING_WINDOW_TYPE_SPLASH_SCREEN thi
+s = ActivityRecord{15634728 u0 com.rootguard.app/.MainActivity t1006} mOccludesParent = true preAllowTaskSnapshot = tru
+e afterAllowTaskSnapshot = true newTask = true taskSwitch = true processRunning = false activityCreated = false activit
+yAllDrawn = false isSnapshotCompatible = false snapshotRotation = NaN resolvedTheme = 2131492879 theme = 2131492879
+03-21 23:28:41.656  6701  6986 D PreStartingManager: Get background color: ff303030  key: com.rootguard.app_light  cont
+ainColor: true
+03-21 23:28:41.658  6701  9501 I ActivityTaskManager: removedForAddTask notifyTaskRemoved Task{ab4453d #1005 type=stand
+ard A=10343:com.rootguard.app}, call from com.android.server.wm.ActivityStarter.startActivityUnchecked:1958 com.android
+.server.wm.ActivityStarter.executeRequest:1770 com.android.server.wm.ActivityStarter.execute:997 java.lang.reflect.Meth
+od.invoke:-2 luMuyq.CBwGCRX.uaF.pM.LNsswbD.HookBridge.invokeOriginalMethod:-2 org.lsposed.lspd.impl.LSPosedBridge$Nativ
+eHooker.callback:157 LSPHooker_.execute:8 com.android.server.wm.ActivityTaskManagerService.startActivityAsCaller:1967 
+03-21 23:28:41.659  6701  9501 D WindowManager: Collecting in transition 152: ActivityRecord{15634728 u0 com.rootguard.
+app/.MainActivity t1006} init visibleRequested:false dc:Display{#0 state=ON size=1080x2400 ROTATION_0}
+03-21 23:28:41.660  6701  9501 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.cate
+gory.LAUNCHER] flg=0x11000000 xflg=0x4 pkg=com.rootguard.app cmp=com.rootguard.app/.MainActivity} with LAUNCH_SINGLE_TA
+SK from uid 10285 from pid -1 callingPackage bin.mt.plus (realCallingUid=1000) (sr=235581522) (BAL_ALLOW_VISIBLE_WINDOW
+) result code=0
+03-21 23:28:41.660  6701  9501 I Perf[AppStartScene]: onSceneChangeNotify:Bundle[{uid=10343, name=com.rootguard.app.Mai
+nActivity, type=1, preStartProc=false, begin=true, state=0, processName=com.rootguard.app, packageName=com.rootguard.ap
+p, appSwitch=true}]
+03-21 23:28:41.663  8185  8347 I SoScStageCoordinator: Transition requested:TransitionRequestInfo { type = OPEN, trigge
+rTask = TaskInfo{userId=0 taskId=1006 effectiveUid=10343 displayId=0 isRunning=true baseIntent=Intent { act=android.int
+ent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x11000000 pkg=com.rootguard.app cmp=com.rootguard.app/.Main
+Activity } baseActivity=ComponentInfo{com.rootguard.app/com.rootguard.app.MainActivity} topActivity=ComponentInfo{com.r
+ootguard.app/com.rootguard.app.MainActivity} origActivity=null realActivity=ComponentInfo{com.rootguard.app/com.rootgua
+rd.app.MainActivity} numActivities=1 lastActiveTime=8480185 supportsSplitScreenMultiWindow=true mSoScDisplayMode=-1 sup
+portsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=200 token=WCT{android.wind
+ow.IWindowContainerToken$Stub$Proxy@9e6f8f} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false l
+aunchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 104 - 0, 0) topActivityInfo=Acti
+vityInfo{10d421c com.rootguard.app.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocuse
+d=false isVisible=false isVisibleRequested=false isTopActivityNoDisplay=false isSleeping=false locusId=null displayArea
+FeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=false lastNonFullscreenBounds=Rect(286, 712 - 794
+, 1792) capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=-9 topActivityRequestOpenInBrowserEducationTime
+stamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false eligibleForLetterboxEducation= false topAct
+ivityInMiuiSizeCompat=false isLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false eligibleForUserAspect
+RatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosi
+tion= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActiv
+ityAppBounds=Rect(0, 104 - 1080, 2400) isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false ha
+sMinAspectRatioOverride=false topActivityLetterboxBounds=null cameraCompatTaskInfo=CameraCompatTaskInfo { freeformCamer
+aCompatMode=inactive}} isImmersive=false mTopActivityRequestOrientation=-2 mStatusBarParent=null mNavBarParent=null mBe
+hindAppLockPkg=null mOriginatingUid=0 isEmbedded=false shouldBeVisible=true isCreatedByOrganizer=false mIsCastMode=fals
+e mTopActivityMediaSize=null mTopActivityRecordName=ActivityRecord{15634728 u0 com.rootguard.app/.MainActivity t1006} m
+TopActivityOrientation=-2 topActivityMainWindowFrame=null}, pipChange = null, remoteTransition = null, displayChange = 
+null, flags = 0, debugId = 152 } isSoScActive:false triggerTask:TaskInfo{userId=0 taskId=1006 effectiveUid=10343 displa
+yId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x11
+000000 pkg=com.rootguard.app cmp=com.rootguard.app/.MainActivity } baseActivity=ComponentInfo{com.rootguard.app/com.roo
+tguard.app.MainActivity} topActivity=ComponentInfo{com.rootguard.app/com.rootguard.app.MainActivity} origActivity=null 
+realActivity=ComponentInfo{com.rootguard.app/com.rootguard.app.MainActivity} numActivities=1 lastActiveTime=8480185 sup
+portsSplitScreenMultiWindow=true mSoScDisplayMode=-1 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-
+1 minHeight=-1 defaultMinSize=200 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@9e6f8f} topActivityType=1 p
+ictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayC
+utoutSafeInsets=Rect(0, 104 - 0, 0) topActivityInfo=ActivityInfo{10d421c com.rootguard.app.MainActivity} launchCookies=
+[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isTopActivityN
+oDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTrans
+parent=false lastNonFullscreenBounds=Rect(286, 712 - 7
+03-21 23:28:41.666  6701  6820 D MiuiEmbeddingWindow: blacklistedAppRunningOnPhone: package=com.rootguard.appisNotProje
+citon=true isHavingJeppackDisabledConfig=false isRunningOnPhone=true isAppleConnection=false
+03-21 23:28:41.666  6701  6820 D MiuiEmbeddingWindow: MiuiEmbeddingWindowService: updateApplicationInfo for com.rootgua
+rd.app, blacklistedAppRunningOnPhone updated: clear
+03-21 23:28:41.666  6701  9502 D WindowManager: Collecting in transition 152: ActivityRecord{15634728 u0 com.rootguard.
+app/.MainActivity t1006} init visibleRequested:false dc:Display{#0 state=ON size=1080x2400 ROTATION_0}
+03-21 23:28:41.667  6701  9502 D WindowManager:    ChangeInfo{57c9458 container=ActivityRecord{15634728 u0 com.rootguar
+d.app/.MainActivity t1006} flags=0x0}
+03-21 23:28:41.667  6701  9502 D WindowManager:    ChangeInfo{f4e29b1 container=Task{457afe6 #1006 type=standard A=1034
+3:com.rootguard.app} flags=0x0}
+03-21 23:28:41.671  6701  9502 D BarFollowAnimation: isAppTaskBarOnTop win:Window{2c724fe u0 com.miui.securitycenter/co
+m.miui.wakepath.ui.ConfirmStartActivity} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} :
+ true); (mAssociatedTask:Task{fd77f2c #999 type=standard A=10285:bin.mt.plus} : true); (mHomeTask:Task{d8ac438 #1 type=
+home} : false); mReparentToOriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:41.674  6701  9502 D WindowManager: isSyncFinished true. ar: ActivityRecord{15634728 u0 com.rootguard.app/.
+MainActivity t1006}
+03-21 23:28:41.674  6701  9502 D WindowManager: isSyncFinished true. ar: ActivityRecord{15634728 u0 com.rootguard.app/.
+MainActivity t1006}
+03-21 23:28:41.675  6701  9502 I SmartPower: com.rootguard.app/10343(0): died->visible(6775ms) R(become visible) adj=-1
+0000.
+03-21 23:28:41.675  6701  9502 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{457afe6 #1006 type=standard A=1
+0343:com.rootguard.app} shouldbeVisible:true isVisible:true isOnTop:true windowMode:1 preDisplayId:-1 displayId:0 mCapt
+ionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:28:41.675  6701  9502 D BarFollowAnimation: onTaskAppearedForCaptionBar Task{457afe6 #1006 type=standard A=103
+43:com.rootguard.app}
+03-21 23:28:41.675  6701  6986 D PreStartingManager: The real or pre StartingWindow has been displayed. pkg: com.rootgu
+ard.app
+03-21 23:28:41.676  6701  9502 D WindowManager: Final targets: [ChangeInfo{f4e29b1 container=Task{457afe6 #1006 type=st
+andard A=10343:com.rootguard.app} flags=0x10}, ChangeInfo{c6cd0b3 container=Task{fd77f2c #999 type=standard A=10285:bin
+.mt.plus} flags=0x10}]
+03-21 23:28:41.678  6701  9502 I DynamicIslandService: elementSurfaceTransition is null for:com.rootguard.app
+03-21 23:28:41.679  6701  9502 D WindowManager: Calling onTransitionReady info={id=152 t=OPEN f=0x0 trk=0 r=[0@Point(0,
+ 0)] c=[{WCT{RemoteToken{fdda99c Task{457afe6 #1006 type=standard A=10343:com.rootguard.app}}} m=OPEN f=NONE leash=Surf
+ace(name=Task=1006#3005)/@0x2be2e41 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 tas
+kParent=-1 v=trueMiuiChangeImpl {miuiEmbedding:false, scale:1.0}},{WCT{RemoteToken{8635392 Task{fd77f2c #999 type=stand
+ard A=10285:bin.mt.plus}}} m=TO_BACK f=NONE leash=Surface(name=Task=999#2501)/@0xd0636df sb=Rect(0, 0 - 1080, 2400) eb=
+Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=falseMiuiChangeImpl {miuiEmbedding:false, scale:1.0}}
+] mk=[false] noAni=[false] df=[false] rsa=[false] oa=[false] nc=[0] ho=[false] hla=[false] iSync=[-1]}, mToken=Token{5b
+6efa5 TransitionRecord{fbea34b id=152 type=OPEN flags=0x0 c=[
+03-21 23:28:41.679  6701  9502 D WindowManager:    ChangeInfo{57c9458 container=ActivityRecord{15634728 u0 com.rootguar
+d.app/.MainActivity t1006} flags=0x0}
+03-21 23:28:41.679  6701  9502 D WindowManager:    ChangeInfo{f4e29b1 container=Task{457afe6 #1006 type=standard A=1034
+3:com.rootguard.app} flags=0x10}
+03-21 23:28:41.680  6701  7286 D BarFollowAnimation: disableBarAnimation change={WCT{RemoteToken{fdda99c Task{457afe6 #
+1006 type=standard A=10343:com.rootguard.app}}} m=OPEN f=NONE leash=Surface(name=Task=1006#3005)/@0x2be2e41 sb=Rect(0, 
+0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=trueMiuiChangeImpl {miuiEmbedding:
+false, scale:1.0}} 1 1
+03-21 23:28:41.680  6701  7286 D BarFollowAnimation: startStatusBarAnimation change= {WCT{RemoteToken{fdda99c Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app}}} m=OPEN f=NONE leash=Surface(name=Task=1006#3005)/@0x2be2e41 sb=Rec
+t(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=trueMiuiChangeImpl {miuiEmbed
+ding:false, scale:1.0}} isRecent=false startWindowMode=1 endWindowMode=1 statusState=-1 isRotationAnimation=false
+03-21 23:28:41.680  6701  7286 D BarFollowAnimation: startStatusBarAnimation task=Task{457afe6 #1006 type=standard A=10
+343:com.rootguard.app}
+03-21 23:28:41.680  6701  7286 D BarFollowAnimation: bindAssociatedTask task=Task{457afe6 #1006 type=standard A=10343:c
+om.rootguard.app}
+03-21 23:28:41.681  6701  7286 D BarFollowAnimation: bindAssociatedTask task=Task{457afe6 #1006 type=standard A=10343:c
+om.rootguard.app}
+03-21 23:28:41.694  6701  6820 I Perf[AppStartScene]: onSceneChangeNotify:Bundle[{hostingRecordName={com.rootguard.app/
+com.rootguard.app.MainActivity}, hostingRecordType=next-top-activity, uid=10343, type=0, state=1, processName=com.rootg
+uard.app, packageName=com.rootguard.app}]
+03-21 23:28:41.694  6701  6820 I ActivityManager: Posting procStart msg for 0:com.rootguard.app/u0a343
+03-21 23:28:41.695  8185  8347 D MiuiDecorationController: relayout::taskId=1006, visible=true, bounds=Rect(0, 0 - 1080
+, 2400), focused=false, oldImmersive=false, newImmersive=false, windowMode=1, activityType=1, displayId=0, baseActivity
+=ComponentInfo{com.rootguard.app/com.rootguard.app.MainActivity}, topActivity=ComponentInfo{com.rootguard.app/com.rootg
+uard.app.MainActivity}, callers=com.android.wm.shell.multitasking.miuimultiwinswitch.miuiwindowdecor.MulWinSwitchDecorV
+iewModel.createWindowDecoration:317 com.android.wm.shell.multitasking.miuimultiwinswitch.miuiwindowdecor.MulWinSwitchDe
+corViewModel.onTaskOpening:10 com.android.wm.shell.freeform.FreeformTaskTransitionObserver.onTransitionReady:334 com.an
+droid.wm.shell.transition.Transitions.dispatchReady:241 com.android.wm.shell.transition.Transitions.onTransitionReady:2
+69 
+03-21 23:28:41.695  6701  8843 I WindowManager: Allow fixed rotation for not collecting:ActivityRecord{15634728 u0 com.
+rootguard.app/.MainActivity t1006}
+03-21 23:28:41.702  6701  9497 D CoreBackPreview: Window{47e9359 u0 Splash Screen com.rootguard.app}: Setting back call
+back OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@e9e5491, mPriority=0, mIsAnim
+ationCallback=false, mOverrideBehavior=0}
+03-21 23:28:41.702  6701  6839 I Perf[AppStartScene]: onSceneChangeNotify:Bundle[{hostingRecordName={com.rootguard.app/
+com.rootguard.app.MainActivity}, hostingRecordType=next-top-activity, pid=2097, uid=10343, type=0, state=2, processName
+=com.rootguard.app, packageName=com.rootguard.app}]
+03-21 23:28:41.703  6701  9501 D BarFollowAnimation: pairAppearanceRegionAndWin win=Window{47e9359 u0 Splash Screen com
+.rootguard.app} 0
+03-21 23:28:41.704  6701  9501 D BarFollowAnimation: isAppTaskBarOnTop win:Window{2c724fe u0 com.miui.securitycenter/co
+m.miui.wakepath.ui.ConfirmStartActivity} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} :
+ true); (mAssociatedTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #
+1 type=home} : false); mReparentToOriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:41.706  6701  6839 I ActivityManager: Start proc 2097:com.rootguard.app/u0a343 for next-top-activity {com.r
+ootguard.app/com.rootguard.app.MainActivity} caller=bin.mt.plus
+03-21 23:28:41.707  6701  9501 D BarFollowAnimation: isAppTaskBarOnTop win:Window{47e9359 u0 Splash Screen com.rootguar
+d.app} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mAssociatedTask:Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentTo
+OriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:41.708  6701  9501 D WindowManager: updateSystemBarAttributes displayId: 16777216 Window{47e9359 u0 Splash 
+Screen com.rootguard.app} winAppearance=
+03-21 23:28:41.708  6701  9501 I WindowManager: Allow fixed rotation for not collecting:ActivityRecord{15634728 u0 com.
+rootguard.app/.MainActivity t1006}
+03-21 23:28:41.711  6701  6818 D WmSystemUiDebug: on system bar attributes changed displayId=16777216 appearance= appea
+ranceRegions=[AppearanceRegion{ bounds=[0,0][1080,2400]}] navbarColorManagedByIme=false behavior=1 requestedVisibleType
+s=[statusBars navigationBars captionBar systemGestures mandatorySystemGestures tappableElement displayCutout windowDeco
+r systemOverlays] packageName=com.rootguard.app letterboxDetails=[]
+03-21 23:28:41.717  6701  9497 D ActivityTaskManager:  setSkipCaptureLayers tr: Task{457afe6 #1006 type=standard A=1034
+3:com.rootguard.app}
+03-21 23:28:41.723  6701  9497 D WindowManager: Finishing drawing starting window: Window{47e9359 u0 Splash Screen com.
+rootguard.app} mDrawState: DRAW_PENDING
+03-21 23:28:41.723  6701  6821 D BarFollowAnimation: pairAppearanceRegionAndWin win=Window{47e9359 u0 Splash Screen com
+.rootguard.app} 0
+03-21 23:28:41.726  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{47e9359 u0 Splash Screen com.rootguar
+d.app} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mAssociatedTask:Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentTo
+OriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:41.731  6701  6821 I WindowManager: wms.showSurfaceRobustly mWin:Window{47e9359 u0 Splash Screen com.rootgu
+ard.app} in Surface(name=Splash Screen com.rootguard.app#3016)/@0x545ff6
+03-21 23:28:41.755  6701  9357 D MiuiForceVkService: shouldUseVk, pkg=com.rootguard.app useVk 0
+03-21 23:28:41.761  6701  8839 I Perf[AppStartScene]: onSceneChangeNotify:Bundle[{applicationThread=android.os.BinderPr
+oxy@dab3894, hostingRecordName={com.rootguard.app/com.rootguard.app.MainActivity}, hostingRecordType=next-top-activity,
+ pid=2097, uid=10343, type=0, state=3, processName=com.rootguard.app, packageName=com.rootguard.app, applicationThreadE
+xt=android.os.BinderProxy@39c5f3d}]
+03-21 23:28:41.761  6701  8839 W Perf[AndroidRuntimePolicy]: App is not launched from home.
+03-21 23:28:41.840  6701  9497 D BarFollowAnimation: pairAppearanceRegionAndWin win=Window{47e9359 u0 Splash Screen com
+.rootguard.app} 0
+03-21 23:28:41.840  6701  9497 D BarFollowAnimation: isAppTaskBarOnTop win:Window{47e9359 u0 Splash Screen com.rootguar
+d.app} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mAssociatedTask:Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentTo
+OriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:41.842  6701  6821 D BarFollowAnimation: pairAppearanceRegionAndWin win=Window{47e9359 u0 Splash Screen com
+.rootguard.app} 0
+03-21 23:28:41.843  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{47e9359 u0 Splash Screen com.rootguar
+d.app} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mAssociatedTask:Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentTo
+OriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:41.846  6701  6821 D BarFollowAnimation: pairAppearanceRegionAndWin win=Window{47e9359 u0 Splash Screen com
+.rootguard.app} 0
+03-21 23:28:41.847  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{47e9359 u0 Splash Screen com.rootguar
+d.app} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mAssociatedTask:Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentTo
+OriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:41.851  6701  6821 D BarFollowAnimation: pairAppearanceRegionAndWin win=Window{47e9359 u0 Splash Screen com
+.rootguard.app} 0
+03-21 23:28:41.851  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{47e9359 u0 Splash Screen com.rootguar
+d.app} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mAssociatedTask:Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentTo
+OriginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: Process: com.rootguard.app, PID: 2097
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~D12fQMACg5HBm42WSQK9BA==/com.rootguard.app-NyQvsaEv8njx94yJK9e5
+iA==/base.apk"],nativeLibraryDirectories=[/data/app/~~D12fQMACg5HBm42WSQK9BA==/com.rootguard.app-NyQvsaEv8njx94yJK9e5iA
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~D12fQMACg5HBm42WSQK9BA==/com.rootguard.app-NyQvsaEv
+8njx94yJK9e5iA==/base.apk"],nativeLibraryDirectories=[/data/app/~~D12fQMACg5HBm42WSQK9BA==/com.rootguard.app-NyQvsaEv8n
+jx94yJK9e5iA==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 23:28:42.054  2097  2097 E AndroidRuntime: 	... 11 more
+03-21 23:28:42.059  2097  4940 W RuntimeInitImpl: dump java trace fail /data/miuilog/stability/jetrace/2026-03-21-23-28
+-42-057_com.rootguard.app_2097.trace.tmp: open failed: EACCES (Permission denied)
+03-21 23:28:42.061  6701  7558 I ActivityManager: note: ProcessRecord{662f53b 2097:com.rootguard.app/u0a343} is being k
+illed, reason: APP CRASH(EXCEPTION), sub-reason: UNKNOWN, message: crash
+03-21 23:28:42.062  6701  6818 I ActivityManager: Showing crash dialog for package com.rootguard.app u0
+03-21 23:28:42.080  6701  9497 I ActivityManager: Process com.rootguard.app (pid 2097) has died: fg  TOP 
+03-21 23:28:42.082  6701  9497 W ActivityTaskManager: ProcessRecord{662f53b 2097:com.rootguard.app/u0a343} is removed w
+ith pending start ActivityRecord{15634728 u0 com.rootguard.app/.MainActivity t1006}
+03-21 23:28:42.083  6701  9497 D WindowManager: Collecting in transition 153: Task{457afe6 #1006 type=standard A=10343:
+com.rootguard.app} init visibleRequested:true dc:Display{#0 state=ON size=1080x2400 ROTATION_0}
+03-21 23:28:42.086  6701  9497 D MiuiFreeFormGestureController: deliverResultForFinishActivity resultTo: null resultFro
+m: ActivityRecord{15634728 u0 com.rootguard.app/.MainActivity t1006 f}} isInVideoOrGameScene: false intent: Intent { ac
+t=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x11000000 xflg=0x4 pkg=com.rootguard.app cmp=c
+om.rootguard.app/.MainActivity }
+03-21 23:28:42.086  6701  9497 D WindowManager: Collecting in transition 153: ActivityRecord{15634728 u0 com.rootguard.
+app/.MainActivity t1006 f}} init visibleRequested:true dc:Display{#0 state=ON size=1080x2400 ROTATION_0}
+03-21 23:28:42.086  8185  8347 I SoScStageCoordinator: Transition requested:TransitionRequestInfo { type = CLOSE, trigg
+erTask = TaskInfo{userId=0 taskId=1006 effectiveUid=10343 displayId=0 isRunning=false baseIntent=Intent { act=android.i
+ntent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x11000000 pkg=com.rootguard.app cmp=com.rootguard.app/.Ma
+inActivity } baseActivity=null topActivity=null origActivity=null realActivity=ComponentInfo{com.rootguard.app/com.root
+guard.app.MainActivity} numActivities=0 lastActiveTime=8480185 supportsSplitScreenMultiWindow=true mSoScDisplayMode=-1 
+supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=200 token=WCT{android.w
+indow.IWindowContainerToken$Stub$Proxy@ab2f6e3} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=fal
+se launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=nu
+ll launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=true isVisibleRequested=true
+ isTopActivityNoDisplay=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false isAct
+ivityStackTransparent=true lastNonFullscreenBounds=Rect(286, 712 - 794, 1792) capturedLink=null capturedLinkTimestamp=0
+ requestedVisibleTypes=-9 topActivityRequestOpenInBrowserEducationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { top
+ActivityInSizeCompat=false eligibleForLetterboxEducation= false topActivityInMiuiSizeCompat=false isLetterboxEducationE
+nabled= false isLetterboxDoubleTapEnabled= false eligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= 
+false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= 
+-1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 topActivityAppBounds=Rect(0, 0 - 0, 0) isUserFullscreenOv
+errideEnabled=false isSystemFullscreenOverrideEnabled=false hasMinAspectRatioOverride=false topActivityLetterboxBounds=
+null cameraCompatTaskInfo=CameraCompatTaskInfo { freeformCameraCompatMode=undefined}} isImmersive=false mTopActivityReq
+uestOrientation=-2 mStatusBarParent=null mNavBarParent=null mBehindAppLockPkg=null mOriginatingUid=0 isEmbedded=false s
+houldBeVisible=false isCreatedByOrganizer=false mIsCastMode=false mTopActivityMediaSize=null mTopActivityRecordName=nul
+l mTopActivityOrientation=-2 topActivityMainWindowFrame=null}, pipChange = null, remoteTransition = null, displayChange
+ = null, flags = 0, debugId = 153 } isSoScActive:false triggerTask:TaskInfo{userId=0 taskId=1006 effectiveUid=10343 dis
+playId=0 isRunning=false baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=
+0x11000000 pkg=com.rootguard.app cmp=com.rootguard.app/.MainActivity } baseActivity=null topActivity=null origActivity=
+null realActivity=ComponentInfo{com.rootguard.app/com.rootguard.app.MainActivity} numActivities=0 lastActiveTime=848018
+5 supportsSplitScreenMultiWindow=true mSoScDisplayMode=-1 supportsMultiWindow=true resizeMode=1 isResizeable=true minWi
+dth=-1 minHeight=-1 defaultMinSize=200 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@ab2f6e3} topActivityTy
+pe=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 di
+splayCutoutSafeInsets=Rect(0, 0 - 0, 0) topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId
+=-1 isFocused=false isVisible=true isVisibleRequested=true isTopActivityNoDisplay=false isSleeping=false locusId=null d
+isplayAreaFeatureId=1 isTopActivityTransparent=false isActivityStackTransparent=true lastNonFullscreenBounds=Rect(286, 
+712 - 794, 1792) capturedLink=null capturedLinkTimestamp=0 requestedVisibleTypes=-9 topActivityRequestOpenInBrowserEduc
+ationTimestamp=0 appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false eligibleForLetterboxEducation= fal
+se topActivityInMiuiSizeCompat=false isLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false eligibleForU
+serAspectRatioButton= false topActivityBoundsLetterbox
+03-21 23:28:42.086  6701  9497 I ActivityTaskManager: ActivityRecord{15634728 u0 com.rootguard.app/.MainActivity t1006 
+f}} isKeyguardLocked:false nonFinishingActivityCount:0
+03-21 23:28:42.093  6701  9497 D BarFollowAnimation: isAppTaskBarOnTop win:Window{13e6948 u0 bin.mt.plus/bin.mt.plus.Ma
+in} (mCurrentTopTask:Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} : true); (mAssociatedTask:Task{457afe6
+ #1006 type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentToOri
+ginParent:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:42.099  6701  9497 I Perf[AppStartScene]: onSceneChangeNotify:Bundle[{uid=10343, name=com.rootguard.app.Mai
+nActivity, type=1, begin=false, state=0, processName=com.rootguard.app, packageName=com.rootguard.app}]
+03-21 23:28:42.100  6701  9497 D WindowManager: Collecting in transition 153: ActivityRecord{15634728 u0 com.rootguard.
+app/.MainActivity t1006 f}} init visibleRequested:false dc:Display{#0 state=ON size=1080x2400 ROTATION_0}
+03-21 23:28:42.100  6701  9497 I WindowManager:    ChangeInfo{e23c119 container=ActivityRecord{15634728 u0 com.rootguar
+d.app/.MainActivity t1006 f}} flags=0x0}
+03-21 23:28:42.100  6701  9497 I WindowManager:    ChangeInfo{c6505de container=Task{457afe6 #1006 type=standard A=1034
+3:com.rootguard.app} flags=0x0}
+03-21 23:28:42.101  6701  9497 D BarFollowAnimation: isAppTaskBarOnTop win:Window{13e6948 u0 bin.mt.plus/bin.mt.plus.Ma
+in} (mCurrentTopTask:Task{fd77f2c #999 type=standard A=10285:bin.mt.plus} : true); (mAssociatedTask:Task{457afe6 #1006 
+type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentToOriginPare
+nt:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:42.104  6701  8839 D WindowManager:    ChangeInfo{e23c119 container=ActivityRecord{15634728 u0 com.rootguar
+d.app/.MainActivity t1006 f} isExiting} flags=0x0}
+03-21 23:28:42.104  6701  8839 D WindowManager:    ChangeInfo{c6505de container=Task{457afe6 #1006 type=standard A=1034
+3:com.rootguard.app} flags=0x0}
+03-21 23:28:42.104  6701  9497 I ActivityManager: note: ProcessRecord{662f53b 2097:com.rootguard.app/u0a343} died, savi
+ng the exit info
+03-21 23:28:42.105  6701  6843 I ActivityManager: Update process exit info for com.rootguard.app(2097/u10343)
+03-21 23:28:42.106  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{13e6948 u0 bin.mt.plus/bin.mt.plus.Ma
+in} (mCurrentTopTask:Task{fd77f2c #999 type=standard A=10285:bin.mt.plus} : true); (mAssociatedTask:Task{457afe6 #1006 
+type=standard A=10343:com.rootguard.app} : true); (mHomeTask:Task{d8ac438 #1 type=home} : false); mReparentToOriginPare
+nt:false mLastAppBarVisible:true mLastHomeBarVisible:false
+03-21 23:28:42.108  6701  6821 D WindowManager: Final targets: [ChangeInfo{e37a1ea container=Task{fd77f2c #999 type=sta
+ndard A=10285:bin.mt.plus} flags=0x30}, ChangeInfo{c6505de container=Task{457afe6 #1006 type=standard A=10343:com.rootg
+uard.app} flags=0x10}]
+03-21 23:28:42.111  6701  6821 I DynamicIslandService: elementSurfaceTransition is null for:com.rootguard.app
+03-21 23:28:42.111  6701  6821 D TransitionControllerImpl:    ChangeInfo{57c9458 container=ActivityRecord{15634728 u0 c
+om.rootguard.app/.MainActivity t1006 f} isExiting} flags=0x0}
+03-21 23:28:42.111  6701  6821 D TransitionControllerImpl:    ChangeInfo{f4e29b1 container=Task{457afe6 #1006 type=stan
+dard A=10343:com.rootguard.app} flags=0x10}
+03-21 23:28:42.111  6701  6821 D TransitionControllerImpl:    ChangeInfo{e23c119 container=ActivityRecord{15634728 u0 c
+om.rootguard.app/.MainActivity t1006 f} isExiting} flags=0x0}
+03-21 23:28:42.111  6701  6821 D TransitionControllerImpl:    ChangeInfo{c6505de container=Task{457afe6 #1006 type=stan
+dard A=10343:com.rootguard.app} flags=0x10}
+03-21 23:28:42.112  6701  6821 D WindowManager: Calling onTransitionReady info={id=153 t=CLOSE f=0x0 trk=0 r=[0@Point(0
+, 0)] c=[{WCT{RemoteToken{8635392 Task{fd77f2c #999 type=standard A=10285:bin.mt.plus}}} m=TO_FRONT f=MOVE_TO_TOP leash
+=Surface(name=Task=999#2501)/@0xd0636df sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0
+ taskParent=-1 v=trueMiuiChangeImpl {miuiEmbedding:false, scale:1.0}},{WCT{RemoteToken{fdda99c Task{457afe6 #1006 type=
+standard A=10343:com.rootguard.app}}} m=CLOSE f=NONE leash=Surface(name=Task=1006#3005)/@0x2be2e41 sb=Rect(0, 0 - 1080,
+ 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=falseMiuiChangeImpl {miuiEmbedding:false, s
+cale:1.0}}] mk=[false] noAni=[false] df=[false] rsa=[false] oa=[false] nc=[0] ho=[false] hla=[false] iSync=[152]}, mTok
+en=Token{2b46a8d TransitionRecord{be5c860 id=153 type=CLOSE flags=0x0 c=[
+03-21 23:28:42.112  6701  6821 D WindowManager:    ChangeInfo{e23c119 container=ActivityRecord{15634728 u0 com.rootguar
+d.app/.MainActivity t1006 f} isExiting} flags=0x0}
+03-21 23:28:42.112  6701  6821 D WindowManager:    ChangeInfo{c6505de container=Task{457afe6 #1006 type=standard A=1034
+3:com.rootguard.app} flags=0x10}
+03-21 23:28:42.112  6701  7286 D BarFollowAnimation: disableBarAnimation change={WCT{RemoteToken{fdda99c Task{457afe6 #
+1006 type=standard A=10343:com.rootguard.app}}} m=CLOSE f=NONE leash=Surface(name=Task=1006#3005)/@0x2be2e41 sb=Rect(0,
+ 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=falseMiuiChangeImpl {miuiEmbeddin
+g:false, scale:1.0}} 1 1
+03-21 23:28:42.112  6701  7286 D BarFollowAnimation: startStatusBarAnimation change= {WCT{RemoteToken{fdda99c Task{457a
+fe6 #1006 type=standard A=10343:com.rootguard.app}}} m=CLOSE f=NONE leash=Surface(name=Task=1006#3005)/@0x2be2e41 sb=Re
+ct(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=falseMiuiChangeImpl {miuiEmb
+edding:false, scale:1.0}} isRecent=false startWindowMode=1 endWindowMode=1 statusState=-1 isRotationAnimation=false
+03-21 23:28:42.113  6701  6821 E WindowManager:  source = Task{457afe6 #1006 type=standard A=10343:com.rootguard.app} e
+xcludeMiuiNavBar = true excludeMiuiStatusBar = true excludeIme = false excludeNavBar = false miuiNavSurfaceControl = Su
+rface(name=NavigationBar Container of Task = 1006#3006)/@0x2d22927 miuiStatusSurfaceControl = Surface(name=StatusBar Co
+ntainer of Task = 1006#3007)/@0x72f97d4
+03-21 23:28:42.124  6701  6821 D WindowManager: snapshot isNothing = false source = Task{457afe6 #1006 type=standard A=
+10343:com.rootguard.app}
+03-21 23:28:42.143  6701  6964 W UsageStatsService: Unexpected activity event reported! (com.rootguard.app/com.rootguar
+d.app.MainActivity event : 23 instanceId : 25062781)
+03-21 23:28:42.151  6701  8837 D ActivityTaskManager:  setSkipCaptureLayers tr: Task{457afe6 #1006 type=standard A=1034
+3:com.rootguard.app}
+03-21 23:28:42.542  6701  8837 D TransitionImpl:    ChangeInfo{57c9458 container=ActivityRecord{15634728 u0 com.rootgua
+rd.app/.MainActivity t1006 f} isExiting} flags=0x0}
+03-21 23:28:42.542  6701  8837 D TransitionImpl:    ChangeInfo{f4e29b1 container=Task{457afe6 #1006 type=standard A=103
+43:com.rootguard.app} flags=0x10}
+03-21 23:28:42.542  6701  8837 I TransitionImpl: finishTransition: updateLastSurfacePosition tf=Task{457afe6 #1006 type
+=standard A=10343:com.rootguard.app}
+03-21 23:28:42.544  6701  9357 I ATMSImpl: No snapshot since not start by launcher, activity=com.rootguard.app/.MainAct
+ivity
+03-21 23:28:42.545  6701  8837 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{457afe6 #1006 type=standard A=1
+0343:com.rootguard.app} shouldbeVisible:false isVisible:false isOnTop:false windowMode:1 preDisplayId:-1 displayId:0 mC
+aptionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:28:42.545  6701  8837 I TransitionImpl: finishTransition: updateLastSurfacePosition tf=Task{457afe6 #1006 type
+=standard A=10343:com.rootguard.app}
+03-21 23:28:42.547  6701  8837 D WindowManager: Starting window removed Window{47e9359 u0 Splash Screen com.rootguard.a
+pp}
+03-21 23:28:42.547  6701  8837 D WindowManager: postWindowRemoveCleanupLocked: Removing startingWindow Window{47e9359 u
+0 Splash Screen com.rootguard.app} from ActivityRecord{15634728 u0 com.rootguard.app/.MainActivity t1006 f}} activity =
+ ActivityRecord{15634728 u0 com.rootguard.app/.MainActivity t1006 f}}
+03-21 23:28:42.552  6701  8837 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{457afe6 #1006 type=standard A=1
+0343:com.rootguard.app} shouldbeVisible:false isVisible:false isOnTop:false windowMode:1 preDisplayId:-1 displayId:0 mC
+aptionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:28:42.553  6701  8837 D BarFollowAnimation: onTaskValishedForCaptionBar Task{457afe6 #1006 type=standard A=103
+43:com.rootguard.app}
+03-21 23:28:43.541  6701  9497 I AppsFilter: interaction: PackageSetting{74b8fd6 com.rootguard.app/10343} -> PackageSet
+ting{c8af826 me.weishu.kernelsu/10303} BLOCKED
+03-21 23:29:01.707  6701  7141 D PolicyMaker: uid =10343 pkg=com.rootguard.app reason=TOP_APP
+03-21 23:29:16.454 11867 12189 D MiSightJni: MiSight: Java_com_miui_misight_MiSight_nativeSendEvent enter called. '{"Pa
+ckageName":"com.rootguard.app","Times":3}'
+03-21 23:29:16.455 11867 12189 D MiEvent : flatten EventId 901003005 -t 1774106956 -paraList {"PackageName":"com.rootgu
+ard.app","Times":3}
+03-21 23:29:16.456 11867 12189 D MiEvent : report:EventId 901003005 -t 1774106956 -paraList {"PackageName":"com.rootgua
+rd.app","Times":3} success
+03-21 23:29:16.457 11867 12189 D DigestGenerator: digest=============org.lsposed.manager me.weishu.kernelsu have been i
+nstalled;exp_appbootfailcom.rootguard.app
+03-21 23:29:16.475 11867 12189 D MQSEventManager: send MSG_JUDGE_TRANSMISSION packageName com.rootguard.app
+
+

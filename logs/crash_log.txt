@@ -1,0 +1,597 @@
+﻿
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: Process: com.rootguard.app, PID: 10777
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: android.app.RemoteServiceException$ForegroundServiceDidNotStartInTimeE
+xception: Context.startForegroundService() did not then call Service.startForeground(): ServiceRecord{d98ca9f u0 com.ro
+otguard.app/.service.RootRequestMonitorService c:com.rootguard.app}
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.generateForegroundServiceDidNotStartInT
+imeException(ActivityThread.java:2649)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.throwRemoteServiceException(ActivityThr
+ead.java:2617)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mthrowRemoteServiceException(Un
+known Source:0)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:300
+3)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: Caused by: android.app.StackTrace: Last startServiceCommon() call for 
+this service was made here
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ContextImpl.startServiceCommon(ContextImpl.java:2066)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ContextImpl.startForegroundService(ContextImpl.java:20
+20)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.content.ContextWrapper.startForegroundService(ContextWrapp
+er.java:876)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.content.ContextWrapper.startForegroundService(ContextWrapp
+er.java:876)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at com.rootguard.app.receiver.BootReceiver.onReceive(BootReceiver.kt:
+20)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.handleReceiver(ActivityThread.java:5501
+)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleReceiver(Unknown Source:
+0)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:283
+9)
+03-21 21:08:33.924 10777 10777 E AndroidRuntime: 	... 7 more
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: Process: com.rootguard.app, PID: 13181
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0ac3XQK4WTOGqX
+6w==/base.apk"],nativeLibraryDirectories=[/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0ac3XQK4WTOGqX6w
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0a
+c3XQK4WTOGqX6w==/base.apk"],nativeLibraryDirectories=[/data/app/~~CJLErPaPdDbq9W7z9wgh-A==/com.rootguard.app-UihkDU0ac3
+XQK4WTOGqX6w==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:24.285 13181 13181 E AndroidRuntime: 	... 11 more
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: Process: com.rootguard.app, PID: 21521
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXNi9k4C20apB-U
+FQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXNi9k4C20apB-UFQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXN
+i9k4C20apB-UFQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~ZxvBazUnKWnEH9SBPIzaZw==/com.rootguard.app-G273vkXNi9
+k4C20apB-UFQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:28.703 21521 21521 E AndroidRuntime: 	... 11 more
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: Process: com.rootguard.app, PID: 23466
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHR
+TQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHRTQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOf
+HZXPgsI0_KHRTQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZ
+XPgsI0_KHRTQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:42.889 23466 23466 E AndroidRuntime: 	... 11 more
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: Process: com.rootguard.app, PID: 24047
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHR
+TQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHRTQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOf
+HZXPgsI0_KHRTQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZ
+XPgsI0_KHRTQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:50.990 24047 24047 E AndroidRuntime: 	... 11 more
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: Process: com.rootguard.app, PID: 24916
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHR
+TQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZXPgsI0_KHRTQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOf
+HZXPgsI0_KHRTQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~4qho9ddfaHquGdXRDf51CA==/com.rootguard.app-TpzE9kOfHZ
+XPgsI0_KHRTQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:52:52.270 24916 24916 E AndroidRuntime: 	... 11 more
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: Process: com.rootguard.app, PID: 27921
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:53:15.698 27921 27921 E AndroidRuntime: 	... 11 more
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: Process: com.rootguard.app, PID: 27922
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:53:51.770 27922 27922 E AndroidRuntime: 	... 11 more
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: Process: com.rootguard.app, PID: 28870
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:53:52.969 28870 28870 E AndroidRuntime: 	... 11 more
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: Process: com.rootguard.app, PID: 29032
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:58:14.857 29032 29032 E AndroidRuntime: 	... 11 more
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: Process: com.rootguard.app, PID: 30755
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yj
+AQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr293RTM072yjAQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0K
+r293RTM072yjAQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~zp7jDrhVH_k82V_e4TXLwg==/com.rootguard.app-DcIW3u0Kr2
+93RTM072yjAQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 21:58:15.843 30755 30755 E AndroidRuntime: 	... 11 more
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: Process: com.rootguard.app, PID: 1750
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSAucB5E_ECQWac
+qw==/base.apk"],nativeLibraryDirectories=[/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSAucB5E_ECQWacqw
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSA
+ucB5E_ECQWacqw==/base.apk"],nativeLibraryDirectories=[/data/app/~~mGBuQppAAE7itOZBkrDNXg==/com.rootguard.app-ojy_hnSAuc
+B5E_ECQWacqw==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 23:21:07.553  1750  1750 E AndroidRuntime: 	... 11 more
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: FATAL EXCEPTION: main
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: Process: com.rootguard.app, PID: 5935
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: java.lang.RuntimeException: Unable to instantiate application com.root
+guard.app.PandaSUApp package com.rootguard.app: java.lang.ClassNotFoundException: Didn't find class "com.rootguard.app.
+PandaSUApp" on path: DexPathList[[zip file "/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6STfhB89JrpJV
+bQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6STfhB89JrpJVbQ
+==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1583)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1499)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread.handleBindApplication(ActivityThread.ja
+va:8663)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread.-$$Nest$mhandleBindApplication(Unknown 
+Source:0)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:280
+8)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:114)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:267)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:360)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:10054)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(Runtim
+eInit.java:616)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1115)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: Caused by: java.lang.ClassNotFoundException: Didn't find class "com.ro
+otguard.app.PandaSUApp" on path: DexPathList[[zip file "/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6
+STfhB89JrpJVbQ==/base.apk"],nativeLibraryDirectories=[/data/app/~~8A6JFBMuQK-k6oqZZxqUgw==/com.rootguard.app-WHYsuPU6ST
+fhB89JrpJVbQ==/lib/arm64, /system/lib64, /system_ext/lib64]]
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at dalvik.system.BaseDexClassLoader.findClass(BaseDexClassLoader.java
+:259)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:637)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at java.lang.ClassLoader.loadClass(ClassLoader.java:573)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.AppComponentFactory.instantiateApplication(AppComponen
+tFactory.java:76)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at androidx.core.app.CoreComponentFactory.instantiateApplication(Core
+ComponentFactory.java:51)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.Instrumentation.newApplication(Instrumentation.java:13
+55)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	at android.app.LoadedApk.makeApplicationInner(LoadedApk.java:1576)
+03-21 23:21:11.433  5935  5935 E AndroidRuntime: 	... 11 more
+03-21 23:22:23.923  6701  9497 E TransitionChain:    ChangeInfo{967714b container=Task{4340dc1 #1001 type=standard A=10
+341:com.rootguard.app} flags=0x0}
+03-21 23:22:23.923  6701  9497 E TransitionChain:    ChangeInfo{967714b container=Task{4340dc1 #1001 type=standard A=10
+341:com.rootguard.app} flags=0x0}
+03-21 23:22:23.923  6701  9497 D ActivityTaskManager:  setSkipCaptureLayers tr: Task{4340dc1 #1001 type=standard A=1034
+1:com.rootguard.app}
+03-21 23:22:23.924  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:false
+03-21 23:22:23.925  6701  6821 D WindowManager: Final targets: [ChangeInfo{939d727 container=Task{d8ac438 #1 type=home}
+ flags=0x30}, ChangeInfo{967714b container=Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} flags=0x10}]
+03-21 23:22:23.927  6701  6821 I DynamicIslandService: elementSurfaceTransition is null for:com.rootguard.app
+03-21 23:22:23.928  6701  6821 D WindowManager: Calling onTransitionReady info={id=137 t=CLOSE f=0x0 trk=0 r=[0@Point(0
+, 0)] c=[{WCT{RemoteToken{c6ad1b8 Task{d8ac438 #1 type=home}}} m=CHANGE f=SHOW_WALLPAPER|MOVE_TO_TOP leash=Surface(name
+=Task=1#160)/@0xecc0b95 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v
+=trueMiuiChangeImpl {miuiEmbedding:false, scale:1.0}},{WCT{RemoteToken{ddd408f Task{4340dc1 #1001 type=standard A=10341
+:com.rootguard.app}}} m=CLOSE f=TRANSLUCENT leash=Surface(name=Task=1001#2690)/@0xb27e097 sb=Rect(0, 0 - 1080, 2400) eb
+=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=falseMiuiChangeImpl {miuiEmbedding:false, scale:1.0}
+}] mk=[false] noAni=[false] df=[false] rsa=[false] oa=[false] nc=[0] ho=[false] hla=[false] iSync=[-1]}, mToken=Token{c
+b0cb7d TransitionRecord{7a321a id=137 type=CLOSE flags=0x0 c=[
+03-21 23:22:23.928  6701  6821 D WindowManager:    ChangeInfo{967714b container=Task{4340dc1 #1001 type=standard A=1034
+1:com.rootguard.app} flags=0x10}
+03-21 23:22:23.929  6701  6821 E WindowManager:  source = Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} e
+xcludeMiuiNavBar = true excludeMiuiStatusBar = true excludeIme = false excludeNavBar = false miuiNavSurfaceControl = Su
+rface(name=NavigationBar Container of Task = 1001#2691)/@0x232d284 miuiStatusSurfaceControl = Surface(name=StatusBar Co
+ntainer of Task = 1001#2692)/@0x1e00a6d
+03-21 23:22:23.929  6701  7286 D BarFollowAnimation: disableBarAnimation change={WCT{RemoteToken{ddd408f Task{4340dc1 #
+1001 type=standard A=10341:com.rootguard.app}}} m=CLOSE f=TRANSLUCENT leash=Surface(name=Task=1001#2690)/@0xb27e097 sb=
+Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=falseMiuiChangeImpl {miuiE
+mbedding:false, scale:1.0}} 1 1
+03-21 23:22:23.929  6701  7286 D BarFollowAnimation: startStatusBarAnimation change= {WCT{RemoteToken{ddd408f Task{4340
+dc1 #1001 type=standard A=10341:com.rootguard.app}}} m=CLOSE f=TRANSLUCENT leash=Surface(name=Task=1001#2690)/@0xb27e09
+7 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) epz=Point(1080, 2400) d=0 taskParent=-1 v=falseMiuiChangeImpl {
+miuiEmbedding:false, scale:1.0}} isRecent=false startWindowMode=1 endWindowMode=1 statusState=6 isRotationAnimation=fal
+se
+03-21 23:22:23.936  6701  6821 D WindowManager: snapshot isNothing = false source = Task{4340dc1 #1001 type=standard A=
+10341:com.rootguard.app}
+03-21 23:22:23.941  6701  8321 D ActivityTaskManager:  setSkipCaptureLayers tr: Task{4340dc1 #1001 type=standard A=1034
+1:com.rootguard.app}
+03-21 23:22:23.953  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:true
+03-21 23:22:23.969  6701  6820 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:true
+03-21 23:22:23.988  6701  8558 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{4340dc1 #1001 type=standard A=1
+0341:com.rootguard.app} shouldbeVisible:false isVisible:false isOnTop:false windowMode:1 preDisplayId:-1 displayId:0 mC
+aptionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:22:23.988  6701  8558 I TransitionImpl: finishTransition: updateLastSurfacePosition tf=Task{4340dc1 #1001 type
+=standard A=10341:com.rootguard.app}
+03-21 23:22:23.991  6701  7286 D BarFollowAnimation: checkBarStatus mReparentToOriginParent:false hasTopFullAppTask:fal
+se mHomeTask:Task{d8ac438 #1 type=home} mCurrentTopTask: Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} mA
+ssociatedTask: Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} homeTaskonTop:true mLastAppBarVisible:false 
+mLastHomeBarVisible:true isInSplitScreen:false
+03-21 23:22:23.994  6701  9405 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:true
+03-21 23:22:24.001  6701  8839 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:true
+03-21 23:22:24.009  6701  6821 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:true
+03-21 23:22:24.020  6701  6732 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:true
+03-21 23:22:24.026  6701  9405 D BarFollowAnimation: isAppTaskBarOnTop win:Window{f883bd2 u0 com.miui.home/com.miui.hom
+e.launcher.Launcher} (mCurrentTopTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mAssociate
+dTask:Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} : false); (mHomeTask:Task{d8ac438 #1 type=home} : tru
+e); mReparentToOriginParent:false mLastAppBarVisible:false mLastHomeBarVisible:true
+03-21 23:22:24.028  6701  6821 D BarFollowAnimation: onTaskInfoChanedForCaptionBar Task{4340dc1 #1001 type=standard A=1
+0341:com.rootguard.app} shouldbeVisible:false isVisible:false isOnTop:false windowMode:1 preDisplayId:-1 displayId:0 mC
+aptionAssociatedTask:null mIsTouchedInCaption:false
+03-21 23:22:24.028  6701  6821 D BarFollowAnimation: onTaskValishedForCaptionBar Task{4340dc1 #1001 type=standard A=103
+41:com.rootguard.app}
+03-21 23:22:24.943  6701  7286 D BarFollowAnimation: checkBarStatus mReparentToOriginParent:true hasTopFullAppTask:fals
+e mHomeTask:Task{d8ac438 #1 type=home} mCurrentTopTask: Task{4340dc1 #1001 type=standard A=10341:com.rootguard.app} mAs
+sociatedTask: null homeTaskonTop:true mLastAppBarVisible:false mLastHomeBarVisible:true isInSplitScreen:false
+03-21 23:22:25.360  6701  9501 I AppsFilter: interaction: PackageSetting{875b101 com.rootguard.app/10341} -> PackageSet
+ting{fb6badb me.weishu.kernelsu/10303} BLOCKED
+
+
