@@ -44,7 +44,7 @@ fun HomeScreen(
     val uiState by viewModel.uiState.collectAsState()
 
     // 版本信息
-    val currentVersion = "1.3.0" // 可以从 BuildConfig 读取
+    val currentVersion = BuildConfig.VERSION_NAME
 
     // 重启对话框状态
     var showRestartDialog by remember { mutableStateOf(false) }

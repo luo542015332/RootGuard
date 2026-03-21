@@ -43,9 +43,34 @@ class OneClickIsolationHelper @Inject constructor(
                 packageName = packageName,
                 appName = appName,
                 category = categorizeApp(packageName, appName),
-                isSystemApp = (appInfo.flags and ApplicationInfo.FLAG_SYSTEM) != 0
+                isSystemApp = isSystemApp(appInfo)
             )
+        }.filter { appInfo ->
+            // 排除系统应用
+            !appInfo.isSystemApp
         }
+    }
+
+    /**
+     * 判断是否为系统应用
+     */
+    private fun isSystemApp(appInfo: ApplicationInfo): Boolean {
+        // 方法1：检查 FLAG_SYSTEM 标志
+        val isFlagSystem = (appInfo.flags and ApplicationInfo.FLAG_SYSTEM) != 0
+
+        // 方法2：检查是否是系统分区应用
+        val isSystemPartition = appInfo.sourceDir?.startsWith("/system/") == true ||
+                              appInfo.sourceDir?.startsWith("/vendor/") == true ||
+                              appInfo.sourceDir?.startsWith("/product/") == true
+
+        // 方法3：排除小米等厂商的预装应用
+        val isVendorApp = appInfo.packageName.startsWith("com.miui.") ||
+                         appInfo.packageName.startsWith("com.xiaomi.") ||
+                         appInfo.packageName.startsWith("com.android.") ||
+                         appInfo.packageName.startsWith("com.google.android.")
+
+        // 满足任一条件即为系统应用
+        return isFlagSystem || isSystemPartition || isVendorApp
     }
 
     /**

@@ -307,8 +307,9 @@ class IsolationViewModel @Inject constructor(
                     it.copy(oneClickProgress = it.oneClickProgress.copy(total = apps.size))
                 }
 
-                // 跳过系统应用
+                // 跳过系统应用和自身
                 val userApps = apps.filterNot { it.isSystemApp }
+                    .filter { it.packageName != "com.rootguard.app" }
 
                 // 生成隔离配置
                 val configs = userApps.mapIndexed { index, app ->
