@@ -433,7 +433,7 @@ fun FeatureSection(
                     subtitle = "隔离",
                     emoji = "🛡️",
                     color = Color(0xFFE1F5FE),
-                    onClick = { onNavigateToIsolation() },
+                    onClick = onIsolationClick,
                     modifier = Modifier.weight(1f)
                 )
                 FeatureCard(
