@@ -34,6 +34,7 @@ fun HomeScreen(
     onNavigateToApps: () -> Unit,
     onNavigateToLogs: () -> Unit,
     onNavigateToSettings: () -> Unit,
+    onNavigateToIsolation: () -> Unit,
     onNavigateToInstall: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
@@ -89,6 +90,7 @@ fun HomeScreen(
                     onAppsClick = onNavigateToApps,
                     onLogsClick = onNavigateToLogs,
                     onRebootClick = { showRestartDialog = true },
+                    onIsolationClick = onNavigateToIsolation,
                     onInstallClick = onNavigateToInstall
                 )
             }
@@ -275,6 +277,7 @@ fun FeatureSection(
     onAppsClick: () -> Unit,
     onLogsClick: () -> Unit,
     onRebootClick: () -> Unit,
+    onIsolationClick: () -> Unit,
     onInstallClick: () -> Unit
 ) {
     Column {
@@ -354,6 +357,15 @@ fun FeatureSection(
                     modifier = Modifier.weight(1f)
                 )
                 FeatureCard(
+                    icon = Icons.Outlined.Security,
+                    title = "一键",
+                    subtitle = "隔离",
+                    emoji = "🛡️",
+                    color = Color(0xFFE1F5FE),
+                    onClick = { onNavigateToIsolation() },
+                    modifier = Modifier.weight(1f)
+                )
+                FeatureCard(
                     icon = Icons.Outlined.SystemUpdate,
                     title = "安装",
                     subtitle = "Root",
@@ -362,8 +374,6 @@ fun FeatureSection(
                     onClick = onInstallClick,
                     modifier = Modifier.weight(1f)
                 )
-                // 占位保持对称
-                Spacer(modifier = Modifier.weight(1f))
             }
         }
     }

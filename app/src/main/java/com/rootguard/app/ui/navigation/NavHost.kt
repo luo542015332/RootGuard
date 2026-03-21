@@ -15,6 +15,7 @@ import com.rootguard.app.ui.screens.settings.ThemeSettingsScreen
 import com.rootguard.app.ui.screens.apps.AppsScreen
 import com.rootguard.app.ui.screens.logs.LogsScreen
 import com.rootguard.app.ui.screens.isolation.IsolationScreen
+import com.rootguard.app.ui.screens.install.InstallScreen
 
 sealed class Screen(val route: String) {
     data object Home : Screen("home")
@@ -23,9 +24,11 @@ sealed class Screen(val route: String) {
     data object Logs : Screen("logs")
     data object Settings : Screen("settings")
     data object ThemeSettings : Screen("theme_settings")
-    data object Isolation : Screen("isolation/{packageName}/{appName}") {
-        fun createRoute(packageName: String, appName: String) = "isolation/$packageName/$appName"
+    data object Isolation : Screen("isolation")  // 全局隔离页面
+    data object AppIsolation : Screen("app_isolation/{packageName}/{appName}") {
+        fun createRoute(packageName: String, appName: String) = "app_isolation/$packageName/$appName"
     }
+    data object Install : Screen("install")
 }
 
 @Composable
@@ -44,7 +47,8 @@ fun RootGuardNavHost(
                 onNavigateToApps = { navController.navigate(Screen.Apps.route) },
                 onNavigateToLogs = { navController.navigate(Screen.Logs.route) },
                 onNavigateToSettings = { navController.navigate(Screen.Settings.route) },
-                onNavigateToInstall = { /* TODO: Implement if needed */ }
+                onNavigateToIsolation = { navController.navigate(Screen.Isolation.route) },
+                onNavigateToInstall = { navController.navigate(Screen.Install.route) }
             )
         }
         composable(Screen.Modules.route) {
@@ -57,12 +61,21 @@ fun RootGuardNavHost(
             AppsScreen(
                 onNavigateBack = { navController.popBackStack() },
                 onNavigateToIsolation = { packageName, appName ->
-                    navController.navigate(Screen.Isolation.createRoute(packageName, appName))
+                    navController.navigate(Screen.AppIsolation.createRoute(packageName, appName))
                 }
             )
         }
+        // 全局隔离页面（一键隔离）
+        composable(Screen.Isolation.route) {
+            IsolationScreen(
+                packageName = null,
+                appName = null,
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+        // 应用特定隔离页面
         composable(
-            route = Screen.Isolation.route,
+            route = Screen.AppIsolation.route,
             arguments = listOf(
                 navArgument("packageName") { type = NavType.StringType },
                 navArgument("appName") { type = NavType.StringType }
@@ -73,6 +86,12 @@ fun RootGuardNavHost(
             IsolationScreen(
                 packageName = packageName,
                 appName = appName,
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+        // 安装页面
+        composable(Screen.Install.route) {
+            InstallScreen(
                 onNavigateBack = { navController.popBackStack() }
             )
         }

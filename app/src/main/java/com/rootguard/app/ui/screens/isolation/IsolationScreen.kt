@@ -98,6 +98,14 @@ fun IsolationScreen(
                     )
                 }
             } else {
+                // 一键隔离功能
+                item {
+                    OneClickIsolationSection(
+                        progress = uiState.oneClickProgress,
+                        onStartIsolation = { viewModel.startOneClickIsolation(com.rootguard.app.data.model.OneClickIsolationPreset.BALANCED) }
+                    )
+                }
+
                 // 已配置隔离的应用列表
                 item {
                     Text(
@@ -507,5 +515,77 @@ fun EmptyIsolationState() {
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f),
             textAlign = TextAlign.Center
         )
+    }
+}
+
+/**
+ * 一键隔离功能区域
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun OneClickIsolationSection(
+    progress: OneClickProgress,
+    onStartIsolation: () -> Unit
+) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.AutoAwesome,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.primary
+                )
+                Column {
+                    Text(
+                        text = "一键隔离",
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    Text(
+                        text = "自动为已安装应用配置隔离策略",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                    )
+                }
+            }
+
+            if (progress.isRunning) {
+                // 显示进度
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    LinearProgressIndicator(
+                        progress = { if (progress.total > 0) progress.current.toFloat() / progress.total else 0f },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Text(
+                        text = "正在隔离: ${progress.currentAppName} (${progress.current}/${progress.total})",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                    )
+                }
+            } else {
+                // 开始按钮
+                Button(
+                    onClick = onStartIsolation,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.PlayArrow,
+                        contentDescription = null
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("开始一键隔离")
+                }
+            }
+        }
     }
 }
