@@ -4,75 +4,100 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- 背景圆形 -->
+    <!-- 渐变背景圆形 -->
     <path
-        android:fillColor="#2D3436"
+        android:fillColor="#1A1A2E"
         android:pathData="M54,54m-50,0a50,50 0,1 1,100 0a50,50 0,1 1,-100 0"/>
     
-    <!-- 熊猫头部白色部分 -->
+    <!-- 熊猫头部轮廓 - 更圆润 -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M54,28c-16,0 -29,11 -29,26c0,15 13,26 29,26c16,0 29,-11 29,-26c0,-15 -13,-26 -29,-26z"/>
+        android:pathData="M54,26c-15,0 -27,10 -27,24c0,14 12,24 27,24c15,0 27,-10 27,-24c0,-14 -12,-24 -27,-24z"/>
     
-    <!-- 左耳 -->
+    <!-- 左耳朵 - 更大更圆 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M28,22c-6,0 -11,5 -11,11c0,6 5,11 11,11c6,0 11,-5 11,-11c0,-6 -5,-11 -11,-11z"/>
+        android:fillColor="#1A1A2E"
+        android:pathData="M26,20c-7,0 -12,6 -12,12c0,6 5,12 12,12c7,0 12,-6 12,-12c0,-6 -5,-12 -12,-12z"/>
     
-    <!-- 右耳 -->
+    <!-- 右耳朵 - 更大更圆 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M80,22c-6,0 -11,5 -11,11c0,6 5,11 11,11c6,0 11,-5 11,-11c0,-6 -5,-11 -11,-11z"/>
+        android:fillColor="#1A1A2E"
+        android:pathData="M82,20c-7,0 -12,6 -12,12c0,6 5,12 12,12c7,0 12,-6 12,-12c0,-6 -5,-12 -12,-12z"/>
     
-    <!-- 左眼黑眼圈 -->
+    <!-- 耳朵内侧粉色 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M38,48c-5,0 -9,4 -9,9c0,5 4,9 9,9c5,0 9,-4 9,-9c0,-5 -4,-9 -9,-9z"/>
+        android:fillColor="#FFB6C1"
+        android:pathData="M26,24c-4,0 -7,3 -7,7c0,4 3,7 7,7c4,0 7,-3 7,-7c0,-4 -3,-7 -7,-7z"/>
+    <path
+        android:fillColor="#FFB6C1"
+        android:pathData="M82,24c-4,0 -7,3 -7,7c0,4 3,7 7,7c4,0 7,-3 7,-7c0,-4 -3,-7 -7,-7z"/>
+    
+    <!-- 左眼黑眼圈 - 经典的熊猫椭圆 -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M38,46c-6,0 -11,4 -11,10c0,6 5,10 11,10c6,0 11,-4 11,-10c0,-6 -5,-10 -11,-10z"
+        android:rotation="-15"
+        android:pivotX="38"
+        android:pivotY="56"/>
     
     <!-- 右眼黑眼圈 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M70,48c-5,0 -9,4 -9,9c0,5 4,9 9,9c5,0 9,-4 9,-9c0,-5 -4,-9 -9,-9z"/>
+        android:fillColor="#1A1A2E"
+        android:pathData="M70,46c-6,0 -11,4 -11,10c0,6 5,10 11,10c6,0 11,-4 11,-10c0,-6 -5,-10 -11,-10z"
+        android:rotation="15"
+        android:pivotX="70"
+        android:pivotY="56"/>
     
     <!-- 左眼白 -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M38,50c-3,0 -5,2 -5,5c0,3 2,5 5,5c3,0 5,-2 5,-5c0,-3 -2,-5 -5,-5z"/>
+        android:pathData="M38,50c-3,0 -5,2.5 -5,5.5c0,3 2,5.5 5,5.5c3,0 5,-2.5 5,-5.5c0,-3 -2,-5.5 -5,-5.5z"/>
     
     <!-- 右眼白 -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M70,50c-3,0 -5,2 -5,5c0,3 2,5 5,5c3,0 5,-2 5,-5c0,-3 -2,-5 -5,-5z"/>
+        android:pathData="M70,50c-3,0 -5,2.5 -5,5.5c0,3 2,5.5 5,5.5c3,0 5,-2.5 5,-5.5c0,-3 -2,-5.5 -5,-5.5z"/>
     
-    <!-- 左眼珠 -->
+    <!-- 左眼珠 - 有神 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M39,52c-1.5,0 -2.5,1 -2.5,2.5c0,1.5 1,2.5 2.5,2.5c1.5,0 2.5,-1 2.5,-2.5c0,-1.5 -1,-2.5 -2.5,-2.5z"/>
+        android:fillColor="#1A1A2E"
+        android:pathData="M39,53c-2,0 -3.5,1.5 -3.5,3.5c0,2 1.5,3.5 3.5,3.5c2,0 3.5,-1.5 3.5,-3.5c0,-2 -1.5,-3.5 -3.5,-3.5z"/>
     
     <!-- 右眼珠 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M71,52c-1.5,0 -2.5,1 -2.5,2.5c0,1.5 1,2.5 2.5,2.5c1.5,0 2.5,-1 2.5,-2.5c0,-1.5 -1,-2.5 -2.5,-2.5z"/>
+        android:fillColor="#1A1A2E"
+        android:pathData="M71,53c-2,0 -3.5,1.5 -3.5,3.5c0,2 1.5,3.5 3.5,3.5c2,0 3.5,-1.5 3.5,-3.5c0,-2 -1.5,-3.5 -3.5,-3.5z"/>
     
-    <!-- 鼻子 -->
+    <!-- 眼睛高光 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M54,62c-3,0 -5,2 -5,4c0,2 2,3 5,3c3,0 5,-1 5,-3c0,-2 -2,-4 -5,-4z"/>
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,52c-1,0 -1.5,0.5 -1.5,1.5c0,1 0.5,1.5 1.5,1.5c1,0 1.5,-0.5 1.5,-1.5c0,-1 -0.5,-1.5 -1.5,-1.5z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M72,52c-1,0 -1.5,0.5 -1.5,1.5c0,1 0.5,1.5 1.5,1.5c1,0 1.5,-0.5 1.5,-1.5c0,-1 -0.5,-1.5 -1.5,-1.5z"/>
     
-    <!-- 嘴巴 -->
+    <!-- 鼻子 - 可爱的心形 -->
     <path
-        android:fillColor="#2D3436"
-        android:pathData="M48,70c2,3 6,5 6,5c0,0 4,-2 6,-5"/>
+        android:fillColor="#1A1A2E"
+        android:pathData="M54,64c-3.5,0 -6,2 -6,4.5c0,2.5 2.5,4.5 6,4.5c3.5,0 6,-2 6,-4.5c0,-2.5 -2.5,-4.5 -6,-4.5z"/>
     
-    <!-- 腮红左 -->
+    <!-- 嘴巴 - 微笑 -->
     <path
-        android:fillColor="#FFB8B8"
-        android:fillAlpha="0.6"
-        android:pathData="M32,62c-3,0 -5,2 -5,4c0,2 2,4 5,4c3,0 5,-2 5,-4c0,-2 -2,-4 -5,-4z"/>
+        android:fillColor="#1A1A2E"
+        android:strokeWidth="2"
+        android:strokeColor="#1A1A2E"
+        android:strokeLineCap="round"
+        android:pathData="M46,74c3,4 8,6 8,6c0,0 5,-2 8,-6"/>
+    
+    <!-- 腮红左 - 更明显的粉色 -->
+    <path
+        android:fillColor="#FF9AA2"
+        android:fillAlpha="0.7"
+        android:pathData="M30,64c-4,0 -7,2.5 -7,5.5c0,3 3,5.5 7,5.5c4,0 7,-2.5 7,-5.5c0,-3 -3,-5.5 -7,-5.5z"/>
     
     <!-- 腮红右 -->
     <path
-        android:fillColor="#FFB8B8"
-        android:fillAlpha="0.6"
-        android:pathData="M76,62c-3,0 -5,2 -5,4c0,2 2,4 5,4c3,0 5,-2 5,-4c0,-2 -2,-4 -5,-4z"/>
+        android:fillColor="#FF9AA2"
+        android:fillAlpha="0.7"
+        android:pathData="M78,64c-4,0 -7,2.5 -7,5.5c0,3 3,5.5 7,5.5c4,0 7,-2.5 7,-5.5c0,-3 -3,-5.5 -7,-5.5z"/>
 </vector>

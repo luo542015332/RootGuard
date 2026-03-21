@@ -18,6 +18,6 @@
     <color name="status_not_rooted">#FFFF1744</color>
     <color name="status_unknown">#FFFFA000</color>
     
-    <!-- Launcher Icon Background -->
-    <color name="ic_launcher_background">#FF2D3436</color>
+    <!-- Launcher Icon Background - 熊猫深蓝灰 -->
+    <color name="ic_launcher_background">#FF1A1A2E</color>
 </resources>

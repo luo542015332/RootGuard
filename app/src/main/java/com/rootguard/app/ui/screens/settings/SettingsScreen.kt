@@ -161,33 +161,11 @@ fun SettingsScreen(
             }
             
             item {
-                SettingsSection(title = "系统") {
-                    SettingsClickableItem(
-                        icon = Icons.Default.RestartAlt,
-                        title = "重启选项",
-                        onClick = { showRestartDialog = true }
-                    )
-                }
-            }
-            
-            item {
                 SettingsSection(title = "关于") {
                     SettingsInfoItem(
                         icon = Icons.Default.Info,
                         title = "版本",
                         value = uiState.appVersion
-                    )
-                    
-                    SettingsInfoItem(
-                        icon = Icons.Default.Code,
-                        title = "Magisk 版本",
-                        value = uiState.magiskVersion
-                    )
-                    
-                    SettingsInfoItem(
-                        icon = Icons.Default.Memory,
-                        title = "内核版本",
-                        value = uiState.kernelVersion
                     )
                     
                     SettingsClickableItem(
@@ -201,34 +179,9 @@ fun SettingsScreen(
                         title = "反馈问题",
                         onClick = { /* TODO */ }
                     )
-                    
-                    SettingsClickableItem(
-                        icon = Icons.Default.Delete,
-                        title = "卸载",
-                        onClick = { /* TODO */ }
-                    )
                 }
             }
         }
-    }
-    
-    // 重启对话框
-    if (showRestartDialog) {
-        RestartDialog(
-            onDismiss = { showRestartDialog = false },
-            onReboot = { viewModel.reboot() },
-            onRebootRecovery = { viewModel.rebootToRecovery() },
-            onRebootBootloader = { viewModel.rebootToBootloader() },
-            onShutdown = { showShutdownConfirm = true }
-        )
-    }
-    
-    // 关机确认对话框
-    if (showShutdownConfirm) {
-        ConfirmShutdownDialog(
-            onConfirm = { viewModel.shutdown() },
-            onDismiss = { showShutdownConfirm = false }
-        )
     }
 }
 

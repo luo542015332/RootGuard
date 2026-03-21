@@ -21,11 +21,11 @@ val PandaBlush = Color(0xFFFFCDD2)        // 腮红粉
 
 // ==================== 预设主题 ====================
 
-// 经典熊猫主题（黑白）
-val ClassicPandaPrimary = PandaBlack
-val ClassicPandaSecondary = PandaGray
-val ClassicPandaBackground = PandaWhite
-val ClassicPandaSurface = Color(0xFFF5F5F5)
+// 经典熊猫主题（黑白）- 优化配色
+val ClassicPandaPrimary = Color(0xFF2D3436)        // 深灰黑，更柔和
+val ClassicPandaSecondary = Color(0xFF636E72)      // 中灰
+val ClassicPandaBackground = Color(0xFFFAFAFA)     // 纯白背景
+val ClassicPandaSurface = Color(0xFFFFFFFF)        // 卡片白色
 
 // 竹林熊猫主题（绿色系）
 val BambooPandaPrimary = BambooGreen
