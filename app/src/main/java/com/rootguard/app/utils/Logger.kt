@@ -3,7 +3,7 @@ package com.rootguard.app.utils
 import android.util.Log
 
 object Logger {
-    private const val TAG = "RootGuard"
+    private const val TAG = "PandaSU"
     
     fun d(message: String) {
         Log.d(TAG, message)

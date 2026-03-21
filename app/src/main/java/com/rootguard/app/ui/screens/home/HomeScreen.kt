@@ -37,7 +37,7 @@ fun HomeScreen(
             TopAppBar(
                 title = { 
                     Text(
-                        "RootGuard",
+                        "PandaSU",
                         style = MaterialTheme.typography.headlineMedium
                     )
                 },
