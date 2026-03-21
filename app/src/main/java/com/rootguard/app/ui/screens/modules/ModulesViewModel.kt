@@ -68,11 +68,11 @@ class ModulesViewModel @Inject constructor(
         loadModules()
     }
 
-    fun toggleModule(moduleId: String) {
+    fun onToggleModule(moduleId: String) {
         viewModelScope.launch {
             val module = _uiState.value.modules.find { it.id == moduleId }
             module?.let {
-                val success = toggleModuleUseCase(it.id, !it.isEnabled)
+                val success = toggleModule(it.id, !it.isEnabled)
                 if (success) {
                     _uiState.update { state ->
                         state.copy(
@@ -88,9 +88,9 @@ class ModulesViewModel @Inject constructor(
         }
     }
 
-    fun uninstallModule(moduleId: String) {
+    fun onUninstallModule(moduleId: String) {
         viewModelScope.launch {
-            val success = uninstallModuleUseCase(moduleId)
+            val success = uninstallModule(moduleId)
             if (success) {
                 _uiState.update { state ->
                     state.copy(

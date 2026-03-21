@@ -142,8 +142,8 @@ fun ModulesScreen(
                         items(uiState.modules) { module ->
                             ModuleCard(
                                 module = module,
-                                onToggle = { viewModel.toggleModule(module.id) },
-                                onUninstall = { viewModel.uninstallModule(module.id) }
+                                onToggle = { viewModel.onToggleModule(module.id) },
+                                onUninstall = { viewModel.onUninstallModule(module.id) }
                             )
                         }
                     }

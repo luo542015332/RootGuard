@@ -31,7 +31,7 @@ fun LogsScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = { viewModel.clearLogs() }) {
+                    IconButton(onClick = { viewModel.onClearLogs() }) {
                         Icon(Icons.Default.Delete, contentDescription = "清空")
                     }
                     IconButton(onClick = { viewModel.refresh() }) {
