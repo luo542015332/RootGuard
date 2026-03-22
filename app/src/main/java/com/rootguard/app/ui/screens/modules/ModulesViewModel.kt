@@ -22,7 +22,15 @@ data class ModulesUiState(
     val modules: List<ModuleItem> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null,
-    val installStatus: InstallStatus = InstallStatus.Idle
+    val installStatus: InstallStatus = InstallStatus.Idle,
+    val isBulkBackingUp: Boolean = false,
+    val bulkBackupProgress: Int = 0,
+    val bulkBackupTotal: Int = 0,
+    val bulkBackupCurrent: String = "",
+    val isBulkRestoring: Boolean = false,
+    val bulkRestoreProgress: Int = 0,
+    val bulkRestoreTotal: Int = 0,
+    val bulkRestoreCurrent: String = ""
 )
 
 data class BackupUiState(
@@ -307,5 +315,85 @@ class ModulesViewModel @Inject constructor(
      */
     fun clearBackupStatus() {
         _backupState.update { BackupUiState() }
+    }
+
+    // ==================== 一键备份/恢复功能 ====================
+
+    /**
+     * 一键备份所有模块
+     */
+    fun backupAllModules() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isBulkBackingUp = true, bulkBackupProgress = 0) }
+
+            backupManager.backupAllModules(
+                onProgress = { current, total, moduleName ->
+                    _uiState.update {
+                        it.copy(
+                            bulkBackupProgress = current,
+                            bulkBackupTotal = total,
+                            bulkBackupCurrent = moduleName
+                        )
+                    }
+                }
+            )
+                .onSuccess { backups ->
+                    _uiState.update {
+                        it.copy(
+                            isBulkBackingUp = false,
+                            bulkBackupProgress = 0,
+                            bulkBackupCurrent = ""
+                        )
+                    }
+                    loadModules() // 刷新模块列表
+                }
+                .onFailure { error ->
+                    _uiState.update {
+                        it.copy(
+                            isBulkBackingUp = false,
+                            error = "一键备份失败: ${error.message}"
+                        )
+                    }
+                }
+        }
+    }
+
+    /**
+     * 一键恢复所有备份
+     */
+    fun restoreAllBackups() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isBulkRestoring = true, bulkRestoreProgress = 0) }
+
+            backupManager.restoreAllBackups(
+                onProgress = { current, total, moduleName ->
+                    _uiState.update {
+                        it.copy(
+                            bulkRestoreProgress = current,
+                            bulkRestoreTotal = total,
+                            bulkRestoreCurrent = moduleName
+                        )
+                    }
+                }
+            )
+                .onSuccess { restored ->
+                    _uiState.update {
+                        it.copy(
+                            isBulkRestoring = false,
+                            bulkRestoreProgress = 0,
+                            bulkRestoreCurrent = ""
+                        )
+                    }
+                    loadModules() // 刷新模块列表
+                }
+                .onFailure { error ->
+                    _uiState.update {
+                        it.copy(
+                            isBulkRestoring = false,
+                            error = "一键恢复失败: ${error.message}"
+                        )
+                    }
+                }
+        }
     }
 }

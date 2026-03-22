@@ -98,6 +98,14 @@ fun ModulesScreen(
                     }
                 },
                 actions = {
+                    // 一键备份按钮
+                    IconButton(onClick = { viewModel.backupAllModules() }, enabled = !uiState.isBulkBackingUp && !uiState.isBulkRestoring) {
+                        Icon(Icons.Default.CloudUpload, contentDescription = "一键备份")
+                    }
+                    // 一键恢复按钮
+                    IconButton(onClick = { viewModel.restoreAllBackups() }, enabled = !uiState.isBulkBackingUp && !uiState.isBulkRestoring) {
+                        Icon(Icons.Default.CloudDownload, contentDescription = "一键恢复")
+                    }
                     IconButton(onClick = { viewModel.refresh() }) {
                         Icon(Icons.Default.Refresh, contentDescription = "刷新")
                     }
@@ -179,6 +187,48 @@ fun ModulesScreen(
         )
     }
     
+    // 批量操作进度对话框
+    if (uiState.isBulkBackingUp || uiState.isBulkRestoring) {
+        val isBackup = uiState.isBulkBackingUp
+        AlertDialog(
+            onDismissRequest = { /* 不可取消 */ },
+            title = {
+                Text(if (isBackup) "正在备份所有模块" else "正在恢复所有备份")
+            },
+            text = {
+                Column {
+                    Text(
+                        text = if (isBackup) {
+                            "正在备份: ${uiState.bulkBackupCurrent}"
+                        } else {
+                            "正在恢复: ${uiState.bulkRestoreCurrent}"
+                        },
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    val progress = if (isBackup) {
+                        if (uiState.bulkBackupTotal > 0) uiState.bulkBackupProgress.toFloat() / uiState.bulkBackupTotal else 0f
+                    } else {
+                        if (uiState.bulkRestoreTotal > 0) uiState.bulkRestoreProgress.toFloat() / uiState.bulkRestoreTotal else 0f
+                    }
+
+                    LinearProgressIndicator(
+                        progress = { progress },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "${(progress * 100).toInt()}%",
+                        style = MaterialTheme.typography.bodySmall,
+                        modifier = Modifier.align(Alignment.End)
+                    )
+                }
+            },
+            confirmButton = { }
+        )
+    }
+
     // 结果对话框（带重启选项）
     if (showResultDialog) {
         AlertDialog(

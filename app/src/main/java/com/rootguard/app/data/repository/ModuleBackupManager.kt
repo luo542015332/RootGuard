@@ -40,6 +40,80 @@ class ModuleBackupManager @Inject constructor(
         }
 
     /**
+     * 一键备份所有模块
+     */
+    suspend fun backupAllModules(onProgress: (current: Int, total: Int, moduleName: String) -> Unit = { _, _, _ -> }): Result<List<ModuleBackup>> = withContext(Dispatchers.IO) {
+        try {
+            Logger.i("开始一键备份所有模块")
+
+            val modules = magiskProvider.getModules()
+            val results = mutableListOf<ModuleBackup>()
+            val failedModules = mutableListOf<String>()
+
+            modules.forEachIndexed { index, module ->
+                onProgress(index + 1, modules.size, module.name)
+
+                val result = backupModule(module.id)
+                if (result.isSuccess) {
+                    results.add(result.getOrNull()!!)
+                } else {
+                    failedModules.add(module.name)
+                    Logger.w("备份模块失败: ${module.name}")
+                }
+            }
+
+            val summary = if (failedModules.isEmpty()) {
+                "全部 ${modules.size} 个模块备份成功"
+            } else {
+                "备份完成: ${modules.size - failedModules.size}/${modules.size} 成功，失败: ${failedModules.joinToString(", ")}"
+            }
+
+            Logger.i(summary)
+            Result.success(results)
+        } catch (e: Exception) {
+            Logger.e("一键备份所有模块失败", e)
+            Result.failure(e)
+        }
+    }
+
+    /**
+     * 一键恢复所有备份模块
+     */
+    suspend fun restoreAllBackups(onProgress: (current: Int, total: Int, moduleName: String) -> Unit = { _, _, _ -> }): Result<List<String>> = withContext(Dispatchers.IO) {
+        try {
+            Logger.i("开始一键恢复所有备份")
+
+            val backups = getAllBackups()
+            val restoredModules = mutableListOf<String>()
+            val failedBackups = mutableListOf<String>()
+
+            backups.forEachIndexed { index, backup ->
+                onProgress(index + 1, backups.size, backup.name)
+
+                val result = restoreModule(backup.id)
+                if (result.isSuccess) {
+                    restoredModules.add(backup.name)
+                } else {
+                    failedBackups.add(backup.name)
+                    Logger.w("恢复备份失败: ${backup.name}")
+                }
+            }
+
+            val summary = if (failedBackups.isEmpty()) {
+                "全部 ${backups.size} 个备份恢复成功"
+            } else {
+                "恢复完成: ${backups.size - failedBackups.size}/${backups.size} 成功，失败: ${failedBackups.joinToString(", ")}"
+            }
+
+            Logger.i(summary)
+            Result.success(restoredModules)
+        } catch (e: Exception) {
+            Logger.e("一键恢复所有备份失败", e)
+            Result.failure(e)
+        }
+    }
+
+    /**
      * 备份模块
      */
     suspend fun backupModule(moduleId: String): Result<ModuleBackup> = withContext(Dispatchers.IO) {
