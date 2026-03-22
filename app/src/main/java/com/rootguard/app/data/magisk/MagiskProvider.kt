@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -32,14 +33,26 @@ class MagiskProvider @Inject constructor(
         private const val MAGISK_AUTHORITY = "com.topjohnwu.magisk.provider"
         private val dateFormat = SimpleDateFormat("MM-dd HH:mm:ss", Locale.getDefault())
         private const val MAGISK_PACKAGE = "com.topjohnwu.magisk"
-        
+
+        // Root 管理方案类型
+        private const val ROOT_TYPE_MAGISK = "magisk"
+        private const val ROOT_TYPE_KERNELSU = "kernelsu"
+
         // Magisk ContentProvider URI
         val MAGISK_URI: Uri = Uri.parse("content://$MAGISK_AUTHORITY")
         val MAGISK_FILE_URI: Uri = Uri.parse("content://$MAGISK_AUTHORITY/file")
-        
+
         // 模块路径
         const val MODULES_PATH = "/data/adb/modules"
         const val MAGISK_DB = "/data/adb/magisk.db"
+
+        // KernelSU 相关路径
+        private val KERNELSU_PATHS = listOf(
+            "/data/adb/ksu",
+            "/data/adb/modules",
+            "/dev/ksu",
+            "/sys/kernel/ksu"
+        )
     }
 
     /**
@@ -52,6 +65,45 @@ class MagiskProvider @Inject constructor(
         } catch (e: Exception) {
             false
         }
+    }
+
+    /**
+     * 检测 Root 类型
+     * @return "kernelsu" 或 "magisk"
+     */
+    private suspend fun detectRootType(): String = withContext(Dispatchers.IO) {
+        // 检查 KernelSU
+        KERNELSU_PATHS.forEach { path ->
+            if (File(path).exists()) {
+                // 进一步验证 ksu 命令
+                try {
+                    val process = Runtime.getRuntime().exec("su -c ksu -v")
+                    process.waitFor()
+                    if (process.exitValue() == 0) {
+                        Logger.d("Detected KernelSU")
+                        return@withContext ROOT_TYPE_KERNELSU
+                    }
+                } catch (e: Exception) {
+                    Logger.w("ksu command failed: ${e.message}")
+                }
+            }
+        }
+
+        // 检查 Magisk
+        try {
+            val process = Runtime.getRuntime().exec("su -c magisk -v")
+            process.waitFor()
+            if (process.exitValue() == 0) {
+                Logger.d("Detected Magisk")
+                return@withContext ROOT_TYPE_MAGISK
+            }
+        } catch (e: Exception) {
+            Logger.w("magisk command failed: ${e.message}")
+        }
+
+        // 默认使用 Magisk 兼容模式
+        Logger.d("Root type not detected, defaulting to Magisk")
+        return@withContext ROOT_TYPE_MAGISK
     }
 
     /**
@@ -199,15 +251,114 @@ class MagiskProvider @Inject constructor(
 
     /**
      * 安装模块（从 zip 文件）
+     * 支持 Magisk 和 KernelSU
      */
     suspend fun installModule(zipPath: String): Boolean = withContext(Dispatchers.IO) {
         try {
-            // 使用 Magisk 的模块安装命令
-            val process = Runtime.getRuntime().exec("su -c magisk --install-module \"$zipPath\"")
-            process.waitFor()
-            process.exitValue() == 0
+            Logger.d("Installing module from: $zipPath")
+
+            // 检测 Root 类型
+            val rootType = detectRootType()
+            Logger.d("Detected root type: $rootType")
+
+            val success = when (rootType) {
+                ROOT_TYPE_KERNELSU -> installKernelSUModule(zipPath)
+                ROOT_TYPE_MAGISK -> installMagiskModule(zipPath)
+                else -> {
+                    Logger.w("Unknown root type, trying Magisk installation")
+                    installMagiskModule(zipPath)
+                }
+            }
+
+            Logger.d("Module installation result: $success")
+            success
         } catch (e: Exception) {
             Logger.e("Failed to install module: $zipPath", e)
+            false
+        }
+    }
+
+    /**
+     * 使用 Magisk 命令安装模块
+     */
+    private suspend fun installMagiskModule(zipPath: String): Boolean {
+        return try {
+            val process = Runtime.getRuntime().exec("su -c magisk --install-module \"$zipPath\"")
+            process.waitFor()
+            val exitCode = process.exitValue()
+
+            if (exitCode != 0) {
+                val error = process.errorStream.bufferedReader().readText()
+                Logger.e("Magisk install failed with exit code $exitCode: $error")
+            }
+
+            exitCode == 0
+        } catch (e: Exception) {
+            Logger.e("Failed to install via Magisk command", e)
+            false
+        }
+    }
+
+    /**
+     * 使用 KernelSU 方式安装模块
+     * KernelSU 不支持 magisk --install-module,需要手动复制文件
+     */
+    private suspend fun installKernelSUModule(zipPath: String): Boolean {
+        return try {
+            // 创建临时目录
+            val tempDir = "/data/local/tmp/module_${System.currentTimeMillis()}"
+            Runtime.getRuntime().exec("su -c mkdir -p $tempDir").waitFor()
+
+            // 解压 zip 文件
+            val extractProcess = Runtime.getRuntime().exec("su -c unzip -o \"$zipPath\" -d $tempDir")
+            extractProcess.waitFor()
+
+            if (extractProcess.exitValue() != 0) {
+                Logger.e("Failed to extract module zip")
+                return false
+            }
+
+            // 检查是否有 module.prop
+            val moduleProp = Runtime.getRuntime().exec("su -c ls $tempDir/module.prop")
+            moduleProp.waitFor()
+
+            if (moduleProp.exitValue() != 0) {
+                Logger.e("No module.prop found, not a valid module")
+                Runtime.getRuntime().exec("su -c rm -rf $tempDir").waitFor()
+                return false
+            }
+
+            // 读取 module.prop 获取模块 ID
+            val propProcess = Runtime.getRuntime().exec("su -c cat $tempDir/module.prop")
+            val propContent = propProcess.inputStream.bufferedReader().readText()
+            propProcess.waitFor()
+
+            val moduleId = propContent.lines()
+                .firstOrNull { it.startsWith("id=") }
+                ?.substring(3)
+                ?.trim() ?: "module_${System.currentTimeMillis()}"
+
+            // 创建模块目录
+            val modulePath = "$MODULES_PATH/$moduleId"
+            Runtime.getRuntime().exec("su -c mkdir -p $modulePath").waitFor()
+
+            // 复制所有文件到模块目录
+            val copyProcess = Runtime.getRuntime().exec("su -c cp -r $tempDir/* $modulePath/")
+            copyProcess.waitFor()
+
+            // 设置权限
+            Runtime.getRuntime().exec("su -c chmod -R 755 $modulePath").waitFor()
+
+            // 清理临时目录
+            Runtime.getRuntime().exec("su -c rm -rf $tempDir").waitFor()
+
+            // 设置模块启用(移除 disable 文件)
+            Runtime.getRuntime().exec("su -c rm -f $modulePath/disable").waitFor()
+
+            Logger.d("KernelSU module installed at: $modulePath")
+            true
+        } catch (e: Exception) {
+            Logger.e("Failed to install via KernelSU", e)
             false
         }
     }
