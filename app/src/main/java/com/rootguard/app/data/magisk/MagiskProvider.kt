@@ -636,11 +636,14 @@ class MagiskProvider @Inject constructor(
         try {
             val pm = context.packageManager
             // 获取所有已安装应用（包括系统应用和用户应用）
-            // 使用正确的 flags 确保获取所有应用
+            // 使用多个 flags 确保获取所有应用，包括微信、QQ等
             val packages = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
                 // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
-                // 0 表示没有任何 flags，返回所有应用
-                pm.getInstalledApplications(PackageManager.ApplicationInfoFlags.of(0))
+                // 使用多个 flags: MATCH_ALL 确保获取所有应用
+                val flags = PackageManager.ApplicationInfoFlags.of(
+                    PackageManager.MATCH_ALL.toLong()
+                )
+                pm.getInstalledApplications(flags)
             } else {
                 @Suppress("DEPRECATION")
                 // Android 12 及以下使用 GET_META_DATA
@@ -980,24 +983,23 @@ class MagiskProvider @Inject constructor(
 
     /**
      * 判断是否为系统应用
-     * 
+     *
      * 系统应用判断逻辑：
-     * 1. 检查 FLAG_SYSTEM 标志
-     * 2. 进一步检查安装路径，排除被错误标记的用户应用
-     * 3. 某些 ROM（如 MIUI）可能将用户应用标记为 FLAG_SYSTEM，
-     *    但它们的安装路径仍在 /data/app/ 下
-     * 
+     * 1. 首先检查 FLAG_SYSTEM 标志 - 这是最主要的判断依据
+     * 2. 如果应用在 /data/app/ 下但有 FLAG_SYSTEM，仍然算作系统应用（MIUI 等 ROM）
+     * 3. 如果没有 FLAG_SYSTEM 标志，但安装在系统路径下，也算作系统应用
+     *
      * @param appInfo 应用信息
      * @return true 如果是系统应用，false 如果是用户应用
      */
     private fun isSystemApp(appInfo: android.content.pm.ApplicationInfo): Boolean {
-        // 检查安装路径 - 这是最可靠的判断方式
-        val sourceDir = appInfo.sourceDir ?: return false
-
-        // 用户应用通常安装在 /data/app/ 下
-        if (sourceDir.contains("/data/app/")) {
-            return false
+        // 方法1：检查 FLAG_SYSTEM 标志（最主要）
+        if ((appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0) {
+            return true
         }
+
+        // 方法2：检查安装路径作为备选判断
+        val sourceDir = appInfo.sourceDir ?: return false
 
         // 系统应用安装在 /system/、/vendor/、/product/、/apex/ 等目录下
         val isSystemPath = sourceDir.contains("/system/") ||
