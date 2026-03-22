@@ -629,7 +629,7 @@ class MagiskProvider @Inject constructor(
 
     /**
      * 获取所有已安装的应用（包括系统应用）
-     * v1.4.36: 尝试 KernelSU 数据库方法获取应用列表
+     * v1.4.37: 使用 ksud 命令获取应用列表（KernelSU 官方方法）
      */
     suspend fun getAllInstalledApps(): List<InstalledAppInfo> = withContext(Dispatchers.IO) {
         val apps = mutableListOf<InstalledAppInfo>()
@@ -639,92 +639,100 @@ class MagiskProvider @Inject constructor(
             val rootType = detectRootType()
             Logger.d("Root type: $rootType")
 
-            // 尝试方法 1: 使用 KernelSU 数据库获取应用列表
-            val ksuPackages = if (rootType.contains("KernelSU")) {
-                Logger.d("Trying KernelSU database method")
+            // 方法 1: 尝试使用 KernelSU ksud 命令获取应用列表
+            val packages = if (rootType.contains("KernelSU")) {
+                Logger.d("Trying KernelSU ksud command method")
                 try {
-                    // 检测使用的 KernelSU 管理器
-                    val ksuPackage = when {
-                        fileExists("/data/data/me.weishu.kernelsu/databases/app.db") -> "me.weishu.kernelsu"
-                        fileExists("/data/data/com.tiann.kernelsu/databases/kernelsu.db") -> "com.tiann.kernelsu"
-                        else -> {
-                            Logger.w("KernelSU database not found, falling back to PackageManager")
-                            null
+                    // 先尝试 ksud 命令获取应用列表
+                    val ksudOutput = try {
+                        val process = Runtime.getRuntime().exec(
+                            arrayOf("su", "-c", "ksud", "app-list")
+                        )
+                        val output = process.inputStream.bufferedReader().readText()
+                        val error = process.errorStream.bufferedReader().readText()
+                        val exitCode = process.waitFor()
+
+                        Logger.d("ksud app-list exitCode: $exitCode")
+                        if (error.isNotEmpty()) {
+                            Logger.d("ksud app-list error: $error")
                         }
+                        output
+                    } catch (e: Exception) {
+                        Logger.w("ksud command failed: ${e.message}")
+                        ""
                     }
 
-                    if (ksuPackage != null) {
-                        Logger.d("Detected KernelSU manager: $ksuPackage")
-                        val dbName = when (ksuPackage) {
-                            "me.weishu.kernelsu" -> "/data/data/me.weishu.kernelsu/databases/app.db"
-                            "com.tiann.kernelsu" -> "/data/data/com.tiann.kernelsu/databases/kernelsu.db"
-                            else -> "/data/data/me.weishu.kernelsu/databases/app.db"
-                        }
+                    // 解析 ksud 输出（JSON 格式）
+                    val appListFromKsud = if (ksudOutput.isNotEmpty()) {
+                        try {
+                            // ksud 返回 JSON 格式的应用列表
+                            val packageNames = mutableListOf<String>()
+                            val lines = ksudOutput.lines()
 
-                        // 从 KernelSU 数据库查询所有已设置策略的应用
-                        val appListQuery = when (ksuPackage) {
-                            "me.weishu.kernelsu" -> "SELECT DISTINCT package_name FROM rules"
-                            "com.tiann.kernelsu" -> "SELECT DISTINCT package_name FROM uid_policy"
-                            else -> "SELECT DISTINCT package_name FROM rules"
-                        }
-
-                        val queryResult = try {
-                            val process = Runtime.getRuntime().exec(
-                                arrayOf("su", "-c", "sqlite3", dbName, appListQuery)
-                            )
-                            val output = process.inputStream.bufferedReader().readText()
-                            val error = process.errorStream.bufferedReader().readText()
-                            process.waitFor()
-                            output.trim().lines()
-                        } catch (e: Exception) {
-                            Logger.e("Failed to query KernelSU database", e)
-                            emptyList()
-                        }
-
-                        if (queryResult.isNotEmpty()) {
-                            Logger.d("KernelSU database returned ${queryResult.size} apps")
-                            // 从数据库获取的包名列表 + PackageManager 获取所有应用
-                            val allPackages = queryResult.mapNotNull { packageName ->
-                                try {
-                                    pm.getApplicationInfo(packageName, 0)
-                                } catch (e: Exception) {
-                                    Logger.w("Failed to get ApplicationInfo for $packageName")
-                                    null
+                            // ksud app-list 的输出格式是 JSON，但我们也尝试解析文本格式
+                            lines.forEach { line ->
+                                if (line.contains("package_name")) {
+                                    // JSON 格式: "package_name": "com.xxx.xxx"
+                                    val packageName = line.substringAfter("\"package_name\": \"")
+                                        .substringBefore("\"")
+                                        .trim()
+                                    if (packageName.isNotEmpty()) {
+                                        packageNames.add(packageName)
+                                    }
                                 }
                             }
-                            Logger.d("Retrieved ${allPackages.size} apps from KernelSU database")
-                            allPackages
-                        } else {
-                            Logger.w("KernelSU database query returned empty, falling back to PackageManager")
-                            null
+
+                            Logger.d("ksud returned ${packageNames.size} packages")
+                            packageNames
+                        } catch (e: Exception) {
+                            Logger.e("Failed to parse ksud output", e)
+                            emptyList()
                         }
                     } else {
+                        emptyList()
+                    }
+
+                    // 如果 ksud 返回了应用列表，使用它
+                    if (appListFromKsud.isNotEmpty()) {
+                        Logger.d("Using ksud app-list result (${appListFromKsud.size} packages)")
+                        appListFromKsud.mapNotNull { packageName ->
+                            try {
+                                pm.getApplicationInfo(packageName, 0)
+                            } catch (e: Exception) {
+                                Logger.w("Failed to get ApplicationInfo for $packageName")
+                                null
+                            }
+                        }
+                    } else {
+                        // ksud 失败，使用 pm 命令作为回退
+                        Logger.d("ksud returned empty, falling back to pm command")
                         null
                     }
                 } catch (e: Exception) {
-                    Logger.e("KernelSU database method failed", e)
+                    Logger.e("ksud method failed", e)
                     null
                 }
             } else {
                 null
             }
 
-            // 尝试方法 2: 使用 pm list packages 命令（如果方法 1 失败）
-            val finalPackages = if (ksuPackages != null) {
-                ksuPackages
+            // 方法 2: 使用 pm list packages 命令（如果方法 1 失败或不是 KernelSU）
+            val finalPackages = if (packages != null) {
+                packages
             } else {
                 Logger.d("Trying pm list packages command")
                 try {
+                    // 使用 pm list packages 获取所有应用
                     val process = Runtime.getRuntime().exec(
-                        arrayOf("su", "-c", "pm", "list", "packages", "-3")  // -3 只显示第三方应用
+                        arrayOf("su", "-c", "pm", "list", "packages")
                     )
                     val output = process.inputStream.bufferedReader().readText()
                     val errorOutput = process.errorStream.bufferedReader().readText()
                     val exitCode = process.waitFor()
 
-                    Logger.d("pm command exitCode: $exitCode")
+                    Logger.d("pm list packages exitCode: $exitCode")
                     if (errorOutput.isNotEmpty()) {
-                        Logger.d("pm command error: $errorOutput")
+                        Logger.d("pm list packages error: $errorOutput")
                     }
 
                     val packageNames = output.lines()
@@ -734,22 +742,8 @@ class MagiskProvider @Inject constructor(
                     Logger.d("pm list packages returned ${packageNames.size} packages")
 
                     if (packageNames.isNotEmpty()) {
-                        // 再获取系统应用
-                        val systemProcess = Runtime.getRuntime().exec(
-                            arrayOf("su", "-c", "pm", "list", "packages", "-s")  // -s 只显示系统应用
-                        )
-                        val systemOutput = systemProcess.inputStream.bufferedReader().readText()
-                        val systemPackages = systemOutput.lines()
-                            .map { it.substringAfter("package:").trim() }
-                            .filter { it.isNotEmpty() }
-
-                        Logger.d("pm list packages -s returned ${systemPackages.size} system packages")
-
-                        val allPackageNames = packageNames + systemPackages
-                        Logger.d("Total packages from pm commands: ${allPackageNames.size}")
-
                         // 获取所有应用的 ApplicationInfo
-                        val allApps = allPackageNames.mapNotNull { packageName ->
+                        val allApps = packageNames.mapNotNull { packageName ->
                             try {
                                 pm.getApplicationInfo(packageName, 0)
                             } catch (e: Exception) {
@@ -757,20 +751,20 @@ class MagiskProvider @Inject constructor(
                                 null
                             }
                         }
-                        Logger.d("Retrieved ${allApps.size} apps from pm commands")
+                        Logger.d("Retrieved ${allApps.size} apps from pm command")
                         allApps
                     } else {
                         null
                     }
                 } catch (e: Exception) {
-                    Logger.e("pm commands failed", e)
+                    Logger.e("pm command failed", e)
                     null
                 }
             }
 
-            // 尝试方法 3: PackageManager API（最后回退）
-            val packages = if (finalPackages != null) {
-                Logger.d("Using pm command result (${finalPackages.size} packages)")
+            // 方法 3: PackageManager API（最后回退）
+            val packagesToUse = if (finalPackages != null) {
+                Logger.d("Using command result (${finalPackages.size} packages)")
                 finalPackages
             } else {
                 Logger.d("Falling back to PackageManager API")
@@ -789,13 +783,13 @@ class MagiskProvider @Inject constructor(
                                 PackageManager.GET_UNINSTALLED_PACKAGES
                     pm.getInstalledApplications(flags)
                 }
-            } ?: emptyList()  // 如果所有方法都失败，返回空列表
+            } ?: emptyList()
 
-            Logger.d("Final packages count: ${packages.size}")
+            Logger.d("Final packages count: ${packagesToUse.size}")
 
             // 检查微信、QQ 是否在列表中
             val keyApps = listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")
-            val foundKeyApps = packages.map { it.packageName }.filter { it in keyApps }
+            val foundKeyApps = packagesToUse.map { it.packageName }.filter { it in keyApps }
             Logger.d("Key apps found in list: $foundKeyApps")
 
             // 先获取默认图标，避免每次都获取
@@ -805,7 +799,7 @@ class MagiskProvider @Inject constructor(
                 null
             }
 
-            packages.forEachIndexed { index, appInfo ->
+            packagesToUse.forEachIndexed { index, appInfo ->
                 try {
                     val packageName = appInfo.packageName
 
