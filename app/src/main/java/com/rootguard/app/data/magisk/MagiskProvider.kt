@@ -639,18 +639,20 @@ class MagiskProvider @Inject constructor(
             // 使用多个 flags 确保获取所有应用，包括微信、QQ等
             val packages = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
                 // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
-                // 使用多个 flags: MATCH_ALL 确保获取所有应用
-                val flags = PackageManager.ApplicationInfoFlags.of(
-                    PackageManager.MATCH_ALL.toLong()
-                )
-                pm.getInstalledApplications(flags)
+                // 使用 0 表示没有任何 flags，返回所有应用
+                pm.getInstalledApplications(PackageManager.ApplicationInfoFlags.of(0))
             } else {
                 @Suppress("DEPRECATION")
-                // Android 12 及以下使用 GET_META_DATA
-                pm.getInstalledApplications(PackageManager.GET_META_DATA)
+                // Android 12 及以下使用 0 获取所有应用
+                pm.getInstalledApplications(0)
             }
 
             Logger.d("PackageManager returned ${packages.size} packages")
+
+            // 检查微信、QQ 是否在列表中
+            val keyApps = listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")
+            val foundKeyApps = packages.map { it.packageName }.filter { it in keyApps }
+            Logger.d("Key apps found in list: $foundKeyApps")
 
             // 先获取默认图标，避免每次都获取
             val defaultIcon = try {
