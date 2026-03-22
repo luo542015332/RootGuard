@@ -10,6 +10,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 
@@ -19,8 +20,11 @@ fun LogsScreen(
     onNavigateBack: () -> Unit,
     viewModel: LogsViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     val uiState by viewModel.uiState.collectAsState()
-    
+    var showExportDialog by remember { mutableStateOf(false) }
+    var exportedFilePath by remember { mutableStateOf<String?>(null) }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -31,6 +35,9 @@ fun LogsScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = { showExportDialog = true }) {
+                        Icon(Icons.Default.Share, contentDescription = "导出")
+                    }
                     IconButton(onClick = { viewModel.onClearLogs() }) {
                         Icon(Icons.Default.Delete, contentDescription = "清空")
                     }
@@ -52,6 +59,44 @@ fun LogsScreen(
                 LogItem(log = log)
             }
         }
+    }
+
+    // 导出对话框
+    if (showExportDialog) {
+        AlertDialog(
+            onDismissRequest = { showExportDialog = false },
+            title = { Text("导出日志") },
+            text = {
+                Text(
+                    if (exportedFilePath == null) {
+                        "是否导出当前日志到文件？"
+                    } else {
+                        "日志已导出到:\n$exportedFilePath\n\n请使用文件管理器查看或分享该文件。"
+                    }
+                )
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        if (exportedFilePath == null) {
+                            exportedFilePath = viewModel.exportLogs(context)
+                            if (exportedFilePath == null) {
+                                showExportDialog = false
+                            }
+                        } else {
+                            showExportDialog = false
+                        }
+                    }
+                ) {
+                    Text(if (exportedFilePath == null) "导出" else "确定")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showExportDialog = false }) {
+                    Text("取消")
+                }
+            }
+        )
     }
 }
 
