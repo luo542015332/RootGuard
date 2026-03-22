@@ -664,11 +664,20 @@ class MagiskProvider @Inject constructor(
             packages.forEachIndexed { index, appInfo ->
                 try {
                     val packageName = appInfo.packageName
+
+                    // 记录关键应用的详细信息（在任何异常之前）
+                    if (packageName in listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")) {
+                        Logger.d("Processing key app: $packageName")
+                    }
+
                     val sourceDir = appInfo.sourceDir ?: ""
                     val isSystemApp = isSystemApp(appInfo)
+
+                    // 获取应用名称，失败时使用包名
                     val appName = try {
                         pm.getApplicationLabel(appInfo).toString()
                     } catch (e: Exception) {
+                        Logger.w("Failed to get label for $packageName, using package name")
                         packageName
                     }
 
