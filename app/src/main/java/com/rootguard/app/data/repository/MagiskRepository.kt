@@ -89,7 +89,7 @@ class MagiskRepository @Inject constructor(
     }
 
     /**
-     * 获取应用列表及其 Root 权限状态
+     * 获取应用列表及其 Root 权限状态和隔离状态
      * 显示所有已安装应用，包括没有 Root 策略记录的应用
      */
     suspend fun getAppsWithRootStatus(): List<AppItem> = withContext(Dispatchers.IO) {
@@ -127,15 +127,20 @@ class MagiskRepository @Inject constructor(
                 }
             }
 
+            // TODO: 从隔离数据库读取隔离级别
+            // 暂时所有应用都未设置隔离
             AppItem(
                 packageName = appInfo.packageName,
                 name = appInfo.appName,
                 rootStatus = status,
                 isSystemApp = appInfo.isSystemApp,
-                icon = appInfo.icon
+                icon = appInfo.icon,
+                isIsolated = false,
+                isolationLevel = "未设置"
             )
         }.sortedWith(
             compareByDescending<AppItem> { it.rootStatus == RootAccessStatus.GRANTED }
+                .thenByDescending { it.isIsolated }
                 .thenBy { it.name }
         )
     }

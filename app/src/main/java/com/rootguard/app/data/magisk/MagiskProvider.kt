@@ -629,64 +629,167 @@ class MagiskProvider @Inject constructor(
 
     /**
      * 获取所有已安装的应用（包括系统应用）
+     * v1.4.36: 尝试 KernelSU 数据库方法获取应用列表
      */
     suspend fun getAllInstalledApps(): List<InstalledAppInfo> = withContext(Dispatchers.IO) {
         val apps = mutableListOf<InstalledAppInfo>()
 
         try {
             val pm = context.packageManager
+            val rootType = detectRootType()
+            Logger.d("Root type: $rootType")
 
-            // 首先尝试使用 ADB 命令获取完整的应用列表
-            val packageNames = try {
-                val process = Runtime.getRuntime().exec(
-                    arrayOf("su", "-c", "pm", "list", "packages")
-                )
-                val output = process.inputStream.bufferedReader().readText()
-                process.waitFor()
-                output.lines()
-                    .map { it.substringAfter("package:").trim() }
-                    .filter { it.isNotEmpty() }
-            } catch (e: Exception) {
-                Logger.w("Failed to get packages via pm command: ${e.message}")
-                emptyList()
-            }
+            // 尝试方法 1: 使用 KernelSU 数据库获取应用列表
+            val ksuPackages = if (rootType.contains("KernelSU")) {
+                Logger.d("Trying KernelSU database method")
+                try {
+                    // 检测使用的 KernelSU 管理器
+                    val ksuPackage = when {
+                        fileExists("/data/data/me.weishu.kernelsu/databases/app.db") -> "me.weishu.kernelsu"
+                        fileExists("/data/data/com.tiann.kernelsu/databases/kernelsu.db") -> "com.tiann.kernelsu"
+                        else -> {
+                            Logger.w("KernelSU database not found, falling back to PackageManager")
+                            null
+                        }
+                    }
 
-            Logger.d("pm list packages returned ${packageNames.size} packages")
+                    if (ksuPackage != null) {
+                        Logger.d("Detected KernelSU manager: $ksuPackage")
+                        val dbName = when (ksuPackage) {
+                            "me.weishu.kernelsu" -> "/data/data/me.weishu.kernelsu/databases/app.db"
+                            "com.tiann.kernelsu" -> "/data/data/com.tiann.kernelsu/databases/kernelsu.db"
+                            else -> "/data/data/me.weishu.kernelsu/databases/app.db"
+                        }
 
-            // 如果 ADB 命令成功且返回更多应用，使用这个列表
-            val usePmCommand = packageNames.size > 302 // 如果 pm 命令返回超过 PackageManager API 的数量
+                        // 从 KernelSU 数据库查询所有已设置策略的应用
+                        val appListQuery = when (ksuPackage) {
+                            "me.weishu.kernelsu" -> "SELECT DISTINCT package_name FROM rules"
+                            "com.tiann.kernelsu" -> "SELECT DISTINCT package_name FROM uid_policy"
+                            else -> "SELECT DISTINCT package_name FROM rules"
+                        }
 
-            val packages = if (usePmCommand) {
-                Logger.d("Using pm command result (${packageNames.size} packages)")
-                packageNames.mapNotNull { packageName ->
-                    try {
-                        pm.getApplicationInfo(packageName, 0)
-                    } catch (e: Exception) {
-                        Logger.w("Failed to get ApplicationInfo for $packageName: ${e.message}")
+                        val queryResult = try {
+                            val process = Runtime.getRuntime().exec(
+                                arrayOf("su", "-c", "sqlite3", dbName, appListQuery)
+                            )
+                            val output = process.inputStream.bufferedReader().readText()
+                            val error = process.errorStream.bufferedReader().readText()
+                            process.waitFor()
+                            output.trim().lines()
+                        } catch (e: Exception) {
+                            Logger.e("Failed to query KernelSU database", e)
+                            emptyList()
+                        }
+
+                        if (queryResult.isNotEmpty()) {
+                            Logger.d("KernelSU database returned ${queryResult.size} apps")
+                            // 从数据库获取的包名列表 + PackageManager 获取所有应用
+                            val allPackages = queryResult.mapNotNull { packageName ->
+                                try {
+                                    pm.getApplicationInfo(packageName, 0)
+                                } catch (e: Exception) {
+                                    Logger.w("Failed to get ApplicationInfo for $packageName")
+                                    null
+                                }
+                            }
+                            Logger.d("Retrieved ${allPackages.size} apps from KernelSU database")
+                            allPackages
+                        } else {
+                            Logger.w("KernelSU database query returned empty, falling back to PackageManager")
+                            null
+                        }
+                    } else {
                         null
                     }
+                } catch (e: Exception) {
+                    Logger.e("KernelSU database method failed", e)
+                    null
                 }
             } else {
-                // 回退到 PackageManager API（原方案）
-                Logger.d("Using PackageManager API")
+                null
+            }
+
+            // 尝试方法 2: 使用 pm list packages 命令（如果方法 1 失败）
+            val finalPackages = if (ksuPackages != null) {
+                ksuPackages
+            } else {
+                Logger.d("Trying pm list packages command")
+                try {
+                    val process = Runtime.getRuntime().exec(
+                        arrayOf("su", "-c", "pm", "list", "packages", "-3")  // -3 只显示第三方应用
+                    )
+                    val output = process.inputStream.bufferedReader().readText()
+                    val errorOutput = process.errorStream.bufferedReader().readText()
+                    val exitCode = process.waitFor()
+
+                    Logger.d("pm command exitCode: $exitCode")
+                    if (errorOutput.isNotEmpty()) {
+                        Logger.d("pm command error: $errorOutput")
+                    }
+
+                    val packageNames = output.lines()
+                        .map { it.substringAfter("package:").trim() }
+                        .filter { it.isNotEmpty() }
+
+                    Logger.d("pm list packages returned ${packageNames.size} packages")
+
+                    if (packageNames.isNotEmpty()) {
+                        // 再获取系统应用
+                        val systemProcess = Runtime.getRuntime().exec(
+                            arrayOf("su", "-c", "pm", "list", "packages", "-s")  // -s 只显示系统应用
+                        )
+                        val systemOutput = systemProcess.inputStream.bufferedReader().readText()
+                        val systemPackages = systemOutput.lines()
+                            .map { it.substringAfter("package:").trim() }
+                            .filter { it.isNotEmpty() }
+
+                        Logger.d("pm list packages -s returned ${systemPackages.size} system packages")
+
+                        val allPackageNames = packageNames + systemPackages
+                        Logger.d("Total packages from pm commands: ${allPackageNames.size}")
+
+                        // 获取所有应用的 ApplicationInfo
+                        val allApps = allPackageNames.mapNotNull { packageName ->
+                            try {
+                                pm.getApplicationInfo(packageName, 0)
+                            } catch (e: Exception) {
+                                Logger.w("Failed to get ApplicationInfo for $packageName")
+                                null
+                            }
+                        }
+                        Logger.d("Retrieved ${allApps.size} apps from pm commands")
+                        allApps
+                    } else {
+                        null
+                    }
+                } catch (e: Exception) {
+                    Logger.e("pm commands failed", e)
+                    null
+                }
+            }
+
+            // 尝试方法 3: PackageManager API（最后回退）
+            val packages = if (finalPackages != null) {
+                Logger.d("Using pm command result (${finalPackages.size} packages)")
+                finalPackages
+            } else {
+                Logger.d("Falling back to PackageManager API")
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
                     // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
-                    val flags = PackageManager.MATCH_ALL.toLong() or
-                               PackageManager.MATCH_DISABLED_COMPONENTS.toLong() or
-                               PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS.toLong() or
-                               PackageManager.MATCH_UNINSTALLED_PACKAGES.toLong()
-                    pm.getInstalledApplications(
-                        PackageManager.ApplicationInfoFlags.of(flags)
-                    )
+                    @Suppress("DEPRECATION")
+                    val flags = PackageManager.MATCH_ALL or
+                               PackageManager.MATCH_DISABLED_COMPONENTS or
+                               PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS or
+                               PackageManager.MATCH_UNINSTALLED_PACKAGES
+                    pm.getInstalledApplications(flags)
                 } else {
                     @Suppress("DEPRECATION")
-                    // Android 12 及以下组合多个 flags
                     val flags = PackageManager.GET_META_DATA or
                                 PackageManager.GET_DISABLED_COMPONENTS or
                                 PackageManager.GET_UNINSTALLED_PACKAGES
                     pm.getInstalledApplications(flags)
                 }
-            }
+            } ?: emptyList()  // 如果所有方法都失败，返回空列表
 
             Logger.d("Final packages count: ${packages.size}")
 
@@ -1107,4 +1210,18 @@ enum class LogLevel {
     INFO,
     WARNING,
     ERROR
+}
+
+/**
+ * 使用 Root 命令检查文件是否存在
+ */
+private suspend fun fileExists(path: String): Boolean = withContext(Dispatchers.IO) {
+    try {
+        val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "test", "-f", path))
+        process.waitFor()
+        process.exitValue() == 0
+    } catch (e: Exception) {
+        Logger.w("Failed to check file existence for $path: ${e.message}")
+        false
+    }
 }

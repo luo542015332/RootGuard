@@ -37,7 +37,6 @@ fun HomeScreen(
     onNavigateToApps: () -> Unit,
     onNavigateToLogs: () -> Unit,
     onNavigateToSettings: () -> Unit,
-    onNavigateToIsolation: () -> Unit,
     onNavigateToInstall: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
@@ -101,11 +100,11 @@ fun HomeScreen(
             
             item {
                 FeatureSection(
+                    isRooted = uiState.rootStatus == RootStatus.ROOTED,
                     onModulesClick = onNavigateToModules,
                     onAppsClick = onNavigateToApps,
                     onLogsClick = onNavigateToLogs,
                     onRebootClick = { showRestartDialog = true },
-                    onIsolationClick = onNavigateToIsolation,
                     onInstallClick = onNavigateToInstall
                 )
             }
@@ -345,11 +344,11 @@ private data class Quad<A, B, C, D>(val first: A, val second: B, val third: C, v
  */
 @Composable
 fun FeatureSection(
+    isRooted: Boolean,
     onModulesClick: () -> Unit,
     onAppsClick: () -> Unit,
     onLogsClick: () -> Unit,
     onRebootClick: () -> Unit,
-    onIsolationClick: () -> Unit,
     onInstallClick: () -> Unit
 ) {
     Column {
@@ -381,7 +380,7 @@ fun FeatureSection(
             )
         }
         
-        // 功能卡片网格 - 3列布局
+        // 功能卡片网格 - 2列布局
         Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -394,15 +393,17 @@ fun FeatureSection(
                     emoji = "🧩",
                     color = Color(0xFFE3F2FD),
                     onClick = onModulesClick,
+                    enabled = isRooted,
                     modifier = Modifier.weight(1f)
                 )
                 FeatureCard(
                     icon = Icons.Outlined.Apps,
                     title = "应用",
-                    subtitle = "授权",
+                    subtitle = "管理",
                     emoji = "📱",
                     color = Color(0xFFF3E5F5),
                     onClick = onAppsClick,
+                    enabled = isRooted,
                     modifier = Modifier.weight(1f)
                 )
                 FeatureCard(
@@ -412,6 +413,7 @@ fun FeatureSection(
                     emoji = "📋",
                     color = Color(0xFFFFF3E0),
                     onClick = onLogsClick,
+                    enabled = isRooted,
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -426,15 +428,7 @@ fun FeatureSection(
                     emoji = "🔄",
                     color = Color(0xFFE8F5E9),
                     onClick = onRebootClick,
-                    modifier = Modifier.weight(1f)
-                )
-                FeatureCard(
-                    icon = Icons.Outlined.Security,
-                    title = "一键",
-                    subtitle = "隔离",
-                    emoji = "🛡️",
-                    color = Color(0xFFE1F5FE),
-                    onClick = onIsolationClick,
+                    enabled = true,
                     modifier = Modifier.weight(1f)
                 )
                 FeatureCard(
@@ -444,6 +438,7 @@ fun FeatureSection(
                     emoji = "⬇️",
                     color = Color(0xFFFFEBEE),
                     onClick = onInstallClick,
+                    enabled = true,
                     modifier = Modifier.weight(1f)
                 )
             }
@@ -460,13 +455,17 @@ fun FeatureCard(
     emoji: String,
     color: Color,
     onClick: () -> Unit,
+    enabled: Boolean = true,
     modifier: Modifier = Modifier
 ) {
     Card(
         onClick = onClick,
+        enabled = enabled,
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = color),
+        colors = CardDefaults.cardColors(
+            containerColor = if (enabled) color else color.copy(alpha = 0.5f)
+        ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Column(
@@ -478,19 +477,21 @@ fun FeatureCard(
             // Emoji 图标
             Text(
                 text = emoji,
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
+                color = if (enabled) Color.Unspecified else Color.Gray.copy(alpha = 0.6f)
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = title,
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.SemiBold,
+                color = if (enabled) Color.Unspecified else Color.Gray.copy(alpha = 0.6f),
                 textAlign = TextAlign.Center
             )
             Text(
                 text = subtitle,
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (enabled) 0.6f else 0.4f),
                 textAlign = TextAlign.Center
             )
         }

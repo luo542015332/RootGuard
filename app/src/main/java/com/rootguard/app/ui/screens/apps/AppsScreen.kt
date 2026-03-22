@@ -22,7 +22,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @Composable
 fun AppsScreen(
     onNavigateBack: () -> Unit,
-    onNavigateToIsolation: (String, String) -> Unit = { _, _ -> },
     viewModel: AppsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -277,9 +276,6 @@ fun AppsScreen(
                             app = app,
                             onStatusChange = { newStatus ->
                                 viewModel.setRootAccess(app.packageName, newStatus)
-                            },
-                            onIsolationClick = {
-                                onNavigateToIsolation(app.packageName, app.name)
                             }
                         )
                     }
@@ -324,11 +320,10 @@ fun StatCard(title: String, count: Int, color: androidx.compose.ui.graphics.Colo
 @Composable
 fun AppCard(
     app: AppItem,
-    onStatusChange: (RootAccessStatus) -> Unit,
-    onIsolationClick: (() -> Unit)? = null
+    onStatusChange: (RootAccessStatus) -> Unit
 ) {
     var showMenu by remember { mutableStateOf(false) }
-    
+
     Card(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -347,7 +342,7 @@ fun AppCard(
                     packageName = app.packageName,
                     modifier = Modifier.size(48.dp)
                 )
-                
+
                 Column(modifier = Modifier.weight(1f)) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Text(
@@ -367,8 +362,14 @@ fun AppCard(
                         if (app.isIsolated) {
                             Spacer(modifier = Modifier.width(4.dp))
                             Text(
-                                text = "🛡️",
-                                style = MaterialTheme.typography.labelSmall
+                                text = app.isolationLevel,
+                                style = MaterialTheme.typography.labelSmall,
+                                color = when (app.isolationLevel) {
+                                    "严格" -> Color(0xFFF44336)
+                                    "中等" -> Color(0xFFFF9800)
+                                    "宽松" -> Color(0xFF4CAF50)
+                                    else -> Color(0xFF9E9E9E)
+                                }
                             )
                         }
                     }
@@ -378,12 +379,12 @@ fun AppCard(
                         color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                     )
                 }
-                
-                // Status dropdown
+
+                // Root Status dropdown
                 Box {
                     AssistChip(
                         onClick = { showMenu = true },
-                        label = { 
+                        label = {
                             Text(
                                 when (app.rootStatus) {
                                     RootAccessStatus.GRANTED -> "已授权"
@@ -421,7 +422,7 @@ fun AppCard(
                             }
                         }
                     )
-                    
+
                     DropdownMenu(
                         expanded = showMenu,
                         onDismissRequest = { showMenu = false }
@@ -467,37 +468,6 @@ fun AppCard(
                                 onStatusChange(RootAccessStatus.PROMPT)
                                 showMenu = false
                             }
-                        )
-                    }
-                }
-            }
-            
-            // 隔离设置按钮
-            if (onIsolationClick != null) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 12.dp, vertical = 4.dp),
-                    horizontalArrangement = Arrangement.End
-                ) {
-                    TextButton(
-                        onClick = onIsolationClick,
-                        colors = ButtonDefaults.textButtonColors(
-                            contentColor = if (app.isIsolated) {
-                                MaterialTheme.colorScheme.primary
-                            } else {
-                                MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-                            }
-                        )
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.Security,
-                            contentDescription = null,
-                            modifier = Modifier.size(16.dp)
-                        )
-                        Spacer(modifier = Modifier.width(4.dp))
-                        Text(
-                            if (app.isIsolated) "🛡️ 已隔离" else "隔离设置"
                         )
                     }
                 }
@@ -560,7 +530,8 @@ data class AppItem(
     val rootStatus: RootAccessStatus,
     val isSystemApp: Boolean = false,
     val icon: android.graphics.drawable.Drawable? = null,
-    val isIsolated: Boolean = false
+    val isIsolated: Boolean = false,
+    val isolationLevel: String = "未设置"  // 严格、中等、宽松、关闭
 )
 
 enum class RootAccessStatus {

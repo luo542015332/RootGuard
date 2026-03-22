@@ -42,7 +42,7 @@ class AppsViewModel @Inject constructor(
     fun loadApps() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
-            
+
             try {
                 val apps = getApps()
                 updateApps(apps)
@@ -78,7 +78,7 @@ class AppsViewModel @Inject constructor(
             )
         }
     }
-    
+
     private fun applyFilters(apps: List<AppItem>, query: String, filter: AppFilter): List<AppItem> {
         var result = apps
 
@@ -112,7 +112,7 @@ class AppsViewModel @Inject constructor(
             )
         }
     }
-    
+
     fun setFilter(filter: AppFilter) {
         _uiState.update { state ->
             val filtered = applyFilters(state.apps, state.searchQuery, filter)
@@ -136,7 +136,7 @@ class AppsViewModel @Inject constructor(
             }
         }
     }
-    
+
     fun toggleRootAccess(packageName: String) {
         viewModelScope.launch {
             val app = _uiState.value.apps.find { it.packageName == packageName }
