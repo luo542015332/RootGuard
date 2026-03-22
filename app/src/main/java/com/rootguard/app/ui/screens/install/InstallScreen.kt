@@ -136,9 +136,10 @@ fun InstallOption(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .selectable(
-                selected = selected,
-                onClick = onClick
+            .clickable(
+                onClick = onClick,
+                interactionSource = remember { androidx.compose.foundation.interaction.MutableInteractionSource() },
+                indication = androidx.compose.material.ripple.rememberRipple(bounded = true)
             )
             .padding(vertical = 8.dp),
         verticalAlignment = Alignment.CenterVertically,
