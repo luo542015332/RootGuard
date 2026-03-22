@@ -272,7 +272,7 @@ class MagiskProvider @Inject constructor(
                         pm.getApplicationIcon(appInfo)
                     } catch (e: Exception) {
                         Logger.w("Failed to load icon for $packageName: ${e.message}")
-                        null
+                        pm.getDefaultActivityIcon()
                     }
 
                     apps.add(
