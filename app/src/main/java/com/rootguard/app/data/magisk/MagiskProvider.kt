@@ -251,17 +251,17 @@ class MagiskProvider @Inject constructor(
      */
     suspend fun getAllInstalledApps(): List<InstalledAppInfo> = withContext(Dispatchers.IO) {
         val apps = mutableListOf<InstalledAppInfo>()
-        
+
         try {
             val pm = context.packageManager
             val packages = pm.getInstalledApplications(0)
-            
+
             packages.forEach { appInfo ->
                 try {
                     val appName = pm.getApplicationLabel(appInfo).toString()
                     val packageName = appInfo.packageName
                     val isSystemApp = (appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0
-                    
+
                     apps.add(
                         InstalledAppInfo(
                             packageName = packageName,
@@ -271,13 +271,15 @@ class MagiskProvider @Inject constructor(
                         )
                     )
                 } catch (e: Exception) {
-                    // 跳过无法读取的应用
+                    Logger.e("Failed to process app: ${appInfo.packageName}", e)
                 }
             }
+
+            Logger.d("Found ${apps.size} total apps, ${apps.count { !it.isSystemApp }} user apps, ${apps.count { it.isSystemApp }} system apps")
         } catch (e: Exception) {
             Logger.e("Failed to get installed apps", e)
         }
-        
+
         apps.sortedBy { it.appName }
     }
 
