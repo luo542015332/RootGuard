@@ -2,6 +2,7 @@ package com.rootguard.app.data.magisk
 
 import android.content.ContentResolver
 import android.content.Context
+import android.content.pm.PackageManager
 import android.database.Cursor
 import android.net.Uri
 import android.os.ParcelFileDescriptor
@@ -634,7 +635,17 @@ class MagiskProvider @Inject constructor(
 
         try {
             val pm = context.packageManager
-            val packages = pm.getInstalledApplications(0)
+            // 获取所有已安装应用（包括系统应用和用户应用）
+            // 使用正确的 flags 确保获取所有应用
+            val packages = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+                // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
+                // 0 表示没有任何 flags，返回所有应用
+                pm.getInstalledApplications(PackageManager.ApplicationInfoFlags.of(0))
+            } else {
+                @Suppress("DEPRECATION")
+                // Android 12 及以下使用 GET_META_DATA
+                pm.getInstalledApplications(PackageManager.GET_META_DATA)
+            }
 
             Logger.d("PackageManager returned ${packages.size} packages")
 
@@ -648,11 +659,17 @@ class MagiskProvider @Inject constructor(
             packages.forEachIndexed { index, appInfo ->
                 try {
                     val packageName = appInfo.packageName
+                    val sourceDir = appInfo.sourceDir ?: ""
                     val isSystemApp = isSystemApp(appInfo)
                     val appName = try {
                         pm.getApplicationLabel(appInfo).toString()
                     } catch (e: Exception) {
                         packageName
+                    }
+
+                    // 记录关键应用的详细信息
+                    if (packageName in listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")) {
+                        Logger.d("Key app found: $packageName ($appName), sourceDir: $sourceDir, isSystem: $isSystemApp")
                     }
 
                     // 不在这里加载图标，延迟加载以提高性能
@@ -671,12 +688,29 @@ class MagiskProvider @Inject constructor(
 
             val userApps = apps.count { !it.isSystemApp }
             val systemApps = apps.count { it.isSystemApp }
-            Logger.d("Added ${apps.size} apps to list: $userApps user apps, $systemApps system apps")
+            Logger.e("========== APP LIST SUMMARY ==========")
+            Logger.e("Total apps: ${apps.size}")
+            Logger.e("User apps: $userApps")
+            Logger.e("System apps: $systemApps")
 
-            // 打印前 10 个用户应用的包名用于调试
-            apps.filter { !it.isSystemApp }.take(10).forEach {
-                Logger.d("User app: ${it.packageName} - ${it.appName}")
+            // 打印所有用户应用的包名用于调试
+            Logger.e("---------- USER APPS LIST ----------")
+            apps.filter { !it.isSystemApp }.sortedBy { it.appName }.forEach {
+                Logger.e("User app: ${it.packageName} - ${it.appName}")
             }
+            Logger.e("---------- END USER APPS LIST ----------")
+
+            // 检查微信和QQ是否在列表中
+            val targetApps = listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")
+            targetApps.forEach { pkg ->
+                val app = apps.find { it.packageName == pkg }
+                if (app != null) {
+                    Logger.e("Found target app: ${app.packageName} - ${app.appName}, isSystem: ${app.isSystemApp}")
+                } else {
+                    Logger.e("TARGET APP NOT FOUND: $pkg")
+                }
+            }
+            Logger.e("========== END APP LIST SUMMARY ==========")
         } catch (e: Exception) {
             Logger.e("Failed to get installed apps", e)
         }
@@ -957,22 +991,21 @@ class MagiskProvider @Inject constructor(
      * @return true 如果是系统应用，false 如果是用户应用
      */
     private fun isSystemApp(appInfo: android.content.pm.ApplicationInfo): Boolean {
-        // 检查 FLAG_SYSTEM 标志
-        val hasSystemFlag = (appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0
-        
-        if (!hasSystemFlag) {
+        // 检查安装路径 - 这是最可靠的判断方式
+        val sourceDir = appInfo.sourceDir ?: return false
+
+        // 用户应用通常安装在 /data/app/ 下
+        if (sourceDir.contains("/data/app/")) {
             return false
         }
-        
-        // 如果有 FLAG_SYSTEM 标志，进一步检查安装路径
-        // 用户应用通常安装在 /data/app/ 下
-        // 系统应用安装在 /system/、/vendor/、/product/ 等目录下
-        val sourceDir = appInfo.sourceDir ?: return true
-        
-        val isUserInstalled = sourceDir.contains("/data/app/") || 
-                             sourceDir.contains("/data/data/")
-        
-        return !isUserInstalled
+
+        // 系统应用安装在 /system/、/vendor/、/product/、/apex/ 等目录下
+        val isSystemPath = sourceDir.contains("/system/") ||
+                          sourceDir.contains("/vendor/") ||
+                          sourceDir.contains("/product/") ||
+                          sourceDir.contains("/apex/")
+
+        return isSystemPath
     }
 }
 

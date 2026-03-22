@@ -46,6 +46,9 @@ fun AppsScreen(
                     }
                 },
                 actions = {
+                    IconButton(onClick = { viewModel.loadApps() }) {
+                        Icon(Icons.Default.Refresh, contentDescription = "刷新")
+                    }
                     IconButton(onClick = { showFilterMenu = true }) {
                         Icon(Icons.Default.FilterList, contentDescription = "筛选")
                     }
