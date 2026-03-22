@@ -125,9 +125,12 @@ class ModuleBackupManager @Inject constructor(
             val module = modules.find { it.id == moduleId }
                 ?: return@withContext Result.failure(Exception("模块不存在"))
 
-            // 创建备份文件
+            // 创建备份目录和文件
             val backupId = "${module.id}_${System.currentTimeMillis()}"
-            val backupFile = File(backupDir, "$backupId.zip")
+            val backupDirPath = File(backupDir, backupId)
+            backupDirPath.mkdirs()
+
+            val backupFile = File(backupDirPath, "$backupId.zip")
 
             // 压缩模块文件
             val modulePath = File("/data/adb/modules", module.id)
@@ -296,10 +299,10 @@ class ModuleBackupManager @Inject constructor(
     }
 
     private fun saveBackupInfo(backup: ModuleBackup) {
-        val backupDir = File(backupDir, backup.id)
-        backupDir.mkdirs()
+        val backupDirPath = File(backupDir, backup.id)
+        backupDirPath.mkdirs()
 
-        val infoFile = File(backupDir, BACKUP_INFO_FILE)
+        val infoFile = File(backupDirPath, BACKUP_INFO_FILE)
         val json = org.json.JSONObject().apply {
             put("id", backup.id)
             put("moduleId", backup.moduleId)
@@ -331,8 +334,8 @@ class ModuleBackupManager @Inject constructor(
     }
 
     private fun getBackupInfo(backupId: String): ModuleBackup? {
-        val backupDir = File(backupDir, backupId)
-        val infoFile = File(backupDir, BACKUP_INFO_FILE)
+        val backupDirPath = File(backupDir, backupId)
+        val infoFile = File(backupDirPath, BACKUP_INFO_FILE)
         return if (infoFile.exists()) {
             try {
                 loadBackupInfo(infoFile)
