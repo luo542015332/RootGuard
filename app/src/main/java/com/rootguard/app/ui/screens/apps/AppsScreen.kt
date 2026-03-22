@@ -28,7 +28,13 @@ fun AppsScreen(
     val uiState by viewModel.uiState.collectAsState()
     var searchQuery by remember { mutableStateOf("") }
     var showFilterMenu by remember { mutableStateOf(false) }
-    var currentFilter by remember { mutableStateOf(AppFilter.ALL) }
+    // 使用 viewModel 的 filter 状态而不是本地状态
+    var currentFilter by remember { mutableStateOf(uiState.filter) }
+
+    // 当 viewModel 的 filter 状态变化时,更新本地状态
+    LaunchedEffect(uiState.filter) {
+        currentFilter = uiState.filter
+    }
     
     Scaffold(
         topBar = {
