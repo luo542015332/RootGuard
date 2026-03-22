@@ -341,6 +341,7 @@ fun AppCard(
                 AppIcon(
                     drawable = app.icon,
                     appName = app.name,
+                    packageName = app.packageName,
                     modifier = Modifier.size(48.dp)
                 )
                 
@@ -506,11 +507,30 @@ fun AppCard(
 fun AppIcon(
     drawable: Drawable?,
     appName: String,
+    packageName: String? = null,
     modifier: Modifier = Modifier
 ) {
-    if (drawable != null) {
+    val context = LocalContext.current
+    var iconDrawable by remember { mutableStateOf<Drawable?>(null) }
+
+    LaunchedEffect(packageName) {
+        if (drawable == null && packageName != null) {
+            // 异步加载图标
+            try {
+                val pm = context.packageManager
+                val packageInfo = pm.getPackageInfo(packageName, 0)
+                iconDrawable = pm.getApplicationIcon(packageInfo.applicationInfo)
+            } catch (e: Exception) {
+                // 加载失败，使用默认显示
+            }
+        } else {
+            iconDrawable = drawable
+        }
+    }
+
+    if (iconDrawable != null) {
         Image(
-            bitmap = drawable.toBitmap().asImageBitmap(),
+            bitmap = iconDrawable!!.toBitmap().asImageBitmap(),
             contentDescription = appName,
             modifier = modifier
         )

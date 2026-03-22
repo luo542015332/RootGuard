@@ -627,6 +627,13 @@ class MagiskProvider @Inject constructor(
 
             Logger.d("PackageManager returned ${packages.size} packages")
 
+            // 先获取默认图标，避免每次都获取
+            val defaultIcon = try {
+                pm.getDefaultActivityIcon()
+            } catch (e: Exception) {
+                null
+            }
+
             packages.forEachIndexed { index, appInfo ->
                 try {
                     val packageName = appInfo.packageName
@@ -637,19 +644,13 @@ class MagiskProvider @Inject constructor(
                         packageName
                     }
 
-                    val icon = try {
-                        pm.getApplicationIcon(appInfo)
-                    } catch (e: Exception) {
-                        Logger.w("Failed to load icon for $packageName: ${e.message}")
-                        pm.getDefaultActivityIcon()
-                    }
-
+                    // 不在这里加载图标，延迟加载以提高性能
                     apps.add(
                         InstalledAppInfo(
                             packageName = packageName,
                             appName = appName,
                             isSystemApp = isSystemApp,
-                            icon = icon
+                            icon = null  // 延迟加载图标
                         )
                     )
                 } catch (e: Exception) {
@@ -983,7 +984,7 @@ data class InstalledAppInfo(
     val packageName: String,
     val appName: String,
     val isSystemApp: Boolean,
-    val icon: android.graphics.drawable.Drawable
+    val icon: android.graphics.drawable.Drawable? = null
 )
 
 data class MagiskLog(
