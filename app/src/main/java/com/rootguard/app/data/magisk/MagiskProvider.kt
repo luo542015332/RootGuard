@@ -35,8 +35,8 @@ class MagiskProvider @Inject constructor(
         private const val MAGISK_PACKAGE = "com.topjohnwu.magisk"
 
         // Root 管理方案类型
-        private const val ROOT_TYPE_MAGISK = "magisk"
-        private const val ROOT_TYPE_KERNELSU = "kernelsu"
+        const val ROOT_TYPE_MAGISK = "magisk"
+        const val ROOT_TYPE_KERNELSU = "kernelsu"
 
         // Magisk ContentProvider URI
         val MAGISK_URI: Uri = Uri.parse("content://$MAGISK_AUTHORITY")
@@ -45,6 +45,12 @@ class MagiskProvider @Inject constructor(
         // 模块路径
         const val MODULES_PATH = "/data/adb/modules"
         const val MAGISK_DB = "/data/adb/magisk.db"
+
+        // KernelSU 管理器包名和数据库路径
+        private const val KERNELSU_PACKAGE_WEISHU = "me.weishu.kernelsu"
+        private const val KERNELSU_PACKAGE_TIANN = "com.tiann.kernelsu"
+        private const val KERNELSU_DB_WEISHU = "/data/data/me.weishu.kernelsu/databases/app.db"
+        private const val KERNELSU_DB_TIANN = "/data/data/com.tiann.kernelsu/databases/kernelsu.db"
 
         // KernelSU 相关路径
         private val KERNELSU_PATHS = listOf(
@@ -68,30 +74,56 @@ class MagiskProvider @Inject constructor(
     }
 
     /**
+     * 获取当前 Root 类型
+     * @return ROOT_TYPE_MAGISK 或 ROOT_TYPE_KERNELSU
+     */
+    suspend fun getCurrentRootType(): String = detectRootType()
+
+    /**
      * 检测 Root 类型
      * @return "kernelsu" 或 "magisk"
      */
     private suspend fun detectRootType(): String = withContext(Dispatchers.IO) {
-        // 检查 KernelSU
-        KERNELSU_PATHS.forEach { path ->
-            if (File(path).exists()) {
-                // 进一步验证 ksu 命令
+        Logger.d("Starting root type detection...")
+
+        // 优先检查 KernelSU (尝试多种检测方式)
+        var isKernelSU = false
+
+        // 方法 1: 检查 ksu 命令是否可用
+        try {
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "ksu", "-v"))
+            process.waitFor()
+            if (process.exitValue() == 0) {
+                Logger.d("Detected KernelSU via ksu -v command")
+                isKernelSU = true
+            }
+        } catch (e: Exception) {
+            Logger.w("ksu command failed: ${e.message}")
+        }
+
+        // 方法 2: 检查 KernelSU 特征文件
+        if (!isKernelSU) {
+            KERNELSU_PATHS.forEach { path ->
                 try {
-                    val process = Runtime.getRuntime().exec("su -c ksu -v")
-                    process.waitFor()
-                    if (process.exitValue() == 0) {
-                        Logger.d("Detected KernelSU")
-                        return@withContext ROOT_TYPE_KERNELSU
+                    if (File(path).exists()) {
+                        Logger.d("Found KernelSU path: $path")
+                        isKernelSU = true
+                        return@forEach
                     }
                 } catch (e: Exception) {
-                    Logger.w("ksu command failed: ${e.message}")
+                    Logger.w("Failed to check path $path: ${e.message}")
                 }
             }
         }
 
+        if (isKernelSU) {
+            Logger.d("Root type detected: KernelSU")
+            return@withContext ROOT_TYPE_KERNELSU
+        }
+
         // 检查 Magisk
         try {
-            val process = Runtime.getRuntime().exec("su -c magisk -v")
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "magisk", "-v"))
             process.waitFor()
             if (process.exitValue() == 0) {
                 Logger.d("Detected Magisk")
@@ -101,9 +133,9 @@ class MagiskProvider @Inject constructor(
             Logger.w("magisk command failed: ${e.message}")
         }
 
-        // 默认使用 Magisk 兼容模式
-        Logger.d("Root type not detected, defaulting to Magisk")
-        return@withContext ROOT_TYPE_MAGISK
+        // 如果都检测失败，默认使用 KernelSU (因为现在大多数新设备都是 KernelSU)
+        Logger.w("Root type not detected, defaulting to KernelSU")
+        return@withContext ROOT_TYPE_KERNELSU
     }
 
     /**
@@ -112,14 +144,14 @@ class MagiskProvider @Inject constructor(
     suspend fun getMagiskVersion(): MagiskVersion = withContext(Dispatchers.IO) {
         try {
             // 通过 su 命令获取版本
-            val process = Runtime.getRuntime().exec("su -c magisk -V")
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "magisk", "-V"))
             val versionCode = process.inputStream.bufferedReader().readText().trim().toIntOrNull() ?: 0
             process.waitFor()
-            
-            val versionNameProcess = Runtime.getRuntime().exec("su -c magisk -v")
+
+            val versionNameProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "magisk", "-v"))
             val versionName = versionNameProcess.inputStream.bufferedReader().readText().trim()
             versionNameProcess.waitFor()
-            
+
             MagiskVersion(
                 versionName = versionName,
                 versionCode = versionCode,
@@ -136,14 +168,15 @@ class MagiskProvider @Inject constructor(
      */
     suspend fun getModules(): List<MagiskModule> = withContext(Dispatchers.IO) {
         val modules = mutableListOf<MagiskModule>()
-        
+
         try {
-            // 读取 /data/adb/modules 目录
-            val process = Runtime.getRuntime().exec("su -c ls -1 $MODULES_PATH")
+            // 读取 /data/adb/modules 目录，只列出真正的模块目录
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "find", MODULES_PATH, "-mindepth", "1", "-maxdepth", "1", "-type", "d"))
             val moduleDirs = process.inputStream.bufferedReader().readLines()
             process.waitFor()
-            
-            moduleDirs.forEach { moduleId ->
+
+            moduleDirs.forEach { dirPath ->
+                val moduleId = dirPath.substringAfterLast("/")
                 if (moduleId.isNotBlank()) {
                     val module = readModuleInfo(moduleId)
                     if (module != null) {
@@ -151,10 +184,11 @@ class MagiskProvider @Inject constructor(
                     }
                 }
             }
+            Logger.d("Found ${modules.size} modules")
         } catch (e: Exception) {
             Logger.e("Failed to get modules", e)
         }
-        
+
         modules
     }
 
@@ -164,22 +198,22 @@ class MagiskProvider @Inject constructor(
     private suspend fun readModuleInfo(moduleId: String): MagiskModule? = withContext(Dispatchers.IO) {
         try {
             val modulePath = "$MODULES_PATH/$moduleId"
-            
+
             // 读取 module.prop
-            val propProcess = Runtime.getRuntime().exec("su -c cat $modulePath/module.prop")
+            val propProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "cat", "$modulePath/module.prop"))
             val propContent = propProcess.inputStream.bufferedReader().readText()
             propProcess.waitFor()
-            
+
             // 检查模块是否启用
-            val disableFile = Runtime.getRuntime().exec("su -c test -f $modulePath/disable && echo 1 || echo 0")
-            val isDisabled = disableFile.inputStream.bufferedReader().readText().trim() == "1"
+            val disableFile = Runtime.getRuntime().exec(arrayOf("su", "-c", "test", "-f", "$modulePath/disable"))
             disableFile.waitFor()
-            
+            val isDisabled = disableFile.exitValue() == 0
+
             // 检查是否为 remove 状态
-            val removeFile = Runtime.getRuntime().exec("su -c test -f $modulePath/remove && echo 1 || echo 0")
-            val isRemoved = removeFile.inputStream.bufferedReader().readText().trim() == "1"
+            val removeFile = Runtime.getRuntime().exec(arrayOf("su", "-c", "test", "-f", "$modulePath/remove"))
             removeFile.waitFor()
-            
+            val isRemoved = removeFile.exitValue() == 0
+
             parseModuleProp(propContent, moduleId, !isDisabled && !isRemoved)
         } catch (e: Exception) {
             Logger.e("Failed to read module info: $moduleId", e)
@@ -216,13 +250,13 @@ class MagiskProvider @Inject constructor(
         try {
             val modulePath = "$MODULES_PATH/$moduleId"
             val disableFile = "$modulePath/disable"
-            
+
             val command = if (enable) {
-                "su -c rm -f $disableFile"
+                arrayOf("su", "-c", "rm", "-f", disableFile)
             } else {
-                "su -c touch $disableFile"
+                arrayOf("su", "-c", "touch", disableFile)
             }
-            
+
             val process = Runtime.getRuntime().exec(command)
             process.waitFor()
             process.exitValue() == 0
@@ -239,8 +273,8 @@ class MagiskProvider @Inject constructor(
         try {
             val modulePath = "$MODULES_PATH/$moduleId"
             val removeFile = "$modulePath/remove"
-            
-            val process = Runtime.getRuntime().exec("su -c touch $removeFile")
+
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "touch", removeFile))
             process.waitFor()
             process.exitValue() == 0
         } catch (e: Exception) {
@@ -283,7 +317,7 @@ class MagiskProvider @Inject constructor(
      */
     private suspend fun installMagiskModule(zipPath: String): Boolean {
         return try {
-            val process = Runtime.getRuntime().exec("su -c magisk --install-module \"$zipPath\"")
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "magisk", "--install-module", zipPath))
             process.waitFor()
             val exitCode = process.exitValue()
 
@@ -305,31 +339,49 @@ class MagiskProvider @Inject constructor(
      */
     private suspend fun installKernelSUModule(zipPath: String): Boolean {
         return try {
+            Logger.d("Starting KernelSU module installation from: $zipPath")
+
             // 创建临时目录
             val tempDir = "/data/local/tmp/module_${System.currentTimeMillis()}"
-            Runtime.getRuntime().exec("su -c mkdir -p $tempDir").waitFor()
+            Logger.d("Creating temp directory: $tempDir")
+            val mkdirProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "mkdir", "-p", tempDir))
+            mkdirProcess.waitFor()
+
+            if (mkdirProcess.exitValue() != 0) {
+                Logger.e("Failed to create temp directory: $tempDir")
+                return false
+            }
 
             // 解压 zip 文件
-            val extractProcess = Runtime.getRuntime().exec("su -c unzip -o \"$zipPath\" -d $tempDir")
+            Logger.d("Extracting zip file to temp directory")
+            val extractProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "unzip", "-o", zipPath, "-d", tempDir))
             extractProcess.waitFor()
 
             if (extractProcess.exitValue() != 0) {
-                Logger.e("Failed to extract module zip")
+                val error = extractProcess.errorStream.bufferedReader().readText()
+                Logger.e("Failed to extract module zip, exit code: ${extractProcess.exitValue()}, error: $error")
+                Runtime.getRuntime().exec(arrayOf("su", "-c", "rm", "-rf", tempDir)).waitFor()
                 return false
             }
 
             // 检查是否有 module.prop
-            val moduleProp = Runtime.getRuntime().exec("su -c ls $tempDir/module.prop")
+            Logger.d("Checking for module.prop")
+            val moduleProp = Runtime.getRuntime().exec(arrayOf("su", "-c", "test", "-f", "$tempDir/module.prop"))
             moduleProp.waitFor()
 
             if (moduleProp.exitValue() != 0) {
-                Logger.e("No module.prop found, not a valid module")
-                Runtime.getRuntime().exec("su -c rm -rf $tempDir").waitFor()
+                Logger.e("No module.prop found in $tempDir, not a valid module")
+                // 列出 temp 目录内容用于调试
+                val lsProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "ls", "-la", tempDir))
+                val lsOutput = lsProcess.inputStream.bufferedReader().readText()
+                Logger.d("Temp directory contents: $lsOutput")
+                Runtime.getRuntime().exec(arrayOf("su", "-c", "rm", "-rf", tempDir)).waitFor()
                 return false
             }
 
             // 读取 module.prop 获取模块 ID
-            val propProcess = Runtime.getRuntime().exec("su -c cat $tempDir/module.prop")
+            Logger.d("Reading module.prop to get module ID")
+            val propProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "cat", "$tempDir/module.prop"))
             val propContent = propProcess.inputStream.bufferedReader().readText()
             propProcess.waitFor()
 
@@ -338,24 +390,36 @@ class MagiskProvider @Inject constructor(
                 ?.substring(3)
                 ?.trim() ?: "module_${System.currentTimeMillis()}"
 
+            Logger.d("Module ID: $moduleId")
+
             // 创建模块目录
             val modulePath = "$MODULES_PATH/$moduleId"
-            Runtime.getRuntime().exec("su -c mkdir -p $modulePath").waitFor()
+            Logger.d("Creating module directory: $modulePath")
+            Runtime.getRuntime().exec(arrayOf("su", "-c", "mkdir", "-p", modulePath)).waitFor()
 
             // 复制所有文件到模块目录
-            val copyProcess = Runtime.getRuntime().exec("su -c cp -r $tempDir/* $modulePath/")
+            Logger.d("Copying files from temp directory to module directory")
+            val copyProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "cp", "-r", "$tempDir/.", modulePath))
             copyProcess.waitFor()
 
+            if (copyProcess.exitValue() != 0) {
+                Logger.e("Failed to copy files to module directory, exit code: ${copyProcess.exitValue()}")
+                Runtime.getRuntime().exec(arrayOf("su", "-c", "rm", "-rf", tempDir)).waitFor()
+                return false
+            }
+
             // 设置权限
-            Runtime.getRuntime().exec("su -c chmod -R 755 $modulePath").waitFor()
+            Logger.d("Setting permissions on module directory")
+            Runtime.getRuntime().exec(arrayOf("su", "-c", "chmod", "-R", "755", modulePath)).waitFor()
 
             // 清理临时目录
-            Runtime.getRuntime().exec("su -c rm -rf $tempDir").waitFor()
+            Logger.d("Cleaning up temp directory")
+            Runtime.getRuntime().exec(arrayOf("su", "-c", "rm", "-rf", tempDir)).waitFor()
 
             // 设置模块启用(移除 disable 文件)
-            Runtime.getRuntime().exec("su -c rm -f $modulePath/disable").waitFor()
+            Runtime.getRuntime().exec(arrayOf("su", "-c", "rm", "-f", "$modulePath/disable")).waitFor()
 
-            Logger.d("KernelSU module installed at: $modulePath")
+            Logger.d("KernelSU module installed successfully at: $modulePath")
             true
         } catch (e: Exception) {
             Logger.e("Failed to install via KernelSU", e)
@@ -365,35 +429,157 @@ class MagiskProvider @Inject constructor(
 
     /**
      * 获取 Root 权限管理数据库中的应用授权信息
+     * 支持 Magisk 和 KernelSU（多个管理器）
      */
     suspend fun getAppPolicies(): List<AppPolicy> = withContext(Dispatchers.IO) {
         val policies = mutableListOf<AppPolicy>()
-        
+
         try {
-            // 查询 Magisk 的 policies 数据库
-            val process = Runtime.getRuntime().exec(
-                "su -c sqlite3 $MAGISK_DB \"SELECT package_name, policy, logging, notification FROM policies\""
-            )
-            val output = process.inputStream.bufferedReader().readText()
-            process.waitFor()
-            
-            output.lines().forEach { line ->
-                val parts = line.split("|")
-                if (parts.size >= 4) {
-                    policies.add(
-                        AppPolicy(
-                            packageName = parts[0],
-                            policy = parts[1].toIntOrNull() ?: 0,
-                            logging = parts[2].toIntOrNull() ?: 1,
-                            notification = parts[3].toIntOrNull() ?: 1
-                        )
-                    )
+            // 检测 Root 类型
+            val rootType = detectRootType()
+            Logger.d("Getting app policies for root type: $rootType")
+
+            val dbPath = when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // 检测使用哪个 KernelSU 管理器
+                    val ksudbWeishu = try {
+                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_WEISHU, 0)
+                        true
+                    } catch (e: Exception) {
+                        false
+                    }
+                    val ksudbTiann = try {
+                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_TIANN, 0)
+                        true
+                    } catch (e: Exception) {
+                        false
+                    }
+
+                    when {
+                        ksudbWeishu -> {
+                            Logger.d("Using Weishu KernelSU manager: $KERNELSU_DB_WEISHU")
+                            KERNELSU_DB_WEISHU
+                        }
+                        ksudbTiann -> {
+                            Logger.d("Using Tiann KernelSU manager: $KERNELSU_DB_TIANN")
+                            KERNELSU_DB_TIANN
+                        }
+                        else -> {
+                            Logger.w("No KernelSU manager found, defaulting to Weishu")
+                            KERNELSU_DB_WEISHU
+                        }
+                    }
+                }
+                ROOT_TYPE_MAGISK -> MAGISK_DB
+                else -> {
+                    Logger.w("Unknown root type, trying Magisk DB")
+                    MAGISK_DB
                 }
             }
+
+            Logger.d("Querying database: $dbPath")
+
+            // 检查数据库文件是否存在
+            val checkDbProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "test", "-f", dbPath))
+            checkDbProcess.waitFor()
+
+            if (checkDbProcess.exitValue() != 0) {
+                Logger.w("Database file not found: $dbPath")
+                return@withContext policies
+            }
+
+            // 根据不同的 Root 类型使用不同的查询方式
+            when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // KernelSU 数据库结构根据不同管理器可能不同
+                    // Weishu KernelSU: app.db - rules 表 (uid, policy)
+                    // Tiann KernelSU: kernelsu.db - uid_policy 表 (uid, policy)
+                    
+                    // 先检查表名
+                    val tableCheck = Runtime.getRuntime().exec(
+                        arrayOf("su", "-c", "sqlite3", dbPath, ".tables")
+                    )
+                    val tables = tableCheck.inputStream.bufferedReader().readText().trim()
+                    tableCheck.waitFor()
+                    
+                    Logger.d("KernelSU database tables: $tables")
+                    
+                    val tableName = when {
+                        tables.contains("rules") -> "rules"
+                        tables.contains("uid_policy") -> "uid_policy"
+                        else -> {
+                            Logger.w("Unknown KernelSU database structure, tables: $tables")
+                            return@withContext policies
+                        }
+                    }
+                    
+                    Logger.d("Using table: $tableName")
+                    
+                    val process = Runtime.getRuntime().exec(
+                        arrayOf("su", "-c", "sqlite3", dbPath, "SELECT uid, policy FROM $tableName")
+                    )
+                    val output = process.inputStream.bufferedReader().readText()
+                    process.waitFor()
+
+                    output.lines().forEach { line ->
+                        val parts = line.split("|")
+                        if (parts.size >= 2) {
+                            // KernelSU 使用 uid，需要转换为包名
+                            val uid = parts[0].toIntOrNull() ?: 0
+                            val policy = parts[1].toIntOrNull() ?: 0
+
+                            // 通过 PackageManager 获取 uid 对应的包名
+                            try {
+                                val pm = context.packageManager
+                                val packages = pm.getPackagesForUid(uid)
+                                packages?.forEach { packageName ->
+                                    policies.add(
+                                        AppPolicy(
+                                            packageName = packageName,
+                                            policy = policy, // 0=拒绝, 1=允许
+                                            logging = 1,
+                                            notification = 1
+                                        )
+                                    )
+                                }
+                            } catch (e: Exception) {
+                                Logger.w("Failed to get package for uid $uid: ${e.message}")
+                            }
+                        }
+                    }
+                }
+                ROOT_TYPE_MAGISK -> {
+                    // Magisk 数据库结构: policies 表 (package_name, policy, logging, notification)
+                    val process = Runtime.getRuntime().exec(
+                        arrayOf("su", "-c", "sqlite3", dbPath, "SELECT package_name, policy, logging, notification FROM policies")
+                    )
+                    val output = process.inputStream.bufferedReader().readText()
+                    process.waitFor()
+
+                    output.lines().forEach { line ->
+                        val parts = line.split("|")
+                        if (parts.size >= 4) {
+                            policies.add(
+                                AppPolicy(
+                                    packageName = parts[0],
+                                    policy = parts[1].toIntOrNull() ?: 0,
+                                    logging = parts[2].toIntOrNull() ?: 1,
+                                    notification = parts[3].toIntOrNull() ?: 1
+                                )
+                            )
+                        }
+                    }
+                }
+                else -> {
+                    Logger.w("Unknown root type, cannot query app policies")
+                }
+            }
+
+            Logger.d("Found ${policies.size} app policies")
         } catch (e: Exception) {
             Logger.e("Failed to get app policies", e)
         }
-        
+
         policies
     }
 
@@ -456,24 +642,109 @@ class MagiskProvider @Inject constructor(
 
     /**
      * 设置应用的 Root 权限策略
-     * policy: 0 = 询问, 1 = 拒绝, 2 = 允许
+     * 支持 Magisk 和 KernelSU（多个管理器）
+     * Magisk policy: 0 = 询问, 1 = 拒绝, 2 = 允许
+     * KernelSU policy: 0 = 拒绝, 1 = 允许
      */
     suspend fun setAppPolicy(packageName: String, policy: Int): Boolean = withContext(Dispatchers.IO) {
         try {
-            val process = Runtime.getRuntime().exec(
-                "su -c sqlite3 $MAGISK_DB \"UPDATE policies SET policy=$policy WHERE package_name='$packageName'\""
-            )
-            process.waitFor()
-            
-            // 如果没有记录则插入
-            if (process.exitValue() != 0) {
-                val insertProcess = Runtime.getRuntime().exec(
-                    "su -c sqlite3 $MAGISK_DB \"INSERT INTO policies (package_name, policy, logging, notification) VALUES ('$packageName', $policy, 1, 1)\""
-                )
-                insertProcess.waitFor()
-                insertProcess.exitValue() == 0
-            } else {
-                true
+            // 检测 Root 类型
+            val rootType = detectRootType()
+            Logger.d("Setting app policy for $packageName, policy: $policy, root type: $rootType")
+
+            val dbPath = when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // 检测使用哪个 KernelSU 管理器
+                    val ksudbWeishu = try {
+                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_WEISHU, 0)
+                        true
+                    } catch (e: Exception) {
+                        false
+                    }
+                    val ksudbTiann = try {
+                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_TIANN, 0)
+                        true
+                    } catch (e: Exception) {
+                        false
+                    }
+
+                    when {
+                        ksudbWeishu -> KERNELSU_DB_WEISHU
+                        ksudbTiann -> KERNELSU_DB_TIANN
+                        else -> {
+                            Logger.w("No KernelSU manager found, defaulting to Weishu")
+                            KERNELSU_DB_WEISHU
+                        }
+                    }
+                }
+                ROOT_TYPE_MAGISK -> MAGISK_DB
+                else -> {
+                    Logger.w("Unknown root type, trying Magisk DB")
+                    MAGISK_DB
+                }
+            }
+
+            return@withContext when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // KernelSU 使用 uid_policy 表，需要先获取应用的 uid
+                    try {
+                        val pm = context.packageManager
+                        val appInfo = pm.getApplicationInfo(packageName, 0)
+                        val uid = appInfo.uid
+
+                        // 先检查表名
+                        val tableCheck = Runtime.getRuntime().exec(
+                            arrayOf("su", "-c", "sqlite3", dbPath, ".tables")
+                        )
+                        val tables = tableCheck.inputStream.bufferedReader().readText().trim()
+                        tableCheck.waitFor()
+                        
+                        val tableName = when {
+                            tables.contains("rules") -> "rules"
+                            tables.contains("uid_policy") -> "uid_policy"
+                            else -> {
+                                Logger.w("Unknown KernelSU database structure")
+                                return@withContext false
+                            }
+                        }
+                        
+                        // 更新或插入 uid_policy
+                        val process = Runtime.getRuntime().exec(
+                            arrayOf("su", "-c", "sqlite3", dbPath, "REPLACE INTO $tableName (uid, policy) VALUES ($uid, $policy)")
+                        )
+                        process.waitFor()
+                        val success = process.exitValue() == 0
+                        if (success) {
+                            Logger.d("Set KernelSU policy for $packageName (uid=$uid): $policy")
+                        }
+                        success
+                    } catch (e: Exception) {
+                        Logger.e("Failed to get uid for $packageName", e)
+                        false
+                    }
+                }
+                ROOT_TYPE_MAGISK -> {
+                    // Magisk 使用 policies 表
+                    val process = Runtime.getRuntime().exec(
+                        arrayOf("su", "-c", "sqlite3", dbPath, "UPDATE policies SET policy=$policy WHERE package_name='$packageName'")
+                    )
+                    process.waitFor()
+
+                    // 如果没有记录则插入
+                    if (process.exitValue() != 0) {
+                        val insertProcess = Runtime.getRuntime().exec(
+                            arrayOf("su", "-c", "sqlite3", dbPath, "INSERT INTO policies (package_name, policy, logging, notification) VALUES ('$packageName', $policy, 1, 1)")
+                        )
+                        insertProcess.waitFor()
+                        insertProcess.exitValue() == 0
+                    } else {
+                        true
+                    }
+                }
+                else -> {
+                    Logger.w("Unknown root type, cannot set app policy")
+                    false
+                }
             }
         } catch (e: Exception) {
             Logger.e("Failed to set app policy: $packageName", e)
@@ -588,10 +859,10 @@ class MagiskProvider @Inject constructor(
     suspend fun clearLogs(): Boolean = withContext(Dispatchers.IO) {
         // 清除本地日志
         Logger.clearLocalLogs()
-        
+
         // 同时尝试清除 Magisk 日志
         try {
-            val process = Runtime.getRuntime().exec("su -c magisk -c")
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "magisk", "-c"))
             process.waitFor()
             process.exitValue() == 0
         } catch (e: Exception) {
@@ -606,9 +877,9 @@ class MagiskProvider @Inject constructor(
     suspend fun reboot(target: String = ""): Boolean = withContext(Dispatchers.IO) {
         try {
             val command = if (target.isEmpty()) {
-                "su -c reboot"
+                arrayOf("su", "-c", "reboot")
             } else {
-                "su -c reboot $target"
+                arrayOf("su", "-c", "reboot", target)
             }
             val process = Runtime.getRuntime().exec(command)
             process.waitFor()

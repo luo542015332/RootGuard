@@ -98,15 +98,35 @@ class MagiskRepository @Inject constructor(
         // 获取已有的授权策略
         val policies = magiskProvider.getAppPolicies()
         val policyMap = policies.associateBy { it.packageName }
-        
+
+        // 检测 Root 类型以确定 policy 值含义
+        val isKernelSU = try {
+            magiskProvider.getCurrentRootType() == MagiskProvider.ROOT_TYPE_KERNELSU
+        } catch (e: Exception) {
+            false
+        }
+
         allApps.map { appInfo ->
             val policy = policyMap[appInfo.packageName]
-            val status = when (policy?.policy) {
-                2 -> RootAccessStatus.GRANTED
-                1 -> RootAccessStatus.DENIED
-                else -> RootAccessStatus.PROMPT
+            val status = when {
+                isKernelSU -> {
+                    // KernelSU: 0=拒绝, 1=允许
+                    when (policy?.policy) {
+                        1 -> RootAccessStatus.GRANTED
+                        0 -> RootAccessStatus.DENIED
+                        else -> RootAccessStatus.PROMPT
+                    }
+                }
+                else -> {
+                    // Magisk: 0=询问, 1=拒绝, 2=允许
+                    when (policy?.policy) {
+                        2 -> RootAccessStatus.GRANTED
+                        1 -> RootAccessStatus.DENIED
+                        else -> RootAccessStatus.PROMPT
+                    }
+                }
             }
-            
+
             AppItem(
                 packageName = appInfo.packageName,
                 name = appInfo.appName,
@@ -124,11 +144,29 @@ class MagiskRepository @Inject constructor(
      * 设置应用的 Root 权限
      */
     suspend fun setAppRootAccess(packageName: String, status: RootAccessStatus): Boolean {
-        val policy = when (status) {
-            RootAccessStatus.GRANTED -> 2
-            RootAccessStatus.DENIED -> 1
-            RootAccessStatus.PROMPT -> 0
+        // 检测 Root 类型以确定 policy 值含义
+        val isKernelSU = try {
+            magiskProvider.getCurrentRootType() == MagiskProvider.ROOT_TYPE_KERNELSU
+        } catch (e: Exception) {
+            false
         }
+
+        val policy = if (isKernelSU) {
+            // KernelSU: 0=拒绝, 1=允许
+            when (status) {
+                RootAccessStatus.GRANTED -> 1
+                RootAccessStatus.DENIED -> 0
+                RootAccessStatus.PROMPT -> 1 // KernelSU 不支持 PROMPT，默认为允许
+            }
+        } else {
+            // Magisk: 0=询问, 1=拒绝, 2=允许
+            when (status) {
+                RootAccessStatus.GRANTED -> 2
+                RootAccessStatus.DENIED -> 1
+                RootAccessStatus.PROMPT -> 0
+            }
+        }
+
         return magiskProvider.setAppPolicy(packageName, policy)
     }
 

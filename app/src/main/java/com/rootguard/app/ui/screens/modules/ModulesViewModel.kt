@@ -9,6 +9,7 @@ import com.rootguard.app.domain.usecase.InstallModuleUseCase
 import com.rootguard.app.domain.usecase.ToggleModuleUseCase
 import com.rootguard.app.domain.usecase.UninstallModuleUseCase
 import com.rootguard.app.utils.FileUtils
+import com.rootguard.app.utils.Logger
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -148,55 +149,68 @@ class ModulesViewModel @Inject constructor(
      * 从 URI 安装模块
      */
     suspend fun installModuleFromUri(context: Context, uri: Uri) {
+        Logger.d("installModuleFromUri called with URI: $uri")
         _uiState.update { it.copy(installStatus = InstallStatus.Installing(0f, "准备安装...")) }
-        
+
         try {
             // 步骤 1: 复制文件到临时目录
+            Logger.d("Step 1: Copying file to temp directory")
             _uiState.update { it.copy(installStatus = InstallStatus.Installing(0.2f, "复制文件...")) }
-            
+
             val tempFile = File(context.cacheDir, "module_${System.currentTimeMillis()}.zip")
-            
+
             context.contentResolver.openInputStream(uri)?.use { input ->
                 tempFile.outputStream().use { output ->
                     input.copyTo(output)
                 }
             } ?: throw Exception("无法读取文件")
-            
+
+            Logger.d("File copied to: ${tempFile.absolutePath}, size: ${tempFile.length()} bytes")
+
             // 步骤 2: 验证文件
+            Logger.d("Step 2: Validating module")
             _uiState.update { it.copy(installStatus = InstallStatus.Installing(0.4f, "验证模块...")) }
-            
+
             if (!isValidMagiskModule(tempFile)) {
                 tempFile.delete()
-                _uiState.update { 
-                    it.copy(installStatus = InstallStatus.Error("无效的 Magisk 模块文件")) 
+                Logger.e("Invalid Magisk module file")
+                _uiState.update {
+                    it.copy(installStatus = InstallStatus.Error("无效的 Magisk 模块文件"))
                 }
                 return
             }
-            
+
+            Logger.d("Module validation passed")
+
             // 步骤 3: 安装模块
+            Logger.d("Step 3: Installing module")
             _uiState.update { it.copy(installStatus = InstallStatus.Installing(0.6f, "正在安装...")) }
-            
+
             val success = installModule(tempFile.absolutePath)
-            
+            Logger.d("Install result: $success")
+
             // 步骤 4: 清理
             _uiState.update { it.copy(installStatus = InstallStatus.Installing(0.9f, "清理...")) }
             tempFile.delete()
-            
+
             if (success) {
-                _uiState.update { 
-                    it.copy(installStatus = InstallStatus.Success("模块安装成功！请重启设备以生效。")) 
+                Logger.d("Module installation successful")
+                _uiState.update {
+                    it.copy(installStatus = InstallStatus.Success("模块安装成功！请重启设备以生效。"))
                 }
                 // 刷新模块列表
                 loadModules()
             } else {
-                _uiState.update { 
-                    it.copy(installStatus = InstallStatus.Error("模块安装失败")) 
+                Logger.e("Module installation failed")
+                _uiState.update {
+                    it.copy(installStatus = InstallStatus.Error("模块安装失败"))
                 }
             }
-            
+
         } catch (e: Exception) {
-            _uiState.update { 
-                it.copy(installStatus = InstallStatus.Error("安装失败: ${e.message}")) 
+            Logger.e("Install module failed", e)
+            _uiState.update {
+                it.copy(installStatus = InstallStatus.Error("安装失败: ${e.message}"))
             }
         }
     }

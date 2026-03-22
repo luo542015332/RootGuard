@@ -14,7 +14,7 @@ object Logger {
     private val MAX_LOGS = 500
     
     fun d(message: String) {
-        Log.d(TAG, message)
+        Log.e(TAG, message)  // 使用 ERROR 级别确保输出
         addLog(message, MagiskLogLevel.DEBUG)
     }
     

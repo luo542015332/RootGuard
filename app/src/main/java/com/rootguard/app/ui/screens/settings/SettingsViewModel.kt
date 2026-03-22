@@ -3,6 +3,7 @@ package com.rootguard.app.ui.screens.settings
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rootguard.app.data.local.SettingsDataStore
+import com.rootguard.app.data.remote.UpdateManager
 import com.rootguard.app.data.repository.MagiskRepository
 import com.rootguard.app.domain.usecase.RebootToBootloaderUseCase
 import com.rootguard.app.domain.usecase.RebootToRecoveryUseCase
@@ -27,15 +28,19 @@ data class SettingsUiState(
     val kernelUnmountModules: Boolean = false,
     val defaultUnmountModules: Boolean = false,
     val webViewDebugging: Boolean = false,
-    val appVersion: String = "1.1.0",
+    val appVersion: String = com.rootguard.app.BuildConfig.VERSION_NAME,
     val magiskVersion: String = "Unknown",
-    val kernelVersion: String = "Unknown"
+    val kernelVersion: String = "Unknown",
+    val isCheckingUpdates: Boolean = false,
+    val updateAvailable: Boolean = false,
+    val updateMessage: String? = null
 )
 
 @HiltViewModel
 class SettingsViewModel @Inject constructor(
     private val settingsDataStore: SettingsDataStore,
     private val repository: MagiskRepository,
+    private val updateManager: UpdateManager,
     private val rebootUseCase: RebootUseCase,
     private val rebootToRecoveryUseCase: RebootToRecoveryUseCase,
     private val rebootToBootloaderUseCase: RebootToBootloaderUseCase,
@@ -187,7 +192,38 @@ class SettingsViewModel @Inject constructor(
 
     fun checkForUpdates() {
         viewModelScope.launch {
-            // TODO: 实现检查更新逻辑
+            _uiState.update { it.copy(isCheckingUpdates = true, updateMessage = null) }
+
+            try {
+                val currentVersion = _uiState.value.appVersion
+                val releaseInfo = updateManager.checkForUpdates(currentVersion)
+
+                if (releaseInfo != null) {
+                    _uiState.update {
+                        it.copy(
+                            isCheckingUpdates = false,
+                            updateAvailable = true,
+                            updateMessage = "发现新版本 ${releaseInfo.getVersionName()}\n\n${releaseInfo.body}"
+                        )
+                    }
+                } else {
+                    _uiState.update {
+                        it.copy(
+                            isCheckingUpdates = false,
+                            updateAvailable = false,
+                            updateMessage = "当前已是最新版本"
+                        )
+                    }
+                }
+            } catch (e: Exception) {
+                _uiState.update {
+                    it.copy(
+                        isCheckingUpdates = false,
+                        updateAvailable = false,
+                        updateMessage = "检查更新失败: ${e.message}"
+                    )
+                }
+            }
         }
     }
     

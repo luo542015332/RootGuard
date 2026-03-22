@@ -3,6 +3,7 @@ package com.rootguard.app
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -16,6 +17,7 @@ import com.rootguard.app.data.local.SettingsDataStore
 import com.rootguard.app.ui.navigation.RootGuardNavHost
 import com.rootguard.app.ui.navigation.Screen
 import com.rootguard.app.ui.theme.RootGuardTheme
+import com.rootguard.app.utils.Logger
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
@@ -34,10 +36,17 @@ class MainActivity : ComponentActivity() {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        
+
+        // 测试 Toast 显示
+        Toast.makeText(this, "PandaSU v${com.rootguard.app.BuildConfig.VERSION_NAME} 启动", Toast.LENGTH_LONG).show()
+
+        // 测试日志输出
+        Logger.d("MainActivity onCreate called")
+        Logger.d("BuildConfig.VERSION_NAME: ${com.rootguard.app.BuildConfig.VERSION_NAME}")
+
         // 检查是否有模块文件被分享过来
         val moduleUri = handleIntent(intent)
-        
+
         setContent {
             val startDestination = remember { mutableStateOf(Screen.Home.route) }
             
