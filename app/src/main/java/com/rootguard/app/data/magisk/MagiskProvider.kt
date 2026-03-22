@@ -256,26 +256,46 @@ class MagiskProvider @Inject constructor(
             val pm = context.packageManager
             val packages = pm.getInstalledApplications(0)
 
-            packages.forEach { appInfo ->
+            Logger.d("PackageManager returned ${packages.size} packages")
+
+            packages.forEachIndexed { index, appInfo ->
                 try {
-                    val appName = pm.getApplicationLabel(appInfo).toString()
                     val packageName = appInfo.packageName
                     val isSystemApp = (appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0
+                    val appName = try {
+                        pm.getApplicationLabel(appInfo).toString()
+                    } catch (e: Exception) {
+                        packageName
+                    }
+
+                    val icon = try {
+                        pm.getApplicationIcon(appInfo)
+                    } catch (e: Exception) {
+                        Logger.w("Failed to load icon for $packageName: ${e.message}")
+                        null
+                    }
 
                     apps.add(
                         InstalledAppInfo(
                             packageName = packageName,
                             appName = appName,
                             isSystemApp = isSystemApp,
-                            icon = pm.getApplicationIcon(appInfo)
+                            icon = icon
                         )
                     )
                 } catch (e: Exception) {
-                    Logger.e("Failed to process app: ${appInfo.packageName}", e)
+                    Logger.e("Failed to process app[${index}]: ${appInfo.packageName}", e)
                 }
             }
 
-            Logger.d("Found ${apps.size} total apps, ${apps.count { !it.isSystemApp }} user apps, ${apps.count { it.isSystemApp }} system apps")
+            val userApps = apps.count { !it.isSystemApp }
+            val systemApps = apps.count { it.isSystemApp }
+            Logger.d("Added ${apps.size} apps to list: $userApps user apps, $systemApps system apps")
+
+            // 打印前 10 个用户应用的包名用于调试
+            apps.filter { !it.isSystemApp }.take(10).forEach {
+                Logger.d("User app: ${it.packageName} - ${it.appName}")
+            }
         } catch (e: Exception) {
             Logger.e("Failed to get installed apps", e)
         }
