@@ -435,25 +435,33 @@ class MagiskProvider @Inject constructor(
         val policies = mutableListOf<AppPolicy>()
 
         try {
+            Logger.d("========== Starting getAppPolicies() ==========")
+            
             // 检测 Root 类型
             val rootType = detectRootType()
-            Logger.d("Getting app policies for root type: $rootType")
+            Logger.d("Detected root type: $rootType")
 
             val dbPath = when (rootType) {
                 ROOT_TYPE_KERNELSU -> {
+                    Logger.d("Root type is KernelSU, detecting manager...")
+                    
                     // 检测使用哪个 KernelSU 管理器
                     val ksudbWeishu = try {
                         context.packageManager.getPackageInfo(KERNELSU_PACKAGE_WEISHU, 0)
                         true
                     } catch (e: Exception) {
+                        Logger.w("Weishu KernelSU not installed: ${e.message}")
                         false
                     }
                     val ksudbTiann = try {
                         context.packageManager.getPackageInfo(KERNELSU_PACKAGE_TIANN, 0)
                         true
                     } catch (e: Exception) {
+                        Logger.w("Tiann KernelSU not installed: ${e.message}")
                         false
                     }
+
+                    Logger.d("ksudbWeishu: $ksudbWeishu, ksudbTiann: $ksudbTiann")
 
                     when {
                         ksudbWeishu -> {
@@ -470,32 +478,43 @@ class MagiskProvider @Inject constructor(
                         }
                     }
                 }
-                ROOT_TYPE_MAGISK -> MAGISK_DB
+                ROOT_TYPE_MAGISK -> {
+                    Logger.d("Root type is Magisk, using: $MAGISK_DB")
+                    MAGISK_DB
+                }
                 else -> {
-                    Logger.w("Unknown root type, trying Magisk DB")
+                    Logger.w("Unknown root type ($rootType), trying Magisk DB: $MAGISK_DB")
                     MAGISK_DB
                 }
             }
 
-            Logger.d("Querying database: $dbPath")
+            Logger.d("Database path: $dbPath")
 
             // 检查数据库文件是否存在
+            Logger.d("Checking if database exists: $dbPath")
             val checkDbProcess = Runtime.getRuntime().exec(arrayOf("su", "-c", "test", "-f", dbPath))
             checkDbProcess.waitFor()
+            
+            Logger.d("Database check exit code: ${checkDbProcess.exitValue()}")
 
             if (checkDbProcess.exitValue() != 0) {
                 Logger.w("Database file not found: $dbPath")
                 return@withContext policies
             }
+            
+            Logger.d("Database file exists, proceeding to query")
 
             // 根据不同的 Root 类型使用不同的查询方式
             when (rootType) {
                 ROOT_TYPE_KERNELSU -> {
+                    Logger.d("Querying KernelSU database...")
+                    
                     // KernelSU 数据库结构根据不同管理器可能不同
                     // Weishu KernelSU: app.db - rules 表 (uid, policy)
                     // Tiann KernelSU: kernelsu.db - uid_policy 表 (uid, policy)
                     
                     // 先检查表名
+                    Logger.d("Checking database tables...")
                     val tableCheck = Runtime.getRuntime().exec(
                         arrayOf("su", "-c", "sqlite3", dbPath, ".tables")
                     )
@@ -503,10 +522,17 @@ class MagiskProvider @Inject constructor(
                     tableCheck.waitFor()
                     
                     Logger.d("KernelSU database tables: $tables")
+                    Logger.d("Table check exit code: ${tableCheck.exitValue()}")
                     
                     val tableName = when {
-                        tables.contains("rules") -> "rules"
-                        tables.contains("uid_policy") -> "uid_policy"
+                        tables.contains("rules") -> {
+                            Logger.d("Found 'rules' table")
+                            "rules"
+                        }
+                        tables.contains("uid_policy") -> {
+                            Logger.d("Found 'uid_policy' table")
+                            "uid_policy"
+                        }
                         else -> {
                             Logger.w("Unknown KernelSU database structure, tables: $tables")
                             return@withContext policies
@@ -515,11 +541,17 @@ class MagiskProvider @Inject constructor(
                     
                     Logger.d("Using table: $tableName")
                     
+                    Logger.d("Executing query: SELECT uid, policy FROM $tableName")
                     val process = Runtime.getRuntime().exec(
                         arrayOf("su", "-c", "sqlite3", dbPath, "SELECT uid, policy FROM $tableName")
                     )
                     val output = process.inputStream.bufferedReader().readText()
                     process.waitFor()
+                    
+                    Logger.d("Query exit code: ${process.exitValue()}")
+                    Logger.d("Query output length: ${output.length} characters")
+                    Logger.d("Query output lines: ${output.lines().size} lines")
+                    Logger.d("Query output preview: ${output.take(200)}")
 
                     output.lines().forEach { line ->
                         val parts = line.split("|")
