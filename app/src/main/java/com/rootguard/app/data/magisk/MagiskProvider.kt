@@ -639,14 +639,16 @@ class MagiskProvider @Inject constructor(
             // 使用多个 flags 确保获取所有应用，包括微信、QQ等
             val packages = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
                 // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
-                // 使用 0 获取所有已安装应用（包括所有用户应用和系统应用）
+                // 使用 MATCH_ALL 确保获取所有已安装应用（包括所有用户应用和系统应用）
                 pm.getInstalledApplications(
-                    PackageManager.ApplicationInfoFlags.of(0)
+                    PackageManager.ApplicationInfoFlags.of(
+                        PackageManager.MATCH_ALL.toLong()
+                    )
                 )
             } else {
                 @Suppress("DEPRECATION")
-                // Android 12 及以下使用 0 获取所有应用
-                pm.getInstalledApplications(0)
+                // Android 12 及以下使用 GET_META_DATA 获取所有应用
+                pm.getInstalledApplications(PackageManager.GET_META_DATA)
             }
 
             Logger.d("PackageManager returned ${packages.size} packages")
