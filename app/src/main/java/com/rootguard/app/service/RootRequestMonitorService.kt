@@ -1,9 +1,16 @@
 package com.rootguard.app.service
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.IBinder
+import androidx.core.app.NotificationCompat
+import com.rootguard.app.MainActivity
+import com.rootguard.app.R
 import com.rootguard.app.utils.Logger
 import kotlinx.coroutines.*
 import java.io.BufferedReader
@@ -18,6 +25,8 @@ class RootRequestMonitorService : Service() {
     companion object {
         const val ACTION_START_MONITORING = "action_start_monitoring"
         const val ACTION_STOP_MONITORING = "action_stop_monitoring"
+        const val CHANNEL_ID = "rootguard_monitor"
+        const val NOTIFICATION_ID = 1
     }
 
     private val serviceScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
@@ -29,6 +38,8 @@ class RootRequestMonitorService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        createNotificationChannel()
+        startForeground(NOTIFICATION_ID, createNotification())
         Logger.d("RootRequestMonitorService created")
     }
 
@@ -192,5 +203,37 @@ class RootRequestMonitorService : Service() {
      */
     fun clearRequest(packageName: String) {
         knownRequests.remove(packageName)
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                CHANNEL_ID,
+                "Root 监控服务",
+                NotificationManager.IMPORTANCE_LOW
+            ).apply {
+                description = "监控 Root 权限请求"
+            }
+
+            val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }
+
+    private fun createNotification(): Notification {
+        val pendingIntent = android.app.PendingIntent.getActivity(
+            this,
+            0,
+            Intent(this, MainActivity::class.java),
+            android.app.PendingIntent.FLAG_IMMUTABLE
+        )
+
+        return NotificationCompat.Builder(this, CHANNEL_ID)
+            .setContentTitle("RootGuard")
+            .setContentText("正在监控 Root 权限请求")
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentIntent(pendingIntent)
+            .setOngoing(true)
+            .build()
     }
 }
