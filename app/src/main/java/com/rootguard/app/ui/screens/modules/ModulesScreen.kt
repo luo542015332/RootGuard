@@ -214,7 +214,7 @@ fun ModulesScreen(
                     }
 
                     LinearProgressIndicator(
-                        progress = { progress },
+                        progress = progress,
                         modifier = Modifier.fillMaxWidth()
                     )
                     Spacer(modifier = Modifier.height(8.dp))

@@ -1,5 +1,6 @@
 package com.rootguard.app.ui.screens.install
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.icons.Icons
