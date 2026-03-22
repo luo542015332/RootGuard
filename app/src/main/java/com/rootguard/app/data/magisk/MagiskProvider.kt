@@ -635,28 +635,60 @@ class MagiskProvider @Inject constructor(
 
         try {
             val pm = context.packageManager
-            // 获取所有已安装应用（包括系统应用和用户应用）
-            // 使用多个 flags 确保获取所有应用，包括微信、QQ等
-            val packages = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-                // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
-                // 组合多个 flags 确保获取所有已安装应用
-                val flags = PackageManager.MATCH_ALL.toLong() or
-                           PackageManager.MATCH_DISABLED_COMPONENTS.toLong() or
-                           PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS.toLong() or
-                           PackageManager.MATCH_UNINSTALLED_PACKAGES.toLong()
-                pm.getInstalledApplications(
-                    PackageManager.ApplicationInfoFlags.of(flags)
+
+            // 首先尝试使用 ADB 命令获取完整的应用列表
+            val packageNames = try {
+                val process = Runtime.getRuntime().exec(
+                    arrayOf("su", "-c", "pm", "list", "packages", "-3")
                 )
-            } else {
-                @Suppress("DEPRECATION")
-                // Android 12 及以下组合多个 flags
-                val flags = PackageManager.GET_META_DATA or
-                            PackageManager.GET_DISABLED_COMPONENTS or
-                            PackageManager.GET_UNINSTALLED_PACKAGES
-                pm.getInstalledApplications(flags)
+                val output = process.inputStream.bufferedReader().readText()
+                process.waitFor()
+                output.lines()
+                    .map { it.substringAfter("package:").trim() }
+                    .filter { it.isNotEmpty() }
+            } catch (e: Exception) {
+                Logger.w("Failed to get packages via pm command: ${e.message}")
+                emptyList()
             }
 
-            Logger.d("PackageManager returned ${packages.size} packages")
+            Logger.d("pm list packages returned ${packageNames.size} packages")
+
+            // 如果 ADB 命令成功且返回更多应用，使用这个列表
+            val usePmCommand = packageNames.size > 302 // 如果 pm 命令返回超过 PackageManager API 的数量
+
+            val packages = if (usePmCommand) {
+                Logger.d("Using pm command result (${packageNames.size} packages)")
+                packageNames.mapNotNull { packageName ->
+                    try {
+                        pm.getApplicationInfo(packageName, 0)
+                    } catch (e: Exception) {
+                        Logger.w("Failed to get ApplicationInfo for $packageName: ${e.message}")
+                        null
+                    }
+                }
+            } else {
+                // 回退到 PackageManager API（原方案）
+                Logger.d("Using PackageManager API")
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+                    // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
+                    val flags = PackageManager.MATCH_ALL.toLong() or
+                               PackageManager.MATCH_DISABLED_COMPONENTS.toLong() or
+                               PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS.toLong() or
+                               PackageManager.MATCH_UNINSTALLED_PACKAGES.toLong()
+                    pm.getInstalledApplications(
+                        PackageManager.ApplicationInfoFlags.of(flags)
+                    )
+                } else {
+                    @Suppress("DEPRECATION")
+                    // Android 12 及以下组合多个 flags
+                    val flags = PackageManager.GET_META_DATA or
+                                PackageManager.GET_DISABLED_COMPONENTS or
+                                PackageManager.GET_UNINSTALLED_PACKAGES
+                    pm.getInstalledApplications(flags)
+                }
+            }
+
+            Logger.d("Final packages count: ${packages.size}")
 
             // 检查微信、QQ 是否在列表中
             val keyApps = listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")
