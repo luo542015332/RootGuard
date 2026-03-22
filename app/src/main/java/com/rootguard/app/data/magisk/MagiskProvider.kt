@@ -261,7 +261,7 @@ class MagiskProvider @Inject constructor(
             packages.forEachIndexed { index, appInfo ->
                 try {
                     val packageName = appInfo.packageName
-                    val isSystemApp = (appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0
+                    val isSystemApp = isSystemApp(appInfo)
                     val appName = try {
                         pm.getApplicationLabel(appInfo).toString()
                     } catch (e: Exception) {
@@ -466,6 +466,37 @@ class MagiskProvider @Inject constructor(
             Logger.e("Failed to reboot", e)
             false
         }
+    }
+
+    /**
+     * 判断是否为系统应用
+     * 
+     * 系统应用判断逻辑：
+     * 1. 检查 FLAG_SYSTEM 标志
+     * 2. 进一步检查安装路径，排除被错误标记的用户应用
+     * 3. 某些 ROM（如 MIUI）可能将用户应用标记为 FLAG_SYSTEM，
+     *    但它们的安装路径仍在 /data/app/ 下
+     * 
+     * @param appInfo 应用信息
+     * @return true 如果是系统应用，false 如果是用户应用
+     */
+    private fun isSystemApp(appInfo: android.content.pm.ApplicationInfo): Boolean {
+        // 检查 FLAG_SYSTEM 标志
+        val hasSystemFlag = (appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0
+        
+        if (!hasSystemFlag) {
+            return false
+        }
+        
+        // 如果有 FLAG_SYSTEM 标志，进一步检查安装路径
+        // 用户应用通常安装在 /data/app/ 下
+        // 系统应用安装在 /system/、/vendor/、/product/ 等目录下
+        val sourceDir = appInfo.sourceDir ?: return true
+        
+        val isUserInstalled = sourceDir.contains("/data/app/") || 
+                             sourceDir.contains("/data/data/")
+        
+        return !isUserInstalled
     }
 }
 

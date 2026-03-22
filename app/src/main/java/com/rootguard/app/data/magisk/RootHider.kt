@@ -22,6 +22,10 @@ class RootHider @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
     companion object {
+        // Root 管理方案类型
+        private const val ROOT_TYPE_MAGISK = "magisk"
+        private const val ROOT_TYPE_KERNELSU = "kernelsu"
+        
         // 常见的 Root 检测路径
         private val ROOT_PATHS = listOf(
             "/system/bin/su",
@@ -42,6 +46,14 @@ class RootHider @Inject constructor(
             "/sbin/.magisk",
             "/dev/.magisk.unblock",
             "/system/etc/init.d"
+        )
+        
+        // KernelSU 相关路径
+        private val KERNELSU_PATHS = listOf(
+            "/data/adb/ksu",
+            "/data/adb/modules", // KernelSU 也使用模块目录
+            "/dev/ksu",
+            "/sys/kernel/ksu"
         )
         
         // Busybox 路径
@@ -72,10 +84,76 @@ class RootHider @Inject constructor(
             "com.smedialink.oneclickroot",
             "com.zhiqupk.root.global",
             "me.weishu.exp",
+            "me.weishu.kernelsu", // KernelSU 管理应用
             "de.robv.android.xposed.installer",
             "org.meowcat.edxposed.manager",
             "com.solohsu.android.edxp.manager"
         )
+    }
+    
+    // 缓存的 Root 类型检测结果
+    private var cachedRootType: String? = null
+    
+    /**
+     * 检测当前设备的 Root 管理方案
+     * 
+     * @return "kernelsu" 或 "magisk"
+     */
+    private suspend fun detectRootType(): String = withContext(Dispatchers.IO) {
+        // 使用缓存结果
+        cachedRootType?.let { return@withContext it }
+        
+        try {
+            // 方法1: 检查 KernelSU 特征文件
+            val hasKernelSU = KERNELSU_PATHS.any { path ->
+                try {
+                    File(path).exists()
+                } catch (e: Exception) {
+                    false
+                }
+            }
+            
+            if (hasKernelSU) {
+                // 进一步验证 KernelSU 命令是否可用
+                val process = Runtime.getRuntime().exec("su -c ksu --version")
+                process.waitFor()
+                if (process.exitValue() == 0) {
+                    Logger.d("Detected KernelSU root management")
+                    cachedRootType = ROOT_TYPE_KERNELSU
+                    return@withContext ROOT_TYPE_KERNELSU
+                }
+            }
+            
+            // 方法2: 检查 Magisk 特征文件
+            val hasMagisk = MAGISK_PATHS.any { path ->
+                try {
+                    File(path).exists()
+                } catch (e: Exception) {
+                    false
+                }
+            }
+            
+            if (hasMagisk) {
+                // 进一步验证 Magisk 命令是否可用
+                val process = Runtime.getRuntime().exec("su -c magisk -c")
+                process.waitFor()
+                if (process.exitValue() == 0) {
+                    Logger.d("Detected Magisk root management")
+                    cachedRootType = ROOT_TYPE_MAGISK
+                    return@withContext ROOT_TYPE_MAGISK
+                }
+            }
+            
+            // 默认使用 Magisk 兼容模式
+            Logger.w("Cannot detect root type, defaulting to Magisk compatibility mode")
+            cachedRootType = ROOT_TYPE_MAGISK
+            return@withContext ROOT_TYPE_MAGISK
+            
+        } catch (e: Exception) {
+            Logger.e("Failed to detect root type, defaulting to Magisk", e)
+            cachedRootType = ROOT_TYPE_MAGISK
+            return@withContext ROOT_TYPE_MAGISK
+        }
     }
     
     /**
@@ -126,28 +204,57 @@ class RootHider @Inject constructor(
     }
     
     /**
-     * 配置 Magisk Hide / DenyList
+     * 配置 Magisk Hide / DenyList / KernelSU DenyList
+     * 自动检测 Root 类型并使用对应的命令
      */
     private suspend fun configureMagiskHide(config: IsolationConfig): Boolean = withContext(Dispatchers.IO) {
         try {
-            // 尝试使用 Magisk 的 magisk --denylist 命令
-            // 或者写入到 Magisk 的配置文件
+            val rootType = detectRootType()
+            val packageName = config.packageName
             
-            // 方法1: 使用命令行
-            val process = Runtime.getRuntime().exec(
-                "su -c magisk --denylist add ${config.packageName}"
-            )
-            process.waitFor()
+            Logger.d("Configuring denylist for $packageName (Root type: $rootType)")
             
-            // 方法2: 写入配置文件（作为备用）
-            if (process.exitValue() != 0) {
-                // 尝试直接修改 Magisk 数据库或配置文件
-                addToMagiskConfig(config.packageName)
+            when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // 使用 KernelSU 命令
+                    val process = Runtime.getRuntime().exec(
+                        "su -c ksu denylist add $packageName"
+                    )
+                    process.waitFor()
+                    
+                    if (process.exitValue() != 0) {
+                        Logger.e("KernelSU denylist add failed for $packageName")
+                        false
+                    } else {
+                        Logger.d("Added $packageName to KernelSU denylist")
+                        true
+                    }
+                }
+                
+                ROOT_TYPE_MAGISK -> {
+                    // 使用 Magisk 命令
+                    val process = Runtime.getRuntime().exec(
+                        "su -c magisk --denylist add $packageName"
+                    )
+                    process.waitFor()
+                    
+                    // 如果命令失败，尝试写入配置文件（备用方法）
+                    if (process.exitValue() != 0) {
+                        Logger.w("Magisk denylist command failed, trying config file")
+                        addToMagiskConfig(packageName)
+                    } else {
+                        Logger.d("Added $packageName to Magisk denylist")
+                        true
+                    }
+                }
+                
+                else -> {
+                    Logger.e("Unknown root type: $rootType")
+                    false
+                }
             }
-            
-            true
         } catch (e: Exception) {
-            Logger.e("Failed to configure Magisk Hide", e)
+            Logger.e("Failed to configure denylist for ${config.packageName}", e)
             // 尝试备用方法
             addToMagiskConfig(config.packageName)
         }
@@ -316,20 +423,50 @@ class RootHider @Inject constructor(
         try {
             Logger.d("Removing isolation for $packageName")
             
-            // 1. 从 Magisk Hide / DenyList 移除
-            val process = Runtime.getRuntime().exec(
-                "su -c magisk --denylist rm $packageName"
-            )
-            process.waitFor()
+            val rootType = detectRootType()
             
-            // 2. 从数据库移除
-            val magiskDb = "/data/adb/magisk.db"
-            val dbProcess = Runtime.getRuntime().exec(
-                "su -c sqlite3 $magiskDb \"DELETE FROM denylist WHERE package_name='$packageName'\""
-            )
-            dbProcess.waitFor()
+            when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // 使用 KernelSU 命令移除
+                    val process = Runtime.getRuntime().exec(
+                        "su -c ksu denylist rm $packageName"
+                    )
+                    process.waitFor()
+                    
+                    if (process.exitValue() != 0) {
+                        Logger.e("KernelSU denylist rm failed for $packageName")
+                    } else {
+                        Logger.d("Removed $packageName from KernelSU denylist")
+                    }
+                }
+                
+                ROOT_TYPE_MAGISK -> {
+                    // 使用 Magisk 命令移除
+                    val process = Runtime.getRuntime().exec(
+                        "su -c magisk --denylist rm $packageName"
+                    )
+                    process.waitFor()
+                    
+                    // 2. 从数据库移除
+                    val magiskDb = "/data/adb/magisk.db"
+                    val dbProcess = Runtime.getRuntime().exec(
+                        "su -c sqlite3 $magiskDb \"DELETE FROM denylist WHERE package_name='$packageName'\""
+                    )
+                    dbProcess.waitFor()
+                    
+                    if (process.exitValue() != 0) {
+                        Logger.w("Magisk denylist rm failed for $packageName")
+                    } else {
+                        Logger.d("Removed $packageName from Magisk denylist")
+                    }
+                }
+                
+                else -> {
+                    Logger.e("Unknown root type: $rootType")
+                }
+            }
             
-            // 3. 清理挂载点
+            // 清理挂载点
             cleanupMounts(packageName)
             
             true
@@ -397,17 +534,53 @@ class RootHider @Inject constructor(
      */
     suspend fun checkHideStatus(): HideStatus = withContext(Dispatchers.IO) {
         try {
-            // 检查 Magisk Hide / Zygisk DenyList 状态
-            val process = Runtime.getRuntime().exec("su -c magisk -Z")
-            val output = process.inputStream.bufferedReader().readText()
-            process.waitFor()
+            val rootType = detectRootType()
             
-            when {
-                output.contains("Enforcing") -> HideStatus.ACTIVE
-                output.contains("Permissive") -> HideStatus.PARTIAL
-                else -> HideStatus.INACTIVE
+            when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // 检查 KernelSU denylist 状态
+                    val process = Runtime.getRuntime().exec("su -c ksu denylist list")
+                    val output = process.inputStream.bufferedReader().readText()
+                    process.waitFor()
+                    
+                    if (process.exitValue() == 0 && output.isNotBlank()) {
+                        Logger.d("KernelSU denylist active")
+                        HideStatus.ACTIVE
+                    } else {
+                        Logger.d("KernelSU denylist inactive")
+                        HideStatus.INACTIVE
+                    }
+                }
+                
+                ROOT_TYPE_MAGISK -> {
+                    // 检查 Magisk Hide / Zygisk DenyList 状态
+                    val process = Runtime.getRuntime().exec("su -c magisk -Z")
+                    val output = process.inputStream.bufferedReader().readText()
+                    process.waitFor()
+                    
+                    when {
+                        output.contains("Enforcing") -> {
+                            Logger.d("Magisk denylist active (Enforcing)")
+                            HideStatus.ACTIVE
+                        }
+                        output.contains("Permissive") -> {
+                            Logger.d("Magisk denylist partial (Permissive)")
+                            HideStatus.PARTIAL
+                        }
+                        else -> {
+                            Logger.d("Magisk denylist inactive")
+                            HideStatus.INACTIVE
+                        }
+                    }
+                }
+                
+                else -> {
+                    Logger.e("Unknown root type: $rootType")
+                    HideStatus.UNKNOWN
+                }
             }
         } catch (e: Exception) {
+            Logger.e("Failed to check hide status", e)
             HideStatus.UNKNOWN
         }
     }
@@ -417,16 +590,54 @@ class RootHider @Inject constructor(
      */
     suspend fun getIsolatedApps(): List<String> = withContext(Dispatchers.IO) {
         try {
-            // 从 Magisk 数据库读取
-            val magiskDb = "/data/adb/magisk.db"
-            val process = Runtime.getRuntime().exec(
-                "su -c sqlite3 $magiskDb \"SELECT package_name FROM denylist\""
-            )
-            val output = process.inputStream.bufferedReader().readText()
-            process.waitFor()
+            val rootType = detectRootType()
             
-            output.lines().filter { it.isNotBlank() }
+            when (rootType) {
+                ROOT_TYPE_KERNELSU -> {
+                    // 从 KernelSU denylist 读取
+                    val process = Runtime.getRuntime().exec("su -c ksu denylist list")
+                    val output = process.inputStream.bufferedReader().readText()
+                    process.waitFor()
+                    
+                    if (process.exitValue() != 0) {
+                        Logger.e("Failed to get KernelSU denylist")
+                        emptyList()
+                    } else {
+                        val packages = output.lines()
+                            .filter { it.isNotBlank() }
+                            .map { it.trim() }
+                            .filter { it.isNotEmpty() }
+                        
+                        Logger.d("KernelSU denylist: ${packages.size} apps")
+                        packages
+                    }
+                }
+                
+                ROOT_TYPE_MAGISK -> {
+                    // 从 Magisk 数据库读取
+                    val magiskDb = "/data/adb/magisk.db"
+                    val process = Runtime.getRuntime().exec(
+                        "su -c sqlite3 $magiskDb \"SELECT package_name FROM denylist\""
+                    )
+                    val output = process.inputStream.bufferedReader().readText()
+                    process.waitFor()
+                    
+                    val packages = output.lines()
+                        .filter { it.isNotBlank() }
+                        .map { it.trim() }
+                        .filter { it.isNotEmpty() }
+                    
+                    Logger.d("Magisk denylist: ${packages.size} apps")
+                    packages
+                }
+                
+                else -> {
+                    Logger.e("Unknown root type: $rootType")
+                    emptyList()
+                }
+            }
         } catch (e: Exception) {
+            Logger.e("Failed to get isolated apps", e)
             emptyList()
         }
     }

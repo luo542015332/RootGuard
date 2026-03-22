@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rootguard.app.domain.usecase.GetAppsUseCase
 import com.rootguard.app.domain.usecase.SetAppRootAccessUseCase
+import com.rootguard.app.utils.Logger
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -57,6 +58,10 @@ class AppsViewModel @Inject constructor(
         val granted = apps.count { it.rootStatus == RootAccessStatus.GRANTED }
         val denied = apps.count { it.rootStatus == RootAccessStatus.DENIED }
         val prompt = apps.count { it.rootStatus == RootAccessStatus.PROMPT }
+
+        // 记录应用数量统计
+        Logger.d("Apps loaded: Total=${apps.size}, User=$userApps, System=$systemApps")
+        Logger.d("Root status: Granted=$granted, Denied=$denied, Prompt=$prompt")
 
         _uiState.update { state ->
             val filtered = applyFilters(apps, state.searchQuery, state.filter)
