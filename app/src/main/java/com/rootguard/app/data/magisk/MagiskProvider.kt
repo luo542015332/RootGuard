@@ -639,7 +639,7 @@ class MagiskProvider @Inject constructor(
             // 首先尝试使用 ADB 命令获取完整的应用列表
             val packageNames = try {
                 val process = Runtime.getRuntime().exec(
-                    arrayOf("su", "-c", "pm", "list", "packages", "-3")
+                    arrayOf("su", "-c", "pm", "list", "packages")
                 )
                 val output = process.inputStream.bufferedReader().readText()
                 process.waitFor()
