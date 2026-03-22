@@ -37,15 +37,16 @@ jobs:
 
       - name: Download APK from latest build
         run: |
-          # 获取最新的 Actions run ID
-          RUN_ID=$(gh run list --repo luo542015332/RootGuard --workflow=build.yml --branch main --limit 1 --json databaseId --jq '.[0].databaseId')
-          echo "Latest build run ID: $RUN_ID"
+          # 获取最新的成功 Actions run ID
+          RUN_ID=$(gh run list --repo luo542015332/RootGuard --workflow=build.yml --branch main --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "Latest successful build run ID: $RUN_ID"
 
-          # 下载 artifact
-          gh run download $RUN_ID --repo luo542015332/RootGuard --name PandaSU-APK-${{ steps.version.outputs.version }}
+          # 下载 artifact 到当前目录
+          gh run download $RUN_ID --repo luo542015332/RootGuard --name PandaSU-APK-${{ steps.version.outputs.version }} --dir ./apk-download/
           
-          # 检查文件是否存在
-          ls -la app/build/outputs/apk/debug/
+          # 检查下载的文件
+          echo "Downloaded files:"
+          find ./apk-download/ -type f
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -53,9 +54,9 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.event.inputs.version || github.ref_name }}
-          name: ${{ github.event.inputs.title || 'PandaSU Release' }}
-          body: ${{ github.event.inputs.notes }}
-          files: app/build/outputs/apk/debug/PandaSU-${{ steps.version.outputs.version }}.apk
+          name: ${{ github.event.inputs.title || format('PandaSU {0}', github.ref_name) }}
+          body: ${{ github.event.inputs.notes || format('PandaSU {0} Release', github.ref_name) }}
+          files: ./apk-download/PandaSU-${{ steps.version.outputs.version }}.apk
           draft: false
           prerelease: false
         env:
