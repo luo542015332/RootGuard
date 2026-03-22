@@ -132,14 +132,30 @@ class ModuleBackupManager @Inject constructor(
 
             val backupFile = File(backupDirPath, "$backupId.zip")
 
-            // 压缩模块文件
-            val modulePath = File("/data/adb/modules", module.id)
-            if (!modulePath.exists()) {
-                return@withContext Result.failure(Exception("模块目录不存在: $modulePath"))
-            }
-
-            ZipOutputStream(FileOutputStream(backupFile)).use { zos ->
-                zipDirectory(modulePath, "", zos)
+            // 使用 su 命令检查并压缩模块文件
+            val modulePath = "/data/adb/modules/${module.id}"
+            
+            try {
+                // 检查模块目录是否存在
+                val checkProcess = Runtime.getRuntime().exec("su -c test -d \"$modulePath\" && echo 1 || echo 0")
+                val checkResult = checkProcess.inputStream.bufferedReader().readText().trim()
+                checkProcess.waitFor()
+                
+                if (checkResult != "1") {
+                    return@withContext Result.failure(Exception("模块目录不存在: $modulePath"))
+                }
+                
+                // 使用 zip 命令压缩模块
+                val zipProcess = Runtime.getRuntime().exec("su -c zip -r \"${backupFile.absolutePath}\" .", null, File(modulePath))
+                val exitCode = zipProcess.waitFor()
+                
+                if (exitCode != 0) {
+                    val errorOutput = zipProcess.errorStream.bufferedReader().readText()
+                    return@withContext Result.failure(Exception("压缩失败: $errorOutput"))
+                }
+                
+            } catch (e: Exception) {
+                return@withContext Result.failure(Exception("压缩模块失败: ${e.message}"))
             }
 
             // 创建备份信息
@@ -201,11 +217,26 @@ class ModuleBackupManager @Inject constructor(
                 }
             }
 
-            // 复制到模块目录
-            val moduleDir = File("/data/adb/modules", backupInfo.moduleId)
-            moduleDir.mkdirs()
+            // 使用 su 命令复制到模块目录
+            val moduleDir = "/data/adb/modules/${backupInfo.moduleId}"
 
-            tempDir.copyRecursively(moduleDir, overwrite = true)
+            try {
+                // 创建模块目录
+                val mkdirProcess = Runtime.getRuntime().exec("su -c mkdir -p \"$moduleDir\"")
+                mkdirProcess.waitFor()
+                
+                // 复制文件
+                val copyProcess = Runtime.getRuntime().exec("su -c cp -r \"${tempDir.absolutePath}\"/* \"$moduleDir/\"")
+                val exitCode = copyProcess.waitFor()
+                
+                if (exitCode != 0) {
+                    val errorOutput = copyProcess.errorStream.bufferedReader().readText()
+                    return@withContext Result.failure(Exception("复制失败: $errorOutput"))
+                }
+                
+            } catch (e: Exception) {
+                return@withContext Result.failure(Exception("恢复模块失败: ${e.message}"))
+            }
 
             // 清理临时目录
             tempDir.deleteRecursively()
@@ -278,24 +309,6 @@ class ModuleBackupManager @Inject constructor(
         return getAllBackups()
             .filter { it.moduleId == moduleId }
             .maxByOrNull { it.backupTime }
-    }
-
-    private fun zipDirectory(dir: File, basePath: String, zos: ZipOutputStream) {
-        val files = dir.listFiles() ?: return
-        for (file in files) {
-            val path = if (basePath.isEmpty()) file.name else "$basePath/${file.name}"
-            if (file.isDirectory) {
-                zos.putNextEntry(ZipEntry("$path/"))
-                zos.closeEntry()
-                zipDirectory(file, path, zos)
-            } else {
-                zos.putNextEntry(ZipEntry(path))
-                FileInputStream(file).use { fis ->
-                    fis.copyTo(zos)
-                }
-                zos.closeEntry()
-            }
-        }
     }
 
     private fun saveBackupInfo(backup: ModuleBackup) {
