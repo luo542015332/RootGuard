@@ -445,19 +445,30 @@ class MagiskProvider @Inject constructor(
                 ROOT_TYPE_KERNELSU -> {
                     Logger.d("Root type is KernelSU, detecting manager...")
                     
-                    // 检测使用哪个 KernelSU 管理器
+                    // 使用 Root 命令检测使用哪个 KernelSU 管理器
                     val ksudbWeishu = try {
-                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_WEISHU, 0)
-                        true
+                        val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm", "path", KERNELSU_PACKAGE_WEISHU))
+                        process.waitFor()
+                        val success = process.exitValue() == 0
+                        if (!success) {
+                            Logger.w("Weishu KernelSU not found via pm path")
+                        }
+                        success
                     } catch (e: Exception) {
-                        Logger.w("Weishu KernelSU not installed: ${e.message}")
+                        Logger.w("Failed to check Weishu KernelSU: ${e.message}")
                         false
                     }
+                    
                     val ksudbTiann = try {
-                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_TIANN, 0)
-                        true
+                        val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm", "path", KERNELSU_PACKAGE_TIANN))
+                        process.waitFor()
+                        val success = process.exitValue() == 0
+                        if (!success) {
+                            Logger.w("Tiann KernelSU not found via pm path")
+                        }
+                        success
                     } catch (e: Exception) {
-                        Logger.w("Tiann KernelSU not installed: ${e.message}")
+                        Logger.w("Failed to check Tiann KernelSU: ${e.message}")
                         false
                     }
 
@@ -687,23 +698,33 @@ class MagiskProvider @Inject constructor(
 
             val dbPath = when (rootType) {
                 ROOT_TYPE_KERNELSU -> {
-                    // 检测使用哪个 KernelSU 管理器
+                    // 使用 Root 命令检测使用哪个 KernelSU 管理器
                     val ksudbWeishu = try {
-                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_WEISHU, 0)
-                        true
+                        val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm", "path", KERNELSU_PACKAGE_WEISHU))
+                        process.waitFor()
+                        process.exitValue() == 0
                     } catch (e: Exception) {
+                        Logger.w("Failed to check Weishu KernelSU: ${e.message}")
                         false
                     }
                     val ksudbTiann = try {
-                        context.packageManager.getPackageInfo(KERNELSU_PACKAGE_TIANN, 0)
-                        true
+                        val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm", "path", KERNELSU_PACKAGE_TIANN))
+                        process.waitFor()
+                        process.exitValue() == 0
                     } catch (e: Exception) {
+                        Logger.w("Failed to check Tiann KernelSU: ${e.message}")
                         false
                     }
 
                     when {
-                        ksudbWeishu -> KERNELSU_DB_WEISHU
-                        ksudbTiann -> KERNELSU_DB_TIANN
+                        ksudbWeishu -> {
+                            Logger.d("Using Weishu KernelSU manager: $KERNELSU_DB_WEISHU")
+                            KERNELSU_DB_WEISHU
+                        }
+                        ksudbTiann -> {
+                            Logger.d("Using Tiann KernelSU manager: $KERNELSU_DB_TIANN")
+                            KERNELSU_DB_TIANN
+                        }
                         else -> {
                             Logger.w("No KernelSU manager found, defaulting to Weishu")
                             KERNELSU_DB_WEISHU
