@@ -100,11 +100,11 @@ fun ModulesScreen(
                 actions = {
                     // 一键备份按钮
                     IconButton(onClick = { viewModel.backupAllModules() }, enabled = !uiState.isBulkBackingUp && !uiState.isBulkRestoring) {
-                        Icon(Icons.Default.CloudUpload, contentDescription = "一键备份")
+                        Icon(Icons.Default.ArrowCircleUp, contentDescription = "一键备份")
                     }
                     // 一键恢复按钮
                     IconButton(onClick = { viewModel.restoreAllBackups() }, enabled = !uiState.isBulkBackingUp && !uiState.isBulkRestoring) {
-                        Icon(Icons.Default.CloudDownload, contentDescription = "一键恢复")
+                        Icon(Icons.Default.ArrowCircleDown, contentDescription = "一键恢复")
                     }
                     IconButton(onClick = { viewModel.refresh() }) {
                         Icon(Icons.Default.Refresh, contentDescription = "刷新")

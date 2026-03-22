@@ -326,7 +326,7 @@ class ModulesViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isBulkBackingUp = true, bulkBackupProgress = 0) }
 
-            backupManager.backupAllModules(
+            val result = backupManager.backupAllModules(
                 onProgress = { current, total, moduleName ->
                     _uiState.update {
                         it.copy(
@@ -337,7 +337,9 @@ class ModulesViewModel @Inject constructor(
                     }
                 }
             )
-                .onSuccess { backups ->
+
+            when {
+                result.isSuccess -> {
                     _uiState.update {
                         it.copy(
                             isBulkBackingUp = false,
@@ -347,14 +349,15 @@ class ModulesViewModel @Inject constructor(
                     }
                     loadModules() // 刷新模块列表
                 }
-                .onFailure { error ->
+                result.isFailure -> {
                     _uiState.update {
                         it.copy(
                             isBulkBackingUp = false,
-                            error = "一键备份失败: ${error.message}"
+                            error = "一键备份失败: ${result.exceptionOrNull()?.message}"
                         )
                     }
                 }
+            }
         }
     }
 
@@ -365,7 +368,7 @@ class ModulesViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update { it.copy(isBulkRestoring = true, bulkRestoreProgress = 0) }
 
-            backupManager.restoreAllBackups(
+            val result = backupManager.restoreAllBackups(
                 onProgress = { current, total, moduleName ->
                     _uiState.update {
                         it.copy(
@@ -376,7 +379,9 @@ class ModulesViewModel @Inject constructor(
                     }
                 }
             )
-                .onSuccess { restored ->
+
+            when {
+                result.isSuccess -> {
                     _uiState.update {
                         it.copy(
                             isBulkRestoring = false,
@@ -386,14 +391,15 @@ class ModulesViewModel @Inject constructor(
                     }
                     loadModules() // 刷新模块列表
                 }
-                .onFailure { error ->
+                result.isFailure -> {
                     _uiState.update {
                         it.copy(
                             isBulkRestoring = false,
-                            error = "一键恢复失败: ${error.message}"
+                            error = "一键恢复失败: ${result.exceptionOrNull()?.message}"
                         )
                     }
                 }
+            }
         }
     }
 }
