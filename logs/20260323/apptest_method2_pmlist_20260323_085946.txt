@@ -1,0 +1,17 @@
+=== pm list packages -3 命令 ===
+总应用数: 3
+耗时: 27ms
+时间: Mon Mar 23 08:59:46 GMT+08:00 2026
+
+关键应用检查:
+  微信 (com.tencent.mm): ✗ 未找到
+  QQ (com.tencent.mobileqq): ✗ 未找到
+  王者荣耀 (com.tencent.tmgp.sgame): ✗ 未找到
+  梦幻西游 (com.netease.dk): ✗ 未找到
+
+找到 0/4 个关键应用
+
+前30个应用:
+  com.miui.notes
+  com.applist.test
+  com.miui.huanji

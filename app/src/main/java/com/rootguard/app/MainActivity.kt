@@ -13,25 +13,43 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.lifecycleScope
+import com.rootguard.app.data.local.IsolationDataStore
 import com.rootguard.app.data.local.SettingsDataStore
+import com.rootguard.app.data.magisk.RootHider
+import com.rootguard.app.data.model.IsolationLevel
+import com.rootguard.app.data.model.IsolationPresets
 import com.rootguard.app.ui.navigation.RootGuardNavHost
 import com.rootguard.app.ui.navigation.Screen
 import com.rootguard.app.ui.theme.RootGuardTheme
 import com.rootguard.app.utils.Logger
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    
+
     @Inject
     lateinit var settingsDataStore: SettingsDataStore
-    
+
+    @Inject
+    lateinit var isolationDataStore: IsolationDataStore
+
+    @Inject
+    lateinit var rootHider: RootHider
+
     companion object {
         const val EXTRA_MODULE_URI = "extra_module_uri"
+
+        // 需要强制应用银行级隔离的税务应用
+        private val TAX_APPS = listOf(
+            "cn.gov.tax.its" to "电子税务",
+            "cn.gov.chinatax.gt4.app" to "中国税务"
+        )
     }
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
@@ -43,6 +61,9 @@ class MainActivity : ComponentActivity() {
         // 测试日志输出
         Logger.d("MainActivity onCreate called")
         Logger.d("BuildConfig.VERSION_NAME: ${com.rootguard.app.BuildConfig.VERSION_NAME}")
+
+        // 自动为税务应用应用银行级隔离
+        applyBankingIsolationForTaxApps()
 
         // 检查是否有模块文件被分享过来
         val moduleUri = handleIntent(intent)
@@ -105,6 +126,27 @@ class MainActivity : ComponentActivity() {
                 intent.data
             }
             else -> null
+        }
+    }
+
+    /**
+     * 为税务类应用自动应用银行级隔离
+     * 税务类应用需要最高级别的隔离防护，防止检测到 Root 权限
+     * 强制更新为银行级配置，无论现有配置如何
+     */
+    private fun applyBankingIsolationForTaxApps() {
+        lifecycleScope.launch {
+            try {
+                TAX_APPS.forEach { (packageName, appName) ->
+                    Logger.d("Applying banking isolation for $packageName ($appName)")
+                    val preset = IsolationPresets.bankingPreset(packageName, appName)
+                    isolationDataStore.saveIsolationConfig(preset)
+                    rootHider.applyIsolation(preset)
+                    Logger.d("Banking isolation applied for $packageName")
+                }
+            } catch (e: Exception) {
+                Logger.e("Failed to apply banking isolation for tax apps", e)
+            }
         }
     }
 }

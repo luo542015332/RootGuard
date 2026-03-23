@@ -1,0 +1,20 @@
+=== PackageManager API (GET_META_DATA) ===
+总应用数: 299
+耗时: 16ms
+时间: Mon Mar 23 08:59:47 GMT+08:00 2026
+
+用户应用: 3
+系统应用: 296
+
+关键应用检查:
+  微信 (com.tencent.mm): ✗ 未找到
+  QQ (com.tencent.mobileqq): ✗ 未找到
+  王者荣耀 (com.tencent.tmgp.sgame): ✗ 未找到
+  梦幻西游 (com.netease.dk): ✗ 未找到
+
+找到 0/4 个关键应用
+
+前30个用户应用:
+  com.miui.huanji
+  com.applist.test
+  com.miui.notes

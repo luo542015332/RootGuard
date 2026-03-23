@@ -295,21 +295,39 @@ class IsolationViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.update {
                 it.copy(
-                    oneClickProgress = OneClickProgress(isRunning = true, current = 0, total = 0)
+                    oneClickProgress = OneClickProgress(isRunning = true, current = 0, total = 0),
+                    errorMessage = null,
+                    successMessage = null
                 )
             }
 
             try {
+                Logger.d("One-click isolation: starting scan...")
+
                 // 扫描已安装应用
                 val apps = oneClickIsolationHelper.scanInstalledApps()
-
-                _uiState.update {
-                    it.copy(oneClickProgress = it.oneClickProgress.copy(total = apps.size))
-                }
+                Logger.d("One-click isolation: scanned ${apps.size} apps")
 
                 // 跳过系统应用和自身
                 val userApps = apps.filterNot { it.isSystemApp }
                     .filter { it.packageName != "com.rootguard.app" }
+
+                Logger.d("One-click isolation: ${userApps.size} user apps after filtering")
+
+                if (userApps.isEmpty()) {
+                    _uiState.update {
+                        it.copy(
+                            oneClickProgress = OneClickProgress(isRunning = false),
+                            errorMessage = "未找到可隔离的用户应用（已扫描 ${apps.size} 个，全部为系统应用）"
+                        )
+                    }
+                    clearMessageAfterDelay()
+                    return@launch
+                }
+
+                _uiState.update {
+                    it.copy(oneClickProgress = it.oneClickProgress.copy(total = userApps.size))
+                }
 
                 // 生成隔离配置
                 val configs = userApps.mapIndexed { index, app ->

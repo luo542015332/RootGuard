@@ -30,9 +30,82 @@ class OneClickIsolationHelper @Inject constructor(
 
     /**
      * 扫描所有已安装的应用
+     * 优先使用 su 权限通过 pm list packages -a 获取完整列表（绕过 HyperOS 限制）
      */
     suspend fun scanInstalledApps(): List<AppInfo> = withContext(Dispatchers.IO) {
         val pm = context.packageManager
+
+        // 方法1: 通过 su 权限执行 pm list packages -a（绕过 HyperOS 限制）
+        try {
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm list packages -a"))
+            val output = process.inputStream.bufferedReader().readText()
+            process.waitFor()
+
+            val packageNames = output.lines()
+                .filter { it.startsWith("package:") }
+                .map { it.removePrefix("package:").trim() }
+                .filter { it.isNotBlank() }
+
+            if (packageNames.isNotEmpty()) {
+                Logger.d("OneClick: found ${packageNames.size} packages via su pm command")
+                val apps = packageNames.mapNotNull { pkgName ->
+                    try {
+                        val appInfo = pm.getApplicationInfo(pkgName, 0)
+                        AppInfo(
+                            packageName = pkgName,
+                            appName = appInfo.loadLabel(pm).toString(),
+                            category = categorizeApp(pkgName, appInfo.loadLabel(pm).toString()),
+                            isSystemApp = isSystemApp(appInfo)
+                        )
+                    } catch (e: Exception) {
+                        null
+                    }
+                }.filter { !it.isSystemApp }
+
+                if (apps.isNotEmpty()) {
+                    Logger.d("OneClick: ${apps.size} user apps found via su pm")
+                    return@withContext apps
+                }
+            }
+        } catch (e: Exception) {
+            Logger.e("su pm list packages failed", e)
+        }
+
+        // 方法2: 不带 su 的 pm list packages
+        try {
+            val process = Runtime.getRuntime().exec("pm list packages")
+            val output = process.inputStream.bufferedReader().readText()
+            val packageNames = output.lines()
+                .filter { it.startsWith("package:") }
+                .map { it.removePrefix("package:").trim() }
+                .filter { it.isNotBlank() }
+
+            if (packageNames.isNotEmpty()) {
+                Logger.d("OneClick: found ${packageNames.size} packages via pm command")
+                val apps = packageNames.mapNotNull { pkgName ->
+                    try {
+                        val appInfo = pm.getApplicationInfo(pkgName, 0)
+                        AppInfo(
+                            packageName = pkgName,
+                            appName = appInfo.loadLabel(pm).toString(),
+                            category = categorizeApp(pkgName, appInfo.loadLabel(pm).toString()),
+                            isSystemApp = isSystemApp(appInfo)
+                        )
+                    } catch (e: Exception) {
+                        null
+                    }
+                }.filter { !it.isSystemApp }
+
+                if (apps.isNotEmpty()) {
+                    return@withContext apps
+                }
+            }
+        } catch (e: Exception) {
+            Logger.e("pm list packages failed", e)
+        }
+
+        // 方法3: 回退到 PackageManager API
+        Logger.d("OneClick: falling back to PackageManager API")
         val packages = pm.getInstalledApplications(PackageManager.GET_META_DATA)
 
         packages.map { appInfo ->
@@ -44,9 +117,10 @@ class OneClickIsolationHelper @Inject constructor(
                 appName = appName,
                 category = categorizeApp(packageName, appName),
                 isSystemApp = isSystemApp(appInfo)
-            )
+            ).also {
+                Logger.d("OneClick scan: ${it.packageName} sys=${it.isSystemApp}")
+            }
         }.filter { appInfo ->
-            // 排除系统应用
             !appInfo.isSystemApp
         }
     }

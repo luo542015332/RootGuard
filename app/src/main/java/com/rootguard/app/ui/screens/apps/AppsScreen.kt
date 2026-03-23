@@ -1,5 +1,6 @@
 package com.rootguard.app.ui.screens.apps
 
+import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -22,6 +23,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @Composable
 fun AppsScreen(
     onNavigateBack: () -> Unit,
+    onNavigateToIsolation: (String, String) -> Unit = { _, _ -> },
     viewModel: AppsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
@@ -488,13 +490,36 @@ fun AppIcon(
 
     LaunchedEffect(packageName) {
         if (drawable == null && packageName != null) {
-            // 异步加载图标
-            try {
+            // 异步加载图标 - 使用多种方法尝试获取
+            iconDrawable = try {
                 val pm = context.packageManager
-                val packageInfo = pm.getPackageInfo(packageName, 0)
-                iconDrawable = pm.getApplicationIcon(packageInfo.applicationInfo)
+                try {
+                    // 方法1: 通过 ApplicationInfo 获取
+                    val appInfo = pm.getApplicationInfo(packageName, 0)
+                    pm.getApplicationIcon(appInfo)
+                } catch (e: Exception) {
+                    // 方法2: 通过 PackageInfo 获取
+                    try {
+                        val packageInfo = pm.getPackageInfo(packageName, 0)
+                        pm.getApplicationIcon(packageInfo.applicationInfo)
+                    } catch (e2: Exception) {
+                        // 方法3: 使用 GET_META_DATA flag
+                        try {
+                            val appInfo = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+                            pm.getApplicationIcon(appInfo) as? Drawable
+                        } catch (e3: Exception) {
+                            // 方法4: 直接通过包名获取（简化版）
+                            try {
+                                pm.getApplicationIcon(packageName)
+                            } catch (e4: Exception) {
+                                // 所有方法都失败
+                                null
+                            }
+                        }
+                    }
+                }
             } catch (e: Exception) {
-                // 加载失败，使用默认显示
+                null
             }
         } else {
             iconDrawable = drawable

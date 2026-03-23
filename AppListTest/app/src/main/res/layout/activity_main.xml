@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="应用列表获取测试工具"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="8dp">
+
+        <Button
+            android:id="@+id/btnPackageManager"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PackageManager\n(GET_META_DATA)"
+            android:layout_marginEnd="4dp"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btnPMCommand"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="pm list\npackages -3"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btnAllPackages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PackageManager\n(MATCH_ALL)"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/btnPathBased"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="基于安装路径\n判断"
+            android:layout_marginStart="4dp"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击上方按钮开始测试\n\n这个工具会尝试用不同的方法获取应用列表，并显示每个方法的结果和性能。"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            android:background="@android:color/white" />
+    </ScrollView>
+
+</LinearLayout>

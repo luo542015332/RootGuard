@@ -1,0 +1,7 @@
+﻿.\platform-tools\adb.exe : logcat: pid '' out of range.
+所在位置 行:1 字符: 55
++ ... 321183732"; .\platform-tools\adb.exe logcat -d -v threadtime --pid=$( ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (logcat: pid '' out of range.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

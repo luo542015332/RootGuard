@@ -37,6 +37,7 @@ fun HomeScreen(
     onNavigateToApps: () -> Unit,
     onNavigateToLogs: () -> Unit,
     onNavigateToSettings: () -> Unit,
+    onNavigateToIsolation: () -> Unit,
     onNavigateToInstall: () -> Unit,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
@@ -105,6 +106,7 @@ fun HomeScreen(
                     onAppsClick = onNavigateToApps,
                     onLogsClick = onNavigateToLogs,
                     onRebootClick = { showRestartDialog = true },
+                    onIsolationClick = onNavigateToIsolation,
                     onInstallClick = onNavigateToInstall
                 )
             }
@@ -349,6 +351,7 @@ fun FeatureSection(
     onAppsClick: () -> Unit,
     onLogsClick: () -> Unit,
     onRebootClick: () -> Unit,
+    onIsolationClick: () -> Unit,
     onInstallClick: () -> Unit
 ) {
     Column {
@@ -421,6 +424,16 @@ fun FeatureSection(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
+                FeatureCard(
+                    icon = Icons.Outlined.Security,
+                    title = "隔离",
+                    subtitle = "防检测",
+                    emoji = "🛡️",
+                    color = Color(0xFFE1F5FE),
+                    onClick = onIsolationClick,
+                    enabled = isRooted,
+                    modifier = Modifier.weight(1f)
+                )
                 FeatureCard(
                     icon = Icons.Outlined.RestartAlt,
                     title = "重启",

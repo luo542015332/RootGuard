@@ -1,16 +1,19 @@
 package com.rootguard.app.ui.screens.install
 
-import androidx.compose.foundation.clickable
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -19,8 +22,21 @@ fun InstallScreen(
     viewModel: InstallViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
-    var showFilePicker by remember { mutableStateOf(false) }
-    
+    val scope = rememberCoroutineScope()
+
+    val context = LocalContext.current
+
+    // 文件选择器启动器
+    val filePickerLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let {
+            scope.launch {
+                viewModel.selectFileFromUri(context = context, it)
+            }
+        }
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -38,53 +54,18 @@ fun InstallScreen(
                 .fillMaxSize()
                 .padding(paddingValues)
                 .padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            // 安装方式选择
-            Card {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    Text(
-                        text = "选择安装方式",
-                        style = MaterialTheme.typography.titleMedium
-                    )
-                    
-                    // 选择文件
-                    InstallOption(
-                        selected = uiState.installMethod == InstallMethod.SELECT_FILE,
-                        onClick = { viewModel.setInstallMethod(InstallMethod.SELECT_FILE) },
-                        icon = Icons.Default.Folder,
-                        title = "选择一个文件",
-                        subtitle = "建议选择 init_boot 分区镜像"
-                    )
-                    
-                    // 直接安装
-                    InstallOption(
-                        selected = uiState.installMethod == InstallMethod.DIRECT,
-                        onClick = { viewModel.setInstallMethod(InstallMethod.DIRECT) },
-                        icon = Icons.Default.SystemUpdate,
-                        title = "直接安装（推荐）",
-                        subtitle = "自动修补并安装"
-                    )
-                    
-                    // 安装到未使用槽位
-                    InstallOption(
-                        selected = uiState.installMethod == InstallMethod.OTHER_SLOT,
-                        onClick = { viewModel.setInstallMethod(InstallMethod.OTHER_SLOT) },
-                        icon = Icons.Default.SwapHoriz,
-                        title = "安装到未使用的槽位（OTA 后）",
-                        subtitle = "适用于 A/B 分区设备"
-                    )
-                }
-            }
-            
-            // 使用本地 LKM 文件
+            Text(
+                text = "选择安装方式",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(bottom = 4.dp)
+            )
+
+            // 直接安装
             Card(
-                onClick = { /* TODO: 选择 LKM 文件 */ }
+                onClick = { viewModel.installDirectly() },
+                enabled = !uiState.isInstalling
             ) {
                 Row(
                     modifier = Modifier
@@ -94,14 +75,19 @@ fun InstallScreen(
                     horizontalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     Icon(
-                        imageVector = Icons.Default.InsertDriveFile,
+                        imageVector = Icons.Default.SystemUpdate,
                         contentDescription = null,
                         tint = MaterialTheme.colorScheme.primary
                     )
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = "使用本地 LKM 文件",
+                            text = "直接安装（推荐）",
                             style = MaterialTheme.typography.bodyLarge
+                        )
+                        Text(
+                            text = "自动查找当前分区的 boot 镜像并修补刷写",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                         )
                     }
                     Icon(
@@ -111,61 +97,186 @@ fun InstallScreen(
                     )
                 }
             }
-            
-            Spacer(modifier = Modifier.weight(1f))
-            
-            // 下一步按钮
-            Button(
-                onClick = { viewModel.proceedInstallation() },
-                modifier = Modifier.fillMaxWidth(),
-                enabled = uiState.canProceed
+
+            // 选择文件并安装
+            Card(
+                onClick = {
+                    if (uiState.selectedFile != null) {
+                        viewModel.installFromFile()
+                    } else {
+                        filePickerLauncher.launch("*/*")
+                    }
+                },
+                enabled = !uiState.isInstalling
             ) {
-                Text("下一步")
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Folder,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = if (uiState.selectedFile != null) "安装所选文件" else "选择 boot 镜像",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                        Text(
+                            text = uiState.selectedFile ?: "选择 boot/init_boot 镜像进行安装",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                            maxLines = 1
+                        )
+                    }
+                    Icon(
+                        imageVector = if (uiState.selectedFile != null) Icons.Default.CheckCircle else Icons.Default.ChevronRight,
+                        contentDescription = null,
+                        tint = if (uiState.selectedFile != null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                    )
+                }
+            }
+
+            // 安装到未使用槽位
+            Card(
+                onClick = { viewModel.installToOtherSlot() },
+                enabled = !uiState.isInstalling
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.SwapHoriz,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = "安装到未使用的槽位",
+                            style = MaterialTheme.typography.bodyLarge
+                        )
+                        Text(
+                            text = "适用于 A/B 分区设备，OTA 更新后使用",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                        )
+                    }
+                    Icon(
+                        imageVector = Icons.Default.ChevronRight,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+                    )
+                }
+            }
+
+            // 安装进度 / 错误信息
+            when (uiState.installStatus) {
+                InstallStatus.INSTALLING -> {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.primaryContainer
+                        )
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                        ) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier.size(20.dp),
+                                    strokeWidth = 2.dp
+                                )
+                                Spacer(modifier = Modifier.width(12.dp))
+                                Text(
+                                    text = "正在安装...",
+                                    style = MaterialTheme.typography.bodyLarge
+                                )
+                            }
+                            uiState.installLog.forEach { log ->
+                                Text(
+                                    text = log,
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
+                                )
+                            }
+                        }
+                    }
+                }
+                InstallStatus.SUCCESS -> {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.tertiaryContainer
+                        )
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.CheckCircle,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.primary
+                            )
+                            Text(
+                                text = "安装成功！请重启设备生效",
+                                style = MaterialTheme.typography.bodyLarge
+                            )
+                        }
+                    }
+                }
+                InstallStatus.ERROR -> {
+                    Card(
+                        colors = CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.errorContainer
+                        )
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(12.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Error,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.error
+                            )
+                            Column(modifier = Modifier.weight(1f)) {
+                                Text(
+                                    text = "安装失败",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.error
+                                )
+                                uiState.errorMessage?.let { msg ->
+                                    Text(
+                                        text = msg,
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onErrorContainer
+                                    )
+                                }
+                            }
+                            IconButton(onClick = { viewModel.dismissError() }) {
+                                Icon(Icons.Default.Close, contentDescription = "关闭")
+                            }
+                        }
+                    }
+                }
+                else -> {}
             }
         }
     }
-}
-
-@Composable
-fun InstallOption(
-    selected: Boolean,
-    onClick: () -> Unit,
-    icon: androidx.compose.ui.graphics.vector.ImageVector,
-    title: String,
-    subtitle: String
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(
-                onClick = onClick,
-                interactionSource = remember { androidx.compose.foundation.interaction.MutableInteractionSource() },
-                indication = androidx.compose.material.ripple.rememberRipple(bounded = true)
-            )
-            .padding(vertical = 8.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-        RadioButton(
-            selected = selected,
-            onClick = onClick
-        )
-        Column(modifier = Modifier.weight(1f)) {
-            Text(
-                text = title,
-                style = MaterialTheme.typography.bodyLarge
-            )
-            Text(
-                text = subtitle,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
-            )
-        }
-    }
-}
-
-enum class InstallMethod {
-    SELECT_FILE,
-    DIRECT,
-    OTHER_SLOT
 }

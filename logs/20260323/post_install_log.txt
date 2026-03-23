@@ -1,0 +1,9 @@
+﻿
+03-23 12:48:19.793 15290 15501 I GID     : PKG: com.rootguard.app IG ? false
+03-23 12:48:19.809  3106 30376 E libsensor-parseRGB: CWB NotifyCWBBufferDone  error 0
+03-23 12:48:20.011  3106  3106 E libsensor-parseRGB: CWB NotifyCWBBufferDone  error 0
+03-23 12:48:20.217  3106  3326 E libsensor-parseRGB: CWB NotifyCWBBufferDone  error 0
+03-23 12:48:20.413  3106  3106 E libsensor-parseRGB: CWB NotifyCWBBufferDone  error 0
+03-23 12:48:20.716  3106 30376 E libsensor-parseRGB: CWB NotifyCWBBufferDone  error 0
+
+
