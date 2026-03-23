@@ -1,0 +1,288 @@
+﻿
+03-23 16:22:59.685  6586  7482 D SSRU-CpuResourceTracker: [deal]doCpuMonitor:AppCpuState{uid=10427, pkgName='me.weishu.
+kernelsu', usages=0.0, duringTime=0, details={me.weishu.kernelsu=0.0}, state=0, stateUpdateTime={1=68537}, restricter=1
+}
+03-23 16:24:02.654 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:02.654 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:02.654 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:02.654 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:04.672 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:04.672 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:04.672 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:04.672 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:06.684 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:06.684 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:06.684 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:06.684 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:08.705 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:08.705 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:08.705 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:08.705 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:10.721 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:10.721 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:10.721 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:10.721 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:11.113 20633 20633 D LSPosed : magisk_loader.cpp:198#void lspd::MagiskLoader::OnNativeForkAndSpecializePost
+(JNIEnv *, jstring, jstring): skipped com.mobiletools.systemhelper
+03-23 16:24:12.734 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:12.734 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:12.734 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:12.734 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:14.751 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:14.751 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:14.751 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:14.751 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:16.769 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:16.769 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:16.769 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:16.769 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:18.781 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:18.781 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:18.781 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:18.781 20630 22252 E PandaSU : 	... 12 more
+03-23 16:24:20.788 20630 22252 E PandaSU : Polling monitoring error
+03-23 16:24:20.788 20630 22252 E PandaSU : java.io.IOException: Cannot run program "su": error=13, Permission denied
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1050)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:709)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:533)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.Runtime.exec(Runtime.java:430)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at com.rootguard.app.service.RootRequestMonitorService$monitorByPolling$2.i
+nvokeSuspend(RootRequestMonitorService.kt:124)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(Continuat
+ionImpl.kt:33)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatch
+er.kt:115)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:103)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineSche
+duler.kt:584)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(Coro
+utineScheduler.kt:793)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(Corout
+ineScheduler.kt:697)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineSch
+eduler.kt:684)
+03-23 16:24:20.788 20630 22252 E PandaSU : Caused by: java.io.IOException: error=13, Permission denied
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.forkAndExec(Native Method)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.UNIXProcess.<init>(UNIXProcess.java:133)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.ProcessImpl.start(ProcessImpl.java:141)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+03-23 16:24:20.788 20630 22252 E PandaSU : 	... 12 more
+
+

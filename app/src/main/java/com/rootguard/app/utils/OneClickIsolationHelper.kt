@@ -168,6 +168,58 @@ class OneClickIsolationHelper @Inject constructor(
     }
 
     /**
+     * 扫描所有已安装应用（包含系统应用，不自动过滤）
+     * 用于应用列表展示
+     */
+    suspend fun scanAllApps(): List<AppInfo> = withContext(Dispatchers.IO) {
+        val pm = context.packageManager
+
+        // 优先使用 su 权限通过 pm list packages -a
+        try {
+            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm list packages -a"))
+            val output = process.inputStream.bufferedReader().readText()
+            process.waitFor()
+
+            val packageNames = output.lines()
+                .filter { it.startsWith("package:") }
+                .map { it.removePrefix("package:").trim() }
+                .filter { it.isNotBlank() }
+
+            if (packageNames.isNotEmpty()) {
+                val apps = packageNames.mapNotNull { pkgName ->
+                    try {
+                        val appInfo = pm.getApplicationInfo(pkgName, 0)
+                        AppInfo(
+                            packageName = pkgName,
+                            appName = appInfo.loadLabel(pm).toString(),
+                            category = categorizeApp(pkgName, appInfo.loadLabel(pm).toString()),
+                            isSystemApp = isSystemApp(appInfo)
+                        )
+                    } catch (e: Exception) {
+                        null
+                    }
+                }
+                if (apps.isNotEmpty()) return@withContext apps
+            }
+        } catch (e: Exception) {
+            Logger.e("su pm list packages -a failed", e)
+        }
+
+        // 回退到 PackageManager API
+        val packages = pm.getInstalledApplications(PackageManager.GET_META_DATA)
+        packages.map { appInfo ->
+            val packageName = appInfo.packageName
+            val appName = appInfo.loadLabel(pm).toString()
+            AppInfo(
+                packageName = packageName,
+                appName = appName,
+                category = categorizeApp(packageName, appName),
+                isSystemApp = isSystemApp(appInfo)
+            )
+        }
+    }
+
+    /**
      * 扫描 Root 相关应用
      */
     suspend fun scanRootApps(): List<AppInfo> = withContext(Dispatchers.IO) {

@@ -1,3 +1,4 @@
+/*
 package com.rootguard.app.data.repository
 
 import android.content.Context
@@ -311,3 +312,4 @@ class BackupManager @Inject constructor(
         return format.format(date)
     }
 }
+*/

@@ -1,10 +1,11 @@
 package com.rootguard.app.di
 
 import android.content.Context
+import com.rootguard.app.data.local.IsolationDataStore
 import com.rootguard.app.data.local.SettingsDataStore
+import com.rootguard.app.data.magisk.RootHider
 import com.rootguard.app.data.magisk.MagiskProvider
 import com.rootguard.app.data.repository.MagiskRepository
-import com.rootguard.app.data.repository.RebootRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,8 +33,4 @@ object AppModule {
     @Provides
     @Singleton
     fun provideSettingsDataStore(@ApplicationContext context: Context): SettingsDataStore = SettingsDataStore(context)
-
-    @Provides
-    @Singleton
-    fun provideRebootRepository(@ApplicationContext context: Context): RebootRepository = RebootRepository(context)
 }

@@ -1,3 +1,4 @@
+/*
 package com.rootguard.app.data.repository
 
 import com.rootguard.app.data.local.IsolationDataStore
@@ -286,4 +287,5 @@ class SandboxEngine @Inject constructor(
         val reason: String
     )
 }
+*/
 

@@ -4,23 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-    
-    <!-- Android 11+ 包可见性权限 -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-    
-    <!-- 文件读取权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" 
-        android:maxSdkVersion="32" />
-    <uses-permission android:name="android.permission.READ_MEDIA_*" 
-        tools:ignore="SelectedPhotoAccess" />
-    
-    <!-- 悬浮窗权限（用于显示 Root 请求弹窗） -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".PandaSUApp"
@@ -33,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PandaSU"
         tools:targetApi="34">
-        
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -42,22 +27,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            
-            <!-- 接收模块文件分享 -->
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="application/zip" />
-            </intent-filter>
-            
-            <!-- 从文件管理器打开 -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="application/zip" />
-                <data android:scheme="file" />
-                <data android:scheme="content" />
             </intent-filter>
         </activity>
 
@@ -71,51 +40,14 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <receiver
-            android:name=".receiver.BootReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <!-- Root 监控服务 -->
-        <service
-            android:name=".service.RootMonitorService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="specialUse" />
-        
-        <!-- Root 请求处理服务 -->
-        <service
-            android:name=".service.RootRequestService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="specialUse" />
-        
-        <!-- Root 请求监控服务 -->
-        <service
-            android:name=".service.RootRequestMonitorService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="specialUse" />
-
     </application>
 
     <!-- Android 11+ 包可见性查询配置 -->
     <queries>
-        <!-- 查询所有已安装应用 -->
         <intent>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent>
-        <!-- 查询特定常用应用 -->
-        <package android:name="com.tencent.mm" />
-        <package android:name="com.tencent.mobileqq" />
-        <package android:name="com.tencent.tmgp.sgame" />
-        <package android:name="com.netease.dhxy" />
-        <package android:name="com.alibaba.android.rimet" />
     </queries>
 
 </manifest>

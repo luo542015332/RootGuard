@@ -1,3 +1,4 @@
+/*
 package com.rootguard.app.ui.screens.isolation
 
 import androidx.lifecycle.ViewModel
@@ -344,3 +345,4 @@ class BackupViewModel @Inject constructor(
         return backupManager.formatDate(timestamp)
     }
 }
+*/

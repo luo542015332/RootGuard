@@ -1,3 +1,4 @@
+/*
 package com.rootguard.app.data.model
 
 import kotlinx.serialization.Serializable
@@ -64,3 +65,4 @@ enum class BackupFormat {
     PROTOBUF,  // Protocol Buffers 格式
     XML        // XML 格式（未来支持）
 }
+*/
