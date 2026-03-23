@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.database.Cursor
 import android.net.Uri
 import android.os.ParcelFileDescriptor
+import com.rootguard.app.data.kernelsu.KernelSUService
 import com.rootguard.app.utils.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -30,6 +31,7 @@ import javax.inject.Singleton
 class MagiskProvider @Inject constructor(
     val context: Context
 ) {
+    private val kernelSUService by lazy { KernelSUService(context) }
     companion object {
         private const val MAGISK_AUTHORITY = "com.topjohnwu.magisk.provider"
         private val dateFormat = SimpleDateFormat("MM-dd HH:mm:ss", Locale.getDefault())
@@ -629,232 +631,319 @@ class MagiskProvider @Inject constructor(
 
     /**
      * 获取所有已安装的应用（包括系统应用）
-     * v1.4.37: 使用 ksud 命令获取应用列表（KernelSU 官方方法）
+     * v1.4.43: 优先使用 Root Shell 获取完整应用列表，绕过 HyperOS/MIUI 限制
      */
     suspend fun getAllInstalledApps(): List<InstalledAppInfo> = withContext(Dispatchers.IO) {
         val apps = mutableListOf<InstalledAppInfo>()
 
         try {
             val pm = context.packageManager
+
+            // 检查 Root 类型
             val rootType = detectRootType()
-            Logger.d("Root type: $rootType")
+            Logger.d("Current root type: $rootType")
 
-            // 方法 1: 尝试使用 KernelSU ksud 命令获取应用列表
-            val packages = if (rootType.contains("KernelSU")) {
-                Logger.d("Trying KernelSU ksud command method")
-                try {
-                    // 先尝试 ksud 命令获取应用列表
-                    val ksudOutput = try {
-                        val process = Runtime.getRuntime().exec(
-                            arrayOf("su", "-c", "ksud", "app-list")
-                        )
-                        val output = process.inputStream.bufferedReader().readText()
-                        val error = process.errorStream.bufferedReader().readText()
-                        val exitCode = process.waitFor()
+            // 如果是 KernelSU，优先使用 Root Shell 获取完整应用列表
+            if (rootType == ROOT_TYPE_KERNELSU) {
+                Logger.d("========== USING ROOT SHELL ==========")
+                Logger.d("Root Shell should bypass HyperOS/MIUI restrictions")
 
-                        Logger.d("ksud app-list exitCode: $exitCode")
-                        if (error.isNotEmpty()) {
-                            Logger.d("ksud app-list error: $error")
-                        }
-                        output
-                    } catch (e: Exception) {
-                        Logger.w("ksud command failed: ${e.message}")
-                        ""
-                    }
+                // 检查 Root 是否可用
+                val rootAvailable = kernelSUService.isRootAvailable()
+                if (rootAvailable) {
+                    Logger.d("Root is available, getting packages via Root Shell")
 
-                    // 解析 ksud 输出（JSON 格式）
-                    val appListFromKsud = if (ksudOutput.isNotEmpty()) {
+                    // 通过 Root Shell 获取所有包名
+                    val packageNames = kernelSUService.getAllPackages()
+                    Logger.d("Found ${packageNames.size} packages via Root Shell")
+
+                    // 检查关键应用是否在列表中
+                    val keyApps = listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")
+                    val foundKeyApps = packageNames.filter { it in keyApps }
+                    Logger.d("Key apps found via RootService: $foundKeyApps")
+
+                    // 处理每个包名
+                    var successfulAppInfoCount = 0
+                    var failedAppInfoCount = 0
+
+                    packageNames.forEachIndexed { index, packageName ->
                         try {
-                            // ksud 返回 JSON 格式的应用列表
-                            val packageNames = mutableListOf<String>()
-                            val lines = ksudOutput.lines()
+                            // 尝试获取 ApplicationInfo
+                            val appInfo = try {
+                                pm.getApplicationInfo(packageName, 0)
+                            } catch (e: Exception) {
+                                Logger.w("Failed to get ApplicationInfo for $packageName: ${e.message}")
+                                failedAppInfoCount++
+                                null
+                            }
 
-                            // ksud app-list 的输出格式是 JSON，但我们也尝试解析文本格式
-                            lines.forEach { line ->
-                                if (line.contains("package_name")) {
-                                    // JSON 格式: "package_name": "com.xxx.xxx"
-                                    val packageName = line.substringAfter("\"package_name\": \"")
-                                        .substringBefore("\"")
-                                        .trim()
-                                    if (packageName.isNotEmpty()) {
-                                        packageNames.add(packageName)
-                                    }
+                            if (appInfo != null) {
+                                successfulAppInfoCount++
+                                val sourceDir = appInfo.sourceDir ?: ""
+                                val isSystemApp = isSystemApp(appInfo)
+
+                                // 获取应用名称
+                                val appName = try {
+                                    pm.getApplicationLabel(appInfo).toString()
+                                } catch (e: Exception) {
+                                    Logger.w("Failed to get label for $packageName, using package name")
+                                    packageName
                                 }
-                            }
 
-                            Logger.d("ksud returned ${packageNames.size} packages")
-                            packageNames
+                                // 记录关键应用
+                                if (packageName in keyApps) {
+                                    Logger.d("Key app: $packageName ($appName), sourceDir: $sourceDir, isSystem: $isSystemApp")
+                                }
+
+                                apps.add(
+                                    InstalledAppInfo(
+                                        packageName = packageName,
+                                        appName = appName,
+                                        isSystemApp = isSystemApp,
+                                        icon = null  // 延迟加载图标
+                                    )
+                                )
+                            } else {
+                                // 如果无法获取 ApplicationInfo，仍然添加应用
+                                Logger.d("Adding app without ApplicationInfo: $packageName")
+
+                                // 尝试从包名推断是否为系统应用
+                                val isSystemApp = packageName.startsWith("com.android.") ||
+                                        packageName.startsWith("com.miui.") ||
+                                        packageName.startsWith("com.xiaomi.") ||
+                                        packageName.startsWith("android.")
+
+                                // 尝试通过其他方式获取应用名称
+                                val appName = try {
+                                    // 方法1: 尝试使用不同的 flags 获取 ApplicationInfo
+                                    try {
+                                        val altAppInfo = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+                                        pm.getApplicationLabel(altAppInfo).toString()
+                                    } catch (e1: Exception) {
+                                        // 方法2: 尝试使用 MATCH_UNINSTALLED_PACKAGES
+                                        try {
+                                            val altAppInfo = pm.getApplicationInfo(
+                                                packageName,
+                                                PackageManager.GET_META_DATA or PackageManager.MATCH_UNINSTALLED_PACKAGES
+                                            )
+                                            pm.getApplicationLabel(altAppInfo).toString()
+                                        } catch (e2: Exception) {
+                                            // 方法3: 尝试通过 PackageInfo 获取
+                                            try {
+                                                val pkgInfo = pm.getPackageInfo(packageName, 0)
+                                                pm.getApplicationLabel(pkgInfo.applicationInfo).toString()
+                                            } catch (e3: Exception) {
+                                                // 所有方法都失败，使用包名
+                                                Logger.w("All methods failed to get app name for $packageName, using package name")
+                                                packageName
+                                            }
+                                        }
+                                    }
+                                } catch (e: Exception) {
+                                    Logger.w("Unexpected error getting app name for $packageName, using package name")
+                                    packageName
+                                }
+
+                                apps.add(
+                                    InstalledAppInfo(
+                                        packageName = packageName,
+                                        appName = appName,
+                                        isSystemApp = isSystemApp,
+                                        icon = null
+                                    )
+                                )
+                            }
                         } catch (e: Exception) {
-                            Logger.e("Failed to parse ksud output", e)
-                            emptyList()
+                            Logger.e("Failed to process app[$index]: $packageName", e)
                         }
-                    } else {
-                        emptyList()
                     }
 
-                    // 如果 ksud 返回了应用列表，使用它
-                    if (appListFromKsud.isNotEmpty()) {
-                        Logger.d("Using ksud app-list result (${appListFromKsud.size} packages)")
-                        appListFromKsud.mapNotNull { packageName ->
-                            try {
-                                pm.getApplicationInfo(packageName, 0)
-                            } catch (e: Exception) {
-                                Logger.w("Failed to get ApplicationInfo for $packageName")
-                                null
-                            }
+                    val userApps = apps.count { !it.isSystemApp }
+                    val systemApps = apps.count { it.isSystemApp }
+                    Logger.e("========== APP LIST SUMMARY (Root Shell) ==========")
+                    Logger.e("Total apps: ${apps.size}")
+                    Logger.e("Successful ApplicationInfo: $successfulAppInfoCount")
+                    Logger.e("Failed ApplicationInfo: $failedAppInfoCount")
+                    Logger.e("User apps: $userApps")
+                    Logger.e("System apps: $systemApps")
+
+                    // 打印用户应用列表
+                    Logger.e("---------- USER APPS LIST (first 30) ----------")
+                    apps.filter { !it.isSystemApp }.sortedBy { it.appName }.take(30).forEach {
+                        Logger.e("User app: ${it.packageName} - ${it.appName}")
+                    }
+                    Logger.e("---------- END USER APPS LIST ----------")
+
+                    // 检查关键应用
+                    keyApps.forEach { pkg ->
+                        val app = apps.find { it.packageName == pkg }
+                        if (app != null) {
+                            Logger.e("Found target app: ${app.packageName} - ${app.appName}, isSystem: ${app.isSystemApp}")
+                        } else {
+                            Logger.e("TARGET APP NOT FOUND: $pkg")
                         }
-                    } else {
-                        // ksud 失败，使用 pm 命令作为回退
-                        Logger.d("ksud returned empty, falling back to pm command")
-                        null
                     }
-                } catch (e: Exception) {
-                    Logger.e("ksud method failed", e)
-                    null
-                }
-            } else {
-                null
-            }
+                    Logger.e("========== END APP LIST SUMMARY ==========")
 
-            // 方法 2: 使用 pm list packages 命令（如果方法 1 失败或不是 KernelSU）
-            val finalPackages = if (packages != null) {
-                packages
-            } else {
-                Logger.d("Trying pm list packages command")
-                try {
-                    // 使用 pm list packages 获取所有应用
-                    val process = Runtime.getRuntime().exec(
-                        arrayOf("su", "-c", "pm", "list", "packages")
-                    )
-                    val output = process.inputStream.bufferedReader().readText()
-                    val errorOutput = process.errorStream.bufferedReader().readText()
-                    val exitCode = process.waitFor()
-
-                    Logger.d("pm list packages exitCode: $exitCode")
-                    if (errorOutput.isNotEmpty()) {
-                        Logger.d("pm list packages error: $errorOutput")
-                    }
-
-                    val packageNames = output.lines()
-                        .map { it.substringAfter("package:").trim() }
-                        .filter { it.isNotEmpty() }
-
-                    Logger.d("pm list packages returned ${packageNames.size} packages")
-
-                    if (packageNames.isNotEmpty()) {
-                        // 获取所有应用的 ApplicationInfo
-                        val allApps = packageNames.mapNotNull { packageName ->
-                            try {
-                                pm.getApplicationInfo(packageName, 0)
-                            } catch (e: Exception) {
-                                Logger.w("Failed to get ApplicationInfo for $packageName")
-                                null
-                            }
-                        }
-                        Logger.d("Retrieved ${allApps.size} apps from pm command")
-                        allApps
-                    } else {
-                        null
-                    }
-                } catch (e: Exception) {
-                    Logger.e("pm command failed", e)
-                    null
-                }
-            }
-
-            // 方法 3: PackageManager API（最后回退）
-            val packagesToUse = if (finalPackages != null) {
-                Logger.d("Using command result (${finalPackages.size} packages)")
-                finalPackages
-            } else {
-                Logger.d("Falling back to PackageManager API")
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
-                    // Android 13+ (API 33) 使用新的 ApplicationInfoFlags
-                    @Suppress("DEPRECATION")
-                    val flags = PackageManager.MATCH_ALL or
-                               PackageManager.MATCH_DISABLED_COMPONENTS or
-                               PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS or
-                               PackageManager.MATCH_UNINSTALLED_PACKAGES
-                    pm.getInstalledApplications(flags)
+                    return@withContext apps.sortedBy { it.appName }
                 } else {
-                    @Suppress("DEPRECATION")
-                    val flags = PackageManager.GET_META_DATA or
-                                PackageManager.GET_DISABLED_COMPONENTS or
-                                PackageManager.GET_UNINSTALLED_PACKAGES
-                    pm.getInstalledApplications(flags)
+                    Logger.w("Root is not available, falling back to pm list packages")
                 }
-            } ?: emptyList()
+            }
 
-            Logger.d("Final packages count: ${packagesToUse.size}")
+            // RootService 不可用或不是 KernelSU，使用降级方案（pm list packages）
+            Logger.d("========== FALLBACK TO PM LIST PACKAGES ==========")
 
-            // 检查微信、QQ 是否在列表中
+            val pmOutput = try {
+                val process = Runtime.getRuntime().exec(arrayOf("pm", "list", "packages"))
+                val output = process.inputStream.bufferedReader().readText()
+                val error = process.errorStream.bufferedReader().readText()
+                val exitCode = process.waitFor()
+
+                Logger.d("pm list packages exitCode: $exitCode")
+                Logger.d("pm list packages output size: ${output.length} characters")
+                if (error.isNotEmpty()) {
+                    Logger.d("pm list packages error: $error")
+                }
+                output
+            } catch (e: Exception) {
+                Logger.e("pm list packages command failed", e)
+                throw e
+            }
+
+            // 解析包名列表
+            val packageNames = pmOutput.lines()
+                .map { it.substringAfter("package:").trim() }
+                .filter { it.isNotEmpty() }
+
+            Logger.d("Found ${packageNames.size} package names")
+
+            // 检查关键应用是否在列表中
             val keyApps = listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")
-            val foundKeyApps = packagesToUse.map { it.packageName }.filter { it in keyApps }
-            Logger.d("Key apps found in list: $foundKeyApps")
+            val foundKeyApps = packageNames.filter { it in keyApps }
+            Logger.d("Key apps found in pm list: $foundKeyApps")
 
-            // 先获取默认图标，避免每次都获取
+            // 获取默认图标
             val defaultIcon = try {
                 pm.getDefaultActivityIcon()
             } catch (e: Exception) {
                 null
             }
 
-            packagesToUse.forEachIndexed { index, appInfo ->
+            // 尝试使用 PackageManager API 获取应用信息
+            var successfulAppInfoCount = 0
+            var failedAppInfoCount = 0
+
+            packageNames.forEachIndexed { index, packageName ->
                 try {
-                    val packageName = appInfo.packageName
-
-                    // 记录关键应用的详细信息（在任何异常之前）
-                    if (packageName in listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")) {
-                        Logger.d("Processing key app: $packageName")
-                    }
-
-                    val sourceDir = appInfo.sourceDir ?: ""
-                    val isSystemApp = isSystemApp(appInfo)
-
-                    // 获取应用名称，失败时使用包名
-                    val appName = try {
-                        pm.getApplicationLabel(appInfo).toString()
+                    // 尝试获取 ApplicationInfo
+                    val appInfo = try {
+                        pm.getApplicationInfo(packageName, 0)
                     } catch (e: Exception) {
-                        Logger.w("Failed to get label for $packageName, using package name")
-                        packageName
+                        Logger.w("Failed to get ApplicationInfo for $packageName: ${e.message}")
+                        failedAppInfoCount++
+                        null
                     }
 
-                    // 记录关键应用的详细信息
-                    if (packageName in listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")) {
-                        Logger.d("Key app found: $packageName ($appName), sourceDir: $sourceDir, isSystem: $isSystemApp")
-                    }
+                    if (appInfo != null) {
+                        successfulAppInfoCount++
+                        val sourceDir = appInfo.sourceDir ?: ""
+                        val isSystemApp = isSystemApp(appInfo)
 
-                    // 不在这里加载图标，延迟加载以提高性能
-                    apps.add(
-                        InstalledAppInfo(
-                            packageName = packageName,
-                            appName = appName,
-                            isSystemApp = isSystemApp,
-                            icon = null  // 延迟加载图标
+                        // 获取应用名称
+                        val appName = try {
+                            pm.getApplicationLabel(appInfo).toString()
+                        } catch (e: Exception) {
+                            Logger.w("Failed to get label for $packageName, using package name")
+                            packageName
+                        }
+
+                        // 记录关键应用
+                        if (packageName in keyApps) {
+                            Logger.d("Key app: $packageName ($appName), sourceDir: $sourceDir, isSystem: $isSystemApp")
+                        }
+
+                        apps.add(
+                            InstalledAppInfo(
+                                packageName = packageName,
+                                appName = appName,
+                                isSystemApp = isSystemApp,
+                                icon = null  // 延迟加载图标
+                            )
                         )
-                    )
+                    } else {
+                        // 如果无法获取 ApplicationInfo，仍然添加应用（使用包名作为名称）
+                        Logger.d("Adding app without ApplicationInfo: $packageName")
+
+                        // 尝试从包名推断是否为系统应用
+                        val isSystemApp = packageName.startsWith("com.android.") ||
+                                packageName.startsWith("com.miui.") ||
+                                packageName.startsWith("com.xiaomi.") ||
+                                packageName.startsWith("android.")
+
+                        // 尝试通过其他方式获取应用名称
+                        val appName = try {
+                            // 方法1: 尝试使用不同的 flags 获取 ApplicationInfo
+                            try {
+                                val altAppInfo = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+                                pm.getApplicationLabel(altAppInfo).toString()
+                            } catch (e1: Exception) {
+                                // 方法2: 尝试使用 MATCH_UNINSTALLED_PACKAGES
+                                try {
+                                    val altAppInfo = pm.getApplicationInfo(
+                                        packageName,
+                                        PackageManager.GET_META_DATA or PackageManager.MATCH_UNINSTALLED_PACKAGES
+                                    )
+                                    pm.getApplicationLabel(altAppInfo).toString()
+                                } catch (e2: Exception) {
+                                    // 方法3: 尝试通过 PackageInfo 获取
+                                    try {
+                                        val pkgInfo = pm.getPackageInfo(packageName, 0)
+                                        pm.getApplicationLabel(pkgInfo.applicationInfo).toString()
+                                    } catch (e3: Exception) {
+                                        // 所有方法都失败，使用包名
+                                        Logger.w("All methods failed to get app name for $packageName, using package name")
+                                        packageName
+                                    }
+                                }
+                            }
+                        } catch (e: Exception) {
+                            Logger.w("Unexpected error getting app name for $packageName, using package name")
+                            packageName
+                        }
+
+                        apps.add(
+                            InstalledAppInfo(
+                                packageName = packageName,
+                                appName = appName,
+                                isSystemApp = isSystemApp,
+                                icon = null
+                            )
+                        )
+                    }
                 } catch (e: Exception) {
-                    Logger.e("Failed to process app[${index}]: ${appInfo.packageName}", e)
+                    Logger.e("Failed to process app[$index]: $packageName", e)
                 }
             }
 
             val userApps = apps.count { !it.isSystemApp }
             val systemApps = apps.count { it.isSystemApp }
-            Logger.e("========== APP LIST SUMMARY ==========")
+            Logger.e("========== APP LIST SUMMARY (Fallback) ==========")
             Logger.e("Total apps: ${apps.size}")
+            Logger.e("Successful ApplicationInfo: $successfulAppInfoCount")
+            Logger.e("Failed ApplicationInfo: $failedAppInfoCount")
             Logger.e("User apps: $userApps")
             Logger.e("System apps: $systemApps")
 
             // 打印所有用户应用的包名用于调试
-            Logger.e("---------- USER APPS LIST ----------")
-            apps.filter { !it.isSystemApp }.sortedBy { it.appName }.forEach {
+            Logger.e("---------- USER APPS LIST (first 30) ----------")
+            apps.filter { !it.isSystemApp }.sortedBy { it.appName }.take(30).forEach {
                 Logger.e("User app: ${it.packageName} - ${it.appName}")
             }
             Logger.e("---------- END USER APPS LIST ----------")
 
-            // 检查微信和QQ是否在列表中
-            val targetApps = listOf("com.tencent.mm", "com.tencent.mobileqq", "com.tencent.tmgp.sgame")
-            targetApps.forEach { pkg ->
+            // 检查微信、QQ、王者荣耀是否在列表中
+            keyApps.forEach { pkg ->
                 val app = apps.find { it.packageName == pkg }
                 if (app != null) {
                     Logger.e("Found target app: ${app.packageName} - ${app.appName}, isSystem: ${app.isSystemApp}")
@@ -1133,28 +1222,51 @@ class MagiskProvider @Inject constructor(
     /**
      * 判断是否为系统应用
      *
-     * 系统应用判断逻辑：
-     * 1. 首先检查 FLAG_SYSTEM 标志 - 这是最主要的判断依据
-     * 2. 如果应用在 /data/app/ 下但有 FLAG_SYSTEM，仍然算作系统应用（MIUI 等 ROM）
-     * 3. 如果没有 FLAG_SYSTEM 标志，但安装在系统路径下，也算作系统应用
+     * 系统应用判断逻辑（修复 HyperOS/MIUI 兼容性）：
+     * 1. 首先检查安装路径 - 这是最可靠的判断依据
+     * 2. 系统应用安装在 /system/、/vendor/、/product/、/apex/ 等目录下
+     * 3. 用户应用安装在 /data/app/ 目录下
+     * 4. FLAG_SYSTEM 标志仅作为辅助判断（不使用，因为 HyperOS/MIUI 会错误设置）
+     * 5. 小米/HyperOS 预装应用即使安装在 /data/app/ 下，也属于系统应用
      *
      * @param appInfo 应用信息
      * @return true 如果是系统应用，false 如果是用户应用
      */
     private fun isSystemApp(appInfo: android.content.pm.ApplicationInfo): Boolean {
-        // 方法1：检查 FLAG_SYSTEM 标志（最主要）
-        if ((appInfo.flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0) {
+        val sourceDir = appInfo.sourceDir ?: ""
+        val packageName = appInfo.packageName
+
+        // 方法1：检查包名前缀 - 小米/HyperOS 预装应用
+        val isMiuiSystemApp = packageName.startsWith("com.miui.") ||
+                              packageName.startsWith("com.xiaomi.") ||
+                              packageName.startsWith("com.android.") ||
+                              packageName.startsWith("android.") ||
+                              packageName.startsWith("com.google.android.") ||
+                              packageName.startsWith("com.qualcomm.") ||
+                              packageName.startsWith("com.mediatek.") ||
+                              packageName.startsWith("com.sprd.")
+
+        // 如果是小米/Android 核心应用，直接返回 true
+        if (isMiuiSystemApp) {
             return true
         }
 
-        // 方法2：检查安装路径作为备选判断
-        val sourceDir = appInfo.sourceDir ?: return false
+        // 方法2：优先检查安装路径（最可靠，兼容 HyperOS/MIUI）
+        // 用户应用的标准路径
+        if (sourceDir.startsWith("/data/app/")) {
+            return false
+        }
 
-        // 系统应用安装在 /system/、/vendor/、/product/、/apex/ 等目录下
-        val isSystemPath = sourceDir.contains("/system/") ||
-                          sourceDir.contains("/vendor/") ||
-                          sourceDir.contains("/product/") ||
-                          sourceDir.contains("/apex/")
+        // 系统应用安装在 /system/、/vendor/、/product/、/apex/、/oem/、/system_ext/ 等目录下
+        val isSystemPath = sourceDir.startsWith("/system/") ||
+                          sourceDir.startsWith("/vendor/") ||
+                          sourceDir.startsWith("/product/") ||
+                          sourceDir.startsWith("/apex/") ||
+                          sourceDir.startsWith("/oem/") ||
+                          sourceDir.startsWith("/system_ext/") ||
+                          sourceDir.startsWith("/system_root/") ||
+                          sourceDir.startsWith("/data/app-private/") ||
+                          sourceDir.startsWith("/data/app-asec/")
 
         return isSystemPath
     }

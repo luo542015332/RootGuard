@@ -52,25 +52,45 @@ class OneClickIsolationHelper @Inject constructor(
     }
 
     /**
-     * 判断是否为系统应用
+     * 判断是否为系统应用（修复 HyperOS/MIUI 兼容性）
      */
     private fun isSystemApp(appInfo: ApplicationInfo): Boolean {
-        // 方法1：检查 FLAG_SYSTEM 标志
-        val isFlagSystem = (appInfo.flags and ApplicationInfo.FLAG_SYSTEM) != 0
+        val sourceDir = appInfo.sourceDir ?: ""
+        val packageName = appInfo.packageName
 
-        // 方法2：检查是否是系统分区应用
-        val isSystemPartition = appInfo.sourceDir?.startsWith("/system/") == true ||
-                              appInfo.sourceDir?.startsWith("/vendor/") == true ||
-                              appInfo.sourceDir?.startsWith("/product/") == true
+        // 方法1：检查包名前缀 - 小米/HyperOS、Android 核心应用
+        val isSystemAppByPackageName = packageName.startsWith("com.miui.") ||
+                                      packageName.startsWith("com.xiaomi.") ||
+                                      packageName.startsWith("com.android.") ||
+                                      packageName.startsWith("android.") ||
+                                      packageName.startsWith("com.google.android.") ||
+                                      packageName.startsWith("com.qualcomm.") ||
+                                      packageName.startsWith("com.mediatek.") ||
+                                      packageName.startsWith("com.sprd.")
 
-        // 方法3：排除小米等厂商的预装应用
-        val isVendorApp = appInfo.packageName.startsWith("com.miui.") ||
-                         appInfo.packageName.startsWith("com.xiaomi.") ||
-                         appInfo.packageName.startsWith("com.android.") ||
-                         appInfo.packageName.startsWith("com.google.android.")
+        // 如果是小米/Android 核心应用，直接返回 true（即使安装在 /data/app/ 下）
+        if (isSystemAppByPackageName) {
+            return true
+        }
 
-        // 满足任一条件即为系统应用
-        return isFlagSystem || isSystemPartition || isVendorApp
+        // 方法2：检查安装路径
+        // 用户应用的标准路径
+        if (sourceDir.startsWith("/data/app/")) {
+            return false
+        }
+
+        // 系统应用安装在 /system/、/vendor/、/product/、/apex/ 等目录下
+        val isSystemPath = sourceDir.startsWith("/system/") ||
+                          sourceDir.startsWith("/vendor/") ||
+                          sourceDir.startsWith("/product/") ||
+                          sourceDir.startsWith("/apex/") ||
+                          sourceDir.startsWith("/oem/") ||
+                          sourceDir.startsWith("/system_ext/") ||
+                          sourceDir.startsWith("/system_root/") ||
+                          sourceDir.startsWith("/data/app-private/") ||
+                          sourceDir.startsWith("/data/app-asec/")
+
+        return isSystemPath
     }
 
     /**
