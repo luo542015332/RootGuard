@@ -103,18 +103,81 @@ class IsolationViewModel @Inject constructor(
     // ========== 新增：环境检测 ==========
 
     fun runEnvironmentCheck() {
+        Logger.d("IsolationViewModel: 开始环境检查")
         viewModelScope.launch {
-            _uiState.update { it.copy(isEnvChecking = true) }
+            _uiState.update { it.copy(isEnvChecking = true, errorMessage = null, successMessage = null) }
             try {
+                // 检查 Root 权限
+                val hasRootPermission = rootHider.checkSelfRootPermission()
+                if (!hasRootPermission) {
+                    Logger.w("IsolationViewModel: 没有 Root 权限，无法执行环境检测")
+                    _uiState.update { 
+                        it.copy(
+                            isEnvChecking = false, 
+                            errorMessage = "没有 Root 权限，无法执行环境检测。请先在 KernelSU 中授予权限",
+                            envScore = -1,
+                            envChecks = emptyList()
+                        ) 
+                    }
+                    clearMessageAfterDelay()
+                    return@launch
+                }
+                Logger.d("IsolationViewModel: Root 权限检查通过，继续环境检测")
+                
+                Logger.d("IsolationViewModel: 调用 rootHider.runEnvironmentCheck()")
                 val score = rootHider.runEnvironmentCheck()
+                Logger.d("IsolationViewModel: 获取到评分: $score")
+                
+                // 如果分数为 -1，表示检测过程中出现权限问题
+                if (score == -1) {
+                    Logger.w("IsolationViewModel: 环境检测过程中权限丢失")
+                    _uiState.update { 
+                        it.copy(
+                            isEnvChecking = false, 
+                            errorMessage = "环境检测失败：权限丢失。请确保 PandaSU 有 Root 权限",
+                            envScore = -1,
+                            envChecks = emptyList()
+                        ) 
+                    }
+                    clearMessageAfterDelay()
+                    return@launch
+                }
+                
+                Logger.d("IsolationViewModel: 调用详细环境检测")
                 val checks = rootHider.runEnvironmentCheckDetail()
+                Logger.d("IsolationViewModel: 获取到详细检测项: ${checks.size}个")
+                
+                Logger.d("IsolationViewModel: 检测模块状态")
                 val modules = rootHider.detectModules()
+                Logger.d("IsolationViewModel: 获取到模块状态: ${modules.size}个")
+                
                 _uiState.update {
-                    it.copy(envScore = score, envChecks = checks, moduleStatuses = modules, isEnvChecking = false)
+                    Logger.d("IsolationViewModel: 更新UI状态, 评分=$score, 检测项=${checks.count { it.detected }}个")
+                    it.copy(
+                        envScore = score, 
+                        envChecks = checks, 
+                        moduleStatuses = modules, 
+                        isEnvChecking = false,
+                        successMessage = if (score >= 0) "环境检测完成，安全评分：$score" else "环境检测失败"
+                    )
+                }
+                Logger.d("IsolationViewModel: 环境检测完成，UI 状态已更新")
+                
+                // 3秒后清除成功消息
+                if (score >= 0) {
+                    clearMessageAfterDelay()
                 }
             } catch (e: Exception) {
                 Logger.e("env check failed", e)
-                _uiState.update { it.copy(isEnvChecking = false) }
+                _uiState.update { 
+                    it.copy(
+                        isEnvChecking = false, 
+                        errorMessage = "环境检测异常: ${e.message}",
+                        envScore = -1,
+                        envChecks = emptyList()
+                    ) 
+                }
+                clearMessageAfterDelay()
             }
         }
     }
@@ -180,21 +243,49 @@ class IsolationViewModel @Inject constructor(
     // ========== 应用隔离操作 ==========
 
     fun toggleAppIsolation(appInfo: OneClickIsolationHelper.AppInfo) {
+        Logger.d("toggleAppIsolation: 开始处理 ${appInfo.appName} (${appInfo.packageName})")
         viewModelScope.launch {
             try {
+                // 检查 Root 权限
+                val hasRootPermission = rootHider.checkSelfRootPermission()
+                if (!hasRootPermission) {
+                    Logger.e("toggleAppIsolation: 没有 Root 权限，操作无法执行")
+                    _uiState.update { it.copy(errorMessage = "没有 Root 权限，请先在 KernelSU 中授予权限") }
+                    clearMessageAfterDelay()
+                    return@launch
+                }
+                Logger.d("toggleAppIsolation: Root 权限检查通过")
+                
                 val existing = isolationDataStore.getConfigForAppSync(appInfo.packageName)
+                Logger.d("toggleAppIsolation: 现有配置检查结果: existing=$existing, isEnabled=${existing?.isEnabled}")
+                
                 if (existing != null && existing.isEnabled) {
-                    rootHider.removeIsolation(appInfo.packageName)
+                    Logger.d("toggleAppIsolation: 执行移除隔离")
+                    val removeResult = rootHider.removeIsolation(appInfo.packageName)
+                    Logger.d("toggleAppIsolation: removeIsolation 结果: $removeResult")
+                    
                     isolationDataStore.saveIsolationConfig(existing.copy(isEnabled = false))
+                    Logger.d("toggleAppIsolation: 配置已保存为禁用")
+                    
                     _uiState.update { it.copy(successMessage = "已取消 ${appInfo.appName} 的隔离") }
+                    Logger.d("toggleAppIsolation: UI 状态已更新")
                 } else {
+                    Logger.d("toggleAppIsolation: 执行应用隔离")
                     val config = oneClickIsolationHelper.generateIsolationConfig(appInfo, _uiState.value.selectedOneClickPreset)
+                    Logger.d("toggleAppIsolation: 生成的配置: packageName=${config.packageName}, isEnabled=${config.isEnabled}, sandboxRule.level=${config.sandboxRule?.level}")
+                    
                     isolationDataStore.saveIsolationConfig(config)
-                    rootHider.applyIsolation(config)
+                    Logger.d("toggleAppIsolation: 配置已保存")
+                    
+                    val applyResult = rootHider.applyIsolation(config)
+                    Logger.d("toggleAppIsolation: applyIsolation 结果: $applyResult")
+                    
                     _uiState.update { it.copy(successMessage = "已为 ${appInfo.appName} 启用隔离") }
+                    Logger.d("toggleAppIsolation: UI 状态已更新")
                 }
                 clearMessageAfterDelay()
             } catch (e: Exception) {
+                Logger.e("toggleAppIsolation: 操作失败", e)
                 _uiState.update { it.copy(errorMessage = "操作失败: ${e.message}") }; clearMessageAfterDelay()
             }
         }

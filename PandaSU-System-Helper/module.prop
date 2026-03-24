@@ -1,0 +1,9 @@
+id=PandaSU-System-Helper
+name=PandaSU系统级隐藏模块
+version=v1.0.0
+versionCode=1
+author=PandaSU Team
+description=PandaSU应用专用系统级隐藏模块，实现su/进程/mount/白名单同步等隐藏功能，与应用配合使用达到完整隐藏效果
+minMagisk=24000
+minApi=29
+updateJson=https://raw.githubusercontent.com/PandaSU/PandaSU-System-Helper/main/update.json

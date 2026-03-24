@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 关键：适配移动端视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>悲伤隐藏工具</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>悲伤压缩包</h1>
+                    <p>让隐藏变得简单 <span class="domain">bszip.me</span></p>
+                </div>
+                <div class="header-logo">
+                    <img src="bszip.png" alt="Logo" class="logo-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- 4个功能按钮区域 -->
+        <div class="button-group">
+            <button class="script-btn" id="btn1">
+                <span class="btn-icon">🔐</span>
+                <span class="btn-text">更新密钥文件</span>
+            </button>
+            <button class="script-btn" id="btn2">
+                <span class="btn-icon">⚙️</span>
+                <span class="btn-text">打开/关闭自动更新TS包名</span>
+            </button>
+            <button class="script-btn" id="btn3">
+                <span class="btn-icon">🛡️</span>
+                <span class="btn-text">一键配置隐藏Root权限</span>
+            </button>
+            <button class="script-btn" id="btn4">
+                <span class="btn-icon">🌐</span>
+                <span class="btn-text">打开隐藏环境网址</span>
+            </button>
+        </div>
+
+        <!-- 执行结果显示区域 -->
+        <div class="result-section">
+            <h3>📋 执行结果</h3>
+            <div class="result-box" id="resultBox"></div>
+            <!-- 清空结果按钮 -->
+            <button class="clear-btn" onclick="clearResult()">🗑️ 清空结果</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

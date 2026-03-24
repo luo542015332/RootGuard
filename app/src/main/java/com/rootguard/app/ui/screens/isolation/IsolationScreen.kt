@@ -24,6 +24,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rootguard.app.data.magisk.RootHider
+import com.rootguard.app.data.model.DetectionItem
 import com.rootguard.app.data.model.IsolationConfig
 import com.rootguard.app.data.model.IsolationLevel
 import com.rootguard.app.data.model.OneClickIsolationPreset
@@ -132,7 +133,42 @@ fun EnvScoreCard(
                 }
             }
 
-            if (score >= 0) {
+            if (isChecking) {
+                // 检测过程中的反馈
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    Box(
+                        modifier = Modifier.size(64.dp).clip(CircleShape)
+                            .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        CircularProgressIndicator(
+                            strokeWidth = 4.dp,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                    }
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            "正在检测环境...",
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.primary
+                        )
+                        Text(
+                            "检查权限、Root 文件、系统属性、模块状态",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
+            } else if (score >= 0) {
                 // 分数圆环
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                     val scoreColor = when {
@@ -144,8 +180,16 @@ fun EnvScoreCard(
                         Text("$score", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = scoreColor)
                     }
                     Column {
-                        Text(when { score >= 80 -> "良好 - 大部分风险已规避"; score >= 50 -> "一般 - 存在可检测的风险"; else -> "危险 - 容易被检测到 Root" },
-                            style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                        Text(when { 
+                            score >= 80 -> "良好 - 大部分风险已规避"
+                            score >= 50 -> "一般 - 存在可检测的风险" 
+                            else -> "危险 - 容易被检测到 Root" 
+                        },
+                            style = MaterialTheme.typography.bodySmall, 
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                        Text("检测时间: ${java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss"))}",
+                            style = MaterialTheme.typography.labelSmall, 
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
                     }
                 }
 
@@ -161,6 +205,35 @@ fun EnvScoreCard(
                         }
                     }
                     if (problems.size > 4) Text("...还有${problems.size - 4}项", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
+                    
+                    // 显示检测建议
+                    Divider(modifier = Modifier.padding(vertical = 4.dp))
+                    Text("建议", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color(0xFF2196F3))
+                    if (problems.any { it.severity >= 10 }) {
+                        Text("• 点击下方快捷操作修复检测到的问题", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                    }
+                    if (score < 50) {
+                        Text("• 使用一键隔离功能隐藏 Root 痕迹", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                    }
+                } else {
+                    // 没有问题时的显示
+                    Divider(modifier = Modifier.padding(vertical = 4.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            Icons.Default.CheckCircle, 
+                            "安全", 
+                            tint = Color(0xFF4CAF50),
+                            modifier = Modifier.size(20.dp)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("未检测到明显风险", 
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = Color(0xFF4CAF50))
+                    }
                 }
 
                 // 模块状态
@@ -169,18 +242,113 @@ fun EnvScoreCard(
                     Divider(modifier = Modifier.padding(vertical = 4.dp))
                     Text("建议安装的模块", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color(0xFFFF9800))
                     missingModules.forEach { m ->
-                        Text("- ${m.name}: ${m.desc}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(4.dp)
+                        ) {
+                            Icon(Icons.Default.Info, null, modifier = Modifier.size(16.dp), tint = Color(0xFFFF9800))
+                            Text("- ${m.name}: ${m.desc}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                        }
                     }
                 }
 
                 // 快捷操作
                 Divider(modifier = Modifier.padding(vertical = 4.dp))
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    OutlinedButton(onClick = onForceDeny, modifier = Modifier.weight(1f)) { Text("强制DenyList", style = MaterialTheme.typography.labelSmall) }
-                    OutlinedButton(onClick = onPropSpoof, modifier = Modifier.weight(1f)) { Text("属性伪装", style = MaterialTheme.typography.labelSmall) }
+                    OutlinedButton(
+                        onClick = onForceDeny, 
+                        modifier = Modifier.weight(1f),
+                        enabled = problems.isNotEmpty()
+                    ) { 
+                        Text("强制DenyList", style = MaterialTheme.typography.labelSmall) 
+                    }
+                    OutlinedButton(
+                        onClick = onPropSpoof, 
+                        modifier = Modifier.weight(1f),
+                        enabled = problems.any { it.item in setOf(DetectionItem.DEBUGGABLE, DetectionItem.TEST_KEYS) }
+                    ) { 
+                        Text("属性伪装", style = MaterialTheme.typography.labelSmall) 
+                    }
+                }
+            } else if (score == -1) {
+                // 权限问题
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Box(
+                        modifier = Modifier.size(64.dp).clip(CircleShape)
+                            .background(MaterialTheme.colorScheme.error.copy(alpha = 0.1f)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            Icons.Default.Warning,
+                            "权限问题",
+                            tint = MaterialTheme.colorScheme.error,
+                            modifier = Modifier.size(32.dp)
+                        )
+                    }
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            "无法执行环境检测",
+                            style = MaterialTheme.typography.bodyMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            color = MaterialTheme.colorScheme.error
+                        )
+                        Text(
+                            "需要 Root 权限才能检测环境安全",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
+                            textAlign = TextAlign.Center
+                        )
+                        Text(
+                            "请点击刷新按钮重试",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
+                            textAlign = TextAlign.Center
+                        )
+                    }
                 }
             } else {
-                Text("点击刷新检测环境", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
+                // 初始状态，未检测
+                Column(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Box(
+                        modifier = Modifier.size(64.dp).clip(CircleShape)
+                            .background(MaterialTheme.colorScheme.surfaceVariant),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            Icons.Default.Shield,
+                            "环境检测",
+                            tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
+                            modifier = Modifier.size(32.dp)
+                        )
+                    }
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            "点击刷新检测环境",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                        )
+                        Text(
+                            "评估当前设备的 Root 暴露风险",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
             }
         }
     }
