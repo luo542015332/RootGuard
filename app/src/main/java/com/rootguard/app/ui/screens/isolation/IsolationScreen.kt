@@ -38,6 +38,7 @@ fun IsolationScreen(
     onNavigateBack: () -> Unit,
     onNavigateToAppIsolation: ((String, String) -> Unit)? = null,
     onNavigateToLogs: (() -> Unit)? = null,
+    onNavigateToEnvScoreDetail: (() -> Unit)? = null,
     hasRootPermission: Boolean = true,
     viewModel: IsolationViewModel = hiltViewModel()
 ) {
@@ -77,12 +78,37 @@ fun IsolationScreen(
             val filteredApps = remember(uiState.userApps, uiState.systemApps, uiState.searchQuery, uiState.activeTab) { viewModel.getFilteredApps() }
             LazyColumn(Modifier.fillMaxSize().padding(pv)) {
                 item { RootPermissionStatusCard(uiState.hasRootPermission) }
-                item { GlobalIsolationCard(uiState.globalEnabled) { viewModel.toggleGlobalIsolation(it) } }
                 uiState.successMessage?.let { item { MessageCard(it, false) } }
                 uiState.errorMessage?.let { item { MessageCard(it, true) } }
 
                 // 环境检测评分卡片
-                item { EnvScoreCard(uiState.envScore, uiState.envChecks, uiState.moduleStatuses, uiState.isEnvChecking, viewModel::runEnvironmentCheck, viewModel::forceDenyList, viewModel::applyFullPropSpoof) }
+                item { EnvScoreCard(uiState.envScore, uiState.envChecks, uiState.isEnvChecking, viewModel::runEnvironmentCheck, onNavigateToEnvScoreDetail) }
+
+                // 快捷操作
+                item {
+                    Card(
+                        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp),
+                        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            Text("快捷操作", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
+                            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                OutlinedButton(
+                                    onClick = { viewModel.forceDenyList() },
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Text("强制DenyList${if (uiState.isDenyListEnabled) " ✓" else ""}", style = MaterialTheme.typography.labelSmall, maxLines = 1)
+                                }
+                                OutlinedButton(
+                                    onClick = { viewModel.applyFullPropSpoof() },
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Text("属性伪装${if (uiState.isPropSpoofEnabled) " ✓" else ""}", style = MaterialTheme.typography.labelSmall, maxLines = 1)
+                                }
+                            }
+                        }
+                    }
+                }
 
                 item { AppSearchBar(uiState.searchQuery, { viewModel.updateSearchQuery(it) }) }
                 item { AppFilterTabRow(uiState.activeTab, { viewModel.setActiveTab(it) }, uiState.userApps.size, uiState.systemApps.size) }
@@ -116,239 +142,79 @@ fun IsolationScreen(
 // ========== 环境检测评分卡片 ==========
 @Composable
 fun EnvScoreCard(
-    score: Int, checks: List<RootHider.DetectionResult>, modules: List<RootHider.ModuleStatus>,
-    isChecking: Boolean, onRefresh: () -> Unit, onForceDeny: () -> Unit, onPropSpoof: () -> Unit
+    score: Int, checks: List<RootHider.DetectionResult>,
+    isChecking: Boolean, onRefresh: () -> Unit,
+    onNavigateToDetail: (() -> Unit)? = null
 ) {
-    Card(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp)) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            // 标题行
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
-                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Icon(Icons.Default.Shield, null, tint = MaterialTheme.colorScheme.primary)
-                    Text("环境安全评分", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .clickable(
+                enabled = onNavigateToDetail != null && !isChecking && score >= 0,
+                onClick = { onNavigateToDetail?.invoke() }
+            ),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
+        ),
+        shape = RoundedCornerShape(16.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            // 图标
+            Icon(
+                Icons.Default.Shield,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.size(28.dp)
+            )
+
+            // 名字
+            Text(
+                text = "环境安全评分",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.weight(1f)
+            )
+
+            // 分数
+            if (isChecking) {
+                CircularProgressIndicator(
+                    modifier = Modifier.size(24.dp),
+                    strokeWidth = 2.dp,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            } else if (score >= 0) {
+                val scoreColor = when {
+                    score >= 80 -> Color(0xFF4CAF50)
+                    score >= 60 -> Color(0xFFFF9800)
+                    else -> Color(0xFFF44336)
                 }
-                IconButton(onClick = onRefresh, enabled = !isChecking) {
-                    if (isChecking) CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
-                    else Icon(Icons.Default.Refresh, null, modifier = Modifier.size(20.dp))
+                Box(
+                    Modifier.size(44.dp)
+                        .clip(CircleShape)
+                        .background(scoreColor.copy(alpha = 0.15f)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "$score",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = scoreColor
+                    )
                 }
             }
 
-            if (isChecking) {
-                // 检测过程中的反馈
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
-                ) {
-                    Box(
-                        modifier = Modifier.size(64.dp).clip(CircleShape)
-                            .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.1f)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator(
-                            strokeWidth = 4.dp,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                    }
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        Text(
-                            "正在检测环境...",
-                            style = MaterialTheme.typography.bodyMedium,
-                            fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.primary
-                        )
-                        Text(
-                            "检查权限、Root 文件、系统属性、模块状态",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f),
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-            } else if (score >= 0) {
-                // 分数圆环
-                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                    val scoreColor = when {
-                        score >= 80 -> Color(0xFF4CAF50)
-                        score >= 50 -> Color(0xFFFF9800)
-                        else -> Color(0xFFF44336)
-                    }
-                    Box(Modifier.size(64.dp).clip(CircleShape).background(scoreColor.copy(alpha = 0.15f)), contentAlignment = Alignment.Center) {
-                        Text("$score", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = scoreColor)
-                    }
-                    Column {
-                        Text(when { 
-                            score >= 80 -> "良好 - 大部分风险已规避"
-                            score >= 50 -> "一般 - 存在可检测的风险" 
-                            else -> "危险 - 容易被检测到 Root" 
-                        },
-                            style = MaterialTheme.typography.bodySmall, 
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
-                        Text("检测时间: ${java.time.LocalTime.now().format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss"))}",
-                            style = MaterialTheme.typography.labelSmall, 
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
-                    }
-                }
-
-                // 问题列表
-                val problems = checks.filter { it.detected }
-                if (problems.isNotEmpty()) {
-                    Divider(modifier = Modifier.padding(vertical = 4.dp))
-                    Text("检测到的问题", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.error)
-                    problems.take(4).forEach { r ->
-                        Row(Modifier.fillMaxWidth().padding(vertical = 2.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            Text("- ${r.label}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error, modifier = Modifier.weight(1f))
-                            Text("-${r.severity}", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.error)
-                        }
-                    }
-                    if (problems.size > 4) Text("...还有${problems.size - 4}项", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
-                    
-                    // 显示检测建议
-                    Divider(modifier = Modifier.padding(vertical = 4.dp))
-                    Text("建议", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color(0xFF2196F3))
-                    if (problems.any { it.severity >= 10 }) {
-                        Text("• 点击下方快捷操作修复检测到的问题", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
-                    }
-                    if (score < 50) {
-                        Text("• 使用一键隔离功能隐藏 Root 痕迹", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
-                    }
-                } else {
-                    // 没有问题时的显示
-                    Divider(modifier = Modifier.padding(vertical = 4.dp))
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            Icons.Default.CheckCircle, 
-                            "安全", 
-                            tint = Color(0xFF4CAF50),
-                            modifier = Modifier.size(20.dp)
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text("未检测到明显风险", 
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = Color(0xFF4CAF50))
-                    }
-                }
-
-                // 模块状态
-                val missingModules = modules.filter { !it.installed }
-                if (missingModules.isNotEmpty()) {
-                    Divider(modifier = Modifier.padding(vertical = 4.dp))
-                    Text("建议安装的模块", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = Color(0xFFFF9800))
-                    missingModules.forEach { m ->
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.spacedBy(4.dp)
-                        ) {
-                            Icon(Icons.Default.Info, null, modifier = Modifier.size(16.dp), tint = Color(0xFFFF9800))
-                            Text("- ${m.name}: ${m.desc}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
-                        }
-                    }
-                }
-
-                // 快捷操作
-                Divider(modifier = Modifier.padding(vertical = 4.dp))
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    OutlinedButton(
-                        onClick = onForceDeny, 
-                        modifier = Modifier.weight(1f),
-                        enabled = problems.isNotEmpty()
-                    ) { 
-                        Text("强制DenyList", style = MaterialTheme.typography.labelSmall) 
-                    }
-                    OutlinedButton(
-                        onClick = onPropSpoof, 
-                        modifier = Modifier.weight(1f),
-                        enabled = problems.any { it.item in setOf(DetectionItem.DEBUGGABLE, DetectionItem.TEST_KEYS) }
-                    ) { 
-                        Text("属性伪装", style = MaterialTheme.typography.labelSmall) 
-                    }
-                }
-            } else if (score == -1) {
-                // 权限问题
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    Box(
-                        modifier = Modifier.size(64.dp).clip(CircleShape)
-                            .background(MaterialTheme.colorScheme.error.copy(alpha = 0.1f)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            Icons.Default.Warning,
-                            "权限问题",
-                            tint = MaterialTheme.colorScheme.error,
-                            modifier = Modifier.size(32.dp)
-                        )
-                    }
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        Text(
-                            "无法执行环境检测",
-                            style = MaterialTheme.typography.bodyMedium,
-                            fontWeight = FontWeight.SemiBold,
-                            color = MaterialTheme.colorScheme.error
-                        )
-                        Text(
-                            "需要 Root 权限才能检测环境安全",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
-                            textAlign = TextAlign.Center
-                        )
-                        Text(
-                            "请点击刷新按钮重试",
-                            style = MaterialTheme.typography.labelSmall,
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-            } else {
-                // 初始状态，未检测
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
-                ) {
-                    Box(
-                        modifier = Modifier.size(64.dp).clip(CircleShape)
-                            .background(MaterialTheme.colorScheme.surfaceVariant),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Icon(
-                            Icons.Default.Shield,
-                            "环境检测",
-                            tint = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
-                            modifier = Modifier.size(32.dp)
-                        )
-                    }
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        Text(
-                            "点击刷新检测环境",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
-                        )
-                        Text(
-                            "评估当前设备的 Root 暴露风险",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
+            // 刷新按钮
+            IconButton(onClick = onRefresh, enabled = !isChecking) {
+                if (isChecking) CircularProgressIndicator(modifier = Modifier.size(18.dp), strokeWidth = 2.dp)
+                else Icon(Icons.Default.Refresh, "刷新", modifier = Modifier.size(20.dp))
             }
         }
     }
@@ -385,26 +251,42 @@ fun AppFilterTabRow(activeTab: AppFilterTab, onTabSelected: (AppFilterTab) -> Un
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OneClickIsolationSection(progress: OneClickProgress, selectedPreset: OneClickIsolationPreset, onPresetSelected: (OneClickIsolationPreset) -> Unit, onStartIsolation: () -> Unit, getLabel: (OneClickIsolationPreset) -> String, getEmoji: (OneClickIsolationPreset) -> String) {
-    Card(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)) {
-        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                Icon(Icons.Default.AutoAwesome, null, tint = MaterialTheme.colorScheme.primary)
-                Column { Text("一键隔离", style = MaterialTheme.typography.titleMedium); Text("自动为用户应用批量配置隔离", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)) }
+    Card(
+        Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        shape = RoundedCornerShape(16.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            // 标题行
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                Icon(Icons.Default.AutoAwesome, null, tint = MaterialTheme.colorScheme.primary, modifier = Modifier.size(22.dp))
+                Text("一键隔离", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                Spacer(Modifier.weight(1f))
+                Text("自动为用户应用批量配置隔离", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
             }
-            Text("隔离强度", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+
+            Divider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+
+            // 预设选择
+            Text("选择隔离强度", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 OneClickIsolationPreset.values().forEach { p ->
                     PresetFilterChip(getEmoji(p), getLabel(p), p == selectedPreset, { onPresetSelected(p) }, Modifier.weight(1f))
                 }
             }
+
+            // 进度或按钮
             if (progress.isRunning) {
-                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    LinearProgressIndicator(progress = if (progress.total > 0) progress.current.toFloat() / progress.total else 0f, modifier = Modifier.fillMaxWidth())
-                    Text("正在隔离: ${progress.currentAppName} (${progress.current}/${progress.total})", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
+                Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    LinearProgressIndicator(progress = if (progress.total > 0) progress.current.toFloat() / progress.total else 0f, modifier = Modifier.fillMaxWidth().clip(RoundedCornerShape(4.dp)), color = MaterialTheme.colorScheme.primary, trackColor = MaterialTheme.colorScheme.primaryContainer)
+                    Text("正在隔离: ${progress.currentAppName} (${progress.current}/${progress.total})", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
                 }
             } else {
-                Button(onClick = onStartIsolation, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(12.dp)) {
-                    Icon(Icons.Default.PlayArrow, null); Spacer(Modifier.width(8.dp)); Text("开始一键隔离")
+                Button(onClick = onStartIsolation, modifier = Modifier.fillMaxWidth().height(44.dp), shape = RoundedCornerShape(12.dp), colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)) {
+                    Icon(Icons.Default.PlayArrow, null, modifier = Modifier.size(18.dp))
+                    Spacer(Modifier.width(6.dp))
+                    Text("开始一键隔离", style = MaterialTheme.typography.labelLarge)
                 }
             }
         }
@@ -414,12 +296,16 @@ fun OneClickIsolationSection(progress: OneClickProgress, selectedPreset: OneClic
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PresetFilterChip(emoji: String, label: String, isSelected: Boolean, onClick: () -> Unit, modifier: Modifier = Modifier) {
-    Surface(onClick = onClick, modifier = modifier, shape = RoundedCornerShape(10.dp),
-        color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f),
-        contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant) {
-        Column(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    Surface(
+        onClick = onClick, modifier = modifier.height(52.dp),
+        shape = RoundedCornerShape(12.dp),
+        color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+        contentColor = if (isSelected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+        border = if (isSelected) null else androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.3f))
+    ) {
+        Column(Modifier.fillMaxSize().padding(horizontal = 4.dp, vertical = 6.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
             Text(emoji, style = MaterialTheme.typography.labelMedium)
-            Text(label, style = MaterialTheme.typography.labelSmall, textAlign = TextAlign.Center, maxLines = 2, overflow = TextOverflow.Ellipsis)
+            Text(label, style = MaterialTheme.typography.labelSmall, maxLines = 1, overflow = TextOverflow.Ellipsis)
         }
     }
 }
@@ -427,15 +313,32 @@ fun PresetFilterChip(emoji: String, label: String, isSelected: Boolean, onClick:
 // ========== Root 权限卡片 ==========
 @Composable
 fun RootPermissionStatusCard(hasRootPermission: Boolean) {
-    Card(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
-        colors = CardDefaults.cardColors(containerColor = if (hasRootPermission) MaterialTheme.colorScheme.tertiaryContainer else MaterialTheme.colorScheme.errorContainer)) {
-        Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            Icon(if (hasRootPermission) Icons.Default.CheckCircle else Icons.Default.Warning, null,
-                tint = if (hasRootPermission) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.error)
-            Column {
-                Text(if (hasRootPermission) "Root 权限已获取" else "未获取 Root 权限", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
-                Text(if (hasRootPermission) "隔离功能可用" else "隔离功能需要 Root 权限", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f))
-            }
+    Card(
+        Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = if (hasRootPermission)
+                Color(0xFF4CAF50).copy(alpha = 0.1f)
+            else MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.5f)
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Row(
+            Modifier.fillMaxWidth().padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            Icon(
+                if (hasRootPermission) Icons.Default.CheckCircle else Icons.Default.Warning,
+                null,
+                tint = if (hasRootPermission) Color(0xFF4CAF50) else MaterialTheme.colorScheme.error,
+                modifier = Modifier.size(24.dp)
+            )
+            Text(
+                if (hasRootPermission) "Root 权限已获取" else "未获取 Root 权限",
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.Medium,
+                color = MaterialTheme.colorScheme.onSurface
+            )
         }
     }
 }
@@ -472,20 +375,6 @@ fun MessageCard(message: String, isError: Boolean) {
         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Icon(if (isError) Icons.Default.Error else Icons.Default.CheckCircle, null, tint = if (isError) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.primary)
             Text(message, style = MaterialTheme.typography.bodyMedium)
-        }
-    }
-}
-
-@Composable
-fun GlobalIsolationCard(enabled: Boolean, onToggle: (Boolean) -> Unit) {
-    Card(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 8.dp),
-        colors = CardDefaults.cardColors(containerColor = if (enabled) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant)) {
-        Row(Modifier.fillMaxWidth().padding(16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                Icon(Icons.Default.Security, null, tint = if (enabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
-                Column { Text("Root 隔离", style = MaterialTheme.typography.titleMedium); Text(if (enabled) "已启用" else "已禁用", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)) }
-            }
-            Switch(checked = enabled, onCheckedChange = onToggle)
         }
     }
 }

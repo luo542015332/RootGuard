@@ -10,10 +10,17 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+
+// 主题颜色常量
+val successColor = Color(0xFF4CAF50)
+val warningColor = Color(0xFFFF9800)
+val errorColor = Color(0xFFF44336)
+val infoColor = Color(0xFF2196F3)
 
 /**
  * 获取熊猫主题颜色方案

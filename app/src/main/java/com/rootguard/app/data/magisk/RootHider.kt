@@ -87,11 +87,26 @@ class RootHider @Inject constructor(
     private suspend fun findDirectoriesContaining(basePath: String, keyword: String): List<String> = withContext(Dispatchers.IO) {
         val results = mutableListOf<String>()
         try {
-            val baseDir = File(basePath)
-            if (baseDir.exists() && baseDir.isDirectory) {
-                baseDir.listFiles()?.forEach { dir ->
-                    if (dir.isDirectory && dir.name.contains(keyword, ignoreCase = true)) {
-                        results.add(dir.absolutePath)
+            // 检查是否为需要 Root 权限的路径
+            val needsRoot = basePath.startsWith("/data/adb/")
+            
+            if (needsRoot) {
+                // 使用 su 命令列出目录
+                val cmd = "ls -d \"$basePath\"/* 2>/dev/null | grep -i \"$keyword\" || echo ''"
+                val output = runSuCommandOutput(cmd)
+                if (output.isNotBlank()) {
+                    results.addAll(output.lines()
+                        .filter { it.contains(keyword, ignoreCase = true) }
+                        .filter { it.isNotBlank() })
+                }
+            } else {
+                // 普通路径使用 File API
+                val baseDir = File(basePath)
+                if (baseDir.exists() && baseDir.isDirectory) {
+                    baseDir.listFiles()?.forEach { dir ->
+                        if (dir.isDirectory && dir.name.contains(keyword, ignoreCase = true)) {
+                            results.add(dir.absolutePath)
+                        }
                     }
                 }
             }
@@ -128,36 +143,70 @@ class RootHider @Inject constructor(
 
     suspend fun applyFullPropSpoof(): Boolean = withContext(Dispatchers.IO) {
         try {
+            Logger.d("开始应用全面属性伪装...")
+            
+            // 首先检查 Root 权限
+            val hasRoot = checkSelfRootPermission()
+            if (!hasRoot) {
+                Logger.e("没有 Root 权限，无法应用属性伪装")
+                return@withContext false
+            }
+            
+            Logger.d("Root 权限检查通过，继续执行属性伪装")
+            
             val allProps = mutableMapOf<String, String>()
             allProps.putAll(IsolationPresets.FULL_PROP_SPOOF)
 
             // 检测厂商
+            Logger.d("检测设备厂商...")
             val brand = runSuCommandOutput("getprop ro.product.brand").trim().lowercase()
             val manufacturer = runSuCommandOutput("getprop ro.product.manufacturer").trim().lowercase()
+            
+            Logger.d("设备品牌: $brand, 制造商: $manufacturer")
 
             if (brand.contains("redmi") || brand.contains("xiaomi") || manufacturer.contains("xiaomi")) {
                 allProps.putAll(IsolationPresets.MIUI_PROPS)
+                Logger.d("检测到小米/Redmi 设备，应用 MIUI 特定属性")
             }
             if (brand.contains("realme") || manufacturer.contains("realme")) {
                 allProps.putAll(IsolationPresets.REALME_PROPS)
+                Logger.d("检测到 realme 设备，应用 realme 特定属性")
             }
 
             // Recovery 模式隐藏
+            Logger.d("检查启动模式...")
             val bootmode = runSuCommandOutput("getprop ro.bootmode").trim()
             if (bootmode.contains("recovery")) {
+                Logger.d("检测到 Recovery 模式，执行隐藏")
                 runSuCommand("resetprop -n ro.bootmode unknown")
                 runSuCommand("resetprop -n ro.boot.bootmode unknown")
                 runSuCommand("resetprop -n vendor.boot.bootmode unknown")
+                Logger.d("Recovery 模式隐藏完成")
             }
 
+            Logger.d("开始设置 ${allProps.size} 个系统属性...")
             var ok = 0
+            var fail = 0
             allProps.forEach { (k, v) ->
-                if (runSuCommand("resetprop -n $k $v")) ok++
+                if (runSuCommand("resetprop -n $k $v")) {
+                    ok++
+                } else {
+                    fail++
+                    Logger.w("属性设置失败: $k=$v")
+                }
             }
-            Logger.d("PropSpoof: $ok/${allProps.size} props set")
+            
+            Logger.d("属性伪装完成: 成功 $ok/${allProps.size}, 失败 $fail")
+            
+            if (ok == 0) {
+                Logger.e("所有属性设置都失败")
+                return@withContext false
+            }
+            
             true
         } catch (e: Exception) {
-            Logger.e("applyFullPropSpoof failed", e); false
+            Logger.e("applyFullPropSpoof 执行异常", e)
+            false
         }
     }
 
@@ -854,7 +903,21 @@ class RootHider @Inject constructor(
     // ========== 工具方法 ==========
 
     private suspend fun fileExists(path: String): Boolean = withContext(Dispatchers.IO) {
-        try { File(path).exists() } catch (_: Exception) { false }
+        try {
+            // 检查是否需要 Root 权限访问的路径
+            val needsRoot = path.startsWith("/data/adb/") || path.startsWith("/system/") || path.startsWith("/vendor/")
+            
+            if (needsRoot) {
+                // 使用 su 命令检查文件是否存在
+                val result = runSuCommandOutput("[ -e \"$path\" ] && echo \"EXISTS\" || echo \"NOT_EXISTS\"")
+                return@withContext result.contains("EXISTS")
+            } else {
+                // 普通路径使用 File API
+                return@withContext File(path).exists()
+            }
+        } catch (_: Exception) {
+            false
+        }
     }
 
     /**

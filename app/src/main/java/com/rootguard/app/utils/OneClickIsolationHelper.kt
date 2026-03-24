@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import com.rootguard.app.data.model.*
+import com.topjohnwu.superuser.Shell
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -29,46 +30,133 @@ class OneClickIsolationHelper @Inject constructor(
     )
 
     /**
+     * 检查设备是否有 Root 权限
+     */
+    private suspend fun checkRootPermission(): Boolean = withContext(Dispatchers.IO) {
+        try {
+            Logger.d("OneClick: 检查Root权限...")
+            // 使用 Shell.cmd() 检查 Root 权限（兼容 KernelSU 和 Magisk）
+            val result = Shell.cmd("id").exec()
+            val hasRoot = result.isSuccess && result.out.any { it.contains("uid=0") }
+            Logger.d("OneClick: Root权限检查结果: $hasRoot, 输出: ${result.out}")
+            return@withContext hasRoot
+        } catch (e: Exception) {
+            Logger.e("OneClick: Root权限检查失败", e)
+            return@withContext false
+        }
+    }
+    
+    /**
+     * 尝试使用有限的方法获取应用列表（无Root权限时）
+     */
+    private suspend fun tryLimitedMethods(pm: PackageManager): List<AppInfo> = withContext(Dispatchers.IO) {
+        Logger.d("OneClick: 尝试有限方法获取应用列表")
+        
+        try {
+            // 方法1: 直接使用 PackageManager API
+            val packages = pm.getInstalledPackages(PackageManager.GET_META_DATA)
+            Logger.d("OneClick: 有限方法1 - 获取到 ${packages.size} 个包")
+            
+            val apps = packages.mapNotNull { pkgInfo ->
+                try {
+                    val appInfo = pkgInfo.applicationInfo
+                    val appName = appInfo.loadLabel(pm).toString()
+                    val category = categorizeApp(pkgInfo.packageName, appName)
+                    val isSystem = isSystemApp(appInfo)
+                    
+                    AppInfo(
+                        packageName = pkgInfo.packageName,
+                        appName = appName,
+                        category = category,
+                        isSystemApp = isSystem
+                    )
+                } catch (e: Exception) {
+                    null
+                }
+            }.filter { !it.isSystemApp }
+            
+            Logger.d("OneClick: 有限方法过滤后用户应用数量: ${apps.size}")
+            return@withContext apps
+        } catch (e: Exception) {
+            Logger.e("OneClick: 有限方法失败", e)
+            return@withContext emptyList()
+        }
+    }
+    
+    /**
      * 扫描所有已安装的应用
      * 优先使用 su 权限通过 pm list packages -a 获取完整列表（绕过 HyperOS 限制）
      */
     suspend fun scanInstalledApps(): List<AppInfo> = withContext(Dispatchers.IO) {
         val pm = context.packageManager
+        
+        // 先检查 Root 权限
+        val hasRoot = checkRootPermission()
+        Logger.d("OneClick: 设备Root权限状态: $hasRoot")
+        
+        if (!hasRoot) {
+            Logger.w("OneClick: 设备没有Root权限，一键隔离功能受限")
+            return@withContext tryLimitedMethods(pm)
+        }
 
-        // 方法1: 通过 su 权限执行 pm list packages -a（绕过 HyperOS 限制）
+        // 方法1: 通过 Shell.cmd() 执行 pm list packages -a（兼容 KernelSU 和 Magisk）
         try {
-            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm list packages -a"))
-            val output = process.inputStream.bufferedReader().readText()
-            process.waitFor()
-
+            Logger.d("OneClick: 尝试方法1 - Shell.cmd pm list packages -a")
+            
+            // 使用 libsu 的 Shell.cmd()，兼容 KernelSU
+            val result = Shell.cmd("pm list packages -a").exec()
+            
+            Logger.d("OneClick: Shell命令退出码: ${result.code}")
+            if (!result.isSuccess) {
+                Logger.e("OneClick: Shell命令失败，错误: ${result.err}")
+            }
+            
+            val output = result.out.joinToString("\n")
+            Logger.d("OneClick: Shell命令输出行数: ${result.out.size}")
+            
             val packageNames = output.lines()
                 .filter { it.startsWith("package:") }
                 .map { it.removePrefix("package:").trim() }
                 .filter { it.isNotBlank() }
 
+            Logger.d("OneClick: 方法1 获取到 ${packageNames.size} 个包名")
+            
             if (packageNames.isNotEmpty()) {
-                Logger.d("OneClick: found ${packageNames.size} packages via su pm command")
+                Logger.d("OneClick: 方法1 开始解析应用信息")
                 val apps = packageNames.mapNotNull { pkgName ->
                     try {
                         val appInfo = pm.getApplicationInfo(pkgName, 0)
+                        val appName = appInfo.loadLabel(pm).toString()
+                        val category = categorizeApp(pkgName, appName)
+                        val isSystem = isSystemApp(appInfo)
+                        Logger.d("OneClick: 解析应用: $appName ($pkgName), 类别: $category, 系统应用: $isSystem, 路径: ${appInfo.sourceDir}")
+                        
                         AppInfo(
                             packageName = pkgName,
-                            appName = appInfo.loadLabel(pm).toString(),
-                            category = categorizeApp(pkgName, appInfo.loadLabel(pm).toString()),
-                            isSystemApp = isSystemApp(appInfo)
+                            appName = appName,
+                            category = category,
+                            isSystemApp = isSystem
                         )
                     } catch (e: Exception) {
+                        Logger.e("OneClick: 无法获取应用信息 $pkgName", e)
                         null
                     }
-                }.filter { !it.isSystemApp }
-
-                if (apps.isNotEmpty()) {
-                    Logger.d("OneClick: ${apps.size} user apps found via su pm")
-                    return@withContext apps
+                }
+                
+                Logger.d("OneClick: 方法1 解析完成，得到 ${apps.size} 个应用信息")
+                
+                val userApps = apps.filter { !it.isSystemApp }
+                Logger.d("OneClick: 方法1 用户应用数量: ${userApps.size}")
+                
+                if (userApps.isNotEmpty()) {
+                    Logger.d("OneClick: 使用方法1 返回 ${userApps.size} 个用户应用")
+                    return@withContext userApps
+                } else {
+                    Logger.d("OneClick: 方法1 没有找到用户应用")
                 }
             }
         } catch (e: Exception) {
-            Logger.e("su pm list packages failed", e)
+            Logger.e("Shell.cmd pm list packages failed", e)
         }
 
         // 方法2: 不带 su 的 pm list packages
@@ -173,50 +261,95 @@ class OneClickIsolationHelper @Inject constructor(
      */
     suspend fun scanAllApps(): List<AppInfo> = withContext(Dispatchers.IO) {
         val pm = context.packageManager
+        
+        Logger.d("开始扫描所有应用")
+        
+        // 方法1: 尝试使用多个 pm list packages 命令变体
+        val pmCommands = listOf(
+            "pm list packages -a",      // 所有包
+            "pm list packages -3",       // 仅第三方应用
+            "pm list packages -i",       // 已安装应用
+            "pm list packages"           // 基本列表
+        )
+        
+        for (command in pmCommands) {
+            try {
+                Logger.d("尝试命令: su -c '$command'")
+                val process = Runtime.getRuntime().exec(arrayOf("su", "-c", command))
+                val output = process.inputStream.bufferedReader().readText()
+                val error = process.errorStream.bufferedReader().readText()
+                process.waitFor()
+                
+                if (process.exitValue() != 0) {
+                    Logger.e("命令执行失败: $command, 错误: $error")
+                    continue
+                }
+                
+                val packageNames = output.lines()
+                    .filter { it.startsWith("package:") }
+                    .map { it.removePrefix("package:").trim() }
+                    .filter { it.isNotBlank() }
 
-        // 优先使用 su 权限通过 pm list packages -a
-        try {
-            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "pm list packages -a"))
-            val output = process.inputStream.bufferedReader().readText()
-            process.waitFor()
-
-            val packageNames = output.lines()
-                .filter { it.startsWith("package:") }
-                .map { it.removePrefix("package:").trim() }
-                .filter { it.isNotBlank() }
-
-            if (packageNames.isNotEmpty()) {
-                val apps = packageNames.mapNotNull { pkgName ->
-                    try {
-                        val appInfo = pm.getApplicationInfo(pkgName, 0)
-                        AppInfo(
-                            packageName = pkgName,
-                            appName = appInfo.loadLabel(pm).toString(),
-                            category = categorizeApp(pkgName, appInfo.loadLabel(pm).toString()),
-                            isSystemApp = isSystemApp(appInfo)
-                        )
-                    } catch (e: Exception) {
-                        null
+                if (packageNames.isNotEmpty()) {
+                    Logger.d("命令 '$command' 获取到 ${packageNames.size} 个包名")
+                    val apps = packageNames.mapNotNull { pkgName ->
+                        try {
+                            val appInfo = pm.getApplicationInfo(pkgName, 0)
+                            AppInfo(
+                                packageName = pkgName,
+                                appName = appInfo.loadLabel(pm).toString(),
+                                category = categorizeApp(pkgName, appInfo.loadLabel(pm).toString()),
+                                isSystemApp = isSystemApp(appInfo)
+                            )
+                        } catch (e: Exception) {
+                            null
+                        }
+                    }
+                    if (apps.isNotEmpty()) {
+                        Logger.d("成功获取到 ${apps.size} 个应用信息")
+                        return@withContext apps
                     }
                 }
-                if (apps.isNotEmpty()) return@withContext apps
+            } catch (e: Exception) {
+                Logger.e("命令 '$command' 执行异常", e)
             }
-        } catch (e: Exception) {
-            Logger.e("su pm list packages -a failed", e)
         }
-
-        // 回退到 PackageManager API
-        val packages = pm.getInstalledApplications(PackageManager.GET_META_DATA)
-        packages.map { appInfo ->
-            val packageName = appInfo.packageName
-            val appName = appInfo.loadLabel(pm).toString()
-            AppInfo(
-                packageName = packageName,
-                appName = appName,
-                category = categorizeApp(packageName, appName),
-                isSystemApp = isSystemApp(appInfo)
-            )
+        
+        Logger.d("所有 su 命令方法失败，尝试使用 PackageManager API")
+        
+        // 方法2: 尝试不同的 PackageManager flags
+        val flagsList = listOf(
+            PackageManager.GET_META_DATA,
+            PackageManager.MATCH_ALL,
+            PackageManager.MATCH_UNINSTALLED_PACKAGES,
+            0
+        )
+        
+        for (flags in flagsList) {
+            try {
+                Logger.d("尝试 PackageManager API flags: $flags")
+                val packages = pm.getInstalledApplications(flags)
+                if (packages.isNotEmpty()) {
+                    val apps = packages.map { appInfo ->
+                        val packageName = appInfo.packageName
+                        val appName = appInfo.loadLabel(pm).toString()
+                        AppInfo(
+                            packageName = packageName,
+                            appName = appName,
+                            category = categorizeApp(packageName, appName),
+                            isSystemApp = isSystemApp(appInfo)
+                        )
+                    }
+                    Logger.d("PackageManager API 获取到 ${apps.size} 个应用")
+                    return@withContext apps
+                }
+            } catch (e: Exception) {
+                Logger.e("PackageManager API flags $flags 失败", e)
+            }
         }
+        
+        Logger.e("所有应用列表获取方法都失败")
+        emptyList()
     }
 
     /**
@@ -282,56 +415,46 @@ class OneClickIsolationHelper @Inject constructor(
      * @return 隔离配置
      */
     fun generateIsolationConfig(appInfo: AppInfo, preset: OneClickIsolationPreset): IsolationConfig {
-        val sandboxLevel = when (preset) {
-            OneClickIsolationPreset.CONSERVATIVE -> when (appInfo.category) {
-                AppCategory.FINANCE -> SandboxLevel.STRICT
-                else -> SandboxLevel.STRICT
-            }
-            OneClickIsolationPreset.BALANCED -> when (appInfo.category) {
-                AppCategory.FINANCE -> SandboxLevel.STRICT
-                AppCategory.GAME -> SandboxLevel.MODERATE
-                AppCategory.SOCIAL -> SandboxLevel.PERMISSIVE
-                else -> SandboxLevel.PERMISSIVE
-            }
-            OneClickIsolationPreset.AGGRESSIVE -> when (appInfo.category) {
-                AppCategory.FINANCE -> SandboxLevel.STRICT
-                else -> SandboxLevel.MODERATE
-            }
-            OneClickIsolationPreset.LENIENT -> when (appInfo.category) {
-                AppCategory.FINANCE -> SandboxLevel.MODERATE
-                else -> SandboxLevel.PERMISSIVE
-            }
+        val isSensitive = appInfo.category in listOf(AppCategory.FINANCE, AppCategory.GAME)
+        val isFinance = appInfo.category == AppCategory.FINANCE
+        val all = true; val sensitive = isSensitive; val finance = isFinance; val off = false
+
+        /*
+         * 🔓 基础隔离: 金融/游戏全开, 其他仅隐藏su+magisk
+         * ⚖️ 中等隔离: 金融/游戏全开, 其他隐藏su+magisk+xposed
+         * 🔒 最高隔离: 全部全开
+         */
+        val (hideMagisk, hideSu, hideBusybox, hideXposed) = when (preset) {
+            OneClickIsolationPreset.CONSERVATIVE -> arrayOf(all, all, off, off)
+            OneClickIsolationPreset.BALANCED   -> arrayOf(all, all, off, all)
+            OneClickIsolationPreset.AGGRESSIVE -> arrayOf(all, all, all, all)
         }
 
-        val sandboxRule = SandboxRule(
-            packageName = appInfo.packageName,
-            level = sandboxLevel,
-            commandWhitelist = generateCommandWhitelist(appInfo.category, sandboxLevel),
-            commandBlacklist = generateCommandBlacklist(appInfo.category, sandboxLevel),
-            pathWhitelist = generatePathWhitelist(appInfo.category, sandboxLevel, appInfo.packageName),
-            pathBlacklist = generatePathBlacklist(appInfo.category, sandboxLevel)
-        )
+        val (hideMagiskApp, isolateStorage, disableRoot) = when (preset) {
+            OneClickIsolationPreset.CONSERVATIVE -> arrayOf(finance, finance, finance)
+            OneClickIsolationPreset.BALANCED   -> arrayOf(sensitive, sensitive, sensitive)
+            OneClickIsolationPreset.AGGRESSIVE -> arrayOf(all, all, all)
+        }
+
+        val sandboxLevel = when (preset) {
+            OneClickIsolationPreset.CONSERVATIVE -> if (isFinance) SandboxLevel.STRICT else SandboxLevel.PERMISSIVE
+            OneClickIsolationPreset.BALANCED   -> if (isSensitive) SandboxLevel.MODERATE else SandboxLevel.PERMISSIVE
+            OneClickIsolationPreset.AGGRESSIVE -> SandboxLevel.STRICT
+        }
 
         return IsolationConfig(
-            packageName = appInfo.packageName,
-            appName = appInfo.appName,
-            isEnabled = true,
-            hideMagisk = when (appInfo.category) {
-                AppCategory.FINANCE -> true
-                AppCategory.GAME -> true
-                else -> preset != OneClickIsolationPreset.LENIENT
-            },
-            hideSuBinary = when (appInfo.category) {
-                AppCategory.FINANCE -> true
-                else -> preset != OneClickIsolationPreset.LENIENT
-            },
-            hideBusybox = appInfo.category == AppCategory.FINANCE,
-            hideXposed = preset != OneClickIsolationPreset.LENIENT,
-            hideMagiskApp = appInfo.category == AppCategory.FINANCE,
-            isolateStorage = appInfo.category == AppCategory.FINANCE,
-            disableRootAccess = appInfo.category == AppCategory.FINANCE,
+            packageName = appInfo.packageName, appName = appInfo.appName, isEnabled = true,
+            hideMagisk = hideMagisk, hideSuBinary = hideSu, hideBusybox = hideBusybox,
+            hideXposed = hideXposed, hideMagiskApp = hideMagiskApp,
+            isolateStorage = isolateStorage, disableRootAccess = disableRoot,
             customProps = generateCustomProps(appInfo.category, preset),
-            sandboxRule = sandboxRule
+            sandboxRule = SandboxRule(
+                packageName = appInfo.packageName, level = sandboxLevel,
+                commandWhitelist = generateCommandWhitelist(appInfo.category, sandboxLevel),
+                commandBlacklist = generateCommandBlacklist(appInfo.category, sandboxLevel),
+                pathWhitelist = generatePathWhitelist(appInfo.category, sandboxLevel, appInfo.packageName),
+                pathBlacklist = generatePathBlacklist(appInfo.category, sandboxLevel)
+            )
         )
     }
 
@@ -425,17 +548,13 @@ class OneClickIsolationHelper @Inject constructor(
      * 生成自定义系统属性
      */
     private fun generateCustomProps(category: AppCategory, preset: OneClickIsolationPreset): Map<String, String> {
-        return when (category) {
-            AppCategory.FINANCE -> mapOf(
-                "ro.build.tags" to "release-keys",
-                "ro.build.selinux" to "enforcing",
-                "ro.debuggable" to "0",
-                "ro.secure" to "1"
-            )
-            AppCategory.GAME -> mapOf(
-                "ro.debuggable" to "0"
-            )
-            else -> emptyMap()
+        val fullProps = mapOf("ro.build.tags" to "release-keys", "ro.build.selinux" to "enforcing", "ro.debuggable" to "0", "ro.secure" to "1")
+        val basicProps = mapOf("ro.debuggable" to "0", "ro.secure" to "1")
+        val isSensitive = category in listOf(AppCategory.FINANCE, AppCategory.GAME)
+        return when (preset) {
+            OneClickIsolationPreset.AGGRESSIVE -> if (isSensitive) fullProps else basicProps
+            OneClickIsolationPreset.BALANCED -> basicProps
+            OneClickIsolationPreset.CONSERVATIVE -> if (category == AppCategory.FINANCE) fullProps else emptyMap()
         }
     }
 

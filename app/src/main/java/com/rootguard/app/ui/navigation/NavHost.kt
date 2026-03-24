@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.rootguard.app.ui.screens.envscore.EnvScoreDetailScreen
 import com.rootguard.app.ui.screens.isolation.IsolationScreen
 import com.rootguard.app.ui.screens.logs.LogsScreen
 
@@ -16,6 +17,7 @@ sealed class Screen(val route: String) {
         fun createRoute(packageName: String, appName: String) = "app_isolation/$packageName/$appName"
     }
     data object Logs : Screen("logs")
+    data object EnvScoreDetail : Screen("env_score_detail")
 }
 
 @Composable
@@ -38,6 +40,7 @@ fun RootGuardNavHost(
                     navController.navigate(Screen.AppIsolation.createRoute(packageName, appName))
                 },
                 onNavigateToLogs = { navController.navigate(Screen.Logs.route) },
+                onNavigateToEnvScoreDetail = { navController.navigate(Screen.EnvScoreDetail.route) },
                 hasRootPermission = hasRootPermission
             )
         }
@@ -57,12 +60,19 @@ fun RootGuardNavHost(
                 onNavigateBack = { navController.popBackStack() },
                 onNavigateToAppIsolation = null,
                 onNavigateToLogs = null,
+                onNavigateToEnvScoreDetail = null,
                 hasRootPermission = hasRootPermission
             )
         }
         // 日志查看
         composable(Screen.Logs.route) {
             LogsScreen(onNavigateBack = { navController.popBackStack() })
+        }
+        // 环境安全评分详情
+        composable(Screen.EnvScoreDetail.route) {
+            EnvScoreDetailScreen(
+                onNavigateBack = { navController.popBackStack() }
+            )
         }
     }
 }

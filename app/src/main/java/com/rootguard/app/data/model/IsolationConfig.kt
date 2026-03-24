@@ -148,5 +148,5 @@ enum class AppCategory {
 }
 
 enum class OneClickIsolationPreset {
-    CONSERVATIVE, BALANCED, AGGRESSIVE, LENIENT
+    CONSERVATIVE, BALANCED, AGGRESSIVE
 }

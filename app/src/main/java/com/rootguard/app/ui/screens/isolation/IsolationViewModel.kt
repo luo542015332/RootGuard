@@ -41,7 +41,9 @@ data class IsolationUiState(
     val envScore: Int = -1,
     val envChecks: List<RootHider.DetectionResult> = emptyList(),
     val moduleStatuses: List<ModuleStatus> = emptyList(),
-    val isEnvChecking: Boolean = false
+    val isEnvChecking: Boolean = false,
+    val isDenyListEnabled: Boolean = false,
+    val isPropSpoofEnabled: Boolean = false
 )
 
 data class OneClickProgress(
@@ -106,6 +108,8 @@ class IsolationViewModel @Inject constructor(
         Logger.d("IsolationViewModel: 开始环境检查")
         viewModelScope.launch {
             _uiState.update { it.copy(isEnvChecking = true, errorMessage = null, successMessage = null) }
+            // 先显示加载动画，让用户感知到刷新过程
+            kotlinx.coroutines.delay(400)
             try {
                 // 检查 Root 权限
                 val hasRootPermission = rootHider.checkSelfRootPermission()
@@ -150,13 +154,13 @@ class IsolationViewModel @Inject constructor(
                 Logger.d("IsolationViewModel: 检测模块状态")
                 val modules = rootHider.detectModules()
                 Logger.d("IsolationViewModel: 获取到模块状态: ${modules.size}个")
-                
+
                 _uiState.update {
                     Logger.d("IsolationViewModel: 更新UI状态, 评分=$score, 检测项=${checks.count { it.detected }}个")
                     it.copy(
-                        envScore = score, 
-                        envChecks = checks, 
-                        moduleStatuses = modules, 
+                        envScore = score,
+                        envChecks = checks,
+                        moduleStatuses = modules,
                         isEnvChecking = false,
                         successMessage = if (score >= 0) "环境检测完成，安全评分：$score" else "环境检测失败"
                     )
@@ -187,7 +191,7 @@ class IsolationViewModel @Inject constructor(
             _uiState.update { it.copy(isLoading = true) }
             try {
                 rootHider.forceDenyList()
-                _uiState.update { it.copy(isLoading = false, successMessage = "DenyList 强制配置完成") }
+                _uiState.update { it.copy(isLoading = false, isDenyListEnabled = true, successMessage = "DenyList 强制配置完成") }
             } catch (e: Exception) {
                 _uiState.update { it.copy(isLoading = false, errorMessage = "配置失败: ${e.message}") }
             }
@@ -200,7 +204,7 @@ class IsolationViewModel @Inject constructor(
             _uiState.update { it.copy(isLoading = true) }
             try {
                 rootHider.applyFullPropSpoof()
-                _uiState.update { it.copy(isLoading = false, successMessage = "属性伪装已应用") }
+                _uiState.update { it.copy(isLoading = false, isPropSpoofEnabled = true, successMessage = "属性伪装已应用") }
             } catch (e: Exception) {
                 _uiState.update { it.copy(isLoading = false, errorMessage = "失败: ${e.message}") }
             }
@@ -228,16 +232,14 @@ class IsolationViewModel @Inject constructor(
 
     fun setOneClickPreset(p: OneClickIsolationPreset) { _uiState.update { it.copy(selectedOneClickPreset = p) } }
     fun getPresetLabel(p: OneClickIsolationPreset) = when (p) {
-        OneClickIsolationPreset.CONSERVATIVE -> "保守"
-        OneClickIsolationPreset.BALANCED -> "平衡"
-        OneClickIsolationPreset.AGGRESSIVE -> "激进"
-        OneClickIsolationPreset.LENIENT -> "宽松"
+        OneClickIsolationPreset.CONSERVATIVE -> "基础隔离"
+        OneClickIsolationPreset.BALANCED -> "中等隔离"
+        OneClickIsolationPreset.AGGRESSIVE -> "最高隔离"
     }
     fun getPresetEmoji(p: OneClickIsolationPreset) = when (p) {
-        OneClickIsolationPreset.CONSERVATIVE -> "🔒"
+        OneClickIsolationPreset.CONSERVATIVE -> "🔓"
         OneClickIsolationPreset.BALANCED -> "⚖️"
-        OneClickIsolationPreset.AGGRESSIVE -> "🔥"
-        OneClickIsolationPreset.LENIENT -> "🔓"
+        OneClickIsolationPreset.AGGRESSIVE -> "🔒"
     }
 
     // ========== 应用隔离操作 ==========
@@ -374,22 +376,79 @@ class IsolationViewModel @Inject constructor(
         val preset = _uiState.value.selectedOneClickPreset
         viewModelScope.launch {
             _uiState.update { it.copy(oneClickProgress = OneClickProgress(isRunning = true), errorMessage = null, successMessage = null) }
+            
+            // 首先检查Root权限
+            val hasRoot = try {
+                com.topjohnwu.superuser.Shell.cmd("id").exec().let {
+                    it.isSuccess && it.out.any { line -> line.contains("uid=0") }
+                }
+            } catch (e: Exception) {
+                Logger.e("Root权限检查异常", e)
+                false
+            }
+            
+            if (!hasRoot) {
+                val errorMsg = """
+                    PandaSU 没有 Root 权限！
+                    
+                    请按照以下步骤操作：
+                    1. 打开 KernelSU 管理器
+                    2. 找到 PandaSU (com.rootguard.app)
+                    3. 点击 PandaSU，授予 Root 权限
+                    4. 返回 PandaSU 重试
+                    
+                    如果已经授权，请重启 PandaSU 应用
+                """.trimIndent()
+                _uiState.update { it.copy(oneClickProgress = OneClickProgress(), errorMessage = errorMsg) }
+                clearMessageAfterDelay(); return@launch
+            }
+            
             try {
-                val apps = oneClickIsolationHelper.scanInstalledApps().filterNot { it.isSystemApp || it.packageName == "com.rootguard.app" }
+                Logger.d("一键隔离开始，预设: $preset，Root权限: 已授予")
+                
+                // 获取所有应用列表
+                val allApps = oneClickIsolationHelper.scanInstalledApps()
+                Logger.d("扫描到 ${allApps.size} 个应用")
+                
+                // 过滤掉系统应用和 PandaSU 自身
+                val apps = allApps.filterNot { 
+                    val isSystem = it.isSystemApp
+                    val isSelf = it.packageName == "com.rootguard.app"
+                    Logger.d("应用: ${it.appName} (${it.packageName}), 系统应用: $isSystem, 自身: $isSelf, 类别: ${it.category}")
+                    isSystem || isSelf
+                }
+                
+                Logger.d("过滤后应用数量: ${apps.size}")
+                
                 if (apps.isEmpty()) {
-                    _uiState.update { it.copy(oneClickProgress = OneClickProgress(), errorMessage = "未找到用户应用") }
+                    val errorMsg = "未找到用户应用（总应用数: ${allApps.size}）"
+                    Logger.e(errorMsg)
+                    _uiState.update { it.copy(oneClickProgress = OneClickProgress(), errorMessage = errorMsg) }
                     clearMessageAfterDelay(); return@launch
                 }
+                
                 _uiState.update { it.copy(oneClickProgress = it.oneClickProgress.copy(total = apps.size)) }
+                
+                Logger.d("开始生成 ${apps.size} 个应用的隔离配置")
                 val configs = apps.mapIndexed { i, app ->
+                    Logger.d("处理应用 ${i+1}/${apps.size}: ${app.appName} (${app.packageName})")
                     _uiState.update { it.copy(oneClickProgress = it.oneClickProgress.copy(current = i + 1, currentAppName = app.appName)) }
                     kotlinx.coroutines.delay(10)
-                    oneClickIsolationHelper.generateIsolationConfig(app, preset)
+                    val config = oneClickIsolationHelper.generateIsolationConfig(app, preset)
+                    Logger.d("生成配置: 包名=${config.packageName}, 隐藏Magisk=${config.hideMagisk}, 隔离级别=${config.sandboxRule?.level}")
+                    config
                 }
+                
+                Logger.d("保存 ${configs.size} 个隔离配置")
                 isolationDataStore.saveIsolationConfigs(configs)
-                _uiState.update { it.copy(oneClickProgress = OneClickProgress(), successMessage = "已为 ${configs.size} 个应用创建隔离") }
+                
+                val successMsg = "已为 ${configs.size} 个应用创建隔离（总应用数: ${allApps.size}, 用户应用: ${apps.size}）"
+                Logger.d(successMsg)
+                _uiState.update { it.copy(oneClickProgress = OneClickProgress(), successMessage = successMsg) }
             } catch (e: Exception) {
-                _uiState.update { it.copy(oneClickProgress = OneClickProgress(), errorMessage = "失败: ${e.message}") }
+                val errorMsg = "一键隔离失败: ${e.message}"
+                Logger.e(errorMsg, e)
+                _uiState.update { it.copy(oneClickProgress = OneClickProgress(), errorMessage = errorMsg) }
             }
             clearMessageAfterDelay()
         }
