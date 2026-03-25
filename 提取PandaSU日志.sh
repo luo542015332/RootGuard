@@ -1,143 +1,76 @@
-#!/bin/bash
-# ========================================
-# PandaSU 应用日志提取脚本 (Linux/Mac)
-# 用途：从已 Root 的设备提取 PandaSU 应用日志
-# ========================================
+#!/system/bin/sh
+# PandaSU 日志提取脚本 - 自动提取所有关键信息
 
-echo "========================================"
-echo "  PandaSU 日志提取工具"
-echo "========================================"
-echo ""
+OUTPUT_DIR="/sdcard/PandaSU_Logs"
+mkdir -p "$OUTPUT_DIR"
 
-# 创建日志目录
-mkdir -p logs/PandaSU
+echo "=== PandaSU 日志提取开始 ===" > "$OUTPUT_DIR/extract_log.txt"
+date >> "$OUTPUT_DIR/extract_log.txt"
+echo "" >> "$OUTPUT_DIR/extract_log.txt"
 
-echo "[1/6] 检查设备连接..."
-adb devices
-echo ""
-
-echo "[2/6] 检查 PandaSU 应用是否安装..."
-if ! adb shell pm list packages | grep -q "com.rootguard.app"; then
-    echo "[错误] 未检测到 PandaSU 应用 (com.rootguard.app)"
-    echo ""
-    echo "请确保:"
-    echo "  - 设备已安装 PandaSU 应用"
-    echo "  - 设备已授予 adb root 权限"
-    exit 1
-fi
-echo "[成功] PandaSU 已安装"
-echo ""
-
-echo "[3/6] 提取 PandaSU 应用日志..."
-
-echo ""
-echo "[方法1] 提取所有 PandaSU 日志（包含所有级别）..."
-adb logcat -d | grep "PandaSU" > logs/PandaSU/pandasu_all.log
-echo "[成功] 所有日志已保存到 logs/PandaSU/pandasu_all.log"
-
-echo ""
-echo "[方法2] 提取 PandaSU Error 级别日志..."
-adb logcat -d *:E | grep "PandaSU" > logs/PandaSU/pandasu_errors.log
-echo "[成功] Error 日志已保存到 logs/PandaSU/pandasu_errors.log"
-
-echo ""
-echo "[方法3] 提取 PandaSU Debug 级别日志..."
-adb logcat -d *:D | grep "PandaSU" > logs/PandaSU/pandasu_debug.log
-echo "[成功] Debug 日志已保存到 logs/PandaSU/pandasu_debug.log"
-
-echo ""
-echo "[方法4] 提取 PandaSU Info 级别日志..."
-adb logcat -d *:I | grep "PandaSU" > logs/PandaSU/pandasu_info.log
-echo "[成功] Info 日志已保存到 logs/PandaSU/pandasu_info.log"
-
-echo ""
-echo "[方法5] 提取 PandaSU Warning 级别日志..."
-adb logcat -d *:W | grep "PandaSU" > logs/PandaSU/pandasu_warning.log
-echo "[成功] Warning 日志已保存到 logs/PandaSU/pandasu_warning.log"
-
-echo ""
-echo "[4/6] 提取 PandaSU 相关的异常堆栈..."
-
-echo "[方法6] 提取 AndroidRuntime 异常（可能包含 PandaSU 崩溃信息）..."
-adb logcat -d AndroidRuntime:E | grep -i "pandasu\|rootguard" > logs/PandaSU/android_runtime.log 2>&1
-echo "[成功] AndroidRuntime 日志已保存到 logs/PandaSU/android_runtime.log"
-
-echo ""
-echo "[方法7] 提取 System.err（标准错误输出）..."
-adb logcat -d System.err:V > logs/PandaSU/system_err.log
-echo "[成功] System.err 日志已保存到 logs/PandaSU/system_err.log"
-
-echo ""
-echo "[5/6] 提取 PandaSU 应用信息..."
-
-echo "[方法8] 获取 PandaSU 应用详细信息..."
-adb shell dumpsys package com.rootguard.app > logs/PandaSU/package_info.txt 2>&1
-echo "[成功] 包信息已保存到 logs/PandaSU/package_info.txt"
-
-echo ""
-echo "[方法9] 获取 PandaSU 应用进程信息..."
-adb shell ps -A | grep "com.rootguard.app" > logs/PandaSU/process_info.txt 2>&1
-echo "[成功] 进程信息已保存到 logs/PandaSU/process_info.txt"
-
-echo ""
-echo "[6/6] 提取 Root 权限相关日志..."
-
-echo "[方法10] 提取 Root 权限请求相关日志..."
-adb logcat -d | grep -i "root.*request\|magisk.*request\|permission.*root" > logs/PandaSU/root_requests.log 2>&1
-echo "[成功] Root 请求日志已保存到 logs/PandaSU/root_requests.log"
-
-echo ""
-echo "[方法11] 提取模块操作相关日志（备份/恢复）..."
-adb logcat -d | grep -i "module.*backup\|module.*restore\|备份模块\|恢复模块\|备份失败\|恢复失败" > logs/PandaSU/module_operations.log 2>&1
-echo "[成功] 模块操作日志已保存到 logs/PandaSU/module_operations.log"
-
-echo ""
-echo "[方法12] 提取完整 logcat（带时间戳）用于深度分析..."
-adb logcat -d -v time > logs/PandaSU/full_logcat.log
-echo "[成功] 完整 logcat 已保存到 logs/PandaSU/full_logcat.log"
-
-echo ""
-echo "========================================"
-echo "  提取完成！"
-echo "========================================"
-echo ""
-echo "日志文件位置: logs/PandaSU/"
-echo ""
-echo "已提取的文件:"
-ls -lh logs/PandaSU/
-echo ""
-
-echo "========================================"
-echo "  日志统计"
-echo "========================================"
-echo ""
-for file in logs/PandaSU/*.log; do
-    if [ -f "$file" ]; then
-        echo "$file:"
-        wc -l "$file"
-        echo ""
-    fi
-done
-
-echo ""
-echo "========================================"
-echo "  日志摘要"
-echo "========================================"
-echo ""
-echo "[最新错误信息]"
-if [ -s logs/PandaSU/pandasu_errors.log ]; then
-    tail -n 20 logs/PandaSU/pandasu_errors.log
+# 1. ZygiskNext 模块信息
+echo "【1/6】提取 ZygiskNext 模块信息..." | tee -a "$OUTPUT_DIR/extract_log.txt"
+if [ -f /data/adb/zygisksu/modules_info ]; then
+    echo "=== modules_info ===" > "$OUTPUT_DIR/zygisksu_info.txt"
+    cat /data/adb/zygisksu/modules_info >> "$OUTPUT_DIR/zygisksu_info.txt"
 else
-    echo "没有 Error 级别的日志"
+    echo "modules_info 不存在" > "$OUTPUT_DIR/zygisksu_info.txt"
 fi
-echo ""
 
-echo "========================================"
-echo "  建议"
-echo "========================================"
+# 2. ZygiskNext 目录结构
+echo "" >> "$OUTPUT_DIR/zygisksu_info.txt"
+echo "=== ZygiskNext 目录结构 ===" >> "$OUTPUT_DIR/zygisksu_info.txt"
+ls -laR /data/adb/zygisksu/ 2>&1 >> "$OUTPUT_DIR/zygisksu_info.txt"
+
+# 3. 已安装模块列表
+echo "【2/6】提取已安装模块列表..." | tee -a "$OUTPUT_DIR/extract_log.txt"
+echo "=== 已安装模块 ===" > "$OUTPUT_DIR/modules_list.txt"
+ls -la /data/adb/modules/ >> "$OUTPUT_DIR/modules_list.txt"
+
+# 4. PandaSU 模块详情
+echo "【3/6】提取 PandaSU 模块详情..." | tee -a "$OUTPUT_DIR/extract_log.txt"
+if [ -d /data/adb/modules/zygisk_pandasu ]; then
+    echo "=== zygisk_pandasu 目录结构 ===" > "$OUTPUT_DIR/pandasu_module.txt"
+    ls -laR /data/adb/modules/zygisk_pandasu/ >> "$OUTPUT_DIR/pandasu_module.txt"
+    
+    echo "" >> "$OUTPUT_DIR/pandasu_module.txt"
+    echo "=== module.prop ===" >> "$OUTPUT_DIR/pandasu_module.txt"
+    cat /data/adb/modules/zygisk_pandasu/module.prop 2>&1 >> "$OUTPUT_DIR/pandasu_module.txt"
+    
+    echo "" >> "$OUTPUT_DIR/pandasu_module.txt"
+    echo "=== SO 文件信息 ===" >> "$OUTPUT_DIR/pandasu_module.txt"
+    ls -la /data/adb/modules/zygisk_pandasu/zygisk/ 2>&1 >> "$OUTPUT_DIR/pandasu_module.txt"
+    file /data/adb/modules/zygisk_pandasu/zygisk/*.so 2>&1 >> "$OUTPUT_DIR/pandasu_module.txt" || true
+else
+    echo "zygisk_pandasu 模块不存在！" > "$OUTPUT_DIR/pandasu_module.txt"
+fi
+
+# 5. 系统属性
+echo "【4/6】提取系统属性..." | tee -a "$OUTPUT_DIR/extract_log.txt"
+echo "=== 关键系统属性 ===" > "$OUTPUT_DIR/system_props.txt"
+getprop ro.build.tags >> "$OUTPUT_DIR/system_props.txt"
+getprop ro.secure >> "$OUTPUT_DIR/system_props.txt"
+getprop ro.debuggable >> "$OUTPUT_DIR/system_props.txt"
+getprop ro.build.type >> "$OUTPUT_DIR/system_props.txt"
+getprop ro.build.selinux >> "$OUTPUT_DIR/system_props.txt"
+
+# 6. 最近 Zygisk 相关日志
+echo "【5/6】提取 Zygisk 相关日志..." | tee -a "$OUTPUT_DIR/extract_log.txt"
+logcat -d -b all | grep -iE "zygisk|panda|ZN-|zygisksu" 2>&1 | tail -100 > "$OUTPUT_DIR/zygisk_log.txt"
+
+# 7. 进程信息
+echo "【6/6】提取进程信息..." | tee -a "$OUTPUT_DIR/extract_log.txt"
+echo "=== Zygote 进程 ===" > "$OUTPUT_DIR/process_info.txt"
+ps -A | grep -E "zygote|init" >> "$OUTPUT_DIR/process_info.txt"
+
+echo "" >> "$OUTPUT_DIR/extract_log.txt"
+echo "=== 提取完成 ===" >> "$OUTPUT_DIR/extract_log.txt"
+echo "日志位置: $OUTPUT_DIR" >> "$OUTPUT_DIR/extract_log.txt"
+ls -la "$OUTPUT_DIR/" >> "$OUTPUT_DIR/extract_log.txt"
+
 echo ""
-echo "1. 首先查看 pandasu_errors.log 了解错误信息"
-echo "2. 查看 android_runtime.log 查找可能的崩溃信息"
-echo "3. 查看模块操作日志 (module_operations.log) 了解备份/恢复问题"
-echo "4. 如需深度分析，可查看完整 logcat (full_logcat.log)"
+echo "✅ 提取完成！"
+echo "日志位置: $OUTPUT_DIR"
 echo ""
+echo "文件列表:"
+ls -la "$OUTPUT_DIR/"

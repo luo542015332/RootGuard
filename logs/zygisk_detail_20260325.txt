@@ -1,0 +1,4 @@
+﻿03-25 09:24:43.180  2439  3225 I am_cpu  : [1522,0,zn-daemon,307918,0,30]
+03-25 09:27:28.002  2439  3225 I am_cpu  : [1522,0,zn-daemon,152798,10,0]
+03-25 09:29:19.965  9581  9581 I MediaProvider: receive action = android.intent.action.MEDIA_SCANNER_SCAN_FILE schemeSpecificPart = ////sdcard/PandaSU-System-Helper-v2.0.0-ZygiskNext.zip
+03-25 09:29:28.062  3283  3283 I adbd    : in ShellService: logcat -d -b all 2>&1 | grep -iE 'zygisk|pandasu|ZN-|zygisksu|panda_zygisk'

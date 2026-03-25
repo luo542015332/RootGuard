@@ -49,6 +49,11 @@ class MainActivity : ComponentActivity() {
             "cn.gov.tax.its" to "电子税务",
             "cn.gov.chinatax.gt4.app" to "中国税务"
         )
+        
+        // 需要强制应用银行级隔离的高风险检测应用
+        private val HIGH_RISK_DETECTOR_APPS = listOf(
+            "com.zhenxi.hunter" to "Hunter检测器"
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -139,12 +144,22 @@ class MainActivity : ComponentActivity() {
     private fun applyBankingIsolationForTaxApps() {
         lifecycleScope.launch {
             try {
+                // 税务应用
                 TAX_APPS.forEach { (packageName, appName) ->
                     Logger.d("Applying banking isolation for $packageName ($appName)")
                     val preset = IsolationPresets.bankingPreset(packageName, appName)
                     isolationDataStore.saveIsolationConfig(preset)
                     rootHider.applyIsolation(preset)
                     Logger.d("Banking isolation applied for $packageName")
+                }
+                
+                // 高风险检测应用
+                HIGH_RISK_DETECTOR_APPS.forEach { (packageName, appName) ->
+                    Logger.d("Applying banking isolation for high-risk detector: $packageName ($appName)")
+                    val preset = IsolationPresets.bankingPreset(packageName, appName)
+                    isolationDataStore.saveIsolationConfig(preset)
+                    rootHider.applyIsolation(preset)
+                    Logger.d("Banking isolation applied for high-risk detector: $packageName")
                 }
             } catch (e: Exception) {
                 Logger.e("Failed to apply banking isolation for tax apps", e)

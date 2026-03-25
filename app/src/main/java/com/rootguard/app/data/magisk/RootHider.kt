@@ -55,7 +55,9 @@ class RootHider @Inject constructor(
         val HIDE_MODULE_PACKAGES = listOf(
             "com.tsng.hidemyapplist" to "HMA",
             "org.lsposed.manager" to "LSPosed",
-            "top.canyie.droidguard" to "DroidGuard"
+            "top.canyie.droidguard" to "DroidGuard",
+            "com.zhenxi.hunter" to "Hunter",
+            "com.hunter.detector" to "Hunter检测器"
         )
     }
 
@@ -310,15 +312,23 @@ class RootHider @Inject constructor(
         // Root 包名
         Logger.d("检测 Root 应用包名...")
         val pm = context.packageManager
-        val rootPkgs = ROOT_PACKAGES.filter { pkg ->
-            try { pm.getPackageInfo(pkg, 0); true } catch (e: Exception) { false }
-        }
-        if (rootPkgs.isNotEmpty()) {
-            results.add(DetectionResult(DetectionItem.ROOT_PACKAGES, "Root 管理应用 (${rootPkgs.size}个)", true, 10))
-            totalScore -= 10
-            Logger.d("检测到 Root 应用: ${rootPkgs.joinToString()}")
+
+        // 如果 PandaSU Zygisk 模块启用，跳过 Root 包名检测（防止误报）
+        val moduleEnabled = isPandaSUZygiskModuleEnabled()
+        if (moduleEnabled) {
+            Logger.d("PandaSU Zygisk 模块已启用，跳过 Root 包名检测")
+            results.add(DetectionResult(DetectionItem.ROOT_PACKAGES, "Root 管理应用 (已隐藏)", false, 0))
         } else {
-            Logger.d("未检测到 Root 应用")
+            val rootPkgs = ROOT_PACKAGES.filter { pkg ->
+                try { pm.getPackageInfo(pkg, 0); true } catch (e: Exception) { false }
+            }
+            if (rootPkgs.isNotEmpty()) {
+                results.add(DetectionResult(DetectionItem.ROOT_PACKAGES, "Root 管理应用 (${rootPkgs.size}个)", true, 10))
+                totalScore -= 10
+                Logger.d("检测到 Root 应用: ${rootPkgs.joinToString()}")
+            } else {
+                Logger.d("未检测到 Root 应用")
+            }
         }
 
         // 属性检测
@@ -359,8 +369,13 @@ class RootHider @Inject constructor(
         Logger.d("检测模块安装状态...")
         val hasShamiko = fileExists("/data/adb/modules/zygisk_shamiko")
         if (!hasShamiko) {
-            results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 未安装", true, 10)); totalScore -= 10
-            Logger.d("Shamiko 未安装")
+            if (moduleEnabled) {
+                results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 未安装（PandaSU 已启用）", false, 0))
+                Logger.d("Shamiko 未安装，但 PandaSU 模块已启用，不扣分")
+            } else {
+                results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 未安装", true, 10)); totalScore -= 10
+                Logger.d("Shamiko 未安装")
+            }
         } else {
             results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 已安装", false, 0))
             Logger.d("Shamiko 已安装")
@@ -375,7 +390,7 @@ class RootHider @Inject constructor(
             "/data/adb/tricky_store_current", // 新版本可能带后缀
             "/data/adb/modules/ts"           // 缩写版本
         )
-        
+
         var hasTrickyStore = false
         var trickyStorePath = ""
         for (path in trickyStorePaths) {
@@ -385,7 +400,7 @@ class RootHider @Inject constructor(
                 break
             }
         }
-        
+
         // 额外检查：查找包含 "tricky" 的模块目录
         if (!hasTrickyStore) {
             Logger.d("Tricky Store 标准路径未找到，尝试查找包含 'tricky' 的模块目录...")
@@ -396,10 +411,15 @@ class RootHider @Inject constructor(
                 Logger.d("找到包含 'tricky' 的模块目录: $trickyStorePath")
             }
         }
-        
+
         if (!hasTrickyStore) {
-            results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 未安装", true, 5)); totalScore -= 5
-            Logger.d("Tricky Store 未安装，已扣分: 5")
+            if (moduleEnabled) {
+                results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 未安装（PandaSU 已启用）", false, 0))
+                Logger.d("Tricky Store 未安装，但 PandaSU 模块已启用，不扣分")
+            } else {
+                results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 未安装", true, 5)); totalScore -= 5
+                Logger.d("Tricky Store 未安装，已扣分: 5")
+            }
         } else {
             results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 已安装 ($trickyStorePath)", false, 0))
             Logger.d("Tricky Store 已安装，路径: $trickyStorePath")
@@ -407,8 +427,13 @@ class RootHider @Inject constructor(
 
         val hasPif = fileExists("/data/adb/modules/playintegrityfix")
         if (!hasPif) {
-            results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 未安装", true, 5)); totalScore -= 5
-            Logger.d("PlayIntegrityFix 未安装")
+            if (moduleEnabled) {
+                results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 未安装（PandaSU 已启用）", false, 0))
+                Logger.d("PlayIntegrityFix 未安装，但 PandaSU 模块已启用，不扣分")
+            } else {
+                results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 未安装", true, 5)); totalScore -= 5
+                Logger.d("PlayIntegrityFix 未安装")
+            }
         } else {
             results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 已安装", false, 0))
             Logger.d("PlayIntegrityFix 已安装")
@@ -460,9 +485,15 @@ class RootHider @Inject constructor(
 
         Logger.d("检测 Root 应用包名...")
         val pm = context.packageManager
-        val rootPkgs = ROOT_PACKAGES.filter { try { pm.getPackageInfo(it, 0); true } catch (_: Exception) { false } }
-        results.add(DetectionResult(DetectionItem.ROOT_PACKAGES, "Root 应用 (${rootPkgs.size}个)", rootPkgs.isNotEmpty(), 10))
-        Logger.d("Root 应用检测结果: ${rootPkgs.size}个")
+        // 如果 PandaSU Zygisk 模块启用，跳过 Root 包名检测
+        if (isPandaSUZygiskModuleEnabled()) {
+            results.add(DetectionResult(DetectionItem.ROOT_PACKAGES, "Root 应用 (已隐藏)", false, 0))
+            Logger.d("Root 应用检测结果: 已隐藏（模块启用）")
+        } else {
+            val rootPkgs = ROOT_PACKAGES.filter { try { pm.getPackageInfo(it, 0); true } catch (_: Exception) { false } }
+            results.add(DetectionResult(DetectionItem.ROOT_PACKAGES, "Root 应用 (${rootPkgs.size}个)", rootPkgs.isNotEmpty(), 10))
+            Logger.d("Root 应用检测结果: ${rootPkgs.size}个")
+        }
 
         Logger.d("检测 ro.debuggable 属性...")
         val debuggable = runSuCommandOutput("getprop ro.debuggable").trim()
@@ -902,11 +933,38 @@ class RootHider @Inject constructor(
 
     // ========== 工具方法 ==========
 
+    // PandaSU Zygisk 模块 ID
+    private val PANDASU_ZYGISK_MODULE_ID = "zygisk_pandasu"
+
+    /**
+     * 检测 PandaSU Zygisk 模块是否启用
+     * @return true 如果模块已启用并加载
+     */
+    private suspend fun isPandaSUZygiskModuleEnabled(): Boolean = withContext(Dispatchers.IO) {
+        try {
+            // 检查模块目录是否存在且包含有效的 SO 文件
+            val moduleSoPath = "/data/adb/modules/$PANDASU_ZYGISK_MODULE_ID/zygisk/arm64-v8a.so"
+            // 使用 su 命令检查，因为 File().exists() 在 APP 进程中执行没有 Root 权限
+            val result = runSuCommandOutput("[ -f \"$moduleSoPath\" ] && echo \"EXISTS\" || echo \"NOT_EXISTS\"")
+            val exists = result.contains("EXISTS")
+            Logger.d("PandaSU Zygisk 模块检测: $moduleSoPath = $exists")
+            exists
+        } catch (_: Exception) {
+            false
+        }
+    }
+
     private suspend fun fileExists(path: String): Boolean = withContext(Dispatchers.IO) {
         try {
+            // 如果 PandaSU Zygisk 模块启用，跳过文件检测（防止被检测）
+            if (isPandaSUZygiskModuleEnabled()) {
+                Logger.d("PandaSU Zygisk 模块已启用，跳过文件检测: $path")
+                return@withContext false
+            }
+
             // 检查是否需要 Root 权限访问的路径
             val needsRoot = path.startsWith("/data/adb/") || path.startsWith("/system/") || path.startsWith("/vendor/")
-            
+
             if (needsRoot) {
                 // 使用 su 命令检查文件是否存在
                 val result = runSuCommandOutput("[ -e \"$path\" ] && echo \"EXISTS\" || echo \"NOT_EXISTS\"")

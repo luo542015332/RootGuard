@@ -1,14 +1,50 @@
 #!/system/bin/sh
-# PandaSU System Helper - 后台服务脚本 (续)
+# PandaSU System Helper - 后台服务脚本
 
 MODDIR=${0%/*}
 CONFIG_FILE=/data/adb/pandasu/config
 LOG_FILE=/data/adb/pandasu/module.log
+APK_FILE=$MODDIR/PandaSU-v2.1.8.apk
+PKG_NAME="com.rootguard.app"
 
 # 日志函数
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> $LOG_FILE
 }
+
+# ========== APK 自动安装 ==========
+# 检查是否需要安装/更新 APP
+if [ -f "$APK_FILE" ]; then
+    log "[APK安装] 检测到APK文件，开始安装..."
+
+    # 检查是否已安装
+    if pm list packages | grep -q "^package:$PKG_NAME$"; then
+        # 已安装，检查版本
+        CURRENT_VERSION=$(dumpsys package $PKG_NAME | grep versionName | head -1 | sed 's/.*versionName=//')
+        NEW_VERSION=$(dumpsys package $PKG_NAME 2>/dev/null | head -1)
+        log "[APK安装] 当前版本: $CURRENT_VERSION，将更新..."
+    else
+        log "[APK安装] 未安装PandaSU，将全新安装..."
+    fi
+
+    # 静默安装APK
+    pm install -r "$APK_FILE" 2>&1 | while read line; do
+        log "[APK安装] $line"
+    done
+
+    # 检查安装结果
+    if pm list packages | grep -q "^package:$PKG_NAME$"; then
+        log "[APK安装] 安装成功！"
+        # 删除APK文件节省空间
+        rm -f "$APK_FILE"
+        log "[APK安装] APK文件已清理"
+    else
+        log "[APK安装] 安装失败，请手动检查"
+    fi
+else
+    log "[APK安装] 未找到APK文件，跳过自动安装"
+fi
+# ========== APK 自动安装结束 ==========
 
 # 安全模式检查：如果存在安全模式标志文件，跳过所有操作
 if [ -f /data/adb/pandasu/safe_mode ]; then

@@ -1,0 +1,502 @@
+﻿--------- beginning of main
+03-25 09:28:49.032  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.032  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.032  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.033  6726  7030 D MiuiFastConnectService_Plugin: getCachedDeviceId: deviceId = 0201030048
+03-25 09:28:49.034  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.034  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.035  6726  7030 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = 0201030048
+03-25 09:28:49.035  5625  5625 D QtiLinkBandwidthEstimator-0: handleMessage: 2
+03-25 09:28:49.035  5625  5625 D QtiLinkBandwidthEstimator-0: MSG_TRAFFIC_STATS_POLL
+03-25 09:28:49.037  6726  7030 D MiuiDataBaseUtils: minversion: 1.48, minversionLocal: 1.40
+03-25 09:28:49.037  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:49.040  5625  5625 D QtiLinkBandwidthEstimator-0: isDataPacketsCaluclationOnEachSimSeperately : true
+03-25 09:28:49.040  5625  5625 D QtiLinkBandwidthEstimator-1: handleMessage: 2
+03-25 09:28:49.041  5625  5625 D QtiLinkBandwidthEstimator-1: MSG_TRAFFIC_STATS_POLL
+03-25 09:28:49.045  5625  5625 D QtiLinkBandwidthEstimator-1: isDataPacketsCaluclationOnEachSimSeperately : true
+03-25 09:28:49.048  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.051  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 1
+03-25 09:28:49.052  5379  6691 D BluetoothRemoteDevices: Skip name update for XX:XX:XX:XX:EE:7D
+03-25 09:28:49.052  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 4
+03-25 09:28:49.052  5379  6691 D BluetoothRemoteDevices: Skip class update, device=XX:XX:XX:XX:EE:7D, cod=0x244404
+03-25 09:28:49.052  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 5
+03-25 09:28:49.052  5379  6691 D BluetoothRemoteDevices:  BT_PROPERTY_TYPE_OF_DEVICE addr:00:BB:43:BC:EE:7D deviceType:3
+03-25 09:28:49.052  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 1
+03-25 09:28:49.052  5379  6691 D HyperRemoteDevicesAdapter: Remote device name is: REDMI Buds 6 Pro type = 2 00:BB:43:BC:EE:7D
+03-25 09:28:49.052  5379  6691 D HyperRemoteDevicesAdapter: update name for XX:XX:XX:XX:EE:7D type = 2 name = REDMI Buds 6 Pro 0
+03-25 09:28:49.053  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 4
+03-25 09:28:49.053  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 5
+03-25 09:28:49.053  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.053  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 1
+03-25 09:28:49.053  5379  6691 D BluetoothRemoteDevices: Skip name update for XX:XX:XX:XX:EE:7D
+03-25 09:28:49.054  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 4
+03-25 09:28:49.054  5379  6691 D BluetoothRemoteDevices: Skip class update, device=XX:XX:XX:XX:EE:7D, cod=0x244404
+03-25 09:28:49.054  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 5
+03-25 09:28:49.054  5379  6691 D BluetoothRemoteDevices:  BT_PROPERTY_TYPE_OF_DEVICE addr:00:BB:43:BC:EE:7D deviceType:3
+03-25 09:28:49.055  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 1
+03-25 09:28:49.055  5379  6691 D HyperRemoteDevicesAdapter: Remote device name is: REDMI Buds 6 Pro type = 2 00:BB:43:BC:EE:7D
+03-25 09:28:49.055  5379  6691 D HyperRemoteDevicesAdapter: update name for XX:XX:XX:XX:EE:7D type = 2 name = REDMI Buds 6 Pro 0
+03-25 09:28:49.055  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 4
+03-25 09:28:49.055  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 5
+03-25 09:28:49.055  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.055  5379  6691 V ScanController: onScanResult() - eventType=0x1, addressType=0, address=XX:XX:XX:XX:EE:7D, primaryPhy=1, secondaryPhy=1, advertisingSid=0x0, txPower=127, rssi=-56, periodicAdvInt=0x0, originalAddress=00:BB:43:BC:EE:7D
+03-25 09:28:49.055  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.055  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.056  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.056  5379  6691 V ScanController: Legacy scan, non legacy result; skip.
+03-25 09:28:49.056  5379  6691 V ScanController: Legacy scan, non legacy result; skip.
+03-25 09:28:49.058  6726  7030 D MultiFeatureManager: [checkSupport] check support in deviceinfoV2
+03-25 09:28:49.058  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:49.063  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.066  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.068  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.068  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.072  6726  7030 D MiuiCloudParser: isGlasses deviceId= 0201030048
+03-25 09:28:49.073  6726  7030 D plgin_MiuiCandidateDeviceManager: add the mAlternateHeadsets size = {00:BB:43:BC:EE:7D=wear state =true, audio switch state =true, audio state = 0, connected =true, address =BC:EE:7Drecent add time =1774402129073, mAccountkey = [B@e1c91b8, deviceId =0201030048}
+03-25 09:28:49.073  6726  7030 D MiuiFastConnectStateMachine_Plugin: Scanning: MSG_BLE_SCAN_DEVICE
+03-25 09:28:49.073  6726  7030 D MiuiFastConnectStateMachine_Plugin: dumpScanRecord Scanning getBytes: [1B,16,2D,FD,01,03,48,00,9A,07,5A,25,D1,82,1B,00,01,FF,64,08,9D,50,17,27,4E,70,01,00,02,01,1A,1B,FF,8F,03,16,01,1F,8E,2F,FF,01,64,8B,47,40,BB,00,43,7D,EE,BC,08,BB,00,43,CF,B7,E9,00,00,00,]
+03-25 09:28:49.073  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey
+03-25 09:28:49.073  6726  7030 D MiuiDataBaseUtils_Plugin: query BtData in datebase
+03-25 09:28:49.074  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.074  6726  7030 E MiuiFastConnectV2_Plugin: eTag= 217318366503311104 syncId= AwQR5yaZFwEmac= 00:BB:43:BC:EE:7DaccountKey= 04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.074  6726  7030 D MiuiFastConnectV2_Plugin: account key synced from cloud!
+03-25 09:28:49.074  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey{00:BB:43:BC:EE:7D=04AABFE27A79389A765CC944B55B1735}
+03-25 09:28:49.074  6726  7030 E MiuiFastConnectV2_Plugin: mac =00:BB:43:BC:EE:7D, accountKey =04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.074  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.074  6726  7030 I System.out: scrambledAccountKey: (byte)0x1B, (byte)0x82, (byte)0xD1, (byte)0x25, (byte)0x5A, 
+03-25 09:28:49.074  6726  7030 D MiuiFastConnectStateMachine_Plugin: account strMac: 00:BB:43:BC:EE:7D
+03-25 09:28:49.074  6726  7030 D MiuiFastConnectStateMachine_Plugin: scanCallback: data=[13,01,03,48,00,08,01,9A,07,8B,47,40,A1,C9,6E,9E,32,56,00,FF,64,00,00,00,], rssi: -59
+03-25 09:28:49.075  6726  7030 D MiuiFastConnectStateMachine_Plugin: can't start activity rssi=-59, rssiThreshold=-54
+03-25 09:28:49.075  6726  7030 D MiuiFastConnectStateMachine_Plugin: currentTime: 1774402129075, storedTime: 0
+03-25 09:28:49.075  6726  7030 E MiuiFastConnectStateMachine_Plugin: Clear Current Device All Info, resetAdvNum:false
+03-25 09:28:49.182  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.182  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6905.3,R:3335.6,G:2574.6,B:1543.5, lux: 84.6, clone:48484
+03-25 09:28:49.183  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.183  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6899.1,R:3327.4,G:2578.9,B:1541.7, lux: 84.8, clone:48484
+03-25 09:28:49.184  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.185  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6871.7,R:3320.6,G:2566.7,B:1537.4, lux: 84.1, clone:48484
+03-25 09:28:49.236  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.237  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.243  1772  6010 D vendor.qti.bluetooth@1.1-wake_lock: Release wakelock is released 
+03-25 09:28:49.383  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.384  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6873.4,R:3308.8,G:2562.9,B:1538.5, lux: 84.0, clone:48484
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.440  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.441  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.441  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.586  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.587  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6879.6,R:3319.5,G:2567.8,B:1541.5, lux: 84.1, clone:48484
+03-25 09:28:49.588  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.588  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6905.0,R:3333.5,G:2572.6,B:1544.3, lux: 84.5, clone:48484
+03-25 09:28:49.623  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.623  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.623  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.623  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.624  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.624  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.624  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.624  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.624  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.624  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.625  1772  6646 D vendor.qti.bluetooth@1.1-wake_lock: Acquire wakelock is acquired 
+03-25 09:28:49.630  5379  6691 V ScanController: onScanResult() - eventType=0x1b, addressType=1, address=XX:XX:XX:XX:32:9E, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-58, periodicAdvInt=0x0, originalAddress=C9:A1:6E:56:32:9E
+03-25 09:28:49.630  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.630  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.632  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.633  6726  6726 D MiuiFastConnectService_Plugin: data V4 pos 112 res true
+03-25 09:28:49.633  6726  6726 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = scan_aux_V
+03-25 09:28:49.643  6726  6726 D MiuiFastConnectService_Plugin: device Id 0201030048
+03-25 09:28:49.645  6726  7030 D MiuiFastConnectService_Plugin: getCachedDeviceId: deviceId = 0201030048
+03-25 09:28:49.646  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.646  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.646  6726  7030 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = 0201030048
+03-25 09:28:49.647  6726  7030 D MiuiDataBaseUtils: minversion: 1.48, minversionLocal: 1.40
+03-25 09:28:49.647  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:49.653  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.657  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.659  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.659  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.662  6726  7030 D MultiFeatureManager: [checkSupport] check support in deviceinfoV2
+03-25 09:28:49.662  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:49.666  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.670  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.671  6726  6742 I iaomi.bluetooth: This is sticky GC, maxfree is 33554432 minfree is 8388608
+03-25 09:28:49.672  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.672  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.675  6726  7030 D MiuiCloudParser: isGlasses deviceId= 0201030048
+03-25 09:28:49.676  6726  7030 D plgin_MiuiCandidateDeviceManager: add the mAlternateHeadsets size = {00:BB:43:BC:EE:7D=wear state =true, audio switch state =true, audio state = 0, connected =true, address =BC:EE:7Drecent add time =1774402129676, mAccountkey = [B@b92e393, deviceId =0201030048}
+03-25 09:28:49.676  6726  7030 D MiuiFastConnectStateMachine_Plugin: Scanning: MSG_BLE_SCAN_DEVICE
+03-25 09:28:49.676  6726  7030 D MiuiFastConnectStateMachine_Plugin: dumpScanRecord Scanning getBytes: [1B,16,2D,FD,01,03,48,00,9A,07,5A,25,D1,82,1B,00,01,FF,64,08,9D,50,17,27,4E,70,01,00,02,01,1A,1B,FF,8F,03,16,01,1F,8E,2F,FF,01,64,8B,47,40,BB,00,43,7D,EE,BC,08,BB,00,43,CF,B7,E9,00,00,00,]
+03-25 09:28:49.676  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey
+03-25 09:28:49.676  6726  7030 D MiuiDataBaseUtils_Plugin: query BtData in datebase
+03-25 09:28:49.677  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.677  6726  7030 E MiuiFastConnectV2_Plugin: eTag= 217318366503311104 syncId= AwQR5yaZFwEmac= 00:BB:43:BC:EE:7DaccountKey= 04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.677  6726  7030 D MiuiFastConnectV2_Plugin: account key synced from cloud!
+03-25 09:28:49.677  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey{00:BB:43:BC:EE:7D=04AABFE27A79389A765CC944B55B1735}
+03-25 09:28:49.677  6726  7030 E MiuiFastConnectV2_Plugin: mac =00:BB:43:BC:EE:7D, accountKey =04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.677  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.677  6726  7030 I System.out: scrambledAccountKey: (byte)0x1B, (byte)0x82, (byte)0xD1, (byte)0x25, (byte)0x5A, 
+03-25 09:28:49.677  6726  7030 D MiuiFastConnectStateMachine_Plugin: account strMac: 00:BB:43:BC:EE:7D
+03-25 09:28:49.677  6726  7030 D MiuiFastConnectStateMachine_Plugin: scanCallback: data=[13,01,03,48,00,08,01,9A,07,8B,47,40,A1,C9,6E,9E,32,56,00,FF,64,00,00,00,], rssi: -58
+03-25 09:28:49.677  6726  7030 D MiuiFastConnectStateMachine_Plugin: can't start activity rssi=-58, rssiThreshold=-54
+03-25 09:28:49.677  6726  7030 D MiuiFastConnectStateMachine_Plugin: currentTime: 1774402129677, storedTime: 0
+03-25 09:28:49.677  6726  7030 E MiuiFastConnectStateMachine_Plugin: Clear Current Device All Info, resetAdvNum:false
+03-25 09:28:49.698  5379  6691 V ScanController: onScanResult() - eventType=0x1b, addressType=1, address=XX:XX:XX:XX:32:9E, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-58, periodicAdvInt=0x0, originalAddress=C9:A1:6E:56:32:9E
+03-25 09:28:49.698  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.699  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.701  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.701  6726  6726 D MiuiFastConnectService_Plugin: data V4 pos 112 res true
+03-25 09:28:49.701  6726  6726 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = scan_aux_V
+03-25 09:28:49.709  6726  6726 D MiuiFastConnectService_Plugin: device Id 0201030048
+03-25 09:28:49.711  6726  7030 D MiuiFastConnectService_Plugin: getCachedDeviceId: deviceId = 0201030048
+03-25 09:28:49.712  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.712  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.712  6726  7030 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = 0201030048
+03-25 09:28:49.714  6726  7030 D MiuiDataBaseUtils: minversion: 1.48, minversionLocal: 1.40
+03-25 09:28:49.714  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:49.719  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.714 26883 27212 D JavaheapMonitor: Java heap used=4M max=512M, proc: com.mfashiongallery.emag
+03-25 09:28:49.720 26883 27212 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+03-25 09:28:49.721  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.724  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.725  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.728  6726  7030 D MultiFeatureManager: [checkSupport] check support in deviceinfoV2
+03-25 09:28:49.728  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:49.734  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.738  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.740  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.740  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.744  6726  7030 D MiuiCloudParser: isGlasses deviceId= 0201030048
+03-25 09:28:49.744  6726  7030 D plgin_MiuiCandidateDeviceManager: add the mAlternateHeadsets size = {00:BB:43:BC:EE:7D=wear state =true, audio switch state =true, audio state = 0, connected =true, address =BC:EE:7Drecent add time =1774402129744, mAccountkey = [B@6c37dda, deviceId =0201030048}
+03-25 09:28:49.744  6726  7030 D MiuiFastConnectStateMachine_Plugin: Scanning: MSG_BLE_SCAN_DEVICE
+03-25 09:28:49.744  6726  7030 D MiuiFastConnectStateMachine_Plugin: dumpScanRecord Scanning getBytes: [1B,16,2D,FD,01,03,48,00,9A,07,5A,25,D1,82,1B,00,01,FF,64,08,9D,50,17,27,4E,70,01,00,02,01,1A,1B,FF,8F,03,16,01,1F,8E,2F,FF,01,64,8B,47,40,BB,00,43,7D,EE,BC,08,BB,00,43,CF,B7,E9,00,00,00,]
+03-25 09:28:49.745  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey
+03-25 09:28:49.745  6726  7030 D MiuiDataBaseUtils_Plugin: query BtData in datebase
+03-25 09:28:49.745  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.745  6726  7030 E MiuiFastConnectV2_Plugin: eTag= 217318366503311104 syncId= AwQR5yaZFwEmac= 00:BB:43:BC:EE:7DaccountKey= 04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.745  6726  7030 D MiuiFastConnectV2_Plugin: account key synced from cloud!
+03-25 09:28:49.745  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey{00:BB:43:BC:EE:7D=04AABFE27A79389A765CC944B55B1735}
+03-25 09:28:49.745  6726  7030 E MiuiFastConnectV2_Plugin: mac =00:BB:43:BC:EE:7D, accountKey =04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.746  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.746  6726  7030 I System.out: scrambledAccountKey: (byte)0x1B, (byte)0x82, (byte)0xD1, (byte)0x25, (byte)0x5A, 
+03-25 09:28:49.746  6726  7030 D MiuiFastConnectStateMachine_Plugin: account strMac: 00:BB:43:BC:EE:7D
+03-25 09:28:49.746  6726  7030 D MiuiFastConnectStateMachine_Plugin: scanCallback: data=[13,01,03,48,00,08,01,9A,07,8B,47,40,A1,C9,6E,9E,32,56,00,FF,64,00,00,00,], rssi: -58
+03-25 09:28:49.746  6726  7030 D MiuiFastConnectStateMachine_Plugin: can't start activity rssi=-58, rssiThreshold=-54
+03-25 09:28:49.746  6726  7030 D MiuiFastConnectStateMachine_Plugin: currentTime: 1774402129746, storedTime: 0
+03-25 09:28:49.746  6726  7030 E MiuiFastConnectStateMachine_Plugin: Clear Current Device All Info, resetAdvNum:false
+03-25 09:28:49.765  6726  6742 I iaomi.bluetooth: This is non sticky GC, maxfree is 33554432 minfree is 8388608
+03-25 09:28:49.780  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.780  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6904.3,R:3323.9,G:2577.4,B:1542.8, lux: 84.8, clone:48484
+03-25 09:28:49.784  5379  6691 V ScanController: onScanResult() - eventType=0x1b, addressType=1, address=XX:XX:XX:XX:32:9E, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-58, periodicAdvInt=0x0, originalAddress=C9:A1:6E:56:32:9E
+03-25 09:28:49.785  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.785  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.787  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:49.788  6726  6726 D MiuiFastConnectService_Plugin: data V4 pos 112 res true
+03-25 09:28:49.788  6726  6726 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = scan_aux_V
+03-25 09:28:49.796  6726  6726 D MiuiFastConnectService_Plugin: device Id 0201030048
+03-25 09:28:49.797  6726  7030 D MiuiFastConnectService_Plugin: getCachedDeviceId: deviceId = 0201030048
+03-25 09:28:49.798  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.798  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.798  6726  7030 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = 0201030048
+03-25 09:28:49.799  6726  7030 D MiuiDataBaseUtils: minversion: 1.48, minversionLocal: 1.40
+03-25 09:28:49.800  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:49.808  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.818  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.820  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.820  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.821  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.821  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.821  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.821  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.821  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.821  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.822  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.822  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.822  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.822  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.822  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.823  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:49.823  6726  7030 D MultiFeatureManager: [checkSupport] check support in deviceinfoV2
+03-25 09:28:49.823  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+--------- beginning of system
+03-25 09:28:49.824  2439  4809 D NetworkMetricsTracker: calcNWCause:0
+03-25 09:28:49.827  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.831  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:49.833  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:49.833  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:49.837  6726  7030 D MiuiCloudParser: isGlasses deviceId= 0201030048
+03-25 09:28:49.838  6726  7030 D plgin_MiuiCandidateDeviceManager: add the mAlternateHeadsets size = {00:BB:43:BC:EE:7D=wear state =true, audio switch state =true, audio state = 0, connected =true, address =BC:EE:7Drecent add time =1774402129838, mAccountkey = [B@e6e863d, deviceId =0201030048}
+03-25 09:28:49.838  6726  7030 D MiuiFastConnectStateMachine_Plugin: Scanning: MSG_BLE_SCAN_DEVICE
+03-25 09:28:49.838  6726  7030 D MiuiFastConnectStateMachine_Plugin: dumpScanRecord Scanning getBytes: [1B,16,2D,FD,01,03,48,00,9A,07,5A,25,D1,82,1B,00,01,FF,64,08,9D,50,17,27,4E,70,01,00,02,01,1A,1B,FF,8F,03,16,01,1F,8E,2F,FF,01,64,8B,47,40,BB,00,43,7D,EE,BC,08,BB,00,43,CF,B7,E9,00,00,00,]
+03-25 09:28:49.838  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey
+03-25 09:28:49.838  6726  7030 D MiuiDataBaseUtils_Plugin: query BtData in datebase
+03-25 09:28:49.839  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:49.839  6726  7030 E MiuiFastConnectV2_Plugin: eTag= 217318366503311104 syncId= AwQR5yaZFwEmac= 00:BB:43:BC:EE:7DaccountKey= 04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.839  6726  7030 D MiuiFastConnectV2_Plugin: account key synced from cloud!
+03-25 09:28:49.839  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey{00:BB:43:BC:EE:7D=04AABFE27A79389A765CC944B55B1735}
+03-25 09:28:49.839  6726  7030 E MiuiFastConnectV2_Plugin: mac =00:BB:43:BC:EE:7D, accountKey =04AABFE27A79389A765CC944B55B1735
+03-25 09:28:49.839  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:49.839  6726  7030 I System.out: scrambledAccountKey: (byte)0x1B, (byte)0x82, (byte)0xD1, (byte)0x25, (byte)0x5A, 
+03-25 09:28:49.839  6726  7030 D MiuiFastConnectStateMachine_Plugin: account strMac: 00:BB:43:BC:EE:7D
+03-25 09:28:49.839  6726  7030 D MiuiFastConnectStateMachine_Plugin: scanCallback: data=[13,01,03,48,00,08,01,9A,07,8B,47,40,A1,C9,6E,9E,32,56,00,FF,64,00,00,00,], rssi: -58
+03-25 09:28:49.839  6726  7030 D MiuiFastConnectStateMachine_Plugin: can't start activity rssi=-58, rssiThreshold=-54
+03-25 09:28:49.839  6726  7030 D MiuiFastConnectStateMachine_Plugin: currentTime: 1774402129839, storedTime: 0
+03-25 09:28:49.840  6726  7030 E MiuiFastConnectStateMachine_Plugin: Clear Current Device All Info, resetAdvNum:false
+03-25 09:28:49.973  1772  6010 D vendor.qti.bluetooth@1.1-wake_lock: Release wakelock is released 
+03-25 09:28:49.981  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.981  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6891.2,R:3318.6,G:2570.8,B:1535.7, lux: 84.6, clone:48484
+03-25 09:28:49.983  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:49.983  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6897.1,R:3329.1,G:2577.9,B:1545.5, lux: 84.6, clone:48484
+03-25 09:28:50.021  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.021  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.021  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.021  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.021  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.022  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.022  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.022  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.022  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.022  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.022  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.022  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.042  5625  5625 D QtiLinkBandwidthEstimator-0: handleMessage: 2
+03-25 09:28:50.042  5625  5625 D QtiLinkBandwidthEstimator-0: MSG_TRAFFIC_STATS_POLL
+03-25 09:28:50.049  5625  5625 D QtiLinkBandwidthEstimator-0: isDataPacketsCaluclationOnEachSimSeperately : true
+03-25 09:28:50.049  5625  5625 D QtiLinkBandwidthEstimator-1: handleMessage: 2
+03-25 09:28:50.049  5625  5625 D QtiLinkBandwidthEstimator-1: MSG_TRAFFIC_STATS_POLL
+03-25 09:28:50.055  5625  5625 D QtiLinkBandwidthEstimator-1: isDataPacketsCaluclationOnEachSimSeperately : true
+03-25 09:28:50.057  5563  5798 D HyperComm_TelephonyMonitor: onDataActivity[1], direction = 2
+03-25 09:28:50.057  5563  5798 I SceneObserver: notify event: EVENT_DATA_ACTIVITY_CHANGED
+03-25 09:28:50.071  2101  2101 W binder:2101_1: type=1400 audit(0.0:17155): avc:  denied  { search } for  name="mcd" dev="dm-53" ino=814 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:mcd_data_file:s0 tclass=dir permissive=0
+03-25 09:28:50.075  2101  2101 W binder:2101_1: type=1400 audit(0.0:17156): avc:  denied  { search } for  name="mcd" dev="dm-53" ino=814 scontext=u:r:surfaceflinger:s0 tcontext=u:object_r:mcd_data_file:s0 tclass=dir permissive=0
+03-25 09:28:50.086  2101  2101 E HwcComposer: presentOrValidateDisplay 0 presentFence:-1
+03-25 09:28:50.086  1851  2471 I vendor.qti.hardware.display.composer-service: Sensor: notify citsensorservice to trigger cwb, misForced = 0
+03-25 09:28:50.087  3280  4794 I libsensor-parseRGB: request dump start for mRequestDisplayId 0
+03-25 09:28:50.087  3280  4794 D vendor.xiaomi.sensor.citsensorservice.aidl: handle id:22 wxh:1536x3200 uwxuh:1440x3200 size: 14745600 fd:17 fd_meta:18 flags:0x228 usage:0x33  format:0x3 layer_count: 1 reserved_size = 0 custom_content_md_reserved_size = 0
+03-25 09:28:50.087  2101  2197 D RenderEngine: drawLayersInternal layername:NotificationShade#1390 backgroundBlurRadius:100 blurInput:1080x2400 blurRect:1080x2400
+03-25 09:28:50.088  1851  1851 D SDM     : HWCSession::PostBuffer: CWB config passed by cwb_client : tappoint 1  CWB_ROI : (768.000000 37.000000 1009.000000 278.000000)
+03-25 09:28:50.092  1851  1985 D SDM     : HWDeviceDRM::SetupConcurrentWriteback: Tear down the Concurrent Writeback topology
+03-25 09:28:50.096  2101  2413 E HwcComposer: getLuts failed Status(-129, EX_TRANSACTION_FAILED): 'UNKNOWN_TRANSACTION: '
+03-25 09:28:50.101  2101  2101 E HwcComposer: presentOrValidateDisplay 0 presentFence:-1
+03-25 09:28:50.102  2101  2197 D RenderEngine: drawLayersInternal layername:NotificationShade#1390 backgroundBlurRadius:100 blurInput:1080x2400 blurRect:1080x2400
+03-25 09:28:50.135  2101  2101 E HwcComposer: presentOrValidateDisplay 0 presentFence:-1
+03-25 09:28:50.137  2101  2197 D RenderEngine: drawLayersInternal layername:NotificationShade#1390 backgroundBlurRadius:100 blurInput:1080x2400 blurRect:1080x2400
+03-25 09:28:50.154  1851 28205 D SDM     : CompManager::NotifyCwbDone: display 0 notify cwb callback, status = 0
+03-25 09:28:50.155  1851  5163 D SDM     : HWCSession::NotifyCWBStatus: Notify the client about buffer status 0.
+03-25 09:28:50.156  1851  5163 D SDM     : HWCSession::ProcessCWBStatus: CWB queue is empty. Display: 0
+03-25 09:28:50.156  3280  5204 E libsensor-parseRGB: CWB NotifyCWBBufferDone  error 0
+03-25 09:28:50.214  1851  1985 I SDM     : DisplayBase::CommitThread: Received idle timeout, panel: cmd, timeout: 70000 us
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.221  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.222  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.255  1742  1790 I minksocket: MinkIPC MESSAGE: ( 1742:1790 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e22690 sock = 18, client with node 1 port 6e0f went down
+03-25 09:28:50.256  1742  1803 I minksocket: MinkIPC MESSAGE: ( 1742:1803 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e23c90 sock = 34, client with node 1 port 6e0f went down
+03-25 09:28:50.262  1742  1790 I minksocket: MinkIPC MESSAGE: ( 1742:1790 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e22690 sock = 18, client with node 1 port 6e10 went down
+03-25 09:28:50.263  1742  1803 I minksocket: MinkIPC MESSAGE: ( 1742:1803 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e23c90 sock = 34, client with node 1 port 6e10 went down
+03-25 09:28:50.270  1742  1790 I minksocket: MinkIPC MESSAGE: ( 1742:1790 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e22690 sock = 18, client with node 1 port 6e11 went down
+03-25 09:28:50.270  1742  1803 I minksocket: MinkIPC MESSAGE: ( 1742:1803 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e23c90 sock = 34, client with node 1 port 6e11 went down
+03-25 09:28:50.274  1742  1790 I minksocket: MinkIPC MESSAGE: ( 1742:1790 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e22690 sock = 18, client with node 1 port 6e12 went down
+03-25 09:28:50.274  1742  1803 I minksocket: MinkIPC MESSAGE: ( 1742:1803 ) MinkIPC_QRTR_Service:351 minkipc = 0xb400007df0e23c90 sock = 34, client with node 1 port 6e12 went down
+03-25 09:28:50.299  2101  2413 E HwcComposer: getLuts failed Status(-129, EX_TRANSACTION_FAILED): 'UNKNOWN_TRANSACTION: '
+03-25 09:28:50.384  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:50.385  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6883.5,R:3318.6,G:2576.9,B:1536.4, lux: 84.8, clone:48484
+03-25 09:28:50.422  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.422  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.422  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.423  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.483  1772  6646 D vendor.qti.bluetooth@1.1-wake_lock: Acquire wakelock is acquired 
+03-25 09:28:50.488  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 1
+03-25 09:28:50.488  5379  6691 D BluetoothRemoteDevices: Skip name update for XX:XX:XX:XX:EE:7D
+03-25 09:28:50.488  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 4
+03-25 09:28:50.488  5379  6691 D BluetoothRemoteDevices: Skip class update, device=XX:XX:XX:XX:EE:7D, cod=0x244404
+03-25 09:28:50.488  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 5
+03-25 09:28:50.488  5379  6691 D BluetoothRemoteDevices:  BT_PROPERTY_TYPE_OF_DEVICE addr:00:BB:43:BC:EE:7D deviceType:3
+03-25 09:28:50.488  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 1
+03-25 09:28:50.488  5379  6691 D HyperRemoteDevicesAdapter: Remote device name is: REDMI Buds 6 Pro type = 2 00:BB:43:BC:EE:7D
+03-25 09:28:50.489  5379  6691 D HyperRemoteDevicesAdapter: update name for XX:XX:XX:XX:EE:7D type = 2 name = REDMI Buds 6 Pro 0
+03-25 09:28:50.489  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 4
+03-25 09:28:50.489  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 5
+03-25 09:28:50.489  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 1
+03-25 09:28:50.489  5379  6691 D BluetoothRemoteDevices: Skip name update for XX:XX:XX:XX:EE:7D
+03-25 09:28:50.489  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 4
+03-25 09:28:50.489  5379  6691 D BluetoothRemoteDevices: Skip class update, device=XX:XX:XX:XX:EE:7D, cod=0x244404
+03-25 09:28:50.489  5379  6691 D BluetoothRemoteDevices: Update property, device=XX:XX:XX:XX:EE:7D, type: 5
+03-25 09:28:50.489  5379  6691 D BluetoothRemoteDevices:  BT_PROPERTY_TYPE_OF_DEVICE addr:00:BB:43:BC:EE:7D deviceType:3
+03-25 09:28:50.490  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 1
+03-25 09:28:50.490  5379  6691 D HyperRemoteDevicesAdapter: Remote device name is: REDMI Buds 6 Pro type = 2 00:BB:43:BC:EE:7D
+03-25 09:28:50.490  5379  6691 D HyperRemoteDevicesAdapter: update name for XX:XX:XX:XX:EE:7D type = 2 name = REDMI Buds 6 Pro 0
+03-25 09:28:50.490  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 4
+03-25 09:28:50.490  5379  6691 D HyperRemoteDevicesAdapter: Update property, device=00:BB:43:BC:EE:7D, type: 5
+03-25 09:28:50.491  5379  6691 V ScanController: onScanResult() - eventType=0x1, addressType=0, address=XX:XX:XX:XX:EE:7D, primaryPhy=1, secondaryPhy=1, advertisingSid=0x0, txPower=127, rssi=-56, periodicAdvInt=0x0, originalAddress=00:BB:43:BC:EE:7D
+03-25 09:28:50.491  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:50.492  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:50.492  5379  6691 V ScanController: Legacy scan, non legacy result; skip.
+03-25 09:28:50.492  5379  6691 V ScanController: Legacy scan, non legacy result; skip.
+03-25 09:28:50.631  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.632  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.667  2439  3060 D JavaheapMonitor: Java heap used=176M max=512M, proc: system_server
+03-25 09:28:50.668  2439  3060 V JavaheapMonitor: Check java heap usage finished! Next check delay: 180000
+03-25 09:28:50.675 10703 16860 D JavaheapMonitor: Java heap used=9M max=512M, proc: com.xiaomi.aicr:cognitionService
+03-25 09:28:50.675 10703 16860 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+03-25 09:28:50.676  1772  6010 D vendor.qti.bluetooth@1.1-wake_lock: Release wakelock is released 
+03-25 09:28:50.700  9581  9968 D JavaheapMonitor: Java heap used=7M max=512M, proc: com.android.providers.media.module
+03-25 09:28:50.700  9581  9968 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+03-25 09:28:50.724  9945 16519 D JavaheapMonitor: Java heap used=6M max=256M, proc: com.miui.analytics
+03-25 09:28:50.724  9945 16519 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+03-25 09:28:50.783  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:50.784  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6909.0,R:3324.4,G:2579.4,B:1545.0, lux: 84.9, clone:48484
+03-25 09:28:50.826 24558 31678 D JavaheapMonitor: Java heap used=10M max=256M, proc: com.android.deskclock
+03-25 09:28:50.826 24558 31678 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+03-25 09:28:50.831  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.831  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.831  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.831  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.831  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.831  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.831  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.832  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.832  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.832  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.832  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.832  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:50.981  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:50.982  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6885.5,R:3322.5,G:2572.3,B:1542.5, lux: 84.4, clone:48484
+03-25 09:28:50.992  7642  7697 D QLM-Service: check_headroom_zone: Timer EVT, Temp: 27958
+03-25 09:28:51.036  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.037  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.052  5625  5625 D QtiLinkBandwidthEstimator-0: handleMessage: 2
+03-25 09:28:51.052  5625  5625 D QtiLinkBandwidthEstimator-0: MSG_TRAFFIC_STATS_POLL
+03-25 09:28:51.057  5625  5625 D QtiLinkBandwidthEstimator-0: isDataPacketsCaluclationOnEachSimSeperately : true
+03-25 09:28:51.058  5625  5625 D QtiLinkBandwidthEstimator-1: handleMessage: 2
+03-25 09:28:51.059  5625  5625 D QtiLinkBandwidthEstimator-1: MSG_TRAFFIC_STATS_POLL
+03-25 09:28:51.063  5625  5625 D QtiLinkBandwidthEstimator-1: isDataPacketsCaluclationOnEachSimSeperately : true
+03-25 09:28:51.170  1772  6646 D vendor.qti.bluetooth@1.1-wake_lock: Acquire wakelock is acquired 
+03-25 09:28:51.175  5379  6691 V ScanController: onScanResult() - eventType=0x1b, addressType=1, address=XX:XX:XX:XX:32:9E, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-59, periodicAdvInt=0x0, originalAddress=C9:A1:6E:56:32:9E
+03-25 09:28:51.176  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:51.176  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:51.180  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:51.181  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:51.181  6726  6726 D MiuiFastConnectService_Plugin: data V4 pos 112 res true
+03-25 09:28:51.181  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6912.9,R:3335.6,G:2586.8,B:1547.6, lux: 85.1, clone:48484
+03-25 09:28:51.182  6726  6726 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = scan_aux_V
+03-25 09:28:51.183  3280  4803 I libsensor-boledalgo: Write:the value of channelCali C:2833.0,R:1591.8,G:927.5,B:565.8,scales [1.024484,1.028844,1.055530,0.912332]
+03-25 09:28:51.183  3280  4803 D libsensor-boledalgo: brightness:667,R:55344.6,G:55117.8,B:55117.8,EVENT C:6889.2,R:3326.9,G:2578.7,B:1543.3, lux: 84.6, clone:48484
+03-25 09:28:51.191  6726  6726 D MiuiFastConnectService_Plugin: device Id 0201030048
+03-25 09:28:51.193  6726  7030 D MiuiFastConnectService_Plugin: getCachedDeviceId: deviceId = 0201030048
+03-25 09:28:51.194  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:51.194  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:51.194  6726  7030 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = 0201030048
+03-25 09:28:51.197  6726  7030 D MiuiDataBaseUtils: minversion: 1.48, minversionLocal: 1.40
+03-25 09:28:51.197  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:51.204  3283  3283 I adbd    : in ShellService: logcat -d -t 500 2>&1
+03-25 09:28:51.211  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:51.219  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:51.224  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:51.224  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:51.229  6726  7030 D MultiFeatureManager: [checkSupport] check support in deviceinfoV2
+03-25 09:28:51.229  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!
+03-25 09:28:51.236  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.238  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.239  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.239  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.239  2439  4546 I MiSensorServiceImpl: user found in check list, getPackageName  android.view.OrientationEventListener
+03-25 09:28:51.239 21133 22520 D JavaheapMonitor: Java heap used=10M max=256M, proc: com.xiaomi.finddevice
+03-25 09:28:51.239 21133 22520 V JavaheapMonitor: Check java heap usage finished! Next check delay: 300000
+03-25 09:28:51.242  6726  7030 D XiaoaiDialogTranslationController_btplugin: isMiuiBtSupportGlasses result = true
+03-25 09:28:51.243  6726  6742 I iaomi.bluetooth: This is sticky GC, maxfree is 33554432 minfree is 8388608
+03-25 09:28:51.244  5379  6691 V ScanController: onScanResult() - eventType=0x1b, addressType=1, address=XX:XX:XX:XX:32:9E, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-59, periodicAdvInt=0x0, originalAddress=C9:A1:6E:56:32:9E
+03-25 09:28:51.244  6726  7030 D DeviceSupport: device info v2 length =140
+03-25 09:28:51.244  6726  7030 D DeviceSupport: device info v2 has data, add to support id!140
+03-25 09:28:51.244  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:51.245  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:51.247  6726  7030 D MiuiCloudParser: isGlasses deviceId= 0201030048
+03-25 09:28:51.247  5379  6691 V ScanController: Skipping client: permission=true matches=false
+03-25 09:28:51.247  6726  7030 D plgin_MiuiCandidateDeviceManager: add the mAlternateHeadsets size = {00:BB:43:BC:EE:7D=wear state =true, audio switch state =true, audio state = 0, connected =true, address =BC:EE:7Drecent add time =1774402131247, mAccountkey = [B@5fcc92c, deviceId =0201030048}
+03-25 09:28:51.248  6726  7030 D MiuiFastConnectStateMachine_Plugin: Scanning: MSG_BLE_SCAN_DEVICE
+03-25 09:28:51.248  6726  6726 D MiuiFastConnectService_Plugin: data V4 pos 112 res true
+03-25 09:28:51.248  6726  7030 D MiuiFastConnectStateMachine_Plugin: dumpScanRecord Scanning getBytes: [1B,16,2D,FD,01,03,48,00,9A,07,5A,25,D1,82,1B,00,01,FF,64,08,9D,50,17,27,4E,70,01,00,02,01,1A,1B,FF,8F,03,16,01,1F,8E,2F,FF,01,64,8B,47,40,BB,00,43,7D,EE,BC,08,BB,00,43,CF,B7,E9,00,00,00,]
+03-25 09:28:51.248  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey
+03-25 09:28:51.248  6726  6726 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = scan_aux_V
+03-25 09:28:51.248  6726  7030 D MiuiDataBaseUtils_Plugin: query BtData in datebase
+03-25 09:28:51.249  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:51.249  6726  7030 E MiuiFastConnectV2_Plugin: eTag= 217318366503311104 syncId= AwQR5yaZFwEmac= 00:BB:43:BC:EE:7DaccountKey= 04AABFE27A79389A765CC944B55B1735
+03-25 09:28:51.249  6726  7030 D MiuiFastConnectV2_Plugin: account key synced from cloud!
+03-25 09:28:51.249  6726  7030 D MiuiFastConnectV2_Plugin: downloadAccountKey{00:BB:43:BC:EE:7D=04AABFE27A79389A765CC944B55B1735}
+03-25 09:28:51.249  6726  7030 E MiuiFastConnectV2_Plugin: mac =00:BB:43:BC:EE:7D, accountKey =04AABFE27A79389A765CC944B55B1735
+03-25 09:28:51.249  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:51.249  6726  7030 I System.out: scrambledAccountKey: (byte)0x1B, (byte)0x82, (byte)0xD1, (byte)0x25, (byte)0x5A, 
+03-25 09:28:51.249  6726  7030 D MiuiFastConnectStateMachine_Plugin: account strMac: 00:BB:43:BC:EE:7D
+03-25 09:28:51.249  6726  7030 D MiuiFastConnectStateMachine_Plugin: scanCallback: data=[13,01,03,48,00,08,01,9A,07,8B,47,40,A1,C9,6E,9E,32,56,00,FF,64,00,00,00,], rssi: -59
+03-25 09:28:51.250  6726  7030 D MiuiFastConnectStateMachine_Plugin: can't start activity rssi=-59, rssiThreshold=-54
+03-25 09:28:51.250  6726  7030 D MiuiFastConnectStateMachine_Plugin: currentTime: 1774402131250, storedTime: 0
+03-25 09:28:51.250  6726  7030 E MiuiFastConnectStateMachine_Plugin: Clear Current Device All Info, resetAdvNum:false
+03-25 09:28:51.258  6726  6726 D MiuiFastConnectService_Plugin: device Id 0201030048
+03-25 09:28:51.258  6726  7030 D MiuiFastConnectService_Plugin: getCachedDeviceId: deviceId = 0201030048
+03-25 09:28:51.258  6726  7030 D MiuiFastConnectV2_Plugin: getScrambledAccountKey data=[1B,82,D1,25,5A,43,0A,F6,29,24,BC,21,F5,B0,4C,A8,F5,47,73,1E,]
+03-25 09:28:51.259  6726  7030 D MiuiParseData_Plugin: getRecordFromUnsyncTable
+03-25 09:28:51.259  6726  7030 V BluetoothPluginCloud: queryPluginFeatureSupport: pluginVersion = 1.4_1.48featureId = 0201030048
+03-25 09:28:51.260  6726  7030 D MiuiDataBaseUtils: minversion: 1.48, minversionLocal: 1.40
+03-25 09:28:51.260  6726  7030 D MultiFeatureManager: getDeviceInfoV2!!!

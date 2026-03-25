@@ -1,0 +1,7 @@
+id=pandasu_lsposed_helper
+name=PandaSU LSPosed Helper
+version=v1.0.0
+versionCode=1
+author=PandaSU Team
+description=PandaSU配套LSPosed模块，隐藏Root和Xposed相关应用
+minApi=29
