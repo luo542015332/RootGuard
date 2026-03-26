@@ -8,14 +8,14 @@ plugins {
 
 android {
     namespace 'com.rootguard.app'
-    compileSdk 34
+    compileSdk 36
 
         defaultConfig {
         applicationId "com.rootguard.app"
         minSdk 26
-        targetSdk 34
-        versionCode 94
-        versionName "2.2.0"
+        targetSdk 36
+        versionCode 98
+        versionName "3.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -91,6 +91,9 @@ dependencies {
     
     // JSON
     implementation 'com.google.code.gson:gson:2.10.1'
+
+    // XposedBridge API (local jar for LSPosed)
+    compileOnly files('libs/XposedBridgeAPI-82.jar')
 
     // Retrofit for API calls
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

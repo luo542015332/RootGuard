@@ -1,0 +1,23 @@
+Signature-Version: 1.0
+Created-By: Android Gradle 8.0.2
+SHA-256-Digest-Manifest: 2YAzVDrafcNjSC73vuMfGuvhPT9hEWS3hMFbczAJSZU=
+X-Android-APK-Signed: 2,3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: PEJ1cLZYh14aM0LAx+VWMPhGozCheQJV79cfLMqTOCI=
+
+Name: assets/xposed_init
+SHA-256-Digest: ct2VowzGK+nZ0/WaRrrWSDtuqAly6/0qsULQ2MzwOLg=
+
+Name: classes.dex
+SHA-256-Digest: BKbOchSYjddqzze1y0qSgUUBTTm9kpFpkGEjvfVjmw8=
+
+Name: lib/arm64-v8a/libdexkit.so
+SHA-256-Digest: BE9S/LrzH8DoSX7gSSoIxj25NrIQP1Ts4uE2z6ng4iI=
+
+Name: lib/armeabi-v7a/libdexkit.so
+SHA-256-Digest: 5THWlpjWJG2Abv/n89BYaG0JYFZ9K02xmBLQsbXqx5o=
+
+Name: resources.arsc
+SHA-256-Digest: bB3dhIucEfQBAqz1Uu1E7qFa9ygMGQxHfhs/iSbsirg=
+

@@ -1,0 +1,11 @@
+# PandaSU 一键安装包 
+ 
+## 安装步骤 
+1. 将「一键安装包」文件夹复制到手机 
+2. Magisk/KernelSU - 模块 - 从本地安装 
+3. 先刷入: ZygiskNext-框架.zip 
+4. 重启手机 
+5. 再刷入: PandaSU-模块.zip 
+6. 重启手机 
+7. 安装: PandaSU-应用.apk 
+8. 打开 PandaSU 完成配置 

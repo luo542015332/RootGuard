@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "RootGuard"
 include ':app'
+// include ':PandaSU-LSPosed-Helper'

@@ -1,0 +1,8 @@
+id=zygisk_pandasu
+name=PandaSU系统级隐藏模块
+version=v2.3.0
+versionCode=11
+author=PandaSU Team
+description=PandaSU应用专用系统级隐藏模块，内置PandaSU v2.2.1。使用ZygiskNext API实现su/进程/mount/应用列表等隐藏功能，支持Hunter和AppList Detector隐藏。增强LSPosed/Xposed/Scene等隐藏路径。新增Java层PackageManager Hook，过滤应用列表返回结果
+minApi=29
+updateJson=https://raw.githubusercontent.com/PandaSU/PandaSU-System-Helper/main/update.json

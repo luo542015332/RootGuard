@@ -8,7 +8,7 @@ echo.
 set MODULE_DIR=%~dp0
 set OUTPUT_DIR=%MODULE_DIR%dist
 set NDK_BUILD=%ANDROID_NDK_HOME%\ndk-build.cmd
-set VERSION=v2.0.0
+set VERSION=v2.3.1
 
 REM 创建输出目录
 if not exist "%OUTPUT_DIR%" mkdir "%OUTPUT_DIR%"

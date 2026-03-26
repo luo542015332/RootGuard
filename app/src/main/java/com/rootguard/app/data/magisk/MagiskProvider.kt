@@ -731,7 +731,12 @@ class MagiskProvider @Inject constructor(
                                             // 方法3: 尝试通过 PackageInfo 获取
                                             try {
                                                 val pkgInfo = pm.getPackageInfo(packageName, 0)
-                                                pm.getApplicationLabel(pkgInfo.applicationInfo).toString()
+                                                val appInfo = pkgInfo.applicationInfo
+                                                if (appInfo != null) {
+                                                    pm.getApplicationLabel(appInfo).toString()
+                                                } else {
+                                                    packageName
+                                                }
                                             } catch (e3: Exception) {
                                                 // 所有方法都失败，使用包名
                                                 Logger.w("All methods failed to get app name for $packageName, using package name")
@@ -899,7 +904,12 @@ class MagiskProvider @Inject constructor(
                                     // 方法3: 尝试通过 PackageInfo 获取
                                     try {
                                         val pkgInfo = pm.getPackageInfo(packageName, 0)
-                                        pm.getApplicationLabel(pkgInfo.applicationInfo).toString()
+                                        val appInfo = pkgInfo.applicationInfo
+                                        if (appInfo != null) {
+                                            pm.getApplicationLabel(appInfo).toString()
+                                        } else {
+                                            packageName
+                                        }
                                     } catch (e3: Exception) {
                                         // 所有方法都失败，使用包名
                                         Logger.w("All methods failed to get app name for $packageName, using package name")

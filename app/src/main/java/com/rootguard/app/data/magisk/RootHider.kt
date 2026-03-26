@@ -3,6 +3,7 @@ package com.rootguard.app.data.magisk
 import android.content.Context
 import android.content.pm.PackageManager
 import com.rootguard.app.data.model.*
+import com.rootguard.app.utils.AndroidVersionCompat
 import com.rootguard.app.utils.Logger
 import com.rootguard.app.util.RootEnvironmentDetector
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -57,7 +58,8 @@ class RootHider @Inject constructor(
             "org.lsposed.manager" to "LSPosed",
             "top.canyie.droidguard" to "DroidGuard",
             "com.zhenxi.hunter" to "Hunter",
-            "com.hunter.detector" to "Hunter检测器"
+            "com.hunter.detector" to "Hunter检测器",
+            "icu.nullptr.applistdetector" to "AppList Detector"
         )
     }
 
@@ -159,20 +161,47 @@ class RootHider @Inject constructor(
             val allProps = mutableMapOf<String, String>()
             allProps.putAll(IsolationPresets.FULL_PROP_SPOOF)
 
-            // 检测厂商
-            Logger.d("检测设备厂商...")
-            val brand = runSuCommandOutput("getprop ro.product.brand").trim().lowercase()
-            val manufacturer = runSuCommandOutput("getprop ro.product.manufacturer").trim().lowercase()
+            // 检测厂商和系统版本
+            Logger.d("检测设备厂商和系统信息...")
             
-            Logger.d("设备品牌: $brand, 制造商: $manufacturer")
-
-            if (brand.contains("redmi") || brand.contains("xiaomi") || manufacturer.contains("xiaomi")) {
-                allProps.putAll(IsolationPresets.MIUI_PROPS)
-                Logger.d("检测到小米/Redmi 设备，应用 MIUI 特定属性")
-            }
-            if (brand.contains("realme") || manufacturer.contains("realme")) {
-                allProps.putAll(IsolationPresets.REALME_PROPS)
-                Logger.d("检测到 realme 设备，应用 realme 特定属性")
+            // 使用 AndroidVersionCompat 进行设备检测
+            val deviceManufacturer = AndroidVersionCompat.getDeviceManufacturer()
+            val customOS = AndroidVersionCompat.getCustomOS()
+            val androidVersion = AndroidVersionCompat.getVersionDescription()
+            
+            Logger.d("设备厂商: $deviceManufacturer, 定制系统: $customOS, Android 版本: $androidVersion")
+            
+            // 根据设备类型应用特定属性
+            when (deviceManufacturer) {
+                AndroidVersionCompat.DeviceManufacturer.XIAOMI -> {
+                    allProps.putAll(IsolationPresets.MIUI_PROPS)
+                    Logger.d("检测到小米设备，应用 MIUI 特定属性")
+                    
+                    // 如果是 HyperOS，可能需要额外的属性
+                    if (customOS == AndroidVersionCompat.CustomOS.HYPEROS) {
+                        Logger.d("检测到 HyperOS 系统，可能需要特殊处理")
+                        // 这里可以添加 HyperOS 特定的属性
+                    }
+                }
+                AndroidVersionCompat.DeviceManufacturer.OPPO -> {
+                    allProps.putAll(IsolationPresets.REALME_PROPS) // OPPO/realme 使用相同属性
+                    Logger.d("检测到 OPPO/realme 设备，应用特定属性")
+                }
+                AndroidVersionCompat.DeviceManufacturer.HUAWEI -> {
+                    Logger.d("检测到华为设备，可能需要 HarmonyOS 特定属性")
+                    // 这里可以添加华为/HarmonyOS 特定的属性
+                }
+                AndroidVersionCompat.DeviceManufacturer.VIVO -> {
+                    Logger.d("检测到 vivo 设备，可能需要 OriginOS 特定属性")
+                    // 这里可以添加 vivo/OriginOS 特定的属性
+                }
+                AndroidVersionCompat.DeviceManufacturer.SAMSUNG -> {
+                    Logger.d("检测到三星设备，可能需要 OneUI 特定属性")
+                    // 这里可以添加三星/OneUI 特定的属性
+                }
+                else -> {
+                    Logger.d("检测到其他厂商设备，使用通用属性")
+                }
             }
 
             // Recovery 模式隐藏
@@ -365,23 +394,18 @@ class RootHider @Inject constructor(
             Logger.d("ro.secure 检查通过: $secure")
         }
 
-        // DenyList 状态
-        Logger.d("检测模块安装状态...")
+        // Shamiko 检测（不再强制要求，不扣分）
         val hasShamiko = fileExists("/data/adb/modules/zygisk_shamiko")
-        if (!hasShamiko) {
-            if (moduleEnabled) {
-                results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 未安装（PandaSU 已启用）", false, 0))
-                Logger.d("Shamiko 未安装，但 PandaSU 模块已启用，不扣分")
-            } else {
-                results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 未安装", true, 10)); totalScore -= 10
-                Logger.d("Shamiko 未安装")
-            }
-        } else {
+        if (hasShamiko) {
             results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 已安装", false, 0))
             Logger.d("Shamiko 已安装")
+        } else {
+            // 不扣分，只是建议
+            results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko 未安装（建议安装增强隐藏）", false, 0))
+            Logger.d("Shamiko 未安装（建议安装）")
         }
 
-        // 增强的 Tricky Store 检测逻辑
+        // Tricky Store 检测（不再强制要求，不扣分）
         Logger.d("检测 Tricky Store 模块...")
         val trickyStorePaths = listOf(
             "/data/adb/tricky_store",
@@ -412,31 +436,24 @@ class RootHider @Inject constructor(
             }
         }
 
-        if (!hasTrickyStore) {
-            if (moduleEnabled) {
-                results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 未安装（PandaSU 已启用）", false, 0))
-                Logger.d("Tricky Store 未安装，但 PandaSU 模块已启用，不扣分")
-            } else {
-                results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 未安装", true, 5)); totalScore -= 5
-                Logger.d("Tricky Store 未安装，已扣分: 5")
-            }
-        } else {
+        if (hasTrickyStore) {
             results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 已安装 ($trickyStorePath)", false, 0))
             Logger.d("Tricky Store 已安装，路径: $trickyStorePath")
+        } else {
+            // 不扣分，只是建议
+            results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store 未安装（建议安装增强隐藏）", false, 0))
+            Logger.d("Tricky Store 未安装（建议安装）")
         }
 
+        // PlayIntegrityFix 检测（不再强制要求，不扣分）
         val hasPif = fileExists("/data/adb/modules/playintegrityfix")
-        if (!hasPif) {
-            if (moduleEnabled) {
-                results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 未安装（PandaSU 已启用）", false, 0))
-                Logger.d("PlayIntegrityFix 未安装，但 PandaSU 模块已启用，不扣分")
-            } else {
-                results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 未安装", true, 5)); totalScore -= 5
-                Logger.d("PlayIntegrityFix 未安装")
-            }
-        } else {
+        if (hasPif) {
             results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 已安装", false, 0))
             Logger.d("PlayIntegrityFix 已安装")
+        } else {
+            // 不扣分，只是建议
+            results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix 未安装（建议安装增强兼容性）", false, 0))
+            Logger.d("PlayIntegrityFix 未安装（建议安装）")
         }
 
         // Recovery 模式
@@ -512,18 +529,18 @@ class RootHider @Inject constructor(
 
         Logger.d("检测 Shamiko 模块...")
         val hasShamiko = fileExists("/data/adb/modules/zygisk_shamiko")
-        results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko", !hasShamiko, 10))
-        Logger.d("Shamiko 检测结果: $hasShamiko")
+        results.add(DetectionResult(DetectionItem.SHAMIKO, "Shamiko", false, 0))
+        Logger.d("Shamiko 检测结果: $hasShamiko（不扣分）")
 
         Logger.d("检测 Tricky Store 模块...")
         val trickyStorePaths = listOf(
             "/data/adb/tricky_store",
             "/data/adb/modules/tricky_store",
-            "/data/adb/modules/trickystore",  // 无下划线版本
-            "/data/adb/tricky_store_current", // 新版本可能带后缀
-            "/data/adb/modules/ts"           // 缩写版本
+            "/data/adb/modules/trickystore",
+            "/data/adb/tricky_store_current",
+            "/data/adb/modules/ts"
         )
-        
+
         var hasTs = false
         var trickyStorePath = ""
         for (path in trickyStorePaths) {
@@ -533,26 +550,22 @@ class RootHider @Inject constructor(
                 break
             }
         }
-        
-        // 额外检查：查找包含 "tricky" 的模块目录
+
         if (!hasTs) {
-            Logger.d("Tricky Store 标准路径未找到，尝试查找包含 'tricky' 的模块目录...")
-            // 简化版本：使用更简单的方法检查
             val trickyRelatedPaths = findDirectoriesContaining("/data/adb/modules", "tricky")
             if (trickyRelatedPaths.isNotEmpty()) {
                 hasTs = true
                 trickyStorePath = trickyRelatedPaths[0]
-                Logger.d("找到包含 'tricky' 的模块目录: $trickyStorePath")
             }
         }
-        
-        results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store", !hasTs, 5))
-        Logger.d("Tricky Store 检测结果: $hasTs, 路径: $trickyStorePath")
+
+        results.add(DetectionResult(DetectionItem.TRICKY_STORE, "Tricky Store", false, 0))
+        Logger.d("Tricky Store 检测结果: $hasTs（不扣分）")
 
         Logger.d("检测 PlayIntegrityFix 模块...")
         val hasPif = fileExists("/data/adb/modules/playintegrityfix")
-        results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix", !hasPif, 5))
-        Logger.d("PlayIntegrityFix 检测结果: $hasPif")
+        results.add(DetectionResult(DetectionItem.PIF, "PlayIntegrityFix", false, 0))
+        Logger.d("PlayIntegrityFix 检测结果: $hasPif（不扣分）")
 
         Logger.d("检测 Recovery 模式...")
         val bootmode = runSuCommandOutput("getprop ro.bootmode").trim()
@@ -979,28 +992,162 @@ class RootHider @Inject constructor(
     }
 
     /**
-     * 检查当前应用是否有 Root 权限
+     * 检查当前应用是否有 Root 权限（增强版）
+     * 支持检测并处理更新后的授权失败问题
      * @return true 如果有 Root 权限，false 如果没有
      */
     suspend fun checkSelfRootPermission(): Boolean = withContext(Dispatchers.IO) {
         try {
-            Logger.d("检查 Root 权限...")
-            val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "id"))
-            val output = process.inputStream.bufferedReader().readText().trim()
-            process.waitFor()
-            val exitCode = process.exitValue()
+            Logger.d("开始增强的 Root 权限检查...")
             
-            if (exitCode == 0) {
-                Logger.d("Root 权限检查通过: $output")
-                true
-            } else {
+            // 方法1：使用简单的 id 命令（兼容性最高）
+            try {
+                val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "id"))
+                val output = process.inputStream.bufferedReader().readText().trim()
                 val error = process.errorStream.bufferedReader().readText().trim()
-                Logger.e("Root 权限检查失败: exitCode=$exitCode, error=$error")
+                process.waitFor()
+                val exitCode = process.exitValue()
+                
+                if (exitCode == 0) {
+                    Logger.d("Root 权限检查通过: $output")
+                    return@withContext true
+                } else {
+                    Logger.w("Root 权限检查失败 (方法1): exitCode=$exitCode, error=$error")
+                    
+                    // 检查是否是权限被拒绝的错误
+                    if (exitCode == 13 || error.contains("permission denied", ignoreCase = true)) {
+                        Logger.e("Root 权限被拒绝 (exitCode=13)，需要重新授权")
+                        recordAuthorizationFailure()
+                    }
+                }
+            } catch (e: Exception) {
+                Logger.w("Root 权限检查异常 (方法1): ${e.message}")
+            }
+            
+            // 方法2：尝试使用 echo 测试（更简单）
+            try {
+                val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "echo", "root_test"))
+                val output = process.inputStream.bufferedReader().readText().trim()
+                val error = process.errorStream.bufferedReader().readText().trim()
+                process.waitFor()
+                val exitCode = process.exitValue()
+                
+                if (exitCode == 0 && output == "root_test") {
+                    Logger.d("Root 权限检查通过 (方法2)")
+                    return@withContext true
+                } else {
+                    Logger.w("Root 权限检查失败 (方法2): exitCode=$exitCode, output=$output, error=$error")
+                    
+                    // 检查是否是权限被拒绝的错误
+                    if (exitCode == 13 || error.contains("permission denied", ignoreCase = true)) {
+                        Logger.e("Root 权限被拒绝 (方法2)")
+                        recordAuthorizationFailure()
+                    }
+                }
+            } catch (e: Exception) {
+                Logger.w("Root 权限检查异常 (方法2): ${e.message}")
+            }
+            
+            // 方法3：使用更复杂的命令测试，同时获取更详细的错误信息
+            try {
+                val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "which su && echo 'SU_BINARY_FOUND'"))
+                val output = process.inputStream.bufferedReader().readText().trim()
+                val error = process.errorStream.bufferedReader().readText().trim()
+                process.waitFor()
+                val exitCode = process.exitValue()
+                
+                if (exitCode == 0 && output.contains("SU_BINARY_FOUND")) {
+                    Logger.d("Root 权限检查通过 (方法3): $output")
+                    return@withContext true
+                } else {
+                    Logger.w("Root 权限检查失败 (方法3): exitCode=$exitCode, output=$output, error=$error")
+                    
+                    // 详细的错误分析
+                    when {
+                        exitCode == 13 -> {
+                            Logger.e("Root 权限被拒绝 (exitCode=13) - Root 管理器拒绝了授权请求")
+                            recordAuthorizationFailure()
+                        }
+                        error.contains("no su binary", ignoreCase = true) -> {
+                            Logger.e("系统中没有 su 二进制文件")
+                        }
+                        error.contains("executable", ignoreCase = true) -> {
+                            Logger.e("su 二进制文件不可执行")
+                        }
+                        else -> {
+                            Logger.e("未知的 Root 权限错误: $error")
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                Logger.w("Root 权限检查异常 (方法3): ${e.message}")
+            }
+            
+            Logger.e("所有 Root 权限检查方法都失败")
+            false
+        } catch (e: Exception) {
+            Logger.e("Root 权限检查总体异常", e)
+            false
+        }
+    }
+    
+    /**
+     * 记录授权失败事件
+     */
+    private suspend fun recordAuthorizationFailure() = withContext(Dispatchers.IO) {
+        try {
+            Logger.d("记录授权失败事件...")
+            
+            // 获取当前 Root 管理器信息
+            val rootMode = RootEnvironmentDetector.detectRootMode()
+            val rootManagerName = RootEnvironmentDetector.getRootManagerName(rootMode)
+            val rootManagerPackage = RootEnvironmentDetector.getRootManagerPackage(rootMode)
+            
+            Logger.d("授权失败信息:")
+            Logger.d("  Root管理器: $rootManagerName")
+            Logger.d("  包名: $rootManagerPackage")
+            Logger.d("  模式: $rootMode")
+            
+            // 检查 Root 管理器是否安装
+            val pm = context.packageManager
+            val managerInstalled = if (rootManagerPackage != null) {
+                try {
+                    pm.getPackageInfo(rootManagerPackage, 0)
+                    true
+                } catch (e: Exception) {
+                    false
+                }
+            } else {
                 false
             }
+            
+            if (!managerInstalled) {
+                Logger.e("Root 管理器未安装或找不到: $rootManagerPackage")
+            }
+            
+            // 创建授权失败的日志文件（可选）
+            try {
+                val timestamp = System.currentTimeMillis()
+                val logContent = """
+                    |授权失败报告
+                    |时间: ${java.util.Date()}
+                    |Root管理器: $rootManagerName (${if (managerInstalled) "已安装" else "未安装"})
+                    |包名: ${rootManagerPackage ?: "未知"}
+                    |模式: $rootMode
+                    |建议: 请打开 ${rootManagerName}，重新授予 PandaSU Root 权限
+                    |
+                """.trimMargin()
+                
+                // 保存到应用私有目录
+                val file = File(context.filesDir, "auth_failure_$timestamp.txt")
+                file.writeText(logContent)
+                Logger.d("授权失败报告已保存: ${file.absolutePath}")
+            } catch (e: Exception) {
+                Logger.w("无法保存授权失败报告: ${e.message}")
+            }
+            
         } catch (e: Exception) {
-            Logger.e("Root 权限检查异常", e)
-            false
+            Logger.e("记录授权失败事件异常", e)
         }
     }
 

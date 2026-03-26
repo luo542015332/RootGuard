@@ -1,0 +1,19 @@
+# PandaSU System Helper - SELinux规则
+# 允许Zygisk模块访问
+
+# 允许Zygisk进程访问系统文件
+allow zygote unlabeled file { open read getattr }
+
+# 允许Zygisk访问PandaSU配置
+allow zygote adb_data_file file { open read getattr }
+allow zygote adb_data_file dir { search }
+
+# 允许Zygisk执行系统属性操作
+allow zygote property_type property_service set
+
+# 允许Zygisk读取应用配置
+allow zygote app_data_file file { open read }
+allow zygote app_data_file dir { search }
+
+# 允许Zygisk隐藏进程
+allow zygote zygote capability sys_ptrace

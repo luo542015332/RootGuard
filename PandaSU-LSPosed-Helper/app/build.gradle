@@ -5,16 +5,19 @@ plugins {
 
 repositories {
     maven { url 'https://jitpack.io' }
-    maven { url 'https://maven.lsposed.org' }
 }
 
 android {
     namespace 'com.rootguard.helper'
     compileSdk 34
+    ndkVersion "26.1.10909125"
 
     defaultConfig {
+        applicationId "com.rootguard.helper"
         minSdk 29
         targetSdk 34
+        versionCode 3
+        versionName "1.0.2"
     }
 
     buildTypes {
@@ -35,6 +38,5 @@ android {
 }
 
 dependencies {
-    compileOnly 'org.lsposed:LSPosed:1.9.2'
-    compileOnly 'org.lsposed:LSParted:1.1.1'
+    compileOnly files('libs/XposedBridgeAPI-82.jar')
 }

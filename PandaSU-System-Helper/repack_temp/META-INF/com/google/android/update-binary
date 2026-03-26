@@ -1,0 +1,4 @@
+#!/sbin/sh
+ui_print() { echo "$@"; }
+abort() { ui_print "Aborting: $@"; exit 1; }
+exit 0

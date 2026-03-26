@@ -25,7 +25,10 @@ import com.rootguard.app.ui.navigation.RootGuardNavHost
 import com.rootguard.app.ui.navigation.Screen
 import com.rootguard.app.ui.theme.RootGuardTheme
 import com.rootguard.app.util.RootEnvironmentDetector
+import com.rootguard.app.utils.AndroidVersionCompat
+import com.rootguard.app.utils.CompatibilityTester
 import com.rootguard.app.utils.Logger
+import com.rootguard.app.utils.SystemAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -52,7 +55,8 @@ class MainActivity : ComponentActivity() {
         
         // 需要强制应用银行级隔离的高风险检测应用
         private val HIGH_RISK_DETECTOR_APPS = listOf(
-            "com.zhenxi.hunter" to "Hunter检测器"
+            "com.zhenxi.hunter" to "Hunter检测器",
+            "icu.nullptr.applistdetector" to "AppList Detector"
         )
     }
 
@@ -73,18 +77,21 @@ class MainActivity : ComponentActivity() {
             if (status.hasPermission) {
                 applyBankingIsolationForTaxApps()
             }
+            
+            // 运行兼容性检查（仅记录信息）
+            runCompatibilityCheck()
         }
 
         setContent {
             // 检查 Root 权限状态
-            var hasRootPermission by remember { mutableStateOf(false) }
+            var authorizationStatus by remember { mutableStateOf<RootEnvironmentDetector.AuthorizationStatus?>(null) }
             var isCheckingPermission by remember { mutableStateOf(true) }
-
             LaunchedEffect(Unit) {
                 val status = RootEnvironmentDetector.getAuthorizationStatus(this@MainActivity)
-                hasRootPermission = status.hasPermission
+                authorizationStatus = status
                 isCheckingPermission = false
-                Logger.d("Permission check result: hasRootPermission=$hasRootPermission")
+                
+                Logger.d("Permission check result: hasPermission=${status.hasPermission}, rootMode=${status.rootMode}")
             }
 
             // 读取主题设置
@@ -112,10 +119,14 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 }
-            } else if (!hasRootPermission) {
+            } else if (authorizationStatus?.hasPermission != true) {
                 RootPermissionGuide(
                     onAuthorized = {
-                        hasRootPermission = true
+                        // 重新获取授权状态
+                        lifecycleScope.launch {
+                            val newStatus = RootEnvironmentDetector.getAuthorizationStatus(this@MainActivity)
+                            authorizationStatus = newStatus
+                        }
                     }
                 )
             } else if (!isLoading) {
@@ -130,7 +141,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         RootGuardNavHost(
                             startDestination = Screen.Home.route,
-                            hasRootPermission = hasRootPermission
+                            hasRootPermission = true
                         )
                     }
                 }
@@ -164,6 +175,70 @@ class MainActivity : ComponentActivity() {
             } catch (e: Exception) {
                 Logger.e("Failed to apply banking isolation for tax apps", e)
             }
+        }
+    }
+    
+    /**
+     * 运行兼容性检查并记录信息
+     */
+    private fun runCompatibilityCheck() {
+        try {
+            // 记录系统信息
+            val deviceManufacturer = AndroidVersionCompat.getDeviceManufacturer()
+            val customOS = AndroidVersionCompat.getCustomOS()
+            val androidVersion = AndroidVersionCompat.getVersionDescription()
+            
+            Logger.d("系统兼容性信息:")
+            Logger.d("  设备厂商: ${deviceManufacturer.name}")
+            Logger.d("  定制系统: ${customOS.name}")
+            Logger.d("  Android 版本: $androidVersion")
+            Logger.d("  SDK_INT: ${AndroidVersionCompat.SDK_INT}")
+            
+            // 检查系统功能支持
+            val supportsSeccomp = AndroidVersionCompat.supportsSeccomp()
+            val supportsScopedStorage = AndroidVersionCompat.supportsScopedStorage()
+            val supportsDynamicColor = AndroidVersionCompat.supportsDynamicColor()
+            
+            Logger.d("功能支持检查:")
+            Logger.d("  Seccomp 支持: $supportsSeccomp (需要 Android 8.0+)")
+            Logger.d("  分区存储支持: $supportsScopedStorage (需要 Android 10+)")
+            Logger.d("  动态色彩支持: $supportsDynamicColor (需要 Android 12+)")
+            
+            // 生成兼容性报告
+            val report = AndroidVersionCompat.generateCompatibilityReport()
+            Logger.d("兼容性报告:")
+            Logger.d("  设备信息: ${report.deviceInfo}")
+            Logger.d("  支持的功能: ${report.supportedFeatures.joinToString(", ")}")
+            Logger.d("  不支持的功能: ${report.unsupportedFeatures.joinToString(", ")}")
+            
+            // 记录建议
+            if (report.suggestions.isNotEmpty()) {
+                Logger.d("系统建议:")
+                report.suggestions.forEach { suggestion ->
+                    Logger.d("  - $suggestion")
+                }
+            }
+            
+            // 根据定制系统记录特定信息
+            when (customOS) {
+                AndroidVersionCompat.CustomOS.HYPEROS -> {
+                    Logger.d("HyperOS 系统检测: 可能需要特殊权限处理")
+                }
+                AndroidVersionCompat.CustomOS.MIUI -> {
+                    Logger.d("MIUI 系统检测: 需要处理 FLAG_SYSTEM 标志异常")
+                }
+                AndroidVersionCompat.CustomOS.COLOROS -> {
+                    Logger.d("ColorOS 系统检测: 有严格的权限管理机制")
+                }
+                else -> {
+                    Logger.d("标准 Android 系统: 使用常规适配")
+                }
+            }
+            
+            Logger.d("兼容性检查完成")
+            
+        } catch (e: Exception) {
+            Logger.w("兼容性检查失败: ${e.message}")
         }
     }
 }

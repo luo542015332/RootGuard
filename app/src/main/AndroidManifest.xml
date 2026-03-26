@@ -40,6 +40,17 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <!-- LSPosed Module Meta -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="PandaSU - Root 隔离隐藏专家" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="89" />
+
     </application>
 
     <!-- Android 11+ 包可见性查询配置 -->

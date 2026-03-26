@@ -60,16 +60,20 @@ class OneClickIsolationHelper @Inject constructor(
             val apps = packages.mapNotNull { pkgInfo ->
                 try {
                     val appInfo = pkgInfo.applicationInfo
-                    val appName = appInfo.loadLabel(pm).toString()
-                    val category = categorizeApp(pkgInfo.packageName, appName)
-                    val isSystem = isSystemApp(appInfo)
+                    if (appInfo != null) {
+                        val appName = appInfo.loadLabel(pm).toString()
+                        val category = categorizeApp(pkgInfo.packageName, appName)
+                        val isSystem = isSystemApp(appInfo)
                     
-                    AppInfo(
-                        packageName = pkgInfo.packageName,
-                        appName = appName,
-                        category = category,
-                        isSystemApp = isSystem
-                    )
+                        AppInfo(
+                            packageName = pkgInfo.packageName,
+                            appName = appName,
+                            category = category,
+                            isSystemApp = isSystem
+                        )
+                    } else {
+                        null
+                    }
                 } catch (e: Exception) {
                     null
                 }
