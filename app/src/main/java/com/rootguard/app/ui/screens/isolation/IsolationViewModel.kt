@@ -66,11 +66,27 @@ class IsolationViewModel @Inject constructor(
         loadSettings()
         loadSandboxStats()
         loadAppList()
+        checkRootPermission()
         runEnvironmentCheck()
     }
 
     fun setRootPermission(hasPermission: Boolean) {
         _uiState.update { it.copy(hasRootPermission = hasPermission) }
+    }
+
+    private fun checkRootPermission() {
+        viewModelScope.launch {
+            try {
+                // 使用 rootHider 的权限检查方法，确保与后续环境检测使用相同的逻辑
+                val hasPermission = rootHider.checkSelfRootPermission()
+                Logger.d("IsolationViewModel: 初始化权限检查结果 = $hasPermission")
+                _uiState.update { it.copy(hasRootPermission = hasPermission) }
+            } catch (e: Exception) {
+                Logger.e("IsolationViewModel: 权限检查失败", e)
+                // 如果检查失败，默认为没有权限
+                _uiState.update { it.copy(hasRootPermission = false) }
+            }
+        }
     }
 
     private fun loadSettings() {
@@ -111,14 +127,16 @@ class IsolationViewModel @Inject constructor(
             // 先显示加载动画，让用户感知到刷新过程
             kotlinx.coroutines.delay(400)
             try {
-                // 检查 Root 权限
-                val hasRootPermission = rootHider.checkSelfRootPermission()
+                // 使用已经检查过的权限状态（从 uiState 中获取）
+                val hasRootPermission = uiState.value.hasRootPermission
+                Logger.d("IsolationViewModel: 环境检测使用权限状态 = $hasRootPermission")
+                
                 if (!hasRootPermission) {
                     Logger.w("IsolationViewModel: 没有 Root 权限，无法执行环境检测")
                     _uiState.update { 
                         it.copy(
                             isEnvChecking = false, 
-                            errorMessage = "没有 Root 权限，无法执行环境检测。请先在 KernelSU 中授予权限",
+                            errorMessage = "没有 Root 权限，无法执行环境检测。请先在 Root 管理器中授予权限",
                             envScore = -1,
                             envChecks = emptyList()
                         ) 
@@ -248,11 +266,13 @@ class IsolationViewModel @Inject constructor(
         Logger.d("toggleAppIsolation: 开始处理 ${appInfo.appName} (${appInfo.packageName})")
         viewModelScope.launch {
             try {
-                // 检查 Root 权限
-                val hasRootPermission = rootHider.checkSelfRootPermission()
+                // 使用已经检查过的权限状态（从 uiState 中获取）
+                val hasRootPermission = uiState.value.hasRootPermission
+                Logger.d("toggleAppIsolation: 使用权限状态 = $hasRootPermission")
+                
                 if (!hasRootPermission) {
                     Logger.e("toggleAppIsolation: 没有 Root 权限，操作无法执行")
-                    _uiState.update { it.copy(errorMessage = "没有 Root 权限，请先在 KernelSU 中授予权限") }
+                    _uiState.update { it.copy(errorMessage = "没有 Root 权限，请先在 Root 管理器中授予权限") }
                     clearMessageAfterDelay()
                     return@launch
                 }
