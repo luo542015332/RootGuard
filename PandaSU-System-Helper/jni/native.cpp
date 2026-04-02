@@ -13,6 +13,8 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <pthread.h>
+#include <link.h>
+#include <sys/mman.h>
 
 #include "zygisk.hpp"
 #include "xhook/xhook.h"
@@ -24,6 +26,84 @@
 // 全局 API 指针
 static zygisk::Api* g_api = nullptr;
 static JNIEnv* g_env = nullptr;
+
+// ============ Shamiko 核心配置 ============
+
+// 需要从 maps 和 dl_iterate_phdr 中隐藏的模块路径
+static const char* HIDE_SO_PATTERNS[] = {
+    "panda_zygisk",
+    "libzygisk",
+    "lspd",
+    "lsposed",
+    "riru",
+    "xposed",
+    "edxposed",
+    "magisk",
+    "ksu",
+    "kernelsu",
+    "apatch",
+    "shamiko",
+    "tricky_store",
+};
+
+// 需要从 /proc/self/maps 中隐藏的路径
+static const char* HIDE_MAPS_PATTERNS[] = {
+    "/data/adb/modules/",
+    "/data/adb/lspd",
+    "/data/adb/lsposed",
+    "/data/adb/magisk",
+    "/data/adb/ksu",
+    "/data/adb/kernelsu",
+    "/data/adb/apatch",
+    "/data/adb/shamiko",
+    "libpanda_zygisk.so",
+    "liblspd.so",
+    "libriru.so",
+    "libxposed.so",
+    "libmagisk",
+    "libksu",
+    "libapatch",
+};
+
+// ============ Shamiko: dl_iterate_phdr Hook ============
+
+static int (*original_dl_iterate_phdr)(int (*)(struct dl_phdr_info*, size_t, void*), void*) = nullptr;
+
+static bool should_hide_so(const char* path) {
+    if (!path) return false;
+    for (size_t i = 0; i < sizeof(HIDE_SO_PATTERNS) / sizeof(HIDE_SO_PATTERNS[0]); i++) {
+        if (strstr(path, HIDE_SO_PATTERNS[i]) != nullptr) {
+            return true;
+        }
+    }
+    return false;
+}
+
+struct dl_callback_wrapper_args {
+    int (*original_callback)(struct dl_phdr_info*, size_t, void*);
+    void* original_data;
+};
+
+static int dl_callback_wrapper(struct dl_phdr_info* info, size_t size, void* data) {
+    auto* args = (dl_callback_wrapper_args*)data;
+    
+    // 过滤隐藏的 .so
+    if (should_hide_so(info->dlpi_name)) {
+        LOGD("[dl_iterate] Hiding: %s", info->dlpi_name);
+        return 0;  // 继续迭代，但跳过此项
+    }
+    
+    return args->original_callback(info, size, args->original_data);
+}
+
+static int my_dl_iterate_phdr(int (*callback)(struct dl_phdr_info*, size_t, void*), void* data) {
+    if (!original_dl_iterate_phdr || !callback) {
+        return 0;
+    }
+    
+    dl_callback_wrapper_args args = { callback, data };
+    return original_dl_iterate_phdr(dl_callback_wrapper, &args);
+}
 
 // ============ 隐藏配置 ============
 
@@ -98,14 +178,28 @@ static const char* HIDE_PATHS[] = {
     "/data/user/0/com.topjohnwu.magisk",
     // Shamiko
     "/data/adb/shamiko", "/data/misc/shamiko",
+    // 自定义模块（Hunter检测到）
+    "RescueBrick",
 };
 
 // 需要伪装的属性
 static const char* SPOOF_PROPS[][2] = {
+    // Bootloader 检测相关
     {"ro.boot.vbmeta.digest", ""},
     {"ro.boot.veritymode", ""},
+    {"ro.boot.verifiedbootstate", "green"},
+    {"ro.boot.flash.locked", "1"},
+    {"ro.boot.dtb.avg", ""},
+    {"persist.bootanim.bootcheck", ""},
+    {"ro.boot.bootreason", ""},
+    
+    // Fingerprint 伪装
     {"ro.system.build.fingerprint", "google/walleye/walleye:8.1.0/OPM6.171019.030.H1/4821327:user/release-keys"},
     {"ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM6.171019.030.H1/4821327:user/release-keys"},
+    
+    // 华为设备额外属性
+    {"ro.boot.logical.bootseries", "1"},
+    {"ro.boot.huawei.hw碟", ""},
 };
 
 // ============ 辅助函数 ============
@@ -148,6 +242,11 @@ static const char* get_spoof_value(const char* name) {
     }
     return "";
 }
+
+// ============ 前向声明 ============
+
+static bool is_mounts_path(const char* path);
+static void track_fd(int fd, const char* path);
 
 // ============ Hook 函数声明 ============
 
@@ -197,10 +296,18 @@ static int my_openat(int dirfd, const char* pathname, int flags) {
         return -1;
     }
     
+    int fd = -1;
     if (original_openat) {
-        return original_openat(dirfd, pathname, flags);
+        fd = original_openat(dirfd, pathname, flags);
     }
-    return -1;
+    
+    // 跟踪 /proc/mounts 和 /proc/self/maps 的 fd
+    if (fd >= 0 && is_mounts_path(pathname)) {
+        track_fd(fd, pathname);
+        LOGD("[openat] Tracking fd=%d for path=%s", fd, pathname);
+    }
+    
+    return fd;
 }
 
 // Hook 后的 open 函数
@@ -316,45 +423,216 @@ static int my_system_property_get(const char* name, char* value) {
     return 0;
 }
 
+// ============ /proc/mounts 过滤 ============
+
+// 跟踪 openat 打开的 fd 对应的路径（仅 /proc/mounts 和 /proc/self/mounts）
+#define MAX_FD_TRACK 64
+static int tracked_fds[MAX_FD_TRACK];
+static char tracked_paths[MAX_FD_TRACK][256];
+static int tracked_fd_count = 0;
+
+static bool is_mounts_path(const char* path) {
+    if (!path) return false;
+    return strcmp(path, "/proc/mounts") == 0 ||
+           strcmp(path, "/proc/self/mounts") == 0 ||
+           strcmp(path, "/proc/self/mountinfo") == 0 ||
+           strcmp(path, "/proc/self/maps") == 0 ||
+           (strstr(path, "/proc/") != nullptr && strstr(path, "/mount") != nullptr);
+}
+
+static bool is_maps_path(const char* path) {
+    if (!path) return false;
+    return strcmp(path, "/proc/self/maps") == 0 ||
+           (strstr(path, "/proc/") != nullptr && strstr(path, "/maps") != nullptr);
+}
+
+static void track_fd(int fd, const char* path) {
+    if (fd < 0 || !is_mounts_path(path)) return;
+    // 如果已存在则更新
+    for (int i = 0; i < tracked_fd_count && i < MAX_FD_TRACK; i++) {
+        if (tracked_fds[i] == fd) {
+            return;
+        }
+    }
+    if (tracked_fd_count < MAX_FD_TRACK) {
+        tracked_fds[tracked_fd_count] = fd;
+        strncpy(tracked_paths[tracked_fd_count], path, 255);
+        tracked_paths[tracked_fd_count][255] = '\0';
+        tracked_fd_count++;
+        LOGD("[track] fd=%d -> %s", fd, path);
+    }
+}
+
+static void untrack_fd(int fd) {
+    for (int i = 0; i < tracked_fd_count && i < MAX_FD_TRACK; i++) {
+        if (tracked_fds[i] == fd) {
+            tracked_fds[i] = -1;
+            tracked_paths[i][0] = '\0';
+            break;
+        }
+    }
+}
+
+static bool is_mounts_fd(int fd) {
+    if (fd < 0) return false;
+    for (int i = 0; i < tracked_fd_count && i < MAX_FD_TRACK; i++) {
+        if (tracked_fds[i] == fd) return true;
+    }
+    return false;
+}
+
+// 过滤 mounts 内容中的敏感行
+static bool is_mounts_line_sensitive(const char* line) {
+    if (!line) return false;
+    return strstr(line, "adb/modules") != nullptr ||
+           strstr(line, "magisk") != nullptr ||
+           strstr(line, "kernelsu") != nullptr ||
+           strstr(line, "/ksu") != nullptr ||
+           strstr(line, "lspd") != nullptr ||
+           strstr(line, "lsposed") != nullptr ||
+           strstr(line, "xposed") != nullptr ||
+           strstr(line, "apatch") != nullptr ||
+           strstr(line, "shamiko") != nullptr;
+}
+
+// 过滤 maps 内容中的敏感行（Shamiko 核心）
+static bool is_maps_line_sensitive(const char* line) {
+    if (!line) return false;
+    for (size_t i = 0; i < sizeof(HIDE_MAPS_PATTERNS) / sizeof(HIDE_MAPS_PATTERNS[0]); i++) {
+        if (strstr(line, HIDE_MAPS_PATTERNS[i]) != nullptr) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// read hook - 过滤 /proc/mounts 和 /proc/self/maps 内容
+static ssize_t (*original_read)(int, void*, size_t) = nullptr;
+static ssize_t my_read(int fd, void* buf, size_t count) {
+    if (original_read && is_mounts_fd(fd)) {
+        ssize_t n = original_read(fd, buf, count);
+        if (n > 0) {
+            // 获取路径判断是 mounts 还是 maps
+            char path[256] = {0};
+            for (int i = 0; i < tracked_fd_count && i < MAX_FD_TRACK; i++) {
+                if (tracked_fds[i] == fd) {
+                    strncpy(path, tracked_paths[i], 255);
+                    break;
+                }
+            }
+            
+            bool is_maps = is_maps_path(path);
+            char* data = (char*)buf;
+            char line_buf[1024];
+            int line_pos = 0;
+            char* dst = data;
+            
+            for (ssize_t i = 0; i < n; i++) {
+                if (data[i] == '\n') {
+                    line_buf[line_pos] = '\0';
+                    bool sensitive = is_maps ? is_maps_line_sensitive(line_buf) : is_mounts_line_sensitive(line_buf);
+                    if (!sensitive) {
+                        memcpy(dst, line_buf, line_pos);
+                        dst += line_pos;
+                        *dst = '\n';
+                        dst++;
+                    } else {
+                        LOGD("[%s] Filtered: %.60s", is_maps ? "maps" : "mounts", line_buf);
+                    }
+                    line_pos = 0;
+                } else {
+                    if (line_pos < 1023) {
+                        line_buf[line_pos] = data[i];
+                        line_pos++;
+                    }
+                }
+            }
+            ssize_t filtered = dst - data;
+            return filtered > 0 ? filtered : n;
+        }
+        return n;
+    }
+    if (original_read) return original_read(fd, buf, count);
+    return -1;
+}
+
+// close hook - 清理 fd 跟踪
+static int (*original_close)(int) = nullptr;
+static int my_close(int fd) {
+    untrack_fd(fd);
+    if (original_close) return original_close(fd);
+    return -1;
+}
+
 // ============ Hook 设置 ============
 
 static bool g_hooks_setup = false;
+static bool g_should_hook = false;  // 只对检测器应用 hook
+
+// 检测器包名列表 - 只对这些应用启用 hook
+static const char* DETECTOR_PACKAGES[] = {
+    "com.zhenxi.hunter",               // Hunter
+    "icu.nullptr.applistdetector",     // AppListDetector
+    "com.oaseng.apecheck",             // ApeCheck
+    "io.github.nitsuya.donottryaccessibility",
+    "com.scottyab.rootbeer.sample",    // RootBeer
+    "com.joeykrim.rootcheck",          // Root Checker
+    "com.amphoras.hidemyroothelper",   // RootCloak
+};
+
+static bool is_detector_app(const char* nice_name) {
+    if (!nice_name) return false;
+    for (size_t i = 0; i < sizeof(DETECTOR_PACKAGES) / sizeof(DETECTOR_PACKAGES[0]); i++) {
+        if (strcmp(nice_name, DETECTOR_PACKAGES[i]) == 0) {
+            return true;
+        }
+    }
+    return false;
+}
 
 static void setup_hooks() {
+    if (g_hooks_setup) return;
+    g_hooks_setup = true;
+    
     LOGI(">>> setup_hooks: Registering xhook hooks...");
     
-    // 注册 openat hook
-    xhook_register("libc\\.so$", "openat", (void*)my_openat, (void**)&original_openat);
+    // 注册 openat hook - 同时匹配 lib64/libc.so 和 lib/libc.so
+    xhook_register(".*/libc\\.so$", "openat", (void*)my_openat, (void**)&original_openat);
     
     // 注册 open hook
-    xhook_register("libc\\.so$", "open", (void*)my_open, (void**)&original_open);
+    xhook_register(".*/libc\\.so$", "open", (void*)my_open, (void**)&original_open);
     
     // 注册 access hook
-    xhook_register("libc\\.so$", "access", (void*)my_access, (void**)&original_access);
+    xhook_register(".*/libc\\.so$", "access", (void*)my_access, (void**)&original_access);
     
     // 注册 faccessat hook
-    xhook_register("libc\\.so$", "faccessat", (void*)my_faccessat, (void**)&original_faccessat);
+    xhook_register(".*/libc\\.so$", "faccessat", (void*)my_faccessat, (void**)&original_faccessat);
     
     // 注册 stat hook
-    xhook_register("libc\\.so$", "stat", (void*)my_stat, (void**)&original_stat);
+    xhook_register(".*/libc\\.so$", "stat", (void*)my_stat, (void**)&original_stat);
     
     // 注册 lstat hook
-    xhook_register("libc\\.so$", "lstat", (void*)my_lstat, (void**)&original_lstat);
+    xhook_register(".*/libc\\.so$", "lstat", (void*)my_lstat, (void**)&original_lstat);
     
     // 注册 fstatat hook
-    xhook_register("libc\\.so$", "fstatat", (void*)my_fstatat, (void**)&original_fstatat);
+    xhook_register(".*/libc\\.so$", "fstatat", (void*)my_fstatat, (void**)&original_fstatat);
     
     // 注册 readdir64 hook
-    xhook_register("libc\\.so$", "readdir64", (void*)my_readdir, (void**)&original_readdir);
+    xhook_register(".*/libc\\.so$", "readdir64", (void*)my_readdir, (void**)&original_readdir);
     
     // 注册 __system_property_get hook
-    xhook_register("libc\\.so$", "__system_property_get", (void*)my_system_property_get, (void**)&original_system_property_get);
+    xhook_register(".*/libc\\.so$", "__system_property_get", (void*)my_system_property_get, (void**)&original_system_property_get);
+    
+    // /proc/mounts 和 /proc/self/maps 过滤 hooks
+    xhook_register(".*/libc\\.so$", "read", (void*)my_read, (void**)&original_read);
+    xhook_register(".*/libc\\.so$", "close", (void*)my_close, (void**)&original_close);
+    
+    // Shamiko: dl_iterate_phdr Hook（隐藏模块 .so 列表）
+    xhook_register(".*/libc\\.so$", "dl_iterate_phdr", (void*)my_dl_iterate_phdr, (void**)&original_dl_iterate_phdr);
     
     // 刷新 hook
     int ret = xhook_refresh(0);
     LOGI(">>> xhook_refresh result: %d", ret);
-    
-    g_hooks_setup = true;
     LOGI(">>> setup_hooks complete!");
 }
 
@@ -366,45 +644,27 @@ public:
         g_api = api;
         g_env = env;
         LOGI("=== PandaSU Module loaded! ===");
+        // ⚠️ 不在 onLoad 中设置 hook！只对检测器应用生效
         
-        // 在模块加载时设置 hook
-        setup_hooks();
-        
-        // 获取模块目录
         int dir_fd = api->getModuleDir();
         if (dir_fd >= 0) {
             LOGI("Module dir fd: %d", dir_fd);
             close(dir_fd);
         }
-        
-        // 获取进程标志
-        uint32_t flags = api->getFlags();
-        LOGI("Process flags: 0x%08x", flags);
-        
-        if (flags & zygisk::PROCESS_GRANTED_ROOT) {
-            LOGI(">>> Process has root granted");
-        }
-        if (flags & zygisk::PROCESS_ON_DENYLIST) {
-            LOGI(">>> Process is on denylist");
-        }
     }
     
     void preAppSpecialize(zygisk::AppSpecializeArgs* args) override {
-        // 在应用进程 specialization 之前设置 hook
+        jstring jnice_name = args->nice_name;
+        const char* nice_name = jnice_name ? g_env->GetStringUTFChars(jnice_name, nullptr) : nullptr;
+        
+        LOGI("[preApp] uid=%d, nice_name=%s", args->uid, nice_name ? nice_name : "null");
+        
+        // ✅ 对所有应用启用 Hook（测试用）
+        LOGI(">>> Enabling hooks for: %s", nice_name ? nice_name : "all");
+        g_should_hook = true;
         setup_hooks();
         
-        jstring jnice_name = args->nice_name;
-        jstring japp_data_dir = args->app_data_dir;
-        
-        const char* nice_name = jnice_name ? g_env->GetStringUTFChars(jnice_name, nullptr) : nullptr;
-        const char* app_data_dir = japp_data_dir ? g_env->GetStringUTFChars(japp_data_dir, nullptr) : nullptr;
-        
-        LOGI("[preApp] uid=%d, nice_name=%s, app_data=%s", 
-             args->uid, nice_name ? nice_name : "null", 
-             app_data_dir ? app_data_dir : "null");
-        
         if (nice_name) g_env->ReleaseStringUTFChars(jnice_name, nice_name);
-        if (app_data_dir) g_env->ReleaseStringUTFChars(japp_data_dir, app_data_dir);
     }
     
     void postAppSpecialize(const zygisk::AppSpecializeArgs* args) override {
@@ -412,10 +672,8 @@ public:
     }
     
     void preServerSpecialize(zygisk::ServerSpecializeArgs* args) override {
-        // 在 system_server 进程 specialization 之前设置 hook
-        setup_hooks();
-        
-        LOGI("[preServer] uid=%d, gid=%d", args->uid, args->gid);
+        // system_server 不需要 hook（PMS Hook 由 LSPosed 模块处理）
+        LOGI("[preServer] uid=%d, gid=%d (no hooks for system_server)", args->uid, args->gid);
     }
     
     void postServerSpecialize(const zygisk::ServerSpecializeArgs* args) override {

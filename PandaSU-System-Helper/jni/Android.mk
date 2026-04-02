@@ -14,12 +14,14 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := panda_zygisk
 LOCAL_MODULE_PATH := $(ZYGISK_OUT)
 LOCAL_SRC_FILES := native.cpp \
-                   $(XHOOK_PATH)/xhook.c \
-                   $(XHOOK_PATH)/xh_core.c \
-                   $(XHOOK_PATH)/xh_elf.c \
-                   $(XHOOK_PATH)/xh_log.c \
-                   $(XHOOK_PATH)/xh_util.c \
-                   $(XHOOK_PATH)/xh_version.c
-LOCAL_LDLIBS := -llog -landroid -lstdc++
-LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter -Wno-unused-function -DXHOOK_VERSION=\"1.0.0\"
+                   xhook/xhook.c \
+                   xhook/xh_core.c \
+                   xhook/xh_elf.c \
+                   xhook/xh_log.c \
+                   xhook/xh_util.c \
+                   xhook/xh_version.c
+LOCAL_LDLIBS := -llog -landroid
+LOCAL_CFLAGS := -Wall -Wno-unused-parameter -Wno-unused-function -DXHOOK_VERSION=\"1.0.0\"
+LOCAL_CPPFLAGS := -std=c++17 -Werror
+LOCAL_STL := c++_static
 include $(BUILD_SHARED_LIBRARY)
