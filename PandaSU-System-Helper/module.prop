@@ -1,8 +1,6 @@
 id=zygisk_pandasu
 name=PandaSU系统级隐藏模块
-version=v3.0.0
-versionCode=20
+version=v3.1.0
+versionCode=21
 author=PandaSU Team
-description=PandaSU应用专用系统级隐藏模块，使用Magisk官方Zygisk API实现su/进程/mount/应用列表等隐藏功能，兼容ZygiskSU/KernelSU/ZygiskNext
-minApi=26
-updateJson=https://raw.githubusercontent.com/PandaSU/PandaSU-System-Helper/main/update.json
+description=PandaSU应用专用系统级隐藏模块。增强版：文件隐藏(open/readdir/stat)、属性伪装(__system_property_get)、目录迭代过滤。兼容 Android 8-16

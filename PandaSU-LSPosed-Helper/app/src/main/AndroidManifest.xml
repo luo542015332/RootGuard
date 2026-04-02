@@ -13,6 +13,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="de.robv.android.xposed.category.MODULE_SETTINGS" />
             </intent-filter>
         </activity>
 
@@ -27,7 +28,7 @@
             android:value="89" />
         <meta-data
             android:name="xposedscope"
-            android:value="[android]" />
+            android:resource="@array/xposed_scope" />
 
     </application>
 

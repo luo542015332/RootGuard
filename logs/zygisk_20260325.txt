@@ -1,2 +1,0 @@
-﻿03-25 09:28:42.856  3283  3283 I adbd    : in ShellService: run-as com.rootguard.app sh -c 'cat /data/adb/zygisksu/modules_info'
-03-25 09:28:57.759  3283  3283 I adbd    : in ShellService: logcat -d 2>&1 | grep -iE 'zygisk|pandasu|panda|modules_info|ZN|zygisksu'

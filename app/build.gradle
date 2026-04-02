@@ -8,14 +8,14 @@ plugins {
 
 android {
     namespace 'com.rootguard.app'
-    compileSdk 36
+    compileSdk 34
 
         defaultConfig {
         applicationId "com.rootguard.app"
         minSdk 26
-        targetSdk 36
-        versionCode 98
-        versionName "3.0.0"
+        targetSdk 34
+        versionCode 142
+        versionName "3.0.52"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -55,6 +55,9 @@ android {
 }
 
 dependencies {
+    // LSPosed Module
+    implementation project(':PandaSU-LSPosed')
+    
     // Core
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
@@ -94,6 +97,13 @@ dependencies {
 
     // XposedBridge API (local jar for LSPosed)
     compileOnly files('libs/XposedBridgeAPI-82.jar')
+
+    // EzXHelper - Xposed helper library
+    implementation 'com.github.kyuubiran:EzXHelper:1.0.3'
+
+    // Hidden API compat
+    implementation 'dev.rikka.hidden:compat:4.4.0'
+    compileOnly 'dev.rikka.hidden:stub:4.4.0'
 
     // Retrofit for API calls
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

@@ -91,3 +91,24 @@ Thumbs.db
 
 # Ignore old RootGuard directory at project root (not to be confused with com.rootguard package)
 /RootGuard/
+
+# Extracted APKs and analysis dirs (local only)
+*-extract/
+*-extracted/
+AppListTest/
+HMA-OSS/
+logs/
+docs/
+dist/
+apk_check/
+apk_extract/
+apk_verify/
+kernelsu_apk_analysis/
+LogExtractor/
+RootGuard/
+zygisk-module-sample/
+zygisk-module-sample-master/
+platform-tools/
+.github/
+*.zip
+*.txt

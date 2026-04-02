@@ -1,1 +1,0 @@
-﻿03-25 09:36:00.123  3223  3223 I adbd    : in ShellService: logcat -d 2>&1 | grep -iE 'panda|zygisk|ZN-|zygisksu|zn_module|hook'

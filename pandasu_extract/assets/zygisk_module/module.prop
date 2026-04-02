@@ -1,0 +1,6 @@
+id=zygisk_pandasu
+name=PandaSU系统级隐藏模块
+version=v3.2.0
+versionCode=22
+author=PandaSU Team
+description=PandaSU应用专用系统级隐藏模块。修复版：xhook hook 注册已生效，提供文件隐藏、属性伪装、目录过滤功能

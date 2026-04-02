@@ -1,4 +1,0 @@
-﻿
-03-23 08:40:14.145  3145  3145 I adbd    : in ShellService: pidof com.rootguard.app
-
-
