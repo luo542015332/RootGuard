@@ -1,0 +1,166 @@
+.class public final Lcom/pandasu/turbo/lspoed/XposedEntry$hookPackageManagerService$2;
+.super Lde/robv/android/xposed/XC_MethodHook;
+.source "XposedEntry.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/pandasu/turbo/lspoed/XposedEntry;->hookPackageManagerService(Ljava/lang/ClassLoader;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0017\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\u0008\n\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\u0014\u00a8\u0006\u0006"
+    }
+    d2 = {
+        "com/pandasu/turbo/lspoed/XposedEntry$hookPackageManagerService$2",
+        "Lde/robv/android/xposed/XC_MethodHook;",
+        "afterHookedMethod",
+        "",
+        "param",
+        "Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;",
+        "PandaSU-LSPosed_debug"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x9,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field final synthetic $classLoader:Ljava/lang/ClassLoader;
+
+
+# direct methods
+.method constructor <init>(Ljava/lang/ClassLoader;)V
+    .registers 2
+    .param p1, "$classLoader"    # Ljava/lang/ClassLoader;
+
+    iput-object p1, p0, Lcom/pandasu/turbo/lspoed/XposedEntry$hookPackageManagerService$2;->$classLoader:Ljava/lang/ClassLoader;
+
+    .line 124
+    invoke-direct {p0}, Lde/robv/android/xposed/XC_MethodHook;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected afterHookedMethod(Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;)V
+    .registers 13
+    .param p1, "param"    # Lde/robv/android/xposed/XC_MethodHook$MethodHookParam;
+
+    const-string v0, "param"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 126
+    const-string v0, "PackageManagerService.initFirstStep called"
+
+    # invokes: Lcom/pandasu/turbo/lspoed/XposedEntryKt;->logI(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/pandasu/turbo/lspoed/XposedEntryKt;->access$logI(Ljava/lang/String;)V
+
+    .line 127
+    nop
+
+    .line 128
+    :try_start_b
+    const-string v0, "package"
+
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    .line 129
+    .local v0, "pms":Landroid/os/IBinder;
+    if-nez v0, :cond_15
+
+    const/4 v1, 0x0
+
+    goto :goto_16
+
+    :cond_15
+    move-object v1, v0
+
+    .line 130
+    .local v1, "pmsBinder":Landroid/os/IBinder;
+    :goto_16
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Got PMS: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    # invokes: Lcom/pandasu/turbo/lspoed/XposedEntryKt;->logI(Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/pandasu/turbo/lspoed/XposedEntryKt;->access$logI(Ljava/lang/String;)V
+
+    .line 131
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    new-instance v2, Lcom/pandasu/turbo/lspoed/XposedEntry$hookPackageManagerService$2$afterHookedMethod$1;
+
+    iget-object v8, p0, Lcom/pandasu/turbo/lspoed/XposedEntry$hookPackageManagerService$2;->$classLoader:Ljava/lang/ClassLoader;
+
+    invoke-direct {v2, v1, v8}, Lcom/pandasu/turbo/lspoed/XposedEntry$hookPackageManagerService$2$afterHookedMethod$1;-><init>(Landroid/os/IBinder;Ljava/lang/ClassLoader;)V
+
+    move-object v8, v2
+
+    check-cast v8, Lkotlin/jvm/functions/Function0;
+
+    const/16 v9, 0x1f
+
+    const/4 v10, 0x0
+
+    invoke-static/range {v3 .. v10}, Lkotlin/concurrent/ThreadsKt;->thread$default(ZZLjava/lang/ClassLoader;Ljava/lang/String;ILkotlin/jvm/functions/Function0;ILjava/lang/Object;)Ljava/lang/Thread;
+    :try_end_41
+    .catchall {:try_start_b .. :try_end_41} :catchall_42
+
+    goto :goto_48
+
+    .line 135
+    .end local v0    # "pms":Landroid/os/IBinder;
+    .end local v1    # "pmsBinder":Landroid/os/IBinder;
+    :catchall_42
+    move-exception v0
+
+    .line 136
+    .local v0, "e":Ljava/lang/Throwable;
+    const-string v1, "Failed to get PMS after initFirstStep"
+
+    # invokes: Lcom/pandasu/turbo/lspoed/XposedEntryKt;->logE(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0}, Lcom/pandasu/turbo/lspoed/XposedEntryKt;->access$logE(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 138
+    .end local v0    # "e":Ljava/lang/Throwable;
+    :goto_48
+    return-void
+.end method

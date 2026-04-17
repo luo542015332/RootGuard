@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#1A1A2E">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="#252540" android:titleTextColor="#FFFFFF"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp">
+
+            <!-- 自动化开关 -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="@string/settings_category_automation" android:textColor="#00D9FF"
+                android:textSize="13sp" android:layout_marginBottom="8dp" android:layout_marginTop="8dp"/>
+
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" app:cardBackgroundColor="#252540" app:cardCornerRadius="12dp" app:cardElevation="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_auto_turbo" android:textColor="#FFFFFF" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_auto_turbo_desc" android:textColor="#888888" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchAutoTurbo" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333355" android:layout_marginVertical="12dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_auto_clean" android:textColor="#FFFFFF" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_auto_clean_desc" android:textColor="#888888" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchAutoClean" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333355" android:layout_marginVertical="12dp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_auto_dnd" android:textColor="#FFFFFF" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_auto_dnd_desc" android:textColor="#888888" android:textSize="12sp"/>
+                        </LinearLayout>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/switchDnd" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 历史 & 配置入口 -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" app:cardBackgroundColor="#252540" app:cardCornerRadius="12dp" app:cardElevation="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                    <LinearLayout android:id="@+id/cardHistory" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="16dp" android:background="?attr/selectableItemBackground" android:gravity="center_vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_history" android:textColor="#FFFFFF" android:textSize="15sp"/>
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textColor="#888888"/>
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#333355" android:layout_marginHorizontal="16dp"/>
+                    <LinearLayout android:id="@+id/cardProfile" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="16dp" android:background="?attr/selectableItemBackground" android:gravity="center_vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_game_profile" android:textColor="#FFFFFF" android:textSize="15sp"/>
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textColor="#888888"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 语言 -->
+            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp" app:cardBackgroundColor="#252540" app:cardCornerRadius="12dp" app:cardElevation="0dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_language" android:textColor="#FFFFFF" android:textSize="15sp"/>
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="12dp">
+                        <Button android:id="@+id/btnLangZh" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:text="@string/settings_language_zh" android:textSize="13sp" android:backgroundTint="#333366" android:layout_marginEnd="8dp"/>
+                        <Button android:id="@+id/btnLangEn" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:text="@string/settings_language_en" android:textSize="13sp" android:backgroundTint="#333366"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 版本 -->
+            <TextView android:id="@+id/tvVersion" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_gravity="center" android:layout_marginTop="24dp" android:textColor="#555555" android:textSize="12sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

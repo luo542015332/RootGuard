@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PandaTurbo</string>
+   <string name="tile_label">PandaTurbo</string>
+
+    <!-- Shizuku -->
+    <string name="shizuku_not_installed">Shizuku is not installed</string>
+    <string name="shizuku_installed_not_granted">Shizuku installed but not yet authorized</string>
+    <string name="shizuku_ready">Shizuku is ready</string>
+    <string name="shizuku_permission_required">Please grant Shizuku permission first</string>
+    <string name="install_shizuku">Install Shizuku</string>
+    <string name="grant_shizuku_permission">Grant Shizuku Permission</string>
+
+    <!-- Main -->
+    <string name="turbo_enabled">Turbo On</string>
+    <string name="turbo_disabled">Turbo Off</string>
+    <string name="status_waiting">Status: Waiting for game…</string>
+    <string name="status_game_running">Status: Game detected</string>
+    <string name="turbo_on">Enable Turbo</string>
+    <string name="turbo_off">Disable Turbo</string>
+    <string name="game_running">Game running</string>
+    <string name="waiting_game">Waiting for game…</string>
+    <string name="cleared_apps">Cleared %1$d apps</string>
+    <string name="cleared_count">Cleared %1$d apps</string>
+    <string name="temperature_fmt">Temp: %1$.1f C</string>
+    <string name="temp_format">Temp: %1$.1f C</string>
+    <string name="saved">Saved</string>
+    <string name="deleted">Deleted</string>
+
+    <!-- Main UI -->
+    <string name="btn_turbo">🚀 Turbo</string>
+    <string name="btn_clean">🧹 Clean</string>
+    <string name="btn_temp">🌡️ Temp</string>
+    <string name="btn_history">📊 History</string>
+    <string name="btn_profiles">🎮 Profiles</string>
+    <string name="btn_settings">⚙️ Settings</string>
+    <string name="shizuku_status_active">Shizuku: Active</string>
+    <string name="shizuku_status_inactive">Shizuku: Inactive</string>
+    <string name="shizuku_banner_install">Shizuku not installed. Tap to install.</string>
+    <string name="shizuku_banner_permission">Tap to grant Shizuku permission</string>
+    <string name="status_turbo_on">🐼 Turbo On</string>
+    <string name="fps_label">FPS: %1$d</string>
+    <string name="temp_label">Temp: %1$.1f C</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_category_general">General</string>
+    <string name="settings_category_shizuku">Shizuku Advanced</string>
+    <string name="settings_category_automation">Automation</string>
+    <string name="settings_category_data">Data Management</string>
+
+    <string name="settings_auto_turbo">Auto Turbo</string>
+    <string name="settings_auto_turbo_desc">Auto-optimize when game detected</string>
+    <string name="settings_auto_clean">Auto Clean</string>
+    <string name="settings_auto_clean_desc">Clean background apps on game launch</string>
+    <string name="settings_auto_dnd">Auto DND</string>
+    <string name="settings_auto_dnd_desc">Enable Do Not Disturb on game launch</string>
+    <string name="settings_shizuku">Enable Shizuku</string>
+    <string name="settings_shizuku_desc">Execute advanced operations via Shizuku (requires install + auth)</string>
+    <string name="settings_shizuku_force_stop">Force Stop Processes</string>
+    <string name="settings_shizuku_force_stop_desc">Force stop background processes via Shizuku</string>
+    <string name="settings_shizuku_cpu_freq">Adjust CPU Frequency</string>
+    <string name="settings_shizuku_cpu_freq_desc">Increase CPU frequency limit via Shizuku</string>
+    <string name="settings_export">Export Config</string>
+    <string name="settings_export_desc">Export all settings as JSON file</string>
+    <string name="settings_import">Import Config</string>
+    <string name="settings_import_desc">Import settings from JSON file</string>
+    <string name="settings_clear_history">Clear History</string>
+    <string name="settings_clear_history_desc">Clear all FPS and temperature history</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_zh">Chinese</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_about">About</string>
+    <string name="version_info">Version %1$s</string>
+    <string name="continue_btn">Continue</string>
+
+    <!-- Profiles -->
+    <string name="profile_title">Game Profiles</string>
+    <string name="add_game_profile">Add Game</string>
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="no_profiles">No profiles yet. Tap + to add.</string>
+    <string name="no_profiles_to_export">No profiles to export</string>
+    <string name="profile_auto_turbo">Auto Turbo</string>
+    <string name="profile_auto_dnd">Auto DND</string>
+    <string name="profile_brightness">Custom Brightness</string>
+    <string name="profile_perf_mode">Performance Mode</string>
+    <string name="profile_saved">Profile saved</string>
+    <string name="profile_deleted">Profile deleted</string>
+    <string name="auto_brightness">Follow System</string>
+
+    <!-- History -->
+    <string name="history_title">Game History</string>
+    <string name="history_no_data">No data yet</string>
+    <string name="history_all_games">All Games</string>
+    <string name="history_export">Export CSV</string>
+    <string name="history_clear_old">Clear older than 30d</string>
+    <string name="stats_summary">%1$d sessions | Avg FPS: %2$d | Avg Temp: %3$.1f C</string>
+    <string name="all_games">All Games</string>
+
+    <!-- Installed Games -->
+    <string name="installed_games_title">Select Game</string>
+    <string name="no_games_found">No installed games found</string>
+    <string name="game_added">Added %1$s</string>
+
+    <!-- Import/Export -->
+    <string name="import_hint">Long press to import config</string>
+    <string name="import_success">Imported %1$d profiles</string>
+    <string name="import_failed">Import failed</string>
+    <string name="export_success">Exported</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_clear_history_title">Clear History</string>
+    <string name="dialog_clear_history_msg">Clear all history records? This cannot be undone.</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">PandaTurbo</string>
+    <string name="notification_channel_desc">Game optimization notifications</string>
+    <string name="notification_turbo_running">Turbo running</string>
+    <string name="notification_game_detected">Game detected: %1$s</string>
+
+    <!-- Widget -->
+    <string name="widget_name">PandaTurbo Widget</string>
+    <string name="widget_description">One-tap to toggle Turbo</string>
+
+
+    <string name="accessibility_description">PandaTurbo accessibility service for automatic game detection and optimization</string>
+    <string name="settings_history">History</string>
+    <string name="settings_game_profile">Game Profiles</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="import_error">Import failed</string>
+</resources>

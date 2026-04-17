@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#FFFFFF">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="#16213E" android:titleTextColor="#FFFFFF"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+    <TextView android:id="@+id/tvEmpty" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:text="暂无游戏配置\n点击下方添加" android:textColor="#666666" android:textSize="14sp" android:gravity="center" android:visibility="gone"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="12dp">
+        <Button android:id="@+id/btnAddInstalled" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1"
+            android:text="添加已安装游戏" android:textSize="13sp" android:backgroundTint="#4A90D9" android:layout_marginEnd="4dp"/>
+        <Button android:id="@+id/btnImport" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1"
+            android:text="导入" android:textSize="13sp" android:backgroundTint="#333366" android:layout_marginEnd="4dp"/>
+        <Button android:id="@+id/btnExport" android:layout_width="0dp" android:layout_height="48dp" android:layout_weight="1"
+            android:text="导出" android:textSize="13sp" android:backgroundTint="#333366"/>
+    </LinearLayout>
+</LinearLayout>

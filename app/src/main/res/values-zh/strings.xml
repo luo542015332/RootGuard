@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">熊猫工具箱</string>
+    <string name="accessibility_description">熊猫工具箱无障碍服务，用于自动检测游戏并优化性能</string>
+    <string name="tile_label">熊猫工具箱</string>
+
+    <!-- Shizuku -->
+    <string name="shizuku_not_installed">Shizuku 未安装</string>
+    <string name="shizuku_installed_not_granted">Shizuku 已安装但未授权</string>
+    <string name="shizuku_ready">Shizuku 已就绪</string>
+    <string name="shizuku_permission_required">请先授予 Shizuku 权限</string>
+    <string name="install_shizuku">安装 Shizuku</string>
+    <string name="grant_shizuku_permission">授予 Shizuku 权限</string>
+
+    <!-- Main -->
+    <string name="turbo_enabled">Turbo 已开启</string>
+    <string name="turbo_disabled">Turbo 已关闭</string>
+    <string name="status_waiting">状态：等待游戏启动…</string>
+    <string name="status_game_running">状态：检测到游戏运行中</string>
+    <string name="turbo_on">开启 Turbo</string>
+    <string name="turbo_off">关闭 Turbo</string>
+    <string name="game_running">游戏运行中</string>
+    <string name="waiting_game">等待游戏…</string>
+    <string name="cleared_apps">已清理 %1$d 个应用</string>
+    <string name="cleared_count">已清理 %1$d 个应用</string>
+    <string name="temperature_fmt">温度：%1$.1f°C</string>
+    <string name="temp_format">温度：%1$.1f°C</string>
+    <string name="saved">已保存</string>
+    <string name="deleted">已删除</string>
+
+    <!-- Main UI -->
+    <string name="btn_turbo">🚀 一键 Turbo</string>
+    <string name="btn_clean">🧹 清理后台</string>
+    <string name="btn_temp">🌡️ 查看温度</string>
+    <string name="btn_history">📊 历史记录</string>
+    <string name="btn_profiles">🎮 游戏配置</string>
+    <string name="btn_settings">⚙️ 设置</string>
+    <string name="shizuku_status_active">Shizuku: 已连接</string>
+    <string name="shizuku_status_inactive">Shizuku: 未连接</string>
+    <string name="shizuku_banner_install">检测到 Shizuku 未安装，点击前往安装</string>
+    <string name="shizuku_banner_permission">点击授予 Shizuku 权限</string>
+    <string name="status_turbo_on">🐼 Turbo 运行中</string>
+    <string name="fps_label">FPS: %1$d</string>
+    <string name="temp_label">温度: %1$.1f°C</string>
+
+    <!-- Settings -->
+    <string name="settings_title">设置</string>
+    <string name="settings_category_general">常规</string>
+    <string name="settings_category_shizuku">Shizuku 高级功能</string>
+    <string name="settings_category_automation">自动化</string>
+    <string name="settings_category_data">数据管理</string>
+
+    <string name="settings_auto_turbo">自动开启 Turbo</string>
+    <string name="settings_auto_turbo_desc">检测到游戏时自动优化</string>
+    <string name="settings_auto_clean">自动清理后台</string>
+    <string name="settings_auto_clean_desc">进入游戏时自动清理后台应用</string>
+    <string name="settings_auto_dnd">自动勿扰模式</string>
+    <string name="settings_auto_dnd_desc">进入游戏自动开启勿扰，退出自动恢复</string>
+    <string name="settings_shizuku">启用 Shizuku</string>
+    <string name="settings_shizuku_desc">通过 Shizuku 执行高级操作（需先安装并授权）</string>
+    <string name="settings_shizuku_force_stop">强制停止进程</string>
+    <string name="settings_shizuku_force_stop_desc">使用 Shizuku 强制结束后台进程</string>
+    <string name="settings_shizuku_cpu_freq">调节 CPU 频率</string>
+    <string name="settings_shizuku_cpu_freq_desc">通过 Shizuku 提升 CPU 频率上限</string>
+    <string name="settings_export">导出配置</string>
+    <string name="settings_export_desc">将所有设置导出为 JSON 文件</string>
+    <string name="settings_import">导入配置</string>
+    <string name="settings_import_desc">从 JSON 文件导入配置</string>
+    <string name="settings_clear_history">清除历史记录</string>
+    <string name="settings_clear_history_desc">清除所有 FPS 和温度历史数据</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_language_zh">中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_about">关于</string>
+    <string name="version_info">版本 %1$s</string>
+    <string name="continue_btn">继续</string>
+
+    <!-- Profiles -->
+    <string name="profile_title">游戏配置</string>
+    <string name="add_game_profile">添加游戏</string>
+    <string name="edit_profile_title">编辑配置</string>
+    <string name="no_profiles">暂无配置，点击右下角添加</string>
+    <string name="no_profiles_to_export">没有可导出的配置</string>
+    <string name="profile_auto_turbo">自动 Turbo</string>
+    <string name="profile_auto_dnd">自动勿扰</string>
+    <string name="profile_brightness">自定义亮度</string>
+    <string name="profile_perf_mode">性能模式</string>
+    <string name="profile_saved">配置已保存</string>
+    <string name="profile_deleted">配置已删除</string>
+    <string name="auto_brightness">跟随系统</string>
+
+    <!-- History -->
+    <string name="history_title">历史记录</string>
+    <string name="history_no_data">暂无数据</string>
+    <string name="history_all_games">全部游戏</string>
+    <string name="history_export">导出 CSV</string>
+    <string name="history_clear_old">清理 30 天前</string>
+    <string name="stats_summary">共 %1$d 场，平均 FPS：%2$d，平均温度：%3$.1f°C</string>
+    <string name="all_games">全部游戏</string>
+
+    <!-- Installed Games -->
+    <string name="installed_games_title">选择游戏</string>
+    <string name="no_games_found">未找到已安装的游戏</string>
+    <string name="game_added">已添加 %1$s</string>
+
+    <!-- Import/Export -->
+    <string name="import_hint">长按导入配置</string>
+    <string name="import_success">已导入 %1$d 个配置</string>
+    <string name="import_failed">导入失败</string>
+    <string name="export_success">已导出</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_clear_history_title">清除历史</string>
+    <string name="dialog_clear_history_msg">确定清除所有历史记录？此操作不可撤销。</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">熊猫工具箱</string>
+    <string name="notification_channel_desc">游戏优化通知</string>
+    <string name="notification_turbo_running">Turbo 运行中</string>
+    <string name="notification_game_detected">检测到游戏：%1$s</string>
+
+    <!-- Widget -->
+    <string name="widget_name">熊猫工具箱 Widget</string>
+    <string name="widget_description">一键开启/关闭 Turbo</string>
+</resources>

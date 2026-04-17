@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    
+    
+    
+    
+    
+    
+
+    <application
+        android:name=".PandaTurboApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PandaTurbo"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="31">
+
+        <!-- ========== Xposed LSPosed Module ========== -->
+        <!-- LSPoed Module 入口 -->
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposedmoduleversion"
+            android:value="82" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="PandaTurbo - App数据隔离 / SafetyNet隐藏 / Magisk对抗 / 游戏温控" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="93" />
+        <!-- 模块作用域：所有 App + 框架 -->
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/lspoed_scope" />
+
+        <activity android:name=".MainActivity" android:exported="true" android:theme="@style/Theme.PandaTurbo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 工具箱 Activity -->
+        <activity android:name=".ui.toolkit.ApkExtractorActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.SystemInfoActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".GameSettingsActivity" android:exported="false" />
+        <activity android:name=".ui.toolkit.ThermalControlActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.BatteryInfoActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.NetworkToolsActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.DisplaySettingsActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.AppManagerActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.CleanerActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.DevToolsActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.toolkit.AdBlockerActivity" android:exported="false"
+            android:theme="@style/Theme.PandaTurbo" android:parentActivityName=".MainActivity" />
+
+        <!-- 原有 Activity -->
+        <activity android:name=".ui.SettingsActivity" android:exported="false" android:theme="@style/Theme.PandaTurbo"/>
+        <activity android:name=".ui.HistoryActivity" android:exported="false" android:theme="@style/Theme.PandaTurbo"/>
+        <activity android:name=".ui.ProfileListActivity" android:exported="false" android:theme="@style/Theme.PandaTurbo"/>
+        <activity android:name=".ui.ProfileEditActivity" android:exported="false" android:theme="@style/Theme.PandaTurbo"/>
+        <activity android:name=".ui.InstalledGamesActivity" android:exported="false" android:theme="@style/Theme.PandaTurbo"/>
+
+        <!-- FileProvider for APK sharing -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- Shizuku Provider -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:exported="true"
+            android:multiprocess="false" />
+
+        <!-- Shizuku UserService for shell command execution -->
+        <service
+            android:name=".userservice.RemoteProcessService"
+            android:exported="false"
+            android:permission="rikka.shizuku.SHIZUKU_SERVICE" />
+
+        <!-- Services -->
+        <service android:name=".PerformanceMonitorService" android:enabled="true" android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
+        <service android:name=".TurboTileService" android:label="@string/tile_label"
+            android:icon="@drawable/ic_tile_turbo" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE" android:value="true" />
+        </service>
+        <service android:name=".GameAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" android:exported="true">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- Receivers -->
+        <receiver android:name=".receiver.GameEventReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.pandasu.turbo.GAME_STARTED" />
+                <action android:name="com.pandasu.turbo.GAME_STOPPED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".widget.TurboWidget" android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+    </application>
+
+</manifest>

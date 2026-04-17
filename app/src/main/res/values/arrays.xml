@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filter_options">
+        <item>全部应用</item>
+        <item>用户应用</item>
+        <item>系统应用</item>
+    </string-array>
+
+    <!-- LSPoed 模块作用域：Hook 框架 + 所有 App -->
+    <string-array name="lspoed_scope">
+        <item>android</item>
+        <item>com.android.systemui</item>
+        <item>com.android.packageinstaller</item>
+        <item>*</item>
+    </string-array>
+</resources>

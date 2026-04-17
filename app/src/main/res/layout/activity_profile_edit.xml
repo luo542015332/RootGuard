@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFF">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="20dp">
+        <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+            android:background="#FFFFFF" android:titleTextColor="#212121"/>
+        <TextView android:id="@+id/tvPackage" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textColor="#666666" android:textSize="12sp" android:layout_marginTop="8dp" android:layout_marginBottom="16dp"/>
+        
+        <!-- 一键配置 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="一键配置" android:textColor="#FF6B35" android:textSize="14sp" android:textStyle="bold"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="12dp" android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btnPresetPerformance" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="性能" android:backgroundTint="#4CAF50" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnPresetBalanced" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="均衡" android:backgroundTint="#2196F3" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnPresetBattery" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="省电" android:backgroundTint="#FFC107" android:layout_marginEnd="4dp"/>
+            <Button android:id="@+id/btnPresetCustom" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="自定义" android:backgroundTint="#9E9E9E"/>
+        </LinearLayout>
+        
+        <!-- 基础设置 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="基础设置" android:textColor="#FF6B35" android:textSize="14sp" android:textStyle="bold" android:layout_marginTop="16dp"/>
+        
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="显示名称" android:textColor="#212121" android:textSize="14sp" android:layout_marginTop="12dp"/>
+        <EditText android:id="@+id/etDisplayName" android:layout_width="match_parent" android:layout_height="48dp"
+            android:background="#F5F5F5" android:textColor="#212121" android:hint="留空使用原名称" android:layout_marginBottom="16dp"/>
+        
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="性能模式" android:textColor="#212121" android:textSize="14sp"/>
+        <Spinner android:id="@+id/spinnerPerf" android:layout_width="match_parent" android:layout_height="48dp"
+            android:background="#F5F5F5" android:layout_marginBottom="16dp"/>
+        
+        <!-- 帧率设置 -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="4dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="游戏帧率" android:textColor="#212121" android:textSize="14sp"/>
+            <TextView android:id="@+id/tvFpsValue" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="跟随系统" android:textColor="#00D9FF" android:textSize="14sp"/>
+        </LinearLayout>
+        <SeekBar android:id="@+id/seekFps" android:layout_width="match_parent" android:layout_height="48dp"
+            android:max="3" android:progress="0" android:layout_marginBottom="8dp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="跟随系统" android:textColor="#9E9E9E" android:textSize="11sp"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="60帧" android:textColor="#9E9E9E" android:textSize="11sp" android:gravity="center_horizontal"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="90帧" android:textColor="#9E9E9E" android:textSize="11sp" android:gravity="center_horizontal"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="120帧" android:textColor="#9E9E9E" android:textSize="11sp" android:gravity="end"/>
+        </LinearLayout>
+        
+        <!-- 高级设置 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="高级设置" android:textColor="#FF6B35" android:textSize="14sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
+        
+        <Switch android:id="@+id/switchCpuBoost" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="CPU 性能模式" android:textColor="#424242" android:layout_marginTop="12dp"/>
+        <Switch android:id="@+id/switchGpuBoost" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="GPU 加速" android:textColor="#424242"/>
+        <Switch android:id="@+id/switchWakelock" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="WakeLock 保活" android:textColor="#424242"/>
+        
+        <!-- 自动设置 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="游戏时自动设置" android:textColor="#FF6B35" android:textSize="14sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
+        
+        <Switch android:id="@+id/switchAutoTurbo" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="进入游戏自动开启 Turbo" android:textColor="#424242" android:layout_marginTop="12dp"/>
+        <Switch android:id="@+id/switchAutoDnd" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="进入游戏自动开启勿扰模式" android:textColor="#424242"/>
+        <Switch android:id="@+id/switchKeepScreenOn" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="游戏时保持屏幕常亮" android:textColor="#424242"/>
+        <Switch android:id="@+id/switchBlockNotif" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="游戏时屏蔽通知" android:textColor="#424242"/>
+        <Switch android:id="@+id/switchBlockCalls" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="游戏时屏蔽来电" android:textColor="#424242"/>
+        <Switch android:id="@+id/switchLockRotation" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="锁定屏幕旋转" android:textColor="#424242"/>
+        <Switch android:id="@+id/switchKillBackground" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="自动清理后台应用" android:textColor="#424242" android:layout_marginBottom="24dp"/>
+        
+        <!-- 操作按钮 -->
+        <Button android:id="@+id/btnSave" android:layout_width="match_parent" android:layout_height="52dp"
+            android:text="保存配置" android:backgroundTint="#FF6B35" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
+        <Button android:id="@+id/btnDelete" android:layout_width="match_parent" android:layout_height="44dp"
+            android:text="删除此配置" android:backgroundTint="#FF5252"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#FFFFFF">
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF" android:titleTextColor="#212121"/>
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView android:id="@+id/tvEmpty" android:layout_width="match_parent" android:layout_height="match_parent"
+            android:text="未检测到游戏\n请手动添加" android:textColor="#666666" android:textSize="14sp" android:gravity="center" android:visibility="gone"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/recyclerView"
+            android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFF"/>
+    </FrameLayout>
+</LinearLayout>

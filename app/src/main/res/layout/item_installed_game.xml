@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="80dp"
+    android:orientation="horizontal" android:gravity="center_vertical"
+    android:paddingHorizontal="16dp" android:paddingVertical="8dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <ImageView android:id="@+id/ivGameIcon" android:layout_width="56dp" android:layout_height="56dp"
+        android:contentDescription="icon"/>
+    <TextView android:id="@+id/tvGameName" android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:layout_marginStart="12dp" android:textColor="#212121"
+        android:textSize="15sp"/>
+    <Button android:id="@+id/btnAddGame" android:layout_width="wrap_content" android:layout_height="40dp"
+        android:text="+" android:textSize="18sp" android:minWidth="48dp"/>
+
+</LinearLayout>
