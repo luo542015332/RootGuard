@@ -125,10 +125,10 @@ class ThermalControlActivity : AppCompatActivity() {
 
         // CPU 调频
         card(root, "CPU 调频") {
-            actionBtn(it, "Performance", "CPU 始终最高频率") { setGovernor("performance") }
-            actionBtn(it, "Powersave", "CPU 始终最低频率") { setGovernor("powersave") }
-            actionBtn(it, "Schedutil", "系统默认智能调度") { setGovernor("schedutil") }
-            actionBtn(it, "Ondemand", "按需动态调频") { setGovernor("ondemand") }
+            actionBtn(it, "性能模式", "CPU 始终最高频率") { setGovernor("performance") }
+            actionBtn(it, "省电模式", "CPU 始终最低频率") { setGovernor("powersave") }
+            actionBtn(it, "智能调度", "系统默认智能调度") { setGovernor("schedutil") }
+            actionBtn(it, "按需模式", "按需动态调频") { setGovernor("ondemand") }
         }
 
         // 其他优化（不需要 root）
