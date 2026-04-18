@@ -28,6 +28,8 @@ object LspConfigHelper {
 
     private const val CONFIG_DIR = "/data/user/0/com.pandasu.turbo/cache"
     private const val CONFIG_PATH = "$CONFIG_DIR/config.dat"
+    // Also write to /data/local/tmp/ for LSP module access (system_server readable via shell)
+    private const val CONFIG_PATH_ALT = "/data/local/tmp/turbox_config.dat"
 
     private var denyListEnabled: Boolean = false
     private var propSpoofEnabled: Boolean = false
@@ -76,6 +78,8 @@ object LspConfigHelper {
 
             File(CONFIG_DIR).mkdirs()
             File(CONFIG_PATH).writeText(root.toString())
+            // Also write to alternate path for LSP module
+            File(CONFIG_PATH_ALT).writeText(root.toString())
         } catch (_: Throwable) {
             // 非关键路径，静默失败
         }
@@ -130,6 +134,7 @@ object LspConfigHelper {
 
             File(CONFIG_DIR).mkdirs()
             File(CONFIG_PATH).writeText(root.toString())
+            File(CONFIG_PATH_ALT).writeText(root.toString())
         } catch (_: Throwable) {}
     }
 }

@@ -27,11 +27,12 @@ class PmsQueryHook(private val service: HMAService) {
      * Hook PMS internal methods in system_server
      */
     fun hookPmsInternal(classLoader: ClassLoader) {
+        var hooksInstalled = 0
         try {
-            hookGetInstalledPackagesInternal(classLoader)
-            hookGetPackageInfoInternal(classLoader)
-            hookQueryIntentActivitiesInternal(classLoader)
-            Log.i(TAG, "PMS internal hooks installed")
+            hooksInstalled += hookGetInstalledPackagesInternal(classLoader)
+            hooksInstalled += hookGetPackageInfoInternal(classLoader)
+            hooksInstalled += hookQueryIntentActivitiesInternal(classLoader)
+            Log.i(TAG, "PMS internal hooks: $hooksInstalled methods hooked")
         } catch (t: Throwable) {
             Log.e(TAG, "PMS internal hook failed: ${t.message}")
         }
@@ -41,54 +42,86 @@ class PmsQueryHook(private val service: HMAService) {
      * Hook ApplicationPackageManager in app processes
      */
     fun hookPackageManagerProxy(classLoader: ClassLoader, packageName: String) {
+        var hooksInstalled = 0
         try {
             val appPmClass = XposedHelpers.findClass(
                 "android.app.ApplicationPackageManager", 
                 classLoader
             )
             
-            // getInstalledPackages
-            hookMethodSafe(appPmClass, "getInstalledPackages", Int::class.java) { param ->
+            // getInstalledPackages(int)
+            hooksInstalled += hookMethodCount(appPmClass, "getInstalledPackages", Int::class.java) { param ->
                 filterPackageList(param)
             }
             
-            // getInstalledPackagesAsUser (if exists)
-            hookMethodSafe(appPmClass, "getInstalledPackagesAsUser", Int::class.java, Int::class.java) { param ->
+            // getInstalledPackages(int, int) 
+            hooksInstalled += hookMethodCount(appPmClass, "getInstalledPackages", Int::class.java, Int::class.java) { param ->
                 filterPackageList(param)
             }
             
-            // getPackageInfo
-            hookMethodSafe(appPmClass, "getPackageInfo", String::class.java, Int::class.java) { param ->
-                val targetPkg = param.args[0] as? String ?: return@hookMethodSafe
+            // getInstalledPackagesAsUser(int, int)
+            hooksInstalled += hookMethodCount(appPmClass, "getInstalledPackagesAsUser", Int::class.java, Int::class.java) { param ->
+                filterPackageList(param)
+            }
+            
+            // getPackageInfo(String, int)
+            hooksInstalled += hookMethodCount(appPmClass, "getPackageInfo", String::class.java, Int::class.java) { param ->
+                val targetPkg = param.args[0] as? String ?: return@hookMethodCount
                 if (service.shouldHide(targetPkg)) {
-                    // Return null or throw PackageManager.NameNotFoundException
                     param.result = null
-                    Log.d(TAG, "[$packageName] getPackageInfo blocked: $targetPkg")
+                    if (service.isDetailLogEnabled()) {
+                        Log.d(TAG, "[$packageName] getPackageInfo blocked: $targetPkg")
+                    }
                 }
             }
             
-            // queryIntentActivities
-            hookMethodSafe(appPmClass, "queryIntentActivities", 
+            // queryIntentActivities(Intent, int)
+            hooksInstalled += hookMethodCount(appPmClass, "queryIntentActivities", 
                 android.content.Intent::class.java, Int::class.java) { param ->
                 filterResolveInfoList(param)
             }
             
-            // queryIntentActivitiesAsUser
-            hookMethodSafe(appPmClass, "queryIntentActivitiesAsUser", 
+            // queryIntentActivities(Intent, int, int)
+            hooksInstalled += hookMethodCount(appPmClass, "queryIntentActivities", 
                 android.content.Intent::class.java, Int::class.java, Int::class.java) { param ->
                 filterResolveInfoList(param)
             }
             
-            Log.i(TAG, "ApplicationPackageManager hooks installed for $packageName")
+            if (hooksInstalled > 0) {
+                Log.i(TAG, "APM hooks installed for $packageName ($hooksInstalled methods)")
+            }
             
         } catch (t: Throwable) {
             Log.d(TAG, "App hook failed for $packageName: ${t.message}")
         }
     }
-
-    private fun hookGetInstalledPackagesInternal(classLoader: ClassLoader) {
+    
+    private fun hookMethodCount(
+        clazz: Class<*>, 
+        methodName: String, 
+        vararg paramTypes: Class<*>,
+        beforeHook: (XC_MethodHook.MethodHookParam) -> Unit
+    ): Int {
         try {
-            // Try different PMS class names across Android versions
+            val method = XposedHelpers.findMethodExact(clazz, methodName, *paramTypes)
+            XposedBridge.hookMethod(method, object : XC_MethodHook() {
+                override fun beforeHookedMethod(param: MethodHookParam) {
+                    try {
+                        beforeHook(param)
+                    } catch (e: Throwable) {
+                        Log.e(TAG, "Hook error in $methodName: ${e.message}")
+                    }
+                }
+            })
+            return 1
+        } catch (_: Throwable) {
+            return 0
+        }
+    }
+
+    private fun hookGetInstalledPackagesInternal(classLoader: ClassLoader): Int {
+        var count = 0
+        try {
             val pmsClassNames = listOf(
                 "com.android.server.pm.PackageManagerService",
                 "com.android.server.pm.PackageManagerService\$PackageManagerServiceInjector"
@@ -99,59 +132,79 @@ class PmsQueryHook(private val service: HMAService) {
                     XposedHelpers.findClassIfExists(className, classLoader)
                 } catch (_: Throwable) { null } ?: continue
                 
-                // getInstalledPackages(int, int)
-                hookMethodSafe(pmsClass, "getInstalledPackages", Int::class.java, Int::class.java) { param ->
+                // getInstalledPackages(int, int) - standard
+                count += hookMethodCount(pmsClass, "getInstalledPackages", Int::class.java, Int::class.java) { param ->
                     filterPackageList(param)
                 }
-                
+                // getInstalledPackages(int, int, int) - Android 13+
+                count += hookMethodCount(pmsClass, "getInstalledPackages", Int::class.java, Int::class.java, Int::class.java) { param ->
+                    filterPackageList(param)
+                }
                 // getInstalledApplications(int, int)
-                hookMethodSafe(pmsClass, "getInstalledApplications", Int::class.java, Int::class.java) { param ->
+                count += hookMethodCount(pmsClass, "getInstalledApplications", Int::class.java, Int::class.java) { param ->
                     filterApplicationInfoList(param)
                 }
                 
-                Log.d(TAG, "Hooked $className for getInstalledPackages/Applications")
+                Log.d(TAG, "PMS hooks for $className: $count methods")
             }
         } catch (t: Throwable) {
             Log.e(TAG, "hookGetInstalledPackagesInternal failed: ${t.message}")
         }
+        return count
     }
 
-    private fun hookGetPackageInfoInternal(classLoader: ClassLoader) {
+    private fun hookGetPackageInfoInternal(classLoader: ClassLoader): Int {
+        var count = 0
         try {
             val pmsClass = XposedHelpers.findClassIfExists(
                 "com.android.server.pm.PackageManagerService", 
                 classLoader
-            ) ?: return
+            ) ?: return 0
             
             // getPackageInfo(String, int, int)
-            hookMethodSafe(pmsClass, "getPackageInfo", String::class.java, Int::class.java, Int::class.java) { param ->
-                val targetPkg = param.args[0] as? String ?: return@hookMethodSafe
+            count += hookMethodCount(pmsClass, "getPackageInfo", String::class.java, Int::class.java, Int::class.java) { param ->
+                val targetPkg = param.args[0] as? String ?: return@hookMethodCount
                 if (service.shouldHide(targetPkg)) {
                     param.result = null
-                    Log.d(TAG, "[system] getPackageInfo blocked: $targetPkg")
+                    if (service.isDetailLogEnabled()) {
+                        Log.d(TAG, "[system] getPackageInfo blocked: $targetPkg")
+                    }
+                }
+            }
+            
+            // getApplicationInfo(String, int, int)
+            count += hookMethodCount(pmsClass, "getApplicationInfo", String::class.java, Int::class.java, Int::class.java) { param ->
+                val targetPkg = param.args[0] as? String ?: return@hookMethodCount
+                if (service.shouldHide(targetPkg)) {
+                    param.result = null
+                    if (service.isDetailLogEnabled()) {
+                        Log.d(TAG, "[system] getApplicationInfo blocked: $targetPkg")
+                    }
                 }
             }
             
         } catch (t: Throwable) {
             Log.e(TAG, "hookGetPackageInfoInternal failed: ${t.message}")
         }
+        return count
     }
 
-    private fun hookQueryIntentActivitiesInternal(classLoader: ClassLoader) {
+    private fun hookQueryIntentActivitiesInternal(classLoader: ClassLoader): Int {
+        var count = 0
         try {
             val pmsClass = XposedHelpers.findClassIfExists(
                 "com.android.server.pm.PackageManagerService",
                 classLoader
-            ) ?: return
+            ) ?: return 0
             
             // queryIntentActivities(Intent, String, int, int)
-            hookMethodSafe(pmsClass, "queryIntentActivities", 
+            count += hookMethodCount(pmsClass, "queryIntentActivities", 
                 android.content.Intent::class.java, String::class.java, Int::class.java, Int::class.java) { param ->
                 filterResolveInfoList(param)
             }
             
             // queryIntentActivitiesAsUser
-            hookMethodSafe(pmsClass, "queryIntentActivitiesAsUser", 
+            count += hookMethodCount(pmsClass, "queryIntentActivitiesAsUser", 
                 android.content.Intent::class.java, String::class.java, Int::class.java, Int::class.java) { param ->
                 filterResolveInfoList(param)
             }
@@ -159,6 +212,7 @@ class PmsQueryHook(private val service: HMAService) {
         } catch (t: Throwable) {
             Log.e(TAG, "hookQueryIntentActivitiesInternal failed: ${t.message}")
         }
+        return count
     }
 
     /**

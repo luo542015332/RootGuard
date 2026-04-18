@@ -22,12 +22,15 @@ object HMAService {
     private var configLoaded = false
     private var detailLog = false
 
-    // Use a root-readable path — /data/local/tmp is accessible from system_server
-    // The app writes config here via root shell, and system_server reads it here
-    private const val CONFIG_PATH = "/data/local/tmp/turbox_config.dat"
+    // Config path — MUST match what the app writes to (LspConfigHelper.kt)
+    // The app writes to /data/user/0/com.pandasu.turbo/cache/config.dat
+    // system_server CANNOT read app-private files directly (SELinux)
+    // So we use shell command (cat) which runs in shell domain (u:r:shell:s0)
+    // shell CAN read /data/user_de/0/ and /data/local/tmp/ on most ROMs
+    private const val CONFIG_PATH = "/data/user_de/0/com.pandasu.turbo/cache/config.dat"
 
-    // Also try the app-private path as fallback (may work on some ROMs)
-    private const val CONFIG_PATH_ALT = "/data/user/0/com.pandasu.turbo/cache/config.dat"
+    // Fallback: try direct read (may work on some ROMs without SELinux restrictions)
+    private const val CONFIG_PATH_ALT = "/data/local/tmp/turbox_config.dat"
 
     fun loadConfigForSystem() {
         if (configLoaded) return
