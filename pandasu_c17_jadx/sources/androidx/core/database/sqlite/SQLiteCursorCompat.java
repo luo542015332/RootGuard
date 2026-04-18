@@ -1,0 +1,26 @@
+package androidx.core.database.sqlite;
+
+import android.database.sqlite.SQLiteCursor;
+import android.os.Build;
+
+/* loaded from: C:\Users\Administrator\Desktop\新建文件夹 (2)\installed_decode\classes17.dex */
+public final class SQLiteCursorCompat {
+    private SQLiteCursorCompat() {
+    }
+
+    public static void setFillWindowForwardOnly(SQLiteCursor cursor, boolean fillWindowForwardOnly) {
+        if (Build.VERSION.SDK_INT >= 28) {
+            Api28Impl.setFillWindowForwardOnly(cursor, fillWindowForwardOnly);
+        }
+    }
+
+    /* loaded from: C:\Users\Administrator\Desktop\新建文件夹 (2)\installed_decode\classes17.dex */
+    static class Api28Impl {
+        private Api28Impl() {
+        }
+
+        static void setFillWindowForwardOnly(SQLiteCursor cursor, boolean fillWindowForwardOnly) {
+            cursor.setFillWindowForwardOnly(fillWindowForwardOnly);
+        }
+    }
+}

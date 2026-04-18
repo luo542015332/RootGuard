@@ -1,0 +1,7 @@
+id=battery_turbo
+name=PandaTurbo - Battery Spoof
+version=v1
+versionCode=1
+author=PandaTurbo
+description=Enables battery temperature spoofing via mount-bind overlay on HyperOS / MIUI / APatch
+minMagisk=24000

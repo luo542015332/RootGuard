@@ -1,0 +1,13 @@
+﻿#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 67108864 bytes. Error detail: G1 virtual space
+.\gradlew.bat : OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00000000fc000000, 67108864, 0) failed; erro
+r='ҳ���ļ�̫С���޷���ɲ�����' (DOS error/errno=1455)
+所在位置 行:1 字符: 121
++ ... PandaTurbo; .\gradlew.bat compileReleaseKotlin --no-daemon 2>&1 | Out ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OpenJDK 64-Bit ...ror/errno=1455):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+# An error report file with more information is saved as:
+# D:\PandaProjects\PandaTurbo\hs_err_pid23960.log

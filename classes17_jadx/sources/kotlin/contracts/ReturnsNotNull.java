@@ -1,0 +1,9 @@
+package kotlin.contracts;
+
+import kotlin.Metadata;
+
+/* compiled from: Effect.kt */
+@Metadata(d1 = {"\u0000\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bg\u0018\u00002\u00020\u0001¨\u0006\u0002"}, d2 = {"Lkotlin/contracts/ReturnsNotNull;", "Lkotlin/contracts/SimpleEffect;", "kotlin-stdlib"}, k = 1, mv = {1, 9, 0}, xi = 48)
+/* loaded from: C:\Users\Administrator\WorkBuddy\20260410212817\PandaTurbo\app\src\main\assets\lspoed\classes17.dex */
+public interface ReturnsNotNull extends SimpleEffect {
+}

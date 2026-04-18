@@ -1,0 +1,37 @@
+package androidx.core.os;
+
+import android.os.Environment;
+import java.io.File;
+
+/* loaded from: C:\Users\Administrator\WorkBuddy\20260410212817\PandaTurbo\app\src\main\assets\lspoed\classes17.dex */
+public final class EnvironmentCompat {
+    public static final String MEDIA_UNKNOWN = "unknown";
+    private static final String TAG = "EnvironmentCompat";
+
+    public static String getStorageState(File path) {
+        return Api21Impl.getExternalStorageState(path);
+    }
+
+    private EnvironmentCompat() {
+    }
+
+    /* loaded from: C:\Users\Administrator\WorkBuddy\20260410212817\PandaTurbo\app\src\main\assets\lspoed\classes17.dex */
+    static class Api21Impl {
+        private Api21Impl() {
+        }
+
+        static String getExternalStorageState(File path) {
+            return Environment.getExternalStorageState(path);
+        }
+    }
+
+    /* loaded from: C:\Users\Administrator\WorkBuddy\20260410212817\PandaTurbo\app\src\main\assets\lspoed\classes17.dex */
+    static class Api19Impl {
+        private Api19Impl() {
+        }
+
+        static String getStorageState(File path) {
+            return Environment.getStorageState(path);
+        }
+    }
+}

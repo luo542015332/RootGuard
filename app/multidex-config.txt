@@ -1,0 +1,2 @@
+@PACKAGE@/PandaTurboApp.class
+@PACKAGE@/MainActivity.class

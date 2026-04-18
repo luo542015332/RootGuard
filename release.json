@@ -1,0 +1,7 @@
+{
+  "tag_name": "v3.2.9",
+  "name": "PandaTurbo v3.2.9",
+  "body": "## PandaTurbo v3.2.9\n\n### 修复\n- LSP模块构建错误修复：main.jar 现在正确包含 Kotlin 代码 (21,175 字节)\n- 生成 LSP DEX 的 Gradle 任务修复\n\n### 功能\n- LSPosed 隐藏模块\n- 电池温度伪装\n- MIUI 温控管理\n- 系统优化\n- 后台管理",
+  "draft": false,
+  "prerelease": false
+}

@@ -1,0 +1,15 @@
+package androidx.emoji2.text.flatbuffer;
+
+import java.nio.ByteBuffer;
+
+/* loaded from: C:\Users\Administrator\WorkBuddy\20260410212817\PandaTurbo\app\src\main\assets\lspoed\classes17.dex */
+public final class FloatVector extends BaseVector {
+    public FloatVector __assign(int _vector, ByteBuffer _bb) {
+        __reset(_vector, 4, _bb);
+        return this;
+    }
+
+    public float get(int j) {
+        return this.bb.getFloat(__element(j));
+    }
+}

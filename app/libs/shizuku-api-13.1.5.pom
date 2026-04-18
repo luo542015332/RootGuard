@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>dev.rikka.shizuku</groupId>
+  <artifactId>api</artifactId>
+  <version>13.1.5</version>
+  <packaging>aar</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>dev.rikka.shizuku</groupId>
+      <artifactId>aidl</artifactId>
+      <version>13.1.5</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>dev.rikka.shizuku</groupId>
+      <artifactId>shared</artifactId>
+      <version>13.1.5</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+</project>

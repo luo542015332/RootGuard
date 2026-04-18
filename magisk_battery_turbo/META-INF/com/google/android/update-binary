@@ -1,0 +1,32 @@
+#!/sbin/sh
+# update-binary for PandaTurbo Battery Spoof Magisk Module
+# Standard Magisk module flash script
+
+rm -rf /data/local/tmp/batt_turbo.log 2>/dev/null
+
+# Module installation (standard pattern)
+MODID=battery_turbo
+MODDIR=/data/adb/modules/$MODID
+OLDMODDIR=/data/adb/modules_update/$MODID
+
+# Cleanup old installs
+[ -d $OLDMODDIR ] && rm -rf $OLDMODDIR
+mkdir -p $MODDIR
+
+# Extract module files
+unzip -o "$ZIPFILE" -d $MODDIR 2>/dev/null
+
+# Set permissions
+set_perm_recursive $MODDIR 0 0 0755 0644
+
+# module.prop check
+if [ ! -f $MODDIR/module.prop ]; then
+    echo "! Invalid module: missing module.prop" >&2
+    exit 1
+fi
+
+# Write last_update_path for module manager
+echo "$MODDIR" > /data/adb/modules/$MODID/path 2>/dev/null
+
+# Flash done
+exit 0
