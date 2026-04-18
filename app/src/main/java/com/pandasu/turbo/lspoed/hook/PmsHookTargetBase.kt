@@ -1,136 +1,82 @@
 package com.pandasu.turbo.lspoed.hook
 
 import android.util.Log
-import de.robv.android.xposed.XC_MethodHook
-import de.robv.android.xposed.XposedBridge
-import com.pandasu.turbo.lspoed.HMAService
-import java.lang.reflect.Method
+import com.pandasu.turbo.lspoed.TurboService
+import com.pandasu.turbo.lspoed.XR
 
 /**
- * Base class for PMS hooks
- * Provides common utilities for extracting package names from various objects
+ * Base class for PMS hooks (Android 10-14).
+ * Provides common shouldFilterApplication interception.
  */
-open class PmsHookTargetBase(protected val service: HMAService) : IPmsHook {
-    
-    protected val unhooks = mutableListOf<XC_MethodHook.Unhook>()
+open class PmsHookTargetBase(protected val service: TurboService) : IPmsHook {
+    protected val unhooks = mutableListOf<Any>()
 
     override fun load() {
         hookShouldFilterApplication()
     }
 
-    /**
-     * Hook PMS.shouldFilterApplication as fallback
-     * AppsFilterImpl hook in PmsHookTarget36 is preferred
-     */
     private fun hookShouldFilterApplication() {
         try {
-            val pmsClass = Class.forName("com.android.server.pm.PackageManagerService")
-            val methods = pmsClass.declaredMethods.filter {
-                it.name == "shouldFilterApplication" && it.parameterTypes.size >= 3
+            val pmsClass = XR.findClass("com.android.server.pm.PackageManagerService")
+            for (method in pmsClass.declaredMethods) {
+                if (method.name == "shouldFilterApplication" && method.parameterTypes.size >= 3) {
+                    method.isAccessible = true
+                    val u = XR.hookMethod(method,
+                        before = { p -> onShouldFilterApplication(p); false },
+                        after = null
+                    )
+                    if (u != null) unhooks.add(u)
+                    Log.i(TAG, "Hooked shouldFilterApplication: ${method.parameterTypes.contentToString()}")
+                }
             }
-            
-            if (methods.isEmpty()) {
-                Log.w(TAG, "PMS.shouldFilterApplication not found")
-                return
-            }
-            
-            for (method in methods) {
-                Log.i(TAG, "Hooking PMS.shouldFilterApplication: ${method.parameterTypes.joinToString { it.simpleName }}")
-                
-                val unhook = XposedBridge.hookMethod(method, object : XC_MethodHook() {
-                    override fun beforeHookedMethod(param: MethodHookParam) {
-                        onShouldFilterApplication(param)
-                    }
-                })
-                unhooks.add(unhook)
-            }
-            
-            Log.i(TAG, "PMS shouldFilterApplication hooks installed")
-        } catch (t: Throwable) {
-            Log.e(TAG, "PMS hook failed: ${t.message}")
+            Log.i(TAG, "shouldFilterApplication hooks: ${unhooks.size}")
+        } catch (e: Throwable) {
+            Log.e(TAG, "PMS hook failed: ${e.message}")
         }
     }
 
-    protected open fun onShouldFilterApplication(param: XC_MethodHook.MethodHookParam) {
+    protected open fun onShouldFilterApplication(param: Any) {
         try {
-            val args = param.args ?: return
+            val args = XR.paramGetArgs(param) ?: return
             if (args.size < 3) return
 
-            var callingPkg = ""
-            var callingUid = -1
-            var targetPkg = ""
+            val callingPkg = args.filterIsInstance<String>().firstOrNull { it.contains(".") } ?: ""
+            if (callingPkg.isEmpty()) return
 
-            for (i in args.indices) {
-                val arg = args[i]
-                when {
-                    arg is String && callingPkg.isEmpty() && arg.contains(".") -> {
-                        callingPkg = arg
-                    }
-                    arg is Int && callingUid < 0 -> {
-                        callingUid = arg
-                    }
-                    arg != null && arg !is String && arg !is Int && targetPkg.isEmpty() -> {
-                        targetPkg = extractPackageName(arg)
-                    }
+            var targetPkg = ""
+            for (arg in args) {
+                if (arg != null && arg !is String && arg !is Int) {
+                    targetPkg = extractPackageName(arg) ?: ""
+                    if (targetPkg.isNotEmpty()) break
                 }
             }
+            if (targetPkg.isEmpty()) return
 
-            // Skip system processes
+            val callingUid = args.filterIsInstance<Int>().firstOrNull() ?: return
             if (callingUid <= 0 || callingUid == 1000 || callingUid == 1001) return
-            if (callingPkg.isEmpty() || targetPkg.isEmpty()) return
 
             if (service.shouldHide(callingPkg, targetPkg)) {
-                param.result = true // true = filter/hide
+                XR.paramSetResult(param, true)
                 Log.d(TAG, "PMS filtered [$callingPkg -> $targetPkg]")
             }
         } catch (e: Throwable) {
-            Log.e(TAG, "PMS hook error: ${e.message}")
+            Log.e(TAG, "hook error: ${e.message}")
         }
     }
 
-    protected fun extractPackageName(obj: Any?): String {
-        if (obj == null) return ""
-        
-        // Try getPackageName() method
-        try {
-            val m = obj.javaClass.getDeclaredMethod("getPackageName")
-            m.isAccessible = true
-            return m.invoke(obj) as? String ?: ""
-        } catch (_: Throwable) {}
-        
-        // Try packageName field
-        try {
-            val f = obj.javaClass.getDeclaredField("packageName")
-            f.isAccessible = true
-            return f.get(obj) as? String ?: ""
-        } catch (_: Throwable) {}
-        
-        // Try pkg.getPackageName()
-        try {
-            val f = obj.javaClass.getDeclaredField("pkg")
-            f.isAccessible = true
-            val pkgObj = f.get(obj) ?: return ""
-            val m = pkgObj.javaClass.getDeclaredMethod("getPackageName")
-            m.isAccessible = true
-            return m.invoke(pkgObj) as? String ?: ""
-        } catch (_: Throwable) {}
-        
-        // Try name field (AndroidPackage)
-        try {
-            val f = obj.javaClass.getDeclaredField("name")
-            f.isAccessible = true
-            return f.get(obj) as? String ?: ""
-        } catch (_: Throwable) {}
-        
-        return ""
+    protected fun extractPackageName(obj: Any?): String? {
+        if (obj == null) return null
+        return XR.getDeclaredField(obj.javaClass, "packageName")?.let {
+            try { it.get(obj) as? String } catch (_: Throwable) { null }
+        } ?: XR.getDeclaredField(obj.javaClass, "name")?.let {
+            try { it.get(obj) as? String } catch (_: Throwable) { null }
+        }
     }
 
     override fun unload() {
-        unhooks.forEach { it.unhook() }
+        unhooks.forEach { XR.unhook(it) }
         unhooks.clear()
     }
 
-    companion object {
-        private const val TAG = "TurboX-PmsBase"
-    }
+    companion object { private const val TAG = "TurboX-PmsBase" }
 }

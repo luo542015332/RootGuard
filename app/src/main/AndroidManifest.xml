@@ -48,7 +48,7 @@
             android:value="PandaTurbo - App数据隔离 / SafetyNet隐藏 / Magisk对抗 / 游戏温控" />
         <meta-data
             android:name="xposedminversion"
-            android:value="93" />
+            android:value="82" />
         <!-- 模块作用域：所有 App + 框架 -->
         <meta-data
             android:name="xposedscope"

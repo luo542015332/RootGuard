@@ -1,374 +1,186 @@
 package com.pandasu.turbo.lspoed.hook
 
-import android.content.pm.PackageInfo
-import android.content.pm.PackageManager
+import android.content.Intent
 import android.util.Log
-import de.robv.android.xposed.XC_MethodHook
-import de.robv.android.xposed.XposedBridge
-import de.robv.android.xposed.XposedHelpers
-import com.pandasu.turbo.lspoed.HMAService
+import com.pandasu.turbo.lspoed.TurboService
+import com.pandasu.turbo.lspoed.XR
 
 /**
- * Hooks for PackageManager query methods
- * 
- * Two-layer approach:
- * 1. system_server: Hook PMS internal methods (getInstalledPackages, getPackageInfo, queryIntentActivities)
- * 2. App processes: Hook ApplicationPackageManager (client proxy) methods
- * 
- * This ensures detection apps can't find hidden packages regardless of which API they use.
+ * PMS query hook - filters package listings for hidden apps.
+ * System_server layer: hooks PMS internal methods.
+ * App layer: hooks ApplicationPackageManager proxy methods.
  */
-class PmsQueryHook(private val service: HMAService) {
+class PmsQueryHook(private val service: TurboService) {
+    companion object { private const val TAG = "TurboX-PmsQuery" }
 
-    companion object {
-        private const val TAG = "TurboX-PmsQuery"
-    }
-
-    /**
-     * Hook PMS internal methods in system_server
-     */
     fun hookPmsInternal(classLoader: ClassLoader) {
-        var hooksInstalled = 0
+        var n = 0
         try {
-            hooksInstalled += hookGetInstalledPackagesInternal(classLoader)
-            hooksInstalled += hookGetPackageInfoInternal(classLoader)
-            hooksInstalled += hookQueryIntentActivitiesInternal(classLoader)
-            Log.i(TAG, "PMS internal hooks: $hooksInstalled methods hooked")
-        } catch (t: Throwable) {
-            Log.e(TAG, "PMS internal hook failed: ${t.message}")
+            val pmsClass = XR.findClass("com.android.server.pm.PackageManagerService", classLoader)
+            n += hookMethod(pmsClass, "getInstalledPackages", Int::class.java, Int::class.java) { p -> filterList(p) }
+            n += hookMethod(pmsClass, "getInstalledPackages", Int::class.java, Int::class.java, Int::class.java) { p -> filterList(p) }
+            n += hookMethod(pmsClass, "getInstalledApplications", Int::class.java, Int::class.java) { p -> filterList(p) }
+            n += hookMethod(pmsClass, "getPackageInfo", String::class.java, Int::class.java, Int::class.java) { p ->
+                val pkg = XR.paramGetArg(p, 0) as? String ?: return@hookMethod
+                if (service.shouldHide(pkg)) XR.paramSetResult(p, null)
+            }
+            n += hookMethod(pmsClass, "getApplicationInfo", String::class.java, Int::class.java, Int::class.java) { p ->
+                val pkg = XR.paramGetArg(p, 0) as? String ?: return@hookMethod
+                if (service.shouldHide(pkg)) XR.paramSetResult(p, null)
+            }
+            n += hookMethod(pmsClass, "queryIntentActivities",
+                Intent::class.java, String::class.java, Int::class.java, Int::class.java) { p -> filterResolveList(p) }
+            n += hookMethod(pmsClass, "queryIntentActivitiesAsUser",
+                Intent::class.java, String::class.java, Int::class.java, Int::class.java) { p -> filterResolveList(p) }
+            XR.log("[Turbo] PMS hooks: $n methods")
+        } catch (e: Throwable) {
+            XR.logE("PMS internal hook failed: ${e.message}", e)
         }
     }
 
-    /**
-     * Hook ApplicationPackageManager in app processes
-     */
     fun hookPackageManagerProxy(classLoader: ClassLoader, packageName: String) {
-        var hooksInstalled = 0
         try {
-            val appPmClass = XposedHelpers.findClass(
-                "android.app.ApplicationPackageManager", 
-                classLoader
-            )
-            
-            // getInstalledPackages(int)
-            hooksInstalled += hookMethodCount(appPmClass, "getInstalledPackages", Int::class.java) { param ->
-                filterPackageList(param)
+            val apmClass = XR.findClass("android.app.ApplicationPackageManager", classLoader)
+            var n = 0
+            n += hookMethod(apmClass, "getInstalledPackages", Int::class.java) { p -> filterList(p) }
+            n += hookMethod(apmClass, "getInstalledPackages", Int::class.java, Int::class.java) { p -> filterList(p) }
+            n += hookMethod(apmClass, "getInstalledPackagesAsUser", Int::class.java, Int::class.java) { p -> filterList(p) }
+            n += hookMethod(apmClass, "getPackageInfo", String::class.java, Int::class.java) { p ->
+                val pkg = XR.paramGetArg(p, 0) as? String ?: return@hookMethod
+                if (service.shouldHide(pkg)) XR.paramSetResult(p, null)
             }
-            
-            // getInstalledPackages(int, int) 
-            hooksInstalled += hookMethodCount(appPmClass, "getInstalledPackages", Int::class.java, Int::class.java) { param ->
-                filterPackageList(param)
-            }
-            
-            // getInstalledPackagesAsUser(int, int)
-            hooksInstalled += hookMethodCount(appPmClass, "getInstalledPackagesAsUser", Int::class.java, Int::class.java) { param ->
-                filterPackageList(param)
-            }
-            
-            // getPackageInfo(String, int)
-            hooksInstalled += hookMethodCount(appPmClass, "getPackageInfo", String::class.java, Int::class.java) { param ->
-                val targetPkg = param.args[0] as? String ?: return@hookMethodCount
-                if (service.shouldHide(targetPkg)) {
-                    param.result = null
-                    if (service.isDetailLogEnabled()) {
-                        Log.d(TAG, "[$packageName] getPackageInfo blocked: $targetPkg")
-                    }
-                }
-            }
-            
-            // queryIntentActivities(Intent, int)
-            hooksInstalled += hookMethodCount(appPmClass, "queryIntentActivities", 
-                android.content.Intent::class.java, Int::class.java) { param ->
-                filterResolveInfoList(param)
-            }
-            
-            // queryIntentActivities(Intent, int, int)
-            hooksInstalled += hookMethodCount(appPmClass, "queryIntentActivities", 
-                android.content.Intent::class.java, Int::class.java, Int::class.java) { param ->
-                filterResolveInfoList(param)
-            }
-            
-            if (hooksInstalled > 0) {
-                Log.i(TAG, "APM hooks installed for $packageName ($hooksInstalled methods)")
-            }
-            
-        } catch (t: Throwable) {
-            Log.d(TAG, "App hook failed for $packageName: ${t.message}")
+            n += hookMethod(apmClass, "queryIntentActivities", Intent::class.java, Int::class.java) { p -> filterResolveList(p) }
+            n += hookMethod(apmClass, "queryIntentActivities", Intent::class.java, Int::class.java, Int::class.java) { p -> filterResolveList(p) }
+            if (n > 0) XR.log("[Turbo] APM hooks for $packageName: $n methods")
+        } catch (e: Throwable) {
+            Log.d(TAG, "App hook failed for $packageName: ${e.message}")
         }
     }
-    
-    private fun hookMethodCount(
-        clazz: Class<*>, 
-        methodName: String, 
-        vararg paramTypes: Class<*>,
-        beforeHook: (XC_MethodHook.MethodHookParam) -> Unit
+
+    /**
+     * Generic method hook helper. Calls filterFn before the original runs.
+     */
+    private fun hookMethod(
+        clazz: Class<*>, methodName: String, vararg paramTypes: Class<*>,
+        filterFn: (Any) -> Unit
     ): Int {
-        try {
-            val method = XposedHelpers.findMethodExact(clazz, methodName, *paramTypes)
-            XposedBridge.hookMethod(method, object : XC_MethodHook() {
-                override fun beforeHookedMethod(param: MethodHookParam) {
-                    try {
-                        beforeHook(param)
-                    } catch (e: Throwable) {
-                        Log.e(TAG, "Hook error in $methodName: ${e.message}")
-                    }
-                }
-            })
-            return 1
-        } catch (_: Throwable) {
-            return 0
-        }
-    }
-
-    private fun hookGetInstalledPackagesInternal(classLoader: ClassLoader): Int {
-        var count = 0
-        try {
-            val pmsClassNames = listOf(
-                "com.android.server.pm.PackageManagerService",
-                "com.android.server.pm.PackageManagerService\$PackageManagerServiceInjector"
-            )
-            
-            for (className in pmsClassNames) {
-                val pmsClass = try {
-                    XposedHelpers.findClassIfExists(className, classLoader)
-                } catch (_: Throwable) { null } ?: continue
-                
-                // getInstalledPackages(int, int) - standard
-                count += hookMethodCount(pmsClass, "getInstalledPackages", Int::class.java, Int::class.java) { param ->
-                    filterPackageList(param)
-                }
-                // getInstalledPackages(int, int, int) - Android 13+
-                count += hookMethodCount(pmsClass, "getInstalledPackages", Int::class.java, Int::class.java, Int::class.java) { param ->
-                    filterPackageList(param)
-                }
-                // getInstalledApplications(int, int)
-                count += hookMethodCount(pmsClass, "getInstalledApplications", Int::class.java, Int::class.java) { param ->
-                    filterApplicationInfoList(param)
-                }
-                
-                Log.d(TAG, "PMS hooks for $className: $count methods")
-            }
-        } catch (t: Throwable) {
-            Log.e(TAG, "hookGetInstalledPackagesInternal failed: ${t.message}")
-        }
-        return count
-    }
-
-    private fun hookGetPackageInfoInternal(classLoader: ClassLoader): Int {
-        var count = 0
-        try {
-            val pmsClass = XposedHelpers.findClassIfExists(
-                "com.android.server.pm.PackageManagerService", 
-                classLoader
-            ) ?: return 0
-            
-            // getPackageInfo(String, int, int)
-            count += hookMethodCount(pmsClass, "getPackageInfo", String::class.java, Int::class.java, Int::class.java) { param ->
-                val targetPkg = param.args[0] as? String ?: return@hookMethodCount
-                if (service.shouldHide(targetPkg)) {
-                    param.result = null
-                    if (service.isDetailLogEnabled()) {
-                        Log.d(TAG, "[system] getPackageInfo blocked: $targetPkg")
-                    }
-                }
-            }
-            
-            // getApplicationInfo(String, int, int)
-            count += hookMethodCount(pmsClass, "getApplicationInfo", String::class.java, Int::class.java, Int::class.java) { param ->
-                val targetPkg = param.args[0] as? String ?: return@hookMethodCount
-                if (service.shouldHide(targetPkg)) {
-                    param.result = null
-                    if (service.isDetailLogEnabled()) {
-                        Log.d(TAG, "[system] getApplicationInfo blocked: $targetPkg")
-                    }
-                }
-            }
-            
-        } catch (t: Throwable) {
-            Log.e(TAG, "hookGetPackageInfoInternal failed: ${t.message}")
-        }
-        return count
-    }
-
-    private fun hookQueryIntentActivitiesInternal(classLoader: ClassLoader): Int {
-        var count = 0
-        try {
-            val pmsClass = XposedHelpers.findClassIfExists(
-                "com.android.server.pm.PackageManagerService",
-                classLoader
-            ) ?: return 0
-            
-            // queryIntentActivities(Intent, String, int, int)
-            count += hookMethodCount(pmsClass, "queryIntentActivities", 
-                android.content.Intent::class.java, String::class.java, Int::class.java, Int::class.java) { param ->
-                filterResolveInfoList(param)
-            }
-            
-            // queryIntentActivitiesAsUser
-            count += hookMethodCount(pmsClass, "queryIntentActivitiesAsUser", 
-                android.content.Intent::class.java, String::class.java, Int::class.java, Int::class.java) { param ->
-                filterResolveInfoList(param)
-            }
-            
-        } catch (t: Throwable) {
-            Log.e(TAG, "hookQueryIntentActivitiesInternal failed: ${t.message}")
-        }
-        return count
-    }
-
-    /**
-     * Safely hook a method - returns Unhook if successful, null otherwise
-     */
-    private fun hookMethodSafe(
-        clazz: Class<*>, 
-        methodName: String, 
-        vararg paramTypes: Class<*>,
-        beforeHook: (XC_MethodHook.MethodHookParam) -> Unit
-    ) {
-        try {
-            val method = XposedHelpers.findMethodExact(clazz, methodName, *paramTypes)
-            XposedBridge.hookMethod(method, object : XC_MethodHook() {
-                override fun beforeHookedMethod(param: MethodHookParam) {
-                    try {
-                        beforeHook(param)
-                    } catch (e: Throwable) {
-                        Log.e(TAG, "Hook error in $methodName: ${e.message}")
-                    }
-                }
-            })
-        } catch (_: Throwable) {
-            // Method not found - skip silently
-        }
-    }
-
-    /**
-     * Filter ParceledListSlice or List<PackageInfo>
-     */
-    private fun filterPackageList(param: XC_MethodHook.MethodHookParam) {
-        val result = param.result ?: return
-        val filtered = filterList(result) { item ->
-            val pkgName = extractPackageName(item) ?: return@filterList true
-            !service.shouldHide(pkgName)
-        }
-        param.result = filtered
-    }
-
-    /**
-     * Filter list of ApplicationInfo
-     */
-    private fun filterApplicationInfoList(param: XC_MethodHook.MethodHookParam) {
-        val result = param.result ?: return
-        val filtered = filterList(result) { item ->
-            val pkgName = extractPackageName(item) ?: return@filterList true
-            !service.shouldHide(pkgName)
-        }
-        param.result = filtered
-    }
-
-    /**
-     * Filter list of ResolveInfo
-     */
-    private fun filterResolveInfoList(param: XC_MethodHook.MethodHookParam) {
-        val result = param.result ?: return
-        val filtered = filterList(result) { item ->
-            val pkgName = extractResolveInfoPackageName(item) ?: return@filterList true
-            !service.shouldHide(pkgName)
-        }
-        param.result = filtered
-    }
-
-    /**
-     * Filter a ParceledListSlice or regular List
-     */
-    private fun filterList(listObj: Any, predicate: (Any) -> Boolean): Any {
         return try {
-            // Try ParceledListSlice (Android 11+)
-            val sliceClass = listObj.javaClass
-            val getListMethod = sliceClass.getDeclaredMethod("getList")
-            getListMethod.isAccessible = true
-            val list = getListMethod.invoke(listObj) as? MutableList<*> ?: return listObj
-            
-            val iterator = list.iterator()
-            while (iterator.hasNext()) {
-                val item = iterator.next() ?: continue
-                if (!predicate(item)) {
-                    iterator.remove()
+            val m = clazz.getDeclaredMethod(methodName, *paramTypes)
+            m.isAccessible = true
+            XR.hookMethod(m,
+                before = { p ->
+                    try { filterFn(p) } catch (e: Throwable) { Log.e(TAG, "hook error: ${e.message}") }
+                    false
+                },
+                after = null
+            )
+            1
+        } catch (e: Throwable) { 0 }
+    }
+
+    private fun filterList(param: Any) {
+        val result = XR.paramGetResult(param) ?: return
+        val filtered = filterListItems(result)
+        XR.paramSetResult(param, filtered)
+    }
+
+    private fun filterListItems(obj: Any): Any {
+        return try {
+            // Try ParceledListSlice.getList()
+            val sliceMethods = obj.javaClass.declaredMethods
+            val getList = sliceMethods.find { it.name == "getList" } ?: throw Throwable("no getList")
+            getList.isAccessible = true
+            val list = getList.invoke(obj) as? MutableList<*> ?: return obj
+
+            val iter = list.iterator()
+            while (iter.hasNext()) {
+                val item = iter.next() ?: continue
+                val pkgName = extractPackageName(item) ?: continue
+                if (service.shouldHide(pkgName)) {
+                    iter.remove()
+                    Log.d(TAG, "Filtered: $pkgName")
                 }
             }
-            
-            // Create new ParceledListSlice with filtered list
-            val constructor = sliceClass.getConstructor(List::class.java)
-            constructor.isAccessible = true
-            constructor.newInstance(list)
+            // Rebuild ParceledListSlice
+            try {
+                val ctor = obj.javaClass.getConstructor(List::class.java)
+                ctor.isAccessible = true
+                ctor.newInstance(list)
+            } catch (_: Throwable) { list }
         } catch (_: Throwable) {
-            // Not a ParceledListSlice, try regular List
-            if (listObj is MutableList<*>) {
-                val iterator = listObj.iterator()
-                while (iterator.hasNext()) {
-                    val item = iterator.next() ?: continue
-                    if (!predicate(item)) {
-                        iterator.remove()
-                    }
+            // Regular List
+            if (obj is MutableList<*>) {
+                val iter = obj.iterator()
+                while (iter.hasNext()) {
+                    val item = iter.next() ?: continue
+                    val pkgName = extractPackageName(item) ?: continue
+                    if (service.shouldHide(pkgName)) iter.remove()
                 }
-                listObj
-            } else {
-                listObj
             }
+            obj
+        }
+    }
+
+    private fun filterResolveList(param: Any) {
+        val result = XR.paramGetResult(param) ?: return
+        val filtered = filterResolveItems(result)
+        XR.paramSetResult(param, filtered)
+    }
+
+    private fun filterResolveItems(obj: Any): Any {
+        return try {
+            val listMethods = obj.javaClass.declaredMethods
+            val getList = listMethods.find { it.name == "getList" } ?: throw Throwable("no getList")
+            getList.isAccessible = true
+            val list = getList.invoke(obj) as? MutableList<*> ?: return obj
+
+            val iter = list.iterator()
+            while (iter.hasNext()) {
+                val item = iter.next() ?: continue
+                val pkgName = extractResolveInfoPackage(item) ?: continue
+                if (service.shouldHide(pkgName)) {
+                    iter.remove()
+                    Log.d(TAG, "ResolveInfo filtered: $pkgName")
+                }
+            }
+            try {
+                val ctor = obj.javaClass.getConstructor(List::class.java)
+                ctor.isAccessible = true
+                ctor.newInstance(list)
+            } catch (_: Throwable) { list }
+        } catch (_: Throwable) {
+            if (obj is MutableList<*>) {
+                val iter = obj.iterator()
+                while (iter.hasNext()) {
+                    val item = iter.next() ?: continue
+                    val pkgName = extractResolveInfoPackage(item) ?: continue
+                    if (service.shouldHide(pkgName)) iter.remove()
+                }
+            }
+            obj
         }
     }
 
     private fun extractPackageName(obj: Any?): String? {
         if (obj == null) return null
-        
-        // PackageInfo.packageName
-        return try {
-            val field = obj.javaClass.getDeclaredField("packageName")
-            field.isAccessible = true
-            field.get(obj) as? String
-        } catch (_: Throwable) {
-            try {
-                // ApplicationInfo.packageName
-                val field = obj.javaClass.getDeclaredField("packageName")
-                field.isAccessible = true
-                field.get(obj) as? String
-            } catch (_: Throwable) {
-                null
-            }
+        return XR.getDeclaredField(obj.javaClass, "packageName")?.let {
+            try { it.get(obj) as? String } catch (_: Throwable) { null }
         }
     }
 
-    private fun extractResolveInfoPackageName(obj: Any?): String? {
+    private fun extractResolveInfoPackage(obj: Any?): String? {
         if (obj == null) return null
-        
-        return try {
-            // ResolveInfo.activityInfo.applicationInfo.packageName
-            val activityInfoField = obj.javaClass.getDeclaredField("activityInfo")
-            activityInfoField.isAccessible = true
-            val activityInfo = activityInfoField.get(obj) ?: return null
-            
-            val appInfoField = activityInfo.javaClass.getDeclaredField("applicationInfo")
-            appInfoField.isAccessible = true
-            val appInfo = appInfoField.get(activityInfo) ?: return null
-            
-            val pkgNameField = appInfo.javaClass.getDeclaredField("packageName")
-            pkgNameField.isAccessible = true
-            pkgNameField.get(appInfo) as? String
-        } catch (_: Throwable) {
-            try {
-                // ResolveInfo.serviceInfo.applicationInfo.packageName
-                val serviceInfoField = obj.javaClass.getDeclaredField("serviceInfo")
-                serviceInfoField.isAccessible = true
-                val serviceInfo = serviceInfoField.get(obj) ?: return null
-                
-                val appInfoField = serviceInfo.javaClass.getDeclaredField("applicationInfo")
-                appInfoField.isAccessible = true
-                val appInfo = appInfoField.get(serviceInfo) ?: return null
-                
-                val pkgNameField = appInfo.javaClass.getDeclaredField("packageName")
-                pkgNameField.isAccessible = true
-                pkgNameField.get(appInfo) as? String
-            } catch (_: Throwable) {
-                null
+        try {
+            val actInfo = XR.getDeclaredField(obj.javaClass, "activityInfo")?.let {
+                try { it.get(obj) } catch (_: Throwable) { null }
+            } ?: return null
+            val appInfo = XR.getDeclaredField(actInfo.javaClass, "applicationInfo")?.let {
+                try { it.get(actInfo) } catch (_: Throwable) { null }
+            } ?: return null
+            val pkgNameField = XR.getDeclaredField(appInfo.javaClass, "packageName")
+            return pkgNameField?.let {
+                try { it.get(appInfo) as? String } catch (_: Throwable) { null }
             }
-        }
+        } catch (_: Throwable) { return null }
     }
 }
