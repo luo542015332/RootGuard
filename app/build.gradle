@@ -133,32 +133,11 @@ dependencies {
 }
 
 // ================================================================
-// Generate main.jar (LSPosed module DEX) from compiled Kotlin classes
+// [DISABLED] generateLspoedDex - NO LONGER NEEDED
+// LSPosed loads module classes directly from APK's classes*.dex
+// when assets/main.jar is absent. Do NOT create an empty main.jar
+// as it causes LSPosed to skip the module entirely.
 // ================================================================
-tasks.register('generateLspoedDex') {
-    group = 'panda'
-    description = 'Generate main.jar (empty - lspoed classes are in APK DEX, loaded by LSPosed from APK classpath)'
-    outputs.file "$projectDir/src/main/assets/main.jar"
-
-    doLast {
-        def outFile = project.file("$projectDir/src/main/assets/main.jar")
-        outFile.parentFile.mkdirs()
-
-        // Write an empty but valid JAR
-        def baos = new java.io.ByteArrayOutputStream()
-        def zos = new java.util.zip.ZipOutputStream(baos)
-        zos.setLevel(java.util.zip.ZipOutputStream.DEFLATED)
-        // Manifest-only JAR - no classes.dex needed
-        def manifestEntry = new java.util.zip.ZipEntry("META-INF/MANIFEST.MF")
-        manifestEntry.comment = "Empty - XposedEntry is in APK DEX"
-        zos.putNextEntry(manifestEntry)
-        zos.write("Manifest-Version: 1.0\n".getBytes("UTF-8"))
-        zos.closeEntry()
-        zos.close()
-        outFile.bytes = baos.toByteArray()
-        println "[generateLspoedDex] Written empty main.jar: ${outFile.length()} bytes"
-    }
-}
 
 // ================================================================
 // Generate Magisk module zip (Unix LF line endings, no CRLF)
@@ -249,9 +228,9 @@ tasks.configureEach { t ->
     if (t.name == 'mergeDebugAssets' || t.name == 'mergeReleaseAssets') {
         t.dependsOn 'generateBatteryModuleZip'
     }
-    // Ensure main.jar is generated before assets are merged
+    // Ensure battery zip is generated before assets are merged
     if (t.name == 'mergeDebugAssets') {
-        t.dependsOn 'generateLspoedDex'
+        t.dependsOn 'generateBatteryModuleZip'
     }
     // Fix lint task dependency issue
     if (t.name == 'lintVitalAnalyzeRelease' || t.name == 'generateReleaseLintVitalReportModel') {

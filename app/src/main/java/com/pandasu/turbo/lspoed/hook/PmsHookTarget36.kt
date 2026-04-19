@@ -1,64 +1,105 @@
-﻿package com.pandasu.turbo.lspoed.hook
+package com.pandasu.turbo.lspoed.hook
 
-import android.util.Log
+import android.os.Binder
 import com.pandasu.turbo.lspoed.TurboService
+import com.pandasu.turbo.lspoed.Utils
 import com.pandasu.turbo.lspoed.XR
+import java.util.concurrent.atomic.AtomicReference
 
-/**
- * Android 14/15+ PMS hook (SDK 29-36).
- * Primary: AppsFilterImpl.shouldFilterApplication
- * Fallback: PMS.shouldFilterApplication
- */
-class PmsHookTarget36(service: TurboService) : PmsHookTargetBase(service) {
+class PmsHookTarget36(private val service: TurboService) : IFrameworkHook {
+    companion object { private const val TAG = "Pms36" }
+
+    private val getPackagesForUidMethod by lazy {
+        try {
+            XR.findClass("com.android.server.pm.Computer").getDeclaredMethod("getPackagesForUid", Int::class.javaPrimitiveType)
+        } catch (_: Throwable) { null }
+    }
+
+    private val hooks = mutableListOf<Any>()
+    private var lastFilteredApp = AtomicReference<String?>(null)
 
     override fun load() {
-        hookAppsFilterImpl()
-        super.load()
+        hookShouldFilterApplication()
+        hookGetArchivedPackageInternal()
     }
 
-    private fun hookAppsFilterImpl() {
+    private fun hookShouldFilterApplication() {
         try {
             val clazz = XR.findClass("com.android.server.pm.AppsFilterImpl")
-            var count = 0
-            for (method in clazz.declaredMethods) {
-                if (method.name == "shouldFilterApplication" && method.parameterTypes.size >= 4) {
-                    method.isAccessible = true
-                    val u = XR.hookMethod(method,
-                        before = { p -> onAppsFilterCheck(p); false },
-                        after = null
-                    )
-                    if (u != null) {
-                        unhooks.add(u)
-                        count++
-                        Log.i(TAG, "Hooked: ${method.parameterTypes.joinToString { it.simpleName }}")
+            val method = findMethodInHierarchy(clazz, "shouldFilterApplication") ?: throw NoSuchMethodException("shouldFilterApplication")
+            method.isAccessible = true
+            val unhook = XR.hookMethod(method, before = { param ->
+                runCatching {
+                    val args = XR.paramGetArgs(param) ?: return@hookMethod false
+                    val useSnapshot = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU
+                    val callingUid = if (useSnapshot) args.getOrNull(1) as? Int ?: return@hookMethod false else args.getOrNull(0) as? Int ?: return@hookMethod false
+                    if (callingUid == 1000) return@hookMethod false
+
+                    val snapshot = if (useSnapshot) args[0] else null
+                    val callingApps = if (snapshot != null && getPackagesForUidMethod != null) {
+                        Utils.binderLocalScope { @Suppress("UNCHECKED_CAST") getPackagesForUidMethod!!.invoke(snapshot, callingUid) as? Array<String> }
+                    } else {
+                        getPackagesForUidFallback(callingUid)
+                    } ?: return@hookMethod false
+
+                    val targetIdx = if (useSnapshot) 3 else 2
+                    val targetPkg = Utils.getPackageNameFromPackageSettings(args[targetIdx] ?: return@hookMethod false) ?: return@hookMethod false
+
+                    for (caller in callingApps) {
+                        if (service.shouldHide(caller, targetPkg)) {
+                            XR.paramSetResult(param, true)
+                            service.filterCount++
+                            val last = lastFilteredApp.getAndSet(caller)
+                            if (last != caller) XR.log("$TAG: hide [$caller]->$targetPkg")
+                            return@hookMethod false
+                        }
                     }
-                }
-            }
-            XR.log("[Turbo] AppsFilterImpl: $count hooks")
-        } catch (e: Throwable) {
-            XR.logE("AppsFilterImpl hook failed: ${e.message}", e)
-        }
+                }.onFailure { e -> XR.logE("$TAG: fatal, disabling: ${e.message}", e); unload() }
+                false
+            }, after = null)
+            if (unhook != null) hooks.add(unhook)
+        } catch (e: Throwable) { XR.logE("$TAG: shouldFilterApplication hook failed: ${e.message}", e) }
     }
 
-    private fun onAppsFilterCheck(param: Any) {
+    private fun hookGetArchivedPackageInternal() {
         try {
-            val args = XR.paramGetArgs(param) ?: return
-            if (args.size < 4) return
-            val callingUid = args[0] as? Int ?: -1
-            if (callingUid <= 0 || callingUid == 1000 || callingUid == 1001) return
-
-            val callingPkg = (args[1] as? String) ?: extractPackageName(args[1])
-            val targetPkg = extractPackageName(args[3]) ?: return
-
-            if (!callingPkg.isNullOrEmpty() && !targetPkg.isNullOrEmpty() && service.shouldHide(callingPkg, targetPkg)) {
-                XR.paramSetResult(param, true)
-                Log.d(TAG, "AppsFilter hidden [${callingPkg}(uid=$callingUid) -> ${targetPkg}]")
-            }
-        } catch (e: Throwable) {
-            Log.e(TAG, "AppsFilter check error: ${e.message}")
-        }
+            val clazz = XR.findClass("com.android.server.pm.PackageManagerService")
+            val method = findMethodInHierarchy(clazz, "getArchivedPackageInternal") ?: return
+            method.isAccessible = true
+            val unhook = XR.hookMethod(method, before = { param ->
+                runCatching {
+                    val callingUid = Binder.getCallingUid()
+                    if (callingUid == 1000) return@hookMethod false
+                    val callingApps = getPackagesForUidFallback(callingUid) ?: return@hookMethod false
+                    val targetPkg = XR.paramGetArg(param, 0)?.toString() ?: return@hookMethod false
+                    for (caller in callingApps) {
+                        if (service.shouldHide(caller, targetPkg)) {
+                            XR.paramSetResult(param, null)
+                            service.filterCount++
+                            XR.log("$TAG: archived hide [$caller]->$targetPkg")
+                            return@hookMethod false
+                        }
+                    }
+                }.onFailure { e -> XR.logE("$TAG: archived error: ${e.message}", e) }
+                false
+            }, after = null)
+            if (unhook != null) hooks.add(unhook)
+        } catch (_: Throwable) {}
     }
 
-    companion object { private const val TAG = "TurboX-Pms36" }
-}
+    private fun getPackagesForUidFallback(uid: Int): Array<String>? {
+        val pms = service.pms ?: return null
+        return try { Utils.binderLocalScope { pms.javaClass.getMethod("getPackagesForUid", Int::class.javaPrimitiveType).invoke(pms, uid) as? Array<String> } } catch (_: Throwable) { null }
+    }
 
+    private fun findMethodInHierarchy(clazz: Class<*>, name: String): java.lang.reflect.Method? {
+        var current: Class<*>? = clazz
+        while (current != null && current != Any::class.java) {
+            try { return current.getDeclaredMethod(name) } catch (_: Throwable) {}
+            current = current.superclass
+        }
+        return null
+    }
+
+    override fun unload() { hooks.forEach { XR.unhook(it) }; hooks.clear() }
+}
