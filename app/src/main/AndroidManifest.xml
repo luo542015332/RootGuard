@@ -41,14 +41,11 @@
             android:name="xposedmodule"
             android:value="true" />
         <meta-data
-            android:name="xposedmoduleversion"
-            android:value="82" />
+            android:name="xposedminversion"
+            android:value="93" />
         <meta-data
             android:name="xposeddescription"
             android:value="PandaTurbo - App数据隔离 / SafetyNet隐藏 / Magisk对抗 / 游戏温控" />
-        <meta-data
-            android:name="xposedminversion"
-            android:value="82" />
         <!-- 模块作用域：所有 App + 框架 -->
         <meta-data
             android:name="xposedscope"
@@ -106,6 +103,13 @@
         <provider
             android:name="rikka.shizuku.ShizukuProvider"
             android:authorities="${applicationId}.shizuku"
+            android:exported="true"
+            android:multiprocess="false" />
+
+        <!-- Turbo ServiceProvider - 用于 Xposed 模块向 App 传递 Binder -->
+        <provider
+            android:name=".service.ServiceProvider"
+            android:authorities="com.pandasu.turbo.provider"
             android:exported="true"
             android:multiprocess="false" />
 

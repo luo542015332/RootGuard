@@ -1,0 +1,5 @@
+# Keep LSPosed module classes in a separate DEX
+com/pandasu/turbo/lspoed/**
+com/pandasu/turbo/xposed/**
+com/github/kyuubiran/ezxhelper/**
+rikka/hidden/compat/**

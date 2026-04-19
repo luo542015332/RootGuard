@@ -1,117 +1,80 @@
 package com.pandasu.turbo.lspoed
 
+import android.content.pm.IPackageManager
+import android.os.ServiceManager
 import de.robv.android.xposed.IXposedHookLoadPackage
+import de.robv.android.xposed.IXposedHookZygoteInit
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 import kotlin.concurrent.thread
 
-/**
- * LSPosed module entry point.
- *
- * PMS acquisition: hook ServiceManager.addService("package") to capture
- * the live IPackageManager binder. This is more reliable than
- * ServiceManager.getService() which may return null if called too early.
- *
- * Architecture follows HMA OSS:
- * - system_server: capture PMS → init TurboService → install hooks
- * - app process: mark module as active via MyApp.isHooked field
- */
-class XposedEntry : IXposedHookLoadPackage {
+private const val TAG = "Turbo-XposedEntry"
 
-    companion object {
-        private const val TAG = "TurboX"
+@Suppress("unused")
+class XposedEntry : IXposedHookZygoteInit, IXposedHookLoadPackage {
+
+    override fun initZygote(startupParam: IXposedHookZygoteInit.StartupParam) {
+        // EzXHelperInit stores this; we just log it directly
+        XposedBridge.log("[$TAG] initZygote: ${startupParam.modulePath}")
     }
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
-        val pkgName = lpparam.packageName
-
-        // Mark ourselves as active in the host app
-        if (pkgName == "com.pandasu.turbo") {
-            try {
-                val appClass = lpparam.classLoader.loadClass("com.pandasu.turbo.MyApp")
-                val field = appClass.getDeclaredField("isHooked")
-                field.isAccessible = true
-                field.setBoolean(null, true)
-                XR.log("$TAG: MyApp.isHooked = true")
-            } catch (e: Throwable) {
-                XR.logE("$TAG: mark isHooked failed: ${e.message}", e)
-            }
-            return
+        if (lpparam.packageName == Constants.APP_PACKAGE_NAME) {
+            logI(TAG, "Loading: ${lpparam.packageName}")
+            // Hook PandaTurboApp constructor to mark isHooked
+            hookAppClass(lpparam.classLoader)
+        } else if (lpparam.packageName == "android") {
+            logI(TAG, "Hook android framework")
+            hookServiceManager(lpparam.classLoader)
         }
+    }
 
-        // Only hook system_server
-        if (pkgName != "android") return
+    private fun hookAppClass(classLoader: ClassLoader) {
+        runCatching {
+            val appClass = classLoader.loadClass("com.pandasu.turbo.PandaTurboApp")
+            XposedBridge.hookMethod(
+                appClass.getDeclaredConstructor(),
+                object : XC_MethodHook() {
+                    override fun afterHookedMethod(param: MethodHookParam) {
+                        try {
+                            val f = appClass.getDeclaredField("isHooked")
+                            f.isAccessible = true
+                            f.setBoolean(param.thisObject, true)
+                            logI(TAG, "isHooked=true")
+                        } catch (e: Throwable) {
+                            logE(TAG, "set isHooked", e)
+                        }
+                    }
+                }
+            )
+        }.onFailure { logE(TAG, "hookAppClass", it) }
+    }
 
-        XR.log("$TAG: system_server detected, hooking ServiceManager.addService")
-
-        // Hook ServiceManager.addService("package") to capture PMS binder
-        try {
-            val smClass = XR.findClass("android.os.ServiceManager")
-
-            // Try 4-param overload first (Android 11+): addService(name, binder, allowIsolated, dumpPriority)
-            var addServiceMethod = try {
-                smClass.getDeclaredMethod(
-                    "addService", String::class.java, android.os.IBinder::class.java,
-                    Boolean::class.javaPrimitiveType, Int::class.javaPrimitiveType
-                )
-            } catch (_: Throwable) {
-                // Fallback to 2-param: addService(name, binder)
-                smClass.getDeclaredMethod("addService", String::class.java, android.os.IBinder::class.java)
-            }
-            addServiceMethod.isAccessible = true
-
-            var unhook: Any? = null
-            unhook = XR.hookMethod(addServiceMethod,
-                before = { param ->
-                    val name = XR.paramGetArg(param, 0) as? String ?: return@hookMethod false
+    private fun hookServiceManager(classLoader: ClassLoader) {
+        var hookRef: XC_MethodHook.Unhook? = null
+        runCatching {
+            // Hook ServiceManager.addService("package", pms)
+            val smClass = classLoader.loadClass("android.os.ServiceManager")
+            val addServiceMethod = smClass.getDeclaredMethod("addService", String::class.java, android.os.IInterface::class.java)
+            hookRef = XposedBridge.hookMethod(addServiceMethod, object : XC_MethodHook() {
+                override fun beforeHookedMethod(param: MethodHookParam) {
+                    val name = param.args[0] as? String ?: return
                     if (name == "package") {
-                        val pmsBinder = XR.paramGetArg(param, 1) as? android.os.IBinder
-                        if (pmsBinder != null) {
-                            // Unhook immediately - we only need PMS once
-                            unhook?.let { XR.unhook(it) }
-
-                            XR.log("$TAG: captured PMS binder via addService")
-                            thread {
-                                try {
-                                    val service = TurboService.getInstance()
-                                    service.initWithPms(pmsBinder, lpparam.classLoader)
-                                    XR.log("$TAG: TurboService initialized")
-                                } catch (e: Throwable) {
-                                    XR.logE("$TAG: TurboService init failed: ${e.message}", e)
-                                }
+                        hookRef?.unhook()
+                        val pms = param.args[1] as? IPackageManager ?: return
+                        logD(TAG, "Got PMS: $pms")
+                        thread {
+                            runCatching {
+                                UserService.register(pms)
+                                logI(TAG, "UserService registered")
+                            }.onFailure {
+                                logE(TAG, "UserService crashed", it)
                             }
                         }
                     }
-                    false
-                },
-                after = null
-            )
-            XR.log("$TAG: ServiceManager.addService hook installed")
-        } catch (e: Throwable) {
-            XR.logE("$TAG: ServiceManager.addService hook failed: ${e.message}", e)
-
-            // Fallback: poll ServiceManager.getService("package") until available
-            XR.log("$TAG: fallback: polling ServiceManager.getService")
-            thread {
-                try {
-                    val smClass = Class.forName("android.os.ServiceManager")
-                    val getService = smClass.getDeclaredMethod("getService", String::class.java)
-                    var binder: android.os.IBinder? = null
-                    for (i in 0 until 60) {
-                        binder = getService.invoke(null, "package") as? android.os.IBinder
-                        if (binder != null) break
-                        Thread.sleep(500)
-                    }
-                    if (binder != null) {
-                        val service = TurboService.getInstance()
-                        service.initWithPms(binder, lpparam.classLoader)
-                        XR.log("$TAG: fallback PMS acquired")
-                    } else {
-                        XR.logE("$TAG: fallback PMS acquisition failed after 30s")
-                    }
-                } catch (e: Throwable) {
-                    XR.logE("$TAG: fallback failed: ${e.message}", e)
                 }
-            }
-        }
+            })
+        }.onFailure { logE(TAG, "hookServiceManager", it) }
     }
 }

@@ -1,102 +1,207 @@
 package com.pandasu.turbo.lspoed
 
-import android.os.IBinder
+import android.content.pm.ApplicationInfo
+import android.content.pm.IPackageManager
+import android.os.Build
 import com.pandasu.turbo.lspoed.hook.*
-import java.io.BufferedReader
 import java.io.File
-import java.io.InputStreamReader
-import java.util.concurrent.ConcurrentHashMap
 
-class TurboService private constructor() {
+class TurboService(val pms: IPackageManager) : ITurboService.Stub() {
+
     companion object {
-        private const val TAG = "TurboX"
-        private const val CONFIG_PATH = "/data/user/0/com.pandasu.turbo/cache/config.dat"
-        @Volatile private var instance: TurboService? = null
-        fun getInstance(): TurboService = instance ?: synchronized(this) { instance ?: TurboService().also { instance = it } }
+        private const val TAG = "TurboService"
+        var instance: TurboService? = null
     }
 
-    @Volatile var pms: Any? = null
-    private val hiddenPackages = ConcurrentHashMap.newKeySet<String>()
-    private val detectorApps = ConcurrentHashMap.newKeySet<String>()
-    private val systemApps = ConcurrentHashMap.newKeySet<String>()
-    private val frameworkHooks = mutableListOf<IFrameworkHook>()
-    @Volatile var filterCount = 0
+    @Volatile
+    var logcatAvailable = false
 
-    fun initWithPms(binder: IBinder, classLoader: ClassLoader) {
-        try {
-            val stubClass = Class.forName("android.content.pm.IPackageManager\$Stub")
-            pms = stubClass.getDeclaredMethod("asInterface", IBinder::class.java).invoke(null, binder)
-            XR.log("$TAG: PMS proxy obtained")
-        } catch (e: Throwable) { XR.logE("$TAG: PMS proxy failed: ${e.message}", e) }
-        loadSystemApps()
+    private lateinit var dataDir: String
+    private lateinit var configFile: File
+    private lateinit var logFile: File
+    private lateinit var oldLogFile: File
+
+    private val configLock = Any()
+    private val loggerLock = Any()
+    private val systemApps = mutableSetOf<String>()
+    private val frameworkHooks = mutableSetOf<IFrameworkHook>()
+
+    var config = JsonConfig().apply { detailLog = true }
+        private set
+
+    var filterCount = 0
+        @JvmName("getFilterCountInternal") get
+        set(value) {
+            field = value
+            if (field % 100 == 0) {
+                synchronized(configLock) {
+                    File("$dataDir/filter_count").writeText(field.toString())
+                }
+            }
+        }
+
+    init {
+        searchDataDir()
+        instance = this
         loadConfig()
         installHooks()
-        XR.log("$TAG: initialized (${hiddenPackages.size} hidden)")
+        logI(TAG, "Turbo service initialized")
     }
 
-    private fun loadSystemApps() {
-        val p = pms ?: return
-        try {
-            val m = p.javaClass.getMethod("getInstalledApplications", Long::class.javaPrimitiveType, Int::class.javaPrimitiveType)
-            val list = Utils.binderLocalScope { m.invoke(p, 0L, 0) as? List<*> } ?: return
-            systemApps.clear()
-            for (app in list) {
-                try {
-                    val flags = app!!.javaClass.getField("flags").getInt(app)
-                    if ((flags and 0x1) != 0) {
-                        app.javaClass.getField("packageName").get(app)?.toString()?.let { systemApps.add(it) }
-                    }
-                } catch (_: Throwable) {}
+    private fun searchDataDir() {
+        File("/data/system").list()?.forEach {
+            if (it.startsWith("panda_turbo")) {
+                if (!this::dataDir.isInitialized) {
+                    val newDir = File("/data/misc/$it")
+                    File("/data/system/$it").renameTo(newDir)
+                    dataDir = newDir.path
+                } else {
+                    File("/data/system/$it").deleteRecursively()
+                }
             }
-        } catch (e: Throwable) { XR.logE("$TAG: loadSystemApps: ${e.message}", e) }
+        }
+        File("/data/misc").list()?.forEach {
+            if (it.startsWith("panda_turbo")) {
+                if (!this::dataDir.isInitialized) {
+                    dataDir = "/data/misc/$it"
+                } else if (dataDir != "/data/misc/$it") {
+                    File("/data/misc/$it").deleteRecursively()
+                }
+            }
+        }
+        if (!this::dataDir.isInitialized) {
+            dataDir = "/data/misc/panda_turbo_" + Utils.generateRandomString(16)
+        }
+
+        File("$dataDir/log").mkdirs()
+        configFile = File("$dataDir/config.json")
+        logFile = File("$dataDir/log/runtime.log")
+        oldLogFile = File("$dataDir/log/old.log")
+        logFile.renameTo(oldLogFile)
+        logFile.createNewFile()
+
+        logcatAvailable = true
+        logI(TAG, "Data dir: $dataDir")
     }
 
     private fun loadConfig() {
-        reloadDefaults()
-        (readConfigViaShell() ?: readConfigDirect())?.let { parseConfig(it) }
+        File("$dataDir/filter_count").also {
+            runCatching {
+                if (it.exists()) filterCount = it.readText().toInt()
+            }.onFailure { e ->
+                logW(TAG, "Failed to load filter count, set to 0", e)
+                it.writeText("0")
+            }
+        }
+        if (!configFile.exists()) {
+            logI(TAG, "Config file not found")
+            return
+        }
+        val loading = runCatching {
+            val json = configFile.readText()
+            JsonConfig.parse(json)
+        }.getOrElse {
+            logE(TAG, "Failed to parse config.json", it)
+            return
+        }
+        if (loading.configVersion != BuildConfig.CONFIG_VERSION) {
+            logW(TAG, "Config version mismatch, need to reload")
+            return
+        }
+        config = loading
+        logI(TAG, "Config loaded")
     }
 
-    private fun reloadDefaults() {
-        hiddenPackages.clear()
-        detectorApps.clear()
-        listOf("com.topjohnwu.magisk", "me.bmax.apatch", "org.lsposed.manager", "com.pandasu.turbo").forEach { hiddenPackages.add(it) }
-        listOf("icu.nullptr.applistdetector", "com.zhenxi.hunter", "com.scottyab.rootbeer.sample").forEach { detectorApps.add(it) }
+    private fun installHooks() {
+        Utils.getInstalledApplicationsCompat(pms, 0, 0).mapNotNullTo(systemApps) {
+            if (it.flags and ApplicationInfo.FLAG_SYSTEM != 0) it.packageName else null
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            frameworkHooks.add(PmsHookTarget36(this))
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            frameworkHooks.add(PlatformCompatHook(this))
+        }
+
+        frameworkHooks.forEach(IFrameworkHook::load)
+        logI(TAG, "Hooks installed")
     }
 
-    private fun readConfigViaShell(): String? = try {
-        val p = Runtime.getRuntime().exec(arrayOf("cat", CONFIG_PATH))
-        val txt = p.inputStream.bufferedReader().use { it.readText() }
-        p.waitFor()
-        if (txt.isNotEmpty()) txt else null
-    } catch (_: Throwable) { null }
+    fun isHookEnabled(packageName: String) = config.scope.containsKey(packageName)
 
-    private fun readConfigDirect(): String? = try { File(CONFIG_PATH).takeIf { it.exists() }?.readText() } catch (_: Throwable) { null }
+    fun shouldHide(caller: String?, query: String?): Boolean {
+        if (caller == null || query == null) return false
+        if (caller in Constants.packagesShouldNotHide || query in Constants.packagesShouldNotHide) return false
+        // GMS/GSF 特殊处理：避免 HMA app 在 GMS 下崩溃
+        if ((caller == Constants.GMS_PACKAGE_NAME || caller == Constants.GSF_PACKAGE_NAME) 
+            && query == Constants.APP_PACKAGE_NAME) return false
+        if (caller == query) return false
+        val appConfig = config.scope[caller] ?: return false
+        if (appConfig.useWhitelist && appConfig.excludeSystemApps && query in systemApps) return false
 
-    private fun parseConfig(content: String) {
-        // Simple line-based: package names, one per line, # for comments
-        content.lines().forEach { line ->
-            val pkg = line.substringBefore("#").trim()
-            if (pkg.isNotEmpty() && !pkg.startsWith("#")) hiddenPackages.add(pkg)
+        if (query in appConfig.extraAppList) return !appConfig.useWhitelist
+        for (tplName in appConfig.applyTemplates) {
+            val tpl = config.templates[tplName]!!
+            if (query in tpl.appList) return !appConfig.useWhitelist
+        }
+
+        return appConfig.useWhitelist
+    }
+
+    override fun stopService(cleanEnv: Boolean) {
+        logI(TAG, "Stop service")
+        synchronized(loggerLock) {
+            logcatAvailable = false
+        }
+        synchronized(configLock) {
+            frameworkHooks.forEach(IFrameworkHook::unload)
+            frameworkHooks.clear()
+            if (cleanEnv) {
+                logI(TAG, "Clean runtime environment")
+                File(dataDir).deleteRecursively()
+                return
+            }
+        }
+        instance = null
+    }
+
+    fun addLog(parsedMsg: String) {
+        synchronized(loggerLock) {
+            if (!logcatAvailable) return
+            if (logFile.length() / 1024 > config.maxLogSize) clearLogs()
+            logFile.appendText(parsedMsg)
         }
     }
 
-    fun shouldHide(caller: String?, target: String?): Boolean {
-        if (caller == null || target == null) return false
-        if (caller in Utils.packagesShouldNotHide || target in Utils.packagesShouldNotHide) return false
-        if (caller == target) return false
-        if (detectorApps.contains(caller)) return false
-        return hiddenPackages.contains(target)
+    override fun syncConfig(json: String) {
+        synchronized(configLock) {
+            configFile.writeText(json)
+            val newConfig = JsonConfig.parse(json)
+            if (newConfig.configVersion != BuildConfig.CONFIG_VERSION) {
+                logW(TAG, "Sync config: version mismatch, need reboot")
+                return
+            }
+            config = newConfig
+            frameworkHooks.forEach(IFrameworkHook::onConfigChanged)
+        }
+        logD(TAG, "Config synced")
     }
 
-    fun isHookEnabled(pkg: String) = true
+    override fun getServiceVersion() = BuildConfig.SERVICE_VERSION
 
-    private fun installHooks() {
-        frameworkHooks.add(PmsHookTarget36(this))
-        frameworkHooks.add(PlatformCompatHook(this))
-        frameworkHooks.add(SafetyNetHook(this))
-        frameworkHooks.add(XposedBridgeHook(this))
-        frameworkHooks.forEach { try { it.load() } catch (e: Throwable) { XR.logE("$TAG: hook failed: ${e.message}", e) } }
+    override fun getFilterCount() = filterCount
+
+    override fun getLogs() = synchronized(loggerLock) {
+        logFile.readText()
     }
 
-    fun unload() { frameworkHooks.forEach { try { it.unload() } catch (_: Throwable) {} }; frameworkHooks.clear() }
+    override fun clearLogs() {
+        synchronized(loggerLock) {
+            oldLogFile.delete()
+            logFile.renameTo(oldLogFile)
+            logFile.createNewFile()
+        }
+    }
 }

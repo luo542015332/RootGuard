@@ -31,8 +31,14 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled true  // R8 needed to strip Xposed/EzXHelper stubs
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -88,6 +94,9 @@ android {
 }
 
 dependencies {
+    // Xposed module - LSPosed hooks (merged at runtime)
+    
+
     // Shizuku
     implementation(name: 'shizuku-aidl-13.1.5', ext: 'aar')
     implementation(name: 'shizuku-shared-13.1.5', ext: 'aar')
@@ -125,8 +134,24 @@ dependencies {
     // OkHttp
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 
-    // Xposed API - compile-only stub (LSPosed provides impl at runtime)
-    compileOnly files('libs/xposed-api-stub.jar')
+    // Xposed API - compileOnly, provided by LSPosed at runtime
+    // IMPORTANT: These classes MUST NOT be compiled into the APK DEX.
+    // R8 rules below ensure they are excluded from the final DEX.
+    compileOnly 'de.robv.android.xposed:api:82'
+    compileOnly 'de.robv.android.xposed:api:82:sources'
+
+    // EzXHelper - compileOnly ONLY. Bundling it into APK DEX causes
+    // LSPosed to reject the module with "Xposed API classes compiled into APK".
+    compileOnly 'com.github.kyuubiran:EzXHelper:1.0.3'
+
+    // Hidden API stubs for IPackageManager, SystemProperties, etc.
+    compileOnly 'dev.rikka.hidden:stub:4.3.3'
+    
+    // Hidden API compat for ActivityManagerApis, UidObserverAdapter
+    implementation 'dev.rikka.hidden:compat:4.3.3'
+
+    // Kotlinx Serialization for config
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3'
 
     // Debug
     debugImplementation 'androidx.compose.ui:ui-tooling'

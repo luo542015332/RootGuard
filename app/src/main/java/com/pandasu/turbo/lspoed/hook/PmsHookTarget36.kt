@@ -1,105 +1,122 @@
 package com.pandasu.turbo.lspoed.hook
 
 import android.os.Binder
-import com.pandasu.turbo.lspoed.TurboService
-import com.pandasu.turbo.lspoed.Utils
-import com.pandasu.turbo.lspoed.XR
-import java.util.concurrent.atomic.AtomicReference
+import android.os.Build
+import androidx.annotation.RequiresApi
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XC_MethodHook
+import com.pandasu.turbo.lspoed.*
+import java.lang.reflect.Method
 
+@RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
 class PmsHookTarget36(private val service: TurboService) : IFrameworkHook {
-    companion object { private const val TAG = "Pms36" }
 
-    private val getPackagesForUidMethod by lazy {
-        try {
-            XR.findClass("com.android.server.pm.Computer").getDeclaredMethod("getPackagesForUid", Int::class.javaPrimitiveType)
-        } catch (_: Throwable) { null }
+    companion object {
+        private const val TAG = "PmsHookTarget36"
     }
 
-    private val hooks = mutableListOf<Any>()
-    private var lastFilteredApp = AtomicReference<String?>(null)
+    private var hook: XC_MethodHook.Unhook? = null
+    private var expHook: XC_MethodHook.Unhook? = null
+    private val lastFilteredApp = java.util.concurrent.atomic.AtomicReference<String?>(null)
 
-    override fun load() {
-        hookShouldFilterApplication()
-        hookGetArchivedPackageInternal()
-    }
+    /**
+     * 在类及其父类中查找方法（不含接口）
+     */
+    private fun findMethodDeep(className: String, methodName: String): Method? {
+        var clazz: Class<*>? = null
+        try { clazz = Class.forName(className) }
+        catch (_: Throwable) { return null }
 
-    private fun hookShouldFilterApplication() {
-        try {
-            val clazz = XR.findClass("com.android.server.pm.AppsFilterImpl")
-            val method = findMethodInHierarchy(clazz, "shouldFilterApplication") ?: throw NoSuchMethodException("shouldFilterApplication")
-            method.isAccessible = true
-            val unhook = XR.hookMethod(method, before = { param ->
-                runCatching {
-                    val args = XR.paramGetArgs(param) ?: return@hookMethod false
-                    val useSnapshot = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU
-                    val callingUid = if (useSnapshot) args.getOrNull(1) as? Int ?: return@hookMethod false else args.getOrNull(0) as? Int ?: return@hookMethod false
-                    if (callingUid == 1000) return@hookMethod false
-
-                    val snapshot = if (useSnapshot) args[0] else null
-                    val callingApps = if (snapshot != null && getPackagesForUidMethod != null) {
-                        Utils.binderLocalScope { @Suppress("UNCHECKED_CAST") getPackagesForUidMethod!!.invoke(snapshot, callingUid) as? Array<String> }
-                    } else {
-                        getPackagesForUidFallback(callingUid)
-                    } ?: return@hookMethod false
-
-                    val targetIdx = if (useSnapshot) 3 else 2
-                    val targetPkg = Utils.getPackageNameFromPackageSettings(args[targetIdx] ?: return@hookMethod false) ?: return@hookMethod false
-
-                    for (caller in callingApps) {
-                        if (service.shouldHide(caller, targetPkg)) {
-                            XR.paramSetResult(param, true)
-                            service.filterCount++
-                            val last = lastFilteredApp.getAndSet(caller)
-                            if (last != caller) XR.log("$TAG: hide [$caller]->$targetPkg")
-                            return@hookMethod false
-                        }
-                    }
-                }.onFailure { e -> XR.logE("$TAG: fatal, disabling: ${e.message}", e); unload() }
-                false
-            }, after = null)
-            if (unhook != null) hooks.add(unhook)
-        } catch (e: Throwable) { XR.logE("$TAG: shouldFilterApplication hook failed: ${e.message}", e) }
-    }
-
-    private fun hookGetArchivedPackageInternal() {
-        try {
-            val clazz = XR.findClass("com.android.server.pm.PackageManagerService")
-            val method = findMethodInHierarchy(clazz, "getArchivedPackageInternal") ?: return
-            method.isAccessible = true
-            val unhook = XR.hookMethod(method, before = { param ->
-                runCatching {
-                    val callingUid = Binder.getCallingUid()
-                    if (callingUid == 1000) return@hookMethod false
-                    val callingApps = getPackagesForUidFallback(callingUid) ?: return@hookMethod false
-                    val targetPkg = XR.paramGetArg(param, 0)?.toString() ?: return@hookMethod false
-                    for (caller in callingApps) {
-                        if (service.shouldHide(caller, targetPkg)) {
-                            XR.paramSetResult(param, null)
-                            service.filterCount++
-                            XR.log("$TAG: archived hide [$caller]->$targetPkg")
-                            return@hookMethod false
-                        }
-                    }
-                }.onFailure { e -> XR.logE("$TAG: archived error: ${e.message}", e) }
-                false
-            }, after = null)
-            if (unhook != null) hooks.add(unhook)
-        } catch (_: Throwable) {}
-    }
-
-    private fun getPackagesForUidFallback(uid: Int): Array<String>? {
-        val pms = service.pms ?: return null
-        return try { Utils.binderLocalScope { pms.javaClass.getMethod("getPackagesForUid", Int::class.javaPrimitiveType).invoke(pms, uid) as? Array<String> } } catch (_: Throwable) { null }
-    }
-
-    private fun findMethodInHierarchy(clazz: Class<*>, name: String): java.lang.reflect.Method? {
-        var current: Class<*>? = clazz
-        while (current != null && current != Any::class.java) {
-            try { return current.getDeclaredMethod(name) } catch (_: Throwable) {}
-            current = current.superclass
+        while (clazz != null) {
+            clazz.declaredMethods.forEach { m ->
+                if (m.name == methodName) return m
+            }
+            clazz = clazz.superclass
         }
         return null
     }
 
-    override fun unload() { hooks.forEach { XR.unhook(it) }; hooks.clear() }
+    override fun load() {
+        logI(TAG, "Load hook")
+
+        // Hook AppsFilterImpl.shouldFilterApplication
+        runCatching {
+            val method = findMethodDeep("com.android.server.pm.AppsFilterImpl", "shouldFilterApplication")
+                ?: findMethodDeep("com.android.server.pm.AppsFilter", "shouldFilterApplication")
+                ?: throw IllegalStateException("shouldFilterApplication not found")
+
+            hook = XposedBridge.hookMethod(method, object : XC_MethodHook() {
+                override fun beforeHookedMethod(param: MethodHookParam) {
+                    runCatching {
+                        val callingUid = param.args[1] as Int
+                        if (callingUid == Constants.UID_SYSTEM) return@beforeHookedMethod
+
+                        val getPackagesForUid = service.pms.javaClass.getDeclaredMethod(
+                            "getPackagesForUid", Int::class.java
+                        )
+                        getPackagesForUid.isAccessible = true
+                        @Suppress("UNCHECKED_CAST")
+                        val callingApps = Utils.binderLocalScope {
+                            getPackagesForUid.invoke(service.pms, callingUid) as? Array<String>
+                        } ?: return@beforeHookedMethod
+
+                        val targetApp = Utils.getPackageNameFromPackageSettings(param.args[3])
+                        for (caller in callingApps) {
+                            if (service.shouldHide(caller, targetApp)) {
+                                param.result = java.lang.Boolean.TRUE
+                                service.filterCount++
+                                val last = lastFilteredApp.getAndSet(caller)
+                                if (last != caller) logI(TAG, "@filterApp: query from $caller")
+                                return@beforeHookedMethod
+                            }
+                        }
+                    }.onFailure {
+                        logE(TAG, "Fatal", it)
+                        unload()
+                    }
+                }
+            })
+            logI(TAG, "Hooked shouldFilterApplication")
+        }.onFailure { logE(TAG, "shouldFilterApplication failed", it) }
+
+        // Hook PackageManagerService.getArchivedPackageInternal (Android 14+ archive feature)
+        runCatching {
+            val method = findMethodDeep("com.android.server.pm.PackageManagerService", "getArchivedPackageInternal")
+            if (method != null) {
+                expHook = XposedBridge.hookMethod(method, object : XC_MethodHook() {
+                    override fun beforeHookedMethod(param: MethodHookParam) {
+                        runCatching {
+                            val callingUid = Binder.getCallingUid()
+                            if (callingUid == Constants.UID_SYSTEM) return@beforeHookedMethod
+                            val callingApps = Utils.binderLocalScope {
+                                service.pms.getPackagesForUid(callingUid)
+                            } ?: return@beforeHookedMethod
+
+                            val targetApp = param.args[0].toString()
+                            for (caller in callingApps) {
+                                if (service.shouldHide(caller, targetApp)) {
+                                    param.result = null
+                                    service.filterCount++
+                                    val last = lastFilteredApp.getAndSet(caller)
+                                    if (last != caller) logI(TAG, "@getArchived: query from $caller")
+                                    return@beforeHookedMethod
+                                }
+                            }
+                        }.onFailure {
+                            logE(TAG, "Fatal", it)
+                            unload()
+                        }
+                    }
+                })
+                logI(TAG, "Hooked getArchivedPackageInternal")
+            } else {
+                logI(TAG, "getArchivedPackageInternal not found, skipping")
+            }
+        }.onFailure { logE(TAG, "getArchivedPackageInternal failed", it) }
+    }
+
+    override fun unload() {
+        hook?.unhook(); hook = null
+        expHook?.unhook(); expHook = null
+    }
 }

@@ -1,0 +1,9 @@
+# Keep LSPosed module classes in a separate DEX
+-keep class com.pandasu.turbo.lspoed.** { *; }
+-keep class com.pandasu.turbo.xposed.** { *; }
+
+# Keep EzXHelper classes
+-keep class com.github.kyuubiran.ezxhelper.** { *; }
+
+# Keep Hidden API compat
+-keep class rikka.hidden.compat.** { *; }

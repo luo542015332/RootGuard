@@ -1,37 +1,77 @@
 package com.pandasu.turbo.lspoed.hook
 
+import android.app.IApplicationThread
 import android.content.pm.ApplicationInfo
-import com.pandasu.turbo.lspoed.TurboService
-import com.pandasu.turbo.lspoed.Utils
-import com.pandasu.turbo.lspoed.XR
+import android.os.Build
+import android.os.SystemProperties
+import androidx.annotation.RequiresApi
+import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XC_MethodHook
+import com.pandasu.turbo.lspoed.*
+import java.lang.reflect.Method
 
+@RequiresApi(Build.VERSION_CODES.R)
 class PlatformCompatHook(private val service: TurboService) : IFrameworkHook {
-    companion object { private const val TAG = "PlatformCompat"; private const val CHANGE_ID_FORCE_MOUNT_DATA = 143937733L }
-    private var hook: Any? = null
 
-    override fun load() {
-        try {
-            val clazz = XR.findClass("com.android.server.compat.PlatformCompat")
-            val method = clazz.getDeclaredMethod("isChangeEnabled", Long::class.javaPrimitiveType, ApplicationInfo::class.java)
-            method.isAccessible = true
-            hook = XR.hookMethod(method, before = { param ->
-                runCatching {
-                    val changeId = XR.paramGetArg(param, 0) as? Long ?: return@hookMethod false
-                    if (changeId != CHANGE_ID_FORCE_MOUNT_DATA) return@hookMethod false
-                    val appInfo = XR.paramGetArg(param, 1) as? ApplicationInfo ?: return@hookMethod false
-                    val pkgs = Utils.binderLocalScope { (service.pms?.javaClass?.getMethod("getPackagesForUid", Int::class.javaPrimitiveType)?.invoke(service.pms, appInfo.uid) as? Array<String>) } ?: return@hookMethod false
-                    for (pkg in pkgs) {
-                        if (service.isHookEnabled(pkg)) {
-                            XR.paramSetResult(param, true)
-                            XR.log("$TAG: force mount data for $pkg")
-                            return@hookMethod false
-                        }
-                    }
-                }.onFailure { e -> XR.logE("$TAG: error: ${e.message}", e) }
-                false
-            }, after = null)
-        } catch (e: Throwable) { XR.logE("$TAG: hook failed: ${e.message}", e) }
+    companion object {
+        private const val TAG = "PlatformCompatHook"
+        private const val CHANGE_ID_FORCE_MOUNT_DATA = 143937733L  // PACKAGE_FLAG_FORCE_DATA_APP_DATA_ISOLATION
+
+        private val sAppDataIsolationEnabled: Boolean
+            get() = SystemProperties.getBoolean(Constants.ANDROID_APP_DATA_ISOLATION_ENABLED_PROPERTY, true)
     }
 
-    override fun unload() { hook?.let { XR.unhook(it) }; hook = null }
+    private var hook: XC_MethodHook.Unhook? = null
+
+    override fun load() {
+        if (!service.config.forceMountData) return
+        logI(TAG, "Load hook (forceMountData=${service.config.forceMountData})")
+        logI(TAG, "App data isolation: $sAppDataIsolationEnabled")
+
+        runCatching {
+            val clazz = Class.forName("com.android.server.compat.PlatformCompat")
+            val method: Method = clazz.getDeclaredMethod("isChangeEnabled", Long::class.java, IApplicationThread::class.java, String::class.java, Int::class.java, ApplicationInfo::class.java)
+
+            hook = XposedBridge.hookMethod(method, object : XC_MethodHook() {
+                override fun beforeHookedMethod(param: MethodHookParam) {
+                    runCatching {
+                        val changeId = param.args[0] as Long
+                        if (changeId != CHANGE_ID_FORCE_MOUNT_DATA) return@beforeHookedMethod
+
+                        val appInfo = param.args[4] as ApplicationInfo
+                        val apps = Utils.binderLocalScope {
+                            service.pms.getPackagesForUid(appInfo.uid)
+                        } ?: return@beforeHookedMethod
+
+                        for (pkg in apps) {
+                            if (service.isHookEnabled(pkg)) {
+                                if (sAppDataIsolationEnabled) param.result = true
+                                logI(TAG, "forceMountData uid=${appInfo.uid} pkg=$pkg")
+                                return@beforeHookedMethod
+                            }
+                        }
+                    }.onFailure {
+                        logE(TAG, "Fatal error, unload", it)
+                        unload()
+                    }
+                }
+            })
+            logI(TAG, "Hooked PlatformCompat.isChangeEnabled")
+        }.onFailure {
+            logE(TAG, "Failed to hook PlatformCompat", it)
+        }
+    }
+
+    override fun unload() {
+        hook?.unhook()
+        hook = null
+    }
+
+    override fun onConfigChanged() {
+        if (service.config.forceMountData) {
+            if (hook == null) load()
+        } else {
+            if (hook != null) unload()
+        }
+    }
 }

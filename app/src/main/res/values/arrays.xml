@@ -6,11 +6,8 @@
         <item>系统应用</item>
     </string-array>
 
-    <!-- LSPoed 模块作用域：Hook 框架 + 所有 App -->
-    <string-array name="lspoed_scope">
+    <!-- LSPoed 模块作用域：只 Hook 系统框架 -->
+    <string-array name="lspoed_scope" translatable="false">
         <item>android</item>
-        <item>com.android.systemui</item>
-        <item>com.android.packageinstaller</item>
-        <item>*</item>
     </string-array>
 </resources>

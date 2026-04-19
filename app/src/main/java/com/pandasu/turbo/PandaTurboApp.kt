@@ -6,9 +6,12 @@ import com.pandasu.turbo.util.BatterySpoofManager
 
 class PandaTurboApp : MultiDexApplication() {
 
+    @JvmField
+    var isHooked = false
+
     override fun onCreate() {
         super.onCreate()
-        Log.d("PandaTurbo", "PandaTurboApp onCreate")
+        Log.d("PandaTurbo", "PandaTurboApp onCreate, isHooked=$isHooked")
 
         // 注册开机广播 → 自动激活电池伪装绑定
         BatterySpoofManager.registerBootReceiver(this)
