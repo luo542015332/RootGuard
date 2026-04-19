@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator$Companion;
 
@@ -73,7 +73,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 262
     invoke-direct {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$AbstractTextSegmentIterator;-><init>()V
@@ -82,7 +82,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;-><init>()V
 
@@ -90,7 +90,7 @@
 .end method
 
 .method public static final synthetic access$getInstance$cp()Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;
-    .registers 1
+    .locals 1
 
     .line 262
     sget-object v0, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->instance:Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;
@@ -99,7 +99,7 @@
 .end method
 
 .method public static final synthetic access$setInstance$cp(Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;
 
     .line 262
@@ -109,11 +109,11 @@
 .end method
 
 .method private final isEndBoundary(I)Z
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
 
     .line 335
-    if-lez p1, :cond_26
+    if-lez p1, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getText()Ljava/lang/String;
 
@@ -127,7 +127,7 @@
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_26
+    if-eq v0, v1, :cond_1
 
     .line 336
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getText()Ljava/lang/String;
@@ -138,7 +138,7 @@
 
     move-result v0
 
-    if-eq p1, v0, :cond_24
+    if-eq p1, v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getText()Ljava/lang/String;
 
@@ -148,23 +148,23 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_26
+    if-ne v0, v1, :cond_1
 
-    :cond_24
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     const/4 v0, 0x0
 
     .line 334
-    :goto_27
+    :goto_0
     return v0
 .end method
 
 .method private final isStartBoundary(I)Z
-    .registers 5
+    .locals 3
     .param p1, "index"    # I
 
     .line 328
@@ -178,10 +178,10 @@
 
     const/16 v1, 0xa
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     .line 329
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getText()Ljava/lang/String;
 
@@ -193,25 +193,25 @@
 
     move-result v0
 
-    if-ne v0, v1, :cond_1c
+    if-ne v0, v1, :cond_1
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     const/4 v0, 0x0
 
     .line 327
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method public following(I)[I
-    .registers 7
+    .locals 5
     .param p1, "current"    # I
 
     .line 275
@@ -227,33 +227,33 @@
     .local v0, "textLength":I
     const/4 v1, 0x0
 
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     .line 277
     return-object v1
 
     .line 279
-    :cond_c
-    if-lt p1, v0, :cond_f
+    :cond_0
+    if-lt p1, v0, :cond_1
 
     .line 280
     return-object v1
 
     .line 282
-    :cond_f
+    :cond_1
     move v2, p1
 
     .line 283
     .local v2, "start":I
-    if-gez v2, :cond_13
+    if-gez v2, :cond_2
 
     .line 284
     const/4 v2, 0x0
 
     .line 286
-    :cond_13
-    :goto_13
-    if-ge v2, v0, :cond_2a
+    :cond_2
+    :goto_0
+    if-ge v2, v0, :cond_3
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getText()Ljava/lang/String;
 
@@ -265,49 +265,49 @@
 
     const/16 v4, 0xa
 
-    if-ne v3, v4, :cond_2a
+    if-ne v3, v4, :cond_3
 
     .line 287
     invoke-direct {p0, v2}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->isStartBoundary(I)Z
 
     move-result v3
 
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_3
 
     .line 289
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 291
-    :cond_2a
-    if-lt v2, v0, :cond_2d
+    :cond_3
+    if-lt v2, v0, :cond_4
 
     .line 292
     return-object v1
 
     .line 294
-    :cond_2d
+    :cond_4
     add-int/lit8 v1, v2, 0x1
 
     .line 295
     .local v1, "end":I
-    :goto_2f
-    if-ge v1, v0, :cond_3a
+    :goto_1
+    if-ge v1, v0, :cond_5
 
     invoke-direct {p0, v1}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->isEndBoundary(I)Z
 
     move-result v3
 
-    if-nez v3, :cond_3a
+    if-nez v3, :cond_5
 
     .line 296
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 298
-    :cond_3a
+    :cond_5
     invoke-virtual {p0, v2, v1}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getRange(II)[I
 
     move-result-object v3
@@ -316,7 +316,7 @@
 .end method
 
 .method public preceding(I)[I
-    .registers 7
+    .locals 5
     .param p1, "current"    # I
 
     .line 302
@@ -332,33 +332,33 @@
     .local v0, "textLength":I
     const/4 v1, 0x0
 
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     .line 304
     return-object v1
 
     .line 306
-    :cond_c
-    if-gtz p1, :cond_f
+    :cond_0
+    if-gtz p1, :cond_1
 
     .line 307
     return-object v1
 
     .line 309
-    :cond_f
+    :cond_1
     move v2, p1
 
     .line 310
     .local v2, "end":I
-    if-le v2, v0, :cond_13
+    if-le v2, v0, :cond_2
 
     .line 311
     move v2, v0
 
     .line 313
-    :cond_13
-    :goto_13
-    if-lez v2, :cond_2c
+    :cond_2
+    :goto_0
+    if-lez v2, :cond_3
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getText()Ljava/lang/String;
 
@@ -372,48 +372,48 @@
 
     const/16 v4, 0xa
 
-    if-ne v3, v4, :cond_2c
+    if-ne v3, v4, :cond_3
 
     invoke-direct {p0, v2}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->isEndBoundary(I)Z
 
     move-result v3
 
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_3
 
     .line 314
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 316
-    :cond_2c
-    if-gtz v2, :cond_2f
+    :cond_3
+    if-gtz v2, :cond_4
 
     .line 317
     return-object v1
 
     .line 319
-    :cond_2f
+    :cond_4
     add-int/lit8 v1, v2, -0x1
 
     .line 320
     .local v1, "start":I
-    :goto_31
-    if-lez v1, :cond_3c
+    :goto_1
+    if-lez v1, :cond_5
 
     invoke-direct {p0, v1}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->isStartBoundary(I)Z
 
     move-result v3
 
-    if-nez v3, :cond_3c
+    if-nez v3, :cond_5
 
     .line 321
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_31
+    goto :goto_1
 
     .line 323
-    :cond_3c
+    :cond_5
     invoke-virtual {p0, v1, v2}, Landroidx/compose/ui/platform/AccessibilityIterators$ParagraphTextSegmentIterator;->getRange(II)[I
 
     move-result-object v3

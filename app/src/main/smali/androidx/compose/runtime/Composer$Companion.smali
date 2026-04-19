@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/Composer$Companion;
 
@@ -67,7 +67,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1066
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final getEmpty()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1072
     sget-object v0, Landroidx/compose/runtime/Composer$Companion;->Empty:Ljava/lang/Object;
@@ -87,7 +87,7 @@
 .end method
 
 .method public final setTracer(Landroidx/compose/runtime/CompositionTracer;)V
-    .registers 3
+    .locals 1
     .param p1, "tracer"    # Landroidx/compose/runtime/CompositionTracer;
 
     const-string/jumbo v0, "tracer"

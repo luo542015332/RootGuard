@@ -27,19 +27,19 @@
 
 # direct methods
 .method public static final ToggleableState(Z)Landroidx/compose/ui/state/ToggleableState;
-    .registers 2
+    .locals 1
     .param p0, "value"    # Z
 
     .line 45
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     sget-object v0, Landroidx/compose/ui/state/ToggleableState;->On:Landroidx/compose/ui/state/ToggleableState;
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     sget-object v0, Landroidx/compose/ui/state/ToggleableState;->Off:Landroidx/compose/ui/state/ToggleableState;
 
-    :goto_7
+    :goto_0
     return-object v0
 .end method

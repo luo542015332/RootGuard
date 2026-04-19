@@ -71,7 +71,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/Recomposer;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -125,7 +125,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -139,7 +139,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -168,7 +168,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -179,7 +179,7 @@
 
     const/4 v2, 0x0
 
-    packed-switch v1, :pswitch_data_56
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -189,28 +189,28 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
     .local p1, "$result":Ljava/lang/Object;
-    :try_start_14
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_17
-    .catchall {:try_start_14 .. :try_end_17} :catchall_18
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 238
-    :catchall_18
+    :catchall_0
     move-exception v1
 
-    goto :goto_46
+    goto :goto_1
 
     .line 231
     .end local v0    # "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1a
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -221,7 +221,7 @@
     nop
 
     .line 233
-    :try_start_1f
+    :try_start_1
     iget-object v3, v1, Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;->$newRecomposer:Landroidx/compose/runtime/Recomposer;
 
     move-object v4, v1
@@ -235,22 +235,22 @@
     invoke-virtual {v3, v4}, Landroidx/compose/runtime/Recomposer;->join(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v3
-    :try_end_2b
-    .catchall {:try_start_1f .. :try_end_2b} :catchall_42
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-ne v3, v0, :cond_2e
+    if-ne v3, v0, :cond_0
 
     .line 231
     return-object v0
 
     .line 233
-    :cond_2e
+    :cond_0
     move-object v0, v1
 
     .line 238
     .end local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
     .restart local v0    # "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
-    :goto_2f
+    :goto_0
     iget-object v1, v0, Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;->$rootView:Landroid/view/View;
 
     invoke-static {v1}, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->getCompositionContext(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;
@@ -261,7 +261,7 @@
     .local v1, "viewTagRecomposer":Landroidx/compose/runtime/CompositionContext;
     iget-object v3, v0, Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;->$newRecomposer:Landroidx/compose/runtime/Recomposer;
 
-    if-ne v1, v3, :cond_3e
+    if-ne v1, v3, :cond_1
 
     .line 240
     .end local v1    # "viewTagRecomposer":Landroidx/compose/runtime/CompositionContext;
@@ -270,7 +270,7 @@
     invoke-static {v1, v2}, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->setCompositionContext(Landroid/view/View;Landroidx/compose/runtime/CompositionContext;)V
 
     .line 242
-    :cond_3e
+    :cond_1
     nop
 
     .line 243
@@ -281,7 +281,7 @@
     .line 238
     .end local v0    # "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
     .local v1, "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
-    :catchall_42
+    :catchall_1
     move-exception v0
 
     move-object v6, v1
@@ -292,7 +292,7 @@
 
     .end local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
     .restart local v0    # "this":Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;
-    :goto_46
+    :goto_1
     iget-object v3, v0, Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;->$rootView:Landroid/view/View;
 
     invoke-static {v3}, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->getCompositionContext(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;
@@ -303,7 +303,7 @@
     .local v3, "viewTagRecomposer":Landroidx/compose/runtime/CompositionContext;
     iget-object v4, v0, Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$unsetJob$1;->$newRecomposer:Landroidx/compose/runtime/Recomposer;
 
-    if-ne v3, v4, :cond_55
+    if-ne v3, v4, :cond_2
 
     .line 240
     .end local v3    # "viewTagRecomposer":Landroidx/compose/runtime/CompositionContext;
@@ -311,12 +311,12 @@
 
     invoke-static {v3, v2}, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->setCompositionContext(Landroid/view/View;Landroidx/compose/runtime/CompositionContext;)V
 
-    :cond_55
+    :cond_2
     throw v1
 
-    :pswitch_data_56
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1a
-        :pswitch_13
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

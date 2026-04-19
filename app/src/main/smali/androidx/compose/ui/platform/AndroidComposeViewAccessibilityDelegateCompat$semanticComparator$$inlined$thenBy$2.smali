@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Comparator;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$semanticComparator$$inlined$thenBy$2;->$this_thenBy:Ljava/util/Comparator;
 
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 8
+    .locals 5
     .param p1, "a"    # Ljava/lang/Object;
     .param p2, "b"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -91,13 +91,13 @@
 
     .line 145
     .local v0, "previousCompare":I
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     move v1, v0
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/semantics/SemanticsNode;
@@ -146,6 +146,6 @@
 
     move-result v1
 
-    :goto_2a
+    :goto_0
     return v1
 .end method

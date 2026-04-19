@@ -58,7 +58,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester$Companion$FocusRequesterFactory;
 
@@ -70,7 +70,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final component1()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 157
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -92,7 +92,7 @@
 .end method
 
 .method public final component10()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 166
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -103,7 +103,7 @@
 .end method
 
 .method public final component11()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 167
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -114,7 +114,7 @@
 .end method
 
 .method public final component12()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 168
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -125,7 +125,7 @@
 .end method
 
 .method public final component13()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 169
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -136,7 +136,7 @@
 .end method
 
 .method public final component14()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 170
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -147,7 +147,7 @@
 .end method
 
 .method public final component15()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 171
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -158,7 +158,7 @@
 .end method
 
 .method public final component16()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 172
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -169,7 +169,7 @@
 .end method
 
 .method public final component2()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 158
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -180,7 +180,7 @@
 .end method
 
 .method public final component3()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 159
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -191,7 +191,7 @@
 .end method
 
 .method public final component4()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 160
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -202,7 +202,7 @@
 .end method
 
 .method public final component5()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 161
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -213,7 +213,7 @@
 .end method
 
 .method public final component6()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 162
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -224,7 +224,7 @@
 .end method
 
 .method public final component7()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 163
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -235,7 +235,7 @@
 .end method
 
 .method public final component8()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 164
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;
@@ -246,7 +246,7 @@
 .end method
 
 .method public final component9()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 165
     new-instance v0, Landroidx/compose/ui/focus/FocusRequester;

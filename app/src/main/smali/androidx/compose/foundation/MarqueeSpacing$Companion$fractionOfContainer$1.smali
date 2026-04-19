@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(F)V
-    .registers 2
+    .locals 0
 
     iput p1, p0, Landroidx/compose/foundation/MarqueeSpacing$Companion$fractionOfContainer$1;->$fraction:F
 
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final calculateSpacing(Landroidx/compose/ui/unit/Density;II)I
-    .registers 5
+    .locals 1
     .param p1, "$this$MarqueeSpacing"    # Landroidx/compose/ui/unit/Density;
     .param p3, "width"    # I
 

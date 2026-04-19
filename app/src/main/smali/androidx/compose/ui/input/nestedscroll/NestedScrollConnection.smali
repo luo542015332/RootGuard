@@ -49,7 +49,7 @@
 
 # direct methods
 .method public static synthetic access$onPostFling-RZ2iAVY$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "consumed"    # J
     .param p3, "available"    # J
@@ -64,7 +64,7 @@
 .end method
 
 .method public static synthetic access$onPostScroll-DzOQY0M$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JJI)J
-    .registers 8
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "consumed"    # J
     .param p3, "available"    # J
@@ -79,7 +79,7 @@
 .end method
 
 .method public static synthetic access$onPreFling-QWom1Mo$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "available"    # J
     .param p3, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -93,7 +93,7 @@
 .end method
 
 .method public static synthetic access$onPreScroll-OzD1aCk$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JI)J
-    .registers 6
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "available"    # J
     .param p3, "source"    # I
@@ -107,7 +107,7 @@
 .end method
 
 .method public static synthetic onPostFling-RZ2iAVY$suspendImpl(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 8
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "consumed"    # J
     .param p3, "available"    # J
@@ -140,7 +140,7 @@
 .end method
 
 .method public static synthetic onPreFling-QWom1Mo$suspendImpl(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "available"    # J
     .param p3, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -174,7 +174,7 @@
 
 # virtual methods
 .method public onPostFling-RZ2iAVY(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJ",
@@ -194,7 +194,7 @@
 .end method
 
 .method public onPostScroll-DzOQY0M(JJI)J
-    .registers 8
+    .locals 2
     .param p1, "consumed"    # J
     .param p3, "available"    # J
     .param p5, "source"    # I
@@ -210,7 +210,7 @@
 .end method
 
 .method public onPreFling-QWom1Mo(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -230,7 +230,7 @@
 .end method
 
 .method public onPreScroll-OzD1aCk(JI)J
-    .registers 6
+    .locals 2
     .param p1, "available"    # J
     .param p3, "source"    # I
 

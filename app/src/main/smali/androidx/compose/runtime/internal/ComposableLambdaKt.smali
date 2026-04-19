@@ -54,7 +54,7 @@
 
 # direct methods
 .method public static final bitsForSlot(II)I
-    .registers 4
+    .locals 2
     .param p0, "bits"    # I
     .param p1, "slot"    # I
 
@@ -73,7 +73,7 @@
 .end method
 
 .method public static final composableLambda(Landroidx/compose/runtime/Composer;IZLjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambda;
-    .registers 7
+    .locals 3
     .param p0, "composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "key"    # I
     .param p2, "tracked"    # Z
@@ -105,7 +105,7 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_0
 
     .line 334
     new-instance v1, Landroidx/compose/runtime/internal/ComposableLambdaImpl;
@@ -120,10 +120,10 @@
     nop
 
     .end local v1    # "value":Landroidx/compose/runtime/internal/ComposableLambdaImpl;
-    goto :goto_2e
+    goto :goto_0
 
     .line 338
-    :cond_25
+    :cond_0
     const-string/jumbo v1, "null cannot be cast to non-null type androidx.compose.runtime.internal.ComposableLambdaImpl"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -133,7 +133,7 @@
     check-cast v1, Landroidx/compose/runtime/internal/ComposableLambdaImpl;
 
     .line 333
-    :goto_2e
+    :goto_0
     nop
 
     .line 340
@@ -152,7 +152,7 @@
 .end method
 
 .method public static final composableLambdaInstance(IZLjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambda;
-    .registers 6
+    .locals 3
     .param p0, "key"    # I
     .param p1, "tracked"    # Z
     .param p2, "block"    # Ljava/lang/Object;
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final differentBits(I)I
-    .registers 2
+    .locals 1
     .param p0, "slot"    # I
 
     .line 36
@@ -200,7 +200,7 @@
 .end method
 
 .method public static final replacableWith(Landroidx/compose/runtime/RecomposeScope;Landroidx/compose/runtime/RecomposeScope;)Z
-    .registers 4
+    .locals 2
     .param p0, "$this$replacableWith"    # Landroidx/compose/runtime/RecomposeScope;
     .param p1, "other"    # Landroidx/compose/runtime/RecomposeScope;
 
@@ -209,16 +209,16 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 56
-    if-eqz p0, :cond_36
+    if-eqz p0, :cond_1
 
     .line 57
     instance-of v0, p0, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
     instance-of v0, p1, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
     .line 58
     move-object v0, p0
@@ -229,13 +229,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_1
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_1
 
     move-object v0, p0
 
@@ -257,26 +257,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_0
 
-    goto :goto_36
+    goto :goto_0
 
-    :cond_34
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
-    :goto_36
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 60
-    :goto_37
+    :goto_1
     return v0
 .end method
 
 .method public static final sameBits(I)I
-    .registers 2
+    .locals 1
     .param p0, "slot"    # I
 
     .line 35

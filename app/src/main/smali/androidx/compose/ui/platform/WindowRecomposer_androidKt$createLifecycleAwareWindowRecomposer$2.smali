@@ -69,7 +69,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/runtime/PausableMonotonicFrameClock;Landroidx/compose/runtime/Recomposer;Lkotlin/jvm/internal/Ref$ObjectRef;Landroid/view/View;)V
-    .registers 6
+    .locals 0
     .param p1, "$runRecomposeScope"    # Lkotlinx/coroutines/CoroutineScope;
     .param p2, "$pausableClock"    # Landroidx/compose/runtime/PausableMonotonicFrameClock;
     .param p3, "$recomposer"    # Landroidx/compose/runtime/Recomposer;
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 14
+    .locals 11
     .param p1, "source"    # Landroidx/lifecycle/LifecycleOwner;
     .param p2, "event"    # Landroidx/lifecycle/Lifecycle$Event;
 
@@ -133,44 +133,44 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_54
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_52
+    goto :goto_0
 
     .line 421
-    :pswitch_19
+    :pswitch_0
     iget-object v0, p0, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2;->$recomposer:Landroidx/compose/runtime/Recomposer;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/Recomposer;->cancel()V
 
-    goto :goto_52
+    goto :goto_0
 
     .line 418
-    :pswitch_1f
+    :pswitch_1
     iget-object v0, p0, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2;->$recomposer:Landroidx/compose/runtime/Recomposer;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/Recomposer;->pauseCompositionFrameClock()V
 
-    goto :goto_52
+    goto :goto_0
 
     .line 408
-    :pswitch_25
+    :pswitch_2
     iget-object v0, p0, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2;->$pausableClock:Landroidx/compose/runtime/PausableMonotonicFrameClock;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/runtime/PausableMonotonicFrameClock;->resume()V
 
     .line 413
-    :cond_2c
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2;->$recomposer:Landroidx/compose/runtime/Recomposer;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/Recomposer;->resumeCompositionFrameClock()V
 
-    goto :goto_52
+    goto :goto_0
 
     .line 380
-    :pswitch_32
+    :pswitch_3
     iget-object v7, p0, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2;->$runRecomposeScope:Lkotlinx/coroutines/CoroutineScope;
 
     const/4 v8, 0x0
@@ -214,16 +214,16 @@
     invoke-static/range {v5 .. v10}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     .line 433
-    :goto_52
+    :goto_0
     return-void
 
     nop
 
-    :pswitch_data_54
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_32
-        :pswitch_25
-        :pswitch_1f
-        :pswitch_19
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

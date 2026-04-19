@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 56
@@ -103,7 +103,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 19
+    .locals 17
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$layout"
@@ -136,8 +136,8 @@
 
     .end local v1    # "index$iv":I
     .local v13, "index$iv":I
-    :goto_13
-    if-ge v13, v12, :cond_30
+    :goto_0
+    if-ge v13, v12, :cond_0
 
     .line 70
     invoke-interface {v10, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -185,11 +185,11 @@
     .end local v14    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v13, v13, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 73
     .end local v13    # "index$iv":I
-    :cond_30
+    :cond_0
     nop
 
     .line 63

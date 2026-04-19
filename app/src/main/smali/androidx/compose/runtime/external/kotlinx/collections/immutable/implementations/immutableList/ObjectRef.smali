@@ -34,7 +34,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # Ljava/lang/Object;
 
     .line 15
@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public final getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 15
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/ObjectRef;->value:Ljava/lang/Object;
@@ -57,7 +57,7 @@
 .end method
 
 .method public final setValue(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     .line 15

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final Path()Landroidx/compose/ui/graphics/Path;
-    .registers 3
+    .locals 3
 
     .line 23
     new-instance v0, Landroidx/compose/ui/graphics/AndroidPath;
@@ -45,7 +45,7 @@
 .end method
 
 .method public static final asAndroidPath(Landroidx/compose/ui/graphics/Path;)Landroid/graphics/Path;
-    .registers 4
+    .locals 3
     .param p0, "$this$asAndroidPath"    # Landroidx/compose/ui/graphics/Path;
 
     const-string v0, "<this>"
@@ -58,7 +58,7 @@
     .local v0, "$i$f$asAndroidPath":I
     instance-of v1, p0, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     .line 36
     move-object v1, p0
@@ -73,7 +73,7 @@
     return-object v1
 
     .line 38
-    :cond_12
+    :cond_0
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v2, "Unable to obtain android.graphics.Path"
@@ -84,7 +84,7 @@
 .end method
 
 .method public static final asComposePath(Landroid/graphics/Path;)Landroidx/compose/ui/graphics/Path;
-    .registers 2
+    .locals 1
     .param p0, "$this$asComposePath"    # Landroid/graphics/Path;
 
     const-string v0, "<this>"

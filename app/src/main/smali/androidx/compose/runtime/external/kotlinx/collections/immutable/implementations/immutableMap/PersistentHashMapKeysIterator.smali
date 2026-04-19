@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;)V
-    .registers 6
+    .locals 4
     .param p1, "node"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -63,8 +63,8 @@
 
     const/4 v2, 0x0
 
-    :goto_b
-    if-ge v2, v0, :cond_17
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     new-instance v3, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeKeysIterator;
 
@@ -74,9 +74,9 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     invoke-direct {p0, p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBaseIterator;-><init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;[Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;)V
 
     .line 180

@@ -88,7 +88,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/snapshots/StateMapMutableEntriesIterator;)V
-    .registers 3
+    .locals 1
     .param p1, "$receiver"    # Landroidx/compose/runtime/snapshots/StateMapMutableEntriesIterator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -136,7 +136,7 @@
 
 # virtual methods
 .method public getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TK;"
@@ -150,7 +150,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -164,7 +164,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 6
     .param p1, "newValue"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -192,12 +192,11 @@
 
     move-result v3
 
-    # getter for: Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->modification:I
     invoke-static {v1}, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->access$getModification(Landroidx/compose/runtime/snapshots/StateMapMutableIterator;)I
 
     move-result v4
 
-    if-ne v3, v4, :cond_2a
+    if-ne v3, v4, :cond_0
 
     .line 364
     const/4 v3, 0x0
@@ -231,7 +230,7 @@
     .line 362
     .end local v3    # "$i$a$-modify-StateMapMutableEntriesIterator$next$1$setValue$1":I
     .end local v4    # "result":Ljava/lang/Object;
-    :cond_2a
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -240,7 +239,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

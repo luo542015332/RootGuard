@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/semantics/SemanticsNode;Ljava/util/Map;)V
-    .registers 12
+    .locals 9
     .param p1, "semanticsNode"    # Landroidx/compose/ui/semantics/SemanticsNode;
     .param p2, "currentSemanticsNodes"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -140,8 +140,8 @@
 
     move-result v3
 
-    :goto_2c
-    if-ge v2, v3, :cond_56
+    :goto_0
+    if-ge v2, v3, :cond_1
 
     .line 3511
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -171,7 +171,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_51
+    if-eqz v7, :cond_0
 
     .line 416
     iget-object v7, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$SemanticsNodeCopy;->children:Ljava/util/Set;
@@ -187,7 +187,7 @@
     invoke-interface {v7, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 418
-    :cond_51
+    :cond_0
     nop
 
     .line 3512
@@ -199,11 +199,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 3514
     .end local v2    # "index$iv":I
-    :cond_56
+    :cond_1
     nop
 
     .line 419
@@ -218,7 +218,7 @@
 
 # virtual methods
 .method public final getChildren()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -235,7 +235,7 @@
 .end method
 
 .method public final getSemanticsNode()Landroidx/compose/ui/semantics/SemanticsNode;
-    .registers 2
+    .locals 1
 
     .line 407
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$SemanticsNodeCopy;->semanticsNode:Landroidx/compose/ui/semantics/SemanticsNode;
@@ -244,7 +244,7 @@
 .end method
 
 .method public final getUnmergedConfig()Landroidx/compose/ui/semantics/SemanticsConfiguration;
-    .registers 2
+    .locals 1
 
     .line 410
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$SemanticsNodeCopy;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -253,7 +253,7 @@
 .end method
 
 .method public final hasPaneTitle()Z
-    .registers 3
+    .locals 2
 
     .line 421
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$SemanticsNodeCopy;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;

@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/ColorFilter$Companion;
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public constructor <init>(Landroid/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
     .param p1, "nativeColorFilter"    # Landroid/graphics/ColorFilter;
 
     const-string/jumbo v0, "nativeColorFilter"
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public final getNativeColorFilter$ui_graphics_release()Landroid/graphics/ColorFilter;
-    .registers 2
+    .locals 1
 
     .line 29
     iget-object v0, p0, Landroidx/compose/ui/graphics/ColorFilter;->nativeColorFilter:Landroid/graphics/ColorFilter;

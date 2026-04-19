@@ -108,7 +108,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateList;II)V
-    .registers 5
+    .locals 1
     .param p1, "parentList"    # Landroidx/compose/runtime/snapshots/SnapshotStateList;
     .param p2, "fromIndex"    # I
     .param p3, "toIndex"    # I
@@ -150,7 +150,7 @@
 .end method
 
 .method private final validateModification()V
-    .registers 3
+    .locals 2
 
     .line 452
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SubList;->parentList:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -161,13 +161,13 @@
 
     iget v1, p0, Landroidx/compose/runtime/snapshots/SubList;->modification:I
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     .line 455
     return-void
 
     .line 453
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -178,7 +178,7 @@
 
 # virtual methods
 .method public add(ILjava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -222,7 +222,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -271,7 +271,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Z
-    .registers 6
+    .locals 3
     .param p1, "index"    # I
     .param p2, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
@@ -302,7 +302,7 @@
 
     .line 358
     .local v0, "result":Z
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 359
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SubList;->size()I
@@ -327,12 +327,12 @@
     iput v1, p0, Landroidx/compose/runtime/snapshots/SubList;->modification:I
 
     .line 362
-    :cond_27
+    :cond_0
     return v0
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -359,14 +359,14 @@
 .end method
 
 .method public clear()V
-    .registers 4
+    .locals 3
 
     .line 368
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SubList;->size()I
 
     move-result v0
 
-    if-lez v0, :cond_20
+    if-lez v0, :cond_0
 
     .line 369
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/SubList;->validateModification()V
@@ -399,12 +399,12 @@
     iput v0, p0, Landroidx/compose/runtime/snapshots/SubList;->modification:I
 
     .line 374
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 310
@@ -412,21 +412,21 @@
 
     move-result v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 9
+    .locals 7
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -462,22 +462,22 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 459
-    :cond_15
+    :cond_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_19
+    :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -498,26 +498,26 @@
     .line 459
     .end local v5    # "it":Ljava/lang/Object;
     .end local v6    # "$i$a$-all-SubList$containsAll$1":I
-    if-nez v5, :cond_19
+    if-nez v5, :cond_1
 
     const/4 v3, 0x0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 460
     .end local v4    # "element$iv":Ljava/lang/Object;
-    :cond_2d
+    :cond_2
     nop
 
     .line 311
     .end local v0    # "$this$all$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$all":I
-    :goto_2e
+    :goto_0
     return v3
 .end method
 
 .method public get(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -533,7 +533,6 @@
 
     move-result v0
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->validateRange(II)V
     invoke-static {p1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$validateRange(II)V
 
     .line 315
@@ -551,7 +550,7 @@
 .end method
 
 .method public final getParentList()Landroidx/compose/runtime/snapshots/SnapshotStateList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -567,7 +566,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 307
     iget v0, p0, Landroidx/compose/runtime/snapshots/SubList;->size:I
@@ -576,7 +575,7 @@
 .end method
 
 .method public indexOf(Ljava/lang/Object;)I
-    .registers 9
+    .locals 7
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 319
@@ -606,12 +605,12 @@
 
     move-result-object v2
 
-    :goto_15
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_1
 
     move-object v3, v2
 
@@ -639,7 +638,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_35
+    if-eqz v6, :cond_0
 
     iget v2, p0, Landroidx/compose/runtime/snapshots/SubList;->offset:I
 
@@ -648,7 +647,7 @@
     return v2
 
     .line 322
-    :cond_35
+    :cond_0
     nop
 
     .line 461
@@ -657,10 +656,10 @@
     nop
 
     .end local v3    # "element$iv":I
-    goto :goto_15
+    goto :goto_0
 
     .line 462
-    :cond_38
+    :cond_1
     nop
 
     .line 323
@@ -672,28 +671,28 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 326
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SubList;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -713,7 +712,7 @@
 .end method
 
 .method public lastIndexOf(Ljava/lang/Object;)I
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 331
@@ -732,10 +731,10 @@
 
     .line 333
     .local v0, "index":I
-    :goto_c
+    :goto_0
     iget v1, p0, Landroidx/compose/runtime/snapshots/SubList;->offset:I
 
-    if-lt v0, v1, :cond_24
+    if-lt v0, v1, :cond_1
 
     .line 334
     iget-object v1, p0, Landroidx/compose/runtime/snapshots/SubList;->parentList:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -748,7 +747,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     iget v1, p0, Landroidx/compose/runtime/snapshots/SubList;->offset:I
 
@@ -757,20 +756,20 @@
     return v1
 
     .line 335
-    :cond_21
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 337
-    :cond_24
+    :cond_1
     const/4 v1, -0x1
 
     return v1
 .end method
 
 .method public listIterator()Ljava/util/ListIterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -790,7 +789,7 @@
 .end method
 
 .method public listIterator(I)Ljava/util/ListIterator;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -824,7 +823,7 @@
 .end method
 
 .method public final bridge remove(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -841,7 +840,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 404
@@ -851,7 +850,7 @@
 
     .line 405
     .local v0, "index":I
-    if-ltz v0, :cond_b
+    if-ltz v0, :cond_0
 
     .line 406
     invoke-virtual {p0, v0}, Landroidx/compose/runtime/snapshots/SubList;->remove(I)Ljava/lang/Object;
@@ -859,19 +858,19 @@
     .line 407
     const/4 v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 408
-    :cond_b
+    :cond_0
     const/4 v1, 0x0
 
     .line 405
-    :goto_c
+    :goto_0
     return v1
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 6
+    .locals 4
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -896,12 +895,12 @@
 
     move-result-object v1
 
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -913,34 +912,34 @@
 
     move-result v3
 
-    if-nez v3, :cond_20
+    if-nez v3, :cond_1
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1e
+    :cond_0
     const/4 v3, 0x0
 
-    goto :goto_21
+    goto :goto_2
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     const/4 v3, 0x1
 
-    :goto_21
+    :goto_2
     move v0, v3
 
     .end local v2    # "element":Ljava/lang/Object;
-    goto :goto_b
+    goto :goto_0
 
     .line 416
-    :cond_23
+    :cond_2
     return v0
 .end method
 
 .method public removeAt(I)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -996,7 +995,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 5
+    .locals 3
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1032,7 +1031,7 @@
 
     .line 430
     .local v0, "removed":I
-    if-lez v0, :cond_27
+    if-lez v0, :cond_0
 
     .line 431
     iget-object v1, p0, Landroidx/compose/runtime/snapshots/SubList;->parentList:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -1053,22 +1052,22 @@
     iput v1, p0, Landroidx/compose/runtime/snapshots/SubList;->size:I
 
     .line 434
-    :cond_27
-    if-lez v0, :cond_2b
+    :cond_0
+    if-lez v0, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_2c
+    :goto_0
     return v1
 .end method
 
 .method public set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1082,7 +1081,6 @@
 
     move-result v0
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->validateRange(II)V
     invoke-static {p1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$validateRange(II)V
 
     .line 439
@@ -1114,7 +1112,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 300
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SubList;->getSize()I
@@ -1125,7 +1123,7 @@
 .end method
 
 .method public subList(II)Ljava/util/List;
-    .registers 7
+    .locals 4
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1141,33 +1139,33 @@
 
     const/4 v1, 0x0
 
-    if-ltz p1, :cond_8
+    if-ltz p1, :cond_0
 
-    if-gt p1, p2, :cond_8
+    if-gt p1, p2, :cond_0
 
     move v2, v0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move v2, v1
 
-    :goto_9
-    if-eqz v2, :cond_12
+    :goto_0
+    if-eqz v2, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SubList;->size()I
 
     move-result v2
 
-    if-gt p2, v2, :cond_12
+    if-gt p2, v2, :cond_1
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_12
+    :cond_1
     move v0, v1
 
-    :goto_13
-    if-eqz v0, :cond_27
+    :goto_1
+    if-eqz v0, :cond_2
 
     .line 447
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/SubList;->validateModification()V
@@ -1190,7 +1188,7 @@
     return-object v0
 
     .line 446
-    :cond_27
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Failed requirement."
@@ -1205,7 +1203,7 @@
 .end method
 
 .method public toArray()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     move-object v0, p0
 
@@ -1219,7 +1217,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

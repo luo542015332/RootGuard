@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/RenderEffect;)V
-    .registers 3
+    .locals 1
     .param p1, "androidRenderEffect"    # Landroid/graphics/RenderEffect;
 
     const-string/jumbo v0, "androidRenderEffect"
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method protected createRenderEffect()Landroid/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidRenderEffect;->androidRenderEffect:Landroid/graphics/RenderEffect;
@@ -66,7 +66,7 @@
 .end method
 
 .method public final getAndroidRenderEffect()Landroid/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     .line 50
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidRenderEffect;->androidRenderEffect:Landroid/graphics/RenderEffect;

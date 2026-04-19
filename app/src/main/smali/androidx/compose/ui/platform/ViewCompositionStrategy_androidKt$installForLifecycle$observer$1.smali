@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AbstractComposeView;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/platform/ViewCompositionStrategy_androidKt$installForLifecycle$observer$1;->$view:Landroidx/compose/ui/platform/AbstractComposeView;
 
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
     .param p2, "event"    # Landroidx/lifecycle/Lifecycle$Event;
 
     const-string v0, "<anonymous parameter 0>"
@@ -70,7 +70,7 @@
     .line 188
     sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne p2, p1, :cond_14
+    if-ne p2, p1, :cond_0
 
     .line 189
     iget-object p1, p0, Landroidx/compose/ui/platform/ViewCompositionStrategy_androidKt$installForLifecycle$observer$1;->$view:Landroidx/compose/ui/platform/AbstractComposeView;
@@ -78,6 +78,6 @@
     invoke-virtual {p1}, Landroidx/compose/ui/platform/AbstractComposeView;->disposeComposition()V
 
     .line 191
-    :cond_14
+    :cond_0
     return-void
 .end method

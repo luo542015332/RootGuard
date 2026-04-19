@@ -72,7 +72,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 6
+    .locals 5
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -113,7 +113,7 @@
 .end method
 
 .method private final addNodes(C[FI)V
-    .registers 6
+    .locals 2
     .param p1, "cmd"    # C
     .param p2, "args"    # [F
     .param p3, "count"    # I
@@ -131,7 +131,7 @@
 .end method
 
 .method private final resizeNodeData(I)V
-    .registers 7
+    .locals 5
     .param p1, "dataCount"    # I
 
     const/4 v0, 0x0
@@ -142,7 +142,7 @@
 
     array-length v1, v1
 
-    if-lt p1, v1, :cond_13
+    if-lt p1, v1, :cond_0
 
     .line 131
     iget-object v1, p0, Landroidx/compose/ui/graphics/vector/PathParser;->nodeData:[F
@@ -164,23 +164,23 @@
 
     .line 135
     .end local v1    # "src":[F
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public static synthetic toPath$default(Landroidx/compose/ui/graphics/vector/PathParser;Landroidx/compose/ui/graphics/Path;ILjava/lang/Object;)Landroidx/compose/ui/graphics/Path;
-    .registers 4
+    .locals 0
 
     .line 144
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_0
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
 
     move-result-object p1
 
-    :cond_8
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/ui/graphics/vector/PathParser;->toPath(Landroidx/compose/ui/graphics/Path;)Landroidx/compose/ui/graphics/Path;
 
     move-result-object p0
@@ -191,7 +191,7 @@
 
 # virtual methods
 .method public final addPathNodes(Ljava/util/List;)Landroidx/compose/ui/graphics/vector/PathParser;
-    .registers 4
+    .locals 2
     .param p1, "nodes"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -222,7 +222,7 @@
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathParser;->nodes:Ljava/util/List;
@@ -234,7 +234,7 @@
 .end method
 
 .method public final parsePathString(Ljava/lang/String;)Landroidx/compose/ui/graphics/vector/PathParser;
-    .registers 15
+    .locals 13
     .param p1, "pathData"    # Ljava/lang/String;
 
     const-string/jumbo v0, "pathData"
@@ -261,10 +261,10 @@
 
     .line 75
     .local v2, "dataCount":I
-    :goto_11
+    :goto_0
     const/16 v3, 0x20
 
-    if-ge v0, v1, :cond_22
+    if-ge v0, v1, :cond_0
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
@@ -274,16 +274,16 @@
 
     move-result v4
 
-    if-gtz v4, :cond_22
+    if-gtz v4, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 76
-    :cond_22
-    :goto_22
-    if-le v1, v0, :cond_33
+    :cond_0
+    :goto_1
+    if-le v1, v0, :cond_1
 
     add-int/lit8 v4, v1, -0x1
 
@@ -295,20 +295,20 @@
 
     move-result v4
 
-    if-gtz v4, :cond_33
+    if-gtz v4, :cond_1
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_22
+    goto :goto_1
 
     .line 78
-    :cond_33
+    :cond_1
     move v4, v0
 
     .line 79
     .local v4, "index":I
-    :goto_34
-    if-ge v4, v1, :cond_c7
+    :goto_2
+    if-ge v4, v1, :cond_c
 
     const/4 v5, 0x0
 
@@ -318,7 +318,7 @@
 
     .line 87
     .local v6, "command":C
-    :goto_38
+    :goto_3
     add-int/lit8 v7, v4, 0x1
 
     .end local v4    # "index":I
@@ -338,41 +338,41 @@
 
     mul-int/2addr v8, v9
 
-    if-gtz v8, :cond_4d
+    if-gtz v8, :cond_2
 
     const/16 v8, 0x65
 
-    if-eq v4, v8, :cond_4d
+    if-eq v4, v8, :cond_2
 
     .line 90
     move v6, v5
 
     .line 91
-    goto :goto_4f
+    goto :goto_4
 
     .line 93
     .end local v4    # "lowerChar":I
-    :cond_4d
-    if-lt v7, v1, :cond_c4
+    :cond_2
+    if-lt v7, v1, :cond_b
 
     .line 96
-    :goto_4f
-    if-eqz v6, :cond_c1
+    :goto_4
+    if-eqz v6, :cond_a
 
     .line 99
     or-int/lit8 v4, v6, 0x20
 
     const/16 v8, 0x7a
 
-    if-eq v4, v8, :cond_b4
+    if-eq v4, v8, :cond_9
 
     .line 100
     const/4 v2, 0x0
 
     .line 104
-    :cond_58
-    :goto_58
-    if-ge v7, v1, :cond_67
+    :cond_3
+    :goto_5
+    if-ge v7, v1, :cond_4
 
     invoke-virtual {p1, v7}, Ljava/lang/String;->charAt(I)C
 
@@ -382,14 +382,14 @@
 
     move-result v4
 
-    if-gtz v4, :cond_67
+    if-gtz v4, :cond_4
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_58
+    goto :goto_5
 
     .line 109
-    :cond_67
+    :cond_4
     sget-object v4, Landroidx/compose/ui/graphics/vector/FastFloatParser;->Companion:Landroidx/compose/ui/graphics/vector/FastFloatParser$Companion;
 
     iget-object v8, p0, Landroidx/compose/ui/graphics/vector/PathParser;->floatResult:Landroidx/compose/ui/graphics/vector/FloatResult;
@@ -407,7 +407,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_9a
+    if-eqz v7, :cond_6
 
     .line 112
     iget-object v7, p0, Landroidx/compose/ui/graphics/vector/PathParser;->nodeData:[F
@@ -436,7 +436,7 @@
 
     array-length v9, v9
 
-    if-lt v8, v9, :cond_97
+    if-lt v8, v9, :cond_5
 
     .line 555
     iget-object v9, v2, Landroidx/compose/ui/graphics/vector/PathParser;->nodeData:[F
@@ -458,25 +458,25 @@
 
     .line 559
     .end local v9    # "src$iv":[F
-    :cond_97
+    :cond_5
     move v7, v4
 
     move v2, v8
 
-    goto :goto_9b
+    goto :goto_6
 
     .line 111
     .end local v7    # "$i$f$resizeNodeData":I
     .end local v8    # "dataCount":I
     .local v2, "dataCount":I
-    :cond_9a
+    :cond_6
     move v7, v4
 
     .line 117
     .end local v4    # "index":I
     .local v7, "index":I
-    :goto_9b
-    if-ge v7, v1, :cond_a8
+    :goto_6
+    if-ge v7, v1, :cond_7
 
     invoke-virtual {p1, v7}, Ljava/lang/String;->charAt(I)C
 
@@ -484,15 +484,15 @@
 
     const/16 v8, 0x2c
 
-    if-ne v4, v8, :cond_a8
+    if-ne v4, v8, :cond_7
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_9b
+    goto :goto_6
 
     .line 118
-    :cond_a8
-    if-ge v7, v1, :cond_b2
+    :cond_7
+    if-ge v7, v1, :cond_8
 
     iget-object v4, p0, Landroidx/compose/ui/graphics/vector/PathParser;->floatResult:Landroidx/compose/ui/graphics/vector/FloatResult;
 
@@ -500,22 +500,22 @@
 
     move-result v4
 
-    if-nez v4, :cond_58
+    if-nez v4, :cond_3
 
     .line 121
-    :cond_b2
+    :cond_8
     move v4, v7
 
-    goto :goto_b5
+    goto :goto_7
 
     .line 99
-    :cond_b4
+    :cond_9
     move v4, v7
 
     .line 121
     .end local v7    # "index":I
     .restart local v4    # "index":I
-    :goto_b5
+    :goto_7
     iget-object v7, p0, Landroidx/compose/ui/graphics/vector/PathParser;->nodeData:[F
 
     .local v7, "args$iv":[F
@@ -538,35 +538,35 @@
     .end local v7    # "args$iv":[F
     .end local v8    # "this_$iv":Landroidx/compose/ui/graphics/vector/PathParser;
     .end local v9    # "$i$f$addNodes":I
-    goto/16 :goto_34
+    goto/16 :goto_2
 
     .line 96
     .end local v4    # "index":I
     .restart local v5    # "c":C
     .restart local v6    # "command":C
     .local v7, "index":I
-    :cond_c1
+    :cond_a
     move v4, v7
 
-    goto/16 :goto_34
+    goto/16 :goto_2
 
     .line 93
-    :cond_c4
+    :cond_b
     move v4, v7
 
-    goto/16 :goto_38
+    goto/16 :goto_3
 
     .line 125
     .end local v5    # "c":C
     .end local v6    # "command":C
     .end local v7    # "index":I
     .restart local v4    # "index":I
-    :cond_c7
+    :cond_c
     return-object p0
 .end method
 
 .method public final toNodes()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -583,7 +583,7 @@
 .end method
 
 .method public final toPath(Landroidx/compose/ui/graphics/Path;)Landroidx/compose/ui/graphics/Path;
-    .registers 3
+    .locals 1
     .param p1, "target"    # Landroidx/compose/ui/graphics/Path;
 
     const-string/jumbo v0, "target"

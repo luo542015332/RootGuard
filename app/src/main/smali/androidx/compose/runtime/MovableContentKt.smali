@@ -51,7 +51,7 @@
 
 # direct methods
 .method public static final movableContentOf(Lkotlin/jvm/functions/Function2;)Lkotlin/jvm/functions/Function2;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -112,7 +112,7 @@
 .end method
 
 .method public static final movableContentOf(Lkotlin/jvm/functions/Function3;)Lkotlin/jvm/functions/Function3;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -164,7 +164,7 @@
 .end method
 
 .method public static final movableContentOf(Lkotlin/jvm/functions/Function4;)Lkotlin/jvm/functions/Function4;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function4;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -230,7 +230,7 @@
 .end method
 
 .method public static final movableContentOf(Lkotlin/jvm/functions/Function5;)Lkotlin/jvm/functions/Function5;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function5;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -298,7 +298,7 @@
 .end method
 
 .method public static final movableContentOf(Lkotlin/jvm/functions/Function6;)Lkotlin/jvm/functions/Function6;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function6;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -368,7 +368,7 @@
 .end method
 
 .method public static final movableContentWithReceiverOf(Lkotlin/jvm/functions/Function3;)Lkotlin/jvm/functions/Function3;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -432,7 +432,7 @@
 .end method
 
 .method public static final movableContentWithReceiverOf(Lkotlin/jvm/functions/Function4;)Lkotlin/jvm/functions/Function4;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function4;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -498,7 +498,7 @@
 .end method
 
 .method public static final movableContentWithReceiverOf(Lkotlin/jvm/functions/Function5;)Lkotlin/jvm/functions/Function5;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function5;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -566,7 +566,7 @@
 .end method
 
 .method public static final movableContentWithReceiverOf(Lkotlin/jvm/functions/Function6;)Lkotlin/jvm/functions/Function6;
-    .registers 5
+    .locals 4
     .param p0, "content"    # Lkotlin/jvm/functions/Function6;
     .annotation system Ldalvik/annotation/Signature;
         value = {

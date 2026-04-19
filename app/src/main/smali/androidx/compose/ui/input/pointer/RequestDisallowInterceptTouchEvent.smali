@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 89
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public final getPointerInteropFilter$ui_release()Landroidx/compose/ui/input/pointer/PointerInteropFilter;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;->pointerInteropFilter:Landroidx/compose/ui/input/pointer/PointerInteropFilter;
@@ -88,7 +88,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 89
@@ -108,26 +108,26 @@
 .end method
 
 .method public invoke(Z)V
-    .registers 3
+    .locals 1
     .param p1, "disallowIntercept"    # Z
 
     .line 94
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;->pointerInteropFilter:Landroidx/compose/ui/input/pointer/PointerInteropFilter;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->setDisallowIntercept$ui_release(Z)V
 
     .line 95
-    :goto_8
+    :goto_0
     return-void
 .end method
 
 .method public final setPointerInteropFilter$ui_release(Landroidx/compose/ui/input/pointer/PointerInteropFilter;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/input/pointer/PointerInteropFilter;
 
     .line 91

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static leadingIconColor(Landroidx/compose/material/TextFieldColorsWithIcons;ZZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 7
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/material/TextFieldColorsWithIcons;
     .param p1, "enabled"    # Z
     .param p2, "isError"    # Z
@@ -55,7 +55,6 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 161
-    # invokes: Landroidx/compose/material/TextFieldColorsWithIcons;->leadingIconColor(ZZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
     invoke-static/range {p0 .. p5}, Landroidx/compose/material/TextFieldColorsWithIcons;->access$leadingIconColor$jd(Landroidx/compose/material/TextFieldColorsWithIcons;ZZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
 
     move-result-object v0
@@ -65,7 +64,7 @@
 .end method
 
 .method public static trailingIconColor(Landroidx/compose/material/TextFieldColorsWithIcons;ZZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 7
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/material/TextFieldColorsWithIcons;
     .param p1, "enabled"    # Z
     .param p2, "isError"    # Z
@@ -94,7 +93,6 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 178
-    # invokes: Landroidx/compose/material/TextFieldColorsWithIcons;->trailingIconColor(ZZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
     invoke-static/range {p0 .. p5}, Landroidx/compose/material/TextFieldColorsWithIcons;->access$trailingIconColor$jd(Landroidx/compose/material/TextFieldColorsWithIcons;ZZLandroidx/compose/foundation/interaction/InteractionSource;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
 
     move-result-object v0

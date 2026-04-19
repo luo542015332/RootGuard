@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/semantics/SemanticsPropertyKey$1;
 
@@ -64,7 +64,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "parentValue"    # Ljava/lang/Object;
     .param p2, "childValue"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -86,15 +86,15 @@
     .end annotation
 
     .line 377
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     move-object v0, p2
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     move-object v0, p1
 
-    :goto_5
+    :goto_0
     return-object v0
 .end method

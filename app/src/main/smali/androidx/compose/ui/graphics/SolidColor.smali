@@ -53,7 +53,7 @@
 
 # direct methods
 .method private constructor <init>(J)V
-    .registers 4
+    .locals 1
     .param p1, "value"    # J
 
     .line 415
@@ -67,7 +67,7 @@
 .end method
 
 .method public synthetic constructor <init>(JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/graphics/SolidColor;-><init>(J)V
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public applyTo-Pq9zytI(JLandroidx/compose/ui/graphics/Paint;F)V
-    .registers 14
+    .locals 9
     .param p1, "size"    # J
     .param p3, "p"    # Landroidx/compose/ui/graphics/Paint;
     .param p4, "alpha"    # F
@@ -94,17 +94,17 @@
     .line 418
     cmpg-float v0, p4, v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_12
-    if-nez v0, :cond_27
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 419
     iget-wide v1, p0, Landroidx/compose/ui/graphics/SolidColor;->value:J
@@ -129,14 +129,14 @@
 
     move-result-wide v0
 
-    goto :goto_29
+    goto :goto_1
 
     .line 421
-    :cond_27
+    :cond_1
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SolidColor;->value:J
 
     .line 418
-    :goto_29
+    :goto_1
     invoke-interface {p3, v0, v1}, Landroidx/compose/ui/graphics/Paint;->setColor-8_81llA(J)V
 
     .line 423
@@ -144,40 +144,40 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x0
 
     invoke-interface {p3, v0}, Landroidx/compose/ui/graphics/Paint;->setShader(Landroid/graphics/Shader;)V
 
     .line 424
-    :cond_36
+    :cond_2
     return-void
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 427
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 428
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/SolidColor;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 429
-    :cond_a
+    :cond_1
     iget-wide v3, p0, Landroidx/compose/ui/graphics/SolidColor;->value:J
 
     move-object v1, p1
@@ -190,17 +190,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 431
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public final getValue-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 415
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SolidColor;->value:J
@@ -209,7 +209,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 435
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SolidColor;->value:J
@@ -222,7 +222,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 439
     new-instance v0, Ljava/lang/StringBuilder;

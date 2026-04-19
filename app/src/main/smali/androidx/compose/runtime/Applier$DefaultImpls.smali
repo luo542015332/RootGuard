@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static onBeginChanges(Landroidx/compose/runtime/Applier;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Applier;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -42,14 +42,13 @@
     .end annotation
 
     .line 47
-    # invokes: Landroidx/compose/runtime/Applier;->onBeginChanges()V
     invoke-static {p0}, Landroidx/compose/runtime/Applier;->access$onBeginChanges$jd(Landroidx/compose/runtime/Applier;)V
 
     return-void
 .end method
 
 .method public static onEndChanges(Landroidx/compose/runtime/Applier;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Applier;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -65,7 +64,6 @@
     .end annotation
 
     .line 53
-    # invokes: Landroidx/compose/runtime/Applier;->onEndChanges()V
     invoke-static {p0}, Landroidx/compose/runtime/Applier;->access$onEndChanges$jd(Landroidx/compose/runtime/Applier;)V
 
     return-void

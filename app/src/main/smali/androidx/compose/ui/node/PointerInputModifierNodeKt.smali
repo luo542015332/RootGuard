@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final getLayoutCoordinates(Landroidx/compose/ui/node/PointerInputModifierNode;)Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 4
+    .locals 3
     .param p0, "$this$layoutCoordinates"    # Landroidx/compose/ui/node/PointerInputModifierNode;
 
     const-string v0, "<this>"
@@ -69,7 +69,7 @@
 .end method
 
 .method public static final isAttached(Landroidx/compose/ui/node/PointerInputModifierNode;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isAttached"    # Landroidx/compose/ui/node/PointerInputModifierNode;
 
     const-string v0, "<this>"

@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -87,7 +87,7 @@
 .end method
 
 .method public static final synthetic access$setSize$p(Landroidx/compose/runtime/collection/IdentityArrayIntMap;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/collection/IdentityArrayIntMap;
     .param p1, "<set-?>"    # I
 
@@ -98,7 +98,7 @@
 .end method
 
 .method private final find(Ljava/lang/Object;)I
-    .registers 10
+    .locals 8
     .param p1, "key"    # Ljava/lang/Object;
 
     .line 186
@@ -122,8 +122,8 @@
 
     .line 191
     .local v3, "keys":[Ljava/lang/Object;
-    :goto_b
-    if-gt v0, v1, :cond_2a
+    :goto_0
+    if-gt v0, v1, :cond_3
 
     .line 192
     add-int v4, v0, v1
@@ -145,28 +145,28 @@
     nop
 
     .line 196
-    if-ge v6, v2, :cond_1d
+    if-ge v6, v2, :cond_0
 
     add-int/lit8 v0, v4, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 197
-    :cond_1d
-    if-le v6, v2, :cond_22
+    :cond_0
+    if-le v6, v2, :cond_1
 
     add-int/lit8 v1, v4, -0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 198
-    :cond_22
-    if-ne v5, p1, :cond_25
+    :cond_1
+    if-ne v5, p1, :cond_2
 
     return v4
 
     .line 199
-    :cond_25
+    :cond_2
     invoke-direct {p0, v4, p1, v2}, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->findExactIndex(ILjava/lang/Object;I)I
 
     move-result v7
@@ -177,7 +177,7 @@
     .end local v4    # "mid":I
     .end local v5    # "midVal":Ljava/lang/Object;
     .end local v6    # "midIdentity":I
-    :cond_2a
+    :cond_3
     add-int/lit8 v4, v0, 0x1
 
     neg-int v4, v4
@@ -186,7 +186,7 @@
 .end method
 
 .method private final findExactIndex(ILjava/lang/Object;I)I
-    .registers 9
+    .locals 5
     .param p1, "midIndex"    # I
     .param p2, "value"    # Ljava/lang/Object;
     .param p3, "valueHash"    # I
@@ -203,66 +203,66 @@
     add-int/lit8 v2, p1, -0x1
 
     .local v2, "i":I
-    :goto_6
+    :goto_0
     const/4 v3, -0x1
 
-    if-ge v3, v2, :cond_18
+    if-ge v3, v2, :cond_2
 
     .line 218
     aget-object v3, v0, v2
 
     .line 219
     .local v3, "v":Ljava/lang/Object;
-    if-ne v3, p2, :cond_e
+    if-ne v3, p2, :cond_0
 
     .line 220
     return v2
 
     .line 222
-    :cond_e
+    :cond_0
     invoke-static {v3}, Landroidx/compose/runtime/ActualJvm_jvmKt;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v4
 
-    if-eq v4, p3, :cond_15
+    if-eq v4, p3, :cond_1
 
     .line 223
-    goto :goto_18
+    goto :goto_1
 
     .line 217
     .end local v3    # "v":Ljava/lang/Object;
-    :cond_15
+    :cond_1
     add-int/lit8 v2, v2, -0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 227
     .end local v2    # "i":I
-    :cond_18
-    :goto_18
+    :cond_2
+    :goto_1
     add-int/lit8 v2, p1, 0x1
 
     .restart local v2    # "i":I
-    :goto_1a
-    if-ge v2, v1, :cond_2e
+    :goto_2
+    if-ge v2, v1, :cond_5
 
     .line 228
     aget-object v3, v0, v2
 
     .line 229
     .restart local v3    # "v":Ljava/lang/Object;
-    if-ne v3, p2, :cond_21
+    if-ne v3, p2, :cond_3
 
     .line 230
     return v2
 
     .line 232
-    :cond_21
+    :cond_3
     invoke-static {v3}, Landroidx/compose/runtime/ActualJvm_jvmKt;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v4
 
-    if-eq v4, p3, :cond_2b
+    if-eq v4, p3, :cond_4
 
     .line 234
     add-int/lit8 v4, v2, 0x1
@@ -273,14 +273,14 @@
 
     .line 227
     .end local v3    # "v":Ljava/lang/Object;
-    :cond_2b
+    :cond_4
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1a
+    goto :goto_2
 
     .line 239
     .end local v2    # "i":I
-    :cond_2e
+    :cond_5
     add-int/lit8 v2, v1, 0x1
 
     neg-int v2, v2
@@ -291,7 +291,7 @@
 
 # virtual methods
 .method public final add(Ljava/lang/Object;I)I
-    .registers 22
+    .locals 19
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # I
 
@@ -313,7 +313,7 @@
     .local v3, "index":I
     iget v4, v0, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->size:I
 
-    if-lez v4, :cond_1e
+    if-lez v4, :cond_1
 
     .line 41
     invoke-direct/range {p0 .. p1}, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->find(Ljava/lang/Object;)I
@@ -321,7 +321,7 @@
     move-result v3
 
     .line 42
-    if-ltz v3, :cond_1c
+    if-ltz v3, :cond_0
 
     .line 43
     aget v4, v2, v3
@@ -335,13 +335,13 @@
 
     .line 42
     .end local v4    # "previousValue":I
-    :cond_1c
+    :cond_0
     move v10, v3
 
-    goto :goto_20
+    goto :goto_0
 
     .line 48
-    :cond_1e
+    :cond_1
     const/4 v3, -0x1
 
     move v10, v3
@@ -349,7 +349,7 @@
     .line 51
     .end local v3    # "index":I
     .local v10, "index":I
-    :goto_20
+    :goto_0
     add-int/lit8 v3, v10, 0x1
 
     neg-int v9, v3
@@ -366,7 +366,7 @@
     .local v7, "size":I
     array-length v3, v8
 
-    if-ne v7, v3, :cond_73
+    if-ne v7, v3, :cond_2
 
     .line 56
     array-length v3, v8
@@ -512,7 +512,7 @@
 
     .end local v11    # "newKeys":[Ljava/lang/Object;
     .end local v15    # "newValues":[I
-    goto :goto_8a
+    goto :goto_1
 
     .line 81
     .end local v12    # "size":I
@@ -521,7 +521,7 @@
     .restart local v7    # "size":I
     .restart local v8    # "keys":[Ljava/lang/Object;
     .restart local v9    # "insertIndex":I
-    :cond_73
+    :cond_2
     move v12, v7
 
     move-object/from16 v18, v8
@@ -572,7 +572,7 @@
     invoke-static {v2, v2, v9, v13, v12}, Lkotlin/collections/ArraysKt;->copyInto([I[IIII)[I
 
     .line 94
-    :goto_8a
+    :goto_1
     iget-object v4, v0, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->keys:[Ljava/lang/Object;
 
     aput-object v1, v4, v13
@@ -596,7 +596,7 @@
 .end method
 
 .method public final any(Lkotlin/jvm/functions/Function2;)Z
-    .registers 9
+    .locals 7
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -639,8 +639,8 @@
     const/4 v4, 0x0
 
     .local v4, "i":I
-    :goto_14
-    if-ge v4, v3, :cond_35
+    :goto_0
+    if-ge v4, v3, :cond_1
 
     .line 166
     aget-object v5, v1, v4
@@ -665,28 +665,28 @@
 
     move-result v5
 
-    if-eqz v5, :cond_32
+    if-eqz v5, :cond_0
 
     const/4 v5, 0x1
 
     return v5
 
     .line 165
-    :cond_32
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 168
     .end local v4    # "i":I
-    :cond_35
+    :cond_1
     const/4 v4, 0x0
 
     return v4
 .end method
 
 .method public final forEach(Lkotlin/jvm/functions/Function2;)V
-    .registers 9
+    .locals 7
     .param p1, "block"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -729,8 +729,8 @@
     const/4 v4, 0x0
 
     .local v4, "i":I
-    :goto_14
-    if-ge v4, v3, :cond_2a
+    :goto_0
+    if-ge v4, v3, :cond_0
 
     .line 177
     aget-object v5, v1, v4
@@ -750,16 +750,16 @@
     .line 176
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 179
     .end local v4    # "i":I
-    :cond_2a
+    :cond_0
     return-void
 .end method
 
 .method public final get(Ljava/lang/Object;)I
-    .registers 5
+    .locals 3
     .param p1, "key"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "key"
@@ -773,7 +773,7 @@
 
     .line 31
     .local v0, "index":I
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->values:[I
 
@@ -781,7 +781,7 @@
 
     return v1
 
-    :cond_11
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Key not found"
@@ -796,7 +796,7 @@
 .end method
 
 .method public final getKeys()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 24
     iget-object v0, p0, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->keys:[Ljava/lang/Object;
@@ -805,7 +805,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 22
     iget v0, p0, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->size:I
@@ -814,7 +814,7 @@
 .end method
 
 .method public final getValues()[I
-    .registers 2
+    .locals 1
 
     .line 26
     iget-object v0, p0, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->values:[I
@@ -823,7 +823,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
     .param p1, "key"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "key"
@@ -849,12 +849,12 @@
 
     .line 110
     .local v3, "size":I
-    if-ltz v0, :cond_31
+    if-ltz v0, :cond_1
 
     .line 111
     add-int/lit8 v4, v3, -0x1
 
-    if-ge v0, v4, :cond_28
+    if-ge v0, v4, :cond_0
 
     .line 112
     nop
@@ -893,7 +893,7 @@
     invoke-static {v2, v2, v0, v4, v3}, Lkotlin/collections/ArraysKt;->copyInto([I[IIII)[I
 
     .line 125
-    :cond_28
+    :cond_0
     add-int/lit8 v4, v3, -0x1
 
     .line 126
@@ -912,14 +912,14 @@
 
     .line 130
     .end local v4    # "newSize":I
-    :cond_31
+    :cond_1
     const/4 v4, 0x0
 
     return v4
 .end method
 
 .method public final removeValueIf(Lkotlin/jvm/functions/Function2;)V
-    .registers 11
+    .locals 9
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -966,8 +966,8 @@
     const/4 v5, 0x0
 
     .local v5, "i":I
-    :goto_15
-    if-ge v5, v3, :cond_3c
+    :goto_0
+    if-ge v5, v3, :cond_2
 
     .line 144
     aget-object v6, v1, v5
@@ -996,10 +996,10 @@
 
     move-result v8
 
-    if-nez v8, :cond_39
+    if-nez v8, :cond_1
 
     .line 147
-    if-eq v4, v5, :cond_37
+    if-eq v4, v5, :cond_0
 
     .line 148
     aput-object v6, v1, v4
@@ -1008,25 +1008,25 @@
     aput v7, v2, v4
 
     .line 151
-    :cond_37
+    :cond_0
     add-int/lit8 v4, v4, 0x1
 
     .line 142
     .end local v6    # "key":Ljava/lang/Object;
     .end local v7    # "value":I
-    :cond_39
+    :cond_1
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 154
     .end local v5    # "i":I
-    :cond_3c
+    :cond_2
     move v5, v4
 
     .restart local v5    # "i":I
-    :goto_3d
-    if-ge v5, v3, :cond_45
+    :goto_1
+    if-ge v5, v3, :cond_3
 
     .line 155
     const/4 v6, 0x0
@@ -1036,11 +1036,11 @@
     .line 154
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_3d
+    goto :goto_1
 
     .line 157
     .end local v5    # "i":I
-    :cond_45
+    :cond_3
     invoke-static {p0, v4}, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->access$setSize$p(Landroidx/compose/runtime/collection/IdentityArrayIntMap;I)V
 
     .line 158

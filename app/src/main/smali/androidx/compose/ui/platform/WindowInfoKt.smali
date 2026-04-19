@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static final WindowFocusObserver(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V
-    .registers 16
+    .locals 13
     .param p0, "onWindowFocusChanged"    # Lkotlin/jvm/functions/Function1;
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -75,51 +75,51 @@
 
     const/4 v3, 0x2
 
-    if-nez v2, :cond_22
+    if-nez v2, :cond_1
 
     invoke-interface {p1, p0}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x4
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     move v2, v3
 
-    :goto_21
+    :goto_0
     or-int/2addr v1, v2
 
-    :cond_22
+    :cond_1
     and-int/lit8 v2, v1, 0xb
 
-    if-ne v2, v3, :cond_32
+    if-ne v2, v3, :cond_3
 
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v2
 
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_2
 
-    goto :goto_32
+    goto :goto_1
 
     .line 60
-    :cond_2d
+    :cond_2
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_ac
+    goto/16 :goto_4
 
     .line 54
-    :cond_32
-    :goto_32
+    :cond_3
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_4
 
     const/4 v2, -0x1
 
@@ -128,7 +128,7 @@
     invoke-static {v0, v1, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 55
-    :cond_3f
+    :cond_4
     invoke-static {}, Landroidx/compose/ui/platform/CompositionLocalsKt;->getLocalWindowInfo()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -216,7 +216,7 @@
 
     .line 86
     .local v9, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v5, :cond_89
+    if-nez v5, :cond_6
 
     sget-object v10, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -224,19 +224,19 @@
 
     move-result-object v10
 
-    if-ne v8, v10, :cond_87
+    if-ne v8, v10, :cond_5
 
-    goto :goto_89
+    goto :goto_2
 
     .line 90
-    :cond_87
+    :cond_5
     move-object v10, v8
 
-    goto :goto_97
+    goto :goto_3
 
     .line 87
-    :cond_89
-    :goto_89
+    :cond_6
+    :goto_2
     const/4 v10, 0x0
 
     .line 57
@@ -262,7 +262,7 @@
 
     .line 86
     .end local v10    # "value$iv$iv":Ljava/lang/Object;
-    :goto_97
+    :goto_3
     nop
 
     .line 85
@@ -289,24 +289,24 @@
 
     move-result v3
 
-    if-eqz v3, :cond_ac
+    if-eqz v3, :cond_7
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 60
     .end local v0    # "windowInfo":Landroidx/compose/ui/platform/WindowInfo;
     .end local v2    # "callback":Landroidx/compose/runtime/State;
-    :cond_ac
-    :goto_ac
+    :cond_7
+    :goto_4
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_b3
+    if-nez v0, :cond_8
 
-    goto :goto_bd
+    goto :goto_5
 
-    :cond_b3
+    :cond_8
     new-instance v2, Landroidx/compose/ui/platform/WindowInfoKt$WindowFocusObserver$2;
 
     invoke-direct {v2, p0, p2}, Landroidx/compose/ui/platform/WindowInfoKt$WindowFocusObserver$2;-><init>(Lkotlin/jvm/functions/Function1;I)V
@@ -315,6 +315,6 @@
 
     invoke-interface {v0, v2}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_bd
+    :goto_5
     return-void
 .end method

@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/focus/FocusOrderModifier;)V
-    .registers 3
+    .locals 1
     .param p1, "modifier"    # Landroidx/compose/ui/focus/FocusOrderModifier;
 
     const-string/jumbo v0, "modifier"
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final getModifier()Landroidx/compose/ui/focus/FocusOrderModifier;
-    .registers 2
+    .locals 1
 
     .line 447
     iget-object v0, p0, Landroidx/compose/ui/node/FocusOrderModifierToProperties;->modifier:Landroidx/compose/ui/focus/FocusOrderModifier;
@@ -80,7 +80,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 445
@@ -96,7 +96,7 @@
 .end method
 
 .method public invoke(Landroidx/compose/ui/focus/FocusProperties;)V
-    .registers 4
+    .locals 2
     .param p1, "focusProperties"    # Landroidx/compose/ui/focus/FocusProperties;
 
     const-string/jumbo v0, "focusProperties"

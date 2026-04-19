@@ -375,7 +375,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     new-instance v0, Landroidx/compose/ui/semantics/SemanticsActions;
 
@@ -946,7 +946,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 253
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -957,7 +957,7 @@
 
 # virtual methods
 .method public final getCollapse()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -976,7 +976,7 @@
 .end method
 
 .method public final getCopyText()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -995,7 +995,7 @@
 .end method
 
 .method public final getCustomActions()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1013,7 +1013,7 @@
 .end method
 
 .method public final getCutText()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1032,7 +1032,7 @@
 .end method
 
 .method public final getDismiss()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1051,7 +1051,7 @@
 .end method
 
 .method public final getExpand()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1070,7 +1070,7 @@
 .end method
 
 .method public final getGetTextLayoutResult()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1092,7 +1092,7 @@
 .end method
 
 .method public final getInsertTextAtCursor()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1112,7 +1112,7 @@
 .end method
 
 .method public final getOnClick()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1131,7 +1131,7 @@
 .end method
 
 .method public final getOnLongClick()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1150,7 +1150,7 @@
 .end method
 
 .method public final getPageDown()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1169,7 +1169,7 @@
 .end method
 
 .method public final getPageLeft()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1188,7 +1188,7 @@
 .end method
 
 .method public final getPageRight()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1207,7 +1207,7 @@
 .end method
 
 .method public final getPageUp()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1226,7 +1226,7 @@
 .end method
 
 .method public final getPasteText()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1245,7 +1245,7 @@
 .end method
 
 .method public final getPerformImeAction()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1264,7 +1264,7 @@
 .end method
 
 .method public final getRequestFocus()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1283,7 +1283,7 @@
 .end method
 
 .method public final getScrollBy()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1304,7 +1304,7 @@
 .end method
 
 .method public final getScrollToIndex()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1324,7 +1324,7 @@
 .end method
 
 .method public final getSetProgress()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1344,7 +1344,7 @@
 .end method
 
 .method public final getSetSelection()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1366,7 +1366,7 @@
 .end method
 
 .method public final getSetText()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

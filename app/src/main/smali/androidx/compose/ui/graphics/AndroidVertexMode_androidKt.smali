@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final toAndroidVertexMode-JOOmi9M(I)Landroid/graphics/Canvas$VertexMode;
-    .registers 2
+    .locals 1
     .param p0, "$this$toAndroidVertexMode_u2dJOOmi9M"    # I
 
     .line 19
@@ -45,14 +45,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/graphics/Canvas$VertexMode;->TRIANGLES:Landroid/graphics/Canvas$VertexMode;
 
-    goto :goto_30
+    goto :goto_0
 
     .line 21
-    :cond_10
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/VertexMode;->Companion:Landroidx/compose/ui/graphics/VertexMode$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/VertexMode$Companion;->getTriangleStrip-c2xauaI()I
@@ -63,14 +63,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     sget-object v0, Landroid/graphics/Canvas$VertexMode;->TRIANGLE_STRIP:Landroid/graphics/Canvas$VertexMode;
 
-    goto :goto_30
+    goto :goto_0
 
     .line 22
-    :cond_1f
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/VertexMode;->Companion:Landroidx/compose/ui/graphics/VertexMode$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/VertexMode$Companion;->getTriangleFan-c2xauaI()I
@@ -81,17 +81,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     sget-object v0, Landroid/graphics/Canvas$VertexMode;->TRIANGLE_FAN:Landroid/graphics/Canvas$VertexMode;
 
-    goto :goto_30
+    goto :goto_0
 
     .line 23
-    :cond_2e
+    :cond_2
     sget-object v0, Landroid/graphics/Canvas$VertexMode;->TRIANGLES:Landroid/graphics/Canvas$VertexMode;
 
     .line 24
-    :goto_30
+    :goto_0
     return-object v0
 .end method

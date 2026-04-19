@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(FF)V
-    .registers 3
+    .locals 0
     .param p1, "start"    # F
     .param p2, "endExclusive"    # F
 
@@ -84,30 +84,30 @@
 .end method
 
 .method private final lessThanOrEquals(FF)Z
-    .registers 4
+    .locals 1
     .param p1, "a"    # F
     .param p2, "b"    # F
 
     .line 157
     cmpg-float v0, p1, p2
 
-    if-gtz v0, :cond_6
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method public contains(F)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 159
@@ -115,27 +115,27 @@
 
     cmpl-float v0, p1, v0
 
-    if-ltz v0, :cond_e
+    if-ltz v0, :cond_0
 
     iget v0, p0, Landroidx/compose/ui/platform/OpenEndFloatRange;->_endExclusive:F
 
     cmpg-float v0, p1, v0
 
-    if-gez v0, :cond_e
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method public bridge synthetic contains(Ljava/lang/Comparable;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Comparable;
 
     .line 148
@@ -155,7 +155,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 163
@@ -163,7 +163,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/OpenEndFloatRange;->isEmpty()Z
 
@@ -171,7 +171,7 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -181,10 +181,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_3
 
     .line 164
-    :cond_15
+    :cond_0
     iget v0, p0, Landroidx/compose/ui/platform/OpenEndFloatRange;->_start:F
 
     move-object v3, p1
@@ -195,17 +195,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     move v0, v1
 
-    :goto_23
-    if-eqz v0, :cond_37
+    :goto_0
+    if-eqz v0, :cond_4
 
     iget v0, p0, Landroidx/compose/ui/platform/OpenEndFloatRange;->_endExclusive:F
 
@@ -217,33 +217,33 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_2
 
     move v0, v2
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     move v0, v1
 
-    :goto_33
-    if-eqz v0, :cond_37
+    :goto_1
+    if-eqz v0, :cond_4
 
-    :cond_35
+    :cond_3
     move v1, v2
 
-    goto :goto_38
+    goto :goto_2
 
-    :cond_37
+    :cond_4
     nop
 
     .line 163
-    :goto_38
+    :goto_2
     return v1
 .end method
 
 .method public bridge synthetic getEndExclusive()Ljava/lang/Comparable;
-    .registers 2
+    .locals 1
 
     .line 148
     invoke-virtual {p0}, Landroidx/compose/ui/platform/OpenEndFloatRange;->getEndExclusive()Ljava/lang/Float;
@@ -256,7 +256,7 @@
 .end method
 
 .method public getEndExclusive()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 155
     iget v0, p0, Landroidx/compose/ui/platform/OpenEndFloatRange;->_endExclusive:F
@@ -269,7 +269,7 @@
 .end method
 
 .method public bridge synthetic getStart()Ljava/lang/Comparable;
-    .registers 2
+    .locals 1
 
     .line 148
     invoke-virtual {p0}, Landroidx/compose/ui/platform/OpenEndFloatRange;->getStart()Ljava/lang/Float;
@@ -282,7 +282,7 @@
 .end method
 
 .method public getStart()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 154
     iget v0, p0, Landroidx/compose/ui/platform/OpenEndFloatRange;->_start:F
@@ -295,20 +295,20 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 168
     invoke-virtual {p0}, Landroidx/compose/ui/platform/OpenEndFloatRange;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     iget v0, p0, Landroidx/compose/ui/platform/OpenEndFloatRange;->_start:F
 
     invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
@@ -325,12 +325,12 @@
 
     add-int/2addr v0, v1
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 160
     iget v0, p0, Landroidx/compose/ui/platform/OpenEndFloatRange;->_start:F
@@ -339,21 +339,21 @@
 
     cmpg-float v0, v0, v1
 
-    if-ltz v0, :cond_a
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 171
     new-instance v0, Ljava/lang/StringBuilder;

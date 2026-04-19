@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlinx/coroutines/CoroutineScope;)V
-    .registers 3
+    .locals 1
     .param p1, "coroutineScope"    # Lkotlinx/coroutines/CoroutineScope;
 
     const-string/jumbo v0, "coroutineScope"
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final getCoroutineScope()Lkotlinx/coroutines/CoroutineScope;
-    .registers 2
+    .locals 1
 
     .line 424
     iget-object v0, p0, Landroidx/compose/runtime/CompositionScopedCoroutineScopeCanceller;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
@@ -70,7 +70,7 @@
 .end method
 
 .method public onAbandoned()V
-    .registers 3
+    .locals 2
 
     .line 435
     iget-object v0, p0, Landroidx/compose/runtime/CompositionScopedCoroutineScopeCanceller;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
@@ -88,7 +88,7 @@
 .end method
 
 .method public onForgotten()V
-    .registers 3
+    .locals 2
 
     .line 431
     iget-object v0, p0, Landroidx/compose/runtime/CompositionScopedCoroutineScopeCanceller;->coroutineScope:Lkotlinx/coroutines/CoroutineScope;
@@ -106,7 +106,7 @@
 .end method
 
 .method public onRemembered()V
-    .registers 1
+    .locals 0
 
     .line 428
     return-void

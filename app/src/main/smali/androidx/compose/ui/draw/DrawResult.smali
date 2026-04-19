@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final getBlock$ui_release()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -108,7 +108,7 @@
 .end method
 
 .method public final setBlock$ui_release(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -56,7 +56,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/vector/VectorComponent;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent$drawVectorBlock$1;->this$0:Landroidx/compose/ui/graphics/vector/VectorComponent;
 
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 138
@@ -86,7 +86,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 4
+    .locals 2
     .param p1, "$this$null"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     const-string v0, "$this$null"

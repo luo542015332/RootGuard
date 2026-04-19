@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static final setFrom-EL8BTi8(Landroid/graphics/Matrix;[F)V
-    .registers 26
+    .locals 24
     .param p0, "$this$setFrom_u2dEL8BTi8"    # Landroid/graphics/Matrix;
     .param p1, "matrix"    # [F
 
@@ -81,17 +81,17 @@
 
     const/4 v5, 0x0
 
-    if-nez v2, :cond_20
+    if-nez v2, :cond_0
 
     move v2, v4
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     move v2, v5
 
-    :goto_21
-    if-eqz v2, :cond_8d
+    :goto_0
+    if-eqz v2, :cond_7
 
     .line 59
     const/4 v2, 0x1
@@ -116,17 +116,17 @@
     .end local v7    # "$i$f$get-impl":I
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_31
+    if-nez v2, :cond_1
 
     move v2, v4
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_1
     move v2, v5
 
-    :goto_32
-    if-eqz v2, :cond_8d
+    :goto_1
+    if-eqz v2, :cond_7
 
     .line 60
     const/4 v2, 0x2
@@ -153,17 +153,17 @@
 
     cmpg-float v2, v2, v6
 
-    if-nez v2, :cond_44
+    if-nez v2, :cond_2
 
     move v2, v4
 
-    goto :goto_45
+    goto :goto_2
 
-    :cond_44
+    :cond_2
     move v2, v5
 
-    :goto_45
-    if-eqz v2, :cond_8d
+    :goto_2
+    if-eqz v2, :cond_7
 
     .line 61
     const/4 v2, 0x3
@@ -188,17 +188,17 @@
     .end local v7    # "$i$f$get-impl":I
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_55
+    if-nez v2, :cond_3
 
     move v2, v4
 
-    goto :goto_56
+    goto :goto_3
 
-    :cond_55
+    :cond_3
     move v2, v5
 
-    :goto_56
-    if-eqz v2, :cond_8d
+    :goto_3
+    if-eqz v2, :cond_7
 
     .line 62
     const/4 v2, 0x2
@@ -223,17 +223,17 @@
     .end local v7    # "$i$f$get-impl":I
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_66
+    if-nez v2, :cond_4
 
     move v2, v4
 
-    goto :goto_67
+    goto :goto_4
 
-    :cond_66
+    :cond_4
     move v2, v5
 
-    :goto_67
-    if-eqz v2, :cond_8d
+    :goto_4
+    if-eqz v2, :cond_7
 
     .line 63
     const/4 v2, 0x2
@@ -258,17 +258,17 @@
     .end local v7    # "$i$f$get-impl":I
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_77
+    if-nez v2, :cond_5
 
     move v2, v4
 
-    goto :goto_78
+    goto :goto_5
 
-    :cond_77
+    :cond_5
     move v2, v5
 
-    :goto_78
-    if-eqz v2, :cond_8d
+    :goto_5
+    if-eqz v2, :cond_7
 
     .line 64
     const/4 v2, 0x2
@@ -293,28 +293,28 @@
     .end local v7    # "$i$f$get-impl":I
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_88
+    if-nez v2, :cond_6
 
     move v2, v4
 
-    goto :goto_89
+    goto :goto_6
 
-    :cond_88
+    :cond_6
     move v2, v5
 
-    :goto_89
-    if-eqz v2, :cond_8d
+    :goto_6
+    if-eqz v2, :cond_7
 
     move v2, v4
 
-    goto :goto_8e
+    goto :goto_7
 
-    :cond_8d
+    :cond_7
     move v2, v5
 
     .line 57
-    :goto_8e
-    if-eqz v2, :cond_e6
+    :goto_7
+    if-eqz v2, :cond_8
 
     .line 73
     aget v2, v1, v5
@@ -470,7 +470,7 @@
     .end local v20    # "translateX":F
     .end local v21    # "translateY":F
     .end local v22    # "persp2":F
-    :cond_e6
+    :cond_8
     const/4 v2, 0x0
 
     .line 66
@@ -493,7 +493,7 @@
 .end method
 
 .method public static final setFrom-tU-YjHk([FLandroid/graphics/Matrix;)V
-    .registers 23
+    .locals 21
     .param p0, "$this$setFrom_u2dtU_u2dYjHk"    # [F
     .param p1, "matrix"    # Landroid/graphics/Matrix;
 

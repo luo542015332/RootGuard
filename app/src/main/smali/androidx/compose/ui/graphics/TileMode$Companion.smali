@@ -46,7 +46,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/TileMode$Companion;-><init>()V
 
@@ -65,10 +65,9 @@
 
 # virtual methods
 .method public final getClamp-3opZhB0()I
-    .registers 2
+    .locals 1
 
     .line 47
-    # getter for: Landroidx/compose/ui/graphics/TileMode;->Clamp:I
     invoke-static {}, Landroidx/compose/ui/graphics/TileMode;->access$getClamp$cp()I
 
     move-result v0
@@ -77,10 +76,9 @@
 .end method
 
 .method public final getDecal-3opZhB0()I
-    .registers 2
+    .locals 1
 
     .line 74
-    # getter for: Landroidx/compose/ui/graphics/TileMode;->Decal:I
     invoke-static {}, Landroidx/compose/ui/graphics/TileMode;->access$getDecal$cp()I
 
     move-result v0
@@ -89,10 +87,9 @@
 .end method
 
 .method public final getMirror-3opZhB0()I
-    .registers 2
+    .locals 1
 
     .line 67
-    # getter for: Landroidx/compose/ui/graphics/TileMode;->Mirror:I
     invoke-static {}, Landroidx/compose/ui/graphics/TileMode;->access$getMirror$cp()I
 
     move-result v0
@@ -101,10 +98,9 @@
 .end method
 
 .method public final getRepeated-3opZhB0()I
-    .registers 2
+    .locals 1
 
     .line 57
-    # getter for: Landroidx/compose/ui/graphics/TileMode;->Repeated:I
     invoke-static {}, Landroidx/compose/ui/graphics/TileMode;->access$getRepeated$cp()I
 
     move-result v0

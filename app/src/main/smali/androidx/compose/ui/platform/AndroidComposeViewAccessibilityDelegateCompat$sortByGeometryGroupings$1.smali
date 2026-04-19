@@ -62,7 +62,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sortByGeometryGroupings$1;
 
@@ -74,7 +74,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public final invoke(Lkotlin/Pair;)Ljava/lang/Comparable;
-    .registers 3
+    .locals 1
     .param p1, "it"    # Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -127,7 +127,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 656

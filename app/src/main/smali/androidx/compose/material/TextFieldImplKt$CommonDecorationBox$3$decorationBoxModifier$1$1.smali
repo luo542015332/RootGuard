@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(ZLjava/lang/String;)V
-    .registers 4
+    .locals 1
 
     iput-boolean p1, p0, Landroidx/compose/material/TextFieldImplKt$CommonDecorationBox$3$decorationBoxModifier$1$1;->$isError:Z
 
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 153
@@ -86,7 +86,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$semantics"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "$this$semantics"
@@ -96,12 +96,12 @@
     .line 153
     iget-boolean v0, p0, Landroidx/compose/material/TextFieldImplKt$CommonDecorationBox$3$decorationBoxModifier$1$1;->$isError:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/material/TextFieldImplKt$CommonDecorationBox$3$decorationBoxModifier$1$1;->$defaultErrorMessage:Ljava/lang/String;
 
     invoke-static {p1, v0}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->error(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;)V
 
-    :cond_e
+    :cond_0
     return-void
 .end method

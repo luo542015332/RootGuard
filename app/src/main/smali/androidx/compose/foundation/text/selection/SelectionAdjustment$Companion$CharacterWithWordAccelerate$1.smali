@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 189
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 .end method
 
 .method private final isAtWordBoundary(Landroidx/compose/ui/text/TextLayoutResult;I)Z
-    .registers 6
+    .locals 3
     .param p1, "$this$isAtWordBoundary"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p2, "offset"    # I
 
@@ -86,31 +86,31 @@
 
     move-result v2
 
-    if-eq p2, v2, :cond_13
+    if-eq p2, v2, :cond_1
 
     invoke-static {v0, v1}, Landroidx/compose/ui/text/TextRange;->getEnd-impl(J)I
 
     move-result v2
 
-    if-ne p2, v2, :cond_11
+    if-ne p2, v2, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v2, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v2, 0x1
 
-    :goto_14
+    :goto_1
     return v2
 .end method
 
 .method private final isExpanding(IIZZ)Z
-    .registers 8
+    .locals 3
     .param p1, "newRawOffset"    # I
     .param p2, "previousRawOffset"    # I
     .param p3, "isStart"    # Z
@@ -121,52 +121,52 @@
 
     const/4 v1, 0x1
 
-    if-ne p2, v0, :cond_5
+    if-ne p2, v0, :cond_0
 
     .line 393
     return v1
 
     .line 395
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
-    if-ne p1, p2, :cond_9
+    if-ne p1, p2, :cond_1
 
     .line 396
     return v0
 
     .line 398
-    :cond_9
+    :cond_1
     xor-int v2, p3, p4
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_3
 
     .line 399
-    if-ge p1, p2, :cond_10
+    if-ge p1, p2, :cond_2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_10
+    :cond_2
     move v1, v0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 401
-    :cond_12
-    if-le p1, p2, :cond_15
+    :cond_3
+    if-le p1, p2, :cond_4
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_4
     move v1, v0
 
     .line 398
-    :goto_16
+    :goto_0
     return v1
 .end method
 
 .method private final snapToWordBoundary(Landroidx/compose/ui/text/TextLayoutResult;IIIZZ)I
-    .registers 15
+    .locals 8
     .param p1, "textLayoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p2, "newRawOffset"    # I
     .param p3, "currentLine"    # I
@@ -191,23 +191,23 @@
 
     .line 335
     .local v2, "wordStartLine":I
-    if-ne v2, p3, :cond_13
+    if-ne v2, p3, :cond_0
 
     .line 336
     invoke-static {v0, v1}, Landroidx/compose/ui/text/TextRange;->getStart-impl(J)I
 
     move-result v3
 
-    goto :goto_17
+    goto :goto_0
 
     .line 338
-    :cond_13
+    :cond_0
     invoke-virtual {p1, p3}, Landroidx/compose/ui/text/TextLayoutResult;->getLineStart(I)I
 
     move-result v3
 
     .line 335
-    :goto_17
+    :goto_0
     nop
 
     .line 341
@@ -224,17 +224,17 @@
     .local v4, "wordEndLine":I
     const/4 v5, 0x2
 
-    if-ne v4, p3, :cond_28
+    if-ne v4, p3, :cond_1
 
     .line 343
     invoke-static {v0, v1}, Landroidx/compose/ui/text/TextRange;->getEnd-impl(J)I
 
     move-result v6
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 345
-    :cond_28
+    :cond_1
     const/4 v6, 0x0
 
     const/4 v7, 0x0
@@ -244,25 +244,25 @@
     move-result v6
 
     .line 342
-    :goto_2e
+    :goto_1
     nop
 
     .line 351
     .local v6, "end":I
-    if-ne v3, p4, :cond_32
+    if-ne v3, p4, :cond_2
 
     .line 352
     return v6
 
     .line 354
-    :cond_32
-    if-ne v6, p4, :cond_35
+    :cond_2
+    if-ne v6, p4, :cond_3
 
     .line 355
     return v3
 
     .line 358
-    :cond_35
+    :cond_3
     add-int v7, v3, v6
 
     div-int/2addr v7, v5
@@ -271,45 +271,45 @@
     .local v7, "threshold":I
     xor-int v5, p5, p6
 
-    if-eqz v5, :cond_40
+    if-eqz v5, :cond_5
 
     .line 363
-    if-gt p2, v7, :cond_3f
+    if-gt p2, v7, :cond_4
 
     .line 364
-    goto :goto_46
+    goto :goto_3
 
     .line 366
-    :cond_3f
-    goto :goto_43
+    :cond_4
+    goto :goto_2
 
     .line 372
-    :cond_40
-    if-lt p2, v7, :cond_45
+    :cond_5
+    if-lt p2, v7, :cond_6
 
     .line 373
     nop
 
     .line 359
-    :goto_43
+    :goto_2
     move v5, v6
 
-    goto :goto_47
+    goto :goto_4
 
     .line 375
-    :cond_45
+    :cond_6
     nop
 
     .line 359
-    :goto_46
+    :goto_3
     move v5, v3
 
-    :goto_47
+    :goto_4
     return v5
 .end method
 
 .method private final updateSelectionBoundary(Landroidx/compose/ui/text/TextLayoutResult;IIIIZZ)I
-    .registers 25
+    .locals 17
     .param p1, "textLayoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p2, "newRawOffset"    # I
     .param p3, "previousRawOffset"    # I
@@ -329,13 +329,13 @@
 
     move/from16 v11, p4
 
-    if-ne v9, v10, :cond_d
+    if-ne v9, v10, :cond_0
 
     .line 275
     return v11
 
     .line 278
-    :cond_d
+    :cond_0
     invoke-virtual/range {p1 .. p2}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForOffset(I)I
 
     move-result v12
@@ -348,7 +348,7 @@
 
     .line 282
     .local v13, "previousLine":I
-    if-eq v12, v13, :cond_30
+    if-eq v12, v13, :cond_1
 
     .line 283
     nop
@@ -393,7 +393,7 @@
     return v0
 
     .line 296
-    :cond_30
+    :cond_1
     move/from16 v14, p6
 
     move/from16 v15, p7
@@ -407,24 +407,24 @@
 
     .line 297
     .local v16, "isExpanding":Z
-    if-nez v16, :cond_3d
+    if-nez v16, :cond_2
 
     .line 298
     return v9
 
     .line 304
-    :cond_3d
+    :cond_2
     invoke-direct {v7, v8, v11}, Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion$CharacterWithWordAccelerate$1;->isAtWordBoundary(Landroidx/compose/ui/text/TextLayoutResult;I)Z
 
     move-result v0
 
-    if-nez v0, :cond_44
+    if-nez v0, :cond_3
 
     .line 305
     return v9
 
     .line 311
-    :cond_44
+    :cond_3
     nop
 
     .line 312
@@ -470,7 +470,7 @@
 
 # virtual methods
 .method public adjust-ZXO7KMw(Landroidx/compose/ui/text/TextLayoutResult;JIZLandroidx/compose/ui/text/TextRange;)J
-    .registers 23
+    .locals 16
     .param p1, "textLayoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p2, "newRawSelectionRange"    # J
     .param p4, "previousHandleOffset"    # I
@@ -486,7 +486,7 @@
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 198
-    if-nez p6, :cond_26
+    if-nez p6, :cond_0
 
     .line 199
     sget-object v0, Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;->$$INSTANCE:Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;
@@ -528,12 +528,12 @@
     return-wide v0
 
     .line 209
-    :cond_26
+    :cond_0
     invoke-static/range {p2 .. p3}, Landroidx/compose/ui/text/TextRange;->getCollapsed-impl(J)Z
 
     move-result v0
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_1
 
     .line 211
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLayoutInput()Landroidx/compose/ui/text/TextLayoutInput;
@@ -587,7 +587,7 @@
 
     return-wide v0
 
-    :cond_58
+    :cond_1
     const/4 v0, 0x0
 
     .local v0, "start":I
@@ -595,7 +595,7 @@
 
     .line 221
     .local v1, "end":I
-    if-eqz v7, :cond_84
+    if-eqz v7, :cond_2
 
     .line 222
     nop
@@ -651,10 +651,10 @@
 
     move-result v1
 
-    goto :goto_aa
+    goto :goto_0
 
     .line 233
-    :cond_84
+    :cond_2
     invoke-static/range {p2 .. p3}, Landroidx/compose/ui/text/TextRange;->getStart-impl(J)I
 
     move-result v0
@@ -707,7 +707,7 @@
     move-result v1
 
     .line 244
-    :goto_aa
+    :goto_0
     invoke-static {v0, v1}, Landroidx/compose/ui/text/TextRangeKt;->TextRange(II)J
 
     move-result-wide v2

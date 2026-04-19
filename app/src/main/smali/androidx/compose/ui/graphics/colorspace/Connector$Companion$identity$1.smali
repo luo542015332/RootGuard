@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/colorspace/ColorSpace;I)V
-    .registers 4
+    .locals 1
     .param p1, "$source"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .param p2, "$super_call_param$1"    # I
 
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public transform([F)[F
-    .registers 3
+    .locals 1
     .param p1, "v"    # [F
 
     const-string/jumbo v0, "v"
@@ -73,7 +73,7 @@
 .end method
 
 .method public transformToColor-wmQWz5c$ui_graphics_release(FFFF)J
-    .registers 7
+    .locals 2
     .param p1, "r"    # F
     .param p2, "g"    # F
     .param p3, "b"    # F

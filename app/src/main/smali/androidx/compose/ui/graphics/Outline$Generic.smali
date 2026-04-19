@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/graphics/Path;)V
-    .registers 3
+    .locals 1
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
 
     const-string/jumbo v0, "path"
@@ -73,28 +73,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 108
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 109
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/Outline$Generic;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 111
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/Outline$Generic;->path:Landroidx/compose/ui/graphics/Path;
 
     move-object v3, p1
@@ -107,17 +107,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 113
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public getBounds()Landroidx/compose/ui/geometry/Rect;
-    .registers 2
+    .locals 1
 
     .line 105
     iget-object v0, p0, Landroidx/compose/ui/graphics/Outline$Generic;->path:Landroidx/compose/ui/graphics/Path;
@@ -130,7 +130,7 @@
 .end method
 
 .method public final getPath()Landroidx/compose/ui/graphics/Path;
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroidx/compose/ui/graphics/Outline$Generic;->path:Landroidx/compose/ui/graphics/Path;
@@ -139,7 +139,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 117
     iget-object v0, p0, Landroidx/compose/ui/graphics/Outline$Generic;->path:Landroidx/compose/ui/graphics/Path;

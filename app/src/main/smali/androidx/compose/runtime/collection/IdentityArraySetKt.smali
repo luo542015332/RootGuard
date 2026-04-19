@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final fastForEach(Ljava/util/Set;Lkotlin/jvm/functions/Function1;)V
-    .registers 10
+    .locals 8
     .param p0, "$this$fastForEach"    # Ljava/util/Set;
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -65,7 +65,7 @@
     .local v0, "$i$f$fastForEach":I
     instance-of v1, p0, Landroidx/compose/runtime/collection/IdentityArraySet;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_1
 
     .line 385
     move-object v1, p0
@@ -93,8 +93,8 @@
 
     move-result v5
 
-    :goto_1e
-    if-ge v4, v5, :cond_2e
+    :goto_0
+    if-ge v4, v5, :cond_0
 
     .line 394
     aget-object v6, v3, v4
@@ -108,20 +108,20 @@
     .line 392
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 396
     .end local v4    # "i$iv":I
-    :cond_2e
+    :cond_0
     nop
 
     .end local v1    # "this_$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v2    # "$i$f$fastForEach":I
     .end local v3    # "values$iv":[Ljava/lang/Object;
-    goto :goto_47
+    goto :goto_2
 
     .line 387
-    :cond_30
+    :cond_1
     move-object v1, p0
 
     check-cast v1, Ljava/lang/Iterable;
@@ -135,12 +135,12 @@
 
     move-result-object v3
 
-    :goto_38
+    :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_46
+    if-eqz v4, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -149,16 +149,16 @@
     .local v4, "element$iv":Ljava/lang/Object;
     invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_38
+    goto :goto_1
 
     .line 398
     .end local v4    # "element$iv":Ljava/lang/Object;
-    :cond_46
+    :cond_2
     nop
 
     .line 389
     .end local v1    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v2    # "$i$f$forEach":I
-    :goto_47
+    :goto_2
     return-void
 .end method

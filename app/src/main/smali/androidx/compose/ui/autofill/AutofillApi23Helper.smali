@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/autofill/AutofillApi23Helper;
 
@@ -63,7 +63,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 197
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final addChildCount(Landroid/view/ViewStructure;I)I
-    .registers 4
+    .locals 1
     .param p1, "structure"    # Landroid/view/ViewStructure;
     .param p2, "num"    # I
 
@@ -91,7 +91,7 @@
 .end method
 
 .method public final newChild(Landroid/view/ViewStructure;I)Landroid/view/ViewStructure;
-    .registers 4
+    .locals 1
     .param p1, "structure"    # Landroid/view/ViewStructure;
     .param p2, "index"    # I
 
@@ -108,7 +108,7 @@
 .end method
 
 .method public final setDimens(Landroid/view/ViewStructure;IIIIII)V
-    .registers 9
+    .locals 1
     .param p1, "structure"    # Landroid/view/ViewStructure;
     .param p2, "left"    # I
     .param p3, "top"    # I
@@ -128,7 +128,7 @@
 .end method
 
 .method public final setId(Landroid/view/ViewStructure;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 7
+    .locals 1
     .param p1, "structure"    # Landroid/view/ViewStructure;
     .param p2, "id"    # I
     .param p3, "packageName"    # Ljava/lang/String;

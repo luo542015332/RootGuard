@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;Landroidx/compose/ui/autofill/AutofillTree;)V
-    .registers 5
+    .locals 2
     .param p1, "view"    # Landroid/view/View;
     .param p2, "autofillTree"    # Landroidx/compose/ui/autofill/AutofillTree;
 
@@ -87,7 +87,7 @@
 
     check-cast v0, Landroid/view/autofill/AutofillManager;
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     iput-object v0, p0, Landroidx/compose/ui/autofill/AndroidAutofill;->autofillManager:Landroid/view/autofill/AutofillManager;
 
@@ -100,7 +100,7 @@
     return-void
 
     .line 43
-    :cond_28
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 44
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public cancelAutofillForNode(Landroidx/compose/ui/autofill/AutofillNode;)V
-    .registers 5
+    .locals 3
     .param p1, "autofillNode"    # Landroidx/compose/ui/autofill/AutofillNode;
 
     const-string/jumbo v0, "autofillNode"
@@ -141,7 +141,7 @@
 .end method
 
 .method public final getAutofillManager()Landroid/view/autofill/AutofillManager;
-    .registers 2
+    .locals 1
 
     .line 43
     iget-object v0, p0, Landroidx/compose/ui/autofill/AndroidAutofill;->autofillManager:Landroid/view/autofill/AutofillManager;
@@ -150,7 +150,7 @@
 .end method
 
 .method public final getAutofillTree()Landroidx/compose/ui/autofill/AutofillTree;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/compose/ui/autofill/AndroidAutofill;->autofillTree:Landroidx/compose/ui/autofill/AutofillTree;
@@ -159,7 +159,7 @@
 .end method
 
 .method public final getView()Landroid/view/View;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/compose/ui/autofill/AndroidAutofill;->view:Landroid/view/View;
@@ -168,7 +168,7 @@
 .end method
 
 .method public requestAutofillForNode(Landroidx/compose/ui/autofill/AutofillNode;)V
-    .registers 11
+    .locals 9
     .param p1, "autofillNode"    # Landroidx/compose/ui/autofill/AutofillNode;
 
     const-string/jumbo v0, "autofillNode"
@@ -180,7 +180,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_0
 
     .line 54
     .local v0, "boundingBox":Landroidx/compose/ui/geometry/Rect;
@@ -244,7 +244,7 @@
 
     .line 49
     .end local v0    # "boundingBox":Landroidx/compose/ui/geometry/Rect;
-    :cond_3d
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 50

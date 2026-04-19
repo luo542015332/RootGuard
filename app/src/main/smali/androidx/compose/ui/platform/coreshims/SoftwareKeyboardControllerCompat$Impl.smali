@@ -16,7 +16,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -28,14 +28,14 @@
 
 # virtual methods
 .method hide()V
-    .registers 1
+    .locals 0
 
     .line 93
     return-void
 .end method
 
 .method show()V
-    .registers 1
+    .locals 0
 
     .line 90
     return-void

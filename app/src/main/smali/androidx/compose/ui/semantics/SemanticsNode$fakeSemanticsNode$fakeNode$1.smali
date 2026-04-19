@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
     .param p1, "$properties"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public applySemantics(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$applySemantics"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"

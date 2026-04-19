@@ -70,7 +70,7 @@
 
 # direct methods
 .method private static final synthetic $values()[Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
-    .registers 4
+    .locals 4
 
     sget-object v0, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->Copy:Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
 
@@ -88,7 +88,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 102
     new-instance v0, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
@@ -144,7 +144,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
-    .registers 4
+    .locals 0
     .param p1, "$enum$name"    # Ljava/lang/String;
     .param p2, "$enum$ordinal"    # I
     .param p3, "id"    # I
@@ -167,7 +167,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
-    .registers 2
+    .locals 1
 
     const-class v0, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
 
@@ -181,7 +181,7 @@
 .end method
 
 .method public static values()[Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->$VALUES:[Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
 
@@ -197,7 +197,7 @@
 
 # virtual methods
 .method public final getId()I
-    .registers 2
+    .locals 1
 
     .line 101
     iget v0, p0, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->id:I
@@ -206,7 +206,7 @@
 .end method
 
 .method public final getOrder()I
-    .registers 2
+    .locals 1
 
     .line 118
     iget v0, p0, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->order:I
@@ -215,7 +215,7 @@
 .end method
 
 .method public final getTitleResource()I
-    .registers 3
+    .locals 2
 
     .line 108
     sget-object v0, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -226,7 +226,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 112
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -235,38 +235,38 @@
 
     throw v0
 
-    :pswitch_11
+    :pswitch_0
     const v0, 0x104000d
 
-    goto :goto_20
+    goto :goto_0
 
     .line 111
-    :pswitch_15
+    :pswitch_1
     const v0, 0x1040003
 
-    goto :goto_20
+    goto :goto_0
 
     .line 110
-    :pswitch_19
+    :pswitch_2
     const v0, 0x104000b
 
-    goto :goto_20
+    goto :goto_0
 
     .line 109
-    :pswitch_1d
+    :pswitch_3
     const v0, 0x1040001
 
     .line 113
-    :goto_20
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_1d
-        :pswitch_19
-        :pswitch_15
-        :pswitch_11
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

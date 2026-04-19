@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/ExpandShrinkModifier;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/animation/ExpandShrinkModifier$sizeTransitionSpec$1;->this$0:Landroidx/compose/animation/ExpandShrinkModifier;
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/animation/core/Transition$Segment;)Landroidx/compose/animation/core/FiniteAnimationSpec;
-    .registers 5
+    .locals 3
     .param p1, "$this$null"    # Landroidx/compose/animation/core/Transition$Segment;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -103,7 +103,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 1107
     iget-object v0, p0, Landroidx/compose/animation/ExpandShrinkModifier$sizeTransitionSpec$1;->this$0:Landroidx/compose/animation/ExpandShrinkModifier;
@@ -118,16 +118,16 @@
 
     check-cast v0, Landroidx/compose/animation/ChangeSize;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/animation/ChangeSize;->getAnimationSpec()Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     move-result-object v1
 
-    goto :goto_48
+    goto :goto_0
 
     .line 1108
-    :cond_24
+    :cond_0
     sget-object v0, Landroidx/compose/animation/EnterExitState;->Visible:Landroidx/compose/animation/EnterExitState;
 
     sget-object v2, Landroidx/compose/animation/EnterExitState;->PostExit:Landroidx/compose/animation/EnterExitState;
@@ -136,7 +136,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 1109
     iget-object v0, p0, Landroidx/compose/animation/ExpandShrinkModifier$sizeTransitionSpec$1;->this$0:Landroidx/compose/animation/ExpandShrinkModifier;
@@ -151,17 +151,16 @@
 
     check-cast v0, Landroidx/compose/animation/ChangeSize;
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/animation/ChangeSize;->getAnimationSpec()Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     move-result-object v1
 
-    goto :goto_48
+    goto :goto_0
 
     .line 1110
-    :cond_41
-    # getter for: Landroidx/compose/animation/EnterExitTransitionKt;->DefaultSizeAnimationSpec:Landroidx/compose/animation/core/SpringSpec;
+    :cond_1
     invoke-static {}, Landroidx/compose/animation/EnterExitTransitionKt;->access$getDefaultSizeAnimationSpec$p()Landroidx/compose/animation/core/SpringSpec;
 
     move-result-object v0
@@ -171,12 +170,11 @@
     check-cast v1, Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     .line 1105
-    :cond_48
-    :goto_48
-    if-nez v1, :cond_51
+    :cond_2
+    :goto_0
+    if-nez v1, :cond_3
 
     .line 1111
-    # getter for: Landroidx/compose/animation/EnterExitTransitionKt;->DefaultSizeAnimationSpec:Landroidx/compose/animation/core/SpringSpec;
     invoke-static {}, Landroidx/compose/animation/EnterExitTransitionKt;->access$getDefaultSizeAnimationSpec$p()Landroidx/compose/animation/core/SpringSpec;
 
     move-result-object v0
@@ -186,12 +184,12 @@
     check-cast v1, Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     .line 1105
-    :cond_51
+    :cond_3
     return-object v1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 1104

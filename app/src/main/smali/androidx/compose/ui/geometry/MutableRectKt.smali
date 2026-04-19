@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final toRect(Landroidx/compose/ui/geometry/MutableRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 5
     .param p0, "$this$toRect"    # Landroidx/compose/ui/geometry/MutableRect;
 
     const-string v0, "<this>"

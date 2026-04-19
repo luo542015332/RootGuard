@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final varargs persistentCompositionLocalHashMapOf([Lkotlin/Pair;)Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 6
+    .locals 5
     .param p0, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,7 +102,7 @@
 .end method
 
 .method public static final persistentCompositionLocalHashMapOf()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
-    .registers 1
+    .locals 1
 
     .line 69
     sget-object v0, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;->Companion:Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Companion;

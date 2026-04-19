@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic getSegment$default(Landroidx/compose/ui/graphics/PathMeasure;FFLandroidx/compose/ui/graphics/Path;ZILjava/lang/Object;)Z
-    .registers 7
+    .locals 0
 
     .line 46
     invoke-static/range {p0 .. p6}, Landroidx/compose/ui/graphics/PathMeasure;->getSegment$default(Landroidx/compose/ui/graphics/PathMeasure;FFLandroidx/compose/ui/graphics/Path;ZILjava/lang/Object;)Z

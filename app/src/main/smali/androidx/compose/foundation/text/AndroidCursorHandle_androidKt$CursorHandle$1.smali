@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;I)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -124,7 +124,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 6
+    .locals 3
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -137,30 +137,30 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_1
 
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 52
-    :cond_11
+    :cond_0
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto :goto_69
+    goto :goto_2
 
     .line 48
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     const/4 v0, -0x1
 
@@ -170,10 +170,10 @@
 
     invoke-static {v2, p2, v0, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_25
+    :cond_2
     iget-object v0, p0, Landroidx/compose/foundation/text/AndroidCursorHandle_androidKt$CursorHandle$1;->$content:Lkotlin/jvm/functions/Function2;
 
-    if-nez v0, :cond_43
+    if-nez v0, :cond_3
 
     const v0, 0x4c08c7b9    # 3.58561E7f
 
@@ -197,10 +197,10 @@
     .line 48
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
-    goto :goto_60
+    goto :goto_1
 
     .line 50
-    :cond_43
+    :cond_3
     const v0, 0x4c08c7ff    # 3.585638E7f
 
     invoke-interface {p1, v0}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
@@ -227,17 +227,17 @@
     .line 50
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
-    :goto_60
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 53
-    :cond_69
-    :goto_69
+    :cond_4
+    :goto_2
     return-void
 .end method

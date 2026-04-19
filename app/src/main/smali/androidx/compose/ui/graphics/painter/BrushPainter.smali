@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/graphics/Brush;)V
-    .registers 3
+    .locals 1
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
 
     const-string/jumbo v0, "brush"
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method protected applyAlpha(F)Z
-    .registers 3
+    .locals 1
     .param p1, "alpha"    # F
 
     .line 43
@@ -97,7 +97,7 @@
 .end method
 
 .method protected applyColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Z
-    .registers 3
+    .locals 1
     .param p1, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 48
@@ -110,28 +110,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 53
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 54
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/painter/BrushPainter;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 56
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/painter/BrushPainter;->brush:Landroidx/compose/ui/graphics/Brush;
 
     move-object v3, p1
@@ -144,17 +144,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 58
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public final getBrush()Landroidx/compose/ui/graphics/Brush;
-    .registers 2
+    .locals 1
 
     .line 29
     iget-object v0, p0, Landroidx/compose/ui/graphics/painter/BrushPainter;->brush:Landroidx/compose/ui/graphics/Brush;
@@ -163,7 +163,7 @@
 .end method
 
 .method public getIntrinsicSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 36
     iget-object v0, p0, Landroidx/compose/ui/graphics/painter/BrushPainter;->brush:Landroidx/compose/ui/graphics/Brush;
@@ -176,7 +176,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/compose/ui/graphics/painter/BrushPainter;->brush:Landroidx/compose/ui/graphics/Brush;
@@ -189,7 +189,7 @@
 .end method
 
 .method protected onDraw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 15
+    .locals 13
     .param p1, "$this$onDraw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     const-string v0, "<this>"
@@ -224,7 +224,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 66
     new-instance v0, Ljava/lang/StringBuilder;

@@ -121,7 +121,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 49
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
@@ -179,7 +179,7 @@
 .end method
 
 .method public static final PathData(Lkotlin/jvm/functions/Function1;)Ljava/util/List;
-    .registers 4
+    .locals 3
     .param p0, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -229,7 +229,7 @@
 .end method
 
 .method public static final addPathNodes(Ljava/lang/String;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .param p0, "pathStr"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -243,15 +243,15 @@
     .end annotation
 
     .line 69
-    if-nez p0, :cond_5
+    if-nez p0, :cond_0
 
     .line 70
     sget-object v0, Landroidx/compose/ui/graphics/vector/VectorKt;->EmptyPath:Ljava/util/List;
 
-    goto :goto_12
+    goto :goto_0
 
     .line 72
-    :cond_5
+    :cond_0
     new-instance v0, Landroidx/compose/ui/graphics/vector/PathParser;
 
     invoke-direct {v0}, Landroidx/compose/ui/graphics/vector/PathParser;-><init>()V
@@ -265,12 +265,12 @@
     move-result-object v0
 
     .line 73
-    :goto_12
+    :goto_0
     return-object v0
 .end method
 
 .method public static final getDefaultFillType()I
-    .registers 1
+    .locals 1
 
     .line 62
     sget v0, Landroidx/compose/ui/graphics/vector/VectorKt;->DefaultFillType:I
@@ -279,7 +279,7 @@
 .end method
 
 .method public static final getDefaultStrokeLineCap()I
-    .registers 1
+    .locals 1
 
     .line 58
     sget v0, Landroidx/compose/ui/graphics/vector/VectorKt;->DefaultStrokeLineCap:I
@@ -288,7 +288,7 @@
 .end method
 
 .method public static final getDefaultStrokeLineJoin()I
-    .registers 1
+    .locals 1
 
     .line 59
     sget v0, Landroidx/compose/ui/graphics/vector/VectorKt;->DefaultStrokeLineJoin:I
@@ -297,7 +297,7 @@
 .end method
 
 .method public static final getDefaultTintBlendMode()I
-    .registers 1
+    .locals 1
 
     .line 60
     sget v0, Landroidx/compose/ui/graphics/vector/VectorKt;->DefaultTintBlendMode:I
@@ -306,7 +306,7 @@
 .end method
 
 .method public static final getDefaultTintColor()J
-    .registers 2
+    .locals 2
 
     .line 61
     sget-wide v0, Landroidx/compose/ui/graphics/vector/VectorKt;->DefaultTintColor:J
@@ -315,7 +315,7 @@
 .end method
 
 .method public static final getEmptyPath()Ljava/util/List;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

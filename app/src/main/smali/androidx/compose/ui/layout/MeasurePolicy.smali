@@ -54,7 +54,7 @@
 
 # direct methods
 .method public static synthetic access$maxIntrinsicHeight$jd(Landroidx/compose/ui/layout/MeasurePolicy;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasurePolicy;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
@@ -69,7 +69,7 @@
 .end method
 
 .method public static synthetic access$maxIntrinsicWidth$jd(Landroidx/compose/ui/layout/MeasurePolicy;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasurePolicy;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
@@ -84,7 +84,7 @@
 .end method
 
 .method public static synthetic access$minIntrinsicHeight$jd(Landroidx/compose/ui/layout/MeasurePolicy;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasurePolicy;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
@@ -99,7 +99,7 @@
 .end method
 
 .method public static synthetic access$minIntrinsicWidth$jd(Landroidx/compose/ui/layout/MeasurePolicy;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasurePolicy;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 21
+    .locals 17
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -181,8 +181,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_4a
+    :goto_0
+    if-ge v7, v8, :cond_0
 
     .line 202
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -244,11 +244,11 @@
 
     move-object/from16 v1, v16
 
-    goto :goto_24
+    goto :goto_0
 
     .end local v16    # "$this$fastMap$iv":Ljava/util/List;
     .restart local v1    # "$this$fastMap$iv":Ljava/util/List;
-    :cond_4a
+    :cond_0
     move-object/from16 v16, v1
 
     .line 206
@@ -320,7 +320,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 21
+    .locals 17
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -385,8 +385,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_4a
+    :goto_0
+    if-ge v7, v8, :cond_0
 
     .line 191
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -448,11 +448,11 @@
 
     move-object/from16 v1, v16
 
-    goto :goto_24
+    goto :goto_0
 
     .end local v16    # "$this$fastMap$iv":Ljava/util/List;
     .restart local v1    # "$this$fastMap$iv":Ljava/util/List;
-    :cond_4a
+    :cond_0
     move-object/from16 v16, v1
 
     .line 195
@@ -538,7 +538,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 21
+    .locals 17
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -603,8 +603,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_4a
+    :goto_0
+    if-ge v7, v8, :cond_0
 
     .line 180
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -666,11 +666,11 @@
 
     move-object/from16 v1, v16
 
-    goto :goto_24
+    goto :goto_0
 
     .end local v16    # "$this$fastMap$iv":Ljava/util/List;
     .restart local v1    # "$this$fastMap$iv":Ljava/util/List;
-    :cond_4a
+    :cond_0
     move-object/from16 v16, v1
 
     .line 184
@@ -742,7 +742,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 21
+    .locals 17
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -807,8 +807,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_4a
+    :goto_0
+    if-ge v7, v8, :cond_0
 
     .line 169
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -870,11 +870,11 @@
 
     move-object/from16 v1, v16
 
-    goto :goto_24
+    goto :goto_0
 
     .end local v16    # "$this$fastMap$iv":Ljava/util/List;
     .restart local v1    # "$this$fastMap$iv":Ljava/util/List;
-    :cond_4a
+    :cond_0
     move-object/from16 v16, v1
 
     .line 173

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final onKeyEvent(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$onKeyEvent"    # Landroidx/compose/ui/Modifier;
     .param p1, "onKeyEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -70,7 +70,7 @@
 .end method
 
 .method public static final onPreviewKeyEvent(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$onPreviewKeyEvent"    # Landroidx/compose/ui/Modifier;
     .param p1, "onPreviewKeyEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

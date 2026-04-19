@@ -60,7 +60,7 @@
 
 # direct methods
 .method public varargs constructor <init>([Lkotlin/Pair;)V
-    .registers 4
+    .locals 2
     .param p1, "entries"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public contains$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -135,7 +135,7 @@
 .end method
 
 .method public get$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -158,16 +158,16 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    :cond_f
+    :cond_0
     return-object v0
 .end method
 
 .method public set$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

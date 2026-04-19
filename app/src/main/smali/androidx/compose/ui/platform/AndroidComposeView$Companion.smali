@@ -45,7 +45,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1813
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/AndroidComposeView$Companion;-><init>()V
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final synthetic access$getIsShowingLayoutBounds(Landroidx/compose/ui/platform/AndroidComposeView$Companion;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView$Companion;
 
     .line 1813
@@ -74,7 +74,7 @@
 .end method
 
 .method private final getIsShowingLayoutBounds()Z
-    .registers 9
+    .locals 8
 
     .line 1821
     nop
@@ -82,8 +82,7 @@
     .line 1822
     const/4 v0, 0x0
 
-    :try_start_2
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->systemPropertiesClass:Ljava/lang/Class;
+    :try_start_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getSystemPropertiesClass$cp()Ljava/lang/Class;
 
     move-result-object v1
@@ -94,7 +93,7 @@
 
     const/4 v4, 0x0
 
-    if-nez v1, :cond_31
+    if-nez v1, :cond_1
 
     .line 1823
     const-string/jumbo v1, "android.os.SystemProperties"
@@ -106,12 +105,11 @@
     invoke-static {v1}, Landroidx/compose/ui/platform/AndroidComposeView;->access$setSystemPropertiesClass$cp(Ljava/lang/Class;)V
 
     .line 1824
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->systemPropertiesClass:Ljava/lang/Class;
     invoke-static {}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getSystemPropertiesClass$cp()Ljava/lang/Class;
 
     move-result-object v1
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_0
 
     .line 1825
     const-string/jumbo v5, "getBoolean"
@@ -132,22 +130,21 @@
 
     move-result-object v1
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     move-object v1, v4
 
-    :goto_2e
+    :goto_0
     invoke-static {v1}, Landroidx/compose/ui/platform/AndroidComposeView;->access$setGetBooleanMethod$cp(Ljava/lang/reflect/Method;)V
 
     .line 1830
-    :cond_31
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->getBooleanMethod:Ljava/lang/reflect/Method;
+    :cond_1
     invoke-static {}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getGetBooleanMethod$cp()Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -165,33 +162,33 @@
 
     move-result-object v1
 
-    goto :goto_4a
+    goto :goto_1
 
-    :cond_49
+    :cond_2
     move-object v1, v4
 
-    :goto_4a
+    :goto_1
     instance-of v2, v1, Ljava/lang/Boolean;
 
-    if-eqz v2, :cond_51
+    if-eqz v2, :cond_3
 
     move-object v4, v1
 
     check-cast v4, Ljava/lang/Boolean;
 
-    :cond_51
-    if-eqz v4, :cond_5a
+    :cond_3
+    if-eqz v4, :cond_4
 
     invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
-    :try_end_57
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_57} :catch_58
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_5a
+    goto :goto_2
 
     .line 1831
-    :catch_58
+    :catch_0
     move-exception v1
 
     .line 1832
@@ -200,7 +197,7 @@
 
     .line 1833
     .end local v1    # "e":Ljava/lang/Exception;
-    :cond_5a
-    :goto_5a
+    :cond_4
+    :goto_2
     return v0
 .end method

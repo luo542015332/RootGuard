@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final modifierLocalProvider(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/modifier/ProvidableModifierLocal;Lkotlin/jvm/functions/Function0;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 2
     .param p0, "$this$modifierLocalProvider"    # Landroidx/compose/ui/Modifier;
     .param p1, "key"    # Landroidx/compose/ui/modifier/ProvidableModifierLocal;
     .param p2, "value"    # Lkotlin/jvm/functions/Function0;
@@ -76,7 +76,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_0
 
     new-instance v1, Landroidx/compose/ui/modifier/ModifierLocalProviderKt$modifierLocalProvider$$inlined$debugInspectorInfo$1;
 
@@ -84,16 +84,16 @@
 
     check-cast v1, Lkotlin/jvm/functions/Function1;
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
 
     move-result-object v1
 
     .line 59
     .end local v0    # "$i$f$debugInspectorInfo":I
-    :goto_25
+    :goto_0
     nop
 
     .line 57

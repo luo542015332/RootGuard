@@ -86,7 +86,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 571
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/Float16$Companion;-><init>()V
 
@@ -103,7 +103,7 @@
 .end method
 
 .method public static final synthetic access$floatToHalf(Landroidx/compose/ui/graphics/Float16$Companion;F)S
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Float16$Companion;
     .param p1, "f"    # F
 
@@ -116,7 +116,7 @@
 .end method
 
 .method public static final synthetic access$toCompareValue(Landroidx/compose/ui/graphics/Float16$Companion;S)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Float16$Companion;
     .param p1, "value"    # S
 
@@ -129,7 +129,7 @@
 .end method
 
 .method private final floatToHalf(F)S
-    .registers 10
+    .locals 8
     .param p1, "f"    # F
 
     .line 660
@@ -165,28 +165,28 @@
 
     .line 668
     .local v6, "outM":I
-    if-ne v2, v3, :cond_1d
+    if-ne v2, v3, :cond_1
 
     .line 669
     const/16 v5, 0x1f
 
     .line 670
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_0
 
     const/16 v3, 0x200
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v3, 0x0
 
-    :goto_1b
+    :goto_0
     move v6, v3
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 672
-    :cond_1d
+    :cond_1
     add-int/lit8 v3, v2, -0x7f
 
     add-int/lit8 v2, v3, 0xf
@@ -194,21 +194,21 @@
     .line 673
     const/16 v3, 0x1f
 
-    if-lt v2, v3, :cond_28
+    if-lt v2, v3, :cond_2
 
     .line 674
     const/16 v5, 0x31
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 675
-    :cond_28
-    if-gtz v2, :cond_3e
+    :cond_2
+    if-gtz v2, :cond_4
 
     .line 676
     const/16 v3, -0xa
 
-    if-lt v2, v3, :cond_4f
+    if-lt v2, v3, :cond_5
 
     .line 681
     const/high16 v3, 0x800000
@@ -224,11 +224,11 @@
     .local v3, "m":I
     and-int/lit16 v4, v3, 0x1000
 
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_3
 
     add-int/lit16 v3, v3, 0x2000
 
-    :cond_3a
+    :cond_3
     move v4, v3
 
     .line 683
@@ -236,10 +236,10 @@
     .restart local v4    # "m":I
     shr-int/lit8 v6, v4, 0xd
 
-    goto :goto_4f
+    goto :goto_1
 
     .line 686
-    :cond_3e
+    :cond_4
     move v5, v2
 
     .line 687
@@ -248,7 +248,7 @@
     .line 688
     and-int/lit16 v3, v4, 0x1000
 
-    if-eqz v3, :cond_4f
+    if-eqz v3, :cond_5
 
     .line 690
     shl-int/lit8 v3, v5, 0xa
@@ -270,8 +270,8 @@
 
     .line 697
     .end local v3    # "out":I
-    :cond_4f
-    :goto_4f
+    :cond_5
+    :goto_1
     shl-int/lit8 v3, v1, 0xf
 
     shl-int/lit8 v7, v5, 0xa
@@ -286,7 +286,7 @@
 .end method
 
 .method private final toCompareValue(S)I
-    .registers 5
+    .locals 3
     .param p1, "value"    # S
 
     .line 652
@@ -296,31 +296,30 @@
 
     const v2, 0xffff
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 653
     and-int v1, p1, v2
 
     sub-int/2addr v0, v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 655
-    :cond_e
+    :cond_0
     and-int v0, p1, v2
 
     .line 652
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method public final getEpsilon-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 581
-    # getter for: Landroidx/compose/ui/graphics/Float16;->Epsilon:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getEpsilon$cp()S
 
     move-result v0
@@ -329,10 +328,9 @@
 .end method
 
 .method public final getLowestValue-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 595
-    # getter for: Landroidx/compose/ui/graphics/Float16;->LowestValue:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getLowestValue$cp()S
 
     move-result v0
@@ -341,10 +339,9 @@
 .end method
 
 .method public final getMaxValue-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 599
-    # getter for: Landroidx/compose/ui/graphics/Float16;->MaxValue:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getMaxValue$cp()S
 
     move-result v0
@@ -353,10 +350,9 @@
 .end method
 
 .method public final getMinNormal-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 603
-    # getter for: Landroidx/compose/ui/graphics/Float16;->MinNormal:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getMinNormal$cp()S
 
     move-result v0
@@ -365,10 +361,9 @@
 .end method
 
 .method public final getMinValue-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 607
-    # getter for: Landroidx/compose/ui/graphics/Float16;->MinValue:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getMinValue$cp()S
 
     move-result v0
@@ -377,10 +372,9 @@
 .end method
 
 .method public final getNaN-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 611
-    # getter for: Landroidx/compose/ui/graphics/Float16;->NaN:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getNaN$cp()S
 
     move-result v0
@@ -389,10 +383,9 @@
 .end method
 
 .method public final getNegativeInfinity-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 615
-    # getter for: Landroidx/compose/ui/graphics/Float16;->NegativeInfinity:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getNegativeInfinity$cp()S
 
     move-result v0
@@ -401,10 +394,9 @@
 .end method
 
 .method public final getNegativeZero-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 619
-    # getter for: Landroidx/compose/ui/graphics/Float16;->NegativeZero:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getNegativeZero$cp()S
 
     move-result v0
@@ -413,10 +405,9 @@
 .end method
 
 .method public final getPositiveInfinity-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 623
-    # getter for: Landroidx/compose/ui/graphics/Float16;->PositiveInfinity:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getPositiveInfinity$cp()S
 
     move-result v0
@@ -425,10 +416,9 @@
 .end method
 
 .method public final getPositiveZero-slo4al4()S
-    .registers 2
+    .locals 1
 
     .line 627
-    # getter for: Landroidx/compose/ui/graphics/Float16;->PositiveZero:S
     invoke-static {}, Landroidx/compose/ui/graphics/Float16;->access$getPositiveZero$cp()S
 
     move-result v0

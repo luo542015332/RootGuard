@@ -63,7 +63,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 1432
     new-instance v0, Ljava/lang/Object;
@@ -83,7 +83,7 @@
 .end method
 
 .method public static final synthetic access$getFramePending$p()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/RecomposerKt;->FramePending:Ljava/lang/Object;
@@ -92,7 +92,7 @@
 .end method
 
 .method public static final synthetic access$getProduceAnotherFrame$p()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/RecomposerKt;->ProduceAnotherFrame:Ljava/lang/Object;
@@ -101,7 +101,7 @@
 .end method
 
 .method public static final addMultiValue(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 8
+    .locals 5
     .param p0, "$this$addMultiValue"    # Ljava/util/Map;
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
@@ -137,7 +137,7 @@
 
     .line 1504
     .local v2, "value$iv":Ljava/lang/Object;
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_0
 
     .line 1505
     const/4 v3, 0x0
@@ -162,14 +162,14 @@
     nop
 
     .end local v3    # "answer$iv":Ljava/lang/Object;
-    goto :goto_1c
+    goto :goto_0
 
     .line 1509
-    :cond_1b
+    :cond_0
     move-object v3, v2
 
     .line 1504
-    :goto_1c
+    :goto_0
     nop
 
     .end local v0    # "$this$getOrPut$iv":Ljava/util/Map;
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final removeLastMultiValue(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 6
     .param p0, "$this$removeLastMultiValue"    # Ljava/util/Map;
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -214,7 +214,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_1
 
     .local v0, "list":Ljava/util/List;
     const/4 v1, 0x0
@@ -236,13 +236,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_0
 
     .line 1500
     invoke-interface {p0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1501
-    :cond_1d
+    :cond_0
     nop
 
     .line 1498
@@ -253,18 +253,18 @@
     .line 1497
     .end local v0    # "list":Ljava/util/List;
     .end local v1    # "$i$a$-let-RecomposerKt$removeLastMultiValue$1":I
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     const/4 v2, 0x0
 
     .line 1502
-    :goto_21
+    :goto_0
     return-object v2
 .end method
 
 .method public static final withRunningRecomposer(Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p0, "block"    # Lkotlin/jvm/functions/Function3;
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;

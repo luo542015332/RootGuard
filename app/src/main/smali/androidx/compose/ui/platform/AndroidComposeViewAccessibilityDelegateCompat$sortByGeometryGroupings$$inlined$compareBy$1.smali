@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 7
+    .locals 4
     .param p1, "a"    # Ljava/lang/Object;
     .param p2, "b"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -86,7 +86,6 @@
 
     .line 329
     .local v1, "$i$a$-compareBy-AndroidComposeViewAccessibilityDelegateCompat$sortByGeometryGroupings$4":I
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat_androidKt;->getGetTraversalIndex(Landroidx/compose/ui/semantics/SemanticsNode;)F
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat_androidKt;->access$getGetTraversalIndex(Landroidx/compose/ui/semantics/SemanticsNode;)F
 
     move-result v2
@@ -109,7 +108,6 @@
 
     .line 329
     .restart local v1    # "$i$a$-compareBy-AndroidComposeViewAccessibilityDelegateCompat$sortByGeometryGroupings$4":I
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat_androidKt;->getGetTraversalIndex(Landroidx/compose/ui/semantics/SemanticsNode;)F
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat_androidKt;->access$getGetTraversalIndex(Landroidx/compose/ui/semantics/SemanticsNode;)F
 
     move-result v3

@@ -61,7 +61,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/core/Transition;Ljava/lang/Object;I)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     move-object v0, p1
 
@@ -108,7 +108,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 6
+    .locals 3
 
     iget-object v0, p0, Landroidx/compose/animation/core/Transition$updateTarget$2;->$tmp0_rcvr:Landroidx/compose/animation/core/Transition;
 

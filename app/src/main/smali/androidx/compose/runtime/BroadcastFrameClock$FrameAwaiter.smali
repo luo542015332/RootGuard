@@ -82,7 +82,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .param p1, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p2, "continuation"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public final getContinuation()Lkotlin/coroutines/Continuation;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -134,7 +134,7 @@
 .end method
 
 .method public final getOnFrame()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -151,13 +151,13 @@
 .end method
 
 .method public final resume(J)V
-    .registers 8
+    .locals 5
     .param p1, "timeNanos"    # J
 
     .line 42
     iget-object v0, p0, Landroidx/compose/runtime/BroadcastFrameClock$FrameAwaiter;->continuation:Lkotlin/coroutines/Continuation;
 
-    :try_start_2
+    :try_start_0
     sget-object v1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     move-object v1, p0
@@ -185,12 +185,12 @@
     invoke-static {v3}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
-    :try_end_16
-    .catchall {:try_start_2 .. :try_end_16} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_22
+    goto :goto_0
 
-    :catchall_17
+    :catchall_0
     move-exception v1
 
     sget-object v2, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
@@ -203,7 +203,7 @@
 
     move-result-object v1
 
-    :goto_22
+    :goto_0
     invoke-interface {v0, v1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 43

@@ -70,7 +70,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/State;Landroidx/compose/foundation/gestures/ScrollConfig;)V
-    .registers 4
+    .locals 1
     .param p1, "scrollingLogicState"    # Landroidx/compose/runtime/State;
     .param p2, "mouseWheelScrollConfig"    # Landroidx/compose/foundation/gestures/ScrollConfig;
     .annotation system Ldalvik/annotation/Signature;
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public create()Landroidx/compose/foundation/gestures/MouseWheelScrollNode;
-    .registers 4
+    .locals 3
 
     .line 303
     new-instance v0, Landroidx/compose/foundation/gestures/MouseWheelScrollNode;
@@ -123,7 +123,7 @@
 .end method
 
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 298
     invoke-virtual {p0}, Landroidx/compose/foundation/gestures/MouseWheelScrollElement;->create()Landroidx/compose/foundation/gestures/MouseWheelScrollNode;
@@ -136,28 +136,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 318
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 319
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/foundation/gestures/MouseWheelScrollElement;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 321
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/foundation/gestures/MouseWheelScrollElement;->scrollingLogicState:Landroidx/compose/runtime/State;
 
     move-object v3, p1
@@ -170,12 +170,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 322
-    :cond_18
+    :cond_2
     iget-object v1, p0, Landroidx/compose/foundation/gestures/MouseWheelScrollElement;->mouseWheelScrollConfig:Landroidx/compose/foundation/gestures/ScrollConfig;
 
     move-object v3, p1
@@ -188,17 +188,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 323
-    :cond_26
+    :cond_3
     return v0
 .end method
 
 .method public final getMouseWheelScrollConfig()Landroidx/compose/foundation/gestures/ScrollConfig;
-    .registers 2
+    .locals 1
 
     .line 300
     iget-object v0, p0, Landroidx/compose/foundation/gestures/MouseWheelScrollElement;->mouseWheelScrollConfig:Landroidx/compose/foundation/gestures/ScrollConfig;
@@ -207,7 +207,7 @@
 .end method
 
 .method public final getScrollingLogicState()Landroidx/compose/runtime/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -224,7 +224,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 312
     iget-object v0, p0, Landroidx/compose/foundation/gestures/MouseWheelScrollElement;->scrollingLogicState:Landroidx/compose/runtime/State;
@@ -252,7 +252,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -264,7 +264,7 @@
 .end method
 
 .method public update(Landroidx/compose/foundation/gestures/MouseWheelScrollNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/foundation/gestures/MouseWheelScrollNode;
 
     const-string/jumbo v0, "node"
@@ -286,7 +286,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 298

@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static synthetic access$drawImage-AZ2fEMs$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
-    .registers 15
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
@@ -56,7 +56,7 @@
 .end method
 
 .method public static synthetic access$getCenter-F1C5BW0$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
 
     .line 25
@@ -68,7 +68,7 @@
 .end method
 
 .method public static synthetic access$getSize-NH-jbRc$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
 
     .line 25
@@ -80,7 +80,7 @@
 .end method
 
 .method public static synthetic access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
 
@@ -93,7 +93,7 @@
 .end method
 
 .method public static synthetic access$roundToPx-0680j_4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
 
@@ -106,7 +106,7 @@
 .end method
 
 .method public static synthetic access$toDp-GaN1DYA$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
 
@@ -119,7 +119,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
 
@@ -132,7 +132,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # I
 
@@ -145,7 +145,7 @@
 .end method
 
 .method public static synthetic access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public static synthetic access$toPx--R2X_6o$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
 
@@ -171,7 +171,7 @@
 .end method
 
 .method public static synthetic access$toPx-0680j_4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public static synthetic access$toRect$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
 
@@ -197,7 +197,7 @@
 .end method
 
 .method public static synthetic access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public static synthetic access$toSp-0xMU5do$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
 
@@ -223,7 +223,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
 
@@ -236,7 +236,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # I
 

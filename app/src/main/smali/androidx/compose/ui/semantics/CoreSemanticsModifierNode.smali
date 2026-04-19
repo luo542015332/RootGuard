@@ -70,7 +70,7 @@
 
 # direct methods
 .method public constructor <init>(ZZLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .param p1, "mergeDescendants"    # Z
     .param p2, "isClearingSemantics"    # Z
     .param p3, "properties"    # Lkotlin/jvm/functions/Function1;
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public applySemantics(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$applySemantics"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -125,7 +125,7 @@
 .end method
 
 .method public final getMergeDescendants()Z
-    .registers 2
+    .locals 1
 
     .line 64
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;->mergeDescendants:Z
@@ -134,7 +134,7 @@
 .end method
 
 .method public final getProperties()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -152,7 +152,7 @@
 .end method
 
 .method public getShouldClearDescendantSemantics()Z
-    .registers 2
+    .locals 1
 
     .line 69
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;->isClearingSemantics:Z
@@ -161,7 +161,7 @@
 .end method
 
 .method public getShouldMergeDescendantSemantics()Z
-    .registers 2
+    .locals 1
 
     .line 71
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;->mergeDescendants:Z
@@ -170,7 +170,7 @@
 .end method
 
 .method public final isClearingSemantics()Z
-    .registers 2
+    .locals 1
 
     .line 65
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;->isClearingSemantics:Z
@@ -179,7 +179,7 @@
 .end method
 
 .method public final setClearingSemantics(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 65
@@ -189,7 +189,7 @@
 .end method
 
 .method public final setMergeDescendants(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 64
@@ -199,7 +199,7 @@
 .end method
 
 .method public final setProperties(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

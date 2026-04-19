@@ -46,13 +46,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private constructor <init>(JJ)V
-    .registers 5
+    .locals 0
     .param p1, "uptimeMillis"    # J
     .param p3, "position"    # J
 
@@ -70,7 +70,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/HistoricalChange;-><init>(JJ)V
 
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public final getPosition-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 815
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/HistoricalChange;->position:J
@@ -89,7 +89,7 @@
 .end method
 
 .method public final getUptimeMillis()J
-    .registers 3
+    .locals 2
 
     .line 814
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/HistoricalChange;->uptimeMillis:J
@@ -98,7 +98,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 818
     new-instance v0, Ljava/lang/StringBuilder;

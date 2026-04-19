@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/animation/core/EasingFunctionsKt$EaseOutBounce$1;
 
@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final transform(F)F
-    .registers 7
+    .locals 5
     .param p1, "fraction"    # F
 
     .line 224
@@ -85,24 +85,24 @@
 
     cmpg-float v3, v2, v3
 
-    if-gez v3, :cond_10
+    if-gez v3, :cond_0
 
     .line 229
     mul-float v3, v0, v2
 
     mul-float/2addr v3, v2
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 230
-    :cond_10
+    :cond_0
     const/high16 v3, 0x40000000    # 2.0f
 
     div-float/2addr v3, v1
 
     cmpg-float v3, v2, v3
 
-    if-gez v3, :cond_22
+    if-gez v3, :cond_1
 
     .line 231
     const/high16 v3, 0x3fc00000    # 1.5f
@@ -120,17 +120,17 @@
 
     add-float/2addr v3, v4
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 233
-    :cond_22
+    :cond_1
     const/high16 v3, 0x40200000    # 2.5f
 
     div-float/2addr v3, v1
 
     cmpg-float v3, v2, v3
 
-    if-gez v3, :cond_34
+    if-gez v3, :cond_2
 
     .line 234
     const/high16 v3, 0x40100000    # 2.25f
@@ -148,10 +148,10 @@
 
     add-float/2addr v3, v4
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 237
-    :cond_34
+    :cond_2
     const/high16 v3, 0x40280000    # 2.625f
 
     div-float/2addr v3, v1
@@ -168,6 +168,6 @@
     add-float/2addr v3, v4
 
     .line 228
-    :goto_3e
+    :goto_0
     return v3
 .end method

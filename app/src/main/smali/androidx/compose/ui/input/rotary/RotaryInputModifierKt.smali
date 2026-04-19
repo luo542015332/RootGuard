@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final onPreRotaryScrollEvent(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$onPreRotaryScrollEvent"    # Landroidx/compose/ui/Modifier;
     .param p1, "onPreRotaryScrollEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -78,7 +78,7 @@
 .end method
 
 .method public static final onRotaryScrollEvent(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$onRotaryScrollEvent"    # Landroidx/compose/ui/Modifier;
     .param p1, "onRotaryScrollEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

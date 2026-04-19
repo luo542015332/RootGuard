@@ -77,7 +77,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/node/IntrinsicsPolicy$Companion;
 
@@ -91,7 +91,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 4
+    .locals 2
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "layoutNode"
@@ -119,7 +119,7 @@
 .end method
 
 .method private final getMeasurePolicyState()Landroidx/compose/ui/layout/MeasurePolicy;
-    .registers 4
+    .locals 3
 
     .line 30
     iget-object v0, p0, Landroidx/compose/ui/node/IntrinsicsPolicy;->measurePolicyState$delegate:Landroidx/compose/runtime/MutableState;
@@ -148,18 +148,18 @@
 .end method
 
 .method private final measurePolicyFromState()Landroidx/compose/ui/layout/MeasurePolicy;
-    .registers 3
+    .locals 2
 
     .line 81
     invoke-direct {p0}, Landroidx/compose/ui/node/IntrinsicsPolicy;->getMeasurePolicyState()Landroidx/compose/ui/layout/MeasurePolicy;
 
     move-result-object v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Intrinsic size is queried but there is no measure policy in place."
@@ -174,7 +174,7 @@
 .end method
 
 .method private final setMeasurePolicyState(Landroidx/compose/ui/layout/MeasurePolicy;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/ui/layout/MeasurePolicy;
 
     .line 30
@@ -203,7 +203,7 @@
 
 # virtual methods
 .method public final getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
-    .registers 2
+    .locals 1
 
     .line 29
     iget-object v0, p0, Landroidx/compose/ui/node/IntrinsicsPolicy;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
@@ -212,7 +212,7 @@
 .end method
 
 .method public final maxIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 48
@@ -253,7 +253,7 @@
 .end method
 
 .method public final maxIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 44
@@ -294,7 +294,7 @@
 .end method
 
 .method public final maxLookaheadIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 73
@@ -340,7 +340,7 @@
 .end method
 
 .method public final maxLookaheadIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 66
@@ -386,7 +386,7 @@
 .end method
 
 .method public final minIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 40
@@ -427,7 +427,7 @@
 .end method
 
 .method public final minIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 36
@@ -468,7 +468,7 @@
 .end method
 
 .method public final minLookaheadIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 59
@@ -514,7 +514,7 @@
 .end method
 
 .method public final minLookaheadIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 52
@@ -560,7 +560,7 @@
 .end method
 
 .method public final updateFrom(Landroidx/compose/ui/layout/MeasurePolicy;)V
-    .registers 3
+    .locals 1
     .param p1, "measurePolicy"    # Landroidx/compose/ui/layout/MeasurePolicy;
 
     const-string/jumbo v0, "measurePolicy"

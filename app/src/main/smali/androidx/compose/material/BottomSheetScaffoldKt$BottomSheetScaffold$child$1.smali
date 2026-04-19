@@ -142,7 +142,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/BottomSheetScaffoldState;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;FIIIIZFLandroidx/compose/ui/graphics/Shape;FJJLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;)V
-    .registers 36
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -273,7 +273,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -298,7 +298,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 34
+    .locals 31
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -317,30 +317,30 @@
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_1c
+    if-ne v1, v2, :cond_1
 
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 498
-    :cond_17
+    :cond_0
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_111
+    goto/16 :goto_3
 
     .line 450
-    :cond_1c
-    :goto_1c
+    :cond_1
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2
 
     const/4 v1, -0x1
 
@@ -351,7 +351,7 @@
     invoke-static {v3, v13, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 496
-    :cond_2c
+    :cond_2
     iget-object v1, v0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffold$child$1;->$scaffoldState:Landroidx/compose/material/BottomSheetScaffoldState;
 
     invoke-virtual {v1}, Landroidx/compose/material/BottomSheetScaffoldState;->getBottomSheetState()Landroidx/compose/material/BottomSheetState;
@@ -507,7 +507,7 @@
 
     .line 751
     .local v15, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v10, :cond_c3
+    if-nez v10, :cond_4
 
     sget-object v16, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -519,26 +519,26 @@
 
     move-result-object v1
 
-    if-ne v14, v1, :cond_c1
+    if-ne v14, v1, :cond_3
 
-    goto :goto_c5
+    goto :goto_1
 
     .line 755
-    :cond_c1
+    :cond_3
     move-object v1, v14
 
-    goto :goto_d4
+    goto :goto_2
 
     .line 751
     .end local v17    # "key1$iv":Ljava/lang/Object;
     .restart local v1    # "key1$iv":Ljava/lang/Object;
-    :cond_c3
+    :cond_4
     move-object/from16 v17, v1
 
     .line 752
     .end local v1    # "key1$iv":Ljava/lang/Object;
     .restart local v17    # "key1$iv":Ljava/lang/Object;
-    :goto_c5
+    :goto_1
     const/4 v1, 0x0
 
     .line 494
@@ -566,7 +566,7 @@
 
     .line 751
     .end local v1    # "value$iv$iv":Ljava/lang/Object;
-    :goto_d4
+    :goto_2
     nop
 
     .line 750
@@ -635,19 +635,18 @@
 
     move-object/from16 v10, p1
 
-    # invokes: Landroidx/compose/material/BottomSheetScaffoldKt;->BottomSheetScaffoldLayout-KCBPh4w(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;FILkotlin/jvm/functions/Function0;Landroidx/compose/material/BottomSheetState;Landroidx/compose/runtime/Composer;I)V
     invoke-static/range {v1 .. v11}, Landroidx/compose/material/BottomSheetScaffoldKt;->access$BottomSheetScaffoldLayout-KCBPh4w(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;FILkotlin/jvm/functions/Function0;Landroidx/compose/material/BottomSheetState;Landroidx/compose/runtime/Composer;I)V
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_111
+    if-eqz v1, :cond_5
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 499
-    :cond_111
-    :goto_111
+    :cond_5
+    :goto_3
     return-void
 .end method

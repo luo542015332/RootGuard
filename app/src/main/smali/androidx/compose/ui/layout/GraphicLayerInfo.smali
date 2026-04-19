@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static synthetic access$getOwnerViewId$jd(Landroidx/compose/ui/layout/GraphicLayerInfo;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/GraphicLayerInfo;
 
     .line 24
@@ -54,7 +54,7 @@
 .end method
 
 .method public getOwnerViewId()J
-    .registers 3
+    .locals 2
 
     .line 37
     const-wide/16 v0, 0x0

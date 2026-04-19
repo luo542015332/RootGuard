@@ -58,7 +58,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/compose/ui/platform/InspectableValueKt$NoInspectorInfo$1;->INSTANCE:Landroidx/compose/ui/platform/InspectableValueKt$NoInspectorInfo$1;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static final debugInspectorInfo(Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function1;
-    .registers 3
+    .locals 2
     .param p0, "definitions"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -100,7 +100,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     new-instance v1, Landroidx/compose/ui/platform/InspectableValueKt$debugInspectorInfo$1;
 
@@ -108,19 +108,19 @@
 
     check-cast v1, Lkotlin/jvm/functions/Function1;
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
 
     move-result-object v1
 
-    :goto_19
+    :goto_0
     return-object v1
 .end method
 
 .method public static final getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -138,7 +138,7 @@
 .end method
 
 .method public static final inspectable(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 2
     .param p0, "$this$inspectable"    # Landroidx/compose/ui/Modifier;
     .param p1, "inspectorInfo"    # Lkotlin/jvm/functions/Function1;
     .param p2, "factory"    # Lkotlin/jvm/functions/Function1;
@@ -193,7 +193,7 @@
 .end method
 
 .method public static final inspectableWrapper(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 6
+    .locals 3
     .param p0, "$this$inspectableWrapper"    # Landroidx/compose/ui/Modifier;
     .param p1, "inspectorInfo"    # Lkotlin/jvm/functions/Function1;
     .param p2, "wrapped"    # Landroidx/compose/ui/Modifier;
@@ -257,7 +257,7 @@
 .end method
 
 .method public static final isDebugInspectorInfoEnabled()Z
-    .registers 1
+    .locals 1
 
     .line 30
     sget-boolean v0, Landroidx/compose/ui/platform/InspectableValueKt;->isDebugInspectorInfoEnabled:Z
@@ -266,7 +266,7 @@
 .end method
 
 .method public static final setDebugInspectorInfoEnabled(Z)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Z
 
     .line 30

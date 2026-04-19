@@ -74,7 +74,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/internal/Ref$IntRef;Ljava/util/List;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -126,7 +126,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 12
+    .locals 8
     .param p1, "applier"    # Landroidx/compose/runtime/Applier;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -175,8 +175,8 @@
 
     move-result v2
 
-    :goto_1d
-    if-ge v1, v2, :cond_36
+    :goto_0
+    if-ge v1, v2, :cond_0
 
     .line 4566
     invoke-interface {p3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -220,11 +220,11 @@
     .end local v3    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 4569
     .end local v1    # "index$iv":I
-    :cond_36
+    :cond_0
     nop
 
     .line 3105

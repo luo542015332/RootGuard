@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;JII)V
-    .registers 7
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/lazy/LazyListKt$rememberLazyListMeasurePolicy$1$1$2;->$this_null:Landroidx/compose/foundation/lazy/layout/LazyLayoutMeasureScope;
 
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final invoke(IILkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 9
+    .locals 5
     .param p1, "width"    # I
     .param p2, "height"    # I
     .param p3, "placement"    # Lkotlin/jvm/functions/Function1;
@@ -154,7 +154,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

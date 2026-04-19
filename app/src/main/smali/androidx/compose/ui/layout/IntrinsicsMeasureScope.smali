@@ -83,7 +83,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/unit/LayoutDirection;)V
-    .registers 4
+    .locals 1
     .param p1, "intrinsicMeasureScope"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
 
@@ -111,7 +111,7 @@
 
 # virtual methods
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -123,7 +123,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -135,7 +135,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 351
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
@@ -144,7 +144,7 @@
 .end method
 
 .method public isLookingAhead()Z
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -156,7 +156,7 @@
 .end method
 
 .method public roundToPx--R2X_6o(J)I
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -168,7 +168,7 @@
 .end method
 
 .method public roundToPx-0680j_4(F)I
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -180,7 +180,7 @@
 .end method
 
 .method public toDp-GaN1DYA(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -192,7 +192,7 @@
 .end method
 
 .method public toDp-u2uoSUM(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -204,7 +204,7 @@
 .end method
 
 .method public toDp-u2uoSUM(I)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -216,7 +216,7 @@
 .end method
 
 .method public toDpSize-k-rfVVM(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -228,7 +228,7 @@
 .end method
 
 .method public toPx--R2X_6o(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -240,7 +240,7 @@
 .end method
 
 .method public toPx-0680j_4(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -252,7 +252,7 @@
 .end method
 
 .method public toRect(Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
 
     const-string v0, "<this>"
 
@@ -268,7 +268,7 @@
 .end method
 
 .method public toSize-XkaWNTQ(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -280,7 +280,7 @@
 .end method
 
 .method public toSp-0xMU5do(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -292,7 +292,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 
@@ -304,7 +304,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(I)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/IntrinsicsMeasureScope;->$$delegate_0:Landroidx/compose/ui/layout/IntrinsicMeasureScope;
 

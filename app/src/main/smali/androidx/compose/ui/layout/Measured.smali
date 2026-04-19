@@ -46,7 +46,7 @@
 .end method
 
 .method public getParentData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 36
     const/4 v0, 0x0

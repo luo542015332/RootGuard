@@ -67,7 +67,7 @@
 
 # direct methods
 .method public static final Group(Ljava/lang/String;FFFFFFFLjava/util/List;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
-    .registers 40
+    .locals 27
     .param p0, "name"    # Ljava/lang/String;
     .param p1, "rotation"    # F
     .param p2, "pivotX"    # F
@@ -131,18 +131,18 @@
     .local v1, "$dirty":I
     and-int/lit8 v2, v12, 0x1
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     or-int/lit8 v1, v1, 0x6
 
     move-object/from16 v3, p0
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_25
+    :cond_0
     and-int/lit8 v3, v14, 0xe
 
-    if-nez v3, :cond_36
+    if-nez v3, :cond_2
 
     move-object/from16 v3, p0
 
@@ -150,38 +150,38 @@
 
     move-result v4
 
-    if-eqz v4, :cond_33
+    if-eqz v4, :cond_1
 
     const/4 v4, 0x4
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_33
+    :cond_1
     const/4 v4, 0x2
 
-    :goto_34
+    :goto_0
     or-int/2addr v1, v4
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_36
+    :cond_2
     move-object/from16 v3, p0
 
-    :goto_38
+    :goto_1
     and-int/lit8 v4, v12, 0x2
 
-    if-eqz v4, :cond_41
+    if-eqz v4, :cond_3
 
     or-int/lit8 v1, v1, 0x30
 
     move/from16 v5, p1
 
-    goto :goto_56
+    goto :goto_3
 
-    :cond_41
+    :cond_3
     and-int/lit8 v5, v14, 0x70
 
-    if-nez v5, :cond_54
+    if-nez v5, :cond_5
 
     move/from16 v5, p1
 
@@ -189,38 +189,38 @@
 
     move-result v6
 
-    if-eqz v6, :cond_50
+    if-eqz v6, :cond_4
 
     const/16 v6, 0x20
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_50
+    :cond_4
     const/16 v6, 0x10
 
-    :goto_52
+    :goto_2
     or-int/2addr v1, v6
 
-    goto :goto_56
+    goto :goto_3
 
-    :cond_54
+    :cond_5
     move/from16 v5, p1
 
-    :goto_56
+    :goto_3
     and-int/lit8 v6, v12, 0x4
 
-    if-eqz v6, :cond_5f
+    if-eqz v6, :cond_6
 
     or-int/lit16 v1, v1, 0x180
 
     move/from16 v8, p2
 
-    goto :goto_74
+    goto :goto_5
 
-    :cond_5f
+    :cond_6
     and-int/lit16 v8, v14, 0x380
 
-    if-nez v8, :cond_72
+    if-nez v8, :cond_8
 
     move/from16 v8, p2
 
@@ -228,38 +228,38 @@
 
     move-result v9
 
-    if-eqz v9, :cond_6e
+    if-eqz v9, :cond_7
 
     const/16 v9, 0x100
 
-    goto :goto_70
+    goto :goto_4
 
-    :cond_6e
+    :cond_7
     const/16 v9, 0x80
 
-    :goto_70
+    :goto_4
     or-int/2addr v1, v9
 
-    goto :goto_74
+    goto :goto_5
 
-    :cond_72
+    :cond_8
     move/from16 v8, p2
 
-    :goto_74
+    :goto_5
     and-int/lit8 v9, v12, 0x8
 
-    if-eqz v9, :cond_7d
+    if-eqz v9, :cond_9
 
     or-int/lit16 v1, v1, 0xc00
 
     move/from16 v10, p3
 
-    goto :goto_92
+    goto :goto_7
 
-    :cond_7d
+    :cond_9
     and-int/lit16 v10, v14, 0x1c00
 
-    if-nez v10, :cond_90
+    if-nez v10, :cond_b
 
     move/from16 v10, p3
 
@@ -267,40 +267,40 @@
 
     move-result v11
 
-    if-eqz v11, :cond_8c
+    if-eqz v11, :cond_a
 
     const/16 v11, 0x800
 
-    goto :goto_8e
+    goto :goto_6
 
-    :cond_8c
+    :cond_a
     const/16 v11, 0x400
 
-    :goto_8e
+    :goto_6
     or-int/2addr v1, v11
 
-    goto :goto_92
+    goto :goto_7
 
-    :cond_90
+    :cond_b
     move/from16 v10, p3
 
-    :goto_92
+    :goto_7
     and-int/lit8 v11, v12, 0x10
 
-    if-eqz v11, :cond_9b
+    if-eqz v11, :cond_c
 
     or-int/lit16 v1, v1, 0x6000
 
     move/from16 v0, p4
 
-    goto :goto_b4
+    goto :goto_9
 
-    :cond_9b
+    :cond_c
     const v16, 0xe000
 
     and-int v16, v14, v16
 
-    if-nez v16, :cond_b2
+    if-nez v16, :cond_e
 
     move/from16 v0, p4
 
@@ -308,27 +308,27 @@
 
     move-result v17
 
-    if-eqz v17, :cond_ad
+    if-eqz v17, :cond_d
 
     const/16 v17, 0x4000
 
-    goto :goto_af
+    goto :goto_8
 
-    :cond_ad
+    :cond_d
     const/16 v17, 0x2000
 
-    :goto_af
+    :goto_8
     or-int v1, v1, v17
 
-    goto :goto_b4
+    goto :goto_9
 
-    :cond_b2
+    :cond_e
     move/from16 v0, p4
 
-    :goto_b4
+    :goto_9
     and-int/lit8 v17, v12, 0x20
 
-    if-eqz v17, :cond_bf
+    if-eqz v17, :cond_f
 
     const/high16 v18, 0x30000
 
@@ -336,14 +336,14 @@
 
     move/from16 v7, p5
 
-    goto :goto_d7
+    goto :goto_b
 
-    :cond_bf
+    :cond_f
     const/high16 v18, 0x70000
 
     and-int v18, v14, v18
 
-    if-nez v18, :cond_d5
+    if-nez v18, :cond_11
 
     move/from16 v7, p5
 
@@ -351,27 +351,27 @@
 
     move-result v18
 
-    if-eqz v18, :cond_d0
+    if-eqz v18, :cond_10
 
     const/high16 v18, 0x20000
 
-    goto :goto_d2
+    goto :goto_a
 
-    :cond_d0
+    :cond_10
     const/high16 v18, 0x10000
 
-    :goto_d2
+    :goto_a
     or-int v1, v1, v18
 
-    goto :goto_d7
+    goto :goto_b
 
-    :cond_d5
+    :cond_11
     move/from16 v7, p5
 
-    :goto_d7
+    :goto_b
     and-int/lit8 v18, v12, 0x40
 
-    if-eqz v18, :cond_e2
+    if-eqz v18, :cond_12
 
     const/high16 v19, 0x180000
 
@@ -379,14 +379,14 @@
 
     move/from16 v0, p6
 
-    goto :goto_fa
+    goto :goto_d
 
-    :cond_e2
+    :cond_12
     const/high16 v19, 0x380000
 
     and-int v19, v14, v19
 
-    if-nez v19, :cond_f8
+    if-nez v19, :cond_14
 
     move/from16 v0, p6
 
@@ -394,27 +394,27 @@
 
     move-result v19
 
-    if-eqz v19, :cond_f3
+    if-eqz v19, :cond_13
 
     const/high16 v19, 0x100000
 
-    goto :goto_f5
+    goto :goto_c
 
-    :cond_f3
+    :cond_13
     const/high16 v19, 0x80000
 
-    :goto_f5
+    :goto_c
     or-int v1, v1, v19
 
-    goto :goto_fa
+    goto :goto_d
 
-    :cond_f8
+    :cond_14
     move/from16 v0, p6
 
-    :goto_fa
+    :goto_d
     and-int/lit16 v0, v12, 0x80
 
-    if-eqz v0, :cond_105
+    if-eqz v0, :cond_15
 
     const/high16 v19, 0xc00000
 
@@ -422,14 +422,14 @@
 
     move/from16 v3, p7
 
-    goto :goto_11d
+    goto :goto_f
 
-    :cond_105
+    :cond_15
     const/high16 v19, 0x1c00000
 
     and-int v19, v14, v19
 
-    if-nez v19, :cond_11b
+    if-nez v19, :cond_17
 
     move/from16 v3, p7
 
@@ -437,71 +437,71 @@
 
     move-result v19
 
-    if-eqz v19, :cond_116
+    if-eqz v19, :cond_16
 
     const/high16 v19, 0x800000
 
-    goto :goto_118
+    goto :goto_e
 
-    :cond_116
+    :cond_16
     const/high16 v19, 0x400000
 
-    :goto_118
+    :goto_e
     or-int v1, v1, v19
 
-    goto :goto_11d
+    goto :goto_f
 
-    :cond_11b
+    :cond_17
     move/from16 v3, p7
 
-    :goto_11d
+    :goto_f
     and-int/lit16 v3, v12, 0x100
 
-    if-eqz v3, :cond_125
+    if-eqz v3, :cond_18
 
     const/high16 v19, 0x2000000
 
     or-int v1, v1, v19
 
-    :cond_125
+    :cond_18
     and-int/lit16 v5, v12, 0x200
 
-    if-eqz v5, :cond_12d
+    if-eqz v5, :cond_19
 
     const/high16 v5, 0x30000000
 
-    :goto_12b
+    :goto_10
     or-int/2addr v1, v5
 
-    goto :goto_13e
+    goto :goto_11
 
-    :cond_12d
+    :cond_19
     const/high16 v5, 0x70000000
 
     and-int/2addr v5, v14
 
-    if-nez v5, :cond_13e
+    if-nez v5, :cond_1b
 
     invoke-interface {v15, v13}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_13b
+    if-eqz v5, :cond_1a
 
     const/high16 v5, 0x20000000
 
-    goto :goto_12b
+    goto :goto_10
 
-    :cond_13b
+    :cond_1a
     const/high16 v5, 0x10000000
 
-    goto :goto_12b
+    goto :goto_10
 
-    :cond_13e
-    :goto_13e
+    :cond_1b
+    :goto_11
     const/16 v5, 0x100
 
-    if-ne v3, v5, :cond_16b
+    if-ne v3, v5, :cond_1d
 
     const v5, 0x5b6db6db
 
@@ -509,18 +509,18 @@
 
     const v7, 0x12492492
 
-    if-ne v5, v7, :cond_16b
+    if-ne v5, v7, :cond_1d
 
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v5
 
-    if-nez v5, :cond_152
+    if-nez v5, :cond_1c
 
-    goto :goto_16b
+    goto :goto_12
 
     .line 75
-    :cond_152
+    :cond_1c
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
     move-object/from16 v18, p0
@@ -543,32 +543,32 @@
 
     move/from16 v19, v10
 
-    goto/16 :goto_2d2
+    goto/16 :goto_1e
 
     .line 58
-    :cond_16b
-    :goto_16b
+    :cond_1d
+    :goto_12
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->startDefaults()V
 
     and-int/lit8 v5, v14, 0x1
 
     const v7, -0xe000001
 
-    if-eqz v5, :cond_1a7
+    if-eqz v5, :cond_20
 
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->getDefaultsInvalid()Z
 
     move-result v5
 
-    if-eqz v5, :cond_17c
+    if-eqz v5, :cond_1e
 
-    goto :goto_1a7
+    goto :goto_13
 
     .line 56
-    :cond_17c
+    :cond_1e
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    if-eqz v3, :cond_196
+    if-eqz v3, :cond_1f
 
     and-int v0, v1, v7
 
@@ -594,11 +594,11 @@
 
     .end local v1    # "$dirty":I
     .local v0, "$dirty":I
-    goto/16 :goto_1e2
+    goto/16 :goto_1c
 
     .end local v0    # "$dirty":I
     .restart local v1    # "$dirty":I
-    :cond_196
+    :cond_1f
     move-object/from16 v2, p0
 
     move/from16 v4, p1
@@ -617,164 +617,164 @@
 
     move/from16 v10, p6
 
-    goto :goto_1e2
+    goto :goto_1c
 
     .line 58
-    :cond_1a7
-    :goto_1a7
-    if-eqz v2, :cond_1ac
+    :cond_20
+    :goto_13
+    if-eqz v2, :cond_21
 
     .line 48
     const-string v2, ""
 
     .end local p0    # "name":Ljava/lang/String;
     .local v2, "name":Ljava/lang/String;
-    goto :goto_1ae
+    goto :goto_14
 
     .line 58
     .end local v2    # "name":Ljava/lang/String;
     .restart local p0    # "name":Ljava/lang/String;
-    :cond_1ac
+    :cond_21
     move-object/from16 v2, p0
 
     .line 48
     .end local p0    # "name":Ljava/lang/String;
     .restart local v2    # "name":Ljava/lang/String;
-    :goto_1ae
-    if-eqz v4, :cond_1b2
+    :goto_14
+    if-eqz v4, :cond_22
 
     .line 49
     const/4 v4, 0x0
 
     .end local p1    # "rotation":F
     .local v4, "rotation":F
-    goto :goto_1b4
+    goto :goto_15
 
     .line 48
     .end local v4    # "rotation":F
     .restart local p1    # "rotation":F
-    :cond_1b2
+    :cond_22
     move/from16 v4, p1
 
     .line 49
     .end local p1    # "rotation":F
     .restart local v4    # "rotation":F
-    :goto_1b4
-    if-eqz v6, :cond_1b8
+    :goto_15
+    if-eqz v6, :cond_23
 
     .line 50
     const/4 v5, 0x0
 
     .end local p2    # "pivotX":F
     .local v5, "pivotX":F
-    goto :goto_1b9
+    goto :goto_16
 
     .line 49
     .end local v5    # "pivotX":F
     .restart local p2    # "pivotX":F
-    :cond_1b8
+    :cond_23
     move v5, v8
 
     .line 50
     .end local p2    # "pivotX":F
     .restart local v5    # "pivotX":F
-    :goto_1b9
-    if-eqz v9, :cond_1bd
+    :goto_16
+    if-eqz v9, :cond_24
 
     .line 51
     const/4 v6, 0x0
 
     .end local p3    # "pivotY":F
     .local v6, "pivotY":F
-    goto :goto_1be
+    goto :goto_17
 
     .line 50
     .end local v6    # "pivotY":F
     .restart local p3    # "pivotY":F
-    :cond_1bd
+    :cond_24
     move v6, v10
 
     .line 51
     .end local p3    # "pivotY":F
     .restart local v6    # "pivotY":F
-    :goto_1be
-    if-eqz v11, :cond_1c3
+    :goto_17
+    if-eqz v11, :cond_25
 
     .line 52
     const/high16 v8, 0x3f800000    # 1.0f
 
     .end local p4    # "scaleX":F
     .local v8, "scaleX":F
-    goto :goto_1c5
+    goto :goto_18
 
     .line 51
     .end local v8    # "scaleX":F
     .restart local p4    # "scaleX":F
-    :cond_1c3
+    :cond_25
     move/from16 v8, p4
 
     .line 52
     .end local p4    # "scaleX":F
     .restart local v8    # "scaleX":F
-    :goto_1c5
-    if-eqz v17, :cond_1ca
+    :goto_18
+    if-eqz v17, :cond_26
 
     .line 53
     const/high16 v9, 0x3f800000    # 1.0f
 
     .end local p5    # "scaleY":F
     .local v9, "scaleY":F
-    goto :goto_1cc
+    goto :goto_19
 
     .line 52
     .end local v9    # "scaleY":F
     .restart local p5    # "scaleY":F
-    :cond_1ca
+    :cond_26
     move/from16 v9, p5
 
     .line 53
     .end local p5    # "scaleY":F
     .restart local v9    # "scaleY":F
-    :goto_1cc
-    if-eqz v18, :cond_1d0
+    :goto_19
+    if-eqz v18, :cond_27
 
     .line 54
     const/4 v10, 0x0
 
     .end local p6    # "translationX":F
     .local v10, "translationX":F
-    goto :goto_1d2
+    goto :goto_1a
 
     .line 53
     .end local v10    # "translationX":F
     .restart local p6    # "translationX":F
-    :cond_1d0
+    :cond_27
     move/from16 v10, p6
 
     .line 54
     .end local p6    # "translationX":F
     .restart local v10    # "translationX":F
-    :goto_1d2
-    if-eqz v0, :cond_1d6
+    :goto_1a
+    if-eqz v0, :cond_28
 
     .line 55
     const/4 v0, 0x0
 
     .end local p7    # "translationY":F
     .local v0, "translationY":F
-    goto :goto_1d8
+    goto :goto_1b
 
     .line 54
     .end local v0    # "translationY":F
     .restart local p7    # "translationY":F
-    :cond_1d6
+    :cond_28
     move/from16 v0, p7
 
     .line 55
     .end local p7    # "translationY":F
     .restart local v0    # "translationY":F
-    :goto_1d8
-    if-eqz v3, :cond_1e0
+    :goto_1b
+    if-eqz v3, :cond_29
 
     .line 56
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getEmptyPath()Ljava/util/List;
@@ -785,25 +785,25 @@
     .local v3, "clipPathData":Ljava/util/List;
     and-int/2addr v1, v7
 
-    goto :goto_1e2
+    goto :goto_1c
 
     .line 55
     .end local v3    # "clipPathData":Ljava/util/List;
     .restart local p8    # "clipPathData":Ljava/util/List;
-    :cond_1e0
+    :cond_29
     move-object/from16 v3, p8
 
     .line 56
     .end local p8    # "clipPathData":Ljava/util/List;
     .restart local v3    # "clipPathData":Ljava/util/List;
-    :goto_1e2
+    :goto_1c
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->endDefaults()V
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v7
 
-    if-eqz v7, :cond_1f5
+    if-eqz v7, :cond_2a
 
     .line 58
     const/4 v7, -0x1
@@ -815,7 +815,7 @@
     invoke-static {v12, v1, v7, v11}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 59
-    :cond_1f5
+    :cond_2a
     sget-object v7, Landroidx/compose/ui/graphics/vector/VectorComposeKt$Group$1;->INSTANCE:Landroidx/compose/ui/graphics/vector/VectorComposeKt$Group$1;
 
     check-cast v7, Lkotlin/jvm/functions/Function0;
@@ -844,12 +844,12 @@
 
     instance-of v12, v12, Landroidx/compose/ui/graphics/vector/VectorApplier;
 
-    if-nez v12, :cond_213
+    if-nez v12, :cond_2b
 
     invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
 
     .line 167
-    :cond_213
+    :cond_2b
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->startNode()V
 
     .line 168
@@ -857,19 +857,19 @@
 
     move-result v12
 
-    if-eqz v12, :cond_220
+    if-eqz v12, :cond_2c
 
     .line 169
     invoke-interface {v15, v7}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_223
+    goto :goto_1d
 
     .line 171
-    :cond_220
+    :cond_2c
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->useNode()V
 
     .line 173
-    :goto_223
+    :goto_1d
     invoke-static {v15}, Landroidx/compose/runtime/Updater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
 
     move-result-object v12
@@ -1052,12 +1052,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c0
+    if-eqz v0, :cond_2d
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 75
-    :cond_2c0
+    :cond_2d
     move/from16 v23, p2
 
     move/from16 v25, v1
@@ -1094,16 +1094,16 @@
     .local v23, "translationY":F
     .local v24, "clipPathData":Ljava/util/List;
     .local v25, "$dirty":I
-    :goto_2d2
+    :goto_1e
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v12
 
-    if-nez v12, :cond_2d9
+    if-nez v12, :cond_2e
 
-    goto :goto_300
+    goto :goto_1f
 
-    :cond_2d9
+    :cond_2e
     new-instance v26, Landroidx/compose/ui/graphics/vector/VectorComposeKt$Group$4;
 
     move-object/from16 v0, v26
@@ -1142,12 +1142,12 @@
 
     invoke-interface {v13, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_300
+    :goto_1f
     return-void
 .end method
 
 .method public static final Path-9cdaXJ4(Ljava/util/List;ILjava/lang/String;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFFFFLandroidx/compose/runtime/Composer;III)V
-    .registers 52
+    .locals 34
     .param p0, "pathData"    # Ljava/util/List;
     .param p1, "pathFillType"    # I
     .param p2, "name"    # Ljava/lang/String;
@@ -1207,7 +1207,7 @@
 
     and-int/lit8 v1, v14, 0x2
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_0
 
     .line 102
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultFillType()I
@@ -1218,21 +1218,21 @@
 
     .end local p1    # "pathFillType":I
     .local v1, "pathFillType":I
-    goto :goto_25
+    goto :goto_0
 
     .line 115
     .end local v1    # "pathFillType":I
     .restart local p1    # "pathFillType":I
-    :cond_23
+    :cond_0
     move/from16 v18, p1
 
     .line 102
     .end local p1    # "pathFillType":I
     .local v18, "pathFillType":I
-    :goto_25
+    :goto_0
     and-int/lit8 v1, v14, 0x4
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_1
 
     .line 103
     const-string v1, ""
@@ -1241,21 +1241,21 @@
 
     .end local p2    # "name":Ljava/lang/String;
     .local v1, "name":Ljava/lang/String;
-    goto :goto_2f
+    goto :goto_1
 
     .line 102
     .end local v1    # "name":Ljava/lang/String;
     .restart local p2    # "name":Ljava/lang/String;
-    :cond_2d
+    :cond_1
     move-object/from16 v12, p2
 
     .line 103
     .end local p2    # "name":Ljava/lang/String;
     .local v12, "name":Ljava/lang/String;
-    :goto_2f
+    :goto_1
     and-int/lit8 v1, v14, 0x8
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_2
 
     .line 104
     const/4 v1, 0x0
@@ -1264,21 +1264,21 @@
 
     .end local p3    # "fill":Landroidx/compose/ui/graphics/Brush;
     .local v1, "fill":Landroidx/compose/ui/graphics/Brush;
-    goto :goto_38
+    goto :goto_2
 
     .line 103
     .end local v1    # "fill":Landroidx/compose/ui/graphics/Brush;
     .restart local p3    # "fill":Landroidx/compose/ui/graphics/Brush;
-    :cond_36
+    :cond_2
     move-object/from16 v11, p3
 
     .line 104
     .end local p3    # "fill":Landroidx/compose/ui/graphics/Brush;
     .local v11, "fill":Landroidx/compose/ui/graphics/Brush;
-    :goto_38
+    :goto_2
     and-int/lit8 v1, v14, 0x10
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_3
 
     .line 105
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1287,21 +1287,21 @@
 
     .end local p4    # "fillAlpha":F
     .local v1, "fillAlpha":F
-    goto :goto_43
+    goto :goto_3
 
     .line 104
     .end local v1    # "fillAlpha":F
     .restart local p4    # "fillAlpha":F
-    :cond_41
+    :cond_3
     move/from16 v19, p4
 
     .line 105
     .end local p4    # "fillAlpha":F
     .local v19, "fillAlpha":F
-    :goto_43
+    :goto_3
     and-int/lit8 v1, v14, 0x20
 
-    if-eqz v1, :cond_4a
+    if-eqz v1, :cond_4
 
     .line 106
     const/4 v1, 0x0
@@ -1310,21 +1310,21 @@
 
     .end local p5    # "stroke":Landroidx/compose/ui/graphics/Brush;
     .local v1, "stroke":Landroidx/compose/ui/graphics/Brush;
-    goto :goto_4c
+    goto :goto_4
 
     .line 105
     .end local v1    # "stroke":Landroidx/compose/ui/graphics/Brush;
     .restart local p5    # "stroke":Landroidx/compose/ui/graphics/Brush;
-    :cond_4a
+    :cond_4
     move-object/from16 v10, p5
 
     .line 106
     .end local p5    # "stroke":Landroidx/compose/ui/graphics/Brush;
     .local v10, "stroke":Landroidx/compose/ui/graphics/Brush;
-    :goto_4c
+    :goto_4
     and-int/lit8 v1, v14, 0x40
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_5
 
     .line 107
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1333,21 +1333,21 @@
 
     .end local p6    # "strokeAlpha":F
     .local v1, "strokeAlpha":F
-    goto :goto_57
+    goto :goto_5
 
     .line 106
     .end local v1    # "strokeAlpha":F
     .restart local p6    # "strokeAlpha":F
-    :cond_55
+    :cond_5
     move/from16 v20, p6
 
     .line 107
     .end local p6    # "strokeAlpha":F
     .local v20, "strokeAlpha":F
-    :goto_57
+    :goto_5
     and-int/lit16 v1, v14, 0x80
 
-    if-eqz v1, :cond_5f
+    if-eqz v1, :cond_6
 
     .line 108
     const/4 v1, 0x0
@@ -1356,21 +1356,21 @@
 
     .end local p7    # "strokeLineWidth":F
     .local v1, "strokeLineWidth":F
-    goto :goto_61
+    goto :goto_6
 
     .line 107
     .end local v1    # "strokeLineWidth":F
     .restart local p7    # "strokeLineWidth":F
-    :cond_5f
+    :cond_6
     move/from16 v21, p7
 
     .line 108
     .end local p7    # "strokeLineWidth":F
     .local v21, "strokeLineWidth":F
-    :goto_61
+    :goto_6
     and-int/lit16 v1, v14, 0x100
 
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_7
 
     .line 109
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineCap()I
@@ -1381,21 +1381,21 @@
 
     .end local p8    # "strokeLineCap":I
     .local v1, "strokeLineCap":I
-    goto :goto_6e
+    goto :goto_7
 
     .line 108
     .end local v1    # "strokeLineCap":I
     .restart local p8    # "strokeLineCap":I
-    :cond_6c
+    :cond_7
     move/from16 v22, p8
 
     .line 109
     .end local p8    # "strokeLineCap":I
     .local v22, "strokeLineCap":I
-    :goto_6e
+    :goto_7
     and-int/lit16 v1, v14, 0x200
 
-    if-eqz v1, :cond_79
+    if-eqz v1, :cond_8
 
     .line 110
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineJoin()I
@@ -1406,21 +1406,21 @@
 
     .end local p9    # "strokeLineJoin":I
     .local v1, "strokeLineJoin":I
-    goto :goto_7b
+    goto :goto_8
 
     .line 109
     .end local v1    # "strokeLineJoin":I
     .restart local p9    # "strokeLineJoin":I
-    :cond_79
+    :cond_8
     move/from16 v23, p9
 
     .line 110
     .end local p9    # "strokeLineJoin":I
     .local v23, "strokeLineJoin":I
-    :goto_7b
+    :goto_8
     and-int/lit16 v1, v14, 0x400
 
-    if-eqz v1, :cond_84
+    if-eqz v1, :cond_9
 
     .line 111
     const/high16 v1, 0x40800000    # 4.0f
@@ -1429,21 +1429,21 @@
 
     .end local p10    # "strokeLineMiter":F
     .local v1, "strokeLineMiter":F
-    goto :goto_86
+    goto :goto_9
 
     .line 110
     .end local v1    # "strokeLineMiter":F
     .restart local p10    # "strokeLineMiter":F
-    :cond_84
+    :cond_9
     move/from16 v24, p10
 
     .line 111
     .end local p10    # "strokeLineMiter":F
     .local v24, "strokeLineMiter":F
-    :goto_86
+    :goto_9
     and-int/lit16 v1, v14, 0x800
 
-    if-eqz v1, :cond_8e
+    if-eqz v1, :cond_a
 
     .line 112
     const/4 v1, 0x0
@@ -1452,21 +1452,21 @@
 
     .end local p11    # "trimPathStart":F
     .local v1, "trimPathStart":F
-    goto :goto_90
+    goto :goto_a
 
     .line 111
     .end local v1    # "trimPathStart":F
     .restart local p11    # "trimPathStart":F
-    :cond_8e
+    :cond_a
     move/from16 v25, p11
 
     .line 112
     .end local p11    # "trimPathStart":F
     .local v25, "trimPathStart":F
-    :goto_90
+    :goto_a
     and-int/lit16 v1, v14, 0x1000
 
-    if-eqz v1, :cond_99
+    if-eqz v1, :cond_b
 
     .line 113
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1475,21 +1475,21 @@
 
     .end local p12    # "trimPathEnd":F
     .local v1, "trimPathEnd":F
-    goto :goto_9b
+    goto :goto_b
 
     .line 112
     .end local v1    # "trimPathEnd":F
     .restart local p12    # "trimPathEnd":F
-    :cond_99
+    :cond_b
     move/from16 v26, p12
 
     .line 113
     .end local p12    # "trimPathEnd":F
     .local v26, "trimPathEnd":F
-    :goto_9b
+    :goto_b
     and-int/lit16 v1, v14, 0x2000
 
-    if-eqz v1, :cond_a3
+    if-eqz v1, :cond_c
 
     .line 114
     const/4 v1, 0x0
@@ -1498,23 +1498,23 @@
 
     .end local p13    # "trimPathOffset":F
     .local v1, "trimPathOffset":F
-    goto :goto_a5
+    goto :goto_c
 
     .line 113
     .end local v1    # "trimPathOffset":F
     .restart local p13    # "trimPathOffset":F
-    :cond_a3
+    :cond_c
     move/from16 v27, p13
 
     .line 114
     .end local p13    # "trimPathOffset":F
     .local v27, "trimPathOffset":F
-    :goto_a5
+    :goto_c
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_b6
+    if-eqz v1, :cond_d
 
     .line 115
     const-string/jumbo v1, "androidx.compose.ui.graphics.vector.Path (VectorCompose.kt:99)"
@@ -1525,16 +1525,16 @@
 
     invoke-static {v0, v9, v8, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_ba
+    goto :goto_d
 
     .line 114
-    :cond_b6
+    :cond_d
     move/from16 v9, p15
 
     move/from16 v8, p16
 
     .line 116
-    :goto_ba
+    :goto_d
     sget-object v0, Landroidx/compose/ui/graphics/vector/VectorComposeKt$Path$1;->INSTANCE:Landroidx/compose/ui/graphics/vector/VectorComposeKt$Path$1;
 
     check-cast v0, Lkotlin/jvm/functions/Function0;
@@ -1561,12 +1561,12 @@
 
     instance-of v3, v3, Landroidx/compose/ui/graphics/vector/VectorApplier;
 
-    if-nez v3, :cond_d6
+    if-nez v3, :cond_e
 
     invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
 
     .line 178
-    :cond_d6
+    :cond_e
     invoke-interface {v13}, Landroidx/compose/runtime/Composer;->startNode()V
 
     .line 179
@@ -1574,7 +1574,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_ea
+    if-eqz v3, :cond_f
 
     .line 180
     new-instance v3, Landroidx/compose/ui/graphics/vector/VectorComposeKt$Path-9cdaXJ4$$inlined$ComposeNode$1;
@@ -1585,14 +1585,14 @@
 
     invoke-interface {v13, v3}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_ed
+    goto :goto_e
 
     .line 182
-    :cond_ea
+    :cond_f
     invoke-interface {v13}, Landroidx/compose/runtime/Composer;->useNode()V
 
     .line 184
-    :goto_ed
+    :goto_e
     invoke-static {v13}, Landroidx/compose/runtime/Updater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
 
     move-result-object v3
@@ -1762,16 +1762,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18e
+    if-eqz v0, :cond_10
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_18e
+    :cond_10
     invoke-interface {v13}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v7
 
-    if-nez v7, :cond_19d
+    if-nez v7, :cond_11
 
     move-object/from16 v30, v10
 
@@ -1781,9 +1781,9 @@
 
     move-object/from16 v33, v13
 
-    goto :goto_1d6
+    goto :goto_f
 
-    :cond_19d
+    :cond_11
     new-instance v28, Landroidx/compose/ui/graphics/vector/VectorComposeKt$Path$3;
 
     move-object/from16 v0, v28
@@ -1851,6 +1851,6 @@
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 135
-    :goto_1d6
+    :goto_f
     return-void
 .end method

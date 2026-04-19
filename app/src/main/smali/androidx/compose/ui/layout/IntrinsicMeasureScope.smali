@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static synthetic isLookingAhead$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -48,7 +48,7 @@
 .end method
 
 .method public isLookingAhead()Z
-    .registers 2
+    .locals 1
 
     .line 44
     const/4 v0, 0x0

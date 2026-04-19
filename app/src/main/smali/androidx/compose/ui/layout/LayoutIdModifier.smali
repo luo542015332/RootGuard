@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "layoutId"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "layoutId"
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public getLayoutId()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutIdModifier;->layoutId:Ljava/lang/Object;
@@ -74,7 +74,7 @@
 .end method
 
 .method public modifyParentData(Landroidx/compose/ui/unit/Density;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "$this$modifyParentData"    # Landroidx/compose/ui/unit/Density;
     .param p2, "parentData"    # Ljava/lang/Object;
 
@@ -87,7 +87,7 @@
 .end method
 
 .method public setLayoutId$ui_release(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     const-string v0, "<set-?>"

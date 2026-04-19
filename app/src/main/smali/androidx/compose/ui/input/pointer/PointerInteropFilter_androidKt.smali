@@ -43,7 +43,7 @@
 
 # direct methods
 .method public static final motionEventSpy(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$motionEventSpy"    # Landroidx/compose/ui/Modifier;
     .param p1, "watcher"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -85,7 +85,7 @@
 .end method
 
 .method public static final pointerInteropFilter(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 2
     .param p0, "$this$pointerInteropFilter"    # Landroidx/compose/ui/Modifier;
     .param p1, "requestDisallowInterceptTouchEvent"    # Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;
     .param p2, "onTouchEvent"    # Lkotlin/jvm/functions/Function1;
@@ -123,7 +123,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     new-instance v1, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$pointerInteropFilter$$inlined$debugInspectorInfo$1;
 
@@ -131,16 +131,16 @@
 
     check-cast v1, Lkotlin/jvm/functions/Function1;
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
 
     move-result-object v1
 
     .line 72
     .end local v0    # "$i$f$debugInspectorInfo":I
-    :goto_1f
+    :goto_0
     new-instance v0, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$pointerInteropFilter$2;
 
     invoke-direct {v0, p2, p1}, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$pointerInteropFilter$2;-><init>(Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;)V
@@ -156,7 +156,7 @@
 .end method
 
 .method public static final pointerInteropFilter(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/viewinterop/AndroidViewHolder;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 3
     .param p0, "$this$pointerInteropFilter"    # Landroidx/compose/ui/Modifier;
     .param p1, "view"    # Landroidx/compose/ui/viewinterop/AndroidViewHolder;
 
@@ -212,18 +212,18 @@
 .end method
 
 .method public static synthetic pointerInteropFilter$default(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 0
 
     .line 69
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 70
     const/4 p1, 0x0
 
     .line 69
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt;->pointerInteropFilter(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
 
     move-result-object p0

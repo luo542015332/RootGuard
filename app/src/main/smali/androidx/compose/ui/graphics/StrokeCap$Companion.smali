@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getButt-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 32
-    # getter for: Landroidx/compose/ui/graphics/StrokeCap;->Butt:I
     invoke-static {}, Landroidx/compose/ui/graphics/StrokeCap;->access$getButt$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getRound-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 37
-    # getter for: Landroidx/compose/ui/graphics/StrokeCap;->Round:I
     invoke-static {}, Landroidx/compose/ui/graphics/StrokeCap;->access$getRound$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getSquare-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 44
-    # getter for: Landroidx/compose/ui/graphics/StrokeCap;->Square:I
     invoke-static {}, Landroidx/compose/ui/graphics/StrokeCap;->access$getSquare$cp()I
 
     move-result v0

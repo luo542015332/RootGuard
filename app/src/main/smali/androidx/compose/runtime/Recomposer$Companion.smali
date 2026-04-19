@@ -77,7 +77,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1339
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer$Companion;-><init>()V
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public static final synthetic access$addRunning(Landroidx/compose/runtime/Recomposer$Companion;Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer$Companion;
     .param p1, "info"    # Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public static final synthetic access$removeRunning(Landroidx/compose/runtime/Recomposer$Companion;Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer$Companion;
     .param p1, "info"    # Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
 
@@ -116,17 +116,16 @@
 .end method
 
 .method private final addRunning(Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;)V
-    .registers 5
+    .locals 3
     .param p1, "info"    # Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
 
     .line 1360
     nop
 
-    :cond_1
+    :cond_0
     nop
 
     .line 1361
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -145,9 +144,8 @@
 
     .line 1363
     .local v1, "new":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v2
@@ -156,27 +154,26 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     .line 1365
     .end local v0    # "old":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .end local v1    # "new":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    :cond_1c
+    :cond_1
     return-void
 .end method
 
 .method private final removeRunning(Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;)V
-    .registers 5
+    .locals 3
     .param p1, "info"    # Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
 
     .line 1368
     nop
 
-    :cond_1
+    :cond_0
     nop
 
     .line 1369
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -195,9 +192,8 @@
 
     .line 1371
     .local v1, "new":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v2
@@ -206,22 +202,21 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
     .line 1373
     .end local v0    # "old":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .end local v1    # "new":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    :cond_1c
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final clearErrors$runtime_release()V
-    .registers 14
+    .locals 13
 
     .line 1422
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -262,12 +257,12 @@
 
     move-result-object v7
 
-    :goto_1a
+    :goto_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_36
+    if-eqz v8, :cond_1
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -297,7 +292,7 @@
     .line 1548
     .end local v11    # "it":Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
     .end local v12    # "$i$a$-mapNotNull-Recomposer$Companion$clearErrors$1":I
-    if-eqz v11, :cond_34
+    if-eqz v11, :cond_0
 
     .line 1550
     .local v11, "it$iv$iv":Ljava/lang/Object;
@@ -312,14 +307,14 @@
     .end local v10    # "$i$a$-forEach-CollectionsKt___CollectionsKt$mapNotNullTo$1$iv$iv":I
     .end local v11    # "it$iv$iv":Ljava/lang/Object;
     .end local v12    # "$i$a$-let-CollectionsKt___CollectionsKt$mapNotNullTo$1$1$iv$iv":I
-    :cond_34
+    :cond_0
     nop
 
     .end local v8    # "element$iv$iv$iv":Ljava/lang/Object;
-    goto :goto_1a
+    goto :goto_0
 
     .line 1551
-    :cond_36
+    :cond_1
     nop
 
     .line 1552
@@ -342,7 +337,7 @@
 .end method
 
 .method public final getCurrentErrors$runtime_release()Ljava/util/List;
-    .registers 14
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -353,7 +348,6 @@
     .end annotation
 
     .line 1417
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -394,12 +388,12 @@
 
     move-result-object v7
 
-    :goto_1a
+    :goto_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_36
+    if-eqz v8, :cond_1
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -429,7 +423,7 @@
     .line 1535
     .end local v11    # "it":Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
     .end local v12    # "$i$a$-mapNotNull-Recomposer$Companion$getCurrentErrors$1":I
-    if-eqz v11, :cond_34
+    if-eqz v11, :cond_0
 
     .line 1537
     .local v11, "it$iv$iv":Ljava/lang/Object;
@@ -444,14 +438,14 @@
     .end local v10    # "$i$a$-forEach-CollectionsKt___CollectionsKt$mapNotNullTo$1$iv$iv":I
     .end local v11    # "it$iv$iv":Ljava/lang/Object;
     .end local v12    # "$i$a$-let-CollectionsKt___CollectionsKt$mapNotNullTo$1$1$iv$iv":I
-    :cond_34
+    :cond_0
     nop
 
     .end local v8    # "element$iv$iv$iv":Ljava/lang/Object;
-    goto :goto_1a
+    goto :goto_0
 
     .line 1538
-    :cond_36
+    :cond_1
     nop
 
     .line 1539
@@ -474,7 +468,7 @@
 .end method
 
 .method public final getRunningRecomposers()Lkotlinx/coroutines/flow/StateFlow;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -486,7 +480,6 @@
     .end annotation
 
     .line 1353
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -497,11 +490,10 @@
 .end method
 
 .method public final invalidateGroupsWithKey$runtime_release(I)V
-    .registers 11
+    .locals 9
     .param p1, "key"    # I
 
     .line 1402
-    # getter for: Landroidx/compose/runtime/Recomposer;->_hotReloadEnabled:Ljava/util/concurrent/atomic/AtomicReference;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_hotReloadEnabled$cp()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0
@@ -515,7 +507,6 @@
     invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     .line 1403
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -535,12 +526,12 @@
 
     move-result-object v3
 
-    :goto_1b
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_46
+    if-eqz v4, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -562,24 +553,24 @@
 
     const/4 v8, 0x0
 
-    if-eqz v7, :cond_37
+    if-eqz v7, :cond_0
 
     invoke-interface {v7}, Landroidx/compose/runtime/RecomposerErrorInfo;->getRecoverable()Z
 
     move-result v7
 
-    if-nez v7, :cond_37
+    if-nez v7, :cond_0
 
     move v8, v1
 
-    :cond_37
-    if-eqz v8, :cond_3a
+    :cond_0
+    if-eqz v8, :cond_1
 
     .line 1405
-    goto :goto_44
+    goto :goto_1
 
     .line 1408
-    :cond_3a
+    :cond_1
     invoke-virtual {v5}, Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;->resetErrorState()Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
 
     .line 1410
@@ -594,14 +585,14 @@
     .line 1525
     .end local v5    # "it":Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
     .end local v6    # "$i$a$-forEach-Recomposer$Companion$invalidateGroupsWithKey$1":I
-    :goto_44
+    :goto_1
     nop
 
     .end local v4    # "element$iv":Ljava/lang/Object;
-    goto :goto_1b
+    goto :goto_0
 
     .line 1526
-    :cond_46
+    :cond_2
     nop
 
     .line 1414
@@ -611,7 +602,7 @@
 .end method
 
 .method public final loadStateAndComposeForHotReload$runtime_release(Ljava/lang/Object;)V
-    .registers 10
+    .locals 8
     .param p1, "token"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "token"
@@ -619,7 +610,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1385
-    # getter for: Landroidx/compose/runtime/Recomposer;->_hotReloadEnabled:Ljava/util/concurrent/atomic/AtomicReference;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_hotReloadEnabled$cp()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0
@@ -633,7 +623,6 @@
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     .line 1387
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -653,12 +642,12 @@
 
     move-result-object v2
 
-    :goto_21
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -685,10 +674,10 @@
     nop
 
     .end local v3    # "element$iv":Ljava/lang/Object;
-    goto :goto_21
+    goto :goto_0
 
     .line 1510
-    :cond_35
+    :cond_0
     nop
 
     .line 1392
@@ -717,8 +706,8 @@
 
     move-result v4
 
-    :goto_41
-    if-ge v3, v4, :cond_52
+    :goto_1
+    if-ge v3, v4, :cond_1
 
     .line 1513
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -747,11 +736,11 @@
     .end local v5    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_41
+    goto :goto_1
 
     .line 1516
     .end local v3    # "index$iv":I
-    :cond_52
+    :cond_1
     nop
 
     .line 1394
@@ -774,8 +763,8 @@
 
     move-result v4
 
-    :goto_5b
-    if-ge v3, v4, :cond_6c
+    :goto_2
+    if-ge v3, v4, :cond_2
 
     .line 1519
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -804,17 +793,16 @@
     .end local v5    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_5b
+    goto :goto_2
 
     .line 1522
     .end local v3    # "index$iv":I
-    :cond_6c
+    :cond_2
     nop
 
     .line 1396
     .end local v1    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v2    # "$i$f$fastForEach":I
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v1
@@ -834,12 +822,12 @@
 
     move-result-object v3
 
-    :goto_7c
+    :goto_3
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_90
+    if-eqz v4, :cond_3
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -866,10 +854,10 @@
     nop
 
     .end local v4    # "element$iv":Ljava/lang/Object;
-    goto :goto_7c
+    goto :goto_3
 
     .line 1524
-    :cond_90
+    :cond_3
     nop
 
     .line 1399
@@ -879,10 +867,9 @@
 .end method
 
 .method public final saveStateAndDisposeForHotReload$runtime_release()Ljava/lang/Object;
-    .registers 10
+    .locals 9
 
     .line 1378
-    # getter for: Landroidx/compose/runtime/Recomposer;->_hotReloadEnabled:Ljava/util/concurrent/atomic/AtomicReference;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_hotReloadEnabled$cp()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0
@@ -896,7 +883,6 @@
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     .line 1379
-    # getter for: Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v0
@@ -930,12 +916,12 @@
 
     move-result-object v5
 
-    :goto_24
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_3c
+    if-eqz v6, :cond_0
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -965,12 +951,12 @@
     .local v7, "list$iv$iv":Ljava/lang/Iterable;
     invoke-static {v2, v7}, Lkotlin/collections/CollectionsKt;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    goto :goto_24
+    goto :goto_0
 
     .line 1508
     .end local v6    # "element$iv$iv":Ljava/lang/Object;
     .end local v7    # "list$iv$iv":Ljava/lang/Iterable;
-    :cond_3c
+    :cond_0
     nop
 
     .end local v2    # "destination$iv$iv":Ljava/util/Collection;
@@ -988,11 +974,10 @@
 .end method
 
 .method public final setHotReloadEnabled$runtime_release(Z)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # Z
 
     .line 1356
-    # getter for: Landroidx/compose/runtime/Recomposer;->_hotReloadEnabled:Ljava/util/concurrent/atomic/AtomicReference;
     invoke-static {}, Landroidx/compose/runtime/Recomposer;->access$get_hotReloadEnabled$cp()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0

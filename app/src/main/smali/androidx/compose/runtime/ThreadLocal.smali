@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "initialValue"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public get()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -100,7 +100,7 @@
 .end method
 
 .method protected initialValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -118,7 +118,7 @@
 .end method
 
 .method public remove()V
-    .registers 1
+    .locals 0
 
     .line 45
     invoke-super {p0}, Ljava/lang/ThreadLocal;->remove()V
@@ -128,7 +128,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

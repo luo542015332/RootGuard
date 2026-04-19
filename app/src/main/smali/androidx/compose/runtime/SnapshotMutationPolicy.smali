@@ -51,7 +51,7 @@
 
 # direct methods
 .method public static synthetic access$merge$jd(Landroidx/compose/runtime/SnapshotMutationPolicy;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .param p1, "previous"    # Ljava/lang/Object;
     .param p2, "current"    # Ljava/lang/Object;
@@ -76,7 +76,7 @@
 .end method
 
 .method public merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p1, "previous"    # Ljava/lang/Object;
     .param p2, "current"    # Ljava/lang/Object;
     .param p3, "applied"    # Ljava/lang/Object;

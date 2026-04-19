@@ -88,7 +88,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;Landroidx/compose/ui/layout/Measurable;)V
-    .registers 4
+    .locals 1
     .param p1, "this$0"    # Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     .param p2, "wrappedMeasurable"    # Landroidx/compose/ui/layout/Measurable;
     .annotation system Ldalvik/annotation/Signature;
@@ -119,7 +119,7 @@
 
 # virtual methods
 .method public get(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 3
+    .locals 1
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -139,7 +139,7 @@
 .end method
 
 .method public getParentData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 255
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedMeasurable:Landroidx/compose/ui/layout/Measurable;
@@ -152,7 +152,7 @@
 .end method
 
 .method public final getWrappedMeasurable()Landroidx/compose/ui/layout/Measurable;
-    .registers 2
+    .locals 1
 
     .line 212
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedMeasurable:Landroidx/compose/ui/layout/Measurable;
@@ -161,7 +161,7 @@
 .end method
 
 .method public final getWrappedPlaceable()Landroidx/compose/ui/layout/Placeable;
-    .registers 2
+    .locals 1
 
     .line 214
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedPlaceable:Landroidx/compose/ui/layout/Placeable;
@@ -170,7 +170,7 @@
 .end method
 
 .method public maxIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 270
@@ -184,7 +184,7 @@
 .end method
 
 .method public maxIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 264
@@ -198,7 +198,7 @@
 .end method
 
 .method public measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
-    .registers 9
+    .locals 6
     .param p1, "constraints"    # J
 
     .line 216
@@ -208,7 +208,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 217
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedMeasurable:Landroidx/compose/ui/layout/Measurable;
@@ -247,15 +247,14 @@
     .line 217
     .end local v1    # "it":Landroidx/compose/ui/layout/Placeable;
     .end local v2    # "$i$a$-also-IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable$measure$1":I
-    goto :goto_69
+    goto :goto_1
 
     .line 224
-    :cond_24
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedMeasurable:Landroidx/compose/ui/layout/Measurable;
 
     iget-object v1, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    # getter for: Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->lookaheadConstraints:Landroidx/compose/ui/unit/Constraints;
     invoke-static {v1}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->access$getLookaheadConstraints$p(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)Landroidx/compose/ui/unit/Constraints;
 
     move-result-object v1
@@ -279,7 +278,6 @@
 
     .line 225
     .local v3, "$i$a$-also-IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable$measure$2":I
-    # getter for: Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->lookaheadConstraints:Landroidx/compose/ui/unit/Constraints;
     invoke-static {v1}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->access$getLookaheadConstraints$p(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)Landroidx/compose/ui/unit/Constraints;
 
     move-result-object v4
@@ -297,7 +295,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5c
+    if-eqz v4, :cond_1
 
     .line 229
     invoke-virtual {v2}, Landroidx/compose/ui/layout/Placeable;->getWidth()I
@@ -312,11 +310,10 @@
 
     move-result-wide v4
 
-    goto :goto_64
+    goto :goto_0
 
     .line 231
-    :cond_5c
-    # getter for: Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->intermediateMeasureScope:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;
+    :cond_1
     invoke-static {v1}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->access$getIntermediateMeasureScope$p(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;
 
     move-result-object v1
@@ -326,7 +323,7 @@
     move-result-wide v4
 
     .line 228
-    :goto_64
+    :goto_0
     invoke-virtual {p0, v4, v5}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->setMeasuredSize-ozmzZPI(J)V
 
     .line 233
@@ -338,7 +335,7 @@
     nop
 
     .line 216
-    :goto_69
+    :goto_1
     iput-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedPlaceable:Landroidx/compose/ui/layout/Placeable;
 
     .line 235
@@ -350,7 +347,7 @@
 .end method
 
 .method public minIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 267
@@ -364,7 +361,7 @@
 .end method
 
 .method public minIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 261
@@ -378,7 +375,7 @@
 .end method
 
 .method protected placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
-    .registers 14
+    .locals 9
     .param p1, "position"    # J
     .param p3, "zIndex"    # F
     .param p4, "layerBlock"    # Lkotlin/jvm/functions/Function1;
@@ -400,13 +397,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     move-wide v0, p1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     sget-object v0, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
@@ -414,12 +411,12 @@
     move-result-wide v0
 
     .line 243
-    :goto_10
+    :goto_0
     nop
 
     .line 245
     .local v0, "offset":J
-    if-eqz p4, :cond_29
+    if-eqz p4, :cond_2
 
     move-object v7, p4
 
@@ -430,7 +427,7 @@
     .local v8, "$i$a$-let-IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable$placeAt$1":I
     iget-object v3, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedPlaceable:Landroidx/compose/ui/layout/Placeable;
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
     sget-object v2, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
@@ -452,22 +449,22 @@
 
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_26
+    :cond_1
     const/4 v2, 0x0
 
     .line 245
     .end local v7    # "it":Lkotlin/jvm/functions/Function1;
     .end local v8    # "$i$a$-let-IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable$placeAt$1":I
-    :goto_27
-    if-nez v2, :cond_34
+    :goto_1
+    if-nez v2, :cond_3
 
     .line 251
-    :cond_29
+    :cond_2
     iget-object v2, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasurablePlaceable;->wrappedPlaceable:Landroidx/compose/ui/layout/Placeable;
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_3
 
     sget-object v3, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
@@ -476,12 +473,12 @@
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 252
-    :cond_34
+    :cond_3
     return-void
 .end method
 
 .method public final setWrappedMeasurable(Landroidx/compose/ui/layout/Measurable;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/layout/Measurable;
 
     const-string v0, "<set-?>"
@@ -495,7 +492,7 @@
 .end method
 
 .method public final setWrappedPlaceable(Landroidx/compose/ui/layout/Placeable;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/layout/Placeable;
 
     .line 214

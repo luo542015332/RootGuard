@@ -85,7 +85,7 @@
 
 # direct methods
 .method private static final Matrix(II)[[F
-    .registers 6
+    .locals 4
     .param p0, "rows"    # I
     .param p1, "cols"    # I
 
@@ -97,8 +97,8 @@
 
     const/4 v2, 0x0
 
-    :goto_4
-    if-ge v2, p0, :cond_d
+    :goto_0
+    if-ge v2, p0, :cond_0
 
     new-array v3, p1, [F
 
@@ -106,14 +106,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     return-object v1
 .end method
 
 .method public static final synthetic access$calculateImpulseVelocity([F[FIZ)F
-    .registers 5
+    .locals 1
     .param p0, "dataPoints"    # [F
     .param p1, "time"    # [F
     .param p2, "sampleCount"    # I
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final synthetic access$set([Landroidx/compose/ui/input/pointer/util/DataPointAtTime;IJF)V
-    .registers 5
+    .locals 0
     .param p0, "$receiver"    # [Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
     .param p1, "index"    # I
     .param p2, "time"    # J
@@ -141,7 +141,7 @@
 .end method
 
 .method public static final addPointerInputChange(Landroidx/compose/ui/input/pointer/util/VelocityTracker;Landroidx/compose/ui/input/pointer/PointerInputChange;)V
-    .registers 18
+    .locals 16
     .param p0, "$this$addPointerInputChange"    # Landroidx/compose/ui/input/pointer/util/VelocityTracker;
     .param p1, "event"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
@@ -162,7 +162,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
     .line 307
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPosition-F1C5BW0()J
@@ -175,7 +175,7 @@
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/input/pointer/util/VelocityTracker;->resetTracking()V
 
     .line 313
-    :cond_1f
+    :cond_0
     const-wide/16 v3, 0x0
 
     .local v3, "previousPointerPosition":J
@@ -203,8 +203,8 @@
 
     move-result v7
 
-    :goto_30
-    if-ge v6, v7, :cond_65
+    :goto_0
+    if-ge v6, v7, :cond_1
 
     .line 621
     invoke-interface {v1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -279,11 +279,11 @@
 
     move-object v1, v15
 
-    goto :goto_30
+    goto :goto_0
 
     .end local v15    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v1    # "$this$fastForEach$iv":Ljava/util/List;
-    :cond_65
+    :cond_1
     move-object v15, v1
 
     .line 624
@@ -331,7 +331,7 @@
 .end method
 
 .method private static final calculateImpulseVelocity([F[FIZ)F
-    .registers 14
+    .locals 10
     .param p0, "dataPoints"    # [F
     .param p1, "time"    # [F
     .param p2, "sampleCount"    # I
@@ -342,18 +342,18 @@
 
     const/4 v1, 0x2
 
-    if-ge p2, v1, :cond_5
+    if-ge p2, v1, :cond_0
 
     .line 551
     return v0
 
     .line 553
-    :cond_5
+    :cond_0
     const/4 v2, 0x0
 
     const/4 v3, 0x1
 
-    if-ne p2, v1, :cond_2b
+    if-ne p2, v1, :cond_4
 
     .line 554
     aget v1, p1, v2
@@ -362,31 +362,31 @@
 
     cmpg-float v1, v1, v4
 
-    if-nez v1, :cond_13
+    if-nez v1, :cond_1
 
     move v1, v3
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_1
     move v1, v2
 
-    :goto_14
-    if-eqz v1, :cond_17
+    :goto_0
+    if-eqz v1, :cond_2
 
     .line 555
     return v0
 
     .line 561
-    :cond_17
-    if-eqz p3, :cond_1c
+    :cond_2
+    if-eqz p3, :cond_3
 
     aget v0, p0, v2
 
-    goto :goto_21
+    goto :goto_1
 
     .line 562
-    :cond_1c
+    :cond_3
     aget v0, p0, v2
 
     aget v1, p0, v3
@@ -394,7 +394,7 @@
     sub-float/2addr v0, v1
 
     .line 561
-    :goto_21
+    :goto_1
     nop
 
     .line 557
@@ -414,7 +414,7 @@
 
     .line 565
     .end local v0    # "dataPointsDelta":F
-    :cond_2b
+    :cond_4
     const/4 v0, 0x0
 
     .line 566
@@ -422,8 +422,8 @@
     add-int/lit8 v4, p2, -0x1
 
     .local v4, "i":I
-    :goto_2e
-    if-lez v4, :cond_7f
+    :goto_2
+    if-lez v4, :cond_9
 
     .line 567
     aget v5, p1, v4
@@ -434,23 +434,23 @@
 
     cmpg-float v5, v5, v6
 
-    if-nez v5, :cond_3c
+    if-nez v5, :cond_5
 
     move v5, v3
 
-    goto :goto_3d
+    goto :goto_3
 
-    :cond_3c
+    :cond_5
     move v5, v2
 
-    :goto_3d
-    if-eqz v5, :cond_40
+    :goto_3
+    if-eqz v5, :cond_6
 
     .line 568
-    goto :goto_7c
+    goto :goto_5
 
     .line 570
-    :cond_40
+    :cond_6
     const/4 v5, 0x0
 
     .line 639
@@ -483,7 +483,7 @@
 
     .line 572
     .local v5, "vPrev":F
-    if-eqz p3, :cond_5b
+    if-eqz p3, :cond_7
 
     add-int/lit8 v6, v4, -0x1
 
@@ -491,10 +491,10 @@
 
     neg-float v6, v6
 
-    goto :goto_62
+    goto :goto_4
 
     .line 573
-    :cond_5b
+    :cond_7
     aget v6, p0, v4
 
     add-int/lit8 v7, v4, -0x1
@@ -504,7 +504,7 @@
     sub-float/2addr v6, v7
 
     .line 572
-    :goto_62
+    :goto_4
     nop
 
     .line 571
@@ -537,7 +537,7 @@
     .line 576
     add-int/lit8 v8, p2, -0x1
 
-    if-ne v4, v8, :cond_7c
+    if-ne v4, v8, :cond_8
 
     .line 577
     const/high16 v8, 0x3f000000    # 0.5f
@@ -548,15 +548,15 @@
     .end local v5    # "vPrev":F
     .end local v6    # "dataPointsDelta":F
     .end local v7    # "vCurr":F
-    :cond_7c
-    :goto_7c
+    :cond_8
+    :goto_5
     add-int/lit8 v4, v4, -0x1
 
-    goto :goto_2e
+    goto :goto_2
 
     .line 580
     .end local v4    # "i":I
-    :cond_7f
+    :cond_9
     const/4 v2, 0x0
 
     .line 640
@@ -589,7 +589,7 @@
 .end method
 
 .method private static final dot([F[F)F
-    .registers 7
+    .locals 5
     .param p0, "$this$dot"    # [F
     .param p1, "a"    # [F
 
@@ -603,8 +603,8 @@
     .local v1, "i":I
     array-length v2, p0
 
-    :goto_3
-    if-ge v1, v2, :cond_e
+    :goto_0
+    if-ge v1, v2, :cond_0
 
     .line 598
     aget v3, p0, v1
@@ -618,16 +618,16 @@
     .line 597
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
     .line 600
     .end local v1    # "i":I
-    :cond_e
+    :cond_0
     return v0
 .end method
 
 .method private static final get([[FII)F
-    .registers 5
+    .locals 2
     .param p0, "$this$get"    # [[F
     .param p1, "row"    # I
     .param p2, "col"    # I
@@ -648,7 +648,7 @@
 .end method
 
 .method private static final kineticEnergyToVelocity(F)F
-    .registers 5
+    .locals 4
     .param p0, "kineticEnergy"    # F
 
     const/4 v0, 0x0
@@ -683,7 +683,7 @@
 .end method
 
 .method private static final norm([F)F
-    .registers 4
+    .locals 3
     .param p0, "$this$norm"    # [F
 
     const/4 v0, 0x0
@@ -706,7 +706,7 @@
 .end method
 
 .method public static final polyFitLeastSquares([F[FII[F)[F
-    .registers 25
+    .locals 20
     .param p0, "x"    # [F
     .param p1, "y"    # [F
     .param p2, "sampleCount"    # I
@@ -738,25 +738,25 @@
     .line 371
     const/4 v4, 0x1
 
-    if-lt v2, v4, :cond_149
+    if-lt v2, v4, :cond_11
 
     .line 374
-    if-eqz v1, :cond_141
+    if-eqz v1, :cond_10
 
     .line 379
-    if-lt v2, v1, :cond_26
+    if-lt v2, v1, :cond_0
 
     .line 380
     add-int/lit8 v4, v1, -0x1
 
-    goto :goto_27
+    goto :goto_0
 
     .line 382
-    :cond_26
+    :cond_0
     move v4, v2
 
     .line 379
-    :goto_27
+    :goto_0
     nop
 
     .line 378
@@ -782,8 +782,8 @@
 
     move v11, v10
 
-    :goto_32
-    if-ge v11, v7, :cond_3b
+    :goto_1
+    if-ge v11, v7, :cond_1
 
     new-array v12, v6, [F
 
@@ -791,11 +791,11 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_32
+    goto :goto_1
 
     .line 390
     .end local v8    # "$i$f$Matrix":I
-    :cond_3b
+    :cond_1
     move-object v8, v9
 
     .line 391
@@ -803,8 +803,8 @@
     const/4 v9, 0x0
 
     .local v9, "h":I
-    :goto_3d
-    if-ge v9, v6, :cond_64
+    :goto_2
+    if-ge v9, v6, :cond_3
 
     .line 392
     const/4 v11, 0x0
@@ -835,8 +835,8 @@
     const/4 v11, 0x1
 
     .local v11, "i":I
-    :goto_4a
-    if-ge v11, v7, :cond_61
+    :goto_3
+    if-ge v11, v7, :cond_2
 
     .line 394
     add-int/lit8 v12, v11, -0x1
@@ -882,18 +882,18 @@
     .end local v14    # "$i$f$set":I
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_4a
+    goto :goto_3
 
     .line 391
     .end local v11    # "i":I
-    :cond_61
+    :cond_2
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_3d
+    goto :goto_2
 
     .line 401
     .end local v9    # "h":I
-    :cond_64
+    :cond_3
     const/4 v9, 0x0
 
     .line 634
@@ -902,8 +902,8 @@
 
     move v12, v10
 
-    :goto_68
-    if-ge v12, v7, :cond_71
+    :goto_4
+    if-ge v12, v7, :cond_4
 
     new-array v13, v6, [F
 
@@ -911,11 +911,11 @@
 
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_68
+    goto :goto_4
 
     .line 401
     .end local v9    # "$i$f$Matrix":I
-    :cond_71
+    :cond_4
     move-object v9, v11
 
     .line 403
@@ -926,8 +926,8 @@
     .local v11, "$i$f$Matrix":I
     new-array v12, v7, [[F
 
-    :goto_75
-    if-ge v10, v7, :cond_7e
+    :goto_5
+    if-ge v10, v7, :cond_5
 
     new-array v13, v7, [F
 
@@ -935,11 +935,11 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_75
+    goto :goto_5
 
     .line 403
     .end local v11    # "$i$f$Matrix":I
-    :cond_7e
+    :cond_5
     move-object v10, v12
 
     .line 404
@@ -947,8 +947,8 @@
     const/4 v11, 0x0
 
     .local v11, "j":I
-    :goto_80
-    if-ge v11, v7, :cond_109
+    :goto_6
+    if-ge v11, v7, :cond_d
 
     .line 405
     aget-object v12, v9, v11
@@ -962,8 +962,8 @@
     const/4 v14, 0x0
 
     .local v14, "h":I
-    :goto_87
-    if-ge v14, v6, :cond_90
+    :goto_7
+    if-ge v14, v6, :cond_6
 
     .line 408
     aget v15, v13, v14
@@ -973,16 +973,16 @@
     .line 407
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_87
+    goto :goto_7
 
     .line 410
     .end local v14    # "h":I
-    :cond_90
+    :cond_6
     const/4 v14, 0x0
 
     .local v14, "i":I
-    :goto_91
-    if-ge v14, v11, :cond_b1
+    :goto_8
+    if-ge v14, v11, :cond_8
 
     .line 411
     aget-object v15, v9, v14
@@ -1000,8 +1000,8 @@
     move/from16 v0, v17
 
     .local v0, "h":I
-    :goto_9d
-    if-ge v0, v6, :cond_ac
+    :goto_9
+    if-ge v0, v6, :cond_7
 
     .line 414
     aget v17, v12, v0
@@ -1017,22 +1017,22 @@
     .line 413
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_9d
+    goto :goto_9
 
     .line 410
     .end local v0    # "h":I
     .end local v15    # "z":[F
     .end local v16    # "dot":F
-    :cond_ac
+    :cond_7
     add-int/lit8 v14, v14, 0x1
 
     move-object/from16 v0, p0
 
-    goto :goto_91
+    goto :goto_8
 
     .line 418
     .end local v14    # "i":I
-    :cond_b1
+    :cond_8
     move-object v0, v12
 
     .local v0, "$this$norm$iv":[F
@@ -1067,7 +1067,7 @@
 
     cmpg-float v1, v0, v1
 
-    if-ltz v1, :cond_fd
+    if-ltz v1, :cond_c
 
     .line 430
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1079,8 +1079,8 @@
     const/4 v14, 0x0
 
     .local v14, "h":I
-    :goto_cb
-    if-ge v14, v6, :cond_d5
+    :goto_a
+    if-ge v14, v6, :cond_9
 
     .line 432
     aget v15, v12, v14
@@ -1092,11 +1092,11 @@
     .line 431
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_cb
+    goto :goto_a
 
     .line 434
     .end local v14    # "h":I
-    :cond_d5
+    :cond_9
     aget-object v14, v10, v11
 
     .line 435
@@ -1104,11 +1104,11 @@
     const/4 v15, 0x0
 
     .local v15, "i":I
-    :goto_d8
-    if-ge v15, v7, :cond_f4
+    :goto_b
+    if-ge v15, v7, :cond_b
 
     .line 436
-    if-ge v15, v11, :cond_e5
+    if-ge v15, v11, :cond_a
 
     const/16 v16, 0x0
 
@@ -1118,9 +1118,9 @@
 
     move/from16 v0, v19
 
-    goto :goto_ed
+    goto :goto_c
 
-    :cond_e5
+    :cond_a
     move/from16 v16, v0
 
     .end local v0    # "norm":F
@@ -1131,7 +1131,7 @@
 
     move-result v0
 
-    :goto_ed
+    :goto_c
     aput v0, v14, v15
 
     .line 435
@@ -1139,11 +1139,11 @@
 
     move/from16 v0, v16
 
-    goto :goto_d8
+    goto :goto_b
 
     .end local v16    # "norm":F
     .restart local v0    # "norm":F
-    :cond_f4
+    :cond_b
     move/from16 v16, v0
 
     .line 404
@@ -1159,13 +1159,13 @@
 
     move/from16 v1, p2
 
-    goto :goto_80
+    goto :goto_6
 
     .line 424
     .restart local v0    # "norm":F
     .restart local v12    # "w":[F
     .restart local v13    # "aw":[F
-    :cond_fd
+    :cond_c
     move/from16 v16, v0
 
     .end local v0    # "norm":F
@@ -1187,7 +1187,7 @@
     .end local v12    # "w":[F
     .end local v13    # "aw":[F
     .end local v16    # "norm":F
-    :cond_109
+    :cond_d
     move-object/from16 v0, p1
 
     .line 447
@@ -1198,10 +1198,10 @@
     add-int/lit8 v1, v7, -0x1
 
     .local v1, "i":I
-    :goto_10e
+    :goto_d
     const/4 v11, -0x1
 
-    if-ge v11, v1, :cond_140
+    if-ge v11, v1, :cond_f
 
     .line 458
     aget-object v11, v9, v1
@@ -1218,10 +1218,10 @@
     .restart local v11    # "j":I
     add-int/lit8 v12, v1, 0x1
 
-    if-gt v12, v11, :cond_132
+    if-gt v12, v11, :cond_e
 
     .line 460
-    :goto_11f
+    :goto_e
     aget v13, v3, v1
 
     move-object v14, v10
@@ -1247,15 +1247,15 @@
     aput v13, v3, v1
 
     .line 459
-    if-eq v11, v12, :cond_132
+    if-eq v11, v12, :cond_e
 
     add-int/lit8 v11, v11, -0x1
 
-    goto :goto_11f
+    goto :goto_e
 
     .line 462
     .end local v11    # "j":I
-    :cond_132
+    :cond_e
     aget v11, v3, v1
 
     move-object v12, v10
@@ -1279,11 +1279,11 @@
     .line 457
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_10e
+    goto :goto_d
 
     .line 465
     .end local v1    # "i":I
-    :cond_140
+    :cond_f
     return-object v3
 
     .line 375
@@ -1294,7 +1294,7 @@
     .end local v8    # "a":[[F
     .end local v9    # "q":[[F
     .end local v10    # "r":[[F
-    :cond_141
+    :cond_10
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "At least one point must be provided"
@@ -1304,7 +1304,7 @@
     throw v0
 
     .line 372
-    :cond_149
+    :cond_11
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "The degree must be at positive integer"
@@ -1315,12 +1315,12 @@
 .end method
 
 .method public static synthetic polyFitLeastSquares$default([F[FII[FILjava/lang/Object;)[F
-    .registers 7
+    .locals 0
 
     .line 361
     and-int/lit8 p5, p5, 0x10
 
-    if-eqz p5, :cond_d
+    if-eqz p5, :cond_0
 
     .line 369
     add-int/lit8 p4, p3, 0x1
@@ -1334,7 +1334,7 @@
     new-array p4, p4, [F
 
     .line 361
-    :cond_d
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/util/VelocityTrackerKt;->polyFitLeastSquares([F[FII[F)[F
 
     move-result-object p0
@@ -1343,7 +1343,7 @@
 .end method
 
 .method private static final set([Landroidx/compose/ui/input/pointer/util/DataPointAtTime;IJF)V
-    .registers 7
+    .locals 2
     .param p0, "$this$set"    # [Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
     .param p1, "index"    # I
     .param p2, "time"    # J
@@ -1354,7 +1354,7 @@
 
     .line 280
     .local v0, "currentEntry":Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 281
     new-instance v1, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
@@ -1363,22 +1363,22 @@
 
     aput-object v1, p0, p1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 283
-    :cond_c
+    :cond_0
     invoke-virtual {v0, p2, p3}, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->setTime(J)V
 
     .line 284
     invoke-virtual {v0, p4}, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->setDataPoint(F)V
 
     .line 286
-    :goto_12
+    :goto_0
     return-void
 .end method
 
 .method private static final set([[FIIF)V
-    .registers 6
+    .locals 2
     .param p0, "$this$set"    # [[F
     .param p1, "row"    # I
     .param p2, "col"    # I

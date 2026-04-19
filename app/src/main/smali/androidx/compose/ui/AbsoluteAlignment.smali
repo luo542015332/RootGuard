@@ -76,7 +76,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     new-instance v0, Landroidx/compose/ui/AbsoluteAlignment;
 
@@ -166,7 +166,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -175,49 +175,49 @@
 .end method
 
 .method public static synthetic getBottomLeft$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getBottomRight$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCenterLeft$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCenterRight$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getLeft$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getRight$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTopLeft$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTopRight$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -225,7 +225,7 @@
 
 # virtual methods
 .method public final getBottomLeft()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 131
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->BottomLeft:Landroidx/compose/ui/Alignment;
@@ -234,7 +234,7 @@
 .end method
 
 .method public final getBottomRight()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 133
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->BottomRight:Landroidx/compose/ui/Alignment;
@@ -243,7 +243,7 @@
 .end method
 
 .method public final getCenterLeft()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 127
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->CenterLeft:Landroidx/compose/ui/Alignment;
@@ -252,7 +252,7 @@
 .end method
 
 .method public final getCenterRight()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 129
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->CenterRight:Landroidx/compose/ui/Alignment;
@@ -261,7 +261,7 @@
 .end method
 
 .method public final getLeft()Landroidx/compose/ui/Alignment$Horizontal;
-    .registers 2
+    .locals 1
 
     .line 137
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->Left:Landroidx/compose/ui/Alignment$Horizontal;
@@ -270,7 +270,7 @@
 .end method
 
 .method public final getRight()Landroidx/compose/ui/Alignment$Horizontal;
-    .registers 2
+    .locals 1
 
     .line 139
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->Right:Landroidx/compose/ui/Alignment$Horizontal;
@@ -279,7 +279,7 @@
 .end method
 
 .method public final getTopLeft()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 123
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->TopLeft:Landroidx/compose/ui/Alignment;
@@ -288,7 +288,7 @@
 .end method
 
 .method public final getTopRight()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 125
     sget-object v0, Landroidx/compose/ui/AbsoluteAlignment;->TopRight:Landroidx/compose/ui/Alignment;

@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
     .param p1, "string"    # Ljava/lang/String;
 
     const-string/jumbo v0, "string"
@@ -122,7 +122,7 @@
 .end method
 
 .method private final dataAvailable()I
-    .registers 2
+    .locals 1
 
     .line 473
     iget-object v0, p0, Landroidx/compose/ui/platform/DecodeHelper;->parcel:Landroid/os/Parcel;
@@ -135,7 +135,7 @@
 .end method
 
 .method private final decodeBaselineShift-y9eOQZs()F
-    .registers 2
+    .locals 1
 
     .line 419
     invoke-direct {p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeFloat()F
@@ -150,7 +150,7 @@
 .end method
 
 .method private final decodeByte()B
-    .registers 2
+    .locals 1
 
     .line 453
     iget-object v0, p0, Landroidx/compose/ui/platform/DecodeHelper;->parcel:Landroid/os/Parcel;
@@ -163,7 +163,7 @@
 .end method
 
 .method private final decodeFloat()F
-    .registers 2
+    .locals 1
 
     .line 465
     iget-object v0, p0, Landroidx/compose/ui/platform/DecodeHelper;->parcel:Landroid/os/Parcel;
@@ -176,7 +176,7 @@
 .end method
 
 .method private final decodeInt()I
-    .registers 2
+    .locals 1
 
     .line 457
     iget-object v0, p0, Landroidx/compose/ui/platform/DecodeHelper;->parcel:Landroid/os/Parcel;
@@ -189,7 +189,7 @@
 .end method
 
 .method private final decodeShadow()Landroidx/compose/ui/graphics/Shadow;
-    .registers 9
+    .locals 8
 
     .line 445
     new-instance v7, Landroidx/compose/ui/graphics/Shadow;
@@ -228,7 +228,7 @@
 .end method
 
 .method private final decodeString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 469
     iget-object v0, p0, Landroidx/compose/ui/platform/DecodeHelper;->parcel:Landroid/os/Parcel;
@@ -241,7 +241,7 @@
 .end method
 
 .method private final decodeTextDecoration()Landroidx/compose/ui/text/style/TextDecoration;
-    .registers 9
+    .locals 8
 
     .line 430
     invoke-direct {p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeInt()I
@@ -266,18 +266,18 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     move v1, v2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v1, v3
 
     .line 432
     .local v1, "hasLineThrough":Z
-    :goto_16
+    :goto_0
     sget-object v4, Landroidx/compose/ui/text/style/TextDecoration;->Companion:Landroidx/compose/ui/text/style/TextDecoration$Companion;
 
     invoke-virtual {v4}, Landroidx/compose/ui/text/style/TextDecoration$Companion;->getUnderline()Landroidx/compose/ui/text/style/TextDecoration;
@@ -290,21 +290,21 @@
 
     and-int/2addr v4, v0
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_1
 
     move v4, v2
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
+    :cond_1
     move v4, v3
 
     .line 433
     .local v4, "hasUnderline":Z
-    :goto_26
-    if-eqz v1, :cond_48
+    :goto_1
+    if-eqz v1, :cond_2
 
-    if-eqz v4, :cond_48
+    if-eqz v4, :cond_2
 
     .line 434
     sget-object v5, Landroidx/compose/ui/text/style/TextDecoration;->Companion:Landroidx/compose/ui/text/style/TextDecoration$Companion;
@@ -337,11 +337,11 @@
 
     move-result-object v2
 
-    goto :goto_60
+    goto :goto_2
 
     .line 435
-    :cond_48
-    if-eqz v1, :cond_51
+    :cond_2
+    if-eqz v1, :cond_3
 
     .line 436
     sget-object v2, Landroidx/compose/ui/text/style/TextDecoration;->Companion:Landroidx/compose/ui/text/style/TextDecoration$Companion;
@@ -350,11 +350,11 @@
 
     move-result-object v2
 
-    goto :goto_60
+    goto :goto_2
 
     .line 437
-    :cond_51
-    if-eqz v4, :cond_5a
+    :cond_3
+    if-eqz v4, :cond_4
 
     .line 438
     sget-object v2, Landroidx/compose/ui/text/style/TextDecoration;->Companion:Landroidx/compose/ui/text/style/TextDecoration$Companion;
@@ -363,10 +363,10 @@
 
     move-result-object v2
 
-    goto :goto_60
+    goto :goto_2
 
     .line 440
-    :cond_5a
+    :cond_4
     sget-object v2, Landroidx/compose/ui/text/style/TextDecoration;->Companion:Landroidx/compose/ui/text/style/TextDecoration$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/text/style/TextDecoration$Companion;->getNone()Landroidx/compose/ui/text/style/TextDecoration;
@@ -374,12 +374,12 @@
     move-result-object v2
 
     .line 433
-    :goto_60
+    :goto_2
     return-object v2
 .end method
 
 .method private final decodeTextGeometricTransform()Landroidx/compose/ui/text/style/TextGeometricTransform;
-    .registers 4
+    .locals 3
 
     .line 423
     new-instance v0, Landroidx/compose/ui/text/style/TextGeometricTransform;
@@ -401,7 +401,7 @@
 .end method
 
 .method private final decodeULong-s-VKNKU()J
-    .registers 3
+    .locals 2
 
     .line 461
     iget-object v0, p0, Landroidx/compose/ui/platform/DecodeHelper;->parcel:Landroid/os/Parcel;
@@ -420,7 +420,7 @@
 
 # virtual methods
 .method public final decodeColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 378
     invoke-direct {p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeULong-s-VKNKU()J
@@ -435,7 +435,7 @@
 .end method
 
 .method public final decodeFontStyle-_-LCdwA()I
-    .registers 3
+    .locals 2
 
     .line 401
     invoke-direct {p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeByte()B
@@ -443,7 +443,7 @@
     move-result v0
 
     .line 402
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     sget-object v0, Landroidx/compose/ui/text/font/FontStyle;->Companion:Landroidx/compose/ui/text/font/FontStyle$Companion;
 
@@ -451,13 +451,13 @@
 
     move-result v0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 403
-    :cond_d
+    :cond_0
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_1
 
     sget-object v0, Landroidx/compose/ui/text/font/FontStyle;->Companion:Landroidx/compose/ui/text/font/FontStyle$Companion;
 
@@ -465,10 +465,10 @@
 
     move-result v0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 404
-    :cond_17
+    :cond_1
     sget-object v0, Landroidx/compose/ui/text/font/FontStyle;->Companion:Landroidx/compose/ui/text/font/FontStyle$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontStyle$Companion;->getNormal-_-LCdwA()I
@@ -476,12 +476,12 @@
     move-result v0
 
     .line 401
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
 .method public final decodeFontSynthesis-GVVA2EU()I
-    .registers 3
+    .locals 2
 
     .line 409
     invoke-direct {p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeByte()B
@@ -489,7 +489,7 @@
     move-result v0
 
     .line 410
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
@@ -497,13 +497,13 @@
 
     move-result v0
 
-    goto :goto_31
+    goto :goto_0
 
     .line 411
-    :cond_d
+    :cond_0
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_1
 
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
@@ -511,13 +511,13 @@
 
     move-result v0
 
-    goto :goto_31
+    goto :goto_0
 
     .line 412
-    :cond_17
+    :cond_1
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_21
+    if-ne v0, v1, :cond_2
 
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
@@ -525,13 +525,13 @@
 
     move-result v0
 
-    goto :goto_31
+    goto :goto_0
 
     .line 413
-    :cond_21
+    :cond_2
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_2b
+    if-ne v0, v1, :cond_3
 
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
@@ -539,10 +539,10 @@
 
     move-result v0
 
-    goto :goto_31
+    goto :goto_0
 
     .line 414
-    :cond_2b
+    :cond_3
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontSynthesis$Companion;->getNone-GVVA2EU()I
@@ -550,12 +550,12 @@
     move-result v0
 
     .line 409
-    :goto_31
+    :goto_0
     return v0
 .end method
 
 .method public final decodeFontWeight()Landroidx/compose/ui/text/font/FontWeight;
-    .registers 3
+    .locals 2
 
     .line 397
     new-instance v0, Landroidx/compose/ui/text/font/FontWeight;
@@ -570,7 +570,7 @@
 .end method
 
 .method public final decodeSpanStyle()Landroidx/compose/ui/text/SpanStyle;
-    .registers 23
+    .locals 22
 
     .line 300
     new-instance v21, Landroidx/compose/ui/platform/MutableSpanStyle;
@@ -613,8 +613,8 @@
 
     .line 301
     .local v0, "mutableSpanStyle":Landroidx/compose/ui/platform/MutableSpanStyle;
-    :cond_1f
-    :goto_1f
+    :cond_0
+    :goto_0
     move-object/from16 v1, p0
 
     iget-object v2, v1, Landroidx/compose/ui/platform/DecodeHelper;->parcel:Landroid/os/Parcel;
@@ -625,7 +625,7 @@
 
     const/4 v3, 0x1
 
-    if-le v2, v3, :cond_11e
+    if-le v2, v3, :cond_17
 
     .line 302
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeByte()B
@@ -635,14 +635,14 @@
     .line 303
     const/16 v4, 0x8
 
-    if-ne v2, v3, :cond_42
+    if-ne v2, v3, :cond_2
 
     .line 304
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v4, :cond_40
+    if-lt v2, v4, :cond_1
 
     .line 305
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeColor-0d7_KjU()J
@@ -651,26 +651,26 @@
 
     invoke-virtual {v0, v2, v3}, Landroidx/compose/ui/platform/MutableSpanStyle;->setColor-8_81llA(J)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 307
-    :cond_40
-    goto/16 :goto_11e
+    :cond_1
+    goto/16 :goto_1
 
     .line 309
-    :cond_42
+    :cond_2
     const/4 v5, 0x2
 
     const/4 v6, 0x5
 
-    if-ne v2, v5, :cond_56
+    if-ne v2, v5, :cond_4
 
     .line 310
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v6, :cond_54
+    if-lt v2, v6, :cond_3
 
     .line 311
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeTextUnit-XSAIIZE()J
@@ -679,26 +679,26 @@
 
     invoke-virtual {v0, v2, v3}, Landroidx/compose/ui/platform/MutableSpanStyle;->setFontSize--R2X_6o(J)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 313
-    :cond_54
-    goto/16 :goto_11e
+    :cond_3
+    goto/16 :goto_1
 
     .line 315
-    :cond_56
+    :cond_4
     const/4 v5, 0x3
 
     const/4 v7, 0x4
 
-    if-ne v2, v5, :cond_6a
+    if-ne v2, v5, :cond_6
 
     .line 316
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v7, :cond_68
+    if-lt v2, v7, :cond_5
 
     .line 317
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeFontWeight()Landroidx/compose/ui/text/font/FontWeight;
@@ -707,22 +707,22 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setFontWeight(Landroidx/compose/ui/text/font/FontWeight;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 319
-    :cond_68
-    goto/16 :goto_11e
+    :cond_5
+    goto/16 :goto_1
 
     .line 321
-    :cond_6a
-    if-ne v2, v7, :cond_80
+    :cond_6
+    if-ne v2, v7, :cond_8
 
     .line 322
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v3, :cond_7e
+    if-lt v2, v3, :cond_7
 
     .line 323
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeFontStyle-_-LCdwA()I
@@ -735,22 +735,22 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setFontStyle-mLjRB2g(Landroidx/compose/ui/text/font/FontStyle;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 325
-    :cond_7e
-    goto/16 :goto_11e
+    :cond_7
+    goto/16 :goto_1
 
     .line 327
-    :cond_80
-    if-ne v2, v6, :cond_96
+    :cond_8
+    if-ne v2, v6, :cond_a
 
     .line 328
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v3, :cond_94
+    if-lt v2, v3, :cond_9
 
     .line 329
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeFontSynthesis-GVVA2EU()I
@@ -763,17 +763,17 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setFontSynthesis-tDdu0R4(Landroidx/compose/ui/text/font/FontSynthesis;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 331
-    :cond_94
-    goto/16 :goto_11e
+    :cond_9
+    goto/16 :goto_1
 
     .line 333
-    :cond_96
+    :cond_a
     const/4 v3, 0x6
 
-    if-ne v2, v3, :cond_a2
+    if-ne v2, v3, :cond_b
 
     .line 334
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeString()Ljava/lang/String;
@@ -782,20 +782,20 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setFontFeatureSettings(Ljava/lang/String;)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_0
 
     .line 335
-    :cond_a2
+    :cond_b
     const/4 v3, 0x7
 
-    if-ne v2, v3, :cond_b6
+    if-ne v2, v3, :cond_d
 
     .line 336
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v6, :cond_b4
+    if-lt v2, v6, :cond_c
 
     .line 337
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeTextUnit-XSAIIZE()J
@@ -804,22 +804,22 @@
 
     invoke-virtual {v0, v2, v3}, Landroidx/compose/ui/platform/MutableSpanStyle;->setLetterSpacing--R2X_6o(J)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_0
 
     .line 339
-    :cond_b4
-    goto/16 :goto_11e
+    :cond_c
+    goto/16 :goto_1
 
     .line 341
-    :cond_b6
-    if-ne v2, v4, :cond_cc
+    :cond_d
+    if-ne v2, v4, :cond_f
 
     .line 342
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v7, :cond_cb
+    if-lt v2, v7, :cond_e
 
     .line 343
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeBaselineShift-y9eOQZs()F
@@ -832,24 +832,24 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setBaselineShift-_isdbwI(Landroidx/compose/ui/text/style/BaselineShift;)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_0
 
     .line 345
-    :cond_cb
-    goto :goto_11e
+    :cond_e
+    goto :goto_1
 
     .line 347
-    :cond_cc
+    :cond_f
     const/16 v3, 0x9
 
-    if-ne v2, v3, :cond_e0
+    if-ne v2, v3, :cond_11
 
     .line 348
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v4, :cond_df
+    if-lt v2, v4, :cond_10
 
     .line 349
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeTextGeometricTransform()Landroidx/compose/ui/text/style/TextGeometricTransform;
@@ -858,24 +858,24 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setTextGeometricTransform(Landroidx/compose/ui/text/style/TextGeometricTransform;)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_0
 
     .line 351
-    :cond_df
-    goto :goto_11e
+    :cond_10
+    goto :goto_1
 
     .line 353
-    :cond_e0
+    :cond_11
     const/16 v3, 0xa
 
-    if-ne v2, v3, :cond_f4
+    if-ne v2, v3, :cond_13
 
     .line 354
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v4, :cond_f3
+    if-lt v2, v4, :cond_12
 
     .line 355
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeColor-0d7_KjU()J
@@ -884,24 +884,24 @@
 
     invoke-virtual {v0, v2, v3}, Landroidx/compose/ui/platform/MutableSpanStyle;->setBackground-8_81llA(J)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_0
 
     .line 357
-    :cond_f3
-    goto :goto_11e
+    :cond_12
+    goto :goto_1
 
     .line 359
-    :cond_f4
+    :cond_13
     const/16 v3, 0xb
 
-    if-ne v2, v3, :cond_108
+    if-ne v2, v3, :cond_15
 
     .line 360
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
 
     move-result v2
 
-    if-lt v2, v7, :cond_107
+    if-lt v2, v7, :cond_14
 
     .line 361
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeTextDecoration()Landroidx/compose/ui/text/style/TextDecoration;
@@ -910,17 +910,17 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setTextDecoration(Landroidx/compose/ui/text/style/TextDecoration;)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_0
 
     .line 363
-    :cond_107
-    goto :goto_11e
+    :cond_14
+    goto :goto_1
 
     .line 365
-    :cond_108
+    :cond_15
     const/16 v3, 0xc
 
-    if-ne v2, v3, :cond_1f
+    if-ne v2, v3, :cond_0
 
     .line 366
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->dataAvailable()I
@@ -929,7 +929,7 @@
 
     const/16 v3, 0x14
 
-    if-lt v2, v3, :cond_11d
+    if-lt v2, v3, :cond_16
 
     .line 367
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeShadow()Landroidx/compose/ui/graphics/Shadow;
@@ -938,15 +938,15 @@
 
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/MutableSpanStyle;->setShadow(Landroidx/compose/ui/graphics/Shadow;)V
 
-    goto/16 :goto_1f
+    goto/16 :goto_0
 
     .line 369
-    :cond_11d
+    :cond_16
     nop
 
     .line 374
-    :cond_11e
-    :goto_11e
+    :cond_17
+    :goto_1
     invoke-virtual {v0}, Landroidx/compose/ui/platform/MutableSpanStyle;->toSpanStyle()Landroidx/compose/ui/text/SpanStyle;
 
     move-result-object v2
@@ -955,7 +955,7 @@
 .end method
 
 .method public final decodeTextUnit-XSAIIZE()J
-    .registers 6
+    .locals 5
 
     .line 383
     invoke-direct {p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeByte()B
@@ -965,7 +965,7 @@
     .line 384
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_e
+    if-ne v0, v1, :cond_0
 
     sget-object v0, Landroidx/compose/ui/unit/TextUnitType;->Companion:Landroidx/compose/ui/unit/TextUnitType$Companion;
 
@@ -973,13 +973,13 @@
 
     move-result-wide v0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 385
-    :cond_e
+    :cond_0
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_1
 
     sget-object v0, Landroidx/compose/ui/unit/TextUnitType;->Companion:Landroidx/compose/ui/unit/TextUnitType$Companion;
 
@@ -987,10 +987,10 @@
 
     move-result-wide v0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 386
-    :cond_18
+    :cond_1
     sget-object v0, Landroidx/compose/ui/unit/TextUnitType;->Companion:Landroidx/compose/ui/unit/TextUnitType$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/unit/TextUnitType$Companion;->getUnspecified-UIouoOA()J
@@ -998,7 +998,7 @@
     move-result-wide v0
 
     .line 383
-    :goto_1e
+    :goto_0
     nop
 
     .line 388
@@ -1013,7 +1013,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_2
 
     .line 389
     sget-object v2, Landroidx/compose/ui/unit/TextUnit;->Companion:Landroidx/compose/ui/unit/TextUnit$Companion;
@@ -1025,7 +1025,7 @@
     return-wide v2
 
     .line 391
-    :cond_32
+    :cond_2
     invoke-direct {p0}, Landroidx/compose/ui/platform/DecodeHelper;->decodeFloat()F
 
     move-result v2

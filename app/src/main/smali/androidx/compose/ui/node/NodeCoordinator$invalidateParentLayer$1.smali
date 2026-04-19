@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/node/NodeCoordinator$invalidateParentLayer$1;->this$0:Landroidx/compose/ui/node/NodeCoordinator;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 479
     invoke-virtual {p0}, Landroidx/compose/ui/node/NodeCoordinator$invalidateParentLayer$1;->invoke()V
@@ -75,7 +75,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 2
+    .locals 1
 
     .line 480
     iget-object v0, p0, Landroidx/compose/ui/node/NodeCoordinator$invalidateParentLayer$1;->this$0:Landroidx/compose/ui/node/NodeCoordinator;
@@ -84,11 +84,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->invalidateLayer()V
 
     .line 481
-    :cond_b
+    :cond_0
     return-void
 .end method

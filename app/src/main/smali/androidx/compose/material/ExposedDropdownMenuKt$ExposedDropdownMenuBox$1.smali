@@ -69,7 +69,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/node/Ref;Landroid/view/View;ILandroidx/compose/runtime/MutableIntState;Landroidx/compose/runtime/MutableIntState;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 120
@@ -120,7 +120,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 7
+    .locals 5
     .param p1, "it"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "it"
@@ -138,7 +138,6 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/material/ExposedDropdownMenuKt;->ExposedDropdownMenuBox$lambda$2(Landroidx/compose/runtime/MutableIntState;I)V
     invoke-static {v0, v1}, Landroidx/compose/material/ExposedDropdownMenuKt;->access$ExposedDropdownMenuBox$lambda$2(Landroidx/compose/runtime/MutableIntState;I)V
 
     .line 122
@@ -178,7 +177,6 @@
 
     check-cast v3, Lkotlin/jvm/functions/Function1;
 
-    # invokes: Landroidx/compose/material/ExposedDropdownMenuKt;->updateHeight(Landroid/view/View;Landroidx/compose/ui/layout/LayoutCoordinates;ILkotlin/jvm/functions/Function1;)V
     invoke-static {v0, v1, v2, v3}, Landroidx/compose/material/ExposedDropdownMenuKt;->access$updateHeight(Landroid/view/View;Landroidx/compose/ui/layout/LayoutCoordinates;ILkotlin/jvm/functions/Function1;)V
 
     .line 130

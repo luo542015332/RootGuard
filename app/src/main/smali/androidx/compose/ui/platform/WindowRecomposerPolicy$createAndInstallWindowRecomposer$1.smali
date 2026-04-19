@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/Job;)V
-    .registers 2
+    .locals 0
     .param p1, "$unsetJob"    # Lkotlinx/coroutines/Job;
 
     iput-object p1, p0, Landroidx/compose/ui/platform/WindowRecomposerPolicy$createAndInstallWindowRecomposer$1;->$unsetJob:Lkotlinx/coroutines/Job;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 3
+    .locals 1
     .param p1, "v"    # Landroid/view/View;
 
     const-string/jumbo v0, "v"
@@ -72,7 +72,7 @@
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 5
+    .locals 3
     .param p1, "v"    # Landroid/view/View;
 
     const-string/jumbo v0, "v"

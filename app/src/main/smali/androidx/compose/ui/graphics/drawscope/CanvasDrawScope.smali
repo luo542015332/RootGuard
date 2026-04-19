@@ -193,7 +193,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 10
+    .locals 9
 
     .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -233,7 +233,7 @@
 .end method
 
 .method private final configurePaint-2qPWKa0(JLandroidx/compose/ui/graphics/drawscope/DrawStyle;FLandroidx/compose/ui/graphics/ColorFilter;II)Landroidx/compose/ui/graphics/Paint;
-    .registers 15
+    .locals 7
     .param p1, "color"    # J
     .param p3, "style"    # Landroidx/compose/ui/graphics/drawscope/DrawStyle;
     .param p4, "alpha"    # F
@@ -267,24 +267,24 @@
 
     move-result v5
 
-    if-nez v5, :cond_17
+    if-nez v5, :cond_0
 
     invoke-interface {v1, v3, v4}, Landroidx/compose/ui/graphics/Paint;->setColor-8_81llA(J)V
 
     .line 659
-    :cond_17
+    :cond_0
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
     move-result-object v5
 
-    if-eqz v5, :cond_21
+    if-eqz v5, :cond_1
 
     const/4 v5, 0x0
 
     invoke-interface {v1, v5}, Landroidx/compose/ui/graphics/Paint;->setShader(Landroid/graphics/Shader;)V
 
     .line 660
-    :cond_21
+    :cond_1
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getColorFilter()Landroidx/compose/ui/graphics/ColorFilter;
 
     move-result-object v5
@@ -293,12 +293,12 @@
 
     move-result v5
 
-    if-nez v5, :cond_2e
+    if-nez v5, :cond_2
 
     invoke-interface {v1, p5}, Landroidx/compose/ui/graphics/Paint;->setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
 
     .line 661
-    :cond_2e
+    :cond_2
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getBlendMode-0nO6VwU()I
 
     move-result v5
@@ -307,12 +307,12 @@
 
     move-result v5
 
-    if-nez v5, :cond_3b
+    if-nez v5, :cond_3
 
     invoke-interface {v1, p6}, Landroidx/compose/ui/graphics/Paint;->setBlendMode-s9anfk8(I)V
 
     .line 662
-    :cond_3b
+    :cond_3
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getFilterQuality-f-v9h1I()I
 
     move-result v5
@@ -321,12 +321,12 @@
 
     move-result v5
 
-    if-nez v5, :cond_48
+    if-nez v5, :cond_4
 
     invoke-interface {v1, p7}, Landroidx/compose/ui/graphics/Paint;->setFilterQuality-vDHp3xo(I)V
 
     .line 663
-    :cond_48
+    :cond_4
     nop
 
     .line 654
@@ -340,12 +340,12 @@
 .end method
 
 .method static synthetic configurePaint-2qPWKa0$default(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;JLandroidx/compose/ui/graphics/drawscope/DrawStyle;FLandroidx/compose/ui/graphics/ColorFilter;IIILjava/lang/Object;)Landroidx/compose/ui/graphics/Paint;
-    .registers 19
+    .locals 9
 
     .line 646
     and-int/lit8 v0, p8, 0x20
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 653
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -356,13 +356,13 @@
 
     move v8, v0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 646
-    :cond_c
+    :cond_0
     move/from16 v8, p7
 
-    :goto_e
+    :goto_0
     move-object v1, p0
 
     move-wide v2, p1
@@ -383,7 +383,7 @@
 .end method
 
 .method private final configurePaint-swdJneE(Landroidx/compose/ui/graphics/Brush;Landroidx/compose/ui/graphics/drawscope/DrawStyle;FLandroidx/compose/ui/graphics/ColorFilter;II)Landroidx/compose/ui/graphics/Paint;
-    .registers 12
+    .locals 5
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "style"    # Landroidx/compose/ui/graphics/drawscope/DrawStyle;
     .param p3, "alpha"    # F
@@ -403,7 +403,7 @@
 
     .line 632
     .local v2, "$i$a$-apply-CanvasDrawScope$configurePaint$1":I
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     .line 633
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->getSize-NH-jbRc()J
@@ -412,34 +412,34 @@
 
     invoke-virtual {p1, v3, v4, v1, p3}, Landroidx/compose/ui/graphics/Brush;->applyTo-Pq9zytI(JLandroidx/compose/ui/graphics/Paint;F)V
 
-    goto :goto_20
+    goto :goto_1
 
     .line 634
-    :cond_10
+    :cond_0
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getAlpha()F
 
     move-result v3
 
     cmpg-float v3, v3, p3
 
-    if-nez v3, :cond_1a
+    if-nez v3, :cond_1
 
     const/4 v3, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     const/4 v3, 0x0
 
-    :goto_1b
-    if-nez v3, :cond_20
+    :goto_0
+    if-nez v3, :cond_2
 
     .line 635
     invoke-interface {v1, p3}, Landroidx/compose/ui/graphics/Paint;->setAlpha(F)V
 
     .line 637
-    :cond_20
-    :goto_20
+    :cond_2
+    :goto_1
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getColorFilter()Landroidx/compose/ui/graphics/ColorFilter;
 
     move-result-object v3
@@ -448,12 +448,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_2d
+    if-nez v3, :cond_3
 
     invoke-interface {v1, p4}, Landroidx/compose/ui/graphics/Paint;->setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
 
     .line 638
-    :cond_2d
+    :cond_3
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getBlendMode-0nO6VwU()I
 
     move-result v3
@@ -462,12 +462,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_3a
+    if-nez v3, :cond_4
 
     invoke-interface {v1, p5}, Landroidx/compose/ui/graphics/Paint;->setBlendMode-s9anfk8(I)V
 
     .line 639
-    :cond_3a
+    :cond_4
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getFilterQuality-f-v9h1I()I
 
     move-result v3
@@ -476,12 +476,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_47
+    if-nez v3, :cond_5
 
     invoke-interface {v1, p6}, Landroidx/compose/ui/graphics/Paint;->setFilterQuality-vDHp3xo(I)V
 
     .line 640
-    :cond_47
+    :cond_5
     nop
 
     .line 631
@@ -494,12 +494,12 @@
 .end method
 
 .method static synthetic configurePaint-swdJneE$default(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;Landroidx/compose/ui/graphics/Brush;Landroidx/compose/ui/graphics/drawscope/DrawStyle;FLandroidx/compose/ui/graphics/ColorFilter;IIILjava/lang/Object;)Landroidx/compose/ui/graphics/Paint;
-    .registers 16
+    .locals 7
 
     .line 623
     and-int/lit8 p7, p7, 0x20
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_0
 
     .line 630
     sget-object p6, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -510,13 +510,13 @@
 
     move v6, p6
 
-    goto :goto_d
+    goto :goto_0
 
     .line 623
-    :cond_c
+    :cond_0
     move v6, p6
 
-    :goto_d
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -537,7 +537,7 @@
 .end method
 
 .method private final configureStrokePaint-Q_0CZUI(JFFIILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;II)Landroidx/compose/ui/graphics/Paint;
-    .registers 31
+    .locals 19
     .param p1, "color"    # J
     .param p3, "strokeWidth"    # F
     .param p4, "miter"    # F
@@ -603,24 +603,24 @@
 
     move-result v10
 
-    if-nez v10, :cond_30
+    if-nez v10, :cond_0
 
     invoke-interface {v9, v7, v8}, Landroidx/compose/ui/graphics/Paint;->setColor-8_81llA(J)V
 
     .line 683
-    :cond_30
+    :cond_0
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
     move-result-object v10
 
-    if-eqz v10, :cond_3a
+    if-eqz v10, :cond_1
 
     const/4 v10, 0x0
 
     invoke-interface {v9, v10}, Landroidx/compose/ui/graphics/Paint;->setShader(Landroid/graphics/Shader;)V
 
     .line 684
-    :cond_3a
+    :cond_1
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getColorFilter()Landroidx/compose/ui/graphics/ColorFilter;
 
     move-result-object v10
@@ -629,12 +629,12 @@
 
     move-result v10
 
-    if-nez v10, :cond_47
+    if-nez v10, :cond_2
 
     invoke-interface {v9, v5}, Landroidx/compose/ui/graphics/Paint;->setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
 
     .line 685
-    :cond_47
+    :cond_2
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getBlendMode-0nO6VwU()I
 
     move-result v10
@@ -643,12 +643,12 @@
 
     move-result v10
 
-    if-nez v10, :cond_54
+    if-nez v10, :cond_3
 
     invoke-interface {v9, v6}, Landroidx/compose/ui/graphics/Paint;->setBlendMode-s9anfk8(I)V
 
     .line 686
-    :cond_54
+    :cond_3
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getStrokeWidth()F
 
     move-result v10
@@ -659,42 +659,42 @@
 
     const/16 v17, 0x0
 
-    if-nez v10, :cond_61
+    if-nez v10, :cond_4
 
     move v10, v11
 
-    goto :goto_63
+    goto :goto_0
 
-    :cond_61
+    :cond_4
     move/from16 v10, v17
 
-    :goto_63
-    if-nez v10, :cond_68
+    :goto_0
+    if-nez v10, :cond_5
 
     invoke-interface {v9, v0}, Landroidx/compose/ui/graphics/Paint;->setStrokeWidth(F)V
 
     .line 687
-    :cond_68
+    :cond_5
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getStrokeMiterLimit()F
 
     move-result v10
 
     cmpg-float v10, v10, v1
 
-    if-nez v10, :cond_71
+    if-nez v10, :cond_6
 
-    goto :goto_73
+    goto :goto_1
 
-    :cond_71
+    :cond_6
     move/from16 v11, v17
 
-    :goto_73
-    if-nez v11, :cond_78
+    :goto_1
+    if-nez v11, :cond_7
 
     invoke-interface {v9, v1}, Landroidx/compose/ui/graphics/Paint;->setStrokeMiterLimit(F)V
 
     .line 688
-    :cond_78
+    :cond_7
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getStrokeCap-KaPHkGw()I
 
     move-result v10
@@ -703,12 +703,12 @@
 
     move-result v10
 
-    if-nez v10, :cond_85
+    if-nez v10, :cond_8
 
     invoke-interface {v9, v2}, Landroidx/compose/ui/graphics/Paint;->setStrokeCap-BeK7IIE(I)V
 
     .line 689
-    :cond_85
+    :cond_8
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getStrokeJoin-LxFBmk8()I
 
     move-result v10
@@ -717,12 +717,12 @@
 
     move-result v10
 
-    if-nez v10, :cond_92
+    if-nez v10, :cond_9
 
     invoke-interface {v9, v3}, Landroidx/compose/ui/graphics/Paint;->setStrokeJoin-Ww9F2mQ(I)V
 
     .line 690
-    :cond_92
+    :cond_9
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getPathEffect()Landroidx/compose/ui/graphics/PathEffect;
 
     move-result-object v10
@@ -731,12 +731,12 @@
 
     move-result v10
 
-    if-nez v10, :cond_9f
+    if-nez v10, :cond_a
 
     invoke-interface {v9, v4}, Landroidx/compose/ui/graphics/Paint;->setPathEffect(Landroidx/compose/ui/graphics/PathEffect;)V
 
     .line 691
-    :cond_9f
+    :cond_a
     invoke-interface {v9}, Landroidx/compose/ui/graphics/Paint;->getFilterQuality-f-v9h1I()I
 
     move-result v10
@@ -751,12 +751,12 @@
 
     move-result v8
 
-    if-nez v8, :cond_b0
+    if-nez v8, :cond_b
 
     invoke-interface {v9, v7}, Landroidx/compose/ui/graphics/Paint;->setFilterQuality-vDHp3xo(I)V
 
     .line 692
-    :cond_b0
+    :cond_b
     nop
 
     .line 678
@@ -770,14 +770,14 @@
 .end method
 
 .method static synthetic configureStrokePaint-Q_0CZUI$default(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;JFFIILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;IIILjava/lang/Object;)Landroidx/compose/ui/graphics/Paint;
-    .registers 27
+    .locals 13
 
     .line 665
     move/from16 v0, p12
 
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 676
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -788,13 +788,13 @@
 
     move v12, v0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 665
-    :cond_e
+    :cond_0
     move/from16 v12, p11
 
-    :goto_10
+    :goto_0
     move-object v1, p0
 
     move-wide v2, p1
@@ -823,7 +823,7 @@
 .end method
 
 .method private final configureStrokePaint-ho4zsrM(Landroidx/compose/ui/graphics/Brush;FFIILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;II)Landroidx/compose/ui/graphics/Paint;
-    .registers 26
+    .locals 15
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "strokeWidth"    # F
     .param p3, "miter"    # F
@@ -867,7 +867,7 @@
 
     .line 707
     .local v12, "$i$a$-apply-CanvasDrawScope$configureStrokePaint$2":I
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 708
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->getSize-NH-jbRc()J
@@ -876,34 +876,34 @@
 
     invoke-virtual {v0, v13, v14, v11, v6}, Landroidx/compose/ui/graphics/Brush;->applyTo-Pq9zytI(JLandroidx/compose/ui/graphics/Paint;F)V
 
-    goto :goto_34
+    goto :goto_1
 
     .line 709
-    :cond_24
+    :cond_0
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getAlpha()F
 
     move-result v13
 
     cmpg-float v13, v13, v6
 
-    if-nez v13, :cond_2e
+    if-nez v13, :cond_1
 
     const/4 v13, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2e
+    :cond_1
     const/4 v13, 0x0
 
-    :goto_2f
-    if-nez v13, :cond_34
+    :goto_0
+    if-nez v13, :cond_2
 
     .line 710
     invoke-interface {v11, v6}, Landroidx/compose/ui/graphics/Paint;->setAlpha(F)V
 
     .line 712
-    :cond_34
-    :goto_34
+    :cond_2
+    :goto_1
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getColorFilter()Landroidx/compose/ui/graphics/ColorFilter;
 
     move-result-object v13
@@ -912,12 +912,12 @@
 
     move-result v13
 
-    if-nez v13, :cond_41
+    if-nez v13, :cond_3
 
     invoke-interface {v11, v7}, Landroidx/compose/ui/graphics/Paint;->setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
 
     .line 713
-    :cond_41
+    :cond_3
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getBlendMode-0nO6VwU()I
 
     move-result v13
@@ -926,56 +926,56 @@
 
     move-result v13
 
-    if-nez v13, :cond_4e
+    if-nez v13, :cond_4
 
     invoke-interface {v11, v8}, Landroidx/compose/ui/graphics/Paint;->setBlendMode-s9anfk8(I)V
 
     .line 714
-    :cond_4e
+    :cond_4
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getStrokeWidth()F
 
     move-result v13
 
     cmpg-float v13, v13, v1
 
-    if-nez v13, :cond_58
+    if-nez v13, :cond_5
 
     const/4 v13, 0x1
 
-    goto :goto_59
+    goto :goto_2
 
-    :cond_58
+    :cond_5
     const/4 v13, 0x0
 
-    :goto_59
-    if-nez v13, :cond_5e
+    :goto_2
+    if-nez v13, :cond_6
 
     invoke-interface {v11, v1}, Landroidx/compose/ui/graphics/Paint;->setStrokeWidth(F)V
 
     .line 715
-    :cond_5e
+    :cond_6
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getStrokeMiterLimit()F
 
     move-result v13
 
     cmpg-float v13, v13, v2
 
-    if-nez v13, :cond_68
+    if-nez v13, :cond_7
 
     const/4 v13, 0x1
 
-    goto :goto_69
+    goto :goto_3
 
-    :cond_68
+    :cond_7
     const/4 v13, 0x0
 
-    :goto_69
-    if-nez v13, :cond_6e
+    :goto_3
+    if-nez v13, :cond_8
 
     invoke-interface {v11, v2}, Landroidx/compose/ui/graphics/Paint;->setStrokeMiterLimit(F)V
 
     .line 716
-    :cond_6e
+    :cond_8
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getStrokeCap-KaPHkGw()I
 
     move-result v13
@@ -984,12 +984,12 @@
 
     move-result v13
 
-    if-nez v13, :cond_7b
+    if-nez v13, :cond_9
 
     invoke-interface {v11, v3}, Landroidx/compose/ui/graphics/Paint;->setStrokeCap-BeK7IIE(I)V
 
     .line 717
-    :cond_7b
+    :cond_9
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getStrokeJoin-LxFBmk8()I
 
     move-result v13
@@ -998,12 +998,12 @@
 
     move-result v13
 
-    if-nez v13, :cond_88
+    if-nez v13, :cond_a
 
     invoke-interface {v11, v4}, Landroidx/compose/ui/graphics/Paint;->setStrokeJoin-Ww9F2mQ(I)V
 
     .line 718
-    :cond_88
+    :cond_a
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getPathEffect()Landroidx/compose/ui/graphics/PathEffect;
 
     move-result-object v13
@@ -1012,12 +1012,12 @@
 
     move-result v13
 
-    if-nez v13, :cond_95
+    if-nez v13, :cond_b
 
     invoke-interface {v11, v5}, Landroidx/compose/ui/graphics/Paint;->setPathEffect(Landroidx/compose/ui/graphics/PathEffect;)V
 
     .line 719
-    :cond_95
+    :cond_b
     invoke-interface {v11}, Landroidx/compose/ui/graphics/Paint;->getFilterQuality-f-v9h1I()I
 
     move-result v13
@@ -1026,12 +1026,12 @@
 
     move-result v13
 
-    if-nez v13, :cond_a2
+    if-nez v13, :cond_c
 
     invoke-interface {v11, v9}, Landroidx/compose/ui/graphics/Paint;->setFilterQuality-vDHp3xo(I)V
 
     .line 720
-    :cond_a2
+    :cond_c
     nop
 
     .line 706
@@ -1044,14 +1044,14 @@
 .end method
 
 .method static synthetic configureStrokePaint-ho4zsrM$default(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;Landroidx/compose/ui/graphics/Brush;FFIILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;IIILjava/lang/Object;)Landroidx/compose/ui/graphics/Paint;
-    .registers 25
+    .locals 12
 
     .line 694
     move/from16 v0, p11
 
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 705
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1062,13 +1062,13 @@
 
     move v11, v0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 694
-    :cond_e
+    :cond_0
     move/from16 v11, p10
 
-    :goto_10
+    :goto_0
     move-object v1, p0
 
     move-object v2, p1
@@ -1097,13 +1097,13 @@
 .end method
 
 .method public static synthetic getDrawParams$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final modulate-5vOe2sY(JF)J
-    .registers 13
+    .locals 9
     .param p1, "$this$modulate_u2d5vOe2sY"    # J
     .param p3, "alpha"    # F
 
@@ -1112,17 +1112,17 @@
 
     cmpg-float v0, p3, v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-nez v0, :cond_1d
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 727
     invoke-static {p1, p2}, Landroidx/compose/ui/graphics/Color;->getAlpha-impl(J)F
@@ -1147,24 +1147,24 @@
 
     move-result-wide v0
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 729
-    :cond_1d
+    :cond_1
     move-wide v0, p1
 
     .line 730
-    :goto_1e
+    :goto_1
     return-wide v0
 .end method
 
 .method private final obtainFillPaint()Landroidx/compose/ui/graphics/Paint;
-    .registers 5
+    .locals 4
 
     .line 588
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->fillPaint:Landroidx/compose/ui/graphics/Paint;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPaint_androidKt;->Paint()Landroidx/compose/ui/graphics/Paint;
 
@@ -1203,17 +1203,17 @@
     nop
 
     .line 590
-    :cond_18
+    :cond_0
     return-object v0
 .end method
 
 .method private final obtainStrokePaint()Landroidx/compose/ui/graphics/Paint;
-    .registers 5
+    .locals 4
 
     .line 597
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->strokePaint:Landroidx/compose/ui/graphics/Paint;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPaint_androidKt;->Paint()Landroidx/compose/ui/graphics/Paint;
 
@@ -1252,12 +1252,12 @@
     nop
 
     .line 599
-    :cond_18
+    :cond_0
     return-object v0
 .end method
 
 .method private final selectPaint(Landroidx/compose/ui/graphics/drawscope/DrawStyle;)Landroidx/compose/ui/graphics/Paint;
-    .registers 9
+    .locals 7
     .param p1, "drawStyle"    # Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
     .line 606
@@ -1270,19 +1270,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->obtainFillPaint()Landroidx/compose/ui/graphics/Paint;
 
     move-result-object v0
 
-    goto/16 :goto_a9
+    goto/16 :goto_2
 
     .line 608
-    :cond_f
+    :cond_0
     instance-of v0, p1, Landroidx/compose/ui/graphics/drawscope/Stroke;
 
-    if-eqz v0, :cond_aa
+    if-eqz v0, :cond_8
 
     .line 609
     invoke-direct {p0}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->obtainStrokePaint()Landroidx/compose/ui/graphics/Paint;
@@ -1315,17 +1315,17 @@
 
     const/4 v5, 0x0
 
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_1
 
     move v3, v4
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     move v3, v5
 
-    :goto_2d
-    if-nez v3, :cond_39
+    :goto_0
+    if-nez v3, :cond_2
 
     move-object v3, p1
 
@@ -1338,7 +1338,7 @@
     invoke-interface {v1, v3}, Landroidx/compose/ui/graphics/Paint;->setStrokeWidth(F)V
 
     .line 612
-    :cond_39
+    :cond_2
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getStrokeCap-KaPHkGw()I
 
     move-result v3
@@ -1355,7 +1355,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_54
+    if-nez v3, :cond_3
 
     move-object v3, p1
 
@@ -1368,7 +1368,7 @@
     invoke-interface {v1, v3}, Landroidx/compose/ui/graphics/Paint;->setStrokeCap-BeK7IIE(I)V
 
     .line 613
-    :cond_54
+    :cond_3
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getStrokeMiterLimit()F
 
     move-result v3
@@ -1383,15 +1383,15 @@
 
     cmpg-float v3, v3, v6
 
-    if-nez v3, :cond_64
+    if-nez v3, :cond_4
 
-    goto :goto_65
+    goto :goto_1
 
-    :cond_64
+    :cond_4
     move v4, v5
 
-    :goto_65
-    if-nez v4, :cond_71
+    :goto_1
+    if-nez v4, :cond_5
 
     move-object v3, p1
 
@@ -1404,7 +1404,7 @@
     invoke-interface {v1, v3}, Landroidx/compose/ui/graphics/Paint;->setStrokeMiterLimit(F)V
 
     .line 614
-    :cond_71
+    :cond_5
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getStrokeJoin-LxFBmk8()I
 
     move-result v3
@@ -1421,7 +1421,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_8c
+    if-nez v3, :cond_6
 
     move-object v3, p1
 
@@ -1434,7 +1434,7 @@
     invoke-interface {v1, v3}, Landroidx/compose/ui/graphics/Paint;->setStrokeJoin-Ww9F2mQ(I)V
 
     .line 615
-    :cond_8c
+    :cond_6
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Paint;->getPathEffect()Landroidx/compose/ui/graphics/PathEffect;
 
     move-result-object v3
@@ -1451,7 +1451,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_a7
+    if-nez v3, :cond_7
 
     move-object v3, p1
 
@@ -1464,7 +1464,7 @@
     invoke-interface {v1, v3}, Landroidx/compose/ui/graphics/Paint;->setPathEffect(Landroidx/compose/ui/graphics/PathEffect;)V
 
     .line 616
-    :cond_a7
+    :cond_7
     nop
 
     .line 610
@@ -1473,11 +1473,11 @@
     nop
 
     .line 617
-    :goto_a9
+    :goto_2
     return-object v0
 
     .line 610
-    :cond_aa
+    :cond_8
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -1488,7 +1488,7 @@
 
 # virtual methods
 .method public final draw-yzxVdVo(Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/graphics/Canvas;JLkotlin/jvm/functions/Function1;)V
-    .registers 15
+    .locals 8
     .param p1, "density"    # Landroidx/compose/ui/unit/Density;
     .param p2, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
     .param p3, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
@@ -1625,7 +1625,7 @@
 .end method
 
 .method public drawArc-illE91I(Landroidx/compose/ui/graphics/Brush;FFZJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 34
+    .locals 21
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "startAngle"    # F
     .param p3, "sweepAngle"    # F
@@ -1736,7 +1736,7 @@
 .end method
 
 .method public drawArc-yD3GUKo(JFFZJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 31
+    .locals 17
     .param p1, "color"    # J
     .param p3, "startAngle"    # F
     .param p4, "sweepAngle"    # F
@@ -1851,7 +1851,7 @@
 .end method
 
 .method public drawCircle-V9BoPsw(Landroidx/compose/ui/graphics/Brush;FJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 22
+    .locals 13
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "radius"    # F
     .param p3, "center"    # J
@@ -1922,7 +1922,7 @@
 .end method
 
 .method public drawCircle-VaOC9Bg(JFJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 23
+    .locals 13
     .param p1, "color"    # J
     .param p3, "radius"    # F
     .param p4, "center"    # J
@@ -1987,7 +1987,7 @@
 .end method
 
 .method public synthetic drawImage-9jGpkUE(Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 28
+    .locals 14
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
     .param p4, "srcSize"    # J
@@ -2088,7 +2088,7 @@
 .end method
 
 .method public drawImage-AZ2fEMs(Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
-    .registers 29
+    .locals 14
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
     .param p4, "srcSize"    # J
@@ -2175,7 +2175,7 @@
 .end method
 
 .method public drawImage-gbVJVH8(Landroidx/compose/ui/graphics/ImageBitmap;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 21
+    .locals 13
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "topLeft"    # J
     .param p4, "alpha"    # F
@@ -2243,7 +2243,7 @@
 .end method
 
 .method public drawLine-1RTmtNc(Landroidx/compose/ui/graphics/Brush;JJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 28
+    .locals 16
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "start"    # J
     .param p4, "end"    # J
@@ -2350,7 +2350,7 @@
 .end method
 
 .method public drawLine-NGM6Ib0(JJJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 29
+    .locals 16
     .param p1, "color"    # J
     .param p3, "start"    # J
     .param p5, "end"    # J
@@ -2451,7 +2451,7 @@
 .end method
 
 .method public drawOval-AsUm42w(Landroidx/compose/ui/graphics/Brush;JJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 27
+    .locals 17
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "topLeft"    # J
     .param p4, "size"    # J
@@ -2554,7 +2554,7 @@
 .end method
 
 .method public drawOval-n-J9OG0(JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 28
+    .locals 17
     .param p1, "color"    # J
     .param p3, "topLeft"    # J
     .param p5, "size"    # J
@@ -2651,7 +2651,7 @@
 .end method
 
 .method public drawPath-GBMwjPU(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 21
+    .locals 14
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p3, "alpha"    # F
@@ -2720,7 +2720,7 @@
 .end method
 
 .method public drawPath-LG529CI(Landroidx/compose/ui/graphics/Path;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 22
+    .locals 14
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "color"    # J
     .param p4, "alpha"    # F
@@ -2783,7 +2783,7 @@
 .end method
 
 .method public drawPoints-F8ZwMP8(Ljava/util/List;IJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 28
+    .locals 17
     .param p1, "points"    # Ljava/util/List;
     .param p2, "pointMode"    # I
     .param p3, "color"    # J
@@ -2902,7 +2902,7 @@
 .end method
 
 .method public drawPoints-Gsft0Ws(Ljava/util/List;ILandroidx/compose/ui/graphics/Brush;FILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 27
+    .locals 17
     .param p1, "points"    # Ljava/util/List;
     .param p2, "pointMode"    # I
     .param p3, "brush"    # Landroidx/compose/ui/graphics/Brush;
@@ -3029,7 +3029,7 @@
 .end method
 
 .method public drawRect-AsUm42w(Landroidx/compose/ui/graphics/Brush;JJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 27
+    .locals 17
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "topLeft"    # J
     .param p4, "size"    # J
@@ -3132,7 +3132,7 @@
 .end method
 
 .method public drawRect-n-J9OG0(JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 28
+    .locals 17
     .param p1, "color"    # J
     .param p3, "topLeft"    # J
     .param p5, "size"    # J
@@ -3229,7 +3229,7 @@
 .end method
 
 .method public drawRoundRect-ZuiqVtQ(Landroidx/compose/ui/graphics/Brush;JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 31
+    .locals 19
     .param p1, "brush"    # Landroidx/compose/ui/graphics/Brush;
     .param p2, "topLeft"    # J
     .param p4, "size"    # J
@@ -3347,7 +3347,7 @@
 .end method
 
 .method public drawRoundRect-u-Aw5IA(JJJJLandroidx/compose/ui/graphics/drawscope/DrawStyle;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 32
+    .locals 19
     .param p1, "color"    # J
     .param p3, "topLeft"    # J
     .param p5, "size"    # J
@@ -3459,7 +3459,7 @@
 .end method
 
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->drawParams:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
@@ -3476,7 +3476,7 @@
 .end method
 
 .method public getDrawContext()Landroidx/compose/ui/graphics/drawscope/DrawContext;
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->drawContext:Landroidx/compose/ui/graphics/drawscope/DrawContext;
@@ -3485,7 +3485,7 @@
 .end method
 
 .method public final getDrawParams()Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
-    .registers 2
+    .locals 1
 
     .line 60
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->drawParams:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
@@ -3494,7 +3494,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->drawParams:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
@@ -3511,7 +3511,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 63
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;->drawParams:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;

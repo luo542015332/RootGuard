@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final synthetic access$lowestBitOf(J)I
-    .registers 3
+    .locals 1
     .param p0, "bits"    # J
 
     .line 1
@@ -42,7 +42,7 @@
 .end method
 
 .method public static final binarySearch([II)I
-    .registers 6
+    .locals 4
     .param p0, "$this$binarySearch"    # [I
     .param p1, "value"    # I
 
@@ -61,8 +61,8 @@
 
     .line 385
     .local v1, "high":I
-    :goto_9
-    if-gt v0, v1, :cond_1c
+    :goto_0
+    if-gt v0, v1, :cond_2
 
     .line 386
     add-int v2, v0, v1
@@ -75,30 +75,30 @@
 
     .line 388
     .local v3, "midVal":I
-    if-le p1, v3, :cond_16
+    if-le p1, v3, :cond_0
 
     .line 389
     add-int/lit8 v0, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 390
-    :cond_16
-    if-ge p1, v3, :cond_1b
+    :cond_0
+    if-ge p1, v3, :cond_1
 
     .line 391
     add-int/lit8 v1, v2, -0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 393
-    :cond_1b
+    :cond_1
     return v2
 
     .line 395
     .end local v2    # "mid":I
     .end local v3    # "midVal":I
-    :cond_1c
+    :cond_2
     add-int/lit8 v2, v0, 0x1
 
     neg-int v2, v2
@@ -107,7 +107,7 @@
 .end method
 
 .method private static final lowestBitOf(J)I
-    .registers 9
+    .locals 7
     .param p0, "bits"    # J
 
     .line 356
@@ -127,7 +127,7 @@
 
     cmp-long v3, v3, v5
 
-    if-nez v3, :cond_14
+    if-nez v3, :cond_0
 
     add-int/lit8 v2, v2, 0x20
 
@@ -140,14 +140,14 @@
     shr-long/2addr v0, v3
 
     .line 362
-    :cond_14
+    :cond_0
     const-wide/32 v3, 0xffff
 
     and-long/2addr v3, v0
 
     cmp-long v3, v3, v5
 
-    if-nez v3, :cond_22
+    if-nez v3, :cond_1
 
     add-int/lit8 v2, v2, 0x10
 
@@ -160,14 +160,14 @@
     shr-long/2addr v0, v3
 
     .line 366
-    :cond_22
+    :cond_1
     const-wide/16 v3, 0xff
 
     and-long/2addr v3, v0
 
     cmp-long v3, v3, v5
 
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_2
 
     add-int/lit8 v2, v2, 0x8
 
@@ -180,14 +180,14 @@
     shr-long/2addr v0, v3
 
     .line 370
-    :cond_2f
+    :cond_2
     const-wide/16 v3, 0xf
 
     and-long/2addr v3, v0
 
     cmp-long v3, v3, v5
 
-    if-nez v3, :cond_3b
+    if-nez v3, :cond_3
 
     add-int/lit8 v2, v2, 0x4
 
@@ -200,61 +200,61 @@
     shr-long/2addr v0, v3
 
     .line 374
-    :cond_3b
+    :cond_3
     const-wide/16 v3, 0x1
 
     and-long/2addr v3, v0
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_4
 
     return v2
 
     .line 375
-    :cond_43
+    :cond_4
     const-wide/16 v3, 0x2
 
     and-long/2addr v3, v0
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_4d
+    if-eqz v3, :cond_5
 
     add-int/lit8 v3, v2, 0x1
 
     return v3
 
     .line 376
-    :cond_4d
+    :cond_5
     const-wide/16 v3, 0x4
 
     and-long/2addr v3, v0
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_57
+    if-eqz v3, :cond_6
 
     add-int/lit8 v3, v2, 0x2
 
     return v3
 
     .line 377
-    :cond_57
+    :cond_6
     const-wide/16 v3, 0x8
 
     and-long/2addr v3, v0
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_61
+    if-eqz v3, :cond_7
 
     add-int/lit8 v3, v2, 0x3
 
     return v3
 
     .line 378
-    :cond_61
+    :cond_7
     const/4 v3, -0x1
 
     return v3

@@ -74,7 +74,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 69
     new-instance v0, Landroidx/compose/runtime/SnapshotThreadLocal;
@@ -94,7 +94,7 @@
 .end method
 
 .method public static final synthetic access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
@@ -103,7 +103,7 @@
 .end method
 
 .method public static final derivedStateObservers()Landroidx/compose/runtime/collection/MutableVector;
-    .registers 6
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -122,7 +122,7 @@
 
     check-cast v1, Landroidx/compose/runtime/collection/MutableVector;
 
-    if-nez v1, :cond_1b
+    if-nez v1, :cond_0
 
     const/4 v1, 0x0
 
@@ -160,12 +160,12 @@
     nop
 
     .line 354
-    :cond_1b
+    :cond_0
     return-object v1
 .end method
 
 .method public static final derivedStateOf(Landroidx/compose/runtime/SnapshotMutationPolicy;Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/State;
-    .registers 3
+    .locals 1
     .param p0, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .param p1, "calculation"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -201,7 +201,7 @@
 .end method
 
 .method public static final derivedStateOf(Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/State;
-    .registers 3
+    .locals 2
     .param p0, "calculation"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -232,7 +232,7 @@
 .end method
 
 .method private static final notifyObservers$SnapshotStateKt__DerivedStateKt(Landroidx/compose/runtime/DerivedState;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 13
+    .locals 11
     .param p0, "derivedState"    # Landroidx/compose/runtime/DerivedState;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -275,7 +275,7 @@
     .local v4, "size$iv":I
     const/4 v5, 0x1
 
-    if-lez v4, :cond_20
+    if-lez v4, :cond_1
 
     .line 390
     const/4 v6, 0x0
@@ -288,7 +288,7 @@
 
     .line 393
     .local v7, "content$iv":[Ljava/lang/Object;
-    :cond_14
+    :cond_0
     aget-object v8, v7, v6
 
     check-cast v8, Landroidx/compose/runtime/DerivedStateObserver;
@@ -309,12 +309,12 @@
     add-int/2addr v6, v5
 
     .line 395
-    if-lt v6, v4, :cond_14
+    if-lt v6, v4, :cond_0
 
     .line 397
     .end local v6    # "i$iv":I
     .end local v7    # "content$iv":[Ljava/lang/Object;
-    :cond_20
+    :cond_1
     nop
 
     .line 359
@@ -324,12 +324,12 @@
     nop
 
     .line 360
-    :try_start_22
+    :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v2
-    :try_end_26
-    .catchall {:try_start_22 .. :try_end_26} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v5}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -350,7 +350,7 @@
 
     .line 400
     .local v6, "size$iv":I
-    if-lez v6, :cond_43
+    if-lez v6, :cond_3
 
     .line 401
     const/4 v7, 0x0
@@ -363,7 +363,7 @@
 
     .line 404
     .local v8, "content$iv":[Ljava/lang/Object;
-    :cond_37
+    :cond_2
     aget-object v9, v8, v7
 
     check-cast v9, Landroidx/compose/runtime/DerivedStateObserver;
@@ -384,12 +384,12 @@
     add-int/2addr v7, v5
 
     .line 406
-    if-lt v7, v6, :cond_37
+    if-lt v7, v6, :cond_2
 
     .line 408
     .end local v7    # "i$iv":I
     .end local v8    # "content$iv":[Ljava/lang/Object;
-    :cond_43
+    :cond_3
     nop
 
     .end local v3    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
@@ -404,7 +404,7 @@
     return-object v2
 
     .line 362
-    :catchall_49
+    :catchall_0
     move-exception v2
 
     invoke-static {v5}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -425,7 +425,7 @@
 
     .line 400
     .restart local v6    # "size$iv":I
-    if-lez v6, :cond_68
+    if-lez v6, :cond_4
 
     .line 401
     const/4 v7, 0x0
@@ -438,7 +438,7 @@
 
     .line 404
     .restart local v8    # "content$iv":[Ljava/lang/Object;
-    :goto_5b
+    :goto_0
     aget-object v9, v8, v7
 
     check-cast v9, Landroidx/compose/runtime/DerivedStateObserver;
@@ -459,14 +459,14 @@
     add-int/2addr v7, v5
 
     .line 406
-    if-ge v7, v6, :cond_68
+    if-ge v7, v6, :cond_4
 
-    goto :goto_5b
+    goto :goto_0
 
     .line 408
     .end local v7    # "i$iv":I
     .end local v8    # "content$iv":[Ljava/lang/Object;
-    :cond_68
+    :cond_4
     nop
 
     .end local v3    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
@@ -478,7 +478,7 @@
 .end method
 
 .method public static final observeDerivedStateRecalculations(Landroidx/compose/runtime/DerivedStateObserver;Lkotlin/jvm/functions/Function0;)V
-    .registers 9
+    .locals 7
     .param p0, "observer"    # Landroidx/compose/runtime/DerivedStateObserver;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -515,13 +515,13 @@
     .line 379
     const/4 v2, 0x1
 
-    :try_start_13
+    :try_start_0
     invoke-virtual {v1, p0}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 380
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
-    :try_end_19
-    .catchall {:try_start_13 .. :try_end_19} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -553,7 +553,7 @@
     return-void
 
     .line 382
-    :catchall_2b
+    :catchall_0
     move-exception v3
 
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;)V
-    .registers 3
+    .locals 1
     .param p1, "ref"    # Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;
 
     const-string/jumbo v0, "ref"
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final getRef()Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;
-    .registers 2
+    .locals 1
 
     .line 3946
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextHolder;->ref:Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;
@@ -80,7 +80,7 @@
 .end method
 
 .method public onAbandoned()V
-    .registers 2
+    .locals 1
 
     .line 3950
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextHolder;->ref:Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;
@@ -92,7 +92,7 @@
 .end method
 
 .method public onForgotten()V
-    .registers 2
+    .locals 1
 
     .line 3953
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextHolder;->ref:Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;
@@ -104,7 +104,7 @@
 .end method
 
 .method public onRemembered()V
-    .registers 1
+    .locals 0
 
     .line 3948
     return-void

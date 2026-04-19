@@ -63,7 +63,7 @@
 
 # direct methods
 .method public static synthetic access$getExtendedTouchPadding-NH-jbRc$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
 
     .line 130
@@ -75,7 +75,7 @@
 .end method
 
 .method public static synthetic access$getInterceptOutOfBoundsChildEvents$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
 
     .line 130
@@ -87,7 +87,7 @@
 .end method
 
 .method public static synthetic access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # J
 
@@ -100,7 +100,7 @@
 .end method
 
 .method public static synthetic access$roundToPx-0680j_4$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # F
 
@@ -113,7 +113,7 @@
 .end method
 
 .method public static synthetic access$setInterceptOutOfBoundsChildEvents$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;Z)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "<anonymous parameter 0>"    # Z
 
@@ -124,7 +124,7 @@
 .end method
 
 .method public static synthetic access$toDp-GaN1DYA$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # J
 
@@ -137,7 +137,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # F
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # I
 
@@ -163,7 +163,7 @@
 .end method
 
 .method public static synthetic access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # J
 
@@ -176,7 +176,7 @@
 .end method
 
 .method public static synthetic access$toPx--R2X_6o$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # J
 
@@ -189,7 +189,7 @@
 .end method
 
 .method public static synthetic access$toPx-0680j_4$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # F
 
@@ -202,7 +202,7 @@
 .end method
 
 .method public static synthetic access$toRect$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
 
@@ -215,7 +215,7 @@
 .end method
 
 .method public static synthetic access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # J
 
@@ -228,7 +228,7 @@
 .end method
 
 .method public static synthetic access$toSp-0xMU5do$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # F
 
@@ -241,7 +241,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # F
 
@@ -254,7 +254,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/input/pointer/PointerInputScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "$receiver"    # I
 
@@ -290,7 +290,7 @@
 .end method
 
 .method public getExtendedTouchPadding-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 144
     sget-object v0, Landroidx/compose/ui/geometry/Size;->Companion:Landroidx/compose/ui/geometry/Size$Companion;
@@ -303,7 +303,7 @@
 .end method
 
 .method public getInterceptOutOfBoundsChildEvents()Z
-    .registers 2
+    .locals 1
 
     .line 161
     const/4 v0, 0x0
@@ -318,7 +318,7 @@
 .end method
 
 .method public setInterceptOutOfBoundsChildEvents(Z)V
-    .registers 2
+    .locals 0
 
     .line 162
     return-void

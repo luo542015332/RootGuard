@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "onFocusChanged"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public final getOnFocusChanged()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -103,7 +103,7 @@
 .end method
 
 .method public onFocusEvent(Landroidx/compose/ui/focus/FocusState;)V
-    .registers 3
+    .locals 1
     .param p1, "focusState"    # Landroidx/compose/ui/focus/FocusState;
 
     const-string/jumbo v0, "focusState"
@@ -117,7 +117,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 58
     iput-object p1, p0, Landroidx/compose/ui/focus/FocusChangedNode;->focusState:Landroidx/compose/ui/focus/FocusState;
@@ -128,12 +128,12 @@
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 61
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public final setOnFocusChanged(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

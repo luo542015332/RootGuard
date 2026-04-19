@@ -70,7 +70,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function3;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -125,7 +125,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 27
+    .locals 24
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -144,28 +144,28 @@
 
     const/4 v4, 0x2
 
-    if-ne v3, v4, :cond_1c
+    if-ne v3, v4, :cond_1
 
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v3
 
-    if-nez v3, :cond_17
+    if-nez v3, :cond_0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_155
+    goto/16 :goto_4
 
-    :cond_1c
-    :goto_1c
+    :cond_1
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2c
+    if-eqz v3, :cond_2
 
     const/4 v3, -0x1
 
@@ -175,7 +175,7 @@
 
     invoke-static {v5, v2, v3, v4}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_2c
+    :cond_2
     iget-object v3, v0, Landroidx/compose/material/ModalBottomSheetKt$ModalBottomSheetLayout$2$6;->$sheetContent:Lkotlin/jvm/functions/Function3;
 
     .local v3, "content$iv":Lkotlin/jvm/functions/Function3;
@@ -302,12 +302,12 @@
 
     instance-of v2, v2, Landroidx/compose/runtime/Applier;
 
-    if-nez v2, :cond_95
+    if-nez v2, :cond_3
 
     invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
 
     .line 851
-    :cond_95
+    :cond_3
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->startReusableNode()V
 
     .line 852
@@ -315,19 +315,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a2
+    if-eqz v2, :cond_4
 
     .line 853
     invoke-interface {v1, v14}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_a5
+    goto :goto_1
 
     .line 855
-    :cond_a2
+    :cond_4
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->useNode()V
 
     .line 857
-    :goto_a5
+    :goto_1
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/Updater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
 
     move-result-object v2
@@ -381,7 +381,7 @@
 
     move-result v22
 
-    if-nez v22, :cond_e7
+    if-nez v22, :cond_6
 
     move-object/from16 v22, v6
 
@@ -403,20 +403,20 @@
 
     move-result v6
 
-    if-nez v6, :cond_e4
+    if-nez v6, :cond_5
 
-    goto :goto_eb
+    goto :goto_2
 
-    :cond_e4
+    :cond_5
     move-object/from16 v7, v20
 
-    goto :goto_fb
+    goto :goto_3
 
     .end local v22    # "modifier$iv":Landroidx/compose/ui/Modifier;
     .end local v23    # "verticalArrangement$iv":Landroidx/compose/foundation/layout/Arrangement$Vertical;
     .restart local v6    # "modifier$iv":Landroidx/compose/ui/Modifier;
     .restart local v7    # "verticalArrangement$iv":Landroidx/compose/foundation/layout/Arrangement$Vertical;
-    :cond_e7
+    :cond_6
     move-object/from16 v22, v6
 
     move-object/from16 v23, v7
@@ -426,7 +426,7 @@
     .end local v7    # "verticalArrangement$iv":Landroidx/compose/foundation/layout/Arrangement$Vertical;
     .restart local v22    # "modifier$iv":Landroidx/compose/ui/Modifier;
     .restart local v23    # "verticalArrangement$iv":Landroidx/compose/foundation/layout/Arrangement$Vertical;
-    :goto_eb
+    :goto_2
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
@@ -445,7 +445,7 @@
     invoke-interface {v2, v6, v5}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 863
-    :goto_fb
+    :goto_3
     nop
 
     .line 858
@@ -573,12 +573,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_155
+    if-eqz v0, :cond_7
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 690
-    :cond_155
-    :goto_155
+    :cond_7
+    :goto_4
     return-void
 .end method

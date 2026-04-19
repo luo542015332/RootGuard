@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder$SaveableStateProvider$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/runtime/DisposableEffectScope;)Landroidx/compose/runtime/DisposableEffectResult;
-    .registers 7
+    .locals 5
     .param p1, "$this$DisposableEffect"    # Landroidx/compose/runtime/DisposableEffectScope;
 
     const-string v0, "$this$DisposableEffect"
@@ -84,7 +84,6 @@
     .line 86
     iget-object v0, p0, Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder$SaveableStateProvider$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;->previouslyComposedKeys:Ljava/util/Set;
     invoke-static {v0}, Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;->access$getPreviouslyComposedKeys$p(Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;)Ljava/util/Set;
 
     move-result-object v0
@@ -123,7 +122,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 85

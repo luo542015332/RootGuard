@@ -68,7 +68,7 @@
 
 # direct methods
 .method private constructor <init>(ILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
-    .registers 24
+    .locals 18
     .param p1, "vertexMode"    # I
     .param p2, "positions"    # Ljava/util/List;
     .param p3, "textureCoordinates"    # Ljava/util/List;
@@ -146,7 +146,7 @@
 
     move-result v8
 
-    if-ne v7, v8, :cond_b2
+    if-ne v7, v8, :cond_5
 
     .line 40
     invoke-interface/range {p4 .. p4}, Ljava/util/List;->size()I
@@ -157,7 +157,7 @@
 
     move-result v8
 
-    if-ne v7, v8, :cond_a9
+    if-ne v7, v8, :cond_4
 
     .line 42
     move-object/from16 v7, p5
@@ -187,10 +187,10 @@
 
     move-result v12
 
-    :goto_51
+    :goto_0
     const/4 v13, 0x0
 
-    if-ge v11, v12, :cond_6d
+    if-ge v11, v12, :cond_1
 
     .line 80
     invoke-interface {v9, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -216,27 +216,27 @@
 
     move-result v17
 
-    if-eqz v17, :cond_69
+    if-eqz v17, :cond_0
 
     const/4 v12, 0x1
 
-    goto :goto_6f
+    goto :goto_1
 
     .line 81
     .end local v15    # "it$iv":Ljava/lang/Object;
     .end local v16    # "$i$a$-fastForEach-ListUtilsKt$fastAny$2$iv":I
-    :cond_69
+    :cond_0
     nop
 
     .line 79
     .end local v14    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_51
+    goto :goto_0
 
     .line 83
     .end local v11    # "index$iv$iv":I
-    :cond_6d
+    :cond_1
     nop
 
     .line 84
@@ -247,8 +247,8 @@
     .line 42
     .end local v7    # "$this$fastAny$iv":Ljava/util/List;
     .end local v8    # "$i$f$fastAny":I
-    :goto_6f
-    if-nez v12, :cond_9f
+    :goto_1
+    if-nez v12, :cond_3
 
     .line 48
     invoke-direct {v0, v1}, Landroidx/compose/ui/graphics/Vertices;->encodePointList(Ljava/util/List;)[F
@@ -278,8 +278,8 @@
 
     new-array v8, v7, [S
 
-    :goto_89
-    if-ge v13, v7, :cond_9b
+    :goto_2
+    if-ge v13, v7, :cond_2
 
     .line 53
     invoke-interface {v4, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -299,9 +299,9 @@
     add-int/lit8 v13, v13, 0x1
 
     .line 51
-    goto :goto_89
+    goto :goto_2
 
-    :cond_9b
+    :cond_2
     iput-object v8, v0, Landroidx/compose/ui/graphics/Vertices;->indices:[S
 
     .line 55
@@ -313,7 +313,7 @@
 
     .line 43
     .restart local v6    # "outOfBounds":Lkotlin/jvm/functions/Function1;
-    :cond_9f
+    :cond_3
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
     .line 44
@@ -327,7 +327,7 @@
     throw v7
 
     .line 41
-    :cond_a9
+    :cond_4
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v8, "positions and colors lengths must match."
@@ -337,7 +337,7 @@
     throw v7
 
     .line 39
-    :cond_b2
+    :cond_5
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v8, "positions and textureCoordinates lengths must match."
@@ -348,7 +348,7 @@
 .end method
 
 .method public synthetic constructor <init>(ILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 7
+    .locals 0
 
     invoke-direct/range {p0 .. p5}, Landroidx/compose/ui/graphics/Vertices;-><init>(ILjava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;)V
 
@@ -356,7 +356,7 @@
 .end method
 
 .method private final encodeColorList(Ljava/util/List;)[I
-    .registers 7
+    .locals 5
     .param p1, "colors"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -376,8 +376,8 @@
 
     const/4 v2, 0x0
 
-    :goto_7
-    if-ge v2, v0, :cond_1c
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     .line 60
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -399,14 +399,14 @@
     add-int/lit8 v2, v2, 0x1
 
     .line 58
-    goto :goto_7
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     return-object v1
 .end method
 
 .method private final encodePointList(Ljava/util/List;)[F
-    .registers 9
+    .locals 7
     .param p1, "points"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -428,8 +428,8 @@
 
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v2, v0, :cond_29
+    :goto_0
+    if-ge v2, v0, :cond_1
 
     .line 66
     div-int/lit8 v3, v2, 0x2
@@ -450,39 +450,39 @@
     .local v4, "point":J
     rem-int/lit8 v6, v2, 0x2
 
-    if-nez v6, :cond_20
+    if-nez v6, :cond_0
 
     .line 69
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v6
 
-    goto :goto_24
+    goto :goto_1
 
     .line 71
-    :cond_20
+    :cond_0
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
     move-result v6
 
     .end local v3    # "pointIndex":I
     .end local v4    # "point":J
-    :goto_24
+    :goto_1
     aput v6, v1, v2
 
     add-int/lit8 v2, v2, 0x1
 
     .line 65
-    goto :goto_9
+    goto :goto_0
 
-    :cond_29
+    :cond_1
     return-object v1
 .end method
 
 
 # virtual methods
 .method public final getColors()[I
-    .registers 2
+    .locals 1
 
     .line 33
     iget-object v0, p0, Landroidx/compose/ui/graphics/Vertices;->colors:[I
@@ -491,7 +491,7 @@
 .end method
 
 .method public final getIndices()[S
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/compose/ui/graphics/Vertices;->indices:[S
@@ -500,7 +500,7 @@
 .end method
 
 .method public final getPositions()[F
-    .registers 2
+    .locals 1
 
     .line 31
     iget-object v0, p0, Landroidx/compose/ui/graphics/Vertices;->positions:[F
@@ -509,7 +509,7 @@
 .end method
 
 .method public final getTextureCoordinates()[F
-    .registers 2
+    .locals 1
 
     .line 32
     iget-object v0, p0, Landroidx/compose/ui/graphics/Vertices;->textureCoordinates:[F
@@ -518,7 +518,7 @@
 .end method
 
 .method public final getVertexMode-c2xauaI()I
-    .registers 2
+    .locals 1
 
     .line 24
     iget v0, p0, Landroidx/compose/ui/graphics/Vertices;->vertexMode:I

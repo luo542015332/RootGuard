@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/foundation/layout/RequiredMinIntrinsicWidthModifier;
 
@@ -64,7 +64,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public calculateContentConstraints-l58MMJ0(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)J
-    .registers 8
+    .locals 3
     .param p1, "$this$calculateContentConstraints_u2dl58MMJ0"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -109,7 +109,7 @@
 .end method
 
 .method public getEnforceIncoming()Z
-    .registers 2
+    .locals 1
 
     .line 173
     sget-boolean v0, Landroidx/compose/foundation/layout/RequiredMinIntrinsicWidthModifier;->enforceIncoming:Z
@@ -118,7 +118,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I

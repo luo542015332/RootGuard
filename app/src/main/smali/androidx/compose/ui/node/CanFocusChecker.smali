@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/CanFocusChecker;
 
@@ -59,7 +59,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 317
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,12 +70,12 @@
 
 # virtual methods
 .method public getCanFocus()Z
-    .registers 3
+    .locals 2
 
     .line 320
     sget-object v0, Landroidx/compose/ui/node/CanFocusChecker;->canFocusValue:Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -83,7 +83,7 @@
 
     return v0
 
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "Required value was null."
@@ -98,26 +98,26 @@
 .end method
 
 .method public final isCanFocusSet()Z
-    .registers 2
+    .locals 1
 
     .line 322
     sget-object v0, Landroidx/compose/ui/node/CanFocusChecker;->canFocusValue:Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 323
     const/4 v0, 0x0
@@ -128,7 +128,7 @@
 .end method
 
 .method public setCanFocus(Z)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Z
 
     .line 321

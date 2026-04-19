@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static fold(Landroidx/compose/ui/MotionDurationScale;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/MotionDurationScale;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -62,7 +62,7 @@
 .end method
 
 .method public static get(Landroidx/compose/ui/MotionDurationScale;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/MotionDurationScale;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
@@ -94,7 +94,7 @@
 .end method
 
 .method public static minusKey(Landroidx/compose/ui/MotionDurationScale;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/MotionDurationScale;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
@@ -125,7 +125,7 @@
 .end method
 
 .method public static plus(Landroidx/compose/ui/MotionDurationScale;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/MotionDurationScale;
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 

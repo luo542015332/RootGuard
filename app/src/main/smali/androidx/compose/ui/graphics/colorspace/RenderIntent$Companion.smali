@@ -46,7 +46,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;-><init>()V
 
@@ -65,10 +65,9 @@
 
 # virtual methods
 .method public final getAbsolute-uksYyKA()I
-    .registers 2
+    .locals 1
 
     .line 67
-    # getter for: Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Absolute:I
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->access$getAbsolute$cp()I
 
     move-result v0
@@ -77,10 +76,9 @@
 .end method
 
 .method public final getPerceptual-uksYyKA()I
-    .registers 2
+    .locals 1
 
     .line 42
-    # getter for: Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Perceptual:I
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->access$getPerceptual$cp()I
 
     move-result v0
@@ -89,10 +87,9 @@
 .end method
 
 .method public final getRelative-uksYyKA()I
-    .registers 2
+    .locals 1
 
     .line 49
-    # getter for: Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Relative:I
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->access$getRelative$cp()I
 
     move-result v0
@@ -101,10 +98,9 @@
 .end method
 
 .method public final getSaturation-uksYyKA()I
-    .registers 2
+    .locals 1
 
     .line 59
-    # getter for: Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Saturation:I
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->access$getSaturation$cp()I
 
     move-result v0

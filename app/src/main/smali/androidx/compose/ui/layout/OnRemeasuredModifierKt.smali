@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final onSizeChanged(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 3
     .param p0, "$this$onSizeChanged"    # Landroidx/compose/ui/Modifier;
     .param p1, "onSizeChanged"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -74,7 +74,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     new-instance v2, Landroidx/compose/ui/layout/OnRemeasuredModifierKt$onSizeChanged$$inlined$debugInspectorInfo$1;
 
@@ -82,16 +82,16 @@
 
     check-cast v2, Lkotlin/jvm/functions/Function1;
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
 
     move-result-object v2
 
     .line 48
     .end local v1    # "$i$f$debugInspectorInfo":I
-    :goto_22
+    :goto_0
     invoke-direct {v0, p1, v2}, Landroidx/compose/ui/layout/OnSizeChangedModifier;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
 
     check-cast v0, Landroidx/compose/ui/Modifier;

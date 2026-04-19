@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/SnapshotMutableDoubleStateImpl;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/SnapshotMutableDoubleStateImpl$component2$1;->this$0:Landroidx/compose/runtime/SnapshotMutableDoubleStateImpl;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 152
@@ -87,7 +87,7 @@
 .end method
 
 .method public final invoke(D)V
-    .registers 4
+    .locals 1
     .param p1, "it"    # D
 
     .line 152

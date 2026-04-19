@@ -20,7 +20,7 @@
 
 # direct methods
 .method public static final getValue(Landroidx/compose/runtime/LongState;Ljava/lang/Object;Lkotlin/reflect/KProperty;)J
-    .registers 5
+    .locals 2
     .param p0, "$this$getValue"    # Landroidx/compose/runtime/LongState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;
@@ -43,7 +43,7 @@
 .end method
 
 .method public static final mutableLongStateOf(J)Landroidx/compose/runtime/MutableLongState;
-    .registers 3
+    .locals 1
     .param p0, "value"    # J
 
     .line 1
@@ -55,7 +55,7 @@
 .end method
 
 .method public static final setValue(Landroidx/compose/runtime/MutableLongState;Ljava/lang/Object;Lkotlin/reflect/KProperty;J)V
-    .registers 5
+    .locals 0
     .param p0, "$this$setValue"    # Landroidx/compose/runtime/MutableLongState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;

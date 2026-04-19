@@ -66,7 +66,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;
 
@@ -116,7 +116,7 @@
 .end method
 
 .method private synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # I
 
     .line 31
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final synthetic access$getAbsolute$cp()I
-    .registers 1
+    .locals 1
 
     .line 29
     sget v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Absolute:I
@@ -137,7 +137,7 @@
 .end method
 
 .method public static final synthetic access$getPerceptual$cp()I
-    .registers 1
+    .locals 1
 
     .line 29
     sget v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Perceptual:I
@@ -146,7 +146,7 @@
 .end method
 
 .method public static final synthetic access$getRelative$cp()I
-    .registers 1
+    .locals 1
 
     .line 29
     sget v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Relative:I
@@ -155,7 +155,7 @@
 .end method
 
 .method public static final synthetic access$getSaturation$cp()I
-    .registers 1
+    .locals 1
 
     .line 29
     sget v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Saturation:I
@@ -164,7 +164,7 @@
 .end method
 
 .method public static final synthetic box-impl(I)Landroidx/compose/ui/graphics/colorspace/RenderIntent;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;
 
@@ -174,23 +174,23 @@
 .end method
 
 .method public static constructor-impl(I)I
-    .registers 1
+    .locals 0
 
     return p0
 .end method
 
 .method public static equals-impl(ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/graphics/colorspace/RenderIntent;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;
@@ -199,34 +199,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(II)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -236,7 +236,7 @@
 .end method
 
 .method public static toString-impl(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # I
 
     .line 70
@@ -249,67 +249,67 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "Perceptual"
 
-    goto :goto_33
+    goto :goto_0
 
     .line 72
-    :cond_d
+    :cond_0
     sget v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Relative:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     const-string/jumbo v0, "Relative"
 
-    goto :goto_33
+    goto :goto_0
 
     .line 73
-    :cond_19
+    :cond_1
     sget v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Saturation:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     const-string/jumbo v0, "Saturation"
 
-    goto :goto_33
+    goto :goto_0
 
     .line 74
-    :cond_25
+    :cond_2
     sget v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Absolute:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_3
 
     const-string v0, "Absolute"
 
-    goto :goto_33
+    goto :goto_0
 
     .line 75
-    :cond_30
+    :cond_3
     const-string/jumbo v0, "Unknown"
 
     .line 76
-    :goto_33
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->value:I
 
@@ -321,7 +321,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->value:I
 
@@ -333,7 +333,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 70
     iget v0, p0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->value:I
@@ -347,7 +347,7 @@
 .end method
 
 .method public final synthetic unbox-impl()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->value:I
 

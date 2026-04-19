@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 53
     new-instance v0, Ljava/util/HashMap;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static final enableLiveLiterals()V
-    .registers 1
+    .locals 1
 
     .line 67
     const/4 v0, 0x1
@@ -89,7 +89,7 @@
 .end method
 
 .method public static final isLiveLiteralsEnabled()Z
-    .registers 1
+    .locals 1
 
     .line 57
     sget-boolean v0, Landroidx/compose/runtime/internal/LiveLiteralKt;->isLiveLiteralsEnabled:Z
@@ -98,7 +98,7 @@
 .end method
 
 .method public static synthetic isLiveLiteralsEnabled$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -106,7 +106,7 @@
 .end method
 
 .method public static final liveLiteral(Ljava/lang/String;Ljava/lang/Object;)Landroidx/compose/runtime/State;
-    .registers 8
+    .locals 6
     .param p0, "key"    # Ljava/lang/String;
     .param p1, "value"    # Ljava/lang/Object;
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
@@ -144,7 +144,7 @@
 
     .line 101
     .local v2, "value$iv":Ljava/lang/Object;
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_0
 
     .line 102
     const/4 v3, 0x0
@@ -171,14 +171,14 @@
     nop
 
     .end local v3    # "answer$iv":Ljava/lang/Object;
-    goto :goto_1f
+    goto :goto_0
 
     .line 106
-    :cond_1e
+    :cond_0
     move-object v3, v2
 
     .line 101
-    :goto_1f
+    :goto_0
     nop
 
     .line 81
@@ -195,7 +195,7 @@
 .end method
 
 .method public static final updateLiveLiteralValue(Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 9
+    .locals 7
     .param p0, "key"    # Ljava/lang/String;
     .param p1, "value"    # Ljava/lang/Object;
 
@@ -225,7 +225,7 @@
 
     .line 108
     .local v3, "value$iv":Ljava/lang/Object;
-    if-nez v3, :cond_21
+    if-nez v3, :cond_0
 
     .line 109
     const/4 v4, 0x0
@@ -255,14 +255,14 @@
     nop
 
     .end local v4    # "answer$iv":Ljava/lang/Object;
-    goto :goto_22
+    goto :goto_0
 
     .line 113
-    :cond_21
+    :cond_0
     move-object v4, v3
 
     .line 108
-    :goto_22
+    :goto_0
     nop
 
     .line 92
@@ -275,12 +275,12 @@
 
     .line 96
     .local v1, "stateObj":Landroidx/compose/runtime/MutableState;
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 97
     invoke-interface {v1, p1}, Landroidx/compose/runtime/MutableState;->setValue(Ljava/lang/Object;)V
 
     .line 99
-    :cond_2b
+    :cond_1
     return-void
 .end method

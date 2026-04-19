@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Landroidx/compose/ui/Modifier$Node;-><init>()V
@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 30
     const-string v0, "<Head>"

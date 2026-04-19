@@ -33,7 +33,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 29
     new-instance v0, Landroidx/compose/ui/graphics/RectangleShapeKt$RectangleShape$1;
@@ -48,7 +48,7 @@
 .end method
 
 .method public static final getRectangleShape()Landroidx/compose/ui/graphics/Shape;
-    .registers 1
+    .locals 1
 
     .line 29
     sget-object v0, Landroidx/compose/ui/graphics/RectangleShapeKt;->RectangleShape:Landroidx/compose/ui/graphics/Shape;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static synthetic getRectangleShape$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method

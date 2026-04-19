@@ -88,7 +88,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/core/Transition;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Ljava/lang/String;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,7 +122,7 @@
 .end method
 
 .method private static final invoke$lambda$1(Landroidx/compose/runtime/MutableState;)Z
-    .registers 5
+    .locals 4
     .param p0, "$shouldAnimate$delegate"    # Landroidx/compose/runtime/MutableState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -168,7 +168,7 @@
 .end method
 
 .method private static final invoke$lambda$2(Landroidx/compose/runtime/MutableState;Z)V
-    .registers 7
+    .locals 5
     .param p0, "$shouldAnimate$delegate"    # Landroidx/compose/runtime/MutableState;
     .param p1, "value"    # Z
     .annotation system Ldalvik/annotation/Signature;
@@ -216,7 +216,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 23
+    .locals 19
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -243,7 +243,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_0
 
     .line 953
     const/4 v3, -0x1
@@ -254,14 +254,14 @@
 
     invoke-static {v2, v9, v3, v4}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 0
-    :cond_26
+    :cond_0
     move/from16 v9, p3
 
     .line 953
-    :goto_28
+    :goto_0
     iget-object v2, v0, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->$transition:Landroidx/compose/animation/core/Transition;
 
     .local v2, "key1$iv":Ljava/lang/Object;
@@ -303,7 +303,7 @@
     .local v13, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
     const/4 v14, 0x0
 
-    if-nez v5, :cond_53
+    if-nez v5, :cond_2
 
     sget-object v15, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -311,21 +311,21 @@
 
     move-result-object v15
 
-    if-ne v12, v15, :cond_4f
+    if-ne v12, v15, :cond_1
 
-    goto :goto_53
+    goto :goto_1
 
     .line 1184
-    :cond_4f
+    :cond_1
     move-object/from16 v18, v2
 
     move-object v2, v12
 
-    goto :goto_65
+    goto :goto_2
 
     .line 1181
-    :cond_53
-    :goto_53
+    :cond_2
+    :goto_1
     const/4 v15, 0x0
 
     .line 953
@@ -359,7 +359,7 @@
 
     .line 1180
     .end local v2    # "value$iv$iv":Ljava/lang/Object;
-    :goto_65
+    :goto_2
     nop
 
     .line 1179
@@ -395,7 +395,7 @@
 
     move-result-object v3
 
-    if-ne v2, v3, :cond_88
+    if-ne v2, v3, :cond_3
 
     iget-object v2, v0, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->$transition:Landroidx/compose/animation/core/Transition;
 
@@ -403,24 +403,24 @@
 
     move-result v2
 
-    if-nez v2, :cond_88
+    if-nez v2, :cond_3
 
     .line 955
     const/4 v2, 0x0
 
     invoke-static {v10, v2}, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->invoke$lambda$2(Landroidx/compose/runtime/MutableState;Z)V
 
-    goto :goto_9c
+    goto :goto_3
 
     .line 957
-    :cond_88
+    :cond_3
     iget-object v2, v0, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->$slideIn:Landroidx/compose/runtime/State;
 
     invoke-interface {v2}, Landroidx/compose/runtime/State;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-nez v2, :cond_98
+    if-nez v2, :cond_4
 
     iget-object v2, v0, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->$slideOut:Landroidx/compose/runtime/State;
 
@@ -428,22 +428,22 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_9c
+    if-eqz v2, :cond_5
 
     .line 958
-    :cond_98
+    :cond_4
     const/4 v2, 0x1
 
     invoke-static {v10, v2}, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->invoke$lambda$2(Landroidx/compose/runtime/MutableState;Z)V
 
     .line 962
-    :cond_9c
-    :goto_9c
+    :cond_5
+    :goto_3
     invoke-static {v10}, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->invoke$lambda$1(Landroidx/compose/runtime/MutableState;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_13f
+    if-eqz v2, :cond_9
 
     .line 963
     iget-object v2, v0, Landroidx/compose/animation/EnterExitTransitionKt$slideInOut$1;->$transition:Landroidx/compose/animation/core/Transition;
@@ -502,7 +502,7 @@
 
     move-result-object v5
 
-    if-ne v14, v5, :cond_e8
+    if-ne v14, v5, :cond_6
 
     .line 1188
     const/4 v5, 0x0
@@ -543,14 +543,14 @@
     nop
 
     .end local v4    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_e9
+    goto :goto_4
 
     .line 1191
-    :cond_e8
+    :cond_6
     move-object v4, v14
 
     .line 1187
-    :goto_e9
+    :goto_4
     nop
 
     .line 1186
@@ -622,7 +622,7 @@
 
     .line 1194
     .restart local v15    # "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v11, :cond_123
+    if-nez v11, :cond_8
 
     sget-object v16, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -630,19 +630,19 @@
 
     move-result-object v0
 
-    if-ne v14, v0, :cond_121
+    if-ne v14, v0, :cond_7
 
-    goto :goto_123
+    goto :goto_5
 
     .line 1198
-    :cond_121
+    :cond_7
     move-object v0, v14
 
-    goto :goto_130
+    goto :goto_6
 
     .line 1195
-    :cond_123
-    :goto_123
+    :cond_8
+    :goto_5
     const/4 v0, 0x0
 
     .line 968
@@ -668,7 +668,7 @@
 
     .line 1194
     .end local v0    # "value$iv$iv":Ljava/lang/Object;
-    :goto_130
+    :goto_6
     nop
 
     .line 1193
@@ -700,30 +700,30 @@
 
     .end local v0    # "modifier":Landroidx/compose/animation/SlideModifier;
     .end local v2    # "animation":Landroidx/compose/animation/core/Transition$DeferredAnimation;
-    goto :goto_140
+    goto :goto_7
 
     .line 972
-    :cond_13f
+    :cond_9
     move-object v0, v1
 
     .line 962
-    :goto_140
+    :goto_7
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_149
+    if-eqz v2, :cond_a
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_149
+    :cond_a
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

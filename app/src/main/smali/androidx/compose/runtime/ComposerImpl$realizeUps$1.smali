@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     iput p1, p0, Landroidx/compose/runtime/ComposerImpl$realizeUps$1;->$count:I
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 6
+    .locals 2
     .param p1, "applier"    # Landroidx/compose/runtime/Applier;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -134,8 +134,8 @@
 
     const/4 p3, 0x0
 
-    :goto_13
-    if-ge p3, p2, :cond_1d
+    :goto_0
+    if-ge p3, p2, :cond_0
 
     move v0, p3
 
@@ -151,8 +151,8 @@
     .end local v1    # "$i$a$-repeat-ComposerImpl$realizeUps$1$1":I
     add-int/lit8 p3, p3, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     return-void
 .end method

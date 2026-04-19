@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutNode;ZZ)V
-    .registers 5
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "isLookahead"    # Z
     .param p3, "isForced"    # Z
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public final getNode()Landroidx/compose/ui/node/LayoutNode;
-    .registers 2
+    .locals 1
 
     .line 590
     iget-object v0, p0, Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;->node:Landroidx/compose/ui/node/LayoutNode;
@@ -98,7 +98,7 @@
 .end method
 
 .method public final isForced()Z
-    .registers 2
+    .locals 1
 
     .line 590
     iget-boolean v0, p0, Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;->isForced:Z
@@ -107,7 +107,7 @@
 .end method
 
 .method public final isLookahead()Z
-    .registers 2
+    .locals 1
 
     .line 590
     iget-boolean v0, p0, Landroidx/compose/ui/node/MeasureAndLayoutDelegate$PostponedRequest;->isLookahead:Z

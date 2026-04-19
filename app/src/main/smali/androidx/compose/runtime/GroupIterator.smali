@@ -67,7 +67,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/SlotTable;II)V
-    .registers 5
+    .locals 1
     .param p1, "table"    # Landroidx/compose/runtime/SlotTable;
     .param p2, "start"    # I
     .param p3, "end"    # I
@@ -103,7 +103,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     .line 3095
     nop
@@ -112,7 +112,7 @@
     return-void
 
     .line 3094
-    :cond_1e
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -121,7 +121,7 @@
 .end method
 
 .method private final validateRead()V
-    .registers 3
+    .locals 2
 
     .line 3108
     iget-object v0, p0, Landroidx/compose/runtime/GroupIterator;->table:Landroidx/compose/runtime/SlotTable;
@@ -132,13 +132,13 @@
 
     iget v1, p0, Landroidx/compose/runtime/GroupIterator;->version:I
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     .line 3111
     return-void
 
     .line 3109
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -149,7 +149,7 @@
 
 # virtual methods
 .method public final getEnd()I
-    .registers 2
+    .locals 1
 
     .line 3088
     iget v0, p0, Landroidx/compose/runtime/GroupIterator;->end:I
@@ -158,7 +158,7 @@
 .end method
 
 .method public final getTable()Landroidx/compose/runtime/SlotTable;
-    .registers 2
+    .locals 1
 
     .line 3086
     iget-object v0, p0, Landroidx/compose/runtime/GroupIterator;->table:Landroidx/compose/runtime/SlotTable;
@@ -167,28 +167,28 @@
 .end method
 
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 3097
     iget v0, p0, Landroidx/compose/runtime/GroupIterator;->index:I
 
     iget v1, p0, Landroidx/compose/runtime/GroupIterator;->end:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public next()Landroidx/compose/runtime/tooling/CompositionGroup;
-    .registers 5
+    .locals 4
 
     .line 3100
     invoke-direct {p0}, Landroidx/compose/runtime/GroupIterator;->validateRead()V
@@ -206,7 +206,6 @@
 
     move-result-object v2
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v2, v0}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v2
@@ -230,7 +229,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 3085
     invoke-virtual {p0}, Landroidx/compose/runtime/GroupIterator;->next()Landroidx/compose/runtime/tooling/CompositionGroup;
@@ -241,7 +240,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

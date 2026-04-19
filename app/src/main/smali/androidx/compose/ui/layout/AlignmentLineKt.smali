@@ -40,7 +40,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 102
     new-instance v0, Landroidx/compose/ui/layout/HorizontalAlignmentLine;
@@ -68,7 +68,7 @@
 .end method
 
 .method public static final getFirstBaseline()Landroidx/compose/ui/layout/HorizontalAlignmentLine;
-    .registers 1
+    .locals 1
 
     .line 102
     sget-object v0, Landroidx/compose/ui/layout/AlignmentLineKt;->FirstBaseline:Landroidx/compose/ui/layout/HorizontalAlignmentLine;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static final getLastBaseline()Landroidx/compose/ui/layout/HorizontalAlignmentLine;
-    .registers 1
+    .locals 1
 
     .line 107
     sget-object v0, Landroidx/compose/ui/layout/AlignmentLineKt;->LastBaseline:Landroidx/compose/ui/layout/HorizontalAlignmentLine;
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final merge(Landroidx/compose/ui/layout/AlignmentLine;II)I
-    .registers 6
+    .locals 3
     .param p0, "$this$merge"    # Landroidx/compose/ui/layout/AlignmentLine;
     .param p1, "position1"    # I
     .param p2, "position2"    # I

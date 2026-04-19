@@ -670,7 +670,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$6rnsioIDxAVR319ScBkOteeoeiE(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->globalLayoutListener$lambda$1(Landroidx/compose/ui/platform/AndroidComposeView;)V
 
@@ -678,7 +678,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$HVKfDYrbF2azN0QgGmEndJ5P5to(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->sendHoverExitEvent$lambda$5(Landroidx/compose/ui/platform/AndroidComposeView;)V
 
@@ -686,7 +686,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$L87CYcEnqBX85FFtAxws3_2BpkM(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->scrollChangedListener$lambda$2(Landroidx/compose/ui/platform/AndroidComposeView;)V
 
@@ -694,7 +694,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$TvhWqMihl4JwF42Odovn0ewO6fk(Landroidx/compose/ui/platform/AndroidComposeView;Z)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->touchModeChangeListener$lambda$3(Landroidx/compose/ui/platform/AndroidComposeView;Z)V
 
@@ -702,7 +702,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidComposeView$Companion;
 
@@ -716,7 +716,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lkotlin/coroutines/CoroutineContext;)V
-    .registers 13
+    .locals 10
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "coroutineContext"    # Lkotlin/coroutines/CoroutineContext;
 
@@ -971,7 +971,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_f4
+    if-eqz v3, :cond_0
 
     new-instance v3, Landroidx/compose/ui/autofill/AndroidAutofill;
 
@@ -985,12 +985,12 @@
 
     invoke-direct {v3, v4, v5}, Landroidx/compose/ui/autofill/AndroidAutofill;-><init>(Landroid/view/View;Landroidx/compose/ui/autofill/AutofillTree;)V
 
-    goto :goto_f5
+    goto :goto_0
 
-    :cond_f4
+    :cond_0
     move-object v3, v2
 
-    :goto_f5
+    :goto_0
     iput-object v3, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_autofill:Landroidx/compose/ui/autofill/AndroidAutofill;
 
     .line 271
@@ -1276,7 +1276,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_207
+    if-eqz v4, :cond_1
 
     sget-object v4, Landroidx/compose/ui/input/InputMode;->Companion:Landroidx/compose/ui/input/InputMode$Companion;
 
@@ -1284,9 +1284,9 @@
 
     move-result v4
 
-    goto :goto_20d
+    goto :goto_1
 
-    :cond_207
+    :cond_1
     sget-object v4, Landroidx/compose/ui/input/InputMode;->Companion:Landroidx/compose/ui/input/InputMode$Companion;
 
     invoke-virtual {v4}, Landroidx/compose/ui/input/InputMode$Companion;->getKeyboard-aOaMEAU()I
@@ -1294,7 +1294,7 @@
     move-result v4
 
     .line 431
-    :goto_20d
+    :goto_1
     new-instance v5, Landroidx/compose/ui/platform/AndroidComposeView$_inputModeManager$1;
 
     invoke-direct {v5, p0}, Landroidx/compose/ui/platform/AndroidComposeView$_inputModeManager$1;-><init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
@@ -1398,7 +1398,7 @@
 
     const/16 v3, 0x1d
 
-    if-lt v2, v3, :cond_26c
+    if-lt v2, v3, :cond_2
 
     .line 548
     new-instance v2, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi29;
@@ -1407,10 +1407,10 @@
 
     check-cast v2, Landroidx/compose/ui/platform/CalculateMatrixToWindow;
 
-    goto :goto_273
+    goto :goto_2
 
     .line 550
-    :cond_26c
+    :cond_2
     new-instance v2, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi21;
 
     invoke-direct {v2}, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi21;-><init>()V
@@ -1418,7 +1418,7 @@
     check-cast v2, Landroidx/compose/ui/platform/CalculateMatrixToWindow;
 
     .line 547
-    :goto_273
+    :goto_2
     iput-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->matrixToWindow:Landroidx/compose/ui/platform/CalculateMatrixToWindow;
 
     .line 564
@@ -1472,12 +1472,12 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2a0
+    if-eqz v0, :cond_3
 
     invoke-interface {v0, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 578
-    :cond_2a0
+    :cond_3
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getRoot()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
@@ -1491,7 +1491,7 @@
     .line 579
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-lt v0, v3, :cond_2b6
+    if-lt v0, v3, :cond_4
 
     .line 581
     sget-object v0, Landroidx/compose/ui/platform/AndroidComposeViewForceDarkModeQ;->INSTANCE:Landroidx/compose/ui/platform/AndroidComposeViewForceDarkModeQ;
@@ -1503,7 +1503,7 @@
     invoke-virtual {v0, v1}, Landroidx/compose/ui/platform/AndroidComposeViewForceDarkModeQ;->disallowForceDark(Landroid/view/View;)V
 
     .line 583
-    :cond_2b6
+    :cond_4
     nop
 
     .line 1758
@@ -1520,7 +1520,7 @@
 .end method
 
 .method public static final synthetic access$addExtraDataToAccessibilityNodeInfoHelper(Landroidx/compose/ui/platform/AndroidComposeView;ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
-    .registers 4
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p1, "virtualViewId"    # I
     .param p2, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
@@ -1533,7 +1533,7 @@
 .end method
 
 .method public static final synthetic access$getAccessibilityDelegate$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     .line 163
@@ -1543,7 +1543,7 @@
 .end method
 
 .method public static final synthetic access$getGetBooleanMethod$cp()Ljava/lang/reflect/Method;
-    .registers 1
+    .locals 1
 
     .line 163
     sget-object v0, Landroidx/compose/ui/platform/AndroidComposeView;->getBooleanMethod:Ljava/lang/reflect/Method;
@@ -1552,7 +1552,7 @@
 .end method
 
 .method public static final synthetic access$getPreviousMotionEvent$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroid/view/MotionEvent;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     .line 163
@@ -1562,7 +1562,7 @@
 .end method
 
 .method public static final synthetic access$getRelayoutTime$p(Landroidx/compose/ui/platform/AndroidComposeView;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     .line 163
@@ -1572,7 +1572,7 @@
 .end method
 
 .method public static final synthetic access$getResendMotionEventRunnable$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     .line 163
@@ -1582,7 +1582,7 @@
 .end method
 
 .method public static final synthetic access$getSystemPropertiesClass$cp()Ljava/lang/Class;
-    .registers 1
+    .locals 1
 
     .line 163
     sget-object v0, Landroidx/compose/ui/platform/AndroidComposeView;->systemPropertiesClass:Ljava/lang/Class;
@@ -1591,7 +1591,7 @@
 .end method
 
 .method public static final synthetic access$get_viewTreeOwners(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     .line 163
@@ -1603,7 +1603,7 @@
 .end method
 
 .method public static final synthetic access$sendSimulatedEvent(Landroidx/compose/ui/platform/AndroidComposeView;Landroid/view/MotionEvent;IJZ)V
-    .registers 6
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
     .param p2, "action"    # I
@@ -1617,7 +1617,7 @@
 .end method
 
 .method public static final synthetic access$setGetBooleanMethod$cp(Ljava/lang/reflect/Method;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Ljava/lang/reflect/Method;
 
     .line 163
@@ -1627,7 +1627,7 @@
 .end method
 
 .method public static final synthetic access$setRelayoutTime$p(Landroidx/compose/ui/platform/AndroidComposeView;J)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p1, "<set-?>"    # J
 
@@ -1638,7 +1638,7 @@
 .end method
 
 .method public static final synthetic access$setSystemPropertiesClass$cp(Ljava/lang/Class;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Ljava/lang/Class;
 
     .line 163
@@ -1648,7 +1648,7 @@
 .end method
 
 .method private final addExtraDataToAccessibilityNodeInfoHelper(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
-    .registers 8
+    .locals 4
     .param p1, "virtualViewId"    # I
     .param p2, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
     .param p3, "extraDataKey"    # Ljava/lang/String;
@@ -1664,7 +1664,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     .line 727
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
@@ -1683,7 +1683,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_1
 
     .local v0, "it":Ljava/lang/Integer;
     const/4 v1, 0x0
@@ -1706,10 +1706,10 @@
     .line 727
     .end local v0    # "it":Ljava/lang/Integer;
     .end local v1    # "$i$a$-let-AndroidComposeView$addExtraDataToAccessibilityNodeInfoHelper$1":I
-    goto :goto_58
+    goto :goto_0
 
     .line 730
-    :cond_2c
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;->getEXTRA_DATA_TEST_TRAVERSALAFTER_VAL$ui_release()Ljava/lang/String;
@@ -1720,7 +1720,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_1
 
     .line 731
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
@@ -1739,7 +1739,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_1
 
     .restart local v0    # "it":Ljava/lang/Integer;
     const/4 v1, 0x0
@@ -1765,13 +1765,13 @@
     nop
 
     .line 735
-    :cond_58
-    :goto_58
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method private final autofillSupported()Z
-    .registers 2
+    .locals 1
 
     .line 1654
     const/4 v0, 0x1
@@ -1780,7 +1780,7 @@
 .end method
 
 .method private final childSizeCanAffectParentSize(Landroidx/compose/ui/node/LayoutNode;)Z
-    .registers 5
+    .locals 3
     .param p1, "$this$childSizeCanAffectParentSize"    # Landroidx/compose/ui/node/LayoutNode;
 
     .line 865
@@ -1788,7 +1788,7 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_2
 
     .line 869
     invoke-virtual {p1}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
@@ -1797,42 +1797,42 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getHasFixedInnerContentConstraints$ui_release()Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v0, v2
 
-    :goto_15
-    if-eqz v0, :cond_18
+    :goto_0
+    if-eqz v0, :cond_1
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move v1, v2
 
-    goto :goto_1b
+    goto :goto_2
 
-    :cond_1a
-    :goto_1a
+    :cond_2
+    :goto_1
     nop
 
     .line 865
-    :goto_1b
+    :goto_2
     return v1
 .end method
 
 .method private final clearChildInvalidObservations(Landroid/view/ViewGroup;)V
-    .registers 6
+    .locals 4
     .param p1, "viewGroup"    # Landroid/view/ViewGroup;
 
     .line 709
@@ -1843,8 +1843,8 @@
 
     move-result v1
 
-    :goto_5
-    if-ge v0, v1, :cond_23
+    :goto_0
+    if-ge v0, v1, :cond_2
 
     .line 710
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -1855,7 +1855,7 @@
     .local v2, "child":Landroid/view/View;
     instance-of v3, v2, Landroidx/compose/ui/platform/AndroidComposeView;
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_0
 
     .line 712
     move-object v3, v2
@@ -1864,13 +1864,13 @@
 
     invoke-virtual {v3}, Landroidx/compose/ui/platform/AndroidComposeView;->onEndApplyChanges()V
 
-    goto :goto_20
+    goto :goto_1
 
     .line 713
-    :cond_16
+    :cond_0
     instance-of v3, v2, Landroid/view/ViewGroup;
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_1
 
     .line 714
     move-object v3, v2
@@ -1881,20 +1881,20 @@
 
     .line 709
     .end local v2    # "child":Landroid/view/View;
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 717
     .end local v0    # "i":I
-    :cond_23
+    :cond_2
     return-void
 .end method
 
 .method private final component1-VKZWuLQ(J)I
-    .registers 6
+    .locals 3
     .param p1, "$this$component1_u2dVKZWuLQ"    # J
 
     const/4 v0, 0x0
@@ -1915,7 +1915,7 @@
 .end method
 
 .method private final component2-VKZWuLQ(J)I
-    .registers 6
+    .locals 3
     .param p1, "$this$component2_u2dVKZWuLQ"    # J
 
     const/4 v0, 0x0
@@ -1936,7 +1936,7 @@
 .end method
 
 .method private final convertMeasureSpec-I7RO_PI(I)J
-    .registers 6
+    .locals 4
     .param p1, "measureSpec"    # I
 
     .line 986
@@ -1954,7 +1954,7 @@
     .local v1, "size":I
     const/4 v2, 0x0
 
-    sparse-switch v0, :sswitch_data_24
+    sparse-switch v0, :sswitch_data_0
 
     .line 992
     new-instance v2, Ljava/lang/IllegalStateException;
@@ -1964,43 +1964,43 @@
     throw v2
 
     .line 989
-    :sswitch_12
+    :sswitch_0
     invoke-direct {p0, v1, v1}, Landroidx/compose/ui/platform/AndroidComposeView;->pack-ZIaKswc(II)J
 
     move-result-wide v2
 
-    goto :goto_23
+    goto :goto_0
 
     .line 990
-    :sswitch_17
+    :sswitch_1
     const v3, 0x7fffffff
 
     invoke-direct {p0, v2, v3}, Landroidx/compose/ui/platform/AndroidComposeView;->pack-ZIaKswc(II)J
 
     move-result-wide v2
 
-    goto :goto_23
+    goto :goto_0
 
     .line 991
-    :sswitch_1f
+    :sswitch_2
     invoke-direct {p0, v2, v1}, Landroidx/compose/ui/platform/AndroidComposeView;->pack-ZIaKswc(II)J
 
     move-result-wide v2
 
     .line 988
-    :goto_23
+    :goto_0
     return-wide v2
 
-    :sswitch_data_24
+    :sswitch_data_0
     .sparse-switch
-        -0x80000000 -> :sswitch_1f
-        0x0 -> :sswitch_17
-        0x40000000 -> :sswitch_12
+        -0x80000000 -> :sswitch_2
+        0x0 -> :sswitch_1
+        0x40000000 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method private final findViewByAccessibilityIdRootedAtCurrentView(ILandroid/view/View;)Landroid/view/View;
-    .registers 8
+    .locals 5
     .param p1, "accessibilityId"    # I
     .param p2, "currentView"    # Landroid/view/View;
 
@@ -2009,7 +2009,7 @@
 
     const/16 v1, 0x1d
 
-    if-ge v0, v1, :cond_4f
+    if-ge v0, v1, :cond_2
 
     const-class v0, Landroid/view/View;
 
@@ -2048,16 +2048,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 1740
     return-object p2
 
     .line 1742
-    :cond_28
+    :cond_0
     instance-of v1, p2, Landroid/view/ViewGroup;
 
-    if-eqz v1, :cond_4f
+    if-eqz v1, :cond_2
 
     .line 1743
     const/4 v1, 0x0
@@ -2071,8 +2071,8 @@
 
     move-result v2
 
-    :goto_34
-    if-ge v1, v2, :cond_4f
+    :goto_0
+    if-ge v1, v2, :cond_2
 
     .line 1744
     nop
@@ -2100,29 +2100,29 @@
 
     .line 1748
     .local v3, "foundView":Landroid/view/View;
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_1
 
     .line 1749
     return-object v3
 
     .line 1743
     .end local v3    # "foundView":Landroid/view/View;
-    :cond_4c
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_34
+    goto :goto_0
 
     .line 1754
     .end local v0    # "getAccessibilityViewIdMethod":Ljava/lang/reflect/Method;
     .end local v1    # "i":I
-    :cond_4f
+    :cond_2
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public static synthetic getFontLoader$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "fontLoader is deprecated, use fontFamilyResolver"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -2135,7 +2135,7 @@
 .end method
 
 .method private final getFontWeightAdjustmentCompat(Landroid/content/res/Configuration;)I
-    .registers 4
+    .locals 2
     .param p1, "$this$fontWeightAdjustmentCompat"    # Landroid/content/res/Configuration;
 
     .line 412
@@ -2143,33 +2143,33 @@
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     iget v0, p1, Landroid/content/res/Configuration;->fontWeightAdjustment:I
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic getLastMatrixRecalculationAnimationTime$ui_release$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getShowLayoutBounds$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final get_viewTreeOwners()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
-    .registers 4
+    .locals 3
 
     .line 339
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_viewTreeOwners$delegate:Landroidx/compose/runtime/MutableState;
@@ -2198,7 +2198,7 @@
 .end method
 
 .method private static final globalLayoutListener$lambda$1(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 2
+    .locals 1
     .param p0, "this$0"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     const-string/jumbo v0, "this$0"
@@ -2213,7 +2213,7 @@
 .end method
 
 .method private final handleMotionEvent-8iAsVTc(Landroid/view/MotionEvent;)I
-    .registers 22
+    .locals 20
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .line 1359
@@ -2233,7 +2233,7 @@
     .line 1361
     const/4 v11, 0x0
 
-    :try_start_d
+    :try_start_0
     invoke-direct/range {p0 .. p1}, Landroidx/compose/ui/platform/AndroidComposeView;->recalculateWindowPosition(Landroid/view/MotionEvent;)V
 
     .line 1362
@@ -2255,8 +2255,8 @@
     .line 2122
     .local v13, "$i$f$trace":I
     invoke-static {v12}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-    :try_end_1d
-    .catchall {:try_start_d .. :try_end_1d} :catchall_c7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 2123
     nop
@@ -2266,7 +2266,7 @@
 
     .line 1365
     .local v14, "$i$a$-trace-AndroidComposeView$handleMotionEvent$result$1":I
-    :try_start_1f
+    :try_start_1
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
@@ -2283,41 +2283,41 @@
     .local v8, "lastEvent":Landroid/view/MotionEvent;
     const/4 v7, 0x3
 
-    if-eqz v8, :cond_32
+    if-eqz v8, :cond_0
 
     invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getToolType(I)I
 
     move-result v1
 
-    if-ne v1, v7, :cond_32
+    if-ne v1, v7, :cond_0
 
     move v1, v0
 
-    goto :goto_33
+    goto :goto_0
 
-    :cond_32
+    :cond_0
     move v1, v11
 
-    :goto_33
+    :goto_0
     move/from16 v16, v1
 
     .line 1369
     .local v16, "wasMouseEvent":Z
-    if-eqz v8, :cond_77
+    if-eqz v8, :cond_4
 
     .line 1370
     invoke-direct {v9, v10, v8}, Landroidx/compose/ui/platform/AndroidComposeView;->hasChangedDevices(Landroid/view/MotionEvent;Landroid/view/MotionEvent;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_3
 
     .line 1372
     invoke-direct {v9, v8}, Landroidx/compose/ui/platform/AndroidComposeView;->isDevicePressEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_4c
+    if-eqz v1, :cond_1
 
     .line 1374
     iget-object v1, v9, Landroidx/compose/ui/platform/AndroidComposeView;->pointerInputEventProcessor:Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;
@@ -2328,19 +2328,19 @@
 
     move-object/from16 v17, v8
 
-    goto :goto_7a
+    goto :goto_1
 
     .line 1375
-    :cond_4c
+    :cond_1
     invoke-virtual {v8}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
 
     const/16 v2, 0xa
 
-    if-eq v1, v2, :cond_6f
+    if-eq v1, v2, :cond_2
 
-    if-eqz v16, :cond_6f
+    if-eqz v16, :cond_2
 
     .line 1378
     const/16 v3, 0xa
@@ -2371,36 +2371,36 @@
 
     invoke-static/range {v1 .. v8}, Landroidx/compose/ui/platform/AndroidComposeView;->sendSimulatedEvent$default(Landroidx/compose/ui/platform/AndroidComposeView;Landroid/view/MotionEvent;IJZILjava/lang/Object;)V
 
-    goto :goto_7a
+    goto :goto_1
 
     .line 1375
     .end local v17    # "lastEvent":Landroid/view/MotionEvent;
     .restart local v8    # "lastEvent":Landroid/view/MotionEvent;
-    :cond_6f
+    :cond_2
     move v0, v7
 
     move-object/from16 v17, v8
 
     .end local v8    # "lastEvent":Landroid/view/MotionEvent;
     .restart local v17    # "lastEvent":Landroid/view/MotionEvent;
-    goto :goto_7a
+    goto :goto_1
 
     .line 1370
     .end local v17    # "lastEvent":Landroid/view/MotionEvent;
     .restart local v8    # "lastEvent":Landroid/view/MotionEvent;
-    :cond_73
+    :cond_3
     move v0, v7
 
     move-object/from16 v17, v8
 
     .end local v8    # "lastEvent":Landroid/view/MotionEvent;
     .restart local v17    # "lastEvent":Landroid/view/MotionEvent;
-    goto :goto_7a
+    goto :goto_1
 
     .line 1369
     .end local v17    # "lastEvent":Landroid/view/MotionEvent;
     .restart local v8    # "lastEvent":Landroid/view/MotionEvent;
-    :cond_77
+    :cond_4
     move v0, v7
 
     move-object/from16 v17, v8
@@ -2408,44 +2408,44 @@
     .line 1382
     .end local v8    # "lastEvent":Landroid/view/MotionEvent;
     .restart local v17    # "lastEvent":Landroid/view/MotionEvent;
-    :goto_7a
+    :goto_1
     invoke-virtual {v10, v11}, Landroid/view/MotionEvent;->getToolType(I)I
 
     move-result v1
 
-    if-ne v1, v0, :cond_83
+    if-ne v1, v0, :cond_5
 
     const/16 v19, 0x1
 
-    goto :goto_85
+    goto :goto_2
 
-    :cond_83
+    :cond_5
     move/from16 v19, v11
 
-    :goto_85
+    :goto_2
     move/from16 v18, v19
 
     .line 1384
     .local v18, "isMouseEvent":Z
-    if-nez v16, :cond_a8
+    if-nez v16, :cond_6
 
     .line 1385
-    if-eqz v18, :cond_a8
+    if-eqz v18, :cond_6
 
     .line 1386
-    if-eq v15, v0, :cond_a8
+    if-eq v15, v0, :cond_6
 
     .line 1387
     const/16 v0, 0x9
 
-    if-eq v15, v0, :cond_a8
+    if-eq v15, v0, :cond_6
 
     .line 1388
     invoke-direct/range {p0 .. p1}, Landroidx/compose/ui/platform/AndroidComposeView;->isInBounds(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_a8
+    if-eqz v0, :cond_6
 
     .line 1393
     const/16 v3, 0x9
@@ -2467,13 +2467,13 @@
     invoke-static/range {v1 .. v8}, Landroidx/compose/ui/platform/AndroidComposeView;->sendSimulatedEvent$default(Landroidx/compose/ui/platform/AndroidComposeView;Landroid/view/MotionEvent;IJZILjava/lang/Object;)V
 
     .line 1395
-    :cond_a8
-    if-eqz v17, :cond_ad
+    :cond_6
+    if-eqz v17, :cond_7
 
     invoke-virtual/range {v17 .. v17}, Landroid/view/MotionEvent;->recycle()V
 
     .line 1396
-    :cond_ad
+    :cond_7
     invoke-static/range {p1 .. p1}, Landroid/view/MotionEvent;->obtainNoHistory(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
@@ -2484,8 +2484,8 @@
     invoke-direct/range {p0 .. p1}, Landroidx/compose/ui/platform/AndroidComposeView;->sendMotionEvent-8iAsVTc(Landroid/view/MotionEvent;)I
 
     move-result v0
-    :try_end_b7
-    .catchall {:try_start_1f .. :try_end_b7} :catchall_c2
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 2124
     .end local v14    # "$i$a$-trace-AndroidComposeView$handleMotionEvent$result$1":I
@@ -2496,10 +2496,10 @@
     nop
 
     .line 2126
-    :try_start_b8
+    :try_start_2
     invoke-static {}, Landroid/os/Trace;->endSection()V
-    :try_end_bb
-    .catchall {:try_start_b8 .. :try_end_bb} :catchall_c7
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 2124
     nop
@@ -2527,22 +2527,22 @@
     .end local v1    # "result":I
     .restart local v12    # "sectionName$iv":Ljava/lang/String;
     .restart local v13    # "$i$f$trace":I
-    :catchall_c2
+    :catchall_0
     move-exception v0
 
-    :try_start_c3
+    :try_start_3
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     .end local p1    # "motionEvent":Landroid/view/MotionEvent;
     throw v0
-    :try_end_c7
-    .catchall {:try_start_c3 .. :try_end_c7} :catchall_c7
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1402
     .end local v12    # "sectionName$iv":Ljava/lang/String;
     .end local v13    # "$i$f$trace":I
     .restart local p1    # "motionEvent":Landroid/view/MotionEvent;
-    :catchall_c7
+    :catchall_1
     move-exception v0
 
     iput-boolean v11, v9, Landroidx/compose/ui/platform/AndroidComposeView;->forceUseMatrixCache:Z
@@ -2551,7 +2551,7 @@
 .end method
 
 .method private final handleRotaryEvent(Landroid/view/MotionEvent;)Z
-    .registers 9
+    .locals 7
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .line 1348
@@ -2621,7 +2621,7 @@
 .end method
 
 .method private final hasChangedDevices(Landroid/view/MotionEvent;Landroid/view/MotionEvent;)Z
-    .registers 6
+    .locals 3
     .param p1, "event"    # Landroid/view/MotionEvent;
     .param p2, "lastEvent"    # Landroid/view/MotionEvent;
 
@@ -2634,7 +2634,7 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_0
 
     .line 1408
     const/4 v0, 0x0
@@ -2647,18 +2647,18 @@
 
     move-result v2
 
-    if-eq v1, v2, :cond_16
+    if-eq v1, v2, :cond_1
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x1
 
     .line 1407
-    :cond_16
+    :cond_1
     return v0
 .end method
 
 .method private final invalidateLayers(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 11
+    .locals 9
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     .line 1214
@@ -2690,7 +2690,7 @@
 
     .line 2109
     .local v4, "size$iv$iv":I
-    if-lez v4, :cond_23
+    if-lez v4, :cond_1
 
     .line 2110
     const/4 v5, 0x0
@@ -2703,7 +2703,7 @@
 
     .line 2113
     .local v6, "content$iv$iv":[Ljava/lang/Object;
-    :cond_16
+    :cond_0
     aget-object v7, v6, v5
 
     check-cast v7, Landroidx/compose/ui/node/LayoutNode;
@@ -2724,12 +2724,12 @@
     add-int/lit8 v5, v5, 0x1
 
     .line 2115
-    if-lt v5, v4, :cond_16
+    if-lt v5, v4, :cond_0
 
     .line 2117
     .end local v5    # "i$iv$iv":I
     .end local v6    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_23
+    :cond_1
     nop
 
     .line 2106
@@ -2745,7 +2745,7 @@
 .end method
 
 .method private final invalidateLayoutNodeMeasurement(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 11
+    .locals 9
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     .line 1206
@@ -2785,7 +2785,7 @@
 
     .line 2097
     .local v4, "size$iv$iv":I
-    if-lez v4, :cond_28
+    if-lez v4, :cond_1
 
     .line 2098
     const/4 v5, 0x0
@@ -2798,7 +2798,7 @@
 
     .line 2101
     .local v6, "content$iv$iv":[Ljava/lang/Object;
-    :cond_1b
+    :cond_0
     aget-object v7, v6, v5
 
     check-cast v7, Landroidx/compose/ui/node/LayoutNode;
@@ -2819,12 +2819,12 @@
     add-int/lit8 v5, v5, 0x1
 
     .line 2103
-    if-lt v5, v4, :cond_1b
+    if-lt v5, v4, :cond_0
 
     .line 2105
     .end local v5    # "i$iv$iv":I
     .end local v6    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_28
+    :cond_1
     nop
 
     .line 2094
@@ -2840,7 +2840,7 @@
 .end method
 
 .method private final isBadMotionEvent(Landroid/view/MotionEvent;)Z
-    .registers 9
+    .locals 7
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .line 1700
@@ -2856,23 +2856,23 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v0, v3
 
-    :goto_15
-    if-eqz v0, :cond_59
+    :goto_0
+    if-eqz v0, :cond_5
 
     .line 1701
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
@@ -2883,23 +2883,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     move v0, v3
 
-    :goto_2a
-    if-eqz v0, :cond_59
+    :goto_1
+    if-eqz v0, :cond_5
 
     .line 1702
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
@@ -2910,23 +2910,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_2
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_2
 
     move v0, v2
 
-    goto :goto_3f
+    goto :goto_2
 
-    :cond_3e
+    :cond_2
     move v0, v3
 
-    :goto_3f
-    if-eqz v0, :cond_59
+    :goto_2
+    if-eqz v0, :cond_5
 
     .line 1703
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
@@ -2937,42 +2937,42 @@
 
     move-result v1
 
-    if-nez v1, :cond_53
+    if-nez v1, :cond_3
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_53
+    if-nez v0, :cond_3
 
     move v0, v2
 
-    goto :goto_54
+    goto :goto_3
 
-    :cond_53
+    :cond_3
     move v0, v3
 
-    :goto_54
-    if-nez v0, :cond_57
+    :goto_3
+    if-nez v0, :cond_4
 
-    goto :goto_59
+    goto :goto_4
 
-    :cond_57
+    :cond_4
     move v0, v3
 
-    goto :goto_5a
+    goto :goto_5
 
-    :cond_59
-    :goto_59
+    :cond_5
+    :goto_4
     move v0, v2
 
     .line 1700
-    :goto_5a
+    :goto_5
     nop
 
     .line 1705
     .local v0, "eventInvalid":Z
-    if-nez v0, :cond_ad
+    if-nez v0, :cond_c
 
     .line 1707
     const/4 v1, 0x1
@@ -2982,8 +2982,8 @@
 
     move-result v4
 
-    :goto_62
-    if-ge v1, v4, :cond_ad
+    :goto_6
+    if-ge v1, v4, :cond_c
 
     .line 1708
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
@@ -2994,23 +2994,23 @@
 
     move-result v6
 
-    if-nez v6, :cond_76
+    if-nez v6, :cond_6
 
     invoke-static {v5}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v5
 
-    if-nez v5, :cond_76
+    if-nez v5, :cond_6
 
     move v5, v2
 
-    goto :goto_77
+    goto :goto_7
 
-    :cond_76
+    :cond_6
     move v5, v3
 
-    :goto_77
-    if-eqz v5, :cond_a6
+    :goto_7
+    if-eqz v5, :cond_b
 
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
 
@@ -3020,30 +3020,30 @@
 
     move-result v6
 
-    if-nez v6, :cond_8b
+    if-nez v6, :cond_7
 
     invoke-static {v5}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v5
 
-    if-nez v5, :cond_8b
+    if-nez v5, :cond_7
 
     move v5, v2
 
-    goto :goto_8c
+    goto :goto_8
 
-    :cond_8b
+    :cond_7
     move v5, v3
 
-    :goto_8c
-    if-eqz v5, :cond_a6
+    :goto_8
+    if-eqz v5, :cond_b
 
     .line 1709
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v6, 0x1d
 
-    if-lt v5, v6, :cond_a0
+    if-lt v5, v6, :cond_9
 
     .line 1710
     sget-object v5, Landroidx/compose/ui/platform/MotionEventVerifierApi29;->INSTANCE:Landroidx/compose/ui/platform/MotionEventVerifierApi29;
@@ -3052,55 +3052,55 @@
 
     move-result v5
 
-    if-nez v5, :cond_9e
+    if-nez v5, :cond_8
 
     move v5, v2
 
-    goto :goto_a1
+    goto :goto_9
 
-    :cond_9e
+    :cond_8
     move v5, v3
 
-    goto :goto_a1
+    goto :goto_9
 
     .line 1712
-    :cond_a0
+    :cond_9
     move v5, v3
 
-    :goto_a1
-    if-eqz v5, :cond_a4
+    :goto_9
+    if-eqz v5, :cond_a
 
-    goto :goto_a6
+    goto :goto_a
 
-    :cond_a4
+    :cond_a
     move v5, v3
 
-    goto :goto_a7
+    goto :goto_b
 
-    :cond_a6
-    :goto_a6
+    :cond_b
+    :goto_a
     move v5, v2
 
     .line 1708
-    :goto_a7
+    :goto_b
     move v0, v5
 
     .line 1715
-    if-nez v0, :cond_ad
+    if-nez v0, :cond_c
 
     .line 1707
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_62
+    goto :goto_6
 
     .line 1719
     .end local v1    # "index":I
-    :cond_ad
+    :cond_c
     return v0
 .end method
 
 .method private final isDevicePressEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .line 1412
@@ -3110,44 +3110,44 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 1413
     return v1
 
     .line 1415
-    :cond_8
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    sparse-switch v0, :sswitch_data_14
+    sparse-switch v0, :sswitch_data_0
 
     .line 1425
     const/4 v1, 0x0
 
-    goto :goto_12
+    goto :goto_0
 
     .line 1418
-    :sswitch_11
+    :sswitch_0
     nop
 
     .line 1415
-    :goto_12
+    :goto_0
     return v1
 
     nop
 
-    :sswitch_data_14
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_11
-        0x2 -> :sswitch_11
-        0x6 -> :sswitch_11
+        0x0 -> :sswitch_0
+        0x2 -> :sswitch_0
+        0x6 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method private final isInBounds(Landroid/view/MotionEvent;)Z
-    .registers 8
+    .locals 6
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .line 1549
@@ -3171,7 +3171,7 @@
 
     const/4 v5, 0x0
 
-    if-gtz v3, :cond_1a
+    if-gtz v3, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getWidth()I
 
@@ -3181,21 +3181,21 @@
 
     cmpg-float v3, v0, v3
 
-    if-gtz v3, :cond_1a
+    if-gtz v3, :cond_0
 
     move v3, v4
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move v3, v5
 
-    :goto_1b
-    if-eqz v3, :cond_30
+    :goto_0
+    if-eqz v3, :cond_2
 
     cmpg-float v2, v2, v1
 
-    if-gtz v2, :cond_2c
+    if-gtz v2, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getHeight()I
 
@@ -3205,29 +3205,29 @@
 
     cmpg-float v2, v1, v2
 
-    if-gtz v2, :cond_2c
+    if-gtz v2, :cond_1
 
     move v2, v4
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_2c
+    :cond_1
     move v2, v5
 
-    :goto_2d
-    if-eqz v2, :cond_30
+    :goto_1
+    if-eqz v2, :cond_2
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_30
+    :cond_2
     move v4, v5
 
-    :goto_31
+    :goto_2
     return v4
 .end method
 
 .method private final isPositionChanged(Landroid/view/MotionEvent;)Z
-    .registers 7
+    .locals 5
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     .line 1723
@@ -3237,18 +3237,18 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     .line 1724
     return v1
 
     .line 1726
-    :cond_8
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->previousMotionEvent:Landroid/view/MotionEvent;
 
     .line 1727
     .local v0, "lastEvent":Landroid/view/MotionEvent;
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -3258,7 +3258,7 @@
 
     move-result v3
 
-    if-ne v2, v3, :cond_3c
+    if-ne v2, v3, :cond_4
 
     .line 1728
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
@@ -3273,17 +3273,17 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_1
 
     move v2, v1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     move v2, v3
 
-    :goto_26
-    if-eqz v2, :cond_3c
+    :goto_0
+    if-eqz v2, :cond_4
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
@@ -3295,36 +3295,36 @@
 
     cmpg-float v2, v2, v4
 
-    if-nez v2, :cond_36
+    if-nez v2, :cond_2
 
     move v2, v1
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
+    :cond_2
     move v2, v3
 
-    :goto_37
-    if-nez v2, :cond_3a
+    :goto_1
+    if-nez v2, :cond_3
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_3a
+    :cond_3
     move v1, v3
 
-    goto :goto_3d
+    goto :goto_3
 
-    :cond_3c
-    :goto_3c
+    :cond_4
+    :goto_2
     nop
 
     .line 1727
-    :goto_3d
+    :goto_3
     return v1
 .end method
 
 .method private final pack-ZIaKswc(II)J
-    .registers 7
+    .locals 4
     .param p1, "a"    # I
     .param p2, "b"    # I
 
@@ -3359,12 +3359,12 @@
 .end method
 
 .method private final recalculateWindowPosition()V
-    .registers 12
+    .locals 11
 
     .line 1571
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->forceUseMatrixCache:Z
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_1
 
     .line 1572
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
@@ -3377,7 +3377,7 @@
 
     cmp-long v2, v0, v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_1
 
     .line 1574
     iput-wide v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->lastMatrixRecalculationAnimationTime:J
@@ -3398,10 +3398,10 @@
 
     .line 1578
     .local v3, "view":Landroid/view/View;
-    :goto_1a
+    :goto_0
     instance-of v4, v2, Landroid/view/ViewGroup;
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_0
 
     .line 1579
     move-object v3, v2
@@ -3417,10 +3417,10 @@
 
     move-result-object v2
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 1582
-    :cond_29
+    :cond_0
     iget-object v4, p0, Landroidx/compose/ui/platform/AndroidComposeView;->tmpPositionArray:[I
 
     invoke-virtual {v3, v4}, Landroid/view/View;->getLocationOnScreen([I)V
@@ -3479,12 +3479,12 @@
     .end local v5    # "windowX":F
     .end local v6    # "screenX":F
     .end local v8    # "screenY":F
-    :cond_4d
+    :cond_1
     return-void
 .end method
 
 .method private final recalculateWindowPosition(Landroid/view/MotionEvent;)V
-    .registers 7
+    .locals 5
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .line 1600
@@ -3554,7 +3554,7 @@
 .end method
 
 .method private final recalculateWindowViewTransforms()V
-    .registers 4
+    .locals 3
 
     .line 1611
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->matrixToWindow:Landroidx/compose/ui/platform/CalculateMatrixToWindow;
@@ -3579,7 +3579,7 @@
 .end method
 
 .method private final scheduleMeasureAndLayout(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 5
+    .locals 3
     .param p1, "nodeToRemeasure"    # Landroidx/compose/ui/node/LayoutNode;
 
     .line 833
@@ -3587,24 +3587,24 @@
 
     move-result v0
 
-    if-nez v0, :cond_42
+    if-nez v0, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isAttachedToWindow()Z
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_4
 
     .line 834
-    if-eqz p1, :cond_2e
+    if-eqz p1, :cond_1
 
     .line 840
     move-object v0, p1
 
     .line 841
     .local v0, "node":Landroidx/compose/ui/node/LayoutNode;
-    :goto_f
-    if-eqz v0, :cond_24
+    :goto_0
+    if-eqz v0, :cond_0
 
     .line 842
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getMeasuredByParent$ui_release()Landroidx/compose/ui/node/LayoutNode$UsageByParent;
@@ -3613,29 +3613,29 @@
 
     sget-object v2, Landroidx/compose/ui/node/LayoutNode$UsageByParent;->InMeasureBlock:Landroidx/compose/ui/node/LayoutNode$UsageByParent;
 
-    if-ne v1, v2, :cond_24
+    if-ne v1, v2, :cond_0
 
     .line 843
     invoke-direct {p0, v0}, Landroidx/compose/ui/platform/AndroidComposeView;->childSizeCanAffectParentSize(Landroidx/compose/ui/node/LayoutNode;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 845
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
 
-    goto :goto_f
+    goto :goto_0
 
     .line 847
-    :cond_24
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getRoot()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_2e
+    if-ne v0, v1, :cond_1
 
     .line 848
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->requestLayout()V
@@ -3645,56 +3645,56 @@
 
     .line 852
     .end local v0    # "node":Landroidx/compose/ui/node/LayoutNode;
-    :cond_2e
+    :cond_1
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getWidth()I
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getHeight()I
 
     move-result v0
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 856
-    :cond_3b
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->invalidate()V
 
-    goto :goto_42
+    goto :goto_2
 
     .line 854
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_1
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->requestLayout()V
 
     .line 859
-    :cond_42
-    :goto_42
+    :cond_4
+    :goto_2
     return-void
 .end method
 
 .method static synthetic scheduleMeasureAndLayout$default(Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/ui/node/LayoutNode;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 832
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->scheduleMeasureAndLayout(Landroidx/compose/ui/node/LayoutNode;)V
 
     return-void
 .end method
 
 .method private static final scrollChangedListener$lambda$2(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 2
+    .locals 1
     .param p0, "this$0"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     const-string/jumbo v0, "this$0"
@@ -3709,7 +3709,7 @@
 .end method
 
 .method private static final sendHoverExitEvent$lambda$5(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 5
+    .locals 4
     .param p0, "this$0"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     const-string/jumbo v0, "this$0"
@@ -3734,12 +3734,12 @@
 
     const/16 v3, 0xa
 
-    if-ne v2, v3, :cond_17
+    if-ne v2, v3, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_17
-    if-eqz v0, :cond_1d
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 523
     invoke-direct {p0, v1}, Landroidx/compose/ui/platform/AndroidComposeView;->sendMotionEvent-8iAsVTc(Landroid/view/MotionEvent;)I
@@ -3748,7 +3748,7 @@
     return-void
 
     .line 520
-    :cond_1d
+    :cond_1
     const/4 v0, 0x0
 
     .line 521
@@ -3771,7 +3771,7 @@
 .end method
 
 .method private final sendMotionEvent-8iAsVTc(Landroid/view/MotionEvent;)I
-    .registers 10
+    .locals 8
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .line 1430
@@ -3779,7 +3779,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 1431
     iput-boolean v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->keyboardModifiersRequireUpdate:Z
@@ -3798,7 +3798,7 @@
     invoke-virtual {v0, v2}, Landroidx/compose/ui/platform/WindowInfoImpl;->setKeyboardModifiers-5xRPYO0(I)V
 
     .line 1435
-    :cond_14
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->motionEventAdapter:Landroidx/compose/ui/input/pointer/MotionEventAdapter;
 
     move-object v2, p0
@@ -3814,7 +3814,7 @@
 
     .line 1436
     .local v0, "pointerInputEvent":Landroidx/compose/ui/input/pointer/PointerInputEvent;
-    if-eqz v0, :cond_7c
+    if-eqz v0, :cond_7
 
     .line 1442
     invoke-virtual {v0}, Landroidx/compose/ui/input/pointer/PointerInputEvent;->getPointers()Ljava/util/List;
@@ -3835,9 +3835,9 @@
 
     add-int/lit8 v3, v3, -0x1
 
-    if-ltz v3, :cond_42
+    if-ltz v3, :cond_3
 
-    :cond_2e
+    :cond_1
     move v4, v3
 
     .local v4, "index$iv":I
@@ -3866,27 +3866,27 @@
     .line 2130
     .end local v6    # "it":Landroidx/compose/ui/input/pointer/PointerInputEventData;
     .end local v7    # "$i$a$-fastLastOrNull-AndroidComposeView$sendMotionEvent$1":I
-    if-eqz v6, :cond_40
+    if-eqz v6, :cond_2
 
-    goto :goto_43
+    goto :goto_0
 
     .line 2128
     .end local v5    # "item$iv":Ljava/lang/Object;
-    :cond_40
-    if-gez v3, :cond_2e
+    :cond_2
+    if-gez v3, :cond_1
 
     .line 2132
     .end local v4    # "index$iv":I
-    :cond_42
+    :cond_3
     const/4 v5, 0x0
 
     .line 1442
     .end local v1    # "$this$fastLastOrNull$iv":Ljava/util/List;
     .end local v2    # "$i$f$fastLastOrNull":I
-    :goto_43
+    :goto_0
     check-cast v5, Landroidx/compose/ui/input/pointer/PointerInputEventData;
 
-    if-eqz v5, :cond_50
+    if-eqz v5, :cond_4
 
     invoke-virtual {v5}, Landroidx/compose/ui/input/pointer/PointerInputEventData;->getPosition-F1C5BW0()J
 
@@ -3908,7 +3908,7 @@
     nop
 
     .line 1446
-    :cond_50
+    :cond_4
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->pointerInputEventProcessor:Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;
 
     .line 1447
@@ -3937,19 +3937,19 @@
 
     .line 1452
     .local v2, "action":I
-    if-eqz v2, :cond_67
+    if-eqz v2, :cond_5
 
     const/4 v3, 0x5
 
-    if-ne v2, v3, :cond_7a
+    if-ne v2, v3, :cond_6
 
     .line 1453
-    :cond_67
+    :cond_5
     invoke-static {v1}, Landroidx/compose/ui/input/pointer/ProcessResult;->getDispatchedToAPointerInputModifier-impl(I)Z
 
     move-result v3
 
-    if-nez v3, :cond_7a
+    if-nez v3, :cond_6
 
     .line 1458
     iget-object v3, p0, Landroidx/compose/ui/platform/AndroidComposeView;->motionEventAdapter:Landroidx/compose/ui/input/pointer/MotionEventAdapter;
@@ -3965,15 +3965,15 @@
     invoke-virtual {v3, v4}, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->endStream(I)V
 
     .line 1460
-    :cond_7a
+    :cond_6
     nop
 
     .end local v1    # "result":I
     .end local v2    # "action":I
-    goto :goto_87
+    goto :goto_1
 
     .line 1462
-    :cond_7c
+    :cond_7
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->pointerInputEventProcessor:Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->processCancel()V
@@ -3990,12 +3990,12 @@
     move-result v1
 
     .line 1436
-    :goto_87
+    :goto_1
     return v1
 .end method
 
 .method private final sendSimulatedEvent(Landroid/view/MotionEvent;IJZ)V
-    .registers 29
+    .locals 23
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
     .param p2, "action"    # I
     .param p3, "eventTime"    # J
@@ -4014,28 +4014,28 @@
 
     const/4 v4, 0x0
 
-    sparse-switch v2, :sswitch_data_ea
+    sparse-switch v2, :sswitch_data_0
 
     .line 1480
-    goto :goto_17
+    goto :goto_0
 
     .line 1479
-    :sswitch_e
+    :sswitch_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v3
 
-    goto :goto_17
+    goto :goto_0
 
     .line 1478
-    :sswitch_13
-    packed-switch p2, :pswitch_data_f4
+    :sswitch_1
+    packed-switch p2, :pswitch_data_0
 
     move v3, v4
 
     .line 1477
-    :goto_17
-    :pswitch_17
+    :goto_0
+    :pswitch_0
     move v2, v3
 
     .line 1482
@@ -4046,33 +4046,33 @@
 
     const/4 v15, 0x1
 
-    if-ltz v2, :cond_21
+    if-ltz v2, :cond_0
 
     move v5, v15
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_21
+    :cond_0
     move v5, v4
 
-    :goto_22
+    :goto_1
     sub-int/2addr v3, v5
 
     .line 1483
     .local v3, "pointerCount":I
-    if-nez v3, :cond_26
+    if-nez v3, :cond_1
 
     .line 1484
     return-void
 
     .line 1486
-    :cond_26
+    :cond_1
     new-array v5, v3, [Landroid/view/MotionEvent$PointerProperties;
 
     move v6, v4
 
-    :goto_29
-    if-ge v6, v3, :cond_35
+    :goto_2
+    if-ge v6, v3, :cond_2
 
     new-instance v7, Landroid/view/MotionEvent$PointerProperties;
 
@@ -4082,9 +4082,9 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_29
+    goto :goto_2
 
-    :cond_35
+    :cond_2
     move-object/from16 v21, v5
 
     .line 1487
@@ -4093,8 +4093,8 @@
 
     move v6, v4
 
-    :goto_3a
-    if-ge v6, v3, :cond_46
+    :goto_3
+    if-ge v6, v3, :cond_3
 
     new-instance v7, Landroid/view/MotionEvent$PointerCoords;
 
@@ -4104,9 +4104,9 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_3a
+    goto :goto_3
 
-    :cond_46
+    :cond_3
     move-object/from16 v22, v5
 
     .line 1488
@@ -4114,26 +4114,26 @@
     const/4 v5, 0x0
 
     .local v5, "i":I
-    :goto_49
-    if-ge v5, v3, :cond_79
+    :goto_4
+    if-ge v5, v3, :cond_6
 
     .line 1489
-    if-ltz v2, :cond_52
+    if-ltz v2, :cond_5
 
-    if-ge v5, v2, :cond_50
+    if-ge v5, v2, :cond_4
 
-    goto :goto_52
+    goto :goto_5
 
-    :cond_50
+    :cond_4
     move v6, v15
 
-    goto :goto_53
+    goto :goto_6
 
-    :cond_52
-    :goto_52
+    :cond_5
+    :goto_5
     move v6, v4
 
-    :goto_53
+    :goto_6
     add-int/2addr v6, v5
 
     .line 1490
@@ -4186,21 +4186,21 @@
     .end local v10    # "screenPosition":J
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_49
+    goto :goto_4
 
     .line 1498
     .end local v5    # "i":I
-    :cond_79
-    if-eqz p5, :cond_7c
+    :cond_6
+    if-eqz p5, :cond_7
 
-    goto :goto_80
+    goto :goto_7
 
-    :cond_7c
+    :cond_7
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getButtonState()I
 
     move-result v4
 
-    :goto_80
+    :goto_7
     move v14, v4
 
     .line 1500
@@ -4215,15 +4215,15 @@
 
     cmp-long v4, v4, v6
 
-    if-nez v4, :cond_90
+    if-nez v4, :cond_8
 
     .line 1501
     move-wide/from16 v5, p3
 
-    goto :goto_95
+    goto :goto_8
 
     .line 1503
-    :cond_90
+    :cond_8
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getDownTime()J
 
     move-result-wide v4
@@ -4231,7 +4231,7 @@
     move-wide v5, v4
 
     .line 1500
-    :goto_95
+    :goto_8
     nop
 
     .line 1506
@@ -4357,39 +4357,39 @@
 
     nop
 
-    :sswitch_data_ea
+    :sswitch_data_0
     .sparse-switch
-        0x1 -> :sswitch_13
-        0x6 -> :sswitch_e
+        0x1 -> :sswitch_1
+        0x6 -> :sswitch_0
     .end sparse-switch
 
-    :pswitch_data_f4
+    :pswitch_data_0
     .packed-switch 0x9
-        :pswitch_17
-        :pswitch_17
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method static synthetic sendSimulatedEvent$default(Landroidx/compose/ui/platform/AndroidComposeView;Landroid/view/MotionEvent;IJZILjava/lang/Object;)V
-    .registers 14
+    .locals 6
 
     .line 1470
     and-int/lit8 p6, p6, 0x8
 
-    if-eqz p6, :cond_7
+    if-eqz p6, :cond_0
 
     .line 1474
     const/4 p5, 0x1
 
     move v5, p5
 
-    goto :goto_8
+    goto :goto_0
 
     .line 1470
-    :cond_7
+    :cond_0
     move v5, p5
 
-    :goto_8
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -4404,7 +4404,7 @@
 .end method
 
 .method private setFontFamilyResolver(Landroidx/compose/ui/text/font/FontFamily$Resolver;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/font/FontFamily$Resolver;
 
     .line 401
@@ -4431,7 +4431,7 @@
 .end method
 
 .method private setLayoutDirection(Landroidx/compose/ui/unit/LayoutDirection;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/ui/unit/LayoutDirection;
 
     .line 415
@@ -4458,7 +4458,7 @@
 .end method
 
 .method private final set_viewTreeOwners(Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
 
     .line 339
@@ -4485,7 +4485,7 @@
 .end method
 
 .method private static final touchModeChangeListener$lambda$3(Landroidx/compose/ui/platform/AndroidComposeView;Z)V
-    .registers 4
+    .locals 2
     .param p0, "this$0"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p1, "touchMode"    # Z
 
@@ -4498,20 +4498,20 @@
 
     sget-object v1, Landroidx/compose/ui/input/InputMode;->Companion:Landroidx/compose/ui/input/InputMode$Companion;
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/InputMode$Companion;->getTouch-aOaMEAU()I
 
     move-result v1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     invoke-virtual {v1}, Landroidx/compose/ui/input/InputMode$Companion;->getKeyboard-aOaMEAU()I
 
     move-result v1
 
-    :goto_15
+    :goto_0
     invoke-virtual {v0, v1}, Landroidx/compose/ui/input/InputModeManagerImpl;->setInputMode-iuPiT84(I)V
 
     .line 369
@@ -4519,7 +4519,7 @@
 .end method
 
 .method private final updatePositionCacheAndDispatch()V
-    .registers 8
+    .locals 7
 
     .line 1018
     const/4 v0, 0x0
@@ -4552,14 +4552,14 @@
 
     const/4 v5, 0x1
 
-    if-ne v3, v4, :cond_1c
+    if-ne v3, v4, :cond_0
 
     aget v6, v2, v5
 
-    if-eq v1, v6, :cond_3b
+    if-eq v1, v6, :cond_1
 
     .line 1022
-    :cond_1c
+    :cond_0
     aget v2, v2, v5
 
     invoke-static {v4, v2}, Landroidx/compose/ui/unit/IntOffsetKt;->IntOffset(II)J
@@ -4571,9 +4571,9 @@
     .line 1023
     const v2, 0x7fffffff
 
-    if-eq v3, v2, :cond_3b
+    if-eq v3, v2, :cond_1
 
-    if-eq v1, v2, :cond_3b
+    if-eq v1, v2, :cond_1
 
     .line 1024
     const/4 v0, 0x1
@@ -4594,7 +4594,7 @@
     invoke-virtual {v2}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$MeasurePassDelegate;->notifyChildrenUsingCoordinatesWhilePlacing()V
 
     .line 1028
-    :cond_3b
+    :cond_1
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
 
     invoke-virtual {v2, v0}, Landroidx/compose/ui/node/MeasureAndLayoutDelegate;->dispatchOnPositionedCallbacks(Z)V
@@ -4606,7 +4606,7 @@
 
 # virtual methods
 .method public final addAndroidView(Landroidx/compose/ui/viewinterop/AndroidViewHolder;Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 6
+    .locals 3
     .param p1, "view"    # Landroidx/compose/ui/viewinterop/AndroidViewHolder;
     .param p2, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
 
@@ -4692,7 +4692,7 @@
 .end method
 
 .method public autofill(Landroid/util/SparseArray;)V
-    .registers 3
+    .locals 1
     .param p1, "values"    # Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4712,21 +4712,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_autofill:Landroidx/compose/ui/autofill/AndroidAutofill;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-static {v0, p1}, Landroidx/compose/ui/autofill/AndroidAutofill_androidKt;->performAutofill(Landroidx/compose/ui/autofill/AndroidAutofill;Landroid/util/SparseArray;)V
 
     .line 1298
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public final boundsUpdatesEventLoop(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4750,11 +4750,11 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     return-object v0
 
-    :cond_d
+    :cond_0
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 1200
@@ -4762,7 +4762,7 @@
 .end method
 
 .method public calculateLocalPosition-MK-Hz9U(J)J
-    .registers 5
+    .locals 2
     .param p1, "positionInWindow"    # J
 
     .line 1622
@@ -4779,7 +4779,7 @@
 .end method
 
 .method public calculatePositionInWindow-MK-Hz9U(J)J
-    .registers 5
+    .locals 2
     .param p1, "localPosition"    # J
 
     .line 1627
@@ -4796,7 +4796,7 @@
 .end method
 
 .method public canScrollHorizontally(I)Z
-    .registers 6
+    .locals 4
     .param p1, "direction"    # I
 
     .line 1542
@@ -4814,7 +4814,7 @@
 .end method
 
 .method public canScrollVertically(I)Z
-    .registers 6
+    .locals 4
     .param p1, "direction"    # I
 
     .line 1546
@@ -4832,7 +4832,7 @@
 .end method
 
 .method public createLayer(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)Landroidx/compose/ui/node/OwnedLayer;
-    .registers 7
+    .locals 4
     .param p1, "drawBlock"    # Lkotlin/jvm/functions/Function1;
     .param p2, "invalidateParentLayer"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -4869,7 +4869,7 @@
 
     .line 1040
     .local v0, "layer":Landroidx/compose/ui/node/OwnedLayer;
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 1041
     invoke-interface {v0, p1, p2}, Landroidx/compose/ui/node/OwnedLayer;->reuseLayer(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
@@ -4878,12 +4878,12 @@
     return-object v0
 
     .line 1049
-    :cond_1a
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isHardwareAccelerated()Z
 
     move-result v1
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     .line 1050
     nop
@@ -4891,13 +4891,13 @@
     .line 1051
     iget-boolean v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->isRenderNodeCompatible:Z
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     .line 1053
     nop
 
     .line 1054
-    :try_start_26
+    :try_start_0
     new-instance v1, Landroidx/compose/ui/platform/RenderNodeLayer;
 
     .line 1055
@@ -4913,13 +4913,13 @@
     invoke-direct {v1, p0, p1, p2}, Landroidx/compose/ui/platform/RenderNodeLayer;-><init>(Landroidx/compose/ui/platform/AndroidComposeView;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
     check-cast v1, Landroidx/compose/ui/node/OwnedLayer;
-    :try_end_30
-    .catchall {:try_start_26 .. :try_end_30} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-object v1
 
     .line 1059
-    :catchall_31
+    :catchall_0
     move-exception v1
 
     .line 1060
@@ -4930,10 +4930,10 @@
 
     .line 1063
     .end local v1    # "_":Ljava/lang/Throwable;
-    :cond_35
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->viewLayersContainer:Landroidx/compose/ui/platform/DrawChildContainer;
 
-    if-nez v1, :cond_7c
+    if-nez v1, :cond_4
 
     .line 1064
     sget-object v1, Landroidx/compose/ui/platform/ViewLayer;->Companion:Landroidx/compose/ui/platform/ViewLayer$Companion;
@@ -4942,7 +4942,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_4f
+    if-nez v1, :cond_2
 
     .line 1067
     sget-object v1, Landroidx/compose/ui/platform/ViewLayer;->Companion:Landroidx/compose/ui/platform/ViewLayer$Companion;
@@ -4958,7 +4958,7 @@
     invoke-virtual {v1, v2}, Landroidx/compose/ui/platform/ViewLayer$Companion;->updateDisplayList(Landroid/view/View;)V
 
     .line 1069
-    :cond_4f
+    :cond_2
     sget-object v1, Landroidx/compose/ui/platform/ViewLayer;->Companion:Landroidx/compose/ui/platform/ViewLayer$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/platform/ViewLayer$Companion;->getShouldUseDispatchDraw()Z
@@ -4967,7 +4967,7 @@
 
     const-string/jumbo v2, "context"
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_3
 
     .line 1070
     new-instance v1, Landroidx/compose/ui/platform/DrawChildContainer;
@@ -4980,10 +4980,10 @@
 
     invoke-direct {v1, v3}, Landroidx/compose/ui/platform/DrawChildContainer;-><init>(Landroid/content/Context;)V
 
-    goto :goto_75
+    goto :goto_0
 
     .line 1072
-    :cond_67
+    :cond_3
     new-instance v1, Landroidx/compose/ui/platform/ViewLayerContainer;
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getContext()Landroid/content/Context;
@@ -4997,7 +4997,7 @@
     check-cast v1, Landroidx/compose/ui/platform/DrawChildContainer;
 
     .line 1069
-    :goto_75
+    :goto_0
     iput-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->viewLayersContainer:Landroidx/compose/ui/platform/DrawChildContainer;
 
     .line 1074
@@ -5006,7 +5006,7 @@
     invoke-virtual {p0, v1}, Landroidx/compose/ui/platform/AndroidComposeView;->addView(Landroid/view/View;)V
 
     .line 1076
-    :cond_7c
+    :cond_4
     new-instance v1, Landroidx/compose/ui/platform/ViewLayer;
 
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->viewLayersContainer:Landroidx/compose/ui/platform/DrawChildContainer;
@@ -5021,7 +5021,7 @@
 .end method
 
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 10
+    .locals 8
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     const-string/jumbo v0, "canvas"
@@ -5033,7 +5033,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 1125
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getRoot()Landroidx/compose/ui/node/LayoutNode;
@@ -5043,7 +5043,7 @@
     invoke-direct {p0, v0}, Landroidx/compose/ui/platform/AndroidComposeView;->invalidateLayers(Landroidx/compose/ui/node/LayoutNode;)V
 
     .line 1127
-    :cond_13
+    :cond_0
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/ui/node/Owner;
@@ -5130,7 +5130,7 @@
 
     xor-int/2addr v0, v3
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_1
 
     .line 1136
     const/4 v0, 0x0
@@ -5142,8 +5142,8 @@
 
     move-result v1
 
-    :goto_59
-    if-ge v0, v1, :cond_69
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 1137
     iget-object v3, p0, Landroidx/compose/ui/platform/AndroidComposeView;->dirtyLayers:Ljava/util/List;
@@ -5162,18 +5162,18 @@
     .end local v3    # "layer":Landroidx/compose/ui/node/OwnedLayer;
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_59
+    goto :goto_0
 
     .line 1142
     .end local v0    # "i":I
-    :cond_69
+    :cond_1
     sget-object v0, Landroidx/compose/ui/platform/ViewLayer;->Companion:Landroidx/compose/ui/platform/ViewLayer$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/ViewLayer$Companion;->getShouldUseDispatchDraw()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7f
+    if-eqz v0, :cond_2
 
     .line 1146
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -5194,7 +5194,7 @@
 
     .line 1153
     .end local v0    # "saveCount":I
-    :cond_7f
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->dirtyLayers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
@@ -5205,7 +5205,7 @@
     .line 1160
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->postponedDirtyLayers:Ljava/util/List;
 
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_3
 
     .line 1161
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
@@ -5225,12 +5225,12 @@
 
     .line 1165
     .end local v0    # "postponed":Ljava/util/List;
-    :cond_98
+    :cond_3
     return-void
 .end method
 
 .method public dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
-    .registers 4
+    .locals 2
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     const-string/jumbo v0, "event"
@@ -5245,7 +5245,7 @@
     .line 1301
     const/16 v1, 0x8
 
-    if-ne v0, v1, :cond_36
+    if-ne v0, v1, :cond_3
 
     .line 1302
     const/high16 v0, 0x400000
@@ -5254,32 +5254,32 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->handleRotaryEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 1303
-    :cond_1b
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->isBadMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_2
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isAttachedToWindow()Z
 
     move-result v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_1
 
-    goto :goto_31
+    goto :goto_0
 
     .line 1306
-    :cond_28
+    :cond_1
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->handleMotionEvent-8iAsVTc(Landroid/view/MotionEvent;)I
 
     move-result v0
@@ -5288,30 +5288,30 @@
 
     move-result v0
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 1304
-    :cond_31
-    :goto_31
+    :cond_2
+    :goto_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 1309
-    :cond_36
+    :cond_3
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     .line 1310
-    :goto_3a
+    :goto_1
     return v0
 .end method
 
 .method public dispatchHoverEvent(Landroid/view/MotionEvent;)Z
-    .registers 5
+    .locals 3
     .param p1, "event"    # Landroid/view/MotionEvent;
 
     const-string/jumbo v0, "event"
@@ -5321,7 +5321,7 @@
     .line 1657
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->hoverExitReceived:Z
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 1659
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->sendHoverExitEvent:Ljava/lang/Runnable;
@@ -5334,25 +5334,25 @@
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     .line 1662
-    :cond_14
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->isBadMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_69
+    if-nez v0, :cond_5
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isAttachedToWindow()Z
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_1
 
-    goto :goto_69
+    goto :goto_1
 
     .line 1668
-    :cond_22
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
@@ -5362,17 +5362,17 @@
 
     move-result v0
 
-    sparse-switch v0, :sswitch_data_6a
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_60
+    goto :goto_0
 
     .line 1672
-    :sswitch_2f
+    :sswitch_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->isInBounds(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_4
 
     .line 1673
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getToolType(I)I
@@ -5381,17 +5381,17 @@
 
     const/4 v2, 0x3
 
-    if-eq v0, v2, :cond_52
+    if-eq v0, v2, :cond_3
 
     .line 1677
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->previousMotionEvent:Landroid/view/MotionEvent;
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     .line 1678
-    :cond_43
+    :cond_2
     invoke-static {p1}, Landroid/view/MotionEvent;->obtainNoHistory(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
@@ -5412,30 +5412,30 @@
     return v1
 
     .line 1682
-    :cond_52
+    :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getButtonState()I
 
     move-result v0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_4
 
     .line 1684
     return v1
 
     .line 1691
-    :sswitch_59
+    :sswitch_1
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->isPositionChanged(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    if-nez v0, :cond_60
+    if-nez v0, :cond_4
 
     .line 1692
     return v1
 
     .line 1695
-    :cond_60
-    :goto_60
+    :cond_4
+    :goto_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->handleMotionEvent-8iAsVTc(Landroid/view/MotionEvent;)I
 
     move-result v0
@@ -5450,19 +5450,19 @@
 
     .line 1663
     .end local v0    # "result":I
-    :cond_69
-    :goto_69
+    :cond_5
+    :goto_1
     return v1
 
-    :sswitch_data_6a
+    :sswitch_data_0
     .sparse-switch
-        0x7 -> :sswitch_59
-        0xa -> :sswitch_2f
+        0x7 -> :sswitch_1
+        0xa -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 2
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     const-string/jumbo v0, "event"
@@ -5474,7 +5474,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 645
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_windowInfo:Landroidx/compose/ui/platform/WindowInfoImpl;
@@ -5502,30 +5502,30 @@
 
     move-result v0
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_1
 
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_0
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2e
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_30
-    :goto_30
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_31
+    :goto_1
     return v0
 
     .line 652
-    :cond_32
+    :cond_2
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
@@ -5534,7 +5534,7 @@
 .end method
 
 .method public dispatchKeyEventPreIme(Landroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 2
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     const-string/jumbo v0, "event"
@@ -5546,7 +5546,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getFocusOwner()Landroidx/compose/ui/focus/FocusOwner;
 
@@ -5560,31 +5560,31 @@
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     .line 662
-    :cond_1a
+    :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchKeyEventPreIme(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_2
 
-    :cond_20
+    :cond_1
     const/4 v0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_2
     const/4 v0, 0x0
 
     .line 657
-    :goto_23
+    :goto_0
     return v0
 .end method
 
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 5
+    .locals 3
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     const-string/jumbo v0, "motionEvent"
@@ -5596,7 +5596,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 1317
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->sendHoverExitEvent:Ljava/lang/Runnable;
@@ -5614,69 +5614,69 @@
 
     move-result v2
 
-    if-nez v2, :cond_25
+    if-nez v2, :cond_1
 
     .line 1320
     invoke-direct {p0, p1, v0}, Landroidx/compose/ui/platform/AndroidComposeView;->hasChangedDevices(Landroid/view/MotionEvent;Landroid/view/MotionEvent;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 1324
-    :cond_22
+    :cond_0
     iput-boolean v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->hoverExitReceived:Z
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 1322
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->sendHoverExitEvent:Ljava/lang/Runnable;
 
     invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
     .line 1327
     .end local v0    # "lastEvent":Landroid/view/MotionEvent;
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_1
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->isBadMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_6
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isAttachedToWindow()Z
 
     move-result v0
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_3
 
-    goto :goto_5c
+    goto :goto_2
 
     .line 1331
-    :cond_37
+    :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     const/4 v2, 0x2
 
-    if-ne v0, v2, :cond_45
+    if-ne v0, v2, :cond_4
 
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->isPositionChanged(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    if-nez v0, :cond_45
+    if-nez v0, :cond_4
 
     .line 1335
     return v1
 
     .line 1338
-    :cond_45
+    :cond_4
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->handleMotionEvent-8iAsVTc(Landroid/view/MotionEvent;)I
 
     move-result v0
@@ -5687,7 +5687,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_5
 
     .line 1341
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getParent()Landroid/view/ViewParent;
@@ -5699,7 +5699,7 @@
     invoke-interface {v1, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
     .line 1344
-    :cond_57
+    :cond_5
     invoke-static {v0}, Landroidx/compose/ui/input/pointer/ProcessResult;->getDispatchedToAPointerInputModifier-impl(I)Z
 
     move-result v1
@@ -5708,13 +5708,13 @@
 
     .line 1328
     .end local v0    # "processResult":I
-    :cond_5c
-    :goto_5c
+    :cond_6
+    :goto_2
     return v1
 .end method
 
 .method public final drawAndroidView(Landroidx/compose/ui/viewinterop/AndroidViewHolder;Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 1
     .param p1, "view"    # Landroidx/compose/ui/viewinterop/AndroidViewHolder;
     .param p2, "canvas"    # Landroid/graphics/Canvas;
 
@@ -5738,7 +5738,7 @@
 .end method
 
 .method public final findViewByAccessibilityIdTraversal(I)Landroid/view/View;
-    .registers 9
+    .locals 7
     .param p1, "accessibilityId"    # I
 
     .line 1787
@@ -5747,12 +5747,12 @@
     .line 1794
     const/4 v0, 0x0
 
-    :try_start_2
+    :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1d
 
-    if-lt v1, v2, :cond_32
+    if-lt v1, v2, :cond_1
 
     const-class v1, Landroid/view/View;
 
@@ -5795,20 +5795,20 @@
 
     instance-of v3, v2, Landroid/view/View;
 
-    if-eqz v3, :cond_31
+    if-eqz v3, :cond_0
 
     check-cast v2, Landroid/view/View;
 
     move-object v0, v2
 
-    goto :goto_39
+    goto :goto_0
 
     .end local v1    # "findViewByAccessibilityIdTraversalMethod":Ljava/lang/reflect/Method;
-    :cond_31
-    goto :goto_39
+    :cond_0
+    goto :goto_0
 
     .line 1800
-    :cond_32
+    :cond_1
     move-object v1, p0
 
     check-cast v1, Landroid/view/View;
@@ -5816,15 +5816,15 @@
     invoke-direct {p0, p1, v1}, Landroidx/compose/ui/platform/AndroidComposeView;->findViewByAccessibilityIdRootedAtCurrentView(ILandroid/view/View;)Landroid/view/View;
 
     move-result-object v0
-    :try_end_39
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_2 .. :try_end_39} :catch_3a
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 1794
-    :goto_39
+    :goto_0
     return-object v0
 
     .line 1802
-    :catch_3a
+    :catch_0
     move-exception v1
 
     .line 1803
@@ -5833,7 +5833,7 @@
 .end method
 
 .method public forceMeasureTheSubtree(Landroidx/compose/ui/node/LayoutNode;Z)V
-    .registers 4
+    .locals 1
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
 
@@ -5851,7 +5851,7 @@
 .end method
 
 .method public bridge synthetic getAccessibilityManager()Landroidx/compose/ui/platform/AccessibilityManager;
-    .registers 2
+    .locals 1
 
     .line 163
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getAccessibilityManager()Landroidx/compose/ui/platform/AndroidAccessibilityManager;
@@ -5864,7 +5864,7 @@
 .end method
 
 .method public getAccessibilityManager()Landroidx/compose/ui/platform/AndroidAccessibilityManager;
-    .registers 2
+    .locals 1
 
     .line 276
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityManager:Landroidx/compose/ui/platform/AndroidAccessibilityManager;
@@ -5873,12 +5873,12 @@
 .end method
 
 .method public final getAndroidViewsHandler$ui_release()Landroidx/compose/ui/platform/AndroidViewsHandler;
-    .registers 4
+    .locals 3
 
     .line 292
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_androidViewsHandler:Landroidx/compose/ui/platform/AndroidViewsHandler;
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 293
     new-instance v0, Landroidx/compose/ui/platform/AndroidViewsHandler;
@@ -5901,7 +5901,7 @@
     invoke-virtual {p0, v0}, Landroidx/compose/ui/platform/AndroidComposeView;->addView(Landroid/view/View;)V
 
     .line 296
-    :cond_1a
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_androidViewsHandler:Landroidx/compose/ui/platform/AndroidViewsHandler;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
@@ -5910,7 +5910,7 @@
 .end method
 
 .method public getAutofill()Landroidx/compose/ui/autofill/Autofill;
-    .registers 2
+    .locals 1
 
     .line 264
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_autofill:Landroidx/compose/ui/autofill/AndroidAutofill;
@@ -5921,7 +5921,7 @@
 .end method
 
 .method public getAutofillTree()Landroidx/compose/ui/autofill/AutofillTree;
-    .registers 2
+    .locals 1
 
     .line 237
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->autofillTree:Landroidx/compose/ui/autofill/AutofillTree;
@@ -5930,7 +5930,7 @@
 .end method
 
 .method public getClipboardManager()Landroidx/compose/ui/platform/AndroidClipboardManager;
-    .registers 2
+    .locals 1
 
     .line 271
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->clipboardManager:Landroidx/compose/ui/platform/AndroidClipboardManager;
@@ -5939,7 +5939,7 @@
 .end method
 
 .method public bridge synthetic getClipboardManager()Landroidx/compose/ui/platform/ClipboardManager;
-    .registers 2
+    .locals 1
 
     .line 163
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getClipboardManager()Landroidx/compose/ui/platform/AndroidClipboardManager;
@@ -5952,7 +5952,7 @@
 .end method
 
 .method public final getConfigurationChangeObserver()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -5970,7 +5970,7 @@
 .end method
 
 .method public getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 455
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->coroutineContext:Lkotlin/coroutines/CoroutineContext;
@@ -5979,7 +5979,7 @@
 .end method
 
 .method public getDensity()Landroidx/compose/ui/unit/Density;
-    .registers 2
+    .locals 1
 
     .line 189
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->density:Landroidx/compose/ui/unit/Density;
@@ -5988,7 +5988,7 @@
 .end method
 
 .method public getFocusDirection-P8AzH3I(Landroid/view/KeyEvent;)Landroidx/compose/ui/focus/FocusDirection;
-    .registers 8
+    .locals 6
     .param p1, "keyEvent"    # Landroid/view/KeyEvent;
 
     const-string/jumbo v0, "keyEvent"
@@ -6011,13 +6011,13 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_1
 
     invoke-static {p1}, Landroidx/compose/ui/input/key/KeyEvent_androidKt;->isShiftPressed-ZmokQxo(Landroid/view/KeyEvent;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -6025,24 +6025,24 @@
 
     move-result v0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getNext-dhqQ-8s()I
 
     move-result v0
 
-    :goto_29
+    :goto_0
     invoke-static {v0}, Landroidx/compose/ui/focus/FocusDirection;->box-impl(I)Landroidx/compose/ui/focus/FocusDirection;
 
     move-result-object v0
 
-    goto/16 :goto_e7
+    goto/16 :goto_4
 
     .line 1113
-    :cond_2f
+    :cond_1
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getDirectionRight-EK5gGoQ()J
@@ -6053,7 +6053,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_47
+    if-eqz v2, :cond_2
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -6065,10 +6065,10 @@
 
     move-result-object v0
 
-    goto/16 :goto_e7
+    goto/16 :goto_4
 
     .line 1114
-    :cond_47
+    :cond_2
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getDirectionLeft-EK5gGoQ()J
@@ -6079,7 +6079,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5f
+    if-eqz v2, :cond_3
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -6091,10 +6091,10 @@
 
     move-result-object v0
 
-    goto/16 :goto_e7
+    goto/16 :goto_4
 
     .line 1115
-    :cond_5f
+    :cond_3
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getDirectionUp-EK5gGoQ()J
@@ -6105,7 +6105,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_77
+    if-eqz v2, :cond_4
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -6117,10 +6117,10 @@
 
     move-result-object v0
 
-    goto/16 :goto_e7
+    goto/16 :goto_4
 
     .line 1116
-    :cond_77
+    :cond_4
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getDirectionDown-EK5gGoQ()J
@@ -6131,7 +6131,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_8e
+    if-eqz v2, :cond_5
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -6143,10 +6143,10 @@
 
     move-result-object v0
 
-    goto :goto_e7
+    goto :goto_4
 
     .line 1117
-    :cond_8e
+    :cond_5
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getDirectionCenter-EK5gGoQ()J
@@ -6159,13 +6159,13 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_9d
+    if-eqz v2, :cond_6
 
     move v2, v3
 
-    goto :goto_a7
+    goto :goto_1
 
-    :cond_9d
+    :cond_6
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getEnter-EK5gGoQ()J
@@ -6176,14 +6176,14 @@
 
     move-result v2
 
-    :goto_a7
-    if-eqz v2, :cond_ab
+    :goto_1
+    if-eqz v2, :cond_7
 
     move v2, v3
 
-    goto :goto_b5
+    goto :goto_2
 
-    :cond_ab
+    :cond_7
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getNumPadEnter-EK5gGoQ()J
@@ -6194,8 +6194,8 @@
 
     move-result v2
 
-    :goto_b5
-    if-eqz v2, :cond_c2
+    :goto_2
+    if-eqz v2, :cond_8
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -6207,10 +6207,10 @@
 
     move-result-object v0
 
-    goto :goto_e7
+    goto :goto_4
 
     .line 1118
-    :cond_c2
+    :cond_8
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getBack-EK5gGoQ()J
@@ -6221,11 +6221,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_cf
+    if-eqz v2, :cond_9
 
-    goto :goto_d9
+    goto :goto_3
 
-    :cond_cf
+    :cond_9
     sget-object v2, Landroidx/compose/ui/input/key/Key;->Companion:Landroidx/compose/ui/input/key/Key$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/key/Key$Companion;->getEscape-EK5gGoQ()J
@@ -6236,8 +6236,8 @@
 
     move-result v3
 
-    :goto_d9
-    if-eqz v3, :cond_e6
+    :goto_3
+    if-eqz v3, :cond_a
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -6249,19 +6249,19 @@
 
     move-result-object v0
 
-    goto :goto_e7
+    goto :goto_4
 
     .line 1119
-    :cond_e6
+    :cond_a
     const/4 v0, 0x0
 
     .line 1111
-    :goto_e7
+    :goto_4
     return-object v0
 .end method
 
 .method public getFocusOwner()Landroidx/compose/ui/focus/FocusOwner;
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->focusOwner:Landroidx/compose/ui/focus/FocusOwner;
@@ -6270,7 +6270,7 @@
 .end method
 
 .method public getFocusedRect(Landroid/graphics/Rect;)V
-    .registers 5
+    .locals 3
     .param p1, "rect"    # Landroid/graphics/Rect;
 
     const-string/jumbo v0, "rect"
@@ -6286,7 +6286,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_0
 
     .local v0, "$this$getFocusedRect_u24lambda_u246":Landroidx/compose/ui/geometry/Rect;
     const/4 v1, 0x0
@@ -6344,24 +6344,24 @@
     .end local v1    # "$i$a$-run-AndroidComposeView$getFocusedRect$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    goto :goto_3e
+    goto :goto_0
 
-    :cond_3d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_3e
-    if-nez v0, :cond_43
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 595
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->getFocusedRect(Landroid/graphics/Rect;)V
 
     .line 596
-    :cond_43
+    :cond_1
     return-void
 .end method
 
 .method public getFontFamilyResolver()Landroidx/compose/ui/text/font/FontFamily$Resolver;
-    .registers 4
+    .locals 3
 
     .line 401
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->fontFamilyResolver$delegate:Landroidx/compose/runtime/MutableState;
@@ -6390,7 +6390,7 @@
 .end method
 
 .method public getFontLoader()Landroidx/compose/ui/text/font/Font$ResourceLoader;
-    .registers 2
+    .locals 1
 
     .line 397
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->fontLoader:Landroidx/compose/ui/text/font/Font$ResourceLoader;
@@ -6399,7 +6399,7 @@
 .end method
 
 .method public getHapticFeedBack()Landroidx/compose/ui/hapticfeedback/HapticFeedback;
-    .registers 2
+    .locals 1
 
     .line 423
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->hapticFeedBack:Landroidx/compose/ui/hapticfeedback/HapticFeedback;
@@ -6408,7 +6408,7 @@
 .end method
 
 .method public getHasPendingMeasureOrLayout()Z
-    .registers 2
+    .locals 1
 
     .line 316
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
@@ -6421,7 +6421,7 @@
 .end method
 
 .method public getInputModeManager()Landroidx/compose/ui/input/InputModeManager;
-    .registers 2
+    .locals 1
 
     .line 445
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_inputModeManager:Landroidx/compose/ui/input/InputModeManagerImpl;
@@ -6432,7 +6432,7 @@
 .end method
 
 .method public final getLastMatrixRecalculationAnimationTime$ui_release()J
-    .registers 3
+    .locals 2
 
     .line 325
     iget-wide v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->lastMatrixRecalculationAnimationTime:J
@@ -6441,7 +6441,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 4
+    .locals 3
 
     .line 415
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->layoutDirection$delegate:Landroidx/compose/runtime/MutableState;
@@ -6470,7 +6470,7 @@
 .end method
 
 .method public getMeasureIteration()J
-    .registers 3
+    .locals 2
 
     .line 311
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
@@ -6483,7 +6483,7 @@
 .end method
 
 .method public getModifierLocalManager()Landroidx/compose/ui/modifier/ModifierLocalManager;
-    .registers 2
+    .locals 1
 
     .line 447
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->modifierLocalManager:Landroidx/compose/ui/modifier/ModifierLocalManager;
@@ -6492,7 +6492,7 @@
 .end method
 
 .method public bridge synthetic getPlatformTextInputPluginRegistry()Landroidx/compose/ui/text/input/PlatformTextInputPluginRegistry;
-    .registers 2
+    .locals 1
 
     .line 163
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getPlatformTextInputPluginRegistry()Landroidx/compose/ui/text/input/PlatformTextInputPluginRegistryImpl;
@@ -6505,7 +6505,7 @@
 .end method
 
 .method public getPlatformTextInputPluginRegistry()Landroidx/compose/ui/text/input/PlatformTextInputPluginRegistryImpl;
-    .registers 2
+    .locals 1
 
     .line 376
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->platformTextInputPluginRegistry:Landroidx/compose/ui/text/input/PlatformTextInputPluginRegistryImpl;
@@ -6514,7 +6514,7 @@
 .end method
 
 .method public getPointerIconService()Landroidx/compose/ui/input/pointer/PointerIconService;
-    .registers 2
+    .locals 1
 
     .line 1757
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->pointerIconService:Landroidx/compose/ui/input/pointer/PointerIconService;
@@ -6523,7 +6523,7 @@
 .end method
 
 .method public getRoot()Landroidx/compose/ui/node/LayoutNode;
-    .registers 2
+    .locals 1
 
     .line 217
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -6532,7 +6532,7 @@
 .end method
 
 .method public getRootForTest()Landroidx/compose/ui/node/RootForTest;
-    .registers 2
+    .locals 1
 
     .line 228
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->rootForTest:Landroidx/compose/ui/node/RootForTest;
@@ -6541,7 +6541,7 @@
 .end method
 
 .method public getSemanticsOwner()Landroidx/compose/ui/semantics/SemanticsOwner;
-    .registers 2
+    .locals 1
 
     .line 230
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->semanticsOwner:Landroidx/compose/ui/semantics/SemanticsOwner;
@@ -6550,7 +6550,7 @@
 .end method
 
 .method public getSharedDrawScope()Landroidx/compose/ui/node/LayoutNodeDrawScope;
-    .registers 2
+    .locals 1
 
     .line 185
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->sharedDrawScope:Landroidx/compose/ui/node/LayoutNodeDrawScope;
@@ -6559,7 +6559,7 @@
 .end method
 
 .method public getShowLayoutBounds()Z
-    .registers 2
+    .locals 1
 
     .line 287
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->showLayoutBounds:Z
@@ -6568,7 +6568,7 @@
 .end method
 
 .method public getSnapshotObserver()Landroidx/compose/ui/node/OwnerSnapshotObserver;
-    .registers 2
+    .locals 1
 
     .line 278
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->snapshotObserver:Landroidx/compose/ui/node/OwnerSnapshotObserver;
@@ -6577,7 +6577,7 @@
 .end method
 
 .method public getTextInputService()Landroidx/compose/ui/text/input/TextInputService;
-    .registers 2
+    .locals 1
 
     .line 388
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->textInputService:Landroidx/compose/ui/text/input/TextInputService;
@@ -6586,7 +6586,7 @@
 .end method
 
 .method public getTextToolbar()Landroidx/compose/ui/platform/TextToolbar;
-    .registers 2
+    .locals 1
 
     .line 453
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->textToolbar:Landroidx/compose/ui/platform/TextToolbar;
@@ -6595,7 +6595,7 @@
 .end method
 
 .method public getView()Landroid/view/View;
-    .registers 2
+    .locals 1
 
     .line 187
     move-object v0, p0
@@ -6606,7 +6606,7 @@
 .end method
 
 .method public getViewConfiguration()Landroidx/compose/ui/platform/ViewConfiguration;
-    .registers 2
+    .locals 1
 
     .line 312
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->viewConfiguration:Landroidx/compose/ui/platform/ViewConfiguration;
@@ -6615,7 +6615,7 @@
 .end method
 
 .method public final getViewTreeOwners()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
-    .registers 4
+    .locals 3
 
     .line 348
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->viewTreeOwners$delegate:Landroidx/compose/runtime/State;
@@ -6642,7 +6642,7 @@
 .end method
 
 .method public getWindowInfo()Landroidx/compose/ui/platform/WindowInfo;
-    .registers 2
+    .locals 1
 
     .line 198
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_windowInfo:Landroidx/compose/ui/platform/WindowInfoImpl;
@@ -6653,7 +6653,7 @@
 .end method
 
 .method public invalidateDescendants()V
-    .registers 2
+    .locals 1
 
     .line 1219
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getRoot()Landroidx/compose/ui/node/LayoutNode;
@@ -6667,21 +6667,21 @@
 .end method
 
 .method public isLifecycleInResumedState()Z
-    .registers 3
+    .locals 2
 
     .line 1808
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getViewTreeOwners()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object v0
 
     .line 1809
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 1808
     nop
@@ -6691,37 +6691,37 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 1808
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
     .line 1809
-    :goto_19
+    :goto_0
     sget-object v1, Landroidx/lifecycle/Lifecycle$State;->RESUMED:Landroidx/lifecycle/Lifecycle$State;
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_20
+    :goto_1
     return v0
 .end method
 
 .method public localToScreen-MK-Hz9U(J)J
-    .registers 9
+    .locals 6
     .param p1, "localPosition"    # J
 
     .line 1555
@@ -6770,7 +6770,7 @@
 .end method
 
 .method public measureAndLayout(Z)V
-    .registers 11
+    .locals 9
     .param p1, "sendPointerUpdate"    # Z
 
     .line 874
@@ -6780,7 +6780,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 875
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
@@ -6789,10 +6789,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_3
 
     .line 877
-    :cond_10
+    :cond_0
     const-string v0, "AndroidOwner:measureAndLayout"
 
     .local v0, "sectionName$iv":Ljava/lang/String;
@@ -6812,28 +6812,28 @@
     .local v2, "$i$a$-trace-AndroidComposeView$measureAndLayout$1":I
     const/4 v3, 0x0
 
-    if-eqz p1, :cond_20
+    if-eqz p1, :cond_1
 
-    :try_start_1b
+    :try_start_0
     iget-object v4, p0, Landroidx/compose/ui/platform/AndroidComposeView;->resendMotionEventOnLayout:Lkotlin/jvm/functions/Function0;
 
-    goto :goto_21
+    goto :goto_0
 
     .line 2072
     .end local v2    # "$i$a$-trace-AndroidComposeView$measureAndLayout$1":I
-    :catchall_1e
+    :catchall_0
     move-exception v2
 
-    goto :goto_3c
+    goto :goto_1
 
     .line 878
     .restart local v2    # "$i$a$-trace-AndroidComposeView$measureAndLayout$1":I
-    :cond_20
+    :cond_1
     move-object v4, v3
 
     .line 879
     .local v4, "resend":Lkotlin/jvm/functions/Function0;
-    :goto_21
+    :goto_0
     iget-object v5, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
 
     invoke-virtual {v5, v4}, Landroidx/compose/ui/node/MeasureAndLayoutDelegate;->measureAndLayout(Lkotlin/jvm/functions/Function0;)Z
@@ -6842,13 +6842,13 @@
 
     .line 880
     .local v5, "rootNodeResized":Z
-    if-eqz v5, :cond_2c
+    if-eqz v5, :cond_2
 
     .line 881
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->requestLayout()V
 
     .line 883
-    :cond_2c
+    :cond_2
     iget-object v6, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
 
     const/4 v7, 0x0
@@ -6864,8 +6864,8 @@
     .end local v4    # "resend":Lkotlin/jvm/functions/Function0;
     .end local v5    # "rootNodeResized":Z
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_36
-    .catchall {:try_start_1b .. :try_end_36} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2070
     nop
@@ -6879,20 +6879,20 @@
     .line 886
     .end local v0    # "sectionName$iv":Ljava/lang/String;
     .end local v1    # "$i$f$trace":I
-    :cond_3b
+    :cond_3
     return-void
 
     .line 2072
     .restart local v0    # "sectionName$iv":Ljava/lang/String;
     .restart local v1    # "$i$f$trace":I
-    :goto_3c
+    :goto_1
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     throw v2
 .end method
 
 .method public measureAndLayout-0kLqBqw(Landroidx/compose/ui/node/LayoutNode;J)V
-    .registers 11
+    .locals 7
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "constraints"    # J
 
@@ -6918,7 +6918,7 @@
 
     .line 890
     .local v2, "$i$a$-trace-AndroidComposeView$measureAndLayout$2":I
-    :try_start_e
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
 
     invoke-virtual {v3, p1, p2, p3}, Landroidx/compose/ui/node/MeasureAndLayoutDelegate;->measureAndLayout-0kLqBqw(Landroidx/compose/ui/node/LayoutNode;J)V
@@ -6930,7 +6930,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_0
 
     .line 895
     iget-object v3, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
@@ -6944,13 +6944,13 @@
     invoke-static {v3, v6, v4, v5}, Landroidx/compose/ui/node/MeasureAndLayoutDelegate;->dispatchOnPositionedCallbacks$default(Landroidx/compose/ui/node/MeasureAndLayoutDelegate;ZILjava/lang/Object;)V
 
     .line 897
-    :cond_23
+    :cond_0
     nop
 
     .end local v2    # "$i$a$-trace-AndroidComposeView$measureAndLayout$2":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_26
-    .catchall {:try_start_e .. :try_end_26} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2075
     nop
@@ -6969,7 +6969,7 @@
     .line 2077
     .restart local v0    # "sectionName$iv":Ljava/lang/String;
     .restart local v1    # "$i$f$trace":I
-    :catchall_2c
+    :catchall_0
     move-exception v2
 
     invoke-static {}, Landroid/os/Trace;->endSection()V
@@ -6978,7 +6978,7 @@
 .end method
 
 .method public measureAndLayoutForTest()V
-    .registers 5
+    .locals 4
 
     .line 945
     move-object v0, p0
@@ -6998,7 +6998,7 @@
 .end method
 
 .method public final notifyLayerIsDirty$ui_release(Landroidx/compose/ui/node/OwnedLayer;Z)V
-    .registers 6
+    .locals 3
     .param p1, "layer"    # Landroidx/compose/ui/node/OwnedLayer;
     .param p2, "isDirty"    # Z
 
@@ -7007,12 +7007,12 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1168
-    if-nez p2, :cond_19
+    if-nez p2, :cond_0
 
     .line 1171
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->isDrawingContent:Z
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_3
 
     .line 1172
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->dirtyLayers:Ljava/util/List;
@@ -7022,17 +7022,17 @@
     .line 1173
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->postponedDirtyLayers:Ljava/util/List;
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_3
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 1175
-    :cond_19
+    :cond_0
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->isDrawingContent:Z
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 1176
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->dirtyLayers:Ljava/util/List;
@@ -7041,13 +7041,13 @@
 
     invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 1178
-    :cond_25
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->postponedDirtyLayers:Ljava/util/List;
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_2
 
     .line 1179
     new-instance v0, Ljava/util/ArrayList;
@@ -7069,7 +7069,7 @@
     .line 1178
     .end local v1    # "it":Ljava/util/List;
     .end local v2    # "$i$a$-also-AndroidComposeView$notifyLayerIsDirty$postponed$1":I
-    :cond_34
+    :cond_2
     nop
 
     .line 1180
@@ -7082,13 +7082,13 @@
 
     .line 1182
     .end local v0    # "postponed":Ljava/util/List;
-    :cond_3b
-    :goto_3b
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method public onAttach(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "node"
@@ -7100,7 +7100,7 @@
 .end method
 
 .method protected onAttachedToWindow()V
-    .registers 7
+    .locals 6
 
     .line 1223
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
@@ -7139,12 +7139,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_0
 
     .line 1229
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_autofill:Landroidx/compose/ui/autofill/AndroidAutofill;
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_0
 
     .line 2093
     .local v2, "it":Landroidx/compose/ui/autofill/AndroidAutofill;
@@ -7159,7 +7159,7 @@
     .line 1231
     .end local v2    # "it":Landroidx/compose/ui/autofill/AndroidAutofill;
     .end local v3    # "$i$a$-let-AndroidComposeView$onAttachedToWindow$1$1":I
-    :cond_2a
+    :cond_0
     nop
 
     .line 2118
@@ -7197,66 +7197,66 @@
 
     .line 1239
     .local v2, "oldViewTreeOwners":Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
-    if-eqz v2, :cond_54
+    if-eqz v2, :cond_2
 
     .line 1241
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_1
 
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_1
 
     .line 1243
     invoke-virtual {v2}, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object v3
 
-    if-ne v0, v3, :cond_54
+    if-ne v0, v3, :cond_2
 
     .line 1244
     invoke-virtual {v2}, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object v3
 
-    if-eq v1, v3, :cond_52
+    if-eq v1, v3, :cond_1
 
-    goto :goto_54
+    goto :goto_0
 
-    :cond_52
+    :cond_1
     const/4 v3, 0x0
 
-    goto :goto_55
+    goto :goto_1
 
-    :cond_54
-    :goto_54
+    :cond_2
+    :goto_0
     const/4 v3, 0x1
 
     .line 1239
-    :goto_55
+    :goto_1
     nop
 
     .line 1247
     .local v3, "resetViewTreeOwner":Z
-    if-eqz v3, :cond_a1
+    if-eqz v3, :cond_7
 
     .line 1248
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_6
 
     .line 1253
-    if-eqz v1, :cond_8f
+    if-eqz v1, :cond_5
 
     .line 1259
-    if-eqz v2, :cond_70
+    if-eqz v2, :cond_3
 
     invoke-virtual {v2}, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object v4
 
-    if-eqz v4, :cond_70
+    if-eqz v4, :cond_3
 
     invoke-interface {v4}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
     move-result-object v4
 
-    if-eqz v4, :cond_70
+    if-eqz v4, :cond_3
 
     move-object v5, p0
 
@@ -7265,7 +7265,7 @@
     invoke-virtual {v4, v5}, Landroidx/lifecycle/Lifecycle;->removeObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
     .line 1260
-    :cond_70
+    :cond_3
     invoke-interface {v0}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
     move-result-object v4
@@ -7295,21 +7295,21 @@
     .line 1266
     iget-object v5, p0, Landroidx/compose/ui/platform/AndroidComposeView;->onViewTreeOwnersAvailable:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v5, :cond_8b
+    if-eqz v5, :cond_4
 
     invoke-interface {v5, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1267
-    :cond_8b
+    :cond_4
     const/4 v5, 0x0
 
     iput-object v5, p0, Landroidx/compose/ui/platform/AndroidComposeView;->onViewTreeOwnersAvailable:Lkotlin/jvm/functions/Function1;
 
-    goto :goto_a1
+    goto :goto_2
 
     .line 1254
     .end local v4    # "viewTreeOwners":Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
-    :cond_8f
+    :cond_5
     new-instance v4, Ljava/lang/IllegalStateException;
 
     .line 1255
@@ -7323,7 +7323,7 @@
     throw v4
 
     .line 1249
-    :cond_98
+    :cond_6
     new-instance v4, Ljava/lang/IllegalStateException;
 
     .line 1250
@@ -7337,15 +7337,15 @@
     throw v4
 
     .line 1270
-    :cond_a1
-    :goto_a1
+    :cond_7
+    :goto_2
     iget-object v4, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_inputModeManager:Landroidx/compose/ui/input/InputModeManagerImpl;
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isInTouchMode()Z
 
     move-result v5
 
-    if-eqz v5, :cond_b0
+    if-eqz v5, :cond_8
 
     sget-object v5, Landroidx/compose/ui/input/InputMode;->Companion:Landroidx/compose/ui/input/InputMode$Companion;
 
@@ -7353,16 +7353,16 @@
 
     move-result v5
 
-    goto :goto_b6
+    goto :goto_3
 
-    :cond_b0
+    :cond_8
     sget-object v5, Landroidx/compose/ui/input/InputMode;->Companion:Landroidx/compose/ui/input/InputMode$Companion;
 
     invoke-virtual {v5}, Landroidx/compose/ui/input/InputMode$Companion;->getKeyboard-aOaMEAU()I
 
     move-result v5
 
-    :goto_b6
+    :goto_3
     invoke-virtual {v4, v5}, Landroidx/compose/ui/input/InputModeManagerImpl;->setInputMode-iuPiT84(I)V
 
     .line 1272
@@ -7418,7 +7418,7 @@
 .end method
 
 .method public onCheckIsTextEditor()Z
-    .registers 2
+    .locals 1
 
     .line 1616
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getPlatformTextInputPluginRegistry()Landroidx/compose/ui/text/input/PlatformTextInputPluginRegistryImpl;
@@ -7429,21 +7429,21 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 5
+    .locals 3
     .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     const-string/jumbo v0, "newConfig"
@@ -7475,7 +7475,7 @@
 
     iget v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->currentFontWeightAdjustment:I
 
-    if-eq v0, v2, :cond_35
+    if-eq v0, v2, :cond_0
 
     .line 1635
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->getFontWeightAdjustmentCompat(Landroid/content/res/Configuration;)I
@@ -7498,7 +7498,7 @@
     invoke-direct {p0, v0}, Landroidx/compose/ui/platform/AndroidComposeView;->setFontFamilyResolver(Landroidx/compose/ui/text/font/FontFamily$Resolver;)V
 
     .line 1638
-    :cond_35
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->configurationChangeObserver:Lkotlin/jvm/functions/Function1;
 
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7508,7 +7508,7 @@
 .end method
 
 .method public onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-    .registers 3
+    .locals 1
     .param p1, "outAttrs"    # Landroid/view/inputmethod/EditorInfo;
 
     const-string/jumbo v0, "outAttrs"
@@ -7524,23 +7524,23 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1}, Landroidx/compose/ui/text/input/PlatformTextInputAdapter;->createInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_16
+    :goto_0
     return-object v0
 .end method
 
 .method public onDetach(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "node"
@@ -7560,7 +7560,7 @@
 .end method
 
 .method protected onDetachedFromWindow()V
-    .registers 6
+    .locals 5
 
     .line 1279
     invoke-super {p0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
@@ -7577,19 +7577,19 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
     move-result-object v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     move-object v1, p0
 
@@ -7598,7 +7598,7 @@
     invoke-virtual {v0, v1}, Landroidx/lifecycle/Lifecycle;->removeObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
     .line 1282
-    :cond_22
+    :cond_0
     const/4 v0, 0x0
 
     .line 2120
@@ -7611,12 +7611,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_1
 
     .line 1284
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_autofill:Landroidx/compose/ui/autofill/AndroidAutofill;
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_1
 
     .line 2093
     .local v2, "it":Landroidx/compose/ui/autofill/AndroidAutofill;
@@ -7631,7 +7631,7 @@
     .line 1286
     .end local v2    # "it":Landroidx/compose/ui/autofill/AndroidAutofill;
     .end local v3    # "$i$a$-let-AndroidComposeView$onDetachedFromWindow$1$1":I
-    :cond_34
+    :cond_1
     nop
 
     .line 2120
@@ -7674,7 +7674,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .registers 3
+    .locals 1
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     const-string/jumbo v0, "canvas"
@@ -7686,14 +7686,14 @@
 .end method
 
 .method public onEndApplyChanges()V
-    .registers 8
+    .locals 7
 
     .line 678
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->observationClearRequested:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 679
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getSnapshotObserver()Landroidx/compose/ui/node/OwnerSnapshotObserver;
@@ -7706,12 +7706,12 @@
     iput-boolean v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->observationClearRequested:Z
 
     .line 682
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_androidViewsHandler:Landroidx/compose/ui/platform/AndroidViewsHandler;
 
     .line 683
     .local v0, "childAndroidViews":Landroidx/compose/ui/platform/AndroidViewsHandler;
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 684
     move-object v2, v0
@@ -7721,15 +7721,15 @@
     invoke-direct {p0, v2}, Landroidx/compose/ui/platform/AndroidComposeView;->clearChildInvalidObservations(Landroid/view/ViewGroup;)V
 
     .line 688
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->endApplyChangesListeners:Landroidx/compose/runtime/collection/MutableVector;
 
     invoke-virtual {v2}, Landroidx/compose/runtime/collection/MutableVector;->isNotEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_48
+    if-eqz v2, :cond_4
 
     .line 689
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->endApplyChangesListeners:Landroidx/compose/runtime/collection/MutableVector;
@@ -7743,8 +7743,8 @@
     const/4 v3, 0x0
 
     .local v3, "i":I
-    :goto_27
-    if-ge v3, v2, :cond_42
+    :goto_1
+    if-ge v3, v2, :cond_3
 
     .line 691
     iget-object v4, p0, Landroidx/compose/ui/platform/AndroidComposeView;->endApplyChangesListeners:Landroidx/compose/runtime/collection/MutableVector;
@@ -7774,34 +7774,34 @@
     invoke-virtual {v5, v3, v6}, Landroidx/compose/runtime/collection/MutableVector;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     .line 694
-    if-eqz v4, :cond_3f
+    if-eqz v4, :cond_2
 
     invoke-interface {v4}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     .line 690
     .end local v4    # "listener":Lkotlin/jvm/functions/Function0;
-    :cond_3f
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_27
+    goto :goto_1
 
     .line 698
     .end local v3    # "i":I
-    :cond_42
+    :cond_3
     iget-object v3, p0, Landroidx/compose/ui/platform/AndroidComposeView;->endApplyChangesListeners:Landroidx/compose/runtime/collection/MutableVector;
 
     invoke-virtual {v3, v1, v2}, Landroidx/compose/runtime/collection/MutableVector;->removeRange(II)V
 
     .end local v2    # "size":I
-    goto :goto_18
+    goto :goto_0
 
     .line 700
-    :cond_48
+    :cond_4
     return-void
 .end method
 
 .method protected onFocusChanged(ZILandroid/graphics/Rect;)V
-    .registers 6
+    .locals 2
     .param p1, "gainFocus"    # Z
     .param p2, "direction"    # I
     .param p3, "previouslyFocusedRect"    # Landroid/graphics/Rect;
@@ -7843,22 +7843,22 @@
 
     move-result-object v0
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/ui/focus/FocusOwner;->takeFocus()V
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2c
+    :cond_0
     invoke-interface {v0}, Landroidx/compose/ui/focus/FocusOwner;->releaseFocus()V
 
     .line 607
-    :goto_2f
+    :goto_0
     return-void
 .end method
 
 .method protected onLayout(ZIIII)V
-    .registers 10
+    .locals 4
     .param p1, "changed"    # Z
     .param p2, "l"    # I
     .param p3, "t"    # I
@@ -7883,7 +7883,7 @@
     .line 1003
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_androidViewsHandler:Landroidx/compose/ui/platform/AndroidViewsHandler;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 1013
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getAndroidViewsHandler$ui_release()Landroidx/compose/ui/platform/AndroidViewsHandler;
@@ -7899,12 +7899,12 @@
     invoke-virtual {v0, v3, v3, v1, v2}, Landroidx/compose/ui/platform/AndroidViewsHandler;->layout(IIII)V
 
     .line 1015
-    :cond_1d
+    :cond_0
     return-void
 .end method
 
 .method public onLayoutChange(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 3
+    .locals 1
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "layoutNode"
@@ -7921,7 +7921,7 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 21
+    .locals 18
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
@@ -7945,12 +7945,12 @@
 
     .line 950
     .local v0, "$i$a$-trace-AndroidComposeView$onMeasure$1":I
-    :try_start_a
+    :try_start_0
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isAttachedToWindow()Z
 
     move-result v4
 
-    if-nez v4, :cond_17
+    if-nez v4, :cond_0
 
     .line 951
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getRoot()Landroidx/compose/ui/node/LayoutNode;
@@ -7960,7 +7960,7 @@
     invoke-direct {v1, v4}, Landroidx/compose/ui/platform/AndroidComposeView;->invalidateLayoutNodeMeasurement(Landroidx/compose/ui/node/LayoutNode;)V
 
     .line 953
-    :cond_17
+    :cond_0
     invoke-direct/range {p0 .. p1}, Landroidx/compose/ui/platform/AndroidComposeView;->convertMeasureSpec-I7RO_PI(I)J
 
     move-result-wide v4
@@ -8007,8 +8007,8 @@
     invoke-static {v13, v14}, Lkotlin/ULong;->constructor-impl(J)J
 
     move-result-wide v13
-    :try_end_37
-    .catchall {:try_start_a .. :try_end_37} :catchall_ca
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     long-to-int v9, v13
 
@@ -8022,7 +8022,7 @@
     .local v4, "maxWidth":I
     move/from16 v5, p2
 
-    :try_start_3b
+    :try_start_1
     invoke-direct {v1, v5}, Landroidx/compose/ui/platform/AndroidComposeView;->convertMeasureSpec-I7RO_PI(I)J
 
     move-result-wide v7
@@ -8088,7 +8088,7 @@
 
     const/4 v12, 0x0
 
-    if-nez v8, :cond_6c
+    if-nez v8, :cond_1
 
     .line 959
     invoke-static {v10, v11}, Landroidx/compose/ui/unit/Constraints;->box-impl(J)Landroidx/compose/ui/unit/Constraints;
@@ -8100,16 +8100,16 @@
     .line 960
     iput-boolean v12, v1, Landroidx/compose/ui/platform/AndroidComposeView;->wasMeasuredWithMultipleConstraints:Z
 
-    goto :goto_7d
+    goto :goto_2
 
     .line 961
-    :cond_6c
-    if-nez v8, :cond_6f
+    :cond_1
+    if-nez v8, :cond_2
 
-    :goto_6e
-    goto :goto_78
+    :goto_0
+    goto :goto_1
 
-    :cond_6f
+    :cond_2
     invoke-virtual {v8}, Landroidx/compose/ui/unit/Constraints;->unbox-impl()J
 
     move-result-wide v12
@@ -8118,10 +8118,10 @@
 
     move-result v12
 
-    goto :goto_6e
+    goto :goto_0
 
-    :goto_78
-    if-nez v12, :cond_7d
+    :goto_1
+    if-nez v12, :cond_3
 
     .line 963
     const/4 v8, 0x1
@@ -8129,8 +8129,8 @@
     iput-boolean v8, v1, Landroidx/compose/ui/platform/AndroidComposeView;->wasMeasuredWithMultipleConstraints:Z
 
     .line 965
-    :cond_7d
-    :goto_7d
+    :cond_3
+    :goto_2
     iget-object v8, v1, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
 
     invoke-virtual {v8, v10, v11}, Landroidx/compose/ui/node/MeasureAndLayoutDelegate;->updateRootConstraints-BRTryo0(J)V
@@ -8162,7 +8162,7 @@
     .line 969
     iget-object v8, v1, Landroidx/compose/ui/platform/AndroidComposeView;->_androidViewsHandler:Landroidx/compose/ui/platform/AndroidViewsHandler;
 
-    if-eqz v8, :cond_bf
+    if-eqz v8, :cond_4
 
     .line 970
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getAndroidViewsHandler$ui_release()Landroidx/compose/ui/platform/AndroidViewsHandler;
@@ -8201,7 +8201,7 @@
     invoke-virtual {v8, v12, v13}, Landroidx/compose/ui/platform/AndroidViewsHandler;->measure(II)V
 
     .line 975
-    :cond_bf
+    :cond_4
     nop
 
     .end local v0    # "$i$a$-trace-AndroidComposeView$onMeasure$1":I
@@ -8211,8 +8211,8 @@
     .end local v9    # "minHeight":I
     .end local v10    # "constraints":J
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_c2
-    .catchall {:try_start_3b .. :try_end_c2} :catchall_c8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 2080
     nop
@@ -8231,24 +8231,24 @@
     .line 2087
     .restart local v2    # "sectionName$iv":Ljava/lang/String;
     .restart local v3    # "$i$f$trace":I
-    :catchall_c8
+    :catchall_0
     move-exception v0
 
-    goto :goto_cd
+    goto :goto_3
 
-    :catchall_ca
+    :catchall_1
     move-exception v0
 
     move/from16 v5, p2
 
-    :goto_cd
+    :goto_3
     invoke-static {}, Landroid/os/Trace;->endSection()V
 
     throw v0
 .end method
 
 .method public onProvideAutofillVirtualStructure(Landroid/view/ViewStructure;I)V
-    .registers 4
+    .locals 1
     .param p1, "structure"    # Landroid/view/ViewStructure;
     .param p2, "flags"    # I
 
@@ -8257,23 +8257,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->_autofill:Landroidx/compose/ui/autofill/AndroidAutofill;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-static {v0, p1}, Landroidx/compose/ui/autofill/AndroidAutofill_androidKt;->populateViewStructure(Landroidx/compose/ui/autofill/AndroidAutofill;Landroid/view/ViewStructure;)V
 
     .line 1294
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public onRequestMeasure(Landroidx/compose/ui/node/LayoutNode;ZZZ)V
-    .registers 6
+    .locals 1
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
     .param p3, "forceRequest"    # Z
@@ -8284,7 +8284,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 910
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_0
 
     .line 911
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
@@ -8293,40 +8293,40 @@
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 912
-    if-eqz p4, :cond_23
+    if-eqz p4, :cond_1
 
     .line 914
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->scheduleMeasureAndLayout(Landroidx/compose/ui/node/LayoutNode;)V
 
-    goto :goto_23
+    goto :goto_0
 
     .line 916
-    :cond_16
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
 
     invoke-virtual {v0, p1, p3}, Landroidx/compose/ui/node/MeasureAndLayoutDelegate;->requestRemeasure(Landroidx/compose/ui/node/LayoutNode;Z)Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 917
-    if-eqz p4, :cond_23
+    if-eqz p4, :cond_1
 
     .line 919
     invoke-direct {p0, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->scheduleMeasureAndLayout(Landroidx/compose/ui/node/LayoutNode;)V
 
     .line 921
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onRequestRelayout(Landroidx/compose/ui/node/LayoutNode;ZZ)V
-    .registers 7
+    .locals 3
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
     .param p3, "forceRequest"    # Z
@@ -8340,7 +8340,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz p2, :cond_16
+    if-eqz p2, :cond_0
 
     .line 929
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
@@ -8349,34 +8349,34 @@
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 930
     invoke-static {p0, v1, v0, v1}, Landroidx/compose/ui/platform/AndroidComposeView;->scheduleMeasureAndLayout$default(Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/ui/node/LayoutNode;ILjava/lang/Object;)V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 933
-    :cond_16
+    :cond_0
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView;->measureAndLayoutDelegate:Landroidx/compose/ui/node/MeasureAndLayoutDelegate;
 
     invoke-virtual {v2, p1, p3}, Landroidx/compose/ui/node/MeasureAndLayoutDelegate;->requestRelayout(Landroidx/compose/ui/node/LayoutNode;Z)Z
 
     move-result v2
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 934
     invoke-static {p0, v1, v0, v1}, Landroidx/compose/ui/platform/AndroidComposeView;->scheduleMeasureAndLayout$default(Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/ui/node/LayoutNode;ILjava/lang/Object;)V
 
     .line 937
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public onResume(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
     .param p1, "owner"    # Landroidx/lifecycle/LifecycleOwner;
 
     const-string/jumbo v0, "owner"
@@ -8386,7 +8386,6 @@
     .line 600
     sget-object v0, Landroidx/compose/ui/platform/AndroidComposeView;->Companion:Landroidx/compose/ui/platform/AndroidComposeView$Companion;
 
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView$Companion;->getIsShowingLayoutBounds()Z
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidComposeView$Companion;->access$getIsShowingLayoutBounds(Landroidx/compose/ui/platform/AndroidComposeView$Companion;)Z
 
     move-result v0
@@ -8398,16 +8397,15 @@
 .end method
 
 .method public onRtlPropertiesChanged(I)V
-    .registers 5
+    .locals 3
     .param p1, "layoutDirection"    # I
 
     .line 1646
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->superclassInitComplete:Z
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 1647
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView_androidKt;->layoutDirectionFromInt(I)Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {p1}, Landroidx/compose/ui/platform/AndroidComposeView_androidKt;->access$layoutDirectionFromInt(I)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v0
@@ -8435,12 +8433,12 @@
     nop
 
     .line 1652
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public onSemanticsChange()V
-    .registers 2
+    .locals 1
 
     .line 1098
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
@@ -8452,7 +8450,7 @@
 .end method
 
 .method public onWindowFocusChanged(Z)V
-    .registers 5
+    .locals 3
     .param p1, "hasWindowFocus"    # Z
 
     .line 610
@@ -8469,12 +8467,11 @@
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowFocusChanged(Z)V
 
     .line 614
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     .line 617
     sget-object v0, Landroidx/compose/ui/platform/AndroidComposeView;->Companion:Landroidx/compose/ui/platform/AndroidComposeView$Companion;
 
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView$Companion;->getIsShowingLayoutBounds()Z
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidComposeView$Companion;->access$getIsShowingLayoutBounds(Landroidx/compose/ui/platform/AndroidComposeView$Companion;)Z
 
     move-result v0
@@ -8488,7 +8485,7 @@
 
     move-result v2
 
-    if-eq v2, v0, :cond_20
+    if-eq v2, v0, :cond_0
 
     .line 619
     invoke-virtual {p0, v0}, Landroidx/compose/ui/platform/AndroidComposeView;->setShowLayoutBounds(Z)V
@@ -8497,7 +8494,7 @@
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->invalidateDescendants()V
 
     .line 624
-    :cond_20
+    :cond_0
     nop
 
     .line 617
@@ -8506,12 +8503,12 @@
     nop
 
     .line 626
-    :cond_22
+    :cond_1
     return-void
 .end method
 
 .method public final recycle$ui_release(Landroidx/compose/ui/node/OwnedLayer;)Z
-    .registers 4
+    .locals 2
     .param p1, "layer"    # Landroidx/compose/ui/node/OwnedLayer;
 
     const-string/jumbo v0, "layer"
@@ -8521,7 +8518,7 @@
     .line 1088
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->viewLayersContainer:Landroidx/compose/ui/platform/DrawChildContainer;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/compose/ui/platform/ViewLayer;->Companion:Landroidx/compose/ui/platform/ViewLayer$Companion;
 
@@ -8529,13 +8526,13 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 1089
     nop
 
     .line 1090
-    :cond_13
+    :cond_0
     nop
 
     .line 1088
@@ -8543,7 +8540,7 @@
 
     .line 1091
     .local v0, "cacheValue":Z
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 1092
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->layerCache:Landroidx/compose/ui/platform/WeakCache;
@@ -8551,12 +8548,12 @@
     invoke-virtual {v1, p1}, Landroidx/compose/ui/platform/WeakCache;->push(Ljava/lang/Object;)V
 
     .line 1094
-    :cond_1c
+    :cond_1
     return v0
 .end method
 
 .method public registerOnEndApplyChangesListener(Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 2
     .param p1, "listener"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -8578,7 +8575,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 704
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView;->endApplyChangesListeners:Landroidx/compose/runtime/collection/MutableVector;
@@ -8596,12 +8593,12 @@
     .line 706
     .end local v0    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
     .end local v1    # "$i$f$plusAssign":I
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public registerOnLayoutCompletedListener(Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;)V
-    .registers 4
+    .locals 2
     .param p1, "listener"    # Landroidx/compose/ui/node/Owner$OnLayoutCompletedListener;
 
     const-string/jumbo v0, "listener"
@@ -8625,7 +8622,7 @@
 .end method
 
 .method public final removeAndroidView(Landroidx/compose/ui/viewinterop/AndroidViewHolder;)V
-    .registers 3
+    .locals 1
     .param p1, "view"    # Landroidx/compose/ui/viewinterop/AndroidViewHolder;
 
     const-string/jumbo v0, "view"
@@ -8646,7 +8643,7 @@
 .end method
 
 .method public final requestClearInvalidObservations()V
-    .registers 2
+    .locals 1
 
     .line 674
     const/4 v0, 0x1
@@ -8658,7 +8655,7 @@
 .end method
 
 .method public requestOnPositionedCallback(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 4
+    .locals 2
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "layoutNode"
@@ -8682,7 +8679,7 @@
 .end method
 
 .method public screenToLocal-MK-Hz9U(J)J
-    .registers 8
+    .locals 5
     .param p1, "positionOnScreen"    # J
 
     .line 1564
@@ -8731,7 +8728,7 @@
 .end method
 
 .method public sendKeyEvent-ZmokQxo(Landroid/view/KeyEvent;)Z
-    .registers 3
+    .locals 1
     .param p1, "keyEvent"    # Landroid/view/KeyEvent;
 
     const-string/jumbo v0, "keyEvent"
@@ -8747,7 +8744,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     .line 639
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getFocusOwner()Landroidx/compose/ui/focus/FocusOwner;
@@ -8758,25 +8755,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1e
+    :goto_1
     return v0
 .end method
 
 .method public final setConfigurationChangeObserver(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -8800,7 +8797,7 @@
 .end method
 
 .method public final setLastMatrixRecalculationAnimationTime$ui_release(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 325
@@ -8810,7 +8807,7 @@
 .end method
 
 .method public final setOnViewTreeOwnersAvailable(Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .param p1, "callback"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -8834,29 +8831,29 @@
 
     .line 1190
     .local v0, "viewTreeOwners":Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 1191
     invoke-interface {p1, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1193
-    :cond_f
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->isAttachedToWindow()Z
 
     move-result v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_1
 
     .line 1194
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView;->onViewTreeOwnersAvailable:Lkotlin/jvm/functions/Function1;
 
     .line 1196
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 .method public setShowLayoutBounds(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 287
@@ -8866,7 +8863,7 @@
 .end method
 
 .method public shouldDelayChildPressedState()Z
-    .registers 2
+    .locals 1
 
     .line 1811
     const/4 v0, 0x0

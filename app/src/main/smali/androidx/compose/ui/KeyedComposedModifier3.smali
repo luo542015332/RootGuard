@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)V
-    .registers 8
+    .locals 1
     .param p1, "fqName"    # Ljava/lang/String;
     .param p2, "key1"    # Ljava/lang/Object;
     .param p3, "key2"    # Ljava/lang/Object;
@@ -127,13 +127,13 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 220
     instance-of v0, p1, Landroidx/compose/ui/KeyedComposedModifier3;
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     .line 221
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->fqName:Ljava/lang/String;
@@ -148,7 +148,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key1:Ljava/lang/Object;
 
@@ -162,7 +162,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key2:Ljava/lang/Object;
 
@@ -176,7 +176,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key3:Ljava/lang/Object;
 
@@ -190,21 +190,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_3a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_3b
+    :goto_0
     return v0
 .end method
 
 .method public final getFqName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 213
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->fqName:Ljava/lang/String;
@@ -213,7 +213,7 @@
 .end method
 
 .method public final getKey1()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 214
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key1:Ljava/lang/Object;
@@ -222,7 +222,7 @@
 .end method
 
 .method public final getKey2()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 215
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key2:Ljava/lang/Object;
@@ -231,7 +231,7 @@
 .end method
 
 .method public final getKey3()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 216
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key3:Ljava/lang/Object;
@@ -240,7 +240,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 224
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifier3;->fqName:Ljava/lang/String;
@@ -257,18 +257,18 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v2, v3
 
-    :goto_13
+    :goto_0
     add-int/2addr v1, v2
 
     .line 226
@@ -278,18 +278,18 @@
 
     iget-object v2, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key2:Ljava/lang/Object;
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
+    :cond_1
     move v2, v3
 
-    :goto_20
+    :goto_1
     add-int/2addr v0, v2
 
     .line 227
@@ -299,13 +299,13 @@
 
     iget-object v2, p0, Landroidx/compose/ui/KeyedComposedModifier3;->key3:Ljava/lang/Object;
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    :cond_2b
+    :cond_2
     add-int/2addr v1, v3
 
     .line 228

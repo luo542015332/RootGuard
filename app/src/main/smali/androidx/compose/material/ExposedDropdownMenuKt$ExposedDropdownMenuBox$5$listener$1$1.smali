@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/MutableIntState;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$5$listener$1$1;->$menuHeight$delegate:Landroidx/compose/runtime/MutableIntState;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 145
@@ -87,13 +87,12 @@
 .end method
 
 .method public final invoke(I)V
-    .registers 3
+    .locals 1
     .param p1, "newHeight"    # I
 
     .line 150
     iget-object v0, p0, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$5$listener$1$1;->$menuHeight$delegate:Landroidx/compose/runtime/MutableIntState;
 
-    # invokes: Landroidx/compose/material/ExposedDropdownMenuKt;->ExposedDropdownMenuBox$lambda$5(Landroidx/compose/runtime/MutableIntState;I)V
     invoke-static {v0, p1}, Landroidx/compose/material/ExposedDropdownMenuKt;->access$ExposedDropdownMenuBox$lambda$5(Landroidx/compose/runtime/MutableIntState;I)V
 
     .line 151

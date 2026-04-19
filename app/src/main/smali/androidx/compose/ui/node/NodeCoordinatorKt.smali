@@ -31,7 +31,7 @@
 
 # direct methods
 .method public static final synthetic access$nextUntil-hw7D004(Landroidx/compose/ui/node/DelegatableNode;II)Landroidx/compose/ui/Modifier$Node;
-    .registers 4
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/node/DelegatableNode;
     .param p1, "type"    # I
     .param p2, "stopType"    # I
@@ -45,7 +45,7 @@
 .end method
 
 .method private static final nextUntil-hw7D004(Landroidx/compose/ui/node/DelegatableNode;II)Landroidx/compose/ui/Modifier$Node;
-    .registers 8
+    .locals 5
     .param p0, "$this$nextUntil_u2dhw7D004"    # Landroidx/compose/ui/node/DelegatableNode;
     .param p1, "type"    # I
     .param p2, "stopType"    # I
@@ -61,31 +61,31 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 1339
     .local v0, "child":Landroidx/compose/ui/Modifier$Node;
-    :cond_c
+    :cond_0
     invoke-virtual {v0}, Landroidx/compose/ui/Modifier$Node;->getAggregateChildKindSet$ui_release()I
 
     move-result v2
 
     and-int/2addr v2, p1
 
-    if-nez v2, :cond_14
+    if-nez v2, :cond_1
 
     return-object v1
 
     .line 1340
-    :cond_14
+    :cond_1
     move-object v2, v0
 
     .line 1341
     .local v2, "next":Landroidx/compose/ui/Modifier$Node;
-    :goto_15
-    if-eqz v2, :cond_2a
+    :goto_0
+    if-eqz v2, :cond_4
 
     .line 1342
     invoke-virtual {v2}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
@@ -96,29 +96,29 @@
     .local v3, "kindSet":I
     and-int v4, v3, p2
 
-    if-eqz v4, :cond_20
+    if-eqz v4, :cond_2
 
     return-object v1
 
     .line 1344
-    :cond_20
+    :cond_2
     and-int v4, v3, p1
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_3
 
     .line 1345
     return-object v2
 
     .line 1347
-    :cond_25
+    :cond_3
     invoke-virtual {v2}, Landroidx/compose/ui/Modifier$Node;->getChild$ui_release()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v2
 
     .end local v3    # "kindSet":I
-    goto :goto_15
+    goto :goto_0
 
     .line 1349
-    :cond_2a
+    :cond_4
     return-object v1
 .end method

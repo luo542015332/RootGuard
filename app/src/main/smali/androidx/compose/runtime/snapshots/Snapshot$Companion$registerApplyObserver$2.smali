@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final dispose()V
-    .registers 7
+    .locals 6
 
     .line 518
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/Snapshot$Companion$registerApplyObserver$2;->$observer:Lkotlin/jvm/functions/Function2;
@@ -107,8 +107,7 @@
 
     .line 519
     .local v4, "$i$a$-sync-Snapshot$Companion$registerApplyObserver$2$dispose$1":I
-    :try_start_a
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->applyObservers:Ljava/util/List;
+    :try_start_0
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getApplyObservers$p()Ljava/util/List;
 
     move-result-object v5
@@ -120,8 +119,8 @@
 
     .end local v4    # "$i$a$-sync-Snapshot$Companion$registerApplyObserver$2$dispose$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_14
-    .catchall {:try_start_a .. :try_end_14} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2292
     monitor-exit v2
@@ -139,7 +138,7 @@
     .restart local v1    # "$i$f$sync":I
     .restart local v2    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_17
+    :catchall_0
     move-exception v0
 
     monitor-exit v2

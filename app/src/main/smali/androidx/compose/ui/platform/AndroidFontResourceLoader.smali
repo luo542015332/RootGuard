@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
     const-string/jumbo v0, "context"
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public load(Landroidx/compose/ui/text/font/Font;)Landroid/graphics/Typeface;
-    .registers 5
+    .locals 3
     .param p1, "font"    # Landroidx/compose/ui/text/font/Font;
     .annotation runtime Lkotlin/Deprecated;
         message = "Replaced by FontFamily.Resolver, this method should not be called"
@@ -87,7 +87,7 @@
     .line 47
     instance-of v0, p1, Landroidx/compose/ui/text/font/ResourceFont;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 48
     nop
@@ -113,7 +113,7 @@
     return-object v0
 
     .line 53
-    :cond_1c
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -140,7 +140,7 @@
 .end method
 
 .method public bridge synthetic load(Landroidx/compose/ui/text/font/Font;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "font"    # Landroidx/compose/ui/text/font/Font;
 
     .line 31

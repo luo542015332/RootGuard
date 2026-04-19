@@ -62,7 +62,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/node/ObserverNodeOwnerScope$Companion;
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/node/ObserverModifierNode;)V
-    .registers 3
+    .locals 1
     .param p1, "observerNode"    # Landroidx/compose/ui/node/ObserverModifierNode;
 
     const-string/jumbo v0, "observerNode"
@@ -101,7 +101,7 @@
 .end method
 
 .method public static final synthetic access$getOnObserveReadsChanged$cp()Lkotlin/jvm/functions/Function1;
-    .registers 1
+    .locals 1
 
     .line 35
     sget-object v0, Landroidx/compose/ui/node/ObserverNodeOwnerScope;->OnObserveReadsChanged:Lkotlin/jvm/functions/Function1;
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final getObserverNode$ui_release()Landroidx/compose/ui/node/ObserverModifierNode;
-    .registers 2
+    .locals 1
 
     .line 36
     iget-object v0, p0, Landroidx/compose/ui/node/ObserverNodeOwnerScope;->observerNode:Landroidx/compose/ui/node/ObserverModifierNode;
@@ -121,7 +121,7 @@
 .end method
 
 .method public isValidOwnerScope()Z
-    .registers 2
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/compose/ui/node/ObserverNodeOwnerScope;->observerNode:Landroidx/compose/ui/node/ObserverModifierNode;

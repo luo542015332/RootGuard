@@ -64,7 +64,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/PointMode$Companion;
 
@@ -105,7 +105,7 @@
 .end method
 
 .method private synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # I
 
     .line 30
@@ -117,7 +117,7 @@
 .end method
 
 .method public static final synthetic access$getLines$cp()I
-    .registers 1
+    .locals 1
 
     .line 28
     sget v0, Landroidx/compose/ui/graphics/PointMode;->Lines:I
@@ -126,7 +126,7 @@
 .end method
 
 .method public static final synthetic access$getPoints$cp()I
-    .registers 1
+    .locals 1
 
     .line 28
     sget v0, Landroidx/compose/ui/graphics/PointMode;->Points:I
@@ -135,7 +135,7 @@
 .end method
 
 .method public static final synthetic access$getPolygon$cp()I
-    .registers 1
+    .locals 1
 
     .line 28
     sget v0, Landroidx/compose/ui/graphics/PointMode;->Polygon:I
@@ -144,7 +144,7 @@
 .end method
 
 .method public static final synthetic box-impl(I)Landroidx/compose/ui/graphics/PointMode;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/PointMode;
 
@@ -154,23 +154,23 @@
 .end method
 
 .method public static constructor-impl(I)I
-    .registers 1
+    .locals 0
 
     return p0
 .end method
 
 .method public static equals-impl(ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/graphics/PointMode;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/graphics/PointMode;
@@ -179,34 +179,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(II)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -216,7 +216,7 @@
 .end method
 
 .method public static toString-impl(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # I
 
     .line 64
@@ -229,53 +229,53 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "Points"
 
-    goto :goto_27
+    goto :goto_0
 
     .line 66
-    :cond_d
+    :cond_0
     sget v0, Landroidx/compose/ui/graphics/PointMode;->Lines:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/PointMode;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     const-string v0, "Lines"
 
-    goto :goto_27
+    goto :goto_0
 
     .line 67
-    :cond_18
+    :cond_1
     sget v0, Landroidx/compose/ui/graphics/PointMode;->Polygon:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/PointMode;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     const-string/jumbo v0, "Polygon"
 
-    goto :goto_27
+    goto :goto_0
 
     .line 68
-    :cond_24
+    :cond_2
     const-string/jumbo v0, "Unknown"
 
     .line 69
-    :goto_27
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/PointMode;->value:I
 
@@ -287,7 +287,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/PointMode;->value:I
 
@@ -299,7 +299,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 64
     iget v0, p0, Landroidx/compose/ui/graphics/PointMode;->value:I
@@ -313,7 +313,7 @@
 .end method
 
 .method public final synthetic unbox-impl()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/PointMode;->value:I
 

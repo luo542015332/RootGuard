@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final imageResource(Landroidx/compose/ui/graphics/ImageBitmap$Companion;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/ImageBitmap;
-    .registers 20
+    .locals 16
     .param p0, "$this$imageResource"    # Landroidx/compose/ui/graphics/ImageBitmap$Companion;
     .param p1, "id"    # I
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -63,7 +63,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_0
 
     .line 53
     const/4 v4, -0x1
@@ -74,14 +74,14 @@
 
     invoke-static {v3, v6, v4, v5}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 0
-    :cond_26
+    :cond_0
     move/from16 v6, p3
 
     .line 54
-    :goto_28
+    :goto_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v3
@@ -160,7 +160,7 @@
 
     move-result-object v13
 
-    if-ne v11, v13, :cond_6d
+    if-ne v11, v13, :cond_1
 
     .line 65
     const/4 v13, 0x0
@@ -183,14 +183,14 @@
     nop
 
     .end local v13    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_6e
+    goto :goto_1
 
     .line 68
-    :cond_6d
+    :cond_1
     move-object v13, v11
 
     .line 64
-    :goto_6e
+    :goto_1
     nop
 
     .line 63
@@ -268,7 +268,7 @@
 
     .line 71
     .local v13, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v9, :cond_ad
+    if-nez v9, :cond_3
 
     sget-object v14, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -276,19 +276,19 @@
 
     move-result-object v14
 
-    if-ne v12, v14, :cond_ab
+    if-ne v12, v14, :cond_2
 
-    goto :goto_ad
+    goto :goto_2
 
     .line 75
-    :cond_ab
+    :cond_2
     move-object v2, v12
 
-    goto :goto_c1
+    goto :goto_3
 
     .line 72
-    :cond_ad
-    :goto_ad
+    :cond_3
+    :goto_2
     const/4 v14, 0x0
 
     .line 58
@@ -318,7 +318,7 @@
 
     .line 71
     .end local v2    # "value$iv$iv":Ljava/lang/Object;
-    :goto_c1
+    :goto_3
     nop
 
     .line 70
@@ -341,18 +341,18 @@
 
     move-result v4
 
-    if-eqz v4, :cond_d1
+    if-eqz v4, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_d1
+    :cond_4
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v2
 .end method
 
 .method public static final imageResource(Landroidx/compose/ui/graphics/ImageBitmap$Companion;Landroid/content/res/Resources;I)Landroidx/compose/ui/graphics/ImageBitmap;
-    .registers 5
+    .locals 2
     .param p0, "$this$imageResource"    # Landroidx/compose/ui/graphics/ImageBitmap$Companion;
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "id"    # I

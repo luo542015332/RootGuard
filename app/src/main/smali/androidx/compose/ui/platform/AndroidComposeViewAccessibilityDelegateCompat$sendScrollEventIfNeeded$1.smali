@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/ScrollObservationScope;Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sendScrollEventIfNeeded$1;->$scrollObservationScope:Landroidx/compose/ui/platform/ScrollObservationScope;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 2711
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sendScrollEventIfNeeded$1;->invoke()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 19
+    .locals 18
 
     .line 2712
     move-object/from16 v0, p0
@@ -118,9 +118,9 @@
     .local v4, "oldYValue":Ljava/lang/Float;
     const/4 v5, 0x0
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_0
 
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_0
 
     .line 2718
     invoke-virtual {v1}, Landroidx/compose/ui/semantics/ScrollAxisRange;->getValue()Lkotlin/jvm/functions/Function0;
@@ -143,21 +143,21 @@
 
     sub-float/2addr v6, v7
 
-    goto :goto_34
+    goto :goto_0
 
     .line 2720
-    :cond_33
+    :cond_0
     move v6, v5
 
     .line 2717
-    :goto_34
+    :goto_0
     nop
 
     .line 2722
     .local v6, "deltaX":F
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_1
 
-    if-eqz v4, :cond_4d
+    if-eqz v4, :cond_1
 
     .line 2723
     invoke-virtual {v2}, Landroidx/compose/ui/semantics/ScrollAxisRange;->getValue()Lkotlin/jvm/functions/Function0;
@@ -180,14 +180,14 @@
 
     sub-float/2addr v7, v8
 
-    goto :goto_4e
+    goto :goto_1
 
     .line 2725
-    :cond_4d
+    :cond_1
     move v7, v5
 
     .line 2722
-    :goto_4e
+    :goto_1
     nop
 
     .line 2728
@@ -198,29 +198,29 @@
 
     const/4 v10, 0x1
 
-    if-nez v8, :cond_57
+    if-nez v8, :cond_2
 
     move v8, v10
 
-    goto :goto_58
+    goto :goto_2
 
-    :cond_57
+    :cond_2
     move v8, v9
 
-    :goto_58
-    if-eqz v8, :cond_61
+    :goto_2
+    if-eqz v8, :cond_4
 
     cmpg-float v5, v7, v5
 
-    if-nez v5, :cond_5f
+    if-nez v5, :cond_3
 
     move v9, v10
 
-    :cond_5f
-    if-nez v9, :cond_e5
+    :cond_3
+    if-nez v9, :cond_8
 
     .line 2729
-    :cond_61
+    :cond_4
     iget-object v5, v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sendScrollEventIfNeeded$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
     .line 2730
@@ -231,7 +231,6 @@
     move-result v8
 
     .line 2729
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;->semanticsNodeIdToAccessibilityVirtualNodeId(I)I
     invoke-static {v5, v8}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;->access$semanticsNodeIdToAccessibilityVirtualNodeId(Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;I)I
 
     move-result v5
@@ -280,7 +279,7 @@
 
     .line 2747
     .local v8, "event":Landroid/view/accessibility/AccessibilityEvent;
-    if-eqz v1, :cond_af
+    if-eqz v1, :cond_5
 
     .line 2748
     invoke-virtual {v1}, Landroidx/compose/ui/semantics/ScrollAxisRange;->getValue()Lkotlin/jvm/functions/Function0;
@@ -321,8 +320,8 @@
     invoke-virtual {v8, v9}, Landroid/view/accessibility/AccessibilityEvent;->setMaxScrollX(I)V
 
     .line 2751
-    :cond_af
-    if-eqz v2, :cond_d5
+    :cond_5
+    if-eqz v2, :cond_6
 
     .line 2752
     invoke-virtual {v2}, Landroidx/compose/ui/semantics/ScrollAxisRange;->getValue()Lkotlin/jvm/functions/Function0;
@@ -363,12 +362,12 @@
     invoke-virtual {v8, v9}, Landroid/view/accessibility/AccessibilityEvent;->setMaxScrollY(I)V
 
     .line 2755
-    :cond_d5
+    :cond_6
     sget v9, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v10, 0x1c
 
-    if-lt v9, v10, :cond_e0
+    if-lt v9, v10, :cond_7
 
     .line 2756
     float-to-int v9, v6
@@ -378,17 +377,16 @@
     invoke-static {v8, v9, v10}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Api28Impl;->setScrollEventDelta(Landroid/view/accessibility/AccessibilityEvent;II)V
 
     .line 2758
-    :cond_e0
+    :cond_7
     iget-object v9, v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sendScrollEventIfNeeded$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;->sendEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
     invoke-static {v9, v8}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;->access$sendEvent(Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;Landroid/view/accessibility/AccessibilityEvent;)Z
 
     .line 2761
     .end local v5    # "virtualNodeId":I
     .end local v8    # "event":Landroid/view/accessibility/AccessibilityEvent;
-    :cond_e5
-    if-eqz v1, :cond_f6
+    :cond_8
+    if-eqz v1, :cond_9
 
     .line 2762
     iget-object v5, v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sendScrollEventIfNeeded$1;->$scrollObservationScope:Landroidx/compose/ui/platform/ScrollObservationScope;
@@ -406,8 +404,8 @@
     invoke-virtual {v5, v8}, Landroidx/compose/ui/platform/ScrollObservationScope;->setOldXValue(Ljava/lang/Float;)V
 
     .line 2764
-    :cond_f6
-    if-eqz v2, :cond_107
+    :cond_9
+    if-eqz v2, :cond_a
 
     .line 2765
     iget-object v5, v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sendScrollEventIfNeeded$1;->$scrollObservationScope:Landroidx/compose/ui/platform/ScrollObservationScope;
@@ -425,6 +423,6 @@
     invoke-virtual {v5, v8}, Landroidx/compose/ui/platform/ScrollObservationScope;->setOldYValue(Ljava/lang/Float;)V
 
     .line 2767
-    :cond_107
+    :cond_a
     return-void
 .end method

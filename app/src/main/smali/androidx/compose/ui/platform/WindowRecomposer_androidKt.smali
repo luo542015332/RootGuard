@@ -71,7 +71,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 93
     new-instance v0, Ljava/util/LinkedHashMap;
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final synthetic access$getAnimationScaleFlowFor(Landroid/content/Context;)Lkotlinx/coroutines/flow/StateFlow;
-    .registers 2
+    .locals 1
     .param p0, "applicationContext"    # Landroid/content/Context;
 
     .line 1
@@ -98,7 +98,7 @@
 .end method
 
 .method public static final createLifecycleAwareWindowRecomposer(Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Landroidx/lifecycle/Lifecycle;)Landroidx/compose/runtime/Recomposer;
-    .registers 20
+    .locals 17
     .param p0, "$this$createLifecycleAwareWindowRecomposer"    # Landroid/view/View;
     .param p1, "coroutineContext"    # Lkotlin/coroutines/CoroutineContext;
     .param p2, "lifecycle"    # Landroidx/lifecycle/Lifecycle;
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_1
 
     .line 332
     sget-object v0, Landroidx/compose/runtime/MonotonicFrameClock;->Key:Landroidx/compose/runtime/MonotonicFrameClock$Key;
@@ -135,19 +135,19 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
     .line 335
-    :cond_24
+    :cond_0
     move-object v0, v7
 
-    goto :goto_30
+    goto :goto_1
 
     .line 334
-    :cond_26
-    :goto_26
+    :cond_1
+    :goto_0
     sget-object v0, Landroidx/compose/ui/platform/AndroidUiDispatcher;->Companion:Landroidx/compose/ui/platform/AndroidUiDispatcher$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/AndroidUiDispatcher$Companion;->getCurrentThread()Lkotlin/coroutines/CoroutineContext;
@@ -159,7 +159,7 @@
     move-result-object v0
 
     .line 331
-    :goto_30
+    :goto_1
     move-object v8, v0
 
     .line 336
@@ -176,7 +176,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_2
 
     .local v0, "it":Landroidx/compose/runtime/MonotonicFrameClock;
     const/4 v2, 0x0
@@ -202,12 +202,12 @@
     .end local v2    # "$i$a$-let-WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$pausableClock$1":I
     .end local v4    # "$this$createLifecycleAwareWindowRecomposer_u24lambda_u244_u24lambda_u243":Landroidx/compose/runtime/PausableMonotonicFrameClock;
     .end local v5    # "$i$a$-apply-WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$pausableClock$1$1":I
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_4a
+    :cond_2
     move-object v3, v1
 
-    :goto_4b
+    :goto_2
     move-object v9, v3
 
     .line 340
@@ -230,7 +230,7 @@
 
     check-cast v0, Landroidx/compose/ui/MotionDurationScale;
 
-    if-nez v0, :cond_6a
+    if-nez v0, :cond_3
 
     new-instance v0, Landroidx/compose/ui/platform/MotionDurationScaleImpl;
 
@@ -253,25 +253,25 @@
     .end local v3    # "$i$a$-also-WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$motionDurationScale$1":I
     check-cast v0, Landroidx/compose/ui/MotionDurationScale;
 
-    :cond_6a
+    :cond_3
     move-object v11, v0
 
     .line 346
     .local v11, "motionDurationScale":Landroidx/compose/ui/MotionDurationScale;
-    if-eqz v9, :cond_71
+    if-eqz v9, :cond_4
 
     move-object v0, v9
 
     check-cast v0, Lkotlin/coroutines/CoroutineContext;
 
-    goto :goto_75
+    goto :goto_3
 
-    :cond_71
+    :cond_4
     sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     check-cast v0, Lkotlin/coroutines/CoroutineContext;
 
-    :goto_75
+    :goto_3
     invoke-interface {v8, v0}, Lkotlin/coroutines/CoroutineContext;->plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
@@ -318,26 +318,26 @@
 
     .line 352
     .local v14, "runRecomposeScope":Lkotlinx/coroutines/CoroutineScope;
-    if-nez p2, :cond_9e
+    if-nez p2, :cond_5
 
     invoke-static/range {p0 .. p0}, Landroidx/lifecycle/ViewTreeLifecycleOwner;->get(Landroid/view/View;)Landroidx/lifecycle/LifecycleOwner;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a0
+    if-eqz v0, :cond_6
 
     invoke-interface {v0}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
 
     move-result-object v1
 
-    goto :goto_a0
+    goto :goto_4
 
-    :cond_9e
+    :cond_5
     move-object/from16 v1, p2
 
-    :cond_a0
-    :goto_a0
-    if-eqz v1, :cond_c4
+    :cond_6
+    :goto_4
+    if-eqz v1, :cond_7
 
     .line 351
     move-object v15, v1
@@ -388,7 +388,7 @@
 
     .line 352
     .end local v15    # "viewTreeLifecycle":Landroidx/lifecycle/Lifecycle;
-    :cond_c4
+    :cond_7
     const/4 v0, 0x0
 
     .line 353
@@ -425,12 +425,12 @@
 .end method
 
 .method public static synthetic createLifecycleAwareWindowRecomposer$default(Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Landroidx/lifecycle/Lifecycle;ILjava/lang/Object;)Landroidx/compose/runtime/Recomposer;
-    .registers 5
+    .locals 0
 
     .line 325
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_8
+    if-eqz p4, :cond_0
 
     .line 326
     sget-object p1, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
@@ -438,16 +438,16 @@
     check-cast p1, Lkotlin/coroutines/CoroutineContext;
 
     .line 325
-    :cond_8
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_1
 
     .line 327
     const/4 p2, 0x0
 
     .line 325
-    :cond_d
+    :cond_1
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->createLifecycleAwareWindowRecomposer(Landroid/view/View;Lkotlin/coroutines/CoroutineContext;Landroidx/lifecycle/Lifecycle;)Landroidx/compose/runtime/Recomposer;
 
     move-result-object p0
@@ -456,7 +456,7 @@
 .end method
 
 .method public static final findViewTreeCompositionContext(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;
-    .registers 4
+    .locals 3
     .param p0, "$this$findViewTreeCompositionContext"    # Landroid/view/View;
 
     const-string v0, "<this>"
@@ -470,24 +470,24 @@
 
     .line 84
     .local v0, "found":Landroidx/compose/runtime/CompositionContext;
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 85
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
     .line 86
     .local v1, "parent":Landroid/view/ViewParent;
-    :goto_10
-    if-nez v0, :cond_22
+    :goto_0
+    if-nez v0, :cond_1
 
     instance-of v2, v1, Landroid/view/View;
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_1
 
     .line 87
     move-object v2, v1
@@ -503,15 +503,15 @@
 
     move-result-object v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 90
-    :cond_22
+    :cond_1
     return-object v0
 .end method
 
 .method private static final getAnimationScaleFlowFor(Landroid/content/Context;)Lkotlinx/coroutines/flow/StateFlow;
-    .registers 24
+    .locals 23
     .param p0, "applicationContext"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -540,7 +540,7 @@
 
     .line 99
     .local v0, "$i$a$-synchronized-WindowRecomposer_androidKt$getAnimationScaleFlowFor$1":I
-    :try_start_7
+    :try_start_0
     sget-object v1, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->animationScale:Ljava/util/Map;
 
     move-object v11, v1
@@ -558,7 +558,7 @@
 
     .line 445
     .local v13, "value$iv":Ljava/lang/Object;
-    if-nez v13, :cond_78
+    if-nez v13, :cond_0
 
     .line 446
     const/4 v14, 0x0
@@ -702,12 +702,12 @@
     nop
 
     .end local v0    # "answer$iv":Ljava/lang/Object;
-    goto :goto_7b
+    goto :goto_0
 
     .line 450
     .end local v16    # "$i$a$-synchronized-WindowRecomposer_androidKt$getAnimationScaleFlowFor$1":I
     .local v0, "$i$a$-synchronized-WindowRecomposer_androidKt$getAnimationScaleFlowFor$1":I
-    :cond_78
+    :cond_0
     move/from16 v16, v0
 
     .end local v0    # "$i$a$-synchronized-WindowRecomposer_androidKt$getAnimationScaleFlowFor$1":I
@@ -715,15 +715,15 @@
     move-object v0, v13
 
     .line 445
-    :goto_7b
+    :goto_0
     nop
 
     .end local v11    # "$this$getOrPut$iv":Ljava/util/Map;
     .end local v12    # "$i$f$getOrPut":I
     .end local v13    # "value$iv":Ljava/lang/Object;
     check-cast v0, Lkotlinx/coroutines/flow/StateFlow;
-    :try_end_7e
-    .catchall {:try_start_7 .. :try_end_7e} :catchall_81
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 99
     nop
@@ -740,7 +740,7 @@
     .line 443
     .restart local v9    # "lock$iv":Ljava/lang/Object;
     .restart local v10    # "$i$f$synchronized":I
-    :catchall_81
+    :catchall_0
     move-exception v0
 
     monitor-exit v9
@@ -749,7 +749,7 @@
 .end method
 
 .method public static final getCompositionContext(Landroid/view/View;)Landroidx/compose/runtime/CompositionContext;
-    .registers 3
+    .locals 2
     .param p0, "$this$compositionContext"    # Landroid/view/View;
 
     const-string v0, "<this>"
@@ -765,21 +765,21 @@
 
     instance-of v1, v0, Landroidx/compose/runtime/CompositionContext;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/runtime/CompositionContext;
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return-object v0
 .end method
 
 .method private static final getContentChild(Landroid/view/View;)Landroid/view/View;
-    .registers 5
+    .locals 4
     .param p0, "$this$contentChild"    # Landroid/view/View;
 
     .line 277
@@ -793,10 +793,10 @@
 
     .line 279
     .local v1, "parent":Landroid/view/ViewParent;
-    :goto_5
+    :goto_0
     instance-of v2, v1, Landroid/view/View;
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1
 
     .line 280
     move-object v2, v1
@@ -809,12 +809,12 @@
 
     const v3, 0x1020002
 
-    if-ne v2, v3, :cond_16
+    if-ne v2, v3, :cond_0
 
     return-object v0
 
     .line 281
-    :cond_16
+    :cond_0
     move-object v0, v1
 
     check-cast v0, Landroid/view/View;
@@ -824,15 +824,15 @@
 
     move-result-object v1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 284
-    :cond_1e
+    :cond_1
     return-object v0
 .end method
 
 .method public static final getWindowRecomposer(Landroid/view/View;)Landroidx/compose/runtime/Recomposer;
-    .registers 5
+    .locals 4
     .param p0, "$this$windowRecomposer"    # Landroid/view/View;
 
     const-string v0, "<this>"
@@ -844,7 +844,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
     .line 298
     invoke-static {p0}, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->getContentChild(Landroid/view/View;)Landroid/view/View;
@@ -859,7 +859,7 @@
 
     .line 300
     .local v1, "rootParentRef":Landroidx/compose/runtime/CompositionContext;
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_0
 
     sget-object v2, Landroidx/compose/ui/platform/WindowRecomposerPolicy;->INSTANCE:Landroidx/compose/ui/platform/WindowRecomposerPolicy;
 
@@ -867,13 +867,13 @@
 
     move-result-object v2
 
-    goto :goto_23
+    goto :goto_0
 
     .line 301
-    :cond_1c
+    :cond_0
     instance-of v2, v1, Landroidx/compose/runtime/Recomposer;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_1
 
     move-object v2, v1
 
@@ -881,12 +881,12 @@
 
     .line 299
     .end local v1    # "rootParentRef":Landroidx/compose/runtime/CompositionContext;
-    :goto_23
+    :goto_0
     return-object v2
 
     .line 301
     .restart local v1    # "rootParentRef":Landroidx/compose/runtime/CompositionContext;
-    :cond_24
+    :cond_1
     new-instance v2, Ljava/lang/IllegalStateException;
 
     .line 302
@@ -903,7 +903,7 @@
     .line 295
     .end local v0    # "rootView":Landroid/view/View;
     .end local v1    # "rootParentRef":Landroidx/compose/runtime/CompositionContext;
-    :cond_31
+    :cond_2
     const/4 v0, 0x0
 
     .line 296
@@ -946,13 +946,13 @@
 .end method
 
 .method public static synthetic getWindowRecomposer$annotations(Landroid/view/View;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public static final setCompositionContext(Landroid/view/View;Landroidx/compose/runtime/CompositionContext;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$compositionContext"    # Landroid/view/View;
     .param p1, "value"    # Landroidx/compose/runtime/CompositionContext;
 

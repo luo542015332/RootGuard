@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 78
     new-instance v0, Landroidx/compose/ui/input/pointer/AndroidPointerIconType;
@@ -98,7 +98,7 @@
 .end method
 
 .method public static final PointerIcon(I)Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 2
+    .locals 1
     .param p0, "pointerIconType"    # I
 
     .line 76
@@ -112,7 +112,7 @@
 .end method
 
 .method public static final PointerIcon(Landroid/view/PointerIcon;)Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 2
+    .locals 1
     .param p0, "pointerIcon"    # Landroid/view/PointerIcon;
 
     const-string/jumbo v0, "pointerIcon"
@@ -130,7 +130,7 @@
 .end method
 
 .method public static final getPointerIconCrosshair()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 1
+    .locals 1
 
     .line 79
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon_androidKt;->pointerIconCrosshair:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -139,7 +139,7 @@
 .end method
 
 .method public static final getPointerIconDefault()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 1
+    .locals 1
 
     .line 78
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon_androidKt;->pointerIconDefault:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -148,7 +148,7 @@
 .end method
 
 .method public static final getPointerIconHand()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 1
+    .locals 1
 
     .line 81
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon_androidKt;->pointerIconHand:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -157,7 +157,7 @@
 .end method
 
 .method public static final getPointerIconText()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 1
+    .locals 1
 
     .line 80
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon_androidKt;->pointerIconText:Landroidx/compose/ui/input/pointer/PointerIcon;

@@ -78,7 +78,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Collection;)V
-    .registers 3
+    .locals 1
     .param p1, "impl"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -120,7 +120,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -139,7 +139,7 @@
 .end method
 
 .method public clear()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -151,7 +151,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableCollectionAdapter;->impl:Ljava/util/Collection;
 
@@ -163,7 +163,7 @@
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -188,7 +188,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 17
@@ -202,7 +202,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableCollectionAdapter;->impl:Ljava/util/Collection;
 
@@ -214,7 +214,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 18
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableCollectionAdapter;->impl:Ljava/util/Collection;
@@ -227,7 +227,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableCollectionAdapter;->impl:Ljava/util/Collection;
 
@@ -239,7 +239,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -258,7 +258,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -270,7 +270,7 @@
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -291,7 +291,7 @@
 .end method
 
 .method public removeIf(Ljava/util/function/Predicate;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -310,7 +310,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -331,7 +331,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 16
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableCollectionAdapter;->getSize()I
@@ -342,7 +342,7 @@
 .end method
 
 .method public toArray()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     move-object v0, p0
 
@@ -356,7 +356,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -381,7 +381,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 19
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableCollectionAdapter;->impl:Ljava/util/Collection;

@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/MotionEventVerifierApi29;
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 2044
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final isValidMotionEvent(Landroid/view/MotionEvent;I)Z
-    .registers 7
+    .locals 4
     .param p1, "event"    # Landroid/view/MotionEvent;
     .param p2, "index"    # I
 
@@ -80,23 +80,23 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move v0, v3
 
-    :goto_1b
-    if-eqz v0, :cond_33
+    :goto_0
+    if-eqz v0, :cond_2
 
     invoke-virtual {p1, p2}, Landroid/view/MotionEvent;->getRawY(I)F
 
@@ -106,29 +106,29 @@
 
     move-result v1
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_1
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
+    :cond_1
     move v0, v3
 
-    :goto_30
-    if-eqz v0, :cond_33
+    :goto_1
+    if-eqz v0, :cond_2
 
-    goto :goto_34
+    goto :goto_2
 
-    :cond_33
+    :cond_2
     move v2, v3
 
-    :goto_34
+    :goto_2
     return v2
 .end method

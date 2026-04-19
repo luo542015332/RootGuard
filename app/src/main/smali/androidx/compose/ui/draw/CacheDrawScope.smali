@@ -77,13 +77,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 233
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final getCacheParams$ui_release()Landroidx/compose/ui/draw/BuildDrawCacheParams;
-    .registers 2
+    .locals 1
 
     .line 234
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawScope;->cacheParams:Landroidx/compose/ui/draw/BuildDrawCacheParams;
@@ -111,7 +111,7 @@
 .end method
 
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     .line 263
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawScope;->cacheParams:Landroidx/compose/ui/draw/BuildDrawCacheParams;
@@ -128,7 +128,7 @@
 .end method
 
 .method public final getDrawResult$ui_release()Landroidx/compose/ui/draw/DrawResult;
-    .registers 2
+    .locals 1
 
     .line 235
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawScope;->drawResult:Landroidx/compose/ui/draw/DrawResult;
@@ -137,7 +137,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     .line 266
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawScope;->cacheParams:Landroidx/compose/ui/draw/BuildDrawCacheParams;
@@ -154,7 +154,7 @@
 .end method
 
 .method public final getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 245
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawScope;->cacheParams:Landroidx/compose/ui/draw/BuildDrawCacheParams;
@@ -167,7 +167,7 @@
 .end method
 
 .method public final getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 240
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawScope;->cacheParams:Landroidx/compose/ui/draw/BuildDrawCacheParams;
@@ -180,7 +180,7 @@
 .end method
 
 .method public final onDrawBehind(Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/draw/DrawResult;
-    .registers 3
+    .locals 1
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -214,7 +214,7 @@
 .end method
 
 .method public final onDrawWithContent(Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/draw/DrawResult;
-    .registers 5
+    .locals 3
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -253,7 +253,7 @@
 .end method
 
 .method public final setCacheParams$ui_release(Landroidx/compose/ui/draw/BuildDrawCacheParams;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/draw/BuildDrawCacheParams;
 
     const-string v0, "<set-?>"
@@ -267,7 +267,7 @@
 .end method
 
 .method public final setDrawResult$ui_release(Landroidx/compose/ui/draw/DrawResult;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/draw/DrawResult;
 
     .line 235

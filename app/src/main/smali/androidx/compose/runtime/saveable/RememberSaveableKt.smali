@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 199
     const/16 v0, 0x24
@@ -65,7 +65,7 @@
 .end method
 
 .method public static final synthetic access$requireCanBeSaved(Landroidx/compose/runtime/saveable/SaveableStateRegistry;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p0, "$receiver"    # Landroidx/compose/runtime/saveable/SaveableStateRegistry;
     .param p1, "value"    # Ljava/lang/Object;
 
@@ -76,7 +76,7 @@
 .end method
 
 .method private static final mutableStateSaver(Landroidx/compose/runtime/saveable/Saver;)Landroidx/compose/runtime/saveable/Saver;
-    .registers 5
+    .locals 4
     .param p0, "inner"    # Landroidx/compose/runtime/saveable/Saver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -134,7 +134,7 @@
 .end method
 
 .method public static final rememberSaveable([Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/MutableState;
-    .registers 15
+    .locals 8
     .param p0, "inputs"    # [Ljava/lang/Object;
     .param p1, "stateSaver"    # Landroidx/compose/runtime/saveable/Saver;
     .param p2, "key"    # Ljava/lang/String;
@@ -185,17 +185,17 @@
 
     and-int/lit8 p6, p6, 0x4
 
-    if-eqz p6, :cond_22
+    if-eqz p6, :cond_0
 
     .line 140
     const/4 p2, 0x0
 
-    :cond_22
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result p6
 
-    if-eqz p6, :cond_2f
+    if-eqz p6, :cond_1
 
     .line 142
     const/4 p6, -0x1
@@ -205,7 +205,7 @@
     invoke-static {v0, p5, p6, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 143
-    :cond_2f
+    :cond_1
     array-length p6, p0
 
     invoke-static {p0, p6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -248,18 +248,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_54
+    :cond_2
     invoke-interface {p4}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object p6
 .end method
 
 .method public static final rememberSaveable([Ljava/lang/Object;Landroidx/compose/runtime/saveable/Saver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 25
+    .locals 18
     .param p0, "inputs"    # [Ljava/lang/Object;
     .param p1, "saver"    # Landroidx/compose/runtime/saveable/Saver;
     .param p2, "key"    # Ljava/lang/String;
@@ -308,7 +308,7 @@
 
     and-int/lit8 v4, p6, 0x2
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_0
 
     .line 68
     invoke-static {}, Landroidx/compose/runtime/saveable/SaverKt;->autoSaver()Landroidx/compose/runtime/saveable/Saver;
@@ -317,44 +317,44 @@
 
     .end local p1    # "saver":Landroidx/compose/runtime/saveable/Saver;
     .local v4, "saver":Landroidx/compose/runtime/saveable/Saver;
-    goto :goto_28
+    goto :goto_0
 
     .line 0
     .end local v4    # "saver":Landroidx/compose/runtime/saveable/Saver;
     .restart local p1    # "saver":Landroidx/compose/runtime/saveable/Saver;
-    :cond_26
+    :cond_0
     move-object/from16 v4, p1
 
     .line 68
     .end local p1    # "saver":Landroidx/compose/runtime/saveable/Saver;
     .restart local v4    # "saver":Landroidx/compose/runtime/saveable/Saver;
-    :goto_28
+    :goto_0
     and-int/lit8 v5, p6, 0x4
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_1
 
     .line 69
     const/4 v5, 0x0
 
     .end local p2    # "key":Ljava/lang/String;
     .local v5, "key":Ljava/lang/String;
-    goto :goto_30
+    goto :goto_1
 
     .line 68
     .end local v5    # "key":Ljava/lang/String;
     .restart local p2    # "key":Ljava/lang/String;
-    :cond_2e
+    :cond_1
     move-object/from16 v5, p2
 
     .line 69
     .end local p2    # "key":Ljava/lang/String;
     .restart local v5    # "key":Ljava/lang/String;
-    :goto_30
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v6
 
-    if-eqz v6, :cond_40
+    if-eqz v6, :cond_2
 
     .line 71
     const/4 v6, -0x1
@@ -365,14 +365,14 @@
 
     invoke-static {v2, v8, v6, v7}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_42
+    goto :goto_2
 
     .line 69
-    :cond_40
+    :cond_2
     move/from16 v8, p5
 
     .line 71
-    :goto_42
+    :goto_2
     const v2, 0x3f24a645
 
     invoke-interface {v1, v2}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
@@ -388,34 +388,34 @@
 
     const/4 v6, 0x0
 
-    if-eqz v2, :cond_5c
+    if-eqz v2, :cond_4
 
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    if-nez v2, :cond_5a
+    if-nez v2, :cond_3
 
-    goto :goto_5c
+    goto :goto_3
 
-    :cond_5a
+    :cond_3
     move v2, v6
 
-    goto :goto_5d
+    goto :goto_4
 
-    :cond_5c
-    :goto_5c
+    :cond_4
+    :goto_3
     const/4 v2, 0x1
 
-    :goto_5d
-    if-nez v2, :cond_61
+    :goto_4
+    if-nez v2, :cond_5
 
     .line 74
     move-object v2, v5
 
-    goto :goto_76
+    goto :goto_5
 
-    :cond_61
+    :cond_5
     nop
 
     .line 76
@@ -438,7 +438,7 @@
     invoke-static {v2, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 73
-    :goto_76
+    :goto_5
     invoke-interface/range {p4 .. p4}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     .line 79
@@ -514,8 +514,8 @@
 
     move v14, v6
 
-    :goto_af
-    if-ge v14, v13, :cond_bc
+    :goto_6
+    if-ge v14, v13, :cond_6
 
     aget-object v15, v9, v14
 
@@ -529,10 +529,10 @@
     .end local v15    # "key$iv":Ljava/lang/Object;
     add-int/lit8 v14, v14, 0x1
 
-    goto :goto_af
+    goto :goto_6
 
     .line 204
-    :cond_bc
+    :cond_6
     move-object/from16 v13, p4
 
     .local v13, "$this$cache$iv$iv":Landroidx/compose/runtime/Composer;
@@ -549,7 +549,7 @@
 
     .line 206
     .local v16, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v12, :cond_d2
+    if-nez v12, :cond_8
 
     sget-object v17, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -557,30 +557,30 @@
 
     move-result-object v6
 
-    if-ne v15, v6, :cond_d0
+    if-ne v15, v6, :cond_7
 
-    goto :goto_d2
+    goto :goto_7
 
     .line 210
-    :cond_d0
+    :cond_7
     move-object v0, v15
 
-    goto :goto_f4
+    goto :goto_9
 
     .line 207
-    :cond_d2
-    :goto_d2
+    :cond_8
+    :goto_7
     const/4 v6, 0x0
 
     .line 85
     .local v6, "$i$a$-remember-RememberSaveableKt$rememberSaveable$value$1":I
-    if-eqz v7, :cond_e6
+    if-eqz v7, :cond_9
 
     invoke-interface {v7, v2}, Landroidx/compose/runtime/saveable/SaveableStateRegistry;->consumeRestored(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v17
 
-    if-eqz v17, :cond_e6
+    if-eqz v17, :cond_9
 
     move-object/from16 p2, v17
 
@@ -600,15 +600,15 @@
     .line 85
     .end local v0    # "it":Ljava/lang/Object;
     .end local v17    # "$i$a$-let-RememberSaveableKt$rememberSaveable$value$1$restored$1":I
-    goto :goto_e7
+    goto :goto_8
 
-    :cond_e6
+    :cond_9
     const/4 v0, 0x0
 
     .line 88
     .local v0, "restored":Ljava/lang/Object;
-    :goto_e7
-    if-nez v0, :cond_ef
+    :goto_8
+    if-nez v0, :cond_a
 
     invoke-interface/range {p3 .. p3}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
@@ -619,7 +619,7 @@
     .line 207
     .end local v0    # "restored":Ljava/lang/Object;
     .end local v6    # "$i$a$-remember-RememberSaveableKt$rememberSaveable$value$1":I
-    :cond_ef
+    :cond_a
     nop
 
     .line 208
@@ -631,7 +631,7 @@
 
     .line 206
     .end local v0    # "value$iv$iv":Ljava/lang/Object;
-    :goto_f4
+    :goto_9
     nop
 
     .line 205
@@ -653,7 +653,7 @@
 
     .line 92
     .local v0, "value":Ljava/lang/Object;
-    if-eqz v7, :cond_10f
+    if-eqz v7, :cond_b
 
     .line 96
     const/4 v6, 0x0
@@ -680,34 +680,34 @@
 
     .end local v9    # "saverState":Landroidx/compose/runtime/State;
     .end local v10    # "valueState":Landroidx/compose/runtime/State;
-    :cond_10f
+    :cond_b
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v6
 
-    if-eqz v6, :cond_118
+    if-eqz v6, :cond_c
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_118
+    :cond_c
     invoke-interface/range {p4 .. p4}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method private static final requireCanBeSaved(Landroidx/compose/runtime/saveable/SaveableStateRegistry;Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$requireCanBeSaved"    # Landroidx/compose/runtime/saveable/SaveableStateRegistry;
     .param p1, "value"    # Ljava/lang/Object;
 
     .line 170
-    if-eqz p1, :cond_71
+    if-eqz p1, :cond_2
 
     invoke-interface {p0, p1}, Landroidx/compose/runtime/saveable/SaveableStateRegistry;->canBeSaved(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_71
+    if-nez v0, :cond_2
 
     .line 171
     new-instance v0, Ljava/lang/IllegalArgumentException;
@@ -715,7 +715,7 @@
     .line 172
     instance-of v1, p1, Landroidx/compose/runtime/snapshots/SnapshotMutableState;
 
-    if-eqz v1, :cond_5a
+    if-eqz v1, :cond_1
 
     .line 173
     move-object v1, p1
@@ -730,7 +730,7 @@
 
     move-result-object v2
 
-    if-eq v1, v2, :cond_38
+    if-eq v1, v2, :cond_0
 
     .line 174
     move-object v1, p1
@@ -745,7 +745,7 @@
 
     move-result-object v2
 
-    if-eq v1, v2, :cond_38
+    if-eq v1, v2, :cond_0
 
     .line 175
     move-object v1, p1
@@ -760,15 +760,15 @@
 
     move-result-object v2
 
-    if-eq v1, v2, :cond_38
+    if-eq v1, v2, :cond_0
 
     .line 177
     const-string v1, "If you use a custom SnapshotMutationPolicy for your MutableState you have to write a custom Saver"
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 180
-    :cond_38
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -801,10 +801,10 @@
 
     move-result-object v1
 
-    goto :goto_6d
+    goto :goto_0
 
     .line 187
-    :cond_5a
+    :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -824,12 +824,12 @@
     move-result-object v1
 
     .line 171
-    :goto_6d
+    :goto_0
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
     .line 194
-    :cond_71
+    :cond_2
     return-void
 .end method

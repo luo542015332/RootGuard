@@ -48,7 +48,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/View;Landroidx/compose/runtime/Recomposer;)V
-    .registers 3
+    .locals 0
     .param p1, "$receiver"    # Landroid/view/View;
     .param p2, "$recomposer"    # Landroidx/compose/runtime/Recomposer;
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 3
+    .locals 1
     .param p1, "v"    # Landroid/view/View;
 
     const-string/jumbo v0, "v"
@@ -77,7 +77,7 @@
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 4
+    .locals 2
     .param p1, "v"    # Landroid/view/View;
 
     const-string/jumbo v0, "v"

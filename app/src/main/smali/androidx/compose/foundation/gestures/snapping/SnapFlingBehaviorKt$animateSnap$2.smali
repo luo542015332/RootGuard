@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(FLkotlin/jvm/internal/Ref$FloatRef;Landroidx/compose/foundation/gestures/ScrollScope;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(F",
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 407
@@ -120,7 +120,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/animation/core/AnimationScope;)V
-    .registers 7
+    .locals 5
     .param p1, "$this$animateTo"    # Landroidx/compose/animation/core/AnimationScope;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -149,7 +149,6 @@
 
     iget v1, p0, Landroidx/compose/foundation/gestures/snapping/SnapFlingBehaviorKt$animateSnap$2;->$cancelOffset:F
 
-    # invokes: Landroidx/compose/foundation/gestures/snapping/SnapFlingBehaviorKt;->coerceToTarget(FF)F
     invoke-static {v0, v1}, Landroidx/compose/foundation/gestures/snapping/SnapFlingBehaviorKt;->access$coerceToTarget(FF)F
 
     move-result v0
@@ -191,7 +190,7 @@
 
     cmpl-float v3, v3, v4
 
-    if-gtz v3, :cond_49
+    if-gtz v3, :cond_1
 
     invoke-virtual {p1}, Landroidx/compose/animation/core/AnimationScope;->getValue()Ljava/lang/Object;
 
@@ -205,24 +204,24 @@
 
     cmpg-float v3, v0, v3
 
-    if-nez v3, :cond_46
+    if-nez v3, :cond_0
 
     const/4 v3, 0x1
 
-    goto :goto_47
+    goto :goto_0
 
-    :cond_46
+    :cond_0
     const/4 v3, 0x0
 
-    :goto_47
-    if-nez v3, :cond_4c
+    :goto_0
+    if-nez v3, :cond_2
 
     .line 418
-    :cond_49
+    :cond_1
     invoke-virtual {p1}, Landroidx/compose/animation/core/AnimationScope;->cancelAnimation()V
 
     .line 420
-    :cond_4c
+    :cond_2
     iget-object v3, p0, Landroidx/compose/foundation/gestures/snapping/SnapFlingBehaviorKt$animateSnap$2;->$consumedUpToNow:Lkotlin/jvm/internal/Ref$FloatRef;
 
     iget v4, v3, Lkotlin/jvm/internal/Ref$FloatRef;->element:F

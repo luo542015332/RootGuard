@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/Placeable;ILandroidx/compose/ui/layout/Placeable;II)V
-    .registers 7
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/SnackbarKt$OneRowSnackbar$2$measure$4;->$textPlaceable:Landroidx/compose/ui/layout/Placeable;
 
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 348
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 10
+    .locals 8
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$layout"

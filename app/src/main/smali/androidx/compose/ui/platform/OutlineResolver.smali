@@ -136,7 +136,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/unit/Density;)V
-    .registers 6
+    .locals 4
     .param p1, "density"    # Landroidx/compose/ui/unit/Density;
 
     const-string/jumbo v0, "density"
@@ -218,7 +218,7 @@
 .end method
 
 .method private final isSameBounds-4L21HEs(Landroidx/compose/ui/geometry/RoundRect;JJF)Z
-    .registers 12
+    .locals 5
     .param p1, "$this$isSameBounds_u2d4L21HEs"    # Landroidx/compose/ui/geometry/RoundRect;
     .param p2, "offset"    # J
     .param p4, "size"    # J
@@ -227,18 +227,18 @@
     .line 346
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_6f
+    if-eqz p1, :cond_7
 
     invoke-static {p1}, Landroidx/compose/ui/geometry/RoundRectKt;->isSimple(Landroidx/compose/ui/geometry/RoundRect;)Z
 
     move-result v1
 
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
-    goto/16 :goto_6f
+    goto/16 :goto_6
 
     .line 349
-    :cond_b
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/RoundRect;->getLeft()F
 
     move-result v1
@@ -251,17 +251,17 @@
 
     const/4 v2, 0x1
 
-    if-nez v1, :cond_1a
+    if-nez v1, :cond_1
 
     move v1, v2
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_1
     move v1, v0
 
-    :goto_1b
-    if-eqz v1, :cond_6d
+    :goto_0
+    if-eqz v1, :cond_6
 
     .line 350
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/RoundRect;->getTop()F
@@ -274,17 +274,17 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_2b
+    if-nez v1, :cond_2
 
     move v1, v2
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
+    :cond_2
     move v1, v0
 
-    :goto_2c
-    if-eqz v1, :cond_6d
+    :goto_1
+    if-eqz v1, :cond_6
 
     .line 351
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/RoundRect;->getRight()F
@@ -303,17 +303,17 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_41
+    if-nez v1, :cond_3
 
     move v1, v2
 
-    goto :goto_42
+    goto :goto_2
 
-    :cond_41
+    :cond_3
     move v1, v0
 
-    :goto_42
-    if-eqz v1, :cond_6d
+    :goto_2
+    if-eqz v1, :cond_6
 
     .line 352
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/RoundRect;->getBottom()F
@@ -332,17 +332,17 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_57
+    if-nez v1, :cond_4
 
     move v1, v2
 
-    goto :goto_58
+    goto :goto_3
 
-    :cond_57
+    :cond_4
     move v1, v0
 
-    :goto_58
-    if-eqz v1, :cond_6d
+    :goto_3
+    if-eqz v1, :cond_6
 
     .line 353
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -355,42 +355,42 @@
 
     cmpg-float v1, v1, p6
 
-    if-nez v1, :cond_68
+    if-nez v1, :cond_5
 
     move v1, v2
 
-    goto :goto_69
+    goto :goto_4
 
-    :cond_68
+    :cond_5
     move v1, v0
 
-    :goto_69
-    if-eqz v1, :cond_6d
+    :goto_4
+    if-eqz v1, :cond_6
 
     move v0, v2
 
-    goto :goto_6e
+    goto :goto_5
 
-    :cond_6d
+    :cond_6
     nop
 
     .line 349
-    :goto_6e
+    :goto_5
     return v0
 
     .line 347
-    :cond_6f
-    :goto_6f
+    :cond_7
+    :goto_6
     return v0
 .end method
 
 .method private final updateCache()V
-    .registers 6
+    .locals 5
 
     .line 269
     iget-boolean v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->cacheIsDirty:Z
 
-    if-eqz v0, :cond_75
+    if-eqz v0, :cond_3
 
     .line 270
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -427,7 +427,7 @@
     .line 276
     iget-boolean v3, p0, Landroidx/compose/ui/platform/OutlineResolver;->outlineNeeded:Z
 
-    if-eqz v3, :cond_70
+    if-eqz v3, :cond_2
 
     invoke-static {v0, v1}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
@@ -435,7 +435,7 @@
 
     cmpl-float v0, v0, v2
 
-    if-lez v0, :cond_70
+    if-lez v0, :cond_2
 
     iget-wide v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->size:J
 
@@ -445,7 +445,7 @@
 
     cmpl-float v0, v0, v2
 
-    if-lez v0, :cond_70
+    if-lez v0, :cond_2
 
     .line 280
     const/4 v0, 0x1
@@ -475,7 +475,7 @@
     .line 284
     instance-of v1, v0, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_0
 
     move-object v1, v0
 
@@ -487,13 +487,13 @@
 
     invoke-direct {p0, v1}, Landroidx/compose/ui/platform/OutlineResolver;->updateCacheWithRect(Landroidx/compose/ui/geometry/Rect;)V
 
-    goto :goto_75
+    goto :goto_0
 
     .line 285
-    :cond_52
+    :cond_0
     instance-of v1, v0, Landroidx/compose/ui/graphics/Outline$Rounded;
 
-    if-eqz v1, :cond_61
+    if-eqz v1, :cond_1
 
     move-object v1, v0
 
@@ -505,13 +505,13 @@
 
     invoke-direct {p0, v1}, Landroidx/compose/ui/platform/OutlineResolver;->updateCacheWithRoundRect(Landroidx/compose/ui/geometry/RoundRect;)V
 
-    goto :goto_75
+    goto :goto_0
 
     .line 286
-    :cond_61
+    :cond_1
     instance-of v1, v0, Landroidx/compose/ui/graphics/Outline$Generic;
 
-    if-eqz v1, :cond_75
+    if-eqz v1, :cond_3
 
     move-object v1, v0
 
@@ -524,22 +524,22 @@
     invoke-direct {p0, v1}, Landroidx/compose/ui/platform/OutlineResolver;->updateCacheWithPath(Landroidx/compose/ui/graphics/Path;)V
 
     .end local v0    # "outline":Landroidx/compose/ui/graphics/Outline;
-    goto :goto_75
+    goto :goto_0
 
     .line 289
-    :cond_70
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->cachedOutline:Landroid/graphics/Outline;
 
     invoke-virtual {v0}, Landroid/graphics/Outline;->setEmpty()V
 
     .line 292
-    :cond_75
-    :goto_75
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method private final updateCacheWithPath(Landroidx/compose/ui/graphics/Path;)V
-    .registers 7
+    .locals 5
     .param p1, "composePath"    # Landroidx/compose/ui/graphics/Path;
 
     .line 328
@@ -549,18 +549,18 @@
 
     const/4 v2, 0x1
 
-    if-gt v0, v1, :cond_19
+    if-gt v0, v1, :cond_1
 
     invoke-interface {p1}, Landroidx/compose/ui/graphics/Path;->isConvex()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 333
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->isSupportedOutline:Z
@@ -573,11 +573,11 @@
     .line 335
     iput-boolean v2, p0, Landroidx/compose/ui/platform/OutlineResolver;->usePathForClip:Z
 
-    goto :goto_35
+    goto :goto_1
 
     .line 330
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->cachedOutline:Landroid/graphics/Outline;
 
     move-object v1, p1
@@ -589,7 +589,7 @@
     .local v3, "$i$f$asAndroidPath":I
     instance-of v4, v1, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v4, :cond_38
+    if-eqz v4, :cond_2
 
     .line 359
     move-object v4, v1
@@ -620,7 +620,7 @@
     iput-boolean v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->usePathForClip:Z
 
     .line 337
-    :goto_35
+    :goto_1
     iput-object p1, p0, Landroidx/compose/ui/platform/OutlineResolver;->outlinePath:Landroidx/compose/ui/graphics/Path;
 
     .line 338
@@ -629,7 +629,7 @@
     .line 361
     .restart local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v3    # "$i$f$asAndroidPath":I
-    :cond_38
+    :cond_2
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v2, "Unable to obtain android.graphics.Path"
@@ -640,7 +640,7 @@
 .end method
 
 .method private final updateCacheWithRect(Landroidx/compose/ui/geometry/Rect;)V
-    .registers 7
+    .locals 5
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
 
     .line 295
@@ -720,7 +720,7 @@
 .end method
 
 .method private final updateCacheWithRoundRect(Landroidx/compose/ui/geometry/RoundRect;)V
-    .registers 10
+    .locals 8
     .param p1, "roundRect"    # Landroidx/compose/ui/geometry/RoundRect;
 
     .line 306
@@ -768,7 +768,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_54
+    if-eqz v1, :cond_0
 
     .line 310
     iget-object v2, p0, Landroidx/compose/ui/platform/OutlineResolver;->cachedOutline:Landroid/graphics/Outline;
@@ -820,13 +820,13 @@
     .line 317
     iput v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->roundedCornerRadius:F
 
-    goto :goto_69
+    goto :goto_0
 
     .line 319
-    :cond_54
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/platform/OutlineResolver;->cachedRrectPath:Landroidx/compose/ui/graphics/Path;
 
-    if-nez v1, :cond_60
+    if-nez v1, :cond_1
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
 
@@ -846,7 +846,7 @@
     .end local v2    # "it":Landroidx/compose/ui/graphics/Path;
     .end local v3    # "$i$a$-also-OutlineResolver$updateCacheWithRoundRect$path$1":I
     .local v1, "path":Landroidx/compose/ui/graphics/Path;
-    :cond_60
+    :cond_1
     invoke-interface {v1}, Landroidx/compose/ui/graphics/Path;->reset()V
 
     .line 321
@@ -857,14 +857,14 @@
 
     .line 324
     .end local v1    # "path":Landroidx/compose/ui/graphics/Path;
-    :goto_69
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final clipToOutline(Landroidx/compose/ui/graphics/Canvas;)V
-    .registers 24
+    .locals 22
     .param p1, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
 
     move-object/from16 v7, p0
@@ -888,24 +888,24 @@
 
     const/4 v10, 0x2
 
-    if-eqz v14, :cond_19
+    if-eqz v14, :cond_0
 
     .line 218
     invoke-static {v15, v14, v8, v10, v9}, Landroidx/compose/ui/graphics/Canvas;->clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
 
     move-object v2, v14
 
-    goto/16 :goto_b1
+    goto/16 :goto_1
 
     .line 224
-    :cond_19
+    :cond_0
     iget v6, v7, Landroidx/compose/ui/platform/OutlineResolver;->roundedCornerRadius:F
 
     const/4 v11, 0x0
 
     cmpl-float v0, v6, v11
 
-    if-lez v0, :cond_7c
+    if-lez v0, :cond_4
 
     .line 225
     iget-object v12, v7, Landroidx/compose/ui/platform/OutlineResolver;->tmpPath:Landroidx/compose/ui/graphics/Path;
@@ -916,7 +916,7 @@
 
     .line 227
     .local v13, "roundRect":Landroidx/compose/ui/geometry/RoundRect;
-    if-eqz v12, :cond_33
+    if-eqz v12, :cond_1
 
     .line 228
     iget-wide v2, v7, Landroidx/compose/ui/platform/OutlineResolver;->rectTopLeft:J
@@ -931,10 +931,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_77
+    if-nez v0, :cond_3
 
     .line 229
-    :cond_33
+    :cond_1
     nop
 
     .line 230
@@ -994,21 +994,21 @@
     move-result-object v13
 
     .line 236
-    if-nez v12, :cond_6d
+    if-nez v12, :cond_2
 
     .line 237
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
 
     move-result-object v12
 
-    goto :goto_70
+    goto :goto_0
 
     .line 239
-    :cond_6d
+    :cond_2
     invoke-interface {v12}, Landroidx/compose/ui/graphics/Path;->reset()V
 
     .line 241
-    :goto_70
+    :goto_0
     invoke-interface {v12, v13}, Landroidx/compose/ui/graphics/Path;->addRoundRect(Landroidx/compose/ui/geometry/RoundRect;)V
 
     .line 242
@@ -1018,17 +1018,17 @@
     iput-object v12, v7, Landroidx/compose/ui/platform/OutlineResolver;->tmpPath:Landroidx/compose/ui/graphics/Path;
 
     .line 245
-    :cond_77
+    :cond_3
     invoke-static {v15, v12, v8, v10, v9}, Landroidx/compose/ui/graphics/Canvas;->clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
 
     move-object v2, v14
 
     .end local v12    # "roundRectClipPath":Landroidx/compose/ui/graphics/Path;
     .end local v13    # "roundRect":Landroidx/compose/ui/geometry/RoundRect;
-    goto :goto_b1
+    goto :goto_1
 
     .line 248
-    :cond_7c
+    :cond_4
     nop
 
     .line 249
@@ -1095,12 +1095,12 @@
     invoke-static/range {v8 .. v15}, Landroidx/compose/ui/graphics/Canvas;->clipRect-N_I0leg$default(Landroidx/compose/ui/graphics/Canvas;FFFFIILjava/lang/Object;)V
 
     .line 256
-    :goto_b1
+    :goto_1
     return-void
 .end method
 
 .method public final getClipPath()Landroidx/compose/ui/graphics/Path;
-    .registers 2
+    .locals 1
 
     .line 133
     invoke-direct {p0}, Landroidx/compose/ui/platform/OutlineResolver;->updateCache()V
@@ -1112,7 +1112,7 @@
 .end method
 
 .method public final getOutline()Landroid/graphics/Outline;
-    .registers 2
+    .locals 1
 
     .line 111
     invoke-direct {p0}, Landroidx/compose/ui/platform/OutlineResolver;->updateCache()V
@@ -1120,29 +1120,29 @@
     .line 112
     iget-boolean v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->outlineNeeded:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->isSupportedOutline:Z
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->cachedOutline:Landroid/graphics/Outline;
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_1
     return-object v0
 .end method
 
 .method public final getOutlineClipSupported()Z
-    .registers 2
+    .locals 1
 
     .line 122
     iget-boolean v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->usePathForClip:Z
@@ -1153,7 +1153,7 @@
 .end method
 
 .method public final isInOutline-k-4lQ0M(J)Z
-    .registers 8
+    .locals 5
     .param p1, "position"    # J
 
     .line 199
@@ -1161,22 +1161,22 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 200
     return v1
 
     .line 202
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->calculatedOutline:Landroidx/compose/ui/graphics/Outline;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_1
 
     return v1
 
     .line 204
     .local v0, "outline":Landroidx/compose/ui/graphics/Outline;
-    :cond_b
+    :cond_1
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v1
@@ -1197,7 +1197,7 @@
 .end method
 
 .method public final update(Landroidx/compose/ui/graphics/Shape;FZFLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Z
-    .registers 11
+    .locals 4
     .param p1, "shape"    # Landroidx/compose/ui/graphics/Shape;
     .param p2, "alpha"    # F
     .param p3, "clipToOutline"    # Z
@@ -1235,7 +1235,7 @@
 
     .line 175
     .local v0, "shapeChanged":Z
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 176
     iput-object p1, p0, Landroidx/compose/ui/platform/OutlineResolver;->shape:Landroidx/compose/ui/graphics/Shape;
@@ -1244,32 +1244,32 @@
     iput-boolean v1, p0, Landroidx/compose/ui/platform/OutlineResolver;->cacheIsDirty:Z
 
     .line 179
-    :cond_25
-    if-nez p3, :cond_2f
+    :cond_0
+    if-nez p3, :cond_2
 
     const/4 v2, 0x0
 
     cmpl-float v2, p4, v2
 
-    if-lez v2, :cond_2d
+    if-lez v2, :cond_1
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2d
+    :cond_1
     const/4 v2, 0x0
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
-    :goto_2f
+    :cond_2
+    :goto_0
     move v2, v1
 
     .line 180
     .local v2, "outlineNeeded":Z
-    :goto_30
+    :goto_1
     iget-boolean v3, p0, Landroidx/compose/ui/platform/OutlineResolver;->outlineNeeded:Z
 
-    if-eq v3, v2, :cond_38
+    if-eq v3, v2, :cond_3
 
     .line 181
     iput-boolean v2, p0, Landroidx/compose/ui/platform/OutlineResolver;->outlineNeeded:Z
@@ -1278,10 +1278,10 @@
     iput-boolean v1, p0, Landroidx/compose/ui/platform/OutlineResolver;->cacheIsDirty:Z
 
     .line 184
-    :cond_38
+    :cond_3
     iget-object v3, p0, Landroidx/compose/ui/platform/OutlineResolver;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v3, p5, :cond_40
+    if-eq v3, p5, :cond_4
 
     .line 185
     iput-object p5, p0, Landroidx/compose/ui/platform/OutlineResolver;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
@@ -1290,14 +1290,14 @@
     iput-boolean v1, p0, Landroidx/compose/ui/platform/OutlineResolver;->cacheIsDirty:Z
 
     .line 188
-    :cond_40
+    :cond_4
     iget-object v3, p0, Landroidx/compose/ui/platform/OutlineResolver;->density:Landroidx/compose/ui/unit/Density;
 
     invoke-static {v3, p6}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_4c
+    if-nez v3, :cond_5
 
     .line 189
     iput-object p6, p0, Landroidx/compose/ui/platform/OutlineResolver;->density:Landroidx/compose/ui/unit/Density;
@@ -1306,12 +1306,12 @@
     iput-boolean v1, p0, Landroidx/compose/ui/platform/OutlineResolver;->cacheIsDirty:Z
 
     .line 192
-    :cond_4c
+    :cond_5
     return v0
 .end method
 
 .method public final update-uvyYCjk(J)V
-    .registers 5
+    .locals 2
     .param p1, "size"    # J
 
     .line 262
@@ -1321,7 +1321,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 263
     iput-wide p1, p0, Landroidx/compose/ui/platform/OutlineResolver;->size:J
@@ -1332,6 +1332,6 @@
     iput-boolean v0, p0, Landroidx/compose/ui/platform/OutlineResolver;->cacheIsDirty:Z
 
     .line 266
-    :cond_d
+    :cond_0
     return-void
 .end method

@@ -128,7 +128,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/Recomposer;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -150,7 +150,7 @@
 .end method
 
 .method public static final synthetic access$invokeSuspend$clearRecompositionState(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/Set;Ljava/util/Set;)V
-    .registers 5
+    .locals 0
 
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->invokeSuspend$clearRecompositionState(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/Set;Ljava/util/Set;)V
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public static final synthetic access$invokeSuspend$fillToInsert(Ljava/util/List;Landroidx/compose/runtime/Recomposer;)V
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->invokeSuspend$fillToInsert(Ljava/util/List;Landroidx/compose/runtime/Recomposer;)V
 
@@ -166,7 +166,7 @@
 .end method
 
 .method private static final invokeSuspend$clearRecompositionState(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/Set;Ljava/util/Set;)V
-    .registers 5
+    .locals 0
     .param p0, "toRecompose"    # Ljava/util/List;
     .param p1, "toInsert"    # Ljava/util/List;
     .param p2, "toApply"    # Ljava/util/List;
@@ -213,7 +213,7 @@
 .end method
 
 .method private static final invokeSuspend$fillToInsert(Ljava/util/List;Landroidx/compose/runtime/Recomposer;)V
-    .registers 13
+    .locals 11
     .param p0, "toInsert"    # Ljava/util/List;
     .param p1, "this$0"    # Landroidx/compose/runtime/Recomposer;
     .annotation system Ldalvik/annotation/Signature;
@@ -231,7 +231,6 @@
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
     .line 519
-    # getter for: Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
     invoke-static {p1}, Landroidx/compose/runtime/Recomposer;->access$getStateLock$p(Landroidx/compose/runtime/Recomposer;)Ljava/lang/Object;
 
     move-result-object v0
@@ -247,8 +246,7 @@
 
     .line 520
     .local v2, "$i$a$-synchronized-Recomposer$runRecomposeAndApplyChanges$2$fillToInsert$1":I
-    :try_start_a
-    # getter for: Landroidx/compose/runtime/Recomposer;->compositionValuesAwaitingInsert:Ljava/util/List;
+    :try_start_0
     invoke-static {p1}, Landroidx/compose/runtime/Recomposer;->access$getCompositionValuesAwaitingInsert$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
 
     move-result-object v3
@@ -268,8 +266,8 @@
 
     move-result v6
 
-    :goto_15
-    if-ge v5, v6, :cond_29
+    :goto_0
+    if-ge v5, v6, :cond_0
 
     .line 1506
     invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -302,17 +300,16 @@
     .end local v7    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1509
     .end local v5    # "index$iv":I
-    :cond_29
+    :cond_0
     nop
 
     .line 521
     .end local v3    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v4    # "$i$f$fastForEach":I
-    # getter for: Landroidx/compose/runtime/Recomposer;->compositionValuesAwaitingInsert:Ljava/util/List;
     invoke-static {p1}, Landroidx/compose/runtime/Recomposer;->access$getCompositionValuesAwaitingInsert$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
 
     move-result-object v3
@@ -324,8 +321,8 @@
 
     .end local v2    # "$i$a$-synchronized-Recomposer$runRecomposeAndApplyChanges$2$fillToInsert$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_34
-    .catchall {:try_start_a .. :try_end_34} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1503
     monitor-exit v0
@@ -338,7 +335,7 @@
     .line 1503
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_36
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -349,7 +346,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -365,7 +362,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/runtime/MonotonicFrameClock;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -397,7 +394,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 22
+    .locals 20
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -408,7 +405,7 @@
 
     iget v2, v1, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->label:I
 
-    packed-switch v2, :pswitch_data_10c
+    packed-switch v2, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -418,7 +415,7 @@
 
     throw v0
 
-    :pswitch_14
+    :pswitch_0
     move-object/from16 v2, p0
 
     .local v2, "this":Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;
@@ -475,7 +472,7 @@
 
     move-object/from16 v6, v19
 
-    goto/16 :goto_fc
+    goto/16 :goto_2
 
     .end local v2    # "this":Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;
     .end local v3    # "$result":Ljava/lang/Object;
@@ -485,7 +482,7 @@
     .end local v7    # "toInsert":Ljava/util/List;
     .end local v8    # "toRecompose":Ljava/util/List;
     .end local v9    # "parentFrameClock":Landroidx/compose/runtime/MonotonicFrameClock;
-    :pswitch_44
+    :pswitch_1
     move-object/from16 v2, p0
 
     .restart local v2    # "this":Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;
@@ -536,7 +533,7 @@
 
     move-object v4, v9
 
-    goto :goto_c0
+    goto :goto_1
 
     .end local v2    # "this":Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;
     .end local v3    # "$result":Ljava/lang/Object;
@@ -546,7 +543,7 @@
     .end local v7    # "toInsert":Ljava/util/List;
     .end local v8    # "toRecompose":Ljava/util/List;
     .end local v9    # "parentFrameClock":Landroidx/compose/runtime/MonotonicFrameClock;
-    :pswitch_6a
+    :pswitch_2
     invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v2, p0
@@ -601,15 +598,14 @@
 
     .line 525
     .local v9, "toComplete":Ljava/util/Set;
-    :goto_98
+    :goto_0
     iget-object v10, v2, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->this$0:Landroidx/compose/runtime/Recomposer;
 
-    # invokes: Landroidx/compose/runtime/Recomposer;->getShouldKeepRecomposing()Z
     invoke-static {v10}, Landroidx/compose/runtime/Recomposer;->access$getShouldKeepRecomposing(Landroidx/compose/runtime/Recomposer;)Z
 
     move-result v10
 
-    if-eqz v10, :cond_108
+    if-eqz v10, :cond_3
 
     .line 526
     iget-object v10, v2, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->this$0:Landroidx/compose/runtime/Recomposer;
@@ -634,18 +630,17 @@
 
     iput v12, v2, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->label:I
 
-    # invokes: Landroidx/compose/runtime/Recomposer;->awaitWorkAvailable(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     invoke-static {v10, v11}, Landroidx/compose/runtime/Recomposer;->access$awaitWorkAvailable(Landroidx/compose/runtime/Recomposer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v10
 
-    if-ne v10, v0, :cond_bb
+    if-ne v10, v0, :cond_0
 
     .line 502
     return-object v0
 
     .line 526
-    :cond_bb
+    :cond_0
     move-object v12, v5
 
     move-object v13, v6
@@ -667,15 +662,14 @@
     .local v13, "toInsert":Ljava/util/List;
     .local v14, "toApply":Ljava/util/List;
     .local v15, "toLateApply":Ljava/util/Set;
-    :goto_c0
+    :goto_1
     iget-object v5, v2, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->this$0:Landroidx/compose/runtime/Recomposer;
 
-    # invokes: Landroidx/compose/runtime/Recomposer;->recordComposerModifications()Z
     invoke-static {v5}, Landroidx/compose/runtime/Recomposer;->access$recordComposerModifications(Landroidx/compose/runtime/Recomposer;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_102
+    if-eqz v5, :cond_2
 
     .line 537
     new-instance v16, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2$1;
@@ -732,13 +726,13 @@
 
     move-result-object v5
 
-    if-ne v5, v0, :cond_f8
+    if-ne v5, v0, :cond_1
 
     .line 502
     return-object v0
 
     .line 537
-    :cond_f8
+    :cond_1
     move-object v5, v12
 
     move-object v6, v13
@@ -756,13 +750,12 @@
     .restart local v6    # "toInsert":Ljava/util/List;
     .restart local v7    # "toApply":Ljava/util/List;
     .restart local v8    # "toLateApply":Ljava/util/Set;
-    :goto_fc
+    :goto_2
     iget-object v10, v2, Landroidx/compose/runtime/Recomposer$runRecomposeAndApplyChanges$2;->this$0:Landroidx/compose/runtime/Recomposer;
 
-    # invokes: Landroidx/compose/runtime/Recomposer;->discardUnusedValues()V
     invoke-static {v10}, Landroidx/compose/runtime/Recomposer;->access$discardUnusedValues(Landroidx/compose/runtime/Recomposer;)V
 
-    goto :goto_98
+    goto :goto_0
 
     .line 529
     .end local v5    # "toRecompose":Ljava/util/List;
@@ -775,7 +768,7 @@
     .restart local v13    # "toInsert":Ljava/util/List;
     .restart local v14    # "toApply":Ljava/util/List;
     .restart local v15    # "toLateApply":Ljava/util/Set;
-    :cond_102
+    :cond_2
     move-object v9, v10
 
     .end local v10    # "toComplete":Ljava/util/Set;
@@ -788,7 +781,7 @@
 
     move-object v8, v15
 
-    goto :goto_98
+    goto :goto_0
 
     .line 681
     .end local v12    # "toRecompose":Ljava/util/List;
@@ -799,17 +792,17 @@
     .restart local v6    # "toInsert":Ljava/util/List;
     .restart local v7    # "toApply":Ljava/util/List;
     .restart local v8    # "toLateApply":Ljava/util/Set;
-    :cond_108
+    :cond_3
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
     nop
 
-    :pswitch_data_10c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6a
-        :pswitch_44
-        :pswitch_14
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

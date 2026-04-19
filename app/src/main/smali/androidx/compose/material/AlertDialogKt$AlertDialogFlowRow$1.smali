@@ -48,7 +48,7 @@
 
 # direct methods
 .method constructor <init>(FF)V
-    .registers 3
+    .locals 0
 
     iput p1, p0, Landroidx/compose/material/AlertDialogKt$AlertDialogFlowRow$1;->$mainAxisSpacing:F
 
@@ -60,7 +60,7 @@
 .end method
 
 .method private static final measure_3p2s80s$canAddToCurrentSequence(Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Landroidx/compose/ui/layout/MeasureScope;FJLandroidx/compose/ui/layout/Placeable;)Z
-    .registers 9
+    .locals 2
     .param p0, "currentSequence"    # Ljava/util/List;
     .param p1, "currentMainAxisSize"    # Lkotlin/jvm/internal/Ref$IntRef;
     .param p2, "$this_Layout"    # Landroidx/compose/ui/layout/MeasureScope;
@@ -86,7 +86,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     iget v0, p1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
@@ -109,25 +109,25 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_19
+    if-gt v0, v1, :cond_0
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1c
+    :goto_1
     return v0
 .end method
 
 .method private static final measure_3p2s80s$startNewSequence(Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Landroidx/compose/ui/layout/MeasureScope;FLjava/util/List;Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Lkotlin/jvm/internal/Ref$IntRef;)V
-    .registers 13
+    .locals 3
     .param p0, "sequences"    # Ljava/util/List;
     .param p1, "crossAxisSpace"    # Lkotlin/jvm/internal/Ref$IntRef;
     .param p2, "$this_Layout"    # Landroidx/compose/ui/layout/MeasureScope;
@@ -175,7 +175,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 215
     iget v0, p1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
@@ -189,7 +189,7 @@
     iput v0, p1, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     .line 218
-    :cond_14
+    :cond_0
     move-object v0, p4
 
     check-cast v0, Ljava/lang/Iterable;
@@ -264,7 +264,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 30
+    .locals 25
     .param p1, "$this$Layout"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -391,12 +391,12 @@
 
     move-result-object v19
 
-    :goto_5e
+    :goto_0
     invoke-interface/range {v19 .. v19}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_d8
+    if-eqz v1, :cond_2
 
     invoke-interface/range {v19 .. v19}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -442,7 +442,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_9a
+    if-nez v1, :cond_0
 
     iget v4, v0, Landroidx/compose/material/AlertDialogKt$AlertDialogFlowRow$1;->$crossAxisSpacing:F
 
@@ -472,13 +472,13 @@
     .local v24, "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     invoke-static/range {v1 .. v10}, Landroidx/compose/material/AlertDialogKt$AlertDialogFlowRow$1;->measure_3p2s80s$startNewSequence(Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Landroidx/compose/ui/layout/MeasureScope;FLjava/util/List;Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Lkotlin/jvm/internal/Ref$IntRef;)V
 
-    goto :goto_9d
+    goto :goto_1
 
     .end local v15    # "currentCrossAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .end local v24    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v9    # "currentCrossAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v10    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
-    :cond_9a
+    :cond_0
     move-object v15, v9
 
     move-object/from16 v24, v10
@@ -488,7 +488,7 @@
     .end local v10    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v15    # "currentCrossAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v24    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
-    :goto_9d
+    :goto_1
     move-object v1, v11
 
     check-cast v1, Ljava/util/Collection;
@@ -499,7 +499,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_b6
+    if-eqz v1, :cond_1
 
     .line 239
     move-object/from16 v10, v24
@@ -518,18 +518,18 @@
 
     iput v1, v10, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    goto :goto_b8
+    goto :goto_2
 
     .line 238
     .end local v10    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v24    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
-    :cond_b6
+    :cond_1
     move-object/from16 v10, v24
 
     .line 241
     .end local v24    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v10    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
-    :goto_b8
+    :goto_2
     move-object/from16 v1, v21
 
     .end local v21    # "placeable":Landroidx/compose/ui/layout/Placeable;
@@ -568,14 +568,14 @@
 
     .end local v1    # "placeable":Landroidx/compose/ui/layout/Placeable;
     .end local v20    # "measurable":Landroidx/compose/ui/layout/Measurable;
-    goto :goto_5e
+    goto :goto_0
 
     .line 246
     .end local v15    # "currentCrossAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .end local v22    # "childConstraints":J
     .restart local v7    # "childConstraints":J
     .restart local v9    # "currentCrossAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
-    :cond_d8
+    :cond_2
     move-wide/from16 v22, v7
 
     move-object v15, v9
@@ -594,7 +594,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_fa
+    if-eqz v1, :cond_3
 
     iget v4, v0, Landroidx/compose/material/AlertDialogKt$AlertDialogFlowRow$1;->$crossAxisSpacing:F
 
@@ -620,24 +620,24 @@
     .local v19, "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     invoke-static/range {v1 .. v10}, Landroidx/compose/material/AlertDialogKt$AlertDialogFlowRow$1;->measure_3p2s80s$startNewSequence(Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Landroidx/compose/ui/layout/MeasureScope;FLjava/util/List;Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Ljava/util/List;Lkotlin/jvm/internal/Ref$IntRef;Lkotlin/jvm/internal/Ref$IntRef;)V
 
-    goto :goto_fc
+    goto :goto_3
 
     .end local v19    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v10    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
-    :cond_fa
+    :cond_3
     move-object/from16 v19, v10
 
     .line 248
     .end local v10    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
     .restart local v19    # "currentMainAxisSize":Lkotlin/jvm/internal/Ref$IntRef;
-    :goto_fc
+    :goto_3
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/unit/Constraints;->getMaxWidth-impl(J)I
 
     move-result v1
 
     const v2, 0x7fffffff
 
-    if-eq v1, v2, :cond_10b
+    if-eq v1, v2, :cond_4
 
     .line 249
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/unit/Constraints;->getMaxWidth-impl(J)I
@@ -646,10 +646,10 @@
 
     move v5, v1
 
-    goto :goto_116
+    goto :goto_4
 
     .line 251
-    :cond_10b
+    :cond_4
     iget v1, v13, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/unit/Constraints;->getMinWidth-impl(J)I
@@ -663,7 +663,7 @@
     move v5, v1
 
     .line 248
-    :goto_116
+    :goto_4
     nop
 
     .line 253

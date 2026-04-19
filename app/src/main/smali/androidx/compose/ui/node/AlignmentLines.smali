@@ -113,7 +113,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/compose/ui/node/AlignmentLinesOwner;)V
-    .registers 3
+    .locals 1
     .param p1, "alignmentLinesOwner"    # Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     .line 26
@@ -140,7 +140,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/node/AlignmentLinesOwner;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/compose/ui/node/AlignmentLines;-><init>(Landroidx/compose/ui/node/AlignmentLinesOwner;)V
 
@@ -148,7 +148,7 @@
 .end method
 
 .method public static final synthetic access$addAlignmentLine(Landroidx/compose/ui/node/AlignmentLines;Landroidx/compose/ui/layout/AlignmentLine;ILandroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 4
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/node/AlignmentLines;
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
     .param p2, "initialPosition"    # I
@@ -161,7 +161,7 @@
 .end method
 
 .method public static final synthetic access$getAlignmentLineMap$p(Landroidx/compose/ui/node/AlignmentLines;)Ljava/util/Map;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/node/AlignmentLines;
 
     .line 26
@@ -171,7 +171,7 @@
 .end method
 
 .method private final addAlignmentLine(Landroidx/compose/ui/layout/AlignmentLine;ILandroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 10
+    .locals 6
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
     .param p2, "initialPosition"    # I
     .param p3, "initialCoordinator"    # Landroidx/compose/ui/node/NodeCoordinator;
@@ -191,8 +191,8 @@
 
     .line 124
     .local v2, "coordinator":Landroidx/compose/ui/node/NodeCoordinator;
-    :cond_7
-    :goto_7
+    :cond_0
+    :goto_0
     nop
 
     .line 125
@@ -220,7 +220,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_35
+    if-nez v3, :cond_1
 
     .line 128
     invoke-virtual {p0, v2}, Landroidx/compose/ui/node/AlignmentLines;->getAlignmentLinesMap(Landroidx/compose/ui/node/NodeCoordinator;)Ljava/util/Map;
@@ -231,7 +231,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_0
 
     .line 129
     invoke-virtual {p0, v2, p1}, Landroidx/compose/ui/node/AlignmentLines;->getPositionFor(Landroidx/compose/ui/node/NodeCoordinator;Landroidx/compose/ui/layout/AlignmentLine;)I
@@ -249,13 +249,13 @@
     move-result-wide v0
 
     .end local v3    # "newPosition":I
-    goto :goto_7
+    goto :goto_0
 
     .line 134
-    :cond_35
+    :cond_1
     instance-of v3, p1, Landroidx/compose/ui/layout/HorizontalAlignmentLine;
 
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_2
 
     .line 135
     invoke-static {v0, v1}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -266,10 +266,10 @@
 
     move-result v3
 
-    goto :goto_4a
+    goto :goto_1
 
     .line 137
-    :cond_42
+    :cond_2
     invoke-static {v0, v1}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v3
@@ -279,7 +279,7 @@
     move-result v3
 
     .line 134
-    :goto_4a
+    :goto_1
     nop
 
     .line 140
@@ -290,7 +290,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_66
+    if-eqz v5, :cond_3
 
     .line 141
     nop
@@ -316,13 +316,13 @@
 
     move-result v5
 
-    goto :goto_67
+    goto :goto_2
 
     .line 146
-    :cond_66
+    :cond_3
     move v5, v3
 
-    :goto_67
+    :goto_2
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -353,7 +353,7 @@
 .end method
 
 .method public final getAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
-    .registers 2
+    .locals 1
 
     .line 26
     iget-object v0, p0, Landroidx/compose/ui/node/AlignmentLines;->alignmentLinesOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
@@ -362,7 +362,7 @@
 .end method
 
 .method public final getDirty$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 30
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->dirty:Z
@@ -371,7 +371,7 @@
 .end method
 
 .method public final getLastCalculation()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -392,7 +392,7 @@
 .end method
 
 .method public final getPreviousUsedDuringParentLayout$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 46
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->previousUsedDuringParentLayout:Z
@@ -401,44 +401,44 @@
 .end method
 
 .method public final getQueried$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 62
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->usedDuringParentMeasurement:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 63
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->previousUsedDuringParentLayout:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->usedByModifierMeasurement:Z
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     .line 64
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->usedByModifierLayout:Z
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_1
     return v0
 .end method
 
 .method public final getRequired$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 78
     invoke-virtual {p0}, Landroidx/compose/ui/node/AlignmentLines;->recalculateQueryOwner()V
@@ -446,21 +446,21 @@
     .line 79
     iget-object v0, p0, Landroidx/compose/ui/node/AlignmentLines;->queryOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public final getUsedByModifierLayout$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 56
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->usedByModifierLayout:Z
@@ -469,7 +469,7 @@
 .end method
 
 .method public final getUsedByModifierMeasurement$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 51
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->usedByModifierMeasurement:Z
@@ -478,7 +478,7 @@
 .end method
 
 .method public final getUsedDuringParentLayout$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 41
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->usedDuringParentLayout:Z
@@ -487,7 +487,7 @@
 .end method
 
 .method public final getUsedDuringParentMeasurement$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 35
     iget-boolean v0, p0, Landroidx/compose/ui/node/AlignmentLines;->usedDuringParentMeasurement:Z
@@ -496,7 +496,7 @@
 .end method
 
 .method public final onAlignmentsChanged()V
-    .registers 3
+    .locals 2
 
     .line 194
     const/4 v0, 0x1
@@ -510,42 +510,42 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return-void
 
     .line 197
     .local v0, "parent":Landroidx/compose/ui/node/AlignmentLinesOwner;
-    :cond_c
+    :cond_0
     iget-boolean v1, p0, Landroidx/compose/ui/node/AlignmentLines;->usedDuringParentMeasurement:Z
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     .line 198
     invoke-interface {v0}, Landroidx/compose/ui/node/AlignmentLinesOwner;->requestMeasure()V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 199
-    :cond_14
+    :cond_1
     iget-boolean v1, p0, Landroidx/compose/ui/node/AlignmentLines;->previousUsedDuringParentLayout:Z
 
-    if-nez v1, :cond_1c
+    if-nez v1, :cond_2
 
     iget-boolean v1, p0, Landroidx/compose/ui/node/AlignmentLines;->usedDuringParentLayout:Z
 
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_3
 
     .line 200
-    :cond_1c
+    :cond_2
     invoke-interface {v0}, Landroidx/compose/ui/node/AlignmentLinesOwner;->requestLayout()V
 
     .line 202
-    :cond_1f
-    :goto_1f
+    :cond_3
+    :goto_0
     iget-boolean v1, p0, Landroidx/compose/ui/node/AlignmentLines;->usedByModifierMeasurement:Z
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_4
 
     .line 203
     iget-object v1, p0, Landroidx/compose/ui/node/AlignmentLines;->alignmentLinesOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
@@ -553,10 +553,10 @@
     invoke-interface {v1}, Landroidx/compose/ui/node/AlignmentLinesOwner;->requestMeasure()V
 
     .line 205
-    :cond_28
+    :cond_4
     iget-boolean v1, p0, Landroidx/compose/ui/node/AlignmentLines;->usedByModifierLayout:Z
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_5
 
     .line 206
     iget-object v1, p0, Landroidx/compose/ui/node/AlignmentLines;->alignmentLinesOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
@@ -564,7 +564,7 @@
     invoke-interface {v1}, Landroidx/compose/ui/node/AlignmentLinesOwner;->requestLayout()V
 
     .line 208
-    :cond_31
+    :cond_5
     invoke-interface {v0}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
     move-result-object v1
@@ -576,7 +576,7 @@
 .end method
 
 .method public final recalculate()V
-    .registers 3
+    .locals 2
 
     .line 154
     iget-object v0, p0, Landroidx/compose/ui/node/AlignmentLines;->alignmentLineMap:Ljava/util/Map;
@@ -619,35 +619,35 @@
 .end method
 
 .method public final recalculateQueryOwner()V
-    .registers 5
+    .locals 4
 
     .line 87
     invoke-virtual {p0}, Landroidx/compose/ui/node/AlignmentLines;->getQueried$ui_release()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 88
     iget-object v0, p0, Landroidx/compose/ui/node/AlignmentLines;->alignmentLinesOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
 
-    goto :goto_55
+    goto :goto_1
 
     .line 90
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/node/AlignmentLines;->alignmentLinesOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     invoke-interface {v0}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getParentAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     move-result-object v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
     return-void
 
     .line 91
     .local v0, "parent":Landroidx/compose/ui/node/AlignmentLinesOwner;
-    :cond_12
+    :cond_1
     invoke-interface {v0}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
     move-result-object v1
@@ -656,7 +656,7 @@
 
     .line 92
     .local v1, "parentQueryOwner":Landroidx/compose/ui/node/AlignmentLinesOwner;
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_2
 
     invoke-interface {v1}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
@@ -666,20 +666,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     .line 93
     move-object v0, v1
 
-    goto :goto_55
+    goto :goto_1
 
     .line 95
-    :cond_26
+    :cond_2
     iget-object v2, p0, Landroidx/compose/ui/node/AlignmentLines;->queryOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     .line 96
     .local v2, "owner":Landroidx/compose/ui/node/AlignmentLinesOwner;
-    if-eqz v2, :cond_58
+    if-eqz v2, :cond_6
 
     invoke-interface {v2}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
@@ -689,55 +689,55 @@
 
     move-result v3
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_3
 
-    goto :goto_58
+    goto :goto_2
 
     .line 97
-    :cond_35
+    :cond_3
     invoke-interface {v2}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getParentAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     move-result-object v3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_4
 
     invoke-interface {v3}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
     move-result-object v3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_4
 
     invoke-virtual {v3}, Landroidx/compose/ui/node/AlignmentLines;->recalculateQueryOwner()V
 
     .line 98
-    :cond_44
+    :cond_4
     invoke-interface {v2}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getParentAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     move-result-object v3
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_5
 
     invoke-interface {v3}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
     move-result-object v3
 
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_5
 
     iget-object v3, v3, Landroidx/compose/ui/node/AlignmentLines;->queryOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
 
-    goto :goto_54
+    goto :goto_0
 
-    :cond_53
+    :cond_5
     const/4 v3, 0x0
 
-    :goto_54
+    :goto_0
     move-object v0, v3
 
     .line 87
     .end local v0    # "parent":Landroidx/compose/ui/node/AlignmentLinesOwner;
     .end local v1    # "parentQueryOwner":Landroidx/compose/ui/node/AlignmentLinesOwner;
     .end local v2    # "owner":Landroidx/compose/ui/node/AlignmentLinesOwner;
-    :goto_55
+    :goto_1
     iput-object v0, p0, Landroidx/compose/ui/node/AlignmentLines;->queryOwner:Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     .line 101
@@ -747,13 +747,13 @@
     .restart local v0    # "parent":Landroidx/compose/ui/node/AlignmentLinesOwner;
     .restart local v1    # "parentQueryOwner":Landroidx/compose/ui/node/AlignmentLinesOwner;
     .restart local v2    # "owner":Landroidx/compose/ui/node/AlignmentLinesOwner;
-    :cond_58
-    :goto_58
+    :cond_6
+    :goto_2
     return-void
 .end method
 
 .method public final reset$ui_release()V
-    .registers 2
+    .locals 1
 
     .line 184
     const/4 v0, 0x1
@@ -787,7 +787,7 @@
 .end method
 
 .method public final setDirty$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 30
@@ -797,7 +797,7 @@
 .end method
 
 .method public final setPreviousUsedDuringParentLayout$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 46
@@ -807,7 +807,7 @@
 .end method
 
 .method public final setUsedByModifierLayout$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 56
@@ -817,7 +817,7 @@
 .end method
 
 .method public final setUsedByModifierMeasurement$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 51
@@ -827,7 +827,7 @@
 .end method
 
 .method public final setUsedDuringParentLayout$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 41
@@ -837,7 +837,7 @@
 .end method
 
 .method public final setUsedDuringParentMeasurement$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 35

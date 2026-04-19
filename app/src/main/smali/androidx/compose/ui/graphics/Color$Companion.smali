@@ -98,7 +98,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 279
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -107,7 +107,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/Color$Companion;-><init>()V
 
@@ -115,106 +115,106 @@
 .end method
 
 .method public static synthetic getBlack-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getBlue-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCyan-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getDarkGray-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getGray-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getGreen-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getLightGray-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getMagenta-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getRed-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTransparent-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getUnspecified-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getWhite-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getYellow-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic hsl-JlNiLsg$default(Landroidx/compose/ui/graphics/Color$Companion;FFFFLandroidx/compose/ui/graphics/colorspace/Rgb;ILjava/lang/Object;)J
-    .registers 14
+    .locals 6
 
     .line 368
     and-int/lit8 p7, p6, 0x8
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 372
     const/high16 p4, 0x3f800000    # 1.0f
 
     move v4, p4
 
-    goto :goto_9
+    goto :goto_0
 
     .line 368
-    :cond_8
+    :cond_0
     move v4, p4
 
-    :goto_9
+    :goto_0
     and-int/lit8 p4, p6, 0x10
 
-    if-eqz p4, :cond_15
+    if-eqz p4, :cond_1
 
     .line 373
     sget-object p4, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -225,13 +225,13 @@
 
     move-object v5, p5
 
-    goto :goto_16
+    goto :goto_1
 
     .line 368
-    :cond_15
+    :cond_1
     move-object v5, p5
 
-    :goto_16
+    :goto_1
     move-object v0, p0
 
     move v1, p1
@@ -248,7 +248,7 @@
 .end method
 
 .method private final hslToRgbComponent(IFFF)F
-    .registers 10
+    .locals 5
     .param p1, "n"    # I
     .param p2, "h"    # F
     .param p3, "s"    # F
@@ -315,28 +315,28 @@
 .end method
 
 .method public static synthetic hsv-JlNiLsg$default(Landroidx/compose/ui/graphics/Color$Companion;FFFFLandroidx/compose/ui/graphics/colorspace/Rgb;ILjava/lang/Object;)J
-    .registers 14
+    .locals 6
 
     .line 336
     and-int/lit8 p7, p6, 0x8
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 340
     const/high16 p4, 0x3f800000    # 1.0f
 
     move v4, p4
 
-    goto :goto_9
+    goto :goto_0
 
     .line 336
-    :cond_8
+    :cond_0
     move v4, p4
 
-    :goto_9
+    :goto_0
     and-int/lit8 p4, p6, 0x10
 
-    if-eqz p4, :cond_15
+    if-eqz p4, :cond_1
 
     .line 341
     sget-object p4, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -347,13 +347,13 @@
 
     move-object v5, p5
 
-    goto :goto_16
+    goto :goto_1
 
     .line 336
-    :cond_15
+    :cond_1
     move-object v5, p5
 
-    :goto_16
+    :goto_1
     move-object v0, p0
 
     move v1, p1
@@ -370,7 +370,7 @@
 .end method
 
 .method private final hsvToRgbComponent(IFFF)F
-    .registers 9
+    .locals 4
     .param p1, "n"    # I
     .param p2, "h"    # F
     .param p3, "s"    # F
@@ -425,10 +425,9 @@
 
 # virtual methods
 .method public final getBlack-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 281
-    # getter for: Landroidx/compose/ui/graphics/Color;->Black:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getBlack$cp()J
 
     move-result-wide v0
@@ -437,10 +436,9 @@
 .end method
 
 .method public final getBlue-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 302
-    # getter for: Landroidx/compose/ui/graphics/Color;->Blue:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getBlue$cp()J
 
     move-result-wide v0
@@ -449,10 +447,9 @@
 .end method
 
 .method public final getCyan-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 308
-    # getter for: Landroidx/compose/ui/graphics/Color;->Cyan:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getCyan$cp()J
 
     move-result-wide v0
@@ -461,10 +458,9 @@
 .end method
 
 .method public final getDarkGray-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 284
-    # getter for: Landroidx/compose/ui/graphics/Color;->DarkGray:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getDarkGray$cp()J
 
     move-result-wide v0
@@ -473,10 +469,9 @@
 .end method
 
 .method public final getGray-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 287
-    # getter for: Landroidx/compose/ui/graphics/Color;->Gray:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getGray$cp()J
 
     move-result-wide v0
@@ -485,10 +480,9 @@
 .end method
 
 .method public final getGreen-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 299
-    # getter for: Landroidx/compose/ui/graphics/Color;->Green:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getGreen$cp()J
 
     move-result-wide v0
@@ -497,10 +491,9 @@
 .end method
 
 .method public final getLightGray-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 290
-    # getter for: Landroidx/compose/ui/graphics/Color;->LightGray:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getLightGray$cp()J
 
     move-result-wide v0
@@ -509,10 +502,9 @@
 .end method
 
 .method public final getMagenta-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 311
-    # getter for: Landroidx/compose/ui/graphics/Color;->Magenta:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getMagenta$cp()J
 
     move-result-wide v0
@@ -521,10 +513,9 @@
 .end method
 
 .method public final getRed-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 296
-    # getter for: Landroidx/compose/ui/graphics/Color;->Red:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getRed$cp()J
 
     move-result-wide v0
@@ -533,10 +524,9 @@
 .end method
 
 .method public final getTransparent-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 314
-    # getter for: Landroidx/compose/ui/graphics/Color;->Transparent:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getTransparent$cp()J
 
     move-result-wide v0
@@ -545,10 +535,9 @@
 .end method
 
 .method public final getUnspecified-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 324
-    # getter for: Landroidx/compose/ui/graphics/Color;->Unspecified:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getUnspecified$cp()J
 
     move-result-wide v0
@@ -557,10 +546,9 @@
 .end method
 
 .method public final getWhite-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 293
-    # getter for: Landroidx/compose/ui/graphics/Color;->White:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getWhite$cp()J
 
     move-result-wide v0
@@ -569,10 +557,9 @@
 .end method
 
 .method public final getYellow-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 305
-    # getter for: Landroidx/compose/ui/graphics/Color;->Yellow:J
     invoke-static {}, Landroidx/compose/ui/graphics/Color;->access$getYellow$cp()J
 
     move-result-wide v0
@@ -581,7 +568,7 @@
 .end method
 
 .method public final hsl-JlNiLsg(FFFFLandroidx/compose/ui/graphics/colorspace/Rgb;)J
-    .registers 11
+    .locals 5
     .param p1, "hue"    # F
     .param p2, "saturation"    # F
     .param p3, "lightness"    # F
@@ -601,69 +588,69 @@
 
     const/4 v3, 0x0
 
-    if-gtz v1, :cond_15
+    if-gtz v1, :cond_0
 
     const/high16 v1, 0x43b40000    # 360.0f
 
     cmpg-float v1, p1, v1
 
-    if-gtz v1, :cond_15
+    if-gtz v1, :cond_0
 
     move v1, v2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v1, v3
 
-    :goto_16
-    if-eqz v1, :cond_35
+    :goto_0
+    if-eqz v1, :cond_3
 
     cmpg-float v1, v0, p2
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    if-gtz v1, :cond_24
+    if-gtz v1, :cond_1
 
     cmpg-float v1, p2, v4
 
-    if-gtz v1, :cond_24
+    if-gtz v1, :cond_1
 
     move v1, v2
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_1
     move v1, v3
 
-    :goto_25
-    if-eqz v1, :cond_35
+    :goto_1
+    if-eqz v1, :cond_3
 
     cmpg-float v0, v0, p3
 
-    if-gtz v0, :cond_31
+    if-gtz v0, :cond_2
 
     cmpg-float v0, p3, v4
 
-    if-gtz v0, :cond_31
+    if-gtz v0, :cond_2
 
     move v0, v2
 
-    goto :goto_32
+    goto :goto_2
 
-    :cond_31
+    :cond_2
     move v0, v3
 
-    :goto_32
-    if-eqz v0, :cond_35
+    :goto_2
+    if-eqz v0, :cond_3
 
-    goto :goto_36
+    goto :goto_3
 
-    :cond_35
+    :cond_3
     move v2, v3
 
-    :goto_36
-    if-eqz v2, :cond_4f
+    :goto_3
+    if-eqz v2, :cond_4
 
     .line 378
     invoke-direct {p0, v3, p1, p2, p3}, Landroidx/compose/ui/graphics/Color$Companion;->hslToRgbComponent(IFFF)F
@@ -702,7 +689,7 @@
     .end local v0    # "red":F
     .end local v1    # "green":F
     .end local v2    # "blue":F
-    :cond_4f
+    :cond_4
     const/4 v0, 0x0
 
     .line 376
@@ -763,7 +750,7 @@
 .end method
 
 .method public final hsv-JlNiLsg(FFFFLandroidx/compose/ui/graphics/colorspace/Rgb;)J
-    .registers 11
+    .locals 5
     .param p1, "hue"    # F
     .param p2, "saturation"    # F
     .param p3, "value"    # F
@@ -783,66 +770,66 @@
 
     const/4 v3, 0x0
 
-    if-gtz v1, :cond_15
+    if-gtz v1, :cond_0
 
     const/high16 v1, 0x43b40000    # 360.0f
 
     cmpg-float v1, p1, v1
 
-    if-gtz v1, :cond_15
+    if-gtz v1, :cond_0
 
     move v1, v2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v1, v3
 
-    :goto_16
-    if-eqz v1, :cond_35
+    :goto_0
+    if-eqz v1, :cond_3
 
     cmpg-float v1, v0, p2
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    if-gtz v1, :cond_24
+    if-gtz v1, :cond_1
 
     cmpg-float v1, p2, v4
 
-    if-gtz v1, :cond_24
+    if-gtz v1, :cond_1
 
     move v1, v2
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_1
     move v1, v3
 
-    :goto_25
-    if-eqz v1, :cond_35
+    :goto_1
+    if-eqz v1, :cond_3
 
     cmpg-float v0, v0, p3
 
-    if-gtz v0, :cond_31
+    if-gtz v0, :cond_2
 
     cmpg-float v0, p3, v4
 
-    if-gtz v0, :cond_31
+    if-gtz v0, :cond_2
 
     move v0, v2
 
-    goto :goto_32
+    goto :goto_2
 
-    :cond_31
+    :cond_2
     move v0, v3
 
-    :goto_32
-    if-eqz v0, :cond_35
+    :goto_2
+    if-eqz v0, :cond_3
 
     move v3, v2
 
-    :cond_35
-    if-eqz v3, :cond_4d
+    :cond_3
+    if-eqz v3, :cond_4
 
     .line 346
     const/4 v0, 0x5
@@ -881,7 +868,7 @@
     .end local v0    # "red":F
     .end local v1    # "green":F
     .end local v2    # "blue":F
-    :cond_4d
+    :cond_4
     const/4 v0, 0x0
 
     .line 344

@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 2
     .param p1, "onSizeChanged"    # Lkotlin/jvm/functions/Function1;
     .param p2, "inspectorInfo"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -115,28 +115,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 71
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
     .line 72
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/compose/ui/layout/OnSizeChangedModifier;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
     return v0
 
     .line 74
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/layout/OnSizeChangedModifier;->onSizeChanged:Lkotlin/jvm/functions/Function1;
 
     move-object v1, p1
@@ -153,7 +153,7 @@
 .end method
 
 .method public final getOnSizeChanged()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -171,7 +171,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/compose/ui/layout/OnSizeChangedModifier;->onSizeChanged:Lkotlin/jvm/functions/Function1;
@@ -184,7 +184,7 @@
 .end method
 
 .method public onRemeasured-ozmzZPI(J)V
-    .registers 5
+    .locals 2
     .param p1, "size"    # J
 
     .line 64
@@ -194,7 +194,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 65
     iget-object v0, p0, Landroidx/compose/ui/layout/OnSizeChangedModifier;->onSizeChanged:Lkotlin/jvm/functions/Function1;
@@ -209,6 +209,6 @@
     iput-wide p1, p0, Landroidx/compose/ui/layout/OnSizeChangedModifier;->previousSize:J
 
     .line 68
-    :cond_13
+    :cond_0
     return-void
 .end method

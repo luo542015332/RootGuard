@@ -68,7 +68,7 @@
 
 # direct methods
 .method public static final ActualImageShader-F49vj9s(Landroidx/compose/ui/graphics/ImageBitmap;II)Landroid/graphics/Shader;
-    .registers 7
+    .locals 4
     .param p0, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p1, "tileModeX"    # I
     .param p2, "tileModeY"    # I
@@ -104,7 +104,7 @@
 .end method
 
 .method public static final ActualLinearGradientShader-VjE6UOU(JJLjava/util/List;Ljava/util/List;I)Landroid/graphics/Shader;
-    .registers 19
+    .locals 12
     .param p0, "from"    # J
     .param p2, "to"    # J
     .param p4, "colors"    # Ljava/util/List;
@@ -189,7 +189,7 @@
 .end method
 
 .method public static final ActualRadialGradientShader-8uybcMk(JFLjava/util/List;Ljava/util/List;I)Landroid/graphics/Shader;
-    .registers 15
+    .locals 9
     .param p0, "center"    # J
     .param p2, "radius"    # F
     .param p3, "colors"    # Ljava/util/List;
@@ -265,7 +265,7 @@
 .end method
 
 .method public static final ActualSweepGradientShader-9KIMszo(JLjava/util/List;Ljava/util/List;)Landroid/graphics/Shader;
-    .registers 10
+    .locals 6
     .param p0, "center"    # J
     .param p2, "colors"    # Ljava/util/List;
     .param p3, "colorStops"    # Ljava/util/List;
@@ -327,7 +327,7 @@
 .end method
 
 .method public static final countTransparentColors(Ljava/util/List;)I
-    .registers 2
+    .locals 1
     .param p0, "colors"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -352,7 +352,7 @@
 .end method
 
 .method public static final makeTransparentColors(Ljava/util/List;I)[I
-    .registers 7
+    .locals 5
     .param p0, "colors"    # Ljava/util/List;
     .param p1, "numTransparentColors"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -380,8 +380,8 @@
 
     const/4 v2, 0x0
 
-    :goto_e
-    if-ge v2, v0, :cond_23
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -401,14 +401,14 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     return-object v1
 .end method
 
 .method public static final makeTransparentStops(Ljava/util/List;Ljava/util/List;I)[F
-    .registers 13
+    .locals 10
     .param p0, "stops"    # Ljava/util/List;
     .param p1, "colors"    # Ljava/util/List;
     .param p2, "numTransparentColors"    # I
@@ -429,10 +429,10 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 173
-    if-nez p2, :cond_14
+    if-nez p2, :cond_1
 
     .line 174
-    if-eqz p0, :cond_12
+    if-eqz p0, :cond_0
 
     move-object v0, p0
 
@@ -442,16 +442,16 @@
 
     move-result-object v0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return-object v0
 
     .line 176
-    :cond_14
+    :cond_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
@@ -466,7 +466,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz p0, :cond_2a
+    if-eqz p0, :cond_2
 
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -478,12 +478,12 @@
 
     move-result v3
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_2a
+    :cond_2
     move v3, v1
 
-    :goto_2b
+    :goto_1
     aput v3, v0, v2
 
     .line 178
@@ -498,8 +498,8 @@
 
     move-result v5
 
-    :goto_33
-    if-ge v4, v5, :cond_6d
+    :goto_2
+    if-ge v4, v5, :cond_6
 
     .line 180
     invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -514,7 +514,7 @@
 
     .line 181
     .local v6, "color":J
-    if-eqz p0, :cond_4c
+    if-eqz p0, :cond_3
 
     invoke-interface {p0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -526,9 +526,9 @@
 
     move-result v8
 
-    goto :goto_53
+    goto :goto_3
 
-    :cond_4c
+    :cond_3
     int-to-float v8, v4
 
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
@@ -541,7 +541,7 @@
 
     .line 182
     .local v8, "stop":F
-    :goto_53
+    :goto_3
     add-int/lit8 v9, v3, 0x1
 
     .end local v3    # "newStopsIndex":I
@@ -555,17 +555,17 @@
 
     cmpg-float v3, v3, v1
 
-    if-nez v3, :cond_61
+    if-nez v3, :cond_4
 
     const/4 v3, 0x1
 
-    goto :goto_62
+    goto :goto_4
 
-    :cond_61
+    :cond_4
     move v3, v2
 
-    :goto_62
-    if-eqz v3, :cond_69
+    :goto_4
+    if-eqz v3, :cond_5
 
     .line 184
     add-int/lit8 v3, v9, 0x1
@@ -574,12 +574,12 @@
     .restart local v3    # "newStopsIndex":I
     aput v8, v0, v9
 
-    goto :goto_6a
+    goto :goto_5
 
     .line 183
     .end local v3    # "newStopsIndex":I
     .restart local v9    # "newStopsIndex":I
-    :cond_69
+    :cond_5
     move v3, v9
 
     .line 179
@@ -587,15 +587,15 @@
     .end local v8    # "stop":F
     .end local v9    # "newStopsIndex":I
     .restart local v3    # "newStopsIndex":I
-    :goto_6a
+    :goto_5
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_33
+    goto :goto_2
 
     .line 187
     .end local v4    # "i":I
-    :cond_6d
-    if-eqz p0, :cond_7e
+    :cond_6
+    if-eqz p0, :cond_7
 
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
 
@@ -611,12 +611,12 @@
 
     move-result v1
 
-    goto :goto_80
+    goto :goto_6
 
-    :cond_7e
+    :cond_7
     const/high16 v1, 0x3f800000    # 1.0f
 
-    :goto_80
+    :goto_6
     aput v1, v0, v3
 
     .line 188
@@ -624,7 +624,7 @@
 .end method
 
 .method private static final validateColorStops(Ljava/util/List;Ljava/util/List;)V
-    .registers 4
+    .locals 2
     .param p0, "colors"    # Ljava/util/List;
     .param p1, "colorStops"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -640,7 +640,7 @@
     .end annotation
 
     .line 192
-    if-nez p1, :cond_14
+    if-nez p1, :cond_1
 
     .line 193
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -649,12 +649,12 @@
 
     const/4 v1, 0x2
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 194
-    :cond_a
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 195
@@ -668,7 +668,7 @@
     throw v0
 
     .line 199
-    :cond_14
+    :cond_1
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -677,14 +677,14 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_2
 
     .line 205
-    :goto_1e
+    :goto_0
     return-void
 
     .line 200
-    :cond_1f
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 201

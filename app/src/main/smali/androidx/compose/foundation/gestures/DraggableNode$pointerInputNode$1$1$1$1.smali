@@ -93,7 +93,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/internal/Ref$ObjectRef;Landroidx/compose/foundation/gestures/DraggableNode;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,7 +122,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -151,7 +151,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/foundation/gestures/DragScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -180,7 +180,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/foundation/gestures/DragScope;
 
@@ -194,7 +194,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
+    .locals 9
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -203,7 +203,7 @@
     .line 309
     iget v1, p0, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_88
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -213,7 +213,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;
@@ -239,12 +239,12 @@
 
     move-object v0, p1
 
-    goto :goto_7d
+    goto :goto_2
 
     .end local v1    # "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;
     .end local v3    # "$this$drag":Landroidx/compose/foundation/gestures/DragScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_24
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -259,14 +259,14 @@
 
     .line 310
     .restart local v3    # "$this$drag":Landroidx/compose/foundation/gestures/DragScope;
-    :goto_2d
+    :goto_0
     iget-object v2, v1, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;->$event:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v2, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     instance-of v2, v2, Landroidx/compose/foundation/gestures/DragEvent$DragStopped;
 
-    if-nez v2, :cond_84
+    if-nez v2, :cond_3
 
     iget-object v2, v1, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;->$event:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -274,7 +274,7 @@
 
     instance-of v2, v2, Landroidx/compose/foundation/gestures/DragEvent$DragCancelled;
 
-    if-nez v2, :cond_84
+    if-nez v2, :cond_3
 
     .line 311
     iget-object v2, v1, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;->$event:Lkotlin/jvm/internal/Ref$ObjectRef;
@@ -283,17 +283,17 @@
 
     instance-of v4, v2, Landroidx/compose/foundation/gestures/DragEvent$DragDelta;
 
-    if-eqz v4, :cond_48
+    if-eqz v4, :cond_0
 
     check-cast v2, Landroidx/compose/foundation/gestures/DragEvent$DragDelta;
 
-    goto :goto_49
+    goto :goto_1
 
-    :cond_48
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_49
-    if-eqz v2, :cond_5d
+    :goto_1
+    if-eqz v2, :cond_1
 
     iget-object v4, v1, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;->this$0:Landroidx/compose/foundation/gestures/DraggableNode;
 
@@ -307,12 +307,10 @@
 
     move-result-wide v6
 
-    # getter for: Landroidx/compose/foundation/gestures/DraggableNode;->orientation:Landroidx/compose/foundation/gestures/Orientation;
     invoke-static {v4}, Landroidx/compose/foundation/gestures/DraggableNode;->access$getOrientation$p(Landroidx/compose/foundation/gestures/DraggableNode;)Landroidx/compose/foundation/gestures/Orientation;
 
     move-result-object v4
 
-    # invokes: Landroidx/compose/foundation/gestures/DraggableKt;->toFloat-3MmeM6k(JLandroidx/compose/foundation/gestures/Orientation;)F
     invoke-static {v6, v7, v4}, Landroidx/compose/foundation/gestures/DraggableKt;->access$toFloat-3MmeM6k(JLandroidx/compose/foundation/gestures/Orientation;)F
 
     move-result v4
@@ -322,12 +320,11 @@
     .line 312
     .end local v2    # "it":Landroidx/compose/foundation/gestures/DragEvent$DragDelta;
     .end local v5    # "$i$a$-let-DraggableNode$pointerInputNode$1$1$1$1$1":I
-    :cond_5d
+    :cond_1
     iget-object v2, v1, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;->$event:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v4, v1, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;->this$0:Landroidx/compose/foundation/gestures/DraggableNode;
 
-    # getter for: Landroidx/compose/foundation/gestures/DraggableNode;->channel:Lkotlinx/coroutines/channels/Channel;
     invoke-static {v4}, Landroidx/compose/foundation/gestures/DraggableNode;->access$getChannel$p(Landroidx/compose/foundation/gestures/DraggableNode;)Lkotlinx/coroutines/channels/Channel;
 
     move-result-object v4
@@ -348,13 +345,13 @@
 
     move-result-object v4
 
-    if-ne v4, v0, :cond_76
+    if-ne v4, v0, :cond_2
 
     .line 309
     return-object v0
 
     .line 312
-    :cond_76
+    :cond_2
     move-object v8, v0
 
     move-object v0, p1
@@ -375,7 +372,7 @@
     .local v0, "$result":Ljava/lang/Object;
     .local v2, "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;
     .local v4, "$this$drag":Landroidx/compose/foundation/gestures/DragScope;
-    :goto_7d
+    :goto_2
     iput-object p1, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     move-object p1, v0
@@ -386,7 +383,7 @@
 
     move-object v3, v4
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 314
     .end local v0    # "$result":Ljava/lang/Object;
@@ -394,16 +391,16 @@
     .end local v4    # "$this$drag":Landroidx/compose/foundation/gestures/DragScope;
     .restart local v1    # "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$1$1;
     .restart local p1    # "$result":Ljava/lang/Object;
-    :cond_84
+    :cond_3
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
     nop
 
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_24
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final excludeFromSystemGesture(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 2
+    .locals 1
     .param p0, "$this$excludeFromSystemGesture"    # Landroidx/compose/ui/Modifier;
     .annotation runtime Lkotlin/Deprecated;
         message = "Use systemGestureExclusion"
@@ -52,7 +52,7 @@
 .end method
 
 .method public static final excludeFromSystemGesture(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$excludeFromSystemGesture"    # Landroidx/compose/ui/Modifier;
     .param p1, "exclusion"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

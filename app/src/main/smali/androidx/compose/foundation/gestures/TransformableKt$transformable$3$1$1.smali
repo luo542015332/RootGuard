@@ -97,7 +97,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlinx/coroutines/channels/Channel;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -157,7 +157,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/foundation/gestures/TransformScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -186,7 +186,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/foundation/gestures/TransformScope;
 
@@ -200,7 +200,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    .locals 10
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -209,7 +209,7 @@
     .line 65535
     iget v1, p0, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_7c
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -219,7 +219,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;
@@ -245,12 +245,12 @@
 
     move-object v0, p1
 
-    goto :goto_71
+    goto :goto_2
 
     .end local v1    # "this":Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;
     .end local v3    # "$this$transform":Landroidx/compose/foundation/gestures/TransformScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_24
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -265,14 +265,14 @@
 
     .line 109
     .restart local v3    # "$this$transform":Landroidx/compose/foundation/gestures/TransformScope;
-    :goto_2d
+    :goto_0
     iget-object v2, v1, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;->$event:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v2, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     instance-of v2, v2, Landroidx/compose/foundation/gestures/TransformEvent$TransformStopped;
 
-    if-nez v2, :cond_78
+    if-nez v2, :cond_3
 
     .line 110
     iget-object v2, v1, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;->$event:Lkotlin/jvm/internal/Ref$ObjectRef;
@@ -281,17 +281,17 @@
 
     instance-of v4, v2, Landroidx/compose/foundation/gestures/TransformEvent$TransformDelta;
 
-    if-eqz v4, :cond_40
+    if-eqz v4, :cond_0
 
     check-cast v2, Landroidx/compose/foundation/gestures/TransformEvent$TransformDelta;
 
-    goto :goto_41
+    goto :goto_1
 
-    :cond_40
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_41
-    if-eqz v2, :cond_55
+    :goto_1
+    if-eqz v2, :cond_1
 
     .local v2, "it":Landroidx/compose/foundation/gestures/TransformEvent$TransformDelta;
     const/4 v4, 0x0
@@ -321,7 +321,7 @@
     nop
 
     .line 113
-    :cond_55
+    :cond_1
     iget-object v2, v1, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;->$event:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v4, v1, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;->$channel:Lkotlinx/coroutines/channels/Channel;
@@ -342,13 +342,13 @@
 
     move-result-object v4
 
-    if-ne v4, v0, :cond_6a
+    if-ne v4, v0, :cond_2
 
     .line 65535
     return-object v0
 
     .line 113
-    :cond_6a
+    :cond_2
     move-object v9, v0
 
     move-object v0, p1
@@ -369,7 +369,7 @@
     .local v0, "$result":Ljava/lang/Object;
     .local v2, "this":Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;
     .local v4, "$this$transform":Landroidx/compose/foundation/gestures/TransformScope;
-    :goto_71
+    :goto_2
     iput-object p1, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     move-object p1, v0
@@ -380,7 +380,7 @@
 
     move-object v3, v4
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 115
     .end local v0    # "$result":Ljava/lang/Object;
@@ -389,16 +389,16 @@
     .restart local v1    # "this":Landroidx/compose/foundation/gestures/TransformableKt$transformable$3$1$1;
     .restart local v3    # "$this$transform":Landroidx/compose/foundation/gestures/TransformScope;
     .restart local p1    # "$result":Ljava/lang/Object;
-    :cond_78
+    :cond_3
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
     nop
 
-    :pswitch_data_7c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_24
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

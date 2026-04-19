@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "onFocusEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public final getOnFocusEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -100,7 +100,7 @@
 .end method
 
 .method public onFocusEvent(Landroidx/compose/ui/focus/FocusState;)V
-    .registers 3
+    .locals 1
     .param p1, "focusState"    # Landroidx/compose/ui/focus/FocusState;
 
     const-string/jumbo v0, "focusState"
@@ -117,7 +117,7 @@
 .end method
 
 .method public final setOnFocusEvent(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

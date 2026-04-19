@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(DDDDDDD)V
-    .registers 37
+    .locals 22
     .param p1, "gamma"    # D
     .param p3, "a"    # D
     .param p5, "b"    # D
@@ -130,57 +130,57 @@
 
     move-result v15
 
-    if-nez v15, :cond_107
+    if-nez v15, :cond_11
 
     invoke-static/range {p5 .. p6}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v15
 
-    if-nez v15, :cond_107
+    if-nez v15, :cond_11
 
     invoke-static/range {p7 .. p8}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v15
 
-    if-nez v15, :cond_107
+    if-nez v15, :cond_11
 
     invoke-static/range {p9 .. p10}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v15
 
-    if-nez v15, :cond_107
+    if-nez v15, :cond_11
 
     invoke-static/range {p11 .. p12}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v15
 
-    if-nez v15, :cond_107
+    if-nez v15, :cond_11
 
     invoke-static/range {p13 .. p14}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v15
 
-    if-nez v15, :cond_107
+    if-nez v15, :cond_11
 
     .line 53
     invoke-static/range {p1 .. p2}, Ljava/lang/Double;->isNaN(D)Z
 
     move-result v15
 
-    if-nez v15, :cond_107
+    if-nez v15, :cond_11
 
     .line 60
     const-wide/16 v15, 0x0
 
     cmpl-double v17, v7, v15
 
-    if-ltz v17, :cond_ec
+    if-ltz v17, :cond_10
 
     const-wide/high16 v17, 0x3ff0000000000000L    # 1.0
 
     cmpg-double v19, v7, v17
 
-    if-gtz v19, :cond_ec
+    if-gtz v19, :cond_10
 
     .line 67
     cmpg-double v19, v7, v15
@@ -189,50 +189,50 @@
 
     const/16 v21, 0x0
 
-    if-nez v19, :cond_63
+    if-nez v19, :cond_0
 
     move/from16 v19, v20
 
-    goto :goto_65
+    goto :goto_0
 
-    :cond_63
+    :cond_0
     move/from16 v19, v21
 
-    :goto_65
-    if-eqz v19, :cond_88
+    :goto_0
+    if-eqz v19, :cond_4
 
     cmpg-double v19, v3, v15
 
-    if-nez v19, :cond_6e
+    if-nez v19, :cond_1
 
     move/from16 v19, v20
 
-    goto :goto_70
+    goto :goto_1
 
-    :cond_6e
+    :cond_1
     move/from16 v19, v21
 
-    :goto_70
-    if-nez v19, :cond_7e
+    :goto_1
+    if-nez v19, :cond_3
 
     cmpg-double v19, v1, v15
 
-    if-nez v19, :cond_79
+    if-nez v19, :cond_2
 
     move/from16 v19, v20
 
-    goto :goto_7b
+    goto :goto_2
 
-    :cond_79
+    :cond_2
     move/from16 v19, v21
 
-    :goto_7b
-    if-nez v19, :cond_7e
+    :goto_2
+    if-nez v19, :cond_3
 
-    goto :goto_88
+    goto :goto_3
 
     .line 68
-    :cond_7e
+    :cond_3
     new-instance v15, Ljava/lang/IllegalArgumentException;
 
     .line 69
@@ -246,30 +246,30 @@
     throw v15
 
     .line 73
-    :cond_88
-    :goto_88
+    :cond_4
+    :goto_3
     cmpl-double v0, v7, v17
 
-    if-ltz v0, :cond_a2
+    if-ltz v0, :cond_7
 
     cmpg-double v0, v5, v15
 
-    if-nez v0, :cond_93
+    if-nez v0, :cond_5
 
     move/from16 v0, v20
 
-    goto :goto_95
+    goto :goto_4
 
-    :cond_93
+    :cond_5
     move/from16 v0, v21
 
-    :goto_95
-    if-nez v0, :cond_98
+    :goto_4
+    if-nez v0, :cond_6
 
-    goto :goto_a2
+    goto :goto_5
 
     .line 74
-    :cond_98
+    :cond_6
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 75
@@ -283,63 +283,63 @@
     throw v0
 
     .line 79
-    :cond_a2
-    :goto_a2
+    :cond_7
+    :goto_5
     cmpg-double v0, v3, v15
 
-    if-nez v0, :cond_a9
+    if-nez v0, :cond_8
 
     move/from16 v0, v20
 
-    goto :goto_ab
+    goto :goto_6
 
-    :cond_a9
+    :cond_8
     move/from16 v0, v21
 
-    :goto_ab
-    if-nez v0, :cond_b8
+    :goto_6
+    if-nez v0, :cond_a
 
     cmpg-double v0, v1, v15
 
-    if-nez v0, :cond_b4
+    if-nez v0, :cond_9
 
     move/from16 v0, v20
 
-    goto :goto_b6
+    goto :goto_7
 
-    :cond_b4
+    :cond_9
     move/from16 v0, v21
 
-    :goto_b6
-    if-eqz v0, :cond_c1
+    :goto_7
+    if-eqz v0, :cond_c
 
-    :cond_b8
+    :cond_a
     cmpg-double v0, v5, v15
 
-    if-nez v0, :cond_bd
+    if-nez v0, :cond_b
 
-    goto :goto_bf
+    goto :goto_8
 
-    :cond_bd
+    :cond_b
     move/from16 v20, v21
 
-    :goto_bf
-    if-nez v20, :cond_e2
+    :goto_8
+    if-nez v20, :cond_f
 
     .line 86
-    :cond_c1
+    :cond_c
     cmpg-double v0, v5, v15
 
-    if-ltz v0, :cond_d9
+    if-ltz v0, :cond_e
 
     .line 90
     cmpg-double v0, v3, v15
 
-    if-ltz v0, :cond_cf
+    if-ltz v0, :cond_d
 
     cmpg-double v0, v1, v15
 
-    if-ltz v0, :cond_cf
+    if-ltz v0, :cond_d
 
     .line 98
     nop
@@ -348,7 +348,7 @@
     return-void
 
     .line 91
-    :cond_cf
+    :cond_d
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 93
@@ -362,7 +362,7 @@
     throw v0
 
     .line 87
-    :cond_d9
+    :cond_e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v15, "The transfer function must be increasing"
@@ -372,7 +372,7 @@
     throw v0
 
     .line 80
-    :cond_e2
+    :cond_f
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 81
@@ -386,7 +386,7 @@
     throw v0
 
     .line 61
-    :cond_ec
+    :cond_10
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 62
@@ -418,7 +418,7 @@
     throw v0
 
     .line 55
-    :cond_107
+    :cond_11
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Parameters cannot be NaN"
@@ -429,39 +429,39 @@
 .end method
 
 .method public synthetic constructor <init>(DDDDDDDILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 35
+    .locals 18
 
     .line 35
     and-int/lit8 v0, p15, 0x20
 
     const-wide/16 v1, 0x0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 47
     move-wide v14, v1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 35
-    :cond_8
+    :cond_0
     move-wide/from16 v14, p11
 
-    :goto_a
+    :goto_0
     and-int/lit8 v0, p15, 0x40
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     .line 49
     move-wide/from16 v16, v1
 
-    goto :goto_13
+    goto :goto_1
 
     .line 35
-    :cond_11
+    :cond_1
     move-wide/from16 v16, p13
 
-    :goto_13
+    :goto_1
     move-object/from16 v3, p0
 
     move-wide/from16 v4, p1
@@ -481,94 +481,94 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/graphics/colorspace/TransferParameters;DDDDDDDILjava/lang/Object;)Landroidx/compose/ui/graphics/colorspace/TransferParameters;
-    .registers 32
+    .locals 15
 
     move-object v0, p0
 
     and-int/lit8 v1, p15, 0x1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_0
 
     iget-wide v1, v0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->gamma:D
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     move-wide/from16 v1, p1
 
-    :goto_a
+    :goto_0
     and-int/lit8 v3, p15, 0x2
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_1
 
     iget-wide v3, v0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->a:D
 
-    goto :goto_13
+    goto :goto_1
 
-    :cond_11
+    :cond_1
     move-wide/from16 v3, p3
 
-    :goto_13
+    :goto_1
     and-int/lit8 v5, p15, 0x4
 
-    if-eqz v5, :cond_1a
+    if-eqz v5, :cond_2
 
     iget-wide v5, v0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->b:D
 
-    goto :goto_1c
+    goto :goto_2
 
-    :cond_1a
+    :cond_2
     move-wide/from16 v5, p5
 
-    :goto_1c
+    :goto_2
     and-int/lit8 v7, p15, 0x8
 
-    if-eqz v7, :cond_23
+    if-eqz v7, :cond_3
 
     iget-wide v7, v0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->c:D
 
-    goto :goto_25
+    goto :goto_3
 
-    :cond_23
+    :cond_3
     move-wide/from16 v7, p7
 
-    :goto_25
+    :goto_3
     and-int/lit8 v9, p15, 0x10
 
-    if-eqz v9, :cond_2c
+    if-eqz v9, :cond_4
 
     iget-wide v9, v0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->d:D
 
-    goto :goto_2e
+    goto :goto_4
 
-    :cond_2c
+    :cond_4
     move-wide/from16 v9, p9
 
-    :goto_2e
+    :goto_4
     and-int/lit8 v11, p15, 0x20
 
-    if-eqz v11, :cond_35
+    if-eqz v11, :cond_5
 
     iget-wide v11, v0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->e:D
 
-    goto :goto_37
+    goto :goto_5
 
-    :cond_35
+    :cond_5
     move-wide/from16 v11, p11
 
-    :goto_37
+    :goto_5
     and-int/lit8 v13, p15, 0x40
 
-    if-eqz v13, :cond_3e
+    if-eqz v13, :cond_6
 
     iget-wide v13, v0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->f:D
 
-    goto :goto_40
+    goto :goto_6
 
-    :cond_3e
+    :cond_6
     move-wide/from16 v13, p13
 
-    :goto_40
+    :goto_6
     move-wide/from16 p1, v1
 
     move-wide/from16 p3, v3
@@ -593,7 +593,7 @@
 
 # virtual methods
 .method public final component1()D
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->gamma:D
 
@@ -601,7 +601,7 @@
 .end method
 
 .method public final component2()D
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->a:D
 
@@ -609,7 +609,7 @@
 .end method
 
 .method public final component3()D
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->b:D
 
@@ -617,7 +617,7 @@
 .end method
 
 .method public final component4()D
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->c:D
 
@@ -625,7 +625,7 @@
 .end method
 
 .method public final component5()D
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->d:D
 
@@ -633,7 +633,7 @@
 .end method
 
 .method public final component6()D
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->e:D
 
@@ -641,7 +641,7 @@
 .end method
 
 .method public final component7()D
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->f:D
 
@@ -649,7 +649,7 @@
 .end method
 
 .method public final copy(DDDDDDD)Landroidx/compose/ui/graphics/colorspace/TransferParameters;
-    .registers 31
+    .locals 16
 
     new-instance v15, Landroidx/compose/ui/graphics/colorspace/TransferParameters;
 
@@ -675,24 +675,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;
@@ -705,11 +705,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget-wide v3, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->a:D
 
     iget-wide v5, v1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->a:D
@@ -718,11 +718,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_3
 
     return v2
 
-    :cond_23
+    :cond_3
     iget-wide v3, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->b:D
 
     iget-wide v5, v1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->b:D
@@ -731,11 +731,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_4
 
     return v2
 
-    :cond_2e
+    :cond_4
     iget-wide v3, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->c:D
 
     iget-wide v5, v1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->c:D
@@ -744,11 +744,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_5
 
     return v2
 
-    :cond_39
+    :cond_5
     iget-wide v3, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->d:D
 
     iget-wide v5, v1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->d:D
@@ -757,11 +757,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_6
 
     return v2
 
-    :cond_44
+    :cond_6
     iget-wide v3, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->e:D
 
     iget-wide v5, v1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->e:D
@@ -770,11 +770,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4f
+    if-eqz v3, :cond_7
 
     return v2
 
-    :cond_4f
+    :cond_7
     iget-wide v3, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->f:D
 
     iget-wide v5, v1, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->f:D
@@ -783,16 +783,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5a
+    if-eqz v1, :cond_8
 
     return v2
 
-    :cond_5a
+    :cond_8
     return v0
 .end method
 
 .method public final getA()D
-    .registers 3
+    .locals 2
 
     .line 39
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->a:D
@@ -801,7 +801,7 @@
 .end method
 
 .method public final getB()D
-    .registers 3
+    .locals 2
 
     .line 41
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->b:D
@@ -810,7 +810,7 @@
 .end method
 
 .method public final getC()D
-    .registers 3
+    .locals 2
 
     .line 43
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->c:D
@@ -819,7 +819,7 @@
 .end method
 
 .method public final getD()D
-    .registers 3
+    .locals 2
 
     .line 45
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->d:D
@@ -828,7 +828,7 @@
 .end method
 
 .method public final getE()D
-    .registers 3
+    .locals 2
 
     .line 47
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->e:D
@@ -837,7 +837,7 @@
 .end method
 
 .method public final getF()D
-    .registers 3
+    .locals 2
 
     .line 49
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->f:D
@@ -846,7 +846,7 @@
 .end method
 
 .method public final getGamma()D
-    .registers 3
+    .locals 2
 
     .line 37
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->gamma:D
@@ -855,7 +855,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->gamma:D
 
@@ -927,7 +927,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 

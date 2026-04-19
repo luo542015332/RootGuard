@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/colorspace/TransferParameters;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final invoke(D)D
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/colorspace/Rgb$$ExternalSyntheticLambda12;->f$0:Landroidx/compose/ui/graphics/colorspace/TransferParameters;
 

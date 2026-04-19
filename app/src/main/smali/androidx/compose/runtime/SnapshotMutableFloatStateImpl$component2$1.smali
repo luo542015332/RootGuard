@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$component2$1;->this$0:Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 148
@@ -87,7 +87,7 @@
 .end method
 
 .method public final invoke(F)V
-    .registers 3
+    .locals 1
     .param p1, "it"    # F
 
     .line 148

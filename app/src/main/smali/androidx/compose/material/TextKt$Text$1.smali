@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>(J)V
-    .registers 3
+    .locals 0
 
     iput-wide p1, p0, Landroidx/compose/material/TextKt$Text$1;->$overrideColorOrUnspecified:J
 
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public final invoke-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 157
     iget-wide v0, p0, Landroidx/compose/material/TextKt$Text$1;->$overrideColorOrUnspecified:J

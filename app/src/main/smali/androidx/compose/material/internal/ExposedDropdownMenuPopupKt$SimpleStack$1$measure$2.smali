@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/Placeable;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$SimpleStack$1$measure$2;->$p:Landroidx/compose/ui/layout/Placeable;
 
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 184
@@ -86,7 +86,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 10
+    .locals 8
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$layout"

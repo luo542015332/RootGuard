@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxCrossAxisIntrinsicItemSize$1;
 
@@ -69,7 +69,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/layout/IntrinsicMeasurable;II)Ljava/lang/Integer;
-    .registers 4
+    .locals 0
     .param p1, "$this$null"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "w"    # I
 
@@ -102,7 +102,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

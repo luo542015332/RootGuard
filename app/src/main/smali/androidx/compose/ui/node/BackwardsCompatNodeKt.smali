@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 428
     new-instance v0, Landroidx/compose/ui/node/BackwardsCompatNodeKt$DetachedModifierLocalReadScope$1;
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final synthetic access$getDetachedModifierLocalReadScope$p()Landroidx/compose/ui/node/BackwardsCompatNodeKt$DetachedModifierLocalReadScope$1;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->DetachedModifierLocalReadScope:Landroidx/compose/ui/node/BackwardsCompatNodeKt$DetachedModifierLocalReadScope$1;
@@ -95,7 +95,7 @@
 .end method
 
 .method public static final synthetic access$getOnDrawCacheReadsChanged$p()Lkotlin/jvm/functions/Function1;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->onDrawCacheReadsChanged:Lkotlin/jvm/functions/Function1;
@@ -104,7 +104,7 @@
 .end method
 
 .method public static final synthetic access$getUpdateModifierLocalConsumer$p()Lkotlin/jvm/functions/Function1;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->updateModifierLocalConsumer:Lkotlin/jvm/functions/Function1;
@@ -113,7 +113,7 @@
 .end method
 
 .method public static final synthetic access$isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/node/BackwardsCompatNode;
 
     .line 1
@@ -125,7 +125,7 @@
 .end method
 
 .method private static final isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
-    .registers 3
+    .locals 2
     .param p0, "$this$isChainUpdate"    # Landroidx/compose/ui/node/BackwardsCompatNode;
 
     .line 455

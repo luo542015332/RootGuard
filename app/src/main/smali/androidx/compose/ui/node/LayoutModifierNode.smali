@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -88,7 +88,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I
@@ -133,7 +133,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -175,7 +175,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I

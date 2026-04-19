@@ -35,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 111
     new-instance v0, Landroidx/compose/runtime/internal/ThreadMap;
@@ -60,7 +60,7 @@
 .end method
 
 .method public static final getEmptyThreadMap()Landroidx/compose/runtime/internal/ThreadMap;
-    .registers 1
+    .locals 1
 
     .line 111
     sget-object v0, Landroidx/compose/runtime/internal/ThreadMapKt;->emptyThreadMap:Landroidx/compose/runtime/internal/ThreadMap;

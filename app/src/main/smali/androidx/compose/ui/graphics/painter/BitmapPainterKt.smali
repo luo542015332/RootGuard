@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final BitmapPainter-QZhYCtY(Landroidx/compose/ui/graphics/ImageBitmap;JJI)Landroidx/compose/ui/graphics/painter/BitmapPainter;
-    .registers 14
+    .locals 8
     .param p0, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p1, "srcOffset"    # J
     .param p3, "srcSize"    # J
@@ -80,12 +80,12 @@
 .end method
 
 .method public static synthetic BitmapPainter-QZhYCtY$default(Landroidx/compose/ui/graphics/ImageBitmap;JJIILjava/lang/Object;)Landroidx/compose/ui/graphics/painter/BitmapPainter;
-    .registers 14
+    .locals 6
 
     .line 47
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_0
 
     .line 49
     sget-object p1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
@@ -96,16 +96,16 @@
 
     move-wide v1, p1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 47
-    :cond_c
+    :cond_0
     move-wide v1, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 p1, p6, 0x4
 
-    if-eqz p1, :cond_1f
+    if-eqz p1, :cond_1
 
     .line 50
     invoke-interface {p0}, Landroidx/compose/ui/graphics/ImageBitmap;->getWidth()I
@@ -122,16 +122,16 @@
 
     move-wide v3, p3
 
-    goto :goto_20
+    goto :goto_1
 
     .line 47
-    :cond_1f
+    :cond_1
     move-wide v3, p3
 
-    :goto_20
+    :goto_1
     and-int/lit8 p1, p6, 0x8
 
-    if-eqz p1, :cond_2c
+    if-eqz p1, :cond_2
 
     .line 51
     sget-object p1, Landroidx/compose/ui/graphics/FilterQuality;->Companion:Landroidx/compose/ui/graphics/FilterQuality$Companion;
@@ -142,13 +142,13 @@
 
     move v5, p5
 
-    goto :goto_2d
+    goto :goto_2
 
     .line 47
-    :cond_2c
+    :cond_2
     move v5, p5
 
-    :goto_2d
+    :goto_2
     move-object v0, p0
 
     invoke-static/range {v0 .. v5}, Landroidx/compose/ui/graphics/painter/BitmapPainterKt;->BitmapPainter-QZhYCtY(Landroidx/compose/ui/graphics/ImageBitmap;JJI)Landroidx/compose/ui/graphics/painter/BitmapPainter;

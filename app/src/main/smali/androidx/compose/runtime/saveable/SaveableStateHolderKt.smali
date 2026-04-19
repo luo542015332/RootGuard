@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final rememberSaveableStateHolder(Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/saveable/SaveableStateHolder;
-    .registers 10
+    .locals 8
     .param p0, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "$changed"    # I
 
@@ -46,7 +46,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 60
     const/4 v1, -0x1
@@ -55,7 +55,7 @@
 
     invoke-static {v0, p1, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
     new-array v1, v0, [Ljava/lang/Object;
@@ -142,11 +142,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5b
+    if-eqz v1, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_5b
+    :cond_1
     invoke-interface {p0}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     check-cast v0, Landroidx/compose/runtime/saveable/SaveableStateHolder;

@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 9
+    .locals 7
     .param p1, "invalid"    # Landroidx/compose/runtime/snapshots/SnapshotIdSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -133,8 +133,7 @@
 
     .line 1845
     .local v4, "$i$a$-sync-SnapshotKt$takeNewSnapshot$1$1":I
-    :try_start_16
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->openSnapshots:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
+    :try_start_0
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getOpenSnapshots$p()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
     move-result-object v5
@@ -154,8 +153,8 @@
 
     .end local v4    # "$i$a$-sync-SnapshotKt$takeNewSnapshot$1$1":I
     sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_28
-    .catchall {:try_start_16 .. :try_end_28} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2292
     monitor-exit v2
@@ -173,7 +172,7 @@
     .restart local v1    # "$i$f$sync":I
     .restart local v2    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_2b
+    :catchall_0
     move-exception v4
 
     monitor-exit v2
@@ -182,7 +181,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 1842

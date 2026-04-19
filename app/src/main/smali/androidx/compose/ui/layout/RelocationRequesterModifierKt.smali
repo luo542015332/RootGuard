@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final relocationRequester(Landroidx/compose/ui/Modifier;Ljava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$relocationRequester"    # Landroidx/compose/ui/Modifier;
     .param p1, "relocationRequester"    # Ljava/lang/Object;
     .annotation runtime Lkotlin/Deprecated;

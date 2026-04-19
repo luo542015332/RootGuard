@@ -221,7 +221,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     const/16 v0, 0x14
 
@@ -715,7 +715,7 @@
 .end method
 
 .method private static final ActionPropertyKey(Ljava/lang/String;)Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 4
+    .locals 3
     .param p0, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -753,7 +753,7 @@
 .end method
 
 .method public static final synthetic access$throwSemanticsGetNotSupported()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->throwSemanticsGetNotSupported()Ljava/lang/Object;
@@ -764,7 +764,7 @@
 .end method
 
 .method public static final collapse(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$collapse"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -805,25 +805,25 @@
 .end method
 
 .method public static synthetic collapse$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1211
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1212
     const/4 p1, 0x0
 
     .line 1211
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->collapse(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final copyText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$copyText"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -864,25 +864,25 @@
 .end method
 
 .method public static synthetic copyText$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1153
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1154
     const/4 p1, 0x0
 
     .line 1153
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->copyText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final cutText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$cutText"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -923,25 +923,25 @@
 .end method
 
 .method public static synthetic cutText$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1166
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1167
     const/4 p1, 0x0
 
     .line 1166
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->cutText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final dialog(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$dialog"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -964,7 +964,7 @@
 .end method
 
 .method public static final disabled(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$disabled"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -987,7 +987,7 @@
 .end method
 
 .method public static final dismiss(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$dismiss"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -1028,25 +1028,25 @@
 .end method
 
 .method public static synthetic dismiss$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1224
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1225
     const/4 p1, 0x0
 
     .line 1224
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->dismiss(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final error(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$error"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "description"    # Ljava/lang/String;
 
@@ -1072,7 +1072,7 @@
 .end method
 
 .method public static final expand(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$expand"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -1113,25 +1113,25 @@
 .end method
 
 .method public static synthetic expand$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1198
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1199
     const/4 p1, 0x0
 
     .line 1198
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->expand(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final getCollectionInfo(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/semantics/CollectionInfo;
-    .registers 4
+    .locals 3
     .param p0, "$this$collectionInfo"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1165,7 +1165,7 @@
 .end method
 
 .method private static getCollectionInfo$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 947
@@ -1179,7 +1179,7 @@
 .end method
 
 .method public static final getCollectionItemInfo(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/semantics/CollectionItemInfo;
-    .registers 4
+    .locals 3
     .param p0, "$this$collectionItemInfo"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1213,7 +1213,7 @@
 .end method
 
 .method private static getCollectionItemInfo$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 955
@@ -1227,7 +1227,7 @@
 .end method
 
 .method public static final getContentDescription(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "$this$contentDescription"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1245,7 +1245,7 @@
 .end method
 
 .method public static final getCustomActions(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/util/List;
-    .registers 4
+    .locals 3
     .param p0, "$this$customActions"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1289,7 +1289,7 @@
 .end method
 
 .method private static getCustomActions$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 1005
@@ -1303,7 +1303,7 @@
 .end method
 
 .method public static final getEditableText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/text/AnnotatedString;
-    .registers 4
+    .locals 3
     .param p0, "$this$editableText"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1337,7 +1337,7 @@
 .end method
 
 .method private static getEditableText$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 918
@@ -1351,7 +1351,7 @@
 .end method
 
 .method public static final getFocused(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$focused"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1389,7 +1389,7 @@
 .end method
 
 .method private static getFocused$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 797
@@ -1403,7 +1403,7 @@
 .end method
 
 .method public static final getHorizontalScrollAxisRange(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/semantics/ScrollAxisRange;
-    .registers 4
+    .locals 3
     .param p0, "$this$horizontalScrollAxisRange"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1437,7 +1437,7 @@
 .end method
 
 .method private static getHorizontalScrollAxisRange$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 857
@@ -1451,7 +1451,7 @@
 .end method
 
 .method public static final getImeAction(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)I
-    .registers 4
+    .locals 3
     .param p0, "$this$imeAction"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1489,7 +1489,7 @@
 .end method
 
 .method private static getImeAction$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 933
@@ -1503,7 +1503,7 @@
 .end method
 
 .method public static final getLiveRegion(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)I
-    .registers 4
+    .locals 3
     .param p0, "$this$liveRegion"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1541,7 +1541,7 @@
 .end method
 
 .method private static getLiveRegion$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 789
@@ -1555,7 +1555,7 @@
 .end method
 
 .method public static final getPaneTitle(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/String;
-    .registers 4
+    .locals 3
     .param p0, "$this$paneTitle"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1589,7 +1589,7 @@
 .end method
 
 .method private static getPaneTitle$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 766
@@ -1603,7 +1603,7 @@
 .end method
 
 .method public static final getProgressBarRangeInfo(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
-    .registers 4
+    .locals 3
     .param p0, "$this$progressBarRangeInfo"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1637,7 +1637,7 @@
 .end method
 
 .method private static getProgressBarRangeInfo$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 746
@@ -1651,7 +1651,7 @@
 .end method
 
 .method public static final getRole(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)I
-    .registers 4
+    .locals 3
     .param p0, "$this$role"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1689,7 +1689,7 @@
 .end method
 
 .method private static getRole$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 887
@@ -1703,7 +1703,7 @@
 .end method
 
 .method public static final getSelected(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$selected"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1741,7 +1741,7 @@
 .end method
 
 .method private static getSelected$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 940
@@ -1755,7 +1755,7 @@
 .end method
 
 .method public static final getStateDescription(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/String;
-    .registers 4
+    .locals 3
     .param p0, "$this$stateDescription"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1789,7 +1789,7 @@
 .end method
 
 .method private static getStateDescription$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 739
@@ -1803,7 +1803,7 @@
 .end method
 
 .method public static final getTestTag(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/String;
-    .registers 4
+    .locals 3
     .param p0, "$this$testTag"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1837,7 +1837,7 @@
 .end method
 
 .method private static getTestTag$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 900
@@ -1851,7 +1851,7 @@
 .end method
 
 .method public static final getText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/text/AnnotatedString;
-    .registers 2
+    .locals 1
     .param p0, "$this$text"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1869,7 +1869,7 @@
 .end method
 
 .method public static final getTextLayoutResult(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$getTextLayoutResult"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function1;
@@ -1914,25 +1914,25 @@
 .end method
 
 .method public static synthetic getTextLayoutResult$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1014
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1015
     const/4 p1, 0x0
 
     .line 1014
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->getTextLayoutResult(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method
 
 .method public static final getTextSelectionRange(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)J
-    .registers 4
+    .locals 3
     .param p0, "$this$textSelectionRange"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1970,7 +1970,7 @@
 .end method
 
 .method private static getTextSelectionRange$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 923
@@ -1984,7 +1984,7 @@
 .end method
 
 .method public static final getToggleableState(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/state/ToggleableState;
-    .registers 4
+    .locals 3
     .param p0, "$this$toggleableState"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2018,7 +2018,7 @@
 .end method
 
 .method private static getToggleableState$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 962
@@ -2032,7 +2032,7 @@
 .end method
 
 .method public static final getTraversalIndex(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)F
-    .registers 4
+    .locals 3
     .param p0, "$this$traversalIndex"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2070,7 +2070,7 @@
 .end method
 
 .method private static getTraversalIndex$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 851
@@ -2084,7 +2084,7 @@
 .end method
 
 .method public static final getVerticalScrollAxisRange(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Landroidx/compose/ui/semantics/ScrollAxisRange;
-    .registers 4
+    .locals 3
     .param p0, "$this$verticalScrollAxisRange"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2118,7 +2118,7 @@
 .end method
 
 .method private static getVerticalScrollAxisRange$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 863
@@ -2132,7 +2132,7 @@
 .end method
 
 .method public static final heading(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$heading"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2155,7 +2155,7 @@
 .end method
 
 .method public static final indexForKey(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$indexForKey"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "mapping"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -2191,7 +2191,7 @@
 .end method
 
 .method public static final insertTextAtCursor(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$insertTextAtCursor"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function1;
@@ -2234,25 +2234,25 @@
 .end method
 
 .method public static synthetic insertTextAtCursor$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1104
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1105
     const/4 p1, 0x0
 
     .line 1104
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->insertTextAtCursor(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method
 
 .method public static final invisibleToUser(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$invisibleToUser"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2275,7 +2275,7 @@
 .end method
 
 .method public static final isContainer(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$isContainer"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2313,7 +2313,7 @@
 .end method
 
 .method public static synthetic isContainer$annotations(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use `isTraversalGroup` instead."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -2326,7 +2326,7 @@
 .end method
 
 .method private static isContainer$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 808
@@ -2340,7 +2340,7 @@
 .end method
 
 .method public static final isTraversalGroup(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$isTraversalGroup"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2378,7 +2378,7 @@
 .end method
 
 .method private static isTraversalGroup$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 816
@@ -2392,7 +2392,7 @@
 .end method
 
 .method public static final onClick(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$onClick"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2433,23 +2433,23 @@
 .end method
 
 .method public static synthetic onClick$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1027
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->onClick(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final onLongClick(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$onLongClick"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2490,23 +2490,23 @@
 .end method
 
 .method public static synthetic onLongClick$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1037
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->onLongClick(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final pageDown(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$pageDown"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2547,25 +2547,25 @@
 .end method
 
 .method public static synthetic pageDown$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1260
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1261
     const/4 p1, 0x0
 
     .line 1260
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->pageDown(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final pageLeft(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$pageLeft"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2606,25 +2606,25 @@
 .end method
 
 .method public static synthetic pageLeft$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1273
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1274
     const/4 p1, 0x0
 
     .line 1273
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->pageLeft(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final pageRight(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$pageRight"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2665,25 +2665,25 @@
 .end method
 
 .method public static synthetic pageRight$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1286
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1287
     const/4 p1, 0x0
 
     .line 1286
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->pageRight(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final pageUp(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$pageUp"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2724,25 +2724,25 @@
 .end method
 
 .method public static synthetic pageUp$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1247
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1248
     const/4 p1, 0x0
 
     .line 1247
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->pageUp(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final password(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$password"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2765,7 +2765,7 @@
 .end method
 
 .method public static final pasteText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$pasteText"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2806,25 +2806,25 @@
 .end method
 
 .method public static synthetic pasteText$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1185
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1186
     const/4 p1, 0x0
 
     .line 1185
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->pasteText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final performImeAction(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$performImeAction"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2865,25 +2865,25 @@
 .end method
 
 .method public static synthetic performImeAction$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1122
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1123
     const/4 p1, 0x0
 
     .line 1122
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->performImeAction(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final popup(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$popup"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -2906,7 +2906,7 @@
 .end method
 
 .method public static final requestFocus(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$requestFocus"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
@@ -2947,23 +2947,23 @@
 .end method
 
 .method public static synthetic requestFocus$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1237
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->requestFocus(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static final scrollBy(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function2;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$scrollBy"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function2;
@@ -3008,25 +3008,25 @@
 .end method
 
 .method public static synthetic scrollBy$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1049
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1050
     const/4 p1, 0x0
 
     .line 1049
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->scrollBy(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function2;)V
 
     return-void
 .end method
 
 .method public static final scrollToIndex(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$scrollToIndex"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function1;
@@ -3073,25 +3073,25 @@
 .end method
 
 .method public static synthetic scrollToIndex$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1061
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1062
     const/4 p1, 0x0
 
     .line 1061
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->scrollToIndex(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method
 
 .method public static final selectableGroup(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$selectableGroup"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -3114,7 +3114,7 @@
 .end method
 
 .method public static final setCollectionInfo(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/semantics/CollectionInfo;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$collectionInfo"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Landroidx/compose/ui/semantics/CollectionInfo;
 
@@ -3149,7 +3149,7 @@
 .end method
 
 .method public static final setCollectionItemInfo(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/semantics/CollectionItemInfo;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$collectionItemInfo"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Landroidx/compose/ui/semantics/CollectionItemInfo;
 
@@ -3184,7 +3184,7 @@
 .end method
 
 .method public static final setContainer(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Z)V
-    .registers 5
+    .locals 3
     .param p0, "$this$isContainer"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Z
 
@@ -3219,7 +3219,7 @@
 .end method
 
 .method public static final setContentDescription(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;)V
-    .registers 4
+    .locals 2
     .param p0, "$this$contentDescription"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "value"    # Ljava/lang/String;
 
@@ -3249,7 +3249,7 @@
 .end method
 
 .method public static final setCustomActions(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/util/List;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$customActions"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -3293,7 +3293,7 @@
 .end method
 
 .method public static final setEditableText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/text/AnnotatedString;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$editableText"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/AnnotatedString;
 
@@ -3328,7 +3328,7 @@
 .end method
 
 .method public static final setFocused(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Z)V
-    .registers 5
+    .locals 3
     .param p0, "$this$focused"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Z
 
@@ -3363,7 +3363,7 @@
 .end method
 
 .method public static final setHorizontalScrollAxisRange(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/semantics/ScrollAxisRange;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$horizontalScrollAxisRange"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Landroidx/compose/ui/semantics/ScrollAxisRange;
 
@@ -3398,7 +3398,7 @@
 .end method
 
 .method public static final setImeAction-4L7nppU(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;I)V
-    .registers 5
+    .locals 3
     .param p0, "$this$imeAction"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # I
 
@@ -3433,7 +3433,7 @@
 .end method
 
 .method public static final setLiveRegion-hR3wRGc(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;I)V
-    .registers 5
+    .locals 3
     .param p0, "$this$liveRegion"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # I
 
@@ -3468,7 +3468,7 @@
 .end method
 
 .method public static final setPaneTitle(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$paneTitle"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Ljava/lang/String;
 
@@ -3503,7 +3503,7 @@
 .end method
 
 .method public static final setProgress(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$setProgress"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function1;
@@ -3546,23 +3546,23 @@
 .end method
 
 .method public static synthetic setProgress$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1076
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->setProgress(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method
 
 .method public static final setProgressBarRangeInfo(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/semantics/ProgressBarRangeInfo;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$progressBarRangeInfo"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
 
@@ -3597,7 +3597,7 @@
 .end method
 
 .method public static final setRole-kuIjeqM(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;I)V
-    .registers 5
+    .locals 3
     .param p0, "$this$role"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # I
 
@@ -3632,7 +3632,7 @@
 .end method
 
 .method public static final setSelected(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Z)V
-    .registers 5
+    .locals 3
     .param p0, "$this$selected"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Z
 
@@ -3667,7 +3667,7 @@
 .end method
 
 .method public static final setSelection(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function3;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$setSelection"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function3;
@@ -3714,25 +3714,25 @@
 .end method
 
 .method public static synthetic setSelection$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function3;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1140
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1141
     const/4 p1, 0x0
 
     .line 1140
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->setSelection(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function3;)V
 
     return-void
 .end method
 
 .method public static final setStateDescription(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$stateDescription"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Ljava/lang/String;
 
@@ -3767,7 +3767,7 @@
 .end method
 
 .method public static final setTestTag(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$testTag"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Ljava/lang/String;
 
@@ -3802,7 +3802,7 @@
 .end method
 
 .method public static final setText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/text/AnnotatedString;)V
-    .registers 4
+    .locals 2
     .param p0, "$this$text"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "value"    # Landroidx/compose/ui/text/AnnotatedString;
 
@@ -3832,7 +3832,7 @@
 .end method
 
 .method public static final setText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$setText"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function1;
@@ -3875,25 +3875,25 @@
 .end method
 
 .method public static synthetic setText$default(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 1088
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 1089
     const/4 p1, 0x0
 
     .line 1088
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsPropertiesKt;->setText(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Ljava/lang/String;Lkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method
 
 .method public static final setTextSelectionRange-FDrldGo(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;J)V
-    .registers 6
+    .locals 3
     .param p0, "$this$textSelectionRange"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # J
 
@@ -3928,7 +3928,7 @@
 .end method
 
 .method public static final setToggleableState(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/state/ToggleableState;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$toggleableState"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Landroidx/compose/ui/state/ToggleableState;
 
@@ -3963,7 +3963,7 @@
 .end method
 
 .method public static final setTraversalGroup(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Z)V
-    .registers 5
+    .locals 3
     .param p0, "$this$isTraversalGroup"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Z
 
@@ -3998,7 +3998,7 @@
 .end method
 
 .method public static final setTraversalIndex(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;F)V
-    .registers 5
+    .locals 3
     .param p0, "$this$traversalIndex"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # F
 
@@ -4033,7 +4033,7 @@
 .end method
 
 .method public static final setVerticalScrollAxisRange(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Landroidx/compose/ui/semantics/ScrollAxisRange;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$verticalScrollAxisRange"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Landroidx/compose/ui/semantics/ScrollAxisRange;
 
@@ -4068,7 +4068,7 @@
 .end method
 
 .method private static final throwSemanticsGetNotSupported()Ljava/lang/Object;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

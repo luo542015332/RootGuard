@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static final BlurEffect-3YTHUZs(FFI)Landroidx/compose/ui/graphics/BlurEffect;
-    .registers 10
+    .locals 7
     .param p0, "radiusX"    # F
     .param p1, "radiusY"    # F
     .param p2, "edgeTreatment"    # I
@@ -62,12 +62,12 @@
 .end method
 
 .method public static synthetic BlurEffect-3YTHUZs$default(FFIILjava/lang/Object;)Landroidx/compose/ui/graphics/BlurEffect;
-    .registers 5
+    .locals 0
 
     .line 46
     and-int/lit8 p3, p3, 0x4
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     sget-object p2, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
 
@@ -75,7 +75,7 @@
 
     move-result p2
 
-    :cond_a
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/RenderEffectKt;->BlurEffect-3YTHUZs(FFI)Landroidx/compose/ui/graphics/BlurEffect;
 
     move-result-object p0
@@ -84,7 +84,7 @@
 .end method
 
 .method public static final OffsetEffect(FF)Landroidx/compose/ui/graphics/OffsetEffect;
-    .registers 6
+    .locals 4
     .param p0, "offsetX"    # F
     .param p1, "offsetY"    # F
 

@@ -120,7 +120,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     new-instance v0, Landroidx/compose/ui/geometry/RoundRect$Companion;
 
@@ -155,7 +155,7 @@
 .end method
 
 .method private constructor <init>(FFFFJJJJ)V
-    .registers 13
+    .locals 0
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -197,14 +197,14 @@
 .end method
 
 .method public synthetic constructor <init>(FFFFJJJJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 32
+    .locals 17
 
     .line 29
     move/from16 v0, p13
 
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     .line 39
     sget-object v1, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -215,16 +215,16 @@
 
     move-wide v8, v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 29
-    :cond_e
+    :cond_0
     move-wide/from16 v8, p5
 
-    :goto_10
+    :goto_0
     and-int/lit8 v1, v0, 0x20
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 42
     sget-object v1, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -235,16 +235,16 @@
 
     move-wide v10, v1
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_1
     move-wide/from16 v10, p7
 
-    :goto_1e
+    :goto_1
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2
 
     .line 45
     sget-object v1, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -255,16 +255,16 @@
 
     move-wide v12, v1
 
-    goto :goto_2c
+    goto :goto_2
 
     .line 29
-    :cond_2a
+    :cond_2
     move-wide/from16 v12, p9
 
-    :goto_2c
+    :goto_2
     and-int/lit16 v0, v0, 0x80
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_3
 
     .line 48
     sget-object v0, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -275,13 +275,13 @@
 
     move-wide v14, v0
 
-    goto :goto_3a
+    goto :goto_3
 
     .line 29
-    :cond_38
+    :cond_3
     move-wide/from16 v14, p11
 
-    :goto_3a
+    :goto_3
     const/16 v16, 0x0
 
     move-object/from16 v3, p0
@@ -301,7 +301,7 @@
 .end method
 
 .method public synthetic constructor <init>(FFFFJJJJLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 14
+    .locals 0
 
     invoke-direct/range {p0 .. p12}, Landroidx/compose/ui/geometry/RoundRect;-><init>(FFFFJJJJ)V
 
@@ -309,7 +309,7 @@
 .end method
 
 .method public static final synthetic access$getZero$cp()Landroidx/compose/ui/geometry/RoundRect;
-    .registers 1
+    .locals 1
 
     .line 28
     sget-object v0, Landroidx/compose/ui/geometry/RoundRect;->Zero:Landroidx/compose/ui/geometry/RoundRect;
@@ -318,7 +318,7 @@
 .end method
 
 .method public static synthetic copy-MDFrsts$default(Landroidx/compose/ui/geometry/RoundRect;FFFFJJJJILjava/lang/Object;)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 29
+    .locals 14
 
     move-object v0, p0
 
@@ -326,100 +326,100 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_0
 
     iget v2, v0, Landroidx/compose/ui/geometry/RoundRect;->left:F
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, p1
 
-    :goto_b
+    :goto_0
     and-int/lit8 v3, v1, 0x2
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_1
 
     iget v3, v0, Landroidx/compose/ui/geometry/RoundRect;->top:F
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_12
+    :cond_1
     move/from16 v3, p2
 
-    :goto_14
+    :goto_1
     and-int/lit8 v4, v1, 0x4
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_2
 
     iget v4, v0, Landroidx/compose/ui/geometry/RoundRect;->right:F
 
-    goto :goto_1d
+    goto :goto_2
 
-    :cond_1b
+    :cond_2
     move/from16 v4, p3
 
-    :goto_1d
+    :goto_2
     and-int/lit8 v5, v1, 0x8
 
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_3
 
     iget v5, v0, Landroidx/compose/ui/geometry/RoundRect;->bottom:F
 
-    goto :goto_26
+    goto :goto_3
 
-    :cond_24
+    :cond_3
     move/from16 v5, p4
 
-    :goto_26
+    :goto_3
     and-int/lit8 v6, v1, 0x10
 
-    if-eqz v6, :cond_2d
+    if-eqz v6, :cond_4
 
     iget-wide v6, v0, Landroidx/compose/ui/geometry/RoundRect;->topLeftCornerRadius:J
 
-    goto :goto_2f
+    goto :goto_4
 
-    :cond_2d
+    :cond_4
     move-wide/from16 v6, p5
 
-    :goto_2f
+    :goto_4
     and-int/lit8 v8, v1, 0x20
 
-    if-eqz v8, :cond_36
+    if-eqz v8, :cond_5
 
     iget-wide v8, v0, Landroidx/compose/ui/geometry/RoundRect;->topRightCornerRadius:J
 
-    goto :goto_38
+    goto :goto_5
 
-    :cond_36
+    :cond_5
     move-wide/from16 v8, p7
 
-    :goto_38
+    :goto_5
     and-int/lit8 v10, v1, 0x40
 
-    if-eqz v10, :cond_3f
+    if-eqz v10, :cond_6
 
     iget-wide v10, v0, Landroidx/compose/ui/geometry/RoundRect;->bottomRightCornerRadius:J
 
-    goto :goto_41
+    goto :goto_6
 
-    :cond_3f
+    :cond_6
     move-wide/from16 v10, p9
 
-    :goto_41
+    :goto_6
     and-int/lit16 v1, v1, 0x80
 
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_7
 
     iget-wide v12, v0, Landroidx/compose/ui/geometry/RoundRect;->bottomLeftCornerRadius:J
 
-    goto :goto_4a
+    goto :goto_7
 
-    :cond_48
+    :cond_7
     move-wide/from16 v12, p11
 
-    :goto_4a
+    :goto_7
     move p1, v2
 
     move/from16 p2, v3
@@ -444,7 +444,7 @@
 .end method
 
 .method public static final getZero()Landroidx/compose/ui/geometry/RoundRect;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/geometry/RoundRect;->Companion:Landroidx/compose/ui/geometry/RoundRect$Companion;
 
@@ -456,7 +456,7 @@
 .end method
 
 .method private final minRadius(FFFF)F
-    .registers 7
+    .locals 2
     .param p1, "min"    # F
     .param p2, "radius1"    # F
     .param p3, "radius2"    # F
@@ -469,23 +469,23 @@
     .local v0, "sum":F
     cmpl-float v1, v0, p4
 
-    if-lez v1, :cond_17
+    if-lez v1, :cond_1
 
     const/4 v1, 0x0
 
     cmpg-float v1, v0, v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
-    if-nez v1, :cond_17
+    :goto_0
+    if-nez v1, :cond_1
 
     .line 110
     div-float v1, p4, v0
@@ -494,26 +494,26 @@
 
     move-result v1
 
-    goto :goto_18
+    goto :goto_1
 
     .line 112
-    :cond_17
+    :cond_1
     move v1, p1
 
     .line 109
-    :goto_18
+    :goto_1
     return v1
 .end method
 
 .method private final scaledRadiiRect()Landroidx/compose/ui/geometry/RoundRect;
-    .registers 22
+    .locals 21
 
     .line 69
     move-object/from16 v0, p0
 
     iget-object v1, v0, Landroidx/compose/ui/geometry/RoundRect;->_scaledRadiiRect:Landroidx/compose/ui/geometry/RoundRect;
 
-    if-nez v1, :cond_c9
+    if-nez v1, :cond_0
 
     move-object v1, v0
 
@@ -764,14 +764,14 @@
     nop
 
     .line 101
-    :cond_c9
+    :cond_0
     return-object v1
 .end method
 
 
 # virtual methods
 .method public final component1()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->left:F
 
@@ -779,7 +779,7 @@
 .end method
 
 .method public final component2()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->top:F
 
@@ -787,7 +787,7 @@
 .end method
 
 .method public final component3()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->right:F
 
@@ -795,7 +795,7 @@
 .end method
 
 .method public final component4()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->bottom:F
 
@@ -803,7 +803,7 @@
 .end method
 
 .method public final component5-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->topLeftCornerRadius:J
 
@@ -811,7 +811,7 @@
 .end method
 
 .method public final component6-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->topRightCornerRadius:J
 
@@ -819,7 +819,7 @@
 .end method
 
 .method public final component7-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->bottomRightCornerRadius:J
 
@@ -827,7 +827,7 @@
 .end method
 
 .method public final component8-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->bottomLeftCornerRadius:J
 
@@ -835,7 +835,7 @@
 .end method
 
 .method public final contains-k-4lQ0M(J)Z
-    .registers 14
+    .locals 11
     .param p1, "point"    # J
 
     .line 126
@@ -849,7 +849,7 @@
 
     const/4 v1, 0x0
 
-    if-ltz v0, :cond_173
+    if-ltz v0, :cond_6
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
@@ -859,7 +859,7 @@
 
     cmpl-float v0, v0, v2
 
-    if-gez v0, :cond_173
+    if-gez v0, :cond_6
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -869,7 +869,7 @@
 
     cmpg-float v0, v0, v2
 
-    if-ltz v0, :cond_173
+    if-ltz v0, :cond_6
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -879,12 +879,12 @@
 
     cmpl-float v0, v0, v2
 
-    if-ltz v0, :cond_2b
+    if-ltz v0, :cond_0
 
-    goto/16 :goto_173
+    goto/16 :goto_1
 
     .line 130
-    :cond_2b
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/ui/geometry/RoundRect;->scaledRadiiRect()Landroidx/compose/ui/geometry/RoundRect;
 
     move-result-object v0
@@ -921,7 +921,7 @@
 
     const/4 v7, 0x1
 
-    if-gez v6, :cond_80
+    if-gez v6, :cond_1
 
     .line 139
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -940,7 +940,7 @@
 
     cmpg-float v6, v6, v8
 
-    if-gez v6, :cond_80
+    if-gez v6, :cond_1
 
     .line 141
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -998,7 +998,7 @@
 
     .end local v5    # "radiusY":F
     .local v4, "radiusY":F
-    goto/16 :goto_161
+    goto/16 :goto_0
 
     .line 145
     .end local v6    # "x":F
@@ -1006,7 +1006,7 @@
     .local v3, "y":F
     .local v4, "radiusX":F
     .restart local v5    # "radiusY":F
-    :cond_80
+    :cond_1
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v6
@@ -1023,7 +1023,7 @@
 
     cmpl-float v6, v6, v8
 
-    if-lez v6, :cond_cc
+    if-lez v6, :cond_2
 
     .line 146
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -1042,7 +1042,7 @@
 
     cmpg-float v6, v6, v8
 
-    if-gez v6, :cond_cc
+    if-gez v6, :cond_2
 
     .line 148
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -1100,7 +1100,7 @@
 
     .end local v5    # "radiusY":F
     .local v4, "radiusY":F
-    goto/16 :goto_161
+    goto/16 :goto_0
 
     .line 152
     .end local v6    # "x":F
@@ -1108,7 +1108,7 @@
     .local v3, "y":F
     .local v4, "radiusX":F
     .restart local v5    # "radiusY":F
-    :cond_cc
+    :cond_2
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v6
@@ -1125,7 +1125,7 @@
 
     cmpl-float v6, v6, v8
 
-    if-lez v6, :cond_117
+    if-lez v6, :cond_3
 
     .line 153
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -1144,7 +1144,7 @@
 
     cmpl-float v6, v6, v8
 
-    if-lez v6, :cond_117
+    if-lez v6, :cond_3
 
     .line 155
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -1202,7 +1202,7 @@
 
     .end local v5    # "radiusY":F
     .local v4, "radiusY":F
-    goto :goto_161
+    goto :goto_0
 
     .line 159
     .end local v6    # "x":F
@@ -1210,7 +1210,7 @@
     .local v3, "y":F
     .local v4, "radiusX":F
     .restart local v5    # "radiusY":F
-    :cond_117
+    :cond_3
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v6
@@ -1227,7 +1227,7 @@
 
     cmpg-float v6, v6, v8
 
-    if-gez v6, :cond_172
+    if-gez v6, :cond_5
 
     .line 160
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -1246,7 +1246,7 @@
 
     cmpl-float v6, v6, v8
 
-    if-lez v6, :cond_172
+    if-lez v6, :cond_5
 
     .line 162
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -1305,7 +1305,7 @@
     .line 170
     .end local v5    # "radiusY":F
     .local v4, "radiusY":F
-    :goto_161
+    :goto_0
     div-float v5, v6, v3
 
     .line 171
@@ -1324,11 +1324,11 @@
 
     cmpg-float v9, v9, v10
 
-    if-gtz v9, :cond_171
+    if-gtz v9, :cond_4
 
     move v1, v7
 
-    :cond_171
+    :cond_4
     return v1
 
     .line 167
@@ -1338,7 +1338,7 @@
     .local v3, "y":F
     .local v4, "radiusX":F
     .local v5, "radiusY":F
-    :cond_172
+    :cond_5
     return v7
 
     .line 127
@@ -1347,13 +1347,13 @@
     .end local v3    # "y":F
     .end local v4    # "radiusX":F
     .end local v5    # "radiusY":F
-    :cond_173
-    :goto_173
+    :cond_6
+    :goto_1
     return v1
 .end method
 
 .method public final copy-MDFrsts(FFFFJJJJ)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 28
+    .locals 15
 
     new-instance v14, Landroidx/compose/ui/geometry/RoundRect;
 
@@ -1383,24 +1383,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/geometry/RoundRect;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/geometry/RoundRect;
@@ -1413,11 +1413,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/geometry/RoundRect;->top:F
 
     iget v4, v1, Landroidx/compose/ui/geometry/RoundRect;->top:F
@@ -1426,11 +1426,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_3
 
     return v2
 
-    :cond_23
+    :cond_3
     iget v3, p0, Landroidx/compose/ui/geometry/RoundRect;->right:F
 
     iget v4, v1, Landroidx/compose/ui/geometry/RoundRect;->right:F
@@ -1439,11 +1439,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_4
 
     return v2
 
-    :cond_2e
+    :cond_4
     iget v3, p0, Landroidx/compose/ui/geometry/RoundRect;->bottom:F
 
     iget v4, v1, Landroidx/compose/ui/geometry/RoundRect;->bottom:F
@@ -1452,11 +1452,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_5
 
     return v2
 
-    :cond_39
+    :cond_5
     iget-wide v3, p0, Landroidx/compose/ui/geometry/RoundRect;->topLeftCornerRadius:J
 
     iget-wide v5, v1, Landroidx/compose/ui/geometry/RoundRect;->topLeftCornerRadius:J
@@ -1465,11 +1465,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_44
+    if-nez v3, :cond_6
 
     return v2
 
-    :cond_44
+    :cond_6
     iget-wide v3, p0, Landroidx/compose/ui/geometry/RoundRect;->topRightCornerRadius:J
 
     iget-wide v5, v1, Landroidx/compose/ui/geometry/RoundRect;->topRightCornerRadius:J
@@ -1478,11 +1478,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_4f
+    if-nez v3, :cond_7
 
     return v2
 
-    :cond_4f
+    :cond_7
     iget-wide v3, p0, Landroidx/compose/ui/geometry/RoundRect;->bottomRightCornerRadius:J
 
     iget-wide v5, v1, Landroidx/compose/ui/geometry/RoundRect;->bottomRightCornerRadius:J
@@ -1491,11 +1491,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_5a
+    if-nez v3, :cond_8
 
     return v2
 
-    :cond_5a
+    :cond_8
     iget-wide v3, p0, Landroidx/compose/ui/geometry/RoundRect;->bottomLeftCornerRadius:J
 
     iget-wide v5, v1, Landroidx/compose/ui/geometry/RoundRect;->bottomLeftCornerRadius:J
@@ -1504,16 +1504,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_65
+    if-nez v1, :cond_9
 
     return v2
 
-    :cond_65
+    :cond_9
     return v0
 .end method
 
 .method public final getBottom()F
-    .registers 2
+    .locals 1
 
     .line 37
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->bottom:F
@@ -1522,7 +1522,7 @@
 .end method
 
 .method public final getBottomLeftCornerRadius-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     .line 48
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->bottomLeftCornerRadius:J
@@ -1531,7 +1531,7 @@
 .end method
 
 .method public final getBottomRightCornerRadius-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     .line 45
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->bottomRightCornerRadius:J
@@ -1540,7 +1540,7 @@
 .end method
 
 .method public final getHeight()F
-    .registers 3
+    .locals 2
 
     .line 56
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->bottom:F
@@ -1553,7 +1553,7 @@
 .end method
 
 .method public final getLeft()F
-    .registers 2
+    .locals 1
 
     .line 31
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->left:F
@@ -1562,7 +1562,7 @@
 .end method
 
 .method public final getRight()F
-    .registers 2
+    .locals 1
 
     .line 35
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->right:F
@@ -1571,7 +1571,7 @@
 .end method
 
 .method public final getTop()F
-    .registers 2
+    .locals 1
 
     .line 33
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->top:F
@@ -1580,7 +1580,7 @@
 .end method
 
 .method public final getTopLeftCornerRadius-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     .line 39
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->topLeftCornerRadius:J
@@ -1589,7 +1589,7 @@
 .end method
 
 .method public final getTopRightCornerRadius-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     .line 42
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->topRightCornerRadius:J
@@ -1598,7 +1598,7 @@
 .end method
 
 .method public final getWidth()F
-    .registers 3
+    .locals 2
 
     .line 52
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->right:F
@@ -1611,7 +1611,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget v0, p0, Landroidx/compose/ui/geometry/RoundRect;->left:F
 
@@ -1693,7 +1693,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 15
+    .locals 14
 
     .line 178
     iget-wide v0, p0, Landroidx/compose/ui/geometry/RoundRect;->topLeftCornerRadius:J
@@ -1803,21 +1803,21 @@
 
     const-string/jumbo v12, "RoundRect(rect="
 
-    if-eqz v9, :cond_d5
+    if-eqz v9, :cond_2
 
     .line 188
     invoke-static {v2, v3, v4, v5}, Landroidx/compose/ui/geometry/CornerRadius;->equals-impl0(JJ)Z
 
     move-result v9
 
-    if-eqz v9, :cond_d5
+    if-eqz v9, :cond_2
 
     .line 189
     invoke-static {v4, v5, v6, v7}, Landroidx/compose/ui/geometry/CornerRadius;->equals-impl0(JJ)Z
 
     move-result v9
 
-    if-eqz v9, :cond_d5
+    if-eqz v9, :cond_2
 
     .line 191
     invoke-static {v0, v1}, Landroidx/compose/ui/geometry/CornerRadius;->getX-impl(J)F
@@ -1830,17 +1830,17 @@
 
     cmpg-float v9, v9, v13
 
-    if-nez v9, :cond_70
+    if-nez v9, :cond_0
 
     move v9, v10
 
-    goto :goto_71
+    goto :goto_0
 
-    :cond_70
+    :cond_0
     const/4 v9, 0x0
 
-    :goto_71
-    if-eqz v9, :cond_9b
+    :goto_0
+    if-eqz v9, :cond_1
 
     .line 192
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1884,7 +1884,7 @@
     return-object v9
 
     .line 194
-    :cond_9b
+    :cond_1
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -1946,7 +1946,7 @@
     return-object v9
 
     .line 197
-    :cond_d5
+    :cond_2
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V

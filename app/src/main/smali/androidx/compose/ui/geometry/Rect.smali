@@ -133,7 +133,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/geometry/Rect$Companion;
 
@@ -156,7 +156,7 @@
 .end method
 
 .method public constructor <init>(FFFF)V
-    .registers 5
+    .locals 0
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -182,7 +182,7 @@
 .end method
 
 .method public static final synthetic access$getZero$cp()Landroidx/compose/ui/geometry/Rect;
-    .registers 1
+    .locals 1
 
     .line 31
     sget-object v0, Landroidx/compose/ui/geometry/Rect;->Zero:Landroidx/compose/ui/geometry/Rect;
@@ -191,36 +191,36 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/geometry/Rect;FFFFILjava/lang/Object;)Landroidx/compose/ui/geometry/Rect;
-    .registers 7
+    .locals 0
 
     and-int/lit8 p6, p5, 0x1
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     iget p1, p0, Landroidx/compose/ui/geometry/Rect;->left:F
 
-    :cond_6
+    :cond_0
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_c
+    if-eqz p6, :cond_1
 
     iget p2, p0, Landroidx/compose/ui/geometry/Rect;->top:F
 
-    :cond_c
+    :cond_1
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_12
+    if-eqz p6, :cond_2
 
     iget p3, p0, Landroidx/compose/ui/geometry/Rect;->right:F
 
-    :cond_12
+    :cond_2
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_18
+    if-eqz p5, :cond_3
 
     iget p4, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
 
-    :cond_18
+    :cond_3
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/geometry/Rect;->copy(FFFF)Landroidx/compose/ui/geometry/Rect;
 
     move-result-object p0
@@ -229,61 +229,61 @@
 .end method
 
 .method public static synthetic getBottom$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getHeight$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getLeft$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getRight$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getSize-NH-jbRc$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTop$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getWidth$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic isEmpty$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic isFinite$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic isInfinite$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -291,7 +291,7 @@
 
 # virtual methods
 .method public final component1()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
 
@@ -299,7 +299,7 @@
 .end method
 
 .method public final component2()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->top:F
 
@@ -307,7 +307,7 @@
 .end method
 
 .method public final component3()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
 
@@ -315,7 +315,7 @@
 .end method
 
 .method public final component4()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
 
@@ -323,7 +323,7 @@
 .end method
 
 .method public final contains-k-4lQ0M(J)Z
-    .registers 5
+    .locals 2
     .param p1, "offset"    # J
 
     .line 248
@@ -335,7 +335,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_2a
+    if-ltz v0, :cond_0
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
@@ -345,7 +345,7 @@
 
     cmpg-float v0, v0, v1
 
-    if-gez v0, :cond_2a
+    if-gez v0, :cond_0
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -355,7 +355,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_2a
+    if-ltz v0, :cond_0
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -365,21 +365,21 @@
 
     cmpg-float v0, v0, v1
 
-    if-gez v0, :cond_2a
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_2b
+    :goto_0
     return v0
 .end method
 
 .method public final copy(FFFF)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/geometry/Rect;
 
@@ -389,7 +389,7 @@
 .end method
 
 .method public final deflate(F)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p1, "delta"    # F
 
     .line 141
@@ -403,24 +403,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/geometry/Rect;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/geometry/Rect;
@@ -433,11 +433,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/geometry/Rect;->top:F
 
     iget v4, v1, Landroidx/compose/ui/geometry/Rect;->top:F
@@ -446,11 +446,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_3
 
     return v2
 
-    :cond_23
+    :cond_3
     iget v3, p0, Landroidx/compose/ui/geometry/Rect;->right:F
 
     iget v4, v1, Landroidx/compose/ui/geometry/Rect;->right:F
@@ -459,11 +459,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_4
 
     return v2
 
-    :cond_2e
+    :cond_4
     iget v3, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
 
     iget v1, v1, Landroidx/compose/ui/geometry/Rect;->bottom:F
@@ -472,16 +472,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_5
 
     return v2
 
-    :cond_39
+    :cond_5
     return v0
 .end method
 
 .method public final getBottom()F
-    .registers 2
+    .locals 1
 
     .line 55
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
@@ -490,7 +490,7 @@
 .end method
 
 .method public final getBottomCenter-F1C5BW0()J
-    .registers 4
+    .locals 3
 
     .line 231
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -515,7 +515,7 @@
 .end method
 
 .method public final getBottomLeft-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 225
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -530,7 +530,7 @@
 .end method
 
 .method public final getBottomRight-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 237
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
@@ -545,7 +545,7 @@
 .end method
 
 .method public final getCenter-F1C5BW0()J
-    .registers 5
+    .locals 4
 
     .line 213
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -578,7 +578,7 @@
 .end method
 
 .method public final getCenterLeft-F1C5BW0()J
-    .registers 5
+    .locals 4
 
     .line 204
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -603,7 +603,7 @@
 .end method
 
 .method public final getCenterRight-F1C5BW0()J
-    .registers 5
+    .locals 4
 
     .line 219
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
@@ -628,7 +628,7 @@
 .end method
 
 .method public final getHeight()F
-    .registers 3
+    .locals 2
 
     .line 73
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
@@ -641,7 +641,7 @@
 .end method
 
 .method public final getLeft()F
-    .registers 2
+    .locals 1
 
     .line 37
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -650,7 +650,7 @@
 .end method
 
 .method public final getMaxDimension()F
-    .registers 3
+    .locals 2
 
     .line 180
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getWidth()F
@@ -677,7 +677,7 @@
 .end method
 
 .method public final getMinDimension()F
-    .registers 3
+    .locals 2
 
     .line 173
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getWidth()F
@@ -704,7 +704,7 @@
 .end method
 
 .method public final getRight()F
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
@@ -713,7 +713,7 @@
 .end method
 
 .method public final getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 81
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getWidth()F
@@ -732,7 +732,7 @@
 .end method
 
 .method public final getTop()F
-    .registers 2
+    .locals 1
 
     .line 43
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->top:F
@@ -741,7 +741,7 @@
 .end method
 
 .method public final getTopCenter-F1C5BW0()J
-    .registers 4
+    .locals 3
 
     .line 192
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -766,7 +766,7 @@
 .end method
 
 .method public final getTopLeft-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 186
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -781,7 +781,7 @@
 .end method
 
 .method public final getTopRight-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 198
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
@@ -796,7 +796,7 @@
 .end method
 
 .method public final getWidth()F
-    .registers 3
+    .locals 2
 
     .line 68
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
@@ -809,7 +809,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
 
@@ -851,7 +851,7 @@
 .end method
 
 .method public final inflate(F)Landroidx/compose/ui/geometry/Rect;
-    .registers 7
+    .locals 5
     .param p1, "delta"    # F
 
     .line 136
@@ -879,7 +879,7 @@
 .end method
 
 .method public final intersect(Landroidx/compose/ui/geometry/Rect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 8
+    .locals 6
     .param p1, "other"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string/jumbo v0, "other"
@@ -932,7 +932,7 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 106
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -941,7 +941,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-gez v0, :cond_13
+    if-gez v0, :cond_1
 
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->top:F
 
@@ -949,25 +949,25 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_1
     return v0
 .end method
 
 .method public final isFinite()Z
-    .registers 5
+    .locals 4
 
     .line 95
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -980,23 +980,23 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v0, v3
 
-    :goto_13
-    if-eqz v0, :cond_4f
+    :goto_0
+    if-eqz v0, :cond_4
 
     .line 96
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->top:F
@@ -1005,23 +1005,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
+    :cond_1
     move v0, v3
 
-    :goto_26
-    if-eqz v0, :cond_4f
+    :goto_1
+    if-eqz v0, :cond_4
 
     .line 97
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
@@ -1030,23 +1030,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_38
+    if-nez v1, :cond_2
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_2
 
     move v0, v2
 
-    goto :goto_39
+    goto :goto_2
 
-    :cond_38
+    :cond_2
     move v0, v3
 
-    :goto_39
-    if-eqz v0, :cond_4f
+    :goto_2
+    if-eqz v0, :cond_4
 
     .line 98
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
@@ -1055,35 +1055,35 @@
 
     move-result v1
 
-    if-nez v1, :cond_4b
+    if-nez v1, :cond_3
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_4b
+    if-nez v0, :cond_3
 
     move v0, v2
 
-    goto :goto_4c
+    goto :goto_3
 
-    :cond_4b
+    :cond_3
     move v0, v3
 
-    :goto_4c
-    if-eqz v0, :cond_4f
+    :goto_3
+    if-eqz v0, :cond_4
 
-    goto :goto_50
+    goto :goto_4
 
-    :cond_4f
+    :cond_4
     move v2, v3
 
-    :goto_50
+    :goto_4
     return v2
 .end method
 
 .method public final isInfinite()Z
-    .registers 3
+    .locals 2
 
     .line 87
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->left:F
@@ -1092,46 +1092,46 @@
 
     cmpl-float v0, v0, v1
 
-    if-gez v0, :cond_1d
+    if-gez v0, :cond_1
 
     .line 88
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->top:F
 
     cmpl-float v0, v0, v1
 
-    if-gez v0, :cond_1d
+    if-gez v0, :cond_1
 
     .line 89
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->right:F
 
     cmpl-float v0, v0, v1
 
-    if-gez v0, :cond_1d
+    if-gez v0, :cond_1
 
     .line 90
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_1b
+    if-ltz v0, :cond_0
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1e
+    :goto_1
     return v0
 .end method
 
 .method public final overlaps(Landroidx/compose/ui/geometry/Rect;)Z
-    .registers 5
+    .locals 3
     .param p1, "other"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string/jumbo v0, "other"
@@ -1147,7 +1147,7 @@
 
     const/4 v1, 0x0
 
-    if-lez v0, :cond_2c
+    if-lez v0, :cond_3
 
     iget v0, p1, Landroidx/compose/ui/geometry/Rect;->right:F
 
@@ -1155,19 +1155,19 @@
 
     cmpg-float v0, v0, v2
 
-    if-gtz v0, :cond_18
+    if-gtz v0, :cond_0
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 163
-    :cond_18
+    :cond_0
     iget v0, p0, Landroidx/compose/ui/geometry/Rect;->bottom:F
 
     iget v2, p1, Landroidx/compose/ui/geometry/Rect;->top:F
 
     cmpg-float v0, v0, v2
 
-    if-lez v0, :cond_2b
+    if-lez v0, :cond_2
 
     iget v0, p1, Landroidx/compose/ui/geometry/Rect;->bottom:F
 
@@ -1175,29 +1175,29 @@
 
     cmpg-float v0, v0, v2
 
-    if-gtz v0, :cond_29
+    if-gtz v0, :cond_1
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 165
-    :cond_29
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 
     .line 164
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_0
     return v1
 
     .line 162
-    :cond_2c
-    :goto_2c
+    :cond_3
+    :goto_1
     return v1
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 251
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1301,7 +1301,7 @@
 .end method
 
 .method public final translate(FF)Landroidx/compose/ui/geometry/Rect;
-    .registers 8
+    .locals 5
     .param p1, "translateX"    # F
     .param p2, "translateY"    # F
 
@@ -1335,7 +1335,7 @@
 .end method
 
 .method public final translate-k-4lQ0M(J)Landroidx/compose/ui/geometry/Rect;
-    .registers 9
+    .locals 6
     .param p1, "offset"    # J
 
     .line 116

@@ -45,7 +45,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/graphics/Shader;)V
-    .registers 2
+    .locals 0
     .param p1, "$shader"    # Landroid/graphics/Shader;
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/BrushKt$ShaderBrush$1;->$shader:Landroid/graphics/Shader;
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public createShader-uvyYCjk(J)Landroid/graphics/Shader;
-    .registers 4
+    .locals 1
     .param p1, "size"    # J
 
     .line 638

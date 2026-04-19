@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/MultiContentMeasurePolicy;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/MultiContentMeasurePolicy;
 
     iput-object p1, p0, Landroidx/compose/ui/layout/MultiContentMeasurePolicyKt$createMeasurePolicy$1$1;->$this_with:Landroidx/compose/ui/layout/MultiContentMeasurePolicy;
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -112,7 +112,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -150,7 +150,7 @@
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 7
+    .locals 2
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -193,7 +193,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -231,7 +231,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I

@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/platform/InspectableModifier;)V
-    .registers 2
+    .locals 0
     .param p1, "this$0"    # Landroidx/compose/ui/platform/InspectableModifier;
     .annotation system Ldalvik/annotation/Signature;
         value = {

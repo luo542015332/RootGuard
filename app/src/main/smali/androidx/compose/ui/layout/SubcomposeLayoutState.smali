@@ -149,7 +149,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -159,7 +159,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 384
     sget-object v0, Landroidx/compose/ui/layout/NoOpSubcomposeSlotReusePolicy;->INSTANCE:Landroidx/compose/ui/layout/NoOpSubcomposeSlotReusePolicy;
@@ -172,7 +172,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
     .param p1, "maxSlotsToRetainForReuse"    # I
     .annotation runtime Lkotlin/Deprecated;
         message = "This constructor is deprecated"
@@ -200,7 +200,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;)V
-    .registers 3
+    .locals 1
     .param p1, "slotReusePolicy"    # Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
 
     const-string/jumbo v0, "slotReusePolicy"
@@ -254,7 +254,7 @@
 .end method
 
 .method public static final synthetic access$getSlotReusePolicy$p(Landroidx/compose/ui/layout/SubcomposeLayoutState;)Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
     .line 377
@@ -264,7 +264,7 @@
 .end method
 
 .method public static final synthetic access$getState(Landroidx/compose/ui/layout/SubcomposeLayoutState;)Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
     .line 377
@@ -276,7 +276,7 @@
 .end method
 
 .method public static final synthetic access$set_state$p(Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/layout/SubcomposeLayoutState;
     .param p1, "<set-?>"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
@@ -287,18 +287,18 @@
 .end method
 
 .method private final getState()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
-    .registers 3
+    .locals 2
 
     .line 417
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState;->_state:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 419
     return-object v0
 
     .line 417
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
     .line 418
@@ -321,7 +321,7 @@
 .end method
 
 .method public static synthetic isInLookaheadScope$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -329,7 +329,7 @@
 
 # virtual methods
 .method public final disposeCurrentNodes$ui_release()V
-    .registers 2
+    .locals 1
 
     .line 459
     invoke-direct {p0}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->getState()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
@@ -342,7 +342,7 @@
 .end method
 
 .method public final forceRecomposeChildren$ui_release()V
-    .registers 2
+    .locals 1
 
     .line 457
     invoke-direct {p0}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->getState()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
@@ -355,7 +355,7 @@
 .end method
 
 .method public final getSetCompositionContext$ui_release()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -374,7 +374,7 @@
 .end method
 
 .method public final getSetIntermediateMeasurePolicy$ui_release()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -400,7 +400,7 @@
 .end method
 
 .method public final getSetMeasurePolicy$ui_release()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -426,7 +426,7 @@
 .end method
 
 .method public final getSetRoot$ui_release()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -445,7 +445,7 @@
 .end method
 
 .method public final isInLookaheadScope()Z
-    .registers 2
+    .locals 1
 
     .line 413
     invoke-direct {p0}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->getState()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
@@ -460,7 +460,7 @@
 .end method
 
 .method public final precompose(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;
-    .registers 4
+    .locals 1
     .param p1, "slotId"    # Ljava/lang/Object;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;

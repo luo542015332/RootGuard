@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/PathMeasure;)V
-    .registers 3
+    .locals 1
     .param p1, "internalPathMeasure"    # Landroid/graphics/PathMeasure;
 
     const-string/jumbo v0, "internalPathMeasure"
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public getLength()F
-    .registers 2
+    .locals 1
 
     .line 28
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->internalPathMeasure:Landroid/graphics/PathMeasure;
@@ -101,7 +101,7 @@
 .end method
 
 .method public getPosition-tuRUvjQ(F)J
-    .registers 6
+    .locals 4
     .param p1, "distance"    # F
 
     .line 55
@@ -109,7 +109,7 @@
 
     const/4 v1, 0x2
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 56
     new-array v0, v1, [F
@@ -117,10 +117,10 @@
     iput-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->positionArray:[F
 
     .line 58
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->tangentArray:[F
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 59
     new-array v0, v1, [F
@@ -128,7 +128,7 @@
     iput-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->tangentArray:[F
 
     .line 61
-    :cond_11
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->internalPathMeasure:Landroid/graphics/PathMeasure;
 
     iget-object v1, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->positionArray:[F
@@ -141,7 +141,7 @@
 
     .line 62
     .local v0, "result":Z
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 63
     iget-object v1, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->positionArray:[F
@@ -164,10 +164,10 @@
 
     move-result-wide v1
 
-    goto :goto_38
+    goto :goto_0
 
     .line 65
-    :cond_32
+    :cond_2
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/geometry/Offset$Companion;->getUnspecified-F1C5BW0()J
@@ -175,12 +175,12 @@
     move-result-wide v1
 
     .line 62
-    :goto_38
+    :goto_0
     return-wide v1
 .end method
 
 .method public getSegment(FFLandroidx/compose/ui/graphics/Path;Z)Z
-    .registers 9
+    .locals 4
     .param p1, "startDistance"    # F
     .param p2, "stopDistance"    # F
     .param p3, "destination"    # Landroidx/compose/ui/graphics/Path;
@@ -209,7 +209,7 @@
     .local v2, "$i$f$asAndroidPath":I
     instance-of v3, v1, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_0
 
     .line 88
     move-object v3, v1
@@ -238,7 +238,7 @@
     .line 90
     .restart local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v2    # "$i$f$asAndroidPath":I
-    :cond_1e
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v3, "Unable to obtain android.graphics.Path"
@@ -249,7 +249,7 @@
 .end method
 
 .method public getTangent-tuRUvjQ(F)J
-    .registers 6
+    .locals 4
     .param p1, "distance"    # F
 
     .line 72
@@ -257,7 +257,7 @@
 
     const/4 v1, 0x2
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 73
     new-array v0, v1, [F
@@ -265,10 +265,10 @@
     iput-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->positionArray:[F
 
     .line 75
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->tangentArray:[F
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_1
 
     .line 76
     new-array v0, v1, [F
@@ -276,7 +276,7 @@
     iput-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->tangentArray:[F
 
     .line 78
-    :cond_11
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->internalPathMeasure:Landroid/graphics/PathMeasure;
 
     iget-object v1, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->positionArray:[F
@@ -289,7 +289,7 @@
 
     .line 79
     .local v0, "result":Z
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_2
 
     .line 80
     iget-object v1, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->tangentArray:[F
@@ -312,10 +312,10 @@
 
     move-result-wide v1
 
-    goto :goto_38
+    goto :goto_0
 
     .line 82
-    :cond_32
+    :cond_2
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/geometry/Offset$Companion;->getUnspecified-F1C5BW0()J
@@ -323,19 +323,19 @@
     move-result-wide v1
 
     .line 79
-    :goto_38
+    :goto_0
     return-wide v1
 .end method
 
 .method public setPath(Landroidx/compose/ui/graphics/Path;Z)V
-    .registers 7
+    .locals 4
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "forceClosed"    # Z
 
     .line 49
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathMeasure;->internalPathMeasure:Landroid/graphics/PathMeasure;
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_1
 
     move-object v1, p1
 
@@ -346,7 +346,7 @@
     .local v2, "$i$f$asAndroidPath":I
     instance-of v3, v1, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v3, :cond_13
+    if-eqz v3, :cond_0
 
     .line 93
     move-object v3, v1
@@ -362,12 +362,12 @@
 
     .end local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .end local v2    # "$i$f$asAndroidPath":I
-    goto :goto_1d
+    goto :goto_0
 
     .line 95
     .restart local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v2    # "$i$f$asAndroidPath":I
-    :cond_13
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v3, "Unable to obtain android.graphics.Path"
@@ -379,10 +379,10 @@
     .line 49
     .end local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .end local v2    # "$i$f$asAndroidPath":I
-    :cond_1c
+    :cond_1
     const/4 v3, 0x0
 
-    :goto_1d
+    :goto_0
     invoke-virtual {v0, v3, p2}, Landroid/graphics/PathMeasure;->setPath(Landroid/graphics/Path;Z)V
 
     .line 50

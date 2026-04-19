@@ -166,13 +166,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -222,19 +222,19 @@
 .end method
 
 .method public static synthetic getDebuggerDisplayValue$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getReadable$runtime_release$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final mutate(Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .registers 26
+    .locals 24
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -257,7 +257,7 @@
 
     .line 129
     .local v2, "result":Ljava/lang/Object;
-    :cond_3
+    :cond_0
     nop
 
     .line 130
@@ -269,7 +269,6 @@
 
     .line 132
     .local v4, "currentModification":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v5
@@ -294,7 +293,7 @@
     .local v8, "$i$f$withCurrent":I
     const/4 v9, 0x1
 
-    :try_start_11
+    :try_start_0
     invoke-virtual {v7}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
 
     move-result-object v10
@@ -361,8 +360,8 @@
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$1":I
     .end local v7    # "current":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_38
-    .catchall {:try_start_11 .. :try_end_38} :catchall_f3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 527
     invoke-static {v9}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -399,7 +398,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_f1
+    if-nez v0, :cond_2
 
     move-object/from16 v8, p0
 
@@ -456,7 +455,7 @@
 
     .line 535
     .local v17, "$i$a$-sync-SnapshotKt$writable$3$iv$iv":I
-    :try_start_78
+    :try_start_1
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -483,7 +482,6 @@
 
     .line 141
     .local v19, "$i$a$-writable-SnapshotStateMap$mutate$2":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -496,28 +494,28 @@
     .line 537
     .local v21, "$i$f$synchronized":I
     monitor-enter v20
-    :try_end_95
-    .catchall {:try_start_78 .. :try_end_95} :catchall_e7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     const/4 v0, 0x0
 
     .line 142
     .local v0, "$i$a$-synchronized-SnapshotStateMap$mutate$2$1":I
-    :try_start_96
+    :try_start_2
     invoke-virtual/range {v18 .. v18}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->getModification$runtime_release()I
 
     move-result v9
-    :try_end_9a
-    .catchall {:try_start_96 .. :try_end_9a} :catchall_da
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne v9, v4, :cond_b2
+    if-ne v9, v4, :cond_1
 
     .line 143
     move-object/from16 v9, v18
 
     .end local v18    # "$this$mutate_u24lambda_u2411":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v9, "$this$mutate_u24lambda_u2411":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    :try_start_9e
+    :try_start_3
     invoke-virtual {v9, v6}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
 
     .line 144
@@ -534,26 +532,26 @@
     add-int/lit8 v0, v18, 0x1
 
     invoke-virtual {v9, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setModification$runtime_release(I)V
-    :try_end_ae
-    .catchall {:try_start_9e .. :try_end_ae} :catchall_b0
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 145
     const/4 v0, 0x1
 
-    goto :goto_b7
+    goto :goto_0
 
     .line 537
     .end local v23    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1":I
-    :catchall_b0
+    :catchall_0
     move-exception v0
 
-    goto :goto_dd
+    goto :goto_1
 
     .line 146
     .end local v9    # "$this$mutate_u24lambda_u2411":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1":I
     .restart local v18    # "$this$mutate_u24lambda_u2411":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    :cond_b2
+    :cond_1
     move/from16 v23, v0
 
     move-object/from16 v9, v18
@@ -565,21 +563,21 @@
     const/4 v0, 0x0
 
     .line 142
-    :goto_b7
+    :goto_0
     nop
 
     .line 537
     .end local v23    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1":I
     const/16 v18, 0x1
 
-    :try_start_ba
+    :try_start_4
     invoke-static/range {v18 .. v18}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     monitor-exit v20
 
     invoke-static/range {v18 .. v18}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
-    :try_end_c1
-    .catchall {:try_start_ba .. :try_end_c1} :catchall_e7
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 141
     .end local v20    # "lock$iv":Ljava/lang/Object;
@@ -639,9 +637,9 @@
     .line 140
     .end local v8    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .end local v10    # "$i$f$writable":I
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_0
 
-    goto :goto_f1
+    goto :goto_2
 
     .line 537
     .restart local v8    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
@@ -657,17 +655,17 @@
     .restart local v19    # "$i$a$-writable-SnapshotStateMap$mutate$2":I
     .restart local v20    # "lock$iv":Ljava/lang/Object;
     .restart local v21    # "$i$f$synchronized":I
-    :catchall_da
+    :catchall_1
     move-exception v0
 
     move-object/from16 v9, v18
 
     .end local v18    # "$this$mutate_u24lambda_u2411":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v9, "$this$mutate_u24lambda_u2411":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    :goto_dd
+    :goto_1
     const/16 v18, 0x1
 
-    :try_start_df
+    :try_start_5
     invoke-static/range {v18 .. v18}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     monitor-exit v20
@@ -690,8 +688,8 @@
     .end local v16    # "$i$f$synchronized":I
     .end local p1    # "block":Lkotlin/jvm/functions/Function1;
     throw v0
-    :try_end_e7
-    .catchall {:try_start_df .. :try_end_e7} :catchall_e7
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .line 534
     .end local v9    # "$this$mutate_u24lambda_u2411":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -714,7 +712,7 @@
     .restart local v15    # "lock$iv$iv$iv$iv":Ljava/lang/Object;
     .restart local v16    # "$i$f$synchronized":I
     .restart local p1    # "block":Lkotlin/jvm/functions/Function1;
-    :catchall_e7
+    :catchall_2
     move-exception v0
 
     const/4 v9, 0x1
@@ -736,8 +734,8 @@
     .end local v14    # "$i$f$sync":I
     .end local v15    # "lock$iv$iv$iv$iv":Ljava/lang/Object;
     .end local v16    # "$i$f$synchronized":I
-    :cond_f1
-    :goto_f1
+    :cond_2
+    :goto_2
     nop
 
     .line 151
@@ -752,7 +750,7 @@
     .restart local v4    # "currentModification":I
     .local v5, "lock$iv":Ljava/lang/Object;
     .local v6, "$i$f$synchronized":I
-    :catchall_f3
+    :catchall_3
     move-exception v0
 
     move-object/from16 v7, p1
@@ -769,7 +767,7 @@
 .end method
 
 .method private final update(Lkotlin/jvm/functions/Function1;)V
-    .registers 28
+    .locals 26
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -846,7 +844,7 @@
 
     move-result-object v0
 
-    if-eq v9, v0, :cond_b7
+    if-eq v9, v0, :cond_0
 
     move-object/from16 v10, p0
 
@@ -905,7 +903,7 @@
     .local v18, "$i$a$-sync-SnapshotKt$writable$3$iv$iv":I
     const/16 v19, 0x1
 
-    :try_start_53
+    :try_start_0
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -932,7 +930,6 @@
 
     .line 157
     .local v21, "$i$a$-writable-SnapshotStateMap$update$1$1":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -945,8 +942,8 @@
     .line 550
     .local v23, "$i$f$synchronized":I
     monitor-enter v22
-    :try_end_70
-    .catchall {:try_start_53 .. :try_end_70} :catchall_ac
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     const/4 v0, 0x0
 
@@ -959,7 +956,7 @@
     .end local v20    # "$this$update_u24lambda_u2414_u24lambda_u2413":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$update_u24lambda_u2414_u24lambda_u2413":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v24, "$i$f$update":I
-    :try_start_75
+    :try_start_1
     invoke-virtual {v1, v9}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
 
     .line 159
@@ -974,19 +971,19 @@
     add-int/lit8 v0, v20, 0x1
 
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setModification$runtime_release(I)V
-    :try_end_83
-    .catchall {:try_start_75 .. :try_end_83} :catchall_a1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 550
     .end local v25    # "$i$a$-synchronized-SnapshotStateMap$update$1$1$1":I
-    :try_start_83
+    :try_start_2
     invoke-static/range {v19 .. v19}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     monitor-exit v22
 
     invoke-static/range {v19 .. v19}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
-    :try_end_8a
-    .catchall {:try_start_83 .. :try_end_8a} :catchall_aa
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 157
     .end local v22    # "lock$iv":Ljava/lang/Object;
@@ -1041,7 +1038,7 @@
     .end local v12    # "$this$writable$iv$iv":Landroidx/compose/runtime/snapshots/StateRecord;
     .end local v13    # "$i$f$writable":I
     .end local v14    # "snapshot$iv$iv":Ljava/lang/Object;
-    goto :goto_b9
+    goto :goto_1
 
     .line 550
     .local v1, "$this$update_u24lambda_u2414_u24lambda_u2413":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -1055,10 +1052,10 @@
     .restart local v21    # "$i$a$-writable-SnapshotStateMap$update$1$1":I
     .restart local v22    # "lock$iv":Ljava/lang/Object;
     .restart local v23    # "$i$f$synchronized":I
-    :catchall_a1
+    :catchall_0
     move-exception v0
 
-    :try_start_a2
+    :try_start_3
     invoke-static/range {v19 .. v19}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     monitor-exit v22
@@ -1083,8 +1080,8 @@
     .end local v24    # "$i$f$update":I
     .end local p1    # "block":Lkotlin/jvm/functions/Function1;
     throw v0
-    :try_end_aa
-    .catchall {:try_start_a2 .. :try_end_aa} :catchall_aa
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 547
     .end local v1    # "$this$update_u24lambda_u2414_u24lambda_u2413":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -1109,21 +1106,21 @@
     .restart local v17    # "$i$f$synchronized":I
     .restart local v24    # "$i$f$update":I
     .restart local p1    # "block":Lkotlin/jvm/functions/Function1;
-    :catchall_aa
+    :catchall_1
     move-exception v0
 
-    goto :goto_af
+    goto :goto_0
 
     .end local v24    # "$i$f$update":I
     .local v1, "$i$f$update":I
-    :catchall_ac
+    :catchall_2
     move-exception v0
 
     move/from16 v24, v1
 
     .end local v1    # "$i$f$update":I
     .restart local v24    # "$i$f$update":I
-    :goto_af
+    :goto_0
     invoke-static/range {v19 .. v19}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     monitor-exit v16
@@ -1143,13 +1140,13 @@
     .end local v17    # "$i$f$synchronized":I
     .end local v24    # "$i$f$update":I
     .restart local v1    # "$i$f$update":I
-    :cond_b7
+    :cond_0
     move/from16 v24, v1
 
     .line 162
     .end local v1    # "$i$f$update":I
     .restart local v24    # "$i$f$update":I
-    :goto_b9
+    :goto_1
     nop
 
     .line 542
@@ -1170,7 +1167,7 @@
 .end method
 
 .method private final withCurrent(Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1220,7 +1217,7 @@
 .end method
 
 .method private final writable(Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .registers 12
+    .locals 10
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1284,7 +1281,7 @@
     .local v7, "$i$a$-sync-SnapshotKt$writable$3$iv":I
     const/4 v8, 0x1
 
-    :try_start_1e
+    :try_start_0
     sget-object v9, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v9}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1305,8 +1302,8 @@
     invoke-interface {p1, v9}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v9
-    :try_end_30
-    .catchall {:try_start_1e .. :try_end_30} :catchall_44
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 521
     .end local v7    # "$i$a$-sync-SnapshotKt$writable$3$iv":I
@@ -1360,7 +1357,7 @@
     .local v4, "$i$f$sync":I
     .local v5, "lock$iv$iv$iv":Ljava/lang/Object;
     .restart local v6    # "$i$f$synchronized":I
-    :catchall_44
+    :catchall_0
     move-exception v7
 
     invoke-static {v8}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -1375,7 +1372,7 @@
 
 # virtual methods
 .method public final all$runtime_release(Lkotlin/jvm/functions/Function1;)Z
-    .registers 6
+    .locals 4
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1415,12 +1412,12 @@
 
     move-result-object v1
 
-    :cond_19
+    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1440,7 +1437,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_19
+    if-nez v3, :cond_0
 
     const/4 v1, 0x0
 
@@ -1448,14 +1445,14 @@
 
     .line 107
     .end local v2    # "entry":Ljava/util/Map$Entry;
-    :cond_33
+    :cond_1
     const/4 v1, 0x1
 
     return v1
 .end method
 
 .method public final any$runtime_release(Lkotlin/jvm/functions/Function1;)Z
-    .registers 6
+    .locals 4
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1495,12 +1492,12 @@
 
     move-result-object v1
 
-    :cond_19
+    :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1520,7 +1517,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_0
 
     const/4 v1, 0x1
 
@@ -1528,14 +1525,14 @@
 
     .line 100
     .end local v2    # "entry":Ljava/util/Map$Entry;
-    :cond_33
+    :cond_1
     const/4 v1, 0x0
 
     return v1
 .end method
 
 .method public clear()V
-    .registers 26
+    .locals 25
 
     .line 69
     move-object/from16 v1, p0
@@ -1608,7 +1605,7 @@
 
     move-result-object v0
 
-    if-eq v9, v0, :cond_9a
+    if-eq v9, v0, :cond_0
 
     move-object v10, v1
 
@@ -1665,7 +1662,7 @@
 
     .line 371
     .local v18, "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
-    :try_start_4e
+    :try_start_0
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1692,7 +1689,6 @@
 
     .line 373
     .local v20, "$i$a$-writable-SnapshotStateMap$update$1$1$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -1705,8 +1701,8 @@
     .line 370
     .local v22, "$i$f$synchronized":I
     monitor-enter v21
-    :try_end_6b
-    .catchall {:try_start_4e .. :try_end_6b} :catchall_95
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     const/4 v0, 0x0
 
@@ -1719,7 +1715,7 @@
     .end local v19    # "$this$update_u24lambda_u2414_u24lambda_u2413$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$update_u24lambda_u2414_u24lambda_u2413$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v23, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :try_start_70
+    :try_start_1
     invoke-virtual {v1, v9}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
 
     .line 375
@@ -1734,15 +1730,15 @@
     add-int/lit8 v0, v19, 0x1
 
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setModification$runtime_release(I)V
-    :try_end_7e
-    .catchall {:try_start_70 .. :try_end_7e} :catchall_90
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 370
     .end local v24    # "$i$a$-synchronized-SnapshotStateMap$update$1$1$1$iv":I
-    :try_start_7e
+    :try_start_2
     monitor-exit v21
-    :try_end_7f
-    .catchall {:try_start_7e .. :try_end_7f} :catchall_93
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 373
     .end local v21    # "lock$iv$iv":Ljava/lang/Object;
@@ -1793,7 +1789,7 @@
     .end local v12    # "$this$writable$iv$iv$iv":Landroidx/compose/runtime/snapshots/StateRecord;
     .end local v13    # "$i$f$writable":I
     .end local v14    # "snapshot$iv$iv$iv":Ljava/lang/Object;
-    goto :goto_9c
+    goto :goto_1
 
     .line 370
     .local v1, "$this$update_u24lambda_u2414_u24lambda_u2413$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -1807,10 +1803,10 @@
     .restart local v20    # "$i$a$-writable-SnapshotStateMap$update$1$1$iv":I
     .restart local v21    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v22    # "$i$f$synchronized":I
-    :catchall_90
+    :catchall_0
     move-exception v0
 
-    :try_start_91
+    :try_start_3
     monitor-exit v21
 
     .end local v2    # "$i$f$update":I
@@ -1831,8 +1827,8 @@
     .end local v17    # "$i$f$synchronized":I
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     throw v0
-    :try_end_93
-    .catchall {:try_start_91 .. :try_end_93} :catchall_93
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .end local v1    # "$this$update_u24lambda_u2414_u24lambda_u2413$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .end local v18    # "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
@@ -1856,21 +1852,21 @@
     .restart local v16    # "lock$iv$iv$iv$iv$iv":Ljava/lang/Object;
     .restart local v17    # "$i$f$synchronized":I
     .restart local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :catchall_93
+    :catchall_1
     move-exception v0
 
-    goto :goto_98
+    goto :goto_0
 
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .local v1, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :catchall_95
+    :catchall_2
     move-exception v0
 
     move-object/from16 v23, v1
 
     .end local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_98
+    :goto_0
     monitor-exit v16
 
     throw v0
@@ -1886,13 +1882,13 @@
     .end local v17    # "$i$f$synchronized":I
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :cond_9a
+    :cond_0
     move-object/from16 v23, v1
 
     .line 379
     .end local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_9c
+    :goto_1
     nop
 
     .line 363
@@ -1918,7 +1914,7 @@
 .end method
 
 .method public containsKey(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
 
     .line 61
@@ -1938,7 +1934,7 @@
 .end method
 
 .method public containsValue(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
 
     .line 62
@@ -1958,7 +1954,7 @@
 .end method
 
 .method public final bridge entrySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1977,7 +1973,7 @@
 .end method
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2004,7 +2000,7 @@
 .end method
 
 .method public final getDebuggerDisplayValue()Ljava/util/Map;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2072,7 +2068,7 @@
 .end method
 
 .method public getEntries()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2089,7 +2085,7 @@
 .end method
 
 .method public getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 2
+    .locals 1
 
     .line 35
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->firstStateRecord:Landroidx/compose/runtime/snapshots/StateRecord;
@@ -2098,7 +2094,7 @@
 .end method
 
 .method public getKeys()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2114,7 +2110,7 @@
 .end method
 
 .method public final getModification$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 74
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getReadable$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -2129,7 +2125,7 @@
 .end method
 
 .method public final getReadable$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2165,7 +2161,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getReadable$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -2184,7 +2180,7 @@
 .end method
 
 .method public getValues()Ljava/util/Collection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2200,7 +2196,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 64
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getReadable$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -2219,7 +2215,7 @@
 .end method
 
 .method public final bridge keySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2237,7 +2233,7 @@
 .end method
 
 .method public prependStateRecord(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -2258,7 +2254,7 @@
 .end method
 
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 28
+    .locals 25
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -2280,7 +2276,7 @@
 
     .line 380
     .local v3, "result$iv":Ljava/lang/Object;
-    :goto_5
+    :goto_0
     nop
 
     .line 381
@@ -2292,7 +2288,6 @@
 
     .line 383
     .local v5, "currentModification$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v6
@@ -2315,7 +2310,7 @@
 
     .line 386
     .local v9, "$i$f$withCurrent":I
-    :try_start_11
+    :try_start_0
     invoke-virtual {v8}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
 
     move-result-object v10
@@ -2382,8 +2377,8 @@
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$1$iv":I
     .end local v8    # "current$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_38
-    .catchall {:try_start_11 .. :try_end_38} :catchall_e6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
     .line 384
     monitor-exit v6
@@ -2432,7 +2427,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e1
+    if-nez v0, :cond_2
 
     move-object v10, v1
 
@@ -2489,7 +2484,7 @@
 
     .line 399
     .local v18, "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
-    :try_start_78
+    :try_start_1
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -2516,7 +2511,6 @@
 
     .line 401
     .local v20, "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -2529,8 +2523,8 @@
     .line 384
     .local v22, "$i$f$synchronized":I
     monitor-enter v21
-    :try_end_95
-    .catchall {:try_start_78 .. :try_end_95} :catchall_dc
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
     const/4 v0, 0x0
 
@@ -2540,14 +2534,14 @@
 
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
     .local v23, "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :try_start_98
+    :try_start_2
     invoke-virtual/range {v19 .. v19}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->getModification$runtime_release()I
 
     move-result v0
-    :try_end_9c
-    .catchall {:try_start_98 .. :try_end_9c} :catchall_d3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne v0, v5, :cond_b3
+    if-ne v0, v5, :cond_0
 
     .line 403
     move-object/from16 v24, v1
@@ -2557,7 +2551,7 @@
     .end local v19    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v24, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :try_start_a2
+    :try_start_3
     invoke-virtual {v1, v7}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
 
     .line 404
@@ -2570,25 +2564,25 @@
     add-int/lit8 v0, v0, 0x1
 
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setModification$runtime_release(I)V
-    :try_end_b0
-    .catchall {:try_start_a2 .. :try_end_b0} :catchall_b1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 405
-    goto :goto_b9
+    goto :goto_1
 
     .line 384
     .end local v23    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :catchall_b1
+    :catchall_0
     move-exception v0
 
-    goto :goto_d8
+    goto :goto_2
 
     .line 406
     .end local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .local v1, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v19    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v23    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :cond_b3
+    :cond_0
     move-object/from16 v24, v1
 
     move-object/from16 v1, v19
@@ -2599,15 +2593,15 @@
     const/16 v19, 0x0
 
     .line 402
-    :goto_b9
+    :goto_1
     nop
 
     .line 384
     .end local v23    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :try_start_ba
+    :try_start_4
     monitor-exit v21
-    :try_end_bb
-    .catchall {:try_start_ba .. :try_end_bb} :catchall_da
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 401
     .end local v21    # "lock$iv$iv":Ljava/lang/Object;
@@ -2663,14 +2657,14 @@
     .line 394
     .end local v10    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .end local v11    # "$i$f$writable":I
-    if-eqz v19, :cond_cf
+    if-eqz v19, :cond_1
 
-    goto :goto_e3
+    goto :goto_4
 
-    :cond_cf
+    :cond_1
     move-object/from16 v1, v24
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 384
     .end local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
@@ -2688,7 +2682,7 @@
     .restart local v20    # "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
     .restart local v21    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v22    # "$i$f$synchronized":I
-    :catchall_d3
+    :catchall_1
     move-exception v0
 
     move-object/from16 v24, v1
@@ -2698,8 +2692,8 @@
     .end local v19    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_d8
-    :try_start_d8
+    :goto_2
+    :try_start_5
     monitor-exit v21
 
     .end local v2    # "$i$f$mutate":I
@@ -2720,8 +2714,8 @@
     .end local p1    # "key":Ljava/lang/Object;
     .end local p2    # "value":Ljava/lang/Object;
     throw v0
-    :try_end_da
-    .catchall {:try_start_d8 .. :try_end_da} :catchall_da
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .end local v1    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .end local v18    # "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
@@ -2745,21 +2739,21 @@
     .restart local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local p1    # "key":Ljava/lang/Object;
     .restart local p2    # "value":Ljava/lang/Object;
-    :catchall_da
+    :catchall_2
     move-exception v0
 
-    goto :goto_df
+    goto :goto_3
 
     .end local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .local v1, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :catchall_dc
+    :catchall_3
     move-exception v0
 
     move-object/from16 v24, v1
 
     .end local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_df
+    :goto_3
     monitor-exit v16
 
     throw v0
@@ -2775,13 +2769,13 @@
     .end local v17    # "$i$f$synchronized":I
     .end local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :cond_e1
+    :cond_2
     move-object/from16 v24, v1
 
     .line 410
     .end local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v24    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_e3
+    :goto_4
     nop
 
     .line 412
@@ -2805,7 +2799,7 @@
     .restart local v5    # "currentModification$iv":I
     .local v6, "lock$iv$iv":Ljava/lang/Object;
     .local v7, "$i$f$synchronized":I
-    :catchall_e6
+    :catchall_4
     move-exception v0
 
     move-object/from16 v8, p1
@@ -2822,7 +2816,7 @@
 .end method
 
 .method public putAll(Ljava/util/Map;)V
-    .registers 25
+    .locals 23
     .param p1, "from"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2851,7 +2845,7 @@
 
     .line 413
     .local v4, "result$iv":Ljava/lang/Object;
-    :goto_d
+    :goto_0
     nop
 
     .line 414
@@ -2863,7 +2857,6 @@
 
     .line 416
     .local v6, "currentModification$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v7
@@ -2886,7 +2879,7 @@
 
     .line 419
     .local v10, "$i$f$withCurrent":I
-    :try_start_19
+    :try_start_0
     invoke-virtual {v9}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
 
     move-result-object v11
@@ -2953,8 +2946,8 @@
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$1$iv":I
     .end local v9    # "current$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_40
-    .catchall {:try_start_19 .. :try_end_40} :catchall_df
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 417
     monitor-exit v7
@@ -2999,7 +2992,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_dc
+    if-nez v0, :cond_2
 
     move-object v9, v2
 
@@ -3056,7 +3049,7 @@
 
     .line 432
     .local v17, "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
-    :try_start_7d
+    :try_start_1
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3083,7 +3076,6 @@
 
     .line 434
     .local v19, "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -3096,8 +3088,8 @@
     .line 417
     .local v21, "$i$f$synchronized":I
     monitor-enter v20
-    :try_end_9a
-    .catchall {:try_start_7d .. :try_end_9a} :catchall_d9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     const/4 v0, 0x0
 
@@ -3107,21 +3099,21 @@
 
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
     .local v22, "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :try_start_9d
+    :try_start_2
     invoke-virtual/range {v18 .. v18}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->getModification$runtime_release()I
 
     move-result v0
-    :try_end_a1
-    .catchall {:try_start_9d .. :try_end_a1} :catchall_d4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne v0, v6, :cond_b6
+    if-ne v0, v6, :cond_0
 
     .line 436
     move-object/from16 v1, v18
 
     .end local v18    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    :try_start_a5
+    :try_start_3
     invoke-virtual {v1, v8}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
 
     .line 437
@@ -3134,24 +3126,24 @@
     add-int/lit8 v0, v0, 0x1
 
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setModification$runtime_release(I)V
-    :try_end_b3
-    .catchall {:try_start_a5 .. :try_end_b3} :catchall_b4
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 438
-    goto :goto_ba
+    goto :goto_1
 
     .line 417
     .end local v22    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :catchall_b4
+    :catchall_0
     move-exception v0
 
-    goto :goto_d7
+    goto :goto_2
 
     .line 439
     .end local v1    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v18    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v22    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :cond_b6
+    :cond_0
     move-object/from16 v1, v18
 
     .end local v18    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -3159,15 +3151,15 @@
     const/16 v18, 0x0
 
     .line 435
-    :goto_ba
+    :goto_1
     nop
 
     .line 417
     .end local v22    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :try_start_bb
+    :try_start_4
     monitor-exit v20
-    :try_end_bc
-    .catchall {:try_start_bb .. :try_end_bc} :catchall_d9
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 434
     .end local v20    # "lock$iv$iv":Ljava/lang/Object;
@@ -3223,14 +3215,14 @@
     .line 427
     .end local v9    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .end local v10    # "$i$f$writable":I
-    if-eqz v18, :cond_d0
+    if-eqz v18, :cond_1
 
-    goto :goto_dc
+    goto :goto_3
 
-    :cond_d0
+    :cond_1
     move-object/from16 v1, p1
 
-    goto/16 :goto_d
+    goto/16 :goto_0
 
     .line 417
     .restart local v9    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
@@ -3246,15 +3238,15 @@
     .restart local v19    # "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
     .restart local v20    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v21    # "$i$f$synchronized":I
-    :catchall_d4
+    :catchall_1
     move-exception v0
 
     move-object/from16 v1, v18
 
     .end local v18    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    :goto_d7
-    :try_start_d7
+    :goto_2
+    :try_start_5
     monitor-exit v20
 
     .end local v2    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
@@ -3274,8 +3266,8 @@
     .end local v16    # "$i$f$synchronized":I
     .end local p1    # "from":Ljava/util/Map;
     throw v0
-    :try_end_d9
-    .catchall {:try_start_d7 .. :try_end_d9} :catchall_d9
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .end local v1    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .end local v17    # "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
@@ -3298,7 +3290,7 @@
     .restart local v15    # "lock$iv$iv$iv$iv$iv":Ljava/lang/Object;
     .restart local v16    # "$i$f$synchronized":I
     .restart local p1    # "from":Ljava/util/Map;
-    :catchall_d9
+    :catchall_2
     move-exception v0
 
     monitor-exit v15
@@ -3314,8 +3306,8 @@
     .end local v14    # "$i$f$sync":I
     .end local v15    # "lock$iv$iv$iv$iv$iv":Ljava/lang/Object;
     .end local v16    # "$i$f$synchronized":I
-    :cond_dc
-    :goto_dc
+    :cond_2
+    :goto_3
     nop
 
     .line 445
@@ -3339,7 +3331,7 @@
     .restart local v6    # "currentModification$iv":I
     .local v7, "lock$iv$iv":Ljava/lang/Object;
     .local v8, "$i$f$synchronized":I
-    :catchall_df
+    :catchall_3
     move-exception v0
 
     monitor-exit v7
@@ -3348,7 +3340,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 26
+    .locals 24
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3371,7 +3363,7 @@
 
     .line 446
     .local v3, "result$iv":Ljava/lang/Object;
-    :goto_5
+    :goto_0
     nop
 
     .line 447
@@ -3383,7 +3375,6 @@
 
     .line 449
     .local v5, "currentModification$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v6
@@ -3406,7 +3397,7 @@
 
     .line 452
     .local v9, "$i$f$withCurrent":I
-    :try_start_11
+    :try_start_0
     invoke-virtual {v8}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
 
     move-result-object v10
@@ -3473,8 +3464,8 @@
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$1$iv":I
     .end local v8    # "current$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_38
-    .catchall {:try_start_11 .. :try_end_38} :catchall_e4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
     .line 450
     monitor-exit v6
@@ -3521,7 +3512,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_df
+    if-nez v0, :cond_2
 
     move-object v9, v1
 
@@ -3578,7 +3569,7 @@
 
     .line 465
     .local v17, "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
-    :try_start_76
+    :try_start_1
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3605,7 +3596,6 @@
 
     .line 467
     .local v19, "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -3618,8 +3608,8 @@
     .line 450
     .local v21, "$i$f$synchronized":I
     monitor-enter v20
-    :try_end_93
-    .catchall {:try_start_76 .. :try_end_93} :catchall_da
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
     const/4 v0, 0x0
 
@@ -3629,14 +3619,14 @@
 
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
     .local v22, "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :try_start_96
+    :try_start_2
     invoke-virtual/range {v18 .. v18}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->getModification$runtime_release()I
 
     move-result v0
-    :try_end_9a
-    .catchall {:try_start_96 .. :try_end_9a} :catchall_d1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne v0, v5, :cond_b1
+    if-ne v0, v5, :cond_0
 
     .line 469
     move-object/from16 v23, v1
@@ -3646,7 +3636,7 @@
     .end local v18    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v23, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :try_start_a0
+    :try_start_3
     invoke-virtual {v1, v7}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
 
     .line 470
@@ -3659,25 +3649,25 @@
     add-int/lit8 v0, v0, 0x1
 
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setModification$runtime_release(I)V
-    :try_end_ae
-    .catchall {:try_start_a0 .. :try_end_ae} :catchall_af
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 471
-    goto :goto_b7
+    goto :goto_1
 
     .line 450
     .end local v22    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :catchall_af
+    :catchall_0
     move-exception v0
 
-    goto :goto_d6
+    goto :goto_2
 
     .line 472
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .local v1, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v18    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v22    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :cond_b1
+    :cond_0
     move-object/from16 v23, v1
 
     move-object/from16 v1, v18
@@ -3688,15 +3678,15 @@
     const/16 v18, 0x0
 
     .line 468
-    :goto_b7
+    :goto_1
     nop
 
     .line 450
     .end local v22    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :try_start_b8
+    :try_start_4
     monitor-exit v20
-    :try_end_b9
-    .catchall {:try_start_b8 .. :try_end_b9} :catchall_d8
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 467
     .end local v20    # "lock$iv$iv":Ljava/lang/Object;
@@ -3752,14 +3742,14 @@
     .line 460
     .end local v9    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .end local v10    # "$i$f$writable":I
-    if-eqz v18, :cond_cd
+    if-eqz v18, :cond_1
 
-    goto :goto_e1
+    goto :goto_4
 
-    :cond_cd
+    :cond_1
     move-object/from16 v1, v23
 
-    goto/16 :goto_5
+    goto/16 :goto_0
 
     .line 450
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
@@ -3777,7 +3767,7 @@
     .restart local v19    # "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
     .restart local v20    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v21    # "$i$f$synchronized":I
-    :catchall_d1
+    :catchall_1
     move-exception v0
 
     move-object/from16 v23, v1
@@ -3787,8 +3777,8 @@
     .end local v18    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_d6
-    :try_start_d6
+    :goto_2
+    :try_start_5
     monitor-exit v20
 
     .end local v2    # "$i$f$mutate":I
@@ -3808,8 +3798,8 @@
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .end local p1    # "key":Ljava/lang/Object;
     throw v0
-    :try_end_d8
-    .catchall {:try_start_d6 .. :try_end_d8} :catchall_d8
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
     .end local v1    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .end local v17    # "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
@@ -3832,21 +3822,21 @@
     .restart local v16    # "$i$f$synchronized":I
     .restart local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local p1    # "key":Ljava/lang/Object;
-    :catchall_d8
+    :catchall_2
     move-exception v0
 
-    goto :goto_dd
+    goto :goto_3
 
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .local v1, "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :catchall_da
+    :catchall_3
     move-exception v0
 
     move-object/from16 v23, v1
 
     .end local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_dd
+    :goto_3
     monitor-exit v15
 
     throw v0
@@ -3862,13 +3852,13 @@
     .end local v16    # "$i$f$synchronized":I
     .end local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :cond_df
+    :cond_2
     move-object/from16 v23, v1
 
     .line 476
     .end local v1    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .restart local v23    # "this_$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    :goto_e1
+    :goto_4
     nop
 
     .line 478
@@ -3892,7 +3882,7 @@
     .restart local v5    # "currentModification$iv":I
     .local v6, "lock$iv$iv":Ljava/lang/Object;
     .local v7, "$i$f$synchronized":I
-    :catchall_e4
+    :catchall_4
     move-exception v0
 
     move-object/from16 v8, p1
@@ -3907,7 +3897,7 @@
 .end method
 
 .method public final removeIf$runtime_release(Lkotlin/jvm/functions/Function1;)Z
-    .registers 27
+    .locals 25
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3951,7 +3941,7 @@
     .end local v0    # "removed":Z
     .local v5, "removed":Z
     .local v6, "result$iv":Ljava/lang/Object;
-    :goto_10
+    :goto_0
     nop
 
     .line 483
@@ -3963,7 +3953,6 @@
 
     .line 485
     .local v8, "currentModification$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v9
@@ -3988,7 +3977,7 @@
     .local v12, "$i$f$withCurrent":I
     const/4 v13, 0x1
 
-    :try_start_1d
+    :try_start_0
     invoke-virtual {v11}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
 
     move-result-object v14
@@ -4055,8 +4044,8 @@
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$1$iv":I
     .end local v11    # "current$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_46
-    .catchall {:try_start_1d .. :try_end_46} :catchall_13d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_5
 
     .line 486
     invoke-static {v13}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -4093,13 +4082,13 @@
 
     move-result-object v11
 
-    :cond_60
-    :goto_60
+    :cond_0
+    :goto_1
     invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
-    if-eqz v12, :cond_81
+    if-eqz v12, :cond_1
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4119,7 +4108,7 @@
 
     move-result v14
 
-    if-eqz v14, :cond_60
+    if-eqz v14, :cond_0
 
     .line 88
     invoke-interface {v12}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -4132,10 +4121,10 @@
     const/4 v5, 0x1
 
     .end local v12    # "entry":Ljava/util/Map$Entry;
-    goto :goto_60
+    goto :goto_1
 
     .line 92
-    :cond_81
+    :cond_1
     nop
 
     .end local v0    # "it":Ljava/util/Map;
@@ -4156,7 +4145,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13a
+    if-nez v0, :cond_4
 
     move-object v11, v3
 
@@ -4213,30 +4202,30 @@
 
     .line 501
     .local v20, "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
-    :try_start_b1
+    :try_start_1
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v0
-    :try_end_b7
-    .catchall {:try_start_b1 .. :try_end_b7} :catchall_130
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
     move-object/from16 v16, v0
 
     .line 502
-    :try_start_b9
+    :try_start_2
     move-object v0, v11
 
     check-cast v0, Landroidx/compose/runtime/snapshots/StateObject;
-    :try_end_bc
-    .catchall {:try_start_b9 .. :try_end_bc} :catchall_12c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
     move-object/from16 v13, v16
 
     .end local v16    # "snapshot$iv$iv$iv":Ljava/lang/Object;
     .local v13, "snapshot$iv$iv$iv":Ljava/lang/Object;
-    :try_start_be
+    :try_start_3
     invoke-static {v14, v0, v13}, Landroidx/compose/runtime/snapshots/SnapshotKt;->writableRecord(Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateObject;Landroidx/compose/runtime/snapshots/Snapshot;)Landroidx/compose/runtime/snapshots/StateRecord;
 
     move-result-object v0
@@ -4250,7 +4239,6 @@
 
     .line 503
     .local v21, "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -4263,8 +4251,8 @@
     .line 486
     .local v23, "$i$f$synchronized":I
     monitor-enter v22
-    :try_end_d1
-    .catchall {:try_start_be .. :try_end_d1} :catchall_128
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     const/4 v0, 0x0
 
@@ -4274,21 +4262,21 @@
 
     .end local v0    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
     .local v24, "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :try_start_d4
+    :try_start_4
     invoke-virtual/range {v16 .. v16}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->getModification$runtime_release()I
 
     move-result v0
-    :try_end_d8
-    .catchall {:try_start_d4 .. :try_end_d8} :catchall_11b
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    if-ne v0, v8, :cond_ee
+    if-ne v0, v8, :cond_2
 
     .line 505
     move-object/from16 v1, v16
 
     .end local v16    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    :try_start_dc
+    :try_start_5
     invoke-virtual {v1, v10}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
 
     .line 506
@@ -4301,26 +4289,26 @@
     add-int/lit8 v0, v0, 0x1
 
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->setModification$runtime_release(I)V
-    :try_end_ea
-    .catchall {:try_start_dc .. :try_end_ea} :catchall_ec
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 507
     const/4 v0, 0x1
 
-    goto :goto_f1
+    goto :goto_2
 
     .line 486
     .end local v24    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :catchall_ec
+    :catchall_0
     move-exception v0
 
-    goto :goto_11e
+    goto :goto_3
 
     .line 508
     .end local v1    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v16    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .restart local v24    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
-    :cond_ee
+    :cond_2
     move-object/from16 v1, v16
 
     .end local v16    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -4328,21 +4316,21 @@
     const/4 v0, 0x0
 
     .line 504
-    :goto_f1
+    :goto_2
     nop
 
     .line 486
     .end local v24    # "$i$a$-synchronized-SnapshotStateMap$mutate$2$1$iv":I
     const/16 v16, 0x1
 
-    :try_start_f4
+    :try_start_6
     invoke-static/range {v16 .. v16}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     monitor-exit v22
 
     invoke-static/range {v16 .. v16}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
-    :try_end_fb
-    .catchall {:try_start_f4 .. :try_end_fb} :catchall_128
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 503
     .end local v22    # "lock$iv$iv":Ljava/lang/Object;
@@ -4406,14 +4394,14 @@
     .line 496
     .end local v11    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .end local v12    # "$i$f$writable":I
-    if-eqz v0, :cond_117
+    if-eqz v0, :cond_3
 
-    goto :goto_13a
+    goto :goto_5
 
-    :cond_117
+    :cond_3
     move-object/from16 v1, p1
 
-    goto/16 :goto_10
+    goto/16 :goto_0
 
     .line 486
     .restart local v11    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap;
@@ -4429,17 +4417,17 @@
     .restart local v21    # "$i$a$-writable-SnapshotStateMap$mutate$2$iv":I
     .restart local v22    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v23    # "$i$f$synchronized":I
-    :catchall_11b
+    :catchall_1
     move-exception v0
 
     move-object/from16 v1, v16
 
     .end local v16    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .local v1, "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    :goto_11e
+    :goto_3
     const/16 v16, 0x1
 
-    :try_start_120
+    :try_start_7
     invoke-static/range {v16 .. v16}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     monitor-exit v22
@@ -4465,8 +4453,8 @@
     .end local v19    # "$i$f$synchronized":I
     .end local p1    # "predicate":Lkotlin/jvm/functions/Function1;
     throw v0
-    :try_end_128
-    .catchall {:try_start_120 .. :try_end_128} :catchall_128
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .end local v1    # "$this$mutate_u24lambda_u2411$iv":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
     .end local v20    # "$i$a$-sync-SnapshotKt$writable$3$iv$iv$iv":I
@@ -4491,30 +4479,30 @@
     .restart local v18    # "lock$iv$iv$iv$iv$iv":Ljava/lang/Object;
     .restart local v19    # "$i$f$synchronized":I
     .restart local p1    # "predicate":Lkotlin/jvm/functions/Function1;
-    :catchall_128
+    :catchall_2
     move-exception v0
 
     move-object/from16 v16, v13
 
-    goto :goto_131
+    goto :goto_4
 
     .end local v13    # "snapshot$iv$iv$iv":Ljava/lang/Object;
     .local v16, "snapshot$iv$iv$iv":Ljava/lang/Object;
-    :catchall_12c
+    :catchall_3
     move-exception v0
 
     move-object/from16 v13, v16
 
     .end local v16    # "snapshot$iv$iv$iv":Ljava/lang/Object;
     .restart local v13    # "snapshot$iv$iv$iv":Ljava/lang/Object;
-    goto :goto_131
+    goto :goto_4
 
     .end local v13    # "snapshot$iv$iv$iv":Ljava/lang/Object;
     .restart local v16    # "snapshot$iv$iv$iv":Ljava/lang/Object;
-    :catchall_130
+    :catchall_4
     move-exception v0
 
-    :goto_131
+    :goto_4
     const/4 v1, 0x1
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -4534,8 +4522,8 @@
     .end local v17    # "$i$f$sync":I
     .end local v18    # "lock$iv$iv$iv$iv$iv":Ljava/lang/Object;
     .end local v19    # "$i$f$synchronized":I
-    :cond_13a
-    :goto_13a
+    :cond_4
+    :goto_5
     nop
 
     .line 514
@@ -4559,7 +4547,7 @@
     .restart local v8    # "currentModification$iv":I
     .local v9, "lock$iv$iv":Ljava/lang/Object;
     .local v10, "$i$f$synchronized":I
-    :catchall_13d
+    :catchall_5
     move-exception v0
 
     const/4 v1, 0x1
@@ -4574,7 +4562,7 @@
 .end method
 
 .method public final removeValue$runtime_release(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4598,12 +4586,12 @@
 
     move-result-object v2
 
-    :cond_b
+    :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4630,22 +4618,22 @@
     .line 479
     .end local v4    # "it":Ljava/util/Map$Entry;
     .end local v5    # "$i$a$-firstOrNull-SnapshotStateMap$removeValue$1":I
-    if-eqz v4, :cond_b
+    if-eqz v4, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 480
     .end local v3    # "element$iv":Ljava/lang/Object;
-    :cond_24
+    :cond_1
     const/4 v3, 0x0
 
     .line 77
     .end local v0    # "$this$firstOrNull$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$firstOrNull":I
-    :goto_25
+    :goto_0
     check-cast v3, Ljava/util/Map$Entry;
 
-    if-eqz v3, :cond_34
+    if-eqz v3, :cond_2
 
     move-object v0, v3
 
@@ -4665,17 +4653,17 @@
     .end local v1    # "$i$a$-let-SnapshotStateMap$removeValue$2":I
     const/4 v0, 0x1
 
-    goto :goto_35
+    goto :goto_1
 
-    :cond_34
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_35
+    :goto_1
     return v0
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 33
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotStateMap;->getSize()I
@@ -4686,7 +4674,7 @@
 .end method
 
 .method public final toMap()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -4710,7 +4698,7 @@
 .end method
 
 .method public final bridge values()Ljava/util/Collection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

@@ -108,7 +108,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -118,7 +118,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 176
     invoke-direct {p0}, Landroidx/compose/ui/graphics/painter/Painter;-><init>()V
@@ -208,7 +208,7 @@
 .end method
 
 .method public static final synthetic access$getVector$p(Landroidx/compose/ui/graphics/vector/VectorPainter;)Landroidx/compose/ui/graphics/vector/VectorComponent;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/vector/VectorPainter;
 
     .line 176
@@ -218,7 +218,7 @@
 .end method
 
 .method public static final synthetic access$setDirty(Landroidx/compose/ui/graphics/vector/VectorPainter;Z)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/vector/VectorPainter;
     .param p1, "<set-?>"    # Z
 
@@ -229,7 +229,7 @@
 .end method
 
 .method private final composeVector(Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function4;)Landroidx/compose/runtime/Composition;
-    .registers 8
+    .locals 5
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .param p2, "composable"    # Lkotlin/jvm/functions/Function4;
     .annotation system Ldalvik/annotation/Signature;
@@ -256,25 +256,25 @@
 
     .line 204
     .local v0, "existing":Landroidx/compose/runtime/Composition;
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_1
 
     invoke-interface {v0}, Landroidx/compose/runtime/Composition;->isDisposed()Z
 
     move-result v1
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
     .line 210
-    :cond_b
+    :cond_0
     move-object v1, v0
 
-    goto :goto_21
+    goto :goto_1
 
     .line 206
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     new-instance v1, Landroidx/compose/ui/graphics/vector/VectorApplier;
 
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorPainter;->vector:Landroidx/compose/ui/graphics/vector/VectorComponent;
@@ -298,7 +298,7 @@
     move-result-object v1
 
     .line 204
-    :goto_21
+    :goto_1
     nop
 
     .line 212
@@ -327,7 +327,7 @@
 .end method
 
 .method private final isDirty()Z
-    .registers 4
+    .locals 3
 
     .line 219
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPainter;->isDirty$delegate:Landroidx/compose/runtime/MutableState;
@@ -360,7 +360,7 @@
 .end method
 
 .method private final setDirty(Z)V
-    .registers 6
+    .locals 4
     .param p1, "<set-?>"    # Z
 
     .line 219
@@ -395,7 +395,7 @@
 
 # virtual methods
 .method public final RenderVector$ui_release(Ljava/lang/String;FFLkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;I)V
-    .registers 24
+    .locals 17
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "viewportWidth"    # F
     .param p3, "viewportHeight"    # F
@@ -456,7 +456,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -466,13 +466,13 @@
 
     invoke-static {v0, v11, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     move/from16 v11, p6
 
     .line 228
-    :goto_32
+    :goto_0
     iget-object v0, v7, Landroidx/compose/ui/graphics/vector/VectorPainter;->vector:Landroidx/compose/ui/graphics/vector/VectorComponent;
 
     .local v0, "$this$RenderVector_u24lambda_u241":Landroidx/compose/ui/graphics/vector/VectorComponent;
@@ -534,20 +534,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_64
+    if-eqz v0, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_64
+    :cond_1
     invoke-interface {v10}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v15
 
-    if-nez v15, :cond_6b
+    if-nez v15, :cond_2
 
-    goto :goto_85
+    goto :goto_1
 
-    :cond_6b
+    :cond_2
     new-instance v16, Landroidx/compose/ui/graphics/vector/VectorPainter$RenderVector$3;
 
     move-object/from16 v0, v16
@@ -573,12 +573,12 @@
     invoke-interface {v15, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 243
-    :goto_85
+    :goto_1
     return-void
 .end method
 
 .method protected applyAlpha(F)Z
-    .registers 3
+    .locals 1
     .param p1, "alpha"    # F
 
     .line 270
@@ -591,7 +591,7 @@
 .end method
 
 .method protected applyColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Z
-    .registers 3
+    .locals 1
     .param p1, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 275
@@ -604,7 +604,7 @@
 .end method
 
 .method public final getAutoMirror$ui_release()Z
-    .registers 4
+    .locals 3
 
     .line 180
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPainter;->autoMirror$delegate:Landroidx/compose/runtime/MutableState;
@@ -637,7 +637,7 @@
 .end method
 
 .method public final getIntrinsicColorFilter$ui_release()Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 2
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPainter;->vector:Landroidx/compose/ui/graphics/vector/VectorComponent;
@@ -650,7 +650,7 @@
 .end method
 
 .method public getIntrinsicSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 249
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/VectorPainter;->getSize-NH-jbRc$ui_release()J
@@ -661,7 +661,7 @@
 .end method
 
 .method public final getSize-NH-jbRc$ui_release()J
-    .registers 4
+    .locals 3
 
     .line 178
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPainter;->size$delegate:Landroidx/compose/runtime/MutableState;
@@ -694,7 +694,7 @@
 .end method
 
 .method protected onDraw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 24
+    .locals 22
     .param p1, "$this$onDraw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     move-object/from16 v0, p0
@@ -715,7 +715,7 @@
     .local v3, "$i$a$-with-VectorPainter$onDraw$1":I
     iget-object v4, v0, Landroidx/compose/ui/graphics/vector/VectorPainter;->currentColorFilter:Landroidx/compose/ui/graphics/ColorFilter;
 
-    if-nez v4, :cond_14
+    if-nez v4, :cond_0
 
     invoke-virtual {v2}, Landroidx/compose/ui/graphics/vector/VectorComponent;->getIntrinsicColorFilter$ui_release()Landroidx/compose/ui/graphics/ColorFilter;
 
@@ -723,12 +723,12 @@
 
     .line 254
     .local v4, "filter":Landroidx/compose/ui/graphics/ColorFilter;
-    :cond_14
+    :cond_0
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/graphics/vector/VectorPainter;->getAutoMirror$ui_release()Z
 
     move-result v5
 
-    if-eqz v5, :cond_6f
+    if-eqz v5, :cond_1
 
     invoke-interface/range {p1 .. p1}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
 
@@ -736,7 +736,7 @@
 
     sget-object v6, Landroidx/compose/ui/unit/LayoutDirection;->Rtl:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-ne v5, v6, :cond_6f
+    if-ne v5, v6, :cond_1
 
     .line 255
     move-object/from16 v5, p1
@@ -887,12 +887,12 @@
 
     .end local v17    # "$this$mirror$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v18    # "$i$f$mirror":I
-    goto :goto_76
+    goto :goto_0
 
     .line 254
     .end local v19    # "$i$a$-with-VectorPainter$onDraw$1":I
     .local v3, "$i$a$-with-VectorPainter$onDraw$1":I
-    :cond_6f
+    :cond_1
     move/from16 v19, v3
 
     .line 259
@@ -903,7 +903,7 @@
     invoke-virtual {v2, v1, v3, v4}, Landroidx/compose/ui/graphics/vector/VectorComponent;->draw(Landroidx/compose/ui/graphics/drawscope/DrawScope;FLandroidx/compose/ui/graphics/ColorFilter;)V
 
     .line 261
-    :goto_76
+    :goto_0
     nop
 
     .line 252
@@ -917,7 +917,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_82
+    if-eqz v2, :cond_2
 
     .line 265
     const/4 v2, 0x0
@@ -925,12 +925,12 @@
     invoke-direct {v0, v2}, Landroidx/compose/ui/graphics/vector/VectorPainter;->setDirty(Z)V
 
     .line 267
-    :cond_82
+    :cond_2
     return-void
 .end method
 
 .method public final setAutoMirror$ui_release(Z)V
-    .registers 6
+    .locals 4
     .param p1, "<set-?>"    # Z
 
     .line 180
@@ -963,7 +963,7 @@
 .end method
 
 .method public final setIntrinsicColorFilter$ui_release(Landroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 188
@@ -976,7 +976,7 @@
 .end method
 
 .method public final setSize-uvyYCjk$ui_release(J)V
-    .registers 7
+    .locals 4
     .param p1, "<set-?>"    # J
 
     .line 178

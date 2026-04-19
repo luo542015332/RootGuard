@@ -108,7 +108,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$Companion;
 
@@ -137,7 +137,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Map;)V
-    .registers 3
+    .locals 1
     .param p1, "savedStates"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -188,12 +188,12 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/Map;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 68
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 69
     new-instance p1, Ljava/util/LinkedHashMap;
@@ -203,7 +203,7 @@
     check-cast p1, Ljava/util/Map;
 
     .line 68
-    :cond_b
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;-><init>(Ljava/util/Map;)V
 
     .line 141
@@ -211,7 +211,7 @@
 .end method
 
 .method public static final synthetic access$getRegistryHolders$p(Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;)Ljava/util/Map;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;
 
     .line 68
@@ -221,7 +221,7 @@
 .end method
 
 .method public static final synthetic access$getSavedStates$p(Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;)Ljava/util/Map;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;
 
     .line 68
@@ -231,7 +231,7 @@
 .end method
 
 .method public static final synthetic access$getSaver$cp()Landroidx/compose/runtime/saveable/Saver;
-    .registers 1
+    .locals 1
 
     .line 68
     sget-object v0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->Saver:Landroidx/compose/runtime/saveable/Saver;
@@ -240,7 +240,7 @@
 .end method
 
 .method public static final synthetic access$saveAll(Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;)Ljava/util/Map;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;
 
     .line 68
@@ -252,7 +252,7 @@
 .end method
 
 .method private final saveAll()Ljava/util/Map;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -292,12 +292,12 @@
 
     move-result-object v3
 
-    :goto_13
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_0
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -321,10 +321,10 @@
     nop
 
     .end local v4    # "element$iv":Ljava/lang/Object;
-    goto :goto_13
+    goto :goto_0
 
     .line 155
-    :cond_26
+    :cond_0
     nop
 
     .line 103
@@ -334,7 +334,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_1
 
     .line 156
     const/4 v1, 0x0
@@ -346,19 +346,19 @@
     .end local v1    # "$i$a$-ifEmpty-SaveableStateHolderImpl$saveAll$2":I
     const/4 v1, 0x0
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_1
     move-object v1, v0
 
-    :goto_32
+    :goto_1
     return-object v1
 .end method
 
 
 # virtual methods
 .method public SaveableStateProvider(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
-    .registers 26
+    .locals 21
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .param p3, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -415,7 +415,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_2f
+    if-eqz v6, :cond_0
 
     const/4 v6, -0x1
 
@@ -424,7 +424,7 @@
     invoke-static {v3, v5, v6, v7}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 76
-    :cond_2f
+    :cond_0
     const/16 v3, 0x8
 
     move v6, v3
@@ -513,7 +513,7 @@
 
     .end local v7    # "$i$f$ReusableContent":I
     .local v17, "$i$f$ReusableContent":I
-    if-ne v3, v6, :cond_b7
+    if-ne v3, v6, :cond_3
 
     .line 148
     const/4 v6, 0x0
@@ -524,19 +524,19 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_7f
+    if-eqz v7, :cond_1
 
     invoke-interface {v7, v1}, Landroidx/compose/runtime/saveable/SaveableStateRegistry;->canBeSaved(Ljava/lang/Object;)Z
 
     move-result v7
 
-    goto :goto_80
+    goto :goto_0
 
-    :cond_7f
+    :cond_1
     const/4 v7, 0x1
 
-    :goto_80
-    if-eqz v7, :cond_8e
+    :goto_0
+    if-eqz v7, :cond_2
 
     .line 82
     new-instance v7, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;
@@ -555,11 +555,11 @@
     move-object/from16 v19, v3
 
     .end local v6    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_bb
+    goto :goto_1
 
     .line 78
     .local v6, "$i$a$-remember-SaveableStateHolderImpl$SaveableStateProvider$1$registryHolder$1":I
-    :cond_8e
+    :cond_2
     const/4 v7, 0x0
 
     .line 79
@@ -612,7 +612,7 @@
     .end local v19    # "it$iv$iv":Ljava/lang/Object;
     .end local v20    # "$i$a$-remember-SaveableStateHolderImpl$SaveableStateProvider$1$registryHolder$1":I
     .restart local v3    # "it$iv$iv":Ljava/lang/Object;
-    :cond_b7
+    :cond_3
     move-object/from16 v19, v3
 
     .end local v3    # "it$iv$iv":Ljava/lang/Object;
@@ -620,7 +620,7 @@
     move-object/from16 v6, v19
 
     .line 147
-    :goto_bb
+    :goto_1
     nop
 
     .line 146
@@ -713,22 +713,22 @@
 
     move-result v3
 
-    if-eqz v3, :cond_ff
+    if-eqz v3, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_ff
+    :cond_4
     invoke-interface {v4}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v3
 
-    if-nez v3, :cond_108
+    if-nez v3, :cond_5
 
     move/from16 v7, p4
 
-    goto :goto_114
+    goto :goto_2
 
-    :cond_108
+    :cond_5
     new-instance v6, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$SaveableStateProvider$2;
 
     move/from16 v7, p4
@@ -740,12 +740,12 @@
     invoke-interface {v3, v6}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 98
-    :goto_114
+    :goto_2
     return-void
 .end method
 
 .method public final getParentSaveableStateRegistry()Landroidx/compose/runtime/saveable/SaveableStateRegistry;
-    .registers 2
+    .locals 1
 
     .line 72
     iget-object v0, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->parentSaveableStateRegistry:Landroidx/compose/runtime/saveable/SaveableStateRegistry;
@@ -754,7 +754,7 @@
 .end method
 
 .method public removeState(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "key"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "key"
@@ -772,28 +772,28 @@
 
     .line 108
     .local v0, "registryHolder":Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     .line 109
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->setShouldSave(Z)V
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 111
-    :cond_15
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->savedStates:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 113
-    :goto_1a
+    :goto_0
     return-void
 .end method
 
 .method public final setParentSaveableStateRegistry(Landroidx/compose/runtime/saveable/SaveableStateRegistry;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/runtime/saveable/SaveableStateRegistry;
 
     .line 72

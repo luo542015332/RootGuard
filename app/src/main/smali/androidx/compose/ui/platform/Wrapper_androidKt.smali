@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 43
     const-string/jumbo v0, "Wrapper"
@@ -80,7 +80,7 @@
 .end method
 
 .method public static final createSubcomposition(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/runtime/CompositionContext;)Landroidx/compose/runtime/Composition;
-    .registers 3
+    .locals 1
     .param p0, "container"    # Landroidx/compose/ui/node/LayoutNode;
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
 
@@ -112,7 +112,7 @@
 .end method
 
 .method private static final doSetContent(Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/Composition;
-    .registers 9
+    .locals 6
     .param p0, "owner"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
@@ -137,7 +137,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 92
     nop
@@ -163,7 +163,7 @@
     invoke-static {}, Landroidx/compose/ui/platform/Wrapper_androidKt;->enableDebugInspectorInfo()V
 
     .line 98
-    :cond_1a
+    :cond_0
     new-instance v0, Landroidx/compose/ui/node/UiApplier;
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView;->getRoot()Landroidx/compose/ui/node/LayoutNode;
@@ -192,17 +192,17 @@
 
     instance-of v2, v1, Landroidx/compose/ui/platform/WrappedComposition;
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_1
 
     check-cast v1, Landroidx/compose/ui/platform/WrappedComposition;
 
-    goto :goto_3b
+    goto :goto_0
 
-    :cond_3a
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_3b
-    if-nez v1, :cond_4f
+    :goto_0
+    if-nez v1, :cond_2
 
     .line 101
     new-instance v1, Landroidx/compose/ui/platform/WrappedComposition;
@@ -233,7 +233,7 @@
     nop
 
     .line 99
-    :cond_4f
+    :cond_2
     nop
 
     .line 104
@@ -249,20 +249,20 @@
 .end method
 
 .method private static final enableDebugInspectorInfo()V
-    .registers 4
+    .locals 4
 
     .line 111
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->isDebugInspectorInfoEnabled()Z
 
     move-result v0
 
-    if-nez v0, :cond_26
+    if-nez v0, :cond_0
 
     .line 112
     nop
 
     .line 113
-    :try_start_7
+    :try_start_0
     const-string/jumbo v0, "androidx.compose.ui.platform.InspectableValueKt"
 
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -287,15 +287,15 @@
     const/4 v3, 0x0
 
     invoke-virtual {v1, v3, v2}, Ljava/lang/reflect/Field;->setBoolean(Ljava/lang/Object;Z)V
-    :try_end_1d
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_1d} :catch_1e
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .end local v0    # "packageClass":Ljava/lang/Class;
     .end local v1    # "field":Ljava/lang/reflect/Field;
-    goto :goto_26
+    goto :goto_0
 
     .line 117
-    :catch_1e
+    :catch_0
     move-exception v0
 
     .line 118
@@ -308,13 +308,13 @@
 
     .line 121
     .end local v0    # "ignored":Ljava/lang/Exception;
-    :cond_26
-    :goto_26
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method private static final inspectionWanted(Landroidx/compose/ui/platform/AndroidComposeView;)Z
-    .registers 3
+    .locals 2
     .param p0, "owner"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     .line 205
@@ -322,7 +322,7 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_18
+    if-lt v0, v1, :cond_0
 
     .line 206
     sget-object v0, Landroidx/compose/ui/platform/WrapperVerificationHelperMethods;->INSTANCE:Landroidx/compose/ui/platform/WrapperVerificationHelperMethods;
@@ -343,19 +343,19 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_19
+    :goto_0
     return v1
 .end method
 
 .method public static final setContent(Landroidx/compose/ui/platform/AbstractComposeView;Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/Composition;
-    .registers 8
+    .locals 5
     .param p0, "$this$setContent"    # Landroidx/compose/ui/platform/AbstractComposeView;
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
@@ -399,7 +399,7 @@
 
     const/4 v1, 0x0
 
-    if-lez v0, :cond_2a
+    if-lez v0, :cond_0
 
     .line 77
     const/4 v0, 0x0
@@ -410,22 +410,22 @@
 
     instance-of v2, v0, Landroidx/compose/ui/platform/AndroidComposeView;
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     move-object v1, v0
 
     check-cast v1, Landroidx/compose/ui/platform/AndroidComposeView;
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 79
-    :cond_2a
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AbstractComposeView;->removeAllViews()V
 
     .line 76
-    :cond_2d
-    :goto_2d
-    if-nez v1, :cond_4f
+    :cond_1
+    :goto_0
+    if-nez v1, :cond_2
 
     .line 80
     new-instance v1, Landroidx/compose/ui/platform/AndroidComposeView;
@@ -468,7 +468,7 @@
     nop
 
     .line 76
-    :cond_4f
+    :cond_2
     nop
 
     .line 75

@@ -68,7 +68,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/reflect/Method;Landroidx/compose/runtime/reflect/ComposableInfo;)V
-    .registers 4
+    .locals 1
     .param p1, "method"    # Ljava/lang/reflect/Method;
     .param p2, "composableInfo"    # Landroidx/compose/runtime/reflect/ComposableInfo;
 
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final asMethod()Ljava/lang/reflect/Method;
-    .registers 2
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/compose/runtime/reflect/ComposableMethod;->method:Ljava/lang/reflect/Method;
@@ -115,7 +115,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 168
@@ -124,7 +124,7 @@
     .line 169
     instance-of v0, p1, Landroidx/compose/runtime/reflect/ComposableMethod;
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/reflect/ComposableMethod;->method:Ljava/lang/reflect/Method;
 
@@ -138,19 +138,19 @@
 
     move-result v0
 
-    goto :goto_12
+    goto :goto_0
 
     .line 170
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 171
-    :goto_12
+    :goto_0
     return v0
 .end method
 
 .method public final getParameterCount()I
-    .registers 2
+    .locals 1
 
     .line 112
     iget-object v0, p0, Landroidx/compose/runtime/reflect/ComposableMethod;->composableInfo:Landroidx/compose/runtime/reflect/ComposableInfo;
@@ -163,7 +163,7 @@
 .end method
 
 .method public final getParameterTypes()[Ljava/lang/Class;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()[",
@@ -203,7 +203,7 @@
 .end method
 
 .method public final getParameters()[Ljava/lang/reflect/Parameter;
-    .registers 4
+    .locals 3
 
     .line 119
     iget-object v0, p0, Landroidx/compose/runtime/reflect/ComposableMethod;->method:Ljava/lang/reflect/Method;
@@ -236,7 +236,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 173
     iget-object v0, p0, Landroidx/compose/runtime/reflect/ComposableMethod;->method:Ljava/lang/reflect/Method;
@@ -249,7 +249,7 @@
 .end method
 
 .method public final varargs invoke(Landroidx/compose/runtime/Composer;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 30
+    .locals 26
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "instance"    # Ljava/lang/Object;
     .param p3, "args"    # [Ljava/lang/Object;
@@ -317,8 +317,8 @@
     .line 139
     move v12, v10
 
-    :goto_33
-    if-ge v12, v2, :cond_d9
+    :goto_0
+    if-ge v12, v2, :cond_5
 
     .line 140
     mul-int/lit8 v14, v12, 0x1f
@@ -376,12 +376,12 @@
 
     move-result-object v20
 
-    :goto_5e
+    :goto_1
     invoke-interface/range {v20 .. v20}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v21
 
-    if-eqz v21, :cond_8b
+    if-eqz v21, :cond_2
 
     move-object/from16 v21, v20
 
@@ -409,26 +409,26 @@
     .end local v22    # "it":I
     .local v5, "it":I
     .local v24, "changedParams":I
-    if-ge v5, v3, :cond_7e
+    if-ge v5, v3, :cond_1
 
     aget-object v3, v1, v5
 
-    if-nez v3, :cond_7c
+    if-nez v3, :cond_0
 
-    goto :goto_7e
+    goto :goto_2
 
-    :cond_7c
+    :cond_0
     const/4 v3, 0x0
 
-    goto :goto_7f
+    goto :goto_3
 
-    :cond_7e
-    :goto_7e
+    :cond_1
+    :goto_2
     const/4 v3, 0x1
 
     .end local v5    # "it":I
     .end local v23    # "$i$a$-map-ComposableMethod$invoke$defaultsMasks$1$useDefault$1":I
-    :goto_7f
+    :goto_3
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -440,13 +440,13 @@
 
     move/from16 v5, v24
 
-    goto :goto_5e
+    goto :goto_1
 
     .line 223
     .end local v21    # "item$iv$iv":I
     .end local v24    # "changedParams":I
     .local v5, "changedParams":I
-    :cond_8b
+    :cond_2
     move/from16 v24, v5
 
     .end local v2    # "destination$iv$iv":Ljava/util/Collection;
@@ -493,12 +493,12 @@
 
     move-result-object v17
 
-    :goto_9e
+    :goto_4
     invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v19
 
-    if-eqz v19, :cond_c4
+    if-eqz v19, :cond_4
 
     invoke-interface/range {v17 .. v17}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -509,11 +509,11 @@
 
     .end local v13    # "index$iv":I
     .local v20, "index$iv":I
-    if-gez v13, :cond_af
+    if-gez v13, :cond_3
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
-    :cond_af
+    :cond_3
     move-object/from16 v21, v19
 
     check-cast v21, Ljava/lang/Number;
@@ -545,12 +545,12 @@
     move/from16 v13, v20
 
     .end local v19    # "element$iv":Ljava/lang/Object;
-    goto :goto_9e
+    goto :goto_4
 
     .line 227
     .end local v20    # "index$iv":I
     .local v13, "index$iv":I
-    :cond_c4
+    :cond_4
     nop
 
     .line 144
@@ -586,13 +586,13 @@
 
     const/4 v10, 0x0
 
-    goto/16 :goto_33
+    goto/16 :goto_0
 
     .end local v18    # "defaultParams":I
     .end local v24    # "changedParams":I
     .local v2, "defaultParams":I
     .local v5, "changedParams":I
-    :cond_d9
+    :cond_5
     move/from16 v18, v2
 
     move/from16 v24, v5
@@ -609,40 +609,40 @@
 
     const/4 v5, 0x0
 
-    :goto_e1
-    if-ge v5, v6, :cond_142
+    :goto_5
+    if-ge v5, v6, :cond_f
 
     .line 149
     nop
 
     .line 151
-    if-ltz v5, :cond_ea
+    if-ltz v5, :cond_6
 
-    if-ge v5, v4, :cond_ea
+    if-ge v5, v4, :cond_6
 
     const/4 v9, 0x1
 
-    goto :goto_eb
+    goto :goto_6
 
-    :cond_ea
+    :cond_6
     const/4 v9, 0x0
 
-    :goto_eb
-    if-eqz v9, :cond_10d
+    :goto_6
+    if-eqz v9, :cond_8
 
-    if-ltz v5, :cond_f8
+    if-ltz v5, :cond_7
 
     invoke-static/range {p3 .. p3}, Lkotlin/collections/ArraysKt;->getLastIndex([Ljava/lang/Object;)I
 
     move-result v9
 
-    if-gt v5, v9, :cond_f8
+    if-gt v5, v9, :cond_7
 
     aget-object v9, v1, v5
 
-    goto :goto_130
+    goto :goto_9
 
-    :cond_f8
+    :cond_7
     move v9, v5
 
     .local v9, "it":I
@@ -662,7 +662,6 @@
 
     invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    # invokes: Landroidx/compose/runtime/reflect/ComposableMethodKt;->getDefaultValue(Ljava/lang/Class;)Ljava/lang/Object;
     invoke-static {v12}, Landroidx/compose/runtime/reflect/ComposableMethodKt;->access$getDefaultValue(Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v9
@@ -670,77 +669,77 @@
     .line 151
     .end local v9    # "it":I
     .end local v10    # "$i$a$-getOrElse-ComposableMethod$invoke$arguments$1$1":I
-    goto :goto_130
+    goto :goto_9
 
     .line 155
-    :cond_10d
-    if-ne v5, v4, :cond_112
+    :cond_8
+    if-ne v5, v4, :cond_9
 
     move-object/from16 v9, p1
 
-    goto :goto_130
+    goto :goto_9
 
     .line 158
-    :cond_112
-    if-ne v5, v7, :cond_116
+    :cond_9
+    if-ne v5, v7, :cond_a
 
     move-object v9, v11
 
-    goto :goto_130
+    goto :goto_9
 
     .line 159
-    :cond_116
+    :cond_a
     add-int/lit8 v9, v7, 0x1
 
-    if-gt v9, v5, :cond_11e
+    if-gt v9, v5, :cond_b
 
-    if-ge v5, v8, :cond_11e
+    if-ge v5, v8, :cond_b
 
     const/4 v9, 0x1
 
-    goto :goto_11f
+    goto :goto_7
 
-    :cond_11e
+    :cond_b
     const/4 v9, 0x0
 
-    :goto_11f
-    if-eqz v9, :cond_123
+    :goto_7
+    if-eqz v9, :cond_c
 
     move-object v9, v11
 
-    goto :goto_130
+    goto :goto_9
 
     .line 161
-    :cond_123
-    if-gt v8, v5, :cond_129
+    :cond_c
+    if-gt v8, v5, :cond_d
 
-    if-ge v5, v6, :cond_129
+    if-ge v5, v6, :cond_d
 
     const/4 v9, 0x1
 
-    goto :goto_12a
+    goto :goto_8
 
-    :cond_129
+    :cond_d
     const/4 v9, 0x0
 
-    :goto_12a
-    if-eqz v9, :cond_135
+    :goto_8
+    if-eqz v9, :cond_e
 
     sub-int v9, v5, v8
 
     aget-object v9, v2, v9
 
     .line 162
-    :goto_130
+    :goto_9
     aput-object v9, v3, v5
 
     add-int/lit8 v5, v5, 0x1
 
     .line 148
-    goto :goto_e1
+    goto :goto_5
 
     .line 161
-    :cond_135
+    :cond_e
     new-instance v3, Ljava/lang/IllegalStateException;
 
     .line 162
@@ -756,7 +755,7 @@
 
     .line 165
     .local v3, "arguments":[Ljava/lang/Object;
-    :cond_142
+    :cond_f
     iget-object v5, v0, Landroidx/compose/runtime/reflect/ComposableMethod;->method:Ljava/lang/reflect/Method;
 
     array-length v9, v3

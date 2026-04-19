@@ -63,7 +63,7 @@
 
 # direct methods
 .method public static final down(JJFF)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 27
+    .locals 21
     .param p0, "id"    # J
     .param p2, "durationMillis"    # J
     .param p4, "x"    # F
@@ -127,55 +127,55 @@
 .end method
 
 .method public static synthetic down$default(JJFFILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 14
+    .locals 6
 
     .line 27
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 29
     const-wide/16 p2, 0x0
 
     move-wide v2, p2
 
-    goto :goto_9
+    goto :goto_0
 
     .line 27
-    :cond_8
+    :cond_0
     move-wide v2, p2
 
-    :goto_9
+    :goto_0
     and-int/lit8 p2, p6, 0x4
 
     const/4 p3, 0x0
 
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_1
 
     .line 30
     move v4, p3
 
-    goto :goto_11
+    goto :goto_1
 
     .line 27
-    :cond_10
+    :cond_1
     move v4, p4
 
-    :goto_11
+    :goto_1
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_17
+    if-eqz p2, :cond_2
 
     .line 31
     move v5, p3
 
-    goto :goto_18
+    goto :goto_2
 
     .line 27
-    :cond_17
+    :cond_2
     move v5, p5
 
-    :goto_18
+    :goto_2
     move-wide v0, p0
 
     invoke-static/range {v0 .. v5}, Landroidx/compose/ui/input/pointer/PointerInputTestUtilKt;->down(JJFF)Landroidx/compose/ui/input/pointer/PointerInputChange;
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final invokeOverAllPasses-H0pRuoY(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;J)V
-    .registers 7
+    .locals 3
     .param p0, "$this$invokeOverAllPasses_u2dH0pRuoY"    # Lkotlin/jvm/functions/Function3;
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p2, "size"    # J
@@ -268,12 +268,12 @@
 .end method
 
 .method public static synthetic invokeOverAllPasses-H0pRuoY$default(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;JILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 96
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_b
+    if-eqz p4, :cond_0
 
     .line 98
     const p2, 0x7fffffff
@@ -283,14 +283,14 @@
     move-result-wide p2
 
     .line 96
-    :cond_b
+    :cond_0
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/input/pointer/PointerInputTestUtilKt;->invokeOverAllPasses-H0pRuoY(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;J)V
 
     return-void
 .end method
 
 .method public static final invokeOverPass-hUlJWOE(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V
-    .registers 6
+    .locals 1
     .param p0, "$this$invokeOverPass_u2dhUlJWOE"    # Lkotlin/jvm/functions/Function3;
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p2, "pointerEventPass"    # Landroidx/compose/ui/input/pointer/PointerEventPass;
@@ -336,12 +336,12 @@
 .end method
 
 .method public static synthetic invokeOverPass-hUlJWOE$default(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;JILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 115
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_b
+    if-eqz p5, :cond_0
 
     .line 118
     const p3, 0x7fffffff
@@ -351,14 +351,14 @@
     move-result-wide p3
 
     .line 115
-    :cond_b
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/PointerInputTestUtilKt;->invokeOverPass-hUlJWOE(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V
 
     return-void
 .end method
 
 .method public static final invokeOverPasses-hUlJWOE(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Ljava/util/List;J)V
-    .registers 13
+    .locals 8
     .param p0, "$this$invokeOverPasses_u2dhUlJWOE"    # Lkotlin/jvm/functions/Function3;
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p2, "pointerEventPasses"    # Ljava/util/List;
@@ -410,7 +410,7 @@
 
     const-string v1, "Failed requirement."
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_2
 
     .line 143
     move-object v0, p2
@@ -423,7 +423,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_1
 
     .line 144
     move-object v0, p2
@@ -443,8 +443,8 @@
 
     move-result v3
 
-    :goto_34
-    if-ge v2, v3, :cond_4a
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 151
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -480,11 +480,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_34
+    goto :goto_0
 
     .line 154
     .end local v2    # "index$iv":I
-    :cond_4a
+    :cond_0
     nop
 
     .line 147
@@ -493,7 +493,7 @@
     return-void
 
     .line 143
-    :cond_4c
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -505,7 +505,7 @@
     throw v0
 
     .line 142
-    :cond_56
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -518,7 +518,7 @@
 .end method
 
 .method public static final invokeOverPasses-hUlJWOE(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;[Landroidx/compose/ui/input/pointer/PointerEventPass;J)V
-    .registers 6
+    .locals 1
     .param p0, "$this$invokeOverPasses_u2dhUlJWOE"    # Lkotlin/jvm/functions/Function3;
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p2, "pointerEventPasses"    # [Landroidx/compose/ui/input/pointer/PointerEventPass;
@@ -565,12 +565,12 @@
 .end method
 
 .method public static synthetic invokeOverPasses-hUlJWOE$default(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Ljava/util/List;JILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 137
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_b
+    if-eqz p5, :cond_0
 
     .line 140
     const p3, 0x7fffffff
@@ -580,19 +580,19 @@
     move-result-wide p3
 
     .line 137
-    :cond_b
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/PointerInputTestUtilKt;->invokeOverPasses-hUlJWOE(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;Ljava/util/List;J)V
 
     return-void
 .end method
 
 .method public static synthetic invokeOverPasses-hUlJWOE$default(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;[Landroidx/compose/ui/input/pointer/PointerEventPass;JILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 126
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_b
+    if-eqz p5, :cond_0
 
     .line 129
     const p3, 0x7fffffff
@@ -602,14 +602,14 @@
     move-result-wide p3
 
     .line 126
-    :cond_b
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/PointerInputTestUtilKt;->invokeOverPasses-hUlJWOE(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/input/pointer/PointerEvent;[Landroidx/compose/ui/input/pointer/PointerEventPass;J)V
 
     return-void
 .end method
 
 .method public static final moveBy(Landroidx/compose/ui/input/pointer/PointerInputChange;JFF)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 27
+    .locals 22
     .param p0, "$this$moveBy"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .param p1, "durationMillis"    # J
     .param p3, "dx"    # F
@@ -721,25 +721,25 @@
 .end method
 
 .method public static synthetic moveBy$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JFFILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 8
+    .locals 1
 
     .line 60
     and-int/lit8 p6, p5, 0x2
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     move p3, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_b
+    if-eqz p5, :cond_1
 
     move p4, v0
 
-    :cond_b
+    :cond_1
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/PointerInputTestUtilKt;->moveBy(Landroidx/compose/ui/input/pointer/PointerInputChange;JFF)Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     move-result-object p0
@@ -748,7 +748,7 @@
 .end method
 
 .method public static final moveTo(Landroidx/compose/ui/input/pointer/PointerInputChange;JFF)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 26
+    .locals 21
     .param p0, "$this$moveTo"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .param p1, "durationMillis"    # J
     .param p3, "x"    # F
@@ -837,25 +837,25 @@
 .end method
 
 .method public static synthetic moveTo$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JFFILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 8
+    .locals 1
 
     .line 46
     and-int/lit8 p6, p5, 0x2
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     move p3, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_b
+    if-eqz p5, :cond_1
 
     move p4, v0
 
-    :cond_b
+    :cond_1
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/PointerInputTestUtilKt;->moveTo(Landroidx/compose/ui/input/pointer/PointerInputChange;JFF)Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     move-result-object p0
@@ -864,7 +864,7 @@
 .end method
 
 .method public static final up(Landroidx/compose/ui/input/pointer/PointerInputChange;J)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 24
+    .locals 21
     .param p0, "$this$up"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .param p1, "durationMillis"    # J
 

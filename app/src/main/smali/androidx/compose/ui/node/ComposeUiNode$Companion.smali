@@ -176,7 +176,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/ComposeUiNode$Companion;
 
@@ -253,7 +253,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -262,7 +262,7 @@
 .end method
 
 .method public static synthetic getSetCompositeKeyHash$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -270,7 +270,7 @@
 
 # virtual methods
 .method public final getConstructor()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -287,7 +287,7 @@
 .end method
 
 .method public final getSetCompositeKeyHash()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -306,7 +306,7 @@
 .end method
 
 .method public final getSetDensity()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -325,7 +325,7 @@
 .end method
 
 .method public final getSetLayoutDirection()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -344,7 +344,7 @@
 .end method
 
 .method public final getSetMeasurePolicy()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -363,7 +363,7 @@
 .end method
 
 .method public final getSetModifier()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -382,7 +382,7 @@
 .end method
 
 .method public final getSetResolvedCompositionLocals()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -401,7 +401,7 @@
 .end method
 
 .method public final getSetViewConfiguration()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -420,7 +420,7 @@
 .end method
 
 .method public final getVirtualConstructor()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

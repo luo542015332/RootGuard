@@ -26,13 +26,12 @@
 
 # direct methods
 .method public static getSubCompositionView(Landroidx/compose/ui/platform/ViewRootForInspector;)Landroidx/compose/ui/platform/AbstractComposeView;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/ViewRootForInspector;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 36
-    # invokes: Landroidx/compose/ui/platform/ViewRootForInspector;->getSubCompositionView()Landroidx/compose/ui/platform/AbstractComposeView;
     invoke-static {p0}, Landroidx/compose/ui/platform/ViewRootForInspector;->access$getSubCompositionView$jd(Landroidx/compose/ui/platform/ViewRootForInspector;)Landroidx/compose/ui/platform/AbstractComposeView;
 
     move-result-object v0
@@ -41,13 +40,12 @@
 .end method
 
 .method public static getViewRoot(Landroidx/compose/ui/platform/ViewRootForInspector;)Landroid/view/View;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/ViewRootForInspector;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 44
-    # invokes: Landroidx/compose/ui/platform/ViewRootForInspector;->getViewRoot()Landroid/view/View;
     invoke-static {p0}, Landroidx/compose/ui/platform/ViewRootForInspector;->access$getViewRoot$jd(Landroidx/compose/ui/platform/ViewRootForInspector;)Landroid/view/View;
 
     move-result-object v0

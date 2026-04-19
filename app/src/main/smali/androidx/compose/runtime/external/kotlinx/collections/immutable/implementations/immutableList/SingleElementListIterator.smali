@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;I)V
-    .registers 4
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
     .param p2, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -102,7 +102,7 @@
 .end method
 
 .method public previous()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"

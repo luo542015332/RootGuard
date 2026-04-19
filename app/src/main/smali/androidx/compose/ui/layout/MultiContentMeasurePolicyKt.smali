@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final createMeasurePolicy(Landroidx/compose/ui/layout/MultiContentMeasurePolicy;)Landroidx/compose/ui/layout/MeasurePolicy;
-    .registers 4
+    .locals 3
     .param p0, "measurePolicy"    # Landroidx/compose/ui/layout/MultiContentMeasurePolicy;
 
     const-string/jumbo v0, "measurePolicy"

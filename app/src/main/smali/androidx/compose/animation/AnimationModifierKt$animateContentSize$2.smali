@@ -78,7 +78,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;Landroidx/compose/animation/core/FiniteAnimationSpec;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 21
+    .locals 17
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -136,7 +136,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_0
 
     .line 79
     const/4 v4, -0x1
@@ -147,14 +147,14 @@
 
     invoke-static {v2, v6, v4, v5}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 0
-    :cond_26
+    :cond_0
     move/from16 v6, p3
 
     .line 79
-    :goto_28
+    :goto_0
     const/4 v2, 0x0
 
     .local v2, "$changed$iv":I
@@ -217,7 +217,7 @@
 
     move-result-object v14
 
-    if-ne v12, v14, :cond_6e
+    if-ne v12, v14, :cond_1
 
     .line 170
     const/4 v14, 0x0
@@ -262,12 +262,12 @@
     nop
 
     .end local v2    # "value$iv$iv$iv":Ljava/lang/Object;
-    goto :goto_71
+    goto :goto_1
 
     .line 176
     .end local v16    # "$changed$iv":I
     .local v2, "$changed$iv":I
-    :cond_6e
+    :cond_1
     move/from16 v16, v2
 
     .end local v2    # "$changed$iv":I
@@ -275,7 +275,7 @@
     move-object v2, v12
 
     .line 169
-    :goto_71
+    :goto_1
     nop
 
     .line 168
@@ -349,7 +349,7 @@
 
     .line 180
     .local v12, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v8, :cond_a9
+    if-nez v8, :cond_3
 
     sget-object v13, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -357,19 +357,19 @@
 
     move-result-object v13
 
-    if-ne v11, v13, :cond_a7
+    if-ne v11, v13, :cond_2
 
-    goto :goto_a9
+    goto :goto_2
 
     .line 184
-    :cond_a7
+    :cond_2
     move-object v4, v11
 
-    goto :goto_b6
+    goto :goto_3
 
     .line 181
-    :cond_a9
-    :goto_a9
+    :cond_3
+    :goto_2
     const/4 v13, 0x0
 
     .line 81
@@ -393,7 +393,7 @@
 
     .line 180
     .end local v4    # "value$iv$iv":Ljava/lang/Object;
-    :goto_b6
+    :goto_3
     nop
 
     .line 179
@@ -435,18 +435,18 @@
 
     move-result v7
 
-    if-eqz v7, :cond_d6
+    if-eqz v7, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_d6
+    :cond_4
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v5
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

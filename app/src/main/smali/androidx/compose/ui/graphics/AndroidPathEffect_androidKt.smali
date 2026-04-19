@@ -53,7 +53,7 @@
 
 # direct methods
 .method public static final actualChainPathEffect(Landroidx/compose/ui/graphics/PathEffect;Landroidx/compose/ui/graphics/PathEffect;)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 6
+    .locals 4
     .param p0, "outer"    # Landroidx/compose/ui/graphics/PathEffect;
     .param p1, "inner"    # Landroidx/compose/ui/graphics/PathEffect;
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public static final actualCornerPathEffect(F)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 3
+    .locals 2
     .param p0, "radius"    # F
 
     .line 32
@@ -124,7 +124,7 @@
 .end method
 
 .method public static final actualDashPathEffect([FF)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 4
+    .locals 2
     .param p0, "intervals"    # [F
     .param p1, "phase"    # F
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public static final actualStampedPathEffect-7aD1DOk(Landroidx/compose/ui/graphics/Path;FFI)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 9
+    .locals 5
     .param p0, "shape"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "advance"    # F
     .param p2, "phase"    # F
@@ -175,7 +175,7 @@
     .local v3, "$i$f$asAndroidPath":I
     instance-of v4, v2, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_0
 
     .line 68
     move-object v4, v2
@@ -218,7 +218,7 @@
     .line 70
     .restart local v2    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v3    # "$i$f$asAndroidPath":I
-    :cond_29
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Unable to obtain android.graphics.Path"
@@ -229,7 +229,7 @@
 .end method
 
 .method public static final asAndroidPathEffect(Landroidx/compose/ui/graphics/PathEffect;)Landroid/graphics/PathEffect;
-    .registers 2
+    .locals 1
     .param p0, "$this$asAndroidPathEffect"    # Landroidx/compose/ui/graphics/PathEffect;
 
     const-string v0, "<this>"
@@ -249,7 +249,7 @@
 .end method
 
 .method public static final toAndroidPathDashPathEffectStyle-oQv6xUo(I)Landroid/graphics/PathDashPathEffect$Style;
-    .registers 2
+    .locals 1
     .param p0, "$this$toAndroidPathDashPathEffectStyle_u2doQv6xUo"    # I
 
     .line 61
@@ -266,14 +266,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/graphics/PathDashPathEffect$Style;->MORPH:Landroid/graphics/PathDashPathEffect$Style;
 
-    goto :goto_30
+    goto :goto_0
 
     .line 63
-    :cond_10
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/StampedPathEffectStyle;->Companion:Landroidx/compose/ui/graphics/StampedPathEffectStyle$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StampedPathEffectStyle$Companion;->getRotate-Ypspkwk()I
@@ -284,14 +284,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     sget-object v0, Landroid/graphics/PathDashPathEffect$Style;->ROTATE:Landroid/graphics/PathDashPathEffect$Style;
 
-    goto :goto_30
+    goto :goto_0
 
     .line 64
-    :cond_1f
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/StampedPathEffectStyle;->Companion:Landroidx/compose/ui/graphics/StampedPathEffectStyle$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StampedPathEffectStyle$Companion;->getTranslate-Ypspkwk()I
@@ -302,23 +302,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     sget-object v0, Landroid/graphics/PathDashPathEffect$Style;->TRANSLATE:Landroid/graphics/PathDashPathEffect$Style;
 
-    goto :goto_30
+    goto :goto_0
 
     .line 65
-    :cond_2e
+    :cond_2
     sget-object v0, Landroid/graphics/PathDashPathEffect$Style;->TRANSLATE:Landroid/graphics/PathDashPathEffect$Style;
 
     .line 66
-    :goto_30
+    :goto_0
     return-object v0
 .end method
 
 .method public static final toComposePathEffect(Landroid/graphics/PathEffect;)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 2
+    .locals 1
     .param p0, "$this$toComposePathEffect"    # Landroid/graphics/PathEffect;
 
     const-string v0, "<this>"

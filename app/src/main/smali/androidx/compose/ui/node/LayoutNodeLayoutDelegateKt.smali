@@ -42,7 +42,7 @@
 
 # direct methods
 .method private static final updateChildMeasurables(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/runtime/collection/MutableVector;Lkotlin/jvm/functions/Function1;)V
-    .registers 15
+    .locals 12
     .param p0, "$this$updateChildMeasurables"    # Landroidx/compose/ui/node/LayoutNode;
     .param p1, "destination"    # Landroidx/compose/runtime/collection/MutableVector;
     .param p2, "transform"    # Lkotlin/jvm/functions/Function1;
@@ -90,7 +90,7 @@
 
     .line 1656
     .local v5, "size$iv$iv":I
-    if-lez v5, :cond_35
+    if-lez v5, :cond_2
 
     .line 1657
     const/4 v6, 0x0
@@ -103,7 +103,7 @@
 
     .line 1660
     .local v7, "content$iv$iv":[Ljava/lang/Object;
-    :cond_14
+    :cond_0
     aget-object v8, v7, v6
 
     check-cast v8, Landroidx/compose/ui/node/LayoutNode;
@@ -120,7 +120,7 @@
 
     move-result v11
 
-    if-gt v11, v9, :cond_28
+    if-gt v11, v9, :cond_1
 
     .line 1572
     invoke-interface {p2, v8}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -129,10 +129,10 @@
 
     invoke-virtual {p1, v11}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 1574
-    :cond_28
+    :cond_1
     invoke-interface {p2, v8}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v11
@@ -140,7 +140,7 @@
     invoke-virtual {p1, v9, v11}, Landroidx/compose/runtime/collection/MutableVector;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     .line 1576
-    :goto_2f
+    :goto_0
     nop
 
     .line 1660
@@ -153,12 +153,12 @@
     add-int/lit8 v6, v6, 0x1
 
     .line 1662
-    if-lt v6, v5, :cond_14
+    if-lt v6, v5, :cond_0
 
     .line 1664
     .end local v6    # "i$iv$iv":I
     .end local v7    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_35
+    :cond_2
     nop
 
     .line 1653

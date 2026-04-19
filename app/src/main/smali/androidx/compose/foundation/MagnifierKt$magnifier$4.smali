@@ -95,7 +95,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FLkotlin/jvm/functions/Function1;Landroidx/compose/foundation/PlatformMagnifierFactory;Landroidx/compose/foundation/MagnifierStyle;)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -140,7 +140,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$1(Landroidx/compose/runtime/MutableState;)J
-    .registers 3
+    .locals 2
     .param p0, "$anchorPositionInRoot$delegate"    # Landroidx/compose/runtime/MutableState;
 
     .line 271
@@ -152,7 +152,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$10(Landroidx/compose/runtime/State;)Z
-    .registers 2
+    .locals 1
     .param p0, "$isMagnifierShown$delegate"    # Landroidx/compose/runtime/State;
 
     .line 271
@@ -164,7 +164,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$2(Landroidx/compose/runtime/MutableState;J)V
-    .registers 3
+    .locals 0
     .param p0, "$anchorPositionInRoot$delegate"    # Landroidx/compose/runtime/MutableState;
     .param p1, "value"    # J
 
@@ -175,7 +175,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$3(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .param p0, "$updatedSourceCenter$delegate"    # Landroidx/compose/runtime/State;
 
     .line 271
@@ -187,7 +187,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$4(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .param p0, "$updatedMagnifierCenter$delegate"    # Landroidx/compose/runtime/State;
 
     .line 271
@@ -199,7 +199,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$5(Landroidx/compose/runtime/State;)F
-    .registers 2
+    .locals 1
     .param p0, "$updatedZoom$delegate"    # Landroidx/compose/runtime/State;
 
     .line 271
@@ -211,7 +211,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$6(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .param p0, "$updatedOnSizeChanged$delegate"    # Landroidx/compose/runtime/State;
 
     .line 271
@@ -223,7 +223,7 @@
 .end method
 
 .method public static final synthetic access$invoke$lambda$8(Landroidx/compose/runtime/State;)J
-    .registers 3
+    .locals 2
     .param p0, "$sourceCenterInRoot$delegate"    # Landroidx/compose/runtime/State;
 
     .line 271
@@ -235,7 +235,7 @@
 .end method
 
 .method private static final invoke$lambda$1(Landroidx/compose/runtime/MutableState;)J
-    .registers 5
+    .locals 4
     .param p0, "$anchorPositionInRoot$delegate"    # Landroidx/compose/runtime/MutableState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -281,7 +281,7 @@
 .end method
 
 .method private static final invoke$lambda$10(Landroidx/compose/runtime/State;)Z
-    .registers 5
+    .locals 4
     .param p0, "$isMagnifierShown$delegate"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -325,7 +325,7 @@
 .end method
 
 .method private static final invoke$lambda$2(Landroidx/compose/runtime/MutableState;J)V
-    .registers 8
+    .locals 5
     .param p0, "$anchorPositionInRoot$delegate"    # Landroidx/compose/runtime/MutableState;
     .param p1, "value"    # J
     .annotation system Ldalvik/annotation/Signature;
@@ -371,7 +371,7 @@
 .end method
 
 .method private static final invoke$lambda$3(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
-    .registers 5
+    .locals 4
     .param p0, "$updatedSourceCenter$delegate"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -419,7 +419,7 @@
 .end method
 
 .method private static final invoke$lambda$4(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
-    .registers 5
+    .locals 4
     .param p0, "$updatedMagnifierCenter$delegate"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -467,7 +467,7 @@
 .end method
 
 .method private static final invoke$lambda$5(Landroidx/compose/runtime/State;)F
-    .registers 5
+    .locals 4
     .param p0, "$updatedZoom$delegate"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -511,7 +511,7 @@
 .end method
 
 .method private static final invoke$lambda$6(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
-    .registers 5
+    .locals 4
     .param p0, "$updatedOnSizeChanged$delegate"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -559,7 +559,7 @@
 .end method
 
 .method private static final invoke$lambda$8(Landroidx/compose/runtime/State;)J
-    .registers 5
+    .locals 4
     .param p0, "$sourceCenterInRoot$delegate"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -605,7 +605,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 33
+    .locals 29
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -632,7 +632,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_0
 
     .line 272
     const/4 v4, -0x1
@@ -643,14 +643,14 @@
 
     invoke-static {v3, v6, v4, v5}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 0
-    :cond_26
+    :cond_0
     move/from16 v6, p3
 
     .line 272
-    :goto_28
+    :goto_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalView()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v3
@@ -763,7 +763,7 @@
 
     const/4 v5, 0x0
 
-    if-ne v14, v9, :cond_8f
+    if-ne v14, v9, :cond_1
 
     .line 398
     const/4 v9, 0x0
@@ -802,12 +802,12 @@
     nop
 
     .end local v6    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_92
+    goto :goto_1
 
     .line 401
     .end local v18    # "$changed$iv":I
     .restart local v7    # "$changed$iv":I
-    :cond_8f
+    :cond_1
     move/from16 v18, v7
 
     .end local v7    # "$changed$iv":I
@@ -815,7 +815,7 @@
     move-object v6, v14
 
     .line 397
-    :goto_92
+    :goto_1
     nop
 
     .line 396
@@ -912,7 +912,7 @@
 
     move-result-object v5
 
-    if-ne v15, v5, :cond_e7
+    if-ne v15, v5, :cond_2
 
     .line 405
     const/4 v5, 0x0
@@ -945,14 +945,14 @@
     nop
 
     .end local v5    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_e8
+    goto :goto_2
 
     .line 408
-    :cond_e7
+    :cond_2
     move-object v5, v15
 
     .line 404
-    :goto_e8
+    :goto_2
     nop
 
     .line 403
@@ -1017,7 +1017,7 @@
 
     move-result-object v7
 
-    if-ne v15, v7, :cond_123
+    if-ne v15, v7, :cond_3
 
     .line 412
     const/4 v7, 0x0
@@ -1050,14 +1050,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_124
+    goto :goto_3
 
     .line 415
-    :cond_123
+    :cond_3
     move-object v7, v15
 
     .line 411
-    :goto_124
+    :goto_3
     nop
 
     .line 410
@@ -1124,7 +1124,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v14, v8, :cond_163
+    if-ne v14, v8, :cond_4
 
     .line 419
     const/4 v8, 0x0
@@ -1171,7 +1171,7 @@
     nop
 
     .end local v8    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_16a
+    goto :goto_4
 
     .line 422
     .end local v16    # "$changed$iv":I
@@ -1180,7 +1180,7 @@
     .restart local v10    # "invalid$iv$iv":Z
     .restart local v11    # "$changed$iv":I
     .restart local v13    # "$i$f$cache":I
-    :cond_163
+    :cond_4
     move/from16 v19, v10
 
     move/from16 v16, v11
@@ -1196,7 +1196,7 @@
     move-object v8, v14
 
     .line 418
-    :goto_16a
+    :goto_4
     nop
 
     .line 417
@@ -1223,16 +1223,16 @@
 
     move-result v10
 
-    if-eqz v10, :cond_17b
+    if-eqz v10, :cond_5
 
     const/4 v10, 0x0
 
-    goto :goto_17d
+    goto :goto_5
 
-    :cond_17b
+    :cond_5
     iget v10, v0, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->$zoom:F
 
-    :goto_17d
+    :goto_5
     move/from16 v27, v10
 
     .line 307
@@ -1368,7 +1368,7 @@
 
     .line 425
     .local v17, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v13, :cond_1f2
+    if-nez v13, :cond_7
 
     sget-object v18, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -1376,19 +1376,19 @@
 
     move-result-object v0
 
-    if-ne v11, v0, :cond_1f0
+    if-ne v11, v0, :cond_6
 
-    goto :goto_1f2
+    goto :goto_6
 
     .line 429
-    :cond_1f0
+    :cond_6
     move-object v0, v11
 
-    goto :goto_201
+    goto :goto_7
 
     .line 426
-    :cond_1f2
-    :goto_1f2
+    :cond_7
+    :goto_6
     const/4 v0, 0x0
 
     .line 372
@@ -1416,7 +1416,7 @@
 
     .line 425
     .end local v0    # "value$iv$iv":Ljava/lang/Object;
-    :goto_201
+    :goto_7
     nop
 
     .line 424
@@ -1489,7 +1489,7 @@
 
     .line 432
     .local v16, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v12, :cond_23f
+    if-nez v12, :cond_9
 
     sget-object v17, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -1497,19 +1497,19 @@
 
     move-result-object v1
 
-    if-ne v10, v1, :cond_23d
+    if-ne v10, v1, :cond_8
 
-    goto :goto_23f
+    goto :goto_8
 
     .line 436
-    :cond_23d
+    :cond_8
     move-object v1, v10
 
-    goto :goto_24e
+    goto :goto_9
 
     .line 433
-    :cond_23f
-    :goto_23f
+    :cond_9
+    :goto_8
     const/4 v1, 0x0
 
     .line 384
@@ -1537,7 +1537,7 @@
 
     .line 432
     .end local v1    # "value$iv$iv":Ljava/lang/Object;
-    :goto_24e
+    :goto_9
     nop
 
     .line 431
@@ -1570,18 +1570,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_265
+    if-eqz v1, :cond_a
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_265
+    :cond_a
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

@@ -65,7 +65,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/layout/LookaheadScopeImpl;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 320
@@ -111,7 +111,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 6
+    .locals 4
     .param p1, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "coordinates"

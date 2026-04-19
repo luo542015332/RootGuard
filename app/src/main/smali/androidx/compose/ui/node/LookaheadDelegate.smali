@@ -165,7 +165,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 4
+    .locals 2
     .param p1, "coordinator"    # Landroidx/compose/ui/node/NodeCoordinator;
 
     const-string/jumbo v0, "coordinator"
@@ -208,7 +208,7 @@
 .end method
 
 .method public static final synthetic access$setMeasurementConstraints-BRTryo0(Landroidx/compose/ui/node/LookaheadDelegate;J)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/node/LookaheadDelegate;
     .param p1, "value"    # J
 
@@ -219,7 +219,7 @@
 .end method
 
 .method public static final synthetic access$set_measureResult(Landroidx/compose/ui/node/LookaheadDelegate;Landroidx/compose/ui/layout/MeasureResult;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/node/LookaheadDelegate;
     .param p1, "result"    # Landroidx/compose/ui/layout/MeasureResult;
 
@@ -230,11 +230,11 @@
 .end method
 
 .method private final set_measureResult(Landroidx/compose/ui/layout/MeasureResult;)V
-    .registers 6
+    .locals 4
     .param p1, "result"    # Landroidx/compose/ui/layout/MeasureResult;
 
     .line 120
-    if-eqz p1, :cond_17
+    if-eqz p1, :cond_0
 
     move-object v0, p1
 
@@ -265,13 +265,13 @@
     .end local v1    # "$i$a$-let-LookaheadDelegate$_measureResult$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
-    if-nez v0, :cond_27
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 122
     move-object v0, p0
@@ -295,43 +295,43 @@
     .line 123
     .end local v0    # "$this$_set__measureResult__u24lambda_u241":Landroidx/compose/ui/node/LookaheadDelegate;
     .end local v1    # "$i$a$-run-LookaheadDelegate$_measureResult$2":I
-    :cond_27
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->_measureResult:Landroidx/compose/ui/layout/MeasureResult;
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_7e
+    if-nez v0, :cond_6
 
-    if-eqz p1, :cond_7e
+    if-eqz p1, :cond_6
 
     .line 126
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->oldAlignmentLines:Ljava/util/Map;
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_3
 
     invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_3d
+    :cond_2
     const/4 v0, 0x0
 
-    goto :goto_40
+    goto :goto_2
 
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_1
     move v0, v1
 
-    :goto_40
-    if-eqz v0, :cond_4d
+    :goto_2
+    if-eqz v0, :cond_4
 
     invoke-interface {p1}, Landroidx/compose/ui/layout/MeasureResult;->getAlignmentLines()Ljava/util/Map;
 
@@ -343,10 +343,10 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_7e
+    if-eqz v0, :cond_6
 
     .line 127
-    :cond_4d
+    :cond_4
     invoke-interface {p1}, Landroidx/compose/ui/layout/MeasureResult;->getAlignmentLines()Ljava/util/Map;
 
     move-result-object v0
@@ -357,7 +357,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_7e
+    if-nez v0, :cond_6
 
     .line 129
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadDelegate;->getAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
@@ -373,7 +373,7 @@
     .line 131
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->oldAlignmentLines:Ljava/util/Map;
 
-    if-nez v0, :cond_73
+    if-nez v0, :cond_5
 
     .line 132
     new-instance v0, Ljava/util/LinkedHashMap;
@@ -395,7 +395,7 @@
     .line 131
     .end local v1    # "it":Ljava/util/Map;
     .end local v2    # "$i$a$-also-LookaheadDelegate$_measureResult$oldLines$1":I
-    :cond_73
+    :cond_5
     nop
 
     .line 133
@@ -411,7 +411,7 @@
 
     .line 137
     .end local v0    # "oldLines":Ljava/util/Map;
-    :cond_7e
+    :cond_6
     iput-object p1, p0, Landroidx/compose/ui/node/LookaheadDelegate;->_measureResult:Landroidx/compose/ui/layout/MeasureResult;
 
     .line 138
@@ -421,7 +421,7 @@
 
 # virtual methods
 .method public getAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
-    .registers 2
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -444,7 +444,7 @@
 .end method
 
 .method public final getCachedAlignmentLine$ui_release(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 3
+    .locals 1
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -460,23 +460,23 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/high16 v0, -0x80000000
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method protected final getCachedAlignmentLinesMap()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -494,7 +494,7 @@
 .end method
 
 .method public getChild()Landroidx/compose/ui/node/LookaheadCapablePlaceable;
-    .registers 2
+    .locals 1
 
     .line 90
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -503,25 +503,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->getLookaheadDelegate()Landroidx/compose/ui/node/LookaheadDelegate;
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     check-cast v0, Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
     return-object v0
 .end method
 
 .method public getCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 2
+    .locals 1
 
     .line 112
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->lookaheadLayoutCoordinates:Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;
@@ -532,7 +532,7 @@
 .end method
 
 .method public final getCoordinator()Landroidx/compose/ui/node/NodeCoordinator;
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -541,7 +541,7 @@
 .end method
 
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     .line 104
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -554,7 +554,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     .line 106
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -567,26 +567,26 @@
 .end method
 
 .method public getHasMeasureResult()Z
-    .registers 2
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->_measureResult:Landroidx/compose/ui/layout/MeasureResult;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 102
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -599,7 +599,7 @@
 .end method
 
 .method public getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
-    .registers 2
+    .locals 1
 
     .line 110
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -612,7 +612,7 @@
 .end method
 
 .method public final getLookaheadLayoutCoordinates()Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;
-    .registers 2
+    .locals 1
 
     .line 114
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->lookaheadLayoutCoordinates:Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;
@@ -621,18 +621,18 @@
 .end method
 
 .method public getMeasureResult$ui_release()Landroidx/compose/ui/layout/MeasureResult;
-    .registers 3
+    .locals 2
 
     .line 96
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->_measureResult:Landroidx/compose/ui/layout/MeasureResult;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 98
     return-object v0
 
     .line 96
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 97
@@ -648,7 +648,7 @@
 .end method
 
 .method public getParent()Landroidx/compose/ui/node/LookaheadCapablePlaceable;
-    .registers 2
+    .locals 1
 
     .line 108
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -657,25 +657,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->getLookaheadDelegate()Landroidx/compose/ui/node/LookaheadDelegate;
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     check-cast v0, Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
     return-object v0
 .end method
 
 .method public getParentData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 184
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -688,7 +688,7 @@
 .end method
 
 .method public getPosition-nOcc-ac()J
-    .registers 3
+    .locals 2
 
     .line 93
     iget-wide v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->position:J
@@ -697,7 +697,7 @@
 .end method
 
 .method public isLookingAhead()Z
-    .registers 2
+    .locals 1
 
     .line 100
     const/4 v0, 0x1
@@ -706,7 +706,7 @@
 .end method
 
 .method public maxIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 199
@@ -732,7 +732,7 @@
 .end method
 
 .method public maxIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 191
@@ -758,7 +758,7 @@
 .end method
 
 .method public minIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 195
@@ -784,7 +784,7 @@
 .end method
 
 .method public minIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 187
@@ -810,7 +810,7 @@
 .end method
 
 .method public final performingMeasure-K40F9xA(JLkotlin/jvm/functions/Function0;)Landroidx/compose/ui/layout/Placeable;
-    .registers 6
+    .locals 2
     .param p1, "constraints"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -832,7 +832,6 @@
 
     .line 178
     .local v0, "$i$f$performingMeasure-K40F9xA":I
-    # invokes: Landroidx/compose/ui/node/LookaheadDelegate;->setMeasurementConstraints-BRTryo0(J)V
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/node/LookaheadDelegate;->access$setMeasurementConstraints-BRTryo0(Landroidx/compose/ui/node/LookaheadDelegate;J)V
 
     .line 179
@@ -842,7 +841,6 @@
 
     check-cast v1, Landroidx/compose/ui/layout/MeasureResult;
 
-    # invokes: Landroidx/compose/ui/node/LookaheadDelegate;->set_measureResult(Landroidx/compose/ui/layout/MeasureResult;)V
     invoke-static {p0, v1}, Landroidx/compose/ui/node/LookaheadDelegate;->access$set_measureResult(Landroidx/compose/ui/node/LookaheadDelegate;Landroidx/compose/ui/layout/MeasureResult;)V
 
     .line 180
@@ -854,7 +852,7 @@
 .end method
 
 .method protected final placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
-    .registers 7
+    .locals 2
     .param p1, "position"    # J
     .param p3, "zIndex"    # F
     .param p4, "layerBlock"    # Lkotlin/jvm/functions/Function1;
@@ -878,7 +876,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 155
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/node/LookaheadDelegate;->setPosition--gyyYBs(J)V
@@ -900,7 +898,7 @@
     move-result-object v0
 
     .line 157
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 156
     nop
@@ -909,23 +907,23 @@
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$LookaheadPassDelegate;->notifyChildrenUsingCoordinatesWhilePlacing()V
 
     .line 158
-    :cond_20
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/node/LookaheadDelegate;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
 
     invoke-virtual {p0, v0}, Landroidx/compose/ui/node/LookaheadDelegate;->invalidateAlignmentLinesFromPositionChange(Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 160
-    :cond_25
+    :cond_1
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadDelegate;->isShallowPlacing$ui_release()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     return-void
 
     .line 161
-    :cond_2c
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadDelegate;->placeChildren()V
 
     .line 162
@@ -933,7 +931,7 @@
 .end method
 
 .method protected placeChildren()V
-    .registers 13
+    .locals 12
 
     .line 165
     sget-object v0, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
@@ -964,7 +962,6 @@
 
     .line 214
     .local v3, "$i$f$executeWithRtlMirroringValues":I
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->_coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$get_coordinates$cp()Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v4
@@ -973,7 +970,6 @@
     .local v4, "previousLayoutCoordinates$iv":Landroidx/compose/ui/layout/LayoutCoordinates;
     sget-object v5, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->getParentWidth()I
     invoke-static {v5}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)I
 
     move-result v5
@@ -982,14 +978,12 @@
     .local v5, "previousParentWidth$iv":I
     sget-object v6, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v6
 
     .line 217
     .local v6, "previousParentLayoutDirection$iv":Landroidx/compose/ui/unit/LayoutDirection;
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->layoutDelegate:Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getLayoutDelegate$cp()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
 
     move-result-object v7
@@ -1010,7 +1004,6 @@
 
     check-cast v8, Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->configureForPlacingForAlignment(Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
     invoke-static {v0, v8}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$configureForPlacingForAlignment(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
 
     move-result v8
@@ -1083,7 +1076,7 @@
 .end method
 
 .method public final positionIn-Bjo55l4$ui_release(Landroidx/compose/ui/node/LookaheadDelegate;)J
-    .registers 11
+    .locals 9
     .param p1, "ancestor"    # Landroidx/compose/ui/node/LookaheadDelegate;
 
     const-string/jumbo v0, "ancestor"
@@ -1103,12 +1096,12 @@
 
     .line 205
     .local v2, "lookaheadDelegate":Landroidx/compose/ui/node/LookaheadDelegate;
-    :goto_d
+    :goto_0
     invoke-static {v2, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_0
 
     .line 206
     invoke-virtual {v2}, Landroidx/compose/ui/node/LookaheadDelegate;->getPosition-nOcc-ac()J
@@ -1166,15 +1159,15 @@
 
     move-object v2, v3
 
-    goto :goto_d
+    goto :goto_0
 
     .line 209
-    :cond_41
+    :cond_0
     return-wide v0
 .end method
 
 .method public replace$ui_release()V
-    .registers 5
+    .locals 4
 
     .line 146
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadDelegate;->getPosition-nOcc-ac()J
@@ -1192,7 +1185,7 @@
 .end method
 
 .method public setPosition--gyyYBs(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 93

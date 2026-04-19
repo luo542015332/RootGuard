@@ -67,14 +67,13 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/vector/VectorGroup;)V
-    .registers 3
+    .locals 1
     .param p1, "$receiver"    # Landroidx/compose/ui/graphics/vector/VectorGroup;
 
     .line 510
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 512
-    # getter for: Landroidx/compose/ui/graphics/vector/VectorGroup;->children:Ljava/util/List;
     invoke-static {p1}, Landroidx/compose/ui/graphics/vector/VectorGroup;->access$getChildren$p(Landroidx/compose/ui/graphics/vector/VectorGroup;)Ljava/util/List;
 
     move-result-object v0
@@ -92,7 +91,7 @@
 
 # virtual methods
 .method public final getIt()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -109,7 +108,7 @@
 .end method
 
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 514
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup$iterator$1;->it:Ljava/util/Iterator;
@@ -122,7 +121,7 @@
 .end method
 
 .method public next()Landroidx/compose/ui/graphics/vector/VectorNode;
-    .registers 2
+    .locals 1
 
     .line 516
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup$iterator$1;->it:Ljava/util/Iterator;
@@ -137,7 +136,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 510
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/VectorGroup$iterator$1;->next()Landroidx/compose/ui/graphics/vector/VectorNode;
@@ -148,7 +147,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

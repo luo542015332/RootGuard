@@ -74,7 +74,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;
 
@@ -184,13 +184,13 @@
 
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_82
+    fill-array-data v0, :array_0
 
     sput-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->D50Xyz:[F
 
     return-void
 
-    :array_82
+    :array_0
     .array-data 4
         0x3f76d699    # 0.964212f
         0x3f800000    # 1.0f
@@ -199,7 +199,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -210,7 +210,7 @@
 
 # virtual methods
 .method public final getA()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 27
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->A:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -219,7 +219,7 @@
 .end method
 
 .method public final getB()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 33
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->B:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -228,7 +228,7 @@
 .end method
 
 .method public final getC()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 39
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->C:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -237,7 +237,7 @@
 .end method
 
 .method public final getD50()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 46
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->D50:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -246,7 +246,7 @@
 .end method
 
 .method public final getD50Xyz$ui_graphics_release()[F
-    .registers 2
+    .locals 1
 
     .line 79
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->D50Xyz:[F
@@ -255,7 +255,7 @@
 .end method
 
 .method public final getD55()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 52
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->D55:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -264,7 +264,7 @@
 .end method
 
 .method public final getD60()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 58
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->D60:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -273,7 +273,7 @@
 .end method
 
 .method public final getD65()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 65
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->D65:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -282,7 +282,7 @@
 .end method
 
 .method public final getD75()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 71
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->D75:Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -291,7 +291,7 @@
 .end method
 
 .method public final getE()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 2
+    .locals 1
 
     .line 77
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Illuminant;->E:Landroidx/compose/ui/graphics/colorspace/WhitePoint;

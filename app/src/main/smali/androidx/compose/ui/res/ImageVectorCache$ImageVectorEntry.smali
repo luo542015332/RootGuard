@@ -62,13 +62,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/graphics/vector/ImageVector;I)V
-    .registers 4
+    .locals 1
     .param p1, "imageVector"    # Landroidx/compose/ui/graphics/vector/ImageVector;
     .param p2, "configFlags"    # I
 
@@ -90,22 +90,22 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;Landroidx/compose/ui/graphics/vector/ImageVector;IILjava/lang/Object;)Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     iget-object p1, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->imageVector:Landroidx/compose/ui/graphics/vector/ImageVector;
 
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_1
 
     iget p2, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->configFlags:I
 
-    :cond_c
+    :cond_1
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->copy(Landroidx/compose/ui/graphics/vector/ImageVector;I)Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
 
     move-result-object p0
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public final component1()Landroidx/compose/ui/graphics/vector/ImageVector;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->imageVector:Landroidx/compose/ui/graphics/vector/ImageVector;
 
@@ -124,7 +124,7 @@
 .end method
 
 .method public final component2()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->configFlags:I
 
@@ -132,7 +132,7 @@
 .end method
 
 .method public final copy(Landroidx/compose/ui/graphics/vector/ImageVector;I)Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
-    .registers 4
+    .locals 1
 
     const-string/jumbo v0, "imageVector"
 
@@ -146,24 +146,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
@@ -176,25 +176,25 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->configFlags:I
 
     iget v1, v1, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->configFlags:I
 
-    if-eq v3, v1, :cond_1f
+    if-eq v3, v1, :cond_3
 
     return v2
 
-    :cond_1f
+    :cond_3
     return v0
 .end method
 
 .method public final getConfigFlags()I
-    .registers 2
+    .locals 1
 
     .line 126
     iget v0, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->configFlags:I
@@ -203,7 +203,7 @@
 .end method
 
 .method public final getImageVector()Landroidx/compose/ui/graphics/vector/ImageVector;
-    .registers 2
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->imageVector:Landroidx/compose/ui/graphics/vector/ImageVector;
@@ -212,7 +212,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->imageVector:Landroidx/compose/ui/graphics/vector/ImageVector;
 
@@ -234,7 +234,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

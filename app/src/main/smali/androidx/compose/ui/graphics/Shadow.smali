@@ -73,7 +73,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .locals 10
 
     new-instance v0, Landroidx/compose/ui/graphics/Shadow$Companion;
 
@@ -106,7 +106,7 @@
 .end method
 
 .method private constructor <init>(JJF)V
-    .registers 6
+    .locals 0
     .param p1, "color"    # J
     .param p3, "offset"    # J
     .param p5, "blurRadius"    # F
@@ -128,12 +128,12 @@
 .end method
 
 .method public synthetic constructor <init>(JJFILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 15
+    .locals 7
 
     .line 29
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_f
+    if-eqz p7, :cond_0
 
     .line 31
     const-wide p1, 0xff000000L
@@ -144,16 +144,16 @@
 
     move-wide v1, p1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 29
-    :cond_f
+    :cond_0
     move-wide v1, p1
 
-    :goto_10
+    :goto_0
     and-int/lit8 p1, p6, 0x2
 
-    if-eqz p1, :cond_1c
+    if-eqz p1, :cond_1
 
     .line 33
     sget-object p1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -164,29 +164,29 @@
 
     move-wide v3, p3
 
-    goto :goto_1d
+    goto :goto_1
 
     .line 29
-    :cond_1c
+    :cond_1
     move-wide v3, p3
 
-    :goto_1d
+    :goto_1
     and-int/lit8 p1, p6, 0x4
 
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_2
 
     .line 35
     const/4 p5, 0x0
 
     move v5, p5
 
-    goto :goto_25
+    goto :goto_2
 
     .line 29
-    :cond_24
+    :cond_2
     move v5, p5
 
-    :goto_25
+    :goto_2
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -198,7 +198,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJFLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 7
+    .locals 0
 
     invoke-direct/range {p0 .. p5}, Landroidx/compose/ui/graphics/Shadow;-><init>(JJF)V
 
@@ -206,7 +206,7 @@
 .end method
 
 .method public static final synthetic access$getNone$cp()Landroidx/compose/ui/graphics/Shadow;
-    .registers 1
+    .locals 1
 
     .line 28
     sget-object v0, Landroidx/compose/ui/graphics/Shadow;->None:Landroidx/compose/ui/graphics/Shadow;
@@ -215,57 +215,57 @@
 .end method
 
 .method public static synthetic copy-qcb84PM$default(Landroidx/compose/ui/graphics/Shadow;JJFILjava/lang/Object;)Landroidx/compose/ui/graphics/Shadow;
-    .registers 14
+    .locals 6
 
     .line 67
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 68
     iget-wide p1, p0, Landroidx/compose/ui/graphics/Shadow;->color:J
 
     move-wide v1, p1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 67
-    :cond_8
+    :cond_0
     move-wide v1, p1
 
-    :goto_9
+    :goto_0
     and-int/lit8 p1, p6, 0x2
 
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_1
 
     .line 69
     iget-wide p3, p0, Landroidx/compose/ui/graphics/Shadow;->offset:J
 
     move-wide v3, p3
 
-    goto :goto_12
+    goto :goto_1
 
     .line 67
-    :cond_11
+    :cond_1
     move-wide v3, p3
 
-    :goto_12
+    :goto_1
     and-int/lit8 p1, p6, 0x4
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_2
 
     .line 70
     iget p5, p0, Landroidx/compose/ui/graphics/Shadow;->blurRadius:F
 
     move v5, p5
 
-    goto :goto_1b
+    goto :goto_2
 
     .line 67
-    :cond_1a
+    :cond_2
     move v5, p5
 
-    :goto_1b
+    :goto_2
     move-object v0, p0
 
     invoke-virtual/range {v0 .. v5}, Landroidx/compose/ui/graphics/Shadow;->copy-qcb84PM(JJF)Landroidx/compose/ui/graphics/Shadow;
@@ -276,19 +276,19 @@
 .end method
 
 .method public static synthetic getBlurRadius$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getColor-0d7_KjU$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getOffset-F1C5BW0$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -296,7 +296,7 @@
 
 # virtual methods
 .method public final copy-qcb84PM(JJF)Landroidx/compose/ui/graphics/Shadow;
-    .registers 14
+    .locals 8
     .param p1, "color"    # J
     .param p3, "offset"    # J
     .param p5, "blurRadius"    # F
@@ -328,28 +328,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 46
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 47
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/Shadow;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 49
-    :cond_a
+    :cond_1
     iget-wide v3, p0, Landroidx/compose/ui/graphics/Shadow;->color:J
 
     move-object v1, p1
@@ -362,12 +362,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 50
-    :cond_18
+    :cond_2
     iget-wide v3, p0, Landroidx/compose/ui/graphics/Shadow;->offset:J
 
     move-object v1, p1
@@ -380,12 +380,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 51
-    :cond_26
+    :cond_3
     iget v1, p0, Landroidx/compose/ui/graphics/Shadow;->blurRadius:F
 
     move-object v3, p1
@@ -396,27 +396,27 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_4
 
     move v1, v0
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_33
+    :cond_4
     move v1, v2
 
-    :goto_34
-    if-nez v1, :cond_37
+    :goto_0
+    if-nez v1, :cond_5
 
     return v2
 
     .line 53
-    :cond_37
+    :cond_5
     return v0
 .end method
 
 .method public final getBlurRadius()F
-    .registers 2
+    .locals 1
 
     .line 35
     iget v0, p0, Landroidx/compose/ui/graphics/Shadow;->blurRadius:F
@@ -425,7 +425,7 @@
 .end method
 
 .method public final getColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 31
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Shadow;->color:J
@@ -434,7 +434,7 @@
 .end method
 
 .method public final getOffset-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 33
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Shadow;->offset:J
@@ -443,7 +443,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 57
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Shadow;->color:J
@@ -484,7 +484,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 64
     new-instance v0, Ljava/lang/StringBuilder;

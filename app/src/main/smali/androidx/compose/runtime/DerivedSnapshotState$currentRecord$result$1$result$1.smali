@@ -74,7 +74,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/DerivedSnapshotState;Landroidx/compose/runtime/collection/IdentityArrayMap;I)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 190
@@ -115,7 +115,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 6
+    .locals 4
     .param p1, "it"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "it"
@@ -125,15 +125,14 @@
     .line 192
     iget-object v0, p0, Landroidx/compose/runtime/DerivedSnapshotState$currentRecord$result$1$result$1;->this$0:Landroidx/compose/runtime/DerivedSnapshotState;
 
-    if-eq p1, v0, :cond_41
+    if-eq p1, v0, :cond_2
 
     .line 194
     instance-of v0, p1, Landroidx/compose/runtime/snapshots/StateObject;
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_1
 
     .line 195
-    # getter for: Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v0
@@ -166,19 +165,19 @@
 
     check-cast v3, Ljava/lang/Integer;
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_32
+    :cond_0
     const v3, 0x7fffffff
 
     .line 196
-    :goto_35
+    :goto_0
     invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
 
     move-result v2
@@ -191,11 +190,11 @@
 
     .line 201
     .end local v0    # "readNestedLevel":I
-    :cond_40
+    :cond_1
     return-void
 
     .line 192
-    :cond_41
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 193

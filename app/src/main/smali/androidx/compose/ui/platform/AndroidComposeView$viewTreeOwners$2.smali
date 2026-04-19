@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView$viewTreeOwners$2;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -64,12 +64,11 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
-    .registers 2
+    .locals 1
 
     .line 348
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$viewTreeOwners$2;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView;->get_viewTreeOwners()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidComposeView;->access$get_viewTreeOwners(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
 
     move-result-object v0
@@ -78,7 +77,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 348
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView$viewTreeOwners$2;->invoke()Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;

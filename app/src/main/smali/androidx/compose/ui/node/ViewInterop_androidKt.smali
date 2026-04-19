@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 84
     const-string/jumbo v0, "ViewAdapter"
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final getOrAddAdapter(Landroid/view/View;ILkotlin/jvm/functions/Function0;)Landroidx/compose/ui/node/ViewAdapter;
-    .registers 19
+    .locals 16
     .param p0, "$this$getOrAddAdapter"    # Landroid/view/View;
     .param p1, "id"    # I
     .param p2, "factory"    # Lkotlin/jvm/functions/Function0;
@@ -129,8 +129,8 @@
 
     move-result v9
 
-    :goto_22
-    if-ge v8, v9, :cond_42
+    :goto_0
+    if-ge v8, v9, :cond_2
 
     .line 103
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -161,27 +161,27 @@
 
     move/from16 v1, p1
 
-    if-ne v10, v1, :cond_38
+    if-ne v10, v1, :cond_0
 
     const/4 v10, 0x1
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_38
+    :cond_0
     const/4 v10, 0x0
 
     .line 100
     .end local v14    # "it$iv":Landroidx/compose/ui/node/ViewAdapter;
     .end local v15    # "$i$a$-fastFirstOrNull-MergedViewAdapter$get$existing$1$iv":I
-    :goto_39
-    if-eqz v10, :cond_3c
+    :goto_1
+    if-eqz v10, :cond_1
 
-    goto :goto_46
+    goto :goto_2
 
     .line 104
     .end local v12    # "it$iv$iv":Ljava/lang/Object;
     .end local v13    # "$i$a$-fastForEach-ListUtilsKt$fastFirstOrNull$2$iv$iv":I
-    :cond_3c
+    :cond_1
     nop
 
     .line 102
@@ -190,9 +190,9 @@
 
     move-object/from16 v1, p0
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_42
+    :cond_2
     move/from16 v1, p1
 
     .line 106
@@ -207,26 +207,26 @@
     .line 98
     .end local v4    # "$this$fastFirstOrNull$iv$iv":Ljava/util/List;
     .end local v5    # "$i$f$fastFirstOrNull":I
-    :goto_46
+    :goto_2
     instance-of v4, v12, Landroidx/compose/ui/node/ViewAdapter;
 
-    if-eqz v4, :cond_4e
+    if-eqz v4, :cond_3
 
     move-object v10, v12
 
     check-cast v10, Landroidx/compose/ui/node/ViewAdapter;
 
-    goto :goto_4f
+    goto :goto_3
 
-    :cond_4e
+    :cond_3
     const/4 v10, 0x0
 
-    :goto_4f
+    :goto_3
     move-object v4, v10
 
     .line 108
     .local v4, "existing$iv":Landroidx/compose/ui/node/ViewAdapter;
-    if-nez v4, :cond_60
+    if-nez v4, :cond_4
 
     .line 109
     invoke-interface/range {p2 .. p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
@@ -251,12 +251,12 @@
     .end local v3    # "$i$f$get":I
     .end local v4    # "existing$iv":Landroidx/compose/ui/node/ViewAdapter;
     .end local v5    # "next$iv":Landroidx/compose/ui/node/ViewAdapter;
-    :cond_60
+    :cond_4
     return-object v4
 .end method
 
 .method public static final getViewAdapter(Landroid/view/View;)Landroidx/compose/ui/node/MergedViewAdapter;
-    .registers 4
+    .locals 3
     .param p0, "$this$getViewAdapter"    # Landroid/view/View;
 
     const-string v0, "<this>"
@@ -272,19 +272,19 @@
 
     instance-of v2, v1, Landroidx/compose/ui/node/MergedViewAdapter;
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     check-cast v1, Landroidx/compose/ui/node/MergedViewAdapter;
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v1, 0x0
 
     .line 92
     .local v1, "adapter":Landroidx/compose/ui/node/MergedViewAdapter;
-    :goto_13
-    if-nez v1, :cond_1e
+    :goto_0
+    if-nez v1, :cond_1
 
     .line 93
     new-instance v2, Landroidx/compose/ui/node/MergedViewAdapter;
@@ -297,12 +297,12 @@
     invoke-virtual {p0, v0, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 96
-    :cond_1e
+    :cond_1
     return-object v1
 .end method
 
 .method public static final getViewAdapterIfExists(Landroid/view/View;)Landroidx/compose/ui/node/MergedViewAdapter;
-    .registers 3
+    .locals 2
     .param p0, "$this$getViewAdapterIfExists"    # Landroid/view/View;
 
     const-string v0, "<this>"
@@ -318,21 +318,21 @@
 
     instance-of v1, v0, Landroidx/compose/ui/node/MergedViewAdapter;
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/ui/node/MergedViewAdapter;
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return-object v0
 .end method
 
 .method public static final tagKey(Ljava/lang/String;)I
-    .registers 3
+    .locals 2
     .param p0, "key"    # Ljava/lang/String;
 
     const-string/jumbo v0, "key"

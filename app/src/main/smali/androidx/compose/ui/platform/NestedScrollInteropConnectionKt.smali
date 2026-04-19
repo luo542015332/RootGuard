@@ -58,7 +58,7 @@
 
 # direct methods
 .method public static final synthetic access$getScrollAxes-k-4lQ0M(J)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # J
 
     .line 1
@@ -70,7 +70,7 @@
 .end method
 
 .method public static final synthetic access$toOffset-Uv8p0NA([IJ)J
-    .registers 5
+    .locals 2
     .param p0, "consumed"    # [I
     .param p1, "available"    # J
 
@@ -83,7 +83,7 @@
 .end method
 
 .method public static final synthetic access$toViewType-GyEprt8(I)I
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # I
 
     .line 1
@@ -95,7 +95,7 @@
 .end method
 
 .method public static final synthetic access$toViewVelocity(F)F
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # F
 
     .line 1
@@ -107,7 +107,7 @@
 .end method
 
 .method private static final ceilAwayFromZero(F)F
-    .registers 3
+    .locals 2
     .param p0, "$this$ceilAwayFromZero"    # F
 
     .line 158
@@ -115,7 +115,7 @@
 
     cmpl-float v0, p0, v0
 
-    if-ltz v0, :cond_b
+    if-ltz v0, :cond_0
 
     float-to-double v0, p0
 
@@ -123,23 +123,23 @@
 
     move-result-wide v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     float-to-double v0, p0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v0
 
-    :goto_10
+    :goto_0
     double-to-float v0, v0
 
     return v0
 .end method
 
 .method public static final composeToViewOffset(F)I
-    .registers 2
+    .locals 1
     .param p0, "offset"    # F
 
     .line 161
@@ -155,7 +155,7 @@
 .end method
 
 .method private static final getScrollAxes-k-4lQ0M(J)I
-    .registers 5
+    .locals 3
     .param p0, "$this$scrollAxes"    # J
 
     .line 203
@@ -175,13 +175,13 @@
 
     cmpl-float v1, v1, v2
 
-    if-ltz v1, :cond_11
+    if-ltz v1, :cond_0
 
     .line 205
     or-int/lit8 v0, v0, 0x1
 
     .line 207
-    :cond_11
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
     move-result v1
@@ -192,18 +192,18 @@
 
     cmpl-float v1, v1, v2
 
-    if-ltz v1, :cond_1f
+    if-ltz v1, :cond_1
 
     .line 208
     or-int/lit8 v0, v0, 0x2
 
     .line 210
-    :cond_1f
+    :cond_1
     return v0
 .end method
 
 .method public static final rememberNestedScrollInteropConnection(Landroid/view/View;Landroidx/compose/runtime/Composer;II)Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
-    .registers 12
+    .locals 8
     .param p0, "hostView"    # Landroid/view/View;
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -218,7 +218,7 @@
 
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_29
+    if-eqz p3, :cond_0
 
     .line 233
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalView()Landroidx/compose/runtime/ProvidableCompositionLocal;
@@ -254,12 +254,12 @@
 
     check-cast p0, Landroid/view/View;
 
-    :cond_29
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result p3
 
-    if-eqz p3, :cond_36
+    if-eqz p3, :cond_1
 
     .line 234
     const/4 p3, -0x1
@@ -268,7 +268,7 @@
 
     invoke-static {v0, p2, p3, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_36
+    :cond_1
     const/16 p3, 0x8
 
     .local p3, "$changed$iv":I
@@ -305,7 +305,7 @@
 
     .line 240
     .local v5, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v1, :cond_5c
+    if-nez v1, :cond_3
 
     sget-object v6, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -313,19 +313,19 @@
 
     move-result-object v6
 
-    if-ne v4, v6, :cond_5a
+    if-ne v4, v6, :cond_2
 
-    goto :goto_5c
+    goto :goto_0
 
     .line 244
-    :cond_5a
+    :cond_2
     move-object v6, v4
 
-    goto :goto_67
+    goto :goto_1
 
     .line 241
-    :cond_5c
-    :goto_5c
+    :cond_3
+    :goto_0
     const/4 v6, 0x0
 
     .line 235
@@ -347,7 +347,7 @@
 
     .line 240
     .end local v6    # "value$iv$iv":Ljava/lang/Object;
-    :goto_67
+    :goto_1
     nop
 
     .line 239
@@ -370,11 +370,11 @@
 
     move-result p3
 
-    if-eqz p3, :cond_77
+    if-eqz p3, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_77
+    :cond_4
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     check-cast v6, Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
@@ -383,7 +383,7 @@
 .end method
 
 .method private static final reverseAxis(I)F
-    .registers 3
+    .locals 2
     .param p0, "$this$reverseAxis"    # I
 
     .line 164
@@ -397,7 +397,7 @@
 .end method
 
 .method private static final toOffset-Uv8p0NA([IJ)J
-    .registers 7
+    .locals 4
     .param p0, "consumed"    # [I
     .param p1, "available"    # J
 
@@ -412,7 +412,7 @@
 
     const/4 v2, 0x0
 
-    if-ltz v0, :cond_19
+    if-ltz v0, :cond_0
 
     .line 175
     aget v0, p0, v2
@@ -429,10 +429,10 @@
 
     move-result v0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 177
-    :cond_19
+    :cond_0
     aget v0, p0, v2
 
     invoke-static {v0}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->reverseAxis(I)F
@@ -448,7 +448,7 @@
     move-result v0
 
     .line 174
-    :goto_27
+    :goto_0
     nop
 
     .line 180
@@ -461,7 +461,7 @@
 
     const/4 v2, 0x1
 
-    if-ltz v1, :cond_40
+    if-ltz v1, :cond_1
 
     .line 181
     aget v1, p0, v2
@@ -478,10 +478,10 @@
 
     move-result v1
 
-    goto :goto_4e
+    goto :goto_1
 
     .line 183
-    :cond_40
+    :cond_1
     aget v1, p0, v2
 
     invoke-static {v1}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->reverseAxis(I)F
@@ -497,7 +497,7 @@
     move-result v1
 
     .line 180
-    :goto_4e
+    :goto_1
     nop
 
     .line 186
@@ -510,7 +510,7 @@
 .end method
 
 .method private static final toViewType-GyEprt8(I)I
-    .registers 2
+    .locals 1
     .param p0, "$this$toViewType_u2dGyEprt8"    # I
 
     .line 189
@@ -527,23 +527,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 191
-    :cond_f
+    :cond_0
     const/4 v0, 0x1
 
     .line 192
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 .method private static final toViewVelocity(F)F
-    .registers 2
+    .locals 1
     .param p0, "$this$toViewVelocity"    # F
 
     .line 166

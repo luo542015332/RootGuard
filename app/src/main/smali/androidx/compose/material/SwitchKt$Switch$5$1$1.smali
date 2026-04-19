@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/AnchoredDraggableState;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 178
     iget-object v0, p0, Landroidx/compose/material/SwitchKt$Switch$5$1$1;->$anchoredDraggableState:Landroidx/compose/material/AnchoredDraggableState;
@@ -98,7 +98,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 178
     invoke-virtual {p0}, Landroidx/compose/material/SwitchKt$Switch$5$1$1;->invoke()Ljava/lang/Float;

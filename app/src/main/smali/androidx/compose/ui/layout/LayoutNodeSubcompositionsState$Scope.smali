@@ -76,7 +76,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V
-    .registers 3
+    .locals 1
     .param p1, "this$0"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     .line 1007
     iget v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;->density:F
@@ -110,7 +110,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     .line 1008
     iget v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;->fontScale:F
@@ -119,7 +119,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 1006
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
@@ -128,12 +128,11 @@
 .end method
 
 .method public isLookingAhead()Z
-    .registers 3
+    .locals 2
 
     .line 1010
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
     invoke-static {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getRoot$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
@@ -144,12 +143,11 @@
 
     sget-object v1, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LookaheadLayingOut:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
-    if-eq v0, v1, :cond_1f
+    if-eq v0, v1, :cond_1
 
     .line 1011
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
     invoke-static {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getRoot$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
@@ -160,25 +158,25 @@
 
     sget-object v1, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LookaheadMeasuring:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
-    :goto_1f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_20
+    :goto_1
     return v0
 .end method
 
 .method public setDensity(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 1007
@@ -188,7 +186,7 @@
 .end method
 
 .method public setFontScale(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 1008
@@ -198,7 +196,7 @@
 .end method
 
 .method public setLayoutDirection(Landroidx/compose/ui/unit/LayoutDirection;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/unit/LayoutDirection;
 
     const-string v0, "<set-?>"
@@ -212,7 +210,7 @@
 .end method
 
 .method public subcompose(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p1, "slotId"    # Ljava/lang/Object;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;

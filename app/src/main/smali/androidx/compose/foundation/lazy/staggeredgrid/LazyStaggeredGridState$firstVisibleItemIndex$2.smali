@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState$firstVisibleItemIndex$2;->this$0:Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Integer;
-    .registers 8
+    .locals 7
 
     .line 104
     iget-object v0, p0, Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState$firstVisibleItemIndex$2;->this$0:Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState;
@@ -84,23 +84,23 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v1, v3
 
-    :goto_12
-    if-eqz v1, :cond_16
+    :goto_0
+    if-eqz v1, :cond_1
 
     const/4 v0, 0x0
 
-    goto :goto_4f
+    goto :goto_2
 
-    :cond_16
+    :cond_1
     aget v1, v0, v3
 
     .local v1, "it":I
@@ -110,13 +110,13 @@
     .local v4, "$i$a$-minOfOrNull-LazyStaggeredGridState$firstVisibleItemIndex$2$1":I
     const/4 v5, -0x1
 
-    if-ne v1, v5, :cond_1d
+    if-ne v1, v5, :cond_2
 
     move v1, v3
 
     .end local v1    # "it":I
     .end local v4    # "$i$a$-minOfOrNull-LazyStaggeredGridState$firstVisibleItemIndex$2$1":I
-    :cond_1d
+    :cond_2
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -136,13 +136,13 @@
 
     move-result-object v2
 
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_1
     invoke-virtual {v2}, Lkotlin/collections/IntIterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_4e
+    if-eqz v4, :cond_5
 
     invoke-virtual {v2}, Lkotlin/collections/IntIterator;->nextInt()I
 
@@ -155,13 +155,13 @@
 
     .line 107
     .local v6, "$i$a$-minOfOrNull-LazyStaggeredGridState$firstVisibleItemIndex$2$1":I
-    if-ne v4, v5, :cond_40
+    if-ne v4, v5, :cond_4
 
     move v4, v3
 
     .end local v4    # "it":I
     .end local v6    # "$i$a$-minOfOrNull-LazyStaggeredGridState$firstVisibleItemIndex$2$1":I
-    :cond_40
+    :cond_4
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -173,31 +173,31 @@
 
     move-result v6
 
-    if-lez v6, :cond_30
+    if-lez v6, :cond_3
 
     move-object v1, v4
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_4e
+    :cond_5
     move-object v0, v1
 
-    :goto_4f
+    :goto_2
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_58
+    if-eqz v0, :cond_6
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
 
-    goto :goto_59
+    goto :goto_3
 
     .line 108
-    :cond_58
+    :cond_6
     nop
 
-    :goto_59
+    :goto_3
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -207,7 +207,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 103
     invoke-virtual {p0}, Landroidx/compose/foundation/lazy/staggeredgrid/LazyStaggeredGridState$firstVisibleItemIndex$2;->invoke()Ljava/lang/Integer;

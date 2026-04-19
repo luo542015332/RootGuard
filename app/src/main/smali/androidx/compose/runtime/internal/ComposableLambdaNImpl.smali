@@ -82,7 +82,7 @@
 
 # direct methods
 .method public constructor <init>(IZI)V
-    .registers 4
+    .locals 0
     .param p1, "key"    # I
     .param p2, "tracked"    # Z
     .param p3, "arity"    # I
@@ -104,7 +104,7 @@
 .end method
 
 .method private final realParamCount(I)I
-    .registers 5
+    .locals 3
     .param p1, "params"    # I
 
     .line 97
@@ -122,10 +122,10 @@
 
     .line 101
     .local v1, "changedParams":I
-    :goto_6
+    :goto_0
     mul-int/lit8 v2, v1, 0xa
 
-    if-ge v2, v0, :cond_f
+    if-ge v2, v0, :cond_0
 
     .line 102
     add-int/lit8 v0, v0, -0x1
@@ -133,21 +133,21 @@
     .line 103
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 105
-    :cond_f
+    :cond_0
     return v0
 .end method
 
 .method private final trackRead(Landroidx/compose/runtime/Composer;)V
-    .registers 9
+    .locals 7
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
 
     .line 57
     iget-boolean v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->tracked:Z
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     .line 58
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getRecomposeScope()Landroidx/compose/runtime/RecomposeScope;
@@ -156,7 +156,7 @@
 
     .line 59
     .local v0, "scope":Landroidx/compose/runtime/RecomposeScope;
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     .line 61
     invoke-interface {p1, v0}, Landroidx/compose/runtime/Composer;->recordUsed(Landroidx/compose/runtime/RecomposeScope;)V
@@ -170,20 +170,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 64
     iput-object v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->scope:Landroidx/compose/runtime/RecomposeScope;
 
-    goto :goto_46
+    goto :goto_1
 
     .line 66
-    :cond_18
+    :cond_0
     iget-object v2, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->scopes:Ljava/util/List;
 
     .line 67
     .local v2, "lastScopes":Ljava/util/List;
-    if-nez v2, :cond_29
+    if-nez v2, :cond_1
 
     .line 68
     new-instance v3, Ljava/util/ArrayList;
@@ -199,11 +199,11 @@
     .line 70
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_46
+    goto :goto_1
 
     .line 72
     .end local v3    # "newScopes":Ljava/util/List;
-    :cond_29
+    :cond_1
     const/4 v3, 0x0
 
     .local v3, "index":I
@@ -211,8 +211,8 @@
 
     move-result v4
 
-    :goto_2e
-    if-ge v3, v4, :cond_43
+    :goto_0
+    if-ge v3, v4, :cond_3
 
     .line 73
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -227,7 +227,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_40
+    if-eqz v6, :cond_2
 
     .line 75
     invoke-interface {v2, v3, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
@@ -237,39 +237,39 @@
 
     .line 72
     .end local v5    # "scopeAtIndex":Landroidx/compose/runtime/RecomposeScope;
-    :cond_40
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 79
     .end local v3    # "index":I
-    :cond_43
+    :cond_3
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 84
     .end local v0    # "scope":Landroidx/compose/runtime/RecomposeScope;
     .end local v1    # "lastScope":Landroidx/compose/runtime/RecomposeScope;
     .end local v2    # "lastScopes":Ljava/util/List;
-    :cond_46
-    :goto_46
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method private final trackWrite()V
-    .registers 6
+    .locals 5
 
     .line 39
     iget-boolean v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->tracked:Z
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 40
     iget-object v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->scope:Landroidx/compose/runtime/RecomposeScope;
 
     .line 41
     .local v0, "scope":Landroidx/compose/runtime/RecomposeScope;
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 42
     invoke-interface {v0}, Landroidx/compose/runtime/RecomposeScope;->invalidate()V
@@ -280,12 +280,12 @@
     iput-object v1, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->scope:Landroidx/compose/runtime/RecomposeScope;
 
     .line 45
-    :cond_e
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->scopes:Ljava/util/List;
 
     .line 46
     .local v1, "scopes":Ljava/util/List;
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_2
 
     .line 47
     const/4 v2, 0x0
@@ -295,8 +295,8 @@
 
     move-result v3
 
-    :goto_17
-    if-ge v2, v3, :cond_25
+    :goto_0
+    if-ge v2, v3, :cond_1
 
     .line 48
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -313,24 +313,24 @@
     .end local v4    # "item":Landroidx/compose/runtime/RecomposeScope;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 51
     .end local v2    # "index":I
-    :cond_25
+    :cond_1
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
     .line 54
     .end local v0    # "scope":Landroidx/compose/runtime/RecomposeScope;
     .end local v1    # "scopes":Ljava/util/List;
-    :cond_28
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public getArity()I
-    .registers 2
+    .locals 1
 
     .line 32
     iget v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->arity:I
@@ -339,7 +339,7 @@
 .end method
 
 .method public final getKey()I
-    .registers 2
+    .locals 1
 
     .line 30
     iget v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->key:I
@@ -348,7 +348,7 @@
 .end method
 
 .method public varargs invoke([Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 10
+    .locals 8
     .param p1, "args"    # [Ljava/lang/Object;
 
     const-string/jumbo v0, "args"
@@ -445,23 +445,23 @@
 
     move-result v4
 
-    if-eqz v4, :cond_51
+    if-eqz v4, :cond_0
 
     .line 116
     invoke-static {v0}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v4
 
-    goto :goto_55
+    goto :goto_0
 
     .line 118
-    :cond_51
+    :cond_0
     invoke-static {v0}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v4
 
     .line 115
-    :goto_55
+    :goto_0
     or-int/2addr v4, v3
 
     .line 120
@@ -508,7 +508,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_8e
+    if-eqz v6, :cond_1
 
     new-instance v7, Landroidx/compose/runtime/internal/ComposableLambdaNImpl$invoke$1;
 
@@ -519,12 +519,12 @@
     invoke-interface {v6, v7}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 135
-    :cond_8e
+    :cond_1
     return-object v5
 .end method
 
 .method public final update(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "block"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "block"
@@ -538,23 +538,23 @@
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 88
     iget-object v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->_block:Ljava/lang/Object;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
     .line 89
     .local v0, "oldBlockNull":Z
-    :goto_15
+    :goto_0
     move-object v1, p1
 
     check-cast v1, Lkotlin/jvm/functions/FunctionN;
@@ -562,13 +562,13 @@
     iput-object v1, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->_block:Ljava/lang/Object;
 
     .line 90
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     .line 91
     invoke-direct {p0}, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;->trackWrite()V
 
     .line 94
     .end local v0    # "oldBlockNull":Z
-    :cond_1f
+    :cond_1
     return-void
 .end method

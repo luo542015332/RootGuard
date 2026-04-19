@@ -25,7 +25,7 @@
 
 # direct methods
 .method public static final PathMeasure()Landroidx/compose/ui/graphics/PathMeasure;
-    .registers 2
+    .locals 2
 
     .line 21
     new-instance v0, Landroidx/compose/ui/graphics/AndroidPathMeasure;

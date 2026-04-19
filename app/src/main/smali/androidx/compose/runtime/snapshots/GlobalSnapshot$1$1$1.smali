@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 1332
@@ -103,7 +103,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 9
+    .locals 7
     .param p1, "state"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "state"
@@ -128,8 +128,8 @@
 
     move-result v3
 
-    :goto_f
-    if-ge v2, v3, :cond_20
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 2293
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -158,11 +158,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 2296
     .end local v2    # "index$iv":I
-    :cond_20
+    :cond_0
     nop
 
     .line 1334

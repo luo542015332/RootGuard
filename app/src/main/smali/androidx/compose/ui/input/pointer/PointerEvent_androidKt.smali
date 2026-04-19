@@ -73,7 +73,7 @@
 
 # direct methods
 .method public static final EmptyPointerKeyboardModifiers()I
-    .registers 1
+    .locals 1
 
     .line 118
     const/4 v0, 0x0
@@ -86,29 +86,29 @@
 .end method
 
 .method public static final getAreAnyPressed-aHzCx-E(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$areAnyPressed"    # I
 
     .line 145
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static final indexOfFirstPressed-aHzCx-E(I)I
-    .registers 4
+    .locals 3
     .param p0, "$this$indexOfFirstPressed_u2daHzCx_u2dE"    # I
 
     .line 148
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     .line 149
     const/4 v0, -0x1
@@ -116,7 +116,7 @@
     return v0
 
     .line 151
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
     .line 153
@@ -131,10 +131,10 @@
 
     .line 154
     .local v1, "shifted":I
-    :goto_c
+    :goto_0
     and-int/lit8 v2, v1, 0x1
 
-    if-nez v2, :cond_15
+    if-nez v2, :cond_1
 
     .line 155
     add-int/lit8 v0, v0, 0x1
@@ -142,15 +142,15 @@
     .line 156
     ushr-int/lit8 v1, v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 158
-    :cond_15
+    :cond_1
     return v0
 .end method
 
 .method public static final indexOfLastPressed-aHzCx-E(I)I
-    .registers 3
+    .locals 2
     .param p0, "$this$indexOfLastPressed_u2daHzCx_u2dE"    # I
 
     .line 163
@@ -168,8 +168,8 @@
 
     .line 165
     .local v1, "index":I
-    :goto_8
-    if-eqz v0, :cond_f
+    :goto_0
+    if-eqz v0, :cond_0
 
     .line 166
     add-int/lit8 v1, v1, 0x1
@@ -177,15 +177,15 @@
     .line 167
     ushr-int/lit8 v0, v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 169
-    :cond_f
+    :cond_0
     return v1
 .end method
 
 .method public static final isAltGraphPressed-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isAltGraphPressed"    # I
 
     .line 182
@@ -195,47 +195,47 @@
 .end method
 
 .method public static final isAltPressed-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isAltPressed"    # I
 
     .line 179
     and-int/lit8 v0, p0, 0x2
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isBackPressed-aHzCx-E(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isBackPressed"    # I
 
     .line 131
     and-int/lit8 v0, p0, 0x8
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isCapsLockOn-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isCapsLockOn"    # I
 
     .line 194
@@ -243,81 +243,81 @@
 
     and-int/2addr v0, p0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public static final isCtrlPressed-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isCtrlPressed"    # I
 
     .line 173
     and-int/lit16 v0, p0, 0x1000
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isForwardPressed-aHzCx-E(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isForwardPressed"    # I
 
     .line 134
     and-int/lit8 v0, p0, 0x10
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isFunctionPressed-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isFunctionPressed"    # I
 
     .line 191
     and-int/lit8 v0, p0, 0x8
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isMetaPressed-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isMetaPressed"    # I
 
     .line 176
@@ -325,21 +325,21 @@
 
     and-int/2addr v0, p0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public static final isNumLockOn-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isNumLockOn"    # I
 
     .line 200
@@ -347,21 +347,21 @@
 
     and-int/2addr v0, p0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public static final isPressed-bNIWhpI(II)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isPressed_u2dbNIWhpI"    # I
     .param p1, "buttonIndex"    # I
 
@@ -370,7 +370,7 @@
 
     const/4 v1, 0x1
 
-    packed-switch p1, :pswitch_data_20
+    packed-switch p1, :pswitch_data_0
 
     .line 141
     add-int/lit8 v2, p1, 0x2
@@ -379,77 +379,77 @@
 
     and-int/2addr v2, p0
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     move v0, v1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 140
-    :pswitch_e
+    :pswitch_0
     shl-int v2, v1, p1
 
     and-int/2addr v2, p0
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     move v0, v1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 139
-    :pswitch_15
+    :pswitch_1
     invoke-static {p0}, Landroidx/compose/ui/input/pointer/PointerEvent_androidKt;->isSecondaryPressed-aHzCx-E(I)Z
 
     move-result v0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 138
-    :pswitch_1a
+    :pswitch_2
     invoke-static {p0}, Landroidx/compose/ui/input/pointer/PointerEvent_androidKt;->isPrimaryPressed-aHzCx-E(I)Z
 
     move-result v0
 
     .line 142
-    :cond_1e
-    :goto_1e
+    :cond_0
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1a
-        :pswitch_15
-        :pswitch_e
-        :pswitch_e
-        :pswitch_e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static final isPrimaryPressed-aHzCx-E(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isPrimaryPressed"    # I
 
     .line 121
     and-int/lit8 v0, p0, 0x21
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isScrollLockOn-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isScrollLockOn"    # I
 
     .line 197
@@ -457,21 +457,21 @@
 
     and-int/2addr v0, p0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public static final isSecondaryPressed-aHzCx-E(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isSecondaryPressed"    # I
 
     .line 124
@@ -483,76 +483,76 @@
     .line 124
     and-int/lit8 v0, p0, 0x42
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 125
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public static final isShiftPressed-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isShiftPressed"    # I
 
     .line 188
     and-int/lit8 v0, p0, 0x1
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isSymPressed-5xRPYO0(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isSymPressed"    # I
 
     .line 185
     and-int/lit8 v0, p0, 0x4
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final isTertiaryPressed-aHzCx-E(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isTertiaryPressed"    # I
 
     .line 128
     and-int/lit8 v0, p0, 0x4
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method

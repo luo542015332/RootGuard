@@ -36,7 +36,7 @@
 
 # direct methods
 .method constructor <init>([F)V
-    .registers 3
+    .locals 1
     .param p1, "$super_call_param$1"    # [F
 
     .line 64
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 71
     const-string/jumbo v0, "VonKries"

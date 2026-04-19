@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "loc"    # I
 
     .line 633
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final getLocation$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 634
     iget v0, p0, Landroidx/compose/runtime/Anchor;->location:I
@@ -70,28 +70,28 @@
 .end method
 
 .method public final getValid()Z
-    .registers 3
+    .locals 2
 
     .line 635
     iget v0, p0, Landroidx/compose/runtime/Anchor;->location:I
 
     const/high16 v1, -0x80000000
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final setLocation$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 634
@@ -101,7 +101,7 @@
 .end method
 
 .method public final toIndexFor(Landroidx/compose/runtime/SlotTable;)I
-    .registers 3
+    .locals 1
     .param p1, "slots"    # Landroidx/compose/runtime/SlotTable;
 
     const-string/jumbo v0, "slots"
@@ -117,7 +117,7 @@
 .end method
 
 .method public final toIndexFor(Landroidx/compose/runtime/SlotWriter;)I
-    .registers 3
+    .locals 1
     .param p1, "writer"    # Landroidx/compose/runtime/SlotWriter;
 
     const-string/jumbo v0, "writer"

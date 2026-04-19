@@ -109,7 +109,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/animation/core/AnimationSpec;Lkotlinx/coroutines/CoroutineScope;)V
-    .registers 5
+    .locals 2
     .param p1, "animSpec"    # Landroidx/compose/animation/core/AnimationSpec;
     .param p2, "scope"    # Lkotlinx/coroutines/CoroutineScope;
     .annotation system Ldalvik/annotation/Signature;
@@ -158,7 +158,7 @@
 
 # virtual methods
 .method public final animateTo-mzRDjE0(J)J
-    .registers 21
+    .locals 18
     .param p1, "targetSize"    # J
 
     .line 120
@@ -170,7 +170,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_4c
+    if-eqz v9, :cond_1
 
     move-object v10, v9
 
@@ -197,7 +197,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_0
 
     .line 122
     invoke-virtual {v10}, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->getAnim()Landroidx/compose/animation/core/Animatable;
@@ -246,16 +246,16 @@
     invoke-static/range {v12 .. v17}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     .line 130
-    :cond_4a
+    :cond_0
     nop
 
     .line 120
     .end local v10    # "$this$animateTo_mzRDjE0_u24lambda_u240":Landroidx/compose/animation/SizeAnimationModifier$AnimData;
     .end local v11    # "$i$a$-apply-SizeAnimationModifier$animateTo$data$1":I
-    goto :goto_71
+    goto :goto_0
 
     .line 130
-    :cond_4c
+    :cond_1
     new-instance v9, Landroidx/compose/animation/SizeAnimationModifier$AnimData;
 
     .line 131
@@ -302,7 +302,7 @@
     invoke-direct {v9, v0, v7, v8, v1}, Landroidx/compose/animation/SizeAnimationModifier$AnimData;-><init>(Landroidx/compose/animation/core/Animatable;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 120
-    :goto_71
+    :goto_0
     move-object v0, v9
 
     .line 137
@@ -328,7 +328,7 @@
 .end method
 
 .method public final getAnimData()Landroidx/compose/animation/SizeAnimationModifier$AnimData;
-    .registers 4
+    .locals 3
 
     .line 102
     iget-object v0, p0, Landroidx/compose/animation/SizeAnimationModifier;->animData$delegate:Landroidx/compose/runtime/MutableState;
@@ -357,7 +357,7 @@
 .end method
 
 .method public final getAnimSpec()Landroidx/compose/animation/core/AnimationSpec;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -374,7 +374,7 @@
 .end method
 
 .method public final getListener()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -393,7 +393,7 @@
 .end method
 
 .method public final getScope()Lkotlinx/coroutines/CoroutineScope;
-    .registers 2
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/compose/animation/SizeAnimationModifier;->scope:Lkotlinx/coroutines/CoroutineScope;
@@ -402,7 +402,7 @@
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 18
+    .locals 13
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -497,7 +497,7 @@
 .end method
 
 .method public final setAnimData(Landroidx/compose/animation/SizeAnimationModifier$AnimData;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/animation/SizeAnimationModifier$AnimData;
 
     .line 102
@@ -524,7 +524,7 @@
 .end method
 
 .method public final setListener(Lkotlin/jvm/functions/Function2;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {

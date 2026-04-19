@@ -143,7 +143,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -153,7 +153,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;FFFFJI)V
-    .registers 22
+    .locals 13
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "defaultWidth"    # F
     .param p3, "defaultHeight"    # F
@@ -221,28 +221,28 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;FFFFJIILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 22
+    .locals 11
 
     .line 148
     and-int/lit8 v0, p9, 0x1
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 152
     const-string v0, ""
 
     move-object v2, v0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 148
-    :cond_8
+    :cond_0
     move-object v2, p1
 
-    :goto_9
+    :goto_0
     and-int/lit8 v0, p9, 0x20
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 179
     sget-object v0, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -253,16 +253,16 @@
 
     move-wide v7, v0
 
-    goto :goto_17
+    goto :goto_1
 
     .line 148
-    :cond_15
+    :cond_1
     move-wide/from16 v7, p6
 
-    :goto_17
+    :goto_1
     and-int/lit8 v0, p9, 0x40
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 184
     sget-object v0, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
@@ -273,13 +273,13 @@
 
     move v9, v0
 
-    goto :goto_25
+    goto :goto_2
 
     .line 148
-    :cond_23
+    :cond_2
     move/from16 v9, p8
 
-    :goto_25
+    :goto_2
     const/4 v10, 0x0
 
     move-object v1, p0
@@ -299,7 +299,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;FFFFJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 10
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         level = .enum Lkotlin/DeprecationLevel;->HIDDEN:Lkotlin/DeprecationLevel;
         message = "Replace with ImageVector.Builder that consumes an optional auto mirror parameter"
@@ -317,7 +317,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;FFFFJIZ)V
-    .registers 36
+    .locals 26
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "defaultWidth"    # F
     .param p3, "defaultHeight"    # F
@@ -442,7 +442,6 @@
     nop
 
     .line 205
-    # invokes: Landroidx/compose/ui/graphics/vector/ImageVectorKt;->push(Ljava/util/ArrayList;Ljava/lang/Object;)Z
     invoke-static {v10, v11}, Landroidx/compose/ui/graphics/vector/ImageVectorKt;->access$push(Ljava/util/ArrayList;Ljava/lang/Object;)Z
 
     .line 206
@@ -453,30 +452,30 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;FFFFJIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 25
+    .locals 13
 
     .line 92
     move/from16 v0, p10
 
     and-int/lit8 v1, v0, 0x1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 97
     const-string v1, ""
 
     move-object v3, v1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 92
-    :cond_a
+    :cond_0
     move-object v3, p1
 
-    :goto_b
+    :goto_0
     and-int/lit8 v1, v0, 0x20
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1
 
     .line 124
     sget-object v1, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -487,16 +486,16 @@
 
     move-wide v8, v1
 
-    goto :goto_19
+    goto :goto_1
 
     .line 92
-    :cond_17
+    :cond_1
     move-wide/from16 v8, p6
 
-    :goto_19
+    :goto_1
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_2
 
     .line 129
     sget-object v1, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
@@ -507,29 +506,29 @@
 
     move v10, v1
 
-    goto :goto_27
+    goto :goto_2
 
     .line 92
-    :cond_25
+    :cond_2
     move/from16 v10, p8
 
-    :goto_27
+    :goto_2
     and-int/lit16 v0, v0, 0x80
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_3
 
     .line 134
     const/4 v0, 0x0
 
     move v11, v0
 
-    goto :goto_30
+    goto :goto_3
 
     .line 92
-    :cond_2e
+    :cond_3
     move/from16 v11, p9
 
-    :goto_30
+    :goto_3
     const/4 v12, 0x0
 
     move-object v2, p0
@@ -549,7 +548,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;FFFFJIZLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 11
+    .locals 0
 
     invoke-direct/range {p0 .. p9}, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;-><init>(Ljava/lang/String;FFFFJIZ)V
 
@@ -557,139 +556,139 @@
 .end method
 
 .method public static synthetic addGroup$default(Landroidx/compose/ui/graphics/vector/ImageVector$Builder;Ljava/lang/String;FFFFFFFLjava/util/List;ILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 22
+    .locals 10
 
     .line 224
     move/from16 v0, p10
 
     and-int/lit8 v1, v0, 0x1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 225
     const-string v1, ""
 
-    goto :goto_a
+    goto :goto_0
 
     .line 224
-    :cond_9
+    :cond_0
     move-object v1, p1
 
-    :goto_a
+    :goto_0
     and-int/lit8 v2, v0, 0x2
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_1
 
     .line 226
     move v2, v3
 
-    goto :goto_12
+    goto :goto_1
 
     .line 224
-    :cond_11
+    :cond_1
     move v2, p2
 
-    :goto_12
+    :goto_1
     and-int/lit8 v4, v0, 0x4
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_2
 
     .line 227
     move v4, v3
 
-    goto :goto_19
+    goto :goto_2
 
     .line 224
-    :cond_18
+    :cond_2
     move v4, p3
 
-    :goto_19
+    :goto_2
     and-int/lit8 v5, v0, 0x8
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_3
 
     .line 228
     move v5, v3
 
-    goto :goto_20
+    goto :goto_3
 
     .line 224
-    :cond_1f
+    :cond_3
     move v5, p4
 
-    :goto_20
+    :goto_3
     and-int/lit8 v6, v0, 0x10
 
     const/high16 v7, 0x3f800000    # 1.0f
 
-    if-eqz v6, :cond_28
+    if-eqz v6, :cond_4
 
     .line 229
     move v6, v7
 
-    goto :goto_29
+    goto :goto_4
 
     .line 224
-    :cond_28
+    :cond_4
     move v6, p5
 
-    :goto_29
+    :goto_4
     and-int/lit8 v8, v0, 0x20
 
-    if-eqz v8, :cond_2e
+    if-eqz v8, :cond_5
 
     .line 230
-    goto :goto_30
+    goto :goto_5
 
     .line 224
-    :cond_2e
+    :cond_5
     move/from16 v7, p6
 
-    :goto_30
+    :goto_5
     and-int/lit8 v8, v0, 0x40
 
-    if-eqz v8, :cond_36
+    if-eqz v8, :cond_6
 
     .line 231
     move v8, v3
 
-    goto :goto_38
+    goto :goto_6
 
     .line 224
-    :cond_36
+    :cond_6
     move/from16 v8, p7
 
-    :goto_38
+    :goto_6
     and-int/lit16 v9, v0, 0x80
 
-    if-eqz v9, :cond_3d
+    if-eqz v9, :cond_7
 
     .line 232
-    goto :goto_3f
+    goto :goto_7
 
     .line 224
-    :cond_3d
+    :cond_7
     move/from16 v3, p8
 
-    :goto_3f
+    :goto_7
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_8
 
     .line 233
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getEmptyPath()Ljava/util/List;
 
     move-result-object v0
 
-    goto :goto_4a
+    goto :goto_8
 
     .line 224
-    :cond_48
+    :cond_8
     move-object/from16 v0, p9
 
-    :goto_4a
+    :goto_8
     move-object p1, v1
 
     move p2, v2
@@ -716,199 +715,199 @@
 .end method
 
 .method public static synthetic addPath-oIyEayM$default(Landroidx/compose/ui/graphics/vector/ImageVector$Builder;Ljava/util/List;ILjava/lang/String;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFFFFILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 32
+    .locals 15
 
     .line 290
     move/from16 v0, p15
 
     and-int/lit8 v1, v0, 0x2
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 292
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultFillType()I
 
     move-result v1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 290
-    :cond_b
+    :cond_0
     move/from16 v1, p2
 
-    :goto_d
+    :goto_0
     and-int/lit8 v2, v0, 0x4
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_1
 
     .line 293
     const-string v2, ""
 
-    goto :goto_16
+    goto :goto_1
 
     .line 290
-    :cond_14
+    :cond_1
     move-object/from16 v2, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v3, v0, 0x8
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_1d
+    if-eqz v3, :cond_2
 
     .line 294
     move-object v3, v4
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 290
-    :cond_1d
+    :cond_2
     move-object/from16 v3, p4
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v5, v0, 0x10
 
     const/high16 v6, 0x3f800000    # 1.0f
 
-    if-eqz v5, :cond_27
+    if-eqz v5, :cond_3
 
     .line 295
     move v5, v6
 
-    goto :goto_29
+    goto :goto_3
 
     .line 290
-    :cond_27
+    :cond_3
     move/from16 v5, p5
 
-    :goto_29
+    :goto_3
     and-int/lit8 v7, v0, 0x20
 
-    if-eqz v7, :cond_2e
+    if-eqz v7, :cond_4
 
     .line 296
-    goto :goto_30
+    goto :goto_4
 
     .line 290
-    :cond_2e
+    :cond_4
     move-object/from16 v4, p6
 
-    :goto_30
+    :goto_4
     and-int/lit8 v7, v0, 0x40
 
-    if-eqz v7, :cond_36
+    if-eqz v7, :cond_5
 
     .line 297
     move v7, v6
 
-    goto :goto_38
+    goto :goto_5
 
     .line 290
-    :cond_36
+    :cond_5
     move/from16 v7, p7
 
-    :goto_38
+    :goto_5
     and-int/lit16 v8, v0, 0x80
 
     const/4 v9, 0x0
 
-    if-eqz v8, :cond_3f
+    if-eqz v8, :cond_6
 
     .line 298
     move v8, v9
 
-    goto :goto_41
+    goto :goto_6
 
     .line 290
-    :cond_3f
+    :cond_6
     move/from16 v8, p8
 
-    :goto_41
+    :goto_6
     and-int/lit16 v10, v0, 0x100
 
-    if-eqz v10, :cond_4a
+    if-eqz v10, :cond_7
 
     .line 299
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineCap()I
 
     move-result v10
 
-    goto :goto_4c
+    goto :goto_7
 
     .line 290
-    :cond_4a
+    :cond_7
     move/from16 v10, p9
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v11, v0, 0x200
 
-    if-eqz v11, :cond_55
+    if-eqz v11, :cond_8
 
     .line 300
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineJoin()I
 
     move-result v11
 
-    goto :goto_57
+    goto :goto_8
 
     .line 290
-    :cond_55
+    :cond_8
     move/from16 v11, p10
 
-    :goto_57
+    :goto_8
     and-int/lit16 v12, v0, 0x400
 
-    if-eqz v12, :cond_5e
+    if-eqz v12, :cond_9
 
     .line 301
     const/high16 v12, 0x40800000    # 4.0f
 
-    goto :goto_60
+    goto :goto_9
 
     .line 290
-    :cond_5e
+    :cond_9
     move/from16 v12, p11
 
-    :goto_60
+    :goto_9
     and-int/lit16 v13, v0, 0x800
 
-    if-eqz v13, :cond_66
+    if-eqz v13, :cond_a
 
     .line 302
     move v13, v9
 
-    goto :goto_68
+    goto :goto_a
 
     .line 290
-    :cond_66
+    :cond_a
     move/from16 v13, p12
 
-    :goto_68
+    :goto_a
     and-int/lit16 v14, v0, 0x1000
 
-    if-eqz v14, :cond_6d
+    if-eqz v14, :cond_b
 
     .line 303
-    goto :goto_6f
+    goto :goto_b
 
     .line 290
-    :cond_6d
+    :cond_b
     move/from16 v6, p13
 
-    :goto_6f
+    :goto_b
     and-int/lit16 v0, v0, 0x2000
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_c
 
     .line 304
-    goto :goto_76
+    goto :goto_c
 
     .line 290
-    :cond_74
+    :cond_c
     move/from16 v9, p14
 
-    :goto_76
+    :goto_c
     move-object/from16 p2, p0
 
     move-object/from16 p3, p1
@@ -947,7 +946,7 @@
 .end method
 
 .method private final asVectorGroup(Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;)Landroidx/compose/ui/graphics/vector/VectorGroup;
-    .registers 14
+    .locals 12
     .param p1, "$this$asVectorGroup"    # Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;
 
     .line 373
@@ -1013,20 +1012,20 @@
 .end method
 
 .method private final ensureNotConsumed()V
-    .registers 3
+    .locals 2
 
     .line 361
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->isConsumed:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 365
     return-void
 
     .line 361
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 362
@@ -1049,12 +1048,11 @@
 .end method
 
 .method private final getCurrentGroup()Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;
-    .registers 2
+    .locals 1
 
     .line 202
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->nodes:Ljava/util/ArrayList;
 
-    # invokes: Landroidx/compose/ui/graphics/vector/ImageVectorKt;->peek(Ljava/util/ArrayList;)Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/ui/graphics/vector/ImageVectorKt;->access$peek(Ljava/util/ArrayList;)Ljava/lang/Object;
 
     move-result-object v0
@@ -1067,7 +1065,7 @@
 
 # virtual methods
 .method public final addGroup(Ljava/lang/String;FFFFFFFLjava/util/List;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 27
+    .locals 17
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "rotate"    # F
     .param p3, "pivotX"    # F
@@ -1172,7 +1170,6 @@
     .local v1, "group":Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;
     iget-object v2, v0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->nodes:Ljava/util/ArrayList;
 
-    # invokes: Landroidx/compose/ui/graphics/vector/ImageVectorKt;->push(Ljava/util/ArrayList;Ljava/lang/Object;)Z
     invoke-static {v2, v1}, Landroidx/compose/ui/graphics/vector/ImageVectorKt;->access$push(Ljava/util/ArrayList;Ljava/lang/Object;)Z
 
     .line 248
@@ -1180,7 +1177,7 @@
 .end method
 
 .method public final addPath-oIyEayM(Ljava/util/List;ILjava/lang/String;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFFFF)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 33
+    .locals 18
     .param p1, "pathData"    # Ljava/util/List;
     .param p2, "pathFillType"    # I
     .param p3, "name"    # Ljava/lang/String;
@@ -1325,13 +1322,13 @@
 .end method
 
 .method public final build()Landroidx/compose/ui/graphics/vector/ImageVector;
-    .registers 15
+    .locals 14
 
     .line 334
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->ensureNotConsumed()V
 
     .line 336
-    :goto_3
+    :goto_0
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->nodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1340,15 +1337,15 @@
 
     const/4 v1, 0x1
 
-    if-le v0, v1, :cond_10
+    if-le v0, v1, :cond_0
 
     .line 337
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->clearGroup()Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
 
-    goto :goto_3
+    goto :goto_0
 
     .line 340
-    :cond_10
+    :cond_0
     new-instance v0, Landroidx/compose/ui/graphics/vector/ImageVector;
 
     .line 341
@@ -1398,7 +1395,7 @@
 .end method
 
 .method public final clearGroup()Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 4
+    .locals 3
 
     .line 257
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->ensureNotConsumed()V
@@ -1406,7 +1403,6 @@
     .line 258
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->nodes:Ljava/util/ArrayList;
 
-    # invokes: Landroidx/compose/ui/graphics/vector/ImageVectorKt;->pop(Ljava/util/ArrayList;)Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/ui/graphics/vector/ImageVectorKt;->access$pop(Ljava/util/ArrayList;)Ljava/lang/Object;
 
     move-result-object v0

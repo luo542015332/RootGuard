@@ -81,7 +81,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/SlotTable;Landroidx/compose/runtime/Anchor;Ljava/util/List;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,7 +114,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -140,7 +140,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 21
+    .locals 17
     .param p1, "applier"    # Landroidx/compose/runtime/Applier;
     .param p2, "slots"    # Landroidx/compose/runtime/SlotWriter;
     .param p3, "rememberManager"    # Landroidx/compose/runtime/RememberManager;
@@ -220,13 +220,13 @@
     const/4 v12, 0x0
 
     .local v12, "index$iv":I
-    :try_start_2c
+    :try_start_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v13
 
-    :goto_30
-    if-ge v12, v13, :cond_43
+    :goto_0
+    if-ge v12, v13, :cond_0
 
     .line 4570
     invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -258,11 +258,11 @@
     .end local v14    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 4573
     .end local v12    # "index$iv":I
-    :cond_43
+    :cond_0
     nop
 
     .line 3548
@@ -273,8 +273,8 @@
     .end local v9    # "writer":Landroidx/compose/runtime/SlotWriter;
     .end local v10    # "$i$a$-write-ComposerImpl$recordInsert$2$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_47
-    .catchall {:try_start_2c .. :try_end_47} :catchall_64
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4567
     nop
@@ -333,7 +333,7 @@
     .restart local v6    # "$i$f$write":I
     .restart local v7    # "writer$iv":Landroidx/compose/runtime/SlotWriter;
     .restart local v8    # "$i$a$-let-SlotTable$write$1$iv":I
-    :catchall_64
+    :catchall_0
     move-exception v0
 
     invoke-virtual {v7}, Landroidx/compose/runtime/SlotWriter;->close()V

@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "focusRequester"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "focusRequester"
@@ -81,15 +81,15 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/focus/FocusRequesterElement;Landroidx/compose/ui/focus/FocusRequester;ILjava/lang/Object;)Landroidx/compose/ui/focus/FocusRequesterElement;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     iget-object p1, p0, Landroidx/compose/ui/focus/FocusRequesterElement;->focusRequester:Landroidx/compose/ui/focus/FocusRequester;
 
-    :cond_6
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/ui/focus/FocusRequesterElement;->copy(Landroidx/compose/ui/focus/FocusRequester;)Landroidx/compose/ui/focus/FocusRequesterElement;
 
     move-result-object p0
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public final component1()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusRequesterElement;->focusRequester:Landroidx/compose/ui/focus/FocusRequester;
 
@@ -108,7 +108,7 @@
 .end method
 
 .method public final copy(Landroidx/compose/ui/focus/FocusRequester;)Landroidx/compose/ui/focus/FocusRequesterElement;
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "focusRequester"
 
@@ -122,7 +122,7 @@
 .end method
 
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-virtual {p0}, Landroidx/compose/ui/focus/FocusRequesterElement;->create()Landroidx/compose/ui/focus/FocusRequesterNode;
@@ -135,7 +135,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/focus/FocusRequesterNode;
-    .registers 3
+    .locals 2
 
     .line 54
     new-instance v0, Landroidx/compose/ui/focus/FocusRequesterNode;
@@ -148,24 +148,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/focus/FocusRequesterElement;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/focus/FocusRequesterElement;
@@ -178,16 +178,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public final getFocusRequester()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusRequesterElement;->focusRequester:Landroidx/compose/ui/focus/FocusRequester;
@@ -196,7 +196,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusRequesterElement;->focusRequester:Landroidx/compose/ui/focus/FocusRequester;
 
@@ -208,7 +208,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 5
+    .locals 3
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -234,7 +234,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -266,7 +266,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 51
@@ -280,7 +280,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/focus/FocusRequesterNode;)V
-    .registers 4
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/focus/FocusRequesterNode;
 
     const-string/jumbo v0, "node"

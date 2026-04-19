@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1353
     nop
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public bridge synthetic measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 6
+    .locals 1
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -79,7 +79,7 @@
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Ljava/lang/Void;
-    .registers 7
+    .locals 2
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J

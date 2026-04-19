@@ -39,7 +39,7 @@
 
 # direct methods
 .method private static final charAt(Ljava/lang/CharSequence;I)C
-    .registers 4
+    .locals 2
     .param p0, "s"    # Ljava/lang/CharSequence;
     .param p1, "index"    # I
 
@@ -51,26 +51,26 @@
 
     move-result v1
 
-    if-ge p1, v1, :cond_c
+    if-ge p1, v1, :cond_0
 
     .line 593
     invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 595
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
     .line 596
-    :goto_d
+    :goto_0
     return v1
 .end method
 
 .method private static final fullMultiplicationHighBits(JJ)J
-    .registers 28
+    .locals 24
     .param p0, "x"    # J
     .param p2, "y"    # J
 
@@ -145,7 +145,7 @@
 .end method
 
 .method private static final isDigit(C)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$isDigit"    # C
 
     const/4 v0, 0x0
@@ -158,21 +158,21 @@
 
     const/16 v2, 0xa
 
-    if-ge v1, v2, :cond_a
+    if-ge v1, v2, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     return v1
 .end method
 
 .method private static final parseFourDigits(Ljava/lang/CharSequence;I)I
-    .registers 14
+    .locals 12
     .param p0, "str"    # Ljava/lang/CharSequence;
     .param p1, "offset"    # I
 
@@ -258,15 +258,15 @@
 
     cmp-long v8, v8, v10
 
-    if-eqz v8, :cond_43
+    if-eqz v8, :cond_0
 
     .line 626
     const/4 v5, -0x1
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 628
-    :cond_43
+    :cond_0
     const-wide v8, 0x3e80064000a0001L
 
     mul-long/2addr v8, v3
@@ -276,6 +276,6 @@
     long-to-int v5, v8
 
     .line 625
-    :goto_4b
+    :goto_0
     return v5
 .end method

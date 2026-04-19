@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
 
     iput-object p1, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap$derivedStateObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public done(Landroidx/compose/runtime/DerivedState;)V
-    .registers 4
+    .locals 2
     .param p1, "derivedState"    # Landroidx/compose/runtime/DerivedState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -77,7 +77,6 @@
     .line 381
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap$derivedStateObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->deriveStateScopeCount:I
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->access$getDeriveStateScopeCount$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;)I
 
     move-result v1
@@ -91,7 +90,7 @@
 .end method
 
 .method public start(Landroidx/compose/runtime/DerivedState;)V
-    .registers 4
+    .locals 2
     .param p1, "derivedState"    # Landroidx/compose/runtime/DerivedState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -108,7 +107,6 @@
     .line 377
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap$derivedStateObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->deriveStateScopeCount:I
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->access$getDeriveStateScopeCount$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;)I
 
     move-result v1

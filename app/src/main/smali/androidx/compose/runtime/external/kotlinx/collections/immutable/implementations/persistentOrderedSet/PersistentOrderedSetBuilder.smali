@@ -99,7 +99,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;)V
-    .registers 3
+    .locals 1
     .param p1, "set"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -154,7 +154,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -169,7 +169,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 38
     const/4 v0, 0x0
@@ -177,14 +177,14 @@
     return v0
 
     .line 40
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->isEmpty()Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     .line 41
     iput-object p1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->firstElement:Ljava/lang/Object;
@@ -207,7 +207,7 @@
     return v1
 
     .line 47
-    :cond_22
+    :cond_1
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
     check-cast v0, Ljava/util/Map;
@@ -257,7 +257,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
@@ -270,7 +270,7 @@
 .end method
 
 .method public build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -294,7 +294,7 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_32
+    if-ne v0, v1, :cond_2
 
     .line 23
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->firstElement:Ljava/lang/Object;
@@ -309,16 +309,16 @@
 
     const/4 v4, 0x0
 
-    if-ne v1, v2, :cond_1c
+    if-ne v1, v2, :cond_0
 
     move v1, v3
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     move v1, v4
 
-    :goto_1d
+    :goto_0
     invoke-static {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 24
@@ -330,23 +330,23 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_2b
+    if-ne v1, v2, :cond_1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
+    :cond_1
     move v3, v4
 
-    :goto_2c
+    :goto_1
     invoke-static {v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 25
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->set:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;
 
-    goto :goto_3b
+    goto :goto_2
 
     .line 27
-    :cond_32
+    :cond_2
     new-instance v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;
 
     iget-object v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->firstElement:Ljava/lang/Object;
@@ -356,7 +356,7 @@
     invoke-direct {v1, v2, v3, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;-><init>(Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;)V
 
     .line 22
-    :goto_3b
+    :goto_2
     iput-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->set:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;
 
     .line 29
@@ -366,7 +366,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -388,7 +388,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 33
@@ -402,7 +402,7 @@
 .end method
 
 .method public final getFirstElement$runtime_release()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 13
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->firstElement:Ljava/lang/Object;
@@ -411,7 +411,7 @@
 .end method
 
 .method public final getHashMapBuilder$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -429,7 +429,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 18
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -442,7 +442,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -462,7 +462,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 58
@@ -474,7 +474,7 @@
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -482,12 +482,12 @@
 
     .line 60
     .local v0, "links":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;
-    :cond_c
+    :cond_0
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->getHasPrevious()Z
 
     move-result v1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_1
 
     .line 61
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -526,11 +526,11 @@
 
     invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 66
     .end local v1    # "previousLinks":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;
-    :cond_37
+    :cond_1
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->getNext()Ljava/lang/Object;
 
     move-result-object v1
@@ -538,12 +538,12 @@
     iput-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->firstElement:Ljava/lang/Object;
 
     .line 68
-    :goto_3d
+    :goto_0
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->getHasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_2
 
     .line 69
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -582,11 +582,11 @@
 
     invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 74
     .end local v1    # "nextLinks":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;
-    :cond_68
+    :cond_2
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->getPrevious()Ljava/lang/Object;
 
     move-result-object v1
@@ -594,14 +594,14 @@
     iput-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->lastElement:Ljava/lang/Object;
 
     .line 77
-    :goto_6e
+    :goto_1
     const/4 v1, 0x1
 
     return v1
 .end method
 
 .method public final setFirstElement$runtime_release(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     .line 13

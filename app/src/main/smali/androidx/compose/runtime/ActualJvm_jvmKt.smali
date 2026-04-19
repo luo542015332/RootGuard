@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static final ensureMutable(Ljava/lang/Object;)V
-    .registers 2
+    .locals 1
     .param p0, "it"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "it"
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final identityHashCode(Ljava/lang/Object;)I
-    .registers 2
+    .locals 1
     .param p0, "instance"    # Ljava/lang/Object;
 
     .line 66
@@ -74,7 +74,7 @@
 .end method
 
 .method public static final invokeComposable(Landroidx/compose/runtime/Composer;Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 2
     .param p0, "composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "composable"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -123,7 +123,7 @@
 .end method
 
 .method public static final invokeComposableForResult(Landroidx/compose/runtime/Composer;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p0, "composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "composable"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -174,7 +174,7 @@
 .end method
 
 .method public static final synchronized(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p0, "lock"    # Ljava/lang/Object;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -204,12 +204,12 @@
 
     const/4 v1, 0x1
 
-    :try_start_f
+    :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v2
-    :try_end_13
-    .catchall {:try_start_f .. :try_end_13} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -219,7 +219,7 @@
 
     return-object v2
 
-    :catchall_1b
+    :catchall_0
     move-exception v2
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

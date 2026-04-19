@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AbstractComposeView;)V
-    .registers 2
+    .locals 0
     .param p1, "$view"    # Landroidx/compose/ui/platform/AbstractComposeView;
 
     iput-object p1, p0, Landroidx/compose/ui/platform/ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$listener$1;->$view:Landroidx/compose/ui/platform/AbstractComposeView;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public onViewAttachedToWindow(Landroid/view/View;)V
-    .registers 3
+    .locals 1
     .param p1, "v"    # Landroid/view/View;
 
     const-string/jumbo v0, "v"
@@ -72,7 +72,7 @@
 .end method
 
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
-    .registers 3
+    .locals 1
     .param p1, "v"    # Landroid/view/View;
 
     const-string/jumbo v0, "v"
@@ -88,7 +88,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     .line 90
     iget-object v0, p0, Landroidx/compose/ui/platform/ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$listener$1;->$view:Landroidx/compose/ui/platform/AbstractComposeView;
@@ -96,6 +96,6 @@
     invoke-virtual {v0}, Landroidx/compose/ui/platform/AbstractComposeView;->disposeComposition()V
 
     .line 92
-    :cond_15
+    :cond_0
     return-void
 .end method

@@ -70,7 +70,7 @@
 
 # direct methods
 .method public static final Size(FF)J
-    .registers 11
+    .locals 9
     .param p0, "width"    # F
     .param p1, "height"    # F
 
@@ -117,7 +117,7 @@
 .end method
 
 .method public static final getCenter-uvyYCjk(J)J
-    .registers 5
+    .locals 3
     .param p0, "$this$center"    # J
 
     .line 225
@@ -143,13 +143,13 @@
 .end method
 
 .method public static synthetic getCenter-uvyYCjk$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final isSpecified-uvyYCjk(J)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isSpecified"    # J
 
     const/4 v0, 0x0
@@ -164,27 +164,27 @@
 
     cmp-long v1, p0, v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     return v1
 .end method
 
 .method public static synthetic isSpecified-uvyYCjk$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final isUnspecified-uvyYCjk(J)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isUnspecified"    # J
 
     const/4 v0, 0x0
@@ -199,27 +199,27 @@
 
     cmp-long v1, p0, v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     return v1
 .end method
 
 .method public static synthetic isUnspecified-uvyYCjk$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final lerp-VgWVRYQ(JJF)J
-    .registers 8
+    .locals 3
     .param p0, "start"    # J
     .param p2, "stop"    # J
     .param p4, "fraction"    # F
@@ -259,7 +259,7 @@
 .end method
 
 .method public static final takeOrElse-TmRCtEA(JLkotlin/jvm/functions/Function0;)J
-    .registers 9
+    .locals 6
     .param p0, "$this$takeOrElse_u2dTmRCtEA"    # J
     .param p2, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -294,26 +294,26 @@
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     const/4 v4, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v4, 0x0
 
     .line 166
     .end local v1    # "$this$isSpecified$iv":J
     .end local v3    # "$i$f$isSpecified-uvyYCjk":I
-    :goto_16
-    if-eqz v4, :cond_1a
+    :goto_0
+    if-eqz v4, :cond_1
 
     move-wide v1, p0
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v1
@@ -324,12 +324,12 @@
 
     move-result-wide v1
 
-    :goto_24
+    :goto_1
     return-wide v1
 .end method
 
 .method public static final times-d16Qtg0(DJ)J
-    .registers 7
+    .locals 3
     .param p0, "$this$times_u2dd16Qtg0"    # D
     .param p2, "size"    # J
 
@@ -347,7 +347,7 @@
 .end method
 
 .method public static final times-d16Qtg0(FJ)J
-    .registers 6
+    .locals 3
     .param p0, "$this$times_u2dd16Qtg0"    # F
     .param p1, "size"    # J
 
@@ -363,7 +363,7 @@
 .end method
 
 .method public static final times-d16Qtg0(IJ)J
-    .registers 6
+    .locals 3
     .param p0, "$this$times_u2dd16Qtg0"    # I
     .param p1, "size"    # J
 
@@ -381,7 +381,7 @@
 .end method
 
 .method public static final toRect-uvyYCjk(J)Landroidx/compose/ui/geometry/Rect;
-    .registers 4
+    .locals 2
     .param p0, "$this$toRect_u2duvyYCjk"    # J
 
     .line 210

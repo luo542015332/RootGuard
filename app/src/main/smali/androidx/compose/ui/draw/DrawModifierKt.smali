@@ -38,7 +38,7 @@
 
 # direct methods
 .method public static final CacheDrawModifierNode(Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/draw/CacheDrawModifierNode;
-    .registers 3
+    .locals 2
     .param p0, "onBuildDrawCache"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -71,7 +71,7 @@
 .end method
 
 .method public static final drawBehind(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$drawBehind"    # Landroidx/compose/ui/Modifier;
     .param p1, "onDraw"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -110,7 +110,7 @@
 .end method
 
 .method public static final drawWithCache(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$drawWithCache"    # Landroidx/compose/ui/Modifier;
     .param p1, "onBuildDrawCache"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -149,7 +149,7 @@
 .end method
 
 .method public static final drawWithContent(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$drawWithContent"    # Landroidx/compose/ui/Modifier;
     .param p1, "onDraw"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

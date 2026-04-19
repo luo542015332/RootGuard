@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final zIndex(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$zIndex"    # Landroidx/compose/ui/Modifier;
     .param p1, "zIndex"    # F
 

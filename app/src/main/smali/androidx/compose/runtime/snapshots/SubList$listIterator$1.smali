@@ -75,7 +75,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/internal/Ref$IntRef;Landroidx/compose/runtime/snapshots/SubList;)V
-    .registers 3
+    .locals 0
     .param p1, "$current"    # Lkotlin/jvm/internal/Ref$IntRef;
     .param p2, "$receiver"    # Landroidx/compose/runtime/snapshots/SubList;
     .annotation system Ldalvik/annotation/Signature;
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)Ljava/lang/Void;
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -110,7 +110,6 @@
     .end annotation
 
     .line 390
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->modificationError()Ljava/lang/Void;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$modificationError()Ljava/lang/Void;
 
     new-instance v0, Lkotlin/KotlinNothingValueException;
@@ -121,7 +120,7 @@
 .end method
 
 .method public bridge synthetic add(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 380
@@ -131,7 +130,7 @@
 .end method
 
 .method public hasNext()Z
-    .registers 4
+    .locals 3
 
     .line 391
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SubList$listIterator$1;->$current:Lkotlin/jvm/internal/Ref$IntRef;
@@ -148,40 +147,40 @@
 
     sub-int/2addr v1, v2
 
-    if-ge v0, v1, :cond_f
+    if-ge v0, v1, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_10
+    :goto_0
     return v2
 .end method
 
 .method public hasPrevious()Z
-    .registers 2
+    .locals 1
 
     .line 381
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SubList$listIterator$1;->$current:Lkotlin/jvm/internal/Ref$IntRef;
 
     iget v0, v0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -203,7 +202,6 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->validateRange(II)V
     invoke-static {v0, v1}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$validateRange(II)V
 
     .line 395
@@ -222,7 +220,7 @@
 .end method
 
 .method public nextIndex()I
-    .registers 2
+    .locals 1
 
     .line 382
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SubList$listIterator$1;->$current:Lkotlin/jvm/internal/Ref$IntRef;
@@ -235,7 +233,7 @@
 .end method
 
 .method public previous()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -255,7 +253,6 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->validateRange(II)V
     invoke-static {v0, v1}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$validateRange(II)V
 
     .line 386
@@ -276,7 +273,7 @@
 .end method
 
 .method public previousIndex()I
-    .registers 2
+    .locals 1
 
     .line 389
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SubList$listIterator$1;->$current:Lkotlin/jvm/internal/Ref$IntRef;
@@ -287,10 +284,9 @@
 .end method
 
 .method public remove()Ljava/lang/Void;
-    .registers 2
+    .locals 1
 
     .line 398
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->modificationError()Ljava/lang/Void;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$modificationError()Ljava/lang/Void;
 
     new-instance v0, Lkotlin/KotlinNothingValueException;
@@ -301,7 +297,7 @@
 .end method
 
 .method public bridge synthetic remove()V
-    .registers 1
+    .locals 0
 
     .line 380
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SubList$listIterator$1;->remove()Ljava/lang/Void;
@@ -310,7 +306,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;)Ljava/lang/Void;
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -320,7 +316,6 @@
     .end annotation
 
     .line 399
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->modificationError()Ljava/lang/Void;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$modificationError()Ljava/lang/Void;
 
     new-instance v0, Lkotlin/KotlinNothingValueException;
@@ -331,7 +326,7 @@
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 380

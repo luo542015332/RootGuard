@@ -41,7 +41,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 100
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/layout/ScaleFactor$Companion;-><init>()V
 
@@ -58,7 +58,7 @@
 .end method
 
 .method public static synthetic getUnspecified-_hLwfpc$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -66,10 +66,9 @@
 
 # virtual methods
 .method public final getUnspecified-_hLwfpc()J
-    .registers 3
+    .locals 2
 
     .line 108
-    # getter for: Landroidx/compose/ui/layout/ScaleFactor;->Unspecified:J
     invoke-static {}, Landroidx/compose/ui/layout/ScaleFactor;->access$getUnspecified$cp()J
 
     move-result-wide v0

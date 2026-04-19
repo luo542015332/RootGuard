@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic localBoundingBoxOf$default(Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;ZILjava/lang/Object;)Landroidx/compose/ui/geometry/Rect;
-    .registers 5
+    .locals 0
 
     .line 94
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/layout/LayoutCoordinates;->localBoundingBoxOf$default(Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;ZILjava/lang/Object;)Landroidx/compose/ui/geometry/Rect;
@@ -37,7 +37,7 @@
 .end method
 
 .method public static transformFrom-EL8BTi8(Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;[F)V
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p1, "sourceCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p2, "matrix"    # [F
@@ -53,7 +53,6 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 101
-    # invokes: Landroidx/compose/ui/layout/LayoutCoordinates;->transformFrom-EL8BTi8(Landroidx/compose/ui/layout/LayoutCoordinates;[F)V
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/layout/LayoutCoordinates;->access$transformFrom-EL8BTi8$jd(Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;[F)V
 
     .line 105

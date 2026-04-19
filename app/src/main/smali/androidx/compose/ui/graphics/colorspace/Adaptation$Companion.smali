@@ -43,7 +43,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,7 +52,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/colorspace/Adaptation$Companion;-><init>()V
 
@@ -62,10 +62,9 @@
 
 # virtual methods
 .method public final getBradford()Landroidx/compose/ui/graphics/colorspace/Adaptation;
-    .registers 2
+    .locals 1
 
     .line 51
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Adaptation;->Bradford:Landroidx/compose/ui/graphics/colorspace/Adaptation;
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/Adaptation;->access$getBradford$cp()Landroidx/compose/ui/graphics/colorspace/Adaptation;
 
     move-result-object v0
@@ -74,10 +73,9 @@
 .end method
 
 .method public final getCiecat02()Landroidx/compose/ui/graphics/colorspace/Adaptation;
-    .registers 2
+    .locals 1
 
     .line 78
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Adaptation;->Ciecat02:Landroidx/compose/ui/graphics/colorspace/Adaptation;
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/Adaptation;->access$getCiecat02$cp()Landroidx/compose/ui/graphics/colorspace/Adaptation;
 
     move-result-object v0
@@ -86,10 +84,9 @@
 .end method
 
 .method public final getVonKries()Landroidx/compose/ui/graphics/colorspace/Adaptation;
-    .registers 2
+    .locals 1
 
     .line 64
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Adaptation;->VonKries:Landroidx/compose/ui/graphics/colorspace/Adaptation;
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/Adaptation;->access$getVonKries$cp()Landroidx/compose/ui/graphics/colorspace/Adaptation;
 
     move-result-object v0

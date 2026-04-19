@@ -182,7 +182,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .locals 10
 
     new-instance v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;
 
@@ -198,7 +198,7 @@
 
     new-array v1, v0, [I
 
-    fill-array-data v1, :array_b4
+    fill-array-data v1, :array_0
 
     .line 27
     nop
@@ -297,7 +297,7 @@
     .line 46
     new-array v9, v6, [I
 
-    fill-array-data v9, :array_ca
+    fill-array-data v9, :array_1
 
     .line 47
     nop
@@ -373,7 +373,7 @@
 
     new-array v9, v9, [I
 
-    fill-array-data v9, :array_de
+    fill-array-data v9, :array_2
 
     .line 65
     nop
@@ -521,7 +521,7 @@
 
     nop
 
-    :array_b4
+    :array_0
     .array-data 4
         0x1010003
         0x1010121
@@ -534,7 +534,7 @@
         0x1010403
     .end array-data
 
-    :array_ca
+    :array_1
     .array-data 4
         0x1010003
         0x10101b5
@@ -546,7 +546,7 @@
         0x101045b
     .end array-data
 
-    :array_de
+    :array_2
     .array-data 4
         0x1010003
         0x1010404
@@ -566,7 +566,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -577,7 +577,7 @@
 
 # virtual methods
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_ALPHA()I
-    .registers 2
+    .locals 1
 
     .line 36
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_ALPHA:I
@@ -586,7 +586,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_AUTO_MIRRORED()I
-    .registers 2
+    .locals 1
 
     .line 37
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_AUTO_MIRRORED:I
@@ -595,7 +595,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_CLIP_PATH()[I
-    .registers 2
+    .locals 1
 
     .line 94
     sget-object v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH:[I
@@ -604,7 +604,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_NAME()I
-    .registers 2
+    .locals 1
 
     .line 96
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_NAME:I
@@ -613,7 +613,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_PATH_DATA()I
-    .registers 2
+    .locals 1
 
     .line 97
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_PATH_DATA:I
@@ -622,7 +622,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP()[I
-    .registers 2
+    .locals 1
 
     .line 45
     sget-object v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP:[I
@@ -631,7 +631,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_NAME()I
-    .registers 2
+    .locals 1
 
     .line 55
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_NAME:I
@@ -640,7 +640,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_PIVOT_X()I
-    .registers 2
+    .locals 1
 
     .line 56
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_PIVOT_X:I
@@ -649,7 +649,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_PIVOT_Y()I
-    .registers 2
+    .locals 1
 
     .line 57
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_PIVOT_Y:I
@@ -658,7 +658,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_ROTATION()I
-    .registers 2
+    .locals 1
 
     .line 58
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_ROTATION:I
@@ -667,7 +667,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_SCALE_X()I
-    .registers 2
+    .locals 1
 
     .line 59
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_SCALE_X:I
@@ -676,7 +676,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_SCALE_Y()I
-    .registers 2
+    .locals 1
 
     .line 60
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_SCALE_Y:I
@@ -685,7 +685,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_TRANSLATE_X()I
-    .registers 2
+    .locals 1
 
     .line 61
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_TRANSLATE_X:I
@@ -694,7 +694,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_GROUP_TRANSLATE_Y()I
-    .registers 2
+    .locals 1
 
     .line 62
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_GROUP_TRANSLATE_Y:I
@@ -703,7 +703,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_HEIGHT()I
-    .registers 2
+    .locals 1
 
     .line 38
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_HEIGHT:I
@@ -712,7 +712,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_NAME()I
-    .registers 2
+    .locals 1
 
     .line 39
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_NAME:I
@@ -721,7 +721,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH()[I
-    .registers 2
+    .locals 1
 
     .line 63
     sget-object v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH:[I
@@ -730,7 +730,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_FILL_ALPHA()I
-    .registers 2
+    .locals 1
 
     .line 80
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_FILL_ALPHA:I
@@ -739,7 +739,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_FILL_COLOR()I
-    .registers 2
+    .locals 1
 
     .line 81
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_FILL_COLOR:I
@@ -748,7 +748,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_NAME()I
-    .registers 2
+    .locals 1
 
     .line 82
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_NAME:I
@@ -757,7 +757,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_PATH_DATA()I
-    .registers 2
+    .locals 1
 
     .line 83
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_PATH_DATA:I
@@ -766,7 +766,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_ALPHA()I
-    .registers 2
+    .locals 1
 
     .line 84
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_ALPHA:I
@@ -775,7 +775,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_COLOR()I
-    .registers 2
+    .locals 1
 
     .line 85
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_COLOR:I
@@ -784,7 +784,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_CAP()I
-    .registers 2
+    .locals 1
 
     .line 86
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_CAP:I
@@ -793,7 +793,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_JOIN()I
-    .registers 2
+    .locals 1
 
     .line 87
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_JOIN:I
@@ -802,7 +802,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_MITER_LIMIT()I
-    .registers 2
+    .locals 1
 
     .line 88
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_MITER_LIMIT:I
@@ -811,7 +811,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_WIDTH()I
-    .registers 2
+    .locals 1
 
     .line 89
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_WIDTH:I
@@ -820,7 +820,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_END()I
-    .registers 2
+    .locals 1
 
     .line 90
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_END:I
@@ -829,7 +829,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_FILLTYPE()I
-    .registers 2
+    .locals 1
 
     .line 93
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_FILLTYPE:I
@@ -838,7 +838,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_OFFSET()I
-    .registers 2
+    .locals 1
 
     .line 91
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_OFFSET:I
@@ -847,7 +847,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_START()I
-    .registers 2
+    .locals 1
 
     .line 92
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_START:I
@@ -856,7 +856,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_TINT()I
-    .registers 2
+    .locals 1
 
     .line 40
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_TINT:I
@@ -865,7 +865,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_TINT_MODE()I
-    .registers 2
+    .locals 1
 
     .line 41
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_TINT_MODE:I
@@ -874,7 +874,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY()[I
-    .registers 2
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY:[I
@@ -883,7 +883,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_VIEWPORT_HEIGHT()I
-    .registers 2
+    .locals 1
 
     .line 42
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_VIEWPORT_HEIGHT:I
@@ -892,7 +892,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_VIEWPORT_WIDTH()I
-    .registers 2
+    .locals 1
 
     .line 43
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_VIEWPORT_WIDTH:I
@@ -901,7 +901,7 @@
 .end method
 
 .method public final getSTYLEABLE_VECTOR_DRAWABLE_WIDTH()I
-    .registers 2
+    .locals 1
 
     .line 44
     sget v0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorResources;->STYLEABLE_VECTOR_DRAWABLE_WIDTH:I

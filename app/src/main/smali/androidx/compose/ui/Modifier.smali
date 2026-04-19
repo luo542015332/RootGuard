@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/Modifier$Companion;->$$INSTANCE:Landroidx/compose/ui/Modifier$Companion;
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public static synthetic access$then$jd(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/Modifier;
     .param p1, "other"    # Landroidx/compose/ui/Modifier;
 
@@ -135,7 +135,7 @@
 .end method
 
 .method public then(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p1, "other"    # Landroidx/compose/ui/Modifier;
 
     const-string/jumbo v0, "other"
@@ -145,19 +145,19 @@
     .line 128
     sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     move-object v0, p0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     new-instance v0, Landroidx/compose/ui/CombinedModifier;
 
     invoke-direct {v0, p0, p1}, Landroidx/compose/ui/CombinedModifier;-><init>(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;)V
 
     check-cast v0, Landroidx/compose/ui/Modifier;
 
-    :goto_13
+    :goto_0
     return-object v0
 .end method

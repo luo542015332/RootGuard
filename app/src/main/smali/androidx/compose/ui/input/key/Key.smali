@@ -636,7 +636,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/input/key/Key$Companion;
 
@@ -3233,7 +3233,7 @@
 .end method
 
 .method private synthetic constructor <init>(J)V
-    .registers 3
+    .locals 0
     .param p1, "keyCode"    # J
 
     .line 34
@@ -3245,7 +3245,7 @@
 .end method
 
 .method public static final synthetic access$getA$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->A:J
@@ -3254,7 +3254,7 @@
 .end method
 
 .method public static final synthetic access$getAllApps$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->AllApps:J
@@ -3263,7 +3263,7 @@
 .end method
 
 .method public static final synthetic access$getAltLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->AltLeft:J
@@ -3272,7 +3272,7 @@
 .end method
 
 .method public static final synthetic access$getAltRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->AltRight:J
@@ -3281,7 +3281,7 @@
 .end method
 
 .method public static final synthetic access$getApostrophe$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Apostrophe:J
@@ -3290,7 +3290,7 @@
 .end method
 
 .method public static final synthetic access$getAppSwitch$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->AppSwitch:J
@@ -3299,7 +3299,7 @@
 .end method
 
 .method public static final synthetic access$getAssist$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Assist:J
@@ -3308,7 +3308,7 @@
 .end method
 
 .method public static final synthetic access$getAt$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->At:J
@@ -3317,7 +3317,7 @@
 .end method
 
 .method public static final synthetic access$getAvReceiverInput$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->AvReceiverInput:J
@@ -3326,7 +3326,7 @@
 .end method
 
 .method public static final synthetic access$getAvReceiverPower$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->AvReceiverPower:J
@@ -3335,7 +3335,7 @@
 .end method
 
 .method public static final synthetic access$getB$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->B:J
@@ -3344,7 +3344,7 @@
 .end method
 
 .method public static final synthetic access$getBack$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Back:J
@@ -3353,7 +3353,7 @@
 .end method
 
 .method public static final synthetic access$getBackslash$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Backslash:J
@@ -3362,7 +3362,7 @@
 .end method
 
 .method public static final synthetic access$getBackspace$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Backspace:J
@@ -3371,7 +3371,7 @@
 .end method
 
 .method public static final synthetic access$getBookmark$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Bookmark:J
@@ -3380,7 +3380,7 @@
 .end method
 
 .method public static final synthetic access$getBreak$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Break:J
@@ -3389,7 +3389,7 @@
 .end method
 
 .method public static final synthetic access$getBrightnessDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->BrightnessDown:J
@@ -3398,7 +3398,7 @@
 .end method
 
 .method public static final synthetic access$getBrightnessUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->BrightnessUp:J
@@ -3407,7 +3407,7 @@
 .end method
 
 .method public static final synthetic access$getBrowser$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Browser:J
@@ -3416,7 +3416,7 @@
 .end method
 
 .method public static final synthetic access$getButton1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button1:J
@@ -3425,7 +3425,7 @@
 .end method
 
 .method public static final synthetic access$getButton10$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button10:J
@@ -3434,7 +3434,7 @@
 .end method
 
 .method public static final synthetic access$getButton11$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button11:J
@@ -3443,7 +3443,7 @@
 .end method
 
 .method public static final synthetic access$getButton12$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button12:J
@@ -3452,7 +3452,7 @@
 .end method
 
 .method public static final synthetic access$getButton13$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button13:J
@@ -3461,7 +3461,7 @@
 .end method
 
 .method public static final synthetic access$getButton14$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button14:J
@@ -3470,7 +3470,7 @@
 .end method
 
 .method public static final synthetic access$getButton15$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button15:J
@@ -3479,7 +3479,7 @@
 .end method
 
 .method public static final synthetic access$getButton16$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button16:J
@@ -3488,7 +3488,7 @@
 .end method
 
 .method public static final synthetic access$getButton2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button2:J
@@ -3497,7 +3497,7 @@
 .end method
 
 .method public static final synthetic access$getButton3$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button3:J
@@ -3506,7 +3506,7 @@
 .end method
 
 .method public static final synthetic access$getButton4$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button4:J
@@ -3515,7 +3515,7 @@
 .end method
 
 .method public static final synthetic access$getButton5$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button5:J
@@ -3524,7 +3524,7 @@
 .end method
 
 .method public static final synthetic access$getButton6$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button6:J
@@ -3533,7 +3533,7 @@
 .end method
 
 .method public static final synthetic access$getButton7$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button7:J
@@ -3542,7 +3542,7 @@
 .end method
 
 .method public static final synthetic access$getButton8$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button8:J
@@ -3551,7 +3551,7 @@
 .end method
 
 .method public static final synthetic access$getButton9$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Button9:J
@@ -3560,7 +3560,7 @@
 .end method
 
 .method public static final synthetic access$getButtonA$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonA:J
@@ -3569,7 +3569,7 @@
 .end method
 
 .method public static final synthetic access$getButtonB$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonB:J
@@ -3578,7 +3578,7 @@
 .end method
 
 .method public static final synthetic access$getButtonC$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonC:J
@@ -3587,7 +3587,7 @@
 .end method
 
 .method public static final synthetic access$getButtonL1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonL1:J
@@ -3596,7 +3596,7 @@
 .end method
 
 .method public static final synthetic access$getButtonL2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonL2:J
@@ -3605,7 +3605,7 @@
 .end method
 
 .method public static final synthetic access$getButtonMode$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonMode:J
@@ -3614,7 +3614,7 @@
 .end method
 
 .method public static final synthetic access$getButtonR1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonR1:J
@@ -3623,7 +3623,7 @@
 .end method
 
 .method public static final synthetic access$getButtonR2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonR2:J
@@ -3632,7 +3632,7 @@
 .end method
 
 .method public static final synthetic access$getButtonSelect$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonSelect:J
@@ -3641,7 +3641,7 @@
 .end method
 
 .method public static final synthetic access$getButtonStart$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonStart:J
@@ -3650,7 +3650,7 @@
 .end method
 
 .method public static final synthetic access$getButtonThumbLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonThumbLeft:J
@@ -3659,7 +3659,7 @@
 .end method
 
 .method public static final synthetic access$getButtonThumbRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonThumbRight:J
@@ -3668,7 +3668,7 @@
 .end method
 
 .method public static final synthetic access$getButtonX$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonX:J
@@ -3677,7 +3677,7 @@
 .end method
 
 .method public static final synthetic access$getButtonY$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonY:J
@@ -3686,7 +3686,7 @@
 .end method
 
 .method public static final synthetic access$getButtonZ$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ButtonZ:J
@@ -3695,7 +3695,7 @@
 .end method
 
 .method public static final synthetic access$getC$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->C:J
@@ -3704,7 +3704,7 @@
 .end method
 
 .method public static final synthetic access$getCalculator$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Calculator:J
@@ -3713,7 +3713,7 @@
 .end method
 
 .method public static final synthetic access$getCalendar$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Calendar:J
@@ -3722,7 +3722,7 @@
 .end method
 
 .method public static final synthetic access$getCall$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Call:J
@@ -3731,7 +3731,7 @@
 .end method
 
 .method public static final synthetic access$getCamera$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Camera:J
@@ -3740,7 +3740,7 @@
 .end method
 
 .method public static final synthetic access$getCapsLock$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->CapsLock:J
@@ -3749,7 +3749,7 @@
 .end method
 
 .method public static final synthetic access$getCaptions$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Captions:J
@@ -3758,7 +3758,7 @@
 .end method
 
 .method public static final synthetic access$getChannelDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ChannelDown:J
@@ -3767,7 +3767,7 @@
 .end method
 
 .method public static final synthetic access$getChannelUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ChannelUp:J
@@ -3776,7 +3776,7 @@
 .end method
 
 .method public static final synthetic access$getClear$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Clear:J
@@ -3785,7 +3785,7 @@
 .end method
 
 .method public static final synthetic access$getComma$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Comma:J
@@ -3794,7 +3794,7 @@
 .end method
 
 .method public static final synthetic access$getContacts$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Contacts:J
@@ -3803,7 +3803,7 @@
 .end method
 
 .method public static final synthetic access$getCopy$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Copy:J
@@ -3812,7 +3812,7 @@
 .end method
 
 .method public static final synthetic access$getCtrlLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->CtrlLeft:J
@@ -3821,7 +3821,7 @@
 .end method
 
 .method public static final synthetic access$getCtrlRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->CtrlRight:J
@@ -3830,7 +3830,7 @@
 .end method
 
 .method public static final synthetic access$getCut$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Cut:J
@@ -3839,7 +3839,7 @@
 .end method
 
 .method public static final synthetic access$getD$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->D:J
@@ -3848,7 +3848,7 @@
 .end method
 
 .method public static final synthetic access$getDelete$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Delete:J
@@ -3857,7 +3857,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionCenter$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionCenter:J
@@ -3866,7 +3866,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionDown:J
@@ -3875,7 +3875,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionDownLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionDownLeft:J
@@ -3884,7 +3884,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionDownRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionDownRight:J
@@ -3893,7 +3893,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionLeft:J
@@ -3902,7 +3902,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionRight:J
@@ -3911,7 +3911,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionUp:J
@@ -3920,7 +3920,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionUpLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionUpLeft:J
@@ -3929,7 +3929,7 @@
 .end method
 
 .method public static final synthetic access$getDirectionUpRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->DirectionUpRight:J
@@ -3938,7 +3938,7 @@
 .end method
 
 .method public static final synthetic access$getDvr$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Dvr:J
@@ -3947,7 +3947,7 @@
 .end method
 
 .method public static final synthetic access$getE$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->E:J
@@ -3956,7 +3956,7 @@
 .end method
 
 .method public static final synthetic access$getEight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Eight:J
@@ -3965,7 +3965,7 @@
 .end method
 
 .method public static final synthetic access$getEisu$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Eisu:J
@@ -3974,7 +3974,7 @@
 .end method
 
 .method public static final synthetic access$getEndCall$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->EndCall:J
@@ -3983,7 +3983,7 @@
 .end method
 
 .method public static final synthetic access$getEnter$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Enter:J
@@ -3992,7 +3992,7 @@
 .end method
 
 .method public static final synthetic access$getEnvelope$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Envelope:J
@@ -4001,7 +4001,7 @@
 .end method
 
 .method public static final synthetic access$getEquals$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Equals:J
@@ -4010,7 +4010,7 @@
 .end method
 
 .method public static final synthetic access$getEscape$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Escape:J
@@ -4019,7 +4019,7 @@
 .end method
 
 .method public static final synthetic access$getF$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F:J
@@ -4028,7 +4028,7 @@
 .end method
 
 .method public static final synthetic access$getF1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F1:J
@@ -4037,7 +4037,7 @@
 .end method
 
 .method public static final synthetic access$getF10$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F10:J
@@ -4046,7 +4046,7 @@
 .end method
 
 .method public static final synthetic access$getF11$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F11:J
@@ -4055,7 +4055,7 @@
 .end method
 
 .method public static final synthetic access$getF12$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F12:J
@@ -4064,7 +4064,7 @@
 .end method
 
 .method public static final synthetic access$getF2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F2:J
@@ -4073,7 +4073,7 @@
 .end method
 
 .method public static final synthetic access$getF3$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F3:J
@@ -4082,7 +4082,7 @@
 .end method
 
 .method public static final synthetic access$getF4$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F4:J
@@ -4091,7 +4091,7 @@
 .end method
 
 .method public static final synthetic access$getF5$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F5:J
@@ -4100,7 +4100,7 @@
 .end method
 
 .method public static final synthetic access$getF6$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F6:J
@@ -4109,7 +4109,7 @@
 .end method
 
 .method public static final synthetic access$getF7$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F7:J
@@ -4118,7 +4118,7 @@
 .end method
 
 .method public static final synthetic access$getF8$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F8:J
@@ -4127,7 +4127,7 @@
 .end method
 
 .method public static final synthetic access$getF9$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->F9:J
@@ -4136,7 +4136,7 @@
 .end method
 
 .method public static final synthetic access$getFive$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Five:J
@@ -4145,7 +4145,7 @@
 .end method
 
 .method public static final synthetic access$getFocus$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Focus:J
@@ -4154,7 +4154,7 @@
 .end method
 
 .method public static final synthetic access$getForward$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Forward:J
@@ -4163,7 +4163,7 @@
 .end method
 
 .method public static final synthetic access$getFour$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Four:J
@@ -4172,7 +4172,7 @@
 .end method
 
 .method public static final synthetic access$getFunction$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Function:J
@@ -4181,7 +4181,7 @@
 .end method
 
 .method public static final synthetic access$getG$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->G:J
@@ -4190,7 +4190,7 @@
 .end method
 
 .method public static final synthetic access$getGrave$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Grave:J
@@ -4199,7 +4199,7 @@
 .end method
 
 .method public static final synthetic access$getGuide$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Guide:J
@@ -4208,7 +4208,7 @@
 .end method
 
 .method public static final synthetic access$getH$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->H:J
@@ -4217,7 +4217,7 @@
 .end method
 
 .method public static final synthetic access$getHeadsetHook$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->HeadsetHook:J
@@ -4226,7 +4226,7 @@
 .end method
 
 .method public static final synthetic access$getHelp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Help:J
@@ -4235,7 +4235,7 @@
 .end method
 
 .method public static final synthetic access$getHenkan$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Henkan:J
@@ -4244,7 +4244,7 @@
 .end method
 
 .method public static final synthetic access$getHome$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Home:J
@@ -4253,7 +4253,7 @@
 .end method
 
 .method public static final synthetic access$getI$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->I:J
@@ -4262,7 +4262,7 @@
 .end method
 
 .method public static final synthetic access$getInfo$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Info:J
@@ -4271,7 +4271,7 @@
 .end method
 
 .method public static final synthetic access$getInsert$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Insert:J
@@ -4280,7 +4280,7 @@
 .end method
 
 .method public static final synthetic access$getJ$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->J:J
@@ -4289,7 +4289,7 @@
 .end method
 
 .method public static final synthetic access$getK$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->K:J
@@ -4298,7 +4298,7 @@
 .end method
 
 .method public static final synthetic access$getKana$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Kana:J
@@ -4307,7 +4307,7 @@
 .end method
 
 .method public static final synthetic access$getKatakanaHiragana$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->KatakanaHiragana:J
@@ -4316,7 +4316,7 @@
 .end method
 
 .method public static final synthetic access$getL$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->L:J
@@ -4325,7 +4325,7 @@
 .end method
 
 .method public static final synthetic access$getLanguageSwitch$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->LanguageSwitch:J
@@ -4334,7 +4334,7 @@
 .end method
 
 .method public static final synthetic access$getLastChannel$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->LastChannel:J
@@ -4343,7 +4343,7 @@
 .end method
 
 .method public static final synthetic access$getLeftBracket$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->LeftBracket:J
@@ -4352,7 +4352,7 @@
 .end method
 
 .method public static final synthetic access$getM$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->M:J
@@ -4361,7 +4361,7 @@
 .end method
 
 .method public static final synthetic access$getMannerMode$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MannerMode:J
@@ -4370,7 +4370,7 @@
 .end method
 
 .method public static final synthetic access$getMediaAudioTrack$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaAudioTrack:J
@@ -4379,7 +4379,7 @@
 .end method
 
 .method public static final synthetic access$getMediaClose$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaClose:J
@@ -4388,7 +4388,7 @@
 .end method
 
 .method public static final synthetic access$getMediaEject$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaEject:J
@@ -4397,7 +4397,7 @@
 .end method
 
 .method public static final synthetic access$getMediaFastForward$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaFastForward:J
@@ -4406,7 +4406,7 @@
 .end method
 
 .method public static final synthetic access$getMediaNext$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaNext:J
@@ -4415,7 +4415,7 @@
 .end method
 
 .method public static final synthetic access$getMediaPause$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaPause:J
@@ -4424,7 +4424,7 @@
 .end method
 
 .method public static final synthetic access$getMediaPlay$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaPlay:J
@@ -4433,7 +4433,7 @@
 .end method
 
 .method public static final synthetic access$getMediaPlayPause$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaPlayPause:J
@@ -4442,7 +4442,7 @@
 .end method
 
 .method public static final synthetic access$getMediaPrevious$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaPrevious:J
@@ -4451,7 +4451,7 @@
 .end method
 
 .method public static final synthetic access$getMediaRecord$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaRecord:J
@@ -4460,7 +4460,7 @@
 .end method
 
 .method public static final synthetic access$getMediaRewind$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaRewind:J
@@ -4469,7 +4469,7 @@
 .end method
 
 .method public static final synthetic access$getMediaSkipBackward$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaSkipBackward:J
@@ -4478,7 +4478,7 @@
 .end method
 
 .method public static final synthetic access$getMediaSkipForward$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaSkipForward:J
@@ -4487,7 +4487,7 @@
 .end method
 
 .method public static final synthetic access$getMediaStepBackward$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaStepBackward:J
@@ -4496,7 +4496,7 @@
 .end method
 
 .method public static final synthetic access$getMediaStepForward$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaStepForward:J
@@ -4505,7 +4505,7 @@
 .end method
 
 .method public static final synthetic access$getMediaStop$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaStop:J
@@ -4514,7 +4514,7 @@
 .end method
 
 .method public static final synthetic access$getMediaTopMenu$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MediaTopMenu:J
@@ -4523,7 +4523,7 @@
 .end method
 
 .method public static final synthetic access$getMenu$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Menu:J
@@ -4532,7 +4532,7 @@
 .end method
 
 .method public static final synthetic access$getMetaLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MetaLeft:J
@@ -4541,7 +4541,7 @@
 .end method
 
 .method public static final synthetic access$getMetaRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MetaRight:J
@@ -4550,7 +4550,7 @@
 .end method
 
 .method public static final synthetic access$getMicrophoneMute$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MicrophoneMute:J
@@ -4559,7 +4559,7 @@
 .end method
 
 .method public static final synthetic access$getMinus$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Minus:J
@@ -4568,7 +4568,7 @@
 .end method
 
 .method public static final synthetic access$getMoveEnd$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MoveEnd:J
@@ -4577,7 +4577,7 @@
 .end method
 
 .method public static final synthetic access$getMoveHome$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->MoveHome:J
@@ -4586,7 +4586,7 @@
 .end method
 
 .method public static final synthetic access$getMuhenkan$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Muhenkan:J
@@ -4595,7 +4595,7 @@
 .end method
 
 .method public static final synthetic access$getMultiply$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Multiply:J
@@ -4604,7 +4604,7 @@
 .end method
 
 .method public static final synthetic access$getMusic$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Music:J
@@ -4613,7 +4613,7 @@
 .end method
 
 .method public static final synthetic access$getN$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->N:J
@@ -4622,7 +4622,7 @@
 .end method
 
 .method public static final synthetic access$getNavigateIn$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NavigateIn:J
@@ -4631,7 +4631,7 @@
 .end method
 
 .method public static final synthetic access$getNavigateNext$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NavigateNext:J
@@ -4640,7 +4640,7 @@
 .end method
 
 .method public static final synthetic access$getNavigateOut$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NavigateOut:J
@@ -4649,7 +4649,7 @@
 .end method
 
 .method public static final synthetic access$getNavigatePrevious$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NavigatePrevious:J
@@ -4658,7 +4658,7 @@
 .end method
 
 .method public static final synthetic access$getNine$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Nine:J
@@ -4667,7 +4667,7 @@
 .end method
 
 .method public static final synthetic access$getNotification$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Notification:J
@@ -4676,7 +4676,7 @@
 .end method
 
 .method public static final synthetic access$getNumLock$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumLock:J
@@ -4685,7 +4685,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad0$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad0:J
@@ -4694,7 +4694,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad1:J
@@ -4703,7 +4703,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad2:J
@@ -4712,7 +4712,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad3$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad3:J
@@ -4721,7 +4721,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad4$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad4:J
@@ -4730,7 +4730,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad5$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad5:J
@@ -4739,7 +4739,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad6$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad6:J
@@ -4748,7 +4748,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad7$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad7:J
@@ -4757,7 +4757,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad8$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad8:J
@@ -4766,7 +4766,7 @@
 .end method
 
 .method public static final synthetic access$getNumPad9$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPad9:J
@@ -4775,7 +4775,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadAdd$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadAdd:J
@@ -4784,7 +4784,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadComma$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadComma:J
@@ -4793,7 +4793,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadDivide$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadDivide:J
@@ -4802,7 +4802,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadDot$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadDot:J
@@ -4811,7 +4811,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadEnter$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadEnter:J
@@ -4820,7 +4820,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadEquals$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadEquals:J
@@ -4829,7 +4829,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadLeftParenthesis$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadLeftParenthesis:J
@@ -4838,7 +4838,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadMultiply$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadMultiply:J
@@ -4847,7 +4847,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadRightParenthesis$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadRightParenthesis:J
@@ -4856,7 +4856,7 @@
 .end method
 
 .method public static final synthetic access$getNumPadSubtract$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->NumPadSubtract:J
@@ -4865,7 +4865,7 @@
 .end method
 
 .method public static final synthetic access$getNumber$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Number:J
@@ -4874,7 +4874,7 @@
 .end method
 
 .method public static final synthetic access$getO$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->O:J
@@ -4883,7 +4883,7 @@
 .end method
 
 .method public static final synthetic access$getOne$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->One:J
@@ -4892,7 +4892,7 @@
 .end method
 
 .method public static final synthetic access$getP$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->P:J
@@ -4901,7 +4901,7 @@
 .end method
 
 .method public static final synthetic access$getPageDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->PageDown:J
@@ -4910,7 +4910,7 @@
 .end method
 
 .method public static final synthetic access$getPageUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->PageUp:J
@@ -4919,7 +4919,7 @@
 .end method
 
 .method public static final synthetic access$getPairing$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Pairing:J
@@ -4928,7 +4928,7 @@
 .end method
 
 .method public static final synthetic access$getPaste$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Paste:J
@@ -4937,7 +4937,7 @@
 .end method
 
 .method public static final synthetic access$getPeriod$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Period:J
@@ -4946,7 +4946,7 @@
 .end method
 
 .method public static final synthetic access$getPictureSymbols$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->PictureSymbols:J
@@ -4955,7 +4955,7 @@
 .end method
 
 .method public static final synthetic access$getPlus$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Plus:J
@@ -4964,7 +4964,7 @@
 .end method
 
 .method public static final synthetic access$getPound$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Pound:J
@@ -4973,7 +4973,7 @@
 .end method
 
 .method public static final synthetic access$getPower$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Power:J
@@ -4982,7 +4982,7 @@
 .end method
 
 .method public static final synthetic access$getPrintScreen$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->PrintScreen:J
@@ -4991,7 +4991,7 @@
 .end method
 
 .method public static final synthetic access$getProfileSwitch$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ProfileSwitch:J
@@ -5000,7 +5000,7 @@
 .end method
 
 .method public static final synthetic access$getProgramBlue$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ProgramBlue:J
@@ -5009,7 +5009,7 @@
 .end method
 
 .method public static final synthetic access$getProgramGreen$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ProgramGreen:J
@@ -5018,7 +5018,7 @@
 .end method
 
 .method public static final synthetic access$getProgramRed$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ProgramRed:J
@@ -5027,7 +5027,7 @@
 .end method
 
 .method public static final synthetic access$getProgramYellow$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ProgramYellow:J
@@ -5036,7 +5036,7 @@
 .end method
 
 .method public static final synthetic access$getQ$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Q:J
@@ -5045,7 +5045,7 @@
 .end method
 
 .method public static final synthetic access$getR$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->R:J
@@ -5054,7 +5054,7 @@
 .end method
 
 .method public static final synthetic access$getRefresh$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Refresh:J
@@ -5063,7 +5063,7 @@
 .end method
 
 .method public static final synthetic access$getRightBracket$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->RightBracket:J
@@ -5072,7 +5072,7 @@
 .end method
 
 .method public static final synthetic access$getRo$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Ro:J
@@ -5081,7 +5081,7 @@
 .end method
 
 .method public static final synthetic access$getS$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->S:J
@@ -5090,7 +5090,7 @@
 .end method
 
 .method public static final synthetic access$getScrollLock$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ScrollLock:J
@@ -5099,7 +5099,7 @@
 .end method
 
 .method public static final synthetic access$getSearch$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Search:J
@@ -5108,7 +5108,7 @@
 .end method
 
 .method public static final synthetic access$getSemicolon$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Semicolon:J
@@ -5117,7 +5117,7 @@
 .end method
 
 .method public static final synthetic access$getSetTopBoxInput$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SetTopBoxInput:J
@@ -5126,7 +5126,7 @@
 .end method
 
 .method public static final synthetic access$getSetTopBoxPower$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SetTopBoxPower:J
@@ -5135,7 +5135,7 @@
 .end method
 
 .method public static final synthetic access$getSettings$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Settings:J
@@ -5144,7 +5144,7 @@
 .end method
 
 .method public static final synthetic access$getSeven$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Seven:J
@@ -5153,7 +5153,7 @@
 .end method
 
 .method public static final synthetic access$getShiftLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ShiftLeft:J
@@ -5162,7 +5162,7 @@
 .end method
 
 .method public static final synthetic access$getShiftRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ShiftRight:J
@@ -5171,7 +5171,7 @@
 .end method
 
 .method public static final synthetic access$getSix$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Six:J
@@ -5180,7 +5180,7 @@
 .end method
 
 .method public static final synthetic access$getSlash$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Slash:J
@@ -5189,7 +5189,7 @@
 .end method
 
 .method public static final synthetic access$getSleep$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Sleep:J
@@ -5198,7 +5198,7 @@
 .end method
 
 .method public static final synthetic access$getSoftLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SoftLeft:J
@@ -5207,7 +5207,7 @@
 .end method
 
 .method public static final synthetic access$getSoftRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SoftRight:J
@@ -5216,7 +5216,7 @@
 .end method
 
 .method public static final synthetic access$getSoftSleep$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SoftSleep:J
@@ -5225,7 +5225,7 @@
 .end method
 
 .method public static final synthetic access$getSpacebar$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Spacebar:J
@@ -5234,7 +5234,7 @@
 .end method
 
 .method public static final synthetic access$getStem1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Stem1:J
@@ -5243,7 +5243,7 @@
 .end method
 
 .method public static final synthetic access$getStem2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Stem2:J
@@ -5252,7 +5252,7 @@
 .end method
 
 .method public static final synthetic access$getStem3$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Stem3:J
@@ -5261,7 +5261,7 @@
 .end method
 
 .method public static final synthetic access$getStemPrimary$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->StemPrimary:J
@@ -5270,7 +5270,7 @@
 .end method
 
 .method public static final synthetic access$getSwitchCharset$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SwitchCharset:J
@@ -5279,7 +5279,7 @@
 .end method
 
 .method public static final synthetic access$getSymbol$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Symbol:J
@@ -5288,7 +5288,7 @@
 .end method
 
 .method public static final synthetic access$getSystemNavigationDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SystemNavigationDown:J
@@ -5297,7 +5297,7 @@
 .end method
 
 .method public static final synthetic access$getSystemNavigationLeft$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SystemNavigationLeft:J
@@ -5306,7 +5306,7 @@
 .end method
 
 .method public static final synthetic access$getSystemNavigationRight$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SystemNavigationRight:J
@@ -5315,7 +5315,7 @@
 .end method
 
 .method public static final synthetic access$getSystemNavigationUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->SystemNavigationUp:J
@@ -5324,7 +5324,7 @@
 .end method
 
 .method public static final synthetic access$getT$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->T:J
@@ -5333,7 +5333,7 @@
 .end method
 
 .method public static final synthetic access$getTab$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Tab:J
@@ -5342,7 +5342,7 @@
 .end method
 
 .method public static final synthetic access$getThree$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Three:J
@@ -5351,7 +5351,7 @@
 .end method
 
 .method public static final synthetic access$getThumbsDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ThumbsDown:J
@@ -5360,7 +5360,7 @@
 .end method
 
 .method public static final synthetic access$getThumbsUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ThumbsUp:J
@@ -5369,7 +5369,7 @@
 .end method
 
 .method public static final synthetic access$getToggle2D3D$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Toggle2D3D:J
@@ -5378,7 +5378,7 @@
 .end method
 
 .method public static final synthetic access$getTv$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Tv:J
@@ -5387,7 +5387,7 @@
 .end method
 
 .method public static final synthetic access$getTvAntennaCable$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvAntennaCable:J
@@ -5396,7 +5396,7 @@
 .end method
 
 .method public static final synthetic access$getTvAudioDescription$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvAudioDescription:J
@@ -5405,7 +5405,7 @@
 .end method
 
 .method public static final synthetic access$getTvAudioDescriptionMixingVolumeDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvAudioDescriptionMixingVolumeDown:J
@@ -5414,7 +5414,7 @@
 .end method
 
 .method public static final synthetic access$getTvAudioDescriptionMixingVolumeUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvAudioDescriptionMixingVolumeUp:J
@@ -5423,7 +5423,7 @@
 .end method
 
 .method public static final synthetic access$getTvContentsMenu$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvContentsMenu:J
@@ -5432,7 +5432,7 @@
 .end method
 
 .method public static final synthetic access$getTvDataService$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvDataService:J
@@ -5441,7 +5441,7 @@
 .end method
 
 .method public static final synthetic access$getTvInput$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInput:J
@@ -5450,7 +5450,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputComponent1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputComponent1:J
@@ -5459,7 +5459,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputComponent2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputComponent2:J
@@ -5468,7 +5468,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputComposite1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputComposite1:J
@@ -5477,7 +5477,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputComposite2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputComposite2:J
@@ -5486,7 +5486,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputHdmi1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputHdmi1:J
@@ -5495,7 +5495,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputHdmi2$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputHdmi2:J
@@ -5504,7 +5504,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputHdmi3$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputHdmi3:J
@@ -5513,7 +5513,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputHdmi4$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputHdmi4:J
@@ -5522,7 +5522,7 @@
 .end method
 
 .method public static final synthetic access$getTvInputVga1$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvInputVga1:J
@@ -5531,7 +5531,7 @@
 .end method
 
 .method public static final synthetic access$getTvMediaContextMenu$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvMediaContextMenu:J
@@ -5540,7 +5540,7 @@
 .end method
 
 .method public static final synthetic access$getTvNetwork$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvNetwork:J
@@ -5549,7 +5549,7 @@
 .end method
 
 .method public static final synthetic access$getTvNumberEntry$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvNumberEntry:J
@@ -5558,7 +5558,7 @@
 .end method
 
 .method public static final synthetic access$getTvPower$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvPower:J
@@ -5567,7 +5567,7 @@
 .end method
 
 .method public static final synthetic access$getTvRadioService$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvRadioService:J
@@ -5576,7 +5576,7 @@
 .end method
 
 .method public static final synthetic access$getTvSatellite$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvSatellite:J
@@ -5585,7 +5585,7 @@
 .end method
 
 .method public static final synthetic access$getTvSatelliteBs$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvSatelliteBs:J
@@ -5594,7 +5594,7 @@
 .end method
 
 .method public static final synthetic access$getTvSatelliteCs$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvSatelliteCs:J
@@ -5603,7 +5603,7 @@
 .end method
 
 .method public static final synthetic access$getTvSatelliteService$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvSatelliteService:J
@@ -5612,7 +5612,7 @@
 .end method
 
 .method public static final synthetic access$getTvTeletext$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvTeletext:J
@@ -5621,7 +5621,7 @@
 .end method
 
 .method public static final synthetic access$getTvTerrestrialAnalog$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvTerrestrialAnalog:J
@@ -5630,7 +5630,7 @@
 .end method
 
 .method public static final synthetic access$getTvTerrestrialDigital$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvTerrestrialDigital:J
@@ -5639,7 +5639,7 @@
 .end method
 
 .method public static final synthetic access$getTvTimerProgramming$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvTimerProgramming:J
@@ -5648,7 +5648,7 @@
 .end method
 
 .method public static final synthetic access$getTvZoomMode$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->TvZoomMode:J
@@ -5657,7 +5657,7 @@
 .end method
 
 .method public static final synthetic access$getTwo$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Two:J
@@ -5666,7 +5666,7 @@
 .end method
 
 .method public static final synthetic access$getU$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->U:J
@@ -5675,7 +5675,7 @@
 .end method
 
 .method public static final synthetic access$getUnknown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Unknown:J
@@ -5684,7 +5684,7 @@
 .end method
 
 .method public static final synthetic access$getV$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->V:J
@@ -5693,7 +5693,7 @@
 .end method
 
 .method public static final synthetic access$getVoiceAssist$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->VoiceAssist:J
@@ -5702,7 +5702,7 @@
 .end method
 
 .method public static final synthetic access$getVolumeDown$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->VolumeDown:J
@@ -5711,7 +5711,7 @@
 .end method
 
 .method public static final synthetic access$getVolumeMute$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->VolumeMute:J
@@ -5720,7 +5720,7 @@
 .end method
 
 .method public static final synthetic access$getVolumeUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->VolumeUp:J
@@ -5729,7 +5729,7 @@
 .end method
 
 .method public static final synthetic access$getW$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->W:J
@@ -5738,7 +5738,7 @@
 .end method
 
 .method public static final synthetic access$getWakeUp$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->WakeUp:J
@@ -5747,7 +5747,7 @@
 .end method
 
 .method public static final synthetic access$getWindow$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Window:J
@@ -5756,7 +5756,7 @@
 .end method
 
 .method public static final synthetic access$getX$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->X:J
@@ -5765,7 +5765,7 @@
 .end method
 
 .method public static final synthetic access$getY$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Y:J
@@ -5774,7 +5774,7 @@
 .end method
 
 .method public static final synthetic access$getYen$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Yen:J
@@ -5783,7 +5783,7 @@
 .end method
 
 .method public static final synthetic access$getZ$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Z:J
@@ -5792,7 +5792,7 @@
 .end method
 
 .method public static final synthetic access$getZenkakuHankaru$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ZenkakuHankaru:J
@@ -5801,7 +5801,7 @@
 .end method
 
 .method public static final synthetic access$getZero$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->Zero:J
@@ -5810,7 +5810,7 @@
 .end method
 
 .method public static final synthetic access$getZoomIn$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ZoomIn:J
@@ -5819,7 +5819,7 @@
 .end method
 
 .method public static final synthetic access$getZoomOut$cp()J
-    .registers 2
+    .locals 2
 
     .line 33
     sget-wide v0, Landroidx/compose/ui/input/key/Key;->ZoomOut:J
@@ -5828,7 +5828,7 @@
 .end method
 
 .method public static final synthetic box-impl(J)Landroidx/compose/ui/input/key/Key;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/input/key/Key;
 
@@ -5838,23 +5838,23 @@
 .end method
 
 .method public static constructor-impl(J)J
-    .registers 2
+    .locals 0
 
     return-wide p0
 .end method
 
 .method public static equals-impl(JLjava/lang/Object;)Z
-    .registers 7
+    .locals 4
 
     instance-of v0, p2, Landroidx/compose/ui/input/key/Key;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p2
 
     check-cast v0, Landroidx/compose/ui/input/key/Key;
@@ -5865,36 +5865,36 @@
 
     cmp-long v0, p0, v2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     return v1
 
-    :cond_12
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(JJ)Z
-    .registers 5
+    .locals 1
 
     cmp-long v0, p0, p2
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(J)I
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Ljava/lang/Long;->hashCode(J)I
 
@@ -5904,7 +5904,7 @@
 .end method
 
 .method public static toString-impl(J)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # J
 
     .line 1412
@@ -5932,7 +5932,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/key/Key;->keyCode:J
 
@@ -5944,7 +5944,7 @@
 .end method
 
 .method public final getKeyCode()J
-    .registers 3
+    .locals 2
 
     .line 34
     iget-wide v0, p0, Landroidx/compose/ui/input/key/Key;->keyCode:J
@@ -5953,7 +5953,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/key/Key;->keyCode:J
 
@@ -5965,7 +5965,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1412
     iget-wide v0, p0, Landroidx/compose/ui/input/key/Key;->keyCode:J
@@ -5978,7 +5978,7 @@
 .end method
 
 .method public final synthetic unbox-impl()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/key/Key;->keyCode:J
 

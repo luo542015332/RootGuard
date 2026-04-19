@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidComposeViewVerificationHelperMethodsN;
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1886
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final setPointerIcon(Landroid/view/View;Landroidx/compose/ui/input/pointer/PointerIcon;)V
-    .registers 5
+    .locals 2
     .param p1, "view"    # Landroid/view/View;
     .param p2, "icon"    # Landroidx/compose/ui/input/pointer/PointerIcon;
 
@@ -73,7 +73,7 @@
     .line 1892
     instance-of v0, p2, Landroidx/compose/ui/input/pointer/AndroidPointerIcon;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 1893
     move-object v0, p2
@@ -84,13 +84,13 @@
 
     move-result-object v0
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 1895
-    :cond_13
+    :cond_0
     instance-of v0, p2, Landroidx/compose/ui/input/pointer/AndroidPointerIconType;
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 1896
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -113,10 +113,10 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 1900
-    :cond_2d
+    :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -136,7 +136,7 @@
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1891
-    :goto_3e
+    :goto_0
     nop
 
     .line 1905
@@ -149,12 +149,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_4c
+    if-nez v1, :cond_2
 
     .line 1906
     invoke-virtual {p1, v0}, Landroid/view/View;->setPointerIcon(Landroid/view/PointerIcon;)V
 
     .line 1908
-    :cond_4c
+    :cond_2
     return-void
 .end method

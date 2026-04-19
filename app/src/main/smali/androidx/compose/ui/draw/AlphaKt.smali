@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final alpha(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
-    .registers 26
+    .locals 24
     .param p0, "$this$alpha"    # Landroidx/compose/ui/Modifier;
     .param p1, "alpha"    # F
 
@@ -41,17 +41,17 @@
 
     cmpg-float v0, p1, v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
-    if-nez v0, :cond_35
+    :goto_0
+    if-nez v0, :cond_1
 
     const/4 v2, 0x0
 
@@ -97,11 +97,11 @@
 
     move-result-object v4
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_35
+    :cond_1
     move-object/from16 v4, p0
 
-    :goto_37
+    :goto_1
     return-object v4
 .end method

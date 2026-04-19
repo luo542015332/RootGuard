@@ -49,7 +49,7 @@
 
 # direct methods
 .method public static final compositionLocalMapOf([Landroidx/compose/runtime/ProvidedValue;Landroidx/compose/runtime/PersistentCompositionLocalMap;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 20
+    .locals 16
     .param p0, "values"    # [Landroidx/compose/runtime/ProvidedValue;
     .param p1, "parentScope"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -92,7 +92,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_0
 
     .line 95
     const/4 v4, -0x1
@@ -103,14 +103,14 @@
 
     invoke-static {v3, v6, v4, v5}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 0
-    :cond_2d
+    :cond_0
     move/from16 v6, p3
 
     .line 96
-    :goto_2f
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/internal/PersistentCompositionLocalMapKt;->persistentCompositionLocalHashMapOf()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
 
     move-result-object v3
@@ -143,8 +143,8 @@
 
     const/4 v11, 0x0
 
-    :goto_41
-    if-ge v11, v10, :cond_83
+    :goto_1
+    if-ge v11, v10, :cond_3
 
     aget-object v12, v0, v11
 
@@ -162,7 +162,7 @@
 
     move-result v13
 
-    if-nez v13, :cond_60
+    if-nez v13, :cond_1
 
     invoke-virtual {v12}, Landroidx/compose/runtime/ProvidedValue;->getCompositionLocal()Landroidx/compose/runtime/CompositionLocal;
 
@@ -172,10 +172,10 @@
 
     move-result v13
 
-    if-nez v13, :cond_7b
+    if-nez v13, :cond_2
 
     .line 101
-    :cond_60
+    :cond_1
     invoke-virtual {v12}, Landroidx/compose/runtime/ProvidedValue;->getCompositionLocal()Landroidx/compose/runtime/CompositionLocal;
 
     move-result-object v13
@@ -202,7 +202,7 @@
     .line 101
     invoke-interface {v8, v13, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_7b
+    :cond_2
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     .line 98
@@ -211,10 +211,10 @@
 
     move-object/from16 v0, p0
 
-    goto :goto_41
+    goto :goto_1
 
     .line 105
-    :cond_83
+    :cond_3
     nop
 
     .line 107
@@ -231,18 +231,18 @@
 
     move-result v4
 
-    if-eqz v4, :cond_91
+    if-eqz v4, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_91
+    :cond_4
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method public static final contains(Landroidx/compose/runtime/PersistentCompositionLocalMap;Landroidx/compose/runtime/CompositionLocal;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this$contains"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
     .param p1, "key"    # Landroidx/compose/runtime/CompositionLocal;
     .annotation system Ldalvik/annotation/Signature;
@@ -273,7 +273,7 @@
 .end method
 
 .method public static final getValueOf(Landroidx/compose/runtime/PersistentCompositionLocalMap;Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$this$getValueOf"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
     .param p1, "key"    # Landroidx/compose/runtime/CompositionLocal;
     .annotation system Ldalvik/annotation/Signature;
@@ -302,23 +302,23 @@
 
     check-cast v0, Landroidx/compose/runtime/State;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/runtime/State;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_19
+    :goto_0
     return-object v0
 .end method
 
 .method public static final mutate(Landroidx/compose/runtime/PersistentCompositionLocalMap;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 4
+    .locals 2
     .param p0, "$this$mutate"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
     .param p1, "mutator"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -366,7 +366,7 @@
 .end method
 
 .method public static final read(Landroidx/compose/runtime/PersistentCompositionLocalMap;Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$this$read"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
     .param p1, "key"    # Landroidx/compose/runtime/CompositionLocal;
     .annotation system Ldalvik/annotation/Signature;
@@ -393,17 +393,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 86
     invoke-static {p0, p1}, Landroidx/compose/runtime/CompositionLocalMapKt;->getValueOf(Landroidx/compose/runtime/PersistentCompositionLocalMap;Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 88
-    :cond_16
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/runtime/CompositionLocal;->getDefaultValueHolder$runtime_release()Landroidx/compose/runtime/LazyValueHolder;
 
     move-result-object v0
@@ -413,6 +413,6 @@
     move-result-object v0
 
     .line 89
-    :goto_1e
+    :goto_0
     return-object v0
 .end method

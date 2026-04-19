@@ -41,7 +41,7 @@
 
 # direct methods
 .method public static final inset(Landroidx/compose/ui/graphics/drawscope/DrawTransform;F)V
-    .registers 5
+    .locals 3
     .param p0, "$this$inset"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .param p1, "inset"    # F
 
@@ -69,7 +69,7 @@
 .end method
 
 .method public static final inset(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FF)V
-    .registers 4
+    .locals 1
     .param p0, "$this$inset"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .param p1, "horizontal"    # F
     .param p2, "vertical"    # F
@@ -88,7 +88,7 @@
 .end method
 
 .method public static synthetic inset$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFILjava/lang/Object;)V
-    .registers 5
+    .locals 0
     .param p0, "$this$inset_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .param p1, "horizontal"    # F
     .param p2, "vertical"    # F
@@ -96,18 +96,18 @@
     .line 36
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_1
 
     const/4 p2, 0x0
 
-    :cond_a
+    :cond_1
     const-string p3, "<this>"
 
     invoke-static {p0, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -122,7 +122,7 @@
 .end method
 
 .method public static final rotateRad-0AR0LA0(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FJ)V
-    .registers 6
+    .locals 2
     .param p0, "$this$rotateRad_u2d0AR0LA0"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .param p1, "radians"    # F
     .param p2, "pivot"    # J
@@ -145,7 +145,7 @@
 .end method
 
 .method public static synthetic rotateRad-0AR0LA0$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FJILjava/lang/Object;)V
-    .registers 6
+    .locals 0
     .param p0, "$this$rotateRad_u2d0AR0LA0_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .param p1, "radians"    # F
     .param p2, "pivot"    # J
@@ -153,7 +153,7 @@
     .line 60
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_8
+    if-eqz p4, :cond_0
 
     .line 62
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getCenter-F1C5BW0()J
@@ -161,7 +161,7 @@
     move-result-wide p2
 
     .line 60
-    :cond_8
+    :cond_0
     const-string p4, "$this$rotateRad"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -180,7 +180,7 @@
 .end method
 
 .method public static final scale-0AR0LA0(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FJ)V
-    .registers 5
+    .locals 1
     .param p0, "$this$scale_u2d0AR0LA0"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .param p1, "scale"    # F
     .param p2, "pivot"    # J
@@ -199,7 +199,7 @@
 .end method
 
 .method public static synthetic scale-0AR0LA0$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FJILjava/lang/Object;)V
-    .registers 6
+    .locals 0
     .param p0, "$this$scale_u2d0AR0LA0_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .param p1, "scale"    # F
     .param p2, "pivot"    # J
@@ -207,13 +207,13 @@
     .line 75
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_8
+    if-eqz p4, :cond_0
 
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getCenter-F1C5BW0()J
 
     move-result-wide p2
 
-    :cond_8
+    :cond_0
     const-string p4, "$this$scale"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V

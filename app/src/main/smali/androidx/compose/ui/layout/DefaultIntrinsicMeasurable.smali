@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/IntrinsicMeasurable;Landroidx/compose/ui/layout/IntrinsicMinMax;Landroidx/compose/ui/layout/IntrinsicWidthHeight;)V
-    .registers 5
+    .locals 1
     .param p1, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p2, "minMax"    # Landroidx/compose/ui/layout/IntrinsicMinMax;
     .param p3, "widthHeight"    # Landroidx/compose/ui/layout/IntrinsicWidthHeight;
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final getMeasurable()Landroidx/compose/ui/layout/IntrinsicMeasurable;
-    .registers 2
+    .locals 1
 
     .line 304
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -107,7 +107,7 @@
 .end method
 
 .method public getParentData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 309
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -120,7 +120,7 @@
 .end method
 
 .method public maxIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 341
@@ -134,7 +134,7 @@
 .end method
 
 .method public maxIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 333
@@ -148,7 +148,7 @@
 .end method
 
 .method public measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
-    .registers 6
+    .locals 3
     .param p1, "constraints"    # J
 
     .line 312
@@ -156,14 +156,14 @@
 
     sget-object v1, Landroidx/compose/ui/layout/IntrinsicWidthHeight;->Width:Landroidx/compose/ui/layout/IntrinsicWidthHeight;
 
-    if-ne v0, v1, :cond_2e
+    if-ne v0, v1, :cond_1
 
     .line 313
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->minMax:Landroidx/compose/ui/layout/IntrinsicMinMax;
 
     sget-object v1, Landroidx/compose/ui/layout/IntrinsicMinMax;->Max:Landroidx/compose/ui/layout/IntrinsicMinMax;
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     .line 314
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -176,10 +176,10 @@
 
     move-result v0
 
-    goto :goto_21
+    goto :goto_0
 
     .line 316
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
 
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/Constraints;->getMaxHeight-impl(J)I
@@ -191,7 +191,7 @@
     move-result v0
 
     .line 313
-    :goto_21
+    :goto_0
     nop
 
     .line 318
@@ -210,12 +210,12 @@
 
     .line 320
     .end local v0    # "width":I
-    :cond_2e
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->minMax:Landroidx/compose/ui/layout/IntrinsicMinMax;
 
     sget-object v1, Landroidx/compose/ui/layout/IntrinsicMinMax;->Max:Landroidx/compose/ui/layout/IntrinsicMinMax;
 
-    if-ne v0, v1, :cond_3f
+    if-ne v0, v1, :cond_2
 
     .line 321
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -228,10 +228,10 @@
 
     move-result v0
 
-    goto :goto_49
+    goto :goto_1
 
     .line 323
-    :cond_3f
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/layout/DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
 
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/Constraints;->getMaxWidth-impl(J)I
@@ -243,7 +243,7 @@
     move-result v0
 
     .line 320
-    :goto_49
+    :goto_1
     nop
 
     .line 325
@@ -262,7 +262,7 @@
 .end method
 
 .method public minIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 337
@@ -276,7 +276,7 @@
 .end method
 
 .method public minIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 329

@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 34
+    .locals 30
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -115,8 +115,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_a7
+    :goto_0
+    if-ge v7, v8, :cond_1
 
     .line 301
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -197,8 +197,8 @@
     .end local v19    # "index$iv$iv":I
     .local v5, "index$iv$iv":I
     .local v21, "$this$fastForEach$iv$iv":Ljava/util/List;
-    :goto_52
-    if-ge v5, v3, :cond_8a
+    :goto_1
+    if-ge v5, v3, :cond_0
 
     .line 309
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -278,7 +278,7 @@
 
     move-object/from16 v9, v29
 
-    goto :goto_52
+    goto :goto_1
 
     .end local v24    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .end local v27    # "$i$f$fastForEach":I
@@ -286,7 +286,7 @@
     .restart local v2    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
     .restart local v9    # "item$iv$iv":Ljava/lang/Object;
-    :cond_8a
+    :cond_0
     move-object/from16 v24, v2
 
     move/from16 v27, v6
@@ -341,7 +341,7 @@
 
     move-object/from16 v5, v21
 
-    goto/16 :goto_24
+    goto/16 :goto_0
 
     .end local v17    # "$this$fastMap$iv":Ljava/util/List;
     .end local v20    # "$i$f$fastMap":I
@@ -351,7 +351,7 @@
     .local v3, "$i$f$fastMap":I
     .local v5, "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
-    :cond_a7
+    :cond_1
     move-object/from16 v17, v1
 
     move/from16 v20, v3
@@ -435,7 +435,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 34
+    .locals 30
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -502,8 +502,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_a7
+    :goto_0
+    if-ge v7, v8, :cond_1
 
     .line 279
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -584,8 +584,8 @@
     .end local v19    # "index$iv$iv":I
     .local v5, "index$iv$iv":I
     .local v21, "$this$fastForEach$iv$iv":Ljava/util/List;
-    :goto_52
-    if-ge v5, v3, :cond_8a
+    :goto_1
+    if-ge v5, v3, :cond_0
 
     .line 287
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -665,7 +665,7 @@
 
     move-object/from16 v9, v29
 
-    goto :goto_52
+    goto :goto_1
 
     .end local v24    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .end local v27    # "$i$f$fastForEach":I
@@ -673,7 +673,7 @@
     .restart local v2    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
     .restart local v9    # "item$iv$iv":Ljava/lang/Object;
-    :cond_8a
+    :cond_0
     move-object/from16 v24, v2
 
     move/from16 v27, v6
@@ -728,7 +728,7 @@
 
     move-object/from16 v5, v21
 
-    goto/16 :goto_24
+    goto/16 :goto_0
 
     .end local v17    # "$this$fastMap$iv":Ljava/util/List;
     .end local v20    # "$i$f$fastMap":I
@@ -738,7 +738,7 @@
     .local v3, "$i$f$fastMap":I
     .local v5, "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
-    :cond_a7
+    :cond_1
     move-object/from16 v17, v1
 
     move/from16 v20, v3
@@ -838,7 +838,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 34
+    .locals 30
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -905,8 +905,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_a7
+    :goto_0
+    if-ge v7, v8, :cond_1
 
     .line 257
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -987,8 +987,8 @@
     .end local v19    # "index$iv$iv":I
     .local v5, "index$iv$iv":I
     .local v21, "$this$fastForEach$iv$iv":Ljava/util/List;
-    :goto_52
-    if-ge v5, v3, :cond_8a
+    :goto_1
+    if-ge v5, v3, :cond_0
 
     .line 265
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1068,7 +1068,7 @@
 
     move-object/from16 v9, v29
 
-    goto :goto_52
+    goto :goto_1
 
     .end local v24    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .end local v27    # "$i$f$fastForEach":I
@@ -1076,7 +1076,7 @@
     .restart local v2    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
     .restart local v9    # "item$iv$iv":Ljava/lang/Object;
-    :cond_8a
+    :cond_0
     move-object/from16 v24, v2
 
     move/from16 v27, v6
@@ -1131,7 +1131,7 @@
 
     move-object/from16 v5, v21
 
-    goto/16 :goto_24
+    goto/16 :goto_0
 
     .end local v17    # "$this$fastMap$iv":Ljava/util/List;
     .end local v20    # "$i$f$fastMap":I
@@ -1141,7 +1141,7 @@
     .local v3, "$i$f$fastMap":I
     .local v5, "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
-    :cond_a7
+    :cond_1
     move-object/from16 v17, v1
 
     move/from16 v20, v3
@@ -1225,7 +1225,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 34
+    .locals 30
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -1292,8 +1292,8 @@
 
     move-result v8
 
-    :goto_24
-    if-ge v7, v8, :cond_a7
+    :goto_0
+    if-ge v7, v8, :cond_1
 
     .line 235
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1374,8 +1374,8 @@
     .end local v19    # "index$iv$iv":I
     .local v5, "index$iv$iv":I
     .local v21, "$this$fastForEach$iv$iv":Ljava/util/List;
-    :goto_52
-    if-ge v5, v3, :cond_8a
+    :goto_1
+    if-ge v5, v3, :cond_0
 
     .line 243
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1455,7 +1455,7 @@
 
     move-object/from16 v9, v29
 
-    goto :goto_52
+    goto :goto_1
 
     .end local v24    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .end local v27    # "$i$f$fastForEach":I
@@ -1463,7 +1463,7 @@
     .restart local v2    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
     .restart local v9    # "item$iv$iv":Ljava/lang/Object;
-    :cond_8a
+    :cond_0
     move-object/from16 v24, v2
 
     move/from16 v27, v6
@@ -1518,7 +1518,7 @@
 
     move-object/from16 v5, v21
 
-    goto/16 :goto_24
+    goto/16 :goto_0
 
     .end local v17    # "$this$fastMap$iv":Ljava/util/List;
     .end local v20    # "$i$f$fastMap":I
@@ -1528,7 +1528,7 @@
     .local v3, "$i$f$fastMap":I
     .local v5, "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
-    :cond_a7
+    :cond_1
     move-object/from16 v17, v1
 
     move/from16 v20, v3

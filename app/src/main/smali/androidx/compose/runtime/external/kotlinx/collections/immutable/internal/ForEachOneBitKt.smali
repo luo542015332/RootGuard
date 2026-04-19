@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final forEachOneBit(ILkotlin/jvm/functions/Function2;)V
-    .registers 8
+    .locals 6
     .param p0, "$this$forEachOneBit"    # I
     .param p1, "body"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -64,8 +64,8 @@
 
     .line 12
     .local v2, "index":I
-    :goto_9
-    if-eqz v1, :cond_1e
+    :goto_0
+    if-eqz v1, :cond_0
 
     .line 13
     invoke-static {v1}, Ljava/lang/Integer;->lowestOneBit(I)I
@@ -91,9 +91,9 @@
     xor-int/2addr v1, v3
 
     .end local v3    # "bit":I
-    goto :goto_9
+    goto :goto_0
 
     .line 18
-    :cond_1e
+    :cond_0
     return-void
 .end method

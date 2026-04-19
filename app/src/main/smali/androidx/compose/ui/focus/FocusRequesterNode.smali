@@ -46,7 +46,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "focusRequester"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "focusRequester"
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final getFocusRequester()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusRequesterNode;->focusRequester:Landroidx/compose/ui/focus/FocusRequester;
@@ -75,7 +75,7 @@
 .end method
 
 .method public onAttach()V
-    .registers 3
+    .locals 2
 
     .line 72
     invoke-super {p0}, Landroidx/compose/ui/Modifier$Node;->onAttach()V
@@ -104,7 +104,7 @@
 .end method
 
 .method public onDetach()V
-    .registers 3
+    .locals 2
 
     .line 77
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusRequesterNode;->focusRequester:Landroidx/compose/ui/focus/FocusRequester;
@@ -133,7 +133,7 @@
 .end method
 
 .method public final setFocusRequester(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string v0, "<set-?>"

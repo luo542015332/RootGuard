@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;Lkotlin/Unit;)V
-    .registers 4
+    .locals 1
     .param p1, "$this$apply"    # Ljava/lang/Object;
     .param p2, "it"    # Lkotlin/Unit;
     .annotation system Ldalvik/annotation/Signature;

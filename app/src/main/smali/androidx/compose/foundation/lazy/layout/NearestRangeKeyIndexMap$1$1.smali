@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(IILjava/util/HashMap;Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 76
@@ -119,7 +119,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/foundation/lazy/layout/IntervalList$Interval;)V
-    .registers 9
+    .locals 7
     .param p1, "it"    # Landroidx/compose/foundation/lazy/layout/IntervalList$Interval;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -183,11 +183,11 @@
     move v3, v1
 
     .local v3, "i":I
-    if-gt v3, v2, :cond_65
+    if-gt v3, v2, :cond_2
 
     .line 85
-    :goto_2e
-    if-eqz v0, :cond_40
+    :goto_0
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/foundation/lazy/layout/IntervalList$Interval;->getStartIndex()I
 
@@ -203,15 +203,15 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_44
+    if-nez v4, :cond_1
 
-    :cond_40
+    :cond_0
     invoke-static {v3}, Landroidx/compose/foundation/lazy/layout/Lazy_androidKt;->getDefaultLazyLayoutKey(I)Ljava/lang/Object;
 
     move-result-object v4
 
     .line 84
-    :cond_44
+    :cond_1
     nop
 
     .local v4, "key":Ljava/lang/Object;
@@ -229,14 +229,12 @@
     .line 87
     iget-object v5, p0, Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap$1$1;->this$0:Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;->keys:[Ljava/lang/Object;
     invoke-static {v5}, Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;->access$getKeys$p(Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;)[Ljava/lang/Object;
 
     move-result-object v5
 
     iget-object v6, p0, Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap$1$1;->this$0:Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;->keysStartIndex:I
     invoke-static {v6}, Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;->access$getKeysStartIndex$p(Landroidx/compose/foundation/lazy/layout/NearestRangeKeyIndexMap;)I
 
     move-result v6
@@ -247,14 +245,14 @@
 
     .line 83
     .end local v4    # "key":Ljava/lang/Object;
-    if-eq v3, v2, :cond_65
+    if-eq v3, v2, :cond_2
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 89
     .end local v3    # "i":I
-    :cond_65
+    :cond_2
     return-void
 .end method

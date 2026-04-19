@@ -99,7 +99,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/vector/ImageVector$Companion;
 
@@ -113,7 +113,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;FFFFLandroidx/compose/ui/graphics/vector/VectorGroup;JIZ)V
-    .registers 12
+    .locals 1
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "defaultWidth"    # F
     .param p3, "defaultHeight"    # F
@@ -167,7 +167,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;FFFFLandroidx/compose/ui/graphics/vector/VectorGroup;JIZLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 12
+    .locals 0
 
     invoke-direct/range {p0 .. p10}, Landroidx/compose/ui/graphics/vector/ImageVector;-><init>(Ljava/lang/String;FFFFLandroidx/compose/ui/graphics/vector/VectorGroup;JIZ)V
 
@@ -177,28 +177,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 410
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 411
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/vector/ImageVector;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 413
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->name:Ljava/lang/String;
 
     move-object v3, p1
@@ -211,12 +211,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 414
-    :cond_18
+    :cond_2
     iget v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->defaultWidth:F
 
     move-object v3, p1
@@ -229,12 +229,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 415
-    :cond_26
+    :cond_3
     iget v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->defaultHeight:F
 
     move-object v3, p1
@@ -247,12 +247,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_4
 
     return v2
 
     .line 416
-    :cond_34
+    :cond_4
     iget v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->viewportWidth:F
 
     move-object v3, p1
@@ -263,22 +263,22 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_41
+    if-nez v1, :cond_5
 
     move v1, v0
 
-    goto :goto_42
+    goto :goto_0
 
-    :cond_41
+    :cond_5
     move v1, v2
 
-    :goto_42
-    if-nez v1, :cond_45
+    :goto_0
+    if-nez v1, :cond_6
 
     return v2
 
     .line 417
-    :cond_45
+    :cond_6
     iget v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->viewportHeight:F
 
     move-object v3, p1
@@ -289,22 +289,22 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_52
+    if-nez v1, :cond_7
 
     move v1, v0
 
-    goto :goto_53
+    goto :goto_1
 
-    :cond_52
+    :cond_7
     move v1, v2
 
-    :goto_53
-    if-nez v1, :cond_56
+    :goto_1
+    if-nez v1, :cond_8
 
     return v2
 
     .line 418
-    :cond_56
+    :cond_8
     iget-object v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->root:Landroidx/compose/ui/graphics/vector/VectorGroup;
 
     move-object v3, p1
@@ -317,12 +317,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_64
+    if-nez v1, :cond_9
 
     return v2
 
     .line 419
-    :cond_64
+    :cond_9
     iget-wide v3, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->tintColor:J
 
     move-object v1, p1
@@ -335,12 +335,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_72
+    if-nez v1, :cond_a
 
     return v2
 
     .line 420
-    :cond_72
+    :cond_a
     iget v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->tintBlendMode:I
 
     move-object v3, p1
@@ -353,12 +353,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_80
+    if-nez v1, :cond_b
 
     return v2
 
     .line 421
-    :cond_80
+    :cond_b
     iget-boolean v1, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->autoMirror:Z
 
     move-object v3, p1
@@ -367,17 +367,17 @@
 
     iget-boolean v3, v3, Landroidx/compose/ui/graphics/vector/ImageVector;->autoMirror:Z
 
-    if-eq v1, v3, :cond_8a
+    if-eq v1, v3, :cond_c
 
     return v2
 
     .line 422
-    :cond_8a
+    :cond_c
     return v0
 .end method
 
 .method public final getAutoMirror()Z
-    .registers 2
+    .locals 1
 
     .line 80
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->autoMirror:Z
@@ -386,7 +386,7 @@
 .end method
 
 .method public final getDefaultHeight-D9Ej5fM()F
-    .registers 2
+    .locals 1
 
     .line 48
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->defaultHeight:F
@@ -395,7 +395,7 @@
 .end method
 
 .method public final getDefaultWidth-D9Ej5fM()F
-    .registers 2
+    .locals 1
 
     .line 43
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->defaultWidth:F
@@ -404,7 +404,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 38
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->name:Ljava/lang/String;
@@ -413,7 +413,7 @@
 .end method
 
 .method public final getRoot()Landroidx/compose/ui/graphics/vector/VectorGroup;
-    .registers 2
+    .locals 1
 
     .line 65
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->root:Landroidx/compose/ui/graphics/vector/VectorGroup;
@@ -422,7 +422,7 @@
 .end method
 
 .method public final getTintBlendMode-0nO6VwU()I
-    .registers 2
+    .locals 1
 
     .line 75
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->tintBlendMode:I
@@ -431,7 +431,7 @@
 .end method
 
 .method public final getTintColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 70
     iget-wide v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->tintColor:J
@@ -440,7 +440,7 @@
 .end method
 
 .method public final getViewportHeight()F
-    .registers 2
+    .locals 1
 
     .line 60
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->viewportHeight:F
@@ -449,7 +449,7 @@
 .end method
 
 .method public final getViewportWidth()F
-    .registers 2
+    .locals 1
 
     .line 54
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->viewportWidth:F
@@ -458,7 +458,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 426
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector;->name:Ljava/lang/String;

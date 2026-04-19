@@ -38,55 +38,55 @@
 
 # direct methods
 .method public static synthetic calculateRecommendedTimeoutMillis$default(Landroidx/compose/ui/platform/AccessibilityManager;JZZZILjava/lang/Object;)J
-    .registers 15
+    .locals 7
 
     .line 45
-    if-nez p7, :cond_1f
+    if-nez p7, :cond_3
 
     and-int/lit8 p7, p6, 0x2
 
     const/4 v0, 0x0
 
-    if-eqz p7, :cond_9
+    if-eqz p7, :cond_0
 
     .line 47
     move v4, v0
 
-    goto :goto_a
+    goto :goto_0
 
     .line 45
-    :cond_9
+    :cond_0
     move v4, p3
 
-    :goto_a
+    :goto_0
     and-int/lit8 p3, p6, 0x4
 
-    if-eqz p3, :cond_10
+    if-eqz p3, :cond_1
 
     .line 48
     move v5, v0
 
-    goto :goto_11
+    goto :goto_1
 
     .line 45
-    :cond_10
+    :cond_1
     move v5, p4
 
-    :goto_11
+    :goto_1
     and-int/lit8 p3, p6, 0x8
 
-    if-eqz p3, :cond_17
+    if-eqz p3, :cond_2
 
     .line 49
     move v6, v0
 
-    goto :goto_18
+    goto :goto_2
 
     .line 45
-    :cond_17
+    :cond_2
     move v6, p5
 
-    :goto_18
+    :goto_2
     move-object v1, p0
 
     move-wide v2, p1
@@ -97,7 +97,7 @@
 
     return-wide p0
 
-    :cond_1f
+    :cond_3
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: calculateRecommendedTimeoutMillis"

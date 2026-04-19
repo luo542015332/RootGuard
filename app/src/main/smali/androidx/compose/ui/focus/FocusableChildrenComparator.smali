@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/focus/FocusableChildrenComparator;
 
@@ -68,7 +68,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 220
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -77,7 +77,7 @@
 .end method
 
 .method private final pathFromRoot(Landroidx/compose/ui/node/LayoutNode;)Landroidx/compose/runtime/collection/MutableVector;
-    .registers 8
+    .locals 6
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -128,8 +128,8 @@
 
     .line 258
     .local v1, "current":Landroidx/compose/ui/node/LayoutNode;
-    :goto_10
-    if-eqz v1, :cond_1a
+    :goto_0
+    if-eqz v1, :cond_0
 
     .line 259
     invoke-virtual {v0, v5, v1}, Landroidx/compose/runtime/collection/MutableVector;->add(ILjava/lang/Object;)V
@@ -139,27 +139,27 @@
 
     move-result-object v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 262
-    :cond_1a
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public compare(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;)I
-    .registers 13
+    .locals 10
     .param p1, "focusTarget1"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p2, "focusTarget2"    # Landroidx/compose/ui/focus/FocusTargetNode;
 
     .line 225
     const-string/jumbo v0, "Required value was null."
 
-    if-eqz p1, :cond_cd
+    if-eqz p1, :cond_c
 
     .line 226
-    if-eqz p2, :cond_c3
+    if-eqz p2, :cond_b
 
     .line 229
     invoke-static {p1}, Landroidx/compose/ui/focus/FocusTraversalKt;->isEligibleForFocusSearch(Landroidx/compose/ui/focus/FocusTargetNode;)Z
@@ -170,37 +170,37 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_b3
+    if-eqz v1, :cond_8
 
     invoke-static {p2}, Landroidx/compose/ui/focus/FocusTraversalKt;->isEligibleForFocusSearch(Landroidx/compose/ui/focus/FocusTargetNode;)Z
 
     move-result v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
-    goto/16 :goto_b3
+    goto/16 :goto_2
 
     .line 235
-    :cond_17
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/focus/FocusTargetNode;->getCoordinator$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v1
 
     const/4 v4, 0x0
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroidx/compose/ui/node/NodeCoordinator;->getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_23
+    :cond_1
     move-object v1, v4
 
-    :goto_24
-    if-eqz v1, :cond_a9
+    :goto_0
+    if-eqz v1, :cond_7
 
     .line 236
     .local v1, "layoutNode1":Landroidx/compose/ui/node/LayoutNode;
@@ -208,14 +208,14 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_30
+    if-eqz v5, :cond_2
 
     invoke-virtual {v5}, Landroidx/compose/ui/node/NodeCoordinator;->getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v4
 
-    :cond_30
-    if-eqz v4, :cond_9f
+    :cond_2
+    if-eqz v4, :cond_6
 
     move-object v0, v4
 
@@ -225,12 +225,12 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_3
 
     return v2
 
     .line 242
-    :cond_3a
+    :cond_3
     invoke-direct {p0, v1}, Landroidx/compose/ui/focus/FocusableChildrenComparator;->pathFromRoot(Landroidx/compose/ui/node/LayoutNode;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v2
@@ -282,10 +282,10 @@
 
     move-result v3
 
-    if-gt v5, v3, :cond_93
+    if-gt v5, v3, :cond_5
 
     .line 248
-    :goto_57
+    :goto_1
     move-object v6, v2
 
     .restart local v6    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
@@ -322,7 +322,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_8e
+    if-nez v6, :cond_4
 
     .line 249
     move-object v3, v2
@@ -376,15 +376,15 @@
     return v3
 
     .line 244
-    :cond_8e
-    if-eq v5, v3, :cond_93
+    :cond_4
+    if-eq v5, v3, :cond_5
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_57
+    goto :goto_1
 
     .end local v5    # "depth":I
-    :cond_93
+    :cond_5
     new-instance v3, Ljava/lang/IllegalStateException;
 
     .line 252
@@ -402,7 +402,7 @@
     .end local v0    # "layoutNode2":Landroidx/compose/ui/node/LayoutNode;
     .end local v2    # "pathFromRoot1":Landroidx/compose/runtime/collection/MutableVector;
     .end local v4    # "pathFromRoot2":Landroidx/compose/runtime/collection/MutableVector;
-    :cond_9f
+    :cond_6
     new-instance v2, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -415,7 +415,7 @@
 
     .line 235
     .end local v1    # "layoutNode1":Landroidx/compose/ui/node/LayoutNode;
-    :cond_a9
+    :cond_7
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -427,34 +427,34 @@
     throw v1
 
     .line 230
-    :cond_b3
-    :goto_b3
+    :cond_8
+    :goto_2
     invoke-static {p1}, Landroidx/compose/ui/focus/FocusTraversalKt;->isEligibleForFocusSearch(Landroidx/compose/ui/focus/FocusTargetNode;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_9
 
     const/4 v0, -0x1
 
     return v0
 
     .line 231
-    :cond_bb
+    :cond_9
     invoke-static {p2}, Landroidx/compose/ui/focus/FocusTraversalKt;->isEligibleForFocusSearch(Landroidx/compose/ui/focus/FocusTargetNode;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_c2
+    if-eqz v0, :cond_a
 
     return v3
 
     .line 232
-    :cond_c2
+    :cond_a
     return v2
 
     .line 226
-    :cond_c3
+    :cond_b
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -466,7 +466,7 @@
     throw v1
 
     .line 225
-    :cond_cd
+    :cond_c
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -479,7 +479,7 @@
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 5
+    .locals 2
     .param p1, "p0"    # Ljava/lang/Object;
     .param p2, "p1"    # Ljava/lang/Object;
 

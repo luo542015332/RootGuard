@@ -41,7 +41,7 @@
 
 # direct methods
 .method public static final synthetic access$dot-p89u6pk([FI[FI)F
-    .registers 5
+    .locals 1
     .param p0, "m1"    # [F
     .param p1, "row"    # I
     .param p2, "m2"    # [F
@@ -56,7 +56,7 @@
 .end method
 
 .method private static final dot-p89u6pk([FI[FI)F
-    .registers 9
+    .locals 5
     .param p0, "m1"    # [F
     .param p1, "row"    # I
     .param p2, "m2"    # [F
@@ -215,7 +215,7 @@
 .end method
 
 .method public static final isIdentity-58bKbWc([F)Z
-    .registers 8
+    .locals 7
     .param p0, "$this$isIdentity_u2d58bKbWc"    # [F
 
     const-string v0, "$this$isIdentity"
@@ -226,33 +226,33 @@
     const/4 v0, 0x0
 
     .local v0, "row":I
-    :goto_6
+    :goto_0
     const/4 v1, 0x4
 
     const/4 v2, 0x1
 
-    if-ge v0, v1, :cond_2a
+    if-ge v0, v1, :cond_4
 
     .line 432
     const/4 v3, 0x0
 
     .local v3, "column":I
-    :goto_b
-    if-ge v3, v1, :cond_27
+    :goto_1
+    if-ge v3, v1, :cond_3
 
     .line 433
-    if-ne v0, v3, :cond_12
+    if-ne v0, v3, :cond_0
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    goto :goto_13
+    goto :goto_2
 
-    :cond_12
+    :cond_0
     const/4 v4, 0x0
 
     .line 434
     .local v4, "expected":F
-    :goto_13
+    :goto_2
     const/4 v5, 0x0
 
     .line 445
@@ -269,37 +269,37 @@
 
     const/4 v6, 0x0
 
-    if-nez v5, :cond_20
+    if-nez v5, :cond_1
 
     move v5, v2
 
-    goto :goto_21
+    goto :goto_3
 
-    :cond_20
+    :cond_1
     move v5, v6
 
-    :goto_21
-    if-nez v5, :cond_24
+    :goto_3
+    if-nez v5, :cond_2
 
     .line 435
     return v6
 
     .line 432
     .end local v4    # "expected":F
-    :cond_24
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_b
+    goto :goto_1
 
     .line 431
     .end local v3    # "column":I
-    :cond_27
+    :cond_3
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 439
     .end local v0    # "row":I
-    :cond_2a
+    :cond_4
     return v2
 .end method

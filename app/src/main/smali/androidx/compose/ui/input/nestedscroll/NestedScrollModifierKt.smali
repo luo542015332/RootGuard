@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final nestedScroll(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 1
     .param p0, "$this$nestedScroll"    # Landroidx/compose/ui/Modifier;
     .param p1, "connection"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p2, "dispatcher"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
@@ -57,18 +57,18 @@
 .end method
 
 .method public static synthetic nestedScroll$default(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 0
 
     .line 334
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 336
     const/4 p2, 0x0
 
     .line 334
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/input/nestedscroll/NestedScrollModifierKt;->nestedScroll(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;)Landroidx/compose/ui/Modifier;
 
     move-result-object p0

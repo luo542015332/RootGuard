@@ -61,7 +61,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/WindowRecomposerPolicy;
 
@@ -92,7 +92,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 173
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public final compareAndSetFactory(Landroidx/compose/ui/platform/WindowRecomposerFactory;Landroidx/compose/ui/platform/WindowRecomposerFactory;)Z
-    .registers 4
+    .locals 1
     .param p1, "expected"    # Landroidx/compose/ui/platform/WindowRecomposerFactory;
     .param p2, "factory"    # Landroidx/compose/ui/platform/WindowRecomposerFactory;
 
@@ -126,7 +126,7 @@
 .end method
 
 .method public final createAndInstallWindowRecomposer$ui_release(Landroid/view/View;)Landroidx/compose/runtime/Recomposer;
-    .registers 10
+    .locals 8
     .param p1, "rootView"    # Landroid/view/View;
 
     const-string/jumbo v0, "rootView"
@@ -224,7 +224,7 @@
 .end method
 
 .method public final getAndSetFactory(Landroidx/compose/ui/platform/WindowRecomposerFactory;)Landroidx/compose/ui/platform/WindowRecomposerFactory;
-    .registers 4
+    .locals 2
     .param p1, "factory"    # Landroidx/compose/ui/platform/WindowRecomposerFactory;
 
     const-string/jumbo v0, "factory"
@@ -248,7 +248,7 @@
 .end method
 
 .method public final setFactory(Landroidx/compose/ui/platform/WindowRecomposerFactory;)V
-    .registers 3
+    .locals 1
     .param p1, "factory"    # Landroidx/compose/ui/platform/WindowRecomposerFactory;
 
     const-string/jumbo v0, "factory"
@@ -265,7 +265,7 @@
 .end method
 
 .method public final withFactory(Landroidx/compose/ui/platform/WindowRecomposerFactory;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 10
+    .locals 7
     .param p1, "factory"    # Landroidx/compose/ui/platform/WindowRecomposerFactory;
     .param p2, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -308,12 +308,12 @@
     .line 205
     const/4 v4, 0x1
 
-    :try_start_17
+    :try_start_0
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v5
-    :try_end_1b
-    .catchall {:try_start_17 .. :try_end_1b} :catchall_31
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -322,7 +322,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_29
+    if-eqz v6, :cond_0
 
     .line 215
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
@@ -334,7 +334,7 @@
     return-object v5
 
     .line 211
-    :cond_29
+    :cond_0
     new-instance v4, Ljava/lang/IllegalStateException;
 
     .line 212
@@ -351,7 +351,7 @@
 
     .line 206
     .end local v0    # "err":Ljava/lang/IllegalStateException;
-    :catchall_31
+    :catchall_0
     move-exception v5
 
     .line 207
@@ -366,10 +366,10 @@
     .end local v3    # "oldFactory":Landroidx/compose/ui/platform/WindowRecomposerFactory;
     .end local p1    # "factory":Landroidx/compose/ui/platform/WindowRecomposerFactory;
     .end local p2    # "block":Lkotlin/jvm/functions/Function0;
-    :try_start_34
+    :try_start_1
     throw v5
-    :try_end_35
-    .catchall {:try_start_34 .. :try_end_35} :catchall_35
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 210
     .end local v5    # "t":Ljava/lang/Throwable;
@@ -378,7 +378,7 @@
     .restart local v3    # "oldFactory":Landroidx/compose/ui/platform/WindowRecomposerFactory;
     .restart local p1    # "factory":Landroidx/compose/ui/platform/WindowRecomposerFactory;
     .restart local p2    # "block":Lkotlin/jvm/functions/Function0;
-    :catchall_35
+    :catchall_1
     move-exception v5
 
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -387,7 +387,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_4e
+    if-nez v6, :cond_1
 
     .line 211
     new-instance v4, Ljava/lang/IllegalStateException;
@@ -415,7 +415,7 @@
     throw v2
 
     .end local v0    # "err":Ljava/lang/IllegalStateException;
-    :cond_4e
+    :cond_1
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
     throw v5

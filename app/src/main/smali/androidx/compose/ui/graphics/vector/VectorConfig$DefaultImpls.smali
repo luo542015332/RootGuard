@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getOrDefault(Landroidx/compose/ui/graphics/vector/VectorConfig;Landroidx/compose/ui/graphics/vector/VectorProperty;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/vector/VectorConfig;
     .param p1, "property"    # Landroidx/compose/ui/graphics/vector/VectorProperty;
     .param p2, "defaultValue"    # Ljava/lang/Object;
@@ -49,7 +49,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 315
-    # invokes: Landroidx/compose/ui/graphics/vector/VectorConfig;->getOrDefault(Landroidx/compose/ui/graphics/vector/VectorProperty;Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/vector/VectorConfig;->access$getOrDefault$jd(Landroidx/compose/ui/graphics/vector/VectorConfig;Landroidx/compose/ui/graphics/vector/VectorProperty;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0

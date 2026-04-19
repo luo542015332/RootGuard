@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/geometry/Rect;)V
-    .registers 3
+    .locals 1
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string/jumbo v0, "rect"
@@ -71,28 +71,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 47
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 48
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 50
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/Outline$Rectangle;->rect:Landroidx/compose/ui/geometry/Rect;
 
     move-object v3, p1
@@ -105,17 +105,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 52
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public getBounds()Landroidx/compose/ui/geometry/Rect;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/compose/ui/graphics/Outline$Rectangle;->rect:Landroidx/compose/ui/geometry/Rect;
@@ -124,7 +124,7 @@
 .end method
 
 .method public final getRect()Landroidx/compose/ui/geometry/Rect;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/compose/ui/graphics/Outline$Rectangle;->rect:Landroidx/compose/ui/geometry/Rect;
@@ -133,7 +133,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/compose/ui/graphics/Outline$Rectangle;->rect:Landroidx/compose/ui/geometry/Rect;

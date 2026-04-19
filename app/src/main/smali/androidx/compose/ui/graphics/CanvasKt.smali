@@ -46,7 +46,7 @@
 
 # direct methods
 .method public static final Canvas(Landroidx/compose/ui/graphics/ImageBitmap;)Landroidx/compose/ui/graphics/Canvas;
-    .registers 2
+    .locals 1
     .param p0, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
 
     const-string/jumbo v0, "image"
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final rotate(Landroidx/compose/ui/graphics/Canvas;FFF)V
-    .registers 6
+    .locals 2
     .param p0, "$this$rotate"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "degrees"    # F
     .param p2, "pivotX"    # F
@@ -77,22 +77,22 @@
 
     cmpg-float v0, p1, v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
-    if-eqz v0, :cond_10
+    :goto_0
+    if-eqz v0, :cond_1
 
     return-void
 
     .line 129
-    :cond_10
+    :cond_1
     invoke-interface {p0, p2, p3}, Landroidx/compose/ui/graphics/Canvas;->translate(FF)V
 
     .line 130
@@ -110,7 +110,7 @@
 .end method
 
 .method public static final rotateRad(Landroidx/compose/ui/graphics/Canvas;FFF)V
-    .registers 5
+    .locals 1
     .param p0, "$this$rotateRad"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "radians"    # F
     .param p2, "pivotX"    # F
@@ -132,32 +132,32 @@
 .end method
 
 .method public static synthetic rotateRad$default(Landroidx/compose/ui/graphics/Canvas;FFFILjava/lang/Object;)V
-    .registers 7
+    .locals 1
 
     .line 141
     and-int/lit8 p5, p4, 0x2
 
     const/4 v0, 0x0
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     move p2, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_b
+    if-eqz p4, :cond_1
 
     move p3, v0
 
-    :cond_b
+    :cond_1
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/CanvasKt;->rotateRad(Landroidx/compose/ui/graphics/Canvas;FFF)V
 
     return-void
 .end method
 
 .method public static final scale(Landroidx/compose/ui/graphics/Canvas;FFFF)V
-    .registers 9
+    .locals 4
     .param p0, "$this$scale"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "sx"    # F
     .param p2, "sy"    # F
@@ -177,34 +177,34 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v1, v3
 
-    :goto_10
-    if-eqz v1, :cond_1b
+    :goto_0
+    if-eqz v1, :cond_2
 
     cmpg-float v0, p2, v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
+    :cond_1
     move v2, v3
 
-    :goto_18
-    if-eqz v2, :cond_1b
+    :goto_1
+    if-eqz v2, :cond_2
 
     return-void
 
     .line 161
-    :cond_1b
+    :cond_2
     invoke-interface {p0, p3, p4}, Landroidx/compose/ui/graphics/Canvas;->translate(FF)V
 
     .line 162
@@ -222,23 +222,23 @@
 .end method
 
 .method public static synthetic scale$default(Landroidx/compose/ui/graphics/Canvas;FFFFILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 159
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     move p2, p1
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/CanvasKt;->scale(Landroidx/compose/ui/graphics/Canvas;FFFF)V
 
     return-void
 .end method
 
 .method public static final withSave(Landroidx/compose/ui/graphics/Canvas;Lkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$withSave"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -268,13 +268,13 @@
     .line 48
     const/4 v1, 0x1
 
-    :try_start_e
+    :try_start_0
     invoke-interface {p0}, Landroidx/compose/ui/graphics/Canvas;->save()V
 
     .line 49
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
-    :try_end_14
-    .catchall {:try_start_e .. :try_end_14} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -290,7 +290,7 @@
     return-void
 
     .line 51
-    :catchall_1f
+    :catchall_0
     move-exception v2
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -303,7 +303,7 @@
 .end method
 
 .method public static final withSaveLayer(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;Lkotlin/jvm/functions/Function0;)V
-    .registers 7
+    .locals 3
     .param p0, "$this$withSaveLayer"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "bounds"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -345,13 +345,13 @@
     .line 112
     const/4 v1, 0x1
 
-    :try_start_1a
+    :try_start_0
     invoke-interface {p0, p1, p2}, Landroidx/compose/ui/graphics/Canvas;->saveLayer(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
 
     .line 113
     invoke-interface {p3}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
-    :try_end_20
-    .catchall {:try_start_1a .. :try_end_20} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -367,7 +367,7 @@
     return-void
 
     .line 115
-    :catchall_2b
+    :catchall_0
     move-exception v2
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

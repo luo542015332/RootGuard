@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final rotate(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
-    .registers 26
+    .locals 24
     .param p0, "$this$rotate"    # Landroidx/compose/ui/Modifier;
     .param p1, "degrees"    # F
 
@@ -42,17 +42,17 @@
 
     cmpg-float v0, p1, v0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
-    if-nez v0, :cond_34
+    :goto_0
+    if-nez v0, :cond_1
 
     const/4 v2, 0x0
 
@@ -98,11 +98,11 @@
 
     move-result-object v10
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_34
+    :cond_1
     move-object/from16 v10, p0
 
-    :goto_36
+    :goto_1
     return-object v10
 .end method

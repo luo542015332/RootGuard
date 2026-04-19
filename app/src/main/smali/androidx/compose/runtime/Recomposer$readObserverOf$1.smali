@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/Recomposer$readObserverOf$1;->$composition:Landroidx/compose/runtime/ControlledComposition;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 1144
@@ -79,7 +79,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "value"

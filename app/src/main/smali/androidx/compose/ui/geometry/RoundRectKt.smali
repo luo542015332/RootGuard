@@ -76,7 +76,7 @@
 
 # direct methods
 .method public static final RoundRect(FFFFFF)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 23
+    .locals 17
     .param p0, "left"    # F
     .param p1, "top"    # F
     .param p2, "right"    # F
@@ -142,7 +142,7 @@
 .end method
 
 .method public static final RoundRect(Landroidx/compose/ui/geometry/Rect;FF)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 10
+    .locals 7
     .param p0, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "radiusX"    # F
     .param p2, "radiusY"    # F
@@ -191,7 +191,7 @@
 .end method
 
 .method public static final RoundRect-ZAM2FJo(Landroidx/compose/ui/geometry/Rect;JJJJ)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 25
+    .locals 16
     .param p0, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "topLeft"    # J
     .param p3, "topRight"    # J
@@ -257,12 +257,12 @@
 .end method
 
 .method public static synthetic RoundRect-ZAM2FJo$default(Landroidx/compose/ui/geometry/Rect;JJJJILjava/lang/Object;)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 19
+    .locals 8
 
     .line 292
     and-int/lit8 v0, p9, 0x2
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 294
     sget-object v0, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -271,16 +271,16 @@
 
     move-result-wide v0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 292
-    :cond_b
+    :cond_0
     move-wide v0, p1
 
-    :goto_c
+    :goto_0
     and-int/lit8 v2, p9, 0x4
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_1
 
     .line 295
     sget-object v2, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -289,16 +289,16 @@
 
     move-result-wide v2
 
-    goto :goto_18
+    goto :goto_1
 
     .line 292
-    :cond_17
+    :cond_1
     move-wide v2, p3
 
-    :goto_18
+    :goto_1
     and-int/lit8 v4, p9, 0x8
 
-    if-eqz v4, :cond_23
+    if-eqz v4, :cond_2
 
     .line 296
     sget-object v4, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -307,16 +307,16 @@
 
     move-result-wide v4
 
-    goto :goto_24
+    goto :goto_2
 
     .line 292
-    :cond_23
+    :cond_2
     move-wide v4, p5
 
-    :goto_24
+    :goto_2
     and-int/lit8 v6, p9, 0x10
 
-    if-eqz v6, :cond_2f
+    if-eqz v6, :cond_3
 
     .line 297
     sget-object v6, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -325,13 +325,13 @@
 
     move-result-wide v6
 
-    goto :goto_30
+    goto :goto_3
 
     .line 292
-    :cond_2f
+    :cond_3
     move-wide v6, p7
 
-    :goto_30
+    :goto_3
     move-wide p1, v0
 
     move-wide p3, v2
@@ -348,7 +348,7 @@
 .end method
 
 .method public static final RoundRect-gG7oq9Y(FFFFJ)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 12
+    .locals 6
     .param p0, "left"    # F
     .param p1, "top"    # F
     .param p2, "right"    # F
@@ -395,7 +395,7 @@
 .end method
 
 .method public static final RoundRect-sniSvfs(Landroidx/compose/ui/geometry/Rect;J)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 5
+    .locals 2
     .param p0, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "cornerRadius"    # J
 
@@ -426,7 +426,7 @@
 .end method
 
 .method public static final getBoundingRect(Landroidx/compose/ui/geometry/RoundRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 5
     .param p0, "$this$boundingRect"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -458,7 +458,7 @@
 .end method
 
 .method public static final getCenter(Landroidx/compose/ui/geometry/RoundRect;)J
-    .registers 5
+    .locals 4
     .param p0, "$this$center"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -500,7 +500,7 @@
 .end method
 
 .method public static final getMaxDimension(Landroidx/compose/ui/geometry/RoundRect;)F
-    .registers 3
+    .locals 2
     .param p0, "$this$maxDimension"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -532,7 +532,7 @@
 .end method
 
 .method public static final getMinDimension(Landroidx/compose/ui/geometry/RoundRect;)F
-    .registers 3
+    .locals 2
     .param p0, "$this$minDimension"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -564,7 +564,7 @@
 .end method
 
 .method public static final getSafeInnerRect(Landroidx/compose/ui/geometry/RoundRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 12
+    .locals 11
     .param p0, "$this$safeInnerRect"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -709,7 +709,7 @@
 .end method
 
 .method public static final isCircle(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$isCircle"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -731,35 +731,35 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v0, v2
 
-    :goto_16
-    if-eqz v0, :cond_1f
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-static {p0}, Landroidx/compose/ui/geometry/RoundRectKt;->isEllipse(Landroidx/compose/ui/geometry/RoundRect;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
+    :cond_1
     move v1, v2
 
-    :goto_20
+    :goto_1
     return v1
 .end method
 
 .method public static final isEllipse(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 10
+    .locals 9
     .param p0, "$this$isEllipse"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -789,17 +789,17 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     move v0, v2
 
-    :goto_1e
-    if-eqz v0, :cond_c6
+    :goto_0
+    if-eqz v0, :cond_6
 
     .line 370
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -820,17 +820,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_1
 
     move v0, v1
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
+    :cond_1
     move v0, v2
 
-    :goto_37
-    if-eqz v0, :cond_c6
+    :goto_1
+    if-eqz v0, :cond_6
 
     .line 371
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
@@ -851,17 +851,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_2
 
     move v0, v1
 
-    goto :goto_50
+    goto :goto_2
 
-    :cond_4f
+    :cond_2
     move v0, v2
 
-    :goto_50
-    if-eqz v0, :cond_c6
+    :goto_2
+    if-eqz v0, :cond_6
 
     .line 372
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
@@ -882,17 +882,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_68
+    if-nez v0, :cond_3
 
     move v0, v1
 
-    goto :goto_69
+    goto :goto_3
 
-    :cond_68
+    :cond_3
     move v0, v2
 
-    :goto_69
-    if-eqz v0, :cond_c6
+    :goto_3
+    if-eqz v0, :cond_6
 
     .line 373
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomRightCornerRadius-kKHJgLs()J
@@ -913,17 +913,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_81
+    if-nez v0, :cond_4
 
     move v0, v1
 
-    goto :goto_82
+    goto :goto_4
 
-    :cond_81
+    :cond_4
     move v0, v2
 
-    :goto_82
-    if-eqz v0, :cond_c6
+    :goto_4
+    if-eqz v0, :cond_6
 
     .line 374
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomRightCornerRadius-kKHJgLs()J
@@ -944,17 +944,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_9a
+    if-nez v0, :cond_5
 
     move v0, v1
 
-    goto :goto_9b
+    goto :goto_5
 
-    :cond_9a
+    :cond_5
     move v0, v2
 
-    :goto_9b
-    if-eqz v0, :cond_c6
+    :goto_5
+    if-eqz v0, :cond_6
 
     .line 375
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getWidth()F
@@ -979,7 +979,7 @@
 
     cmpg-double v0, v3, v5
 
-    if-gtz v0, :cond_c6
+    if-gtz v0, :cond_6
 
     .line 376
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getHeight()F
@@ -1002,19 +1002,19 @@
 
     cmpg-double v0, v3, v5
 
-    if-gtz v0, :cond_c6
+    if-gtz v0, :cond_6
 
-    goto :goto_c7
+    goto :goto_6
 
-    :cond_c6
+    :cond_6
     move v1, v2
 
-    :goto_c7
+    :goto_6
     return v1
 .end method
 
 .method public static final isEmpty(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 3
+    .locals 2
     .param p0, "$this$isEmpty"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -1032,7 +1032,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-gez v0, :cond_20
+    if-gez v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTop()F
 
@@ -1044,25 +1044,25 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_1e
+    if-ltz v0, :cond_0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_21
+    :goto_1
     return v0
 .end method
 
 .method public static final isFinite(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 5
+    .locals 4
     .param p0, "$this$isFinite"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -1082,23 +1082,23 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move v0, v3
 
-    :goto_1a
-    if-eqz v0, :cond_5c
+    :goto_0
+    if-eqz v0, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTop()F
 
@@ -1108,23 +1108,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_2e
+    if-nez v1, :cond_1
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     move v0, v3
 
-    :goto_2f
-    if-eqz v0, :cond_5c
+    :goto_1
+    if-eqz v0, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getRight()F
 
@@ -1134,23 +1134,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_43
+    if-nez v1, :cond_2
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_43
+    if-nez v0, :cond_2
 
     move v0, v2
 
-    goto :goto_44
+    goto :goto_2
 
-    :cond_43
+    :cond_2
     move v0, v3
 
-    :goto_44
-    if-eqz v0, :cond_5c
+    :goto_2
+    if-eqz v0, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottom()F
 
@@ -1160,35 +1160,35 @@
 
     move-result v1
 
-    if-nez v1, :cond_58
+    if-nez v1, :cond_3
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_58
+    if-nez v0, :cond_3
 
     move v0, v2
 
-    goto :goto_59
+    goto :goto_3
 
-    :cond_58
+    :cond_3
     move v0, v3
 
-    :goto_59
-    if-eqz v0, :cond_5c
+    :goto_3
+    if-eqz v0, :cond_4
 
-    goto :goto_5d
+    goto :goto_4
 
-    :cond_5c
+    :cond_4
     move v2, v3
 
-    :goto_5d
+    :goto_4
     return v2
 .end method
 
 .method public static final isRect(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 7
+    .locals 6
     .param p0, "$this$isRect"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -1212,17 +1212,17 @@
 
     const/4 v3, 0x0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v0, v3
 
-    :goto_17
-    if-nez v0, :cond_2a
+    :goto_0
+    if-nez v0, :cond_2
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
 
@@ -1234,20 +1234,20 @@
 
     cmpg-float v0, v0, v1
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
+    :cond_1
     move v0, v3
 
-    :goto_28
-    if-eqz v0, :cond_91
+    :goto_1
+    if-eqz v0, :cond_b
 
     .line 363
-    :cond_2a
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
 
     move-result-wide v4
@@ -1258,17 +1258,17 @@
 
     cmpg-float v0, v0, v1
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_3
 
     move v0, v2
 
-    goto :goto_39
+    goto :goto_2
 
-    :cond_38
+    :cond_3
     move v0, v3
 
-    :goto_39
-    if-nez v0, :cond_4c
+    :goto_2
+    if-nez v0, :cond_5
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
 
@@ -1280,20 +1280,20 @@
 
     cmpg-float v0, v0, v1
 
-    if-nez v0, :cond_49
+    if-nez v0, :cond_4
 
     move v0, v2
 
-    goto :goto_4a
+    goto :goto_3
 
-    :cond_49
+    :cond_4
     move v0, v3
 
-    :goto_4a
-    if-eqz v0, :cond_91
+    :goto_3
+    if-eqz v0, :cond_b
 
     .line 364
-    :cond_4c
+    :cond_5
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomLeftCornerRadius-kKHJgLs()J
 
     move-result-wide v4
@@ -1304,17 +1304,17 @@
 
     cmpg-float v0, v0, v1
 
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_6
 
     move v0, v2
 
-    goto :goto_5b
+    goto :goto_4
 
-    :cond_5a
+    :cond_6
     move v0, v3
 
-    :goto_5b
-    if-nez v0, :cond_6e
+    :goto_4
+    if-nez v0, :cond_8
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomLeftCornerRadius-kKHJgLs()J
 
@@ -1326,20 +1326,20 @@
 
     cmpg-float v0, v0, v1
 
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_7
 
     move v0, v2
 
-    goto :goto_6c
+    goto :goto_5
 
-    :cond_6b
+    :cond_7
     move v0, v3
 
-    :goto_6c
-    if-eqz v0, :cond_91
+    :goto_5
+    if-eqz v0, :cond_b
 
     .line 365
-    :cond_6e
+    :cond_8
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomRightCornerRadius-kKHJgLs()J
 
     move-result-wide v4
@@ -1350,17 +1350,17 @@
 
     cmpg-float v0, v0, v1
 
-    if-nez v0, :cond_7c
+    if-nez v0, :cond_9
 
     move v0, v2
 
-    goto :goto_7d
+    goto :goto_6
 
-    :cond_7c
+    :cond_9
     move v0, v3
 
-    :goto_7d
-    if-nez v0, :cond_92
+    :goto_6
+    if-nez v0, :cond_c
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomRightCornerRadius-kKHJgLs()J
 
@@ -1372,30 +1372,30 @@
 
     cmpg-float v0, v0, v1
 
-    if-nez v0, :cond_8d
+    if-nez v0, :cond_a
 
     move v0, v2
 
-    goto :goto_8e
+    goto :goto_7
 
-    :cond_8d
+    :cond_a
     move v0, v3
 
-    :goto_8e
-    if-eqz v0, :cond_91
+    :goto_7
+    if-eqz v0, :cond_b
 
-    goto :goto_92
+    goto :goto_8
 
-    :cond_91
+    :cond_b
     move v2, v3
 
-    :cond_92
-    :goto_92
+    :cond_c
+    :goto_8
     return v2
 .end method
 
 .method public static final isSimple(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 6
+    .locals 5
     .param p0, "$this$isSimple"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string v0, "<this>"
@@ -1425,17 +1425,17 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     move v0, v2
 
-    :goto_1e
-    if-eqz v0, :cond_b7
+    :goto_0
+    if-eqz v0, :cond_7
 
     .line 401
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -1456,17 +1456,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_1
 
     move v0, v1
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
+    :cond_1
     move v0, v2
 
-    :goto_37
-    if-eqz v0, :cond_b7
+    :goto_1
+    if-eqz v0, :cond_7
 
     .line 402
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -1487,17 +1487,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_4f
+    if-nez v0, :cond_2
 
     move v0, v1
 
-    goto :goto_50
+    goto :goto_2
 
-    :cond_4f
+    :cond_2
     move v0, v2
 
-    :goto_50
-    if-eqz v0, :cond_b7
+    :goto_2
+    if-eqz v0, :cond_7
 
     .line 403
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -1518,17 +1518,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_68
+    if-nez v0, :cond_3
 
     move v0, v1
 
-    goto :goto_69
+    goto :goto_3
 
-    :cond_68
+    :cond_3
     move v0, v2
 
-    :goto_69
-    if-eqz v0, :cond_b7
+    :goto_3
+    if-eqz v0, :cond_7
 
     .line 404
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -1549,17 +1549,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_81
+    if-nez v0, :cond_4
 
     move v0, v1
 
-    goto :goto_82
+    goto :goto_4
 
-    :cond_81
+    :cond_4
     move v0, v2
 
-    :goto_82
-    if-eqz v0, :cond_b7
+    :goto_4
+    if-eqz v0, :cond_7
 
     .line 405
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -1580,17 +1580,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_9a
+    if-nez v0, :cond_5
 
     move v0, v1
 
-    goto :goto_9b
+    goto :goto_5
 
-    :cond_9a
+    :cond_5
     move v0, v2
 
-    :goto_9b
-    if-eqz v0, :cond_b7
+    :goto_5
+    if-eqz v0, :cond_7
 
     .line 406
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -1611,29 +1611,29 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_b3
+    if-nez v0, :cond_6
 
     move v0, v1
 
-    goto :goto_b4
+    goto :goto_6
 
-    :cond_b3
+    :cond_6
     move v0, v2
 
-    :goto_b4
-    if-eqz v0, :cond_b7
+    :goto_6
+    if-eqz v0, :cond_7
 
-    goto :goto_b8
+    goto :goto_7
 
-    :cond_b7
+    :cond_7
     move v1, v2
 
-    :goto_b8
+    :goto_7
     return v1
 .end method
 
 .method public static final lerp(Landroidx/compose/ui/geometry/RoundRect;Landroidx/compose/ui/geometry/RoundRect;F)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 21
+    .locals 18
     .param p0, "start"    # Landroidx/compose/ui/geometry/RoundRect;
     .param p1, "stop"    # Landroidx/compose/ui/geometry/RoundRect;
     .param p2, "fraction"    # F
@@ -1797,7 +1797,7 @@
 .end method
 
 .method public static final translate-Uv8p0NA(Landroidx/compose/ui/geometry/RoundRect;J)Landroidx/compose/ui/geometry/RoundRect;
-    .registers 19
+    .locals 16
     .param p0, "$this$translate_u2dUv8p0NA"    # Landroidx/compose/ui/geometry/RoundRect;
     .param p1, "offset"    # J
 

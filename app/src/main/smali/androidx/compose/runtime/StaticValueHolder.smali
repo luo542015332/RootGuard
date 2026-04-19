@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -83,15 +83,15 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/runtime/StaticValueHolder;Ljava/lang/Object;ILjava/lang/Object;)Landroidx/compose/runtime/StaticValueHolder;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     iget-object p1, p0, Landroidx/compose/runtime/StaticValueHolder;->value:Ljava/lang/Object;
 
-    :cond_6
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/StaticValueHolder;->copy(Ljava/lang/Object;)Landroidx/compose/runtime/StaticValueHolder;
 
     move-result-object p0
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final component1()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -115,7 +115,7 @@
 .end method
 
 .method public final copy(Ljava/lang/Object;)Landroidx/compose/runtime/StaticValueHolder;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -132,24 +132,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/runtime/StaticValueHolder;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/runtime/StaticValueHolder;
@@ -162,16 +162,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -185,27 +185,27 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/StaticValueHolder;->value:Ljava/lang/Object;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

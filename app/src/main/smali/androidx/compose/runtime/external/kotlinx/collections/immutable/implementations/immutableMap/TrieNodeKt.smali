@@ -63,7 +63,7 @@
 
 # direct methods
 .method public static final synthetic access$insertEntryAtIndex([Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p0, "$receiver"    # [Ljava/lang/Object;
     .param p1, "keyIndex"    # I
     .param p2, "key"    # Ljava/lang/Object;
@@ -78,7 +78,7 @@
 .end method
 
 .method public static final synthetic access$removeEntryAtIndex([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [Ljava/lang/Object;
     .param p1, "keyIndex"    # I
 
@@ -91,7 +91,7 @@
 .end method
 
 .method public static final synthetic access$removeNodeAtIndex([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [Ljava/lang/Object;
     .param p1, "nodeIndex"    # I
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public static final synthetic access$replaceEntryWithNode([Ljava/lang/Object;IILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;)[Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p0, "$receiver"    # [Ljava/lang/Object;
     .param p1, "keyIndex"    # I
     .param p2, "nodeIndex"    # I
@@ -119,7 +119,7 @@
 .end method
 
 .method public static final synthetic access$replaceNodeWithEntry([Ljava/lang/Object;IILjava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 6
+    .locals 1
     .param p0, "$receiver"    # [Ljava/lang/Object;
     .param p1, "nodeIndex"    # I
     .param p2, "keyIndex"    # I
@@ -135,7 +135,7 @@
 .end method
 
 .method public static final indexSegment(II)I
-    .registers 3
+    .locals 1
     .param p0, "index"    # I
     .param p1, "shift"    # I
 
@@ -148,7 +148,7 @@
 .end method
 
 .method private static final insertEntryAtIndex([Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 12
+    .locals 8
     .param p0, "$this$insertEntryAtIndex"    # [Ljava/lang/Object;
     .param p1, "keyIndex"    # I
     .param p2, "key"    # Ljava/lang/Object;
@@ -211,7 +211,7 @@
 .end method
 
 .method private static final removeEntryAtIndex([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 10
+    .locals 8
     .param p0, "$this$removeEntryAtIndex"    # [Ljava/lang/Object;
     .param p1, "keyIndex"    # I
 
@@ -252,7 +252,7 @@
 .end method
 
 .method private static final removeNodeAtIndex([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 10
+    .locals 8
     .param p0, "$this$removeNodeAtIndex"    # [Ljava/lang/Object;
     .param p1, "nodeIndex"    # I
 
@@ -293,7 +293,7 @@
 .end method
 
 .method private static final replaceEntryWithNode([Ljava/lang/Object;IILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;)[Ljava/lang/Object;
-    .registers 13
+    .locals 9
     .param p0, "$this$replaceEntryWithNode"    # [Ljava/lang/Object;
     .param p1, "keyIndex"    # I
     .param p2, "nodeIndex"    # I
@@ -360,7 +360,7 @@
 .end method
 
 .method private static final replaceNodeWithEntry([Ljava/lang/Object;IILjava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 9
+    .locals 4
     .param p0, "$this$replaceNodeWithEntry"    # [Ljava/lang/Object;
     .param p1, "nodeIndex"    # I
     .param p2, "keyIndex"    # I

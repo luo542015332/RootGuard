@@ -86,13 +86,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -101,12 +101,12 @@
 .end method
 
 .method private final getInspectorValues()Landroidx/compose/ui/platform/InspectorInfo;
-    .registers 5
+    .locals 4
 
     .line 43
     iget-object v0, p0, Landroidx/compose/ui/node/ModifierNodeElement;->_inspectorValues:Landroidx/compose/ui/platform/InspectorInfo;
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_0
 
     new-instance v0, Landroidx/compose/ui/platform/InspectorInfo;
 
@@ -158,7 +158,7 @@
 
     .end local v1    # "it":Landroidx/compose/ui/platform/InspectorInfo;
     .end local v2    # "$i$a$-also-ModifierNodeElement$inspectorValues$2":I
-    :cond_23
+    :cond_0
     return-object v0
 .end method
 
@@ -176,7 +176,7 @@
 .end method
 
 .method public final getInspectableElements()Lkotlin/sequences/Sequence;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -201,7 +201,7 @@
 .end method
 
 .method public final getNameFallback()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 51
     invoke-direct {p0}, Landroidx/compose/ui/node/ModifierNodeElement;->getInspectorValues()Landroidx/compose/ui/platform/InspectorInfo;
@@ -216,7 +216,7 @@
 .end method
 
 .method public final getValueOverride()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 54
     invoke-direct {p0}, Landroidx/compose/ui/node/ModifierNodeElement;->getInspectorValues()Landroidx/compose/ui/platform/InspectorInfo;
@@ -234,7 +234,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"

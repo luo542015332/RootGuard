@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 33
@@ -109,7 +109,7 @@
 .end method
 
 .method public final invoke(Ljava/util/List;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "list"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -140,29 +140,29 @@
 
     rem-int/lit8 v1, v1, 0x2
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_18
-    if-eqz v1, :cond_41
+    :goto_0
+    if-eqz v1, :cond_2
 
     .line 45
     const/4 v1, 0x0
 
     .line 46
     .local v1, "index":I
-    :goto_1b
+    :goto_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_3a
+    if-ge v1, v2, :cond_1
 
     .line 47
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -194,10 +194,10 @@
 
     .end local v2    # "key":Ljava/lang/String;
     .end local v3    # "value":Ljava/lang/Object;
-    goto :goto_1b
+    goto :goto_1
 
     .line 52
-    :cond_3a
+    :cond_1
     iget-object v2, p0, Landroidx/compose/runtime/saveable/MapSaverKt$mapSaver$2;->$restore:Lkotlin/jvm/functions/Function1;
 
     invoke-interface {v2, v0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -208,7 +208,7 @@
 
     .line 44
     .end local v1    # "index":I
-    :cond_41
+    :cond_2
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Check failed."

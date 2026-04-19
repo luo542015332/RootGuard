@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/ContentInViewModifier;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 198
     invoke-virtual {p0}, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->invoke()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 13
+    .locals 12
 
     .line 232
     nop
@@ -87,7 +87,6 @@
     .line 236
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->bringIntoViewRequests:Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getBringIntoViewRequests$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
 
     move-result-object v0
@@ -102,8 +101,7 @@
     nop
 
     .line 429
-    :goto_b
-    # getter for: Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->requests:Landroidx/compose/runtime/collection/MutableVector;
+    :goto_0
     invoke-static {v0}, Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->access$getRequests$p(Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v1
@@ -114,10 +112,9 @@
 
     const/4 v9, 0x1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_2
 
     .line 430
-    # getter for: Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->requests:Landroidx/compose/runtime/collection/MutableVector;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->access$getRequests$p(Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v1
@@ -145,14 +142,14 @@
 
     .line 238
     .local v11, "$i$a$-resumeAndRemoveWhile-ContentInViewModifier$launchAnimation$1$1$2$1":I
-    if-nez v10, :cond_30
+    if-nez v10, :cond_0
 
     move v1, v9
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 239
-    :cond_30
+    :cond_0
     const-wide/16 v3, 0x0
 
     const/4 v5, 0x1
@@ -187,16 +184,14 @@
     .line 430
     .end local v10    # "bounds":Landroidx/compose/ui/geometry/Rect;
     .end local v11    # "$i$a$-resumeAndRemoveWhile-ContentInViewModifier$launchAnimation$1$1$2$1":I
-    :goto_3f
-    if-eqz v1, :cond_67
+    :goto_1
+    if-eqz v1, :cond_1
 
     .line 431
-    # getter for: Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->requests:Landroidx/compose/runtime/collection/MutableVector;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->access$getRequests$p(Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v1
 
-    # getter for: Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->requests:Landroidx/compose/runtime/collection/MutableVector;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->access$getRequests$p(Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v2
@@ -237,40 +232,38 @@
 
     invoke-interface {v1, v2}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
-    goto :goto_b
+    goto :goto_0
 
     .line 433
-    :cond_67
-    goto :goto_69
+    :cond_1
+    goto :goto_2
 
     .line 436
-    :cond_68
+    :cond_2
     nop
 
     .line 248
     .end local v0    # "this_$iv":Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     .end local v8    # "$i$f$resumeAndRemoveWhile":I
-    :goto_69
+    :goto_2
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->trackingFocusedChild:Z
     invoke-static {v0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getTrackingFocusedChild$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_90
+    if-eqz v0, :cond_4
 
     .line 249
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # invokes: Landroidx/compose/foundation/gestures/ContentInViewModifier;->getFocusedChildBounds()Landroidx/compose/ui/geometry/Rect;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getFocusedChildBounds(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v2
 
     const/4 v0, 0x0
 
-    if-eqz v2, :cond_87
+    if-eqz v2, :cond_3
 
     iget-object v1, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
@@ -284,15 +277,15 @@
 
     move-result v1
 
-    if-ne v1, v9, :cond_87
+    if-ne v1, v9, :cond_3
 
-    goto :goto_88
+    goto :goto_3
 
-    :cond_87
+    :cond_3
     move v9, v0
 
-    :goto_88
-    if-eqz v9, :cond_90
+    :goto_3
+    if-eqz v9, :cond_4
 
     .line 251
     nop
@@ -303,17 +296,15 @@
     invoke-static {v1, v0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$setTrackingFocusedChild$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;Z)V
 
     .line 259
-    :cond_90
+    :cond_4
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->animationState:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getAnimationState$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/UpdatableAnimationState;
 
     move-result-object v0
 
     iget-object v1, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$2;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # invokes: Landroidx/compose/foundation/gestures/ContentInViewModifier;->calculateScrollDelta()F
     invoke-static {v1}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$calculateScrollDelta(Landroidx/compose/foundation/gestures/ContentInViewModifier;)F
 
     move-result v1

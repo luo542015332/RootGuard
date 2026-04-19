@@ -61,7 +61,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 632
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
     .param p1, "it"    # Ljava/lang/Throwable;
 
     .line 632

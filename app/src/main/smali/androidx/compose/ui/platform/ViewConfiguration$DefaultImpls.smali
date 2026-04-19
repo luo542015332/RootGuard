@@ -26,13 +26,12 @@
 
 # direct methods
 .method public static getMinimumTouchTargetSize-MYxV2XQ(Landroidx/compose/ui/platform/ViewConfiguration;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/platform/ViewConfiguration;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 56
-    # invokes: Landroidx/compose/ui/platform/ViewConfiguration;->getMinimumTouchTargetSize-MYxV2XQ()J
     invoke-static {p0}, Landroidx/compose/ui/platform/ViewConfiguration;->access$getMinimumTouchTargetSize-MYxV2XQ$jd(Landroidx/compose/ui/platform/ViewConfiguration;)J
 
     move-result-wide v0

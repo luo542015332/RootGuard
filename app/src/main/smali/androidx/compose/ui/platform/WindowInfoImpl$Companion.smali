@@ -40,7 +40,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/WindowInfoImpl$Companion;-><init>()V
 
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final getGlobalKeyboardModifiers$ui_release()Landroidx/compose/runtime/MutableState;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -70,7 +70,6 @@
     .end annotation
 
     .line 78
-    # getter for: Landroidx/compose/ui/platform/WindowInfoImpl;->GlobalKeyboardModifiers:Landroidx/compose/runtime/MutableState;
     invoke-static {}, Landroidx/compose/ui/platform/WindowInfoImpl;->access$getGlobalKeyboardModifiers$cp()Landroidx/compose/runtime/MutableState;
 
     move-result-object v0

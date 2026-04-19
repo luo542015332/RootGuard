@@ -61,7 +61,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/RecomposeScopeImpl;ILandroidx/compose/runtime/collection/IdentityArrayIntMap;)V
-    .registers 5
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/RecomposeScopeImpl$end$1$2;->this$0:Landroidx/compose/runtime/RecomposeScopeImpl;
 
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 339
@@ -95,7 +95,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composition;)V
-    .registers 26
+    .locals 24
     .param p1, "composition"    # Landroidx/compose/runtime/Composition;
 
     move-object/from16 v0, p0
@@ -112,20 +112,18 @@
     .line 341
     iget-object v2, v0, Landroidx/compose/runtime/RecomposeScopeImpl$end$1$2;->this$0:Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    # getter for: Landroidx/compose/runtime/RecomposeScopeImpl;->currentToken:I
     invoke-static {v2}, Landroidx/compose/runtime/RecomposeScopeImpl;->access$getCurrentToken$p(Landroidx/compose/runtime/RecomposeScopeImpl;)I
 
     move-result v2
 
     iget v3, v0, Landroidx/compose/runtime/RecomposeScopeImpl$end$1$2;->$token:I
 
-    if-ne v2, v3, :cond_be
+    if-ne v2, v3, :cond_a
 
     iget-object v2, v0, Landroidx/compose/runtime/RecomposeScopeImpl$end$1$2;->$instances:Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
     iget-object v3, v0, Landroidx/compose/runtime/RecomposeScopeImpl$end$1$2;->this$0:Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    # getter for: Landroidx/compose/runtime/RecomposeScopeImpl;->trackedInstances:Landroidx/compose/runtime/collection/IdentityArrayIntMap;
     invoke-static {v3}, Landroidx/compose/runtime/RecomposeScopeImpl;->access$getTrackedInstances$p(Landroidx/compose/runtime/RecomposeScopeImpl;)Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
     move-result-object v3
@@ -134,12 +132,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_be
+    if-eqz v2, :cond_a
 
     .line 342
     instance-of v2, v1, Landroidx/compose/runtime/CompositionImpl;
 
-    if-eqz v2, :cond_be
+    if-eqz v2, :cond_a
 
     .line 344
     iget-object v2, v0, Landroidx/compose/runtime/RecomposeScopeImpl$end$1$2;->$instances:Landroidx/compose/runtime/collection/IdentityArrayIntMap;
@@ -178,8 +176,8 @@
     const/4 v10, 0x0
 
     .local v10, "i$iv":I
-    :goto_3c
-    if-ge v10, v8, :cond_a3
+    :goto_0
+    if-ge v10, v8, :cond_8
 
     .line 396
     aget-object v12, v6, v10
@@ -204,16 +202,16 @@
 
     .line 345
     .local v16, "$i$a$-removeValueIf-RecomposeScopeImpl$end$1$2$1":I
-    if-eq v15, v3, :cond_51
+    if-eq v15, v3, :cond_0
 
     const/16 v17, 0x1
 
-    goto :goto_53
+    goto :goto_1
 
-    :cond_51
+    :cond_0
     const/16 v17, 0x0
 
-    :goto_53
+    :goto_1
     move/from16 v18, v17
 
     .local v18, "remove":Z
@@ -221,7 +219,7 @@
 
     .line 346
     .local v19, "$i$a$-also-RecomposeScopeImpl$end$1$2$1$1":I
-    if-eqz v18, :cond_8e
+    if-eqz v18, :cond_5
 
     .line 347
     move-object v11, v1
@@ -233,19 +231,19 @@
     .line 348
     instance-of v11, v14, Landroidx/compose/runtime/DerivedState;
 
-    if-eqz v11, :cond_67
+    if-eqz v11, :cond_1
 
     move-object v11, v14
 
     check-cast v11, Landroidx/compose/runtime/DerivedState;
 
-    goto :goto_68
+    goto :goto_2
 
-    :cond_67
+    :cond_1
     const/4 v11, 0x0
 
-    :goto_68
-    if-eqz v11, :cond_8b
+    :goto_2
+    if-eqz v11, :cond_3
 
     .local v11, "it":Landroidx/compose/runtime/DerivedState;
     const/16 v20, 0x0
@@ -261,12 +259,11 @@
     invoke-virtual {v3, v11}, Landroidx/compose/runtime/CompositionImpl;->removeDerivedStateObservation$runtime_release(Landroidx/compose/runtime/DerivedState;)V
 
     .line 350
-    # getter for: Landroidx/compose/runtime/RecomposeScopeImpl;->trackedDependencies:Landroidx/compose/runtime/collection/IdentityArrayMap;
     invoke-static {v4}, Landroidx/compose/runtime/RecomposeScopeImpl;->access$getTrackedDependencies$p(Landroidx/compose/runtime/RecomposeScopeImpl;)Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     move-result-object v3
 
-    if-eqz v3, :cond_8d
+    if-eqz v3, :cond_4
 
     .local v3, "dependencies":Landroidx/compose/runtime/collection/IdentityArrayMap;
     const/16 v22, 0x0
@@ -280,7 +277,7 @@
 
     move-result v23
 
-    if-nez v23, :cond_89
+    if-nez v23, :cond_2
 
     .line 353
     const/4 v1, 0x0
@@ -288,30 +285,30 @@
     invoke-static {v4, v1}, Landroidx/compose/runtime/RecomposeScopeImpl;->access$setTrackedDependencies$p(Landroidx/compose/runtime/RecomposeScopeImpl;Landroidx/compose/runtime/collection/IdentityArrayMap;)V
 
     .line 355
-    :cond_89
+    :cond_2
     nop
 
     .line 350
     .end local v3    # "dependencies":Landroidx/compose/runtime/collection/IdentityArrayMap;
     .end local v22    # "$i$a$-let-RecomposeScopeImpl$end$1$2$1$1$1$1":I
-    goto :goto_8d
+    goto :goto_3
 
     .line 348
     .end local v11    # "it":Landroidx/compose/runtime/DerivedState;
     .end local v20    # "$i$a$-let-RecomposeScopeImpl$end$1$2$1$1$1":I
-    :cond_8b
+    :cond_3
     move/from16 v21, v3
 
-    :cond_8d
-    :goto_8d
-    goto :goto_90
+    :cond_4
+    :goto_3
+    goto :goto_4
 
     .line 346
-    :cond_8e
+    :cond_5
     move/from16 v21, v3
 
     .line 358
-    :goto_90
+    :goto_4
     nop
 
     .line 345
@@ -323,10 +320,10 @@
     .end local v14    # "instance":Ljava/lang/Object;
     .end local v15    # "instanceToken":I
     .end local v16    # "$i$a$-removeValueIf-RecomposeScopeImpl$end$1$2$1":I
-    if-nez v17, :cond_9c
+    if-nez v17, :cond_7
 
     .line 399
-    if-eq v9, v10, :cond_9a
+    if-eq v9, v10, :cond_6
 
     .line 400
     aput-object v12, v6, v9
@@ -335,29 +332,29 @@
     aput v13, v7, v9
 
     .line 403
-    :cond_9a
+    :cond_6
     add-int/lit8 v9, v9, 0x1
 
     .line 394
     .end local v12    # "key$iv":Ljava/lang/Object;
     .end local v13    # "value$iv":I
-    :cond_9c
+    :cond_7
     add-int/lit8 v10, v10, 0x1
 
     move-object/from16 v1, p1
 
     move/from16 v3, v21
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 406
     .end local v10    # "i$iv":I
-    :cond_a3
+    :cond_8
     move v1, v9
 
     .local v1, "i$iv":I
-    :goto_a4
-    if-ge v1, v8, :cond_ac
+    :goto_5
+    if-ge v1, v8, :cond_9
 
     .line 407
     const/4 v3, 0x0
@@ -367,11 +364,11 @@
     .line 406
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a4
+    goto :goto_5
 
     .line 409
     .end local v1    # "i$iv":I
-    :cond_ac
+    :cond_9
     invoke-static {v2, v9}, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->access$setSize$p(Landroidx/compose/runtime/collection/IdentityArrayIntMap;I)V
 
     .line 410
@@ -390,7 +387,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_be
+    if-nez v1, :cond_a
 
     iget-object v1, v0, Landroidx/compose/runtime/RecomposeScopeImpl$end$1$2;->this$0:Landroidx/compose/runtime/RecomposeScopeImpl;
 
@@ -399,6 +396,6 @@
     invoke-static {v1, v2}, Landroidx/compose/runtime/RecomposeScopeImpl;->access$setTrackedInstances$p(Landroidx/compose/runtime/RecomposeScopeImpl;Landroidx/compose/runtime/collection/IdentityArrayIntMap;)V
 
     .line 362
-    :cond_be
+    :cond_a
     return-void
 .end method

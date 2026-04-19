@@ -100,7 +100,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;Landroidx/compose/animation/core/AnimationSpec;Lkotlin/jvm/functions/Function1;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/material/AnchoredDraggableState;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -178,7 +178,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 614
     invoke-virtual {p0}, Landroidx/compose/material/AnchoredDraggableKt$rememberAnchoredDraggableState$2;->invoke()Landroidx/compose/material/AnchoredDraggableState;

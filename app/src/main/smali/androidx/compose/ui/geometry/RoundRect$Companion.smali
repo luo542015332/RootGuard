@@ -40,7 +40,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 205
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/geometry/RoundRect$Companion;-><init>()V
 
@@ -57,7 +57,7 @@
 .end method
 
 .method public static synthetic getZero$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
@@ -67,10 +67,9 @@
 
 # virtual methods
 .method public final getZero()Landroidx/compose/ui/geometry/RoundRect;
-    .registers 2
+    .locals 1
 
     .line 208
-    # getter for: Landroidx/compose/ui/geometry/RoundRect;->Zero:Landroidx/compose/ui/geometry/RoundRect;
     invoke-static {}, Landroidx/compose/ui/geometry/RoundRect;->access$getZero$cp()Landroidx/compose/ui/geometry/RoundRect;
 
     move-result-object v0

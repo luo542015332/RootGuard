@@ -47,7 +47,7 @@
 
 # direct methods
 .method public static final synthetic access$intersects(Ljava/util/Set;Ljava/util/Set;)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/Set;
     .param p1, "other"    # Ljava/util/Set;
 
@@ -60,7 +60,7 @@
 .end method
 
 .method public static final collectAsState(Lkotlinx/coroutines/flow/Flow;Ljava/lang/Object;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;
-    .registers 13
+    .locals 7
     .param p0, "$this$collectAsState"    # Lkotlinx/coroutines/flow/Flow;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "context"    # Lkotlin/coroutines/CoroutineContext;
@@ -95,7 +95,7 @@
 
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_19
+    if-eqz p5, :cond_0
 
     .line 61
     sget-object p5, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
@@ -104,12 +104,12 @@
 
     check-cast p2, Lkotlin/coroutines/CoroutineContext;
 
-    :cond_19
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result p5
 
-    if-eqz p5, :cond_26
+    if-eqz p5, :cond_1
 
     .line 62
     const/4 p5, -0x1
@@ -118,7 +118,7 @@
 
     invoke-static {v0, p4, p5, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_26
+    :cond_1
     new-instance p5, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
 
     const/4 v0, 0x0
@@ -157,18 +157,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_4c
+    :cond_2
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object p5
 .end method
 
 .method public static final collectAsState(Lkotlinx/coroutines/flow/StateFlow;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;
-    .registers 12
+    .locals 7
     .param p0, "$this$collectAsState"    # Lkotlinx/coroutines/flow/StateFlow;
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -202,7 +202,7 @@
 
     and-int/lit8 p4, p4, 0x1
 
-    if-eqz p4, :cond_19
+    if-eqz p4, :cond_0
 
     .line 46
     sget-object p4, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
@@ -211,12 +211,12 @@
 
     check-cast p1, Lkotlin/coroutines/CoroutineContext;
 
-    :cond_19
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result p4
 
-    if-eqz p4, :cond_26
+    if-eqz p4, :cond_1
 
     .line 47
     const/4 p4, -0x1
@@ -225,7 +225,7 @@
 
     invoke-static {v0, p3, p4, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_26
+    :cond_1
     move-object v1, p0
 
     check-cast v1, Lkotlinx/coroutines/flow/Flow;
@@ -250,18 +250,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_3f
+    :cond_2
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object p4
 .end method
 
 .method private static final intersects$SnapshotStateKt__SnapshotFlowKt(Ljava/util/Set;Ljava/util/Set;)Z
-    .registers 10
+    .locals 8
     .param p0, "$this$intersects"    # Ljava/util/Set;
     .param p1, "other"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
@@ -289,7 +289,7 @@
 
     const/4 v3, 0x0
 
-    if-ge v0, v1, :cond_37
+    if-ge v0, v1, :cond_3
 
     move-object v0, p0
 
@@ -302,7 +302,7 @@
     .local v1, "$i$f$any":I
     instance-of v4, v0, Ljava/util/Collection;
 
-    if-eqz v4, :cond_1e
+    if-eqz v4, :cond_0
 
     move-object v4, v0
 
@@ -312,22 +312,22 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1e
+    if-eqz v4, :cond_0
 
-    goto :goto_48
+    goto :goto_0
 
     .line 175
-    :cond_1e
+    :cond_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    :cond_22
+    :cond_1
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_35
+    if-eqz v5, :cond_2
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -348,21 +348,21 @@
     .line 175
     .end local v6    # "it":Ljava/lang/Object;
     .end local v7    # "$i$a$-any-SnapshotStateKt__SnapshotFlowKt$intersects$1":I
-    if-eqz v6, :cond_22
+    if-eqz v6, :cond_1
 
-    goto :goto_60
+    goto :goto_1
 
     .line 176
     .end local v5    # "element$iv":Ljava/lang/Object;
-    :cond_35
+    :cond_2
     move v2, v3
 
     .end local v0    # "$this$any$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$any":I
-    goto :goto_62
+    goto :goto_2
 
     .line 172
-    :cond_37
+    :cond_3
     move-object v0, p1
 
     check-cast v0, Ljava/lang/Iterable;
@@ -374,7 +374,7 @@
     .restart local v1    # "$i$f$any":I
     instance-of v4, v0, Ljava/util/Collection;
 
-    if-eqz v4, :cond_4a
+    if-eqz v4, :cond_4
 
     move-object v4, v0
 
@@ -384,25 +384,25 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4a
+    if-eqz v4, :cond_4
 
-    :goto_48
+    :goto_0
     move v2, v3
 
-    goto :goto_62
+    goto :goto_2
 
     .line 175
-    :cond_4a
+    :cond_4
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    :cond_4e
+    :cond_5
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_61
+    if-eqz v5, :cond_6
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -423,25 +423,25 @@
     .line 175
     .end local v6    # "it":Ljava/lang/Object;
     .end local v7    # "$i$a$-any-SnapshotStateKt__SnapshotFlowKt$intersects$2":I
-    if-eqz v6, :cond_4e
+    if-eqz v6, :cond_5
 
-    :goto_60
-    goto :goto_62
+    :goto_1
+    goto :goto_2
 
     .line 176
     .end local v5    # "element$iv":Ljava/lang/Object;
-    :cond_61
+    :cond_6
     move v2, v3
 
     .line 172
     .end local v0    # "$this$any$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$any":I
-    :goto_62
+    :goto_2
     return v2
 .end method
 
 .method public static final snapshotFlow(Lkotlin/jvm/functions/Function0;)Lkotlinx/coroutines/flow/Flow;
-    .registers 3
+    .locals 2
     .param p0, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final dispose()V
-    .registers 7
+    .locals 6
 
     .line 546
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/Snapshot$Companion$registerGlobalWriteObserver$2;->$observer:Lkotlin/jvm/functions/Function1;
@@ -98,15 +98,14 @@
 
     .line 547
     .local v4, "$i$a$-sync-Snapshot$Companion$registerGlobalWriteObserver$2$dispose$1":I
-    :try_start_a
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->globalWriteObservers:Ljava/util/List;
+    :try_start_0
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getGlobalWriteObservers$p()Ljava/util/List;
 
     move-result-object v5
 
     invoke-interface {v5, v0}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-    :try_end_11
-    .catchall {:try_start_a .. :try_end_11} :catchall_17
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2292
     .end local v4    # "$i$a$-sync-Snapshot$Companion$registerGlobalWriteObserver$2$dispose$1":I
@@ -119,7 +118,6 @@
 
     .line 549
     .end local v1    # "$i$f$sync":I
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->advanceGlobalSnapshot()V
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$advanceGlobalSnapshot()V
 
     .line 550
@@ -129,7 +127,7 @@
     .restart local v1    # "$i$f$sync":I
     .restart local v2    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_17
+    :catchall_0
     move-exception v0
 
     monitor-exit v2

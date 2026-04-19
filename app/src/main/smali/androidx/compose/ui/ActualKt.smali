@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final areObjectsOfSameType(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p0, "a"    # Ljava/lang/Object;
     .param p1, "b"    # Ljava/lang/Object;
 
@@ -58,21 +58,21 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_18
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_19
+    :goto_0
     return v0
 .end method
 
 .method public static final tryPopulateReflectively(Landroidx/compose/ui/platform/InspectorInfo;Landroidx/compose/ui/node/ModifierNodeElement;)V
-    .registers 12
+    .locals 10
     .param p0, "$this$tryPopulateReflectively"    # Landroidx/compose/ui/platform/InspectorInfo;
     .param p1, "element"    # Landroidx/compose/ui/node/ModifierNodeElement;
     .annotation system Ldalvik/annotation/Signature;
@@ -145,8 +145,8 @@
 
     move-result v3
 
-    :goto_30
-    if-ge v2, v3, :cond_69
+    :goto_0
+    if-ge v2, v3, :cond_1
 
     .line 53
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -174,7 +174,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_64
+    if-nez v7, :cond_0
 
     .line 37
     nop
@@ -182,7 +182,7 @@
     .line 38
     const/4 v7, 0x1
 
-    :try_start_48
+    :try_start_0
     invoke-virtual {v5, v7}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 39
@@ -203,25 +203,25 @@
     move-result-object v9
 
     invoke-virtual {v7, v8, v9}, Landroidx/compose/ui/platform/ValueElementSequence;->set(Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_60
-    .catch Ljava/lang/SecurityException; {:try_start_48 .. :try_end_60} :catch_63
-    .catch Ljava/lang/IllegalAccessException; {:try_start_48 .. :try_end_60} :catch_61
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_64
+    goto :goto_1
 
     .line 43
-    :catch_61
+    :catch_0
     move-exception v7
 
-    goto :goto_64
+    goto :goto_1
 
     .line 40
-    :catch_63
+    :catch_1
     move-exception v7
 
     .line 48
-    :cond_64
-    :goto_64
+    :cond_0
+    :goto_1
     nop
 
     .line 54
@@ -233,11 +233,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_30
+    goto :goto_0
 
     .line 56
     .end local v2    # "index$iv":I
-    :cond_69
+    :cond_1
     nop
 
     .line 49

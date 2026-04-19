@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/text/modifiers/SelectionController;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/text/modifiers/SelectionController$modifier$2;->this$0:Landroidx/compose/foundation/text/modifiers/SelectionController;
 
@@ -64,12 +64,11 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/ui/text/TextLayoutResult;
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/compose/foundation/text/modifiers/SelectionController$modifier$2;->this$0:Landroidx/compose/foundation/text/modifiers/SelectionController;
 
-    # getter for: Landroidx/compose/foundation/text/modifiers/SelectionController;->params:Landroidx/compose/foundation/text/modifiers/StaticTextSelectionParams;
     invoke-static {v0}, Landroidx/compose/foundation/text/modifiers/SelectionController;->access$getParams$p(Landroidx/compose/foundation/text/modifiers/SelectionController;)Landroidx/compose/foundation/text/modifiers/StaticTextSelectionParams;
 
     move-result-object v0
@@ -82,7 +81,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 84
     invoke-virtual {p0}, Landroidx/compose/foundation/text/modifiers/SelectionController$modifier$2;->invoke()Landroidx/compose/ui/text/TextLayoutResult;

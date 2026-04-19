@@ -48,7 +48,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/internal/PopupLayout;Landroidx/compose/ui/unit/LayoutDirection;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$ExposedDropdownMenuPopup$6;->$popupLayout:Landroidx/compose/material/internal/PopupLayout;
 
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 12
+    .locals 7
     .param p1, "$this$Layout"    # Landroidx/compose/ui/layout/MeasureScope;
     .annotation system Ldalvik/annotation/Signature;
         value = {

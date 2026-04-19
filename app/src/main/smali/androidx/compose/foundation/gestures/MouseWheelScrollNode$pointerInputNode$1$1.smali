@@ -81,7 +81,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/MouseWheelScrollNode;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,7 +132,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -161,7 +161,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
 
@@ -175,7 +175,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 20
+    .locals 18
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -188,7 +188,7 @@
 
     const/4 v3, 0x1
 
-    packed-switch v2, :pswitch_data_d2
+    packed-switch v2, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -198,7 +198,7 @@
 
     throw v0
 
-    :pswitch_15
+    :pswitch_0
     move-object/from16 v2, p0
 
     .local v2, "this":Landroidx/compose/foundation/gestures/MouseWheelScrollNode$pointerInputNode$1$1;
@@ -216,12 +216,12 @@
 
     move-object v5, v4
 
-    goto :goto_43
+    goto :goto_1
 
     .end local v2    # "this":Landroidx/compose/foundation/gestures/MouseWheelScrollNode$pointerInputNode$1$1;
     .end local v4    # "$result":Ljava/lang/Object;
     .end local v5    # "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :pswitch_23
+    :pswitch_1
     invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v2, p0
@@ -236,7 +236,7 @@
 
     .line 337
     .restart local v5    # "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_2e
+    :goto_0
     nop
 
     .line 338
@@ -248,18 +248,17 @@
 
     iput v3, v2, Landroidx/compose/foundation/gestures/MouseWheelScrollNode$pointerInputNode$1$1;->label:I
 
-    # invokes: Landroidx/compose/foundation/gestures/ScrollableKt;->awaitScrollEvent(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     invoke-static {v5, v6}, Landroidx/compose/foundation/gestures/ScrollableKt;->access$awaitScrollEvent(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v6
 
-    if-ne v6, v0, :cond_3d
+    if-ne v6, v0, :cond_0
 
     .line 336
     return-object v0
 
     .line 338
-    :cond_3d
+    :cond_0
     move-object/from16 v17, v5
 
     move-object v5, v4
@@ -272,7 +271,7 @@
     .end local v4    # "$result":Ljava/lang/Object;
     .local v5, "$result":Ljava/lang/Object;
     .local v6, "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_43
+    :goto_1
     check-cast v4, Landroidx/compose/ui/input/pointer/PointerEvent;
 
     .line 339
@@ -306,10 +305,10 @@
 
     move-result v11
 
-    :goto_53
+    :goto_2
     const/4 v12, 0x0
 
-    if-ge v10, v11, :cond_70
+    if-ge v10, v11, :cond_3
 
     .line 642
     invoke-interface {v7, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -336,38 +335,38 @@
 
     move-result v16
 
-    if-nez v16, :cond_67
+    if-nez v16, :cond_1
 
     move v13, v3
 
-    goto :goto_68
+    goto :goto_3
 
-    :cond_67
+    :cond_1
     move v13, v12
 
     .line 639
     .end local v13    # "it":Landroidx/compose/ui/input/pointer/PointerInputChange;
     .end local v15    # "$i$a$-fastAll-MouseWheelScrollNode$pointerInputNode$1$1$1":I
-    :goto_68
-    if-nez v13, :cond_6c
+    :goto_3
+    if-nez v13, :cond_2
 
     move v7, v12
 
-    goto :goto_72
+    goto :goto_4
 
     .line 643
     .end local v14    # "$i$a$-fastForEach-ListUtilsKt$fastAll$2$iv":I
-    :cond_6c
+    :cond_2
     nop
 
     .line 641
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_53
+    goto :goto_2
 
     .line 645
     .end local v10    # "index$iv$iv":I
-    :cond_70
+    :cond_3
     nop
 
     .line 646
@@ -377,8 +376,8 @@
 
     .line 339
     .end local v8    # "$i$f$fastAll":I
-    :goto_72
-    if-eqz v7, :cond_cd
+    :goto_4
+    if-eqz v7, :cond_7
 
     .line 340
     iget-object v7, v2, Landroidx/compose/foundation/gestures/MouseWheelScrollNode$pointerInputNode$1$1;->this$0:Landroidx/compose/foundation/gestures/MouseWheelScrollNode;
@@ -449,15 +448,15 @@
 
     cmpg-float v10, v7, v10
 
-    if-nez v10, :cond_aa
+    if-nez v10, :cond_4
 
     move v12, v3
 
     nop
 
     .end local v7    # "consumedDelta":F
-    :cond_aa
-    if-nez v12, :cond_c9
+    :cond_4
+    if-nez v12, :cond_6
 
     .line 346
     invoke-virtual {v4}, Landroidx/compose/ui/input/pointer/PointerEvent;->getChanges()Ljava/util/List;
@@ -479,8 +478,8 @@
 
     move-result v11
 
-    :goto_b7
-    if-ge v10, v11, :cond_c8
+    :goto_5
+    if-ge v10, v11, :cond_5
 
     .line 649
     invoke-interface {v4, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -509,17 +508,17 @@
     .line 648
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_b7
+    goto :goto_5
 
     .line 652
     .end local v10    # "index$iv":I
-    :cond_c8
+    :cond_5
     nop
 
     .line 348
     .end local v4    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v7    # "$i$f$fastForEach":I
-    :cond_c9
+    :cond_6
     nop
 
     .line 342
@@ -534,18 +533,18 @@
     nop
 
     .line 337
-    :cond_cd
+    :cond_7
     move-object v4, v5
 
     move-object v5, v6
 
-    goto/16 :goto_2e
+    goto/16 :goto_0
 
     nop
 
-    :pswitch_data_d2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_23
-        :pswitch_15
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

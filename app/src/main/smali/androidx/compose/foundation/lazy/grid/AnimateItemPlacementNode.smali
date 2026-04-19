@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/animation/core/FiniteAnimationSpec;)V
-    .registers 3
+    .locals 1
     .param p1, "animationSpec"    # Landroidx/compose/animation/core/FiniteAnimationSpec;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public final getDelegatingNode()Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementNode;->delegatingNode:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
@@ -94,7 +94,7 @@
 .end method
 
 .method public modifyParentData(Landroidx/compose/ui/unit/Density;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "$this$modifyParentData"    # Landroidx/compose/ui/unit/Density;
     .param p2, "parentData"    # Ljava/lang/Object;
 

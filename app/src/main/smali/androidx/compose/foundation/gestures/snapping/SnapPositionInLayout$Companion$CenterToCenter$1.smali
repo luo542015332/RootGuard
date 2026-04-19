@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/foundation/gestures/snapping/SnapPositionInLayout$Companion$CenterToCenter$1;
 
@@ -56,7 +56,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final position(Landroidx/compose/ui/unit/Density;III)I
-    .registers 6
+    .locals 1
     .param p1, "$this$SnapPositionInLayout"    # Landroidx/compose/ui/unit/Density;
     .param p2, "layoutSize"    # I
     .param p3, "itemSize"    # I

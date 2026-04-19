@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final synthetic access$nextDrawNode(Landroidx/compose/ui/node/DelegatableNode;)Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/node/DelegatableNode;
 
     .line 1
@@ -42,7 +42,7 @@
 .end method
 
 .method private static final nextDrawNode(Landroidx/compose/ui/node/DelegatableNode;)Landroidx/compose/ui/Modifier$Node;
-    .registers 7
+    .locals 6
     .param p0, "$this$nextDrawNode"    # Landroidx/compose/ui/node/DelegatableNode;
 
     .line 114
@@ -88,31 +88,31 @@
 
     const/4 v3, 0x0
 
-    if-nez v2, :cond_1a
+    if-nez v2, :cond_0
 
     return-object v3
 
     .line 117
     .local v2, "child":Landroidx/compose/ui/Modifier$Node;
-    :cond_1a
+    :cond_0
     invoke-virtual {v2}, Landroidx/compose/ui/Modifier$Node;->getAggregateChildKindSet$ui_release()I
 
     move-result v4
 
     and-int/2addr v4, v0
 
-    if-nez v4, :cond_22
+    if-nez v4, :cond_1
 
     return-object v3
 
     .line 118
-    :cond_22
+    :cond_1
     move-object v4, v2
 
     .line 119
     .local v4, "next":Landroidx/compose/ui/Modifier$Node;
-    :goto_23
-    if-eqz v4, :cond_3a
+    :goto_0
+    if-eqz v4, :cond_4
 
     .line 120
     invoke-virtual {v4}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
@@ -121,32 +121,32 @@
 
     and-int/2addr v5, v1
 
-    if-eqz v5, :cond_2d
+    if-eqz v5, :cond_2
 
     return-object v3
 
     .line 121
-    :cond_2d
+    :cond_2
     invoke-virtual {v4}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
 
     move-result v5
 
     and-int/2addr v5, v0
 
-    if-eqz v5, :cond_35
+    if-eqz v5, :cond_3
 
     .line 122
     return-object v4
 
     .line 124
-    :cond_35
+    :cond_3
     invoke-virtual {v4}, Landroidx/compose/ui/Modifier$Node;->getChild$ui_release()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v4
 
-    goto :goto_23
+    goto :goto_0
 
     .line 126
-    :cond_3a
+    :cond_4
     return-object v3
 .end method

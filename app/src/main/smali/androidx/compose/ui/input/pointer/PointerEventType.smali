@@ -72,7 +72,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
@@ -149,7 +149,7 @@
 .end method
 
 .method private synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # I
 
     .line 313
@@ -161,7 +161,7 @@
 .end method
 
 .method public static final synthetic access$getEnter$cp()I
-    .registers 1
+    .locals 1
 
     .line 312
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Enter:I
@@ -170,7 +170,7 @@
 .end method
 
 .method public static final synthetic access$getExit$cp()I
-    .registers 1
+    .locals 1
 
     .line 312
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Exit:I
@@ -179,7 +179,7 @@
 .end method
 
 .method public static final synthetic access$getMove$cp()I
-    .registers 1
+    .locals 1
 
     .line 312
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Move:I
@@ -188,7 +188,7 @@
 .end method
 
 .method public static final synthetic access$getPress$cp()I
-    .registers 1
+    .locals 1
 
     .line 312
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Press:I
@@ -197,7 +197,7 @@
 .end method
 
 .method public static final synthetic access$getRelease$cp()I
-    .registers 1
+    .locals 1
 
     .line 312
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Release:I
@@ -206,7 +206,7 @@
 .end method
 
 .method public static final synthetic access$getScroll$cp()I
-    .registers 1
+    .locals 1
 
     .line 312
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Scroll:I
@@ -215,7 +215,7 @@
 .end method
 
 .method public static final synthetic access$getUnknown$cp()I
-    .registers 1
+    .locals 1
 
     .line 312
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Unknown:I
@@ -224,7 +224,7 @@
 .end method
 
 .method public static final synthetic box-impl(I)Landroidx/compose/ui/input/pointer/PointerEventType;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/input/pointer/PointerEventType;
 
@@ -234,23 +234,23 @@
 .end method
 
 .method private static constructor-impl(I)I
-    .registers 1
+    .locals 0
 
     return p0
 .end method
 
 .method public static equals-impl(ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/input/pointer/PointerEventType;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/input/pointer/PointerEventType;
@@ -259,34 +259,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(II)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -296,7 +296,7 @@
 .end method
 
 .method public static toString-impl(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # I
 
     .line 361
@@ -309,95 +309,95 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "Press"
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 363
-    :cond_d
+    :cond_0
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Release:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/input/pointer/PointerEventType;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     const-string/jumbo v0, "Release"
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 364
-    :cond_19
+    :cond_1
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Move:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/input/pointer/PointerEventType;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     const-string/jumbo v0, "Move"
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 365
-    :cond_25
+    :cond_2
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Enter:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/input/pointer/PointerEventType;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_3
 
     const-string v0, "Enter"
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 366
-    :cond_30
+    :cond_3
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Exit:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/input/pointer/PointerEventType;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string v0, "Exit"
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 367
-    :cond_3b
+    :cond_4
     sget v0, Landroidx/compose/ui/input/pointer/PointerEventType;->Scroll:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/input/pointer/PointerEventType;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_5
 
     const-string/jumbo v0, "Scroll"
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 368
-    :cond_47
+    :cond_5
     const-string/jumbo v0, "Unknown"
 
     .line 369
-    :goto_4a
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerEventType;->value:I
 
@@ -409,7 +409,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerEventType;->value:I
 
@@ -421,7 +421,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 361
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerEventType;->value:I
@@ -435,7 +435,7 @@
 .end method
 
 .method public final synthetic unbox-impl()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerEventType;->value:I
 

@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/semantics/Role;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/semantics/SemanticsNode$emitFakeNodes$fakeNode$1;->$nodeRole:Landroidx/compose/ui/semantics/Role;
 
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 378
@@ -82,7 +82,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$fakeSemanticsNode"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "$this$fakeSemanticsNode"

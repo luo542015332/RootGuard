@@ -90,7 +90,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;I)V
-    .registers 4
+    .locals 1
     .param p1, "builder"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
     .param p2, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -141,7 +141,7 @@
 .end method
 
 .method private final checkForComodification()V
-    .registers 3
+    .locals 2
 
     .line 126
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->expectedModCount:I
@@ -152,13 +152,13 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     .line 128
     return-void
 
     .line 127
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -167,20 +167,20 @@
 .end method
 
 .method private final checkHasIterated()V
-    .registers 3
+    .locals 2
 
     .line 131
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->lastIteratedIndex:I
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_6
+    if-eq v0, v1, :cond_0
 
     .line 133
     return-void
 
     .line 132
-    :cond_6
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -189,7 +189,7 @@
 .end method
 
 .method private final reset()V
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
@@ -222,7 +222,7 @@
 .end method
 
 .method private final setupTrieIterator()V
-    .registers 6
+    .locals 5
 
     .line 82
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
@@ -233,7 +233,7 @@
 
     .line 83
     .local v0, "root":[Ljava/lang/Object;
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 84
     const/4 v1, 0x0
@@ -244,7 +244,7 @@
     return-void
 
     .line 88
-    :cond_c
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
 
     invoke-virtual {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;->size()I
@@ -281,7 +281,7 @@
     .local v3, "trieHeight":I
     iget-object v4, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->trieIterator:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;
 
-    if-nez v4, :cond_34
+    if-nez v4, :cond_1
 
     .line 92
     new-instance v4, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;
@@ -290,23 +290,23 @@
 
     iput-object v4, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->trieIterator:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 94
-    :cond_34
+    :cond_1
     invoke-static {v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     invoke-virtual {v4, v0, v2, v1, v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->reset$runtime_release([Ljava/lang/Object;III)V
 
     .line 96
-    :goto_3a
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public add(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -343,7 +343,7 @@
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -366,7 +366,7 @@
     .line 64
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->trieIterator:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
 
@@ -388,12 +388,12 @@
 
     .line 65
     .local v0, "trieIterator":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;
-    :cond_22
+    :cond_0
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_1
 
     .line 66
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->getIndex()I
@@ -412,7 +412,7 @@
     return-object v1
 
     .line 70
-    :cond_36
+    :cond_1
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
 
     invoke-virtual {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;->getTail$runtime_release()[Ljava/lang/Object;
@@ -439,7 +439,7 @@
 .end method
 
 .method public previous()Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -464,7 +464,7 @@
     .line 48
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->trieIterator:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
 
@@ -490,7 +490,7 @@
 
     .line 49
     .local v0, "trieIterator":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;
-    :cond_28
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->getIndex()I
 
     move-result v1
@@ -499,7 +499,7 @@
 
     move-result v2
 
-    if-le v1, v2, :cond_4d
+    if-le v1, v2, :cond_1
 
     .line 51
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
@@ -531,7 +531,7 @@
     return-object v1
 
     .line 53
-    :cond_4d
+    :cond_1
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->getIndex()I
 
     move-result v1
@@ -549,7 +549,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     .line 107
     invoke-direct {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->checkForComodification()V
@@ -571,14 +571,14 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_1a
+    if-ge v0, v1, :cond_0
 
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->lastIteratedIndex:I
 
     invoke-virtual {p0, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->setIndex(I)V
 
     .line 112
-    :cond_1a
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorMutableIterator;->reset()V
 
     .line 113
@@ -586,7 +586,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

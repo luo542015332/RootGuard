@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat_androidKt$excludeLineAndPageGranularities$ancestor$1;
 
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/node/LayoutNode;)Ljava/lang/Boolean;
-    .registers 6
+    .locals 4
     .param p1, "it"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "it"
@@ -96,23 +96,23 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/semantics/SemanticsConfiguration;->isMergingSemanticsOfDescendants()Z
 
     move-result v3
 
-    if-ne v3, v1, :cond_16
+    if-ne v3, v1, :cond_0
 
     move v3, v1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v3, v2
 
-    :goto_17
-    if-eqz v3, :cond_26
+    :goto_0
+    if-eqz v3, :cond_1
 
     .line 3340
     sget-object v3, Landroidx/compose/ui/semantics/SemanticsActions;->INSTANCE:Landroidx/compose/ui/semantics/SemanticsActions;
@@ -125,14 +125,14 @@
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_26
+    :cond_1
     move v1, v2
 
-    :goto_27
+    :goto_1
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
@@ -142,7 +142,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 3336

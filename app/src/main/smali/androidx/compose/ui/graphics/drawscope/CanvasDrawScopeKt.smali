@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 52
     const/high16 v0, 0x3f800000    # 1.0f
@@ -47,7 +47,7 @@
 .end method
 
 .method public static final synthetic access$asDrawTransform(Landroidx/compose/ui/graphics/drawscope/DrawContext;)Landroidx/compose/ui/graphics/drawscope/DrawTransform;
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/graphics/drawscope/DrawContext;
 
     .line 1
@@ -59,7 +59,7 @@
 .end method
 
 .method public static final synthetic access$getDefaultDensity$p()Landroidx/compose/ui/unit/Density;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt;->DefaultDensity:Landroidx/compose/ui/unit/Density;
@@ -68,7 +68,7 @@
 .end method
 
 .method private static final asDrawTransform(Landroidx/compose/ui/graphics/drawscope/DrawContext;)Landroidx/compose/ui/graphics/drawscope/DrawTransform;
-    .registers 2
+    .locals 1
     .param p0, "$this$asDrawTransform"    # Landroidx/compose/ui/graphics/drawscope/DrawContext;
 
     .line 749

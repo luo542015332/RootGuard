@@ -123,7 +123,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .param p1, "abandoning"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -178,7 +178,7 @@
 
 # virtual methods
 .method public deactivating(Landroidx/compose/runtime/ComposeNodeLifecycleCallback;)V
-    .registers 5
+    .locals 3
     .param p1, "instance"    # Landroidx/compose/runtime/ComposeNodeLifecycleCallback;
 
     const-string/jumbo v0, "instance"
@@ -188,7 +188,7 @@
     .line 1096
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->deactivating:Ljava/util/List;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -213,7 +213,7 @@
     .end local v2    # "$i$a$-also-CompositionImpl$RememberEventDispatcher$deactivating$1":I
     nop
 
-    :cond_17
+    :cond_0
     check-cast v0, Ljava/util/Collection;
 
     invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
@@ -223,7 +223,7 @@
 .end method
 
 .method public final dispatchAbandons()V
-    .registers 7
+    .locals 6
 
     .line 1169
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->abandoning:Ljava/util/Set;
@@ -236,7 +236,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 1170
     const-string v0, "Compose:abandons"
@@ -261,7 +261,7 @@
 
     .line 1171
     .local v3, "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchAbandons$1":I
-    :try_start_17
+    :try_start_0
     iget-object v4, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->abandoning:Ljava/util/Set;
 
     invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -270,12 +270,12 @@
 
     .line 1172
     .local v4, "iterator":Ljava/util/Iterator;
-    :goto_1d
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_30
+    if-eqz v5, :cond_0
 
     .line 1173
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -292,17 +292,17 @@
     invoke-interface {v5}, Landroidx/compose/runtime/RememberObserver;->onAbandoned()V
 
     .end local v5    # "instance":Landroidx/compose/runtime/RememberObserver;
-    goto :goto_1d
+    goto :goto_0
 
     .line 1177
-    :cond_30
+    :cond_0
     nop
 
     .end local v3    # "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchAbandons$1":I
     .end local v4    # "iterator":Ljava/util/Iterator;
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_33
-    .catchall {:try_start_17 .. :try_end_33} :catchall_3a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1315
     nop
@@ -313,10 +313,10 @@
     invoke-virtual {v3, v2}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
 
     .line 1315
-    goto :goto_41
+    goto :goto_1
 
     .line 1317
-    :catchall_3a
+    :catchall_0
     move-exception v3
 
     sget-object v4, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
@@ -329,13 +329,13 @@
     .end local v0    # "sectionName$iv":Ljava/lang/String;
     .end local v1    # "$i$f$trace":I
     .end local v2    # "token$iv":Ljava/lang/Object;
-    :cond_41
-    :goto_41
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public final dispatchRememberObservers()V
-    .registers 18
+    .locals 17
 
     .line 1109
     move-object/from16 v1, p0
@@ -350,29 +350,29 @@
 
     const/4 v4, 0x1
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     move v0, v4
 
-    :goto_14
+    :goto_1
     const/4 v5, -0x1
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_3
 
     .line 1111
     const-string v6, "Compose:deactivations"
@@ -397,7 +397,7 @@
 
     .line 1112
     .local v0, "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$1":I
-    :try_start_22
+    :try_start_0
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v9
@@ -405,8 +405,8 @@
     sub-int/2addr v9, v4
 
     .local v9, "i":I
-    :goto_27
-    if-ge v5, v9, :cond_35
+    :goto_2
+    if-ge v5, v9, :cond_2
 
     .line 1113
     invoke-interface {v2, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -423,17 +423,17 @@
     .end local v10    # "instance":Landroidx/compose/runtime/ComposeNodeLifecycleCallback;
     add-int/lit8 v9, v9, -0x1
 
-    goto :goto_27
+    goto :goto_2
 
     .line 1116
     .end local v9    # "i":I
-    :cond_35
+    :cond_2
     nop
 
     .end local v0    # "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_38
-    .catchall {:try_start_22 .. :try_end_38} :catchall_43
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1280
     nop
@@ -452,13 +452,13 @@
     .end local v8    # "token$iv":Ljava/lang/Object;
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    goto :goto_4a
+    goto :goto_3
 
     .line 1282
     .restart local v6    # "sectionName$iv":Ljava/lang/String;
     .restart local v7    # "$i$f$trace":I
     .restart local v8    # "token$iv":Ljava/lang/Object;
-    :catchall_43
+    :catchall_0
     move-exception v0
 
     sget-object v3, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
@@ -471,8 +471,8 @@
     .end local v6    # "sectionName$iv":Ljava/lang/String;
     .end local v7    # "$i$f$trace":I
     .end local v8    # "token$iv":Ljava/lang/Object;
-    :cond_4a
-    :goto_4a
+    :cond_3
+    :goto_3
     iget-object v0, v1, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->forgetting:Ljava/util/List;
 
     check-cast v0, Ljava/util/Collection;
@@ -483,7 +483,7 @@
 
     xor-int/2addr v0, v4
 
-    if-eqz v0, :cond_90
+    if-eqz v0, :cond_6
 
     .line 1122
     const-string v6, "Compose:onForgotten"
@@ -508,7 +508,7 @@
 
     .line 1123
     .local v0, "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$2":I
-    :try_start_60
+    :try_start_1
     iget-object v9, v1, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->forgetting:Ljava/util/List;
 
     invoke-interface {v9}, Ljava/util/List;->size()I
@@ -518,8 +518,8 @@
     sub-int/2addr v9, v4
 
     .restart local v9    # "i":I
-    :goto_67
-    if-ge v5, v9, :cond_7f
+    :goto_4
+    if-ge v5, v9, :cond_5
 
     .line 1124
     iget-object v10, v1, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->forgetting:Ljava/util/List;
@@ -538,27 +538,27 @@
 
     move-result v11
 
-    if-nez v11, :cond_7c
+    if-nez v11, :cond_4
 
     .line 1126
     invoke-interface {v10}, Landroidx/compose/runtime/RememberObserver;->onForgotten()V
 
     .line 1123
     .end local v10    # "instance":Landroidx/compose/runtime/RememberObserver;
-    :cond_7c
+    :cond_4
     add-int/lit8 v9, v9, -0x1
 
-    goto :goto_67
+    goto :goto_4
 
     .line 1129
     .end local v9    # "i":I
-    :cond_7f
+    :cond_5
     nop
 
     .end local v0    # "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$2":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_82
-    .catchall {:try_start_60 .. :try_end_82} :catchall_89
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1285
     nop
@@ -569,10 +569,10 @@
     invoke-virtual {v0, v8}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
 
     .line 1285
-    goto :goto_90
+    goto :goto_5
 
     .line 1287
-    :catchall_89
+    :catchall_1
     move-exception v0
 
     sget-object v3, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
@@ -585,8 +585,8 @@
     .end local v6    # "sectionName$iv":Ljava/lang/String;
     .end local v7    # "$i$f$trace":I
     .end local v8    # "token$iv":Ljava/lang/Object;
-    :cond_90
-    :goto_90
+    :cond_6
+    :goto_5
     iget-object v0, v1, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->remembering:Ljava/util/List;
 
     check-cast v0, Ljava/util/Collection;
@@ -597,7 +597,7 @@
 
     xor-int/2addr v0, v4
 
-    if-eqz v0, :cond_d8
+    if-eqz v0, :cond_8
 
     .line 1134
     const-string v6, "Compose:onRemembered"
@@ -622,7 +622,7 @@
 
     .line 1135
     .local v0, "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$3":I
-    :try_start_a6
+    :try_start_2
     iget-object v9, v1, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->remembering:Ljava/util/List;
 
     .local v9, "$this$fastForEach$iv":Ljava/util/List;
@@ -640,8 +640,8 @@
 
     move-result v12
 
-    :goto_af
-    if-ge v11, v12, :cond_c6
+    :goto_6
+    if-ge v11, v12, :cond_7
 
     .line 1293
     invoke-interface {v9, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -678,11 +678,11 @@
     .end local v13    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_af
+    goto :goto_6
 
     .line 1296
     .end local v11    # "index$iv":I
-    :cond_c6
+    :cond_7
     nop
 
     .line 1139
@@ -692,8 +692,8 @@
 
     .end local v0    # "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$3":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_ca
-    .catchall {:try_start_a6 .. :try_end_ca} :catchall_d1
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 1290
     nop
@@ -704,10 +704,10 @@
     invoke-virtual {v0, v8}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
 
     .line 1290
-    goto :goto_d8
+    goto :goto_7
 
     .line 1297
-    :catchall_d1
+    :catchall_2
     move-exception v0
 
     sget-object v3, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
@@ -720,8 +720,8 @@
     .end local v6    # "sectionName$iv":Ljava/lang/String;
     .end local v7    # "$i$f$trace":I
     .end local v8    # "token$iv":Ljava/lang/Object;
-    :cond_d8
-    :goto_d8
+    :cond_8
+    :goto_7
     iget-object v3, v1, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->releasing:Ljava/util/List;
 
     .line 1144
@@ -730,27 +730,27 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    if-eqz v0, :cond_e9
+    if-eqz v0, :cond_a
 
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e6
+    if-eqz v0, :cond_9
 
-    goto :goto_e9
+    goto :goto_8
 
-    :cond_e6
+    :cond_9
     const/16 v16, 0x0
 
-    goto :goto_eb
+    goto :goto_9
 
-    :cond_e9
-    :goto_e9
+    :cond_a
+    :goto_8
     move/from16 v16, v4
 
-    :goto_eb
-    if-nez v16, :cond_120
+    :goto_9
+    if-nez v16, :cond_c
 
     .line 1147
     const-string v6, "Compose:releases"
@@ -775,7 +775,7 @@
 
     .line 1148
     .local v0, "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$4":I
-    :try_start_f8
+    :try_start_3
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v9
@@ -783,8 +783,8 @@
     sub-int/2addr v9, v4
 
     .local v9, "i":I
-    :goto_fd
-    if-ge v5, v9, :cond_10b
+    :goto_a
+    if-ge v5, v9, :cond_b
 
     .line 1149
     invoke-interface {v3, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -801,17 +801,17 @@
     .end local v4    # "instance":Landroidx/compose/runtime/ComposeNodeLifecycleCallback;
     add-int/lit8 v9, v9, -0x1
 
-    goto :goto_fd
+    goto :goto_a
 
     .line 1152
     .end local v9    # "i":I
-    :cond_10b
+    :cond_b
     nop
 
     .end local v0    # "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchRememberObservers$4":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_10e
-    .catchall {:try_start_f8 .. :try_end_10e} :catchall_119
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 1300
     nop
@@ -830,13 +830,13 @@
     .end local v8    # "token$iv":Ljava/lang/Object;
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    goto :goto_120
+    goto :goto_b
 
     .line 1302
     .restart local v6    # "sectionName$iv":Ljava/lang/String;
     .restart local v7    # "$i$f$trace":I
     .restart local v8    # "token$iv":Ljava/lang/Object;
-    :catchall_119
+    :catchall_3
     move-exception v0
 
     sget-object v4, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
@@ -849,13 +849,13 @@
     .end local v6    # "sectionName$iv":Ljava/lang/String;
     .end local v7    # "$i$f$trace":I
     .end local v8    # "token$iv":Ljava/lang/Object;
-    :cond_120
-    :goto_120
+    :cond_c
+    :goto_b
     return-void
 .end method
 
 .method public final dispatchSideEffects()V
-    .registers 12
+    .locals 11
 
     .line 1158
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->sideEffects:Ljava/util/List;
@@ -868,7 +868,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_1
 
     .line 1159
     const-string v0, "Compose:sideeffects"
@@ -893,7 +893,7 @@
 
     .line 1160
     .local v3, "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchSideEffects$1":I
-    :try_start_17
+    :try_start_0
     iget-object v4, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->sideEffects:Ljava/util/List;
 
     .local v4, "$this$fastForEach$iv":Ljava/util/List;
@@ -911,8 +911,8 @@
 
     move-result v7
 
-    :goto_20
-    if-ge v6, v7, :cond_32
+    :goto_0
+    if-ge v6, v7, :cond_0
 
     .line 1308
     invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -944,11 +944,11 @@
     .end local v8    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
     .line 1311
     .end local v6    # "index$iv":I
-    :cond_32
+    :cond_0
     nop
 
     .line 1163
@@ -963,8 +963,8 @@
 
     .end local v3    # "$i$a$-trace-CompositionImpl$RememberEventDispatcher$dispatchSideEffects$1":I
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_3b
-    .catchall {:try_start_17 .. :try_end_3b} :catchall_42
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1305
     nop
@@ -975,10 +975,10 @@
     invoke-virtual {v3, v2}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
 
     .line 1305
-    goto :goto_49
+    goto :goto_1
 
     .line 1312
-    :catchall_42
+    :catchall_0
     move-exception v3
 
     sget-object v4, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
@@ -991,13 +991,13 @@
     .end local v0    # "sectionName$iv":Ljava/lang/String;
     .end local v1    # "$i$f$trace":I
     .end local v2    # "token$iv":Ljava/lang/Object;
-    :cond_49
-    :goto_49
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public forgetting(Landroidx/compose/runtime/RememberObserver;)V
-    .registers 5
+    .locals 3
     .param p1, "instance"    # Landroidx/compose/runtime/RememberObserver;
 
     const-string/jumbo v0, "instance"
@@ -1016,7 +1016,7 @@
 
     .line 1082
     .local v1, "$i$a$-let-CompositionImpl$RememberEventDispatcher$forgetting$1":I
-    if-ltz v0, :cond_1a
+    if-ltz v0, :cond_0
 
     .line 1083
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->remembering:Ljava/util/List;
@@ -1028,16 +1028,16 @@
 
     invoke-interface {v2, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 1086
-    :cond_1a
+    :cond_0
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->forgetting:Ljava/util/List;
 
     invoke-interface {v2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 1082
-    :goto_1f
+    :goto_0
     nop
 
     .line 1081
@@ -1050,7 +1050,7 @@
 .end method
 
 .method public releasing(Landroidx/compose/runtime/ComposeNodeLifecycleCallback;)V
-    .registers 5
+    .locals 3
     .param p1, "instance"    # Landroidx/compose/runtime/ComposeNodeLifecycleCallback;
 
     const-string/jumbo v0, "instance"
@@ -1060,7 +1060,7 @@
     .line 1102
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->releasing:Ljava/util/List;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1085,7 +1085,7 @@
     .end local v2    # "$i$a$-also-CompositionImpl$RememberEventDispatcher$releasing$1":I
     nop
 
-    :cond_17
+    :cond_0
     check-cast v0, Ljava/util/Collection;
 
     invoke-interface {v0, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
@@ -1095,7 +1095,7 @@
 .end method
 
 .method public remembering(Landroidx/compose/runtime/RememberObserver;)V
-    .registers 5
+    .locals 3
     .param p1, "instance"    # Landroidx/compose/runtime/RememberObserver;
 
     const-string/jumbo v0, "instance"
@@ -1114,7 +1114,7 @@
 
     .line 1071
     .local v1, "$i$a$-let-CompositionImpl$RememberEventDispatcher$remembering$1":I
-    if-ltz v0, :cond_1a
+    if-ltz v0, :cond_0
 
     .line 1072
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->forgetting:Ljava/util/List;
@@ -1126,16 +1126,16 @@
 
     invoke-interface {v2, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 1075
-    :cond_1a
+    :cond_0
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->remembering:Ljava/util/List;
 
     invoke-interface {v2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 1071
-    :goto_1f
+    :goto_0
     nop
 
     .line 1070
@@ -1148,7 +1148,7 @@
 .end method
 
 .method public sideEffect(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "effect"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {

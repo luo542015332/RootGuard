@@ -149,7 +149,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -159,7 +159,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 9
+    .locals 7
 
     const-string/jumbo v0, "context"
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 10
+    .locals 7
 
     const-string/jumbo v0, "context"
 
@@ -207,7 +207,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 5
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
@@ -251,27 +251,27 @@
 .end method
 
 .method public synthetic constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 48
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     .line 50
     const/4 p2, 0x0
 
     .line 48
-    :cond_5
+    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_1
 
     .line 51
     const/4 p3, 0x0
 
     .line 48
-    :cond_a
+    :cond_1
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/platform/AbstractComposeView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 403
@@ -279,7 +279,7 @@
 .end method
 
 .method private final cacheIfAlive(Landroidx/compose/runtime/CompositionContext;)Landroidx/compose/runtime/CompositionContext;
-    .registers 7
+    .locals 5
     .param p1, "$this$cacheIfAlive"    # Landroidx/compose/runtime/CompositionContext;
 
     .line 222
@@ -307,18 +307,18 @@
 
     .end local v2    # "it":Landroidx/compose/runtime/CompositionContext;
     .end local v3    # "$i$a$-takeIf-AbstractComposeView$cacheIfAlive$1$1":I
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     move-object v2, v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v2, 0x0
 
     .line 224
-    :goto_e
-    if-eqz v2, :cond_1a
+    :goto_0
+    if-eqz v2, :cond_1
 
     .line 223
     nop
@@ -341,7 +341,7 @@
     .line 225
     .end local v2    # "it":Landroidx/compose/runtime/CompositionContext;
     .end local v3    # "$i$a$-let-AbstractComposeView$cacheIfAlive$1$2":I
-    :cond_1a
+    :cond_1
     nop
 
     .line 222
@@ -354,18 +354,18 @@
 .end method
 
 .method private final checkAddView()V
-    .registers 4
+    .locals 3
 
     .line 201
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->creatingComposition:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 207
     return-void
 
     .line 202
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     .line 203
@@ -414,12 +414,12 @@
 .end method
 
 .method private final ensureCompositionCreated()V
-    .registers 6
+    .locals 5
 
     .line 248
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->composition:Landroidx/compose/runtime/Composition;
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_0
 
     .line 249
     nop
@@ -429,7 +429,7 @@
 
     const/4 v1, 0x1
 
-    :try_start_7
+    :try_start_0
     iput-boolean v1, p0, Landroidx/compose/ui/platform/AbstractComposeView;->creatingComposition:Z
 
     .line 251
@@ -454,17 +454,17 @@
     move-result-object v1
 
     iput-object v1, p0, Landroidx/compose/ui/platform/AbstractComposeView;->composition:Landroidx/compose/runtime/Composition;
-    :try_end_21
-    .catchall {:try_start_7 .. :try_end_21} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 255
     iput-boolean v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->creatingComposition:Z
 
     .line 256
-    goto :goto_28
+    goto :goto_0
 
     .line 255
-    :catchall_24
+    :catchall_0
     move-exception v1
 
     iput-boolean v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->creatingComposition:Z
@@ -472,31 +472,31 @@
     throw v1
 
     .line 258
-    :cond_28
-    :goto_28
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method private static synthetic getDisposeViewCompositionStrategy$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getShowLayoutBounds$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final isAlive(Landroidx/compose/runtime/CompositionContext;)Z
-    .registers 4
+    .locals 2
     .param p1, "$this$isAlive"    # Landroidx/compose/runtime/CompositionContext;
 
     .line 216
     instance-of v0, p1, Landroidx/compose/runtime/Recomposer;
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     move-object v0, p1
 
@@ -520,30 +520,30 @@
 
     move-result v0
 
-    if-lez v0, :cond_1c
+    if-lez v0, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1f
+    :goto_1
     return v0
 .end method
 
 .method private final resolveParentCompositionContext()Landroidx/compose/runtime/CompositionContext;
-    .registers 5
+    .locals 4
 
     .line 241
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->parentContext:Landroidx/compose/runtime/CompositionContext;
 
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
     .line 242
     move-object v0, p0
@@ -556,25 +556,25 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-direct {p0, v0}, Landroidx/compose/ui/platform/AbstractComposeView;->cacheIfAlive(Landroidx/compose/runtime/CompositionContext;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move-object v0, v1
 
     .line 241
-    :goto_14
-    if-nez v0, :cond_3b
+    :goto_0
+    if-nez v0, :cond_2
 
     .line 243
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->cachedViewTreeCompositionContext:Ljava/lang/ref/WeakReference;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -582,7 +582,7 @@
 
     check-cast v0, Landroidx/compose/runtime/CompositionContext;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     move-object v2, v0
 
@@ -598,15 +598,15 @@
 
     .end local v2    # "it":Landroidx/compose/runtime/CompositionContext;
     .end local v3    # "$i$a$-takeIf-AbstractComposeView$resolveParentCompositionContext$1":I
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_1
 
     move-object v1, v0
 
-    :cond_2b
+    :cond_1
     move-object v0, v1
 
     .line 241
-    if-nez v0, :cond_3b
+    if-nez v0, :cond_2
 
     .line 244
     move-object v0, p0
@@ -623,18 +623,18 @@
 
     move-result-object v0
 
-    :cond_3b
+    :cond_2
     return-object v0
 .end method
 
 .method private final setParentContext(Landroidx/compose/runtime/CompositionContext;)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # Landroidx/compose/runtime/CompositionContext;
 
     .line 94
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->parentContext:Landroidx/compose/runtime/CompositionContext;
 
-    if-eq v0, p1, :cond_1d
+    if-eq v0, p1, :cond_1
 
     .line 95
     iput-object p1, p0, Landroidx/compose/ui/platform/AbstractComposeView;->parentContext:Landroidx/compose/runtime/CompositionContext;
@@ -642,18 +642,18 @@
     .line 96
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_0
 
     .line 97
     iput-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->cachedViewTreeCompositionContext:Ljava/lang/ref/WeakReference;
 
     .line 99
-    :cond_b
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/platform/AbstractComposeView;->composition:Landroidx/compose/runtime/Composition;
 
     .line 100
     .local v1, "old":Landroidx/compose/runtime/Composition;
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_1
 
     .line 101
     invoke-interface {v1}, Landroidx/compose/runtime/Composition;->dispose()V
@@ -666,25 +666,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 106
     invoke-direct {p0}, Landroidx/compose/ui/platform/AbstractComposeView;->ensureCompositionCreated()V
 
     .line 110
     .end local v1    # "old":Landroidx/compose/runtime/Composition;
-    :cond_1d
+    :cond_1
     return-void
 .end method
 
 .method private final setPreviousAttachedWindowToken(Landroid/os/IBinder;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroid/os/IBinder;
 
     .line 78
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->previousAttachedWindowToken:Landroid/os/IBinder;
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     .line 79
     iput-object p1, p0, Landroidx/compose/ui/platform/AbstractComposeView;->previousAttachedWindowToken:Landroid/os/IBinder;
@@ -695,7 +695,7 @@
     iput-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->cachedViewTreeCompositionContext:Ljava/lang/ref/WeakReference;
 
     .line 82
-    :cond_9
+    :cond_0
     return-void
 .end method
 
@@ -705,7 +705,7 @@
 .end method
 
 .method public addView(Landroid/view/View;)V
-    .registers 2
+    .locals 0
     .param p1, "child"    # Landroid/view/View;
 
     .line 363
@@ -719,7 +719,7 @@
 .end method
 
 .method public addView(Landroid/view/View;I)V
-    .registers 3
+    .locals 0
     .param p1, "child"    # Landroid/view/View;
     .param p2, "index"    # I
 
@@ -734,7 +734,7 @@
 .end method
 
 .method public addView(Landroid/view/View;II)V
-    .registers 4
+    .locals 0
     .param p1, "child"    # Landroid/view/View;
     .param p2, "width"    # I
     .param p3, "height"    # I
@@ -750,7 +750,7 @@
 .end method
 
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-    .registers 4
+    .locals 0
     .param p1, "child"    # Landroid/view/View;
     .param p2, "index"    # I
     .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
@@ -766,7 +766,7 @@
 .end method
 
 .method public addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 3
+    .locals 0
     .param p1, "child"    # Landroid/view/View;
     .param p2, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
@@ -781,7 +781,7 @@
 .end method
 
 .method protected addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)Z
-    .registers 5
+    .locals 1
     .param p1, "child"    # Landroid/view/View;
     .param p2, "index"    # I
     .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
@@ -798,7 +798,7 @@
 .end method
 
 .method protected addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
-    .registers 6
+    .locals 1
     .param p1, "child"    # Landroid/view/View;
     .param p2, "index"    # I
     .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
@@ -816,32 +816,32 @@
 .end method
 
 .method public final createComposition()V
-    .registers 3
+    .locals 2
 
     .line 192
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->parentContext:Landroidx/compose/runtime/CompositionContext;
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AbstractComposeView;->isAttachedToWindow()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
-    if-eqz v0, :cond_14
+    :goto_1
+    if-eqz v0, :cond_2
 
     .line 196
     invoke-direct {p0}, Landroidx/compose/ui/platform/AbstractComposeView;->ensureCompositionCreated()V
@@ -850,7 +850,7 @@
     return-void
 
     .line 192
-    :cond_14
+    :cond_2
     const/4 v0, 0x0
 
     .line 193
@@ -873,17 +873,17 @@
 .end method
 
 .method public final disposeComposition()V
-    .registers 2
+    .locals 1
 
     .line 266
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->composition:Landroidx/compose/runtime/Composition;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/runtime/Composition;->dispose()V
 
     .line 267
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->composition:Landroidx/compose/runtime/Composition;
@@ -896,26 +896,26 @@
 .end method
 
 .method public final getHasComposition()Z
-    .registers 2
+    .locals 1
 
     .line 275
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->composition:Landroidx/compose/runtime/Composition;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method protected getShouldCreateCompositionOnAttachedToWindow()Z
-    .registers 2
+    .locals 1
 
     .line 150
     const/4 v0, 0x1
@@ -924,7 +924,7 @@
 .end method
 
 .method public final getShowLayoutBounds()Z
-    .registers 2
+    .locals 1
 
     .line 160
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->showLayoutBounds:Z
@@ -933,7 +933,7 @@
 .end method
 
 .method public internalOnLayout$ui_release(ZIIII)V
-    .registers 12
+    .locals 6
     .param p1, "changed"    # Z
     .param p2, "left"    # I
     .param p3, "top"    # I
@@ -947,7 +947,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 323
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AbstractComposeView;->getPaddingLeft()I
@@ -981,12 +981,12 @@
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->layout(IIII)V
 
     .line 328
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method public internalOnMeasure$ui_release(II)V
-    .registers 9
+    .locals 6
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
@@ -999,7 +999,7 @@
 
     .line 295
     .local v1, "child":Landroid/view/View;
-    if-nez v1, :cond_b
+    if-nez v1, :cond_0
 
     .line 296
     invoke-super {p0, p1, p2}, Landroid/view/ViewGroup;->onMeasure(II)V
@@ -1008,7 +1008,7 @@
     return-void
 
     .line 300
-    :cond_b
+    :cond_0
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
@@ -1121,36 +1121,36 @@
 .end method
 
 .method public isTransitionGroup()Z
-    .registers 2
+    .locals 1
 
     .line 353
     iget-boolean v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->isTransitionGroupSet:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_1
 
     invoke-super {p0}, Landroid/view/ViewGroup;->isTransitionGroup()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 .method protected onAttachedToWindow()V
-    .registers 2
+    .locals 1
 
     .line 278
     invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
@@ -1167,18 +1167,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 283
     invoke-direct {p0}, Landroidx/compose/ui/platform/AbstractComposeView;->ensureCompositionCreated()V
 
     .line 285
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method protected final onLayout(ZIIII)V
-    .registers 6
+    .locals 0
     .param p1, "changed"    # Z
     .param p2, "left"    # I
     .param p3, "top"    # I
@@ -1192,7 +1192,7 @@
 .end method
 
 .method protected final onMeasure(II)V
-    .registers 3
+    .locals 0
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
@@ -1207,7 +1207,7 @@
 .end method
 
 .method public onRtlPropertiesChanged(I)V
-    .registers 3
+    .locals 1
     .param p1, "layoutDirection"    # I
 
     .line 335
@@ -1217,20 +1217,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutDirection(I)V
 
     .line 336
-    :goto_b
+    :goto_0
     return-void
 .end method
 
 .method public final setParentCompositionContext(Landroidx/compose/runtime/CompositionContext;)V
-    .registers 2
+    .locals 0
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
 
     .line 118
@@ -1241,7 +1241,7 @@
 .end method
 
 .method public final setShowLayoutBounds(Z)V
-    .registers 5
+    .locals 3
     .param p1, "value"    # Z
 
     .line 162
@@ -1254,7 +1254,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .local v0, "it":Landroid/view/View;
     const/4 v1, 0x0
@@ -1276,12 +1276,12 @@
     nop
 
     .line 166
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public setTransitionGroup(Z)V
-    .registers 3
+    .locals 1
     .param p1, "isTransitionGroup"    # Z
 
     .line 356
@@ -1297,7 +1297,7 @@
 .end method
 
 .method public final setViewCompositionStrategy(Landroidx/compose/ui/platform/ViewCompositionStrategy;)V
-    .registers 3
+    .locals 1
     .param p1, "strategy"    # Landroidx/compose/ui/platform/ViewCompositionStrategy;
 
     const-string/jumbo v0, "strategy"
@@ -1307,12 +1307,12 @@
     .line 137
     iget-object v0, p0, Landroidx/compose/ui/platform/AbstractComposeView;->disposeViewCompositionStrategy:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     .line 138
-    :cond_d
+    :cond_0
     invoke-interface {p1, p0}, Landroidx/compose/ui/platform/ViewCompositionStrategy;->installFor(Landroidx/compose/ui/platform/AbstractComposeView;)Lkotlin/jvm/functions/Function0;
 
     move-result-object v0
@@ -1324,7 +1324,7 @@
 .end method
 
 .method public shouldDelayChildPressedState()Z
-    .registers 2
+    .locals 1
 
     .line 402
     const/4 v0, 0x0

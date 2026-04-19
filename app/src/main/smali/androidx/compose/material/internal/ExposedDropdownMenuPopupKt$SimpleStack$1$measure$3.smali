@@ -64,7 +64,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 197
@@ -103,7 +103,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 12
+    .locals 10
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$layout"
@@ -120,10 +120,10 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_25
+    if-gt v0, v1, :cond_0
 
     .line 199
-    :goto_e
+    :goto_0
     iget-object v2, p0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$SimpleStack$1$measure$3;->$placeables:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -152,14 +152,14 @@
 
     .line 198
     .end local v2    # "p":Landroidx/compose/ui/layout/Placeable;
-    if-eq v0, v1, :cond_25
+    if-eq v0, v1, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 202
     .end local v0    # "i":I
-    :cond_25
+    :cond_0
     return-void
 .end method

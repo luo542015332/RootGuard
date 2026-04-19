@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static final composableLambdaN(Landroidx/compose/runtime/Composer;IZILjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambdaN;
-    .registers 8
+    .locals 3
     .param p0, "composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "key"    # I
     .param p2, "tracked"    # Z
@@ -72,7 +72,7 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_0
 
     .line 155
     new-instance v1, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;
@@ -87,10 +87,10 @@
     nop
 
     .end local v1    # "value":Landroidx/compose/runtime/internal/ComposableLambdaNImpl;
-    goto :goto_2e
+    goto :goto_0
 
     .line 160
-    :cond_25
+    :cond_0
     const-string/jumbo v1, "null cannot be cast to non-null type androidx.compose.runtime.internal.ComposableLambdaNImpl"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -100,7 +100,7 @@
     check-cast v1, Landroidx/compose/runtime/internal/ComposableLambdaNImpl;
 
     .line 154
-    :goto_2e
+    :goto_0
     nop
 
     .line 162
@@ -119,7 +119,7 @@
 .end method
 
 .method public static final composableLambdaNInstance(IZILjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambdaN;
-    .registers 7
+    .locals 3
     .param p0, "key"    # I
     .param p1, "tracked"    # Z
     .param p2, "arity"    # I

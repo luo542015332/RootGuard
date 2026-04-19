@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/saveable/SaveableStateHolderKt$rememberSaveableStateHolder$1;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;
-    .registers 4
+    .locals 3
 
     .line 63
     new-instance v0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;
@@ -89,7 +89,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-virtual {p0}, Landroidx/compose/runtime/saveable/SaveableStateHolderKt$rememberSaveableStateHolder$1;->invoke()Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;

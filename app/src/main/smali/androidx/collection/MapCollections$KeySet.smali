@@ -31,7 +31,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/collection/MapCollections;)V
-    .registers 2
+    .locals 0
     .param p1, "this$0"    # Landroidx/collection/MapCollections;
 
     .line 269
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)Z"
@@ -64,7 +64,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 283
     .local p0, "this":Landroidx/collection/MapCollections$KeySet;, "Landroidx/collection/MapCollections<TK;TV;>.KeySet;"
@@ -97,7 +97,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "object"    # Ljava/lang/Object;
 
     .line 288
@@ -108,21 +108,21 @@
 
     move-result v0
 
-    if-ltz v0, :cond_a
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -148,7 +148,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "object"    # Ljava/lang/Object;
 
     .line 343
@@ -161,7 +161,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 348
     .local p0, "this":Landroidx/collection/MapCollections$KeySet;, "Landroidx/collection/MapCollections<TK;TV;>.KeySet;"
@@ -178,8 +178,8 @@
     add-int/lit8 v1, v1, -0x1
 
     .local v1, "i":I
-    :goto_9
-    if-ltz v1, :cond_1d
+    :goto_0
+    if-ltz v1, :cond_1
 
     .line 350
     iget-object v2, p0, Landroidx/collection/MapCollections$KeySet;->this$0:Landroidx/collection/MapCollections;
@@ -192,32 +192,32 @@
 
     .line 351
     .local v2, "obj":Ljava/lang/Object;
-    if-nez v2, :cond_15
+    if-nez v2, :cond_0
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_15
+    :cond_0
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    :goto_19
+    :goto_1
     add-int/2addr v0, v3
 
     .line 349
     .end local v2    # "obj":Ljava/lang/Object;
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 353
     .end local v1    # "i":I
-    :cond_1d
+    :cond_1
     return v0
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 298
     .local p0, "this":Landroidx/collection/MapCollections$KeySet;, "Landroidx/collection/MapCollections<TK;TV;>.KeySet;"
@@ -227,21 +227,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -264,7 +264,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "object"    # Ljava/lang/Object;
 
     .line 308
@@ -277,7 +277,7 @@
 
     .line 309
     .local v0, "index":I
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_0
 
     .line 310
     iget-object v1, p0, Landroidx/collection/MapCollections$KeySet;->this$0:Landroidx/collection/MapCollections;
@@ -290,14 +290,14 @@
     return v1
 
     .line 313
-    :cond_f
+    :cond_0
     const/4 v1, 0x0
 
     return v1
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -323,7 +323,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -349,7 +349,7 @@
 .end method
 
 .method public size()I
-    .registers 2
+    .locals 1
 
     .line 328
     .local p0, "this":Landroidx/collection/MapCollections$KeySet;, "Landroidx/collection/MapCollections<TK;TV;>.KeySet;"
@@ -363,7 +363,7 @@
 .end method
 
 .method public toArray()[Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 333
     .local p0, "this":Landroidx/collection/MapCollections$KeySet;, "Landroidx/collection/MapCollections<TK;TV;>.KeySet;"
@@ -379,7 +379,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

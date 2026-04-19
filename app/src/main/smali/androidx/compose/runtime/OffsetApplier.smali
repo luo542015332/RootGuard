@@ -83,7 +83,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/Applier;I)V
-    .registers 4
+    .locals 1
     .param p1, "applier"    # Landroidx/compose/runtime/Applier;
     .param p2, "offset"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -114,7 +114,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 5
+    .locals 4
 
     .line 286
     const/4 v0, 0x0
@@ -153,7 +153,7 @@
 .end method
 
 .method public down(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -178,7 +178,7 @@
 .end method
 
 .method public getCurrent()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TN;"
@@ -196,7 +196,7 @@
 .end method
 
 .method public insertBottomUp(ILjava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "instance"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -210,16 +210,16 @@
 
     iget v1, p0, Landroidx/compose/runtime/OffsetApplier;->nesting:I
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     iget v1, p0, Landroidx/compose/runtime/OffsetApplier;->offset:I
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_0
     add-int/2addr v1, p1
 
     invoke-interface {v0, v1, p2}, Landroidx/compose/runtime/Applier;->insertBottomUp(ILjava/lang/Object;)V
@@ -229,7 +229,7 @@
 .end method
 
 .method public insertTopDown(ILjava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "instance"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -243,16 +243,16 @@
 
     iget v1, p0, Landroidx/compose/runtime/OffsetApplier;->nesting:I
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     iget v1, p0, Landroidx/compose/runtime/OffsetApplier;->offset:I
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_0
     add-int/2addr v1, p1
 
     invoke-interface {v0, v1, p2}, Landroidx/compose/runtime/Applier;->insertTopDown(ILjava/lang/Object;)V
@@ -262,7 +262,7 @@
 .end method
 
 .method public move(III)V
-    .registers 8
+    .locals 4
     .param p1, "from"    # I
     .param p2, "to"    # I
     .param p3, "count"    # I
@@ -270,18 +270,18 @@
     .line 281
     iget v0, p0, Landroidx/compose/runtime/OffsetApplier;->nesting:I
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     iget v0, p0, Landroidx/compose/runtime/OffsetApplier;->offset:I
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 282
     .local v0, "effectiveOffset":I
-    :goto_8
+    :goto_0
     iget-object v1, p0, Landroidx/compose/runtime/OffsetApplier;->applier:Landroidx/compose/runtime/Applier;
 
     add-int v2, p1, v0
@@ -295,7 +295,7 @@
 .end method
 
 .method public remove(II)V
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "count"    # I
 
@@ -304,16 +304,16 @@
 
     iget v1, p0, Landroidx/compose/runtime/OffsetApplier;->nesting:I
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     iget v1, p0, Landroidx/compose/runtime/OffsetApplier;->offset:I
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_0
     add-int/2addr v1, p1
 
     invoke-interface {v0, v1, p2}, Landroidx/compose/runtime/Applier;->remove(II)V
@@ -323,27 +323,27 @@
 .end method
 
 .method public up()V
-    .registers 5
+    .locals 4
 
     .line 263
     iget v0, p0, Landroidx/compose/runtime/OffsetApplier;->nesting:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
     .local v1, "value$iv":Z
-    :goto_7
+    :goto_0
     const/4 v2, 0x0
 
     .line 289
     .local v2, "$i$f$runtimeCheck":I
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_1
 
     .line 293
     nop
@@ -366,7 +366,7 @@
     .line 290
     .restart local v1    # "value$iv":Z
     .restart local v2    # "$i$f$runtimeCheck":I
-    :cond_15
+    :cond_1
     const/4 v0, 0x0
 
     .line 263

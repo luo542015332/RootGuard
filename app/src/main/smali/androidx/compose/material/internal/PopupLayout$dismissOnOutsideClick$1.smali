@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/material/internal/PopupLayout$dismissOnOutsideClick$1;
 
@@ -69,7 +69,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -102,7 +102,7 @@
 .end method
 
 .method public final invoke-KMgbckE(Landroidx/compose/ui/geometry/Offset;Landroidx/compose/ui/unit/IntRect;)Ljava/lang/Boolean;
-    .registers 6
+    .locals 3
     .param p1, "offset"    # Landroidx/compose/ui/geometry/Offset;
     .param p2, "bounds"    # Landroidx/compose/ui/unit/IntRect;
 
@@ -113,12 +113,12 @@
     .line 251
     const/4 v0, 0x0
 
-    if-nez p1, :cond_a
+    if-nez p1, :cond_0
 
-    goto :goto_4f
+    goto :goto_0
 
     .line 253
-    :cond_a
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Offset;->unbox-impl()J
 
     move-result-wide v1
@@ -135,7 +135,7 @@
 
     cmpg-float v1, v1, v2
 
-    if-ltz v1, :cond_4e
+    if-ltz v1, :cond_1
 
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Offset;->unbox-impl()J
 
@@ -153,7 +153,7 @@
 
     cmpl-float v1, v1, v2
 
-    if-gtz v1, :cond_4e
+    if-gtz v1, :cond_1
 
     .line 254
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Offset;->unbox-impl()J
@@ -172,7 +172,7 @@
 
     cmpg-float v1, v1, v2
 
-    if-ltz v1, :cond_4e
+    if-ltz v1, :cond_1
 
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Offset;->unbox-impl()J
 
@@ -190,13 +190,13 @@
 
     cmpl-float v1, v1, v2
 
-    if-lez v1, :cond_4f
+    if-lez v1, :cond_2
 
-    :cond_4e
+    :cond_1
     const/4 v0, 0x1
 
-    :cond_4f
-    :goto_4f
+    :cond_2
+    :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0

@@ -56,7 +56,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/SlideModifier;J)V
-    .registers 5
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/animation/SlideModifier$measure$1$slideOffset$1;->this$0:Landroidx/compose/animation/SlideModifier;
 
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 1016
@@ -92,7 +92,7 @@
 .end method
 
 .method public final invoke-Bjo55l4(Landroidx/compose/animation/EnterExitState;)J
-    .registers 5
+    .locals 3
     .param p1, "it"    # Landroidx/compose/animation/EnterExitState;
 
     const-string/jumbo v0, "it"

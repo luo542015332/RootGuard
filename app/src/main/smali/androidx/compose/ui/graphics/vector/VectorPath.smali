@@ -116,13 +116,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;Ljava/util/List;ILandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFFFF)V
-    .registers 16
+    .locals 1
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "pathData"    # Ljava/util/List;
     .param p3, "pathFillType"    # I
@@ -212,106 +212,106 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/util/List;ILandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFFFFILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 35
+    .locals 18
 
     .line 560
     move/from16 v0, p15
 
     and-int/lit8 v1, v0, 0x1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 564
     const-string v1, ""
 
     move-object v3, v1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 560
-    :cond_a
+    :cond_0
     move-object/from16 v3, p1
 
-    :goto_c
+    :goto_0
     and-int/lit8 v1, v0, 0x8
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_1
 
     .line 579
     move-object v6, v2
 
-    goto :goto_15
+    goto :goto_1
 
     .line 560
-    :cond_13
+    :cond_1
     move-object/from16 v6, p4
 
-    :goto_15
+    :goto_1
     and-int/lit8 v1, v0, 0x10
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_2
 
     .line 584
     move v7, v4
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 560
-    :cond_1d
+    :cond_2
     move/from16 v7, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v1, v0, 0x20
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_3
 
     .line 589
     move-object v8, v2
 
-    goto :goto_27
+    goto :goto_3
 
     .line 560
-    :cond_25
+    :cond_3
     move-object/from16 v8, p6
 
-    :goto_27
+    :goto_3
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_4
 
     .line 594
     move v9, v4
 
-    goto :goto_2f
+    goto :goto_4
 
     .line 560
-    :cond_2d
+    :cond_4
     move/from16 v9, p7
 
-    :goto_2f
+    :goto_4
     and-int/lit16 v1, v0, 0x80
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_5
 
     .line 599
     move v10, v2
 
-    goto :goto_38
+    goto :goto_5
 
     .line 560
-    :cond_36
+    :cond_5
     move/from16 v10, p8
 
-    :goto_38
+    :goto_5
     and-int/lit16 v1, v0, 0x100
 
-    if-eqz v1, :cond_42
+    if-eqz v1, :cond_6
 
     .line 604
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineCap()I
@@ -320,16 +320,16 @@
 
     move v11, v1
 
-    goto :goto_44
+    goto :goto_6
 
     .line 560
-    :cond_42
+    :cond_6
     move/from16 v11, p9
 
-    :goto_44
+    :goto_6
     and-int/lit16 v1, v0, 0x200
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_7
 
     .line 609
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineJoin()I
@@ -338,71 +338,71 @@
 
     move v12, v1
 
-    goto :goto_50
+    goto :goto_7
 
     .line 560
-    :cond_4e
+    :cond_7
     move/from16 v12, p10
 
-    :goto_50
+    :goto_7
     and-int/lit16 v1, v0, 0x400
 
-    if-eqz v1, :cond_58
+    if-eqz v1, :cond_8
 
     .line 614
     const/high16 v1, 0x40800000    # 4.0f
 
     move v13, v1
 
-    goto :goto_5a
+    goto :goto_8
 
     .line 560
-    :cond_58
+    :cond_8
     move/from16 v13, p11
 
-    :goto_5a
+    :goto_8
     and-int/lit16 v1, v0, 0x800
 
-    if-eqz v1, :cond_60
+    if-eqz v1, :cond_9
 
     .line 620
     move v14, v2
 
-    goto :goto_62
+    goto :goto_9
 
     .line 560
-    :cond_60
+    :cond_9
     move/from16 v14, p12
 
-    :goto_62
+    :goto_9
     and-int/lit16 v1, v0, 0x1000
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_a
 
     .line 626
     move v15, v4
 
-    goto :goto_6a
+    goto :goto_a
 
     .line 560
-    :cond_68
+    :cond_a
     move/from16 v15, p13
 
-    :goto_6a
+    :goto_a
     and-int/lit16 v0, v0, 0x2000
 
-    if-eqz v0, :cond_71
+    if-eqz v0, :cond_b
 
     .line 632
     move/from16 v16, v2
 
-    goto :goto_73
+    goto :goto_b
 
     .line 560
-    :cond_71
+    :cond_b
     move/from16 v16, p14
 
-    :goto_73
+    :goto_b
     const/16 v17, 0x0
 
     move-object/from16 v2, p0
@@ -418,7 +418,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;Ljava/util/List;ILandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFFFFLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 16
+    .locals 0
 
     invoke-direct/range {p0 .. p14}, Landroidx/compose/ui/graphics/vector/VectorPath;-><init>(Ljava/lang/String;Ljava/util/List;ILandroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFFFF)V
 
@@ -428,21 +428,21 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 636
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 637
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_f0
+    if-eqz p1, :cond_17
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -452,12 +452,12 @@
 
     move-result-object v3
 
-    if-eq v2, v3, :cond_13
+    if-eq v2, v3, :cond_1
 
-    goto/16 :goto_f0
+    goto/16 :goto_7
 
     .line 639
-    :cond_13
+    :cond_1
     move-object v2, p1
 
     check-cast v2, Landroidx/compose/ui/graphics/vector/VectorPath;
@@ -475,12 +475,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_24
+    if-nez v2, :cond_2
 
     return v1
 
     .line 642
-    :cond_24
+    :cond_2
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->fill:Landroidx/compose/ui/graphics/Brush;
 
     move-object v3, p1
@@ -493,12 +493,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_32
+    if-nez v2, :cond_3
 
     return v1
 
     .line 643
-    :cond_32
+    :cond_3
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->fillAlpha:F
 
     move-object v3, p1
@@ -509,22 +509,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_3f
+    if-nez v2, :cond_4
 
     move v2, v0
 
-    goto :goto_40
+    goto :goto_0
 
-    :cond_3f
+    :cond_4
     move v2, v1
 
-    :goto_40
-    if-nez v2, :cond_43
+    :goto_0
+    if-nez v2, :cond_5
 
     return v1
 
     .line 644
-    :cond_43
+    :cond_5
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->stroke:Landroidx/compose/ui/graphics/Brush;
 
     move-object v3, p1
@@ -537,12 +537,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_51
+    if-nez v2, :cond_6
 
     return v1
 
     .line 645
-    :cond_51
+    :cond_6
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeAlpha:F
 
     move-object v3, p1
@@ -553,22 +553,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_5e
+    if-nez v2, :cond_7
 
     move v2, v0
 
-    goto :goto_5f
+    goto :goto_1
 
-    :cond_5e
+    :cond_7
     move v2, v1
 
-    :goto_5f
-    if-nez v2, :cond_62
+    :goto_1
+    if-nez v2, :cond_8
 
     return v1
 
     .line 646
-    :cond_62
+    :cond_8
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineWidth:F
 
     move-object v3, p1
@@ -579,22 +579,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_6f
+    if-nez v2, :cond_9
 
     move v2, v0
 
-    goto :goto_70
+    goto :goto_2
 
-    :cond_6f
+    :cond_9
     move v2, v1
 
-    :goto_70
-    if-nez v2, :cond_73
+    :goto_2
+    if-nez v2, :cond_a
 
     return v1
 
     .line 647
-    :cond_73
+    :cond_a
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineCap:I
 
     move-object v3, p1
@@ -607,12 +607,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_81
+    if-nez v2, :cond_b
 
     return v1
 
     .line 648
-    :cond_81
+    :cond_b
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineJoin:I
 
     move-object v3, p1
@@ -625,12 +625,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_8f
+    if-nez v2, :cond_c
 
     return v1
 
     .line 649
-    :cond_8f
+    :cond_c
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineMiter:F
 
     move-object v3, p1
@@ -641,22 +641,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_9c
+    if-nez v2, :cond_d
 
     move v2, v0
 
-    goto :goto_9d
+    goto :goto_3
 
-    :cond_9c
+    :cond_d
     move v2, v1
 
-    :goto_9d
-    if-nez v2, :cond_a0
+    :goto_3
+    if-nez v2, :cond_e
 
     return v1
 
     .line 650
-    :cond_a0
+    :cond_e
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->trimPathStart:F
 
     move-object v3, p1
@@ -667,22 +667,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_ad
+    if-nez v2, :cond_f
 
     move v2, v0
 
-    goto :goto_ae
+    goto :goto_4
 
-    :cond_ad
+    :cond_f
     move v2, v1
 
-    :goto_ae
-    if-nez v2, :cond_b1
+    :goto_4
+    if-nez v2, :cond_10
 
     return v1
 
     .line 651
-    :cond_b1
+    :cond_10
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->trimPathEnd:F
 
     move-object v3, p1
@@ -693,22 +693,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_be
+    if-nez v2, :cond_11
 
     move v2, v0
 
-    goto :goto_bf
+    goto :goto_5
 
-    :cond_be
+    :cond_11
     move v2, v1
 
-    :goto_bf
-    if-nez v2, :cond_c2
+    :goto_5
+    if-nez v2, :cond_12
 
     return v1
 
     .line 652
-    :cond_c2
+    :cond_12
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->trimPathOffset:F
 
     move-object v3, p1
@@ -719,22 +719,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_cf
+    if-nez v2, :cond_13
 
     move v2, v0
 
-    goto :goto_d0
+    goto :goto_6
 
-    :cond_cf
+    :cond_13
     move v2, v1
 
-    :goto_d0
-    if-nez v2, :cond_d3
+    :goto_6
+    if-nez v2, :cond_14
 
     return v1
 
     .line 653
-    :cond_d3
+    :cond_14
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->pathFillType:I
 
     move-object v3, p1
@@ -747,12 +747,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_e1
+    if-nez v2, :cond_15
 
     return v1
 
     .line 654
-    :cond_e1
+    :cond_15
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->pathData:Ljava/util/List;
 
     move-object v3, p1
@@ -765,22 +765,22 @@
 
     move-result v2
 
-    if-nez v2, :cond_ef
+    if-nez v2, :cond_16
 
     return v1
 
     .line 656
-    :cond_ef
+    :cond_16
     return v0
 
     .line 637
-    :cond_f0
-    :goto_f0
+    :cond_17
+    :goto_7
     return v1
 .end method
 
 .method public final getFill()Landroidx/compose/ui/graphics/Brush;
-    .registers 2
+    .locals 1
 
     .line 579
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->fill:Landroidx/compose/ui/graphics/Brush;
@@ -789,7 +789,7 @@
 .end method
 
 .method public final getFillAlpha()F
-    .registers 2
+    .locals 1
 
     .line 584
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->fillAlpha:F
@@ -798,7 +798,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 564
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->name:Ljava/lang/String;
@@ -807,7 +807,7 @@
 .end method
 
 .method public final getPathData()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -824,7 +824,7 @@
 .end method
 
 .method public final getPathFillType-Rg-k1Os()I
-    .registers 2
+    .locals 1
 
     .line 574
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->pathFillType:I
@@ -833,7 +833,7 @@
 .end method
 
 .method public final getStroke()Landroidx/compose/ui/graphics/Brush;
-    .registers 2
+    .locals 1
 
     .line 589
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->stroke:Landroidx/compose/ui/graphics/Brush;
@@ -842,7 +842,7 @@
 .end method
 
 .method public final getStrokeAlpha()F
-    .registers 2
+    .locals 1
 
     .line 594
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeAlpha:F
@@ -851,7 +851,7 @@
 .end method
 
 .method public final getStrokeLineCap-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 604
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineCap:I
@@ -860,7 +860,7 @@
 .end method
 
 .method public final getStrokeLineJoin-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 609
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineJoin:I
@@ -869,7 +869,7 @@
 .end method
 
 .method public final getStrokeLineMiter()F
-    .registers 2
+    .locals 1
 
     .line 614
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineMiter:F
@@ -878,7 +878,7 @@
 .end method
 
 .method public final getStrokeLineWidth()F
-    .registers 2
+    .locals 1
 
     .line 599
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->strokeLineWidth:F
@@ -887,7 +887,7 @@
 .end method
 
 .method public final getTrimPathEnd()F
-    .registers 2
+    .locals 1
 
     .line 626
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->trimPathEnd:F
@@ -896,7 +896,7 @@
 .end method
 
 .method public final getTrimPathOffset()F
-    .registers 2
+    .locals 1
 
     .line 632
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->trimPathOffset:F
@@ -905,7 +905,7 @@
 .end method
 
 .method public final getTrimPathStart()F
-    .registers 2
+    .locals 1
 
     .line 620
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->trimPathStart:F
@@ -914,7 +914,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 660
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->name:Ljava/lang/String;
@@ -944,18 +944,18 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Landroidx/compose/ui/graphics/Brush;->hashCode()I
 
     move-result v2
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move v2, v3
 
-    :goto_1c
+    :goto_0
     add-int/2addr v0, v2
 
     .line 663
@@ -978,13 +978,13 @@
 
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorPath;->stroke:Landroidx/compose/ui/graphics/Brush;
 
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Landroidx/compose/ui/graphics/Brush;->hashCode()I
 
     move-result v3
 
-    :cond_30
+    :cond_1
     add-int/2addr v0, v3
 
     .line 665

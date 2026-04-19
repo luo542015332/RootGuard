@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/channels/Channel;Landroid/os/Handler;)V
-    .registers 3
+    .locals 0
     .param p1, "$channel"    # Lkotlinx/coroutines/channels/Channel;
     .param p2, "$super_call_param$1"    # Landroid/os/Handler;
     .annotation system Ldalvik/annotation/Signature;
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public onChange(ZLandroid/net/Uri;)V
-    .registers 5
+    .locals 2
     .param p1, "selfChange"    # Z
     .param p2, "uri"    # Landroid/net/Uri;
 

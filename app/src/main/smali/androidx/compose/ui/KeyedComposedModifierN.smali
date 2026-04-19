@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;[Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)V
-    .registers 6
+    .locals 1
     .param p1, "fqName"    # Ljava/lang/String;
     .param p2, "keys"    # [Ljava/lang/Object;
     .param p3, "inspectorInfo"    # Lkotlin/jvm/functions/Function1;
@@ -116,13 +116,13 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 239
     instance-of v0, p1, Landroidx/compose/ui/KeyedComposedModifierN;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 240
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifierN;->fqName:Ljava/lang/String;
@@ -137,7 +137,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifierN;->keys:[Ljava/lang/Object;
 
@@ -151,21 +151,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_21
+    :goto_0
     return v0
 .end method
 
 .method public final getFqName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 234
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifierN;->fqName:Ljava/lang/String;
@@ -174,7 +174,7 @@
 .end method
 
 .method public final getKeys()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 235
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifierN;->keys:[Ljava/lang/Object;
@@ -183,7 +183,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 241
     iget-object v0, p0, Landroidx/compose/ui/KeyedComposedModifierN;->fqName:Ljava/lang/String;

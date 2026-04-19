@@ -81,7 +81,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Map;Ljava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;)V
-    .registers 5
+    .locals 1
     .param p1, "mutableMap"    # Ljava/util/Map;
     .param p2, "key"    # Ljava/lang/Object;
     .param p3, "links"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -143,7 +143,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "newValue"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

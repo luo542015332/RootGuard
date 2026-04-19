@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     invoke-static {}, Landroidx/compose/animation/EnterExitState;->values()[Landroidx/compose/animation/EnterExitState;
 
@@ -40,7 +40,7 @@
 
     new-array v0, v0, [I
 
-    :try_start_7
+    :try_start_0
     sget-object v1, Landroidx/compose/animation/EnterExitState;->Visible:Landroidx/compose/animation/EnterExitState;
 
     invoke-virtual {v1}, Landroidx/compose/animation/EnterExitState;->ordinal()I
@@ -50,16 +50,16 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_10
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_11
+    :catch_0
     move-exception v1
 
-    :goto_12
-    :try_start_12
+    :goto_0
+    :try_start_1
     sget-object v1, Landroidx/compose/animation/EnterExitState;->PreEnter:Landroidx/compose/animation/EnterExitState;
 
     invoke-virtual {v1}, Landroidx/compose/animation/EnterExitState;->ordinal()I
@@ -69,16 +69,16 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_1b} :catch_1c
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_1d
+    goto :goto_1
 
-    :catch_1c
+    :catch_1
     move-exception v1
 
-    :goto_1d
-    :try_start_1d
+    :goto_1
+    :try_start_2
     sget-object v1, Landroidx/compose/animation/EnterExitState;->PostExit:Landroidx/compose/animation/EnterExitState;
 
     invoke-virtual {v1}, Landroidx/compose/animation/EnterExitState;->ordinal()I
@@ -88,15 +88,15 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_26
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_26} :catch_27
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_28
+    goto :goto_2
 
-    :catch_27
+    :catch_2
     move-exception v1
 
-    :goto_28
+    :goto_2
     sput-object v0, Landroidx/compose/animation/SlideModifier$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

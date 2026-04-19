@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static final asDoubleState(Landroidx/compose/runtime/State;)Landroidx/compose/runtime/DoubleState;
-    .registers 2
+    .locals 1
     .param p0, "$this$asDoubleState"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -55,27 +55,27 @@
     .line 109
     instance-of v0, p0, Landroidx/compose/runtime/DoubleState;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/DoubleState;
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/UnboxedDoubleState;
 
     invoke-direct {v0, p0}, Landroidx/compose/runtime/UnboxedDoubleState;-><init>(Landroidx/compose/runtime/State;)V
 
     check-cast v0, Landroidx/compose/runtime/DoubleState;
 
-    :goto_14
+    :goto_0
     return-object v0
 .end method
 
 .method public static final asFloatState(Landroidx/compose/runtime/State;)Landroidx/compose/runtime/FloatState;
-    .registers 2
+    .locals 1
     .param p0, "$this$asFloatState"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -94,27 +94,27 @@
     .line 83
     instance-of v0, p0, Landroidx/compose/runtime/FloatState;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/FloatState;
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/UnboxedFloatState;
 
     invoke-direct {v0, p0}, Landroidx/compose/runtime/UnboxedFloatState;-><init>(Landroidx/compose/runtime/State;)V
 
     check-cast v0, Landroidx/compose/runtime/FloatState;
 
-    :goto_14
+    :goto_0
     return-object v0
 .end method
 
 .method public static final asIntState(Landroidx/compose/runtime/State;)Landroidx/compose/runtime/IntState;
-    .registers 2
+    .locals 1
     .param p0, "$this$asIntState"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -133,27 +133,27 @@
     .line 31
     instance-of v0, p0, Landroidx/compose/runtime/IntState;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/IntState;
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/UnboxedIntState;
 
     invoke-direct {v0, p0}, Landroidx/compose/runtime/UnboxedIntState;-><init>(Landroidx/compose/runtime/State;)V
 
     check-cast v0, Landroidx/compose/runtime/IntState;
 
-    :goto_14
+    :goto_0
     return-object v0
 .end method
 
 .method public static final asLongState(Landroidx/compose/runtime/State;)Landroidx/compose/runtime/LongState;
-    .registers 2
+    .locals 1
     .param p0, "$this$asLongState"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -172,21 +172,21 @@
     .line 57
     instance-of v0, p0, Landroidx/compose/runtime/LongState;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/LongState;
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/UnboxedLongState;
 
     invoke-direct {v0, p0}, Landroidx/compose/runtime/UnboxedLongState;-><init>(Landroidx/compose/runtime/State;)V
 
     check-cast v0, Landroidx/compose/runtime/LongState;
 
-    :goto_14
+    :goto_0
     return-object v0
 .end method

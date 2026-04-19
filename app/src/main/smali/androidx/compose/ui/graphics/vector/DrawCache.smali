@@ -78,7 +78,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -109,7 +109,7 @@
 .end method
 
 .method private final clear(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 16
+    .locals 14
     .param p1, "$this$clear"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     .line 104
@@ -148,34 +148,34 @@
 .end method
 
 .method public static synthetic drawInto$default(Landroidx/compose/ui/graphics/vector/DrawCache;Landroidx/compose/ui/graphics/drawscope/DrawScope;FLandroidx/compose/ui/graphics/ColorFilter;ILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 86
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     .line 88
     const/high16 p2, 0x3f800000    # 1.0f
 
     .line 86
-    :cond_6
+    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_b
+    if-eqz p4, :cond_1
 
     .line 89
     const/4 p3, 0x0
 
     .line 86
-    :cond_b
+    :cond_1
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/vector/DrawCache;->drawInto(Landroidx/compose/ui/graphics/drawscope/DrawScope;FLandroidx/compose/ui/graphics/ColorFilter;)V
 
     return-void
 .end method
 
 .method public static synthetic getMCachedImage$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -183,7 +183,7 @@
 
 # virtual methods
 .method public final drawCachedImage-CJJAR-o(JLandroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Lkotlin/jvm/functions/Function1;)V
-    .registers 23
+    .locals 17
     .param p1, "size"    # J
     .param p3, "density"    # Landroidx/compose/ui/unit/Density;
     .param p4, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
@@ -236,10 +236,10 @@
 
     .line 64
     .local v5, "targetCanvas":Landroidx/compose/ui/graphics/Canvas;
-    if-eqz v4, :cond_3a
+    if-eqz v4, :cond_0
 
     .line 65
-    if-eqz v5, :cond_3a
+    if-eqz v5, :cond_0
 
     .line 66
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/unit/IntSize;->getWidth-impl(J)I
@@ -250,7 +250,7 @@
 
     move-result v7
 
-    if-gt v6, v7, :cond_3a
+    if-gt v6, v7, :cond_0
 
     .line 67
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/unit/IntSize;->getHeight-impl(J)I
@@ -261,10 +261,10 @@
 
     move-result v7
 
-    if-le v6, v7, :cond_54
+    if-le v6, v7, :cond_1
 
     .line 69
-    :cond_3a
+    :cond_0
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/unit/IntSize;->getWidth-impl(J)I
 
     move-result v8
@@ -299,7 +299,7 @@
     iput-object v5, v0, Landroidx/compose/ui/graphics/vector/DrawCache;->cachedCanvas:Landroidx/compose/ui/graphics/Canvas;
 
     .line 75
-    :cond_54
+    :cond_1
     move-wide/from16 v6, p1
 
     iput-wide v6, v0, Landroidx/compose/ui/graphics/vector/DrawCache;->size:J
@@ -446,7 +446,7 @@
 .end method
 
 .method public final drawInto(Landroidx/compose/ui/graphics/drawscope/DrawScope;FLandroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 23
+    .locals 19
     .param p1, "target"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p2, "alpha"    # F
     .param p3, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
@@ -464,17 +464,17 @@
 
     .line 92
     .local v1, "targetImage":Landroidx/compose/ui/graphics/ImageBitmap;
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_11
-    if-eqz v2, :cond_2e
+    :goto_0
+    if-eqz v2, :cond_1
 
     .line 96
     const-wide/16 v4, 0x0
@@ -509,7 +509,7 @@
     return-void
 
     .line 92
-    :cond_2e
+    :cond_1
     const/4 v2, 0x0
 
     .line 93
@@ -532,7 +532,7 @@
 .end method
 
 .method public final getMCachedImage()Landroidx/compose/ui/graphics/ImageBitmap;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/DrawCache;->mCachedImage:Landroidx/compose/ui/graphics/ImageBitmap;
@@ -541,7 +541,7 @@
 .end method
 
 .method public final setMCachedImage(Landroidx/compose/ui/graphics/ImageBitmap;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/ImageBitmap;
 
     .line 41

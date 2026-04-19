@@ -62,7 +62,7 @@
 
 # direct methods
 .method private constructor <init>(JJZI)V
-    .registers 7
+    .locals 0
     .param p1, "uptime"    # J
     .param p3, "positionOnScreen"    # J
     .param p5, "down"    # Z
@@ -88,7 +88,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 8
+    .locals 0
 
     invoke-direct/range {p0 .. p6}, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;-><init>(JJZI)V
 
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final getDown()Z
-    .registers 2
+    .locals 1
 
     .line 202
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;->down:Z
@@ -107,7 +107,7 @@
 .end method
 
 .method public final getPositionOnScreen-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 201
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;->positionOnScreen:J
@@ -116,7 +116,7 @@
 .end method
 
 .method public final getType-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 203
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;->type:I
@@ -125,7 +125,7 @@
 .end method
 
 .method public final getUptime()J
-    .registers 3
+    .locals 2
 
     .line 200
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;->uptime:J

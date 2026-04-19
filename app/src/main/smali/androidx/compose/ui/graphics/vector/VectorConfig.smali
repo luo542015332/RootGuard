@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static synthetic access$getOrDefault$jd(Landroidx/compose/ui/graphics/vector/VectorConfig;Landroidx/compose/ui/graphics/vector/VectorProperty;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/vector/VectorConfig;
     .param p1, "property"    # Landroidx/compose/ui/graphics/vector/VectorProperty;
     .param p2, "defaultValue"    # Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public getOrDefault(Landroidx/compose/ui/graphics/vector/VectorProperty;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "property"    # Landroidx/compose/ui/graphics/vector/VectorProperty;
     .param p2, "defaultValue"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

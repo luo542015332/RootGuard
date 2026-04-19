@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/collection/MutableVector;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier$Element;)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
     .param p1, "it"    # Landroidx/compose/ui/Modifier$Element;
 
     const-string/jumbo v0, "it"
@@ -107,7 +107,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 838

@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;)V
-    .registers 3
+    .locals 1
     .param p1, "$receiver"    # Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$drawContext$1;->this$0:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
@@ -71,7 +71,6 @@
 
     check-cast v0, Landroidx/compose/ui/graphics/drawscope/DrawContext;
 
-    # invokes: Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt;->asDrawTransform(Landroidx/compose/ui/graphics/drawscope/DrawContext;)Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     invoke-static {v0}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt;->access$asDrawTransform(Landroidx/compose/ui/graphics/drawscope/DrawContext;)Landroidx/compose/ui/graphics/drawscope/DrawTransform;
 
     move-result-object v0
@@ -85,7 +84,7 @@
 
 # virtual methods
 .method public getCanvas()Landroidx/compose/ui/graphics/Canvas;
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$drawContext$1;->this$0:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
@@ -102,7 +101,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 76
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$drawContext$1;->this$0:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
@@ -119,7 +118,7 @@
 .end method
 
 .method public getTransform()Landroidx/compose/ui/graphics/drawscope/DrawTransform;
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$drawContext$1;->transform:Landroidx/compose/ui/graphics/drawscope/DrawTransform;
@@ -128,7 +127,7 @@
 .end method
 
 .method public setSize-uvyYCjk(J)V
-    .registers 4
+    .locals 1
     .param p1, "value"    # J
 
     .line 78

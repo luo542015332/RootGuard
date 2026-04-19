@@ -85,7 +85,7 @@
 
 # direct methods
 .method public static final Color(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J
-    .registers 23
+    .locals 18
     .param p0, "red"    # F
     .param p1, "green"    # F
     .param p2, "blue"    # F
@@ -121,25 +121,25 @@
 
     const/4 v8, 0x1
 
-    if-gtz v7, :cond_24
+    if-gtz v7, :cond_0
 
     cmpg-float v6, v6, v0
 
-    if-gtz v6, :cond_24
+    if-gtz v6, :cond_0
 
     move v6, v8
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     move v6, v5
 
-    :goto_25
+    :goto_0
     const/high16 v7, 0x3f800000    # 1.0f
 
     const/4 v9, 0x0
 
-    if-eqz v6, :cond_64
+    if-eqz v6, :cond_4
 
     .line 408
     invoke-virtual {v4, v8}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->getMinValue(I)F
@@ -152,21 +152,21 @@
 
     cmpg-float v10, v1, v10
 
-    if-gtz v10, :cond_3c
+    if-gtz v10, :cond_1
 
     cmpg-float v6, v6, v1
 
-    if-gtz v6, :cond_3c
+    if-gtz v6, :cond_1
 
     move v6, v8
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_3c
+    :cond_1
     move v6, v5
 
-    :goto_3d
-    if-eqz v6, :cond_64
+    :goto_1
+    if-eqz v6, :cond_4
 
     .line 409
     const/4 v6, 0x2
@@ -181,51 +181,51 @@
 
     cmpg-float v6, v2, v6
 
-    if-gtz v6, :cond_52
+    if-gtz v6, :cond_2
 
     cmpg-float v6, v10, v2
 
-    if-gtz v6, :cond_52
+    if-gtz v6, :cond_2
 
     move v6, v8
 
-    goto :goto_53
+    goto :goto_2
 
-    :cond_52
+    :cond_2
     move v6, v5
 
-    :goto_53
-    if-eqz v6, :cond_64
+    :goto_2
+    if-eqz v6, :cond_4
 
     .line 410
     cmpg-float v6, v9, v3
 
-    if-gtz v6, :cond_5f
+    if-gtz v6, :cond_3
 
     cmpg-float v6, v3, v7
 
-    if-gtz v6, :cond_5f
+    if-gtz v6, :cond_3
 
     move v6, v8
 
-    goto :goto_60
+    goto :goto_3
 
-    :cond_5f
+    :cond_3
     move v6, v5
 
-    :goto_60
-    if-eqz v6, :cond_64
+    :goto_3
+    if-eqz v6, :cond_4
 
     move v6, v8
 
-    goto :goto_65
+    goto :goto_4
 
-    :cond_64
+    :cond_4
     move v6, v5
 
     .line 406
-    :goto_65
-    if-eqz v6, :cond_163
+    :goto_4
+    if-eqz v6, :cond_a
 
     .line 415
     invoke-virtual/range {p4 .. p4}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->isSrgb()Z
@@ -238,7 +238,7 @@
 
     const/high16 v12, 0x3f000000    # 0.5f
 
-    if-eqz v6, :cond_a6
+    if-eqz v6, :cond_5
 
     .line 417
     const/high16 v5, 0x437f0000    # 255.0f
@@ -318,24 +318,24 @@
 
     .line 425
     .end local v5    # "argb":I
-    :cond_a6
+    :cond_5
     invoke-virtual/range {p4 .. p4}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->getComponentCount()I
 
     move-result v6
 
     const/4 v13, 0x3
 
-    if-ne v6, v13, :cond_af
+    if-ne v6, v13, :cond_6
 
     move v6, v8
 
-    goto :goto_b0
+    goto :goto_5
 
-    :cond_af
+    :cond_6
     move v6, v5
 
-    :goto_b0
-    if-eqz v6, :cond_155
+    :goto_5
+    if-eqz v6, :cond_9
 
     .line 429
     invoke-virtual/range {p4 .. p4}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->getId$ui_graphics_release()I
@@ -346,12 +346,12 @@
     .local v6, "id":I
     const/4 v13, -0x1
 
-    if-eq v6, v13, :cond_ba
+    if-eq v6, v13, :cond_7
 
     move v5, v8
 
-    :cond_ba
-    if-eqz v5, :cond_146
+    :cond_7
+    if-eqz v5, :cond_8
 
     .line 434
     invoke-static/range {p0 .. p0}, Landroidx/compose/ui/graphics/Float16;->constructor-impl(F)S
@@ -526,7 +526,7 @@
     .end local v7    # "a":I
     .end local v8    # "g":S
     .end local v13    # "b":S
-    :cond_146
+    :cond_8
     const/4 v5, 0x0
 
     .line 431
@@ -549,7 +549,7 @@
 
     .line 425
     .end local v6    # "id":I
-    :cond_155
+    :cond_9
     const/4 v5, 0x0
 
     .line 426
@@ -571,7 +571,7 @@
     throw v5
 
     .line 406
-    :cond_163
+    :cond_a
     const/4 v5, 0x0
 
     .line 412
@@ -648,7 +648,7 @@
 .end method
 
 .method public static final Color(I)J
-    .registers 4
+    .locals 3
     .param p0, "color"    # I
 
     .line 466
@@ -674,7 +674,7 @@
 .end method
 
 .method public static final Color(IIII)J
-    .registers 7
+    .locals 3
     .param p0, "red"    # I
     .param p1, "green"    # I
     .param p2, "blue"    # I
@@ -717,7 +717,7 @@
 .end method
 
 .method public static final Color(J)J
-    .registers 6
+    .locals 4
     .param p0, "color"    # J
 
     .line 483
@@ -749,21 +749,21 @@
 .end method
 
 .method public static synthetic Color$default(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;ILjava/lang/Object;)J
-    .registers 7
+    .locals 0
 
     .line 399
     and-int/lit8 p6, p5, 0x8
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     .line 403
     const/high16 p3, 0x3f800000    # 1.0f
 
     .line 399
-    :cond_6
+    :cond_0
     and-int/lit8 p5, p5, 0x10
 
-    if-eqz p5, :cond_12
+    if-eqz p5, :cond_1
 
     .line 404
     sget-object p4, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -775,7 +775,7 @@
     check-cast p4, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     .line 399
-    :cond_12
+    :cond_1
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/ColorKt;->Color(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J
 
     move-result-wide p0
@@ -784,18 +784,18 @@
 .end method
 
 .method public static synthetic Color$default(IIIIILjava/lang/Object;)J
-    .registers 6
+    .locals 0
 
     .line 499
     and-int/lit8 p4, p4, 0x8
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     .line 507
     const/16 p3, 0xff
 
     .line 499
-    :cond_6
+    :cond_0
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/ColorKt;->Color(IIII)J
 
     move-result-wide p0
@@ -804,7 +804,7 @@
 .end method
 
 .method private static final compositeComponent(FFFFF)F
-    .registers 9
+    .locals 4
     .param p0, "fgC"    # F
     .param p1, "bgC"    # F
     .param p2, "fgA"    # F
@@ -819,21 +819,21 @@
 
     cmpg-float v2, p4, v1
 
-    if-nez v2, :cond_8
+    if-nez v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_9
-    if-eqz v2, :cond_c
+    :goto_0
+    if-eqz v2, :cond_1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_c
+    :cond_1
     mul-float v1, p0, p2
 
     mul-float v2, p1, p3
@@ -848,12 +848,12 @@
 
     div-float/2addr v1, p4
 
-    :goto_16
+    :goto_1
     return v1
 .end method
 
 .method public static final compositeOver--OWjLjI(JJ)J
-    .registers 22
+    .locals 18
     .param p0, "$this$compositeOver_u2d_u2dOWjLjI"    # J
     .param p2, "background"    # J
 
@@ -914,23 +914,23 @@
 
     const/4 v14, 0x0
 
-    if-nez v12, :cond_2a
+    if-nez v12, :cond_0
 
     move v12, v13
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     move v12, v14
 
-    :goto_2b
-    if-eqz v12, :cond_2f
+    :goto_0
+    if-eqz v12, :cond_1
 
     move v12, v11
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_2f
+    :cond_1
     mul-float v12, v8, v5
 
     mul-float v15, v9, v0
@@ -947,7 +947,7 @@
     .end local v8    # "fgC$iv":F
     .end local v9    # "bgC$iv":F
     .end local v10    # "$i$f$compositeComponent":I
-    :goto_39
+    :goto_1
     move v8, v12
 
     .line 568
@@ -968,23 +968,23 @@
     .local v12, "$i$f$compositeComponent":I
     cmpg-float v15, v7, v11
 
-    if-nez v15, :cond_49
+    if-nez v15, :cond_2
 
     move v15, v13
 
-    goto :goto_4a
+    goto :goto_2
 
-    :cond_49
+    :cond_2
     move v15, v14
 
-    :goto_4a
-    if-eqz v15, :cond_4e
+    :goto_2
+    if-eqz v15, :cond_3
 
     move v15, v11
 
-    goto :goto_59
+    goto :goto_3
 
-    :cond_4e
+    :cond_3
     mul-float v15, v9, v5
 
     mul-float v16, v10, v0
@@ -1001,7 +1001,7 @@
     .end local v9    # "fgC$iv":F
     .end local v10    # "bgC$iv":F
     .end local v12    # "$i$f$compositeComponent":I
-    :goto_59
+    :goto_3
     move v9, v15
 
     .line 569
@@ -1022,19 +1022,19 @@
     .local v15, "$i$f$compositeComponent":I
     cmpg-float v16, v7, v11
 
-    if-nez v16, :cond_68
+    if-nez v16, :cond_4
 
-    goto :goto_69
+    goto :goto_4
 
-    :cond_68
+    :cond_4
     move v13, v14
 
-    :goto_69
-    if-eqz v13, :cond_6c
+    :goto_4
+    if-eqz v13, :cond_5
 
-    goto :goto_74
+    goto :goto_5
 
-    :cond_6c
+    :cond_5
     mul-float v11, v10, v5
 
     mul-float v13, v12, v0
@@ -1051,7 +1051,7 @@
     .end local v10    # "fgC$iv":F
     .end local v12    # "bgC$iv":F
     .end local v15    # "$i$f$compositeComponent":I
-    :goto_74
+    :goto_5
     move v6, v11
 
     .line 571
@@ -1068,7 +1068,7 @@
 .end method
 
 .method private static final getComponents-8_81llA(J)[F
-    .registers 5
+    .locals 3
     .param p0, "$this$getComponents_u2d8_81llA"    # J
 
     .line 596
@@ -1112,7 +1112,7 @@
 .end method
 
 .method public static final isSpecified-8_81llA(J)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isSpecified"    # J
 
     const/4 v0, 0x0
@@ -1127,27 +1127,27 @@
 
     cmp-long v1, p0, v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     return v1
 .end method
 
 .method public static synthetic isSpecified-8_81llA$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final isUnspecified-8_81llA(J)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isUnspecified"    # J
 
     const/4 v0, 0x0
@@ -1162,27 +1162,27 @@
 
     cmp-long v1, p0, v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     return v1
 .end method
 
 .method public static synthetic isUnspecified-8_81llA$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final lerp-jxsXWHM(JJF)J
-    .registers 23
+    .locals 18
     .param p0, "start"    # J
     .param p2, "stop"    # J
     .param p4, "fraction"    # F
@@ -1319,7 +1319,7 @@
 .end method
 
 .method public static final luminance-8_81llA(J)F
-    .registers 14
+    .locals 12
     .param p0, "$this$luminance_u2d8_81llA"    # J
 
     .line 611
@@ -1343,7 +1343,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_0
 
     .line 617
     const-string/jumbo v1, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb"
@@ -1425,7 +1425,7 @@
     .end local v2    # "r":D
     .end local v4    # "g":D
     .end local v6    # "b":D
-    :cond_56
+    :cond_0
     const/4 v1, 0x0
 
     .line 613
@@ -1472,7 +1472,7 @@
 .end method
 
 .method private static final saturate(F)F
-    .registers 3
+    .locals 2
     .param p0, "v"    # F
 
     .line 626
@@ -1480,29 +1480,29 @@
 
     cmpg-float v1, p0, v0
 
-    if-gtz v1, :cond_6
+    if-gtz v1, :cond_0
 
-    :goto_5
-    goto :goto_e
+    :goto_0
+    goto :goto_1
 
-    :cond_6
+    :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v1, p0, v0
 
-    if-ltz v1, :cond_d
+    if-ltz v1, :cond_1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_d
+    :cond_1
     move v0, p0
 
-    :goto_e
+    :goto_1
     return v0
 .end method
 
 .method public static final takeOrElse-DxMtmZc(JLkotlin/jvm/functions/Function0;)J
-    .registers 9
+    .locals 6
     .param p0, "$this$takeOrElse_u2dDxMtmZc"    # J
     .param p2, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -1537,26 +1537,26 @@
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     const/4 v4, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v4, 0x0
 
     .line 658
     .end local v1    # "$this$isSpecified$iv":J
     .end local v3    # "$i$f$isSpecified-8_81llA":I
-    :goto_16
-    if-eqz v4, :cond_1a
+    :goto_0
+    if-eqz v4, :cond_1
 
     move-wide v1, p0
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v1
@@ -1567,12 +1567,12 @@
 
     move-result-wide v1
 
-    :goto_24
+    :goto_1
     return-wide v1
 .end method
 
 .method public static final toArgb-8_81llA(J)I
-    .registers 5
+    .locals 3
     .param p0, "$this$toArgb_u2d8_81llA"    # J
 
     .line 639

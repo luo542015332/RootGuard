@@ -85,7 +85,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 20
+    .locals 20
 
     new-instance v0, Landroidx/compose/foundation/MagnifierStyle$Companion;
 
@@ -158,7 +158,7 @@
 .end method
 
 .method private constructor <init>(JFFZZ)V
-    .registers 16
+    .locals 9
     .param p1, "size"    # J
     .param p3, "cornerRadius"    # F
     .param p4, "elevation"    # F
@@ -206,12 +206,12 @@
 .end method
 
 .method public synthetic constructor <init>(JFFZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 16
+    .locals 7
 
     .line 89
     and-int/lit8 v0, p7, 0x1
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 90
     sget-object v0, Landroidx/compose/ui/unit/DpSize;->Companion:Landroidx/compose/ui/unit/DpSize$Companion;
@@ -220,16 +220,16 @@
 
     move-result-wide v0
 
-    goto :goto_c
+    goto :goto_0
 
     .line 89
-    :cond_b
+    :cond_0
     move-wide v0, p1
 
-    :goto_c
+    :goto_0
     and-int/lit8 v2, p7, 0x2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_1
 
     .line 91
     sget-object v2, Landroidx/compose/ui/unit/Dp;->Companion:Landroidx/compose/ui/unit/Dp$Companion;
@@ -238,16 +238,16 @@
 
     move-result v2
 
-    goto :goto_18
+    goto :goto_1
 
     .line 89
-    :cond_17
+    :cond_1
     move v2, p3
 
-    :goto_18
+    :goto_1
     and-int/lit8 v3, p7, 0x4
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_2
 
     .line 92
     sget-object v3, Landroidx/compose/ui/unit/Dp;->Companion:Landroidx/compose/ui/unit/Dp$Companion;
@@ -256,41 +256,41 @@
 
     move-result v3
 
-    goto :goto_24
+    goto :goto_2
 
     .line 89
-    :cond_23
+    :cond_2
     move v3, p4
 
-    :goto_24
+    :goto_2
     and-int/lit8 v4, p7, 0x8
 
-    if-eqz v4, :cond_2a
+    if-eqz v4, :cond_3
 
     .line 93
     const/4 v4, 0x1
 
-    goto :goto_2b
+    goto :goto_3
 
     .line 89
-    :cond_2a
+    :cond_3
     move v4, p5
 
-    :goto_2b
+    :goto_3
     and-int/lit8 v5, p7, 0x10
 
-    if-eqz v5, :cond_31
+    if-eqz v5, :cond_4
 
     .line 94
     const/4 v5, 0x0
 
-    goto :goto_32
+    goto :goto_4
 
     .line 89
-    :cond_31
+    :cond_4
     move v5, p6
 
-    :goto_32
+    :goto_4
     const/4 v6, 0x0
 
     move-object p1, p0
@@ -314,7 +314,7 @@
 .end method
 
 .method public synthetic constructor <init>(JFFZZLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 8
+    .locals 0
 
     invoke-direct/range {p0 .. p6}, Landroidx/compose/foundation/MagnifierStyle;-><init>(JFFZZ)V
 
@@ -322,7 +322,7 @@
 .end method
 
 .method private constructor <init>(ZJFFZZ)V
-    .registers 8
+    .locals 0
     .param p1, "useTextDefault"    # Z
     .param p2, "size"    # J
     .param p4, "cornerRadius"    # F
@@ -356,7 +356,7 @@
 .end method
 
 .method public synthetic constructor <init>(ZJFFZZLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 9
+    .locals 0
 
     invoke-direct/range {p0 .. p7}, Landroidx/compose/foundation/MagnifierStyle;-><init>(ZJFFZZ)V
 
@@ -364,7 +364,7 @@
 .end method
 
 .method public static final synthetic access$getDefault$cp()Landroidx/compose/foundation/MagnifierStyle;
-    .registers 1
+    .locals 1
 
     .line 78
     sget-object v0, Landroidx/compose/foundation/MagnifierStyle;->Default:Landroidx/compose/foundation/MagnifierStyle;
@@ -373,7 +373,7 @@
 .end method
 
 .method public static final synthetic access$getTextDefault$cp()Landroidx/compose/foundation/MagnifierStyle;
-    .registers 1
+    .locals 1
 
     .line 78
     sget-object v0, Landroidx/compose/foundation/MagnifierStyle;->TextDefault:Landroidx/compose/foundation/MagnifierStyle;
@@ -384,28 +384,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 116
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 117
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/foundation/MagnifierStyle;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 119
-    :cond_a
+    :cond_1
     iget-boolean v1, p0, Landroidx/compose/foundation/MagnifierStyle;->useTextDefault:Z
 
     move-object v3, p1
@@ -414,12 +414,12 @@
 
     iget-boolean v3, v3, Landroidx/compose/foundation/MagnifierStyle;->useTextDefault:Z
 
-    if-eq v1, v3, :cond_14
+    if-eq v1, v3, :cond_2
 
     return v2
 
     .line 120
-    :cond_14
+    :cond_2
     iget-wide v3, p0, Landroidx/compose/foundation/MagnifierStyle;->size:J
 
     move-object v1, p1
@@ -432,12 +432,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_22
+    if-nez v1, :cond_3
 
     return v2
 
     .line 121
-    :cond_22
+    :cond_3
     iget v1, p0, Landroidx/compose/foundation/MagnifierStyle;->cornerRadius:F
 
     move-object v3, p1
@@ -450,12 +450,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_4
 
     return v2
 
     .line 122
-    :cond_30
+    :cond_4
     iget v1, p0, Landroidx/compose/foundation/MagnifierStyle;->elevation:F
 
     move-object v3, p1
@@ -468,12 +468,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_3e
+    if-nez v1, :cond_5
 
     return v2
 
     .line 123
-    :cond_3e
+    :cond_5
     iget-boolean v1, p0, Landroidx/compose/foundation/MagnifierStyle;->clippingEnabled:Z
 
     move-object v3, p1
@@ -482,12 +482,12 @@
 
     iget-boolean v3, v3, Landroidx/compose/foundation/MagnifierStyle;->clippingEnabled:Z
 
-    if-eq v1, v3, :cond_48
+    if-eq v1, v3, :cond_6
 
     return v2
 
     .line 124
-    :cond_48
+    :cond_6
     iget-boolean v1, p0, Landroidx/compose/foundation/MagnifierStyle;->fishEyeEnabled:Z
 
     move-object v3, p1
@@ -496,17 +496,17 @@
 
     iget-boolean v3, v3, Landroidx/compose/foundation/MagnifierStyle;->fishEyeEnabled:Z
 
-    if-eq v1, v3, :cond_52
+    if-eq v1, v3, :cond_7
 
     return v2
 
     .line 126
-    :cond_52
+    :cond_7
     return v0
 .end method
 
 .method public final getClippingEnabled$foundation_release()Z
-    .registers 2
+    .locals 1
 
     .line 85
     iget-boolean v0, p0, Landroidx/compose/foundation/MagnifierStyle;->clippingEnabled:Z
@@ -515,7 +515,7 @@
 .end method
 
 .method public final getCornerRadius-D9Ej5fM$foundation_release()F
-    .registers 2
+    .locals 1
 
     .line 83
     iget v0, p0, Landroidx/compose/foundation/MagnifierStyle;->cornerRadius:F
@@ -524,7 +524,7 @@
 .end method
 
 .method public final getElevation-D9Ej5fM$foundation_release()F
-    .registers 2
+    .locals 1
 
     .line 84
     iget v0, p0, Landroidx/compose/foundation/MagnifierStyle;->elevation:F
@@ -533,7 +533,7 @@
 .end method
 
 .method public final getFishEyeEnabled$foundation_release()Z
-    .registers 2
+    .locals 1
 
     .line 86
     iget-boolean v0, p0, Landroidx/compose/foundation/MagnifierStyle;->fishEyeEnabled:Z
@@ -542,7 +542,7 @@
 .end method
 
 .method public final getSize-MYxV2XQ$foundation_release()J
-    .registers 3
+    .locals 2
 
     .line 82
     iget-wide v0, p0, Landroidx/compose/foundation/MagnifierStyle;->size:J
@@ -551,7 +551,7 @@
 .end method
 
 .method public final getUseTextDefault$foundation_release()Z
-    .registers 2
+    .locals 1
 
     .line 81
     iget-boolean v0, p0, Landroidx/compose/foundation/MagnifierStyle;->useTextDefault:Z
@@ -560,7 +560,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 130
     iget-boolean v0, p0, Landroidx/compose/foundation/MagnifierStyle;->useTextDefault:Z
@@ -640,7 +640,7 @@
 .end method
 
 .method public final isSupported()Z
-    .registers 5
+    .locals 4
 
     .line 113
     sget-object v0, Landroidx/compose/foundation/MagnifierStyle;->Companion:Landroidx/compose/foundation/MagnifierStyle$Companion;
@@ -659,20 +659,20 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 140
     iget-boolean v0, p0, Landroidx/compose/foundation/MagnifierStyle;->useTextDefault:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 141
     const-string/jumbo v0, "MagnifierStyle.TextDefault"
 
-    goto :goto_64
+    goto :goto_0
 
     .line 143
-    :cond_8
+    :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -786,6 +786,6 @@
     move-result-object v0
 
     .line 140
-    :goto_64
+    :goto_0
     return-object v0
 .end method

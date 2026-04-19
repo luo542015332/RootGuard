@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 96
     sget-object v0, Landroidx/compose/runtime/saveable/SaverKt$AutoSaver$1;->INSTANCE:Landroidx/compose/runtime/saveable/SaverKt$AutoSaver$1;
@@ -74,7 +74,7 @@
 .end method
 
 .method public static final Saver(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/saveable/Saver;
-    .registers 3
+    .locals 1
     .param p0, "save"    # Lkotlin/jvm/functions/Function2;
     .param p1, "restore"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -114,7 +114,7 @@
 .end method
 
 .method public static final autoSaver()Landroidx/compose/runtime/saveable/Saver;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

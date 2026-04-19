@@ -86,7 +86,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -96,7 +96,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 35
     invoke-direct {p0}, Landroidx/compose/ui/Modifier$Node;-><init>()V
@@ -117,13 +117,13 @@
 .end method
 
 .method public static synthetic getSelfKindSet$ui_release$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final updateNodeKindSet(IZ)V
-    .registers 8
+    .locals 5
     .param p1, "newKindSet"    # I
     .param p2, "recalculateOwner"    # Z
 
@@ -137,7 +137,7 @@
     invoke-virtual {p0, p1}, Landroidx/compose/ui/node/DelegatingNode;->setKindSet$ui_release(I)V
 
     .line 193
-    if-eq v0, p1, :cond_5d
+    if-eq v0, p1, :cond_4
 
     .line 194
     move v1, p1
@@ -152,18 +152,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     .line 196
     invoke-virtual {p0, v1}, Landroidx/compose/ui/node/DelegatingNode;->setAggregateChildKindSet$ui_release(I)V
 
     .line 201
-    :cond_16
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/node/DelegatingNode;->isAttached()Z
 
     move-result v2
 
-    if-eqz v2, :cond_5d
+    if-eqz v2, :cond_4
 
     .line 202
     invoke-virtual {p0}, Landroidx/compose/ui/node/DelegatingNode;->getNode()Landroidx/compose/ui/Modifier$Node;
@@ -178,8 +178,8 @@
 
     .line 208
     .local v3, "it":Landroidx/compose/ui/Modifier$Node;
-    :goto_23
-    if-eqz v3, :cond_34
+    :goto_0
+    if-eqz v3, :cond_1
 
     .line 209
     invoke-virtual {v3}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
@@ -192,20 +192,20 @@
     invoke-virtual {v3, v1}, Landroidx/compose/ui/Modifier$Node;->setKindSet$ui_release(I)V
 
     .line 211
-    if-eq v3, v2, :cond_34
+    if-eq v3, v2, :cond_1
 
     .line 212
     invoke-virtual {v3}, Landroidx/compose/ui/Modifier$Node;->getParent$ui_release()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v3
 
-    goto :goto_23
+    goto :goto_0
 
     .line 215
-    :cond_34
-    if-eqz p2, :cond_3f
+    :cond_1
+    if-eqz p2, :cond_2
 
-    if-ne v3, v2, :cond_3f
+    if-ne v3, v2, :cond_2
 
     .line 216
     invoke-static {v2}, Landroidx/compose/ui/node/NodeKindKt;->calculateNodeKindSetFromIncludingDelegates(Landroidx/compose/ui/Modifier$Node;)I
@@ -216,30 +216,30 @@
     invoke-virtual {v2, v1}, Landroidx/compose/ui/Modifier$Node;->setKindSet$ui_release(I)V
 
     .line 220
-    :cond_3f
-    if-eqz v3, :cond_4c
+    :cond_2
+    if-eqz v3, :cond_3
 
     invoke-virtual {v3}, Landroidx/compose/ui/Modifier$Node;->getChild$ui_release()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v4
 
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_3
 
     invoke-virtual {v4}, Landroidx/compose/ui/Modifier$Node;->getAggregateChildKindSet$ui_release()I
 
     move-result v4
 
-    goto :goto_4d
+    goto :goto_1
 
-    :cond_4c
+    :cond_3
     const/4 v4, 0x0
 
-    :goto_4d
+    :goto_1
     or-int/2addr v1, v4
 
     .line 224
-    :goto_4e
-    if-eqz v3, :cond_5d
+    :goto_2
+    if-eqz v3, :cond_4
 
     .line 225
     invoke-virtual {v3}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
@@ -256,18 +256,18 @@
 
     move-result-object v3
 
-    goto :goto_4e
+    goto :goto_2
 
     .line 231
     .end local v1    # "agg":I
     .end local v2    # "owner":Landroidx/compose/ui/Modifier$Node;
     .end local v3    # "it":Landroidx/compose/ui/Modifier$Node;
-    :cond_5d
+    :cond_4
     return-void
 .end method
 
 .method private final validateDelegateKindSet(ILandroidx/compose/ui/Modifier$Node;)V
-    .registers 11
+    .locals 8
     .param p1, "delegateKindSet"    # I
     .param p2, "delegateNode"    # Landroidx/compose/ui/Modifier$Node;
 
@@ -306,21 +306,21 @@
 
     const/4 v7, 0x0
 
-    if-eqz v5, :cond_15
+    if-eqz v5, :cond_0
 
     move v1, v6
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v1, v7
 
     .line 176
     .end local v1    # "value$iv":I
     .end local v3    # "$this$contains_u2d64DMado$iv":I
     .end local v4    # "$i$f$contains-64DMado":I
-    :goto_16
-    if-eqz v1, :cond_58
+    :goto_0
+    if-eqz v1, :cond_3
 
     const/4 v1, 0x0
 
@@ -344,28 +344,28 @@
     .local v3, "$i$f$contains-64DMado":I
     and-int v4, v2, v1
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_1
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
+    :cond_1
     move v6, v7
 
     .line 176
     .end local v1    # "value$iv":I
     .end local v2    # "$this$contains_u2d64DMado$iv":I
     .end local v3    # "$i$f$contains-64DMado":I
-    :goto_26
-    if-eqz v6, :cond_58
+    :goto_1
+    if-eqz v6, :cond_3
 
     .line 181
     instance-of v1, p0, Landroidx/compose/ui/node/LayoutModifierNode;
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
-    goto :goto_58
+    goto :goto_2
 
-    :cond_2d
+    :cond_2
     const/4 v1, 0x0
 
     .line 182
@@ -423,15 +423,15 @@
     throw v2
 
     .line 188
-    :cond_58
-    :goto_58
+    :cond_3
+    :goto_2
     return-void
 .end method
 
 
 # virtual methods
 .method protected final delegate(Landroidx/compose/ui/node/DelegatableNode;)Landroidx/compose/ui/node/DelegatableNode;
-    .registers 14
+    .locals 12
     .param p1, "delegatableNode"    # Landroidx/compose/ui/node/DelegatableNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -456,38 +456,38 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, p1, :cond_10
+    if-eq v0, p1, :cond_0
 
     move v3, v1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move v3, v2
 
     .line 74
     .local v3, "isAlreadyDelegated":Z
-    :goto_11
+    :goto_0
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_40
+    if-eqz v3, :cond_5
 
     .line 75
     instance-of v5, p1, Landroidx/compose/ui/Modifier$Node;
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_1
 
     move-object v5, p1
 
     check-cast v5, Landroidx/compose/ui/Modifier$Node;
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_1
     move-object v5, v4
 
-    :goto_1d
-    if-eqz v5, :cond_23
+    :goto_1
+    if-eqz v5, :cond_2
 
     invoke-virtual {v5}, Landroidx/compose/ui/Modifier$Node;->getParent$ui_release()Landroidx/compose/ui/Modifier$Node;
 
@@ -495,33 +495,33 @@
 
     .line 76
     .local v4, "delegator":Landroidx/compose/ui/Modifier$Node;
-    :cond_23
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/node/DelegatingNode;->getNode()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v5
 
-    if-ne v0, v5, :cond_30
+    if-ne v0, v5, :cond_3
 
     invoke-static {v4, p0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_30
+    if-eqz v5, :cond_3
 
-    goto :goto_31
+    goto :goto_2
 
-    :cond_30
+    :cond_3
     move v1, v2
 
     .line 77
     .local v1, "isDelegatedToThisNode":Z
-    :goto_31
-    if-eqz v1, :cond_34
+    :goto_2
+    if-eqz v1, :cond_4
 
     .line 79
     return-object p1
 
-    :cond_34
+    :cond_4
     new-instance v2, Ljava/lang/IllegalStateException;
 
     .line 81
@@ -538,14 +538,14 @@
     .line 84
     .end local v1    # "isDelegatedToThisNode":Z
     .end local v4    # "delegator":Landroidx/compose/ui/Modifier$Node;
-    :cond_40
+    :cond_5
     invoke-virtual {v0}, Landroidx/compose/ui/Modifier$Node;->isAttached()Z
 
     move-result v5
 
     xor-int/2addr v5, v1
 
-    if-eqz v5, :cond_c0
+    if-eqz v5, :cond_a
 
     .line 89
     invoke-virtual {p0}, Landroidx/compose/ui/node/DelegatingNode;->getNode()Landroidx/compose/ui/Modifier$Node;
@@ -601,7 +601,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_bf
+    if-eqz v7, :cond_9
 
     .line 106
     const/4 v7, 0x0
@@ -628,21 +628,21 @@
     .local v10, "$i$f$contains-64DMado":I
     and-int v11, v9, v7
 
-    if-eqz v11, :cond_86
+    if-eqz v11, :cond_6
 
     move v7, v1
 
-    goto :goto_87
+    goto :goto_3
 
-    :cond_86
+    :cond_6
     move v7, v2
 
     .line 106
     .end local v7    # "value$iv":I
     .end local v9    # "$this$contains_u2d64DMado$iv":I
     .end local v10    # "$i$f$contains-64DMado":I
-    :goto_87
-    if-eqz v7, :cond_af
+    :goto_3
+    if-eqz v7, :cond_8
 
     const/4 v7, 0x0
 
@@ -666,19 +666,19 @@
     .local v9, "$i$f$contains-64DMado":I
     and-int v10, v8, v7
 
-    if-eqz v10, :cond_96
+    if-eqz v10, :cond_7
 
-    goto :goto_97
+    goto :goto_4
 
-    :cond_96
+    :cond_7
     move v1, v2
 
     .line 106
     .end local v7    # "value$iv":I
     .end local v8    # "$this$contains_u2d64DMado$iv":I
     .end local v9    # "$i$f$contains-64DMado":I
-    :goto_97
-    if-nez v1, :cond_af
+    :goto_4
+    if-nez v1, :cond_8
 
     .line 109
     move-object v1, p0
@@ -705,10 +705,10 @@
     invoke-virtual {v1}, Landroidx/compose/ui/node/NodeChain;->syncCoordinators()V
 
     .end local v1    # "chain":Landroidx/compose/ui/node/NodeChain;
-    goto :goto_b6
+    goto :goto_5
 
     .line 113
-    :cond_af
+    :cond_8
     invoke-virtual {p0}, Landroidx/compose/ui/node/DelegatingNode;->getCoordinator$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v1
@@ -716,7 +716,7 @@
     invoke-virtual {p0, v1}, Landroidx/compose/ui/node/DelegatingNode;->updateCoordinator$ui_release(Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 115
-    :goto_b6
+    :goto_5
     invoke-virtual {v0}, Landroidx/compose/ui/Modifier$Node;->markAsAttached$ui_release()V
 
     .line 116
@@ -726,13 +726,13 @@
     invoke-static {v0}, Landroidx/compose/ui/node/NodeKindKt;->autoInvalidateInsertedNode(Landroidx/compose/ui/Modifier$Node;)V
 
     .line 119
-    :cond_bf
+    :cond_9
     return-object p1
 
     .line 84
     .end local v5    # "beforeKindSet":I
     .end local v6    # "delegatedKindSet":I
-    :cond_c0
+    :cond_a
     const/4 v1, 0x0
 
     .line 85
@@ -755,7 +755,7 @@
 .end method
 
 .method public final delegateUnprotected$ui_release(Landroidx/compose/ui/node/DelegatableNode;)Landroidx/compose/ui/node/DelegatableNode;
-    .registers 3
+    .locals 1
     .param p1, "delegatableNode"    # Landroidx/compose/ui/node/DelegatableNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -778,7 +778,7 @@
 .end method
 
 .method public final forEachImmediateDelegate$ui_release(Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -805,8 +805,8 @@
 
     .line 235
     .local v1, "node":Landroidx/compose/ui/Modifier$Node;
-    :goto_b
-    if-eqz v1, :cond_15
+    :goto_0
+    if-eqz v1, :cond_0
 
     .line 236
     invoke-interface {p1, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -816,15 +816,15 @@
 
     move-result-object v1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 239
-    :cond_15
+    :cond_0
     return-void
 .end method
 
 .method public final getDelegate$ui_release()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 50
     iget-object v0, p0, Landroidx/compose/ui/node/DelegatingNode;->delegate:Landroidx/compose/ui/Modifier$Node;
@@ -833,7 +833,7 @@
 .end method
 
 .method public final getSelfKindSet$ui_release()I
-    .registers 2
+    .locals 1
 
     .line 42
     iget v0, p0, Landroidx/compose/ui/node/DelegatingNode;->selfKindSet:I
@@ -842,7 +842,7 @@
 .end method
 
 .method public markAsAttached$ui_release()V
-    .registers 7
+    .locals 6
 
     .line 242
     invoke-super {p0}, Landroidx/compose/ui/Modifier$Node;->markAsAttached$ui_release()V
@@ -861,8 +861,8 @@
 
     .line 291
     .local v2, "node$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_9
-    if-eqz v2, :cond_24
+    :goto_0
+    if-eqz v2, :cond_1
 
     .line 292
     move-object v3, v2
@@ -883,13 +883,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_1d
+    if-nez v5, :cond_0
 
     .line 248
     invoke-virtual {v3}, Landroidx/compose/ui/Modifier$Node;->markAsAttached$ui_release()V
 
     .line 250
-    :cond_1d
+    :cond_0
     nop
 
     .line 292
@@ -902,10 +902,10 @@
 
     move-result-object v2
 
-    goto :goto_9
+    goto :goto_0
 
     .line 295
-    :cond_24
+    :cond_1
     nop
 
     .line 251
@@ -916,7 +916,7 @@
 .end method
 
 .method public markAsDetached$ui_release()V
-    .registers 6
+    .locals 5
 
     .line 268
     move-object v0, p0
@@ -932,8 +932,8 @@
 
     .line 309
     .local v2, "node$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_6
-    if-eqz v2, :cond_13
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 310
     move-object v3, v2
@@ -955,10 +955,10 @@
 
     move-result-object v2
 
-    goto :goto_6
+    goto :goto_0
 
     .line 313
-    :cond_13
+    :cond_0
     nop
 
     .line 269
@@ -972,7 +972,7 @@
 .end method
 
 .method public reset$ui_release()V
-    .registers 6
+    .locals 5
 
     .line 273
     invoke-super {p0}, Landroidx/compose/ui/Modifier$Node;->reset$ui_release()V
@@ -991,8 +991,8 @@
 
     .line 315
     .local v2, "node$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_9
-    if-eqz v2, :cond_16
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 316
     move-object v3, v2
@@ -1014,10 +1014,10 @@
 
     move-result-object v2
 
-    goto :goto_9
+    goto :goto_0
 
     .line 319
-    :cond_16
+    :cond_0
     nop
 
     .line 275
@@ -1028,7 +1028,7 @@
 .end method
 
 .method public runAttachLifecycle$ui_release()V
-    .registers 6
+    .locals 5
 
     .line 254
     move-object v0, p0
@@ -1044,8 +1044,8 @@
 
     .line 297
     .local v2, "node$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_6
-    if-eqz v2, :cond_14
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 298
     move-object v3, v2
@@ -1070,10 +1070,10 @@
 
     move-result-object v2
 
-    goto :goto_6
+    goto :goto_0
 
     .line 301
-    :cond_14
+    :cond_0
     nop
 
     .line 257
@@ -1087,7 +1087,7 @@
 .end method
 
 .method public runDetachLifecycle$ui_release()V
-    .registers 6
+    .locals 5
 
     .line 261
     invoke-super {p0}, Landroidx/compose/ui/Modifier$Node;->runDetachLifecycle$ui_release()V
@@ -1106,8 +1106,8 @@
 
     .line 303
     .local v2, "node$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_9
-    if-eqz v2, :cond_17
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 304
     move-object v3, v2
@@ -1132,10 +1132,10 @@
 
     move-result-object v2
 
-    goto :goto_9
+    goto :goto_0
 
     .line 307
-    :cond_17
+    :cond_0
     nop
 
     .line 265
@@ -1146,7 +1146,7 @@
 .end method
 
 .method public final setDelegate$ui_release(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 50
@@ -1156,7 +1156,7 @@
 .end method
 
 .method protected final undelegate(Landroidx/compose/ui/node/DelegatableNode;)V
-    .registers 15
+    .locals 13
     .param p1, "instance"    # Landroidx/compose/ui/node/DelegatableNode;
 
     const-string/jumbo v0, "instance"
@@ -1176,22 +1176,22 @@
 
     .line 134
     .local v2, "found":Z
-    :goto_a
+    :goto_0
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_3
 
     .line 135
-    if-ne v1, p1, :cond_3d
+    if-ne v1, p1, :cond_2
 
     .line 137
     invoke-virtual {v1}, Landroidx/compose/ui/Modifier$Node;->isAttached()Z
 
     move-result v5
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_0
 
     .line 138
     invoke-static {v1}, Landroidx/compose/ui/node/NodeKindKt;->autoInvalidateRemovedNode(Landroidx/compose/ui/Modifier$Node;)V
@@ -1203,14 +1203,14 @@
     invoke-virtual {v1}, Landroidx/compose/ui/Modifier$Node;->markAsDetached$ui_release()V
 
     .line 142
-    :cond_1f
+    :cond_0
     invoke-virtual {v1, v1}, Landroidx/compose/ui/Modifier$Node;->setAsDelegateTo$ui_release(Landroidx/compose/ui/Modifier$Node;)V
 
     .line 143
     invoke-virtual {v1, v4}, Landroidx/compose/ui/Modifier$Node;->setAggregateChildKindSet$ui_release(I)V
 
     .line 144
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_1
 
     .line 145
     invoke-virtual {v1}, Landroidx/compose/ui/Modifier$Node;->getChild$ui_release()Landroidx/compose/ui/Modifier$Node;
@@ -1219,10 +1219,10 @@
 
     iput-object v5, p0, Landroidx/compose/ui/node/DelegatingNode;->delegate:Landroidx/compose/ui/Modifier$Node;
 
-    goto :goto_35
+    goto :goto_1
 
     .line 147
-    :cond_2e
+    :cond_1
     invoke-virtual {v1}, Landroidx/compose/ui/Modifier$Node;->getChild$ui_release()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v5
@@ -1230,7 +1230,7 @@
     invoke-virtual {v0, v5}, Landroidx/compose/ui/Modifier$Node;->setChild$ui_release(Landroidx/compose/ui/Modifier$Node;)V
 
     .line 149
-    :goto_35
+    :goto_1
     invoke-virtual {v1, v3}, Landroidx/compose/ui/Modifier$Node;->setChild$ui_release(Landroidx/compose/ui/Modifier$Node;)V
 
     .line 150
@@ -1240,10 +1240,10 @@
     const/4 v2, 0x1
 
     .line 152
-    goto :goto_43
+    goto :goto_2
 
     .line 154
-    :cond_3d
+    :cond_2
     move-object v0, v1
 
     .line 155
@@ -1251,12 +1251,12 @@
 
     move-result-object v1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 157
-    :cond_43
-    :goto_43
-    if-eqz v2, :cond_91
+    :cond_3
+    :goto_2
+    if-eqz v2, :cond_7
 
     .line 158
     invoke-virtual {p0}, Landroidx/compose/ui/node/DelegatingNode;->getKindSet$ui_release()I
@@ -1284,7 +1284,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_90
+    if-eqz v8, :cond_6
 
     const/4 v8, 0x0
 
@@ -1310,21 +1310,21 @@
     .local v11, "$i$f$contains-64DMado":I
     and-int v12, v10, v8
 
-    if-eqz v12, :cond_69
+    if-eqz v12, :cond_4
 
     move v8, v7
 
-    goto :goto_6a
+    goto :goto_3
 
-    :cond_69
+    :cond_4
     move v8, v4
 
     .line 162
     .end local v8    # "value$iv":I
     .end local v10    # "$this$contains_u2d64DMado$iv":I
     .end local v11    # "$i$f$contains-64DMado":I
-    :goto_6a
-    if-eqz v8, :cond_90
+    :goto_3
+    if-eqz v8, :cond_6
 
     const/4 v8, 0x0
 
@@ -1348,7 +1348,7 @@
     .local v10, "$i$f$contains-64DMado":I
     and-int v11, v9, v8
 
-    if-eqz v11, :cond_79
+    if-eqz v11, :cond_5
 
     move v4, v7
 
@@ -1356,8 +1356,8 @@
     .end local v8    # "value$iv":I
     .end local v9    # "$this$contains_u2d64DMado$iv":I
     .end local v10    # "$i$f$contains-64DMado":I
-    :cond_79
-    if-nez v4, :cond_90
+    :cond_5
+    if-nez v4, :cond_6
 
     .line 165
     move-object v4, p0
@@ -1387,11 +1387,11 @@
     .end local v4    # "chain":Landroidx/compose/ui/node/NodeChain;
     .end local v5    # "beforeKindSet":I
     .end local v6    # "afterKindSet":I
-    :cond_90
+    :cond_6
     return-void
 
     .line 167
-    :cond_91
+    :cond_7
     new-instance v3, Ljava/lang/IllegalStateException;
 
     .line 170
@@ -1423,7 +1423,7 @@
 .end method
 
 .method public final undelegateUnprotected$ui_release(Landroidx/compose/ui/node/DelegatableNode;)V
-    .registers 3
+    .locals 1
     .param p1, "instance"    # Landroidx/compose/ui/node/DelegatableNode;
 
     const-string/jumbo v0, "instance"
@@ -1437,7 +1437,7 @@
 .end method
 
 .method public updateCoordinator$ui_release(Landroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 7
+    .locals 5
     .param p1, "coordinator"    # Landroidx/compose/ui/node/NodeCoordinator;
 
     .line 44
@@ -1457,8 +1457,8 @@
 
     .line 279
     .local v2, "node$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_9
-    if-eqz v2, :cond_17
+    :goto_0
+    if-eqz v2, :cond_0
 
     .line 280
     move-object v3, v2
@@ -1483,10 +1483,10 @@
 
     move-result-object v2
 
-    goto :goto_9
+    goto :goto_0
 
     .line 283
-    :cond_17
+    :cond_0
     nop
 
     .line 48

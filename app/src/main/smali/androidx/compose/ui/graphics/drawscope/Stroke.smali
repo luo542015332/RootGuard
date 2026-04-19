@@ -83,7 +83,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/drawscope/Stroke$Companion;
 
@@ -115,7 +115,7 @@
 .end method
 
 .method private constructor <init>(FFIILandroidx/compose/ui/graphics/PathEffect;)V
-    .registers 7
+    .locals 1
     .param p1, "width"    # F
     .param p2, "miter"    # F
     .param p3, "cap"    # I
@@ -147,89 +147,89 @@
 .end method
 
 .method public synthetic constructor <init>(FFIILandroidx/compose/ui/graphics/PathEffect;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 15
+    .locals 7
 
     .line 916
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_7
+    if-eqz p7, :cond_0
 
     .line 917
     const/4 p1, 0x0
 
     move v1, p1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 916
-    :cond_7
+    :cond_0
     move v1, p1
 
-    :goto_8
+    :goto_0
     and-int/lit8 p1, p6, 0x2
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_1
 
     .line 918
     const/high16 p2, 0x40800000    # 4.0f
 
     move v2, p2
 
-    goto :goto_11
+    goto :goto_1
 
     .line 916
-    :cond_10
+    :cond_1
     move v2, p2
 
-    :goto_11
+    :goto_1
     and-int/lit8 p1, p6, 0x4
 
-    if-eqz p1, :cond_19
+    if-eqz p1, :cond_2
 
     .line 919
     sget p3, Landroidx/compose/ui/graphics/drawscope/Stroke;->DefaultCap:I
 
     move v3, p3
 
-    goto :goto_1a
+    goto :goto_2
 
     .line 916
-    :cond_19
+    :cond_2
     move v3, p3
 
-    :goto_1a
+    :goto_2
     and-int/lit8 p1, p6, 0x8
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_3
 
     .line 920
     sget p4, Landroidx/compose/ui/graphics/drawscope/Stroke;->DefaultJoin:I
 
     move v4, p4
 
-    goto :goto_23
+    goto :goto_3
 
     .line 916
-    :cond_22
+    :cond_3
     move v4, p4
 
-    :goto_23
+    :goto_3
     and-int/lit8 p1, p6, 0x10
 
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_4
 
     .line 921
     const/4 p5, 0x0
 
     move-object v5, p5
 
-    goto :goto_2b
+    goto :goto_4
 
     .line 916
-    :cond_2a
+    :cond_4
     move-object v5, p5
 
-    :goto_2b
+    :goto_4
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -241,7 +241,7 @@
 .end method
 
 .method public synthetic constructor <init>(FFIILandroidx/compose/ui/graphics/PathEffect;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 7
+    .locals 0
 
     invoke-direct/range {p0 .. p5}, Landroidx/compose/ui/graphics/drawscope/Stroke;-><init>(FFIILandroidx/compose/ui/graphics/PathEffect;)V
 
@@ -249,7 +249,7 @@
 .end method
 
 .method public static final synthetic access$getDefaultCap$cp()I
-    .registers 1
+    .locals 1
 
     .line 916
     sget v0, Landroidx/compose/ui/graphics/drawscope/Stroke;->DefaultCap:I
@@ -258,7 +258,7 @@
 .end method
 
 .method public static final synthetic access$getDefaultJoin$cp()I
-    .registers 1
+    .locals 1
 
     .line 916
     sget v0, Landroidx/compose/ui/graphics/drawscope/Stroke;->DefaultJoin:I
@@ -269,28 +269,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 947
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 948
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/drawscope/Stroke;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 950
-    :cond_a
+    :cond_1
     iget v1, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->width:F
 
     move-object v3, p1
@@ -301,22 +301,22 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_2
 
     move v1, v0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_2
     move v1, v2
 
-    :goto_18
-    if-nez v1, :cond_1b
+    :goto_0
+    if-nez v1, :cond_3
 
     return v2
 
     .line 951
-    :cond_1b
+    :cond_3
     iget v1, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->miter:F
 
     move-object v3, p1
@@ -327,22 +327,22 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_28
+    if-nez v1, :cond_4
 
     move v1, v0
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
+    :cond_4
     move v1, v2
 
-    :goto_29
-    if-nez v1, :cond_2c
+    :goto_1
+    if-nez v1, :cond_5
 
     return v2
 
     .line 952
-    :cond_2c
+    :cond_5
     iget v1, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->cap:I
 
     move-object v3, p1
@@ -355,12 +355,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_3a
+    if-nez v1, :cond_6
 
     return v2
 
     .line 953
-    :cond_3a
+    :cond_6
     iget v1, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->join:I
 
     move-object v3, p1
@@ -373,12 +373,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_48
+    if-nez v1, :cond_7
 
     return v2
 
     .line 954
-    :cond_48
+    :cond_7
     iget-object v1, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->pathEffect:Landroidx/compose/ui/graphics/PathEffect;
 
     move-object v3, p1
@@ -391,17 +391,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_56
+    if-nez v1, :cond_8
 
     return v2
 
     .line 956
-    :cond_56
+    :cond_8
     return v0
 .end method
 
 .method public final getCap-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 919
     iget v0, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->cap:I
@@ -410,7 +410,7 @@
 .end method
 
 .method public final getJoin-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 920
     iget v0, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->join:I
@@ -419,7 +419,7 @@
 .end method
 
 .method public final getMiter()F
-    .registers 2
+    .locals 1
 
     .line 918
     iget v0, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->miter:F
@@ -428,7 +428,7 @@
 .end method
 
 .method public final getPathEffect()Landroidx/compose/ui/graphics/PathEffect;
-    .registers 2
+    .locals 1
 
     .line 921
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->pathEffect:Landroidx/compose/ui/graphics/PathEffect;
@@ -437,7 +437,7 @@
 .end method
 
 .method public final getWidth()F
-    .registers 2
+    .locals 1
 
     .line 917
     iget v0, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->width:F
@@ -446,7 +446,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 960
     iget v0, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->width:F
@@ -500,18 +500,18 @@
 
     iget-object v2, p0, Landroidx/compose/ui/graphics/drawscope/Stroke;->pathEffect:Landroidx/compose/ui/graphics/PathEffect;
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_2d
+    :goto_0
     add-int/2addr v0, v2
 
     .line 965
@@ -521,7 +521,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 969
     new-instance v0, Ljava/lang/StringBuilder;

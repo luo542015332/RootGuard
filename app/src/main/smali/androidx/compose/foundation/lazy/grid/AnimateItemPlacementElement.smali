@@ -64,7 +64,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/animation/core/FiniteAnimationSpec;)V
-    .registers 3
+    .locals 1
     .param p1, "animationSpec"    # Landroidx/compose/animation/core/FiniteAnimationSpec;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public create()Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementNode;
-    .registers 3
+    .locals 2
 
     .line 41
     new-instance v0, Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementNode;
@@ -105,7 +105,7 @@
 .end method
 
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 37
     invoke-virtual {p0}, Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementElement;->create()Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementNode;
@@ -118,28 +118,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 48
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 49
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementElement;
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     const/4 v0, 0x0
 
     return v0
 
     .line 50
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementElement;->animationSpec:Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     move-object v2, p1
@@ -158,7 +158,7 @@
 .end method
 
 .method public final getAnimationSpec()Landroidx/compose/animation/core/FiniteAnimationSpec;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -175,7 +175,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 54
     iget-object v0, p0, Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementElement;->animationSpec:Landroidx/compose/animation/core/FiniteAnimationSpec;
@@ -188,7 +188,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -210,7 +210,7 @@
 .end method
 
 .method public update(Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementNode;)V
-    .registers 4
+    .locals 2
     .param p1, "node"    # Landroidx/compose/foundation/lazy/grid/AnimateItemPlacementNode;
 
     const-string/jumbo v0, "node"
@@ -231,7 +231,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 37

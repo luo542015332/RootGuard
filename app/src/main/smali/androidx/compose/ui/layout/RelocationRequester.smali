@@ -46,13 +46,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,16 +62,16 @@
 .end method
 
 .method public static synthetic bringIntoView$default(Landroidx/compose/ui/layout/RelocationRequester;Landroidx/compose/ui/geometry/Rect;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 0
 
     .line 55
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/layout/RelocationRequester;->bringIntoView(Landroidx/compose/ui/geometry/Rect;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public final bringIntoView(Landroidx/compose/ui/geometry/Rect;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;

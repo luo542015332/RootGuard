@@ -97,7 +97,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "onRequestApplyChangesListener"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -163,7 +163,7 @@
 .end method
 
 .method public static final synthetic access$getFocusEventNodes$p(Landroidx/compose/ui/focus/FocusInvalidationManager;)Ljava/util/Set;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusInvalidationManager;
 
     .line 28
@@ -173,7 +173,7 @@
 .end method
 
 .method public static final synthetic access$getFocusPropertiesNodes$p(Landroidx/compose/ui/focus/FocusInvalidationManager;)Ljava/util/Set;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusInvalidationManager;
 
     .line 28
@@ -183,7 +183,7 @@
 .end method
 
 .method public static final synthetic access$getFocusTargetNodes$p(Landroidx/compose/ui/focus/FocusInvalidationManager;)Ljava/util/Set;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusInvalidationManager;
 
     .line 28
@@ -193,7 +193,7 @@
 .end method
 
 .method private final scheduleInvalidation(Ljava/util/Set;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "$this$scheduleInvalidation"    # Ljava/util/Set;
     .param p2, "node"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -211,7 +211,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 51
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusInvalidationManager;->focusTargetNodes:Ljava/util/Set;
@@ -238,7 +238,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_24
+    if-ne v0, v1, :cond_0
 
     .line 52
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusInvalidationManager;->onRequestApplyChangesListener:Lkotlin/jvm/functions/Function1;
@@ -248,14 +248,14 @@
     invoke-interface {v0, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 55
-    :cond_24
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final scheduleInvalidation(Landroidx/compose/ui/focus/FocusEventModifierNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/focus/FocusEventModifierNode;
 
     const-string/jumbo v0, "node"
@@ -272,7 +272,7 @@
 .end method
 
 .method public final scheduleInvalidation(Landroidx/compose/ui/focus/FocusPropertiesModifierNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/focus/FocusPropertiesModifierNode;
 
     const-string/jumbo v0, "node"
@@ -289,7 +289,7 @@
 .end method
 
 .method public final scheduleInvalidation(Landroidx/compose/ui/focus/FocusTargetNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/focus/FocusTargetNode;
 
     const-string/jumbo v0, "node"

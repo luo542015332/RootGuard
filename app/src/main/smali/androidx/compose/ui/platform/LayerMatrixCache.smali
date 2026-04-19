@@ -88,7 +88,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .param p1, "getMatrix"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public final calculateInverseMatrix-bWbORWo(Ljava/lang/Object;)[F
-    .registers 6
+    .locals 4
     .param p1, "target"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -142,7 +142,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -169,10 +169,10 @@
 
     .line 90
     .local v0, "matrix":[F
-    :cond_10
+    :cond_0
     iget-boolean v2, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->isInverseDirty:Z
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_1
 
     .line 91
     invoke-virtual {p0, p1}, Landroidx/compose/ui/platform/LayerMatrixCache;->calculateMatrix-GrdbGEg(Ljava/lang/Object;)[F
@@ -194,19 +194,19 @@
 
     .line 95
     .end local v2    # "normalMatrix":[F
-    :cond_21
+    :cond_1
     iget-boolean v2, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->isInverseValid:Z
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     move-object v1, v0
 
-    :cond_26
+    :cond_2
     return-object v1
 .end method
 
 .method public final calculateMatrix-GrdbGEg(Ljava/lang/Object;)[F
-    .registers 6
+    .locals 4
     .param p1, "target"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -217,7 +217,7 @@
     .line 57
     iget-object v0, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->matrixCache:[F
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -246,19 +246,19 @@
 
     .line 60
     .local v0, "matrix":[F
-    :cond_10
+    :cond_0
     iget-boolean v1, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->isDirty:Z
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_1
 
     .line 61
     return-object v0
 
     .line 64
-    :cond_15
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->androidMatrixCache:Landroid/graphics/Matrix;
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_2
 
     new-instance v1, Landroid/graphics/Matrix;
 
@@ -283,7 +283,7 @@
 
     .line 68
     .local v1, "cachedMatrix":Landroid/graphics/Matrix;
-    :cond_24
+    :cond_2
     iget-object v2, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->getMatrix:Lkotlin/jvm/functions/Function2;
 
     invoke-interface {v2, p1, v1}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -293,16 +293,16 @@
 
     .line 71
     .local v2, "prevMatrix":Landroid/graphics/Matrix;
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_3
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_3a
+    if-nez v3, :cond_4
 
     .line 72
-    :cond_33
+    :cond_3
     invoke-static {v0, v1}, Landroidx/compose/ui/graphics/AndroidMatrixConversions_androidKt;->setFrom-tU-YjHk([FLandroid/graphics/Matrix;)V
 
     .line 73
@@ -312,7 +312,7 @@
     iput-object v1, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->previousAndroidMatrix:Landroid/graphics/Matrix;
 
     .line 77
-    :cond_3a
+    :cond_4
     const/4 v3, 0x0
 
     iput-boolean v3, p0, Landroidx/compose/ui/platform/LayerMatrixCache;->isDirty:Z
@@ -322,7 +322,7 @@
 .end method
 
 .method public final invalidate()V
-    .registers 2
+    .locals 1
 
     .line 49
     const/4 v0, 0x1

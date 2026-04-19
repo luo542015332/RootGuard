@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/focus/FocusOwnerImpl;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/ui/focus/FocusOwnerImpl;
 
     iput-object p1, p0, Landroidx/compose/ui/focus/FocusOwnerImpl$modifier$1;->this$0:Landroidx/compose/ui/focus/FocusOwnerImpl;
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 65
     invoke-virtual {p0}, Landroidx/compose/ui/focus/FocusOwnerImpl$modifier$1;->create()Landroidx/compose/ui/focus/FocusTargetNode;
@@ -86,7 +86,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/focus/FocusTargetNode;
-    .registers 2
+    .locals 1
 
     .line 66
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOwnerImpl$modifier$1;->this$0:Landroidx/compose/ui/focus/FocusOwnerImpl;
@@ -99,25 +99,25 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 76
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOwnerImpl$modifier$1;->this$0:Landroidx/compose/ui/focus/FocusOwnerImpl;
@@ -134,7 +134,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -151,7 +151,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 65
@@ -165,7 +165,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/focus/FocusTargetNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/focus/FocusTargetNode;
 
     const-string/jumbo v0, "node"

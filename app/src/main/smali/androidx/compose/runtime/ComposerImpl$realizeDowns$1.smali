@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>([Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/ComposerImpl$realizeDowns$1;->$nodes:[Ljava/lang/Object;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 6
+    .locals 2
     .param p1, "applier"    # Landroidx/compose/runtime/Applier;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -133,8 +133,8 @@
 
     array-length p3, p3
 
-    :goto_14
-    if-ge p2, p3, :cond_21
+    :goto_0
+    if-ge p2, p3, :cond_0
 
     .line 3444
     move-object v0, p1
@@ -151,10 +151,10 @@
     .end local v0    # "nodeApplier":Landroidx/compose/runtime/Applier;
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 3447
     .end local p2    # "index":I
-    :cond_21
+    :cond_0
     return-void
 .end method

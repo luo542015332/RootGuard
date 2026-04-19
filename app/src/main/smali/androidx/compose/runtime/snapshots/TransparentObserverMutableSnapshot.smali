@@ -92,7 +92,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/snapshots/MutableSnapshot;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ZZ)V
-    .registers 10
+    .locals 4
     .param p1, "parentSnapshot"    # Landroidx/compose/runtime/snapshots/MutableSnapshot;
     .param p2, "specifiedReadObserver"    # Lkotlin/jvm/functions/Function1;
     .param p3, "specifiedWriteObserver"    # Lkotlin/jvm/functions/Function1;
@@ -130,16 +130,15 @@
     nop
 
     .line 1478
-    if-eqz p1, :cond_11
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->getReadObserver$runtime_release()Lkotlin/jvm/functions/Function1;
 
     move-result-object v1
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_1
 
-    :cond_11
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->currentGlobalSnapshot:Ljava/util/concurrent/atomic/AtomicReference;
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getCurrentGlobalSnapshot$p()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v1
@@ -155,11 +154,10 @@
     move-result-object v1
 
     .line 1479
-    :cond_1f
+    :cond_1
     nop
 
     .line 1476
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->mergedReadObserver(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Z)Lkotlin/jvm/functions/Function1;
     invoke-static {p2, v1, p4}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$mergedReadObserver(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Z)Lkotlin/jvm/functions/Function1;
 
     move-result-object v1
@@ -168,16 +166,15 @@
     nop
 
     .line 1483
-    if-eqz p1, :cond_2d
+    if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->getWriteObserver$runtime_release()Lkotlin/jvm/functions/Function1;
 
     move-result-object v2
 
-    if-nez v2, :cond_3b
+    if-nez v2, :cond_3
 
-    :cond_2d
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->currentGlobalSnapshot:Ljava/util/concurrent/atomic/AtomicReference;
+    :cond_2
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getCurrentGlobalSnapshot$p()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v2
@@ -193,8 +190,7 @@
     move-result-object v2
 
     .line 1481
-    :cond_3b
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->mergedWriteObserver(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function1;
+    :cond_3
     invoke-static {p3, v2}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$mergedWriteObserver(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function1;
 
     move-result-object v2
@@ -218,14 +214,13 @@
 .end method
 
 .method private final getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    .registers 3
+    .locals 2
 
     .line 1487
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->parentSnapshot:Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->currentGlobalSnapshot:Ljava/util/concurrent/atomic/AtomicReference;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getCurrentGlobalSnapshot$p()Ljava/util/concurrent/atomic/AtomicReference;
 
     move-result-object v0
@@ -240,14 +235,14 @@
 
     check-cast v0, Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
-    :cond_14
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public apply()Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
-    .registers 2
+    .locals 1
 
     .line 1523
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -262,7 +257,7 @@
 .end method
 
 .method public dispose()V
-    .registers 2
+    .locals 1
 
     .line 1491
     const/4 v0, 0x1
@@ -272,22 +267,22 @@
     .line 1492
     iget-boolean v0, p0, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->ownsParentSnapshot:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 1493
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->parentSnapshot:Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->dispose()V
 
     .line 1495
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 1498
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -302,7 +297,7 @@
 .end method
 
 .method public getInvalid$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
-    .registers 2
+    .locals 1
 
     .line 1502
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -317,7 +312,7 @@
 .end method
 
 .method public getModified$runtime_release()Landroidx/compose/runtime/collection/IdentityArraySet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -340,7 +335,7 @@
 .end method
 
 .method public getReadOnly()Z
-    .registers 2
+    .locals 1
 
     .line 1520
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -355,7 +350,7 @@
 .end method
 
 .method public getWriteCount$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 1514
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -370,7 +365,7 @@
 .end method
 
 .method public hasPendingChanges()Z
-    .registers 2
+    .locals 1
 
     .line 1506
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -385,7 +380,7 @@
 .end method
 
 .method public nestedActivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)Ljava/lang/Void;
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -403,7 +398,7 @@
 .end method
 
 .method public bridge synthetic nestedActivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 2
+    .locals 0
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     .line 1467
@@ -413,7 +408,7 @@
 .end method
 
 .method public nestedDeactivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)Ljava/lang/Void;
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -431,7 +426,7 @@
 .end method
 
 .method public bridge synthetic nestedDeactivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 2
+    .locals 0
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     .line 1467
@@ -441,7 +436,7 @@
 .end method
 
 .method public notifyObjectsInitialized$runtime_release()V
-    .registers 2
+    .locals 1
 
     .line 1567
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -454,7 +449,7 @@
 .end method
 
 .method public recordModified$runtime_release(Landroidx/compose/runtime/snapshots/StateObject;)V
-    .registers 3
+    .locals 1
     .param p1, "state"    # Landroidx/compose/runtime/snapshots/StateObject;
 
     const-string/jumbo v0, "state"
@@ -472,7 +467,7 @@
 .end method
 
 .method public setId$runtime_release(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 1500
@@ -486,7 +481,7 @@
 .end method
 
 .method public setInvalid$runtime_release(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
     const-string/jumbo v0, "value"
@@ -504,7 +499,7 @@
 .end method
 
 .method public setModified(Landroidx/compose/runtime/collection/IdentityArraySet;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/collection/IdentityArraySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -526,7 +521,7 @@
 .end method
 
 .method public setWriteCount$runtime_release(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 1516
@@ -541,7 +536,7 @@
 .end method
 
 .method public takeNestedMutableSnapshot(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    .registers 13
+    .locals 10
     .param p1, "readObserver"    # Lkotlin/jvm/functions/Function1;
     .param p2, "writeObserver"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -580,7 +575,6 @@
 
     move-result-object v1
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->mergedWriteObserver(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function1;
     invoke-static {p2, v1}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$mergedWriteObserver(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lkotlin/jvm/functions/Function1;
 
     move-result-object v1
@@ -589,7 +583,7 @@
     .local v1, "mergedWriteObserver":Lkotlin/jvm/functions/Function1;
     iget-boolean v2, p0, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->mergeParentObservers:Z
 
-    if-nez v2, :cond_32
+    if-nez v2, :cond_0
 
     .line 1548
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -640,10 +634,10 @@
     .end local v2    # "nestedSnapshot":Landroidx/compose/runtime/snapshots/MutableSnapshot;
     check-cast v3, Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 1560
-    :cond_32
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     move-result-object v2
@@ -660,12 +654,12 @@
     move-result-object v3
 
     .line 1547
-    :goto_3c
+    :goto_0
     return-object v3
 .end method
 
 .method public takeNestedSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 6
+    .locals 4
     .param p1, "readObserver"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -697,7 +691,7 @@
     .local v0, "mergedReadObserver":Lkotlin/jvm/functions/Function1;
     iget-boolean v1, p0, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->mergeParentObservers:Z
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_0
 
     .line 1532
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -717,15 +711,14 @@
     .line 1531
     const/4 v2, 0x1
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->createTransparentSnapshotWithNoParentReadObserver(Landroidx/compose/runtime/snapshots/Snapshot;Lkotlin/jvm/functions/Function1;Z)Landroidx/compose/runtime/snapshots/Snapshot;
     invoke-static {v1, v0, v2}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$createTransparentSnapshotWithNoParentReadObserver(Landroidx/compose/runtime/snapshots/Snapshot;Lkotlin/jvm/functions/Function1;Z)Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v1
 
-    goto :goto_27
+    goto :goto_0
 
     .line 1537
-    :cond_1f
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/TransparentObserverMutableSnapshot;->getCurrentSnapshot()Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     move-result-object v1
@@ -735,6 +728,6 @@
     move-result-object v1
 
     .line 1530
-    :goto_27
+    :goto_0
     return-object v1
 .end method

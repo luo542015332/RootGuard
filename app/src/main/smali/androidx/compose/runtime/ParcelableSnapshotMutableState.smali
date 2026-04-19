@@ -80,7 +80,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/runtime/ParcelableSnapshotMutableState$Companion;
 
@@ -103,7 +103,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;)V
-    .registers 4
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .annotation system Ldalvik/annotation/Signature;
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     .line 44
     const/4 v0, 0x0
@@ -137,7 +137,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 5
+    .locals 2
     .param p1, "parcel"    # Landroid/os/Parcel;
     .param p2, "flags"    # I
 
@@ -169,14 +169,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_35
+    goto :goto_0
 
     .line 34
-    :cond_1e
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->structuralEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v1
@@ -185,14 +185,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_35
+    goto :goto_0
 
     .line 35
-    :cond_2a
+    :cond_1
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->referentialEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v1
@@ -201,19 +201,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
     const/4 v0, 0x2
 
     .line 31
-    :goto_35
+    :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 41
     return-void
 
     .line 36
-    :cond_39
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 37

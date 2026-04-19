@@ -49,7 +49,7 @@
 .end method
 
 .method public getPlaceablesCount()I
-    .registers 2
+    .locals 1
 
     .line 481
     const/4 v0, 0x0
@@ -58,7 +58,7 @@
 .end method
 
 .method public premeasure-0kLqBqw(IJ)V
-    .registers 4
+    .locals 0
     .param p1, "index"    # I
     .param p2, "constraints"    # J
 

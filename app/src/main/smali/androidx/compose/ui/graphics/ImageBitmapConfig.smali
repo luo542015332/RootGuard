@@ -70,7 +70,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
 
@@ -129,7 +129,7 @@
 .end method
 
 .method private synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # I
 
     .line 148
@@ -141,7 +141,7 @@
 .end method
 
 .method public static final synthetic access$getAlpha8$cp()I
-    .registers 1
+    .locals 1
 
     .line 146
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Alpha8:I
@@ -150,7 +150,7 @@
 .end method
 
 .method public static final synthetic access$getArgb8888$cp()I
-    .registers 1
+    .locals 1
 
     .line 146
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Argb8888:I
@@ -159,7 +159,7 @@
 .end method
 
 .method public static final synthetic access$getF16$cp()I
-    .registers 1
+    .locals 1
 
     .line 146
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->F16:I
@@ -168,7 +168,7 @@
 .end method
 
 .method public static final synthetic access$getGpu$cp()I
-    .registers 1
+    .locals 1
 
     .line 146
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Gpu:I
@@ -177,7 +177,7 @@
 .end method
 
 .method public static final synthetic access$getRgb565$cp()I
-    .registers 1
+    .locals 1
 
     .line 146
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Rgb565:I
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final synthetic box-impl(I)Landroidx/compose/ui/graphics/ImageBitmapConfig;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;
 
@@ -196,23 +196,23 @@
 .end method
 
 .method public static constructor-impl(I)I
-    .registers 1
+    .locals 0
 
     return p0
 .end method
 
 .method public static equals-impl(ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/graphics/ImageBitmapConfig;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;
@@ -221,34 +221,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(II)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -258,7 +258,7 @@
 .end method
 
 .method public static toString-impl(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # I
 
     .line 231
@@ -271,81 +271,81 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const-string v0, "Argb8888"
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 233
-    :cond_c
+    :cond_0
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Alpha8:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     const-string v0, "Alpha8"
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 234
-    :cond_17
+    :cond_1
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Rgb565:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     const-string/jumbo v0, "Rgb565"
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 235
-    :cond_23
+    :cond_2
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->F16:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_3
 
     const-string v0, "F16"
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 236
-    :cond_2e
+    :cond_3
     sget v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Gpu:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_4
 
     const-string v0, "Gpu"
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 237
-    :cond_39
+    :cond_4
     const-string/jumbo v0, "Unknown"
 
     .line 238
-    :goto_3c
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->value:I
 
@@ -357,7 +357,7 @@
 .end method
 
 .method public final getValue()I
-    .registers 2
+    .locals 1
 
     .line 148
     iget v0, p0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->value:I
@@ -366,7 +366,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->value:I
 
@@ -378,7 +378,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 231
     iget v0, p0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->value:I
@@ -392,7 +392,7 @@
 .end method
 
 .method public final synthetic unbox-impl()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->value:I
 

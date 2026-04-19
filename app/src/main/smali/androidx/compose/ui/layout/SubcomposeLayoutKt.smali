@@ -49,7 +49,7 @@
 
 # direct methods
 .method public static final SubcomposeLayout(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
-    .registers 15
+    .locals 10
     .param p0, "modifier"    # Landroidx/compose/ui/Modifier;
     .param p1, "measurePolicy"    # Lkotlin/jvm/functions/Function2;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -91,66 +91,66 @@
     .local v1, "$dirty":I
     and-int/lit8 v2, p4, 0x1
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     or-int/lit8 v1, v1, 0x6
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_1a
+    :cond_0
     and-int/lit8 v3, p3, 0xe
 
-    if-nez v3, :cond_28
+    if-nez v3, :cond_2
 
     invoke-interface {p2, p0}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
     const/4 v3, 0x4
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     const/4 v3, 0x2
 
-    :goto_27
+    :goto_0
     or-int/2addr v1, v3
 
-    :cond_28
-    :goto_28
+    :cond_2
+    :goto_1
     and-int/lit8 v3, p4, 0x2
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_3
 
     or-int/lit8 v1, v1, 0x30
 
-    goto :goto_3f
+    goto :goto_3
 
-    :cond_2f
+    :cond_3
     and-int/lit8 v3, p3, 0x70
 
-    if-nez v3, :cond_3f
+    if-nez v3, :cond_5
 
     invoke-interface {p2, p1}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_3c
+    if-eqz v3, :cond_4
 
     const/16 v3, 0x20
 
-    goto :goto_3e
+    goto :goto_2
 
-    :cond_3c
+    :cond_4
     const/16 v3, 0x10
 
-    :goto_3e
+    :goto_2
     or-int/2addr v1, v3
 
-    :cond_3f
-    :goto_3f
+    :cond_5
+    :goto_3
     move v7, v1
 
     .end local v1    # "$dirty":I
@@ -159,26 +159,26 @@
 
     const/16 v3, 0x12
 
-    if-ne v1, v3, :cond_51
+    if-ne v1, v3, :cond_7
 
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v1
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_6
 
-    goto :goto_51
+    goto :goto_4
 
     .line 82
-    :cond_4d
+    :cond_6
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto :goto_b5
+    goto :goto_6
 
     .line 76
-    :cond_51
-    :goto_51
-    if-eqz v2, :cond_58
+    :cond_7
+    :goto_4
+    if-eqz v2, :cond_8
 
     .line 74
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -187,12 +187,12 @@
 
     check-cast p0, Landroidx/compose/ui/Modifier;
 
-    :cond_58
+    :cond_8
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_65
+    if-eqz v1, :cond_9
 
     .line 76
     const/4 v1, -0x1
@@ -201,7 +201,7 @@
 
     invoke-static {v0, v7, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_65
+    :cond_9
     nop
 
     .line 78
@@ -245,7 +245,7 @@
 
     move-result-object v8
 
-    if-ne v5, v8, :cond_8f
+    if-ne v5, v8, :cond_a
 
     .line 1067
     const/4 v8, 0x0
@@ -268,14 +268,14 @@
     nop
 
     .end local v8    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_90
+    goto :goto_5
 
     .line 1070
-    :cond_8f
+    :cond_a
     move-object v8, v5
 
     .line 1066
-    :goto_90
+    :goto_5
     nop
 
     .line 1065
@@ -326,22 +326,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_b5
+    if-eqz v0, :cond_b
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 82
-    :cond_b5
-    :goto_b5
+    :cond_b
+    :goto_6
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_bc
+    if-nez v0, :cond_c
 
-    goto :goto_c6
+    goto :goto_7
 
-    :cond_bc
+    :cond_c
     new-instance v1, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$2;
 
     invoke-direct {v1, p0, p1, p3, p4}, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$2;-><init>(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;II)V
@@ -350,12 +350,12 @@
 
     invoke-interface {v0, v1}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_c6
+    :goto_7
     return-void
 .end method
 
 .method public static final SubcomposeLayout(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
-    .registers 16
+    .locals 10
     .param p0, "modifier"    # Landroidx/compose/ui/Modifier;
     .param p1, "intermediateMeasurePolicy"    # Lkotlin/jvm/functions/Function2;
     .param p2, "measurePolicy"    # Lkotlin/jvm/functions/Function2;
@@ -406,97 +406,97 @@
     .local v1, "$dirty":I
     and-int/lit8 v2, p5, 0x1
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     or-int/lit8 v1, v1, 0x6
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_1a
+    :cond_0
     and-int/lit8 v3, p4, 0xe
 
-    if-nez v3, :cond_28
+    if-nez v3, :cond_2
 
     invoke-interface {p3, p0}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_1
 
     const/4 v3, 0x4
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_1
     const/4 v3, 0x2
 
-    :goto_27
+    :goto_0
     or-int/2addr v1, v3
 
-    :cond_28
-    :goto_28
+    :cond_2
+    :goto_1
     and-int/lit8 v3, p5, 0x2
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_3
 
     or-int/lit8 v1, v1, 0x30
 
-    goto :goto_3f
+    goto :goto_3
 
-    :cond_2f
+    :cond_3
     and-int/lit8 v4, p4, 0x70
 
-    if-nez v4, :cond_3f
+    if-nez v4, :cond_5
 
     invoke-interface {p3, p1}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_3c
+    if-eqz v4, :cond_4
 
     const/16 v4, 0x20
 
-    goto :goto_3e
+    goto :goto_2
 
-    :cond_3c
+    :cond_4
     const/16 v4, 0x10
 
-    :goto_3e
+    :goto_2
     or-int/2addr v1, v4
 
-    :cond_3f
-    :goto_3f
+    :cond_5
+    :goto_3
     and-int/lit8 v4, p5, 0x4
 
-    if-eqz v4, :cond_46
+    if-eqz v4, :cond_6
 
     or-int/lit16 v1, v1, 0x180
 
-    goto :goto_56
+    goto :goto_5
 
-    :cond_46
+    :cond_6
     and-int/lit16 v4, p4, 0x380
 
-    if-nez v4, :cond_56
+    if-nez v4, :cond_8
 
     invoke-interface {p3, p2}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_53
+    if-eqz v4, :cond_7
 
     const/16 v4, 0x100
 
-    goto :goto_55
+    goto :goto_4
 
-    :cond_53
+    :cond_7
     const/16 v4, 0x80
 
-    :goto_55
+    :goto_4
     or-int/2addr v1, v4
 
-    :cond_56
-    :goto_56
+    :cond_8
+    :goto_5
     move v8, v1
 
     .end local v1    # "$dirty":I
@@ -505,26 +505,26 @@
 
     const/16 v4, 0x92
 
-    if-ne v1, v4, :cond_69
+    if-ne v1, v4, :cond_a
 
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v1
 
-    if-nez v1, :cond_64
+    if-nez v1, :cond_9
 
-    goto :goto_69
+    goto :goto_6
 
     .line 145
-    :cond_64
+    :cond_9
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_db
+    goto/16 :goto_8
 
     .line 138
-    :cond_69
-    :goto_69
-    if-eqz v2, :cond_70
+    :cond_a
+    :goto_6
+    if-eqz v2, :cond_b
 
     .line 132
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -533,8 +533,8 @@
 
     check-cast p0, Landroidx/compose/ui/Modifier;
 
-    :cond_70
-    if-eqz v3, :cond_77
+    :cond_b
+    if-eqz v3, :cond_c
 
     .line 134
     sget-object v1, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$3;->INSTANCE:Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$3;
@@ -543,12 +543,12 @@
 
     check-cast p1, Lkotlin/jvm/functions/Function2;
 
-    :cond_77
+    :cond_c
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_84
+    if-eqz v1, :cond_d
 
     .line 138
     const/4 v1, -0x1
@@ -557,7 +557,7 @@
 
     invoke-static {v0, v8, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_84
+    :cond_d
     nop
 
     .line 140
@@ -601,7 +601,7 @@
 
     move-result-object v7
 
-    if-ne v5, v7, :cond_ae
+    if-ne v5, v7, :cond_e
 
     .line 1074
     const/4 v7, 0x0
@@ -624,14 +624,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_af
+    goto :goto_7
 
     .line 1077
-    :cond_ae
+    :cond_e
     move-object v7, v5
 
     .line 1073
-    :goto_af
+    :goto_7
     nop
 
     .line 1072
@@ -693,22 +693,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_db
+    if-eqz v0, :cond_f
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 145
-    :cond_db
-    :goto_db
+    :cond_f
+    :goto_8
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_e2
+    if-nez v0, :cond_10
 
-    goto :goto_f2
+    goto :goto_9
 
-    :cond_e2
+    :cond_10
     new-instance v7, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$5;
 
     move-object v1, v7
@@ -729,12 +729,12 @@
 
     invoke-interface {v0, v7}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_f2
+    :goto_9
     return-void
 .end method
 
 .method public static final SubcomposeLayout(Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
-    .registers 15
+    .locals 9
     .param p0, "state"    # Landroidx/compose/ui/layout/SubcomposeLayoutState;
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
     .param p2, "measurePolicy"    # Lkotlin/jvm/functions/Function2;
@@ -782,7 +782,7 @@
     .local v8, "$dirty":I
     and-int/lit8 v1, p5, 0x2
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 257
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -791,12 +791,12 @@
 
     check-cast p1, Landroidx/compose/ui/Modifier;
 
-    :cond_22
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 259
     const/4 v1, -0x1
@@ -806,7 +806,7 @@
     invoke-static {v0, v8, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 261
-    :cond_2f
+    :cond_1
     sget-object v0, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$6;->INSTANCE:Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$6;
 
     move-object v3, v0
@@ -839,20 +839,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_4f
+    :cond_2
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_56
+    if-nez v0, :cond_3
 
-    goto :goto_66
+    goto :goto_0
 
-    :cond_56
+    :cond_3
     new-instance v7, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$7;
 
     move-object v1, v7
@@ -874,12 +874,12 @@
     invoke-interface {v0, v7}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 262
-    :goto_66
+    :goto_0
     return-void
 .end method
 
 .method public static final SubcomposeLayout(Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
-    .registers 27
+    .locals 20
     .param p0, "state"    # Landroidx/compose/ui/layout/SubcomposeLayoutState;
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
     .param p2, "intermediateMeasurePolicy"    # Lkotlin/jvm/functions/Function2;
@@ -941,7 +941,7 @@
 
     and-int/lit8 v1, p6, 0x2
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 313
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -952,21 +952,21 @@
 
     .end local p1    # "modifier":Landroidx/compose/ui/Modifier;
     .local v1, "modifier":Landroidx/compose/ui/Modifier;
-    goto :goto_2a
+    goto :goto_0
 
     .line 319
     .end local v1    # "modifier":Landroidx/compose/ui/Modifier;
     .restart local p1    # "modifier":Landroidx/compose/ui/Modifier;
-    :cond_28
+    :cond_0
     move-object/from16 v10, p1
 
     .line 313
     .end local p1    # "modifier":Landroidx/compose/ui/Modifier;
     .local v10, "modifier":Landroidx/compose/ui/Modifier;
-    :goto_2a
+    :goto_0
     and-int/lit8 v1, p6, 0x4
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_1
 
     .line 315
     sget-object v1, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$8;->INSTANCE:Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$8;
@@ -977,23 +977,23 @@
 
     .end local p2    # "intermediateMeasurePolicy":Lkotlin/jvm/functions/Function2;
     .local v1, "intermediateMeasurePolicy":Lkotlin/jvm/functions/Function2;
-    goto :goto_36
+    goto :goto_1
 
     .line 313
     .end local v1    # "intermediateMeasurePolicy":Lkotlin/jvm/functions/Function2;
     .restart local p2    # "intermediateMeasurePolicy":Lkotlin/jvm/functions/Function2;
-    :cond_34
+    :cond_1
     move-object/from16 v11, p2
 
     .line 315
     .end local p2    # "intermediateMeasurePolicy":Lkotlin/jvm/functions/Function2;
     .local v11, "intermediateMeasurePolicy":Lkotlin/jvm/functions/Function2;
-    :goto_36
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_2
 
     .line 319
     const/4 v1, -0x1
@@ -1004,14 +1004,14 @@
 
     invoke-static {v0, v12, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_48
+    goto :goto_2
 
     .line 315
-    :cond_46
+    :cond_2
     move/from16 v12, p5
 
     .line 319
-    :goto_48
+    :goto_2
     nop
 
     .line 320
@@ -1072,12 +1072,12 @@
 
     instance-of v5, v5, Landroidx/compose/runtime/Applier;
 
-    if-nez v5, :cond_79
+    if-nez v5, :cond_3
 
     invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
 
     .line 1079
-    :cond_79
+    :cond_3
     invoke-interface {v9}, Landroidx/compose/runtime/Composer;->startNode()V
 
     .line 1080
@@ -1085,7 +1085,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_8d
+    if-eqz v5, :cond_4
 
     .line 1081
     new-instance v5, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$$inlined$ComposeNode$1;
@@ -1096,14 +1096,14 @@
 
     invoke-interface {v9, v5}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_90
+    goto :goto_3
 
     .line 1083
-    :cond_8d
+    :cond_4
     invoke-interface {v9}, Landroidx/compose/runtime/Composer;->useNode()V
 
     .line 1085
-    :goto_90
+    :goto_3
     invoke-static {v9}, Landroidx/compose/runtime/Updater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
 
     move-result-object v5
@@ -1188,7 +1188,7 @@
 
     move-result v19
 
-    if-nez v19, :cond_ec
+    if-nez v19, :cond_6
 
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
 
@@ -1206,24 +1206,24 @@
 
     move-result v0
 
-    if-nez v0, :cond_e9
+    if-nez v0, :cond_5
 
-    goto :goto_ee
+    goto :goto_4
 
-    :cond_e9
+    :cond_5
     move-object/from16 v1, p2
 
-    goto :goto_fe
+    goto :goto_5
 
     .end local v19    # "factory$iv":Lkotlin/jvm/functions/Function0;
     .restart local v1    # "factory$iv":Lkotlin/jvm/functions/Function0;
-    :cond_ec
+    :cond_6
     move-object/from16 v19, v1
 
     .line 1088
     .end local v1    # "factory$iv":Lkotlin/jvm/functions/Function0;
     .restart local v19    # "factory$iv":Lkotlin/jvm/functions/Function0;
-    :goto_ee
+    :goto_4
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -1242,7 +1242,7 @@
     invoke-interface {v5, v0, v2}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 1091
-    :goto_fe
+    :goto_5
     nop
 
     .line 1086
@@ -1287,7 +1287,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_126
+    if-nez v0, :cond_7
 
     .line 341
     new-instance v0, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$10;
@@ -1300,7 +1300,7 @@
 
     invoke-static {v0, v9, v1}, Landroidx/compose/runtime/EffectsKt;->SideEffect(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V
 
-    :cond_126
+    :cond_7
     invoke-interface {v9}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     .line 345
@@ -1354,7 +1354,7 @@
 
     .line 1096
     .local v17, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v3, :cond_15d
+    if-nez v3, :cond_9
 
     sget-object v18, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -1366,26 +1366,26 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_15a
+    if-ne v1, v2, :cond_8
 
-    goto :goto_15f
+    goto :goto_6
 
     .line 1100
-    :cond_15a
+    :cond_8
     move-object/from16 v18, v1
 
-    goto :goto_16e
+    goto :goto_7
 
     .line 1096
     .end local p4    # "$i$f$remember":I
     .restart local v2    # "$i$f$remember":I
-    :cond_15d
+    :cond_9
     move/from16 p4, v2
 
     .line 1097
     .end local v2    # "$i$f$remember":I
     .restart local p4    # "$i$f$remember":I
-    :goto_15f
+    :goto_6
     const/4 v2, 0x0
 
     .line 346
@@ -1413,7 +1413,7 @@
 
     .line 1096
     .end local v1    # "value$iv$iv":Ljava/lang/Object;
-    :goto_16e
+    :goto_7
     nop
 
     .line 1095
@@ -1440,24 +1440,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_182
+    if-eqz v0, :cond_a
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_182
+    :cond_a
     invoke-interface {v9}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v4
 
-    if-nez v4, :cond_18d
+    if-nez v4, :cond_b
 
     move-object/from16 v17, v5
 
     move-object/from16 v18, v6
 
-    goto :goto_1aa
+    goto :goto_8
 
-    :cond_18d
+    :cond_b
     new-instance v16, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$12;
 
     move-object/from16 v0, v16
@@ -1493,12 +1493,12 @@
     invoke-interface {v7, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 351
-    :goto_1aa
+    :goto_8
     return-void
 .end method
 
 .method public static final SubcomposeSlotReusePolicy(I)Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
-    .registers 2
+    .locals 1
     .param p0, "maxSlotsToRetainForReuse"    # I
 
     .line 574

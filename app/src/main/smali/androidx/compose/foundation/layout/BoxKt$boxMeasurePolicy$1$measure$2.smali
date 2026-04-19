@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/Measurable;Landroidx/compose/ui/layout/MeasureScope;IILandroidx/compose/ui/Alignment;)V
-    .registers 8
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/layout/BoxKt$boxMeasurePolicy$1$measure$2;->$placeable:Landroidx/compose/ui/layout/Placeable;
 
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 124
@@ -102,7 +102,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 10
+    .locals 8
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$layout"
@@ -128,7 +128,6 @@
 
     move-object v1, p1
 
-    # invokes: Landroidx/compose/foundation/layout/BoxKt;->placeInBox(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/Measurable;Landroidx/compose/ui/unit/LayoutDirection;IILandroidx/compose/ui/Alignment;)V
     invoke-static/range {v1 .. v7}, Landroidx/compose/foundation/layout/BoxKt;->access$placeInBox(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/Measurable;Landroidx/compose/ui/unit/LayoutDirection;IILandroidx/compose/ui/Alignment;)V
 
     .line 126

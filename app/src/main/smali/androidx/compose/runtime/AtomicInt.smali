@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 90
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final add(I)I
-    .registers 3
+    .locals 1
     .param p1, "amount"    # I
 
     .line 94
@@ -75,7 +75,7 @@
 .end method
 
 .method public final get()I
-    .registers 2
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/compose/runtime/AtomicInt;->delegate:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -88,7 +88,7 @@
 .end method
 
 .method public final getDelegate()Ljava/util/concurrent/atomic/AtomicInteger;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/compose/runtime/AtomicInt;->delegate:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -97,7 +97,7 @@
 .end method
 
 .method public final set(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 93

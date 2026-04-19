@@ -71,7 +71,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function4;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 4
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -132,7 +132,7 @@
 .end method
 
 .method public final invoke-3p2s80s(Landroidx/compose/ui/layout/IntermediateMeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 9
+    .locals 4
     .param p1, "$this$intermediateLayout"    # Landroidx/compose/ui/layout/IntermediateMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J

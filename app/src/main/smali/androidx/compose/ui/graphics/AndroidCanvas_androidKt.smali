@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 62
     new-instance v0, Landroid/graphics/Canvas;
@@ -57,7 +57,7 @@
 .end method
 
 .method public static final ActualCanvas(Landroidx/compose/ui/graphics/ImageBitmap;)Landroidx/compose/ui/graphics/Canvas;
-    .registers 6
+    .locals 5
     .param p0, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
 
     const-string/jumbo v0, "image"
@@ -99,7 +99,7 @@
 .end method
 
 .method public static final Canvas(Landroid/graphics/Canvas;)Landroidx/compose/ui/graphics/Canvas;
-    .registers 4
+    .locals 3
     .param p0, "c"    # Landroid/graphics/Canvas;
 
     const-string/jumbo v0, "c"
@@ -129,7 +129,7 @@
 .end method
 
 .method public static final synthetic access$getEmptyCanvas$p()Landroid/graphics/Canvas;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/graphics/AndroidCanvas_androidKt;->EmptyCanvas:Landroid/graphics/Canvas;
@@ -138,7 +138,7 @@
 .end method
 
 .method public static final getNativeCanvas(Landroidx/compose/ui/graphics/Canvas;)Landroid/graphics/Canvas;
-    .registers 2
+    .locals 1
     .param p0, "$this$nativeCanvas"    # Landroidx/compose/ui/graphics/Canvas;
 
     const-string v0, "<this>"

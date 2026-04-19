@@ -49,7 +49,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/foundation/MagnifierStyle$Companion;-><init>()V
 
@@ -66,30 +66,30 @@
 .end method
 
 .method public static synthetic getDefault$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTextDefault$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic isStyleSupported$foundation_release$default(Landroidx/compose/foundation/MagnifierStyle$Companion;Landroidx/compose/foundation/MagnifierStyle;IILjava/lang/Object;)Z
-    .registers 5
+    .locals 0
 
     .line 174
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_0
 
     .line 176
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 174
-    :cond_6
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/compose/foundation/MagnifierStyle$Companion;->isStyleSupported$foundation_release(Landroidx/compose/foundation/MagnifierStyle;I)Z
 
     move-result p0
@@ -100,10 +100,9 @@
 
 # virtual methods
 .method public final getDefault()Landroidx/compose/foundation/MagnifierStyle;
-    .registers 2
+    .locals 1
 
     .line 156
-    # getter for: Landroidx/compose/foundation/MagnifierStyle;->Default:Landroidx/compose/foundation/MagnifierStyle;
     invoke-static {}, Landroidx/compose/foundation/MagnifierStyle;->access$getDefault$cp()Landroidx/compose/foundation/MagnifierStyle;
 
     move-result-object v0
@@ -112,10 +111,9 @@
 .end method
 
 .method public final getTextDefault()Landroidx/compose/foundation/MagnifierStyle;
-    .registers 2
+    .locals 1
 
     .line 165
-    # getter for: Landroidx/compose/foundation/MagnifierStyle;->TextDefault:Landroidx/compose/foundation/MagnifierStyle;
     invoke-static {}, Landroidx/compose/foundation/MagnifierStyle;->access$getTextDefault$cp()Landroidx/compose/foundation/MagnifierStyle;
 
     move-result-object v0
@@ -124,7 +122,7 @@
 .end method
 
 .method public final isStyleSupported$foundation_release(Landroidx/compose/foundation/MagnifierStyle;I)Z
-    .registers 6
+    .locals 3
     .param p1, "style"    # Landroidx/compose/foundation/MagnifierStyle;
     .param p2, "sdkVersion"    # I
 
@@ -139,31 +137,31 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 180
-    goto :goto_2e
+    goto :goto_1
 
     .line 181
-    :cond_e
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/foundation/MagnifierStyle;->getFishEyeEnabled$foundation_release()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 183
-    goto :goto_2e
+    goto :goto_1
 
     .line 184
-    :cond_15
+    :cond_1
     invoke-virtual {p1}, Landroidx/compose/foundation/MagnifierStyle;->getUseTextDefault$foundation_release()Z
 
     move-result v0
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_2d
+    if-nez v0, :cond_3
 
     invoke-virtual {p0}, Landroidx/compose/foundation/MagnifierStyle$Companion;->getDefault()Landroidx/compose/foundation/MagnifierStyle;
 
@@ -173,27 +171,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
-    goto :goto_2d
+    goto :goto_0
 
     .line 189
-    :cond_27
+    :cond_2
     const/16 v0, 0x1d
 
-    if-lt p2, v0, :cond_2e
+    if-lt p2, v0, :cond_4
 
     move v1, v2
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 186
-    :cond_2d
-    :goto_2d
+    :cond_3
+    :goto_0
     move v1, v2
 
     .line 178
-    :cond_2e
-    :goto_2e
+    :cond_4
+    :goto_1
     return v1
 .end method

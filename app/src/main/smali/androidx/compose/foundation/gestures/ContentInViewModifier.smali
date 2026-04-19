@@ -137,7 +137,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/gestures/ScrollableState;Z)V
-    .registers 7
+    .locals 2
     .param p1, "scope"    # Lkotlinx/coroutines/CoroutineScope;
     .param p2, "orientation"    # Landroidx/compose/foundation/gestures/Orientation;
     .param p3, "scrollState"    # Landroidx/compose/foundation/gestures/ScrollableState;
@@ -228,7 +228,7 @@
 .end method
 
 .method public static final synthetic access$calculateScrollDelta(Landroidx/compose/foundation/gestures/ContentInViewModifier;)F
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -240,7 +240,7 @@
 .end method
 
 .method public static final synthetic access$getAnimationState$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/UpdatableAnimationState;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -250,7 +250,7 @@
 .end method
 
 .method public static final synthetic access$getBringIntoViewRequests$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -260,7 +260,7 @@
 .end method
 
 .method public static final synthetic access$getFocusedChildBounds(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/ui/geometry/Rect;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -272,7 +272,7 @@
 .end method
 
 .method public static final synthetic access$getReverseDirection$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -282,7 +282,7 @@
 .end method
 
 .method public static final synthetic access$getScrollState$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/ScrollableState;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -292,7 +292,7 @@
 .end method
 
 .method public static final synthetic access$getTrackingFocusedChild$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -302,7 +302,7 @@
 .end method
 
 .method public static final synthetic access$isAnimationRunning$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -312,7 +312,7 @@
 .end method
 
 .method public static final synthetic access$launchAnimation(Landroidx/compose/foundation/gestures/ContentInViewModifier;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     .line 63
@@ -322,7 +322,7 @@
 .end method
 
 .method public static final synthetic access$setAnimationRunning$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;Z)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
     .param p1, "<set-?>"    # Z
 
@@ -333,7 +333,7 @@
 .end method
 
 .method public static final synthetic access$setFocusedChild$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
     .param p1, "<set-?>"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
@@ -344,7 +344,7 @@
 .end method
 
 .method public static final synthetic access$setTrackingFocusedChild$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;Z)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/foundation/gestures/ContentInViewModifier;
     .param p1, "<set-?>"    # Z
 
@@ -355,7 +355,7 @@
 .end method
 
 .method private final calculateScrollDelta()F
-    .registers 7
+    .locals 6
 
     .line 299
     iget-wide v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->viewportSize:J
@@ -372,42 +372,42 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     return v1
 
     .line 301
-    :cond_10
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->findBringIntoViewRequest()Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_2
 
     .line 302
     iget-boolean v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->trackingFocusedChild:Z
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     invoke-direct {p0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->getFocusedChildBounds()Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v0
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_1
     const/4 v0, 0x0
 
     .line 301
-    :goto_20
-    if-nez v0, :cond_23
+    :goto_0
+    if-nez v0, :cond_2
 
     .line 303
     return v1
 
     .line 305
     .local v0, "rectangleToMakeVisible":Landroidx/compose/ui/geometry/Rect;
-    :cond_23
+    :cond_2
     iget-wide v1, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->viewportSize:J
 
     invoke-static {v1, v2}, Landroidx/compose/ui/unit/IntSizeKt;->toSize-ozmzZPI(J)J
@@ -426,7 +426,7 @@
 
     aget v3, v4, v3
 
-    packed-switch v3, :pswitch_data_60
+    packed-switch v3, :pswitch_data_0
 
     .line 313
     new-instance v3, Lkotlin/NoWhenBranchMatchedException;
@@ -435,7 +435,7 @@
 
     throw v3
 
-    :pswitch_3c
+    :pswitch_0
     nop
 
     .line 314
@@ -458,10 +458,10 @@
 
     move-result v3
 
-    goto :goto_5f
+    goto :goto_1
 
     .line 307
-    :pswitch_4e
+    :pswitch_1
     nop
 
     .line 308
@@ -485,18 +485,18 @@
     move-result v3
 
     .line 306
-    :goto_5f
+    :goto_1
     return v3
 
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_4e
-        :pswitch_3c
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private final compareTo-TemP2vQ(JJ)I
-    .registers 7
+    .locals 2
     .param p1, "$this$compareTo_u2dTemP2vQ"    # J
     .param p3, "other"    # J
 
@@ -511,7 +511,7 @@
 
     aget v0, v1, v0
 
-    packed-switch v0, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_0
 
     .line 398
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -521,7 +521,7 @@
     throw v0
 
     .line 397
-    :pswitch_13
+    :pswitch_0
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/IntSize;->getWidth-impl(J)I
 
     move-result v0
@@ -534,10 +534,10 @@
 
     move-result v0
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 398
-    :pswitch_20
+    :pswitch_1
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/IntSize;->getHeight-impl(J)I
 
     move-result v0
@@ -551,20 +551,20 @@
     move-result v0
 
     .line 399
-    :goto_2c
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_20
-        :pswitch_13
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private final compareTo-iLBOSCw(JJ)I
-    .registers 7
+    .locals 2
     .param p1, "$this$compareTo_u2diLBOSCw"    # J
     .param p3, "other"    # J
 
@@ -579,7 +579,7 @@
 
     aget v0, v1, v0
 
-    packed-switch v0, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_0
 
     .line 403
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -589,7 +589,7 @@
     throw v0
 
     .line 402
-    :pswitch_13
+    :pswitch_0
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
     move-result v0
@@ -602,10 +602,10 @@
 
     move-result v0
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 403
-    :pswitch_20
+    :pswitch_1
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
     move-result v0
@@ -619,20 +619,20 @@
     move-result v0
 
     .line 404
-    :goto_2c
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_2e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_20
-        :pswitch_13
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private final computeDestination-O0kMr_c(Landroidx/compose/ui/geometry/Rect;J)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 2
     .param p1, "childBounds"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "containerSize"    # J
 
@@ -653,7 +653,7 @@
 .end method
 
 .method private final findBringIntoViewRequest()Landroidx/compose/ui/geometry/Rect;
-    .registers 18
+    .locals 17
 
     .line 325
     move-object/from16 v0, p0
@@ -672,7 +672,6 @@
     nop
 
     .line 441
-    # getter for: Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->requests:Landroidx/compose/runtime/collection/MutableVector;
     invoke-static {v2}, Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->access$getRequests$p(Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v4
@@ -691,7 +690,7 @@
 
     .line 444
     .local v6, "size$iv$iv":I
-    if-lez v6, :cond_4f
+    if-lez v6, :cond_3
 
     .line 445
     add-int/lit8 v7, v6, -0x1
@@ -704,7 +703,7 @@
 
     .line 448
     .local v8, "content$iv$iv":[Ljava/lang/Object;
-    :goto_19
+    :goto_0
     aget-object v9, v8, v7
 
     check-cast v9, Landroidx/compose/foundation/gestures/ContentInViewModifier$Request;
@@ -729,7 +728,7 @@
 
     .line 328
     .local v12, "$i$a$-forEachFromSmallest-ContentInViewModifier$findBringIntoViewRequest$1":I
-    if-eqz v11, :cond_41
+    if-eqz v11, :cond_1
 
     .line 329
     invoke-virtual {v11}, Landroidx/compose/ui/geometry/Rect;->getSize-NH-jbRc()J
@@ -754,16 +753,16 @@
 
     move-result v2
 
-    if-gtz v2, :cond_40
+    if-gtz v2, :cond_0
 
     .line 330
     move-object v1, v11
 
     .line 338
-    goto :goto_44
+    goto :goto_1
 
     .line 336
-    :cond_40
+    :cond_0
     return-object v1
 
     .line 328
@@ -771,7 +770,7 @@
     .end local v16    # "$i$f$forEachFromSmallest":I
     .restart local v2    # "this_$iv":Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     .restart local v3    # "$i$f$forEachFromSmallest":I
-    :cond_41
+    :cond_1
     move-object v15, v2
 
     move/from16 v16, v3
@@ -783,7 +782,7 @@
     .end local v12    # "$i$a$-forEachFromSmallest-ContentInViewModifier$findBringIntoViewRequest$1":I
     .restart local v15    # "this_$iv":Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     .restart local v16    # "$i$f$forEachFromSmallest":I
-    :goto_44
+    :goto_1
     nop
 
     .line 448
@@ -795,16 +794,16 @@
     add-int/lit8 v7, v7, -0x1
 
     .line 450
-    if-gez v7, :cond_4b
+    if-gez v7, :cond_2
 
-    goto :goto_52
+    goto :goto_2
 
-    :cond_4b
+    :cond_2
     move-object v2, v15
 
     move/from16 v3, v16
 
-    goto :goto_19
+    goto :goto_0
 
     .line 444
     .end local v7    # "i$iv$iv":I
@@ -813,7 +812,7 @@
     .end local v16    # "$i$f$forEachFromSmallest":I
     .restart local v2    # "this_$iv":Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     .restart local v3    # "$i$f$forEachFromSmallest":I
-    :cond_4f
+    :cond_3
     move-object v15, v2
 
     move/from16 v16, v3
@@ -823,7 +822,7 @@
     .end local v3    # "$i$f$forEachFromSmallest":I
     .restart local v15    # "this_$iv":Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     .restart local v16    # "$i$f$forEachFromSmallest":I
-    :goto_52
+    :goto_2
     nop
 
     .line 453
@@ -839,14 +838,14 @@
 .end method
 
 .method private final getFocusedChildBounds()Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 5
 
     .line 177
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_5
 
     move-object v2, v0
 
@@ -862,24 +861,24 @@
 
     .end local v2    # "it":Landroidx/compose/ui/layout/LayoutCoordinates;
     .end local v3    # "$i$a$-takeIf-ContentInViewModifier$getFocusedChildBounds$coordinates$1":I
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-nez v0, :cond_12
+    :goto_0
+    if-nez v0, :cond_1
 
-    goto :goto_2b
+    goto :goto_3
 
     .line 178
     .local v0, "coordinates":Landroidx/compose/ui/layout/LayoutCoordinates;
-    :cond_12
+    :cond_1
     iget-object v2, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->focusedChild:Landroidx/compose/ui/layout/LayoutCoordinates;
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_4
 
     move-object v3, v2
 
@@ -895,19 +894,19 @@
 
     .end local v3    # "it":Landroidx/compose/ui/layout/LayoutCoordinates;
     .end local v4    # "$i$a$-takeIf-ContentInViewModifier$getFocusedChildBounds$focusedChild$1":I
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_2
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
+    :cond_2
     move-object v2, v1
 
-    :goto_20
-    if-nez v2, :cond_23
+    :goto_1
+    if-nez v2, :cond_3
 
-    goto :goto_2a
+    goto :goto_2
 
-    :cond_23
+    :cond_3
     move-object v1, v2
 
     .line 179
@@ -922,19 +921,19 @@
 
     .line 178
     .end local v1    # "focusedChild":Landroidx/compose/ui/layout/LayoutCoordinates;
-    :cond_2a
-    :goto_2a
+    :cond_4
+    :goto_2
     return-object v1
 
     .line 177
     .end local v0    # "coordinates":Landroidx/compose/ui/layout/LayoutCoordinates;
-    :cond_2b
-    :goto_2b
+    :cond_5
+    :goto_3
     return-object v1
 .end method
 
 .method private final isMaxVisible-O0kMr_c(Landroidx/compose/ui/geometry/Rect;J)Z
-    .registers 8
+    .locals 4
     .param p1, "$this$isMaxVisible_u2dO0kMr_c"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "size"    # J
 
@@ -957,16 +956,16 @@
 .end method
 
 .method static synthetic isMaxVisible-O0kMr_c$default(Landroidx/compose/foundation/gestures/ContentInViewModifier;Landroidx/compose/ui/geometry/Rect;JILjava/lang/Object;)Z
-    .registers 6
+    .locals 0
 
     .line 357
     and-int/lit8 p4, p4, 0x1
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     iget-wide p2, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->viewportSize:J
 
-    :cond_6
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->isMaxVisible-O0kMr_c(Landroidx/compose/ui/geometry/Rect;J)Z
 
     move-result p0
@@ -975,14 +974,14 @@
 .end method
 
 .method private final launchAnimation()V
-    .registers 8
+    .locals 7
 
     .line 183
     iget-boolean v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->isAnimationRunning:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 185
     nop
@@ -1014,7 +1013,7 @@
     return-void
 
     .line 183
-    :cond_1b
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -1029,7 +1028,7 @@
 .end method
 
 .method private final relocationDistance(FFF)F
-    .registers 6
+    .locals 2
     .param p1, "leadingEdge"    # F
     .param p2, "trailingEdge"    # F
     .param p3, "containerSize"    # F
@@ -1042,28 +1041,28 @@
 
     cmpl-float v1, p1, v0
 
-    if-ltz v1, :cond_b
+    if-ltz v1, :cond_0
 
     cmpg-float v1, p2, p3
 
-    if-gtz v1, :cond_b
+    if-gtz v1, :cond_0
 
-    goto :goto_26
+    goto :goto_0
 
     .line 388
-    :cond_b
+    :cond_0
     cmpg-float v1, p1, v0
 
-    if-gez v1, :cond_14
+    if-gez v1, :cond_1
 
     cmpl-float v1, p2, p3
 
-    if-lez v1, :cond_14
+    if-lez v1, :cond_1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 392
-    :cond_14
+    :cond_1
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -1076,23 +1075,23 @@
 
     cmpg-float v0, v0, v1
 
-    if-gez v0, :cond_24
+    if-gez v0, :cond_2
 
     move v0, p1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 393
-    :cond_24
+    :cond_2
     sub-float v0, p2, p3
 
     .line 394
-    :goto_26
+    :goto_0
     return v0
 .end method
 
 .method private final relocationOffset-BMxPBkI(Landroidx/compose/ui/geometry/Rect;J)J
-    .registers 10
+    .locals 6
     .param p1, "childBounds"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "containerSize"    # J
 
@@ -1115,7 +1114,7 @@
 
     const/4 v3, 0x0
 
-    packed-switch v2, :pswitch_data_44
+    packed-switch v2, :pswitch_data_0
 
     .line 369
     new-instance v2, Lkotlin/NoWhenBranchMatchedException;
@@ -1125,7 +1124,7 @@
     throw v2
 
     .line 370
-    :pswitch_18
+    :pswitch_0
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
     move-result v2
@@ -1150,10 +1149,10 @@
 
     move-result-wide v2
 
-    goto :goto_43
+    goto :goto_0
 
     .line 365
-    :pswitch_2e
+    :pswitch_1
     nop
 
     .line 366
@@ -1179,20 +1178,20 @@
     move-result-wide v2
 
     .line 363
-    :goto_43
+    :goto_0
     return-wide v2
 
-    :pswitch_data_44
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2e
-        :pswitch_18
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public bringChildIntoView(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 11
+    .locals 8
     .param p1, "localRect"    # Lkotlin/jvm/functions/Function0;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -1222,7 +1221,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     const-wide/16 v3, 0x0
 
@@ -1236,19 +1235,19 @@
 
     move-result v1
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_0
 
     move v7, v0
 
-    :cond_17
-    if-nez v7, :cond_1c
+    :cond_0
+    if-nez v7, :cond_1
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
     .line 129
-    :cond_1c
+    :cond_1
     const/4 v1, 0x0
 
     .line 428
@@ -1293,7 +1292,6 @@
     nop
 
     .line 134
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->bringIntoViewRequests:Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     invoke-static {p0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getBringIntoViewRequests$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
 
     move-result-object v7
@@ -1302,21 +1300,19 @@
 
     move-result v7
 
-    if-eqz v7, :cond_49
+    if-eqz v7, :cond_2
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->isAnimationRunning:Z
     invoke-static {p0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$isAnimationRunning$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Z
 
     move-result v7
 
-    if-nez v7, :cond_49
+    if-nez v7, :cond_2
 
     .line 135
-    # invokes: Landroidx/compose/foundation/gestures/ContentInViewModifier;->launchAnimation()V
     invoke-static {p0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$launchAnimation(Landroidx/compose/foundation/gestures/ContentInViewModifier;)V
 
     .line 137
-    :cond_49
+    :cond_2
     nop
 
     .line 436
@@ -1338,21 +1334,21 @@
 
     move-result-object v2
 
-    if-ne v0, v2, :cond_58
+    if-ne v0, v2, :cond_3
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_58
+    :cond_3
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-ne v0, v2, :cond_5f
+    if-ne v0, v2, :cond_4
 
     return-object v0
 
     .line 438
-    :cond_5f
+    :cond_4
     nop
 
     .end local v1    # "$i$f$suspendCancellableCoroutine":I
@@ -1363,7 +1359,7 @@
 .end method
 
 .method public calculateRectForParent(Landroidx/compose/ui/geometry/Rect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 4
     .param p1, "localRect"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string/jumbo v0, "localRect"
@@ -1385,7 +1381,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 121
     iget-wide v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->viewportSize:J
@@ -1397,7 +1393,7 @@
     return-object v0
 
     .line 117
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
     .line 118
@@ -1420,7 +1416,7 @@
 .end method
 
 .method public final getModifier()Landroidx/compose/ui/Modifier;
-    .registers 2
+    .locals 1
 
     .line 109
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->modifier:Landroidx/compose/ui/Modifier;
@@ -1429,7 +1425,7 @@
 .end method
 
 .method public onPlaced(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 3
+    .locals 1
     .param p1, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "coordinates"
@@ -1444,7 +1440,7 @@
 .end method
 
 .method public onRemeasured-ozmzZPI(J)V
-    .registers 9
+    .locals 6
     .param p1, "size"    # J
 
     .line 145
@@ -1459,12 +1455,12 @@
 
     move-result v2
 
-    if-ltz v2, :cond_b
+    if-ltz v2, :cond_0
 
     return-void
 
     .line 151
-    :cond_b
+    :cond_0
     nop
 
     .line 153
@@ -1472,7 +1468,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_3
 
     .local v2, "focusedChild":Landroidx/compose/ui/geometry/Rect;
     const/4 v3, 0x0
@@ -1484,33 +1480,33 @@
     .line 155
     iget-object v4, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->focusedChildBoundsFromPreviousRemeasure:Landroidx/compose/ui/geometry/Rect;
 
-    if-nez v4, :cond_19
+    if-nez v4, :cond_1
 
     move-object v4, v2
 
     .line 156
     .local v4, "previousFocusedChildBounds":Landroidx/compose/ui/geometry/Rect;
-    :cond_19
+    :cond_1
     iget-boolean v5, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->isAnimationRunning:Z
 
-    if-nez v5, :cond_34
+    if-nez v5, :cond_2
 
     iget-boolean v5, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->trackingFocusedChild:Z
 
-    if-nez v5, :cond_34
+    if-nez v5, :cond_2
 
     .line 163
     invoke-direct {p0, v4, v0, v1}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->isMaxVisible-O0kMr_c(Landroidx/compose/ui/geometry/Rect;J)Z
 
     move-result v5
 
-    if-eqz v5, :cond_34
+    if-eqz v5, :cond_2
 
     invoke-direct {p0, v2, p1, p2}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->isMaxVisible-O0kMr_c(Landroidx/compose/ui/geometry/Rect;J)Z
 
     move-result v5
 
-    if-nez v5, :cond_34
+    if-nez v5, :cond_2
 
     .line 165
     nop
@@ -1524,7 +1520,7 @@
     invoke-direct {p0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->launchAnimation()V
 
     .line 172
-    :cond_34
+    :cond_2
     iput-object v2, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier;->focusedChildBoundsFromPreviousRemeasure:Landroidx/compose/ui/geometry/Rect;
 
     .line 173
@@ -1537,6 +1533,6 @@
     nop
 
     .line 174
-    :cond_38
+    :cond_3
     return-void
 .end method

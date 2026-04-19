@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static final getValue(Landroidx/compose/runtime/IntState;Ljava/lang/Object;Lkotlin/reflect/KProperty;)I
-    .registers 5
+    .locals 2
     .param p0, "$this$getValue"    # Landroidx/compose/runtime/IntState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;
@@ -70,7 +70,7 @@
 .end method
 
 .method public static final mutableIntStateOf(I)Landroidx/compose/runtime/MutableIntState;
-    .registers 2
+    .locals 1
     .param p0, "value"    # I
 
     .line 52
@@ -82,7 +82,7 @@
 .end method
 
 .method public static final setValue(Landroidx/compose/runtime/MutableIntState;Ljava/lang/Object;Lkotlin/reflect/KProperty;I)V
-    .registers 5
+    .locals 1
     .param p0, "$this$setValue"    # Landroidx/compose/runtime/MutableIntState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;

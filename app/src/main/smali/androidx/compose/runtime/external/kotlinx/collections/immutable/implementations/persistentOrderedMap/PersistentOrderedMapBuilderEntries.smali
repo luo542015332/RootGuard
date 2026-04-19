@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;)V
-    .registers 3
+    .locals 1
     .param p1, "builder"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 10
@@ -115,7 +115,7 @@
 .end method
 
 .method public add(Ljava/util/Map$Entry;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -138,7 +138,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 17
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilderEntries;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;
@@ -150,7 +150,7 @@
 .end method
 
 .method public containsEntry(Ljava/util/Map$Entry;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -175,7 +175,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 86
     .local v0, "candidate":Ljava/lang/Object;
@@ -193,15 +193,15 @@
 
     .end local v0    # "candidate":Ljava/lang/Object;
     .end local v1    # "$i$a$-let-PersistentOrderedMapBuilderEntries$containsEntry$1":I
-    goto :goto_31
+    goto :goto_0
 
     .line 33
-    :cond_1c
+    :cond_0
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilderEntries;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;
 
@@ -213,22 +213,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_1
     const/4 v0, 0x0
 
     .line 32
-    :goto_31
+    :goto_0
     return v0
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 29
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilderEntries;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;
@@ -241,7 +241,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -264,7 +264,7 @@
 .end method
 
 .method public removeEntry(Ljava/util/Map$Entry;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;F)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 23
+    .locals 18
     .param p1, "$this$Layout"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -134,14 +134,14 @@
 
     move-result-object v3
 
-    :goto_1b
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
     const-string v9, "Collection contains no element matching the predicate."
 
-    if-eqz v6, :cond_ae
+    if-eqz v6, :cond_5
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -170,7 +170,7 @@
     .line 400
     .end local v10    # "it":Landroidx/compose/ui/layout/Measurable;
     .end local v11    # "$i$a$-first-BottomNavigationKt$BottomNavigationItemBaselineLayout$2$measure$iconPlaceable$1":I
-    if-eqz v10, :cond_aa
+    if-eqz v10, :cond_4
 
     .line 401
     .end local v1    # "$this$first$iv":Ljava/lang/Iterable;
@@ -189,7 +189,7 @@
     .local v6, "iconPlaceable":Landroidx/compose/ui/layout/Placeable;
     iget-object v1, v0, Landroidx/compose/material/BottomNavigationKt$BottomNavigationItemBaselineLayout$2;->$label:Lkotlin/jvm/functions/Function2;
 
-    if-eqz v1, :cond_8a
+    if-eqz v1, :cond_2
 
     .local v1, "it":Lkotlin/jvm/functions/Function2;
     const/4 v2, 0x0
@@ -209,12 +209,12 @@
 
     move-result-object v11
 
-    :goto_4c
+    :goto_1
     invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
-    if-eqz v12, :cond_82
+    if-eqz v12, :cond_1
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -247,7 +247,7 @@
     .line 402
     .end local v13    # "it":Landroidx/compose/ui/layout/Measurable;
     .end local v14    # "$i$a$-first-BottomNavigationKt$BottomNavigationItemBaselineLayout$2$measure$labelPlaceable$1$1":I
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_0
 
     .line 403
     .end local v3    # "$this$first$iv":Ljava/lang/Iterable;
@@ -284,7 +284,7 @@
     .line 275
     .end local v2    # "$i$a$-let-BottomNavigationKt$BottomNavigationItemBaselineLayout$2$measure$labelPlaceable$1":I
     .end local v17    # "it":Lkotlin/jvm/functions/Function2;
-    goto :goto_8b
+    goto :goto_2
 
     .line 402
     .restart local v2    # "$i$a$-let-BottomNavigationKt$BottomNavigationItemBaselineLayout$2$measure$labelPlaceable$1":I
@@ -292,16 +292,16 @@
     .restart local v10    # "$i$f$first":I
     .restart local v12    # "element$iv":Ljava/lang/Object;
     .restart local v17    # "it":Lkotlin/jvm/functions/Function2;
-    :cond_7f
+    :cond_0
     move-object/from16 v1, v17
 
-    goto :goto_4c
+    goto :goto_1
 
     .line 403
     .end local v12    # "element$iv":Ljava/lang/Object;
     .end local v17    # "it":Lkotlin/jvm/functions/Function2;
     .restart local v1    # "it":Lkotlin/jvm/functions/Function2;
-    :cond_82
+    :cond_1
     move-object/from16 v17, v1
 
     .end local v1    # "it":Lkotlin/jvm/functions/Function2;
@@ -317,30 +317,29 @@
     .end local v3    # "$this$first$iv":Ljava/lang/Iterable;
     .end local v10    # "$i$f$first":I
     .end local v17    # "it":Lkotlin/jvm/functions/Function2;
-    :cond_8a
+    :cond_2
     const/4 v1, 0x0
 
-    :goto_8b
+    :goto_2
     move-object v2, v1
 
     .line 284
     .local v2, "labelPlaceable":Landroidx/compose/ui/layout/Placeable;
     iget-object v1, v0, Landroidx/compose/material/BottomNavigationKt$BottomNavigationItemBaselineLayout$2;->$label:Lkotlin/jvm/functions/Function2;
 
-    if-nez v1, :cond_96
+    if-nez v1, :cond_3
 
     .line 285
-    # invokes: Landroidx/compose/material/BottomNavigationKt;->placeIcon-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Placeable;J)Landroidx/compose/ui/layout/MeasureResult;
     invoke-static {v7, v6, v4, v5}, Landroidx/compose/material/BottomNavigationKt;->access$placeIcon-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Placeable;J)Landroidx/compose/ui/layout/MeasureResult;
 
     move-result-object v1
 
     move-object v10, v6
 
-    goto :goto_a9
+    goto :goto_3
 
     .line 287
-    :cond_96
+    :cond_3
     nop
 
     .line 288
@@ -368,13 +367,12 @@
     .local v10, "iconPlaceable":Landroidx/compose/ui/layout/Placeable;
     move v6, v9
 
-    # invokes: Landroidx/compose/material/BottomNavigationKt;->placeLabelAndIcon-DIyivk0(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/Placeable;JF)Landroidx/compose/ui/layout/MeasureResult;
     invoke-static/range {v1 .. v6}, Landroidx/compose/material/BottomNavigationKt;->access$placeLabelAndIcon-DIyivk0(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/Placeable;JF)Landroidx/compose/ui/layout/MeasureResult;
 
     move-result-object v1
 
     .line 284
-    :goto_a9
+    :goto_3
     return-object v1
 
     .line 400
@@ -382,14 +380,14 @@
     .local v1, "$this$first$iv":Ljava/lang/Iterable;
     .local v2, "$i$f$first":I
     .local v6, "element$iv":Ljava/lang/Object;
-    :cond_aa
+    :cond_4
     move-wide/from16 v4, p3
 
-    goto/16 :goto_1b
+    goto/16 :goto_0
 
     .line 401
     .end local v6    # "element$iv":Ljava/lang/Object;
-    :cond_ae
+    :cond_5
     new-instance v3, Ljava/util/NoSuchElementException;
 
     invoke-direct {v3, v9}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V

@@ -62,7 +62,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/layout/AlignmentLine$Companion;
 
@@ -76,7 +76,7 @@
 .end method
 
 .method private constructor <init>(Lkotlin/jvm/functions/Function2;)V
-    .registers 2
+    .locals 0
     .param p1, "merger"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,7 +102,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/compose/ui/layout/AlignmentLine;-><init>(Lkotlin/jvm/functions/Function2;)V
 
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final getMerger$ui_release()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

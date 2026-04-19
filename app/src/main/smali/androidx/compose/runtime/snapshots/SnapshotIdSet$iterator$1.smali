@@ -104,7 +104,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotIdSet;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -155,7 +155,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlin/sequences/SequenceScope;
 
@@ -169,7 +169,7 @@
 .end method
 
 .method public final invoke(Lkotlin/sequences/SequenceScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -201,7 +201,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 23
+    .locals 21
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -218,7 +218,7 @@
 
     const-wide/16 v8, 0x0
 
-    packed-switch v2, :pswitch_data_112
+    packed-switch v2, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -228,7 +228,7 @@
 
     throw v0
 
-    :pswitch_19
+    :pswitch_0
     move-object/from16 v2, p0
 
     .local v2, "this":Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;
@@ -249,13 +249,13 @@
 
     const-wide/16 v13, 0x1
 
-    goto/16 :goto_10b
+    goto/16 :goto_5
 
     .end local v2    # "this":Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;
     .end local v10    # "$result":Ljava/lang/Object;
     .end local v11    # "index":I
     .end local v12    # "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :pswitch_2b
+    :pswitch_1
     move-object/from16 v2, p0
 
     .restart local v2    # "this":Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;
@@ -272,13 +272,13 @@
     .restart local v12    # "$this$sequence":Lkotlin/sequences/SequenceScope;
     invoke-static {v10}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_c7
+    goto/16 :goto_3
 
     .end local v2    # "this":Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;
     .end local v10    # "$result":Ljava/lang/Object;
     .end local v11    # "index":I
     .end local v12    # "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :pswitch_3a
+    :pswitch_2
     move-object/from16 v2, p0
 
     .restart local v2    # "this":Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;
@@ -301,13 +301,13 @@
     .local v14, "$this$sequence":Lkotlin/sequences/SequenceScope;
     invoke-static {v10}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_86
+    goto :goto_1
 
     .end local v2    # "this":Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;
     .end local v10    # "$result":Ljava/lang/Object;
     .end local v13    # "belowBound":[I
     .end local v14    # "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :pswitch_4e
+    :pswitch_3
     invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v2, p0
@@ -324,14 +324,13 @@
     .local v11, "$this$sequence":Lkotlin/sequences/SequenceScope;
     iget-object v12, v2, Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->belowBound:[I
     invoke-static {v12}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getBelowBound$p(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)[I
 
     move-result-object v12
 
     .line 293
     .local v12, "belowBound":[I
-    if-eqz v12, :cond_89
+    if-eqz v12, :cond_2
 
     .line 294
     array-length v13, v12
@@ -352,8 +351,8 @@
     .end local v12    # "belowBound":[I
     .restart local v13    # "belowBound":[I
     .restart local v14    # "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :goto_6a
-    if-ge v12, v11, :cond_88
+    :goto_0
+    if-ge v12, v11, :cond_1
 
     aget v15, v13, v12
 
@@ -382,36 +381,35 @@
     move-result-object v3
 
     .end local v15    # "element":I
-    if-ne v3, v0, :cond_86
+    if-ne v3, v0, :cond_0
 
     .line 291
     return-object v0
 
     .line 294
-    :cond_86
-    :goto_86
+    :cond_0
+    :goto_1
     add-int/2addr v12, v7
 
-    goto :goto_6a
+    goto :goto_0
 
-    :cond_88
+    :cond_1
     move-object v11, v14
 
     .line 297
     .end local v13    # "belowBound":[I
     .end local v14    # "$this$sequence":Lkotlin/sequences/SequenceScope;
     .restart local v11    # "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :cond_89
+    :cond_2
     iget-object v3, v2, Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->lowerSet:J
     invoke-static {v3}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getLowerSet$p(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)J
 
     move-result-wide v3
 
     cmp-long v3, v3, v8
 
-    if-eqz v3, :cond_cb
+    if-eqz v3, :cond_6
 
     .line 298
     const/4 v3, 0x0
@@ -422,13 +420,12 @@
 
     .local v11, "index":I
     .local v12, "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :goto_96
-    if-ge v11, v6, :cond_ca
+    :goto_2
+    if-ge v11, v6, :cond_5
 
     .line 299
     iget-object v3, v2, Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->lowerSet:J
     invoke-static {v3}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getLowerSet$p(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)J
 
     move-result-wide v3
@@ -441,12 +438,11 @@
 
     cmp-long v3, v3, v8
 
-    if-eqz v3, :cond_c8
+    if-eqz v3, :cond_4
 
     .line 300
     iget-object v3, v2, Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->lowerBound:I
     invoke-static {v3}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getLowerBound$p(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)I
 
     move-result v3
@@ -477,38 +473,37 @@
 
     move-result-object v3
 
-    if-ne v3, v0, :cond_c7
+    if-ne v3, v0, :cond_3
 
     .line 291
     return-object v0
 
     .line 298
-    :cond_c7
-    :goto_c7
+    :cond_3
+    :goto_3
     nop
 
-    :cond_c8
+    :cond_4
     add-int/2addr v11, v7
 
-    goto :goto_96
+    goto :goto_2
 
-    :cond_ca
+    :cond_5
     move-object v11, v12
 
     .line 304
     .end local v12    # "$this$sequence":Lkotlin/sequences/SequenceScope;
     .local v11, "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :cond_cb
+    :cond_6
     iget-object v3, v2, Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->upperSet:J
     invoke-static {v3}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getUpperSet$p(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)J
 
     move-result-wide v3
 
     cmp-long v3, v3, v8
 
-    if-eqz v3, :cond_10f
+    if-eqz v3, :cond_9
 
     .line 305
     const/4 v3, 0x0
@@ -519,13 +514,12 @@
 
     .local v11, "index":I
     .restart local v12    # "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :goto_d8
-    if-ge v11, v6, :cond_10f
+    :goto_4
+    if-ge v11, v6, :cond_9
 
     .line 306
     iget-object v3, v2, Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->upperSet:J
     invoke-static {v3}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getUpperSet$p(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)J
 
     move-result-wide v3
@@ -538,14 +532,13 @@
 
     cmp-long v3, v3, v8
 
-    if-eqz v3, :cond_10c
+    if-eqz v3, :cond_8
 
     .line 307
     add-int/lit8 v3, v11, 0x40
 
     iget-object v4, v2, Landroidx/compose/runtime/snapshots/SnapshotIdSet$iterator$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->lowerBound:I
     invoke-static {v4}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getLowerBound$p(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)I
 
     move-result v4
@@ -576,39 +569,39 @@
 
     move-result-object v3
 
-    if-ne v3, v0, :cond_10b
+    if-ne v3, v0, :cond_7
 
     .line 291
     return-object v0
 
     .line 305
-    :cond_10b
-    :goto_10b
-    goto :goto_10d
+    :cond_7
+    :goto_5
+    goto :goto_6
 
     .line 306
-    :cond_10c
+    :cond_8
     const/4 v5, 0x0
 
     .line 305
-    :goto_10d
+    :goto_6
     add-int/2addr v11, v7
 
-    goto :goto_d8
+    goto :goto_4
 
     .line 311
     .end local v11    # "index":I
     .end local v12    # "$this$sequence":Lkotlin/sequences/SequenceScope;
-    :cond_10f
+    :cond_9
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
-    :pswitch_data_112
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4e
-        :pswitch_3a
-        :pswitch_2b
-        :pswitch_19
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

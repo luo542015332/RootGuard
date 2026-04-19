@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/TileModeVerificationHelper;
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 63
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final getComposeTileModeDecal-3opZhB0()I
-    .registers 2
+    .locals 1
 
     .line 69
     sget-object v0, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -72,7 +72,7 @@
 .end method
 
 .method public final getFrameworkTileModeDecal()Landroid/graphics/Shader$TileMode;
-    .registers 2
+    .locals 1
 
     .line 66
     sget-object v0, Landroid/graphics/Shader$TileMode;->DECAL:Landroid/graphics/Shader$TileMode;

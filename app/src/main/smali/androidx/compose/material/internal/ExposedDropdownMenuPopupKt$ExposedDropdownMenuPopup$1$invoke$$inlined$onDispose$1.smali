@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/material/internal/PopupLayout;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$ExposedDropdownMenuPopup$1$invoke$$inlined$onDispose$1;->$popupLayout$inlined:Landroidx/compose/material/internal/PopupLayout;
 
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 3
+    .locals 2
 
     .line 65
     const/4 v0, 0x0

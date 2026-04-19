@@ -40,7 +40,7 @@
 
 # direct methods
 .method public static final booleanResource(ILandroidx/compose/runtime/Composer;I)Z
-    .registers 8
+    .locals 5
     .param p0, "id"    # I
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -56,7 +56,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -65,7 +65,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 64
-    :cond_15
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -114,19 +114,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 63
-    :cond_40
+    :cond_1
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return v1
 .end method
 
 .method public static final dimensionResource(ILandroidx/compose/runtime/Composer;I)F
-    .registers 9
+    .locals 6
     .param p0, "id"    # I
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -142,7 +142,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -151,7 +151,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 77
-    :cond_15
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -244,19 +244,19 @@
 
     move-result v4
 
-    if-eqz v4, :cond_5f
+    if-eqz v4, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 76
-    :cond_5f
+    :cond_1
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return v3
 .end method
 
 .method public static final integerArrayResource(ILandroidx/compose/runtime/Composer;I)[I
-    .registers 8
+    .locals 5
     .param p0, "id"    # I
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -272,7 +272,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -281,7 +281,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 51
-    :cond_15
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -334,19 +334,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 50
-    :cond_46
+    :cond_1
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v1
 .end method
 
 .method public static final integerResource(ILandroidx/compose/runtime/Composer;I)I
-    .registers 8
+    .locals 5
     .param p0, "id"    # I
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -362,7 +362,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -371,7 +371,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 38
-    :cond_15
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -420,12 +420,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 37
-    :cond_40
+    :cond_1
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return v1

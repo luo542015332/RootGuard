@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlinx/coroutines/CancellableContinuation;)V
-    .registers 4
+    .locals 1
     .param p1, "currentBounds"    # Lkotlin/jvm/functions/Function0;
     .param p2, "continuation"    # Lkotlinx/coroutines/CancellableContinuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public final getContinuation()Lkotlinx/coroutines/CancellableContinuation;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -130,7 +130,7 @@
 .end method
 
 .method public final getCurrentBounds()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -147,7 +147,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 420
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$Request;->continuation:Lkotlinx/coroutines/CancellableContinuation;
@@ -166,20 +166,20 @@
 
     check-cast v0, Lkotlinx/coroutines/CoroutineName;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Lkotlinx/coroutines/CoroutineName;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
     .line 421
     .local v0, "name":Ljava/lang/String;
-    :goto_18
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -213,7 +213,7 @@
     move-result-object v1
 
     .line 422
-    if-eqz v0, :cond_5c
+    if-eqz v0, :cond_1
 
     .line 428
     move-object v2, v0
@@ -249,13 +249,13 @@
 
     .end local v2    # "it":Ljava/lang/String;
     .end local v3    # "$i$a$-let-ContentInViewModifier$Request$toString$1":I
-    if-nez v2, :cond_5e
+    if-nez v2, :cond_2
 
-    :cond_5c
+    :cond_1
     const-string v2, "("
 
     .line 421
-    :cond_5e
+    :cond_2
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1

@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -48,7 +48,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/SlotTable;)V
-    .registers 3
+    .locals 1
     .param p1, "slotTable"    # Landroidx/compose/runtime/SlotTable;
 
     const-string/jumbo v0, "slotTable"
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final getSlotTable$runtime_release()Landroidx/compose/runtime/SlotTable;
-    .registers 2
+    .locals 1
 
     .line 336
     iget-object v0, p0, Landroidx/compose/runtime/MovableContentState;->slotTable:Landroidx/compose/runtime/SlotTable;

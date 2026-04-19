@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 234
     new-instance v0, Ljava/lang/Object;
@@ -49,7 +49,7 @@
 .end method
 
 .method public static final synthetic access$getSync$p()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->sync:Ljava/lang/Object;
@@ -58,7 +58,7 @@
 .end method
 
 .method public static final synthetic access$modificationError()Ljava/lang/Void;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->modificationError()Ljava/lang/Void;
@@ -69,7 +69,7 @@
 .end method
 
 .method public static final synthetic access$validateRange(II)V
-    .registers 2
+    .locals 0
     .param p0, "index"    # I
     .param p1, "size"    # I
 
@@ -80,7 +80,7 @@
 .end method
 
 .method private static final modificationError()Ljava/lang/Void;
-    .registers 2
+    .locals 2
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -97,27 +97,27 @@
 .end method
 
 .method private static final validateRange(II)V
-    .registers 5
+    .locals 3
     .param p0, "index"    # I
     .param p1, "size"    # I
 
     .line 240
     const/4 v0, 0x0
 
-    if-ltz p0, :cond_6
+    if-ltz p0, :cond_0
 
-    if-ge p0, p1, :cond_6
+    if-ge p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_6
-    if-eqz v0, :cond_9
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 243
     return-void
 
     .line 241
-    :cond_9
+    :cond_1
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v1, Ljava/lang/StringBuilder;

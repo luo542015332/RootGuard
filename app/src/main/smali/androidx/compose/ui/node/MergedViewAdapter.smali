@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public didInsert(Landroid/view/View;Landroid/view/ViewGroup;)V
-    .registers 10
+    .locals 7
     .param p1, "view"    # Landroid/view/View;
     .param p2, "parent"    # Landroid/view/ViewGroup;
 
@@ -119,8 +119,8 @@
 
     move-result v3
 
-    :goto_15
-    if-ge v2, v3, :cond_26
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 115
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -149,11 +149,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 118
     .end local v2    # "index$iv":I
-    :cond_26
+    :cond_0
     nop
 
     .line 67
@@ -163,7 +163,7 @@
 .end method
 
 .method public didUpdate(Landroid/view/View;Landroid/view/ViewGroup;)V
-    .registers 10
+    .locals 7
     .param p1, "view"    # Landroid/view/View;
     .param p2, "parent"    # Landroid/view/ViewGroup;
 
@@ -193,8 +193,8 @@
 
     move-result v3
 
-    :goto_15
-    if-ge v2, v3, :cond_26
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 121
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -223,11 +223,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 124
     .end local v2    # "index$iv":I
-    :cond_26
+    :cond_0
     nop
 
     .line 71
@@ -237,7 +237,7 @@
 .end method
 
 .method public final get(ILkotlin/jvm/functions/Function0;)Landroidx/compose/ui/node/ViewAdapter;
-    .registers 19
+    .locals 16
     .param p1, "id"    # I
     .param p2, "factory"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -289,10 +289,10 @@
 
     move-result v7
 
-    :goto_17
+    :goto_0
     const/4 v8, 0x0
 
-    if-ge v6, v7, :cond_36
+    if-ge v6, v7, :cond_2
 
     .line 102
     invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -323,36 +323,36 @@
 
     move/from16 v15, p1
 
-    if-ne v14, v15, :cond_2e
+    if-ne v14, v15, :cond_0
 
     const/4 v14, 0x1
 
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_2e
+    :cond_0
     const/4 v14, 0x0
 
     .line 99
     .end local v12    # "it":Landroidx/compose/ui/node/ViewAdapter;
     .end local v13    # "$i$a$-fastFirstOrNull-MergedViewAdapter$get$existing$1":I
-    :goto_2f
-    if-eqz v14, :cond_32
+    :goto_1
+    if-eqz v14, :cond_1
 
-    goto :goto_3a
+    goto :goto_2
 
     .line 103
     .end local v10    # "it$iv":Ljava/lang/Object;
     .end local v11    # "$i$a$-fastForEach-ListUtilsKt$fastFirstOrNull$2$iv":I
-    :cond_32
+    :cond_1
     nop
 
     .line 101
     .end local v9    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_36
+    :cond_2
     move/from16 v15, p1
 
     .line 105
@@ -367,26 +367,26 @@
     .line 54
     .end local v2    # "$this$fastFirstOrNull$iv":Ljava/util/List;
     .end local v3    # "$i$f$fastFirstOrNull":I
-    :goto_3a
+    :goto_2
     instance-of v2, v10, Landroidx/compose/ui/node/ViewAdapter;
 
-    if-eqz v2, :cond_41
+    if-eqz v2, :cond_3
 
     move-object v8, v10
 
     check-cast v8, Landroidx/compose/ui/node/ViewAdapter;
 
-    :cond_41
+    :cond_3
     move-object v2, v8
 
     .line 55
     .local v2, "existing":Landroidx/compose/ui/node/ViewAdapter;
-    if-eqz v2, :cond_45
+    if-eqz v2, :cond_4
 
     return-object v2
 
     .line 56
-    :cond_45
+    :cond_4
     invoke-interface/range {p2 .. p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v3
@@ -406,7 +406,7 @@
 .end method
 
 .method public final getAdapters()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -423,7 +423,7 @@
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/compose/ui/node/MergedViewAdapter;->id:I
@@ -432,7 +432,7 @@
 .end method
 
 .method public willInsert(Landroid/view/View;Landroid/view/ViewGroup;)V
-    .registers 10
+    .locals 7
     .param p1, "view"    # Landroid/view/View;
     .param p2, "parent"    # Landroid/view/ViewGroup;
 
@@ -462,8 +462,8 @@
 
     move-result v3
 
-    :goto_15
-    if-ge v2, v3, :cond_26
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 109
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -492,11 +492,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 112
     .end local v2    # "index$iv":I
-    :cond_26
+    :cond_0
     nop
 
     .line 63

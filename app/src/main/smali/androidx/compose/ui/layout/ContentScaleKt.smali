@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static final synthetic access$computeFillHeight-iLBOSCw(JJ)F
-    .registers 5
+    .locals 1
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 
@@ -49,7 +49,7 @@
 .end method
 
 .method public static final synthetic access$computeFillMaxDimension-iLBOSCw(JJ)F
-    .registers 5
+    .locals 1
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final synthetic access$computeFillMinDimension-iLBOSCw(JJ)F
-    .registers 5
+    .locals 1
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 
@@ -75,7 +75,7 @@
 .end method
 
 .method public static final synthetic access$computeFillWidth-iLBOSCw(JJ)F
-    .registers 5
+    .locals 1
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 
@@ -88,7 +88,7 @@
 .end method
 
 .method private static final computeFillHeight-iLBOSCw(JJ)F
-    .registers 6
+    .locals 2
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 
@@ -107,7 +107,7 @@
 .end method
 
 .method private static final computeFillMaxDimension-iLBOSCw(JJ)F
-    .registers 7
+    .locals 3
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 
@@ -132,7 +132,7 @@
 .end method
 
 .method private static final computeFillMinDimension-iLBOSCw(JJ)F
-    .registers 7
+    .locals 3
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 
@@ -157,7 +157,7 @@
 .end method
 
 .method private static final computeFillWidth-iLBOSCw(JJ)F
-    .registers 6
+    .locals 2
     .param p0, "srcSize"    # J
     .param p2, "dstSize"    # J
 

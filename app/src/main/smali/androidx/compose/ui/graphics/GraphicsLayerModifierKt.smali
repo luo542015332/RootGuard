@@ -63,7 +63,7 @@
 
 # direct methods
 .method public static final graphicsLayer(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$graphicsLayer"    # Landroidx/compose/ui/Modifier;
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -102,7 +102,7 @@
 .end method
 
 .method public static final synthetic graphicsLayer-2Xn7asI(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;)Landroidx/compose/ui/Modifier;
-    .registers 39
+    .locals 23
     .param p0, "$this$graphicsLayer_u2d2Xn7asI"    # Landroidx/compose/ui/Modifier;
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
@@ -260,7 +260,7 @@
 .end method
 
 .method public static synthetic graphicsLayer-2Xn7asI$default(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 33
+    .locals 15
 
     .line 165
     move/from16 v0, p16
@@ -269,145 +269,145 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 166
     move v1, v2
 
-    goto :goto_c
+    goto :goto_0
 
     .line 165
-    :cond_a
+    :cond_0
     move/from16 v1, p1
 
-    :goto_c
+    :goto_0
     and-int/lit8 v3, v0, 0x2
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_1
 
     .line 167
     move v3, v2
 
-    goto :goto_14
+    goto :goto_1
 
     .line 165
-    :cond_12
+    :cond_1
     move/from16 v3, p2
 
-    :goto_14
+    :goto_1
     and-int/lit8 v4, v0, 0x4
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_2
 
     .line 168
-    goto :goto_1b
+    goto :goto_2
 
     .line 165
-    :cond_19
+    :cond_2
     move/from16 v2, p3
 
-    :goto_1b
+    :goto_2
     and-int/lit8 v4, v0, 0x8
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_3
 
     .line 169
     move v4, v5
 
-    goto :goto_24
+    goto :goto_3
 
     .line 165
-    :cond_22
+    :cond_3
     move/from16 v4, p4
 
-    :goto_24
+    :goto_3
     and-int/lit8 v6, v0, 0x10
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_4
 
     .line 170
     move v6, v5
 
-    goto :goto_2c
+    goto :goto_4
 
     .line 165
-    :cond_2a
+    :cond_4
     move/from16 v6, p5
 
-    :goto_2c
+    :goto_4
     and-int/lit8 v7, v0, 0x20
 
-    if-eqz v7, :cond_32
+    if-eqz v7, :cond_5
 
     .line 171
     move v7, v5
 
-    goto :goto_34
+    goto :goto_5
 
     .line 165
-    :cond_32
+    :cond_5
     move/from16 v7, p6
 
-    :goto_34
+    :goto_5
     and-int/lit8 v8, v0, 0x40
 
-    if-eqz v8, :cond_3a
+    if-eqz v8, :cond_6
 
     .line 172
     move v8, v5
 
-    goto :goto_3c
+    goto :goto_6
 
     .line 165
-    :cond_3a
+    :cond_6
     move/from16 v8, p7
 
-    :goto_3c
+    :goto_6
     and-int/lit16 v9, v0, 0x80
 
-    if-eqz v9, :cond_42
+    if-eqz v9, :cond_7
 
     .line 173
     move v9, v5
 
-    goto :goto_44
+    goto :goto_7
 
     .line 165
-    :cond_42
+    :cond_7
     move/from16 v9, p8
 
-    :goto_44
+    :goto_7
     and-int/lit16 v10, v0, 0x100
 
-    if-eqz v10, :cond_49
+    if-eqz v10, :cond_8
 
     .line 174
-    goto :goto_4b
+    goto :goto_8
 
     .line 165
-    :cond_49
+    :cond_8
     move/from16 v5, p9
 
-    :goto_4b
+    :goto_8
     and-int/lit16 v10, v0, 0x200
 
-    if-eqz v10, :cond_52
+    if-eqz v10, :cond_9
 
     .line 175
     const/high16 v10, 0x41000000    # 8.0f
 
-    goto :goto_54
+    goto :goto_9
 
     .line 165
-    :cond_52
+    :cond_9
     move/from16 v10, p10
 
-    :goto_54
+    :goto_9
     and-int/lit16 v11, v0, 0x400
 
-    if-eqz v11, :cond_5f
+    if-eqz v11, :cond_a
 
     .line 176
     sget-object v11, Landroidx/compose/ui/graphics/TransformOrigin;->Companion:Landroidx/compose/ui/graphics/TransformOrigin$Companion;
@@ -416,57 +416,57 @@
 
     move-result-wide v11
 
-    goto :goto_61
+    goto :goto_a
 
     .line 165
-    :cond_5f
+    :cond_a
     move-wide/from16 v11, p11
 
-    :goto_61
+    :goto_a
     and-int/lit16 v13, v0, 0x800
 
-    if-eqz v13, :cond_6a
+    if-eqz v13, :cond_b
 
     .line 177
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v13
 
-    goto :goto_6c
+    goto :goto_b
 
     .line 165
-    :cond_6a
+    :cond_b
     move-object/from16 v13, p13
 
-    :goto_6c
+    :goto_b
     and-int/lit16 v14, v0, 0x1000
 
-    if-eqz v14, :cond_72
+    if-eqz v14, :cond_c
 
     .line 178
     const/4 v14, 0x0
 
-    goto :goto_74
+    goto :goto_c
 
     .line 165
-    :cond_72
+    :cond_c
     move/from16 v14, p14
 
-    :goto_74
+    :goto_c
     and-int/lit16 v0, v0, 0x2000
 
-    if-eqz v0, :cond_7a
+    if-eqz v0, :cond_d
 
     .line 179
     const/4 v0, 0x0
 
-    goto :goto_7c
+    goto :goto_d
 
     .line 165
-    :cond_7a
+    :cond_d
     move-object/from16 v0, p15
 
-    :goto_7c
+    :goto_d
     move/from16 p1, v1
 
     move/from16 p2, v3
@@ -503,7 +503,7 @@
 .end method
 
 .method public static final graphicsLayer-Ap8cVGQ(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJI)Landroidx/compose/ui/Modifier;
-    .registers 45
+    .locals 24
     .param p0, "$this$graphicsLayer_u2dAp8cVGQ"    # Landroidx/compose/ui/Modifier;
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
@@ -643,7 +643,7 @@
 .end method
 
 .method public static synthetic graphicsLayer-Ap8cVGQ$default(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJIILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 43
+    .locals 20
 
     .line 345
     move/from16 v0, p21
@@ -652,145 +652,145 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 346
     move v1, v2
 
-    goto :goto_c
+    goto :goto_0
 
     .line 345
-    :cond_a
+    :cond_0
     move/from16 v1, p1
 
-    :goto_c
+    :goto_0
     and-int/lit8 v3, v0, 0x2
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_1
 
     .line 347
     move v3, v2
 
-    goto :goto_14
+    goto :goto_1
 
     .line 345
-    :cond_12
+    :cond_1
     move/from16 v3, p2
 
-    :goto_14
+    :goto_1
     and-int/lit8 v4, v0, 0x4
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_2
 
     .line 348
-    goto :goto_1b
+    goto :goto_2
 
     .line 345
-    :cond_19
+    :cond_2
     move/from16 v2, p3
 
-    :goto_1b
+    :goto_2
     and-int/lit8 v4, v0, 0x8
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_3
 
     .line 349
     move v4, v5
 
-    goto :goto_24
+    goto :goto_3
 
     .line 345
-    :cond_22
+    :cond_3
     move/from16 v4, p4
 
-    :goto_24
+    :goto_3
     and-int/lit8 v6, v0, 0x10
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_4
 
     .line 350
     move v6, v5
 
-    goto :goto_2c
+    goto :goto_4
 
     .line 345
-    :cond_2a
+    :cond_4
     move/from16 v6, p5
 
-    :goto_2c
+    :goto_4
     and-int/lit8 v7, v0, 0x20
 
-    if-eqz v7, :cond_32
+    if-eqz v7, :cond_5
 
     .line 351
     move v7, v5
 
-    goto :goto_34
+    goto :goto_5
 
     .line 345
-    :cond_32
+    :cond_5
     move/from16 v7, p6
 
-    :goto_34
+    :goto_5
     and-int/lit8 v8, v0, 0x40
 
-    if-eqz v8, :cond_3a
+    if-eqz v8, :cond_6
 
     .line 352
     move v8, v5
 
-    goto :goto_3c
+    goto :goto_6
 
     .line 345
-    :cond_3a
+    :cond_6
     move/from16 v8, p7
 
-    :goto_3c
+    :goto_6
     and-int/lit16 v9, v0, 0x80
 
-    if-eqz v9, :cond_42
+    if-eqz v9, :cond_7
 
     .line 353
     move v9, v5
 
-    goto :goto_44
+    goto :goto_7
 
     .line 345
-    :cond_42
+    :cond_7
     move/from16 v9, p8
 
-    :goto_44
+    :goto_7
     and-int/lit16 v10, v0, 0x100
 
-    if-eqz v10, :cond_49
+    if-eqz v10, :cond_8
 
     .line 354
-    goto :goto_4b
+    goto :goto_8
 
     .line 345
-    :cond_49
+    :cond_8
     move/from16 v5, p9
 
-    :goto_4b
+    :goto_8
     and-int/lit16 v10, v0, 0x200
 
-    if-eqz v10, :cond_52
+    if-eqz v10, :cond_9
 
     .line 355
     const/high16 v10, 0x41000000    # 8.0f
 
-    goto :goto_54
+    goto :goto_9
 
     .line 345
-    :cond_52
+    :cond_9
     move/from16 v10, p10
 
-    :goto_54
+    :goto_9
     and-int/lit16 v11, v0, 0x400
 
-    if-eqz v11, :cond_5f
+    if-eqz v11, :cond_a
 
     .line 356
     sget-object v11, Landroidx/compose/ui/graphics/TransformOrigin;->Companion:Landroidx/compose/ui/graphics/TransformOrigin$Companion;
@@ -799,98 +799,98 @@
 
     move-result-wide v11
 
-    goto :goto_61
+    goto :goto_a
 
     .line 345
-    :cond_5f
+    :cond_a
     move-wide/from16 v11, p11
 
-    :goto_61
+    :goto_a
     and-int/lit16 v13, v0, 0x800
 
-    if-eqz v13, :cond_6a
+    if-eqz v13, :cond_b
 
     .line 357
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v13
 
-    goto :goto_6c
+    goto :goto_b
 
     .line 345
-    :cond_6a
+    :cond_b
     move-object/from16 v13, p13
 
-    :goto_6c
+    :goto_b
     and-int/lit16 v14, v0, 0x1000
 
-    if-eqz v14, :cond_72
+    if-eqz v14, :cond_c
 
     .line 358
     const/4 v14, 0x0
 
-    goto :goto_74
+    goto :goto_c
 
     .line 345
-    :cond_72
+    :cond_c
     move/from16 v14, p14
 
-    :goto_74
+    :goto_c
     and-int/lit16 v15, v0, 0x2000
 
-    if-eqz v15, :cond_7a
+    if-eqz v15, :cond_d
 
     .line 359
     const/4 v15, 0x0
 
-    goto :goto_7c
+    goto :goto_d
 
     .line 345
-    :cond_7a
+    :cond_d
     move-object/from16 v15, p15
 
-    :goto_7c
+    :goto_d
     move-object/from16 p15, v15
 
     and-int/lit16 v15, v0, 0x4000
 
-    if-eqz v15, :cond_87
+    if-eqz v15, :cond_e
 
     .line 360
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
 
     move-result-wide v15
 
-    goto :goto_89
+    goto :goto_e
 
     .line 345
-    :cond_87
+    :cond_e
     move-wide/from16 v15, p16
 
-    :goto_89
+    :goto_e
     const v17, 0x8000
 
     and-int v17, v0, v17
 
-    if-eqz v17, :cond_95
+    if-eqz v17, :cond_f
 
     .line 361
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
 
     move-result-wide v17
 
-    goto :goto_97
+    goto :goto_f
 
     .line 345
-    :cond_95
+    :cond_f
     move-wide/from16 v17, p18
 
-    :goto_97
+    :goto_f
     const/high16 v19, 0x10000
 
     and-int v0, v0, v19
 
-    if-eqz v0, :cond_a4
+    if-eqz v0, :cond_10
 
     .line 362
     sget-object v0, Landroidx/compose/ui/graphics/CompositingStrategy;->Companion:Landroidx/compose/ui/graphics/CompositingStrategy$Companion;
@@ -899,13 +899,13 @@
 
     move-result v0
 
-    goto :goto_a6
+    goto :goto_10
 
     .line 345
-    :cond_a4
+    :cond_10
     move/from16 v0, p20
 
-    :goto_a6
+    :goto_10
     move/from16 p1, v1
 
     move/from16 p2, v3
@@ -946,7 +946,7 @@
 .end method
 
 .method public static final synthetic graphicsLayer-pANQ8Wg(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJ)Landroidx/compose/ui/Modifier;
-    .registers 43
+    .locals 23
     .param p0, "$this$graphicsLayer_u2dpANQ8Wg"    # Landroidx/compose/ui/Modifier;
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
@@ -1097,7 +1097,7 @@
 .end method
 
 .method public static synthetic graphicsLayer-pANQ8Wg$default(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 41
+    .locals 19
 
     .line 254
     move/from16 v0, p20
@@ -1106,145 +1106,145 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 255
     move v1, v2
 
-    goto :goto_c
+    goto :goto_0
 
     .line 254
-    :cond_a
+    :cond_0
     move/from16 v1, p1
 
-    :goto_c
+    :goto_0
     and-int/lit8 v3, v0, 0x2
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_1
 
     .line 256
     move v3, v2
 
-    goto :goto_14
+    goto :goto_1
 
     .line 254
-    :cond_12
+    :cond_1
     move/from16 v3, p2
 
-    :goto_14
+    :goto_1
     and-int/lit8 v4, v0, 0x4
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_2
 
     .line 257
-    goto :goto_1b
+    goto :goto_2
 
     .line 254
-    :cond_19
+    :cond_2
     move/from16 v2, p3
 
-    :goto_1b
+    :goto_2
     and-int/lit8 v4, v0, 0x8
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_3
 
     .line 258
     move v4, v5
 
-    goto :goto_24
+    goto :goto_3
 
     .line 254
-    :cond_22
+    :cond_3
     move/from16 v4, p4
 
-    :goto_24
+    :goto_3
     and-int/lit8 v6, v0, 0x10
 
-    if-eqz v6, :cond_2a
+    if-eqz v6, :cond_4
 
     .line 259
     move v6, v5
 
-    goto :goto_2c
+    goto :goto_4
 
     .line 254
-    :cond_2a
+    :cond_4
     move/from16 v6, p5
 
-    :goto_2c
+    :goto_4
     and-int/lit8 v7, v0, 0x20
 
-    if-eqz v7, :cond_32
+    if-eqz v7, :cond_5
 
     .line 260
     move v7, v5
 
-    goto :goto_34
+    goto :goto_5
 
     .line 254
-    :cond_32
+    :cond_5
     move/from16 v7, p6
 
-    :goto_34
+    :goto_5
     and-int/lit8 v8, v0, 0x40
 
-    if-eqz v8, :cond_3a
+    if-eqz v8, :cond_6
 
     .line 261
     move v8, v5
 
-    goto :goto_3c
+    goto :goto_6
 
     .line 254
-    :cond_3a
+    :cond_6
     move/from16 v8, p7
 
-    :goto_3c
+    :goto_6
     and-int/lit16 v9, v0, 0x80
 
-    if-eqz v9, :cond_42
+    if-eqz v9, :cond_7
 
     .line 262
     move v9, v5
 
-    goto :goto_44
+    goto :goto_7
 
     .line 254
-    :cond_42
+    :cond_7
     move/from16 v9, p8
 
-    :goto_44
+    :goto_7
     and-int/lit16 v10, v0, 0x100
 
-    if-eqz v10, :cond_49
+    if-eqz v10, :cond_8
 
     .line 263
-    goto :goto_4b
+    goto :goto_8
 
     .line 254
-    :cond_49
+    :cond_8
     move/from16 v5, p9
 
-    :goto_4b
+    :goto_8
     and-int/lit16 v10, v0, 0x200
 
-    if-eqz v10, :cond_52
+    if-eqz v10, :cond_9
 
     .line 264
     const/high16 v10, 0x41000000    # 8.0f
 
-    goto :goto_54
+    goto :goto_9
 
     .line 254
-    :cond_52
+    :cond_9
     move/from16 v10, p10
 
-    :goto_54
+    :goto_9
     and-int/lit16 v11, v0, 0x400
 
-    if-eqz v11, :cond_5f
+    if-eqz v11, :cond_a
 
     .line 265
     sget-object v11, Landroidx/compose/ui/graphics/TransformOrigin;->Companion:Landroidx/compose/ui/graphics/TransformOrigin$Companion;
@@ -1253,93 +1253,93 @@
 
     move-result-wide v11
 
-    goto :goto_61
+    goto :goto_a
 
     .line 254
-    :cond_5f
+    :cond_a
     move-wide/from16 v11, p11
 
-    :goto_61
+    :goto_a
     and-int/lit16 v13, v0, 0x800
 
-    if-eqz v13, :cond_6a
+    if-eqz v13, :cond_b
 
     .line 266
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v13
 
-    goto :goto_6c
+    goto :goto_b
 
     .line 254
-    :cond_6a
+    :cond_b
     move-object/from16 v13, p13
 
-    :goto_6c
+    :goto_b
     and-int/lit16 v14, v0, 0x1000
 
-    if-eqz v14, :cond_72
+    if-eqz v14, :cond_c
 
     .line 267
     const/4 v14, 0x0
 
-    goto :goto_74
+    goto :goto_c
 
     .line 254
-    :cond_72
+    :cond_c
     move/from16 v14, p14
 
-    :goto_74
+    :goto_c
     and-int/lit16 v15, v0, 0x2000
 
-    if-eqz v15, :cond_7a
+    if-eqz v15, :cond_d
 
     .line 268
     const/4 v15, 0x0
 
-    goto :goto_7c
+    goto :goto_d
 
     .line 254
-    :cond_7a
+    :cond_d
     move-object/from16 v15, p15
 
-    :goto_7c
+    :goto_d
     move-object/from16 p15, v15
 
     and-int/lit16 v15, v0, 0x4000
 
-    if-eqz v15, :cond_87
+    if-eqz v15, :cond_e
 
     .line 269
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
 
     move-result-wide v15
 
-    goto :goto_89
+    goto :goto_e
 
     .line 254
-    :cond_87
+    :cond_e
     move-wide/from16 v15, p16
 
-    :goto_89
+    :goto_e
     const v17, 0x8000
 
     and-int v0, v0, v17
 
-    if-eqz v0, :cond_95
+    if-eqz v0, :cond_f
 
     .line 270
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
 
     move-result-wide v17
 
-    goto :goto_97
+    goto :goto_f
 
     .line 254
-    :cond_95
+    :cond_f
     move-wide/from16 v17, p18
 
-    :goto_97
+    :goto_f
     move/from16 p1, v1
 
     move/from16 p2, v3
@@ -1378,7 +1378,7 @@
 .end method
 
 .method public static final synthetic graphicsLayer-sKFY_QE(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;Z)Landroidx/compose/ui/Modifier;
-    .registers 39
+    .locals 24
     .param p0, "$this$graphicsLayer_u2dsKFY_QE"    # Landroidx/compose/ui/Modifier;
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
@@ -1511,7 +1511,7 @@
 .end method
 
 .method public static synthetic graphicsLayer-sKFY_QE$default(Landroidx/compose/ui/Modifier;FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 31
+    .locals 14
 
     .line 83
     move/from16 v0, p15
@@ -1520,145 +1520,145 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     .line 84
     move v1, v2
 
-    goto :goto_b
+    goto :goto_0
 
     .line 83
-    :cond_a
+    :cond_0
     move v1, p1
 
-    :goto_b
+    :goto_0
     and-int/lit8 v3, v0, 0x2
 
-    if-eqz v3, :cond_11
+    if-eqz v3, :cond_1
 
     .line 85
     move v3, v2
 
-    goto :goto_13
+    goto :goto_1
 
     .line 83
-    :cond_11
+    :cond_1
     move/from16 v3, p2
 
-    :goto_13
+    :goto_1
     and-int/lit8 v4, v0, 0x4
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_2
 
     .line 86
-    goto :goto_1a
+    goto :goto_2
 
     .line 83
-    :cond_18
+    :cond_2
     move/from16 v2, p3
 
-    :goto_1a
+    :goto_2
     and-int/lit8 v4, v0, 0x8
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_3
 
     .line 87
     move v4, v5
 
-    goto :goto_23
+    goto :goto_3
 
     .line 83
-    :cond_21
+    :cond_3
     move/from16 v4, p4
 
-    :goto_23
+    :goto_3
     and-int/lit8 v6, v0, 0x10
 
-    if-eqz v6, :cond_29
+    if-eqz v6, :cond_4
 
     .line 88
     move v6, v5
 
-    goto :goto_2b
+    goto :goto_4
 
     .line 83
-    :cond_29
+    :cond_4
     move/from16 v6, p5
 
-    :goto_2b
+    :goto_4
     and-int/lit8 v7, v0, 0x20
 
-    if-eqz v7, :cond_31
+    if-eqz v7, :cond_5
 
     .line 89
     move v7, v5
 
-    goto :goto_33
+    goto :goto_5
 
     .line 83
-    :cond_31
+    :cond_5
     move/from16 v7, p6
 
-    :goto_33
+    :goto_5
     and-int/lit8 v8, v0, 0x40
 
-    if-eqz v8, :cond_39
+    if-eqz v8, :cond_6
 
     .line 90
     move v8, v5
 
-    goto :goto_3b
+    goto :goto_6
 
     .line 83
-    :cond_39
+    :cond_6
     move/from16 v8, p7
 
-    :goto_3b
+    :goto_6
     and-int/lit16 v9, v0, 0x80
 
-    if-eqz v9, :cond_41
+    if-eqz v9, :cond_7
 
     .line 91
     move v9, v5
 
-    goto :goto_43
+    goto :goto_7
 
     .line 83
-    :cond_41
+    :cond_7
     move/from16 v9, p8
 
-    :goto_43
+    :goto_7
     and-int/lit16 v10, v0, 0x100
 
-    if-eqz v10, :cond_48
+    if-eqz v10, :cond_8
 
     .line 92
-    goto :goto_4a
+    goto :goto_8
 
     .line 83
-    :cond_48
+    :cond_8
     move/from16 v5, p9
 
-    :goto_4a
+    :goto_8
     and-int/lit16 v10, v0, 0x200
 
-    if-eqz v10, :cond_51
+    if-eqz v10, :cond_9
 
     .line 93
     const/high16 v10, 0x41000000    # 8.0f
 
-    goto :goto_53
+    goto :goto_9
 
     .line 83
-    :cond_51
+    :cond_9
     move/from16 v10, p10
 
-    :goto_53
+    :goto_9
     and-int/lit16 v11, v0, 0x400
 
-    if-eqz v11, :cond_5e
+    if-eqz v11, :cond_a
 
     .line 94
     sget-object v11, Landroidx/compose/ui/graphics/TransformOrigin;->Companion:Landroidx/compose/ui/graphics/TransformOrigin$Companion;
@@ -1667,43 +1667,43 @@
 
     move-result-wide v11
 
-    goto :goto_60
+    goto :goto_a
 
     .line 83
-    :cond_5e
+    :cond_a
     move-wide/from16 v11, p11
 
-    :goto_60
+    :goto_a
     and-int/lit16 v13, v0, 0x800
 
-    if-eqz v13, :cond_69
+    if-eqz v13, :cond_b
 
     .line 95
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v13
 
-    goto :goto_6b
+    goto :goto_b
 
     .line 83
-    :cond_69
+    :cond_b
     move-object/from16 v13, p13
 
-    :goto_6b
+    :goto_b
     and-int/lit16 v0, v0, 0x1000
 
-    if-eqz v0, :cond_71
+    if-eqz v0, :cond_c
 
     .line 96
     const/4 v0, 0x0
 
-    goto :goto_73
+    goto :goto_c
 
     .line 83
-    :cond_71
+    :cond_c
     move/from16 v0, p14
 
-    :goto_73
+    :goto_c
     move p1, v1
 
     move/from16 p2, v3
@@ -1738,7 +1738,7 @@
 .end method
 
 .method public static final toolingGraphicsLayer(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 26
+    .locals 25
     .param p0, "$this$toolingGraphicsLayer"    # Landroidx/compose/ui/Modifier;
 
     move-object/from16 v0, p0
@@ -1752,7 +1752,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_0
 
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
@@ -1806,11 +1806,11 @@
 
     move-result-object v1
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_37
+    :cond_0
     move-object v1, v0
 
-    :goto_38
+    :goto_0
     return-object v1
 .end method

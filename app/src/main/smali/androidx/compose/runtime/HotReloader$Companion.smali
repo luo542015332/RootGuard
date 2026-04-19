@@ -52,7 +52,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1192
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/HotReloader$Companion;-><init>()V
 
@@ -69,7 +69,7 @@
 .end method
 
 .method private final loadStateAndCompose(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "token"    # Ljava/lang/Object;
 
     .line 1202
@@ -82,7 +82,7 @@
 .end method
 
 .method private final saveStateAndDispose(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "context"    # Ljava/lang/Object;
 
     .line 1196
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final clearErrors$runtime_release()V
-    .registers 2
+    .locals 1
 
     .line 1222
     sget-object v0, Landroidx/compose/runtime/Recomposer;->Companion:Landroidx/compose/runtime/Recomposer$Companion;
@@ -109,7 +109,7 @@
 .end method
 
 .method public final getCurrentErrors$runtime_release()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -130,7 +130,7 @@
 .end method
 
 .method public final invalidateGroupsWithKey$runtime_release(I)V
-    .registers 3
+    .locals 1
     .param p1, "key"    # I
 
     .line 1212
@@ -142,7 +142,7 @@
 .end method
 
 .method public final simulateHotReload$runtime_release(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "context"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "context"

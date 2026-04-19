@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic readPixels$default(Landroidx/compose/ui/graphics/ImageBitmap;[IIIIIIIILjava/lang/Object;)V
-    .registers 10
+    .locals 0
 
     .line 77
     invoke-static/range {p0 .. p9}, Landroidx/compose/ui/graphics/ImageBitmap;->readPixels$default(Landroidx/compose/ui/graphics/ImageBitmap;[IIIIIIIILjava/lang/Object;)V

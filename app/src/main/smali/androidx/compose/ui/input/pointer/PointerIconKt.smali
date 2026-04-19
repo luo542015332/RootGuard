@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 242
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIconKt$ModifierLocalPointerIcon$1;->INSTANCE:Landroidx/compose/ui/input/pointer/PointerIconKt$ModifierLocalPointerIcon$1;
@@ -65,7 +65,7 @@
 .end method
 
 .method public static final synthetic access$getModifierLocalPointerIcon$p()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIconKt;->ModifierLocalPointerIcon:Landroidx/compose/ui/modifier/ProvidableModifierLocal;
@@ -74,7 +74,7 @@
 .end method
 
 .method public static final pointerHoverIcon(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/pointer/PointerIcon;Z)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 2
     .param p0, "$this$pointerHoverIcon"    # Landroidx/compose/ui/Modifier;
     .param p1, "icon"    # Landroidx/compose/ui/input/pointer/PointerIcon;
     .param p2, "overrideDescendants"    # Z
@@ -96,7 +96,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     new-instance v1, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$$inlined$debugInspectorInfo$1;
 
@@ -104,16 +104,16 @@
 
     check-cast v1, Lkotlin/jvm/functions/Function1;
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
 
     move-result-object v1
 
     .line 86
     .end local v0    # "$i$f$debugInspectorInfo":I
-    :goto_1e
+    :goto_0
     new-instance v0, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2;
 
     invoke-direct {v0, p1, p2}, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2;-><init>(Landroidx/compose/ui/input/pointer/PointerIcon;Z)V
@@ -129,16 +129,16 @@
 .end method
 
 .method public static synthetic pointerHoverIcon$default(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/pointer/PointerIcon;ZILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 0
 
     .line 85
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p2, 0x0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/input/pointer/PointerIconKt;->pointerHoverIcon(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/pointer/PointerIcon;Z)Landroidx/compose/ui/Modifier;
 
     move-result-object p0

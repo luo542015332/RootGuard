@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -53,7 +53,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
     const-string/jumbo v0, "context"
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public openUri(Ljava/lang/String;)V
-    .registers 6
+    .locals 4
     .param p1, "uri"    # Ljava/lang/String;
 
     const-string/jumbo v0, "uri"

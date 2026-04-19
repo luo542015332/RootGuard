@@ -58,7 +58,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/PathEffect$Companion;
 
@@ -70,7 +70,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -79,16 +79,16 @@
 .end method
 
 .method public static synthetic dashPathEffect$default(Landroidx/compose/ui/graphics/PathEffect$Companion;[FFILjava/lang/Object;)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 5
+    .locals 0
 
     .line 53
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     const/4 p2, 0x0
 
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/graphics/PathEffect$Companion;->dashPathEffect([FF)Landroidx/compose/ui/graphics/PathEffect;
 
     move-result-object p0
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public final chainPathEffect(Landroidx/compose/ui/graphics/PathEffect;Landroidx/compose/ui/graphics/PathEffect;)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 4
+    .locals 1
     .param p1, "outer"    # Landroidx/compose/ui/graphics/PathEffect;
     .param p2, "inner"    # Landroidx/compose/ui/graphics/PathEffect;
 
@@ -120,7 +120,7 @@
 .end method
 
 .method public final cornerPathEffect(F)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 3
+    .locals 1
     .param p1, "radius"    # F
 
     .line 34
@@ -132,7 +132,7 @@
 .end method
 
 .method public final dashPathEffect([FF)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 4
+    .locals 1
     .param p1, "intervals"    # [F
     .param p2, "phase"    # F
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public final stampedPathEffect-7aD1DOk(Landroidx/compose/ui/graphics/Path;FFI)Landroidx/compose/ui/graphics/PathEffect;
-    .registers 6
+    .locals 1
     .param p1, "shape"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "advance"    # F
     .param p3, "phase"    # F

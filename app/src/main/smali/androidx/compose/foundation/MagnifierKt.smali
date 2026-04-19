@@ -73,7 +73,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 61
     new-instance v0, Landroidx/compose/ui/semantics/SemanticsPropertyKey;
@@ -92,7 +92,7 @@
 .end method
 
 .method public static final getMagnifierPositionInRoot()Landroidx/compose/ui/semantics/SemanticsPropertyKey;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -110,36 +110,36 @@
 .end method
 
 .method public static final isPlatformMagnifierSupported(I)Z
-    .registers 2
+    .locals 1
     .param p0, "sdkVersion"    # I
 
     .line 391
     const/16 v0, 0x1c
 
-    if-lt p0, v0, :cond_6
+    if-lt p0, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic isPlatformMagnifierSupported$default(IILjava/lang/Object;)Z
-    .registers 3
+    .locals 0
 
     .line 390
     and-int/lit8 p1, p1, 0x1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     sget p0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    :cond_6
+    :cond_0
     invoke-static {p0}, Landroidx/compose/foundation/MagnifierKt;->isPlatformMagnifierSupported(I)Z
 
     move-result p0
@@ -148,7 +148,7 @@
 .end method
 
 .method public static final magnifier(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FLandroidx/compose/foundation/MagnifierStyle;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 23
+    .locals 17
     .param p0, "$this$magnifier"    # Landroidx/compose/ui/Modifier;
     .param p1, "sourceCenter"    # Lkotlin/jvm/functions/Function1;
     .param p2, "magnifierCenter"    # Lkotlin/jvm/functions/Function1;
@@ -215,7 +215,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_0
 
     new-instance v1, Landroidx/compose/foundation/MagnifierKt$magnifier$$inlined$debugInspectorInfo$1;
 
@@ -225,9 +225,9 @@
 
     check-cast v1, Lkotlin/jvm/functions/Function1;
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     move/from16 v11, p3
 
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
@@ -236,7 +236,7 @@
 
     .line 230
     .end local v0    # "$i$f$debugInspectorInfo":I
-    :goto_37
+    :goto_0
     move-object/from16 v12, p0
 
     .local v12, "$this$inspectable$iv":Landroidx/compose/ui/Modifier;
@@ -268,7 +268,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_67
+    if-eqz v0, :cond_1
 
     .line 241
     nop
@@ -312,16 +312,16 @@
 
     move-result-object v0
 
-    goto :goto_6b
+    goto :goto_1
 
     .line 253
-    :cond_67
+    :cond_1
     sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
     check-cast v0, Landroidx/compose/ui/Modifier;
 
     .line 240
-    :goto_6b
+    :goto_1
     nop
 
     .line 394
@@ -339,7 +339,7 @@
 .end method
 
 .method public static final magnifier(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FLandroidx/compose/foundation/MagnifierStyle;Lkotlin/jvm/functions/Function1;Landroidx/compose/foundation/PlatformMagnifierFactory;)Landroidx/compose/ui/Modifier;
-    .registers 15
+    .locals 8
     .param p0, "$this$magnifier"    # Landroidx/compose/ui/Modifier;
     .param p1, "sourceCenter"    # Lkotlin/jvm/functions/Function1;
     .param p2, "magnifierCenter"    # Lkotlin/jvm/functions/Function1;
@@ -427,12 +427,12 @@
 .end method
 
 .method public static synthetic magnifier$default(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;FLandroidx/compose/foundation/MagnifierStyle;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 14
+    .locals 6
 
     .line 224
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_a
+    if-eqz p7, :cond_0
 
     .line 226
     sget-object p2, Landroidx/compose/foundation/MagnifierKt$magnifier$1;->INSTANCE:Landroidx/compose/foundation/MagnifierKt$magnifier$1;
@@ -441,32 +441,32 @@
 
     move-object v2, p2
 
-    goto :goto_b
+    goto :goto_0
 
     .line 224
-    :cond_a
+    :cond_0
     move-object v2, p2
 
-    :goto_b
+    :goto_0
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_1
 
     .line 227
     const/high16 p3, 0x7fc00000    # Float.NaN
 
     move v3, p3
 
-    goto :goto_14
+    goto :goto_1
 
     .line 224
-    :cond_13
+    :cond_1
     move v3, p3
 
-    :goto_14
+    :goto_1
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_2
 
     .line 228
     sget-object p2, Landroidx/compose/foundation/MagnifierStyle;->Companion:Landroidx/compose/foundation/MagnifierStyle$Companion;
@@ -477,29 +477,29 @@
 
     move-object v4, p4
 
-    goto :goto_21
+    goto :goto_2
 
     .line 224
-    :cond_20
+    :cond_2
     move-object v4, p4
 
-    :goto_21
+    :goto_2
     and-int/lit8 p2, p6, 0x10
 
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_3
 
     .line 229
     const/4 p5, 0x0
 
     move-object v5, p5
 
-    goto :goto_29
+    goto :goto_3
 
     .line 224
-    :cond_28
+    :cond_3
     move-object v5, p5
 
-    :goto_29
+    :goto_3
     move-object v0, p0
 
     move-object v1, p1

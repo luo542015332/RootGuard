@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/layout/TestModifierUpdaterKt$TestModifierUpdaterLayout$measurePolicy$1;
 
@@ -58,7 +58,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 13
+    .locals 8
     .param p1, "$this$MeasurePolicy"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p3, "constraints"    # J
     .annotation system Ldalvik/annotation/Signature;

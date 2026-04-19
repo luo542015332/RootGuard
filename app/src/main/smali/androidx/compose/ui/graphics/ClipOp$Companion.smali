@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/ClipOp$Companion;-><init>()V
 
@@ -61,10 +61,9 @@
 
 # virtual methods
 .method public final getDifference-rtfAjoo()I
-    .registers 2
+    .locals 1
 
     .line 32
-    # getter for: Landroidx/compose/ui/graphics/ClipOp;->Difference:I
     invoke-static {}, Landroidx/compose/ui/graphics/ClipOp;->access$getDifference$cp()I
 
     move-result v0
@@ -73,10 +72,9 @@
 .end method
 
 .method public final getIntersect-rtfAjoo()I
-    .registers 2
+    .locals 1
 
     .line 35
-    # getter for: Landroidx/compose/ui/graphics/ClipOp;->Intersect:I
     invoke-static {}, Landroidx/compose/ui/graphics/ClipOp;->access$getIntersect$cp()I
 
     move-result v0

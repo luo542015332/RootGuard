@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "this$0"    # Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;
     .param p2, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -94,7 +94,6 @@
     iput-boolean v0, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->shouldSave:Z
 
     .line 119
-    # getter for: Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->savedStates:Ljava/util/Map;
     invoke-static {p1}, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->access$getSavedStates$p(Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;)Ljava/util/Map;
 
     move-result-object v0
@@ -124,7 +123,7 @@
 
 # virtual methods
 .method public final getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->key:Ljava/lang/Object;
@@ -133,7 +132,7 @@
 .end method
 
 .method public final getRegistry()Landroidx/compose/runtime/saveable/SaveableStateRegistry;
-    .registers 2
+    .locals 1
 
     .line 119
     iget-object v0, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->registry:Landroidx/compose/runtime/saveable/SaveableStateRegistry;
@@ -142,7 +141,7 @@
 .end method
 
 .method public final getShouldSave()Z
-    .registers 2
+    .locals 1
 
     .line 118
     iget-boolean v0, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->shouldSave:Z
@@ -151,7 +150,7 @@
 .end method
 
 .method public final saveTo(Ljava/util/Map;)V
-    .registers 4
+    .locals 2
     .param p1, "map"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -173,7 +172,7 @@
     .line 124
     iget-boolean v0, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->shouldSave:Z
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 125
     iget-object v0, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->registry:Landroidx/compose/runtime/saveable/SaveableStateRegistry;
@@ -188,30 +187,30 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_0
 
     .line 127
     iget-object v1, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->key:Ljava/lang/Object;
 
     invoke-interface {p1, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_21
+    goto :goto_0
 
     .line 129
-    :cond_1c
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$RegistryHolder;->key:Ljava/lang/Object;
 
     invoke-interface {p1, v1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 132
     .end local v0    # "savedData":Ljava/util/Map;
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final setShouldSave(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 118

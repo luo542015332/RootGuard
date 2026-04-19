@@ -50,7 +50,7 @@
 
 # direct methods
 .method private static final synthetic $values()[Landroidx/compose/runtime/InvalidationResult;
-    .registers 4
+    .locals 4
 
     sget-object v0, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
 
@@ -68,7 +68,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 265
     new-instance v0, Landroidx/compose/runtime/InvalidationResult;
@@ -124,7 +124,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .param p1, "$enum$name"    # Ljava/lang/String;
     .param p2, "$enum$ordinal"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -140,7 +140,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/compose/runtime/InvalidationResult;
-    .registers 2
+    .locals 1
 
     const-class v0, Landroidx/compose/runtime/InvalidationResult;
 
@@ -154,7 +154,7 @@
 .end method
 
 .method public static values()[Landroidx/compose/runtime/InvalidationResult;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/runtime/InvalidationResult;->$VALUES:[Landroidx/compose/runtime/InvalidationResult;
 

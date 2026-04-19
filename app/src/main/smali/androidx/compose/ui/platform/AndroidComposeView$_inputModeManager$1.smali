@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView$_inputModeManager$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 431
@@ -88,7 +88,7 @@
 .end method
 
 .method public final invoke-iuPiT84(I)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
     .param p1, "it"    # I
 
     .line 432
@@ -105,7 +105,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$_inputModeManager$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -113,10 +113,10 @@
 
     move-result v0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 439
-    :cond_14
+    :cond_0
     sget-object v0, Landroidx/compose/ui/input/InputMode;->Companion:Landroidx/compose/ui/input/InputMode$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/input/InputMode$Companion;->getKeyboard-aOaMEAU()I
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$_inputModeManager$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -135,7 +135,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$_inputModeManager$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -143,18 +143,18 @@
 
     move-result v0
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_2f
+    :cond_1
     const/4 v0, 0x1
 
-    goto :goto_32
+    goto :goto_0
 
     .line 441
-    :cond_31
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_32
+    :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0

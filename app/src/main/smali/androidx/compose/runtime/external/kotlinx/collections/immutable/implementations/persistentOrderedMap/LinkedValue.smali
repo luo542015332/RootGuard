@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -92,7 +92,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "previous"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -112,7 +112,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "previous"    # Ljava/lang/Object;
     .param p3, "next"    # Ljava/lang/Object;
@@ -140,49 +140,49 @@
 
 # virtual methods
 .method public final getHasNext()Z
-    .registers 3
+    .locals 2
 
     .line 25
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->next:Ljava/lang/Object;
 
     sget-object v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;->INSTANCE:Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final getHasPrevious()Z
-    .registers 3
+    .locals 2
 
     .line 26
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->previous:Ljava/lang/Object;
 
     sget-object v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;->INSTANCE:Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final getNext()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 15
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->next:Ljava/lang/Object;
@@ -191,7 +191,7 @@
 .end method
 
 .method public final getPrevious()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 15
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->previous:Ljava/lang/Object;
@@ -200,7 +200,7 @@
 .end method
 
 .method public final getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -214,7 +214,7 @@
 .end method
 
 .method public final withNext(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    .registers 5
+    .locals 3
     .param p1, "newNext"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -239,7 +239,7 @@
 .end method
 
 .method public final withPrevious(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    .registers 5
+    .locals 3
     .param p1, "newPrevious"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -264,7 +264,7 @@
 .end method
 
 .method public final withValue(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    .registers 5
+    .locals 3
     .param p1, "newValue"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

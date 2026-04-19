@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>(FLandroidx/compose/ui/graphics/Shape;ZJJ)V
-    .registers 8
+    .locals 0
 
     iput p1, p0, Landroidx/compose/ui/draw/ShadowKt$shadow-s4CzXII$$inlined$debugInspectorInfo$1;->$elevation$inlined:F
 
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 135
@@ -103,7 +103,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 7
+    .locals 5
     .param p1, "$this$null"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "$this$null"

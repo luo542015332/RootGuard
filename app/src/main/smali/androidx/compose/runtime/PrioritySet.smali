@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .param p1, "list"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -90,12 +90,12 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 3393
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     new-instance p1, Ljava/util/ArrayList;
 
@@ -103,7 +103,7 @@
 
     check-cast p1, Ljava/util/List;
 
-    :cond_b
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/runtime/PrioritySet;-><init>(Ljava/util/List;)V
 
     .line 3471
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public final add(I)V
-    .registers 7
+    .locals 5
     .param p1, "value"    # I
 
     .line 3397
@@ -127,7 +127,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_30
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
 
@@ -143,7 +143,7 @@
 
     move-result v0
 
-    if-eq v0, p1, :cond_2f
+    if-eq v0, p1, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
 
@@ -163,13 +163,13 @@
 
     move-result v0
 
-    if-ne v0, p1, :cond_30
+    if-ne v0, p1, :cond_1
 
-    :cond_2f
+    :cond_0
     return-void
 
     .line 3399
-    :cond_30
+    :cond_1
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -187,8 +187,8 @@
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 3403
-    :goto_3f
-    if-lez v0, :cond_61
+    :goto_0
+    if-lez v0, :cond_3
 
     .line 3404
     add-int/lit8 v1, v0, 0x1
@@ -213,7 +213,7 @@
 
     .line 3406
     .local v2, "parentValue":I
-    if-le p1, v2, :cond_60
+    if-le p1, v2, :cond_2
 
     .line 3407
     iget-object v3, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -229,18 +229,18 @@
 
     .end local v1    # "parent":I
     .end local v2    # "parentValue":I
-    goto :goto_3f
+    goto :goto_0
 
     .line 3408
     .restart local v1    # "parent":I
     .restart local v2    # "parentValue":I
-    :cond_60
+    :cond_2
     nop
 
     .line 3411
     .end local v1    # "parent":I
     .end local v2    # "parentValue":I
-    :cond_61
+    :cond_3
     iget-object v1, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -254,7 +254,7 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 3414
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -267,7 +267,7 @@
 .end method
 
 .method public final isNotEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 3415
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -284,7 +284,7 @@
 .end method
 
 .method public final peek()I
-    .registers 2
+    .locals 1
 
     .line 3416
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -303,7 +303,7 @@
 .end method
 
 .method public final takeMax()I
-    .registers 14
+    .locals 13
 
     .line 3420
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -316,22 +316,22 @@
 
     const/4 v2, 0x1
 
-    if-lez v0, :cond_c
+    if-lez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move v0, v1
 
     .local v0, "value$iv":Z
-    :goto_d
+    :goto_0
     const/4 v3, 0x0
 
     .line 3472
     .local v3, "$i$f$runtimeCheck":I
-    if-eqz v0, :cond_bb
+    if-eqz v0, :cond_6
 
     .line 3476
     nop
@@ -353,8 +353,8 @@
 
     .line 3427
     .local v0, "value":I
-    :cond_1d
-    :goto_1d
+    :cond_1
+    :goto_1
     iget-object v3, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
 
     check-cast v3, Ljava/util/Collection;
@@ -365,7 +365,7 @@
 
     xor-int/2addr v3, v2
 
-    if-eqz v3, :cond_ba
+    if-eqz v3, :cond_5
 
     iget-object v3, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
 
@@ -379,7 +379,7 @@
 
     move-result v3
 
-    if-ne v3, v0, :cond_ba
+    if-ne v3, v0, :cond_5
 
     .line 3429
     iget-object v3, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -424,8 +424,8 @@
 
     .line 3434
     .local v5, "max":I
-    :goto_57
-    if-ge v3, v5, :cond_1d
+    :goto_2
+    if-ge v3, v5, :cond_1
 
     .line 3435
     iget-object v6, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -470,7 +470,7 @@
 
     .line 3439
     .local v9, "right":I
-    if-ge v9, v4, :cond_a2
+    if-ge v9, v4, :cond_3
 
     .line 3442
     iget-object v10, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -487,10 +487,10 @@
 
     .line 3443
     .local v10, "rightValue":I
-    if-le v10, v8, :cond_a2
+    if-le v10, v8, :cond_3
 
     .line 3444
-    if-le v10, v6, :cond_a0
+    if-le v10, v6, :cond_2
 
     .line 3445
     iget-object v11, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -514,16 +514,16 @@
     move v3, v9
 
     .line 3448
-    goto :goto_57
+    goto :goto_2
 
     .line 3449
-    :cond_a0
-    goto/16 :goto_1d
+    :cond_2
+    goto/16 :goto_1
 
     .line 3452
     .end local v10    # "rightValue":I
-    :cond_a2
-    if-le v8, v6, :cond_b8
+    :cond_3
+    if-le v8, v6, :cond_4
 
     .line 3453
     iget-object v10, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -546,11 +546,11 @@
     .line 3455
     move v3, v7
 
-    goto :goto_57
+    goto :goto_2
 
     .line 3456
-    :cond_b8
-    goto/16 :goto_1d
+    :cond_4
+    goto/16 :goto_1
 
     .line 3459
     .end local v3    # "index":I
@@ -560,13 +560,13 @@
     .end local v7    # "left":I
     .end local v8    # "leftValue":I
     .end local v9    # "right":I
-    :cond_ba
+    :cond_5
     return v0
 
     .line 3473
     .local v0, "value$iv":Z
     .local v3, "$i$f$runtimeCheck":I
-    :cond_bb
+    :cond_6
     const/4 v1, 0x0
 
     .line 3420
@@ -593,7 +593,7 @@
 .end method
 
 .method public final validateHeap()V
-    .registers 11
+    .locals 10
 
     .line 3463
     iget-object v0, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
@@ -609,8 +609,8 @@
     .local v1, "index":I
     div-int/lit8 v2, v0, 0x2
 
-    :goto_9
-    if-ge v1, v2, :cond_6e
+    :goto_0
+    if-ge v1, v2, :cond_5
 
     .line 3465
     add-int/lit8 v3, v1, 0x1
@@ -655,22 +655,22 @@
 
     const/4 v8, 0x0
 
-    if-lt v6, v7, :cond_32
+    if-lt v6, v7, :cond_0
 
     move v6, v4
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_32
+    :cond_0
     move v6, v8
 
-    :goto_33
+    :goto_1
     const-string v7, "Check failed."
 
-    if-eqz v6, :cond_64
+    if-eqz v6, :cond_4
 
     .line 3468
-    if-ge v5, v0, :cond_55
+    if-ge v5, v0, :cond_2
 
     iget-object v6, p0, Landroidx/compose/runtime/PrioritySet;->list:Ljava/util/List;
 
@@ -696,28 +696,28 @@
 
     move-result v9
 
-    if-lt v6, v9, :cond_54
+    if-lt v6, v9, :cond_1
 
-    goto :goto_55
+    goto :goto_2
 
-    :cond_54
+    :cond_1
     move v4, v8
 
-    :cond_55
-    :goto_55
-    if-eqz v4, :cond_5a
+    :cond_2
+    :goto_2
+    if-eqz v4, :cond_3
 
     .line 3464
     .end local v3    # "left":I
     .end local v5    # "right":I
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 3468
     .restart local v3    # "left":I
     .restart local v5    # "right":I
-    :cond_5a
+    :cond_3
     new-instance v2, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -729,7 +729,7 @@
     throw v2
 
     .line 3467
-    :cond_64
+    :cond_4
     new-instance v2, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v7}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -744,6 +744,6 @@
     .end local v1    # "index":I
     .end local v3    # "left":I
     .end local v5    # "right":I
-    :cond_6e
+    :cond_5
     return-void
 .end method

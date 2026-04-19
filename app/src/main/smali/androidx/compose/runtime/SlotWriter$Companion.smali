@@ -51,7 +51,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1961
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/SlotWriter$Companion;-><init>()V
 
@@ -68,7 +68,7 @@
 .end method
 
 .method public static final synthetic access$moveGroup(Landroidx/compose/runtime/SlotWriter$Companion;Landroidx/compose/runtime/SlotWriter;ILandroidx/compose/runtime/SlotWriter;ZZZ)Ljava/util/List;
-    .registers 8
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/SlotWriter$Companion;
     .param p1, "fromWriter"    # Landroidx/compose/runtime/SlotWriter;
     .param p2, "fromIndex"    # I
@@ -86,7 +86,7 @@
 .end method
 
 .method private final moveGroup(Landroidx/compose/runtime/SlotWriter;ILandroidx/compose/runtime/SlotWriter;ZZZ)Ljava/util/List;
-    .registers 36
+    .locals 29
     .param p1, "fromWriter"    # Landroidx/compose/runtime/SlotWriter;
     .param p2, "fromIndex"    # I
     .param p3, "toWriter"    # Landroidx/compose/runtime/SlotWriter;
@@ -123,14 +123,12 @@
 
     .line 1972
     .local v4, "sourceGroupsEnd":I
-    # invokes: Landroidx/compose/runtime/SlotWriter;->dataIndex(I)I
     invoke-static/range {p1 .. p2}, Landroidx/compose/runtime/SlotWriter;->access$dataIndex(Landroidx/compose/runtime/SlotWriter;I)I
 
     move-result v5
 
     .line 1973
     .local v5, "sourceSlotsStart":I
-    # invokes: Landroidx/compose/runtime/SlotWriter;->dataIndex(I)I
     invoke-static {v0, v4}, Landroidx/compose/runtime/SlotWriter;->access$dataIndex(Landroidx/compose/runtime/SlotWriter;I)I
 
     move-result v6
@@ -141,14 +139,12 @@
 
     .line 1975
     .local v7, "slotsToMove":I
-    # invokes: Landroidx/compose/runtime/SlotWriter;->containsAnyGroupMarks(I)Z
     invoke-static/range {p1 .. p2}, Landroidx/compose/runtime/SlotWriter;->access$containsAnyGroupMarks(Landroidx/compose/runtime/SlotWriter;I)Z
 
     move-result v8
 
     .line 1978
     .local v8, "hasMarks":Z
-    # invokes: Landroidx/compose/runtime/SlotWriter;->insertGroups(I)V
     invoke-static {v2, v3}, Landroidx/compose/runtime/SlotWriter;->access$insertGroups(Landroidx/compose/runtime/SlotWriter;I)V
 
     .line 1979
@@ -156,37 +152,31 @@
 
     move-result v9
 
-    # invokes: Landroidx/compose/runtime/SlotWriter;->insertSlots(II)V
     invoke-static {v2, v7, v9}, Landroidx/compose/runtime/SlotWriter;->access$insertSlots(Landroidx/compose/runtime/SlotWriter;II)V
 
     .line 1983
-    # getter for: Landroidx/compose/runtime/SlotWriter;->groupGapStart:I
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->access$getGroupGapStart$p(Landroidx/compose/runtime/SlotWriter;)I
 
     move-result v9
 
-    if-ge v9, v4, :cond_2d
+    if-ge v9, v4, :cond_0
 
     .line 1984
-    # invokes: Landroidx/compose/runtime/SlotWriter;->moveGroupGapTo(I)V
     invoke-static {v0, v4}, Landroidx/compose/runtime/SlotWriter;->access$moveGroupGapTo(Landroidx/compose/runtime/SlotWriter;I)V
 
     .line 1986
-    :cond_2d
-    # getter for: Landroidx/compose/runtime/SlotWriter;->slotsGapStart:I
+    :cond_0
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->access$getSlotsGapStart$p(Landroidx/compose/runtime/SlotWriter;)I
 
     move-result v9
 
-    if-ge v9, v6, :cond_36
+    if-ge v9, v6, :cond_1
 
     .line 1987
-    # invokes: Landroidx/compose/runtime/SlotWriter;->moveSlotGapTo(II)V
     invoke-static {v0, v6, v4}, Landroidx/compose/runtime/SlotWriter;->access$moveSlotGapTo(Landroidx/compose/runtime/SlotWriter;II)V
 
     .line 1991
-    :cond_36
-    # getter for: Landroidx/compose/runtime/SlotWriter;->groups:[I
+    :cond_1
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getGroups$p(Landroidx/compose/runtime/SlotWriter;)[I
 
     move-result-object v9
@@ -199,7 +189,6 @@
 
     .line 1993
     .local v10, "currentGroup":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->groups:[I
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->access$getGroups$p(Landroidx/compose/runtime/SlotWriter;)[I
 
     move-result-object v11
@@ -220,21 +209,18 @@
     invoke-static {v11, v9, v12, v13, v14}, Lkotlin/collections/ArraysKt;->copyInto([I[IIII)[I
 
     .line 1999
-    # getter for: Landroidx/compose/runtime/SlotWriter;->slots:[Ljava/lang/Object;
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getSlots$p(Landroidx/compose/runtime/SlotWriter;)[Ljava/lang/Object;
 
     move-result-object v11
 
     .line 2000
     .local v11, "slots":[Ljava/lang/Object;
-    # getter for: Landroidx/compose/runtime/SlotWriter;->currentSlot:I
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getCurrentSlot$p(Landroidx/compose/runtime/SlotWriter;)I
 
     move-result v12
 
     .line 2001
     .local v12, "currentSlot":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->slots:[Ljava/lang/Object;
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->access$getSlots$p(Landroidx/compose/runtime/SlotWriter;)[Ljava/lang/Object;
 
     move-result-object v13
@@ -261,7 +247,6 @@
 
     .line 2011
     .local v13, "parent":I
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->updateParentAnchor([III)V
     invoke-static {v9, v10, v13}, Landroidx/compose/runtime/SlotTableKt;->access$updateParentAnchor([III)V
 
     .line 2012
@@ -290,7 +275,6 @@
     .end local v16    # "$this$moveGroup_u24lambda_u240":Landroidx/compose/runtime/SlotWriter;
     .local v6, "$this$moveGroup_u24lambda_u240":Landroidx/compose/runtime/SlotWriter;
     .local v18, "sourceSlotsEnd":I
-    # invokes: Landroidx/compose/runtime/SlotWriter;->dataIndex([II)I
     invoke-static {v6, v9, v10}, Landroidx/compose/runtime/SlotWriter;->access$dataIndex(Landroidx/compose/runtime/SlotWriter;[II)I
 
     move-result v6
@@ -304,7 +288,6 @@
     const/16 v16, 0x0
 
     .local v16, "slotsGapOwner":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->slotsGapOwner:I
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getSlotsGapOwner$p(Landroidx/compose/runtime/SlotWriter;)I
 
     move-result v16
@@ -314,7 +297,6 @@
 
     .end local v13    # "parent":I
     .local v17, "parent":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->slotsGapLen:I
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getSlotsGapLen$p(Landroidx/compose/runtime/SlotWriter;)I
 
     move-result v13
@@ -343,16 +325,15 @@
     .local v12, "groupAddress":I
     .local v16, "currentSlot":I
     .local v21, "slots":[Ljava/lang/Object;
-    :goto_92
+    :goto_0
     const/16 v20, 0x0
 
-    if-ge v12, v15, :cond_de
+    if-ge v12, v15, :cond_5
 
     .line 2020
-    if-eq v12, v10, :cond_a4
+    if-eq v12, v10, :cond_2
 
     .line 2021
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->parentAnchor([II)I
     invoke-static {v9, v12}, Landroidx/compose/runtime/SlotTableKt;->access$parentAnchor([II)I
 
     move-result v22
@@ -365,22 +346,21 @@
     .local v23, "moveEnd":I
     add-int v15, v22, v14
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->updateParentAnchor([III)V
     invoke-static {v9, v12, v15}, Landroidx/compose/runtime/SlotTableKt;->access$updateParentAnchor([III)V
 
-    goto :goto_a6
+    goto :goto_1
 
     .line 2020
     .end local v22    # "previousParent":I
     .end local v23    # "moveEnd":I
     .restart local v15    # "moveEnd":I
-    :cond_a4
+    :cond_2
     move/from16 v23, v15
 
     .line 2025
     .end local v15    # "moveEnd":I
     .restart local v23    # "moveEnd":I
-    :goto_a6
+    :goto_1
     move-object/from16 v15, p3
 
     .local v15, "$this$moveGroup_u24lambda_u241":Landroidx/compose/runtime/SlotWriter;
@@ -388,7 +368,6 @@
 
     .line 2026
     .local v22, "$i$a$-with-SlotWriter$Companion$moveGroup$newDataIndex$1":I
-    # invokes: Landroidx/compose/runtime/SlotWriter;->dataIndex([II)I
     invoke-static {v15, v9, v12}, Landroidx/compose/runtime/SlotWriter;->access$dataIndex(Landroidx/compose/runtime/SlotWriter;[II)I
 
     move-result v24
@@ -415,17 +394,16 @@
     nop
 
     .line 2033
-    if-ge v11, v12, :cond_bb
+    if-ge v11, v12, :cond_3
 
-    goto :goto_bf
+    goto :goto_2
 
-    :cond_bb
-    # getter for: Landroidx/compose/runtime/SlotWriter;->slotsGapStart:I
+    :cond_3
     invoke-static/range {v22 .. v22}, Landroidx/compose/runtime/SlotWriter;->access$getSlotsGapStart$p(Landroidx/compose/runtime/SlotWriter;)I
 
     move-result v20
 
-    :goto_bf
+    :goto_2
     move/from16 v25, v6
 
     move/from16 v6, v20
@@ -446,7 +424,6 @@
     .end local v22    # "$this$moveGroup_u24lambda_u242":Landroidx/compose/runtime/SlotWriter;
     .local v14, "$this$moveGroup_u24lambda_u242":Landroidx/compose/runtime/SlotWriter;
     .local v26, "parentDelta":I
-    # invokes: Landroidx/compose/runtime/SlotWriter;->dataIndexToDataAnchor(IIII)I
     invoke-static {v14, v15, v6, v13, v8}, Landroidx/compose/runtime/SlotWriter;->access$dataIndexToDataAnchor(Landroidx/compose/runtime/SlotWriter;IIII)I
 
     move-result v6
@@ -458,18 +435,17 @@
 
     .line 2040
     .local v6, "newDataAnchor":I
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->updateDataAnchor([III)V
     invoke-static {v9, v12, v6}, Landroidx/compose/runtime/SlotTableKt;->access$updateDataAnchor([III)V
 
     .line 2043
-    if-ne v12, v11, :cond_d5
+    if-ne v12, v11, :cond_4
 
     add-int/lit8 v11, v11, 0x1
 
     .line 2018
     .end local v6    # "newDataAnchor":I
     .end local v15    # "newDataIndex":I
-    :cond_d5
+    :cond_4
     add-int/lit8 v12, v12, 0x1
 
     move/from16 v15, v23
@@ -478,7 +454,7 @@
 
     move/from16 v14, v26
 
-    goto :goto_92
+    goto :goto_0
 
     .end local v23    # "moveEnd":I
     .end local v25    # "dataIndexDelta":I
@@ -486,7 +462,7 @@
     .local v6, "dataIndexDelta":I
     .local v14, "parentDelta":I
     .local v15, "moveEnd":I
-    :cond_de
+    :cond_5
     move/from16 v25, v6
 
     move/from16 v26, v14
@@ -504,7 +480,6 @@
     invoke-static {v2, v11}, Landroidx/compose/runtime/SlotWriter;->access$setSlotsGapOwner$p(Landroidx/compose/runtime/SlotWriter;I)V
 
     .line 2048
-    # getter for: Landroidx/compose/runtime/SlotWriter;->anchors:Ljava/util/ArrayList;
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->access$getAnchors$p(Landroidx/compose/runtime/SlotWriter;)Ljava/util/ArrayList;
 
     move-result-object v6
@@ -513,14 +488,12 @@
 
     move-result v12
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->locationOf(Ljava/util/ArrayList;II)I
     invoke-static {v6, v1, v12}, Landroidx/compose/runtime/SlotTableKt;->access$locationOf(Ljava/util/ArrayList;II)I
 
     move-result v6
 
     .line 2049
     .local v6, "startAnchors":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->anchors:Ljava/util/ArrayList;
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->access$getAnchors$p(Landroidx/compose/runtime/SlotWriter;)Ljava/util/ArrayList;
 
     move-result-object v12
@@ -529,17 +502,15 @@
 
     move-result v14
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->locationOf(Ljava/util/ArrayList;II)I
     invoke-static {v12, v4, v14}, Landroidx/compose/runtime/SlotTableKt;->access$locationOf(Ljava/util/ArrayList;II)I
 
     move-result v12
 
     .line 2050
     .local v12, "endAnchors":I
-    if-ge v6, v12, :cond_164
+    if-ge v6, v12, :cond_7
 
     .line 2051
-    # getter for: Landroidx/compose/runtime/SlotWriter;->anchors:Ljava/util/ArrayList;
     invoke-static/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->access$getAnchors$p(Landroidx/compose/runtime/SlotWriter;)Ljava/util/ArrayList;
 
     move-result-object v14
@@ -572,8 +543,8 @@
 
     .local v8, "anchorIndex":I
     .local v27, "slotsCapacity":I
-    :goto_117
-    if-ge v8, v12, :cond_13b
+    :goto_3
+    if-ge v8, v12, :cond_6
 
     .line 2057
     move/from16 v24, v11
@@ -615,13 +586,13 @@
 
     move/from16 v13, v28
 
-    goto :goto_117
+    goto :goto_3
 
     .end local v24    # "slotsGapOwner":I
     .end local v28    # "slotsGapLen":I
     .local v11, "slotsGapOwner":I
     .restart local v13    # "slotsGapLen":I
-    :cond_13b
+    :cond_6
     move/from16 v24, v11
 
     move/from16 v28, v13
@@ -632,7 +603,6 @@
     .end local v13    # "slotsGapLen":I
     .restart local v24    # "slotsGapOwner":I
     .restart local v28    # "slotsGapLen":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->anchors:Ljava/util/ArrayList;
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getAnchors$p(Landroidx/compose/runtime/SlotWriter;)Ljava/util/ArrayList;
 
     move-result-object v8
@@ -648,14 +618,12 @@
     move-result v13
 
     .line 2063
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->locationOf(Ljava/util/ArrayList;II)I
     invoke-static {v8, v11, v13}, Landroidx/compose/runtime/SlotTableKt;->access$locationOf(Ljava/util/ArrayList;II)I
 
     move-result v8
 
     .line 2067
     .local v8, "insertLocation":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->anchors:Ljava/util/ArrayList;
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getAnchors$p(Landroidx/compose/runtime/SlotWriter;)Ljava/util/ArrayList;
 
     move-result-object v11
@@ -682,7 +650,7 @@
     .end local v15    # "anchorDelta":I
     check-cast v4, Ljava/util/List;
 
-    goto :goto_170
+    goto :goto_4
 
     .line 2073
     .end local v22    # "sourceGroupsEnd":I
@@ -693,7 +661,7 @@
     .local v8, "slotsCapacity":I
     .restart local v11    # "slotsGapOwner":I
     .restart local v13    # "slotsGapLen":I
-    :cond_164
+    :cond_7
     move/from16 v22, v4
 
     move/from16 v27, v8
@@ -715,7 +683,7 @@
     move-result-object v4
 
     .line 2050
-    :goto_170
+    :goto_4
     nop
 
     .line 2075
@@ -728,31 +696,31 @@
     .local v8, "parentGroup":I
     const/4 v11, 0x1
 
-    if-nez p6, :cond_17b
+    if-nez p6, :cond_8
 
     .line 2079
     move/from16 v14, v20
 
-    goto :goto_1bb
+    goto :goto_6
 
     .line 2080
-    :cond_17b
-    if-eqz p4, :cond_1b1
+    :cond_8
+    if-eqz p4, :cond_c
 
     .line 2084
-    if-ltz v8, :cond_181
+    if-ltz v8, :cond_9
 
     move v13, v11
 
-    goto :goto_183
+    goto :goto_5
 
-    :cond_181
+    :cond_9
     move/from16 v13, v20
 
     .line 2085
     .local v13, "needsStartGroups":Z
-    :goto_183
-    if-eqz v13, :cond_194
+    :goto_5
+    if-eqz v13, :cond_a
 
     .line 2088
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->startGroup()V
@@ -770,7 +738,7 @@
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->startGroup()V
 
     .line 2092
-    :cond_194
+    :cond_a
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->getCurrentGroup()I
 
     move-result v14
@@ -786,7 +754,7 @@
 
     .line 2094
     .local v14, "anchorsRemoved":Z
-    if-eqz v13, :cond_1af
+    if-eqz v13, :cond_b
 
     .line 2095
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->skipToGroupEnd()V
@@ -801,16 +769,15 @@
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/runtime/SlotWriter;->endGroup()I
 
     .line 2100
-    :cond_1af
+    :cond_b
     nop
 
     .end local v13    # "needsStartGroups":Z
     .end local v14    # "anchorsRemoved":Z
-    goto :goto_1bb
+    goto :goto_6
 
     .line 2103
-    :cond_1b1
-    # invokes: Landroidx/compose/runtime/SlotWriter;->removeGroups(II)Z
+    :cond_c
     invoke-static {v0, v1, v3}, Landroidx/compose/runtime/SlotWriter;->access$removeGroups(Landroidx/compose/runtime/SlotWriter;II)Z
 
     move-result v14
@@ -819,7 +786,6 @@
     .restart local v14    # "anchorsRemoved":Z
     add-int/lit8 v13, v1, -0x1
 
-    # invokes: Landroidx/compose/runtime/SlotWriter;->removeSlots(III)V
     invoke-static {v0, v5, v7, v13}, Landroidx/compose/runtime/SlotWriter;->access$removeSlots(Landroidx/compose/runtime/SlotWriter;III)V
 
     .line 2105
@@ -827,16 +793,16 @@
 
     .line 2076
     .end local v14    # "anchorsRemoved":Z
-    :goto_1bb
+    :goto_6
     move v13, v14
 
     .line 2109
     .local v13, "anchorsRemoved":Z
-    if-nez v13, :cond_1c0
+    if-nez v13, :cond_d
 
     move/from16 v20, v11
 
-    :cond_1c0
+    :cond_d
     move/from16 v14, v20
 
     .local v14, "value$iv":Z
@@ -844,7 +810,7 @@
 
     .line 3473
     .local v15, "$i$f$runtimeCheck":I
-    if-eqz v14, :cond_1f1
+    if-eqz v14, :cond_11
 
     .line 3477
     nop
@@ -852,37 +818,34 @@
     .line 2112
     .end local v14    # "value$iv":Z
     .end local v15    # "$i$f$runtimeCheck":I
-    # getter for: Landroidx/compose/runtime/SlotWriter;->nodeCount:I
     invoke-static/range {p3 .. p3}, Landroidx/compose/runtime/SlotWriter;->access$getNodeCount$p(Landroidx/compose/runtime/SlotWriter;)I
 
     move-result v14
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {v9, v10}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v15
 
-    if-eqz v15, :cond_1d1
+    if-eqz v15, :cond_e
 
-    goto :goto_1d6
+    goto :goto_7
 
     .line 2113
-    :cond_1d1
+    :cond_e
     nop
 
     .line 2112
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->nodeCount([II)I
     invoke-static {v9, v10}, Landroidx/compose/runtime/SlotTableKt;->access$nodeCount([II)I
 
     move-result v11
 
-    :goto_1d6
+    :goto_7
     add-int/2addr v14, v11
 
     invoke-static {v2, v14}, Landroidx/compose/runtime/SlotWriter;->access$setNodeCount$p(Landroidx/compose/runtime/SlotWriter;I)V
 
     .line 2117
-    if-eqz p5, :cond_1e6
+    if-eqz p5, :cond_f
 
     .line 2118
     add-int v11, v10, v3
@@ -895,29 +858,28 @@
     invoke-static {v2, v11}, Landroidx/compose/runtime/SlotWriter;->access$setCurrentSlot$p(Landroidx/compose/runtime/SlotWriter;I)V
 
     .line 2123
-    :cond_1e6
-    if-eqz v19, :cond_1ee
+    :cond_f
+    if-eqz v19, :cond_10
 
     .line 2124
     move/from16 v11, v17
 
     .end local v17    # "parent":I
     .local v11, "parent":I
-    # invokes: Landroidx/compose/runtime/SlotWriter;->updateContainsMark(I)V
     invoke-static {v2, v11}, Landroidx/compose/runtime/SlotWriter;->access$updateContainsMark(Landroidx/compose/runtime/SlotWriter;I)V
 
-    goto :goto_1f0
+    goto :goto_8
 
     .line 2123
     .end local v11    # "parent":I
     .restart local v17    # "parent":I
-    :cond_1ee
+    :cond_10
     move/from16 v11, v17
 
     .line 2126
     .end local v17    # "parent":I
     .restart local v11    # "parent":I
-    :goto_1f0
+    :goto_8
     return-object v4
 
     .line 3474
@@ -925,7 +887,7 @@
     .restart local v14    # "value$iv":Z
     .restart local v15    # "$i$f$runtimeCheck":I
     .restart local v17    # "parent":I
-    :cond_1f1
+    :cond_11
     move/from16 v11, v17
 
     .end local v17    # "parent":I
@@ -956,25 +918,25 @@
 .end method
 
 .method static synthetic moveGroup$default(Landroidx/compose/runtime/SlotWriter$Companion;Landroidx/compose/runtime/SlotWriter;ILandroidx/compose/runtime/SlotWriter;ZZZILjava/lang/Object;)Ljava/util/List;
-    .registers 16
+    .locals 7
 
     .line 1962
     and-int/lit8 p7, p7, 0x20
 
-    if-eqz p7, :cond_7
+    if-eqz p7, :cond_0
 
     .line 1968
     const/4 p6, 0x1
 
     move v6, p6
 
-    goto :goto_8
+    goto :goto_0
 
     .line 1962
-    :cond_7
+    :cond_0
     move v6, p6
 
-    :goto_8
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1

@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/runtime/saveable/SaverScope;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 8
+    .locals 5
     .param p1, "$this$Saver"    # Landroidx/compose/runtime/saveable/SaverScope;
     .param p2, "it"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -126,8 +126,8 @@
 
     move-result v2
 
-    :goto_12
-    if-ge v1, v2, :cond_30
+    :goto_0
+    if-ge v1, v2, :cond_2
 
     .line 37
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -136,18 +136,18 @@
 
     .line 38
     .local v3, "item":Ljava/lang/Object;
-    if-eqz v3, :cond_2d
+    if-eqz v3, :cond_1
 
     .line 39
     invoke-interface {p1, v3}, Landroidx/compose/runtime/saveable/SaverScope;->canBeSaved(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_21
+    if-eqz v4, :cond_0
 
-    goto :goto_2d
+    goto :goto_1
 
-    :cond_21
+    :cond_0
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v4, "Failed requirement."
@@ -162,15 +162,15 @@
 
     .line 36
     .end local v3    # "item":Ljava/lang/Object;
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 42
     .end local v1    # "index":I
-    :cond_30
+    :cond_2
     move-object v1, v0
 
     check-cast v1, Ljava/util/Collection;
@@ -181,7 +181,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_3
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -191,17 +191,17 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    goto :goto_45
+    goto :goto_2
 
-    :cond_44
+    :cond_3
     const/4 v1, 0x0
 
-    :goto_45
+    :goto_2
     return-object v1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 

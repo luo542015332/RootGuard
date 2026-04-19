@@ -31,7 +31,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 274
     new-instance v0, Ljava/lang/Object;
@@ -44,7 +44,7 @@
 .end method
 
 .method public static final synthetic access$getSync$p()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final unsupported()Ljava/lang/Void;
-    .registers 1
+    .locals 1
 
     .line 358
     new-instance v0, Ljava/lang/UnsupportedOperationException;

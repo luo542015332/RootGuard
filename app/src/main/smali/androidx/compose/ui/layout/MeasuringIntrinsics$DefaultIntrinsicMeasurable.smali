@@ -75,7 +75,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/IntrinsicMeasurable;Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicWidthHeight;)V
-    .registers 5
+    .locals 1
     .param p1, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p2, "minMax"    # Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;
     .param p3, "widthHeight"    # Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicWidthHeight;
@@ -111,7 +111,7 @@
 
 # virtual methods
 .method public final getMeasurable()Landroidx/compose/ui/layout/IntrinsicMeasurable;
-    .registers 2
+    .locals 1
 
     .line 194
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -120,7 +120,7 @@
 .end method
 
 .method public final getMinMax()Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;
-    .registers 2
+    .locals 1
 
     .line 195
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->minMax:Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;
@@ -129,7 +129,7 @@
 .end method
 
 .method public getParentData()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 199
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -142,7 +142,7 @@
 .end method
 
 .method public final getWidthHeight()Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicWidthHeight;
-    .registers 2
+    .locals 1
 
     .line 196
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->widthHeight:Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicWidthHeight;
@@ -151,7 +151,7 @@
 .end method
 
 .method public maxIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 231
@@ -165,7 +165,7 @@
 .end method
 
 .method public maxIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 223
@@ -179,7 +179,7 @@
 .end method
 
 .method public measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
-    .registers 6
+    .locals 3
     .param p1, "constraints"    # J
 
     .line 202
@@ -187,14 +187,14 @@
 
     sget-object v1, Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicWidthHeight;->Width:Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicWidthHeight;
 
-    if-ne v0, v1, :cond_2e
+    if-ne v0, v1, :cond_1
 
     .line 203
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->minMax:Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;
 
     sget-object v1, Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;->Max:Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     .line 204
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -207,10 +207,10 @@
 
     move-result v0
 
-    goto :goto_21
+    goto :goto_0
 
     .line 206
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
 
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/Constraints;->getMaxHeight-impl(J)I
@@ -222,7 +222,7 @@
     move-result v0
 
     .line 203
-    :goto_21
+    :goto_0
     nop
 
     .line 208
@@ -241,12 +241,12 @@
 
     .line 210
     .end local v0    # "width":I
-    :cond_2e
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->minMax:Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;
 
     sget-object v1, Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;->Max:Landroidx/compose/ui/layout/MeasuringIntrinsics$IntrinsicMinMax;
 
-    if-ne v0, v1, :cond_3f
+    if-ne v0, v1, :cond_2
 
     .line 211
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -259,10 +259,10 @@
 
     move-result v0
 
-    goto :goto_49
+    goto :goto_1
 
     .line 213
-    :cond_3f
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/layout/MeasuringIntrinsics$DefaultIntrinsicMeasurable;->measurable:Landroidx/compose/ui/layout/IntrinsicMeasurable;
 
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/Constraints;->getMaxWidth-impl(J)I
@@ -274,7 +274,7 @@
     move-result v0
 
     .line 210
-    :goto_49
+    :goto_1
     nop
 
     .line 215
@@ -293,7 +293,7 @@
 .end method
 
 .method public minIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 227
@@ -307,7 +307,7 @@
 .end method
 
 .method public minIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 219

@@ -67,7 +67,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;III)V
-    .registers 9
+    .locals 4
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "index"    # I
     .param p3, "size"    # I
@@ -92,16 +92,16 @@
 
     const/4 v2, 0x0
 
-    if-ne p2, p3, :cond_15
+    if-ne p2, p3, :cond_0
 
     move v3, v1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     move v3, v2
 
-    :goto_16
+    :goto_0
     iput-boolean v3, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->isInRightEdge:Z
 
     .line 15
@@ -123,7 +123,7 @@
 .end method
 
 .method private final elementAtCurrentIndex()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -159,7 +159,7 @@
 .end method
 
 .method private final fillPath(II)V
-    .registers 8
+    .locals 5
     .param p1, "index"    # I
     .param p2, "startLevel"    # I
 
@@ -176,10 +176,10 @@
 
     .line 34
     .local v1, "i":I
-    :goto_6
+    :goto_0
     iget v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->height:I
 
-    if-ge v1, v2, :cond_25
+    if-ge v1, v2, :cond_0
 
     .line 36
     iget-object v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->path:[Ljava/lang/Object;
@@ -208,15 +208,15 @@
     add-int/lit8 v1, v1, 0x1
 
     .line 38
-    goto :goto_6
+    goto :goto_0
 
     .line 40
-    :cond_25
+    :cond_0
     return-void
 .end method
 
 .method private final fillPathIfNeeded(I)V
-    .registers 6
+    .locals 4
     .param p1, "indexPredicate"    # I
 
     .line 44
@@ -224,7 +224,7 @@
 
     .line 45
     .local v0, "shift":I
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->getIndex()I
 
     move-result v1
@@ -233,16 +233,16 @@
 
     move-result v1
 
-    if-ne v1, p1, :cond_e
+    if-ne v1, p1, :cond_0
 
     add-int/lit8 v0, v0, 0x5
 
     .line 46
-    goto :goto_1
+    goto :goto_0
 
     .line 49
-    :cond_e
-    if-lez v0, :cond_20
+    :cond_0
+    if-lez v0, :cond_1
 
     .line 50
     iget v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->height:I
@@ -265,14 +265,14 @@
 
     .line 53
     .end local v1    # "level":I
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public next()Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -284,7 +284,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 66
     invoke-direct {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->elementAtCurrentIndex()Ljava/lang/Object;
@@ -312,7 +312,7 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_20
+    if-ne v1, v3, :cond_0
 
     .line 70
     iput-boolean v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->isInRightEdge:Z
@@ -321,7 +321,7 @@
     return-object v0
 
     .line 74
-    :cond_20
+    :cond_0
     const/4 v1, 0x0
 
     invoke-direct {p0, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->fillPathIfNeeded(I)V
@@ -331,7 +331,7 @@
 
     .line 63
     .end local v0    # "result":Ljava/lang/Object;
-    :cond_25
+    :cond_1
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -340,7 +340,7 @@
 .end method
 
 .method public previous()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -352,7 +352,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 84
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->getIndex()I
@@ -366,7 +366,7 @@
     .line 86
     iget-boolean v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->isInRightEdge:Z
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 87
     const/4 v0, 0x0
@@ -381,7 +381,7 @@
     return-object v0
 
     .line 91
-    :cond_1b
+    :cond_0
     const/16 v0, 0x1f
 
     invoke-direct {p0, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->fillPathIfNeeded(I)V
@@ -394,7 +394,7 @@
     return-object v0
 
     .line 81
-    :cond_25
+    :cond_1
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -403,7 +403,7 @@
 .end method
 
 .method public final reset$runtime_release([Ljava/lang/Object;III)V
-    .registers 7
+    .locals 2
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "index"    # I
     .param p3, "size"    # I
@@ -427,14 +427,14 @@
 
     array-length v0, v0
 
-    if-ge v0, p4, :cond_17
+    if-ge v0, p4, :cond_0
 
     new-array v0, p4, [Ljava/lang/Object;
 
     iput-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->path:[Ljava/lang/Object;
 
     .line 25
-    :cond_17
+    :cond_0
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->path:[Ljava/lang/Object;
 
     const/4 v1, 0x0
@@ -444,11 +444,11 @@
     .line 26
     const/4 v0, 0x1
 
-    if-ne p2, p3, :cond_20
+    if-ne p2, p3, :cond_1
 
     move v1, v0
 
-    :cond_20
+    :cond_1
     iput-boolean v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/TrieIterator;->isInRightEdge:Z
 
     .line 28

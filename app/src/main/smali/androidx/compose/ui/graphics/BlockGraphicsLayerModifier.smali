@@ -72,7 +72,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "layerBlock"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final getLayerBlock()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -120,7 +120,7 @@
 .end method
 
 .method public getShouldAutoInvalidate()Z
-    .registers 2
+    .locals 1
 
     .line 565
     const/4 v0, 0x0
@@ -129,7 +129,7 @@
 .end method
 
 .method public final invalidateLayerBlock()V
-    .registers 4
+    .locals 3
 
     .line 568
     move-object v0, p0
@@ -156,7 +156,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 569
     iget-object v1, p0, Landroidx/compose/ui/graphics/BlockGraphicsLayerModifier;->layerBlock:Lkotlin/jvm/functions/Function1;
@@ -170,12 +170,12 @@
     invoke-virtual {v0, v1, v2}, Landroidx/compose/ui/node/NodeCoordinator;->updateLayerBlock(Lkotlin/jvm/functions/Function1;Z)V
 
     .line 572
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 13
+    .locals 8
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -227,7 +227,7 @@
 .end method
 
 .method public final setLayerBlock(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -251,7 +251,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 585
     new-instance v0, Ljava/lang/StringBuilder;

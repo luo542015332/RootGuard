@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/layout/FlowResult;Landroidx/compose/foundation/layout/RowColumnMeasurementHelper;[ILandroidx/compose/ui/layout/MeasureScope;)V
-    .registers 6
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$measure$2;->$flowResult:Landroidx/compose/foundation/layout/FlowResult;
 
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 273
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 15
+    .locals 13
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$layout"
@@ -132,7 +132,7 @@
 
     .line 758
     .local v5, "size$iv":I
-    if-lez v5, :cond_36
+    if-lez v5, :cond_1
 
     .line 759
     const/4 v6, 0x0
@@ -145,7 +145,7 @@
 
     .line 762
     .local v7, "content$iv":[Ljava/lang/Object;
-    :cond_1e
+    :cond_0
     aget-object v8, v7, v6
 
     check-cast v8, Landroidx/compose/foundation/layout/RowColumnMeasureHelperResult;
@@ -190,12 +190,12 @@
     add-int/lit8 v6, v6, 0x1
 
     .line 764
-    if-lt v6, v5, :cond_1e
+    if-lt v6, v5, :cond_0
 
     .line 766
     .end local v6    # "i$iv":I
     .end local v7    # "content$iv":[Ljava/lang/Object;
-    :cond_36
+    :cond_1
     nop
 
     .line 283

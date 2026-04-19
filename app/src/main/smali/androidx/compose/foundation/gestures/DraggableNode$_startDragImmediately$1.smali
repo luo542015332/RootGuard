@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/DraggableNode;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/gestures/DraggableNode$_startDragImmediately$1;->this$0:Landroidx/compose/foundation/gestures/DraggableNode;
 
@@ -65,12 +65,11 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Boolean;
-    .registers 2
+    .locals 1
 
     .line 296
     iget-object v0, p0, Landroidx/compose/foundation/gestures/DraggableNode$_startDragImmediately$1;->this$0:Landroidx/compose/foundation/gestures/DraggableNode;
 
-    # getter for: Landroidx/compose/foundation/gestures/DraggableNode;->startDragImmediately:Lkotlin/jvm/functions/Function0;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/DraggableNode;->access$getStartDragImmediately$p(Landroidx/compose/foundation/gestures/DraggableNode;)Lkotlin/jvm/functions/Function0;
 
     move-result-object v0
@@ -85,7 +84,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 296
     invoke-virtual {p0}, Landroidx/compose/foundation/gestures/DraggableNode$_startDragImmediately$1;->invoke()Ljava/lang/Boolean;

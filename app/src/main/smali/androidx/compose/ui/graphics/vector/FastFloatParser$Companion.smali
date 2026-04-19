@@ -56,7 +56,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/FastFloatParser$Companion;-><init>()V
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final nextFloat(Ljava/lang/String;IILandroidx/compose/ui/graphics/vector/FloatResult;)I
-    .registers 55
+    .locals 50
     .param p1, "s"    # Ljava/lang/String;
     .param p2, "start"    # I
     .param p3, "end"    # I
@@ -108,12 +108,12 @@
     invoke-virtual {v4, v0}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValid(Z)V
 
     .line 56
-    if-ne v2, v3, :cond_20
+    if-ne v2, v3, :cond_0
 
     return v2
 
     .line 58
-    :cond_20
+    :cond_0
     move/from16 v5, p2
 
     .line 59
@@ -126,34 +126,34 @@
     .local v6, "c":C
     const/16 v7, 0x2d
 
-    if-ne v6, v7, :cond_2c
+    if-ne v6, v7, :cond_1
 
     const/4 v9, 0x1
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     move v9, v0
 
     .line 63
     .local v9, "isNegative":Z
-    :goto_2d
+    :goto_0
     const/16 v10, 0x2e
 
     const/16 v11, 0xa
 
-    if-eqz v9, :cond_4b
+    if-eqz v9, :cond_4
 
     .line 64
     add-int/lit8 v5, v5, 0x1
 
     .line 65
-    if-ne v5, v3, :cond_38
+    if-ne v5, v3, :cond_2
 
     return v5
 
     .line 68
-    :cond_38
+    :cond_2
     invoke-virtual {v1, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
@@ -170,27 +170,27 @@
 
     int-to-char v14, v14
 
-    if-ge v14, v11, :cond_45
+    if-ge v14, v11, :cond_3
 
     const/4 v12, 0x1
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_45
+    :cond_3
     move v12, v0
 
     .line 69
     .end local v12    # "$this$isDigit$iv":C
     .end local v13    # "$i$f$isDigit":I
-    :goto_46
-    if-nez v12, :cond_4b
+    :goto_1
+    if-nez v12, :cond_4
 
-    if-eq v6, v10, :cond_4b
+    if-eq v6, v10, :cond_4
 
     return v5
 
     .line 73
-    :cond_4b
+    :cond_4
     const-wide/16 v12, 0x0
 
     .line 74
@@ -199,10 +199,10 @@
 
     .line 77
     .local v14, "significandStartIndex":I
-    :goto_4e
+    :goto_2
     const-wide/16 v15, 0xa
 
-    if-eq v5, v3, :cond_87
+    if-eq v5, v3, :cond_8
 
     move/from16 v17, v6
 
@@ -215,19 +215,19 @@
 
     int-to-char v0, v0
 
-    if-ge v0, v11, :cond_5d
+    if-ge v0, v11, :cond_5
 
     const/4 v0, 0x1
 
-    goto :goto_5e
+    goto :goto_3
 
-    :cond_5d
+    :cond_5
     const/4 v0, 0x0
 
     .end local v17    # "$this$isDigit$iv":C
     .end local v18    # "$i$f$isDigit":I
-    :goto_5e
-    if-eqz v0, :cond_84
+    :goto_3
+    if-eqz v0, :cond_7
 
     .line 78
     mul-long/2addr v15, v12
@@ -260,7 +260,7 @@
 
     move-result v9
 
-    if-ge v0, v9, :cond_7d
+    if-ge v0, v9, :cond_6
 
     .line 635
     move-object v9, v1
@@ -271,14 +271,14 @@
 
     move-result v9
 
-    goto :goto_7e
+    goto :goto_4
 
     .line 637
-    :cond_7d
+    :cond_6
     const/4 v9, 0x0
 
     .line 638
-    :goto_7e
+    :goto_4
     nop
 
     .line 79
@@ -290,28 +290,28 @@
 
     const/4 v0, 0x0
 
-    goto :goto_4e
+    goto :goto_2
 
     .line 633
     .end local v18    # "isNegative":Z
     .restart local v9    # "isNegative":Z
-    :cond_84
+    :cond_7
     move/from16 v18, v9
 
     .end local v9    # "isNegative":Z
     .restart local v18    # "isNegative":Z
-    goto :goto_89
+    goto :goto_5
 
     .line 77
     .end local v18    # "isNegative":Z
     .restart local v9    # "isNegative":Z
-    :cond_87
+    :cond_8
     move/from16 v18, v9
 
     .line 82
     .end local v9    # "isNegative":Z
     .restart local v18    # "isNegative":Z
-    :goto_89
+    :goto_5
     move v8, v5
 
     .line 83
@@ -338,9 +338,9 @@
 
     const/16 v25, 0x20
 
-    if-eq v5, v3, :cond_175
+    if-eq v5, v3, :cond_10
 
-    if-ne v6, v10, :cond_175
+    if-ne v6, v10, :cond_10
 
     .line 91
     add-int/lit8 v5, v5, 0x1
@@ -349,12 +349,12 @@
     move/from16 v20, v5
 
     .line 94
-    :goto_9f
+    :goto_6
     sub-int v10, v3, v5
 
     const/4 v15, 0x4
 
-    if-lt v10, v15, :cond_11f
+    if-lt v10, v15, :cond_a
 
     .line 95
     const/4 v10, 0x0
@@ -457,7 +457,7 @@
 
     cmp-long v13, v35, v23
 
-    if-eqz v13, :cond_f9
+    if-eqz v13, :cond_9
 
     .line 647
     const/4 v13, -0x1
@@ -466,10 +466,10 @@
 
     move-wide/from16 v38, v7
 
-    goto :goto_109
+    goto :goto_7
 
     .line 649
-    :cond_f9
+    :cond_9
     const-wide v35, 0x3e80064000a0001L
 
     mul-long v35, v35, v11
@@ -489,7 +489,7 @@
     long-to-int v13, v6
 
     .line 646
-    :goto_109
+    :goto_7
     nop
 
     .line 95
@@ -501,7 +501,7 @@
 
     .line 96
     .local v6, "digits":I
-    if-ltz v6, :cond_124
+    if-ltz v6, :cond_b
 
     .line 97
     const-wide/16 v7, 0x2710
@@ -528,14 +528,14 @@
     const-wide/16 v15, 0xa
 
     .end local v6    # "digits":I
-    goto :goto_9f
+    goto :goto_6
 
     .line 94
     .end local v15    # "significandEndIndex":I
     .end local v37    # "c":C
     .local v6, "c":C
     .restart local v8    # "significandEndIndex":I
-    :cond_11f
+    :cond_a
     move/from16 v37, v6
 
     move v15, v8
@@ -549,7 +549,7 @@
     .restart local v15    # "significandEndIndex":I
     .restart local v30    # "significand":J
     .restart local v37    # "c":C
-    :cond_124
+    :cond_b
     const/4 v6, 0x0
 
     .line 650
@@ -562,7 +562,7 @@
 
     move-result v7
 
-    if-ge v5, v7, :cond_136
+    if-ge v5, v7, :cond_c
 
     .line 651
     move-object v7, v1
@@ -573,14 +573,14 @@
 
     move-result v7
 
-    goto :goto_137
+    goto :goto_8
 
     .line 653
-    :cond_136
+    :cond_c
     const/4 v7, 0x0
 
     .line 654
-    :goto_137
+    :goto_8
     nop
 
     .line 101
@@ -594,8 +594,8 @@
     .end local v37    # "c":C
     .local v6, "c":C
     .restart local v12    # "significand":J
-    :goto_13b
-    if-eq v5, v3, :cond_16d
+    :goto_9
+    if-eq v5, v3, :cond_f
 
     move v7, v6
 
@@ -610,19 +610,19 @@
 
     const/16 v11, 0xa
 
-    if-ge v10, v11, :cond_148
+    if-ge v10, v11, :cond_d
 
     const/4 v7, 0x1
 
-    goto :goto_149
+    goto :goto_a
 
-    :cond_148
+    :cond_d
     const/4 v7, 0x0
 
     .end local v7    # "$this$isDigit$iv":C
     .end local v8    # "$i$f$isDigit":I
-    :goto_149
-    if-eqz v7, :cond_16d
+    :goto_a
+    if-eqz v7, :cond_f
 
     .line 103
     const-wide/16 v7, 0xa
@@ -653,7 +653,7 @@
 
     move-result v10
 
-    if-ge v7, v10, :cond_169
+    if-ge v7, v10, :cond_e
 
     .line 657
     move-object v10, v1
@@ -664,14 +664,14 @@
 
     move-result v10
 
-    goto :goto_16a
+    goto :goto_b
 
     .line 659
-    :cond_169
+    :cond_e
     const/4 v10, 0x0
 
     .line 660
-    :goto_16a
+    :goto_b
     nop
 
     .line 104
@@ -679,10 +679,10 @@
     .end local v8    # "$i$f$charAt":I
     move v6, v10
 
-    goto :goto_13b
+    goto :goto_9
 
     .line 107
-    :cond_16d
+    :cond_f
     sub-int v9, v20, v5
 
     .line 108
@@ -693,12 +693,12 @@
 
     move/from16 v7, v21
 
-    goto :goto_17c
+    goto :goto_c
 
     .line 90
     .end local v15    # "significandEndIndex":I
     .local v8, "significandEndIndex":I
-    :cond_175
+    :cond_10
     move/from16 v37, v6
 
     move v15, v8
@@ -716,13 +716,13 @@
     .end local v37    # "c":C
     .restart local v6    # "c":C
     .local v7, "exponentEndIndex":I
-    :goto_17c
-    if-nez v0, :cond_17f
+    :goto_c
+    if-nez v0, :cond_11
 
     return v5
 
     .line 115
-    :cond_17f
+    :cond_11
     const/4 v8, 0x0
 
     .line 116
@@ -735,7 +735,7 @@
 
     .end local v6    # "c":C
     .local v21, "c":C
-    if-ne v10, v11, :cond_1f4
+    if-ne v10, v11, :cond_1c
 
     .line 117
     add-int/lit8 v5, v5, 0x1
@@ -755,7 +755,7 @@
 
     move-result v6
 
-    if-ge v10, v6, :cond_19e
+    if-ge v10, v6, :cond_12
 
     .line 662
     move-object v6, v1
@@ -766,14 +766,14 @@
 
     move-result v6
 
-    goto :goto_19f
+    goto :goto_d
 
     .line 664
-    :cond_19e
+    :cond_12
     const/4 v6, 0x0
 
     .line 665
-    :goto_19f
+    :goto_d
     nop
 
     .line 117
@@ -786,37 +786,37 @@
     .restart local v6    # "c":C
     const/16 v10, 0x2d
 
-    if-ne v6, v10, :cond_1a7
+    if-ne v6, v10, :cond_13
 
     const/4 v10, 0x1
 
-    goto :goto_1a8
+    goto :goto_e
 
-    :cond_1a7
+    :cond_13
     const/4 v10, 0x0
 
     .line 120
     .local v10, "isExponentNegative":Z
-    :goto_1a8
-    if-nez v10, :cond_1ae
+    :goto_e
+    if-nez v10, :cond_14
 
     const/16 v11, 0x2b
 
-    if-ne v6, v11, :cond_1b0
+    if-ne v6, v11, :cond_15
 
     .line 121
-    :cond_1ae
+    :cond_14
     add-int/lit8 v5, v5, 0x1
 
     .line 124
-    :cond_1b0
+    :cond_15
     invoke-virtual {v1, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v6
 
     .line 125
-    :goto_1b4
-    if-eq v5, v3, :cond_1ed
+    :goto_f
+    if-eq v5, v3, :cond_19
 
     move v11, v6
 
@@ -835,24 +835,24 @@
 
     const/16 v13, 0xa
 
-    if-ge v12, v13, :cond_1c4
+    if-ge v12, v13, :cond_16
 
     const/4 v11, 0x1
 
-    goto :goto_1c5
+    goto :goto_10
 
-    :cond_1c4
+    :cond_16
     const/4 v11, 0x0
 
     .end local v11    # "$this$isDigit$iv":C
     .end local v21    # "$i$f$isDigit":I
-    :goto_1c5
-    if-eqz v11, :cond_1ef
+    :goto_10
+    if-eqz v11, :cond_1a
 
     .line 126
     const/16 v11, 0x400
 
-    if-ge v8, v11, :cond_1d1
+    if-ge v8, v11, :cond_17
 
     .line 127
     mul-int/lit8 v11, v8, 0xa
@@ -864,7 +864,7 @@
     move v8, v11
 
     .line 129
-    :cond_1d1
+    :cond_17
     add-int/lit8 v5, v5, 0x1
 
     move v11, v5
@@ -882,7 +882,7 @@
 
     move-result v13
 
-    if-ge v11, v13, :cond_1e7
+    if-ge v11, v13, :cond_18
 
     .line 668
     move-object v13, v1
@@ -893,14 +893,14 @@
 
     move-result v13
 
-    goto :goto_1e8
+    goto :goto_11
 
     .line 670
-    :cond_1e7
+    :cond_18
     const/4 v13, 0x0
 
     .line 671
-    :goto_1e8
+    :goto_11
     nop
 
     .line 129
@@ -910,27 +910,27 @@
 
     move-wide/from16 v12, v33
 
-    goto :goto_1b4
+    goto :goto_f
 
     .line 125
     .end local v33    # "significand":J
     .local v12, "significand":J
-    :cond_1ed
+    :cond_19
     move-wide/from16 v33, v12
 
     .line 132
     .end local v12    # "significand":J
     .restart local v33    # "significand":J
-    :cond_1ef
-    if-eqz v10, :cond_1f2
+    :cond_1a
+    if-eqz v10, :cond_1b
 
     neg-int v8, v8
 
     .line 133
-    :cond_1f2
+    :cond_1b
     add-int/2addr v9, v8
 
-    goto :goto_1f8
+    goto :goto_12
 
     .line 116
     .end local v6    # "c":C
@@ -938,7 +938,7 @@
     .end local v33    # "significand":J
     .restart local v12    # "significand":J
     .local v21, "c":C
-    :cond_1f4
+    :cond_1c
     move-wide/from16 v33, v12
 
     .end local v12    # "significand":J
@@ -948,14 +948,14 @@
     .line 138
     .end local v21    # "c":C
     .restart local v6    # "c":C
-    :goto_1f8
+    :goto_12
     const/4 v10, 0x0
 
     .line 141
     .local v10, "tooManyDigits":Z
     const/16 v11, 0x13
 
-    if-le v0, v11, :cond_2e5
+    if-le v0, v11, :cond_28
 
     .line 142
     move v12, v14
@@ -967,30 +967,30 @@
     move-result v6
 
     .line 146
-    :goto_202
-    if-eq v5, v3, :cond_233
+    :goto_13
+    if-eq v5, v3, :cond_20
 
     const/16 v13, 0x30
 
-    if-eq v6, v13, :cond_20d
+    if-eq v6, v13, :cond_1d
 
     const/16 v11, 0x2e
 
-    if-ne v6, v11, :cond_233
+    if-ne v6, v11, :cond_20
 
-    goto :goto_20f
+    goto :goto_14
 
-    :cond_20d
+    :cond_1d
     const/16 v11, 0x2e
 
     .line 147
-    :goto_20f
-    if-ne v6, v13, :cond_213
+    :goto_14
+    if-ne v6, v13, :cond_1e
 
     add-int/lit8 v0, v0, -0x1
 
     .line 148
-    :cond_213
+    :cond_1e
     add-int/lit8 v12, v12, 0x1
 
     move/from16 v21, v12
@@ -1012,7 +1012,7 @@
 
     .end local v21    # "index$iv":I
     .local v13, "index$iv":I
-    if-ge v13, v11, :cond_22d
+    if-ge v13, v11, :cond_1f
 
     .line 673
     move-object v11, v1
@@ -1023,14 +1023,14 @@
 
     move-result v11
 
-    goto :goto_22e
+    goto :goto_15
 
     .line 675
-    :cond_22d
+    :cond_1f
     const/4 v11, 0x0
 
     .line 676
-    :goto_22e
+    :goto_15
     nop
 
     .line 148
@@ -1040,13 +1040,13 @@
 
     const/16 v11, 0x13
 
-    goto :goto_202
+    goto :goto_13
 
     .line 151
-    :cond_233
+    :cond_20
     const/16 v11, 0x13
 
-    if-le v0, v11, :cond_2dd
+    if-le v0, v11, :cond_27
 
     .line 152
     const/4 v10, 0x1
@@ -1071,7 +1071,7 @@
     .line 159
     .end local v26    # "significand":J
     .local v12, "significand":J
-    :goto_241
+    :goto_16
     move/from16 v16, v9
 
     move/from16 v21, v10
@@ -1082,7 +1082,7 @@
     .local v21, "tooManyDigits":Z
     const-wide v9, 0xde0b6b3a7640000L
 
-    if-eq v11, v15, :cond_280
+    if-eq v11, v15, :cond_22
 
     .line 160
     invoke-static {v12, v13}, Lkotlin/ULong;->constructor-impl(J)J
@@ -1093,7 +1093,7 @@
 
     move-result v2
 
-    if-gez v2, :cond_280
+    if-gez v2, :cond_22
 
     .line 162
     const-wide/16 v2, 0xa
@@ -1124,7 +1124,7 @@
 
     move-result v9
 
-    if-ge v2, v9, :cond_274
+    if-ge v2, v9, :cond_21
 
     .line 678
     move-object v9, v1
@@ -1135,14 +1135,14 @@
 
     move-result v9
 
-    goto :goto_275
+    goto :goto_17
 
     .line 680
-    :cond_274
+    :cond_21
     const/4 v9, 0x0
 
     .line 681
-    :goto_275
+    :goto_17
     nop
 
     .line 163
@@ -1158,10 +1158,10 @@
 
     move/from16 v10, v21
 
-    goto :goto_241
+    goto :goto_16
 
     .line 166
-    :cond_280
+    :cond_22
     invoke-static {v12, v13}, Lkotlin/ULong;->constructor-impl(J)J
 
     move-result-wide v2
@@ -1170,7 +1170,7 @@
 
     move-result v2
 
-    if-ltz v2, :cond_295
+    if-ltz v2, :cond_23
 
     .line 167
     sub-int v2, v15, v11
@@ -1187,12 +1187,12 @@
 
     .end local v16    # "exponent":I
     .restart local v9    # "exponent":I
-    goto/16 :goto_2ec
+    goto/16 :goto_1a
 
     .line 169
     .end local v9    # "exponent":I
     .restart local v16    # "exponent":I
-    :cond_295
+    :cond_23
     move/from16 v2, v20
 
     .line 170
@@ -1205,8 +1205,8 @@
     move v6, v3
 
     .line 173
-    :goto_29c
-    if-eq v2, v7, :cond_2d4
+    :goto_18
+    if-eq v2, v7, :cond_25
 
     .line 174
     move v3, v14
@@ -1225,7 +1225,7 @@
 
     move-result v14
 
-    if-gez v14, :cond_2d6
+    if-gez v14, :cond_26
 
     .line 176
     const-wide/16 v14, 0xa
@@ -1256,7 +1256,7 @@
 
     move-result v14
 
-    if-ge v9, v14, :cond_2c9
+    if-ge v9, v14, :cond_24
 
     .line 683
     move-object v14, v1
@@ -1267,14 +1267,14 @@
 
     move-result v14
 
-    goto :goto_2ca
+    goto :goto_19
 
     .line 685
-    :cond_2c9
+    :cond_24
     const/4 v14, 0x0
 
     .line 686
-    :goto_2ca
+    :goto_19
     nop
 
     .line 177
@@ -1288,14 +1288,14 @@
 
     const-wide v9, 0xde0b6b3a7640000L
 
-    goto :goto_29c
+    goto :goto_18
 
     .line 173
     .end local v3    # "significandStartIndex":I
     .end local v11    # "significandEndIndex":I
     .restart local v14    # "significandStartIndex":I
     .restart local v15    # "significandEndIndex":I
-    :cond_2d4
+    :cond_25
     move v3, v14
 
     move v11, v15
@@ -1305,7 +1305,7 @@
     .end local v15    # "significandEndIndex":I
     .restart local v3    # "significandStartIndex":I
     .restart local v11    # "significandEndIndex":I
-    :cond_2d6
+    :cond_26
     sub-int v9, v20, v2
 
     add-int/2addr v9, v8
@@ -1316,7 +1316,7 @@
 
     .end local v16    # "exponent":I
     .local v9, "exponent":I
-    goto :goto_2ec
+    goto :goto_1a
 
     .line 151
     .end local v2    # "retryIndex":I
@@ -1328,7 +1328,7 @@
     .restart local v14    # "significandStartIndex":I
     .restart local v15    # "significandEndIndex":I
     .restart local v33    # "significand":J
-    :cond_2dd
+    :cond_27
     move/from16 v16, v9
 
     move v3, v14
@@ -1345,7 +1345,7 @@
 
     move-wide/from16 v12, v33
 
-    goto :goto_2ec
+    goto :goto_1a
 
     .line 141
     .end local v3    # "significandStartIndex":I
@@ -1355,7 +1355,7 @@
     .restart local v9    # "exponent":I
     .restart local v14    # "significandStartIndex":I
     .restart local v15    # "significandEndIndex":I
-    :cond_2e5
+    :cond_28
     move/from16 v16, v9
 
     move v3, v14
@@ -1379,27 +1379,27 @@
     .local v2, "digitCount":I
     .restart local v9    # "exponent":I
     .local v12, "significand":J
-    :goto_2ec
+    :goto_1a
     const/16 v0, -0xa
 
-    if-gt v0, v9, :cond_2f6
+    if-gt v0, v9, :cond_29
 
     const/16 v0, 0xb
 
-    if-ge v9, v0, :cond_2f6
+    if-ge v9, v0, :cond_29
 
     const/4 v0, 0x1
 
-    goto :goto_2f7
+    goto :goto_1b
 
-    :cond_2f6
+    :cond_29
     const/4 v0, 0x0
 
-    :goto_2f7
-    if-eqz v0, :cond_335
+    :goto_1b
+    if-eqz v0, :cond_2d
 
     .line 186
-    if-nez v10, :cond_330
+    if-nez v10, :cond_2c
 
     .line 187
     invoke-static {v12, v13}, Lkotlin/ULong;->constructor-impl(J)J
@@ -1424,17 +1424,16 @@
 
     move-result v0
 
-    if-gtz v0, :cond_339
+    if-gtz v0, :cond_2e
 
     .line 189
     long-to-float v0, v12
 
     .line 190
     .local v0, "f":F
-    if-gez v9, :cond_31c
+    if-gez v9, :cond_2a
 
     .line 191
-    # getter for: Landroidx/compose/ui/graphics/vector/FastFloatParser;->PowersOfTen:[F
     invoke-static {}, Landroidx/compose/ui/graphics/vector/FastFloatParser;->access$getPowersOfTen$cp()[F
 
     move-result-object v2
@@ -1445,11 +1444,10 @@
 
     div-float/2addr v0, v2
 
-    goto :goto_323
+    goto :goto_1c
 
     .line 193
-    :cond_31c
-    # getter for: Landroidx/compose/ui/graphics/vector/FastFloatParser;->PowersOfTen:[F
+    :cond_2a
     invoke-static {}, Landroidx/compose/ui/graphics/vector/FastFloatParser;->access$getPowersOfTen$cp()[F
 
     move-result-object v2
@@ -1459,22 +1457,22 @@
     mul-float/2addr v0, v2
 
     .line 196
-    :goto_323
+    :goto_1c
     const/4 v2, 0x1
 
     invoke-virtual {v4, v2}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValid(Z)V
 
     .line 197
-    if-eqz v18, :cond_32b
+    if-eqz v18, :cond_2b
 
     neg-float v2, v0
 
-    goto :goto_32c
+    goto :goto_1d
 
-    :cond_32b
+    :cond_2b
     move v2, v0
 
-    :goto_32c
+    :goto_1d
     invoke-virtual {v4, v2}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValue(F)V
 
     .line 199
@@ -1486,7 +1484,7 @@
     .end local v21    # "digitCount":I
     .restart local v2    # "digitCount":I
     .restart local v3    # "significandStartIndex":I
-    :cond_330
+    :cond_2c
     move/from16 v21, v2
 
     move/from16 v16, v3
@@ -1495,14 +1493,14 @@
     .end local v3    # "significandStartIndex":I
     .restart local v16    # "significandStartIndex":I
     .restart local v21    # "digitCount":I
-    goto :goto_339
+    goto :goto_1e
 
     .line 185
     .end local v16    # "significandStartIndex":I
     .end local v21    # "digitCount":I
     .restart local v2    # "digitCount":I
     .restart local v3    # "significandStartIndex":I
-    :cond_335
+    :cond_2d
     move/from16 v21, v2
 
     move/from16 v16, v3
@@ -1512,11 +1510,11 @@
     .end local v3    # "significandStartIndex":I
     .restart local v16    # "significandStartIndex":I
     .restart local v21    # "digitCount":I
-    :cond_339
-    :goto_339
+    :cond_2e
+    :goto_1e
     cmp-long v0, v12, v23
 
-    if-nez v0, :cond_34b
+    if-nez v0, :cond_30
 
     .line 206
     const/4 v2, 0x1
@@ -1524,42 +1522,42 @@
     invoke-virtual {v4, v2}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValid(Z)V
 
     .line 207
-    if-eqz v18, :cond_346
+    if-eqz v18, :cond_2f
 
     const/high16 v0, -0x80000000
 
-    goto :goto_347
+    goto :goto_1f
 
-    :cond_346
+    :cond_2f
     const/4 v0, 0x0
 
-    :goto_347
+    :goto_1f
     invoke-virtual {v4, v0}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValue(F)V
 
     .line 208
     return v5
 
     .line 211
-    :cond_34b
+    :cond_30
     const/16 v0, -0x7e
 
-    if-gt v0, v9, :cond_355
+    if-gt v0, v9, :cond_31
 
     const/16 v0, 0x80
 
-    if-ge v9, v0, :cond_355
+    if-ge v9, v0, :cond_31
 
     const/4 v0, 0x1
 
-    goto :goto_356
+    goto :goto_20
 
-    :cond_355
+    :cond_31
     const/4 v0, 0x0
 
-    :goto_356
+    :goto_20
     const-string/jumbo v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
-    if-nez v0, :cond_378
+    if-nez v0, :cond_32
 
     .line 212
     nop
@@ -1567,7 +1565,7 @@
     .line 213
     move/from16 v3, p2
 
-    :try_start_35e
+    :try_start_0
     invoke-virtual {v1, v3, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
@@ -1579,8 +1577,8 @@
     move-result v0
 
     invoke-virtual {v4, v0}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValue(F)V
-    :try_end_36c
-    .catchall {:try_start_35e .. :try_end_36c} :catchall_372
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 215
     const/4 v2, 0x1
@@ -1594,7 +1592,7 @@
     return v5
 
     .line 215
-    :catchall_372
+    :catchall_0
     move-exception v0
 
     const/4 v2, 0x1
@@ -1604,10 +1602,9 @@
     throw v0
 
     .line 220
-    :cond_378
+    :cond_32
     move/from16 v3, p2
 
-    # getter for: Landroidx/compose/ui/graphics/vector/FastFloatParser;->Mantissa64:[J
     invoke-static {}, Landroidx/compose/ui/graphics/vector/FastFloatParser;->access$getMantissa64$cp()[J
 
     move-result-object v0
@@ -1748,7 +1745,7 @@
 
     cmp-long v0, v34, v32
 
-    if-eqz v0, :cond_45e
+    if-eqz v0, :cond_38
 
     and-long v32, v25, v32
 
@@ -1756,7 +1753,7 @@
 
     const-wide/16 v32, 0x1
 
-    if-nez v0, :cond_3e7
+    if-nez v0, :cond_33
 
     const-wide/16 v34, 0x3
 
@@ -1764,7 +1761,7 @@
 
     cmp-long v0, v34, v32
 
-    if-nez v0, :cond_3e7
+    if-nez v0, :cond_33
 
     move/from16 v36, v7
 
@@ -1772,10 +1769,10 @@
 
     move/from16 v34, v10
 
-    goto/16 :goto_464
+    goto/16 :goto_22
 
     .line 238
-    :cond_3e7
+    :cond_33
     add-long v29, v29, v32
 
     .line 239
@@ -1788,7 +1785,7 @@
 
     cmp-long v0, v29, v34
 
-    if-ltz v0, :cond_3f7
+    if-ltz v0, :cond_34
 
     .line 242
     const-wide/high16 v29, 0x10000000000000L
@@ -1797,7 +1794,7 @@
     add-int/lit8 v8, v8, -0x1
 
     .line 246
-    :cond_3f7
+    :cond_34
     const-wide v34, -0x10000000000001L
 
     and-long v29, v29, v34
@@ -1845,20 +1842,20 @@
     .local v9, "realExponent":J
     cmp-long v0, v9, v32
 
-    if-ltz v0, :cond_441
+    if-ltz v0, :cond_37
 
     const-wide/16 v32, 0x7fe
 
     cmp-long v0, v9, v32
 
-    if-lez v0, :cond_424
+    if-lez v0, :cond_35
 
     move-wide/from16 v32, v6
 
-    goto :goto_443
+    goto :goto_21
 
     .line 259
-    :cond_424
+    :cond_35
     const/16 v0, 0x34
 
     shl-long v32, v9, v0
@@ -1866,11 +1863,11 @@
     or-long v29, v29, v32
 
     .line 260
-    if-eqz v18, :cond_42e
+    if-eqz v18, :cond_36
 
     const-wide/high16 v23, -0x8000000000000000L
 
-    :cond_42e
+    :cond_36
     or-long v22, v29, v23
 
     .line 262
@@ -1903,17 +1900,17 @@
     .end local v32    # "adjustedExponent":J
     .restart local v6    # "adjustedExponent":J
     .restart local v29    # "mantissa":J
-    :cond_441
+    :cond_37
     move-wide/from16 v32, v6
 
     .line 251
     .end local v6    # "adjustedExponent":J
     .restart local v32    # "adjustedExponent":J
-    :goto_443
+    :goto_21
     nop
 
     .line 252
-    :try_start_444
+    :try_start_1
     invoke-virtual {v1, v3, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
@@ -1925,8 +1922,8 @@
     move-result v0
 
     invoke-virtual {v4, v0}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValue(F)V
-    :try_end_452
-    .catchall {:try_start_444 .. :try_end_452} :catchall_458
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 254
     const/4 v2, 0x1
@@ -1940,7 +1937,7 @@
     return v5
 
     .line 254
-    :catchall_458
+    :catchall_1
     move-exception v0
 
     const/4 v2, 0x1
@@ -1957,7 +1954,7 @@
     .restart local v7    # "upperBit":I
     .local v9, "exponent":I
     .restart local v10    # "tooManyDigits":Z
-    :cond_45e
+    :cond_38
     move/from16 v36, v7
 
     move/from16 v31, v9
@@ -1971,11 +1968,11 @@
     .restart local v31    # "exponent":I
     .restart local v34    # "tooManyDigits":Z
     .restart local v36    # "upperBit":I
-    :goto_464
+    :goto_22
     nop
 
     .line 231
-    :try_start_465
+    :try_start_2
     invoke-virtual {v1, v3, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
@@ -1987,8 +1984,8 @@
     move-result v0
 
     invoke-virtual {v4, v0}, Landroidx/compose/ui/graphics/vector/FloatResult;->setValue(F)V
-    :try_end_473
-    .catchall {:try_start_465 .. :try_end_473} :catchall_479
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 233
     const/4 v2, 0x1
@@ -2002,7 +1999,7 @@
     return v5
 
     .line 233
-    :catchall_479
+    :catchall_2
     move-exception v0
 
     const/4 v2, 0x1

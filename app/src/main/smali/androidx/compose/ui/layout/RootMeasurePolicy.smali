@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/layout/RootMeasurePolicy;
 
@@ -56,7 +56,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 26
     nop
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 22
+    .locals 17
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -113,7 +113,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_0
 
     .line 35
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/unit/Constraints;->getMinWidth-impl(J)I
@@ -142,17 +142,17 @@
 
     move-result-object v3
 
-    goto/16 :goto_e3
+    goto/16 :goto_2
 
     .line 37
-    :cond_30
+    :cond_0
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
     move-result v3
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_66
+    if-ne v3, v4, :cond_1
 
     .line 38
     const/4 v3, 0x0
@@ -211,10 +211,10 @@
     move-result-object v3
 
     .end local v3    # "placeable":Landroidx/compose/ui/layout/Placeable;
-    goto/16 :goto_e3
+    goto/16 :goto_2
 
     .line 47
-    :cond_66
+    :cond_1
     move-object/from16 v3, p2
 
     .local v3, "$this$fastMap$iv":Ljava/util/List;
@@ -252,8 +252,8 @@
 
     move-result v9
 
-    :goto_7b
-    if-ge v8, v9, :cond_97
+    :goto_0
+    if-ge v8, v9, :cond_2
 
     .line 73
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -303,11 +303,11 @@
     .end local v10    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_7b
+    goto :goto_0
 
     .line 77
     .end local v8    # "index$iv$iv":I
-    :cond_97
+    :cond_2
     nop
 
     .line 78
@@ -358,8 +358,8 @@
     .end local v5    # "maxHeight":I
     .local v12, "maxWidth":I
     .local v13, "maxHeight":I
-    :goto_a8
-    if-ge v8, v9, :cond_c7
+    :goto_1
+    if-ge v8, v9, :cond_3
 
     .line 81
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -406,11 +406,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_a8
+    goto :goto_1
 
     .line 84
     .end local v8    # "index$iv":I
-    :cond_c7
+    :cond_3
     nop
 
     .line 56
@@ -455,6 +455,6 @@
     .end local v3    # "placeables":Ljava/util/List;
     .end local v12    # "maxWidth":I
     .end local v13    # "maxHeight":I
-    :goto_e3
+    :goto_2
     return-object v3
 .end method

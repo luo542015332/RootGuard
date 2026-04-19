@@ -78,7 +78,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;I)V
-    .registers 4
+    .locals 1
     .param p1, "node"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
     .param p2, "sizeDelta"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final getNode()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -122,7 +122,7 @@
 .end method
 
 .method public final getSizeDelta()I
-    .registers 2
+    .locals 1
 
     .line 81
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode$ModificationResult;->sizeDelta:I
@@ -131,7 +131,7 @@
 .end method
 
 .method public final replaceNode(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode$ModificationResult;
-    .registers 6
+    .locals 4
     .param p1, "operation"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -187,7 +187,7 @@
 .end method
 
 .method public final setNode(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {

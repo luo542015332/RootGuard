@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -73,7 +73,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p1, "scopeCoordinates"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -96,18 +96,18 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 294
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     .line 295
     const/4 p1, 0x0
 
     .line 294
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/layout/LookaheadScopeImpl;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     .line 326
@@ -117,7 +117,7 @@
 
 # virtual methods
 .method public getLookaheadScopeCoordinates(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 3
+    .locals 1
     .param p1, "$this$lookaheadScopeCoordinates"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "<this>"
@@ -139,7 +139,7 @@
 .end method
 
 .method public final getScopeCoordinates()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -156,7 +156,7 @@
 .end method
 
 .method public onPlaced(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 1
     .param p1, "$this$onPlaced"    # Landroidx/compose/ui/Modifier;
     .param p2, "onPlaced"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -202,7 +202,7 @@
 .end method
 
 .method public final setScopeCoordinates(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -221,7 +221,7 @@
 .end method
 
 .method public toLookaheadCoordinates(Landroidx/compose/ui/layout/LayoutCoordinates;)Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 5
+    .locals 3
     .param p1, "$this$toLookaheadCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -231,26 +231,26 @@
     .line 298
     instance-of v0, p1, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
-    if-eqz v0, :cond_13
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/ui/layout/LayoutCoordinates;
 
-    goto :goto_2b
+    goto :goto_2
 
     .line 299
-    :cond_13
+    :cond_1
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/node/NodeCoordinator;
@@ -264,24 +264,24 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     invoke-virtual {v2}, Landroidx/compose/ui/node/LookaheadDelegate;->getLookaheadLayoutCoordinates()Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;
 
     move-result-object v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_2
 
     check-cast v2, Landroidx/compose/ui/layout/LayoutCoordinates;
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_26
+    :cond_2
     move-object v2, v0
 
     check-cast v2, Landroidx/compose/ui/layout/LayoutCoordinates;
 
-    :goto_29
+    :goto_1
     move-object v0, v2
 
     .line 299
@@ -290,6 +290,6 @@
     nop
 
     .line 298
-    :goto_2b
+    :goto_2
     return-object v0
 .end method

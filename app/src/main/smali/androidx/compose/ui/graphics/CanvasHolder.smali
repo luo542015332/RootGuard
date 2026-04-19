@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .end method
 
 .method public static synthetic getAndroidCanvas$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final drawInto(Landroid/graphics/Canvas;Lkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 3
     .param p1, "targetCanvas"    # Landroid/graphics/Canvas;
     .param p2, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -130,7 +130,7 @@
 .end method
 
 .method public final getAndroidCanvas()Landroidx/compose/ui/graphics/AndroidCanvas;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/compose/ui/graphics/CanvasHolder;->androidCanvas:Landroidx/compose/ui/graphics/AndroidCanvas;

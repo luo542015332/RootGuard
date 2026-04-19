@@ -63,7 +63,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/BottomDrawerState;Lkotlinx/coroutines/CoroutineScope;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/material/DrawerKt$BottomDrawerAnchorChangeCallback$1;->$state:Landroidx/compose/material/BottomDrawerState;
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public final onAnchorsChanged(Landroidx/compose/material/BottomDrawerValue;Ljava/util/Map;Ljava/util/Map;)V
-    .registers 15
+    .locals 11
     .param p1, "previousTarget"    # Landroidx/compose/material/BottomDrawerValue;
     .param p2, "previousAnchors"    # Ljava/util/Map;
     .param p3, "newAnchors"    # Ljava/util/Map;
@@ -125,7 +125,7 @@
 
     aget v1, v1, v2
 
-    packed-switch v1, :pswitch_data_90
+    packed-switch v1, :pswitch_data_0
 
     .line 942
     new-instance v1, Lkotlin/NoWhenBranchMatchedException;
@@ -135,7 +135,7 @@
     throw v1
 
     .line 935
-    :pswitch_29
+    :pswitch_0
     sget-object v1, Landroidx/compose/material/BottomDrawerValue;->Open:Landroidx/compose/material/BottomDrawerValue;
 
     invoke-interface {p3, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -144,32 +144,32 @@
 
     .line 936
     .local v1, "hasHalfExpandedState":Z
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_0
 
     .line 937
     sget-object v2, Landroidx/compose/material/BottomDrawerValue;->Open:Landroidx/compose/material/BottomDrawerValue;
 
-    goto :goto_41
+    goto :goto_0
 
     .line 939
-    :cond_34
+    :cond_0
     sget-object v2, Landroidx/compose/material/BottomDrawerValue;->Expanded:Landroidx/compose/material/BottomDrawerValue;
 
     invoke-interface {p3, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_1
 
     sget-object v2, Landroidx/compose/material/BottomDrawerValue;->Expanded:Landroidx/compose/material/BottomDrawerValue;
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_3f
+    :cond_1
     sget-object v2, Landroidx/compose/material/BottomDrawerValue;->Closed:Landroidx/compose/material/BottomDrawerValue;
 
     .line 936
-    :goto_41
+    :goto_0
     nop
 
     .line 942
@@ -178,14 +178,14 @@
 
     .end local v1    # "hasHalfExpandedState":Z
     .end local v2    # "newTarget":Landroidx/compose/material/BottomDrawerValue;
-    goto :goto_46
+    goto :goto_1
 
     .line 933
-    :pswitch_44
+    :pswitch_1
     sget-object v2, Landroidx/compose/material/BottomDrawerValue;->Closed:Landroidx/compose/material/BottomDrawerValue;
 
     .line 932
-    :goto_46
+    :goto_1
     move-object v1, v2
 
     .line 945
@@ -206,7 +206,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_8e
+    if-nez v3, :cond_3
 
     .line 947
     iget-object v3, p0, Landroidx/compose/material/DrawerKt$BottomDrawerAnchorChangeCallback$1;->$state:Landroidx/compose/material/BottomDrawerState;
@@ -217,7 +217,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_74
+    if-eqz v3, :cond_2
 
     .line 949
     iget-object v5, p0, Landroidx/compose/material/DrawerKt$BottomDrawerAnchorChangeCallback$1;->$scope:Lkotlinx/coroutines/CoroutineScope;
@@ -242,10 +242,10 @@
 
     invoke-static/range {v5 .. v10}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    goto :goto_8e
+    goto :goto_2
 
     .line 952
-    :cond_74
+    :cond_2
     iget-object v3, p0, Landroidx/compose/material/DrawerKt$BottomDrawerAnchorChangeCallback$1;->$state:Landroidx/compose/material/BottomDrawerState;
 
     invoke-virtual {v3, v1}, Landroidx/compose/material/BottomDrawerState;->trySnapTo$material_release(Landroidx/compose/material/BottomDrawerValue;)Z
@@ -254,7 +254,7 @@
 
     .line 953
     .local v3, "didSnapSynchronously":Z
-    if-nez v3, :cond_8e
+    if-nez v3, :cond_3
 
     iget-object v5, p0, Landroidx/compose/material/DrawerKt$BottomDrawerAnchorChangeCallback$1;->$scope:Lkotlinx/coroutines/CoroutineScope;
 
@@ -278,22 +278,22 @@
 
     .line 956
     .end local v3    # "didSnapSynchronously":Z
-    :cond_8e
-    :goto_8e
+    :cond_3
+    :goto_2
     return-void
 
     nop
 
-    :pswitch_data_90
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_44
-        :pswitch_29
-        :pswitch_29
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public bridge synthetic onAnchorsChanged(Ljava/lang/Object;Ljava/util/Map;Ljava/util/Map;)V
-    .registers 5
+    .locals 1
     .param p1, "previousTargetValue"    # Ljava/lang/Object;
     .param p2, "previousAnchors"    # Ljava/util/Map;
     .param p3, "newAnchors"    # Ljava/util/Map;

@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/saveable/SaveableStateRegistry;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/runtime/saveable/RememberSaveableKt$rememberSaveable$1$valueProvider$1$1$1;->$registry:Landroidx/compose/runtime/saveable/SaveableStateRegistry;
 
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final canBeSaved(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "it"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "it"

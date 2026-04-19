@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/modifier/ProvidableModifierLocal;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .param p1, "$key"    # Landroidx/compose/ui/modifier/ProvidableModifierLocal;
     .param p2, "$value"    # Lkotlin/jvm/functions/Function0;
     .param p3, "$super_call_param$1"    # Lkotlin/jvm/functions/Function1;
@@ -117,7 +117,7 @@
 
 # virtual methods
 .method public getKey()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -133,7 +133,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"

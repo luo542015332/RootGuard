@@ -67,7 +67,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/modifier/ModifierLocal;)V
-    .registers 4
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -103,7 +103,7 @@
 .end method
 
 .method private final getValue()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 41
     iget-object v0, p0, Landroidx/compose/ui/modifier/SingleLocalMap;->value$delegate:Landroidx/compose/runtime/MutableState;
@@ -130,7 +130,7 @@
 .end method
 
 .method private final setValue(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     .line 41
@@ -159,7 +159,7 @@
 
 # virtual methods
 .method public contains$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -176,21 +176,21 @@
     .line 57
     iget-object v0, p0, Landroidx/compose/ui/modifier/SingleLocalMap;->key:Landroidx/compose/ui/modifier/ModifierLocal;
 
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public final forceValue$ui_release(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # Ljava/lang/Object;
 
     .line 43
@@ -201,7 +201,7 @@
 .end method
 
 .method public get$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -220,32 +220,32 @@
     .line 52
     iget-object v0, p0, Landroidx/compose/ui/modifier/SingleLocalMap;->key:Landroidx/compose/ui/modifier/ModifierLocal;
 
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
-    if-eqz v0, :cond_17
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 54
     invoke-direct {p0}, Landroidx/compose/ui/modifier/SingleLocalMap;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
-    :cond_16
+    :cond_1
     return-object v0
 
     .line 52
-    :cond_17
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -260,7 +260,7 @@
 .end method
 
 .method public set$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -280,17 +280,17 @@
     .line 47
     iget-object v0, p0, Landroidx/compose/ui/modifier/SingleLocalMap;->key:Landroidx/compose/ui/modifier/ModifierLocal;
 
-    if-ne p1, v0, :cond_c
+    if-ne p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
-    if-eqz v0, :cond_13
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 48
     invoke-direct {p0, p2}, Landroidx/compose/ui/modifier/SingleLocalMap;->setValue(Ljava/lang/Object;)V
@@ -299,7 +299,7 @@
     return-void
 
     .line 47
-    :cond_13
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."

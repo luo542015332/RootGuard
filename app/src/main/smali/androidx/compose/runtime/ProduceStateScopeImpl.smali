@@ -81,7 +81,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/MutableState;Lkotlin/coroutines/CoroutineContext;)V
-    .registers 4
+    .locals 1
     .param p1, "state"    # Landroidx/compose/runtime/MutableState;
     .param p2, "coroutineContext"    # Lkotlin/coroutines/CoroutineContext;
     .annotation system Ldalvik/annotation/Signature;
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public awaitDispose(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 12
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -133,7 +133,7 @@
 
     instance-of v0, p2, Landroidx/compose/runtime/ProduceStateScopeImpl$awaitDispose$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -145,7 +145,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/compose/runtime/ProduceStateScopeImpl$awaitDispose$1;->label:I
 
@@ -153,14 +153,14 @@
 
     iput p2, v0, Landroidx/compose/runtime/ProduceStateScopeImpl$awaitDispose$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/ProduceStateScopeImpl$awaitDispose$1;
 
     invoke-direct {v0, p0, p2}, Landroidx/compose/runtime/ProduceStateScopeImpl$awaitDispose$1;-><init>(Landroidx/compose/runtime/ProduceStateScopeImpl;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     move-object p2, v0
 
     .local p2, "$continuation":Lkotlin/coroutines/Continuation;
@@ -174,7 +174,7 @@
     .line 48
     iget v2, p2, Landroidx/compose/runtime/ProduceStateScopeImpl$awaitDispose$1;->label:I
 
-    packed-switch v2, :pswitch_data_7a
+    packed-switch v2, :pswitch_data_0
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local p2    # "$continuation":Lkotlin/coroutines/Continuation;
@@ -188,7 +188,7 @@
 
     .restart local v0    # "$result":Ljava/lang/Object;
     .restart local p2    # "$continuation":Lkotlin/coroutines/Continuation;
-    :pswitch_2e
+    :pswitch_0
     const/4 p1, 0x0
 
     .local p1, "$i$f$suspendCancellableCoroutine":I
@@ -197,23 +197,23 @@
     check-cast v1, Lkotlin/jvm/functions/Function0;
 
     .local v1, "onDispose":Lkotlin/jvm/functions/Function0;
-    :try_start_33
+    :try_start_0
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_36
-    .catchall {:try_start_33 .. :try_end_36} :catchall_37
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_6a
+    goto :goto_1
 
     .line 52
     .end local p1    # "$i$f$suspendCancellableCoroutine":I
-    :catchall_37
+    :catchall_0
     move-exception p1
 
-    goto :goto_75
+    goto :goto_2
 
     .line 48
     .end local v1    # "onDispose":Lkotlin/jvm/functions/Function0;
-    :pswitch_39
+    :pswitch_1
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     .line 49
@@ -225,7 +225,7 @@
 
     .line 224
     .local v2, "$i$f$suspendCancellableCoroutine":I
-    :try_start_3e
+    :try_start_1
     iput-object p1, p2, Landroidx/compose/runtime/ProduceStateScopeImpl$awaitDispose$1;->L$0:Ljava/lang/Object;
 
     const/4 v3, 0x1
@@ -281,20 +281,20 @@
 
     move-result-object v3
 
-    if-ne v6, v3, :cond_65
+    if-ne v6, v3, :cond_1
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
-    :try_end_65
-    .catchall {:try_start_3e .. :try_end_65} :catchall_71
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    :cond_65
-    if-ne v6, v1, :cond_68
+    :cond_1
+    if-ne v6, v1, :cond_2
 
     .line 48
     return-object v1
 
     .line 224
-    :cond_68
+    :cond_2
     move-object v1, p1
 
     move p1, v2
@@ -303,12 +303,12 @@
     .end local v2    # "$i$f$suspendCancellableCoroutine":I
     .restart local v1    # "onDispose":Lkotlin/jvm/functions/Function0;
     .local p1, "$i$f$suspendCancellableCoroutine":I
-    :goto_6a
+    :goto_1
     nop
 
     .line 50
     .end local p1    # "$i$f$suspendCancellableCoroutine":I
-    :try_start_6b
+    :try_start_2
     new-instance p1, Lkotlin/KotlinNothingValueException;
 
     invoke-direct {p1}, Lkotlin/KotlinNothingValueException;-><init>()V
@@ -317,14 +317,14 @@
     .end local v1    # "onDispose":Lkotlin/jvm/functions/Function0;
     .end local p2    # "$continuation":Lkotlin/coroutines/Continuation;
     throw p1
-    :try_end_71
-    .catchall {:try_start_6b .. :try_end_71} :catchall_37
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 52
     .restart local v0    # "$result":Ljava/lang/Object;
     .local p1, "onDispose":Lkotlin/jvm/functions/Function0;
     .restart local p2    # "$continuation":Lkotlin/coroutines/Continuation;
-    :catchall_71
+    :catchall_1
     move-exception v1
 
     move-object v8, v1
@@ -335,22 +335,22 @@
 
     .end local p1    # "onDispose":Lkotlin/jvm/functions/Function0;
     .restart local v1    # "onDispose":Lkotlin/jvm/functions/Function0;
-    :goto_75
+    :goto_2
     invoke-interface {v1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     throw p1
 
     nop
 
-    :pswitch_data_7a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_39
-        :pswitch_2e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public component1()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -367,7 +367,7 @@
 .end method
 
 .method public component2()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -388,7 +388,7 @@
 .end method
 
 .method public getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 45
     iget-object v0, p0, Landroidx/compose/runtime/ProduceStateScopeImpl;->coroutineContext:Lkotlin/coroutines/CoroutineContext;
@@ -397,7 +397,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -414,7 +414,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"

@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/internal/PopupLayout;Landroidx/compose/ui/window/PopupPositionProvider;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$ExposedDropdownMenuPopup$3;->$popupLayout:Landroidx/compose/material/internal/PopupLayout;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/runtime/DisposableEffectScope;)Landroidx/compose/runtime/DisposableEffectResult;
-    .registers 5
+    .locals 3
     .param p1, "$this$DisposableEffect"    # Landroidx/compose/runtime/DisposableEffectScope;
 
     const-string v0, "$this$DisposableEffect"
@@ -117,7 +117,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 141

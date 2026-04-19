@@ -116,7 +116,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 14
+    .locals 13
 
     const/4 v1, 0x0
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;FFFFFFFLjava/util/List;Ljava/util/List;)V
-    .registers 12
+    .locals 1
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "rotate"    # F
     .param p3, "pivotX"    # F
@@ -226,142 +226,142 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;FFFFFFFLjava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 23
+    .locals 10
 
     .line 390
     move/from16 v0, p11
 
     and-int/lit8 v1, v0, 0x1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 391
     const-string v1, ""
 
-    goto :goto_a
+    goto :goto_0
 
     .line 390
-    :cond_9
+    :cond_0
     move-object v1, p1
 
-    :goto_a
+    :goto_0
     and-int/lit8 v2, v0, 0x2
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_1
 
     .line 392
     move v2, v3
 
-    goto :goto_12
+    goto :goto_1
 
     .line 390
-    :cond_11
+    :cond_1
     move v2, p2
 
-    :goto_12
+    :goto_1
     and-int/lit8 v4, v0, 0x4
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_2
 
     .line 393
     move v4, v3
 
-    goto :goto_19
+    goto :goto_2
 
     .line 390
-    :cond_18
+    :cond_2
     move v4, p3
 
-    :goto_19
+    :goto_2
     and-int/lit8 v5, v0, 0x8
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_3
 
     .line 394
     move v5, v3
 
-    goto :goto_20
+    goto :goto_3
 
     .line 390
-    :cond_1f
+    :cond_3
     move v5, p4
 
-    :goto_20
+    :goto_3
     and-int/lit8 v6, v0, 0x10
 
     const/high16 v7, 0x3f800000    # 1.0f
 
-    if-eqz v6, :cond_28
+    if-eqz v6, :cond_4
 
     .line 395
     move v6, v7
 
-    goto :goto_29
+    goto :goto_4
 
     .line 390
-    :cond_28
+    :cond_4
     move v6, p5
 
-    :goto_29
+    :goto_4
     and-int/lit8 v8, v0, 0x20
 
-    if-eqz v8, :cond_2e
+    if-eqz v8, :cond_5
 
     .line 396
-    goto :goto_30
+    goto :goto_5
 
     .line 390
-    :cond_2e
+    :cond_5
     move/from16 v7, p6
 
-    :goto_30
+    :goto_5
     and-int/lit8 v8, v0, 0x40
 
-    if-eqz v8, :cond_36
+    if-eqz v8, :cond_6
 
     .line 397
     move v8, v3
 
-    goto :goto_38
+    goto :goto_6
 
     .line 390
-    :cond_36
+    :cond_6
     move/from16 v8, p7
 
-    :goto_38
+    :goto_6
     and-int/lit16 v9, v0, 0x80
 
-    if-eqz v9, :cond_3d
+    if-eqz v9, :cond_7
 
     .line 398
-    goto :goto_3f
+    goto :goto_7
 
     .line 390
-    :cond_3d
+    :cond_7
     move/from16 v3, p8
 
-    :goto_3f
+    :goto_7
     and-int/lit16 v9, v0, 0x100
 
-    if-eqz v9, :cond_48
+    if-eqz v9, :cond_8
 
     .line 399
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getEmptyPath()Ljava/util/List;
 
     move-result-object v9
 
-    goto :goto_4a
+    goto :goto_8
 
     .line 390
-    :cond_48
+    :cond_8
     move-object/from16 v9, p9
 
-    :goto_4a
+    :goto_8
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_9
 
     .line 400
     new-instance v0, Ljava/util/ArrayList;
@@ -370,13 +370,13 @@
 
     check-cast v0, Ljava/util/List;
 
-    goto :goto_58
+    goto :goto_9
 
     .line 390
-    :cond_56
+    :cond_9
     move-object/from16 v0, p10
 
-    :goto_58
+    :goto_9
     move-object p1, p0
 
     move-object p2, v1
@@ -408,7 +408,7 @@
 
 # virtual methods
 .method public final getChildren()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -425,7 +425,7 @@
 .end method
 
 .method public final getClipPathData()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -442,7 +442,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 391
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->name:Ljava/lang/String;
@@ -451,7 +451,7 @@
 .end method
 
 .method public final getPivotX()F
-    .registers 2
+    .locals 1
 
     .line 393
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->pivotX:F
@@ -460,7 +460,7 @@
 .end method
 
 .method public final getPivotY()F
-    .registers 2
+    .locals 1
 
     .line 394
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->pivotY:F
@@ -469,7 +469,7 @@
 .end method
 
 .method public final getRotate()F
-    .registers 2
+    .locals 1
 
     .line 392
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->rotate:F
@@ -478,7 +478,7 @@
 .end method
 
 .method public final getScaleX()F
-    .registers 2
+    .locals 1
 
     .line 395
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->scaleX:F
@@ -487,7 +487,7 @@
 .end method
 
 .method public final getScaleY()F
-    .registers 2
+    .locals 1
 
     .line 396
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->scaleY:F
@@ -496,7 +496,7 @@
 .end method
 
 .method public final getTranslationX()F
-    .registers 2
+    .locals 1
 
     .line 397
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->translationX:F
@@ -505,7 +505,7 @@
 .end method
 
 .method public final getTranslationY()F
-    .registers 2
+    .locals 1
 
     .line 398
     iget v0, p0, Landroidx/compose/ui/graphics/vector/ImageVector$Builder$GroupParams;->translationY:F
@@ -514,7 +514,7 @@
 .end method
 
 .method public final setChildren(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -536,7 +536,7 @@
 .end method
 
 .method public final setClipPathData(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -559,7 +559,7 @@
 .end method
 
 .method public final setName(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/lang/String;
 
     const-string v0, "<set-?>"
@@ -573,7 +573,7 @@
 .end method
 
 .method public final setPivotX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 393
@@ -583,7 +583,7 @@
 .end method
 
 .method public final setPivotY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 394
@@ -593,7 +593,7 @@
 .end method
 
 .method public final setRotate(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 392
@@ -603,7 +603,7 @@
 .end method
 
 .method public final setScaleX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 395
@@ -613,7 +613,7 @@
 .end method
 
 .method public final setScaleY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 396
@@ -623,7 +623,7 @@
 .end method
 
 .method public final setTranslationX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 397
@@ -633,7 +633,7 @@
 .end method
 
 .method public final setTranslationY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 398

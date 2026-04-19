@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/text/input/TextInputService;)V
-    .registers 3
+    .locals 1
     .param p1, "textInputService"    # Landroidx/compose/ui/text/input/TextInputService;
 
     const-string/jumbo v0, "textInputService"
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public final getTextInputService()Landroidx/compose/ui/text/input/TextInputService;
-    .registers 2
+    .locals 1
 
     .line 65
     iget-object v0, p0, Landroidx/compose/ui/platform/DelegatingSoftwareKeyboardController;->textInputService:Landroidx/compose/ui/text/input/TextInputService;
@@ -69,7 +69,7 @@
 .end method
 
 .method public hide()V
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/compose/ui/platform/DelegatingSoftwareKeyboardController;->textInputService:Landroidx/compose/ui/text/input/TextInputService;
@@ -81,7 +81,7 @@
 .end method
 
 .method public show()V
-    .registers 2
+    .locals 1
 
     .line 69
     iget-object v0, p0, Landroidx/compose/ui/platform/DelegatingSoftwareKeyboardController;->textInputService:Landroidx/compose/ui/text/input/TextInputService;

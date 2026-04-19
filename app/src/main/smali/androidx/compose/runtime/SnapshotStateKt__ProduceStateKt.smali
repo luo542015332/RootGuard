@@ -49,7 +49,7 @@
 
 # direct methods
 .method public static final produceState(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 21
+    .locals 14
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "key2"    # Ljava/lang/Object;
@@ -102,7 +102,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     .line 182
     const/4 v2, -0x1
@@ -113,14 +113,14 @@
 
     invoke-static {v1, v8, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_27
+    goto :goto_0
 
     .line 0
-    :cond_25
+    :cond_0
     move/from16 v8, p6
 
     .line 182
-    :goto_27
+    :goto_0
     nop
 
     .line 183
@@ -166,7 +166,7 @@
 
     const/4 v11, 0x0
 
-    if-ne v6, v10, :cond_54
+    if-ne v6, v10, :cond_1
 
     .line 248
     const/4 v10, 0x0
@@ -193,16 +193,16 @@
     nop
 
     .end local v10    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_56
+    goto :goto_1
 
     .line 251
-    :cond_54
+    :cond_1
     move-object v13, p0
 
     move-object v10, v6
 
     .line 247
-    :goto_56
+    :goto_1
     nop
 
     .line 246
@@ -249,11 +249,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7b
+    if-eqz v1, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_7b
+    :cond_2
     invoke-interface/range {p5 .. p5}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     move-object v1, v9
@@ -264,7 +264,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 16
+    .locals 10
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "key2"    # Ljava/lang/Object;
@@ -311,7 +311,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 147
     const/4 v1, -0x1
@@ -320,7 +320,7 @@
 
     invoke-static {v0, p5, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_1e
+    :cond_0
     nop
 
     .line 148
@@ -366,7 +366,7 @@
 
     const/4 v8, 0x0
 
-    if-ne v5, v7, :cond_49
+    if-ne v5, v7, :cond_1
 
     .line 241
     const/4 v7, 0x0
@@ -391,14 +391,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_4a
+    goto :goto_0
 
     .line 244
-    :cond_49
+    :cond_1
     move-object v7, v5
 
     .line 240
-    :goto_4a
+    :goto_0
     nop
 
     .line 239
@@ -435,11 +435,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_67
+    :cond_2
     invoke-interface {p4}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     move-object v1, v0
@@ -450,7 +450,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 15
+    .locals 10
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "producer"    # Lkotlin/jvm/functions/Function2;
@@ -495,7 +495,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 113
     const/4 v1, -0x1
@@ -504,7 +504,7 @@
 
     invoke-static {v0, p4, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_1e
+    :cond_0
     nop
 
     .line 114
@@ -550,7 +550,7 @@
 
     const/4 v8, 0x0
 
-    if-ne v5, v7, :cond_49
+    if-ne v5, v7, :cond_1
 
     .line 234
     const/4 v7, 0x0
@@ -575,14 +575,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_4a
+    goto :goto_0
 
     .line 237
-    :cond_49
+    :cond_1
     move-object v7, v5
 
     .line 233
-    :goto_4a
+    :goto_0
     nop
 
     .line 232
@@ -619,11 +619,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_67
+    :cond_2
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     move-object v1, v0
@@ -634,7 +634,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 14
+    .locals 10
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "producer"    # Lkotlin/jvm/functions/Function2;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -677,7 +677,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_0
 
     .line 80
     const/4 v1, -0x1
@@ -686,7 +686,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_1e
+    :cond_0
     nop
 
     .line 81
@@ -732,7 +732,7 @@
 
     const/4 v8, 0x0
 
-    if-ne v5, v7, :cond_49
+    if-ne v5, v7, :cond_1
 
     .line 227
     const/4 v7, 0x0
@@ -757,14 +757,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_4a
+    goto :goto_0
 
     .line 230
-    :cond_49
+    :cond_1
     move-object v7, v5
 
     .line 226
-    :goto_4a
+    :goto_0
     nop
 
     .line 225
@@ -803,11 +803,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_69
+    if-eqz v1, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_69
+    :cond_2
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     move-object v1, v0
@@ -818,7 +818,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 15
+    .locals 10
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "keys"    # [Ljava/lang/Object;
     .param p2, "producer"    # Lkotlin/jvm/functions/Function2;
@@ -867,7 +867,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    if-eqz v1, :cond_0
 
     .line 215
     const/4 v1, -0x1
@@ -876,7 +876,7 @@
 
     invoke-static {v0, p4, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_24
+    :cond_0
     nop
 
     .line 216
@@ -922,7 +922,7 @@
 
     const/4 v8, 0x0
 
-    if-ne v5, v7, :cond_4f
+    if-ne v5, v7, :cond_1
 
     .line 255
     const/4 v7, 0x0
@@ -947,14 +947,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_50
+    goto :goto_0
 
     .line 258
-    :cond_4f
+    :cond_1
     move-object v7, v5
 
     .line 254
-    :goto_50
+    :goto_0
     nop
 
     .line 253
@@ -997,11 +997,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_72
+    if-eqz v1, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_72
+    :cond_2
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     move-object v1, v0

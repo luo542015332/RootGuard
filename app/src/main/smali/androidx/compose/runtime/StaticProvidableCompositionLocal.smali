@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "defaultFactory"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public provided$runtime_release(Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 7
+    .locals 3
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -94,7 +94,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 140
     const/4 v1, -0x1
@@ -103,7 +103,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_18
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/StaticValueHolder;
 
     invoke-direct {v0, p1}, Landroidx/compose/runtime/StaticValueHolder;-><init>(Ljava/lang/Object;)V
@@ -112,11 +112,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_26
+    :cond_1
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     check-cast v0, Landroidx/compose/runtime/State;

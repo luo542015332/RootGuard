@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final synthetic access$calculateAlignmentAndPlaceChildAsNeeded(Landroidx/compose/ui/node/LookaheadCapablePlaceable;Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/node/LookaheadCapablePlaceable;
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
@@ -41,7 +41,7 @@
 .end method
 
 .method private static final calculateAlignmentAndPlaceChildAsNeeded(Landroidx/compose/ui/node/LookaheadCapablePlaceable;Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 7
+    .locals 5
     .param p0, "$this$calculateAlignmentAndPlaceChildAsNeeded"    # Landroidx/compose/ui/node/LookaheadCapablePlaceable;
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
@@ -56,17 +56,17 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     move v3, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v3, v2
 
-    :goto_b
-    if-eqz v3, :cond_60
+    :goto_0
+    if-eqz v3, :cond_5
 
     .line 204
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getMeasureResult$ui_release()Landroidx/compose/ui/layout/MeasureResult;
@@ -83,7 +83,7 @@
 
     const/high16 v4, -0x80000000
 
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_2
 
     .line 205
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getMeasureResult$ui_release()Landroidx/compose/ui/layout/MeasureResult;
@@ -100,30 +100,30 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
 
-    :cond_31
+    :cond_1
     return v4
 
     .line 207
-    :cond_32
+    :cond_2
     invoke-virtual {v0, p1}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->get(Landroidx/compose/ui/layout/AlignmentLine;)I
 
     move-result v3
 
     .line 208
     .local v3, "positionInWrapped":I
-    if-ne v3, v4, :cond_39
+    if-ne v3, v4, :cond_3
 
     .line 209
     return v4
 
     .line 212
-    :cond_39
+    :cond_3
     invoke-virtual {v0, v1}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->setShallowPlacing$ui_release(Z)V
 
     .line 213
@@ -141,7 +141,7 @@
     .line 217
     instance-of v1, p1, Landroidx/compose/ui/layout/HorizontalAlignmentLine;
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_4
 
     .line 218
     invoke-virtual {v0}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getPosition-nOcc-ac()J
@@ -154,10 +154,10 @@
 
     add-int/2addr v1, v3
 
-    goto :goto_5f
+    goto :goto_1
 
     .line 220
-    :cond_56
+    :cond_4
     invoke-virtual {v0}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getPosition-nOcc-ac()J
 
     move-result-wide v1
@@ -169,12 +169,12 @@
     add-int/2addr v1, v3
 
     .line 217
-    :goto_5f
+    :goto_1
     return v1
 
     .line 201
     .end local v3    # "positionInWrapped":I
-    :cond_60
+    :cond_5
     const/4 v1, 0x0
 
     .line 202

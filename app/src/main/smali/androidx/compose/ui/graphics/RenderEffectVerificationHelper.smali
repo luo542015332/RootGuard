@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/RenderEffectVerificationHelper;
 
@@ -58,7 +58,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 129
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final createBlurEffect-8A-3gB4(Landroidx/compose/ui/graphics/RenderEffect;FFI)Landroid/graphics/RenderEffect;
-    .registers 8
+    .locals 3
     .param p1, "inputRenderEffect"    # Landroidx/compose/ui/graphics/RenderEffect;
     .param p2, "radiusX"    # F
     .param p3, "radiusY"    # F
@@ -78,7 +78,7 @@
     .line 139
     const-string/jumbo v0, "{\n            android.gr\u2026)\n            )\n        }"
 
-    if-nez p1, :cond_13
+    if-nez p1, :cond_0
 
     .line 141
     nop
@@ -99,10 +99,10 @@
     .line 139
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_24
+    goto :goto_0
 
     .line 147
-    :cond_13
+    :cond_0
     nop
 
     .line 148
@@ -127,17 +127,17 @@
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 152
-    :goto_24
+    :goto_0
     return-object v1
 .end method
 
 .method public final createOffsetEffect-Uv8p0NA(Landroidx/compose/ui/graphics/RenderEffect;J)Landroid/graphics/RenderEffect;
-    .registers 7
+    .locals 3
     .param p1, "inputRenderEffect"    # Landroidx/compose/ui/graphics/RenderEffect;
     .param p2, "offset"    # J
 
     .line 159
-    if-nez p1, :cond_15
+    if-nez p1, :cond_0
 
     .line 160
     invoke-static {p2, p3}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -157,10 +157,10 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 163
-    :cond_15
+    :cond_0
     invoke-static {p2, p3}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v0
@@ -186,6 +186,6 @@
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 167
-    :goto_2b
+    :goto_0
     return-object v0
 .end method

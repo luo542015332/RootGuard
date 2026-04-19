@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/semantics/EmptySemanticsElement;
 
@@ -63,7 +63,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Landroidx/compose/ui/node/ModifierNodeElement;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 49
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/EmptySemanticsElement;->create()Landroidx/compose/ui/semantics/EmptySemanticsModifier;
@@ -88,7 +88,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/semantics/EmptySemanticsModifier;
-    .registers 2
+    .locals 1
 
     .line 51
     new-instance v0, Landroidx/compose/ui/semantics/EmptySemanticsModifier;
@@ -99,25 +99,25 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 60
-    if-ne p1, p0, :cond_4
+    if-ne p1, p0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 59
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
@@ -128,7 +128,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -140,7 +140,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 49
@@ -154,7 +154,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/semantics/EmptySemanticsModifier;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/semantics/EmptySemanticsModifier;
 
     const-string/jumbo v0, "node"

@@ -79,7 +79,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -89,7 +89,7 @@
 .end method
 
 .method private constructor <init>(Landroidx/compose/animation/core/Animatable;J)V
-    .registers 5
+    .locals 1
     .param p1, "anim"    # Landroidx/compose/animation/core/Animatable;
     .param p2, "startSize"    # J
     .annotation system Ldalvik/annotation/Signature;
@@ -120,7 +120,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/animation/core/Animatable;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/animation/SizeAnimationModifier$AnimData;-><init>(Landroidx/compose/animation/core/Animatable;J)V
 
@@ -128,22 +128,22 @@
 .end method
 
 .method public static synthetic copy-O0kMr_c$default(Landroidx/compose/animation/SizeAnimationModifier$AnimData;Landroidx/compose/animation/core/Animatable;JILjava/lang/Object;)Landroidx/compose/animation/SizeAnimationModifier$AnimData;
-    .registers 6
+    .locals 0
 
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     iget-object p1, p0, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->anim:Landroidx/compose/animation/core/Animatable;
 
-    :cond_6
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_c
+    if-eqz p4, :cond_1
 
     iget-wide p2, p0, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->startSize:J
 
-    :cond_c
+    :cond_1
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->copy-O0kMr_c(Landroidx/compose/animation/core/Animatable;J)Landroidx/compose/animation/SizeAnimationModifier$AnimData;
 
     move-result-object p0
@@ -154,7 +154,7 @@
 
 # virtual methods
 .method public final component1()Landroidx/compose/animation/core/Animatable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -171,7 +171,7 @@
 .end method
 
 .method public final component2-YbymL2g()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->startSize:J
 
@@ -179,7 +179,7 @@
 .end method
 
 .method public final copy-O0kMr_c(Landroidx/compose/animation/core/Animatable;J)Landroidx/compose/animation/SizeAnimationModifier$AnimData;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -205,24 +205,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/animation/SizeAnimationModifier$AnimData;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/animation/SizeAnimationModifier$AnimData;
@@ -235,11 +235,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget-wide v3, p0, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->startSize:J
 
     iget-wide v5, v1, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->startSize:J
@@ -248,16 +248,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_3
 
     return v2
 
-    :cond_23
+    :cond_3
     return v0
 .end method
 
 .method public final getAnim()Landroidx/compose/animation/core/Animatable;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -275,7 +275,7 @@
 .end method
 
 .method public final getStartSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 99
     iget-wide v0, p0, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->startSize:J
@@ -284,7 +284,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget-object v0, p0, Landroidx/compose/animation/SizeAnimationModifier$AnimData;->anim:Landroidx/compose/animation/core/Animatable;
 
@@ -306,7 +306,7 @@
 .end method
 
 .method public final setStartSize-ozmzZPI(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 99
@@ -316,7 +316,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 

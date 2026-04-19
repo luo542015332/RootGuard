@@ -273,7 +273,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 4459
     sget-object v0, Landroidx/compose/runtime/ComposerKt$removeCurrentGroupInstance$1;->INSTANCE:Landroidx/compose/runtime/ComposerKt$removeCurrentGroupInstance$1;
@@ -366,7 +366,7 @@
 .end method
 
 .method public static final synthetic access$asBool(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # I
 
     .line 1
@@ -378,7 +378,7 @@
 .end method
 
 .method public static final synthetic access$asInt(Z)I
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Z
 
     .line 1
@@ -390,7 +390,7 @@
 .end method
 
 .method public static final synthetic access$collectNodesFrom(Landroidx/compose/runtime/SlotTable;Landroidx/compose/runtime/Anchor;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/runtime/SlotTable;
     .param p1, "anchor"    # Landroidx/compose/runtime/Anchor;
 
@@ -403,7 +403,7 @@
 .end method
 
 .method public static final synthetic access$filterToRange(Ljava/util/List;II)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/List;
     .param p1, "start"    # I
     .param p2, "end"    # I
@@ -417,7 +417,7 @@
 .end method
 
 .method public static final synthetic access$firstInRange(Ljava/util/List;II)Landroidx/compose/runtime/Invalidation;
-    .registers 4
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/List;
     .param p1, "start"    # I
     .param p2, "end"    # I
@@ -431,7 +431,7 @@
 .end method
 
 .method public static final synthetic access$getEndGroupInstance$p()Lkotlin/jvm/functions/Function3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->endGroupInstance:Lkotlin/jvm/functions/Function3;
@@ -440,7 +440,7 @@
 .end method
 
 .method public static final synthetic access$getJoinedKey(Landroidx/compose/runtime/KeyInfo;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/runtime/KeyInfo;
 
     .line 1
@@ -452,7 +452,7 @@
 .end method
 
 .method public static final synthetic access$getKey(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "value"    # Ljava/lang/Object;
     .param p1, "left"    # Ljava/lang/Object;
     .param p2, "right"    # Ljava/lang/Object;
@@ -466,7 +466,7 @@
 .end method
 
 .method public static final synthetic access$getRemoveCurrentGroupInstance$p()Lkotlin/jvm/functions/Function3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->removeCurrentGroupInstance:Lkotlin/jvm/functions/Function3;
@@ -475,7 +475,7 @@
 .end method
 
 .method public static final synthetic access$getResetSlotsInstance$p()Lkotlin/jvm/functions/Function3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->resetSlotsInstance:Lkotlin/jvm/functions/Function3;
@@ -484,7 +484,7 @@
 .end method
 
 .method public static final synthetic access$getSkipToGroupEndInstance$p()Lkotlin/jvm/functions/Function3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->skipToGroupEndInstance:Lkotlin/jvm/functions/Function3;
@@ -493,7 +493,7 @@
 .end method
 
 .method public static final synthetic access$getStartRootGroup$p()Lkotlin/jvm/functions/Function3;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->startRootGroup:Lkotlin/jvm/functions/Function3;
@@ -502,7 +502,7 @@
 .end method
 
 .method public static final synthetic access$insertIfMissing(Ljava/util/List;ILandroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
     .param p0, "$receiver"    # Ljava/util/List;
     .param p1, "location"    # I
     .param p2, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
@@ -515,7 +515,7 @@
 .end method
 
 .method public static final synthetic access$multiMap()Ljava/util/HashMap;
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->multiMap()Ljava/util/HashMap;
@@ -526,7 +526,7 @@
 .end method
 
 .method public static final synthetic access$nearestCommonRootOf(Landroidx/compose/runtime/SlotReader;III)I
-    .registers 5
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/runtime/SlotReader;
     .param p1, "a"    # I
     .param p2, "b"    # I
@@ -541,7 +541,7 @@
 .end method
 
 .method public static final synthetic access$pop(Ljava/util/HashMap;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/HashMap;
     .param p1, "key"    # Ljava/lang/Object;
 
@@ -554,7 +554,7 @@
 .end method
 
 .method public static final synthetic access$put(Ljava/util/HashMap;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/HashMap;
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
@@ -568,7 +568,7 @@
 .end method
 
 .method public static final synthetic access$removeLocation(Ljava/util/List;I)Landroidx/compose/runtime/Invalidation;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/List;
     .param p1, "location"    # I
 
@@ -581,7 +581,7 @@
 .end method
 
 .method public static final synthetic access$removeRange(Ljava/util/List;II)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # Ljava/util/List;
     .param p1, "start"    # I
     .param p2, "end"    # I
@@ -593,7 +593,7 @@
 .end method
 
 .method public static final synthetic access$setCompositionTracer$p(Landroidx/compose/runtime/CompositionTracer;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Landroidx/compose/runtime/CompositionTracer;
 
     .line 1
@@ -603,25 +603,25 @@
 .end method
 
 .method private static final asBool(I)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$asBool"    # I
 
     .line 4398
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method private static final asInt(Z)I
-    .registers 1
+    .locals 0
     .param p0, "$this$asInt"    # Z
 
     .line 4397
@@ -629,7 +629,7 @@
 .end method
 
 .method public static final cache(Landroidx/compose/runtime/Composer;ZLkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .param p0, "$this$cache"    # Landroidx/compose/runtime/Composer;
     .param p1, "invalid"    # Z
     .param p2, "block"    # Lkotlin/jvm/functions/Function0;
@@ -669,7 +669,7 @@
 
     .line 1098
     .local v2, "$i$a$-let-ComposerKt$cache$1":I
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_1
 
     sget-object v3, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -677,19 +677,19 @@
 
     move-result-object v3
 
-    if-ne v1, v3, :cond_1c
+    if-ne v1, v3, :cond_0
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 1102
-    :cond_1c
+    :cond_0
     move-object v3, v1
 
-    goto :goto_26
+    goto :goto_1
 
     .line 1099
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v3
@@ -703,7 +703,7 @@
 
     .line 1098
     .end local v3    # "value":Ljava/lang/Object;
-    :goto_26
+    :goto_1
     nop
 
     .line 1097
@@ -713,7 +713,7 @@
 .end method
 
 .method private static final collectNodesFrom(Landroidx/compose/runtime/SlotTable;Landroidx/compose/runtime/Anchor;)Ljava/util/List;
-    .registers 10
+    .locals 8
     .param p0, "$this$collectNodesFrom"    # Landroidx/compose/runtime/SlotTable;
     .param p1, "anchor"    # Landroidx/compose/runtime/Anchor;
     .annotation system Ldalvik/annotation/Signature;
@@ -766,7 +766,7 @@
 
     .line 4403
     .local v6, "$i$a$-read-ComposerKt$collectNodesFrom$1":I
-    :try_start_12
+    :try_start_0
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/SlotTable;->anchorIndex(Landroidx/compose/runtime/Anchor;)I
 
     move-result v7
@@ -782,8 +782,8 @@
     .end local v6    # "$i$a$-read-ComposerKt$collectNodesFrom$1":I
     .end local v7    # "index":I
     sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_1c
-    .catchall {:try_start_12 .. :try_end_1c} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 4575
     nop
@@ -815,7 +815,7 @@
     .restart local v2    # "$i$f$read":I
     .restart local v3    # "reader$iv":Landroidx/compose/runtime/SlotReader;
     .restart local v4    # "$i$a$-let-SlotTable$read$1$iv":I
-    :catchall_25
+    :catchall_0
     move-exception v5
 
     invoke-virtual {v3}, Landroidx/compose/runtime/SlotReader;->close()V
@@ -824,7 +824,7 @@
 .end method
 
 .method private static final collectNodesFrom$lambda$9$collectFromGroup(Landroidx/compose/runtime/SlotReader;Ljava/util/List;I)V
-    .registers 6
+    .locals 3
     .param p0, "$reader"    # Landroidx/compose/runtime/SlotReader;
     .param p1, "result"    # Ljava/util/List;
     .param p2, "group"    # I
@@ -843,7 +843,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 4406
     invoke-virtual {p0, p2}, Landroidx/compose/runtime/SlotReader;->node(I)Ljava/lang/Object;
@@ -852,10 +852,10 @@
 
     invoke-interface {p1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_20
+    goto :goto_1
 
     .line 4408
-    :cond_e
+    :cond_0
     add-int/lit8 v0, p2, 0x1
 
     .line 4409
@@ -868,8 +868,8 @@
 
     .line 4410
     .local v1, "end":I
-    :goto_15
-    if-ge v0, v1, :cond_20
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 4411
     invoke-static {p0, p1, v0}, Landroidx/compose/runtime/ComposerKt;->collectNodesFrom$lambda$9$collectFromGroup(Landroidx/compose/runtime/SlotReader;Ljava/util/List;I)V
@@ -881,18 +881,18 @@
 
     add-int/2addr v0, v2
 
-    goto :goto_15
+    goto :goto_0
 
     .line 4415
     .end local v0    # "current":I
     .end local v1    # "end":I
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_1
     return-void
 .end method
 
 .method public static final composeRuntimeError(Ljava/lang/String;)Ljava/lang/Void;
-    .registers 4
+    .locals 3
     .param p0, "message"    # Ljava/lang/String;
 
     const-string/jumbo v0, "message"
@@ -942,7 +942,7 @@
 .end method
 
 .method private static final distanceFrom(Landroidx/compose/runtime/SlotReader;II)I
-    .registers 5
+    .locals 2
     .param p0, "$this$distanceFrom"    # Landroidx/compose/runtime/SlotReader;
     .param p1, "index"    # I
     .param p2, "root"    # I
@@ -956,10 +956,10 @@
 
     .line 4424
     .local v1, "current":I
-    :goto_2
-    if-lez v1, :cond_d
+    :goto_0
+    if-lez v1, :cond_0
 
-    if-eq v1, p2, :cond_d
+    if-eq v1, p2, :cond_0
 
     .line 4425
     invoke-virtual {p0, v1}, Landroidx/compose/runtime/SlotReader;->parent(I)I
@@ -969,15 +969,15 @@
     .line 4426
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 4428
-    :cond_d
+    :cond_0
     return v0
 .end method
 
 .method private static final filterToRange(Ljava/util/List;II)Ljava/util/List;
-    .registers 7
+    .locals 4
     .param p0, "$this$filterToRange"    # Ljava/util/List;
     .param p1, "start"    # I
     .param p2, "end"    # I
@@ -1008,12 +1008,12 @@
 
     .line 4388
     .local v1, "index":I
-    :goto_b
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
 
-    if-ge v1, v2, :cond_25
+    if-ge v1, v2, :cond_1
 
     .line 4389
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1028,7 +1028,7 @@
 
     move-result v3
 
-    if-ge v3, p2, :cond_24
+    if-ge v3, p2, :cond_0
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -1038,21 +1038,21 @@
     .end local v2    # "invalidation":Landroidx/compose/runtime/Invalidation;
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 4391
     .restart local v2    # "invalidation":Landroidx/compose/runtime/Invalidation;
-    :cond_24
+    :cond_0
     nop
 
     .line 4394
     .end local v2    # "invalidation":Landroidx/compose/runtime/Invalidation;
-    :cond_25
+    :cond_1
     return-object v0
 .end method
 
 .method private static final findInsertLocation(Ljava/util/List;I)I
-    .registers 5
+    .locals 3
     .param p0, "$this$findInsertLocation"    # Ljava/util/List;
     .param p1, "location"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1075,7 +1075,7 @@
 
     .line 4331
     .local v1, "$i$a$-let-ComposerKt$findInsertLocation$1":I
-    if-gez v0, :cond_b
+    if-gez v0, :cond_0
 
     add-int/lit8 v2, v0, 0x1
 
@@ -1085,12 +1085,12 @@
 
     .end local v0    # "it":I
     .end local v1    # "$i$a$-let-ComposerKt$findInsertLocation$1":I
-    :cond_b
+    :cond_0
     return v0
 .end method
 
 .method private static final findLocation(Ljava/util/List;I)I
-    .registers 7
+    .locals 5
     .param p0, "$this$findLocation"    # Ljava/util/List;
     .param p1, "location"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1115,8 +1115,8 @@
 
     .line 4316
     .local v1, "high":I
-    :goto_7
-    if-gt v0, v1, :cond_27
+    :goto_0
+    if-gt v0, v1, :cond_2
 
     .line 4317
     add-int v2, v0, v1
@@ -1146,29 +1146,29 @@
     nop
 
     .line 4322
-    if-gez v4, :cond_21
+    if-gez v4, :cond_0
 
     add-int/lit8 v0, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 4323
-    :cond_21
-    if-lez v4, :cond_26
+    :cond_0
+    if-lez v4, :cond_1
 
     add-int/lit8 v1, v2, -0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 4324
-    :cond_26
+    :cond_1
     return v2
 
     .line 4327
     .end local v2    # "mid":I
     .end local v3    # "midVal":Landroidx/compose/runtime/Invalidation;
     .end local v4    # "cmp":I
-    :cond_27
+    :cond_2
     add-int/lit8 v2, v0, 0x1
 
     neg-int v2, v2
@@ -1177,7 +1177,7 @@
 .end method
 
 .method private static final firstInRange(Ljava/util/List;II)Landroidx/compose/runtime/Invalidation;
-    .registers 6
+    .locals 3
     .param p0, "$this$firstInRange"    # Ljava/util/List;
     .param p1, "start"    # I
     .param p2, "end"    # I
@@ -1202,7 +1202,7 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_17
+    if-ge v0, v1, :cond_0
 
     .line 4362
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1217,20 +1217,20 @@
 
     move-result v2
 
-    if-ge v2, p2, :cond_17
+    if-ge v2, p2, :cond_0
 
     return-object v1
 
     .line 4365
     .end local v1    # "firstInvalidation":Landroidx/compose/runtime/Invalidation;
-    :cond_17
+    :cond_0
     const/4 v1, 0x0
 
     return-object v1
 .end method
 
 .method public static final getCompositionLocalMap()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 4520
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->compositionLocalMap:Ljava/lang/Object;
@@ -1239,25 +1239,25 @@
 .end method
 
 .method public static synthetic getCompositionLocalMap$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCompositionLocalMapKey$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static synthetic getCompositionTracer$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getInvocation()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 4508
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->invocation:Ljava/lang/Object;
@@ -1266,19 +1266,19 @@
 .end method
 
 .method public static synthetic getInvocation$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getInvocationKey$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static final getJoinedKey(Landroidx/compose/runtime/KeyInfo;)Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .param p0, "$this$joinedKey"    # Landroidx/compose/runtime/KeyInfo;
 
     .line 4471
@@ -1286,7 +1286,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     new-instance v0, Landroidx/compose/runtime/JoinedKey;
 
@@ -1304,9 +1304,9 @@
 
     invoke-direct {v0, v1, v2}, Landroidx/compose/runtime/JoinedKey;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/KeyInfo;->getKey()I
 
     move-result v0
@@ -1315,12 +1315,12 @@
 
     move-result-object v0
 
-    :goto_20
+    :goto_0
     return-object v0
 .end method
 
 .method private static final getKey(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .param p0, "value"    # Ljava/lang/Object;
     .param p1, "left"    # Ljava/lang/Object;
     .param p2, "right"    # Ljava/lang/Object;
@@ -1330,19 +1330,19 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/JoinedKey;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move-object v0, v1
 
-    :goto_a
-    if-eqz v0, :cond_39
+    :goto_0
+    if-eqz v0, :cond_3
 
     .local v0, "it":Landroidx/compose/runtime/JoinedKey;
     const/4 v1, 0x0
@@ -1357,7 +1357,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     invoke-virtual {v0}, Landroidx/compose/runtime/JoinedKey;->getRight()Ljava/lang/Object;
 
@@ -1367,14 +1367,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     move-object v2, p0
 
-    goto :goto_37
+    goto :goto_1
 
     .line 4304
-    :cond_23
+    :cond_1
     invoke-virtual {v0}, Landroidx/compose/runtime/JoinedKey;->getLeft()Ljava/lang/Object;
 
     move-result-object v2
@@ -1383,7 +1383,7 @@
 
     move-result-object v2
 
-    if-nez v2, :cond_37
+    if-nez v2, :cond_2
 
     .line 4305
     invoke-virtual {v0}, Landroidx/compose/runtime/JoinedKey;->getRight()Ljava/lang/Object;
@@ -1402,8 +1402,8 @@
     move-result-object v2
 
     .line 4303
-    :cond_37
-    :goto_37
+    :cond_2
+    :goto_1
     nop
 
     .line 4302
@@ -1412,12 +1412,12 @@
     move-object v1, v2
 
     .line 4309
-    :cond_39
+    :cond_3
     return-object v1
 .end method
 
 .method public static final getProvider()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 4514
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->provider:Ljava/lang/Object;
@@ -1426,19 +1426,19 @@
 .end method
 
 .method public static synthetic getProvider$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getProviderKey$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getProviderMaps()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 4532
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->providerMaps:Ljava/lang/Object;
@@ -1447,19 +1447,19 @@
 .end method
 
 .method public static synthetic getProviderMaps$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getProviderMapsKey$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getProviderValues()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 4526
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->providerValues:Ljava/lang/Object;
@@ -1468,19 +1468,19 @@
 .end method
 
 .method public static synthetic getProviderValues$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getProviderValuesKey$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getReference()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 4538
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->reference:Ljava/lang/Object;
@@ -1489,25 +1489,25 @@
 .end method
 
 .method public static synthetic getReference$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getReferenceKey$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getReuseKey$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static final insertIfMissing(Ljava/util/List;ILandroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)V
-    .registers 11
+    .locals 7
     .param p0, "$this$insertIfMissing"    # Ljava/util/List;
     .param p1, "location"    # I
     .param p2, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
@@ -1533,7 +1533,7 @@
     .local v0, "index":I
     const/4 v1, 0x0
 
-    if-gez v0, :cond_26
+    if-gez v0, :cond_1
 
     .line 4340
     nop
@@ -1553,7 +1553,7 @@
     nop
 
     .line 4345
-    if-eqz p3, :cond_1d
+    if-eqz p3, :cond_0
 
     move-object v1, p3
 
@@ -1584,7 +1584,7 @@
     move-object v1, v4
 
     .line 4342
-    :cond_1d
+    :cond_0
     new-instance v3, Landroidx/compose/runtime/Invalidation;
 
     invoke-direct {v3, p2, p1, v1}, Landroidx/compose/runtime/Invalidation;-><init>(Landroidx/compose/runtime/RecomposeScopeImpl;ILandroidx/compose/runtime/collection/IdentityArraySet;)V
@@ -1592,11 +1592,11 @@
     .line 4340
     invoke-interface {p0, v2, v3}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    goto :goto_41
+    goto :goto_0
 
     .line 4351
-    :cond_26
-    if-nez p3, :cond_32
+    :cond_1
+    if-nez p3, :cond_2
 
     .line 4352
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1607,10 +1607,10 @@
 
     invoke-virtual {v2, v1}, Landroidx/compose/runtime/Invalidation;->setInstances(Landroidx/compose/runtime/collection/IdentityArraySet;)V
 
-    goto :goto_41
+    goto :goto_0
 
     .line 4354
-    :cond_32
+    :cond_2
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -1621,18 +1621,18 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_3
 
     invoke-virtual {v1, p3}, Landroidx/compose/runtime/collection/IdentityArraySet;->add(Ljava/lang/Object;)Z
 
     .line 4357
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method public static final isTraceInProgress()Z
-    .registers 3
+    .locals 3
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -1645,29 +1645,29 @@
 
     .line 1157
     .local v1, "$i$a$-let-ComposerKt$isTraceInProgress$1":I
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/runtime/CompositionTracer;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v2, 0x0
 
     .end local v0    # "it":Landroidx/compose/runtime/CompositionTracer;
     .end local v1    # "$i$a$-let-ComposerKt$isTraceInProgress$1":I
-    :goto_e
+    :goto_0
     return v2
 .end method
 
 .method private static final multiMap()Ljava/util/HashMap;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -1691,47 +1691,47 @@
 .end method
 
 .method private static final nearestCommonRootOf(Landroidx/compose/runtime/SlotReader;III)I
-    .registers 13
+    .locals 9
     .param p0, "$this$nearestCommonRootOf"    # Landroidx/compose/runtime/SlotReader;
     .param p1, "a"    # I
     .param p2, "b"    # I
     .param p3, "common"    # I
 
     .line 4434
-    if-ne p1, p2, :cond_3
+    if-ne p1, p2, :cond_0
 
     return p1
 
     .line 4435
-    :cond_3
-    if-eq p1, p3, :cond_59
+    :cond_0
+    if-eq p1, p3, :cond_8
 
-    if-ne p2, p3, :cond_8
+    if-ne p2, p3, :cond_1
 
-    goto :goto_59
+    goto :goto_3
 
     .line 4436
-    :cond_8
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/SlotReader;->parent(I)I
 
     move-result v0
 
-    if-ne v0, p2, :cond_f
+    if-ne v0, p2, :cond_2
 
     return p2
 
     .line 4437
-    :cond_f
+    :cond_2
     invoke-virtual {p0, p2}, Landroidx/compose/runtime/SlotReader;->parent(I)I
 
     move-result v0
 
-    if-ne v0, p1, :cond_16
+    if-ne v0, p1, :cond_3
 
     return p1
 
     .line 4438
-    :cond_16
+    :cond_3
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/SlotReader;->parent(I)I
 
     move-result v0
@@ -1740,7 +1740,7 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_4
 
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/SlotReader;->parent(I)I
 
@@ -1749,7 +1749,7 @@
     return v0
 
     .line 4441
-    :cond_25
+    :cond_4
     const/4 v0, 0x0
 
     .local v0, "currentA":I
@@ -1780,8 +1780,8 @@
 
     move v6, v5
 
-    :goto_35
-    if-ge v6, v4, :cond_40
+    :goto_0
+    if-ge v6, v4, :cond_5
 
     move v7, v6
 
@@ -1799,14 +1799,14 @@
     .end local v8    # "$i$a$-repeat-ComposerKt$nearestCommonRootOf$1":I
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_35
+    goto :goto_0
 
     .line 4446
-    :cond_40
+    :cond_5
     sub-int v4, v3, v2
 
-    :goto_42
-    if-ge v5, v4, :cond_4d
+    :goto_1
+    if-ge v5, v4, :cond_6
 
     move v6, v5
 
@@ -1824,12 +1824,12 @@
     .end local v7    # "$i$a$-repeat-ComposerKt$nearestCommonRootOf$2":I
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_42
+    goto :goto_1
 
     .line 4450
-    :cond_4d
-    :goto_4d
-    if-eq v0, v1, :cond_58
+    :cond_6
+    :goto_2
+    if-eq v0, v1, :cond_7
 
     .line 4451
     invoke-virtual {p0, v0}, Landroidx/compose/runtime/SlotReader;->parent(I)I
@@ -1841,10 +1841,10 @@
 
     move-result v1
 
-    goto :goto_4d
+    goto :goto_2
 
     .line 4456
-    :cond_58
+    :cond_7
     return v0
 
     .line 4435
@@ -1852,13 +1852,13 @@
     .end local v1    # "currentB":I
     .end local v2    # "aDistance":I
     .end local v3    # "bDistance":I
-    :cond_59
-    :goto_59
+    :cond_8
+    :goto_3
     return p3
 .end method
 
 .method private static final pop(Ljava/util/HashMap;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p0, "$this$pop"    # Ljava/util/HashMap;
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1882,7 +1882,7 @@
 
     check-cast v0, Ljava/util/LinkedHashSet;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     check-cast v0, Ljava/lang/Iterable;
 
@@ -1890,7 +1890,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v1, v0
 
@@ -1907,18 +1907,18 @@
     .line 4298
     .end local v1    # "it":Ljava/lang/Object;
     .end local v2    # "$i$a$-also-ComposerKt$pop$1":I
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
     .line 4300
-    :goto_18
+    :goto_0
     return-object v0
 .end method
 
 .method private static final put(Ljava/util/HashMap;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 8
+    .locals 5
     .param p0, "$this$put"    # Ljava/util/HashMap;
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
@@ -1952,7 +1952,7 @@
 
     .line 4566
     .local v2, "value$iv":Ljava/lang/Object;
-    if-nez v2, :cond_16
+    if-nez v2, :cond_0
 
     .line 4567
     const/4 v3, 0x0
@@ -1975,14 +1975,14 @@
     nop
 
     .end local v3    # "answer$iv":Ljava/lang/Object;
-    goto :goto_17
+    goto :goto_0
 
     .line 4571
-    :cond_16
+    :cond_0
     move-object v3, v2
 
     .line 4566
-    :goto_17
+    :goto_0
     nop
 
     .end local v0    # "$this$getOrPut$iv":Ljava/util/Map;
@@ -1999,7 +1999,7 @@
 .end method
 
 .method private static final remove(Ljava/util/HashMap;Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Unit;
-    .registers 6
+    .locals 3
     .param p0, "$this$remove"    # Ljava/util/HashMap;
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
@@ -2025,7 +2025,7 @@
 
     check-cast v0, Ljava/util/LinkedHashSet;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     .local v0, "it":Ljava/util/LinkedHashSet;
     const/4 v1, 0x0
@@ -2039,12 +2039,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4296
-    :cond_15
+    :cond_0
     nop
 
     .line 4293
@@ -2052,18 +2052,18 @@
     .end local v1    # "$i$a$-let-ComposerKt$remove$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_1
     const/4 v0, 0x0
 
     .line 4296
-    :goto_1a
+    :goto_0
     return-object v0
 .end method
 
 .method public static final removeCurrentGroup(Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$removeCurrentGroup"    # Landroidx/compose/runtime/SlotWriter;
     .param p1, "rememberManager"    # Landroidx/compose/runtime/RememberManager;
 
@@ -2080,13 +2080,13 @@
 
     move-result-object v0
 
-    :cond_f
-    :goto_f
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2096,7 +2096,7 @@
     .local v1, "slot":Ljava/lang/Object;
     instance-of v2, v1, Landroidx/compose/runtime/ComposeNodeLifecycleCallback;
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_1
 
     .line 4272
     move-object v2, v1
@@ -2106,10 +2106,10 @@
     invoke-interface {p1, v2}, Landroidx/compose/runtime/RememberManager;->releasing(Landroidx/compose/runtime/ComposeNodeLifecycleCallback;)V
 
     .line 4274
-    :cond_23
+    :cond_1
     instance-of v2, v1, Landroidx/compose/runtime/RememberObserver;
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_2
 
     .line 4275
     move-object v2, v1
@@ -2119,10 +2119,10 @@
     invoke-interface {p1, v2}, Landroidx/compose/runtime/RememberManager;->forgetting(Landroidx/compose/runtime/RememberObserver;)V
 
     .line 4277
-    :cond_2d
+    :cond_2
     instance-of v2, v1, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     .line 4278
     move-object v2, v1
@@ -2132,10 +2132,10 @@
     invoke-virtual {v2}, Landroidx/compose/runtime/RecomposeScopeImpl;->release()V
 
     .end local v1    # "slot":Ljava/lang/Object;
-    goto :goto_f
+    goto :goto_0
 
     .line 4282
-    :cond_38
+    :cond_3
     invoke-virtual {p0}, Landroidx/compose/runtime/SlotWriter;->removeGroup()Z
 
     .line 4283
@@ -2143,7 +2143,7 @@
 .end method
 
 .method private static final removeLocation(Ljava/util/List;I)Landroidx/compose/runtime/Invalidation;
-    .registers 4
+    .locals 2
     .param p0, "$this$removeLocation"    # Ljava/util/List;
     .param p1, "location"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -2163,7 +2163,7 @@
 
     .line 4370
     .local v0, "index":I
-    if-ltz v0, :cond_d
+    if-ltz v0, :cond_0
 
     invoke-interface {p0, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
@@ -2171,17 +2171,17 @@
 
     check-cast v1, Landroidx/compose/runtime/Invalidation;
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     return-object v1
 .end method
 
 .method private static final removeRange(Ljava/util/List;II)V
-    .registers 6
+    .locals 3
     .param p0, "$this$removeRange"    # Ljava/util/List;
     .param p1, "start"    # I
     .param p2, "end"    # I
@@ -2201,12 +2201,12 @@
 
     .line 4375
     .local v0, "index":I
-    :goto_4
+    :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_1b
+    if-ge v0, v1, :cond_1
 
     .line 4376
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2221,24 +2221,24 @@
 
     move-result v2
 
-    if-ge v2, p2, :cond_1a
+    if-ge v2, p2, :cond_0
 
     invoke-interface {p0, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    goto :goto_4
+    goto :goto_0
 
     .line 4378
-    :cond_1a
+    :cond_0
     nop
 
     .line 4380
     .end local v1    # "validation":Landroidx/compose/runtime/Invalidation;
-    :cond_1b
+    :cond_1
     return-void
 .end method
 
 .method public static final runtimeCheck(Z)V
-    .registers 4
+    .locals 3
     .param p0, "value"    # Z
 
     .line 4554
@@ -2246,7 +2246,7 @@
 
     .line 4580
     .local v0, "$i$f$runtimeCheck":I
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_0
 
     .line 4584
     nop
@@ -2257,7 +2257,7 @@
 
     .line 4581
     .restart local v0    # "$i$f$runtimeCheck":I
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 4554
@@ -2284,7 +2284,7 @@
 .end method
 
 .method public static final runtimeCheck(ZLkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 3
     .param p0, "value"    # Z
     .param p1, "lazyMessage"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -2305,13 +2305,13 @@
 
     .line 4548
     .local v0, "$i$f$runtimeCheck":I
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_0
 
     .line 4552
     return-void
 
     .line 4549
-    :cond_a
+    :cond_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v1
@@ -2332,7 +2332,7 @@
 .end method
 
 .method public static final sourceInformation(Landroidx/compose/runtime/Composer;Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p0, "composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "sourceInformation"    # Ljava/lang/String;
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
@@ -2354,7 +2354,7 @@
 .end method
 
 .method public static final sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
-    .registers 2
+    .locals 1
     .param p0, "composer"    # Landroidx/compose/runtime/Composer;
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -2371,7 +2371,7 @@
 .end method
 
 .method public static final sourceInformationMarkerStart(Landroidx/compose/runtime/Composer;ILjava/lang/String;)V
-    .registers 4
+    .locals 1
     .param p0, "composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "key"    # I
     .param p2, "sourceInformation"    # Ljava/lang/String;
@@ -2394,24 +2394,24 @@
 .end method
 
 .method public static final traceEventEnd()V
-    .registers 1
+    .locals 1
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
     .line 1190
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->compositionTracer:Landroidx/compose/runtime/CompositionTracer;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/runtime/CompositionTracer;->traceEventEnd()V
 
     .line 1191
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public static final traceEventStart(IIILjava/lang/String;)V
-    .registers 5
+    .locals 1
     .param p0, "key"    # I
     .param p1, "dirty1"    # I
     .param p2, "dirty2"    # I
@@ -2426,17 +2426,17 @@
     .line 1179
     sget-object v0, Landroidx/compose/runtime/ComposerKt;->compositionTracer:Landroidx/compose/runtime/CompositionTracer;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p0, p1, p2, p3}, Landroidx/compose/runtime/CompositionTracer;->traceEventStart(IIILjava/lang/String;)V
 
     .line 1180
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public static final synthetic traceEventStart(ILjava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p0, "key"    # I
     .param p1, "info"    # Ljava/lang/String;
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;

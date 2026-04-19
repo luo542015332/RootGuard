@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/foundation/OverscrollConfigurationKt$LocalOverscrollConfiguration$1;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/foundation/OverscrollConfiguration;
-    .registers 8
+    .locals 7
 
     .line 69
     new-instance v6, Landroidx/compose/foundation/OverscrollConfiguration;
@@ -95,7 +95,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 68
     invoke-virtual {p0}, Landroidx/compose/foundation/OverscrollConfigurationKt$LocalOverscrollConfiguration$1;->invoke()Landroidx/compose/foundation/OverscrollConfiguration;

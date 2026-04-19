@@ -36,14 +36,14 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 559
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_1b
+    if-lt v0, v1, :cond_0
 
     .line 560
     sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -68,23 +68,23 @@
 
     move-result-object v0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 587
-    :cond_1b
+    :cond_0
     sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
     check-cast v0, Landroidx/compose/ui/Modifier;
 
     .line 559
-    :goto_1f
+    :goto_0
     sput-object v0, Landroidx/compose/foundation/AndroidOverscrollKt;->StretchOverscrollNonClippingLayer:Landroidx/compose/ui/Modifier;
 
     return-void
 .end method
 
 .method public static final synthetic access$getStretchOverscrollNonClippingLayer$p()Landroidx/compose/ui/Modifier;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/foundation/AndroidOverscrollKt;->StretchOverscrollNonClippingLayer:Landroidx/compose/ui/Modifier;
@@ -93,7 +93,7 @@
 .end method
 
 .method public static final rememberOverscrollEffect(Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/OverscrollEffect;
-    .registers 13
+    .locals 11
     .param p0, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "$changed"    # I
 
@@ -109,7 +109,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 63
     const/4 v1, -0x1
@@ -119,7 +119,7 @@
     invoke-static {v0, p1, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 64
-    :cond_18
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -188,7 +188,7 @@
 
     .line 66
     .local v1, "config":Landroidx/compose/foundation/OverscrollConfiguration;
-    if-eqz v1, :cond_87
+    if-eqz v1, :cond_3
 
     .line 67
     const/16 v2, 0x8
@@ -234,7 +234,7 @@
 
     .line 595
     .local v8, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v4, :cond_74
+    if-nez v4, :cond_2
 
     sget-object v9, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -242,19 +242,19 @@
 
     move-result-object v9
 
-    if-ne v7, v9, :cond_72
+    if-ne v7, v9, :cond_1
 
-    goto :goto_74
+    goto :goto_0
 
     .line 599
-    :cond_72
+    :cond_1
     move-object v9, v7
 
-    goto :goto_7f
+    goto :goto_1
 
     .line 596
-    :cond_74
-    :goto_74
+    :cond_2
+    :goto_0
     const/4 v9, 0x0
 
     .line 67
@@ -276,7 +276,7 @@
 
     .line 595
     .end local v9    # "value$iv$iv":Ljava/lang/Object;
-    :goto_7f
+    :goto_1
     nop
 
     .line 594
@@ -294,10 +294,10 @@
     .end local v3    # "$i$f$remember":I
     check-cast v9, Landroidx/compose/foundation/OverscrollEffect;
 
-    goto :goto_8c
+    goto :goto_2
 
     .line 69
-    :cond_87
+    :cond_3
     sget-object v2, Landroidx/compose/foundation/NoOpOverscrollEffect;->INSTANCE:Landroidx/compose/foundation/NoOpOverscrollEffect;
 
     move-object v9, v2
@@ -305,16 +305,16 @@
     check-cast v9, Landroidx/compose/foundation/OverscrollEffect;
 
     .line 66
-    :goto_8c
+    :goto_2
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_95
+    if-eqz v2, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_95
+    :cond_4
     invoke-interface {p0}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v9

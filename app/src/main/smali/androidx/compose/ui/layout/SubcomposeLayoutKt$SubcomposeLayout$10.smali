@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/SubcomposeLayoutState;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$10;->$state:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 341
     invoke-virtual {p0}, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$10;->invoke()V
@@ -75,7 +75,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 2
+    .locals 1
 
     .line 342
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeLayoutKt$SubcomposeLayout$10;->$state:Landroidx/compose/ui/layout/SubcomposeLayoutState;

@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/input/pointer/PointerIconService;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2$onSetIcon$1;->$pointerIconService:Landroidx/compose/ui/input/pointer/PointerIconService;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 95
@@ -83,7 +83,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/input/pointer/PointerIcon;)V
-    .registers 3
+    .locals 1
     .param p1, "pointerIcon"    # Landroidx/compose/ui/input/pointer/PointerIcon;
 
     .line 96

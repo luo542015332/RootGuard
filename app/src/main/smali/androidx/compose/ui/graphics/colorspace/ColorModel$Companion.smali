@@ -46,7 +46,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/colorspace/ColorModel$Companion;-><init>()V
 
@@ -65,10 +65,9 @@
 
 # virtual methods
 .method public final getCmyk-xdoWZVw()J
-    .registers 3
+    .locals 2
 
     .line 79
-    # getter for: Landroidx/compose/ui/graphics/colorspace/ColorModel;->Cmyk:J
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/ColorModel;->access$getCmyk$cp()J
 
     move-result-wide v0
@@ -77,10 +76,9 @@
 .end method
 
 .method public final getLab-xdoWZVw()J
-    .registers 3
+    .locals 2
 
     .line 71
-    # getter for: Landroidx/compose/ui/graphics/colorspace/ColorModel;->Lab:J
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/ColorModel;->access$getLab$cp()J
 
     move-result-wide v0
@@ -89,10 +87,9 @@
 .end method
 
 .method public final getRgb-xdoWZVw()J
-    .registers 3
+    .locals 2
 
     .line 57
-    # getter for: Landroidx/compose/ui/graphics/colorspace/ColorModel;->Rgb:J
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/ColorModel;->access$getRgb$cp()J
 
     move-result-wide v0
@@ -101,10 +98,9 @@
 .end method
 
 .method public final getXyz-xdoWZVw()J
-    .registers 3
+    .locals 2
 
     .line 64
-    # getter for: Landroidx/compose/ui/graphics/colorspace/ColorModel;->Xyz:J
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/ColorModel;->access$getXyz$cp()J
 
     move-result-wide v0

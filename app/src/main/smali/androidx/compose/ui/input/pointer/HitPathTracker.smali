@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 3
+    .locals 1
     .param p1, "rootCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "rootCoordinates"
@@ -82,18 +82,18 @@
 .end method
 
 .method public static synthetic dispatchChanges$default(Landroidx/compose/ui/input/pointer/HitPathTracker;Landroidx/compose/ui/input/pointer/InternalPointerEvent;ZILjava/lang/Object;)Z
-    .registers 5
+    .locals 0
 
     .line 89
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 91
     const/4 p2, 0x1
 
     .line 89
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/input/pointer/HitPathTracker;->dispatchChanges(Landroidx/compose/ui/input/pointer/InternalPointerEvent;Z)Z
 
     move-result p0
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public final addHitPath-KNwqfcY(JLjava/util/List;)V
-    .registers 20
+    .locals 16
     .param p1, "pointerId"    # J
     .param p3, "pointerInputNodes"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -141,8 +141,8 @@
 
     move-result v5
 
-    :goto_12
-    if-ge v4, v5, :cond_8b
+    :goto_0
+    if-ge v4, v5, :cond_6
 
     .line 59
     invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -153,7 +153,7 @@
 
     .line 60
     .local v6, "pointerInputNode":Landroidx/compose/ui/Modifier$Node;
-    if-eqz v3, :cond_6a
+    if-eqz v3, :cond_5
 
     .line 61
     invoke-virtual {v2}, Landroidx/compose/ui/input/pointer/NodeParent;->getChildren()Landroidx/compose/runtime/collection/MutableVector;
@@ -174,7 +174,7 @@
 
     .line 560
     .local v9, "size$iv":I
-    if-lez v9, :cond_43
+    if-lez v9, :cond_2
 
     .line 561
     const/4 v10, 0x0
@@ -187,7 +187,7 @@
 
     .line 564
     .local v11, "content$iv":[Ljava/lang/Object;
-    :cond_2d
+    :cond_0
     aget-object v12, v11, v10
 
     .line 565
@@ -212,38 +212,38 @@
     .line 565
     .end local v13    # "it":Landroidx/compose/ui/input/pointer/Node;
     .end local v14    # "$i$a$-firstOrNull-HitPathTracker$addHitPath$node$1":I
-    if-eqz v13, :cond_3e
+    if-eqz v13, :cond_1
 
-    goto :goto_44
+    goto :goto_1
 
     .line 566
-    :cond_3e
+    :cond_1
     nop
 
     .end local v12    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v10, v10, 0x1
 
     .line 567
-    if-lt v10, v9, :cond_2d
+    if-lt v10, v9, :cond_0
 
     .line 569
     .end local v10    # "i$iv":I
     .end local v11    # "content$iv":[Ljava/lang/Object;
-    :cond_43
+    :cond_2
     const/4 v12, 0x0
 
     .line 61
     .end local v7    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
     .end local v8    # "$i$f$firstOrNull":I
     .end local v9    # "size$iv":I
-    :goto_44
+    :goto_1
     move-object v7, v12
 
     check-cast v7, Landroidx/compose/ui/input/pointer/Node;
 
     .line 64
     .local v7, "node":Landroidx/compose/ui/input/pointer/Node;
-    if-eqz v7, :cond_69
+    if-eqz v7, :cond_4
 
     .line 65
     invoke-virtual {v7}, Landroidx/compose/ui/input/pointer/Node;->markIsIn()V
@@ -261,7 +261,7 @@
 
     move-result v8
 
-    if-nez v8, :cond_65
+    if-nez v8, :cond_3
 
     invoke-virtual {v7}, Landroidx/compose/ui/input/pointer/Node;->getPointerIds()Landroidx/compose/runtime/collection/MutableVector;
 
@@ -274,21 +274,21 @@
     invoke-virtual {v8, v9}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 67
-    :cond_65
+    :cond_3
     move-object v2, v7
 
     check-cast v2, Landroidx/compose/ui/input/pointer/NodeParent;
 
     .line 68
-    goto :goto_88
+    goto :goto_2
 
     .line 70
-    :cond_69
+    :cond_4
     const/4 v3, 0x0
 
     .line 74
     .end local v7    # "node":Landroidx/compose/ui/input/pointer/Node;
-    :cond_6a
+    :cond_5
     new-instance v7, Landroidx/compose/ui/input/pointer/Node;
 
     invoke-direct {v7, v6}, Landroidx/compose/ui/input/pointer/Node;-><init>(Landroidx/compose/ui/Modifier$Node;)V
@@ -334,19 +334,19 @@
     .line 58
     .end local v6    # "pointerInputNode":Landroidx/compose/ui/Modifier$Node;
     .end local v7    # "node":Landroidx/compose/ui/input/pointer/Node;
-    :goto_88
+    :goto_2
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 80
     .end local v4    # "i":I
-    :cond_8b
+    :cond_6
     return-void
 .end method
 
 .method public final dispatchChanges(Landroidx/compose/ui/input/pointer/InternalPointerEvent;Z)Z
-    .registers 8
+    .locals 5
     .param p1, "internalPointerEvent"    # Landroidx/compose/ui/input/pointer/InternalPointerEvent;
     .param p2, "isInBounds"    # Z
 
@@ -380,13 +380,13 @@
     .local v0, "changed":Z
     const/4 v1, 0x0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 100
     return v1
 
     .line 102
-    :cond_18
+    :cond_0
     iget-object v2, p0, Landroidx/compose/ui/input/pointer/HitPathTracker;->root:Landroidx/compose/ui/input/pointer/NodeParent;
 
     .line 103
@@ -416,22 +416,22 @@
 
     move-result v3
 
-    if-nez v3, :cond_30
+    if-nez v3, :cond_1
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_2
 
-    :cond_30
+    :cond_1
     const/4 v1, 0x1
 
     .line 110
     .end local v2    # "dispatchHit":Z
     .local v1, "dispatchHit":Z
-    :cond_31
+    :cond_2
     return v1
 .end method
 
 .method public final getRoot$ui_release()Landroidx/compose/ui/input/pointer/NodeParent;
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/HitPathTracker;->root:Landroidx/compose/ui/input/pointer/NodeParent;
@@ -440,7 +440,7 @@
 .end method
 
 .method public final processCancel()V
-    .registers 2
+    .locals 1
 
     .line 120
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/HitPathTracker;->root:Landroidx/compose/ui/input/pointer/NodeParent;
@@ -457,7 +457,7 @@
 .end method
 
 .method public final removeDetachedPointerInputFilters()V
-    .registers 2
+    .locals 1
 
     .line 131
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/HitPathTracker;->root:Landroidx/compose/ui/input/pointer/NodeParent;

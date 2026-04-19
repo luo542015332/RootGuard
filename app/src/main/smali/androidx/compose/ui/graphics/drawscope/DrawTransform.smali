@@ -74,7 +74,7 @@
 
 # direct methods
 .method public static synthetic access$getCenter-F1C5BW0$jd(Landroidx/compose/ui/graphics/drawscope/DrawTransform;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
 
     .line 81
@@ -86,14 +86,14 @@
 .end method
 
 .method public static synthetic clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 139
-    if-nez p4, :cond_10
+    if-nez p4, :cond_1
 
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_0
 
     sget-object p2, Landroidx/compose/ui/graphics/ClipOp;->Companion:Landroidx/compose/ui/graphics/ClipOp$Companion;
 
@@ -101,12 +101,12 @@
 
     move-result p2
 
-    :cond_c
+    :cond_0
     invoke-interface {p0, p1, p2}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->clipPath-mtrdD-E(Landroidx/compose/ui/graphics/Path;I)V
 
     return-void
 
-    :cond_10
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: clipPath-mtrdD-E"
@@ -117,34 +117,34 @@
 .end method
 
 .method public static synthetic clipRect-N_I0leg$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFFFIILjava/lang/Object;)V
-    .registers 10
+    .locals 2
 
     .line 124
-    if-nez p7, :cond_33
+    if-nez p7, :cond_5
 
     and-int/lit8 p7, p6, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p7, :cond_8
+    if-eqz p7, :cond_0
 
     .line 125
     move p1, v0
 
     .line 124
-    :cond_8
+    :cond_0
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_d
+    if-eqz p7, :cond_1
 
     .line 126
     move p2, v0
 
     .line 124
-    :cond_d
+    :cond_1
     and-int/lit8 p7, p6, 0x4
 
-    if-eqz p7, :cond_19
+    if-eqz p7, :cond_2
 
     .line 127
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getSize-NH-jbRc()J
@@ -156,10 +156,10 @@
     move-result p3
 
     .line 124
-    :cond_19
+    :cond_2
     and-int/lit8 p7, p6, 0x8
 
-    if-eqz p7, :cond_25
+    if-eqz p7, :cond_3
 
     .line 128
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getSize-NH-jbRc()J
@@ -171,10 +171,10 @@
     move-result p4
 
     .line 124
-    :cond_25
+    :cond_3
     and-int/lit8 p6, p6, 0x10
 
-    if-eqz p6, :cond_2f
+    if-eqz p6, :cond_4
 
     .line 129
     sget-object p5, Landroidx/compose/ui/graphics/ClipOp;->Companion:Landroidx/compose/ui/graphics/ClipOp$Companion;
@@ -184,12 +184,12 @@
     move-result p5
 
     .line 124
-    :cond_2f
+    :cond_4
     invoke-interface/range {p0 .. p5}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->clipRect-N_I0leg(FFFFI)V
 
     return-void
 
-    :cond_33
+    :cond_5
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: clipRect-N_I0leg"
@@ -200,25 +200,25 @@
 .end method
 
 .method public static synthetic rotate-Uv8p0NA$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FJILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 158
-    if-nez p5, :cond_e
+    if-nez p5, :cond_1
 
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_0
 
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getCenter-F1C5BW0()J
 
     move-result-wide p2
 
-    :cond_a
+    :cond_0
     invoke-interface {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->rotate-Uv8p0NA(FJ)V
 
     return-void
 
-    :cond_e
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: rotate-Uv8p0NA"
@@ -229,25 +229,25 @@
 .end method
 
 .method public static synthetic scale-0AR0LA0$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFJILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 171
-    if-nez p6, :cond_e
+    if-nez p6, :cond_1
 
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_a
+    if-eqz p5, :cond_0
 
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getCenter-F1C5BW0()J
 
     move-result-wide p3
 
-    :cond_a
+    :cond_0
     invoke-interface {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->scale-0AR0LA0(FFJ)V
 
     return-void
 
-    :cond_e
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: scale-0AR0LA0"
@@ -258,32 +258,32 @@
 .end method
 
 .method public static synthetic translate$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFILjava/lang/Object;)V
-    .registers 6
+    .locals 1
 
     .line 148
-    if-nez p4, :cond_11
+    if-nez p4, :cond_2
 
     and-int/lit8 p4, p3, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p4, :cond_8
+    if-eqz p4, :cond_0
 
     move p1, v0
 
-    :cond_8
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_1
 
     move p2, v0
 
-    :cond_d
+    :cond_1
     invoke-interface {p0, p1, p2}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->translate(FF)V
 
     return-void
 
-    :cond_11
+    :cond_2
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: translate"
@@ -302,7 +302,7 @@
 .end method
 
 .method public getCenter-F1C5BW0()J
-    .registers 5
+    .locals 4
 
     .line 94
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getSize-NH-jbRc()J

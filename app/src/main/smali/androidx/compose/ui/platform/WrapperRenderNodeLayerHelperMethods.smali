@@ -34,7 +34,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/WrapperRenderNodeLayerHelperMethods;
 
@@ -46,7 +46,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 375
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final onDescendantInvalidated(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 5
+    .locals 3
     .param p1, "ownerView"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     const-string/jumbo v0, "ownerView"
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     move-object v1, p1
 
@@ -82,6 +82,6 @@
     invoke-interface {v0, v1, v2}, Landroid/view/ViewParent;->onDescendantInvalidated(Landroid/view/View;Landroid/view/View;)V
 
     .line 380
-    :cond_15
+    :cond_0
     return-void
 .end method

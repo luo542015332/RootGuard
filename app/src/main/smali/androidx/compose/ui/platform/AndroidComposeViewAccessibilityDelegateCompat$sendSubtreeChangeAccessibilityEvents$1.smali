@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$sendSubtreeChangeAccessibilityEvents$1;
 
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/node/LayoutNode;)Ljava/lang/Boolean;
-    .registers 5
+    .locals 3
     .param p1, "it"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "it"
@@ -92,7 +92,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/semantics/SemanticsConfiguration;->isMergingSemanticsOfDescendants()Z
 
@@ -100,11 +100,11 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v2, :cond_15
+    if-ne v0, v2, :cond_0
 
     move v1, v2
 
-    :cond_15
+    :cond_0
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -113,7 +113,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 2276

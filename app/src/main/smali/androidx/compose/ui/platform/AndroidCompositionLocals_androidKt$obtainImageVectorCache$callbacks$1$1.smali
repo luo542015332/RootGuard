@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/res/Configuration;Landroidx/compose/ui/res/ImageVectorCache;)V
-    .registers 3
+    .locals 0
     .param p1, "$currentConfiguration"    # Landroid/content/res/Configuration;
     .param p2, "$imageVectorCache"    # Landroidx/compose/ui/res/ImageVectorCache;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 4
+    .locals 2
     .param p1, "configuration"    # Landroid/content/res/Configuration;
 
     const-string/jumbo v0, "configuration"
@@ -98,7 +98,7 @@
 .end method
 
 .method public onLowMemory()V
-    .registers 2
+    .locals 1
 
     .line 146
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$obtainImageVectorCache$callbacks$1$1;->$imageVectorCache:Landroidx/compose/ui/res/ImageVectorCache;
@@ -110,7 +110,7 @@
 .end method
 
 .method public onTrimMemory(I)V
-    .registers 3
+    .locals 1
     .param p1, "level"    # I
 
     .line 150

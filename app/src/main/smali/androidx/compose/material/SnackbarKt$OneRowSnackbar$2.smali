@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/material/SnackbarKt$OneRowSnackbar$2;->$actionTag:Ljava/lang/String;
 
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 29
+    .locals 24
     .param p1, "$this$Layout"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -112,14 +112,14 @@
 
     move-result-object v4
 
-    :goto_1b
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
     const-string v6, "Collection contains no element matching the predicate."
 
-    if-eqz v5, :cond_187
+    if-eqz v5, :cond_a
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -146,7 +146,7 @@
     .line 365
     .end local v7    # "it":Landroidx/compose/ui/layout/Measurable;
     .end local v10    # "$i$a$-first-SnackbarKt$OneRowSnackbar$2$measure$buttonPlaceable$1":I
-    if-eqz v7, :cond_183
+    if-eqz v7, :cond_9
 
     .line 366
     .end local v1    # "$this$first$iv":Ljava/lang/Iterable;
@@ -175,7 +175,6 @@
 
     sub-int/2addr v1, v2
 
-    # getter for: Landroidx/compose/material/SnackbarKt;->TextEndExtraSpacing:F
     invoke-static {}, Landroidx/compose/material/SnackbarKt;->access$getTextEndExtraSpacing$p()F
 
     move-result v2
@@ -215,12 +214,12 @@
 
     move-result-object v10
 
-    :goto_63
+    :goto_1
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v11
 
-    if-eqz v11, :cond_17d
+    if-eqz v11, :cond_8
 
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -247,7 +246,7 @@
     .line 367
     .end local v12    # "it":Landroidx/compose/ui/layout/Measurable;
     .end local v14    # "$i$a$-first-SnackbarKt$OneRowSnackbar$2$measure$textPlaceable$1":I
-    if-eqz v12, :cond_176
+    if-eqz v12, :cond_7
 
     .line 368
     .end local v1    # "$this$first$iv":Ljava/lang/Iterable;
@@ -297,19 +296,19 @@
 
     const/high16 v2, -0x80000000
 
-    if-eq v11, v2, :cond_a0
+    if-eq v11, v2, :cond_0
 
     move v6, v1
 
-    goto :goto_a1
+    goto :goto_2
 
-    :cond_a0
+    :cond_0
     const/4 v6, 0x0
 
-    :goto_a1
+    :goto_2
     const-string/jumbo v12, "No baselines for text"
 
-    if-eqz v6, :cond_16a
+    if-eqz v6, :cond_6
 
     .line 318
     invoke-static {}, Landroidx/compose/ui/layout/AlignmentLineKt;->getLastBaseline()Landroidx/compose/ui/layout/HorizontalAlignmentLine;
@@ -324,27 +323,27 @@
 
     .line 319
     .local v6, "lastTextBaseline":I
-    if-eq v6, v2, :cond_b4
+    if-eq v6, v2, :cond_1
 
     move v14, v1
 
-    goto :goto_b5
+    goto :goto_3
 
-    :cond_b4
+    :cond_1
     const/4 v14, 0x0
 
-    :goto_b5
-    if-eqz v14, :cond_15e
+    :goto_3
+    if-eqz v14, :cond_5
 
     .line 320
-    if-ne v11, v6, :cond_ba
+    if-ne v11, v6, :cond_2
 
-    goto :goto_bb
+    goto :goto_4
 
-    :cond_ba
+    :cond_2
     const/4 v1, 0x0
 
-    :goto_bb
+    :goto_4
     move v12, v1
 
     .line 321
@@ -370,10 +369,9 @@
 
     .line 326
     .local v15, "buttonPlaceY":I
-    if-eqz v12, :cond_109
+    if-eqz v12, :cond_4
 
     .line 327
-    # getter for: Landroidx/compose/material/SnackbarKt;->SnackbarMinHeightOneLine:F
     invoke-static {}, Landroidx/compose/material/SnackbarKt;->access$getSnackbarMinHeightOneLine$p()F
 
     move-result v3
@@ -435,7 +433,7 @@
     .end local v19    # "it":I
     .local v0, "it":I
     .local v17, "buttonBaseline":I
-    if-eq v0, v1, :cond_ff
+    if-eq v0, v1, :cond_3
 
     .line 334
     add-int v1, v18, v11
@@ -444,14 +442,14 @@
 
     move/from16 v16, v1
 
-    goto :goto_101
+    goto :goto_5
 
     .line 336
-    :cond_ff
+    :cond_3
     const/16 v16, 0x0
 
     .line 333
-    :goto_101
+    :goto_5
     nop
 
     .line 332
@@ -468,15 +466,14 @@
     .end local v15    # "buttonPlaceY":I
     .end local v17    # "buttonBaseline":I
     .local v0, "buttonPlaceY":I
-    goto :goto_132
+    goto :goto_6
 
     .line 340
     .end local v0    # "buttonPlaceY":I
     .end local v18    # "textPlaceY":I
     .local v1, "textPlaceY":I
     .restart local v15    # "buttonPlaceY":I
-    :cond_109
-    # getter for: Landroidx/compose/material/SnackbarKt;->HeightToFirstLine:F
+    :cond_4
     invoke-static {}, Landroidx/compose/material/SnackbarKt;->access$getHeightToFirstLine$p()F
 
     move-result v0
@@ -492,7 +489,6 @@
     .line 342
     .end local v1    # "textPlaceY":I
     .restart local v18    # "textPlaceY":I
-    # getter for: Landroidx/compose/material/SnackbarKt;->SnackbarMinHeightTwoLines:F
     invoke-static {}, Landroidx/compose/material/SnackbarKt;->access$getSnackbarMinHeightTwoLines$p()F
 
     move-result v1
@@ -539,7 +535,7 @@
     .local v0, "buttonPlaceY":I
     .local v21, "containerHeight":I
     .local v22, "textPlaceY":I
-    :goto_132
+    :goto_6
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/unit/Constraints;->getMaxWidth-impl(J)I
 
     move-result v2
@@ -606,7 +602,7 @@
     .end local v22    # "textPlaceY":I
     .restart local v6    # "lastTextBaseline":I
     .restart local v7    # "buttonPlaceable":Landroidx/compose/ui/layout/Placeable;
-    :cond_15e
+    :cond_5
     const/4 v0, 0x0
 
     .line 319
@@ -626,7 +622,7 @@
 
     .line 369
     .end local v6    # "lastTextBaseline":I
-    :cond_16a
+    :cond_6
     const/4 v0, 0x0
 
     .line 317
@@ -649,7 +645,7 @@
     .local v1, "$this$first$iv":Ljava/lang/Iterable;
     .local v3, "$i$f$first":I
     .local v11, "element$iv":Ljava/lang/Object;
-    :cond_176
+    :cond_7
     move-object v15, v7
 
     .end local v7    # "buttonPlaceable":Landroidx/compose/ui/layout/Placeable;
@@ -658,13 +654,13 @@
 
     move-wide/from16 v4, p3
 
-    goto/16 :goto_63
+    goto/16 :goto_1
 
     .line 368
     .end local v11    # "element$iv":Ljava/lang/Object;
     .end local v15    # "buttonPlaceable":Landroidx/compose/ui/layout/Placeable;
     .restart local v7    # "buttonPlaceable":Landroidx/compose/ui/layout/Placeable;
-    :cond_17d
+    :cond_8
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0, v6}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
@@ -675,14 +671,14 @@
     .end local v7    # "buttonPlaceable":Landroidx/compose/ui/layout/Placeable;
     .end local v13    # "textMaxWidth":I
     .restart local v5    # "element$iv":Ljava/lang/Object;
-    :cond_183
+    :cond_9
     move-object/from16 v0, p0
 
-    goto/16 :goto_1b
+    goto/16 :goto_0
 
     .line 366
     .end local v5    # "element$iv":Ljava/lang/Object;
-    :cond_187
+    :cond_a
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0, v6}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V

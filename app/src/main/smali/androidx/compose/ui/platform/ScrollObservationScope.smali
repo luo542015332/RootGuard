@@ -81,7 +81,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/util/List;Ljava/lang/Float;Ljava/lang/Float;Landroidx/compose/ui/semantics/ScrollAxisRange;Landroidx/compose/ui/semantics/ScrollAxisRange;)V
-    .registers 8
+    .locals 1
     .param p1, "semanticsNodeId"    # I
     .param p2, "allScopes"    # Ljava/util/List;
     .param p3, "oldXValue"    # Ljava/lang/Float;
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public final getAllScopes()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -151,7 +151,7 @@
 .end method
 
 .method public final getHorizontalScrollAxisRange()Landroidx/compose/ui/semantics/ScrollAxisRange;
-    .registers 2
+    .locals 1
 
     .line 3478
     iget-object v0, p0, Landroidx/compose/ui/platform/ScrollObservationScope;->horizontalScrollAxisRange:Landroidx/compose/ui/semantics/ScrollAxisRange;
@@ -160,7 +160,7 @@
 .end method
 
 .method public final getOldXValue()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 3476
     iget-object v0, p0, Landroidx/compose/ui/platform/ScrollObservationScope;->oldXValue:Ljava/lang/Float;
@@ -169,7 +169,7 @@
 .end method
 
 .method public final getOldYValue()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 3477
     iget-object v0, p0, Landroidx/compose/ui/platform/ScrollObservationScope;->oldYValue:Ljava/lang/Float;
@@ -178,7 +178,7 @@
 .end method
 
 .method public final getSemanticsNodeId()I
-    .registers 2
+    .locals 1
 
     .line 3474
     iget v0, p0, Landroidx/compose/ui/platform/ScrollObservationScope;->semanticsNodeId:I
@@ -187,7 +187,7 @@
 .end method
 
 .method public final getVerticalScrollAxisRange()Landroidx/compose/ui/semantics/ScrollAxisRange;
-    .registers 2
+    .locals 1
 
     .line 3479
     iget-object v0, p0, Landroidx/compose/ui/platform/ScrollObservationScope;->verticalScrollAxisRange:Landroidx/compose/ui/semantics/ScrollAxisRange;
@@ -196,7 +196,7 @@
 .end method
 
 .method public isValidOwnerScope()Z
-    .registers 2
+    .locals 1
 
     .line 3481
     iget-object v0, p0, Landroidx/compose/ui/platform/ScrollObservationScope;->allScopes:Ljava/util/List;
@@ -209,7 +209,7 @@
 .end method
 
 .method public final setHorizontalScrollAxisRange(Landroidx/compose/ui/semantics/ScrollAxisRange;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/semantics/ScrollAxisRange;
 
     .line 3478
@@ -219,7 +219,7 @@
 .end method
 
 .method public final setOldXValue(Ljava/lang/Float;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Float;
 
     .line 3476
@@ -229,7 +229,7 @@
 .end method
 
 .method public final setOldYValue(Ljava/lang/Float;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Float;
 
     .line 3477
@@ -239,7 +239,7 @@
 .end method
 
 .method public final setVerticalScrollAxisRange(Landroidx/compose/ui/semantics/ScrollAxisRange;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/semantics/ScrollAxisRange;
 
     .line 3479

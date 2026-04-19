@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 364
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/RenderNodeApi23$Companion;-><init>()V
 
@@ -61,10 +61,9 @@
 
 # virtual methods
 .method public final getTestFailCreateRenderNode$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 367
-    # getter for: Landroidx/compose/ui/platform/RenderNodeApi23;->testFailCreateRenderNode:Z
     invoke-static {}, Landroidx/compose/ui/platform/RenderNodeApi23;->access$getTestFailCreateRenderNode$cp()Z
 
     move-result v0
@@ -73,7 +72,7 @@
 .end method
 
 .method public final setTestFailCreateRenderNode$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 367

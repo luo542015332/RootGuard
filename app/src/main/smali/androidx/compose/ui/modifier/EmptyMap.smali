@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/modifier/EmptyMap;
 
@@ -56,7 +56,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 97
     const/4 v0, 0x0
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public contains$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -90,7 +90,7 @@
 .end method
 
 .method public get$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -121,7 +121,7 @@
 .end method
 
 .method public set$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;Ljava/lang/Object;)Ljava/lang/Void;
-    .registers 5
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -154,7 +154,7 @@
 .end method
 
 .method public bridge synthetic set$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .param p2, "value"    # Ljava/lang/Object;
 

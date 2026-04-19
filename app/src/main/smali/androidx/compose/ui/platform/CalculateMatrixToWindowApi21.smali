@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1997
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
 .end method
 
 .method private final preConcat-tU-YjHk([FLandroid/graphics/Matrix;)V
-    .registers 4
+    .locals 1
     .param p1, "$this$preConcat_u2dtU_u2dYjHk"    # [F
     .param p2, "other"    # Landroid/graphics/Matrix;
 
@@ -100,7 +100,6 @@
     .line 2031
     iget-object v0, p0, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi21;->tmpMatrix:[F
 
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView_androidKt;->preTransform-JiSxe2E([F[F)V
     invoke-static {p1, v0}, Landroidx/compose/ui/platform/AndroidComposeView_androidKt;->access$preTransform-JiSxe2E([F[F)V
 
     .line 2032
@@ -108,7 +107,7 @@
 .end method
 
 .method private final preTranslate-3XD1CNM([FFF)V
-    .registers 11
+    .locals 7
     .param p1, "$this$preTranslate_u2d3XD1CNM"    # [F
     .param p2, "x"    # F
     .param p3, "y"    # F
@@ -136,7 +135,6 @@
     .line 2040
     iget-object v0, p0, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi21;->tmpMatrix:[F
 
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView_androidKt;->preTransform-JiSxe2E([F[F)V
     invoke-static {p1, v0}, Landroidx/compose/ui/platform/AndroidComposeView_androidKt;->access$preTransform-JiSxe2E([F[F)V
 
     .line 2041
@@ -144,7 +142,7 @@
 .end method
 
 .method private final transformMatrixToWindow-EL8BTi8(Landroid/view/View;[F)V
-    .registers 7
+    .locals 4
     .param p1, "view"    # Landroid/view/View;
     .param p2, "matrix"    # [F
 
@@ -157,7 +155,7 @@
     .local v0, "parentView":Landroid/view/ViewParent;
     instance-of v1, v0, Landroid/view/View;
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_0
 
     .line 2009
     move-object v1, v0
@@ -200,10 +198,10 @@
 
     invoke-direct {p0, p2, v1, v2}, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi21;->preTranslate-3XD1CNM([FFF)V
 
-    goto :goto_4a
+    goto :goto_0
 
     .line 2013
-    :cond_2b
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi21;->tmpLocation:[I
 
     .line 2014
@@ -246,7 +244,7 @@
 
     .line 2019
     .end local v1    # "pos":[I
-    :goto_4a
+    :goto_0
     invoke-virtual {p1}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
 
     move-result-object v1
@@ -257,7 +255,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_5d
+    if-nez v2, :cond_1
 
     .line 2021
     const-string/jumbo v2, "viewMatrix"
@@ -267,14 +265,14 @@
     invoke-direct {p0, p2, v1}, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi21;->preConcat-tU-YjHk([FLandroid/graphics/Matrix;)V
 
     .line 2023
-    :cond_5d
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public calculateMatrixToWindow-EL8BTi8(Landroid/view/View;[F)V
-    .registers 4
+    .locals 1
     .param p1, "view"    # Landroid/view/View;
     .param p2, "matrix"    # [F
 

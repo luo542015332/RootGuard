@@ -135,7 +135,7 @@
 
 # direct methods
 .method private constructor <init>(JJLandroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontSynthesis;Landroidx/compose/ui/text/font/FontFamily;Ljava/lang/String;JLandroidx/compose/ui/text/style/BaselineShift;Landroidx/compose/ui/text/style/TextGeometricTransform;Landroidx/compose/ui/text/intl/LocaleList;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/Shadow;)V
-    .registers 35
+    .locals 16
     .param p1, "color"    # J
     .param p3, "fontSize"    # J
     .param p5, "fontWeight"    # Landroidx/compose/ui/text/font/FontWeight;
@@ -231,14 +231,14 @@
 .end method
 
 .method public synthetic constructor <init>(JJLandroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontSynthesis;Landroidx/compose/ui/text/font/FontFamily;Ljava/lang/String;JLandroidx/compose/ui/text/style/BaselineShift;Landroidx/compose/ui/text/style/TextGeometricTransform;Landroidx/compose/ui/text/intl/LocaleList;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/Shadow;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 40
+    .locals 19
 
     .line 477
     move/from16 v0, p19
 
     and-int/lit8 v1, v0, 0x1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     .line 478
     sget-object v1, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -247,16 +247,16 @@
 
     move-result-wide v1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 477
-    :cond_d
+    :cond_0
     move-wide/from16 v1, p1
 
-    :goto_f
+    :goto_0
     and-int/lit8 v3, v0, 0x2
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1
 
     .line 479
     sget-object v3, Landroidx/compose/ui/unit/TextUnit;->Companion:Landroidx/compose/ui/unit/TextUnit$Companion;
@@ -265,86 +265,86 @@
 
     move-result-wide v3
 
-    goto :goto_1c
+    goto :goto_1
 
     .line 477
-    :cond_1a
+    :cond_1
     move-wide/from16 v3, p3
 
-    :goto_1c
+    :goto_1
     and-int/lit8 v5, v0, 0x4
 
-    if-eqz v5, :cond_22
+    if-eqz v5, :cond_2
 
     .line 480
     const/4 v5, 0x0
 
-    goto :goto_24
+    goto :goto_2
 
     .line 477
-    :cond_22
+    :cond_2
     move-object/from16 v5, p5
 
-    :goto_24
+    :goto_2
     and-int/lit8 v7, v0, 0x8
 
-    if-eqz v7, :cond_2a
+    if-eqz v7, :cond_3
 
     .line 481
     const/4 v7, 0x0
 
-    goto :goto_2c
+    goto :goto_3
 
     .line 477
-    :cond_2a
+    :cond_3
     move-object/from16 v7, p6
 
-    :goto_2c
+    :goto_3
     and-int/lit8 v8, v0, 0x10
 
-    if-eqz v8, :cond_32
+    if-eqz v8, :cond_4
 
     .line 482
     const/4 v8, 0x0
 
-    goto :goto_34
+    goto :goto_4
 
     .line 477
-    :cond_32
+    :cond_4
     move-object/from16 v8, p7
 
-    :goto_34
+    :goto_4
     and-int/lit8 v9, v0, 0x20
 
-    if-eqz v9, :cond_3a
+    if-eqz v9, :cond_5
 
     .line 483
     const/4 v9, 0x0
 
-    goto :goto_3c
+    goto :goto_5
 
     .line 477
-    :cond_3a
+    :cond_5
     move-object/from16 v9, p8
 
-    :goto_3c
+    :goto_5
     and-int/lit8 v10, v0, 0x40
 
-    if-eqz v10, :cond_42
+    if-eqz v10, :cond_6
 
     .line 484
     const/4 v10, 0x0
 
-    goto :goto_44
+    goto :goto_6
 
     .line 477
-    :cond_42
+    :cond_6
     move-object/from16 v10, p9
 
-    :goto_44
+    :goto_6
     and-int/lit16 v11, v0, 0x80
 
-    if-eqz v11, :cond_4f
+    if-eqz v11, :cond_7
 
     .line 485
     sget-object v11, Landroidx/compose/ui/unit/TextUnit;->Companion:Landroidx/compose/ui/unit/TextUnit$Companion;
@@ -353,58 +353,58 @@
 
     move-result-wide v11
 
-    goto :goto_51
+    goto :goto_7
 
     .line 477
-    :cond_4f
+    :cond_7
     move-wide/from16 v11, p10
 
-    :goto_51
+    :goto_7
     and-int/lit16 v13, v0, 0x100
 
-    if-eqz v13, :cond_57
+    if-eqz v13, :cond_8
 
     .line 486
     const/4 v13, 0x0
 
-    goto :goto_59
+    goto :goto_8
 
     .line 477
-    :cond_57
+    :cond_8
     move-object/from16 v13, p12
 
-    :goto_59
+    :goto_8
     and-int/lit16 v14, v0, 0x200
 
-    if-eqz v14, :cond_5f
+    if-eqz v14, :cond_9
 
     .line 487
     const/4 v14, 0x0
 
-    goto :goto_61
+    goto :goto_9
 
     .line 477
-    :cond_5f
+    :cond_9
     move-object/from16 v14, p13
 
-    :goto_61
+    :goto_9
     and-int/lit16 v15, v0, 0x400
 
-    if-eqz v15, :cond_67
+    if-eqz v15, :cond_a
 
     .line 488
     const/4 v15, 0x0
 
-    goto :goto_69
+    goto :goto_a
 
     .line 477
-    :cond_67
+    :cond_a
     move-object/from16 v15, p14
 
-    :goto_69
+    :goto_a
     and-int/lit16 v6, v0, 0x800
 
-    if-eqz v6, :cond_74
+    if-eqz v6, :cond_b
 
     .line 489
     sget-object v6, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -413,41 +413,41 @@
 
     move-result-wide v16
 
-    goto :goto_76
+    goto :goto_b
 
     .line 477
-    :cond_74
+    :cond_b
     move-wide/from16 v16, p15
 
-    :goto_76
+    :goto_b
     and-int/lit16 v6, v0, 0x1000
 
-    if-eqz v6, :cond_7c
+    if-eqz v6, :cond_c
 
     .line 490
     const/4 v6, 0x0
 
-    goto :goto_7e
+    goto :goto_c
 
     .line 477
-    :cond_7c
+    :cond_c
     move-object/from16 v6, p17
 
-    :goto_7e
+    :goto_c
     and-int/lit16 v0, v0, 0x2000
 
-    if-eqz v0, :cond_84
+    if-eqz v0, :cond_d
 
     .line 491
     const/4 v0, 0x0
 
-    goto :goto_86
+    goto :goto_d
 
     .line 477
-    :cond_84
+    :cond_d
     move-object/from16 v0, p18
 
-    :goto_86
+    :goto_d
     const/16 v18, 0x0
 
     move-object/from16 p20, v18
@@ -489,7 +489,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJLandroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontSynthesis;Landroidx/compose/ui/text/font/FontFamily;Ljava/lang/String;JLandroidx/compose/ui/text/style/BaselineShift;Landroidx/compose/ui/text/style/TextGeometricTransform;Landroidx/compose/ui/text/intl/LocaleList;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/Shadow;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 20
+    .locals 0
 
     invoke-direct/range {p0 .. p18}, Landroidx/compose/ui/platform/MutableSpanStyle;-><init>(JJLandroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontSynthesis;Landroidx/compose/ui/text/font/FontFamily;Ljava/lang/String;JLandroidx/compose/ui/text/style/BaselineShift;Landroidx/compose/ui/text/style/TextGeometricTransform;Landroidx/compose/ui/text/intl/LocaleList;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/graphics/Shadow;)V
 
@@ -499,7 +499,7 @@
 
 # virtual methods
 .method public final getBackground-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 489
     iget-wide v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->background:J
@@ -508,7 +508,7 @@
 .end method
 
 .method public final getBaselineShift-5SSeXJ0()Landroidx/compose/ui/text/style/BaselineShift;
-    .registers 2
+    .locals 1
 
     .line 486
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->baselineShift:Landroidx/compose/ui/text/style/BaselineShift;
@@ -517,7 +517,7 @@
 .end method
 
 .method public final getColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 478
     iget-wide v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->color:J
@@ -526,7 +526,7 @@
 .end method
 
 .method public final getFontFamily()Landroidx/compose/ui/text/font/FontFamily;
-    .registers 2
+    .locals 1
 
     .line 483
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->fontFamily:Landroidx/compose/ui/text/font/FontFamily;
@@ -535,7 +535,7 @@
 .end method
 
 .method public final getFontFeatureSettings()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 484
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->fontFeatureSettings:Ljava/lang/String;
@@ -544,7 +544,7 @@
 .end method
 
 .method public final getFontSize-XSAIIZE()J
-    .registers 3
+    .locals 2
 
     .line 479
     iget-wide v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->fontSize:J
@@ -553,7 +553,7 @@
 .end method
 
 .method public final getFontStyle-4Lr2A7w()Landroidx/compose/ui/text/font/FontStyle;
-    .registers 2
+    .locals 1
 
     .line 481
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->fontStyle:Landroidx/compose/ui/text/font/FontStyle;
@@ -562,7 +562,7 @@
 .end method
 
 .method public final getFontSynthesis-ZQGJjVo()Landroidx/compose/ui/text/font/FontSynthesis;
-    .registers 2
+    .locals 1
 
     .line 482
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->fontSynthesis:Landroidx/compose/ui/text/font/FontSynthesis;
@@ -571,7 +571,7 @@
 .end method
 
 .method public final getFontWeight()Landroidx/compose/ui/text/font/FontWeight;
-    .registers 2
+    .locals 1
 
     .line 480
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->fontWeight:Landroidx/compose/ui/text/font/FontWeight;
@@ -580,7 +580,7 @@
 .end method
 
 .method public final getLetterSpacing-XSAIIZE()J
-    .registers 3
+    .locals 2
 
     .line 485
     iget-wide v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->letterSpacing:J
@@ -589,7 +589,7 @@
 .end method
 
 .method public final getLocaleList()Landroidx/compose/ui/text/intl/LocaleList;
-    .registers 2
+    .locals 1
 
     .line 488
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->localeList:Landroidx/compose/ui/text/intl/LocaleList;
@@ -598,7 +598,7 @@
 .end method
 
 .method public final getShadow()Landroidx/compose/ui/graphics/Shadow;
-    .registers 2
+    .locals 1
 
     .line 491
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->shadow:Landroidx/compose/ui/graphics/Shadow;
@@ -607,7 +607,7 @@
 .end method
 
 .method public final getTextDecoration()Landroidx/compose/ui/text/style/TextDecoration;
-    .registers 2
+    .locals 1
 
     .line 490
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->textDecoration:Landroidx/compose/ui/text/style/TextDecoration;
@@ -616,7 +616,7 @@
 .end method
 
 .method public final getTextGeometricTransform()Landroidx/compose/ui/text/style/TextGeometricTransform;
-    .registers 2
+    .locals 1
 
     .line 487
     iget-object v0, p0, Landroidx/compose/ui/platform/MutableSpanStyle;->textGeometricTransform:Landroidx/compose/ui/text/style/TextGeometricTransform;
@@ -625,7 +625,7 @@
 .end method
 
 .method public final setBackground-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 489
@@ -635,7 +635,7 @@
 .end method
 
 .method public final setBaselineShift-_isdbwI(Landroidx/compose/ui/text/style/BaselineShift;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/style/BaselineShift;
 
     .line 486
@@ -645,7 +645,7 @@
 .end method
 
 .method public final setColor-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 478
@@ -655,7 +655,7 @@
 .end method
 
 .method public final setFontFamily(Landroidx/compose/ui/text/font/FontFamily;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/font/FontFamily;
 
     .line 483
@@ -665,7 +665,7 @@
 .end method
 
 .method public final setFontFeatureSettings(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/String;
 
     .line 484
@@ -675,7 +675,7 @@
 .end method
 
 .method public final setFontSize--R2X_6o(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 479
@@ -685,7 +685,7 @@
 .end method
 
 .method public final setFontStyle-mLjRB2g(Landroidx/compose/ui/text/font/FontStyle;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/font/FontStyle;
 
     .line 481
@@ -695,7 +695,7 @@
 .end method
 
 .method public final setFontSynthesis-tDdu0R4(Landroidx/compose/ui/text/font/FontSynthesis;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/font/FontSynthesis;
 
     .line 482
@@ -705,7 +705,7 @@
 .end method
 
 .method public final setFontWeight(Landroidx/compose/ui/text/font/FontWeight;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/font/FontWeight;
 
     .line 480
@@ -715,7 +715,7 @@
 .end method
 
 .method public final setLetterSpacing--R2X_6o(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 485
@@ -725,7 +725,7 @@
 .end method
 
 .method public final setLocaleList(Landroidx/compose/ui/text/intl/LocaleList;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/intl/LocaleList;
 
     .line 488
@@ -735,7 +735,7 @@
 .end method
 
 .method public final setShadow(Landroidx/compose/ui/graphics/Shadow;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/Shadow;
 
     .line 491
@@ -745,7 +745,7 @@
 .end method
 
 .method public final setTextDecoration(Landroidx/compose/ui/text/style/TextDecoration;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/style/TextDecoration;
 
     .line 490
@@ -755,7 +755,7 @@
 .end method
 
 .method public final setTextGeometricTransform(Landroidx/compose/ui/text/style/TextGeometricTransform;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/text/style/TextGeometricTransform;
 
     .line 487
@@ -765,7 +765,7 @@
 .end method
 
 .method public final toSpanStyle()Landroidx/compose/ui/text/SpanStyle;
-    .registers 29
+    .locals 28
 
     .line 494
     move-object/from16 v0, p0

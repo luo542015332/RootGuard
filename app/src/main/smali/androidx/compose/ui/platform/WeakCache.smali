@@ -77,7 +77,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -126,12 +126,12 @@
 .end method
 
 .method private final clearWeakReferences()V
-    .registers 3
+    .locals 2
 
     .line 69
     nop
 
-    :cond_1
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/WeakCache;->referenceQueue:Ljava/lang/ref/ReferenceQueue;
 
     invoke-virtual {v0}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
@@ -140,7 +140,7 @@
 
     .line 70
     .local v0, "item":Ljava/lang/ref/Reference;
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_1
 
     .line 72
     iget-object v1, p0, Landroidx/compose/ui/platform/WeakCache;->values:Landroidx/compose/runtime/collection/MutableVector;
@@ -148,8 +148,8 @@
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/collection/MutableVector;->remove(Ljava/lang/Object;)Z
 
     .line 74
-    :cond_e
-    if-nez v0, :cond_1
+    :cond_1
+    if-nez v0, :cond_0
 
     .line 75
     .end local v0    # "item":Ljava/lang/ref/Reference;
@@ -159,7 +159,7 @@
 
 # virtual methods
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 63
     invoke-direct {p0}, Landroidx/compose/ui/platform/WeakCache;->clearWeakReferences()V
@@ -175,7 +175,7 @@
 .end method
 
 .method public final pop()Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -186,14 +186,14 @@
     invoke-direct {p0}, Landroidx/compose/ui/platform/WeakCache;->clearWeakReferences()V
 
     .line 48
-    :cond_3
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/WeakCache;->values:Landroidx/compose/runtime/collection/MutableVector;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/collection/MutableVector;->isNotEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     .line 49
     iget-object v0, p0, Landroidx/compose/ui/platform/WeakCache;->values:Landroidx/compose/runtime/collection/MutableVector;
@@ -226,21 +226,21 @@
 
     .line 50
     .local v0, "item":Ljava/lang/Object;
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_0
 
     .line 51
     return-object v0
 
     .line 54
     .end local v0    # "item":Ljava/lang/Object;
-    :cond_23
+    :cond_1
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public final push(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

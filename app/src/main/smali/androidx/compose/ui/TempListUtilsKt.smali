@@ -70,7 +70,7 @@
 
 # direct methods
 .method private static final appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .param p0, "$this$appendElement"    # Ljava/lang/Appendable;
     .param p1, "element"    # Ljava/lang/Object;
     .param p2, "transform"    # Lkotlin/jvm/functions/Function1;
@@ -92,7 +92,7 @@
     nop
 
     .line 207
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_0
 
     invoke-interface {p2, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -102,21 +102,21 @@
 
     invoke-interface {p0, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    goto :goto_34
+    goto :goto_1
 
     .line 208
-    :cond_d
-    if-nez p1, :cond_11
+    :cond_0
+    if-nez p1, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_1
     instance-of v0, p1, Ljava/lang/CharSequence;
 
-    :goto_13
-    if-eqz v0, :cond_1c
+    :goto_0
+    if-eqz v0, :cond_2
 
     move-object v0, p1
 
@@ -124,13 +124,13 @@
 
     invoke-interface {p0, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    goto :goto_34
+    goto :goto_1
 
     .line 209
-    :cond_1c
+    :cond_2
     instance-of v0, p1, Ljava/lang/Character;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_3
 
     move-object v0, p1
 
@@ -142,10 +142,10 @@
 
     invoke-interface {p0, v0}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
 
-    goto :goto_34
+    goto :goto_1
 
     .line 210
-    :cond_2b
+    :cond_3
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -155,12 +155,12 @@
     invoke-interface {p0, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 212
-    :goto_34
+    :goto_1
     return-void
 .end method
 
 .method public static final fastAssociate(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/util/Map;
-    .registers 14
+    .locals 12
     .param p0, "$this$fastAssociate"    # Ljava/util/List;
     .param p1, "transform"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -225,8 +225,8 @@
 
     move-result v5
 
-    :goto_1e
-    if-ge v4, v5, :cond_3f
+    :goto_0
+    if-ge v4, v5, :cond_0
 
     .line 216
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -274,11 +274,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 219
     .end local v4    # "index$iv":I
-    :cond_3f
+    :cond_0
     nop
 
     .line 97
@@ -292,7 +292,7 @@
 .end method
 
 .method private static final fastJoinTo(Ljava/util/List;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
-    .registers 13
+    .locals 5
     .param p0, "$this$fastJoinTo"    # Ljava/util/List;
     .param p1, "buffer"    # Ljava/lang/Appendable;
     .param p2, "separator"    # Ljava/lang/CharSequence;
@@ -337,8 +337,8 @@
 
     move-result v2
 
-    :goto_9
-    if-ge v1, v2, :cond_23
+    :goto_0
+    if-ge v1, v2, :cond_3
 
     .line 191
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -351,45 +351,45 @@
 
     const/4 v4, 0x1
 
-    if-le v0, v4, :cond_17
+    if-le v0, v4, :cond_0
 
     invoke-interface {p1, p2}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 193
-    :cond_17
-    if-ltz p5, :cond_1d
+    :cond_0
+    if-ltz p5, :cond_2
 
-    if-gt v0, p5, :cond_1c
+    if-gt v0, p5, :cond_1
 
-    goto :goto_1d
+    goto :goto_1
 
     .line 195
-    :cond_1c
-    goto :goto_23
+    :cond_1
+    goto :goto_2
 
     .line 194
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_1
     invoke-static {p1, v3, p7}, Landroidx/compose/ui/TempListUtilsKt;->appendElement(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V
 
     .line 190
     .end local v3    # "element":Ljava/lang/Object;
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 197
     .end local v1    # "index":I
-    :cond_23
-    :goto_23
-    if-ltz p5, :cond_2a
+    :cond_3
+    :goto_2
+    if-ltz p5, :cond_4
 
-    if-le v0, p5, :cond_2a
+    if-le v0, p5, :cond_4
 
     invoke-interface {p1, p6}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 198
-    :cond_2a
+    :cond_4
     invoke-interface {p1, p4}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
     .line 199
@@ -397,101 +397,101 @@
 .end method
 
 .method static synthetic fastJoinTo$default(Ljava/util/List;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/Appendable;
-    .registers 16
+    .locals 6
 
     .line 179
     and-int/lit8 v0, p8, 0x2
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 181
     const-string v0, ", "
 
     check-cast v0, Ljava/lang/CharSequence;
 
-    goto :goto_a
+    goto :goto_0
 
     .line 179
-    :cond_9
+    :cond_0
     move-object v0, p2
 
-    :goto_a
+    :goto_0
     and-int/lit8 v1, p8, 0x4
 
     const-string v2, ""
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     .line 182
     move-object v1, v2
 
     check-cast v1, Ljava/lang/CharSequence;
 
-    goto :goto_15
+    goto :goto_1
 
     .line 179
-    :cond_14
+    :cond_1
     move-object v1, p3
 
-    :goto_15
+    :goto_1
     and-int/lit8 v3, p8, 0x8
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_2
 
     .line 183
     check-cast v2, Ljava/lang/CharSequence;
 
-    goto :goto_1d
+    goto :goto_2
 
     .line 179
-    :cond_1c
+    :cond_2
     move-object v2, p4
 
-    :goto_1d
+    :goto_2
     and-int/lit8 v3, p8, 0x10
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_3
 
     .line 184
     const/4 v3, -0x1
 
-    goto :goto_24
+    goto :goto_3
 
     .line 179
-    :cond_23
+    :cond_3
     move v3, p5
 
-    :goto_24
+    :goto_3
     and-int/lit8 v4, p8, 0x20
 
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_4
 
     .line 185
     const-string v4, "..."
 
     check-cast v4, Ljava/lang/CharSequence;
 
-    goto :goto_2e
+    goto :goto_4
 
     .line 179
-    :cond_2d
+    :cond_4
     move-object v4, p6
 
-    :goto_2e
+    :goto_4
     and-int/lit8 v5, p8, 0x40
 
-    if-eqz v5, :cond_34
+    if-eqz v5, :cond_5
 
     .line 186
     const/4 v5, 0x0
 
-    goto :goto_35
+    goto :goto_5
 
     .line 179
-    :cond_34
+    :cond_5
     move-object v5, p7
 
-    :goto_35
+    :goto_5
     move-object p2, p0
 
     move-object p3, p1
@@ -516,7 +516,7 @@
 .end method
 
 .method public static final fastJoinToString(Ljava/util/List;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/String;
-    .registers 16
+    .locals 9
     .param p0, "$this$fastJoinToString"    # Ljava/util/List;
     .param p1, "separator"    # Ljava/lang/CharSequence;
     .param p2, "prefix"    # Ljava/lang/CharSequence;
@@ -607,12 +607,12 @@
 .end method
 
 .method public static synthetic fastJoinToString$default(Ljava/util/List;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Ljava/lang/String;
-    .registers 13
+    .locals 4
 
     .line 155
     and-int/lit8 p8, p7, 0x1
 
-    if-eqz p8, :cond_8
+    if-eqz p8, :cond_0
 
     .line 156
     const-string p1, ", "
@@ -620,12 +620,12 @@
     check-cast p1, Ljava/lang/CharSequence;
 
     .line 155
-    :cond_8
+    :cond_0
     and-int/lit8 p8, p7, 0x2
 
     const-string v0, ""
 
-    if-eqz p8, :cond_13
+    if-eqz p8, :cond_1
 
     .line 157
     move-object p2, v0
@@ -634,16 +634,16 @@
 
     move-object p8, p2
 
-    goto :goto_14
+    goto :goto_0
 
     .line 155
-    :cond_13
+    :cond_1
     move-object p8, p2
 
-    :goto_14
+    :goto_0
     and-int/lit8 p2, p7, 0x4
 
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_2
 
     .line 158
     move-object p3, v0
@@ -652,32 +652,32 @@
 
     move-object v0, p3
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 155
-    :cond_1d
+    :cond_2
     move-object v0, p3
 
-    :goto_1e
+    :goto_1
     and-int/lit8 p2, p7, 0x8
 
-    if-eqz p2, :cond_25
+    if-eqz p2, :cond_3
 
     .line 159
     const/4 p4, -0x1
 
     move v1, p4
 
-    goto :goto_26
+    goto :goto_2
 
     .line 155
-    :cond_25
+    :cond_3
     move v1, p4
 
-    :goto_26
+    :goto_2
     and-int/lit8 p2, p7, 0x10
 
-    if-eqz p2, :cond_31
+    if-eqz p2, :cond_4
 
     .line 160
     const-string p2, "..."
@@ -688,29 +688,29 @@
 
     move-object v2, p5
 
-    goto :goto_32
+    goto :goto_3
 
     .line 155
-    :cond_31
+    :cond_4
     move-object v2, p5
 
-    :goto_32
+    :goto_3
     and-int/lit8 p2, p7, 0x20
 
-    if-eqz p2, :cond_39
+    if-eqz p2, :cond_5
 
     .line 161
     const/4 p6, 0x0
 
     move-object v3, p6
 
-    goto :goto_3a
+    goto :goto_4
 
     .line 155
-    :cond_39
+    :cond_5
     move-object v3, p6
 
-    :goto_3a
+    :goto_4
     move-object p2, p0
 
     move-object p3, p1
@@ -733,7 +733,7 @@
 .end method
 
 .method public static final fastMapNotNull(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
-    .registers 14
+    .locals 12
     .param p0, "$this$fastMapNotNull"    # Ljava/util/List;
     .param p1, "transform"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -794,8 +794,8 @@
 
     move-result v5
 
-    :goto_1e
-    if-ge v4, v5, :cond_38
+    :goto_0
+    if-ge v4, v5, :cond_1
 
     .line 222
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -815,7 +815,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_33
+    if-eqz v9, :cond_0
 
     .line 224
     .local v9, "it":Ljava/lang/Object;
@@ -832,7 +832,7 @@
     .line 139
     .end local v9    # "it":Ljava/lang/Object;
     .end local v10    # "$i$a$-let-TempListUtilsKt$fastMapNotNull$2$1":I
-    :cond_33
+    :cond_0
     nop
 
     .line 223
@@ -844,11 +844,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 225
     .end local v4    # "index$iv":I
-    :cond_38
+    :cond_1
     nop
 
     .line 140
@@ -862,7 +862,7 @@
 .end method
 
 .method public static final fastReduce(Ljava/util/List;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 7
+    .locals 5
     .param p0, "$this$fastReduce"    # Ljava/util/List;
     .param p1, "operation"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -896,7 +896,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     .line 70
     invoke-static {p0}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
@@ -912,10 +912,10 @@
 
     move-result v3
 
-    if-gt v2, v3, :cond_2b
+    if-gt v2, v3, :cond_0
 
     .line 72
-    :goto_1e
+    :goto_0
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -925,20 +925,20 @@
     move-result-object v1
 
     .line 71
-    if-eq v2, v3, :cond_2b
+    if-eq v2, v3, :cond_0
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 74
     .end local v2    # "i":I
-    :cond_2b
+    :cond_0
     return-object v1
 
     .line 69
     .end local v1    # "accumulator":Ljava/lang/Object;
-    :cond_2c
+    :cond_1
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     const-string v2, "Empty collection can\'t be reduced."
@@ -949,7 +949,7 @@
 .end method
 
 .method public static final fastZip(Ljava/util/List;Ljava/util/List;Lkotlin/jvm/functions/Function2;)Ljava/util/List;
-    .registers 10
+    .locals 7
     .param p0, "$this$fastZip"    # Ljava/util/List;
     .param p1, "other"    # Ljava/util/List;
     .param p2, "transform"    # Lkotlin/jvm/functions/Function2;
@@ -1015,8 +1015,8 @@
     const/4 v3, 0x0
 
     .local v3, "i":I
-    :goto_25
-    if-ge v3, v1, :cond_3c
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     .line 119
     move-object v4, v2
@@ -1040,11 +1040,11 @@
     .line 118
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_25
+    goto :goto_0
 
     .line 121
     .end local v3    # "i":I
-    :cond_3c
+    :cond_0
     move-object v3, v2
 
     check-cast v3, Ljava/util/List;
@@ -1053,7 +1053,7 @@
 .end method
 
 .method public static final fastZipWithNext(Ljava/util/List;Lkotlin/jvm/functions/Function2;)Ljava/util/List;
-    .registers 9
+    .locals 7
     .param p0, "$this$fastZipWithNext"    # Ljava/util/List;
     .param p1, "transform"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -1091,7 +1091,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_40
+    if-eqz v1, :cond_2
 
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -1099,12 +1099,12 @@
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_1b
+    if-ne v1, v2, :cond_0
 
-    goto :goto_40
+    goto :goto_1
 
     .line 40
-    :cond_1b
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -1128,8 +1128,8 @@
 
     move-result v4
 
-    :goto_2c
-    if-ge v3, v4, :cond_3f
+    :goto_0
+    if-ge v3, v4, :cond_1
 
     .line 44
     add-int/lit8 v5, v3, 0x1
@@ -1153,18 +1153,18 @@
     .end local v5    # "next":Ljava/lang/Object;
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 48
     .end local v3    # "i":I
-    :cond_3f
+    :cond_1
     return-object v1
 
     .line 39
     .end local v1    # "result":Ljava/util/List;
     .end local v2    # "current":Ljava/lang/Object;
-    :cond_40
-    :goto_40
+    :cond_2
+    :goto_1
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v1

@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1376
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public getDoubleTapMinTimeMillis()J
-    .registers 3
+    .locals 2
 
     .line 1382
     const-wide/16 v0, 0x28
@@ -72,7 +72,7 @@
 .end method
 
 .method public getDoubleTapTimeoutMillis()J
-    .registers 3
+    .locals 2
 
     .line 1380
     const-wide/16 v0, 0x12c
@@ -81,7 +81,7 @@
 .end method
 
 .method public getLongPressTimeoutMillis()J
-    .registers 3
+    .locals 2
 
     .line 1378
     const-wide/16 v0, 0x190
@@ -90,7 +90,7 @@
 .end method
 
 .method public getMinimumTouchTargetSize-MYxV2XQ()J
-    .registers 3
+    .locals 2
 
     .line 1386
     sget-object v0, Landroidx/compose/ui/unit/DpSize;->Companion:Landroidx/compose/ui/unit/DpSize$Companion;
@@ -103,7 +103,7 @@
 .end method
 
 .method public getTouchSlop()F
-    .registers 2
+    .locals 1
 
     .line 1384
     const/high16 v0, 0x41800000    # 16.0f

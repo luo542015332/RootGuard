@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(IILandroidx/compose/runtime/SlotWriter;)V
-    .registers 4
+    .locals 0
     .param p1, "$start"    # I
     .param p2, "$end"    # I
     .param p3, "$receiver"    # Landroidx/compose/runtime/SlotWriter;
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public final getCurrent()I
-    .registers 2
+    .locals 1
 
     .line 1829
     iget v0, p0, Landroidx/compose/runtime/SlotWriter$groupSlots$1;->current:I
@@ -97,39 +97,38 @@
 .end method
 
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 1830
     iget v0, p0, Landroidx/compose/runtime/SlotWriter$groupSlots$1;->current:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotWriter$groupSlots$1;->$end:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 5
+    .locals 4
 
     .line 1832
     invoke-virtual {p0}, Landroidx/compose/runtime/SlotWriter$groupSlots$1;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/SlotWriter$groupSlots$1;->this$0:Landroidx/compose/runtime/SlotWriter;
 
-    # getter for: Landroidx/compose/runtime/SlotWriter;->slots:[Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/runtime/SlotWriter;->access$getSlots$p(Landroidx/compose/runtime/SlotWriter;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -142,24 +141,23 @@
 
     iput v3, p0, Landroidx/compose/runtime/SlotWriter$groupSlots$1;->current:I
 
-    # invokes: Landroidx/compose/runtime/SlotWriter;->dataIndexToDataAddress(I)I
     invoke-static {v1, v2}, Landroidx/compose/runtime/SlotWriter;->access$dataIndexToDataAddress(Landroidx/compose/runtime/SlotWriter;I)I
 
     move-result v1
 
     aget-object v0, v0, v1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1c
+    :goto_0
     return-object v0
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -171,7 +169,7 @@
 .end method
 
 .method public final setCurrent(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 1829

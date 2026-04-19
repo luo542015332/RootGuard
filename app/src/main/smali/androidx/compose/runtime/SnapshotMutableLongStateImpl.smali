@@ -87,7 +87,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 4
+    .locals 1
     .param p1, "value"    # J
 
     .line 125
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public component1()Ljava/lang/Long;
-    .registers 3
+    .locals 2
 
     .line 147
     invoke-virtual {p0}, Landroidx/compose/runtime/SnapshotMutableLongStateImpl;->getLongValue()J
@@ -122,7 +122,7 @@
 .end method
 
 .method public bridge synthetic component1()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 125
     invoke-virtual {p0}, Landroidx/compose/runtime/SnapshotMutableLongStateImpl;->component1()Ljava/lang/Long;
@@ -133,7 +133,7 @@
 .end method
 
 .method public component2()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -155,7 +155,7 @@
 .end method
 
 .method public getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 2
+    .locals 1
 
     .line 132
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableLongStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableLongStateImpl$LongStateStateRecord;
@@ -166,7 +166,7 @@
 .end method
 
 .method public getLongValue()J
-    .registers 3
+    .locals 2
 
     .line 135
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableLongStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableLongStateImpl$LongStateStateRecord;
@@ -191,7 +191,7 @@
 .end method
 
 .method public getPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -210,7 +210,7 @@
 .end method
 
 .method public mergeRecords(Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 10
+    .locals 6
     .param p1, "previous"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p2, "current"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p3, "applied"    # Landroidx/compose/runtime/snapshots/StateRecord;
@@ -250,24 +250,24 @@
 
     cmp-long v2, v2, v4
 
-    if-nez v2, :cond_26
+    if-nez v2, :cond_0
 
     .line 163
     move-object v2, p2
 
-    goto :goto_27
+    goto :goto_0
 
     .line 165
-    :cond_26
+    :cond_0
     const/4 v2, 0x0
 
     .line 162
-    :goto_27
+    :goto_0
     return-object v2
 .end method
 
 .method public prependStateRecord(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -286,7 +286,7 @@
 .end method
 
 .method public setLongValue(J)V
-    .registers 16
+    .locals 13
     .param p1, "value"    # J
 
     .line 136
@@ -316,7 +316,7 @@
 
     cmp-long v4, v4, p1
 
-    if-eqz v4, :cond_50
+    if-eqz v4, :cond_0
 
     .line 138
     iget-object v4, p0, Landroidx/compose/runtime/SnapshotMutableLongStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableLongStateImpl$LongStateStateRecord;
@@ -355,7 +355,7 @@
 
     .line 189
     .local v10, "$i$a$-sync-SnapshotKt$overwritable$1$iv":I
-    :try_start_26
+    :try_start_0
     sget-object v11, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v11}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -389,8 +389,8 @@
     .end local v11    # "$this$_set_longValue__u24lambda_u241_u24lambda_u240":Landroidx/compose/runtime/SnapshotMutableLongStateImpl$LongStateStateRecord;
     .end local v12    # "$i$a$-overwritable-SnapshotMutableLongStateImpl$longValue$1$1":I
     sget-object v11, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_3f
-    .catchall {:try_start_26 .. :try_end_3f} :catchall_4d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 190
     nop
@@ -428,13 +428,13 @@
     nop
 
     .line 186
-    goto :goto_50
+    goto :goto_0
 
     .line 188
     .local v7, "$i$f$sync":I
     .local v8, "lock$iv$iv$iv":Ljava/lang/Object;
     .restart local v9    # "$i$f$synchronized":I
-    :catchall_4d
+    :catchall_0
     move-exception v10
 
     monitor-exit v8
@@ -448,8 +448,8 @@
     .end local v7    # "$i$f$sync":I
     .end local v8    # "lock$iv$iv$iv":Ljava/lang/Object;
     .end local v9    # "$i$f$synchronized":I
-    :cond_50
-    :goto_50
+    :cond_0
+    :goto_0
     nop
 
     .line 184
@@ -464,7 +464,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 8
+    .locals 7
 
     .line 169
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableLongStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableLongStateImpl$LongStateStateRecord;

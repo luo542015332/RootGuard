@@ -86,7 +86,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -127,7 +127,7 @@
 .end method
 
 .method private final addFreshIds(Landroid/view/MotionEvent;)V
-    .registers 9
+    .locals 7
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .line 153
@@ -137,12 +137,12 @@
 
     const-wide/16 v1, 0x1
 
-    sparse-switch v0, :sswitch_data_4a
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_49
+    goto :goto_0
 
     .line 155
-    :sswitch_a
+    :sswitch_0
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getPointerId(I)I
@@ -157,7 +157,7 @@
 
     move-result v3
 
-    if-gez v3, :cond_49
+    if-gez v3, :cond_0
 
     .line 157
     iget-object v3, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -171,10 +171,10 @@
     invoke-virtual {v3, v0, v4, v5}, Landroid/util/SparseLongArray;->put(IJ)V
 
     .end local v0    # "pointerId":I
-    goto :goto_49
+    goto :goto_0
 
     .line 162
-    :sswitch_22
+    :sswitch_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v0
@@ -193,7 +193,7 @@
 
     move-result v4
 
-    if-gez v4, :cond_49
+    if-gez v4, :cond_0
 
     .line 165
     iget-object v4, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -213,7 +213,7 @@
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_49
+    if-ne v1, v2, :cond_0
 
     .line 167
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->canHover:Landroid/util/SparseBooleanArray;
@@ -225,20 +225,20 @@
     .line 172
     .end local v0    # "actionIndex":I
     .end local v3    # "pointerId":I
-    :cond_49
-    :goto_49
+    :cond_0
+    :goto_0
     return-void
 
-    :sswitch_data_4a
+    :sswitch_data_0
     .sparse-switch
-        0x0 -> :sswitch_22
-        0x5 -> :sswitch_22
-        0x9 -> :sswitch_a
+        0x0 -> :sswitch_1
+        0x5 -> :sswitch_1
+        0x9 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method private final clearOnDeviceChange(Landroid/view/MotionEvent;)V
-    .registers 5
+    .locals 3
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .line 232
@@ -248,13 +248,13 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     .line 233
     return-void
 
     .line 235
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getToolType(I)I
@@ -271,14 +271,14 @@
     .local v1, "source":I
     iget v2, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->previousToolType:I
 
-    if-ne v0, v2, :cond_19
+    if-ne v0, v2, :cond_1
 
     iget v2, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->previousSource:I
 
-    if-eq v1, v2, :cond_27
+    if-eq v1, v2, :cond_2
 
     .line 239
-    :cond_19
+    :cond_1
     iput v0, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->previousToolType:I
 
     .line 240
@@ -295,12 +295,12 @@
     invoke-virtual {v2}, Landroid/util/SparseLongArray;->clear()V
 
     .line 244
-    :cond_27
+    :cond_2
     return-void
 .end method
 
 .method private final createPointerInputEventData(Landroidx/compose/ui/input/pointer/PositionCalculator;Landroid/view/MotionEvent;IZ)Landroidx/compose/ui/input/pointer/PointerInputEventData;
-    .registers 40
+    .locals 35
     .param p1, "positionCalculator"    # Landroidx/compose/ui/input/pointer/PositionCalculator;
     .param p2, "motionEvent"    # Landroid/view/MotionEvent;
     .param p3, "index"    # I
@@ -350,7 +350,7 @@
 
     .line 265
     .local v7, "rawPosition":J
-    if-nez v3, :cond_39
+    if-nez v3, :cond_0
 
     .line 266
     invoke-virtual/range {p2 .. p2}, Landroid/view/MotionEvent;->getRawX()F
@@ -374,15 +374,15 @@
 
     move-wide/from16 v27, v7
 
-    goto :goto_56
+    goto :goto_0
 
     .line 268
-    :cond_39
+    :cond_0
     sget v9, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v10, 0x1d
 
-    if-lt v9, v10, :cond_4e
+    if-lt v9, v10, :cond_1
 
     .line 269
     sget-object v9, Landroidx/compose/ui/input/pointer/MotionEventHelper;->INSTANCE:Landroidx/compose/ui/input/pointer/MotionEventHelper;
@@ -400,10 +400,10 @@
 
     move-wide/from16 v27, v7
 
-    goto :goto_56
+    goto :goto_0
 
     .line 272
-    :cond_4e
+    :cond_1
     invoke-interface {v1, v5, v6}, Landroidx/compose/ui/input/pointer/PositionCalculator;->localToScreen-MK-Hz9U(J)J
 
     move-result-wide v7
@@ -417,12 +417,12 @@
     .end local v7    # "rawPosition":J
     .local v25, "position":J
     .local v27, "rawPosition":J
-    :goto_56
+    :goto_0
     invoke-virtual/range {p2 .. p3}, Landroid/view/MotionEvent;->getToolType(I)I
 
     move-result v5
 
-    packed-switch v5, :pswitch_data_14a
+    packed-switch v5, :pswitch_data_0
 
     .line 280
     sget-object v5, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
@@ -433,10 +433,10 @@
 
     move/from16 v16, v5
 
-    goto :goto_92
+    goto :goto_1
 
     .line 279
-    :pswitch_66
+    :pswitch_0
     sget-object v5, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
 
     invoke-virtual {v5}, Landroidx/compose/ui/input/pointer/PointerType$Companion;->getEraser-T8wyACA()I
@@ -445,10 +445,10 @@
 
     move/from16 v16, v5
 
-    goto :goto_92
+    goto :goto_1
 
     .line 278
-    :pswitch_6f
+    :pswitch_1
     sget-object v5, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
 
     invoke-virtual {v5}, Landroidx/compose/ui/input/pointer/PointerType$Companion;->getMouse-T8wyACA()I
@@ -457,10 +457,10 @@
 
     move/from16 v16, v5
 
-    goto :goto_92
+    goto :goto_1
 
     .line 277
-    :pswitch_78
+    :pswitch_2
     sget-object v5, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
 
     invoke-virtual {v5}, Landroidx/compose/ui/input/pointer/PointerType$Companion;->getStylus-T8wyACA()I
@@ -469,10 +469,10 @@
 
     move/from16 v16, v5
 
-    goto :goto_92
+    goto :goto_1
 
     .line 276
-    :pswitch_81
+    :pswitch_3
     sget-object v5, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
 
     invoke-virtual {v5}, Landroidx/compose/ui/input/pointer/PointerType$Companion;->getTouch-T8wyACA()I
@@ -481,10 +481,10 @@
 
     move/from16 v16, v5
 
-    goto :goto_92
+    goto :goto_1
 
     .line 275
-    :pswitch_8a
+    :pswitch_4
     sget-object v5, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
 
     invoke-virtual {v5}, Landroidx/compose/ui/input/pointer/PointerType$Companion;->getUnknown-T8wyACA()I
@@ -494,7 +494,7 @@
     move/from16 v16, v5
 
     .line 274
-    :goto_92
+    :goto_1
     nop
 
     .line 283
@@ -526,8 +526,8 @@
 
     move v9, v8
 
-    :goto_a6
-    if-ge v9, v7, :cond_ef
+    :goto_2
+    if-ge v9, v7, :cond_5
 
     move v10, v9
 
@@ -554,43 +554,43 @@
 
     const/16 v17, 0x1
 
-    if-nez v14, :cond_c3
+    if-nez v14, :cond_2
 
     invoke-static {v12}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v14
 
-    if-nez v14, :cond_c3
+    if-nez v14, :cond_2
 
     move/from16 v14, v17
 
-    goto :goto_c4
+    goto :goto_3
 
-    :cond_c3
+    :cond_2
     move v14, v8
 
-    :goto_c4
-    if-eqz v14, :cond_eb
+    :goto_3
+    if-eqz v14, :cond_4
 
     invoke-static {v13}, Ljava/lang/Float;->isInfinite(F)Z
 
     move-result v14
 
-    if-nez v14, :cond_d3
+    if-nez v14, :cond_3
 
     invoke-static {v13}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v14
 
-    if-nez v14, :cond_d3
+    if-nez v14, :cond_3
 
-    goto :goto_d5
+    goto :goto_4
 
-    :cond_d3
+    :cond_3
     move/from16 v17, v8
 
-    :goto_d5
-    if-eqz v17, :cond_eb
+    :goto_4
+    if-eqz v17, :cond_4
 
     .line 289
     new-instance v14, Landroidx/compose/ui/input/pointer/HistoricalChange;
@@ -618,7 +618,7 @@
 
     .line 295
     .end local v14    # "historicalChange":Landroidx/compose/ui/input/pointer/HistoricalChange;
-    :cond_eb
+    :cond_4
     nop
 
     .line 285
@@ -628,10 +628,10 @@
     .end local v13    # "y":F
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_a6
+    goto :goto_2
 
     .line 296
-    :cond_ef
+    :cond_5
     nop
 
     .line 284
@@ -646,7 +646,7 @@
 
     const/16 v6, 0x8
 
-    if-ne v5, v6, :cond_10f
+    if-ne v5, v6, :cond_6
 
     .line 298
     const/16 v5, 0xa
@@ -679,10 +679,10 @@
 
     .end local v5    # "x":F
     .end local v6    # "y":F
-    goto :goto_117
+    goto :goto_5
 
     .line 318
-    :cond_10f
+    :cond_6
     sget-object v5, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v5}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
@@ -692,7 +692,7 @@
     move-wide/from16 v19, v5
 
     .line 297
-    :goto_117
+    :goto_5
     nop
 
     .line 321
@@ -770,18 +770,18 @@
 
     nop
 
-    :pswitch_data_14a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_8a
-        :pswitch_81
-        :pswitch_78
-        :pswitch_6f
-        :pswitch_66
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private final getComposePointerId-_I2yYro(I)J
-    .registers 7
+    .locals 5
     .param p1, "motionEventPointerId"    # I
 
     .line 215
@@ -793,7 +793,7 @@
 
     .line 216
     .local v0, "pointerIndex":I
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_0
 
     .line 217
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -802,10 +802,10 @@
 
     move-result-wide v1
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 220
-    :cond_f
+    :cond_0
     iget-wide v1, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->nextId:J
 
     const-wide/16 v3, 0x1
@@ -825,7 +825,7 @@
 
     .line 216
     .end local v1    # "newId":J
-    :goto_1c
+    :goto_0
     nop
 
     .line 224
@@ -838,13 +838,13 @@
 .end method
 
 .method public static synthetic getMotionEventToComposePointerIdMap$ui_release$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final hasPointerId(Landroid/view/MotionEvent;I)Z
-    .registers 6
+    .locals 3
     .param p1, "$this$hasPointerId"    # Landroid/view/MotionEvent;
     .param p2, "pointerId"    # I
 
@@ -856,15 +856,15 @@
 
     move-result v1
 
-    :goto_5
-    if-ge v0, v1, :cond_12
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 207
     invoke-virtual {p1, v0}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v2
 
-    if-ne v2, p2, :cond_f
+    if-ne v2, p2, :cond_0
 
     .line 208
     const/4 v1, 0x1
@@ -872,21 +872,21 @@
     return v1
 
     .line 206
-    :cond_f
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 211
     .end local v0    # "i":I
-    :cond_12
+    :cond_1
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method private final removeStaleIds(Landroid/view/MotionEvent;)V
-    .registers 6
+    .locals 4
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     .line 179
@@ -894,12 +894,12 @@
 
     move-result v0
 
-    sparse-switch v0, :sswitch_data_54
+    sparse-switch v0, :sswitch_data_0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 182
-    :sswitch_8
+    :sswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v0
@@ -920,7 +920,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_23
+    if-nez v2, :cond_0
 
     .line 185
     iget-object v2, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -935,8 +935,8 @@
     .line 194
     .end local v0    # "actionIndex":I
     .end local v1    # "pointerId":I
-    :cond_23
-    :goto_23
+    :cond_0
+    :goto_0
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
 
     invoke-virtual {v0}, Landroid/util/SparseLongArray;->size()I
@@ -947,7 +947,7 @@
 
     move-result v1
 
-    if-le v0, v1, :cond_53
+    if-le v0, v1, :cond_2
 
     .line 195
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -959,10 +959,10 @@
     add-int/lit8 v0, v0, -0x1
 
     .local v0, "i":I
-    :goto_37
+    :goto_1
     const/4 v1, -0x1
 
-    if-ge v1, v0, :cond_53
+    if-ge v1, v0, :cond_2
 
     .line 196
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -977,7 +977,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_50
+    if-nez v2, :cond_1
 
     .line 198
     iget-object v2, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -991,27 +991,27 @@
 
     .line 195
     .end local v1    # "pointerId":I
-    :cond_50
+    :cond_1
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_37
+    goto :goto_1
 
     .line 203
     .end local v0    # "i":I
-    :cond_53
+    :cond_2
     return-void
 
-    :sswitch_data_54
+    :sswitch_data_0
     .sparse-switch
-        0x1 -> :sswitch_8
-        0x6 -> :sswitch_8
+        0x1 -> :sswitch_0
+        0x6 -> :sswitch_0
     .end sparse-switch
 .end method
 
 
 # virtual methods
 .method public final convertToPointerInputEvent$ui_release(Landroid/view/MotionEvent;Landroidx/compose/ui/input/pointer/PositionCalculator;)Landroidx/compose/ui/input/pointer/PointerInputEvent;
-    .registers 13
+    .locals 10
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
     .param p2, "positionCalculator"    # Landroidx/compose/ui/input/pointer/PositionCalculator;
 
@@ -1032,7 +1032,7 @@
     .local v0, "action":I
     const/4 v1, 0x3
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_0
 
     .line 89
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;
@@ -1050,7 +1050,7 @@
     return-object v1
 
     .line 93
-    :cond_1f
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->clearOnDeviceChange(Landroid/view/MotionEvent;)V
 
     .line 95
@@ -1063,49 +1063,49 @@
 
     const/4 v3, 0x1
 
-    if-eq v0, v1, :cond_35
+    if-eq v0, v1, :cond_2
 
     const/4 v1, 0x7
 
-    if-eq v0, v1, :cond_35
+    if-eq v0, v1, :cond_2
 
     .line 98
     const/16 v1, 0x9
 
-    if-ne v0, v1, :cond_33
+    if-ne v0, v1, :cond_1
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_33
+    :cond_1
     move v1, v2
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_35
-    :goto_35
+    :cond_2
+    :goto_0
     move v1, v3
 
     .line 97
-    :goto_36
+    :goto_1
     nop
 
     .line 99
     .local v1, "isHover":Z
     const/16 v4, 0x8
 
-    if-ne v0, v4, :cond_3d
+    if-ne v0, v4, :cond_3
 
     move v4, v3
 
-    goto :goto_3e
+    goto :goto_2
 
-    :cond_3d
+    :cond_3
     move v4, v2
 
     .line 101
     .local v4, "isScroll":Z
-    :goto_3e
-    if-eqz v1, :cond_4d
+    :goto_2
+    if-eqz v1, :cond_4
 
     .line 102
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
@@ -1124,28 +1124,28 @@
 
     .line 106
     .end local v5    # "hoverId":I
-    :cond_4d
-    sparse-switch v0, :sswitch_data_94
+    :cond_4
+    sparse-switch v0, :sswitch_data_0
 
     .line 109
     const/4 v5, -0x1
 
-    goto :goto_58
+    goto :goto_3
 
     .line 108
-    :sswitch_52
+    :sswitch_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v5
 
-    goto :goto_58
+    goto :goto_3
 
     .line 107
-    :sswitch_57
+    :sswitch_1
     move v5, v2
 
     .line 106
-    :goto_58
+    :goto_3
     nop
 
     .line 112
@@ -1162,8 +1162,8 @@
 
     move-result v7
 
-    :goto_63
-    if-ge v6, v7, :cond_84
+    :goto_4
+    if-ge v6, v7, :cond_7
 
     .line 117
     iget-object v8, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->pointers:Ljava/util/List;
@@ -1181,28 +1181,28 @@
     nop
 
     .line 126
-    if-nez v1, :cond_79
+    if-nez v1, :cond_6
 
-    if-eq v6, v5, :cond_79
+    if-eq v6, v5, :cond_6
 
-    if-eqz v4, :cond_77
+    if-eqz v4, :cond_5
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getButtonState()I
 
     move-result v9
 
-    if-eqz v9, :cond_79
+    if-eqz v9, :cond_6
 
-    :cond_77
+    :cond_5
     move v9, v3
 
-    goto :goto_7a
+    goto :goto_5
 
-    :cond_79
+    :cond_6
     move v9, v2
 
     .line 118
-    :goto_7a
+    :goto_5
     invoke-direct {p0, p2, p1, v6, v9}, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->createPointerInputEventData(Landroidx/compose/ui/input/pointer/PositionCalculator;Landroid/view/MotionEvent;IZ)Landroidx/compose/ui/input/pointer/PointerInputEventData;
 
     move-result-object v9
@@ -1213,11 +1213,11 @@
     .line 116
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_63
+    goto :goto_4
 
     .line 131
     .end local v6    # "i":I
-    :cond_84
+    :cond_7
     invoke-direct {p0, p1}, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->removeStaleIds(Landroid/view/MotionEvent;)V
 
     .line 133
@@ -1239,15 +1239,15 @@
 
     return-object v2
 
-    :sswitch_data_94
+    :sswitch_data_0
     .sparse-switch
-        0x1 -> :sswitch_57
-        0x6 -> :sswitch_52
+        0x1 -> :sswitch_1
+        0x6 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public final endStream(I)V
-    .registers 3
+    .locals 1
     .param p1, "pointerId"    # I
 
     .line 145
@@ -1265,7 +1265,7 @@
 .end method
 
 .method public final getMotionEventToComposePointerIdMap$ui_release()Landroid/util/SparseLongArray;
-    .registers 2
+    .locals 1
 
     .line 55
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/MotionEventAdapter;->motionEventToComposePointerIdMap:Landroid/util/SparseLongArray;

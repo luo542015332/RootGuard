@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder$SaveableStateProvider$1$invoke$$inlined$onDispose$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 4
+    .locals 3
 
     .line 65
     const/4 v0, 0x0
@@ -73,7 +73,6 @@
     .local v0, "$i$a$-onDispose-LazySaveableStateHolder$SaveableStateProvider$1$1":I
     iget-object v1, p0, Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder$SaveableStateProvider$1$invoke$$inlined$onDispose$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;->previouslyComposedKeys:Ljava/util/Set;
     invoke-static {v1}, Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;->access$getPreviouslyComposedKeys$p(Landroidx/compose/foundation/lazy/layout/LazySaveableStateHolder;)Ljava/util/Set;
 
     move-result-object v1

@@ -67,7 +67,7 @@
 
 # direct methods
 .method private static final synthetic $values()[Landroidx/compose/ui/focus/FocusStateImpl;
-    .registers 4
+    .locals 4
 
     sget-object v0, Landroidx/compose/ui/focus/FocusStateImpl;->Active:Landroidx/compose/ui/focus/FocusStateImpl;
 
@@ -85,7 +85,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 61
     new-instance v0, Landroidx/compose/ui/focus/FocusStateImpl;
@@ -141,7 +141,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .param p1, "$enum$name"    # Ljava/lang/String;
     .param p2, "$enum$ordinal"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -157,7 +157,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/compose/ui/focus/FocusStateImpl;
-    .registers 2
+    .locals 1
 
     const-class v0, Landroidx/compose/ui/focus/FocusStateImpl;
 
@@ -171,7 +171,7 @@
 .end method
 
 .method public static values()[Landroidx/compose/ui/focus/FocusStateImpl;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/focus/FocusStateImpl;->$VALUES:[Landroidx/compose/ui/focus/FocusStateImpl;
 
@@ -187,7 +187,7 @@
 
 # virtual methods
 .method public getHasFocus()Z
-    .registers 3
+    .locals 2
 
     .line 85
     sget-object v0, Landroidx/compose/ui/focus/FocusStateImpl$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -198,7 +198,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 87
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -207,32 +207,32 @@
 
     throw v0
 
-    :pswitch_11
+    :pswitch_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 86
-    :pswitch_13
+    :pswitch_1
     const/4 v0, 0x1
 
     .line 88
-    :goto_14
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_13
-        :pswitch_13
-        :pswitch_13
-        :pswitch_11
+        :pswitch_1
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public isCaptured()Z
-    .registers 3
+    .locals 2
 
     .line 91
     sget-object v0, Landroidx/compose/ui/focus/FocusStateImpl$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -243,7 +243,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 93
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -252,32 +252,32 @@
 
     throw v0
 
-    :pswitch_11
+    :pswitch_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 92
-    :pswitch_13
+    :pswitch_1
     const/4 v0, 0x1
 
     .line 94
-    :goto_14
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_13
-        :pswitch_11
-        :pswitch_11
-        :pswitch_11
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public isFocused()Z
-    .registers 3
+    .locals 2
 
     .line 79
     sget-object v0, Landroidx/compose/ui/focus/FocusStateImpl$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -288,7 +288,7 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_16
+    packed-switch v0, :pswitch_data_0
 
     .line 81
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -297,26 +297,26 @@
 
     throw v0
 
-    :pswitch_11
+    :pswitch_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 80
-    :pswitch_13
+    :pswitch_1
     const/4 v0, 0x1
 
     .line 82
-    :goto_14
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_16
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_13
-        :pswitch_13
-        :pswitch_11
-        :pswitch_11
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method

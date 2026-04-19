@@ -43,7 +43,7 @@
 
 # direct methods
 .method public static final synthetic access$awaitMouseEventDown(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
 
@@ -56,7 +56,7 @@
 .end method
 
 .method private static final awaitMouseEventDown(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 19
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -73,7 +73,7 @@
 
     instance-of v1, v0, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$awaitMouseEventDown$1;
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
     move-object v1, v0
 
@@ -85,7 +85,7 @@
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_16
+    if-eqz v2, :cond_0
 
     iget v0, v1, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$awaitMouseEventDown$1;->label:I
 
@@ -93,14 +93,14 @@
 
     iput v0, v1, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$awaitMouseEventDown$1;->label:I
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     new-instance v1, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$awaitMouseEventDown$1;
 
     invoke-direct {v1, v0}, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$awaitMouseEventDown$1;-><init>(Lkotlin/coroutines/Continuation;)V
 
-    :goto_1b
+    :goto_0
     move-object v0, v1
 
     .local v0, "$continuation":Lkotlin/coroutines/Continuation;
@@ -116,7 +116,7 @@
 
     const/4 v4, 0x1
 
-    packed-switch v3, :pswitch_data_a6
+    packed-switch v3, :pswitch_data_0
 
     .end local v0    # "$continuation":Lkotlin/coroutines/Continuation;
     .end local v1    # "$result":Ljava/lang/Object;
@@ -130,7 +130,7 @@
 
     .restart local v0    # "$continuation":Lkotlin/coroutines/Continuation;
     .restart local v1    # "$result":Ljava/lang/Object;
-    :pswitch_31
+    :pswitch_0
     iget-object v3, v0, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$awaitMouseEventDown$1;->L$0:Ljava/lang/Object;
 
     check-cast v3, Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
@@ -144,17 +144,17 @@
 
     move-object v2, v1
 
-    goto :goto_55
+    goto :goto_2
 
     .end local v3    # "$this$awaitMouseEventDown":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :pswitch_3c
+    :pswitch_1
     invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v3, p0
 
     .line 125
     .restart local v3    # "$this$awaitMouseEventDown":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_41
+    :goto_1
     sget-object v5, Landroidx/compose/ui/input/pointer/PointerEventPass;->Main:Landroidx/compose/ui/input/pointer/PointerEventPass;
 
     iput-object v3, v0, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$awaitMouseEventDown$1;->L$0:Ljava/lang/Object;
@@ -165,13 +165,13 @@
 
     move-result-object v5
 
-    if-ne v5, v2, :cond_4e
+    if-ne v5, v2, :cond_1
 
     .line 122
     return-object v2
 
     .line 125
-    :cond_4e
+    :cond_1
     move-object/from16 v16, v2
 
     move-object v2, v1
@@ -187,7 +187,7 @@
     .end local v3    # "$this$awaitMouseEventDown":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .local v2, "$result":Ljava/lang/Object;
     .local v5, "$this$awaitMouseEventDown":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_55
+    :goto_2
     check-cast v1, Landroidx/compose/ui/input/pointer/PointerEvent;
 
     .line 127
@@ -203,7 +203,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_a1
+    if-eqz v6, :cond_5
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEvent;->getChanges()Ljava/util/List;
 
@@ -234,8 +234,8 @@
 
     move-result v10
 
-    :goto_70
-    if-ge v9, v10, :cond_9c
+    :goto_3
+    if-ge v9, v10, :cond_4
 
     .line 139
     invoke-interface {v6, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -274,42 +274,42 @@
 
     const/4 v15, 0x0
 
-    if-eqz v14, :cond_94
+    if-eqz v14, :cond_2
 
     invoke-static {v11}, Landroidx/compose/ui/input/pointer/PointerEventKt;->changedToDown(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
 
     move-result v14
 
-    if-eqz v14, :cond_94
+    if-eqz v14, :cond_2
 
     move v11, v4
 
-    goto :goto_95
+    goto :goto_4
 
     .end local v11    # "it":Landroidx/compose/ui/input/pointer/PointerInputChange;
-    :cond_94
+    :cond_2
     move v11, v15
 
     .line 136
     .end local v13    # "$i$a$-fastAll-TextSelectionMouseDetectorKt$awaitMouseEventDown$2":I
-    :goto_95
-    if-nez v11, :cond_98
+    :goto_4
+    if-nez v11, :cond_3
 
-    goto :goto_9e
+    goto :goto_5
 
     .line 140
     .end local v12    # "$i$a$-fastForEach-ListUtilsKt$fastAll$2$iv":I
-    :cond_98
+    :cond_3
     nop
 
     .line 138
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_70
+    goto :goto_3
 
     .line 142
     .end local v9    # "index$iv$iv":I
-    :cond_9c
+    :cond_4
     nop
 
     .line 143
@@ -318,34 +318,34 @@
     move v15, v4
 
     .end local v7    # "$i$f$fastAll":I
-    :goto_9e
-    if-eqz v15, :cond_a1
+    :goto_5
+    if-eqz v15, :cond_5
 
     .line 133
     return-object v1
 
     .line 125
     .end local v1    # "event":Landroidx/compose/ui/input/pointer/PointerEvent;
-    :cond_a1
+    :cond_5
     move-object v1, v2
 
     move-object v2, v3
 
     move-object v3, v5
 
-    goto :goto_41
+    goto :goto_1
 
     nop
 
-    :pswitch_data_a6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3c
-        :pswitch_31
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static final mouseSelectionDetector(Landroidx/compose/ui/input/pointer/PointerInputScope;Landroidx/compose/foundation/text/selection/MouseSelectionObserver;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p0, "$this$mouseSelectionDetector"    # Landroidx/compose/ui/input/pointer/PointerInputScope;
     .param p1, "observer"    # Landroidx/compose/foundation/text/selection/MouseSelectionObserver;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -379,11 +379,11 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     return-object v0
 
-    :cond_13
+    :cond_0
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 120

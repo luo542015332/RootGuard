@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateMap;Ljava/util/Iterator;)V
-    .registers 4
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .param p2, "iterator"    # Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 312
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/StateMapMutableEntriesIterator;->next()Ljava/util/Map$Entry;
@@ -100,7 +100,7 @@
 .end method
 
 .method public next()Ljava/util/Map$Entry;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 319
     new-instance v0, Landroidx/compose/runtime/snapshots/StateMapMutableEntriesIterator$next$1;
@@ -129,7 +129,7 @@
     return-object v0
 
     .line 330
-    :cond_11
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V

@@ -115,7 +115,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;)V
-    .registers 3
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -170,7 +170,7 @@
 
 # virtual methods
 .method public build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -194,7 +194,7 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_32
+    if-ne v0, v1, :cond_2
 
     .line 25
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->firstKey:Ljava/lang/Object;
@@ -209,16 +209,16 @@
 
     const/4 v4, 0x0
 
-    if-ne v1, v2, :cond_1c
+    if-ne v1, v2, :cond_0
 
     move v1, v3
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     move v1, v4
 
-    :goto_1d
+    :goto_0
     invoke-static {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 26
@@ -230,23 +230,23 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_2b
+    if-ne v1, v2, :cond_1
 
-    goto :goto_2c
+    goto :goto_1
 
-    :cond_2b
+    :cond_1
     move v3, v4
 
-    :goto_2c
+    :goto_1
     invoke-static {v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 27
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;
 
-    goto :goto_3b
+    goto :goto_2
 
     .line 29
-    :cond_32
+    :cond_2
     new-instance v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;
 
     iget-object v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->firstKey:Ljava/lang/Object;
@@ -256,7 +256,7 @@
     invoke-direct {v1, v2, v3, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;-><init>(Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;)V
 
     .line 24
-    :goto_3b
+    :goto_2
     iput-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;
 
     .line 31
@@ -266,7 +266,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 115
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -288,7 +288,7 @@
 .end method
 
 .method public containsKey(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
 
     .line 49
@@ -302,7 +302,7 @@
 .end method
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -321,23 +321,23 @@
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return-object v0
 .end method
 
 .method public getEntries()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -358,7 +358,7 @@
 .end method
 
 .method public final getFirstKey$runtime_release()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 13
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->firstKey:Ljava/lang/Object;
@@ -367,7 +367,7 @@
 .end method
 
 .method public final getHashMapBuilder$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -385,7 +385,7 @@
 .end method
 
 .method public getKeys()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -405,7 +405,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 20
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -418,7 +418,7 @@
 .end method
 
 .method public getValues()Ljava/util/Collection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -438,7 +438,7 @@
 .end method
 
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 6
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -458,20 +458,20 @@
 
     .line 55
     .local v0, "links":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 56
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-ne v1, p2, :cond_11
+    if-ne v1, p2, :cond_0
 
     .line 57
     return-object p2
 
     .line 59
-    :cond_11
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
     check-cast v1, Ljava/util/Map;
@@ -490,14 +490,14 @@
     return-object v1
 
     .line 63
-    :cond_21
+    :cond_1
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->isEmpty()Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_2
 
     .line 64
     iput-object p1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->firstKey:Ljava/lang/Object;
@@ -520,7 +520,7 @@
     return-object v2
 
     .line 70
-    :cond_39
+    :cond_2
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->lastKey:Ljava/lang/Object;
 
     .line 71
@@ -575,7 +575,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 5
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -594,7 +594,7 @@
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
@@ -602,12 +602,12 @@
 
     .line 83
     .local v0, "links":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    :cond_c
+    :cond_0
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getHasPrevious()Z
 
     move-result v1
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_1
 
     .line 84
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -646,11 +646,11 @@
 
     invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 89
     .end local v1    # "previousLinks":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    :cond_37
+    :cond_1
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getNext()Ljava/lang/Object;
 
     move-result-object v1
@@ -658,12 +658,12 @@
     iput-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->firstKey:Ljava/lang/Object;
 
     .line 91
-    :goto_3d
+    :goto_0
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getHasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_68
+    if-eqz v1, :cond_2
 
     .line 92
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->hashMapBuilder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -702,11 +702,11 @@
 
     invoke-interface {v2, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_6e
+    goto :goto_1
 
     .line 97
     .end local v1    # "nextLinks":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    :cond_68
+    :cond_2
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getPrevious()Ljava/lang/Object;
 
     move-result-object v1
@@ -714,7 +714,7 @@
     iput-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->lastKey:Ljava/lang/Object;
 
     .line 100
-    :goto_6e
+    :goto_1
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -723,7 +723,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 6
+    .locals 3
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
 
@@ -738,13 +738,13 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     return v1
 
     .line 106
     .local v0, "links":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;
-    :cond_c
+    :cond_0
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/LinkedValue;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -753,19 +753,19 @@
 
     move-result v2
 
-    if-nez v2, :cond_17
+    if-nez v2, :cond_1
 
     .line 107
-    goto :goto_1b
+    goto :goto_0
 
     .line 109
-    :cond_17
+    :cond_1
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 110
     const/4 v1, 0x1
 
     .line 106
-    :goto_1b
+    :goto_0
     return v1
 .end method

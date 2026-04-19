@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static all(Landroidx/compose/ui/focus/FocusOrderModifier;Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusOrderModifier;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -49,7 +49,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 29
-    # invokes: Landroidx/compose/ui/focus/FocusOrderModifier;->all(Lkotlin/jvm/functions/Function1;)Z
     invoke-static {p0, p1}, Landroidx/compose/ui/focus/FocusOrderModifier;->access$all$jd(Landroidx/compose/ui/focus/FocusOrderModifier;Lkotlin/jvm/functions/Function1;)Z
 
     move-result v0
@@ -59,7 +58,7 @@
 .end method
 
 .method public static any(Landroidx/compose/ui/focus/FocusOrderModifier;Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusOrderModifier;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -82,7 +81,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 29
-    # invokes: Landroidx/compose/ui/focus/FocusOrderModifier;->any(Lkotlin/jvm/functions/Function1;)Z
     invoke-static {p0, p1}, Landroidx/compose/ui/focus/FocusOrderModifier;->access$any$jd(Landroidx/compose/ui/focus/FocusOrderModifier;Lkotlin/jvm/functions/Function1;)Z
 
     move-result v0
@@ -92,7 +90,7 @@
 .end method
 
 .method public static foldIn(Landroidx/compose/ui/focus/FocusOrderModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusOrderModifier;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -118,7 +116,6 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 29
-    # invokes: Landroidx/compose/ui/focus/FocusOrderModifier;->foldIn(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/focus/FocusOrderModifier;->access$foldIn$jd(Landroidx/compose/ui/focus/FocusOrderModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object v0
@@ -128,7 +125,7 @@
 .end method
 
 .method public static foldOut(Landroidx/compose/ui/focus/FocusOrderModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusOrderModifier;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -154,7 +151,6 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 29
-    # invokes: Landroidx/compose/ui/focus/FocusOrderModifier;->foldOut(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/focus/FocusOrderModifier;->access$foldOut$jd(Landroidx/compose/ui/focus/FocusOrderModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
 
     move-result-object v0
@@ -164,7 +160,7 @@
 .end method
 
 .method public static then(Landroidx/compose/ui/focus/FocusOrderModifier;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/focus/FocusOrderModifier;
     .param p1, "other"    # Landroidx/compose/ui/Modifier;
     .annotation runtime Ljava/lang/Deprecated;
@@ -175,7 +171,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 29
-    # invokes: Landroidx/compose/ui/focus/FocusOrderModifier;->then(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
     invoke-static {p0, p1}, Landroidx/compose/ui/focus/FocusOrderModifier;->access$then$jd(Landroidx/compose/ui/focus/FocusOrderModifier;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
 
     move-result-object v0

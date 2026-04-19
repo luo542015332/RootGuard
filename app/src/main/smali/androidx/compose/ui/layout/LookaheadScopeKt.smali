@@ -53,7 +53,7 @@
 
 # direct methods
 .method public static final LookaheadLayout(Lkotlin/jvm/functions/Function3;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/layout/MeasurePolicy;Landroidx/compose/runtime/Composer;II)V
-    .registers 15
+    .locals 9
     .param p0, "content"    # Lkotlin/jvm/functions/Function3;
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
     .param p2, "measurePolicy"    # Landroidx/compose/ui/layout/MeasurePolicy;
@@ -110,121 +110,121 @@
     .local v1, "$dirty":I
     and-int/lit8 v2, p5, 0x1
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     or-int/lit8 v1, v1, 0x6
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_20
+    :cond_0
     and-int/lit8 v2, p4, 0xe
 
-    if-nez v2, :cond_2e
+    if-nez v2, :cond_2
 
     invoke-interface {p3, p0}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_1
 
     const/4 v2, 0x4
 
-    goto :goto_2d
+    goto :goto_0
 
-    :cond_2c
+    :cond_1
     const/4 v2, 0x2
 
-    :goto_2d
+    :goto_0
     or-int/2addr v1, v2
 
-    :cond_2e
-    :goto_2e
+    :cond_2
+    :goto_1
     and-int/lit8 v2, p5, 0x2
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_3
 
     or-int/lit8 v1, v1, 0x30
 
-    goto :goto_45
+    goto :goto_3
 
-    :cond_35
+    :cond_3
     and-int/lit8 v3, p4, 0x70
 
-    if-nez v3, :cond_45
+    if-nez v3, :cond_5
 
     invoke-interface {p3, p1}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_4
 
     const/16 v3, 0x20
 
-    goto :goto_44
+    goto :goto_2
 
-    :cond_42
+    :cond_4
     const/16 v3, 0x10
 
-    :goto_44
+    :goto_2
     or-int/2addr v1, v3
 
-    :cond_45
-    :goto_45
+    :cond_5
+    :goto_3
     and-int/lit8 v3, p5, 0x4
 
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_6
 
     or-int/lit16 v1, v1, 0x180
 
-    goto :goto_5c
+    goto :goto_5
 
-    :cond_4c
+    :cond_6
     and-int/lit16 v3, p4, 0x380
 
-    if-nez v3, :cond_5c
+    if-nez v3, :cond_8
 
     invoke-interface {p3, p2}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_59
+    if-eqz v3, :cond_7
 
     const/16 v3, 0x100
 
-    goto :goto_5b
+    goto :goto_4
 
-    :cond_59
+    :cond_7
     const/16 v3, 0x80
 
-    :goto_5b
+    :goto_4
     or-int/2addr v1, v3
 
-    :cond_5c
-    :goto_5c
+    :cond_8
+    :goto_5
     and-int/lit16 v3, v1, 0x2db
 
     const/16 v4, 0x92
 
-    if-ne v3, v4, :cond_6d
+    if-ne v3, v4, :cond_a
 
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v3
 
-    if-nez v3, :cond_69
+    if-nez v3, :cond_9
 
-    goto :goto_6d
+    goto :goto_6
 
     .line 59
-    :cond_69
+    :cond_9
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto :goto_9d
+    goto :goto_7
 
     .line 51
-    :cond_6d
-    :goto_6d
-    if-eqz v2, :cond_74
+    :cond_a
+    :goto_6
+    if-eqz v2, :cond_b
 
     .line 49
     sget-object v2, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -233,12 +233,12 @@
 
     check-cast p1, Landroidx/compose/ui/Modifier;
 
-    :cond_74
+    :cond_b
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_81
+    if-eqz v2, :cond_c
 
     .line 51
     const/4 v2, -0x1
@@ -248,7 +248,7 @@
     invoke-static {v0, v1, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 52
-    :cond_81
+    :cond_c
     new-instance v0, Landroidx/compose/ui/layout/LookaheadScopeKt$LookaheadLayout$1;
 
     invoke-direct {v0, p1, p2, v1, p0}, Landroidx/compose/ui/layout/LookaheadScopeKt$LookaheadLayout$1;-><init>(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/layout/MeasurePolicy;ILkotlin/jvm/functions/Function3;)V
@@ -271,22 +271,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9d
+    if-eqz v0, :cond_d
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 59
-    :cond_9d
-    :goto_9d
+    :cond_d
+    :goto_7
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_a4
+    if-nez v0, :cond_e
 
-    goto :goto_b4
+    goto :goto_8
 
-    :cond_a4
+    :cond_e
     new-instance v8, Landroidx/compose/ui/layout/LookaheadScopeKt$LookaheadLayout$2;
 
     move-object v2, v8
@@ -307,12 +307,12 @@
 
     invoke-interface {v0, v8}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_b4
+    :goto_8
     return-void
 .end method
 
 .method public static final LookaheadScope(Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;I)V
-    .registers 15
+    .locals 12
     .param p0, "content"    # Lkotlin/jvm/functions/Function3;
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -355,51 +355,51 @@
 
     const/4 v3, 0x2
 
-    if-nez v2, :cond_22
+    if-nez v2, :cond_1
 
     invoke-interface {p1, p0}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x4
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     move v2, v3
 
-    :goto_21
+    :goto_0
     or-int/2addr v1, v2
 
-    :cond_22
+    :cond_1
     and-int/lit8 v2, v1, 0xb
 
-    if-ne v2, v3, :cond_32
+    if-ne v2, v3, :cond_3
 
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v2
 
-    if-nez v2, :cond_2d
+    if-nez v2, :cond_2
 
-    goto :goto_32
+    goto :goto_1
 
     .line 128
-    :cond_2d
+    :cond_2
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_e4
+    goto/16 :goto_4
 
     .line 111
-    :cond_32
-    :goto_32
+    :cond_3
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_4
 
     const/4 v2, -0x1
 
@@ -408,7 +408,7 @@
     invoke-static {v0, v1, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 112
-    :cond_3f
+    :cond_4
     const/4 v0, 0x0
 
     .local v0, "$changed$iv":I
@@ -449,7 +449,7 @@
 
     move-result-object v8
 
-    if-ne v6, v8, :cond_6a
+    if-ne v6, v8, :cond_5
 
     .line 330
     const/4 v8, 0x0
@@ -476,14 +476,14 @@
     nop
 
     .end local v8    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_6b
+    goto :goto_2
 
     .line 333
-    :cond_6a
+    :cond_5
     move-object v8, v6
 
     .line 329
-    :goto_6b
+    :goto_2
     nop
 
     .line 328
@@ -532,12 +532,12 @@
 
     instance-of v5, v5, Landroidx/compose/runtime/Applier;
 
-    if-nez v5, :cond_8f
+    if-nez v5, :cond_6
 
     invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
 
     .line 335
-    :cond_8f
+    :cond_6
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->startReusableNode()V
 
     .line 336
@@ -545,19 +545,19 @@
 
     move-result v5
 
-    if-eqz v5, :cond_9c
+    if-eqz v5, :cond_7
 
     .line 337
     invoke-interface {p1, v2}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_9f
+    goto :goto_3
 
     .line 339
-    :cond_9c
+    :cond_7
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->useNode()V
 
     .line 341
-    :goto_9f
+    :goto_3
     invoke-static {p1}, Landroidx/compose/runtime/Updater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
 
     move-result-object v5
@@ -645,23 +645,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e4
+    if-eqz v2, :cond_8
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 128
     .end local v0    # "scope":Landroidx/compose/ui/layout/LookaheadScopeImpl;
-    :cond_e4
-    :goto_e4
+    :cond_8
+    :goto_4
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_eb
+    if-nez v0, :cond_9
 
-    goto :goto_f5
+    goto :goto_5
 
-    :cond_eb
+    :cond_9
     new-instance v2, Landroidx/compose/ui/layout/LookaheadScopeKt$LookaheadScope$4;
 
     invoke-direct {v2, p0, p2}, Landroidx/compose/ui/layout/LookaheadScopeKt$LookaheadScope$4;-><init>(Lkotlin/jvm/functions/Function3;I)V
@@ -670,12 +670,12 @@
 
     invoke-interface {v0, v2}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_f5
+    :goto_5
     return-void
 .end method
 
 .method public static final intermediateLayout(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$intermediateLayout"    # Landroidx/compose/ui/Modifier;
     .param p1, "measure"    # Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;

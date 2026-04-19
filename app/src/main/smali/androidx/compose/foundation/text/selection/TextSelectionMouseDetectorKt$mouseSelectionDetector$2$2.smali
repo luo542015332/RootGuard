@@ -55,7 +55,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/text/selection/MouseSelectionObserver;Landroidx/compose/foundation/text/selection/SelectionAdjustment;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2$2;->$observer:Landroidx/compose/foundation/text/selection/MouseSelectionObserver;
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 111
@@ -87,7 +87,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/input/pointer/PointerInputChange;)V
-    .registers 6
+    .locals 4
     .param p1, "it"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string/jumbo v0, "it"
@@ -107,12 +107,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 113
     invoke-virtual {p1}, Landroidx/compose/ui/input/pointer/PointerInputChange;->consume()V
 
     .line 115
-    :cond_17
+    :cond_0
     return-void
 .end method

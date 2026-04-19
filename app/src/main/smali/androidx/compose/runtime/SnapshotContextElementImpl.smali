@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -101,7 +101,7 @@
 .end method
 
 .method public get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -122,7 +122,7 @@
 .end method
 
 .method public getKey()Lkotlin/coroutines/CoroutineContext$Key;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -140,7 +140,7 @@
 .end method
 
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -160,7 +160,7 @@
 .end method
 
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 
     .line 106
@@ -172,7 +172,7 @@
 .end method
 
 .method public restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 4
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
     .param p2, "oldState"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
@@ -190,7 +190,7 @@
 .end method
 
 .method public bridge synthetic restoreThreadContext(Lkotlin/coroutines/CoroutineContext;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
     .param p2, "oldState"    # Ljava/lang/Object;
 
@@ -205,7 +205,7 @@
 .end method
 
 .method public updateThreadContext(Lkotlin/coroutines/CoroutineContext;)Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 3
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 
     const-string/jumbo v0, "context"
@@ -223,7 +223,7 @@
 .end method
 
 .method public bridge synthetic updateThreadContext(Lkotlin/coroutines/CoroutineContext;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 
     .line 106

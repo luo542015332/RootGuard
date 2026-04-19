@@ -48,7 +48,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 4
+    .locals 0
     .param p1, "$layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "$receiver"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p3, "$thisView"    # Landroidx/compose/ui/platform/AndroidComposeView;
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
-    .registers 14
+    .locals 11
     .param p1, "host"    # Landroid/view/View;
     .param p2, "info"    # Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
 
@@ -99,7 +99,7 @@
     move-result-object v0
 
     .line 762
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 761
     nop
@@ -113,18 +113,18 @@
 
     move-result-object v0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const/4 v0, 0x0
 
     .line 760
-    :goto_27
+    :goto_0
     nop
 
     .line 763
     .local v0, "parentId":Ljava/lang/Integer;
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_1
 
     .line 764
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView$addAndroidView$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -145,10 +145,10 @@
 
     move-result v2
 
-    if-ne v2, v1, :cond_43
+    if-ne v2, v1, :cond_2
 
     .line 766
-    :cond_3e
+    :cond_1
     const/4 v1, -0x1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -156,7 +156,7 @@
     move-result-object v0
 
     .line 768
-    :cond_43
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView$addAndroidView$1;->$thisView:Landroidx/compose/ui/platform/AndroidComposeView;
 
     check-cast v1, Landroid/view/View;
@@ -178,7 +178,6 @@
     .local v1, "semanticsId":I
     iget-object v2, p0, Landroidx/compose/ui/platform/AndroidComposeView$addAndroidView$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
     invoke-static {v2}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getAccessibilityDelegate$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
     move-result-object v2
@@ -201,7 +200,7 @@
     .local v2, "beforeId":Ljava/lang/Integer;
     const-string/jumbo v3, "info.unwrap()"
 
-    if-eqz v2, :cond_a5
+    if-eqz v2, :cond_4
 
     iget-object v4, p0, Landroidx/compose/ui/platform/AndroidComposeView$addAndroidView$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -234,21 +233,21 @@
 
     .line 774
     .local v8, "beforeView":Landroid/view/View;
-    if-eqz v8, :cond_8b
+    if-eqz v8, :cond_3
 
     .line 778
     invoke-virtual {p2, v8}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setTraversalBefore(Landroid/view/View;)V
 
-    goto :goto_90
+    goto :goto_1
 
     .line 782
-    :cond_8b
+    :cond_3
     check-cast v5, Landroid/view/View;
 
     invoke-virtual {p2, v5, v6}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setTraversalBefore(Landroid/view/View;I)V
 
     .line 784
-    :goto_90
+    :goto_1
     nop
 
     .line 785
@@ -259,7 +258,6 @@
     invoke-static {v5, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 786
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
     invoke-static {v4}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getAccessibilityDelegate$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
     move-result-object v9
@@ -269,7 +267,6 @@
     move-result-object v9
 
     .line 784
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView;->addExtraDataToAccessibilityNodeInfoHelper(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
     invoke-static {v4, v1, v5, v9}, Landroidx/compose/ui/platform/AndroidComposeView;->access$addExtraDataToAccessibilityNodeInfoHelper(Landroidx/compose/ui/platform/AndroidComposeView;ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
 
     .line 788
@@ -282,10 +279,9 @@
     nop
 
     .line 790
-    :cond_a5
+    :cond_4
     iget-object v4, p0, Landroidx/compose/ui/platform/AndroidComposeView$addAndroidView$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
     invoke-static {v4}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getAccessibilityDelegate$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
     move-result-object v4
@@ -306,7 +302,7 @@
 
     .line 791
     .local v4, "afterId":Ljava/lang/Integer;
-    if-eqz v4, :cond_f3
+    if-eqz v4, :cond_6
 
     iget-object v5, p0, Landroidx/compose/ui/platform/AndroidComposeView$addAndroidView$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -339,21 +335,21 @@
 
     .line 793
     .local v9, "afterView":Landroid/view/View;
-    if-eqz v9, :cond_d9
+    if-eqz v9, :cond_5
 
     .line 794
     invoke-virtual {p2, v9}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setTraversalAfter(Landroid/view/View;)V
 
-    goto :goto_de
+    goto :goto_2
 
     .line 796
-    :cond_d9
+    :cond_5
     check-cast v6, Landroid/view/View;
 
     invoke-virtual {p2, v6, v7}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setTraversalAfter(Landroid/view/View;I)V
 
     .line 798
-    :goto_de
+    :goto_2
     nop
 
     .line 799
@@ -364,7 +360,6 @@
     invoke-static {v6, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 800
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->accessibilityDelegate:Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
     invoke-static {v5}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getAccessibilityDelegate$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat;
 
     move-result-object v3
@@ -374,7 +369,6 @@
     move-result-object v3
 
     .line 798
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView;->addExtraDataToAccessibilityNodeInfoHelper(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
     invoke-static {v5, v1, v6, v3}, Landroidx/compose/ui/platform/AndroidComposeView;->access$addExtraDataToAccessibilityNodeInfoHelper(Landroidx/compose/ui/platform/AndroidComposeView;ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;)V
 
     .line 802
@@ -387,6 +381,6 @@
     nop
 
     .line 803
-    :cond_f3
+    :cond_6
     return-void
 .end method

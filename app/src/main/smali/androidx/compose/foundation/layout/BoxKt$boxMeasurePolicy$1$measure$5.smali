@@ -74,7 +74,7 @@
 
 # direct methods
 .method constructor <init>([Landroidx/compose/ui/layout/Placeable;Ljava/util/List;Landroidx/compose/ui/layout/MeasureScope;Lkotlin/jvm/internal/Ref$IntRef;Lkotlin/jvm/internal/Ref$IntRef;Landroidx/compose/ui/Alignment;)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -113,7 +113,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 162
@@ -129,7 +129,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 26
+    .locals 24
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     move-object/from16 v0, p0
@@ -168,8 +168,8 @@
 
     move v7, v3
 
-    :goto_1a
-    if-ge v7, v8, :cond_5f
+    :goto_0
+    if-ge v7, v8, :cond_0
 
     aget-object v16, v1, v7
 
@@ -241,7 +241,6 @@
 
     move-object v8, v14
 
-    # invokes: Landroidx/compose/foundation/layout/BoxKt;->placeInBox(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/Measurable;Landroidx/compose/ui/unit/LayoutDirection;IILandroidx/compose/ui/Alignment;)V
     invoke-static/range {v2 .. v8}, Landroidx/compose/foundation/layout/BoxKt;->access$placeInBox(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/Measurable;Landroidx/compose/ui/unit/LayoutDirection;IILandroidx/compose/ui/Alignment;)V
 
     .line 167
@@ -261,12 +260,12 @@
 
     move/from16 v8, v21
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 304
     .end local v17    # "index$iv":I
     .restart local v2    # "index$iv":I
-    :cond_5f
+    :cond_0
     nop
 
     .line 168

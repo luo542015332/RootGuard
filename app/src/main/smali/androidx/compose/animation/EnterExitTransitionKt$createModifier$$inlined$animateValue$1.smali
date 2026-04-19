@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/animation/EnterExitTransitionKt$createModifier$$inlined$animateValue$1;
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/animation/core/Transition$Segment;Landroidx/compose/runtime/Composer;I)Landroidx/compose/animation/core/SpringSpec;
-    .registers 7
+    .locals 3
     .param p1, "$this$null"    # Landroidx/compose/animation/core/Transition$Segment;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -106,7 +106,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 853
     const/4 v1, -0x1
@@ -115,7 +115,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x7
 
     const/4 v1, 0x0
@@ -130,18 +130,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_28
+    :cond_1
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final onGloballyPositioned(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$onGloballyPositioned"    # Landroidx/compose/ui/Modifier;
     .param p1, "onGloballyPositioned"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

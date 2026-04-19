@@ -55,7 +55,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/Composer;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/ComposedModifierKt$materialize$result$1;->$this_materialize:Landroidx/compose/runtime/Composer;
 
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier$Element;)Landroidx/compose/ui/Modifier;
-    .registers 7
+    .locals 4
     .param p1, "acc"    # Landroidx/compose/ui/Modifier;
     .param p2, "element"    # Landroidx/compose/ui/Modifier$Element;
 
@@ -87,7 +87,7 @@
     .line 267
     instance-of v0, p2, Landroidx/compose/ui/ComposedModifier;
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_0
 
     .line 269
     move-object v0, p2
@@ -138,16 +138,16 @@
 
     .end local v0    # "factory":Lkotlin/jvm/functions/Function3;
     .end local v1    # "composedMod":Landroidx/compose/ui/Modifier;
-    goto :goto_3e
+    goto :goto_0
 
     .line 273
-    :cond_3b
+    :cond_0
     move-object v0, p2
 
     check-cast v0, Landroidx/compose/ui/Modifier;
 
     .line 266
-    :goto_3e
+    :goto_0
     invoke-interface {p1, v0}, Landroidx/compose/ui/Modifier;->then(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
 
     move-result-object v0
@@ -156,7 +156,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 

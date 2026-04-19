@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .param p1, "impl"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {

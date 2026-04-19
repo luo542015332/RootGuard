@@ -110,7 +110,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;II)V
-    .registers 5
+    .locals 1
     .param p1, "list"    # Ljava/util/List;
     .param p2, "start"    # I
     .param p3, "end"    # I
@@ -145,7 +145,7 @@
 
 # virtual methods
 .method public add(ILjava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -175,7 +175,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -201,7 +201,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Z
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
@@ -241,21 +241,21 @@
 
     move-result v0
 
-    if-lez v0, :cond_1f
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_20
+    :goto_0
     return v0
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -292,21 +292,21 @@
 
     move-result v0
 
-    if-lez v0, :cond_1e
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1f
+    :goto_0
     return v0
 .end method
 
 .method public clear()V
-    .registers 4
+    .locals 3
 
     .line 1071
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
@@ -316,24 +316,24 @@
     .local v0, "i":I
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->start:I
 
-    if-gt v1, v0, :cond_12
+    if-gt v1, v0, :cond_0
 
     .line 1072
-    :goto_8
+    :goto_0
     iget-object v2, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     .line 1071
-    if-eq v0, v1, :cond_12
+    if-eq v0, v1, :cond_0
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 1074
     .end local v0    # "i":I
-    :cond_12
+    :cond_0
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->start:I
 
     iput v0, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
@@ -343,7 +343,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 1004
@@ -352,8 +352,8 @@
     .local v0, "i":I
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
 
-    :goto_4
-    if-ge v0, v1, :cond_17
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 1005
     iget-object v2, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
@@ -366,7 +366,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_14
+    if-eqz v2, :cond_0
 
     .line 1006
     const/4 v1, 0x1
@@ -374,21 +374,21 @@
     return v1
 
     .line 1004
-    :cond_14
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 1009
     .end local v0    # "i":I
-    :cond_17
+    :cond_1
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 9
+    .locals 7
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -418,12 +418,12 @@
 
     move-result-object v2
 
-    :goto_e
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -441,7 +441,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_22
+    if-nez v6, :cond_0
 
     .line 1015
     const/4 v2, 0x0
@@ -449,7 +449,7 @@
     return v2
 
     .line 1017
-    :cond_22
+    :cond_0
     nop
 
     .line 1195
@@ -458,10 +458,10 @@
     nop
 
     .end local v3    # "element$iv":Ljava/lang/Object;
-    goto :goto_e
+    goto :goto_0
 
     .line 1196
-    :cond_25
+    :cond_1
     nop
 
     .line 1018
@@ -473,7 +473,7 @@
 .end method
 
 .method public get(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -486,7 +486,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkIndex(Ljava/util/List;I)V
     invoke-static {v0, p1}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkIndex(Ljava/util/List;I)V
 
     .line 1023
@@ -504,7 +503,7 @@
 .end method
 
 .method public getSize()I
-    .registers 3
+    .locals 2
 
     .line 1001
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
@@ -517,7 +516,7 @@
 .end method
 
 .method public indexOf(Ljava/lang/Object;)I
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 1027
@@ -526,8 +525,8 @@
     .local v0, "i":I
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
 
-    :goto_4
-    if-ge v0, v1, :cond_1a
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 1028
     iget-object v2, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
@@ -540,7 +539,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_0
 
     .line 1029
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->start:I
@@ -550,42 +549,42 @@
     return v1
 
     .line 1027
-    :cond_17
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 1032
     .end local v0    # "i":I
-    :cond_1a
+    :cond_1
     const/4 v0, -0x1
 
     return v0
 .end method
 
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 1035
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
 
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->start:I
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -611,7 +610,7 @@
 .end method
 
 .method public lastIndexOf(Ljava/lang/Object;)I
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 1040
@@ -622,10 +621,10 @@
     .local v0, "i":I
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->start:I
 
-    if-gt v1, v0, :cond_1e
+    if-gt v1, v0, :cond_1
 
     .line 1041
-    :goto_8
+    :goto_0
     iget-object v2, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -636,7 +635,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_0
 
     .line 1042
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->start:I
@@ -646,23 +645,23 @@
     return v1
 
     .line 1040
-    :cond_19
-    if-eq v0, v1, :cond_1e
+    :cond_0
+    if-eq v0, v1, :cond_1
 
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 1045
     .end local v0    # "i":I
-    :cond_1e
+    :cond_1
     const/4 v0, -0x1
 
     return v0
 .end method
 
 .method public listIterator()Ljava/util/ListIterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -688,7 +687,7 @@
 .end method
 
 .method public listIterator(I)Ljava/util/ListIterator;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -713,7 +712,7 @@
 .end method
 
 .method public final bridge remove(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -730,7 +729,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 1083
@@ -739,8 +738,8 @@
     .local v0, "i":I
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
 
-    :goto_4
-    if-ge v0, v1, :cond_22
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 1084
     iget-object v2, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
@@ -753,7 +752,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_0
 
     .line 1085
     iget-object v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
@@ -773,21 +772,21 @@
     return v1
 
     .line 1083
-    :cond_1f
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4
+    goto :goto_0
 
     .line 1090
     .end local v0    # "i":I
-    :cond_22
+    :cond_1
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 9
+    .locals 7
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -821,12 +820,12 @@
 
     move-result-object v3
 
-    :goto_10
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_0
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -851,10 +850,10 @@
     nop
 
     .end local v4    # "element$iv":Ljava/lang/Object;
-    goto :goto_10
+    goto :goto_0
 
     .line 1198
-    :cond_22
+    :cond_0
     nop
 
     .line 1098
@@ -862,21 +861,21 @@
     .end local v2    # "$i$f$forEach":I
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
 
-    if-eq v0, v1, :cond_29
+    if-eq v0, v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_2a
+    :goto_1
     return v1
 .end method
 
 .method public removeAt(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -889,7 +888,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkIndex(Ljava/util/List;I)V
     invoke-static {v0, p1}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkIndex(Ljava/util/List;I)V
 
     .line 1103
@@ -916,7 +914,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 8
+    .locals 6
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -946,10 +944,10 @@
     .local v1, "i":I
     iget v3, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->start:I
 
-    if-gt v3, v1, :cond_2c
+    if-gt v3, v1, :cond_1
 
     .line 1111
-    :goto_10
+    :goto_0
     iget-object v4, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
 
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -962,7 +960,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_27
+    if-nez v5, :cond_0
 
     .line 1113
     iget-object v5, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->list:Ljava/util/List;
@@ -978,31 +976,31 @@
 
     .line 1110
     .end local v4    # "item":Ljava/lang/Object;
-    :cond_27
-    if-eq v1, v3, :cond_2c
+    :cond_0
+    if-eq v1, v3, :cond_1
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 1117
     .end local v1    # "i":I
-    :cond_2c
+    :cond_1
     iget v1, p0, Landroidx/compose/runtime/collection/MutableVector$SubList;->end:I
 
-    if-eq v0, v1, :cond_31
+    if-eq v0, v1, :cond_2
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_2
     const/4 v2, 0x0
 
-    :goto_32
+    :goto_1
     return v2
 .end method
 
 .method public set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1016,7 +1014,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkIndex(Ljava/util/List;I)V
     invoke-static {v0, p1}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkIndex(Ljava/util/List;I)V
 
     .line 1122
@@ -1034,7 +1031,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 995
     invoke-virtual {p0}, Landroidx/compose/runtime/collection/MutableVector$SubList;->getSize()I
@@ -1045,7 +1042,7 @@
 .end method
 
 .method public subList(II)Ljava/util/List;
-    .registers 5
+    .locals 2
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1061,7 +1058,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkSubIndex(Ljava/util/List;II)V
     invoke-static {v0, p1, p2}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkSubIndex(Ljava/util/List;II)V
 
     .line 1127
@@ -1079,7 +1075,7 @@
 .end method
 
 .method public toArray()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     move-object v0, p0
 
@@ -1093,7 +1089,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

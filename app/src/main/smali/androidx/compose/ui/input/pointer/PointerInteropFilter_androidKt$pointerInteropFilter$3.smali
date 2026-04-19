@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/viewinterop/AndroidViewHolder;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$pointerInteropFilter$3;->$view:Landroidx/compose/ui/viewinterop/AndroidViewHolder;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final invoke(Landroid/view/MotionEvent;)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     const-string/jumbo v0, "motionEvent"
@@ -80,7 +80,7 @@
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_20
+    packed-switch v0, :pswitch_data_0
 
     .line 119
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$pointerInteropFilter$3;->$view:Landroidx/compose/ui/viewinterop/AndroidViewHolder;
@@ -89,10 +89,10 @@
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 113
-    :pswitch_14
+    :pswitch_0
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$pointerInteropFilter$3;->$view:Landroidx/compose/ui/viewinterop/AndroidViewHolder;
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/viewinterop/AndroidViewHolder;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
@@ -100,7 +100,7 @@
     move-result v0
 
     .line 119
-    :goto_1a
+    :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -110,20 +110,20 @@
 
     nop
 
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_14
-        :pswitch_14
-        :pswitch_14
-        :pswitch_14
-        :pswitch_14
-        :pswitch_14
-        :pswitch_14
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 105

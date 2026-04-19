@@ -40,7 +40,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/Shadow$Companion;-><init>()V
 
@@ -57,7 +57,7 @@
 .end method
 
 .method public static synthetic getNone$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -65,10 +65,9 @@
 
 # virtual methods
 .method public final getNone()Landroidx/compose/ui/graphics/Shadow;
-    .registers 2
+    .locals 1
 
     .line 42
-    # getter for: Landroidx/compose/ui/graphics/Shadow;->None:Landroidx/compose/ui/graphics/Shadow;
     invoke-static {}, Landroidx/compose/ui/graphics/Shadow;->access$getNone$cp()Landroidx/compose/ui/graphics/Shadow;
 
     move-result-object v0

@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/runtime/ParcelableSnapshotMutableIntState$Companion;
 
@@ -82,7 +82,7 @@
 .end method
 
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # I
 
     .line 26
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public describeContents()I
-    .registers 2
+    .locals 1
 
     .line 33
     const/4 v0, 0x0
@@ -104,7 +104,7 @@
 .end method
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 4
+    .locals 1
     .param p1, "parcel"    # Landroid/os/Parcel;
     .param p2, "flags"    # I
 

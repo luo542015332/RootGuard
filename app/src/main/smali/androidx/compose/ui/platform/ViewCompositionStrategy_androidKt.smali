@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final synthetic access$installForLifecycle(Landroidx/compose/ui/platform/AbstractComposeView;Landroidx/lifecycle/Lifecycle;)Lkotlin/jvm/functions/Function0;
-    .registers 3
+    .locals 1
     .param p0, "view"    # Landroidx/compose/ui/platform/AbstractComposeView;
     .param p1, "lifecycle"    # Landroidx/lifecycle/Lifecycle;
 
@@ -43,7 +43,7 @@
 .end method
 
 .method private static final installForLifecycle(Landroidx/compose/ui/platform/AbstractComposeView;Landroidx/lifecycle/Lifecycle;)Lkotlin/jvm/functions/Function0;
-    .registers 5
+    .locals 3
     .param p0, "view"    # Landroidx/compose/ui/platform/AbstractComposeView;
     .param p1, "lifecycle"    # Landroidx/lifecycle/Lifecycle;
     .annotation system Ldalvik/annotation/Signature;
@@ -71,17 +71,17 @@
 
     move-result v0
 
-    if-lez v0, :cond_10
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
-    if-eqz v0, :cond_28
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 187
     new-instance v0, Landroidx/compose/ui/platform/ViewCompositionStrategy_androidKt$installForLifecycle$observer$1;
@@ -109,7 +109,7 @@
 
     .line 183
     .end local v0    # "observer":Landroidx/lifecycle/LifecycleEventObserver;
-    :cond_28
+    :cond_1
     const/4 v0, 0x0
 
     .line 184

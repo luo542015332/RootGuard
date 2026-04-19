@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1440
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public static final synthetic access$getPendingFrameContinuation$p(Landroidx/compose/runtime/ProduceFrameSignal;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/ProduceFrameSignal;
 
     .line 1440
@@ -61,7 +61,7 @@
 .end method
 
 .method public static final synthetic access$setPendingFrameContinuation$p(Landroidx/compose/runtime/ProduceFrameSignal;Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/ProduceFrameSignal;
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final awaitFrameRequest(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 13
+    .locals 10
     .param p1, "lock"    # Ljava/lang/Object;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -100,18 +100,16 @@
 
     .line 1450
     .local v1, "$i$a$-synchronized-ProduceFrameSignal$awaitFrameRequest$2":I
-    :try_start_3
+    :try_start_0
     iget-object v2, p0, Landroidx/compose/runtime/ProduceFrameSignal;->pendingFrameContinuation:Ljava/lang/Object;
 
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->ProduceAnotherFrame:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getProduceAnotherFrame$p()Ljava/lang/Object;
 
     move-result-object v3
 
-    if-ne v2, v3, :cond_15
+    if-ne v2, v3, :cond_0
 
     .line 1451
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->FramePending:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getFramePending$p()Ljava/lang/Object;
 
     move-result-object v2
@@ -120,8 +118,8 @@
 
     .line 1452
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_13
-    .catchall {:try_start_3 .. :try_end_13} :catchall_77
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .end local v0    # "$i$f$synchronized":I
     .end local v1    # "$i$a$-synchronized-ProduceFrameSignal$awaitFrameRequest$2":I
@@ -132,14 +130,14 @@
     .line 1454
     .restart local v0    # "$i$f$synchronized":I
     .restart local v1    # "$i$a$-synchronized-ProduceFrameSignal$awaitFrameRequest$2":I
-    :cond_15
+    :cond_0
     nop
 
     .end local v1    # "$i$a$-synchronized-ProduceFrameSignal$awaitFrameRequest$2":I
-    :try_start_16
+    :try_start_1
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_18
-    .catchall {:try_start_16 .. :try_end_18} :catchall_77
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1503
     monitor-exit p1
@@ -194,21 +192,18 @@
 
     .line 1457
     .local v7, "$i$a$-synchronized-ProduceFrameSignal$awaitFrameRequest$3$1":I
-    :try_start_31
-    # getter for: Landroidx/compose/runtime/ProduceFrameSignal;->pendingFrameContinuation:Ljava/lang/Object;
+    :try_start_2
     invoke-static {p0}, Landroidx/compose/runtime/ProduceFrameSignal;->access$getPendingFrameContinuation$p(Landroidx/compose/runtime/ProduceFrameSignal;)Ljava/lang/Object;
 
     move-result-object v8
 
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->ProduceAnotherFrame:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getProduceAnotherFrame$p()Ljava/lang/Object;
 
     move-result-object v9
 
-    if-ne v8, v9, :cond_44
+    if-ne v8, v9, :cond_1
 
     .line 1458
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->FramePending:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getFramePending$p()Ljava/lang/Object;
 
     move-result-object v8
@@ -218,19 +213,19 @@
     .line 1459
     move-object v8, v4
 
-    goto :goto_48
+    goto :goto_0
 
     .line 1461
-    :cond_44
+    :cond_1
     invoke-static {p0, v4}, Landroidx/compose/runtime/ProduceFrameSignal;->access$setPendingFrameContinuation$p(Landroidx/compose/runtime/ProduceFrameSignal;Ljava/lang/Object;)V
-    :try_end_47
-    .catchall {:try_start_31 .. :try_end_47} :catchall_74
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 1462
     const/4 v8, 0x0
 
     .line 1457
-    :goto_48
+    :goto_0
     nop
 
     .line 1513
@@ -242,7 +237,7 @@
     nop
 
     .line 1464
-    if-eqz v8, :cond_5a
+    if-eqz v8, :cond_2
 
     .line 1456
     check-cast v8, Lkotlin/coroutines/Continuation;
@@ -259,7 +254,7 @@
     invoke-interface {v8, v6}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 1465
-    :cond_5a
+    :cond_2
     nop
 
     .line 1512
@@ -280,21 +275,21 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_69
+    if-ne v1, v2, :cond_3
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_69
+    :cond_3
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_70
+    if-ne v1, v2, :cond_4
 
     return-object v1
 
     .line 1515
-    :cond_70
+    :cond_4
     nop
 
     .end local v0    # "$i$f$suspendCancellableCoroutine":I
@@ -311,7 +306,7 @@
     .restart local v4    # "co":Lkotlinx/coroutines/CancellableContinuation;
     .restart local v5    # "$i$a$-suspendCancellableCoroutine-ProduceFrameSignal$awaitFrameRequest$3":I
     .restart local v6    # "$i$f$synchronized":I
-    :catchall_74
+    :catchall_0
     move-exception v7
 
     monitor-exit p1
@@ -326,7 +321,7 @@
     .end local v5    # "$i$a$-suspendCancellableCoroutine-ProduceFrameSignal$awaitFrameRequest$3":I
     .end local v6    # "$i$f$synchronized":I
     .local v0, "$i$f$synchronized":I
-    :catchall_77
+    :catchall_1
     move-exception v1
 
     monitor-exit p1
@@ -335,7 +330,7 @@
 .end method
 
 .method public final requestFrameLocked()Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -352,10 +347,9 @@
     .local v0, "co":Ljava/lang/Object;
     instance-of v1, v0, Lkotlin/coroutines/Continuation;
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 1479
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->FramePending:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getFramePending$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -367,11 +361,10 @@
 
     check-cast v1, Lkotlin/coroutines/Continuation;
 
-    goto :goto_32
+    goto :goto_1
 
     .line 1483
-    :cond_10
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->ProduceAnotherFrame:Ljava/lang/Object;
+    :cond_0
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getProduceAnotherFrame$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -380,14 +373,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_1c
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->FramePending:Ljava/lang/Object;
+    :cond_1
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getFramePending$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -396,21 +388,20 @@
 
     move-result v1
 
-    :goto_24
+    :goto_0
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_2
 
     move-object v1, v2
 
-    goto :goto_32
+    goto :goto_1
 
     .line 1484
-    :cond_29
-    if-nez v0, :cond_33
+    :cond_2
+    if-nez v0, :cond_3
 
     .line 1485
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->ProduceAnotherFrame:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getProduceAnotherFrame$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -422,12 +413,12 @@
 
     .line 1489
     .end local v0    # "co":Ljava/lang/Object;
-    :goto_32
+    :goto_1
     return-object v1
 
     .line 1486
     .restart local v0    # "co":Ljava/lang/Object;
-    :cond_33
+    :cond_3
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 1488
@@ -459,27 +450,26 @@
 .end method
 
 .method public final takeFrameRequestLocked()V
-    .registers 3
+    .locals 2
 
     .line 1473
     iget-object v0, p0, Landroidx/compose/runtime/ProduceFrameSignal;->pendingFrameContinuation:Ljava/lang/Object;
 
-    # getter for: Landroidx/compose/runtime/RecomposerKt;->FramePending:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/RecomposerKt;->access$getFramePending$p()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
-    if-eqz v0, :cond_11
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 1474
     const/4 v0, 0x0
@@ -490,7 +480,7 @@
     return-void
 
     .line 1516
-    :cond_11
+    :cond_1
     const/4 v0, 0x0
 
     .line 1473

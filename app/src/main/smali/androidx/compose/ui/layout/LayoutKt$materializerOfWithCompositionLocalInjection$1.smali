@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/Modifier;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/layout/LayoutKt$materializerOfWithCompositionLocalInjection$1;->$modifier:Landroidx/compose/ui/Modifier;
 
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -110,7 +110,7 @@
 .end method
 
 .method public final invoke-Deg8D_g(Landroidx/compose/runtime/Composer;Landroidx/compose/runtime/Composer;I)V
-    .registers 15
+    .locals 11
     .param p1, "$this$null"    # Landroidx/compose/runtime/Composer;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 226
     const v0, -0x352954e
@@ -138,7 +138,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p2, v0}, Landroidx/compose/runtime/ComposablesKt;->getCurrentCompositeKeyHash(Landroidx/compose/runtime/Composer;I)I
@@ -204,7 +204,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_57
+    if-nez v9, :cond_1
 
     invoke-interface {v7}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
 
@@ -218,10 +218,10 @@
 
     move-result v9
 
-    if-nez v9, :cond_65
+    if-nez v9, :cond_2
 
     .line 358
-    :cond_57
+    :cond_1
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -236,7 +236,7 @@
     invoke-interface {v3, v9, v5}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 361
-    :cond_65
+    :cond_2
     nop
 
     .line 356
@@ -268,11 +268,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_77
+    if-eqz v2, :cond_3
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 233
-    :cond_77
+    :cond_3
     return-void
 .end method

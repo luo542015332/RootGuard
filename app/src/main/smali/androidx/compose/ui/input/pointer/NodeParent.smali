@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 141
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -109,7 +109,7 @@
 
 # virtual methods
 .method public buildCache(Ljava/util/Map;Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/input/pointer/InternalPointerEvent;Z)Z
-    .registers 14
+    .locals 9
     .param p1, "changes"    # Ljava/util/Map;
     .param p2, "parentCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p3, "internalPointerEvent"    # Landroidx/compose/ui/input/pointer/InternalPointerEvent;
@@ -160,7 +160,7 @@
 
     .line 563
     .local v3, "size$iv":I
-    if-lez v3, :cond_3f
+    if-lez v3, :cond_3
 
     .line 564
     const/4 v4, 0x0
@@ -173,7 +173,7 @@
 
     .line 567
     .local v5, "content$iv":[Ljava/lang/Object;
-    :cond_22
+    :cond_0
     aget-object v6, v5, v4
 
     check-cast v6, Landroidx/compose/ui/input/pointer/Node;
@@ -202,24 +202,24 @@
 
     move-result v8
 
-    if-nez v8, :cond_37
+    if-nez v8, :cond_2
 
     .line 158
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_35
+    :cond_1
     const/4 v8, 0x0
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_37
-    :goto_37
+    :cond_2
+    :goto_0
     const/4 v8, 0x1
 
     .line 153
-    :goto_38
+    :goto_1
     move v0, v8
 
     .line 159
@@ -234,12 +234,12 @@
     add-int/lit8 v4, v4, 0x1
 
     .line 569
-    if-lt v4, v3, :cond_22
+    if-lt v4, v3, :cond_0
 
     .line 571
     .end local v4    # "i$iv":I
     .end local v5    # "content$iv":[Ljava/lang/Object;
-    :cond_3f
+    :cond_3
     nop
 
     .line 160
@@ -250,7 +250,7 @@
 .end method
 
 .method public cleanUpHits(Landroidx/compose/ui/input/pointer/InternalPointerEvent;)V
-    .registers 6
+    .locals 4
     .param p1, "internalPointerEvent"    # Landroidx/compose/ui/input/pointer/InternalPointerEvent;
 
     const-string/jumbo v0, "internalPointerEvent"
@@ -277,10 +277,10 @@
     move v0, v2
 
     .local v0, "i":I
-    :goto_10
+    :goto_0
     const/4 v1, -0x1
 
-    if-ge v1, v0, :cond_30
+    if-ge v1, v0, :cond_1
 
     .line 241
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/NodeParent;->children:Landroidx/compose/runtime/collection/MutableVector;
@@ -311,7 +311,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_0
 
     .line 243
     iget-object v2, p0, Landroidx/compose/ui/input/pointer/NodeParent;->children:Landroidx/compose/runtime/collection/MutableVector;
@@ -320,19 +320,19 @@
 
     .line 240
     .end local v1    # "child":Landroidx/compose/ui/input/pointer/Node;
-    :cond_2d
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 246
     .end local v0    # "i":I
-    :cond_30
+    :cond_1
     return-void
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 219
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/NodeParent;->children:Landroidx/compose/runtime/collection/MutableVector;
@@ -344,7 +344,7 @@
 .end method
 
 .method public dispatchCancel()V
-    .registers 8
+    .locals 7
 
     .line 212
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/NodeParent;->children:Landroidx/compose/runtime/collection/MutableVector;
@@ -363,7 +363,7 @@
 
     .line 596
     .local v2, "size$iv":I
-    if-lez v2, :cond_1c
+    if-lez v2, :cond_1
 
     .line 597
     const/4 v3, 0x0
@@ -376,7 +376,7 @@
 
     .line 600
     .local v4, "content$iv":[Ljava/lang/Object;
-    :cond_f
+    :cond_0
     aget-object v5, v4, v3
 
     check-cast v5, Landroidx/compose/ui/input/pointer/Node;
@@ -397,12 +397,12 @@
     add-int/lit8 v3, v3, 0x1
 
     .line 602
-    if-lt v3, v2, :cond_f
+    if-lt v3, v2, :cond_0
 
     .line 604
     .end local v3    # "i$iv":I
     .end local v4    # "content$iv":[Ljava/lang/Object;
-    :cond_1c
+    :cond_1
     nop
 
     .line 213
@@ -413,7 +413,7 @@
 .end method
 
 .method public dispatchFinalEventPass(Landroidx/compose/ui/input/pointer/InternalPointerEvent;)Z
-    .registers 11
+    .locals 9
     .param p1, "internalPointerEvent"    # Landroidx/compose/ui/input/pointer/InternalPointerEvent;
 
     const-string/jumbo v0, "internalPointerEvent"
@@ -441,7 +441,7 @@
 
     .line 585
     .local v3, "size$iv":I
-    if-lez v3, :cond_2e
+    if-lez v3, :cond_3
 
     .line 586
     const/4 v4, 0x0
@@ -454,7 +454,7 @@
 
     .line 589
     .local v5, "content$iv":[Ljava/lang/Object;
-    :cond_16
+    :cond_0
     aget-object v6, v5, v4
 
     check-cast v6, Landroidx/compose/ui/input/pointer/Node;
@@ -468,22 +468,22 @@
 
     move-result v8
 
-    if-nez v8, :cond_26
+    if-nez v8, :cond_2
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     const/4 v8, 0x0
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_26
-    :goto_26
+    :cond_2
+    :goto_0
     const/4 v8, 0x1
 
-    :goto_27
+    :goto_1
     move v0, v8
 
     .line 203
@@ -498,12 +498,12 @@
     add-int/lit8 v4, v4, 0x1
 
     .line 591
-    if-lt v4, v3, :cond_16
+    if-lt v4, v3, :cond_0
 
     .line 593
     .end local v4    # "i$iv":I
     .end local v5    # "content$iv":[Ljava/lang/Object;
-    :cond_2e
+    :cond_3
     nop
 
     .line 204
@@ -517,7 +517,7 @@
 .end method
 
 .method public dispatchMainEventPass(Ljava/util/Map;Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/input/pointer/InternalPointerEvent;Z)Z
-    .registers 14
+    .locals 9
     .param p1, "changes"    # Ljava/util/Map;
     .param p2, "parentCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p3, "internalPointerEvent"    # Landroidx/compose/ui/input/pointer/InternalPointerEvent;
@@ -568,7 +568,7 @@
 
     .line 574
     .local v3, "size$iv":I
-    if-lez v3, :cond_3f
+    if-lez v3, :cond_3
 
     .line 575
     const/4 v4, 0x0
@@ -581,7 +581,7 @@
 
     .line 578
     .local v5, "content$iv":[Ljava/lang/Object;
-    :cond_22
+    :cond_0
     aget-object v6, v5, v4
 
     check-cast v6, Landroidx/compose/ui/input/pointer/Node;
@@ -610,24 +610,24 @@
 
     move-result v8
 
-    if-nez v8, :cond_37
+    if-nez v8, :cond_2
 
     .line 188
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_35
+    :cond_1
     const/4 v8, 0x0
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_37
-    :goto_37
+    :cond_2
+    :goto_0
     const/4 v8, 0x1
 
     .line 183
-    :goto_38
+    :goto_1
     move v0, v8
 
     .line 189
@@ -642,12 +642,12 @@
     add-int/lit8 v4, v4, 0x1
 
     .line 580
-    if-lt v4, v3, :cond_22
+    if-lt v4, v3, :cond_0
 
     .line 582
     .end local v4    # "i$iv":I
     .end local v5    # "content$iv":[Ljava/lang/Object;
-    :cond_3f
+    :cond_3
     nop
 
     .line 190
@@ -658,7 +658,7 @@
 .end method
 
 .method public final getChildren()Landroidx/compose/runtime/collection/MutableVector;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -675,21 +675,21 @@
 .end method
 
 .method public final removeDetachedPointerInputFilters()V
-    .registers 5
+    .locals 4
 
     .line 226
     const/4 v0, 0x0
 
     .line 227
     .local v0, "index":I
-    :goto_1
+    :goto_0
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/NodeParent;->children:Landroidx/compose/runtime/collection/MutableVector;
 
     invoke-virtual {v1}, Landroidx/compose/runtime/collection/MutableVector;->getSize()I
 
     move-result v1
 
-    if-ge v0, v1, :cond_2d
+    if-ge v0, v1, :cond_1
 
     .line 228
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/NodeParent;->children:Landroidx/compose/runtime/collection/MutableVector;
@@ -720,7 +720,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_27
+    if-nez v2, :cond_0
 
     .line 230
     iget-object v2, p0, Landroidx/compose/ui/input/pointer/NodeParent;->children:Landroidx/compose/runtime/collection/MutableVector;
@@ -730,19 +730,19 @@
     .line 231
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/Node;->dispatchCancel()V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 233
-    :cond_27
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     .line 234
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/Node;->removeDetachedPointerInputFilters()V
 
     .end local v1    # "child":Landroidx/compose/ui/input/pointer/Node;
-    goto :goto_1
+    goto :goto_0
 
     .line 237
-    :cond_2d
+    :cond_1
     return-void
 .end method

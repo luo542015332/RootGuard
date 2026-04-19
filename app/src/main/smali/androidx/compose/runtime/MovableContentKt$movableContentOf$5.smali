@@ -73,7 +73,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/MovableContent;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 14
+    .locals 7
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -137,7 +137,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)V
-    .registers 11
+    .locals 4
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -161,117 +161,117 @@
     .local v0, "$dirty":I
     and-int/lit8 v1, p6, 0xe
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1
 
     invoke-interface {p5, p1}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x4
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v1, 0x2
 
-    :goto_13
+    :goto_0
     or-int/2addr v0, v1
 
-    :cond_14
+    :cond_1
     and-int/lit8 v1, p6, 0x70
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_3
 
     invoke-interface {p5, p2}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     const/16 v1, 0x20
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_21
+    :cond_2
     const/16 v1, 0x10
 
-    :goto_23
+    :goto_1
     or-int/2addr v0, v1
 
-    :cond_24
+    :cond_3
     and-int/lit16 v1, p6, 0x380
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_5
 
     invoke-interface {p5, p3}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_4
 
     const/16 v1, 0x100
 
-    goto :goto_33
+    goto :goto_2
 
-    :cond_31
+    :cond_4
     const/16 v1, 0x80
 
-    :goto_33
+    :goto_2
     or-int/2addr v0, v1
 
-    :cond_34
+    :cond_5
     and-int/lit16 v1, p6, 0x1c00
 
-    if-nez v1, :cond_44
+    if-nez v1, :cond_7
 
     invoke-interface {p5, p4}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_6
 
     const/16 v1, 0x800
 
-    goto :goto_43
+    goto :goto_3
 
-    :cond_41
+    :cond_6
     const/16 v1, 0x400
 
-    :goto_43
+    :goto_3
     or-int/2addr v0, v1
 
     .line 148
-    :cond_44
+    :cond_7
     const v1, 0xb6db
 
     and-int/2addr v1, v0
 
     const/16 v2, 0x2492
 
-    if-ne v1, v2, :cond_57
+    if-ne v1, v2, :cond_9
 
     invoke-interface {p5}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v1
 
-    if-nez v1, :cond_53
+    if-nez v1, :cond_8
 
-    goto :goto_57
+    goto :goto_4
 
-    :cond_53
+    :cond_8
     invoke-interface {p5}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto :goto_81
+    goto :goto_5
 
-    :cond_57
-    :goto_57
+    :cond_9
+    :goto_4
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_67
+    if-eqz v1, :cond_a
 
     const/4 v1, -0x1
 
@@ -281,7 +281,7 @@
 
     invoke-static {v3, p6, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_67
+    :cond_a
     iget-object v1, p0, Landroidx/compose/runtime/MovableContentKt$movableContentOf$5;->$movableContent:Landroidx/compose/runtime/MovableContent;
 
     invoke-static {p1, p2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
@@ -302,12 +302,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_81
+    if-eqz v1, :cond_b
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 149
-    :cond_81
-    :goto_81
+    :cond_b
+    :goto_5
     return-void
 .end method

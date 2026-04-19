@@ -73,7 +73,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 329
     new-instance v0, Ljava/lang/Object;
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final Composition(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/CompositionContext;)Landroidx/compose/runtime/Composition;
-    .registers 9
+    .locals 7
     .param p0, "applier"    # Landroidx/compose/runtime/Applier;
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .annotation system Ldalvik/annotation/Signature;
@@ -139,7 +139,7 @@
 .end method
 
 .method public static final Composition(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/CompositionContext;Lkotlin/coroutines/CoroutineContext;)Landroidx/compose/runtime/Composition;
-    .registers 4
+    .locals 1
     .param p0, "applier"    # Landroidx/compose/runtime/Applier;
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .param p2, "recomposeCoroutineContext"    # Lkotlin/coroutines/CoroutineContext;
@@ -189,7 +189,7 @@
 .end method
 
 .method public static final ControlledComposition(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/CompositionContext;)Landroidx/compose/runtime/ControlledComposition;
-    .registers 9
+    .locals 7
     .param p0, "applier"    # Landroidx/compose/runtime/Applier;
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .annotation system Ldalvik/annotation/Signature;
@@ -242,7 +242,7 @@
 .end method
 
 .method public static final ControlledComposition(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/CompositionContext;Lkotlin/coroutines/CoroutineContext;)Landroidx/compose/runtime/ControlledComposition;
-    .registers 4
+    .locals 1
     .param p0, "applier"    # Landroidx/compose/runtime/Applier;
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .param p2, "recomposeCoroutineContext"    # Lkotlin/coroutines/CoroutineContext;
@@ -292,7 +292,7 @@
 .end method
 
 .method public static final synthetic access$addValue(Landroidx/compose/runtime/collection/IdentityArrayMap;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # Landroidx/compose/runtime/collection/IdentityArrayMap;
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
@@ -304,7 +304,7 @@
 .end method
 
 .method public static final synthetic access$getPendingApplyNoModifications$p()Ljava/lang/Object;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/runtime/CompositionKt;->PendingApplyNoModifications:Ljava/lang/Object;
@@ -313,7 +313,7 @@
 .end method
 
 .method private static final addValue(Landroidx/compose/runtime/collection/IdentityArrayMap;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
+    .locals 3
     .param p0, "$this$addValue"    # Landroidx/compose/runtime/collection/IdentityArrayMap;
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
@@ -336,7 +336,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 1260
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/collection/IdentityArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -345,14 +345,14 @@
 
     check-cast v0, Landroidx/compose/runtime/collection/IdentityArraySet;
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0, p2}, Landroidx/compose/runtime/collection/IdentityArraySet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_21
+    goto :goto_0
 
     .line 1262
-    :cond_12
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/collection/IdentityArraySet;
 
     invoke-direct {v0}, Landroidx/compose/runtime/collection/IdentityArraySet;-><init>()V
@@ -374,13 +374,13 @@
     invoke-virtual {p0, p1, v0}, Landroidx/compose/runtime/collection/IdentityArrayMap;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 1264
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public static final clearCompositionErrors()V
-    .registers 1
+    .locals 1
 
     .line 1253
     sget-object v0, Landroidx/compose/runtime/HotReloader;->Companion:Landroidx/compose/runtime/HotReloader$Companion;
@@ -391,7 +391,7 @@
 .end method
 
 .method public static final currentCompositionErrors()Ljava/util/List;
-    .registers 11
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -444,12 +444,12 @@
 
     move-result-object v5
 
-    :goto_1d
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_3f
+    if-eqz v6, :cond_0
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -487,11 +487,11 @@
     .end local v8    # "$i$a$-map-CompositionKt$currentCompositionErrors$1":I
     invoke-interface {v2, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 1281
     .end local v6    # "item$iv$iv":Ljava/lang/Object;
-    :cond_3f
+    :cond_0
     nop
 
     .end local v2    # "destination$iv$iv":Ljava/util/Collection;
@@ -509,7 +509,7 @@
 .end method
 
 .method public static final getRecomposeCoroutineContext(Landroidx/compose/runtime/ControlledComposition;)Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
     .param p0, "$this$recomposeCoroutineContext"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string v0, "<this>"
@@ -519,43 +519,43 @@
     .line 241
     instance-of v0, p0, Landroidx/compose/runtime/CompositionImpl;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/CompositionImpl;
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
-    if-eqz v0, :cond_16
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroidx/compose/runtime/CompositionImpl;->getRecomposeContext()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_2
 
-    :cond_16
+    :cond_1
     sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
 
     check-cast v0, Lkotlin/coroutines/CoroutineContext;
 
-    :cond_1a
+    :cond_2
     return-object v0
 .end method
 
 .method public static synthetic getRecomposeCoroutineContext$annotations(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public static final invalidateGroupsWithKey(I)V
-    .registers 2
+    .locals 1
     .param p0, "key"    # I
 
     .line 1237
@@ -567,7 +567,7 @@
 .end method
 
 .method private static final removeValueIf(Ljava/util/HashSet;Lkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 3
     .param p0, "$this$removeValueIf"    # Ljava/util/HashSet;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -598,13 +598,13 @@
 
     .line 1272
     .local v1, "iter":Ljava/util/Iterator;
-    :cond_b
-    :goto_b
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_1
 
     .line 1273
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -621,20 +621,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 1274
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_b
+    goto :goto_0
 
     .line 1277
-    :cond_25
+    :cond_1
     return-void
 .end method
 
 .method public static final simulateHotReload(Ljava/lang/Object;)V
-    .registers 2
+    .locals 1
     .param p0, "context"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "context"

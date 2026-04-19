@@ -82,7 +82,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/xmlpull/v1/XmlPullParser;I)V
-    .registers 4
+    .locals 1
     .param p1, "xmlParser"    # Lorg/xmlpull/v1/XmlPullParser;
     .param p2, "config"    # I
 
@@ -104,18 +104,18 @@
 .end method
 
 .method public synthetic constructor <init>(Lorg/xmlpull/v1/XmlPullParser;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     .line 526
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 528
     const/4 p2, 0x0
 
     .line 526
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;-><init>(Lorg/xmlpull/v1/XmlPullParser;I)V
 
     .line 726
@@ -123,22 +123,22 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Lorg/xmlpull/v1/XmlPullParser;IILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     iget-object p1, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->xmlParser:Lorg/xmlpull/v1/XmlPullParser;
 
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_1
 
     iget p2, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->config:I
 
-    :cond_c
+    :cond_1
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->copy(Lorg/xmlpull/v1/XmlPullParser;I)Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
 
     move-result-object p0
@@ -147,7 +147,7 @@
 .end method
 
 .method private final updateConfig(I)V
-    .registers 3
+    .locals 1
     .param p1, "resConfig"    # I
 
     .line 532
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public final component1()Lorg/xmlpull/v1/XmlPullParser;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->xmlParser:Lorg/xmlpull/v1/XmlPullParser;
 
@@ -172,7 +172,7 @@
 .end method
 
 .method public final component2()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->config:I
 
@@ -180,7 +180,7 @@
 .end method
 
 .method public final copy(Lorg/xmlpull/v1/XmlPullParser;I)Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
-    .registers 4
+    .locals 1
 
     const-string/jumbo v0, "xmlParser"
 
@@ -194,24 +194,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
@@ -224,25 +224,25 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->config:I
 
     iget v1, v1, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->config:I
 
-    if-eq v3, v1, :cond_1f
+    if-eq v3, v1, :cond_3
 
     return v2
 
-    :cond_1f
+    :cond_3
     return v0
 .end method
 
 .method public final getConfig()I
-    .registers 2
+    .locals 1
 
     .line 528
     iget v0, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->config:I
@@ -251,7 +251,7 @@
 .end method
 
 .method public final getDimension(Landroid/content/res/TypedArray;IF)F
-    .registers 8
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "index"    # I
     .param p3, "defValue"    # F
@@ -285,7 +285,7 @@
 .end method
 
 .method public final getFloat(Landroid/content/res/TypedArray;IF)F
-    .registers 8
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "index"    # I
     .param p3, "defaultValue"    # F
@@ -328,7 +328,7 @@
 .end method
 
 .method public final getInt(Landroid/content/res/TypedArray;II)I
-    .registers 8
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "index"    # I
     .param p3, "defaultValue"    # I
@@ -362,7 +362,7 @@
 .end method
 
 .method public final getNamedBoolean(Landroid/content/res/TypedArray;Ljava/lang/String;IZ)Z
-    .registers 9
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "attrName"    # Ljava/lang/String;
     .param p3, "resId"    # I
@@ -416,7 +416,7 @@
 .end method
 
 .method public final getNamedColorStateList(Landroid/content/res/TypedArray;Landroid/content/res/Resources$Theme;Ljava/lang/String;I)Landroid/content/res/ColorStateList;
-    .registers 9
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
     .param p3, "attrName"    # Ljava/lang/String;
@@ -470,7 +470,7 @@
 .end method
 
 .method public final getNamedComplexColor(Landroid/content/res/TypedArray;Landroid/content/res/Resources$Theme;Ljava/lang/String;II)Landroidx/core/content/res/ComplexColorCompat;
-    .registers 13
+    .locals 7
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
     .param p3, "attrName"    # Ljava/lang/String;
@@ -537,7 +537,7 @@
 .end method
 
 .method public final getNamedFloat(Landroid/content/res/TypedArray;Ljava/lang/String;IF)F
-    .registers 9
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "attrName"    # Ljava/lang/String;
     .param p3, "resId"    # I
@@ -591,7 +591,7 @@
 .end method
 
 .method public final getNamedInt(Landroid/content/res/TypedArray;Ljava/lang/String;II)I
-    .registers 9
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "attrName"    # Ljava/lang/String;
     .param p3, "resId"    # I
@@ -645,7 +645,7 @@
 .end method
 
 .method public final getString(Landroid/content/res/TypedArray;I)Ljava/lang/String;
-    .registers 7
+    .locals 4
     .param p1, "typedArray"    # Landroid/content/res/TypedArray;
     .param p2, "index"    # I
 
@@ -678,7 +678,7 @@
 .end method
 
 .method public final getXmlParser()Lorg/xmlpull/v1/XmlPullParser;
-    .registers 2
+    .locals 1
 
     .line 527
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->xmlParser:Lorg/xmlpull/v1/XmlPullParser;
@@ -687,7 +687,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->xmlParser:Lorg/xmlpull/v1/XmlPullParser;
 
@@ -709,7 +709,7 @@
 .end method
 
 .method public final obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-    .registers 7
+    .locals 2
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
     .param p3, "set"    # Landroid/util/AttributeSet;
@@ -761,7 +761,7 @@
 .end method
 
 .method public final setConfig(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 528
@@ -771,7 +771,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

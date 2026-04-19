@@ -26,13 +26,12 @@
 
 # direct methods
 .method public static getOwnerViewId(Landroidx/compose/ui/layout/GraphicLayerInfo;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/GraphicLayerInfo;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 37
-    # invokes: Landroidx/compose/ui/layout/GraphicLayerInfo;->getOwnerViewId()J
     invoke-static {p0}, Landroidx/compose/ui/layout/GraphicLayerInfo;->access$getOwnerViewId$jd(Landroidx/compose/ui/layout/GraphicLayerInfo;)J
 
     move-result-wide v0

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final ShaderBrush(Landroid/graphics/Shader;)Landroidx/compose/ui/graphics/ShaderBrush;
-    .registers 2
+    .locals 1
     .param p0, "shader"    # Landroid/graphics/Shader;
 
     const-string/jumbo v0, "shader"

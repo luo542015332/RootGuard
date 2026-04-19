@@ -96,7 +96,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
     const-string/jumbo v0, "context"
@@ -138,7 +138,7 @@
 
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 3
+    .locals 1
     .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .line 76
@@ -148,7 +148,7 @@
 .end method
 
 .method public final drawView(Landroidx/compose/ui/viewinterop/AndroidViewHolder;Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 1
     .param p1, "view"    # Landroidx/compose/ui/viewinterop/AndroidViewHolder;
     .param p2, "canvas"    # Landroid/graphics/Canvas;
 
@@ -168,7 +168,7 @@
 .end method
 
 .method public final getHolderToLayoutNode()Ljava/util/HashMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -186,7 +186,7 @@
 .end method
 
 .method public final getLayoutNodeToHolder()Ljava/util/HashMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -204,7 +204,7 @@
 .end method
 
 .method public bridge synthetic invalidateChildInParent([ILandroid/graphics/Rect;)Landroid/view/ViewParent;
-    .registers 4
+    .locals 1
     .param p1, "p0"    # [I
     .param p2, "p1"    # Landroid/graphics/Rect;
 
@@ -219,7 +219,7 @@
 .end method
 
 .method public invalidateChildInParent([ILandroid/graphics/Rect;)Ljava/lang/Void;
-    .registers 4
+    .locals 1
     .param p1, "location"    # [I
     .param p2, "dirty"    # Landroid/graphics/Rect;
 
@@ -230,7 +230,7 @@
 .end method
 
 .method public onDescendantInvalidated(Landroid/view/View;Landroid/view/View;)V
-    .registers 4
+    .locals 1
     .param p1, "child"    # Landroid/view/View;
     .param p2, "target"    # Landroid/view/View;
 
@@ -247,7 +247,7 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .registers 16
+    .locals 10
     .param p1, "changed"    # Z
     .param p2, "l"    # I
     .param p3, "t"    # I
@@ -276,12 +276,12 @@
 
     move-result-object v2
 
-    :goto_13
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_36
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -321,10 +321,10 @@
     nop
 
     .end local v3    # "element$iv":Ljava/lang/Object;
-    goto :goto_13
+    goto :goto_0
 
     .line 102
-    :cond_36
+    :cond_0
     nop
 
     .line 62
@@ -334,7 +334,7 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 9
+    .locals 6
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
@@ -349,34 +349,34 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    if-ne v0, v3, :cond_c
+    if-ne v0, v3, :cond_0
 
     move v0, v1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move v0, v2
 
-    :goto_d
+    :goto_0
     const-string v4, "Failed requirement."
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_4
 
     .line 46
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
 
-    if-ne v0, v3, :cond_18
+    if-ne v0, v3, :cond_1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move v1, v2
 
-    :goto_19
-    if-eqz v1, :cond_4f
+    :goto_1
+    if-eqz v1, :cond_3
 
     .line 47
     nop
@@ -416,12 +416,12 @@
 
     move-result-object v2
 
-    :goto_3a
+    :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_4d
+    if-eqz v3, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -445,10 +445,10 @@
     nop
 
     .end local v3    # "element$iv":Ljava/lang/Object;
-    goto :goto_3a
+    goto :goto_2
 
     .line 100
-    :cond_4d
+    :cond_2
     nop
 
     .line 55
@@ -457,7 +457,7 @@
     return-void
 
     .line 46
-    :cond_4f
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -469,7 +469,7 @@
     throw v0
 
     .line 45
-    :cond_59
+    :cond_4
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -482,7 +482,7 @@
 .end method
 
 .method public requestLayout()V
-    .registers 8
+    .locals 7
 
     .line 84
     move-object v0, p0
@@ -499,8 +499,8 @@
 
     move-result v1
 
-    :goto_b
-    if-ge v0, v1, :cond_2c
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 88
     invoke-virtual {p0, v0}, Landroidx/compose/ui/platform/AndroidViewsHandler;->getChildAt(I)Landroid/view/View;
@@ -525,9 +525,9 @@
 
     move-result v4
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_0
 
-    if-eqz v3, :cond_29
+    if-eqz v3, :cond_0
 
     .line 91
     const/4 v4, 0x3
@@ -541,19 +541,19 @@
     .line 87
     .end local v2    # "child":Landroid/view/View;
     .end local v3    # "node":Landroidx/compose/ui/node/LayoutNode;
-    :cond_29
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 94
     .end local v0    # "i":I
-    :cond_2c
+    :cond_1
     return-void
 .end method
 
 .method public shouldDelayChildPressedState()Z
-    .registers 2
+    .locals 1
 
     .line 96
     const/4 v0, 0x0

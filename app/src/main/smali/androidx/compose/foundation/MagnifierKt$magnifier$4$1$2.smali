@@ -118,7 +118,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/PlatformMagnifier;Landroidx/compose/ui/unit/Density;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;Lkotlin/jvm/internal/Ref$LongRef;Landroidx/compose/runtime/State;)V
-    .registers 11
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -182,7 +182,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 333
     invoke-virtual {p0}, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;->invoke()V
@@ -193,17 +193,16 @@
 .end method
 
 .method public final invoke()V
-    .registers 10
+    .locals 9
 
     .line 336
     iget-object v0, p0, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;->$isMagnifierShown$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$10(Landroidx/compose/runtime/State;)Z
     invoke-static {v0}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$10(Landroidx/compose/runtime/State;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_77
+    if-eqz v0, :cond_2
 
     .line 337
     iget-object v1, p0, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;->$magnifier:Landroidx/compose/foundation/PlatformMagnifier;
@@ -211,7 +210,6 @@
     .line 338
     iget-object v0, p0, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;->$sourceCenterInRoot$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$8(Landroidx/compose/runtime/State;)J
     invoke-static {v0}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$8(Landroidx/compose/runtime/State;)J
 
     move-result-wide v2
@@ -219,7 +217,6 @@
     .line 339
     iget-object v0, p0, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;->$updatedMagnifierCenter$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$4(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
     invoke-static {v0}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$4(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
 
     move-result-object v0
@@ -247,10 +244,9 @@
 
     move-result v7
 
-    if-eqz v7, :cond_34
+    if-eqz v7, :cond_0
 
     .line 341
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$1(Landroidx/compose/runtime/MutableState;)J
     invoke-static {v4}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$1(Landroidx/compose/runtime/MutableState;)J
 
     move-result-wide v7
@@ -259,10 +255,10 @@
 
     move-result-wide v7
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 343
-    :cond_34
+    :cond_0
     sget-object v4, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v4}, Landroidx/compose/ui/geometry/Offset$Companion;->getUnspecified-F1C5BW0()J
@@ -270,7 +266,7 @@
     move-result-wide v7
 
     .line 340
-    :goto_3a
+    :goto_0
     nop
 
     .line 339
@@ -281,7 +277,6 @@
     .line 346
     iget-object v0, p0, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;->$updatedZoom$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$5(Landroidx/compose/runtime/State;)F
     invoke-static {v0}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$5(Landroidx/compose/runtime/State;)F
 
     move-result v6
@@ -315,18 +310,17 @@
 
     move-result v6
 
-    if-nez v6, :cond_75
+    if-nez v6, :cond_1
 
     .line 351
     iput-wide v0, v2, Lkotlin/jvm/internal/Ref$LongRef;->element:J
 
     .line 352
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$6(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
     invoke-static {v4}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$6(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
 
     move-result-object v2
 
-    if-eqz v2, :cond_75
+    if-eqz v2, :cond_1
 
     .line 353
     nop
@@ -357,21 +351,21 @@
     invoke-interface {v2, v3}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 358
-    :cond_75
+    :cond_1
     nop
 
     .line 349
     .end local v0    # "size":J
     .end local v5    # "$i$a$-let-MagnifierKt$magnifier$4$1$2$2":I
-    goto :goto_7c
+    goto :goto_1
 
     .line 361
-    :cond_77
+    :cond_2
     iget-object v0, p0, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;->$magnifier:Landroidx/compose/foundation/PlatformMagnifier;
 
     invoke-interface {v0}, Landroidx/compose/foundation/PlatformMagnifier;->dismiss()V
 
     .line 363
-    :goto_7c
+    :goto_1
     return-void
 .end method

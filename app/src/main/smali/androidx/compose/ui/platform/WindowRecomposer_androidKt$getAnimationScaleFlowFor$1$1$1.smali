@@ -103,7 +103,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/ContentResolver;Landroid/net/Uri;Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1;Lkotlinx/coroutines/channels/Channel;Landroid/content/Context;Lkotlin/coroutines/Continuation;)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -141,7 +141,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -180,7 +180,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -194,7 +194,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -226,7 +226,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
+    .locals 9
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -235,7 +235,7 @@
     .line 112
     iget v1, p0, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_ba
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -245,7 +245,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
@@ -259,10 +259,10 @@
     check-cast v3, Lkotlinx/coroutines/flow/FlowCollector;
 
     .local v3, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :try_start_1b
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_1e
-    .catchall {:try_start_1b .. :try_end_1e} :catchall_af
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move-object v8, v3
 
@@ -270,12 +270,12 @@
 
     move-object v2, v8
 
-    goto/16 :goto_9b
+    goto/16 :goto_2
 
     .end local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
     .end local v3    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_23
+    :pswitch_1
     move-object v1, p0
 
     .restart local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
@@ -289,10 +289,10 @@
     check-cast v3, Lkotlinx/coroutines/flow/FlowCollector;
 
     .restart local v3    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :try_start_2c
+    :try_start_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_2f
-    .catchall {:try_start_2c .. :try_end_2f} :catchall_af
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-object v4, v3
 
@@ -304,12 +304,12 @@
 
     move-object v0, p1
 
-    goto :goto_67
+    goto :goto_1
 
     .end local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
     .end local v3    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_35
+    :pswitch_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -338,14 +338,14 @@
     nop
 
     .line 115
-    :try_start_4a
+    :try_start_2
     iget-object v3, v1, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;->$channel:Lkotlinx/coroutines/channels/Channel;
 
     invoke-interface {v3}, Lkotlinx/coroutines/channels/Channel;->iterator()Lkotlinx/coroutines/channels/ChannelIterator;
 
     move-result-object v3
 
-    :goto_50
+    :goto_0
     move-object v4, v1
 
     check-cast v4, Lkotlin/coroutines/Continuation;
@@ -361,16 +361,16 @@
     invoke-interface {v3, v4}, Lkotlinx/coroutines/channels/ChannelIterator;->hasNext(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v4
-    :try_end_5e
-    .catchall {:try_start_4a .. :try_end_5e} :catchall_af
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    if-ne v4, v0, :cond_61
+    if-ne v4, v0, :cond_0
 
     .line 112
     return-object v0
 
     .line 115
-    :cond_61
+    :cond_0
     move-object v8, v0
 
     move-object v0, p1
@@ -388,15 +388,15 @@
     .local v0, "$result":Ljava/lang/Object;
     .local v2, "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
     .local v4, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :goto_67
-    :try_start_67
+    :goto_1
+    :try_start_3
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-eqz p1, :cond_9c
+    if-eqz p1, :cond_2
 
     invoke-interface {v3}, Lkotlinx/coroutines/channels/ChannelIterator;->next()Ljava/lang/Object;
 
@@ -441,17 +441,17 @@
     invoke-interface {v4, v5, v6}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v5
-    :try_end_94
-    .catchall {:try_start_67 .. :try_end_94} :catchall_a9
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .end local p1    # "newValue":F
-    if-ne v5, v1, :cond_97
+    if-ne v5, v1, :cond_1
 
     .line 112
     return-object v1
 
     .line 121
-    :cond_97
+    :cond_1
     move-object p1, v0
 
     move-object v0, v1
@@ -465,15 +465,15 @@
     .restart local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
     .local v2, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
     .local p1, "$result":Ljava/lang/Object;
-    :goto_9b
-    goto :goto_50
+    :goto_2
+    goto :goto_0
 
     .line 124
     .end local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
     .end local p1    # "$result":Ljava/lang/Object;
     .restart local v0    # "$result":Ljava/lang/Object;
     .local v2, "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
-    :cond_9c
+    :cond_2
     iget-object p1, v2, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;->$resolver:Landroid/content/ContentResolver;
 
     iget-object v1, v2, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;->$contentObserver:Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1;
@@ -491,7 +491,7 @@
     return-object p1
 
     .line 124
-    :catchall_a9
+    :catchall_0
     move-exception p1
 
     move-object v1, v2
@@ -502,16 +502,16 @@
 
     move-object p1, v8
 
-    goto :goto_b0
+    goto :goto_3
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local v2    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
     .restart local v1    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;
     .restart local p1    # "$result":Ljava/lang/Object;
-    :catchall_af
+    :catchall_1
     move-exception v0
 
-    :goto_b0
+    :goto_3
     iget-object v2, v1, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;->$resolver:Landroid/content/ContentResolver;
 
     iget-object v3, v1, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$1;->$contentObserver:Landroidx/compose/ui/platform/WindowRecomposer_androidKt$getAnimationScaleFlowFor$1$1$contentObserver$1;
@@ -522,10 +522,10 @@
 
     throw v0
 
-    :pswitch_data_ba
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_35
-        :pswitch_23
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -35,7 +35,7 @@
 
 # direct methods
 .method public static final observeReads(Landroidx/compose/ui/Modifier$Node;Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 4
     .param p0, "$this$observeReads"    # Landroidx/compose/ui/Modifier$Node;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -64,7 +64,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1e
+    if-nez v0, :cond_0
 
     new-instance v0, Landroidx/compose/ui/node/ObserverNodeOwnerScope;
 
@@ -88,7 +88,7 @@
     .end local v1    # "it":Landroidx/compose/ui/node/ObserverNodeOwnerScope;
     .end local v2    # "$i$a$-also-ObserverModifierNodeKt$observeReads$target$1":I
     .local v0, "target":Landroidx/compose/ui/node/ObserverNodeOwnerScope;
-    :cond_1e
+    :cond_0
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/node/DelegatableNode;

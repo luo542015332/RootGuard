@@ -88,7 +88,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -121,7 +121,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -148,7 +148,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -162,7 +162,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -189,7 +189,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    .locals 10
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -198,7 +198,7 @@
     .line 64
     iget v1, p0, Landroidx/compose/runtime/RecomposerKt$withRunningRecomposer$2;->label:I
 
-    packed-switch v1, :pswitch_data_6a
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -208,7 +208,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/runtime/RecomposerKt$withRunningRecomposer$2;
@@ -220,12 +220,12 @@
 
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_68
+    goto :goto_1
 
     .end local v0    # "this":Landroidx/compose/runtime/RecomposerKt$withRunningRecomposer$2;
     .end local v1    # "$i$a$-also-RecomposerKt$withRunningRecomposer$2$2":I
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1a
+    :pswitch_1
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/runtime/RecomposerKt$withRunningRecomposer$2;
@@ -241,12 +241,12 @@
 
     move-object v2, p1
 
-    goto :goto_56
+    goto :goto_0
 
     .end local v1    # "this":Landroidx/compose/runtime/RecomposerKt$withRunningRecomposer$2;
     .end local v2    # "recomposer":Landroidx/compose/runtime/Recomposer;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_25
+    :pswitch_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -307,13 +307,13 @@
     move-result-object v2
 
     .end local v2    # "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
-    if-ne v2, v0, :cond_56
+    if-ne v2, v0, :cond_0
 
     .line 64
     return-object v0
 
-    :cond_56
-    :goto_56
+    :cond_0
+    :goto_0
     const/4 v3, 0x0
 
     .line 69
@@ -332,13 +332,13 @@
     move-result-object v4
 
     .end local v9    # "recomposer":Landroidx/compose/runtime/Recomposer;
-    if-ne v4, v0, :cond_66
+    if-ne v4, v0, :cond_1
 
     .line 64
     return-object v0
 
     .line 70
-    :cond_66
+    :cond_1
     move-object v0, v1
 
     move v1, v3
@@ -347,17 +347,17 @@
     .end local v3    # "$i$a$-also-RecomposerKt$withRunningRecomposer$2$2":I
     .restart local v0    # "this":Landroidx/compose/runtime/RecomposerKt$withRunningRecomposer$2;
     .local v1, "$i$a$-also-RecomposerKt$withRunningRecomposer$2$2":I
-    :goto_68
+    :goto_1
     nop
 
     .line 68
     .end local v1    # "$i$a$-also-RecomposerKt$withRunningRecomposer$2$2":I
     return-object v2
 
-    :pswitch_data_6a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
-        :pswitch_1a
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -81,7 +81,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/Lab$Companion;
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 10
+    .locals 7
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "id"    # I
 
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public fromXyz([F)[F
-    .registers 18
+    .locals 16
     .param p1, "v"    # [F
 
     move-object/from16 v0, p1
@@ -202,7 +202,7 @@
 
     const v11, 0x40f92f68
 
-    if-lez v8, :cond_44
+    if-lez v8, :cond_0
 
     float-to-double v12, v2
 
@@ -214,19 +214,19 @@
 
     double-to-float v8, v12
 
-    goto :goto_47
+    goto :goto_0
 
-    :cond_44
+    :cond_0
     mul-float v8, v2, v11
 
     add-float/2addr v8, v10
 
     .line 120
     .local v8, "fx":F
-    :goto_47
+    :goto_0
     cmpl-float v12, v4, v7
 
-    if-lez v12, :cond_53
+    if-lez v12, :cond_1
 
     float-to-double v12, v4
 
@@ -238,19 +238,19 @@
 
     double-to-float v12, v12
 
-    goto :goto_56
+    goto :goto_1
 
-    :cond_53
+    :cond_1
     mul-float v12, v4, v11
 
     add-float/2addr v12, v10
 
     .line 121
     .local v12, "fy":F
-    :goto_56
+    :goto_1
     cmpl-float v7, v6, v7
 
-    if-lez v7, :cond_62
+    if-lez v7, :cond_2
 
     float-to-double v10, v6
 
@@ -262,16 +262,16 @@
 
     double-to-float v7, v9
 
-    goto :goto_65
+    goto :goto_2
 
-    :cond_62
+    :cond_2
     mul-float/2addr v11, v6
 
     add-float v7, v11, v10
 
     .line 123
     .local v7, "fz":F
-    :goto_65
+    :goto_2
     const/high16 v9, 0x42e80000    # 116.0f
 
     mul-float/2addr v9, v12
@@ -331,43 +331,43 @@
 .end method
 
 .method public getMaxValue(I)F
-    .registers 3
+    .locals 1
     .param p1, "component"    # I
 
     .line 43
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     const/high16 v0, 0x42c80000    # 100.0f
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/high16 v0, 0x43000000    # 128.0f
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public getMinValue(I)F
-    .registers 3
+    .locals 1
     .param p1, "component"    # I
 
     .line 39
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/high16 v0, -0x3d000000    # -128.0f
 
-    :goto_6
+    :goto_0
     return v0
 .end method
 
 .method public isWideGamut()Z
-    .registers 2
+    .locals 1
 
     .line 36
     const/4 v0, 0x1
@@ -376,7 +376,7 @@
 .end method
 
 .method public toXy$ui_graphics_release(FFF)J
-    .registers 22
+    .locals 18
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -430,40 +430,40 @@
 
     const v8, 0x3e038027
 
-    if-lez v6, :cond_2d
+    if-lez v6, :cond_0
 
     mul-float v6, v4, v4
 
     mul-float/2addr v6, v4
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     sub-float v6, v4, v7
 
     mul-float/2addr v6, v8
 
     .line 72
     .local v6, "x":F
-    :goto_30
+    :goto_0
     cmpl-float v5, v3, v5
 
-    if-lez v5, :cond_38
+    if-lez v5, :cond_1
 
     mul-float v5, v3, v3
 
     mul-float/2addr v5, v3
 
-    goto :goto_3b
+    goto :goto_1
 
-    :cond_38
+    :cond_1
     sub-float v5, v3, v7
 
     mul-float/2addr v5, v8
 
     .line 74
     .local v5, "y":F
-    :goto_3b
+    :goto_1
     sget-object v7, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
 
     invoke-virtual {v7}, Landroidx/compose/ui/graphics/colorspace/Illuminant;->getD50Xyz$ui_graphics_release()[F
@@ -530,7 +530,7 @@
 .end method
 
 .method public toXyz([F)[F
-    .registers 13
+    .locals 11
     .param p1, "v"    # [F
 
     const-string/jumbo v0, "v"
@@ -619,58 +619,58 @@
 
     const v9, 0x3e038027
 
-    if-lez v7, :cond_50
+    if-lez v7, :cond_0
 
     mul-float v7, v4, v4
 
     mul-float/2addr v7, v4
 
-    goto :goto_53
+    goto :goto_0
 
-    :cond_50
+    :cond_0
     sub-float v7, v4, v8
 
     mul-float/2addr v7, v9
 
     .line 55
     .local v7, "x":F
-    :goto_53
+    :goto_0
     cmpl-float v10, v3, v6
 
-    if-lez v10, :cond_5b
+    if-lez v10, :cond_1
 
     mul-float v10, v3, v3
 
     mul-float/2addr v10, v3
 
-    goto :goto_5e
+    goto :goto_1
 
-    :cond_5b
+    :cond_1
     sub-float v10, v3, v8
 
     mul-float/2addr v10, v9
 
     .line 56
     .local v10, "y":F
-    :goto_5e
+    :goto_1
     cmpl-float v6, v5, v6
 
-    if-lez v6, :cond_66
+    if-lez v6, :cond_2
 
     mul-float v6, v5, v5
 
     mul-float/2addr v6, v5
 
-    goto :goto_69
+    goto :goto_2
 
-    :cond_66
+    :cond_2
     sub-float v6, v5, v8
 
     mul-float/2addr v6, v9
 
     .line 58
     .local v6, "z":F
-    :goto_69
+    :goto_2
     sget-object v8, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/colorspace/Illuminant;->getD50Xyz$ui_graphics_release()[F
@@ -714,7 +714,7 @@
 .end method
 
 .method public toZ$ui_graphics_release(FFF)F
-    .registers 11
+    .locals 7
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -762,15 +762,15 @@
 
     cmpl-float v4, v3, v4
 
-    if-lez v4, :cond_26
+    if-lez v4, :cond_0
 
     mul-float v4, v3, v3
 
     mul-float/2addr v4, v3
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const v4, 0x3e0d3dcb
 
     sub-float v4, v3, v4
@@ -781,7 +781,7 @@
 
     .line 83
     .local v4, "z":F
-    :goto_2f
+    :goto_0
     sget-object v5, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
 
     invoke-virtual {v5}, Landroidx/compose/ui/graphics/colorspace/Illuminant;->getD50Xyz$ui_graphics_release()[F
@@ -798,7 +798,7 @@
 .end method
 
 .method public xyzaToColor-JlNiLsg$ui_graphics_release(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J
-    .registers 21
+    .locals 15
     .param p1, "x"    # F
     .param p2, "y"    # F
     .param p3, "z"    # F
@@ -864,7 +864,7 @@
 
     const v8, 0x40f92f68
 
-    if-lez v5, :cond_41
+    if-lez v5, :cond_0
 
     float-to-double v9, v1
 
@@ -876,19 +876,19 @@
 
     double-to-float v5, v9
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_41
+    :cond_0
     mul-float v5, v1, v8
 
     add-float/2addr v5, v7
 
     .line 98
     .local v5, "fx":F
-    :goto_44
+    :goto_0
     cmpl-float v9, v2, v4
 
-    if-lez v9, :cond_50
+    if-lez v9, :cond_1
 
     float-to-double v9, v2
 
@@ -900,19 +900,19 @@
 
     double-to-float v9, v9
 
-    goto :goto_53
+    goto :goto_1
 
-    :cond_50
+    :cond_1
     mul-float v9, v2, v8
 
     add-float/2addr v9, v7
 
     .line 99
     .local v9, "fy":F
-    :goto_53
+    :goto_1
     cmpl-float v4, v3, v4
 
-    if-lez v4, :cond_5f
+    if-lez v4, :cond_2
 
     float-to-double v7, v3
 
@@ -924,16 +924,16 @@
 
     double-to-float v4, v6
 
-    goto :goto_62
+    goto :goto_2
 
-    :cond_5f
+    :cond_2
     mul-float/2addr v8, v3
 
     add-float v4, v8, v7
 
     .line 101
     .local v4, "fz":F
-    :goto_62
+    :goto_2
     const/high16 v6, 0x42e80000    # 116.0f
 
     mul-float/2addr v6, v9

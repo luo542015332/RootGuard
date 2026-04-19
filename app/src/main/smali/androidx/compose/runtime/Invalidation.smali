@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/RecomposeScopeImpl;ILandroidx/compose/runtime/collection/IdentityArraySet;)V
-    .registers 5
+    .locals 1
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
     .param p2, "location"    # I
     .param p3, "instances"    # Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public final getInstances()Landroidx/compose/runtime/collection/IdentityArraySet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -113,7 +113,7 @@
 .end method
 
 .method public final getLocation()I
-    .registers 2
+    .locals 1
 
     .line 230
     iget v0, p0, Landroidx/compose/runtime/Invalidation;->location:I
@@ -122,7 +122,7 @@
 .end method
 
 .method public final getScope()Landroidx/compose/runtime/RecomposeScopeImpl;
-    .registers 2
+    .locals 1
 
     .line 225
     iget-object v0, p0, Landroidx/compose/runtime/Invalidation;->scope:Landroidx/compose/runtime/RecomposeScopeImpl;
@@ -131,7 +131,7 @@
 .end method
 
 .method public final isInvalid()Z
-    .registers 3
+    .locals 2
 
     .line 240
     iget-object v0, p0, Landroidx/compose/runtime/Invalidation;->scope:Landroidx/compose/runtime/RecomposeScopeImpl;
@@ -146,7 +146,7 @@
 .end method
 
 .method public final setInstances(Landroidx/compose/runtime/collection/IdentityArraySet;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/runtime/collection/IdentityArraySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {

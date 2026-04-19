@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/core/Transition;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Boolean;
-    .registers 3
+    .locals 2
 
     .line 746
     iget-object v0, p0, Landroidx/compose/animation/AnimatedVisibilityKt$AnimatedEnterExitImpl$1$1$1;->$childTransition:Landroidx/compose/animation/core/Transition;
@@ -93,7 +93,7 @@
 
     sget-object v1, Landroidx/compose/animation/EnterExitState;->Visible:Landroidx/compose/animation/EnterExitState;
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_1
 
     .line 747
     iget-object v0, p0, Landroidx/compose/animation/AnimatedVisibilityKt$AnimatedEnterExitImpl$1$1$1;->$childTransition:Landroidx/compose/animation/core/Transition;
@@ -104,20 +104,20 @@
 
     sget-object v1, Landroidx/compose/animation/EnterExitState;->Visible:Landroidx/compose/animation/EnterExitState;
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_18
+    :goto_1
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -127,7 +127,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 745
     invoke-virtual {p0}, Landroidx/compose/animation/AnimatedVisibilityKt$AnimatedEnterExitImpl$1$1$1;->invoke()Ljava/lang/Boolean;

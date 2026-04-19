@@ -78,7 +78,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/layout/ContentScale$Companion;
 
@@ -153,7 +153,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -162,43 +162,43 @@
 .end method
 
 .method public static synthetic getCrop$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getFillBounds$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getFillHeight$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getFillWidth$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getFit$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getInside$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getNone$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -206,7 +206,7 @@
 
 # virtual methods
 .method public final getCrop()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 51
     sget-object v0, Landroidx/compose/ui/layout/ContentScale$Companion;->Crop:Landroidx/compose/ui/layout/ContentScale;
@@ -215,7 +215,7 @@
 .end method
 
 .method public final getFillBounds()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 135
     sget-object v0, Landroidx/compose/ui/layout/ContentScale$Companion;->FillBounds:Landroidx/compose/ui/layout/ContentScale;
@@ -224,7 +224,7 @@
 .end method
 
 .method public final getFillHeight()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 80
     sget-object v0, Landroidx/compose/ui/layout/ContentScale$Companion;->FillHeight:Landroidx/compose/ui/layout/ContentScale;
@@ -233,7 +233,7 @@
 .end method
 
 .method public final getFillWidth()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 93
     sget-object v0, Landroidx/compose/ui/layout/ContentScale$Companion;->FillWidth:Landroidx/compose/ui/layout/ContentScale;
@@ -242,7 +242,7 @@
 .end method
 
 .method public final getFit()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 67
     sget-object v0, Landroidx/compose/ui/layout/ContentScale$Companion;->Fit:Landroidx/compose/ui/layout/ContentScale;
@@ -251,7 +251,7 @@
 .end method
 
 .method public final getInside()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 110
     sget-object v0, Landroidx/compose/ui/layout/ContentScale$Companion;->Inside:Landroidx/compose/ui/layout/ContentScale;
@@ -260,7 +260,7 @@
 .end method
 
 .method public final getNone()Landroidx/compose/ui/layout/FixedScale;
-    .registers 2
+    .locals 1
 
     .line 129
     sget-object v0, Landroidx/compose/ui/layout/ContentScale$Companion;->None:Landroidx/compose/ui/layout/FixedScale;

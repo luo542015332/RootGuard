@@ -75,7 +75,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -120,7 +120,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/saveable/SaverScope;Ljava/lang/Object;)Ljava/util/List;
-    .registers 13
+    .locals 10
     .param p1, "$this$listSaver"    # Landroidx/compose/runtime/saveable/SaverScope;
     .param p2, "it"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -173,12 +173,12 @@
 
     move-result-object v5
 
-    :goto_1f
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_3e
+    if-eqz v6, :cond_0
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -216,10 +216,10 @@
     nop
 
     .end local v6    # "element$iv":Ljava/util/Map$Entry;
-    goto :goto_1f
+    goto :goto_0
 
     .line 57
-    :cond_3e
+    :cond_0
     nop
 
     .line 40

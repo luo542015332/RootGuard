@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$QFu0dile_y9I3drz06WdO7yW50A(Lkotlin/jvm/functions/Function1;D)D
-    .registers 3
+    .locals 0
 
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;->androidColorSpace$lambda$1(Lkotlin/jvm/functions/Function1;D)D
 
@@ -44,7 +44,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$QjPy_9duDqaY6Xqc17Bckdmcey8(Landroid/graphics/ColorSpace;D)D
-    .registers 3
+    .locals 0
 
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;->composeColorSpace$lambda$2(Landroid/graphics/ColorSpace;D)D
 
@@ -54,7 +54,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$eGlfWATOmIjmWkkLSguMlMWw7_8(Lkotlin/jvm/functions/Function1;D)D
-    .registers 3
+    .locals 0
 
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;->androidColorSpace$lambda$0(Lkotlin/jvm/functions/Function1;D)D
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$pQY73vf2dPh7NEalGYV8cBq8u3g(Landroid/graphics/ColorSpace;D)D
-    .registers 3
+    .locals 0
 
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;->composeColorSpace$lambda$3(Landroid/graphics/ColorSpace;D)D
 
@@ -74,7 +74,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/ColorSpaceVerificationHelper;
 
@@ -86,7 +86,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 .end method
 
 .method public static final androidColorSpace(Landroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroid/graphics/ColorSpace;
-    .registers 27
+    .locals 26
     .param p0, "$this$androidColorSpace"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
@@ -120,7 +120,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
@@ -132,10 +132,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 56
-    :cond_22
+    :cond_0
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getAces()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -146,7 +146,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_1
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->ACES:Landroid/graphics/ColorSpace$Named;
 
@@ -158,10 +158,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 57
-    :cond_3c
+    :cond_1
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getAcescg()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -172,7 +172,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_2
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->ACESCG:Landroid/graphics/ColorSpace$Named;
 
@@ -184,10 +184,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 58
-    :cond_56
+    :cond_2
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getAdobeRgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -198,7 +198,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_70
+    if-eqz v1, :cond_3
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->ADOBE_RGB:Landroid/graphics/ColorSpace$Named;
 
@@ -210,10 +210,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 59
-    :cond_70
+    :cond_3
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getBt2020()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -224,7 +224,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8a
+    if-eqz v1, :cond_4
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->BT2020:Landroid/graphics/ColorSpace$Named;
 
@@ -236,10 +236,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 60
-    :cond_8a
+    :cond_4
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getBt709()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -250,7 +250,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_a4
+    if-eqz v1, :cond_5
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->BT709:Landroid/graphics/ColorSpace$Named;
 
@@ -262,10 +262,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 61
-    :cond_a4
+    :cond_5
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getCieLab()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -276,7 +276,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_be
+    if-eqz v1, :cond_6
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->CIE_LAB:Landroid/graphics/ColorSpace$Named;
 
@@ -288,10 +288,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 62
-    :cond_be
+    :cond_6
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getCieXyz()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -302,7 +302,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_d8
+    if-eqz v1, :cond_7
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->CIE_XYZ:Landroid/graphics/ColorSpace$Named;
 
@@ -314,10 +314,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 63
-    :cond_d8
+    :cond_7
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getDciP3()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -328,7 +328,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f2
+    if-eqz v1, :cond_8
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->DCI_P3:Landroid/graphics/ColorSpace$Named;
 
@@ -340,10 +340,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 64
-    :cond_f2
+    :cond_8
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getDisplayP3()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -354,7 +354,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_10c
+    if-eqz v1, :cond_9
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
@@ -366,10 +366,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 65
-    :cond_10c
+    :cond_9
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getExtendedSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -380,7 +380,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_126
+    if-eqz v1, :cond_a
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->EXTENDED_SRGB:Landroid/graphics/ColorSpace$Named;
 
@@ -392,10 +392,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 66
-    :cond_126
+    :cond_a
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getLinearExtendedSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -406,7 +406,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_140
+    if-eqz v1, :cond_b
 
     .line 67
     sget-object v1, Landroid/graphics/ColorSpace$Named;->LINEAR_EXTENDED_SRGB:Landroid/graphics/ColorSpace$Named;
@@ -419,10 +419,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 68
-    :cond_140
+    :cond_b
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getLinearSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -433,7 +433,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15a
+    if-eqz v1, :cond_c
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->LINEAR_SRGB:Landroid/graphics/ColorSpace$Named;
 
@@ -445,10 +445,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 69
-    :cond_15a
+    :cond_c
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getNtsc1953()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -459,7 +459,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_174
+    if-eqz v1, :cond_d
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->NTSC_1953:Landroid/graphics/ColorSpace$Named;
 
@@ -471,10 +471,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 70
-    :cond_174
+    :cond_d
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getProPhotoRgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -485,7 +485,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18e
+    if-eqz v1, :cond_e
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->PRO_PHOTO_RGB:Landroid/graphics/ColorSpace$Named;
 
@@ -497,10 +497,10 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 71
-    :cond_18e
+    :cond_e
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getSmpteC()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -511,7 +511,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1a8
+    if-eqz v1, :cond_f
 
     sget-object v1, Landroid/graphics/ColorSpace$Named;->SMPTE_C:Landroid/graphics/ColorSpace$Named;
 
@@ -523,13 +523,13 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto/16 :goto_23f
+    goto/16 :goto_3
 
     .line 73
-    :cond_1a8
+    :cond_f
     instance-of v1, v0, Landroidx/compose/ui/graphics/colorspace/Rgb;
 
-    if-eqz v1, :cond_232
+    if-eqz v1, :cond_12
 
     .line 74
     move-object v1, v0
@@ -556,7 +556,7 @@
 
     .line 76
     .local v10, "transferParams":Landroidx/compose/ui/graphics/colorspace/TransferParameters;
-    if-eqz v10, :cond_1e3
+    if-eqz v10, :cond_10
 
     .line 77
     new-instance v2, Landroid/graphics/ColorSpace$Rgb$TransferParameters;
@@ -601,19 +601,19 @@
 
     invoke-direct/range {v11 .. v25}, Landroid/graphics/ColorSpace$Rgb$TransferParameters;-><init>(DDDDDDD)V
 
-    goto :goto_1e4
+    goto :goto_0
 
     .line 87
-    :cond_1e3
+    :cond_10
     const/4 v2, 0x0
 
     .line 76
-    :goto_1e4
+    :goto_0
     move-object v11, v2
 
     .line 89
     .local v11, "androidTransferParams":Landroid/graphics/ColorSpace$Rgb$TransferParameters;
-    if-eqz v11, :cond_1fa
+    if-eqz v11, :cond_11
 
     .line 90
     new-instance v2, Landroid/graphics/ColorSpace$Rgb;
@@ -641,10 +641,10 @@
     .line 90
     invoke-direct {v2, v3, v4, v1, v11}, Landroid/graphics/ColorSpace$Rgb;-><init>(Ljava/lang/String;[F[FLandroid/graphics/ColorSpace$Rgb$TransferParameters;)V
 
-    goto :goto_22e
+    goto :goto_1
 
     .line 97
-    :cond_1fa
+    :cond_11
     new-instance v12, Landroid/graphics/ColorSpace$Rgb;
 
     .line 98
@@ -712,15 +712,15 @@
     .end local v1    # "whitePointArray":[F
     .end local v10    # "transferParams":Landroidx/compose/ui/graphics/colorspace/TransferParameters;
     .end local v11    # "androidTransferParams":Landroid/graphics/ColorSpace$Rgb$TransferParameters;
-    :goto_22e
+    :goto_1
     check-cast v2, Landroid/graphics/ColorSpace;
 
     move-object v1, v2
 
-    goto :goto_238
+    goto :goto_2
 
     .line 108
-    :cond_232
+    :cond_12
     sget-object v1, Landroid/graphics/ColorSpace$Named;->SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-static {v1}, Landroid/graphics/ColorSpace;->get(Landroid/graphics/ColorSpace$Named;)Landroid/graphics/ColorSpace;
@@ -728,7 +728,7 @@
     move-result-object v1
 
     .line 72
-    :goto_238
+    :goto_2
     nop
 
     .line 102
@@ -737,12 +737,12 @@
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 54
-    :goto_23f
+    :goto_3
     return-object v1
 .end method
 
 .method private static final androidColorSpace$lambda$0(Lkotlin/jvm/functions/Function1;D)D
-    .registers 5
+    .locals 2
     .param p0, "$tmp0"    # Lkotlin/jvm/functions/Function1;
     .param p1, "p0"    # D
 
@@ -769,7 +769,7 @@
 .end method
 
 .method private static final androidColorSpace$lambda$1(Lkotlin/jvm/functions/Function1;D)D
-    .registers 5
+    .locals 2
     .param p0, "$tmp0"    # Lkotlin/jvm/functions/Function1;
     .param p1, "p0"    # D
 
@@ -796,7 +796,7 @@
 .end method
 
 .method public static final composeColorSpace(Landroid/graphics/ColorSpace;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 27
+    .locals 26
     .param p0, "$this$composeColorSpace"    # Landroid/graphics/ColorSpace;
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
@@ -819,7 +819,7 @@
 
     move-result v2
 
-    if-ne v1, v2, :cond_1d
+    if-ne v1, v2, :cond_0
 
     .line 120
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -830,17 +830,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 121
-    :cond_1d
+    :cond_0
     sget-object v2, Landroid/graphics/ColorSpace$Named;->ACES:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_2f
+    if-ne v1, v2, :cond_1
 
     .line 122
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -851,17 +851,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 123
-    :cond_2f
+    :cond_1
     sget-object v2, Landroid/graphics/ColorSpace$Named;->ACESCG:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_41
+    if-ne v1, v2, :cond_2
 
     .line 124
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -872,17 +872,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 125
-    :cond_41
+    :cond_2
     sget-object v2, Landroid/graphics/ColorSpace$Named;->ADOBE_RGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_53
+    if-ne v1, v2, :cond_3
 
     .line 126
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -893,17 +893,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 127
-    :cond_53
+    :cond_3
     sget-object v2, Landroid/graphics/ColorSpace$Named;->BT2020:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_65
+    if-ne v1, v2, :cond_4
 
     .line 128
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -914,17 +914,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 129
-    :cond_65
+    :cond_4
     sget-object v2, Landroid/graphics/ColorSpace$Named;->BT709:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_77
+    if-ne v1, v2, :cond_5
 
     .line 130
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -935,17 +935,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 131
-    :cond_77
+    :cond_5
     sget-object v2, Landroid/graphics/ColorSpace$Named;->CIE_LAB:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_87
+    if-ne v1, v2, :cond_6
 
     .line 132
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -954,17 +954,17 @@
 
     move-result-object v1
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 133
-    :cond_87
+    :cond_6
     sget-object v2, Landroid/graphics/ColorSpace$Named;->CIE_XYZ:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_97
+    if-ne v1, v2, :cond_7
 
     .line 134
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -973,17 +973,17 @@
 
     move-result-object v1
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 135
-    :cond_97
+    :cond_7
     sget-object v2, Landroid/graphics/ColorSpace$Named;->DCI_P3:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_a9
+    if-ne v1, v2, :cond_8
 
     .line 136
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -994,17 +994,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 137
-    :cond_a9
+    :cond_8
     sget-object v2, Landroid/graphics/ColorSpace$Named;->DISPLAY_P3:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_bb
+    if-ne v1, v2, :cond_9
 
     .line 138
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -1015,17 +1015,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 139
-    :cond_bb
+    :cond_9
     sget-object v2, Landroid/graphics/ColorSpace$Named;->EXTENDED_SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_cd
+    if-ne v1, v2, :cond_a
 
     .line 140
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -1036,17 +1036,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 141
-    :cond_cd
+    :cond_a
     sget-object v2, Landroid/graphics/ColorSpace$Named;->LINEAR_EXTENDED_SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_df
+    if-ne v1, v2, :cond_b
 
     .line 142
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -1057,17 +1057,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 143
-    :cond_df
+    :cond_b
     sget-object v2, Landroid/graphics/ColorSpace$Named;->LINEAR_SRGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_f1
+    if-ne v1, v2, :cond_c
 
     .line 144
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -1078,17 +1078,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 145
-    :cond_f1
+    :cond_c
     sget-object v2, Landroid/graphics/ColorSpace$Named;->NTSC_1953:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_103
+    if-ne v1, v2, :cond_d
 
     .line 146
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -1099,17 +1099,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 147
-    :cond_103
+    :cond_d
     sget-object v2, Landroid/graphics/ColorSpace$Named;->PRO_PHOTO_RGB:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_115
+    if-ne v1, v2, :cond_e
 
     .line 148
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -1120,17 +1120,17 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 149
-    :cond_115
+    :cond_e
     sget-object v2, Landroid/graphics/ColorSpace$Named;->SMPTE_C:Landroid/graphics/ColorSpace$Named;
 
     invoke-virtual {v2}, Landroid/graphics/ColorSpace$Named;->ordinal()I
 
     move-result v2
 
-    if-ne v1, v2, :cond_127
+    if-ne v1, v2, :cond_f
 
     .line 150
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -1141,13 +1141,13 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    goto/16 :goto_1f2
+    goto/16 :goto_3
 
     .line 152
-    :cond_127
+    :cond_f
     instance-of v1, v0, Landroid/graphics/ColorSpace$Rgb;
 
-    if-eqz v1, :cond_1e9
+    if-eqz v1, :cond_12
 
     .line 153
     move-object v1, v0
@@ -1176,7 +1176,7 @@
 
     const/4 v5, 0x0
 
-    if-ne v2, v3, :cond_162
+    if-ne v2, v3, :cond_10
 
     .line 155
     new-instance v2, Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -1217,10 +1217,10 @@
 
     move-object v9, v2
 
-    goto :goto_17a
+    goto :goto_0
 
     .line 157
-    :cond_162
+    :cond_10
     new-instance v2, Landroidx/compose/ui/graphics/colorspace/WhitePoint;
 
     move-object v3, v0
@@ -1248,12 +1248,12 @@
     move-object v9, v2
 
     .line 154
-    :goto_17a
+    :goto_0
     nop
 
     .line 160
     .local v9, "whitePoint":Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    if-eqz v1, :cond_19e
+    if-eqz v1, :cond_11
 
     .line 161
     new-instance v2, Landroidx/compose/ui/graphics/colorspace/TransferParameters;
@@ -1300,12 +1300,12 @@
 
     move-object v15, v2
 
-    goto :goto_1a2
+    goto :goto_1
 
     .line 171
     .end local v25    # "whitePoint":Landroidx/compose/ui/graphics/colorspace/WhitePoint;
     .restart local v9    # "whitePoint":Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    :cond_19e
+    :cond_11
     move-object/from16 v25, v9
 
     .end local v9    # "whitePoint":Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -1315,7 +1315,7 @@
     move-object v15, v2
 
     .line 160
-    :goto_1a2
+    :goto_1
     nop
 
     .line 173
@@ -1406,28 +1406,28 @@
     .end local v1    # "transferParams":Landroid/graphics/ColorSpace$Rgb$TransferParameters;
     .end local v9    # "whitePoint":Landroidx/compose/ui/graphics/colorspace/WhitePoint;
     .end local v15    # "composeTransferParams":Landroidx/compose/ui/graphics/colorspace/TransferParameters;
-    goto :goto_1ef
+    goto :goto_2
 
     .line 186
-    :cond_1e9
+    :cond_12
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
 
     move-result-object v2
 
-    :goto_1ef
+    :goto_2
     move-object v1, v2
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     .line 118
-    :goto_1f2
+    :goto_3
     return-object v1
 .end method
 
 .method private static final composeColorSpace$lambda$2(Landroid/graphics/ColorSpace;D)D
-    .registers 5
+    .locals 2
     .param p0, "$this_composeColorSpace"    # Landroid/graphics/ColorSpace;
     .param p1, "x"    # D
 
@@ -1452,7 +1452,7 @@
 .end method
 
 .method private static final composeColorSpace$lambda$3(Landroid/graphics/ColorSpace;D)D
-    .registers 5
+    .locals 2
     .param p0, "$this_composeColorSpace"    # Landroid/graphics/ColorSpace;
     .param p1, "x"    # D
 

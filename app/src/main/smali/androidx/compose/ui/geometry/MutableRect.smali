@@ -80,7 +80,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -90,7 +90,7 @@
 .end method
 
 .method public constructor <init>(FFFF)V
-    .registers 5
+    .locals 0
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public final contains-k-4lQ0M(J)Z
-    .registers 5
+    .locals 2
     .param p1, "offset"    # J
 
     .line 81
@@ -130,7 +130,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_2a
+    if-ltz v0, :cond_0
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
@@ -140,7 +140,7 @@
 
     cmpg-float v0, v0, v1
 
-    if-gez v0, :cond_2a
+    if-gez v0, :cond_0
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -150,7 +150,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_2a
+    if-ltz v0, :cond_0
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -160,21 +160,21 @@
 
     cmpg-float v0, v0, v1
 
-    if-gez v0, :cond_2a
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_2b
+    :goto_0
     return v0
 .end method
 
 .method public final getBottom()F
-    .registers 2
+    .locals 1
 
     .line 36
     iget v0, p0, Landroidx/compose/ui/geometry/MutableRect;->bottom:F
@@ -183,7 +183,7 @@
 .end method
 
 .method public final getHeight()F
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -203,7 +203,7 @@
 .end method
 
 .method public final getLeft()F
-    .registers 2
+    .locals 1
 
     .line 33
     iget v0, p0, Landroidx/compose/ui/geometry/MutableRect;->left:F
@@ -212,7 +212,7 @@
 .end method
 
 .method public final getRight()F
-    .registers 2
+    .locals 1
 
     .line 35
     iget v0, p0, Landroidx/compose/ui/geometry/MutableRect;->right:F
@@ -221,7 +221,7 @@
 .end method
 
 .method public final getSize-NH-jbRc()J
-    .registers 6
+    .locals 5
 
     .line 51
     move-object v0, p0
@@ -272,7 +272,7 @@
 .end method
 
 .method public final getTop()F
-    .registers 2
+    .locals 1
 
     .line 34
     iget v0, p0, Landroidx/compose/ui/geometry/MutableRect;->top:F
@@ -281,7 +281,7 @@
 .end method
 
 .method public final getWidth()F
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -301,7 +301,7 @@
 .end method
 
 .method public final intersect(FFFF)V
-    .registers 6
+    .locals 1
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -348,7 +348,7 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 58
     iget v0, p0, Landroidx/compose/ui/geometry/MutableRect;->left:F
@@ -357,7 +357,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-gez v0, :cond_13
+    if-gez v0, :cond_1
 
     iget v0, p0, Landroidx/compose/ui/geometry/MutableRect;->top:F
 
@@ -365,25 +365,25 @@
 
     cmpl-float v0, v0, v1
 
-    if-ltz v0, :cond_11
+    if-ltz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_1
     return v0
 .end method
 
 .method public final set(FFFF)V
-    .registers 5
+    .locals 0
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -406,7 +406,7 @@
 .end method
 
 .method public final setBottom(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 36
@@ -416,7 +416,7 @@
 .end method
 
 .method public final setLeft(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 33
@@ -426,7 +426,7 @@
 .end method
 
 .method public final setRight(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 35
@@ -436,7 +436,7 @@
 .end method
 
 .method public final setTop(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 34
@@ -446,7 +446,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 94
     new-instance v0, Ljava/lang/StringBuilder;

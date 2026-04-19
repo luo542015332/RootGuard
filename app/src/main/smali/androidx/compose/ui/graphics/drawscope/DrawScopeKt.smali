@@ -72,7 +72,7 @@
 
 # direct methods
 .method public static final clipPath-KD09W0M(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Path;ILkotlin/jvm/functions/Function1;)V
-    .registers 13
+    .locals 9
     .param p0, "$this$clipPath_u2dKD09W0M"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "clipOp"    # I
@@ -184,7 +184,7 @@
 .end method
 
 .method public static synthetic clipPath-KD09W0M$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Path;ILkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 13
+    .locals 7
     .param p0, "$this$clipPath_u2dKD09W0M_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "clipOp"    # I
@@ -193,7 +193,7 @@
     .line 233
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_0
 
     .line 235
     sget-object p4, Landroidx/compose/ui/graphics/ClipOp;->Companion:Landroidx/compose/ui/graphics/ClipOp$Companion;
@@ -203,7 +203,7 @@
     move-result p2
 
     .line 233
-    :cond_a
+    :cond_0
     const-string p4, "$this$clipPath"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -297,7 +297,7 @@
 .end method
 
 .method public static final clipRect-rOu3jXo(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFFFILkotlin/jvm/functions/Function1;)V
-    .registers 24
+    .locals 17
     .param p0, "$this$clipRect_u2drOu3jXo"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "left"    # F
     .param p2, "top"    # F
@@ -423,7 +423,7 @@
 .end method
 
 .method public static synthetic clipRect-rOu3jXo$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFFFILkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 28
+    .locals 19
     .param p0, "$this$clipRect_u2drOu3jXo_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "left"    # F
     .param p2, "top"    # F
@@ -437,27 +437,27 @@
 
     and-int/lit8 v1, p7, 0x1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_0
 
     .line 215
     const/4 v1, 0x0
 
     .end local p1    # "left":F
     .local v1, "left":F
-    goto :goto_a
+    goto :goto_0
 
     .line 214
     .end local v1    # "left":F
     .restart local p1    # "left":F
-    :cond_8
+    :cond_0
     move/from16 v1, p1
 
     .end local p1    # "left":F
     .restart local v1    # "left":F
-    :goto_a
+    :goto_0
     and-int/lit8 v2, p7, 0x2
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_1
 
     .line 216
     const/4 v2, 0x0
@@ -466,20 +466,20 @@
 
     .end local p2    # "top":F
     .local v2, "top":F
-    goto :goto_13
+    goto :goto_1
 
     .line 214
     .end local v2    # "top":F
     .restart local p2    # "top":F
-    :cond_11
+    :cond_1
     move/from16 v8, p2
 
     .end local p2    # "top":F
     .local v8, "top":F
-    :goto_13
+    :goto_1
     and-int/lit8 v2, p7, 0x4
 
-    if-eqz v2, :cond_21
+    if-eqz v2, :cond_2
 
     .line 217
     invoke-interface/range {p0 .. p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -494,20 +494,20 @@
 
     .end local p3    # "right":F
     .local v2, "right":F
-    goto :goto_23
+    goto :goto_2
 
     .line 214
     .end local v2    # "right":F
     .restart local p3    # "right":F
-    :cond_21
+    :cond_2
     move/from16 v9, p3
 
     .end local p3    # "right":F
     .local v9, "right":F
-    :goto_23
+    :goto_2
     and-int/lit8 v2, p7, 0x8
 
-    if-eqz v2, :cond_31
+    if-eqz v2, :cond_3
 
     .line 218
     invoke-interface/range {p0 .. p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -522,20 +522,20 @@
 
     .end local p4    # "bottom":F
     .local v2, "bottom":F
-    goto :goto_33
+    goto :goto_3
 
     .line 214
     .end local v2    # "bottom":F
     .restart local p4    # "bottom":F
-    :cond_31
+    :cond_3
     move/from16 v10, p4
 
     .end local p4    # "bottom":F
     .local v10, "bottom":F
-    :goto_33
+    :goto_3
     and-int/lit8 v2, p7, 0x10
 
-    if-eqz v2, :cond_3f
+    if-eqz v2, :cond_4
 
     .line 219
     sget-object v2, Landroidx/compose/ui/graphics/ClipOp;->Companion:Landroidx/compose/ui/graphics/ClipOp$Companion;
@@ -548,17 +548,17 @@
 
     .end local p5    # "clipOp":I
     .local v2, "clipOp":I
-    goto :goto_41
+    goto :goto_4
 
     .line 214
     .end local v2    # "clipOp":I
     .restart local p5    # "clipOp":I
-    :cond_3f
+    :cond_4
     move/from16 v11, p5
 
     .end local p5    # "clipOp":I
     .local v11, "clipOp":I
-    :goto_41
+    :goto_4
     const-string v2, "$this$clipRect"
 
     move-object/from16 v12, p0
@@ -678,7 +678,7 @@
 .end method
 
 .method public static final drawIntoCanvas(Landroidx/compose/ui/graphics/drawscope/DrawScope;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .param p0, "$this$drawIntoCanvas"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -719,7 +719,7 @@
 .end method
 
 .method public static final inset(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFFFLkotlin/jvm/functions/Function1;)V
-    .registers 12
+    .locals 6
     .param p0, "$this$inset"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "left"    # F
     .param p2, "top"    # F
@@ -788,7 +788,7 @@
 .end method
 
 .method public static final inset(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFLkotlin/jvm/functions/Function1;)V
-    .registers 12
+    .locals 8
     .param p0, "$this$inset"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "horizontal"    # F
     .param p2, "vertical"    # F
@@ -867,7 +867,7 @@
 .end method
 
 .method public static final inset(Landroidx/compose/ui/graphics/drawscope/DrawScope;FLkotlin/jvm/functions/Function1;)V
-    .registers 9
+    .locals 6
     .param p0, "$this$inset"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "inset"    # F
     .param p2, "block"    # Lkotlin/jvm/functions/Function1;
@@ -933,7 +933,7 @@
 .end method
 
 .method public static synthetic inset$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 12
+    .locals 6
     .param p0, "$this$inset_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "horizontal"    # F
     .param p2, "vertical"    # F
@@ -942,22 +942,22 @@
     .line 100
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     .line 101
     const/4 p1, 0x0
 
     .line 100
-    :cond_5
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_1
 
     .line 102
     const/4 p2, 0x0
 
     .line 100
-    :cond_a
+    :cond_1
     const-string p4, "<this>"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1019,7 +1019,7 @@
 .end method
 
 .method public static final rotate-Rg1IO4c(Landroidx/compose/ui/graphics/drawscope/DrawScope;FJLkotlin/jvm/functions/Function1;)V
-    .registers 14
+    .locals 9
     .param p0, "$this$rotate_u2dRg1IO4c"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "degrees"    # F
     .param p2, "pivot"    # J
@@ -1126,7 +1126,7 @@
 .end method
 
 .method public static synthetic rotate-Rg1IO4c$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;FJLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 14
+    .locals 7
     .param p0, "$this$rotate_u2dRg1IO4c_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "degrees"    # F
     .param p2, "pivot"    # J
@@ -1135,7 +1135,7 @@
     .line 136
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 138
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getCenter-F1C5BW0()J
@@ -1143,7 +1143,7 @@
     move-result-wide p2
 
     .line 136
-    :cond_8
+    :cond_0
     const-string p5, "$this$rotate"
 
     invoke-static {p0, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1233,7 +1233,7 @@
 .end method
 
 .method public static final rotateRad-Rg1IO4c(Landroidx/compose/ui/graphics/drawscope/DrawScope;FJLkotlin/jvm/functions/Function1;)V
-    .registers 15
+    .locals 10
     .param p0, "$this$rotateRad_u2dRg1IO4c"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "radians"    # F
     .param p2, "pivot"    # J
@@ -1344,7 +1344,7 @@
 .end method
 
 .method public static synthetic rotateRad-Rg1IO4c$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;FJLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 15
+    .locals 8
     .param p0, "$this$rotateRad_u2dRg1IO4c_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "radians"    # F
     .param p2, "pivot"    # J
@@ -1353,7 +1353,7 @@
     .line 152
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 154
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getCenter-F1C5BW0()J
@@ -1361,7 +1361,7 @@
     move-result-wide p2
 
     .line 152
-    :cond_8
+    :cond_0
     const-string p5, "$this$rotateRad"
 
     invoke-static {p0, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1455,7 +1455,7 @@
 .end method
 
 .method public static final scale-Fgt4K4Q(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFJLkotlin/jvm/functions/Function1;)V
-    .registers 15
+    .locals 9
     .param p0, "$this$scale_u2dFgt4K4Q"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
@@ -1563,7 +1563,7 @@
 .end method
 
 .method public static synthetic scale-Fgt4K4Q$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFJLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 15
+    .locals 7
     .param p0, "$this$scale_u2dFgt4K4Q_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
@@ -1573,7 +1573,7 @@
     .line 173
     and-int/lit8 p6, p6, 0x4
 
-    if-eqz p6, :cond_8
+    if-eqz p6, :cond_0
 
     .line 176
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getCenter-F1C5BW0()J
@@ -1581,7 +1581,7 @@
     move-result-wide p3
 
     .line 173
-    :cond_8
+    :cond_0
     const-string p6, "$this$scale"
 
     invoke-static {p0, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1671,7 +1671,7 @@
 .end method
 
 .method public static final scale-Rg1IO4c(Landroidx/compose/ui/graphics/drawscope/DrawScope;FJLkotlin/jvm/functions/Function1;)V
-    .registers 14
+    .locals 9
     .param p0, "$this$scale_u2dRg1IO4c"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "scale"    # F
     .param p2, "pivot"    # J
@@ -1778,7 +1778,7 @@
 .end method
 
 .method public static synthetic scale-Rg1IO4c$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;FJLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 14
+    .locals 7
     .param p0, "$this$scale_u2dRg1IO4c_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "scale"    # F
     .param p2, "pivot"    # J
@@ -1787,7 +1787,7 @@
     .line 191
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 193
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getCenter-F1C5BW0()J
@@ -1795,7 +1795,7 @@
     move-result-wide p2
 
     .line 191
-    :cond_8
+    :cond_0
     const-string p5, "$this$scale"
 
     invoke-static {p0, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1885,7 +1885,7 @@
 .end method
 
 .method public static final translate(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFLkotlin/jvm/functions/Function1;)V
-    .registers 8
+    .locals 4
     .param p0, "$this$translate"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "left"    # F
     .param p2, "top"    # F
@@ -1948,7 +1948,7 @@
 .end method
 
 .method public static synthetic translate$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;FFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 8
+    .locals 2
     .param p0, "$this$translate_u24default"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "left"    # F
     .param p2, "top"    # F
@@ -1957,22 +1957,22 @@
     .line 115
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     .line 116
     const/4 p1, 0x0
 
     .line 115
-    :cond_5
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_1
 
     .line 117
     const/4 p2, 0x0
 
     .line 115
-    :cond_a
+    :cond_1
     const-string p4, "<this>"
 
     invoke-static {p0, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -2018,7 +2018,7 @@
 .end method
 
 .method public static final withTransform(Landroidx/compose/ui/graphics/drawscope/DrawScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 9
+    .locals 6
     .param p0, "$this$withTransform"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "transformBlock"    # Lkotlin/jvm/functions/Function1;
     .param p2, "drawBlock"    # Lkotlin/jvm/functions/Function1;

@@ -70,7 +70,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 31
     iget-object v0, p0, Landroidx/compose/runtime/Stack;->backing:Ljava/util/ArrayList;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 23
     iget-object v0, p0, Landroidx/compose/runtime/Stack;->backing:Ljava/util/ArrayList;
@@ -113,7 +113,7 @@
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 29
     iget-object v0, p0, Landroidx/compose/runtime/Stack;->backing:Ljava/util/ArrayList;
@@ -126,7 +126,7 @@
 .end method
 
 .method public final isNotEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 30
     invoke-virtual {p0}, Landroidx/compose/runtime/Stack;->isEmpty()Z
@@ -139,7 +139,7 @@
 .end method
 
 .method public final peek()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -163,7 +163,7 @@
 .end method
 
 .method public final peek(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -182,7 +182,7 @@
 .end method
 
 .method public final pop()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -206,7 +206,7 @@
 .end method
 
 .method public final push(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -225,7 +225,7 @@
 .end method
 
 .method public final toArray()[Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()[TT;"
@@ -243,8 +243,8 @@
 
     const/4 v2, 0x0
 
-    :goto_9
-    if-ge v2, v0, :cond_16
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     iget-object v3, p0, Landroidx/compose/runtime/Stack;->backing:Ljava/util/ArrayList;
 
@@ -256,8 +256,8 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     return-object v1
 .end method

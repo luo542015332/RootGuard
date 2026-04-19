@@ -83,7 +83,7 @@
 
 # direct methods
 .method public static final Paint()Landroidx/compose/ui/graphics/Paint;
-    .registers 1
+    .locals 1
 
     .line 25
     new-instance v0, Landroidx/compose/ui/graphics/AndroidPaint;
@@ -96,7 +96,7 @@
 .end method
 
 .method public static final asComposePaint(Landroid/graphics/Paint;)Landroidx/compose/ui/graphics/Paint;
-    .registers 2
+    .locals 1
     .param p0, "$this$asComposePaint"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -114,7 +114,7 @@
 .end method
 
 .method public static final getNativeAlpha(Landroid/graphics/Paint;)F
-    .registers 3
+    .locals 2
     .param p0, "$this$getNativeAlpha"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -136,7 +136,7 @@
 .end method
 
 .method public static final getNativeAntiAlias(Landroid/graphics/Paint;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$getNativeAntiAlias"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -152,7 +152,7 @@
 .end method
 
 .method public static final getNativeColor(Landroid/graphics/Paint;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$getNativeColor"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -172,7 +172,7 @@
 .end method
 
 .method public static final getNativeFilterQuality(Landroid/graphics/Paint;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$getNativeFilterQuality"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -184,7 +184,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     .line 237
     sget-object v0, Landroidx/compose/ui/graphics/FilterQuality;->Companion:Landroidx/compose/ui/graphics/FilterQuality$Companion;
@@ -193,10 +193,10 @@
 
     move-result v0
 
-    goto :goto_18
+    goto :goto_0
 
     .line 244
-    :cond_12
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/FilterQuality;->Companion:Landroidx/compose/ui/graphics/FilterQuality$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/FilterQuality$Companion;->getLow-f-v9h1I()I
@@ -204,12 +204,12 @@
     move-result v0
 
     .line 245
-    :goto_18
+    :goto_0
     return v0
 .end method
 
 .method public static final getNativeStrokeCap(Landroid/graphics/Paint;)I
-    .registers 3
+    .locals 2
     .param p0, "$this$getNativeStrokeCap"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -221,13 +221,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     sget-object v1, Landroidx/compose/ui/graphics/AndroidPaint_androidKt$WhenMappings;->$EnumSwitchMapping$1:[I
 
     invoke-virtual {v0}, Landroid/graphics/Paint$Cap;->ordinal()I
@@ -236,8 +236,8 @@
 
     aget v0, v1, v0
 
-    :goto_15
-    packed-switch v0, :pswitch_data_34
+    :goto_0
+    packed-switch v0, :pswitch_data_0
 
     .line 199
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
@@ -246,30 +246,30 @@
 
     move-result v0
 
-    goto :goto_33
+    goto :goto_1
 
     .line 198
-    :pswitch_1f
+    :pswitch_0
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getSquare-KaPHkGw()I
 
     move-result v0
 
-    goto :goto_33
+    goto :goto_1
 
     .line 197
-    :pswitch_26
+    :pswitch_1
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getRound-KaPHkGw()I
 
     move-result v0
 
-    goto :goto_33
+    goto :goto_1
 
     .line 196
-    :pswitch_2d
+    :pswitch_2
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getButt-KaPHkGw()I
@@ -277,19 +277,19 @@
     move-result v0
 
     .line 200
-    :goto_33
+    :goto_1
     return v0
 
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2d
-        :pswitch_26
-        :pswitch_1f
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static final getNativeStrokeJoin(Landroid/graphics/Paint;)I
-    .registers 3
+    .locals 2
     .param p0, "$this$getNativeStrokeJoin"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -301,13 +301,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     sget-object v1, Landroidx/compose/ui/graphics/AndroidPaint_androidKt$WhenMappings;->$EnumSwitchMapping$2:[I
 
     invoke-virtual {v0}, Landroid/graphics/Paint$Join;->ordinal()I
@@ -316,8 +316,8 @@
 
     aget v0, v1, v0
 
-    :goto_15
-    packed-switch v0, :pswitch_data_34
+    :goto_0
+    packed-switch v0, :pswitch_data_0
 
     .line 216
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
@@ -326,30 +326,30 @@
 
     move-result v0
 
-    goto :goto_33
+    goto :goto_1
 
     .line 215
-    :pswitch_1f
+    :pswitch_0
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getRound-LxFBmk8()I
 
     move-result v0
 
-    goto :goto_33
+    goto :goto_1
 
     .line 214
-    :pswitch_26
+    :pswitch_1
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getBevel-LxFBmk8()I
 
     move-result v0
 
-    goto :goto_33
+    goto :goto_1
 
     .line 213
-    :pswitch_2d
+    :pswitch_2
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getMiter-LxFBmk8()I
@@ -357,19 +357,19 @@
     move-result v0
 
     .line 217
-    :goto_33
+    :goto_1
     return v0
 
-    :pswitch_data_34
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2d
-        :pswitch_26
-        :pswitch_1f
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static final getNativeStrokeMiterLimit(Landroid/graphics/Paint;)F
-    .registers 2
+    .locals 1
     .param p0, "$this$getNativeStrokeMiterLimit"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -385,7 +385,7 @@
 .end method
 
 .method public static final getNativeStrokeWidth(Landroid/graphics/Paint;)F
-    .registers 2
+    .locals 1
     .param p0, "$this$getNativeStrokeWidth"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -401,7 +401,7 @@
 .end method
 
 .method public static final getNativeStyle(Landroid/graphics/Paint;)I
-    .registers 3
+    .locals 2
     .param p0, "$this$getNativeStyle"    # Landroid/graphics/Paint;
 
     const-string v0, "<this>"
@@ -413,13 +413,13 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     sget-object v1, Landroidx/compose/ui/graphics/AndroidPaint_androidKt$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {v0}, Landroid/graphics/Paint$Style;->ordinal()I
@@ -429,10 +429,10 @@
     aget v0, v1, v0
 
     .line 184
-    :goto_15
+    :goto_0
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_1
 
     sget-object v0, Landroidx/compose/ui/graphics/PaintingStyle;->Companion:Landroidx/compose/ui/graphics/PaintingStyle$Companion;
 
@@ -440,10 +440,10 @@
 
     move-result v0
 
-    goto :goto_25
+    goto :goto_1
 
     .line 185
-    :cond_1f
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/PaintingStyle;->Companion:Landroidx/compose/ui/graphics/PaintingStyle$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PaintingStyle$Companion;->getFill-TiuSbCo()I
@@ -451,12 +451,12 @@
     move-result v0
 
     .line 186
-    :goto_25
+    :goto_1
     return v0
 .end method
 
 .method public static final makeNativePaint()Landroid/graphics/Paint;
-    .registers 2
+    .locals 2
 
     .line 137
     new-instance v0, Landroid/graphics/Paint;
@@ -474,7 +474,7 @@
 .end method
 
 .method public static final setNativeAlpha(Landroid/graphics/Paint;F)V
-    .registers 4
+    .locals 2
     .param p0, "$this$setNativeAlpha"    # Landroid/graphics/Paint;
     .param p1, "value"    # F
 
@@ -504,7 +504,7 @@
 .end method
 
 .method public static final setNativeAntiAlias(Landroid/graphics/Paint;Z)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeAntiAlias"    # Landroid/graphics/Paint;
     .param p1, "value"    # Z
 
@@ -520,7 +520,7 @@
 .end method
 
 .method public static final setNativeBlendMode-GB0RdKg(Landroid/graphics/Paint;I)V
-    .registers 4
+    .locals 2
     .param p0, "$this$setNativeBlendMode_u2dGB0RdKg"    # Landroid/graphics/Paint;
     .param p1, "mode"    # I
 
@@ -533,17 +533,17 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 146
     sget-object v0, Landroidx/compose/ui/graphics/WrapperVerificationHelperMethods;->INSTANCE:Landroidx/compose/ui/graphics/WrapperVerificationHelperMethods;
 
     invoke-virtual {v0, p0, p1}, Landroidx/compose/ui/graphics/WrapperVerificationHelperMethods;->setBlendMode-GB0RdKg(Landroid/graphics/Paint;I)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 149
-    :cond_11
+    :cond_0
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
 
     invoke-static {p1}, Landroidx/compose/ui/graphics/AndroidBlendMode_androidKt;->toPorterDuffMode-s9anfk8(I)Landroid/graphics/PorterDuff$Mode;
@@ -557,12 +557,12 @@
     invoke-virtual {p0, v0}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
     .line 151
-    :goto_1f
+    :goto_0
     return-void
 .end method
 
 .method public static final setNativeColor-4WTKRHQ(Landroid/graphics/Paint;J)V
-    .registers 4
+    .locals 1
     .param p0, "$this$setNativeColor_u2d4WTKRHQ"    # Landroid/graphics/Paint;
     .param p1, "value"    # J
 
@@ -582,7 +582,7 @@
 .end method
 
 .method public static final setNativeColorFilter(Landroid/graphics/Paint;Landroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeColorFilter"    # Landroid/graphics/Paint;
     .param p1, "value"    # Landroidx/compose/ui/graphics/ColorFilter;
 
@@ -591,18 +591,18 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 154
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     invoke-static {p1}, Landroidx/compose/ui/graphics/AndroidColorFilter_androidKt;->asAndroidColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
     move-result-object v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
     .line 155
@@ -610,7 +610,7 @@
 .end method
 
 .method public static final setNativeFilterQuality-50PEsBU(Landroid/graphics/Paint;I)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeFilterQuality_u2d50PEsBU"    # Landroid/graphics/Paint;
     .param p1, "value"    # I
 
@@ -638,7 +638,7 @@
 .end method
 
 .method public static final setNativePathEffect(Landroid/graphics/Paint;Landroidx/compose/ui/graphics/PathEffect;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativePathEffect"    # Landroid/graphics/Paint;
     .param p1, "value"    # Landroidx/compose/ui/graphics/PathEffect;
 
@@ -651,18 +651,18 @@
 
     check-cast v0, Landroidx/compose/ui/graphics/AndroidPathEffect;
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/AndroidPathEffect;->getNativePathEffect()Landroid/graphics/PathEffect;
 
     move-result-object v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
     .line 257
@@ -670,7 +670,7 @@
 .end method
 
 .method public static final setNativeShader(Landroid/graphics/Paint;Landroid/graphics/Shader;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeShader"    # Landroid/graphics/Paint;
     .param p1, "value"    # Landroid/graphics/Shader;
 
@@ -686,7 +686,7 @@
 .end method
 
 .method public static final setNativeStrokeCap-CSYIeUk(Landroid/graphics/Paint;I)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeStrokeCap_u2dCSYIeUk"    # Landroid/graphics/Paint;
     .param p1, "value"    # I
 
@@ -708,14 +708,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/graphics/Paint$Cap;->SQUARE:Landroid/graphics/Paint$Cap;
 
-    goto :goto_35
+    goto :goto_0
 
     .line 205
-    :cond_15
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getRound-KaPHkGw()I
@@ -726,14 +726,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
-    goto :goto_35
+    goto :goto_0
 
     .line 206
-    :cond_24
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getButt-KaPHkGw()I
@@ -744,18 +744,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2
 
     sget-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
-    goto :goto_35
+    goto :goto_0
 
     .line 207
-    :cond_33
+    :cond_2
     sget-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
 
     .line 203
-    :goto_35
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
     .line 209
@@ -763,7 +763,7 @@
 .end method
 
 .method public static final setNativeStrokeJoin-kLtJ_vA(Landroid/graphics/Paint;I)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeStrokeJoin_u2dkLtJ_vA"    # Landroid/graphics/Paint;
     .param p1, "value"    # I
 
@@ -785,14 +785,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
-    goto :goto_35
+    goto :goto_0
 
     .line 222
-    :cond_15
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getBevel-LxFBmk8()I
@@ -803,14 +803,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     sget-object v0, Landroid/graphics/Paint$Join;->BEVEL:Landroid/graphics/Paint$Join;
 
-    goto :goto_35
+    goto :goto_0
 
     .line 223
-    :cond_24
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getRound-LxFBmk8()I
@@ -821,18 +821,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2
 
     sget-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
-    goto :goto_35
+    goto :goto_0
 
     .line 224
-    :cond_33
+    :cond_2
     sget-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
 
     .line 220
-    :goto_35
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
     .line 226
@@ -840,7 +840,7 @@
 .end method
 
 .method public static final setNativeStrokeMiterLimit(Landroid/graphics/Paint;F)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeStrokeMiterLimit"    # Landroid/graphics/Paint;
     .param p1, "value"    # F
 
@@ -856,7 +856,7 @@
 .end method
 
 .method public static final setNativeStrokeWidth(Landroid/graphics/Paint;F)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeStrokeWidth"    # Landroid/graphics/Paint;
     .param p1, "value"    # F
 
@@ -872,7 +872,7 @@
 .end method
 
 .method public static final setNativeStyle--5YerkU(Landroid/graphics/Paint;I)V
-    .registers 3
+    .locals 1
     .param p0, "$this$setNativeStyle_u2d_u2d5YerkU"    # Landroid/graphics/Paint;
     .param p1, "value"    # I
 
@@ -894,18 +894,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
-    goto :goto_17
+    goto :goto_0
 
     .line 179
-    :cond_15
+    :cond_0
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     .line 177
-    :goto_17
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 181

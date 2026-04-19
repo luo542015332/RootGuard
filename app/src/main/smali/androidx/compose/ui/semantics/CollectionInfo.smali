@@ -42,13 +42,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
     .param p1, "rowCount"    # I
     .param p2, "columnCount"    # I
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final getColumnCount()I
-    .registers 2
+    .locals 1
 
     .line 563
     iget v0, p0, Landroidx/compose/ui/semantics/CollectionInfo;->columnCount:I
@@ -74,7 +74,7 @@
 .end method
 
 .method public final getRowCount()I
-    .registers 2
+    .locals 1
 
     .line 563
     iget v0, p0, Landroidx/compose/ui/semantics/CollectionInfo;->rowCount:I

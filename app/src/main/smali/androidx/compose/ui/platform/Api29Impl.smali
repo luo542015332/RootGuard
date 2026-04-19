@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/Api29Impl;
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 79
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final getRecommendedTimeoutMillis(Landroid/view/accessibility/AccessibilityManager;II)I
-    .registers 5
+    .locals 1
     .param p1, "accessibilityManager"    # Landroid/view/accessibility/AccessibilityManager;
     .param p2, "originalTimeout"    # I
     .param p3, "uiContentFlags"    # I

@@ -93,7 +93,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;
 
@@ -126,7 +126,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 455
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public getAfterContentPadding()I
-    .registers 2
+    .locals 1
 
     .line 465
     sget v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->afterContentPadding:I
@@ -146,7 +146,7 @@
 .end method
 
 .method public getBeforeContentPadding()I
-    .registers 2
+    .locals 1
 
     .line 464
     sget v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->beforeContentPadding:I
@@ -155,7 +155,7 @@
 .end method
 
 .method public getMainAxisItemSpacing()I
-    .registers 2
+    .locals 1
 
     .line 466
     sget v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->mainAxisItemSpacing:I
@@ -164,7 +164,7 @@
 .end method
 
 .method public getOrientation()Landroidx/compose/foundation/gestures/Orientation;
-    .registers 2
+    .locals 1
 
     .line 462
     sget-object v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->orientation:Landroidx/compose/foundation/gestures/Orientation;
@@ -173,7 +173,7 @@
 .end method
 
 .method public getReverseLayout()Z
-    .registers 2
+    .locals 1
 
     .line 463
     sget-boolean v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->reverseLayout:Z
@@ -182,7 +182,7 @@
 .end method
 
 .method public getTotalItemsCount()I
-    .registers 2
+    .locals 1
 
     .line 460
     sget v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->totalItemsCount:I
@@ -191,7 +191,7 @@
 .end method
 
 .method public getViewportEndOffset()I
-    .registers 2
+    .locals 1
 
     .line 459
     sget v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->viewportEndOffset:I
@@ -200,7 +200,7 @@
 .end method
 
 .method public getViewportSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 461
     sget-wide v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->viewportSize:J
@@ -209,7 +209,7 @@
 .end method
 
 .method public getViewportStartOffset()I
-    .registers 2
+    .locals 1
 
     .line 458
     sget v0, Landroidx/compose/foundation/lazy/grid/EmptyLazyGridLayoutInfo;->viewportStartOffset:I
@@ -218,7 +218,7 @@
 .end method
 
 .method public getVisibleItemsInfo()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

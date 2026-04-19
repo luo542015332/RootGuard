@@ -64,7 +64,7 @@
 
 # direct methods
 .method public static synthetic access$getExtendedTouchPadding-NH-jbRc$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
 
     .line 60
@@ -76,7 +76,7 @@
 .end method
 
 .method public static synthetic access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # J
 
@@ -89,7 +89,7 @@
 .end method
 
 .method public static synthetic access$roundToPx-0680j_4$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # F
 
@@ -102,7 +102,7 @@
 .end method
 
 .method public static synthetic access$toDp-GaN1DYA$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # J
 
@@ -115,7 +115,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # F
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # I
 
@@ -141,7 +141,7 @@
 .end method
 
 .method public static synthetic access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # J
 
@@ -154,7 +154,7 @@
 .end method
 
 .method public static synthetic access$toPx--R2X_6o$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # J
 
@@ -167,7 +167,7 @@
 .end method
 
 .method public static synthetic access$toPx-0680j_4$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # F
 
@@ -180,7 +180,7 @@
 .end method
 
 .method public static synthetic access$toRect$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
 
@@ -193,7 +193,7 @@
 .end method
 
 .method public static synthetic access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # J
 
@@ -206,7 +206,7 @@
 .end method
 
 .method public static synthetic access$toSp-0xMU5do$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # F
 
@@ -219,7 +219,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # F
 
@@ -232,7 +232,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "$receiver"    # I
 
@@ -245,7 +245,7 @@
 .end method
 
 .method public static synthetic access$withTimeout$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "timeMillis"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function2;
@@ -260,7 +260,7 @@
 .end method
 
 .method public static synthetic access$withTimeoutOrNull$jd(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "timeMillis"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function2;
@@ -275,27 +275,27 @@
 .end method
 
 .method public static synthetic awaitPointerEvent$default(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 0
 
     .line 97
-    if-nez p4, :cond_d
+    if-nez p4, :cond_1
 
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_0
 
     .line 98
     sget-object p1, Landroidx/compose/ui/input/pointer/PointerEventPass;->Main:Landroidx/compose/ui/input/pointer/PointerEventPass;
 
     .line 97
-    :cond_8
+    :cond_0
     invoke-interface {p0, p1, p2}, Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;->awaitPointerEvent(Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_d
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: awaitPointerEvent"
@@ -306,7 +306,7 @@
 .end method
 
 .method public static synthetic withTimeout$suspendImpl(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "timeMillis"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function2;
@@ -341,7 +341,7 @@
 .end method
 
 .method public static synthetic withTimeoutOrNull$suspendImpl(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .param p1, "timeMillis"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function2;
@@ -395,7 +395,7 @@
 .end method
 
 .method public getExtendedTouchPadding-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 75
     sget-object v0, Landroidx/compose/ui/geometry/Size;->Companion:Landroidx/compose/ui/geometry/Size$Companion;
@@ -414,7 +414,7 @@
 .end method
 
 .method public withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -442,7 +442,7 @@
 .end method
 
 .method public withTimeoutOrNull(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

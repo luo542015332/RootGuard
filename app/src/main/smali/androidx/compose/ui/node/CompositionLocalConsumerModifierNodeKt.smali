@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final currentValueOf(Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p0, "$this$currentValueOf"    # Landroidx/compose/ui/node/CompositionLocalConsumerModifierNode;
     .param p1, "local"    # Landroidx/compose/runtime/CompositionLocal;
     .annotation system Ldalvik/annotation/Signature;
@@ -60,7 +60,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 75
     move-object v0, p0
@@ -82,7 +82,7 @@
     return-object v0
 
     .line 72
-    :cond_25
+    :cond_0
     const/4 v0, 0x0
 
     .line 73

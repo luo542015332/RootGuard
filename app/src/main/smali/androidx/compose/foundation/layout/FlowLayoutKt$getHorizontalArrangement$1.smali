@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/layout/Arrangement$Horizontal;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/layout/FlowLayoutKt$getHorizontalArrangement$1;->$horizontalArrangement:Landroidx/compose/foundation/layout/Arrangement$Horizontal;
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
+    .locals 7
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -120,7 +120,7 @@
 .end method
 
 .method public final invoke(I[ILandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;[I)V
-    .registers 14
+    .locals 8
     .param p1, "totalSize"    # I
     .param p2, "size"    # [I
     .param p3, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;

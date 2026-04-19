@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function3;I)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     move-object v0, p1
 
@@ -109,7 +109,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LookaheadScopeKt$LookaheadScope$4;->$content:Lkotlin/jvm/functions/Function3;
 

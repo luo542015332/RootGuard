@@ -154,7 +154,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/ComposerImpl;IZ)V
-    .registers 7
+    .locals 3
     .param p1, "this$0"    # Landroidx/compose/runtime/ComposerImpl;
     .param p2, "compoundHashKey"    # I
     .param p3, "collectingParameterInformation"    # Z
@@ -209,7 +209,7 @@
 .end method
 
 .method private final getCompositionLocalScope()Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 4
+    .locals 3
 
     .line 4032
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->compositionLocalScope$delegate:Landroidx/compose/runtime/MutableState;
@@ -238,13 +238,13 @@
 .end method
 
 .method public static synthetic getRecomposeCoroutineContext$runtime_release$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private final setCompositionLocalScope(Landroidx/compose/runtime/PersistentCompositionLocalMap;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
 
     .line 4032
@@ -273,7 +273,7 @@
 
 # virtual methods
 .method public composeInitial$runtime_release(Landroidx/compose/runtime/ControlledComposition;Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -301,7 +301,6 @@
     .line 4007
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -313,7 +312,7 @@
 .end method
 
 .method public deletedMovableContent$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 3
+    .locals 1
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
     const-string/jumbo v0, "reference"
@@ -323,7 +322,6 @@
     .line 4064
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -335,7 +333,7 @@
 .end method
 
 .method public final dispose()V
-    .registers 8
+    .locals 7
 
     .line 3965
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->composers:Ljava/util/Set;
@@ -348,12 +346,12 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_3
 
     .line 3966
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->inspectionTables:Ljava/util/Set;
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_2
 
     .local v0, "it":Ljava/util/Set;
     const/4 v1, 0x0
@@ -366,12 +364,12 @@
 
     move-result-object v2
 
-    :cond_17
+    :cond_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_3b
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -385,12 +383,12 @@
 
     move-result-object v4
 
-    :goto_27
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_17
+    if-eqz v5, :cond_0
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -400,19 +398,18 @@
 
     .line 3969
     .local v5, "table":Ljava/util/Set;
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->slotTable:Landroidx/compose/runtime/SlotTable;
     invoke-static {v3}, Landroidx/compose/runtime/ComposerImpl;->access$getSlotTable$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/SlotTable;
 
     move-result-object v6
 
     invoke-interface {v5, v6}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_27
+    goto :goto_0
 
     .line 3971
     .end local v3    # "composer":Landroidx/compose/runtime/ComposerImpl;
     .end local v5    # "table":Ljava/util/Set;
-    :cond_3b
+    :cond_1
     nop
 
     .line 3966
@@ -421,23 +418,22 @@
     nop
 
     .line 3972
-    :cond_3d
+    :cond_2
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->composers:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->clear()V
 
     .line 3974
-    :cond_42
+    :cond_3
     return-void
 .end method
 
 .method public doneComposing$runtime_release()V
-    .registers 3
+    .locals 2
 
     .line 4056
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->childrenComposing:I
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getChildrenComposing$p(Landroidx/compose/runtime/ComposerImpl;)I
 
     move-result v1
@@ -451,7 +447,7 @@
 .end method
 
 .method public getCollectingParameterInformation$runtime_release()Z
-    .registers 2
+    .locals 1
 
     .line 3959
     iget-boolean v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->collectingParameterInformation:Z
@@ -460,7 +456,7 @@
 .end method
 
 .method public final getComposers()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -477,7 +473,7 @@
 .end method
 
 .method public getCompositionLocalScope$runtime_release()Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 2
+    .locals 1
 
     .line 4037
     invoke-direct {p0}, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->getCompositionLocalScope()Landroidx/compose/runtime/PersistentCompositionLocalMap;
@@ -488,7 +484,7 @@
 .end method
 
 .method public getCompoundHashKey$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 3958
     iget v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->compoundHashKey:I
@@ -497,12 +493,11 @@
 .end method
 
 .method public getEffectCoroutineContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 3995
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -515,7 +510,7 @@
 .end method
 
 .method public final getInspectionTables()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -533,7 +528,7 @@
 .end method
 
 .method public getRecomposeCoroutineContext$runtime_release()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 4001
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
@@ -550,7 +545,7 @@
 .end method
 
 .method public insertMovableContent$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 3
+    .locals 1
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
     const-string/jumbo v0, "reference"
@@ -560,7 +555,6 @@
     .line 4060
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -572,7 +566,7 @@
 .end method
 
 .method public invalidate$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 4
+    .locals 2
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -582,7 +576,6 @@
     .line 4020
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -598,7 +591,6 @@
     .line 4021
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -610,7 +602,7 @@
 .end method
 
 .method public invalidateScope$runtime_release(Landroidx/compose/runtime/RecomposeScopeImpl;)V
-    .registers 3
+    .locals 1
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
 
     const-string/jumbo v0, "scope"
@@ -620,7 +612,6 @@
     .line 4025
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -632,7 +623,7 @@
 .end method
 
 .method public movableContentStateReleased$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;Landroidx/compose/runtime/MovableContentState;)V
-    .registers 4
+    .locals 1
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
     .param p2, "data"    # Landroidx/compose/runtime/MovableContentState;
 
@@ -647,7 +638,6 @@
     .line 4075
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -659,7 +649,7 @@
 .end method
 
 .method public movableContentStateResolve$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;)Landroidx/compose/runtime/MovableContentState;
-    .registers 3
+    .locals 1
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
     const-string/jumbo v0, "reference"
@@ -669,7 +659,6 @@
     .line 4069
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -682,7 +671,7 @@
 .end method
 
 .method public recordInspectionTable$runtime_release(Ljava/util/Set;)V
-    .registers 6
+    .locals 4
     .param p1, "table"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -700,7 +689,7 @@
     .line 4045
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->inspectionTables:Ljava/util/Set;
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     new-instance v0, Ljava/util/HashSet;
 
@@ -728,7 +717,7 @@
     check-cast v0, Ljava/util/Set;
 
     .line 4048
-    :cond_19
+    :cond_0
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 4049
@@ -736,7 +725,7 @@
 .end method
 
 .method public registerComposer$runtime_release(Landroidx/compose/runtime/Composer;)V
-    .registers 3
+    .locals 1
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
 
     const-string/jumbo v0, "composer"
@@ -762,7 +751,7 @@
 .end method
 
 .method public registerComposition$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 3
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -772,7 +761,6 @@
     .line 3987
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -784,7 +772,7 @@
 .end method
 
 .method public reportRemovedComposition$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 3
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -794,7 +782,6 @@
     .line 4079
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -806,7 +793,7 @@
 .end method
 
 .method public final setInspectionTables(Ljava/util/Set;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -825,12 +812,11 @@
 .end method
 
 .method public startComposing$runtime_release()V
-    .registers 3
+    .locals 2
 
     .line 4052
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->childrenComposing:I
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getChildrenComposing$p(Landroidx/compose/runtime/ComposerImpl;)I
 
     move-result v1
@@ -844,7 +830,7 @@
 .end method
 
 .method public unregisterComposer$runtime_release(Landroidx/compose/runtime/Composer;)V
-    .registers 9
+    .locals 7
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
 
     const-string/jumbo v0, "composer"
@@ -854,7 +840,7 @@
     .line 3982
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->inspectionTables:Ljava/util/Set;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     check-cast v0, Ljava/lang/Iterable;
 
@@ -867,12 +853,12 @@
 
     move-result-object v2
 
-    :goto_11
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -892,7 +878,6 @@
 
     check-cast v6, Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->slotTable:Landroidx/compose/runtime/SlotTable;
     invoke-static {v6}, Landroidx/compose/runtime/ComposerImpl;->access$getSlotTable$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/SlotTable;
 
     move-result-object v6
@@ -905,16 +890,16 @@
     nop
 
     .end local v3    # "element$iv":Ljava/lang/Object;
-    goto :goto_11
+    goto :goto_0
 
     .line 4565
-    :cond_2b
+    :cond_0
     nop
 
     .line 3983
     .end local v0    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$forEach":I
-    :cond_2c
+    :cond_1
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->composers:Ljava/util/Set;
 
     check-cast v0, Ljava/util/Collection;
@@ -930,7 +915,7 @@
 .end method
 
 .method public unregisterComposition$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 3
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -940,7 +925,6 @@
     .line 3991
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$CompositionContextImpl;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object v0
@@ -952,7 +936,7 @@
 .end method
 
 .method public final updateCompositionLocalScope(Landroidx/compose/runtime/PersistentCompositionLocalMap;)V
-    .registers 3
+    .locals 1
     .param p1, "scope"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
 
     const-string/jumbo v0, "scope"

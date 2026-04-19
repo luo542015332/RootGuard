@@ -125,7 +125,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 43
     sget-object v0, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$LocalConfiguration$1;->INSTANCE:Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$LocalConfiguration$1;
@@ -201,7 +201,7 @@
 .end method
 
 .method public static final ProvideAndroidCompositionLocals(Landroidx/compose/ui/platform/AndroidComposeView;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
-    .registers 24
+    .locals 20
     .param p0, "owner"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p1, "content"    # Lkotlin/jvm/functions/Function2;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -256,7 +256,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2d
+    if-eqz v5, :cond_0
 
     const/4 v5, -0x1
 
@@ -265,7 +265,7 @@
     invoke-static {v2, v4, v5, v6}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 85
-    :cond_2d
+    :cond_0
     move-object/from16 v2, p0
 
     .line 86
@@ -318,7 +318,7 @@
 
     move-result-object v9
 
-    if-ne v14, v9, :cond_6f
+    if-ne v14, v9, :cond_1
 
     .line 170
     const/4 v9, 0x0
@@ -365,14 +365,14 @@
     nop
 
     .end local v6    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_74
+    goto :goto_0
 
     .line 173
     .end local v17    # "$i$f$remember":I
     .end local v18    # "$changed$iv":I
     .restart local v7    # "$changed$iv":I
     .restart local v8    # "$i$f$remember":I
-    :cond_6f
+    :cond_1
     move/from16 v18, v7
 
     move/from16 v17, v8
@@ -384,7 +384,7 @@
     move-object v6, v14
 
     .line 169
-    :goto_74
+    :goto_0
     nop
 
     .line 168
@@ -441,7 +441,7 @@
 
     .line 176
     .local v14, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v9, :cond_a2
+    if-nez v9, :cond_3
 
     sget-object v15, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -449,21 +449,21 @@
 
     move-result-object v15
 
-    if-ne v13, v15, :cond_9e
+    if-ne v13, v15, :cond_2
 
-    goto :goto_a2
+    goto :goto_1
 
     .line 180
-    :cond_9e
+    :cond_2
     move/from16 v17, v7
 
     move-object v7, v13
 
-    goto :goto_b1
+    goto :goto_2
 
     .line 177
-    :cond_a2
-    :goto_a2
+    :cond_3
+    :goto_1
     const/4 v15, 0x0
 
     .line 93
@@ -491,7 +491,7 @@
 
     .line 176
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    :goto_b1
+    :goto_2
     nop
 
     .line 175
@@ -559,7 +559,7 @@
     .local v17, "$i$f$remember":I
     const-string/jumbo v7, "context"
 
-    if-ne v13, v15, :cond_ed
+    if-ne v13, v15, :cond_4
 
     .line 184
     const/4 v15, 0x0
@@ -588,12 +588,12 @@
     nop
 
     .end local v8    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_f0
+    goto :goto_3
 
     .line 187
     .end local v18    # "$changed$iv":I
     .local v8, "$changed$iv":I
-    :cond_ed
+    :cond_4
     move/from16 v18, v8
 
     .end local v8    # "$changed$iv":I
@@ -601,7 +601,7 @@
     move-object v8, v13
 
     .line 183
-    :goto_f0
+    :goto_3
     nop
 
     .line 182
@@ -626,7 +626,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_1e1
+    if-eqz v9, :cond_8
 
     .line 100
     .local v9, "viewTreeOwners":Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
@@ -674,7 +674,7 @@
 
     move-result-object v10
 
-    if-ne v15, v10, :cond_132
+    if-ne v15, v10, :cond_5
 
     .line 191
     const/4 v10, 0x0
@@ -713,12 +713,12 @@
     nop
 
     .end local v2    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_135
+    goto :goto_4
 
     .line 194
     .end local v19    # "view":Landroidx/compose/ui/platform/AndroidComposeView;
     .local v2, "view":Landroidx/compose/ui/platform/AndroidComposeView;
-    :cond_132
+    :cond_5
     move-object/from16 v19, v2
 
     .end local v2    # "view":Landroidx/compose/ui/platform/AndroidComposeView;
@@ -726,7 +726,7 @@
     move-object v2, v15
 
     .line 190
-    :goto_135
+    :goto_4
     nop
 
     .line 189
@@ -910,22 +910,22 @@
 
     move-result v10
 
-    if-eqz v10, :cond_1cb
+    if-eqz v10, :cond_6
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_1cb
+    :cond_6
     invoke-interface {v3}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v10
 
-    if-nez v10, :cond_1d4
+    if-nez v10, :cond_7
 
     move/from16 v12, p3
 
-    goto :goto_1e0
+    goto :goto_5
 
-    :cond_1d4
+    :cond_7
     new-instance v11, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$ProvideAndroidCompositionLocals$4;
 
     move/from16 v12, p3
@@ -937,7 +937,7 @@
     invoke-interface {v10, v11}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 125
-    :goto_1e0
+    :goto_5
     return-void
 
     .line 96
@@ -945,7 +945,7 @@
     .end local v9    # "viewTreeOwners":Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
     .end local v19    # "view":Landroidx/compose/ui/platform/AndroidComposeView;
     .local v2, "view":Landroidx/compose/ui/platform/AndroidComposeView;
-    :cond_1e1
+    :cond_8
     move-object/from16 v19, v2
 
     .end local v2    # "view":Landroidx/compose/ui/platform/AndroidComposeView;
@@ -964,7 +964,7 @@
 .end method
 
 .method private static final ProvideAndroidCompositionLocals$lambda$1(Landroidx/compose/runtime/MutableState;)Landroid/content/res/Configuration;
-    .registers 5
+    .locals 4
     .param p0, "$configuration$delegate"    # Landroidx/compose/runtime/MutableState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1007,7 +1007,7 @@
 .end method
 
 .method private static final ProvideAndroidCompositionLocals$lambda$2(Landroidx/compose/runtime/MutableState;Landroid/content/res/Configuration;)V
-    .registers 6
+    .locals 4
     .param p0, "$configuration$delegate"    # Landroidx/compose/runtime/MutableState;
     .param p1, "value"    # Landroid/content/res/Configuration;
     .annotation system Ldalvik/annotation/Signature;
@@ -1049,7 +1049,7 @@
 .end method
 
 .method public static final synthetic access$ProvideAndroidCompositionLocals$lambda$2(Landroidx/compose/runtime/MutableState;Landroid/content/res/Configuration;)V
-    .registers 2
+    .locals 0
     .param p0, "$configuration$delegate"    # Landroidx/compose/runtime/MutableState;
     .param p1, "value"    # Landroid/content/res/Configuration;
 
@@ -1060,7 +1060,7 @@
 .end method
 
 .method public static final synthetic access$noLocalProvidedFor(Ljava/lang/String;)Ljava/lang/Void;
-    .registers 2
+    .locals 1
     .param p0, "name"    # Ljava/lang/String;
 
     .line 1
@@ -1072,7 +1072,7 @@
 .end method
 
 .method public static final getLocalConfiguration()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1089,7 +1089,7 @@
 .end method
 
 .method public static final getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1106,7 +1106,7 @@
 .end method
 
 .method public static final getLocalImageVectorCache()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1123,7 +1123,7 @@
 .end method
 
 .method public static final getLocalLifecycleOwner()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1140,7 +1140,7 @@
 .end method
 
 .method public static final getLocalSavedStateRegistryOwner()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1157,7 +1157,7 @@
 .end method
 
 .method public static final getLocalView()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1174,7 +1174,7 @@
 .end method
 
 .method private static final noLocalProvidedFor(Ljava/lang/String;)Ljava/lang/Void;
-    .registers 4
+    .locals 3
     .param p0, "name"    # Ljava/lang/String;
 
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -1214,7 +1214,7 @@
 .end method
 
 .method private static final obtainImageVectorCache(Landroid/content/Context;Landroid/content/res/Configuration;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/res/ImageVectorCache;
-    .registers 23
+    .locals 19
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "configuration"    # Landroid/content/res/Configuration;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -1234,7 +1234,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     .line 132
     const/4 v2, -0x1
@@ -1245,14 +1245,14 @@
 
     invoke-static {v1, v4, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 0
-    :cond_1d
+    :cond_0
     move/from16 v4, p3
 
     .line 132
-    :goto_1f
+    :goto_0
     nop
 
     .line 133
@@ -1298,7 +1298,7 @@
 
     move-result-object v12
 
-    if-ne v10, v12, :cond_4b
+    if-ne v10, v12, :cond_1
 
     .line 198
     const/4 v12, 0x0
@@ -1321,14 +1321,14 @@
     nop
 
     .end local v12    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_4c
+    goto :goto_1
 
     .line 201
-    :cond_4b
+    :cond_1
     move-object v12, v10
 
     .line 197
-    :goto_4c
+    :goto_1
     nop
 
     .line 196
@@ -1387,7 +1387,7 @@
 
     move-result-object v13
 
-    if-ne v11, v13, :cond_87
+    if-ne v11, v13, :cond_3
 
     .line 205
     const/4 v13, 0x0
@@ -1406,7 +1406,7 @@
 
     .line 135
     .local v16, "$i$a$-apply-AndroidCompositionLocals_androidKt$obtainImageVectorCache$currentConfiguration$1$1":I
-    if-eqz p1, :cond_81
+    if-eqz p1, :cond_2
 
     move-object/from16 v17, p1
 
@@ -1428,7 +1428,7 @@
     .end local v15    # "$this$obtainImageVectorCache_u24lambda_u249_u24lambda_u248":Landroid/content/res/Configuration;
     .end local v16    # "$i$a$-apply-AndroidCompositionLocals_androidKt$obtainImageVectorCache$currentConfiguration$1$1":I
     .end local v18    # "$i$a$-let-AndroidCompositionLocals_androidKt$obtainImageVectorCache$currentConfiguration$1$1$1":I
-    :cond_81
+    :cond_2
     move-object v5, v14
 
     .line 207
@@ -1439,14 +1439,14 @@
     nop
 
     .end local v5    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_88
+    goto :goto_2
 
     .line 209
-    :cond_87
+    :cond_3
     move-object v5, v11
 
     .line 204
-    :goto_88
+    :goto_2
     nop
 
     .line 203
@@ -1507,7 +1507,7 @@
 
     move-result-object v11
 
-    if-ne v9, v11, :cond_b8
+    if-ne v9, v11, :cond_4
 
     .line 213
     const/4 v11, 0x0
@@ -1530,14 +1530,14 @@
     nop
 
     .end local v11    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_b9
+    goto :goto_3
 
     .line 216
-    :cond_b8
+    :cond_4
     move-object v11, v9
 
     .line 212
-    :goto_b9
+    :goto_3
     nop
 
     .line 211
@@ -1576,11 +1576,11 @@
 
     move-result v5
 
-    if-eqz v5, :cond_d8
+    if-eqz v5, :cond_5
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_d8
+    :cond_5
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v2

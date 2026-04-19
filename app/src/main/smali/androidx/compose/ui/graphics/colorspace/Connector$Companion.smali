@@ -54,7 +54,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 282
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/colorspace/Connector$Companion;-><init>()V
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public static final synthetic access$computeTransform-YBCOT_4(Landroidx/compose/ui/graphics/colorspace/Connector$Companion;Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/ColorSpace;I)[F
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/colorspace/Connector$Companion;
     .param p1, "source"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .param p2, "destination"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -86,7 +86,7 @@
 .end method
 
 .method private final computeTransform-YBCOT_4(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/ColorSpace;I)[F
-    .registers 13
+    .locals 9
     .param p1, "source"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .param p2, "destination"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .param p3, "intent"    # I
@@ -104,12 +104,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     return-object v1
 
     .line 294
-    :cond_e
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->getModel-xdoWZVw()J
 
     move-result-wide v2
@@ -142,37 +142,37 @@
 
     .line 297
     .local v2, "dstRGB":Z
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
-    if-eqz v2, :cond_2f
+    if-eqz v2, :cond_1
 
     return-object v1
 
     .line 299
-    :cond_2f
-    if-nez v0, :cond_35
+    :cond_1
+    if-nez v0, :cond_3
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_2
 
-    goto :goto_35
+    goto :goto_0
 
     .line 310
-    :cond_34
+    :cond_2
     return-object v1
 
     .line 300
-    :cond_35
-    :goto_35
-    if-eqz v0, :cond_39
+    :cond_3
+    :goto_0
+    if-eqz v0, :cond_4
 
     move-object v1, p1
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_39
+    :cond_4
     move-object v1, p2
 
-    :goto_3a
+    :goto_1
     const-string/jumbo v3, "null cannot be cast to non-null type androidx.compose.ui.graphics.colorspace.Rgb"
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -181,7 +181,7 @@
 
     .line 301
     .local v1, "rgb":Landroidx/compose/ui/graphics/colorspace/Rgb;
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_5
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/Rgb;->getWhitePoint()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
 
@@ -191,9 +191,9 @@
 
     move-result-object v3
 
-    goto :goto_53
+    goto :goto_2
 
-    :cond_4d
+    :cond_5
     sget-object v3, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
 
     invoke-virtual {v3}, Landroidx/compose/ui/graphics/colorspace/Illuminant;->getD50Xyz$ui_graphics_release()[F
@@ -202,8 +202,8 @@
 
     .line 302
     .local v3, "srcXYZ":[F
-    :goto_53
-    if-eqz v2, :cond_5e
+    :goto_2
+    if-eqz v2, :cond_6
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/Rgb;->getWhitePoint()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
 
@@ -213,9 +213,9 @@
 
     move-result-object v4
 
-    goto :goto_64
+    goto :goto_3
 
-    :cond_5e
+    :cond_6
     sget-object v4, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
 
     invoke-virtual {v4}, Landroidx/compose/ui/graphics/colorspace/Illuminant;->getD50Xyz$ui_graphics_release()[F
@@ -224,7 +224,7 @@
 
     .line 304
     .local v4, "dstXYZ":[F
-    :goto_64
+    :goto_3
     const/4 v5, 0x3
 
     new-array v5, v5, [F
@@ -274,10 +274,9 @@
 
 # virtual methods
 .method public final getOklabToSrgbPerceptual$ui_graphics_release()Landroidx/compose/ui/graphics/colorspace/Connector;
-    .registers 2
+    .locals 1
 
     .line 336
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Connector;->OklabToSrgbPerceptual:Landroidx/compose/ui/graphics/colorspace/Connector;
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/Connector;->access$getOklabToSrgbPerceptual$cp()Landroidx/compose/ui/graphics/colorspace/Connector;
 
     move-result-object v0
@@ -286,10 +285,9 @@
 .end method
 
 .method public final getSrgbIdentity$ui_graphics_release()Landroidx/compose/ui/graphics/colorspace/Connector;
-    .registers 2
+    .locals 1
 
     .line 333
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Connector;->SrgbIdentity:Landroidx/compose/ui/graphics/colorspace/Connector;
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/Connector;->access$getSrgbIdentity$cp()Landroidx/compose/ui/graphics/colorspace/Connector;
 
     move-result-object v0
@@ -298,10 +296,9 @@
 .end method
 
 .method public final getSrgbToOklabPerceptual$ui_graphics_release()Landroidx/compose/ui/graphics/colorspace/Connector;
-    .registers 2
+    .locals 1
 
     .line 334
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Connector;->SrgbToOklabPerceptual:Landroidx/compose/ui/graphics/colorspace/Connector;
     invoke-static {}, Landroidx/compose/ui/graphics/colorspace/Connector;->access$getSrgbToOklabPerceptual$cp()Landroidx/compose/ui/graphics/colorspace/Connector;
 
     move-result-object v0
@@ -310,7 +307,7 @@
 .end method
 
 .method public final identity$ui_graphics_release(Landroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroidx/compose/ui/graphics/colorspace/Connector;
-    .registers 4
+    .locals 2
     .param p1, "source"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     const-string/jumbo v0, "source"

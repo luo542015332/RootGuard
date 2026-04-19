@@ -45,7 +45,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 244
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollSource$Companion;-><init>()V
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public static synthetic getRelocate-WNlRxjI$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Do not use. Will be removed in the future."
     .end annotation
@@ -73,10 +73,9 @@
 
 # virtual methods
 .method public final getDrag-WNlRxjI()I
-    .registers 2
+    .locals 1
 
     .line 248
-    # getter for: Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;->Drag:I
     invoke-static {}, Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;->access$getDrag$cp()I
 
     move-result v0
@@ -85,10 +84,9 @@
 .end method
 
 .method public final getFling-WNlRxjI()I
-    .registers 2
+    .locals 1
 
     .line 253
-    # getter for: Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;->Fling:I
     invoke-static {}, Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;->access$getFling$cp()I
 
     move-result v0
@@ -97,10 +95,9 @@
 .end method
 
 .method public final getRelocate-WNlRxjI()I
-    .registers 2
+    .locals 1
 
     .line 262
-    # getter for: Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;->Relocate:I
     invoke-static {}, Landroidx/compose/ui/input/nestedscroll/NestedScrollSource;->access$getRelocate$cp()I
 
     move-result v0

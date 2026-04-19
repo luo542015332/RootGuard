@@ -38,7 +38,7 @@
 
 # direct methods
 .method public static final getUseMinimumTouchTarget(Landroidx/compose/ui/semantics/SemanticsConfiguration;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$useMinimumTouchTarget"    # Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
     const-string v0, "<this>"
@@ -56,21 +56,21 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public static final invalidateSemantics(Landroidx/compose/ui/node/SemanticsModifierNode;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$invalidateSemantics"    # Landroidx/compose/ui/node/SemanticsModifierNode;
 
     const-string v0, "<this>"
@@ -92,7 +92,7 @@
 .end method
 
 .method public static final touchBoundsInRoot(Landroidx/compose/ui/Modifier$Node;Z)Landroidx/compose/ui/geometry/Rect;
-    .registers 5
+    .locals 3
     .param p0, "$this$touchBoundsInRoot"    # Landroidx/compose/ui/Modifier$Node;
     .param p1, "useMinimumTouchTarget"    # Z
 
@@ -109,7 +109,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     .line 99
     sget-object v0, Landroidx/compose/ui/geometry/Rect;->Companion:Landroidx/compose/ui/geometry/Rect$Companion;
@@ -121,10 +121,10 @@
     return-object v0
 
     .line 101
-    :cond_16
+    :cond_0
     const/16 v0, 0x8
 
-    if-nez p1, :cond_2d
+    if-nez p1, :cond_1
 
     .line 102
     move-object v1, p0
@@ -154,7 +154,7 @@
     return-object v0
 
     .line 105
-    :cond_2d
+    :cond_1
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/node/DelegatableNode;

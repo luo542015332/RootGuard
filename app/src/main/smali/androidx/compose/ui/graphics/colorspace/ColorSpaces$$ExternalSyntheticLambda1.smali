@@ -8,7 +8,7 @@
 
 # direct methods
 .method public synthetic constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -18,7 +18,7 @@
 
 # virtual methods
 .method public final invoke(D)D
-    .registers 3
+    .locals 0
 
     invoke-static {p1, p2}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->$r8$lambda$ZBI1_TKEGKDkhEJCw6ApGeuxJiI(D)D
 

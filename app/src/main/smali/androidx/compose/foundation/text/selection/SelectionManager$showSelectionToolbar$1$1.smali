@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/text/selection/SelectionManager;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/text/selection/SelectionManager$showSelectionToolbar$1$1;->this$0:Landroidx/compose/foundation/text/selection/SelectionManager;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 421
     invoke-virtual {p0}, Landroidx/compose/foundation/text/selection/SelectionManager$showSelectionToolbar$1$1;->invoke()V
@@ -75,7 +75,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 2
+    .locals 1
 
     .line 424
     iget-object v0, p0, Landroidx/compose/foundation/text/selection/SelectionManager$showSelectionToolbar$1$1;->this$0:Landroidx/compose/foundation/text/selection/SelectionManager;

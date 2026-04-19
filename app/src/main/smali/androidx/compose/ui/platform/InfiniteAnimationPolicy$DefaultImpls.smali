@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static fold(Landroidx/compose/ui/platform/InfiniteAnimationPolicy;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InfiniteAnimationPolicy;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -62,7 +62,7 @@
 .end method
 
 .method public static get(Landroidx/compose/ui/platform/InfiniteAnimationPolicy;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InfiniteAnimationPolicy;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
@@ -94,7 +94,7 @@
 .end method
 
 .method public static getKey(Landroidx/compose/ui/platform/InfiniteAnimationPolicy;)Lkotlin/coroutines/CoroutineContext$Key;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InfiniteAnimationPolicy;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -110,7 +110,6 @@
     .end annotation
 
     .line 48
-    # invokes: Landroidx/compose/ui/platform/InfiniteAnimationPolicy;->getKey()Lkotlin/coroutines/CoroutineContext$Key;
     invoke-static {p0}, Landroidx/compose/ui/platform/InfiniteAnimationPolicy;->access$getKey$jd(Landroidx/compose/ui/platform/InfiniteAnimationPolicy;)Lkotlin/coroutines/CoroutineContext$Key;
 
     move-result-object v0
@@ -119,7 +118,7 @@
 .end method
 
 .method public static minusKey(Landroidx/compose/ui/platform/InfiniteAnimationPolicy;Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InfiniteAnimationPolicy;
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
@@ -150,7 +149,7 @@
 .end method
 
 .method public static plus(Landroidx/compose/ui/platform/InfiniteAnimationPolicy;Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InfiniteAnimationPolicy;
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 

@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/snapshots/MutableSnapshot;)V
-    .registers 7
+    .locals 1
     .param p1, "id"    # I
     .param p2, "invalid"    # Landroidx/compose/runtime/snapshots/SnapshotIdSet;
     .param p3, "readObserver"    # Lkotlin/jvm/functions/Function1;
@@ -107,12 +107,12 @@
 .end method
 
 .method private final deactivate()V
-    .registers 3
+    .locals 2
 
     .line 1457
     iget-boolean v0, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->deactivated:Z
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 1458
     const/4 v0, 0x1
@@ -129,14 +129,14 @@
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->nestedDeactivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .line 1461
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public apply()Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
-    .registers 14
+    .locals 13
 
     .line 1406
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -145,7 +145,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d6
+    if-nez v0, :cond_8
 
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
@@ -153,12 +153,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
-    goto/16 :goto_d6
+    goto/16 :goto_3
 
     .line 1415
-    :cond_12
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->getModified$runtime_release()Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v0
@@ -173,7 +173,7 @@
     .local v1, "id":I
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     .line 1418
     iget-object v3, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -186,19 +186,18 @@
 
     move-result-object v5
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->optimisticMerges(Landroidx/compose/runtime/snapshots/MutableSnapshot;Landroidx/compose/runtime/snapshots/MutableSnapshot;Landroidx/compose/runtime/snapshots/SnapshotIdSet;)Ljava/util/Map;
     invoke-static {v3, v4, v5}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$optimisticMerges(Landroidx/compose/runtime/snapshots/MutableSnapshot;Landroidx/compose/runtime/snapshots/MutableSnapshot;Landroidx/compose/runtime/snapshots/SnapshotIdSet;)Ljava/util/Map;
 
     move-result-object v3
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 1419
-    :cond_2b
+    :cond_1
     move-object v3, v2
 
     .line 1417
-    :goto_2c
+    :goto_0
     nop
 
     .line 1420
@@ -222,27 +221,26 @@
 
     .line 1421
     .local v7, "$i$a$-sync-NestedMutableSnapshot$apply$1":I
-    :try_start_35
+    :try_start_0
     move-object v8, p0
 
     check-cast v8, Landroidx/compose/runtime/snapshots/Snapshot;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->validateOpen(Landroidx/compose/runtime/snapshots/Snapshot;)V
     invoke-static {v8}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$validateOpen(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .line 1422
-    if-eqz v0, :cond_7d
+    if-eqz v0, :cond_6
 
     invoke-virtual {v0}, Landroidx/compose/runtime/collection/IdentityArraySet;->size()I
 
     move-result v8
 
-    if-nez v8, :cond_44
+    if-nez v8, :cond_2
 
-    goto :goto_7d
+    goto :goto_1
 
     .line 1425
-    :cond_44
+    :cond_2
     iget-object v8, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     invoke-virtual {v8}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->getId()I
@@ -266,10 +264,10 @@
     invoke-static {v8, v9}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v9
-    :try_end_5a
-    .catchall {:try_start_35 .. :try_end_5a} :catchall_d3
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v9, :cond_5e
+    if-nez v9, :cond_3
 
     .end local v4    # "$i$f$sync":I
     .end local v5    # "lock$iv$iv":Ljava/lang/Object;
@@ -286,15 +284,15 @@
     .restart local v6    # "$i$f$synchronized":I
     .restart local v7    # "$i$a$-sync-NestedMutableSnapshot$apply$1":I
     .restart local v8    # "result":Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
-    :cond_5e
-    :try_start_5e
+    :cond_3
+    :try_start_1
     iget-object v9, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     invoke-virtual {v9}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->getModified$runtime_release()Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v9
 
-    if-eqz v9, :cond_70
+    if-eqz v9, :cond_4
 
     move-object v10, v9
 
@@ -312,10 +310,10 @@
 
     .end local v10    # "$this$apply_u24lambda_u242_u24lambda_u240":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v11    # "$i$a$-apply-NestedMutableSnapshot$apply$1$1":I
-    if-nez v9, :cond_7c
+    if-nez v9, :cond_5
 
     .line 1429
-    :cond_70
+    :cond_4
     move-object v9, v0
 
     .local v9, "it":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -338,24 +336,24 @@
     .end local v10    # "$i$a$-also-NestedMutableSnapshot$apply$1$2":I
     nop
 
-    :cond_7c
-    goto :goto_80
+    :cond_5
+    goto :goto_2
 
     .line 1423
     .end local v8    # "result":Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
-    :cond_7d
-    :goto_7d
+    :cond_6
+    :goto_1
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->closeAndReleasePinning$runtime_release()V
 
     .line 1437
-    :goto_80
+    :goto_2
     iget-object v2, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     invoke-virtual {v2}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->getId()I
 
     move-result v2
 
-    if-ge v2, v1, :cond_8d
+    if-ge v2, v1, :cond_7
 
     .line 1438
     iget-object v2, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -363,7 +361,7 @@
     invoke-virtual {v2}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->advance$runtime_release()V
 
     .line 1442
-    :cond_8d
+    :cond_7
     iget-object v2, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     invoke-virtual {v2}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->getInvalid$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
@@ -421,8 +419,8 @@
 
     .end local v7    # "$i$a$-sync-NestedMutableSnapshot$apply$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_c5
-    .catchall {:try_start_5e .. :try_end_c5} :catchall_d3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 2292
     monitor-exit v5
@@ -452,7 +450,7 @@
     .restart local v4    # "$i$f$sync":I
     .restart local v5    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v6    # "$i$f$synchronized":I
-    :catchall_d3
+    :catchall_0
     move-exception v2
 
     monitor-exit v5
@@ -466,8 +464,8 @@
     .end local v4    # "$i$f$sync":I
     .end local v5    # "lock$iv$iv":Ljava/lang/Object;
     .end local v6    # "$i$f$synchronized":I
-    :cond_d6
-    :goto_d6
+    :cond_8
+    :goto_3
     new-instance v0, Landroidx/compose/runtime/snapshots/SnapshotApplyResult$Failure;
 
     move-object v1, p0
@@ -482,14 +480,14 @@
 .end method
 
 .method public dispose()V
-    .registers 2
+    .locals 1
 
     .line 1399
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->getDisposed$runtime_release()Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     .line 1400
     invoke-super {p0}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->dispose()V
@@ -498,12 +496,12 @@
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->deactivate()V
 
     .line 1403
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public final getParent()Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    .registers 2
+    .locals 1
 
     .line 1390
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;
@@ -512,7 +510,7 @@
 .end method
 
 .method public getRoot()Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 2
+    .locals 1
 
     .line 1396
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/NestedMutableSnapshot;->parent:Landroidx/compose/runtime/snapshots/MutableSnapshot;

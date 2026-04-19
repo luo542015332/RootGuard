@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final onFocusChanged(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$onFocusChanged"    # Landroidx/compose/ui/Modifier;
     .param p1, "onFocusChanged"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

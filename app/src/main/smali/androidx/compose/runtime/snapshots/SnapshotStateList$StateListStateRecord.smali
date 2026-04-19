@@ -77,7 +77,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;)V
-    .registers 3
+    .locals 1
     .param p1, "list"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public assign(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 6
+    .locals 4
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -112,7 +112,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 76
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateListKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v0
@@ -128,7 +127,7 @@
 
     .line 78
     .local v2, "$i$a$-synchronized-SnapshotStateList$StateListStateRecord$assign$1":I
-    :try_start_d
+    :try_start_0
     move-object v3, p1
 
     check-cast v3, Landroidx/compose/runtime/snapshots/SnapshotStateList$StateListStateRecord;
@@ -151,8 +150,8 @@
 
     .end local v2    # "$i$a$-synchronized-SnapshotStateList$StateListStateRecord$assign$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_1e
-    .catchall {:try_start_d .. :try_end_1e} :catchall_20
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 458
     monitor-exit v0
@@ -165,7 +164,7 @@
     .line 458
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_20
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -174,7 +173,7 @@
 .end method
 
 .method public create()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 3
+    .locals 2
 
     .line 83
     new-instance v0, Landroidx/compose/runtime/snapshots/SnapshotStateList$StateListStateRecord;
@@ -189,7 +188,7 @@
 .end method
 
 .method public final getList$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -205,7 +204,7 @@
 .end method
 
 .method public final getModification$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 74
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateList$StateListStateRecord;->modification:I
@@ -214,7 +213,7 @@
 .end method
 
 .method public final setList$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -235,7 +234,7 @@
 .end method
 
 .method public final setModification$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 74

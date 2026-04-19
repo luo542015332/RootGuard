@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$readObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 161
@@ -79,7 +79,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 5
+    .locals 3
     .param p1, "state"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "state"
@@ -89,17 +89,15 @@
     .line 162
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$readObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->isPaused:Z
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$isPaused$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_0
 
     .line 163
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$readObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->observedScopeMaps:Landroidx/compose/runtime/collection/MutableVector;
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$getObservedScopeMaps$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v0
@@ -112,8 +110,7 @@
 
     .line 164
     .local v2, "$i$a$-synchronized-SnapshotStateObserver$readObserver$1$1":I
-    :try_start_18
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->currentMap:Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
+    :try_start_0
     invoke-static {v1}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$getCurrentMap$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
 
     move-result-object v1
@@ -127,15 +124,15 @@
 
     .end local v2    # "$i$a$-synchronized-SnapshotStateObserver$readObserver$1$1":I
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_25
-    .catchall {:try_start_18 .. :try_end_25} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 163
     monitor-exit v0
 
-    goto :goto_2a
+    goto :goto_0
 
-    :catchall_27
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
@@ -143,7 +140,7 @@
     throw v1
 
     .line 167
-    :cond_2a
-    :goto_2a
+    :cond_0
+    :goto_0
     return-void
 .end method

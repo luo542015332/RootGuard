@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Comparator;)V
-    .registers 3
+    .locals 1
     .param p1, "comparator"    # Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge getSize()I
-    .registers 2
+    .locals 1
 
     .line 20
     invoke-super {p0}, Ljava/util/TreeSet;->size()I
@@ -75,7 +75,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 20
     invoke-virtual {p0}, Landroidx/compose/ui/node/TreeSet;->getSize()I

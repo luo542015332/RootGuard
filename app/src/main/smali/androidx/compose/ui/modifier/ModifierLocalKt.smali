@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final modifierLocalOf(Lkotlin/jvm/functions/Function0;)Landroidx/compose/ui/modifier/ProvidableModifierLocal;
-    .registers 2
+    .locals 1
     .param p0, "defaultFactory"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {

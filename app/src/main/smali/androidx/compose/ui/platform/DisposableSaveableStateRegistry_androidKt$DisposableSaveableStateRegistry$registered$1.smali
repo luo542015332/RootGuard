@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/saveable/SaveableStateRegistry;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt$DisposableSaveableStateRegistry$registered$1;->$saveableStateRegistry:Landroidx/compose/runtime/saveable/SaveableStateRegistry;
 
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public final saveState()Landroid/os/Bundle;
-    .registers 2
+    .locals 1
 
     .line 83
     iget-object v0, p0, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt$DisposableSaveableStateRegistry$registered$1;->$saveableStateRegistry:Landroidx/compose/runtime/saveable/SaveableStateRegistry;
@@ -61,7 +61,6 @@
 
     move-result-object v0
 
-    # invokes: Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt;->toBundle(Ljava/util/Map;)Landroid/os/Bundle;
     invoke-static {v0}, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt;->access$toBundle(Ljava/util/Map;)Landroid/os/Bundle;
 
     move-result-object v0

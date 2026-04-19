@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 345
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Canvas;->clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static synthetic clipRect-N_I0leg$default(Landroidx/compose/ui/graphics/Canvas;FFFFIILjava/lang/Object;)V
-    .registers 8
+    .locals 0
 
     .line 333
     invoke-static/range {p0 .. p7}, Landroidx/compose/ui/graphics/Canvas;->clipRect-N_I0leg$default(Landroidx/compose/ui/graphics/Canvas;FFFFIILjava/lang/Object;)V
@@ -45,7 +45,7 @@
 .end method
 
 .method public static clipRect-mtrdD-E(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;I)V
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "clipOp"    # I
@@ -57,7 +57,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 317
-    # invokes: Landroidx/compose/ui/graphics/Canvas;->clipRect-mtrdD-E(Landroidx/compose/ui/geometry/Rect;I)V
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/Canvas;->access$clipRect-mtrdD-E$jd(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;I)V
 
     .line 318
@@ -65,7 +64,7 @@
 .end method
 
 .method public static synthetic clipRect-mtrdD-E$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;IILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 317
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Canvas;->clipRect-mtrdD-E$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;IILjava/lang/Object;)V
@@ -75,7 +74,7 @@
 .end method
 
 .method public static drawArc(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;FFZLandroidx/compose/ui/graphics/Paint;)V
-    .registers 7
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngle"    # F
@@ -94,7 +93,6 @@
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 445
-    # invokes: Landroidx/compose/ui/graphics/Canvas;->drawArc(Landroidx/compose/ui/geometry/Rect;FFZLandroidx/compose/ui/graphics/Paint;)V
     invoke-static/range {p0 .. p5}, Landroidx/compose/ui/graphics/Canvas;->access$drawArc$jd(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;FFZLandroidx/compose/ui/graphics/Paint;)V
 
     .line 460
@@ -102,7 +100,7 @@
 .end method
 
 .method public static drawArcRad(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;FFZLandroidx/compose/ui/graphics/Paint;)V
-    .registers 7
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngleRad"    # F
@@ -121,7 +119,6 @@
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 507
-    # invokes: Landroidx/compose/ui/graphics/Canvas;->drawArcRad(Landroidx/compose/ui/geometry/Rect;FFZLandroidx/compose/ui/graphics/Paint;)V
     invoke-static/range {p0 .. p5}, Landroidx/compose/ui/graphics/Canvas;->access$drawArcRad$jd(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;FFZLandroidx/compose/ui/graphics/Paint;)V
 
     .line 515
@@ -129,7 +126,7 @@
 .end method
 
 .method public static synthetic drawImageRect-HPBpro0$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/ImageBitmap;JJJJLandroidx/compose/ui/graphics/Paint;ILjava/lang/Object;)V
-    .registers 13
+    .locals 0
 
     .line 547
     invoke-static/range {p0 .. p12}, Landroidx/compose/ui/graphics/Canvas;->drawImageRect-HPBpro0$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/ImageBitmap;JJJJLandroidx/compose/ui/graphics/Paint;ILjava/lang/Object;)V
@@ -139,7 +136,7 @@
 .end method
 
 .method public static drawOval(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -155,7 +152,6 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 404
-    # invokes: Landroidx/compose/ui/graphics/Canvas;->drawOval(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/Canvas;->access$drawOval$jd(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
 
     .line 410
@@ -163,7 +159,7 @@
 .end method
 
 .method public static drawRect(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -179,7 +175,6 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 359
-    # invokes: Landroidx/compose/ui/graphics/Canvas;->drawRect(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/Canvas;->access$drawRect$jd(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
 
     .line 365
@@ -187,7 +182,7 @@
 .end method
 
 .method public static synthetic scale$default(Landroidx/compose/ui/graphics/Canvas;FFILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 276
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Canvas;->scale$default(Landroidx/compose/ui/graphics/Canvas;FFILjava/lang/Object;)V
@@ -196,7 +191,7 @@
 .end method
 
 .method public static skewRad(Landroidx/compose/ui/graphics/Canvas;FF)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "sxRad"    # F
     .param p2, "syRad"    # F
@@ -204,7 +199,6 @@
     .end annotation
 
     .line 299
-    # invokes: Landroidx/compose/ui/graphics/Canvas;->skewRad(FF)V
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/Canvas;->access$skewRad$jd(Landroidx/compose/ui/graphics/Canvas;FF)V
 
     .line 301

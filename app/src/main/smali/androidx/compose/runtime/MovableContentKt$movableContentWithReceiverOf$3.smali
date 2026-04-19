@@ -68,7 +68,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/MovableContent;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    .locals 6
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -127,7 +127,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)V
-    .registers 10
+    .locals 4
     .param p1, "$this$null"    # Ljava/lang/Object;
     .param p2, "p1"    # Ljava/lang/Object;
     .param p3, "p2"    # Ljava/lang/Object;
@@ -150,94 +150,94 @@
     .local v0, "$dirty":I
     and-int/lit8 v1, p5, 0xe
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1
 
     invoke-interface {p4, p1}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_12
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x4
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v1, 0x2
 
-    :goto_13
+    :goto_0
     or-int/2addr v0, v1
 
-    :cond_14
+    :cond_1
     and-int/lit8 v1, p5, 0x70
 
-    if-nez v1, :cond_24
+    if-nez v1, :cond_3
 
     invoke-interface {p4, p2}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_2
 
     const/16 v1, 0x20
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_21
+    :cond_2
     const/16 v1, 0x10
 
-    :goto_23
+    :goto_1
     or-int/2addr v0, v1
 
-    :cond_24
+    :cond_3
     and-int/lit16 v1, p5, 0x380
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_5
 
     invoke-interface {p4, p3}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_4
 
     const/16 v1, 0x100
 
-    goto :goto_33
+    goto :goto_2
 
-    :cond_31
+    :cond_4
     const/16 v1, 0x80
 
-    :goto_33
+    :goto_2
     or-int/2addr v0, v1
 
     .line 229
-    :cond_34
+    :cond_5
     and-int/lit16 v1, v0, 0x16db
 
     const/16 v2, 0x492
 
-    if-ne v1, v2, :cond_45
+    if-ne v1, v2, :cond_7
 
     invoke-interface {p4}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v1
 
-    if-nez v1, :cond_41
+    if-nez v1, :cond_6
 
-    goto :goto_45
+    goto :goto_3
 
-    :cond_41
+    :cond_6
     invoke-interface {p4}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto :goto_6b
+    goto :goto_4
 
-    :cond_45
-    :goto_45
+    :cond_7
+    :goto_3
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_8
 
     const/4 v1, -0x1
 
@@ -247,7 +247,7 @@
 
     invoke-static {v3, p5, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_55
+    :cond_8
     iget-object v1, p0, Landroidx/compose/runtime/MovableContentKt$movableContentWithReceiverOf$3;->$movableContent:Landroidx/compose/runtime/MovableContent;
 
     invoke-static {p1, p2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
@@ -264,12 +264,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6b
+    if-eqz v1, :cond_9
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 230
-    :cond_6b
-    :goto_6b
+    :cond_9
+    :goto_4
     return-void
 .end method

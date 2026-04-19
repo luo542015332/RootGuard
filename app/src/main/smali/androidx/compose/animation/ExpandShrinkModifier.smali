@@ -159,7 +159,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;)V
-    .registers 7
+    .locals 1
     .param p1, "sizeAnimation"    # Landroidx/compose/animation/core/Transition$DeferredAnimation;
     .param p2, "offsetAnimation"    # Landroidx/compose/animation/core/Transition$DeferredAnimation;
     .param p3, "expand"    # Landroidx/compose/runtime/State;
@@ -247,7 +247,7 @@
 
 # virtual methods
 .method public final getAlignment()Landroidx/compose/runtime/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -264,7 +264,7 @@
 .end method
 
 .method public final getCurrentAlignment()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 1102
     iget-object v0, p0, Landroidx/compose/animation/ExpandShrinkModifier;->currentAlignment:Landroidx/compose/ui/Alignment;
@@ -273,7 +273,7 @@
 .end method
 
 .method public final getExpand()Landroidx/compose/runtime/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -290,7 +290,7 @@
 .end method
 
 .method public final getOffsetAnimation()Landroidx/compose/animation/core/Transition$DeferredAnimation;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -310,7 +310,7 @@
 .end method
 
 .method public final getShrink()Landroidx/compose/runtime/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -327,7 +327,7 @@
 .end method
 
 .method public final getSizeAnimation()Landroidx/compose/animation/core/Transition$DeferredAnimation;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -347,7 +347,7 @@
 .end method
 
 .method public final getSizeTransitionSpec()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -368,7 +368,7 @@
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 28
+    .locals 23
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -472,7 +472,7 @@
     .local v15, "offsetDelta":J
     iget-object v2, v0, Landroidx/compose/animation/ExpandShrinkModifier;->currentAlignment:Landroidx/compose/ui/Alignment;
 
-    if-eqz v2, :cond_67
+    if-eqz v2, :cond_0
 
     sget-object v22, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
@@ -486,10 +486,10 @@
 
     move-wide v13, v2
 
-    goto :goto_6e
+    goto :goto_0
 
     .line 1171
-    :cond_67
+    :cond_0
     sget-object v2, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
@@ -499,7 +499,7 @@
     move-wide v13, v2
 
     .line 1170
-    :goto_6e
+    :goto_0
     nop
 
     .line 1169
@@ -551,7 +551,7 @@
 .end method
 
 .method public final setCurrentAlignment(Landroidx/compose/ui/Alignment;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/Alignment;
 
     .line 1102
@@ -561,7 +561,7 @@
 .end method
 
 .method public final sizeByState-Uzc_VyU(Landroidx/compose/animation/EnterExitState;J)J
-    .registers 10
+    .locals 6
     .param p1, "targetState"    # Landroidx/compose/animation/EnterExitState;
     .param p2, "fullSize"    # J
 
@@ -578,7 +578,7 @@
 
     check-cast v0, Landroidx/compose/animation/ChangeSize;
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 1178
     .local v0, "it":Landroidx/compose/animation/ChangeSize;
@@ -606,14 +606,14 @@
 
     .end local v0    # "it":Landroidx/compose/animation/ChangeSize;
     .end local v1    # "$i$a$-let-ExpandShrinkModifier$sizeByState$preEnterSize$1":I
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     move-wide v0, p2
 
     .line 1116
     .local v0, "preEnterSize":J
-    :goto_25
+    :goto_0
     iget-object v2, p0, Landroidx/compose/animation/ExpandShrinkModifier;->shrink:Landroidx/compose/runtime/State;
 
     invoke-interface {v2}, Landroidx/compose/runtime/State;->getValue()Ljava/lang/Object;
@@ -622,7 +622,7 @@
 
     check-cast v2, Landroidx/compose/animation/ChangeSize;
 
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_1
 
     .line 1178
     .local v2, "it":Landroidx/compose/animation/ChangeSize;
@@ -650,14 +650,14 @@
 
     .end local v2    # "it":Landroidx/compose/animation/ChangeSize;
     .end local v3    # "$i$a$-let-ExpandShrinkModifier$sizeByState$postExitSize$1":I
-    goto :goto_44
+    goto :goto_1
 
-    :cond_43
+    :cond_1
     move-wide v2, p2
 
     .line 1118
     .local v2, "postExitSize":J
-    :goto_44
+    :goto_1
     sget-object v4, Landroidx/compose/animation/ExpandShrinkModifier$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Landroidx/compose/animation/EnterExitState;->ordinal()I
@@ -666,7 +666,7 @@
 
     aget v4, v4, v5
 
-    packed-switch v4, :pswitch_data_5c
+    packed-switch v4, :pswitch_data_0
 
     .line 1121
     new-instance v4, Lkotlin/NoWhenBranchMatchedException;
@@ -675,37 +675,37 @@
 
     throw v4
 
-    :pswitch_55
+    :pswitch_0
     move-wide v4, v2
 
-    goto :goto_5a
+    goto :goto_2
 
     .line 1120
-    :pswitch_57
+    :pswitch_1
     move-wide v4, v0
 
-    goto :goto_5a
+    goto :goto_2
 
     .line 1119
-    :pswitch_59
+    :pswitch_2
     move-wide v4, p2
 
     .line 1118
-    :goto_5a
+    :goto_2
     return-wide v4
 
     nop
 
-    :pswitch_data_5c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_59
-        :pswitch_57
-        :pswitch_55
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final targetOffsetByState-oFUgxo0(Landroidx/compose/animation/EnterExitState;J)J
-    .registers 19
+    .locals 15
     .param p1, "targetState"    # Landroidx/compose/animation/EnterExitState;
     .param p2, "fullSize"    # J
 
@@ -723,7 +723,7 @@
     .line 1131
     iget-object v1, v0, Landroidx/compose/animation/ExpandShrinkModifier;->currentAlignment:Landroidx/compose/ui/Alignment;
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
@@ -731,17 +731,17 @@
 
     move-result-wide v3
 
-    goto/16 :goto_bc
+    goto/16 :goto_0
 
     .line 1132
-    :cond_16
+    :cond_0
     iget-object v1, v0, Landroidx/compose/animation/ExpandShrinkModifier;->alignment:Landroidx/compose/runtime/State;
 
     invoke-interface {v1}, Landroidx/compose/runtime/State;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_1
 
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
@@ -749,10 +749,10 @@
 
     move-result-wide v3
 
-    goto/16 :goto_bc
+    goto/16 :goto_0
 
     .line 1133
-    :cond_26
+    :cond_1
     iget-object v1, v0, Landroidx/compose/animation/ExpandShrinkModifier;->currentAlignment:Landroidx/compose/ui/Alignment;
 
     iget-object v3, v0, Landroidx/compose/animation/ExpandShrinkModifier;->alignment:Landroidx/compose/runtime/State;
@@ -765,7 +765,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_2
 
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
@@ -773,10 +773,10 @@
 
     move-result-wide v3
 
-    goto/16 :goto_bc
+    goto/16 :goto_0
 
     .line 1134
-    :cond_3c
+    :cond_2
     sget-object v1, Landroidx/compose/animation/ExpandShrinkModifier$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/animation/EnterExitState;->ordinal()I
@@ -785,7 +785,7 @@
 
     aget v1, v1, v3
 
-    packed-switch v1, :pswitch_data_be
+    packed-switch v1, :pswitch_data_0
 
     .line 1150
     new-instance v1, Lkotlin/NoWhenBranchMatchedException;
@@ -795,7 +795,7 @@
     throw v1
 
     .line 1137
-    :pswitch_4d
+    :pswitch_0
     iget-object v1, v0, Landroidx/compose/animation/ExpandShrinkModifier;->shrink:Landroidx/compose/runtime/State;
 
     invoke-interface {v1}, Landroidx/compose/runtime/State;->getValue()Ljava/lang/Object;
@@ -804,7 +804,7 @@
 
     check-cast v1, Landroidx/compose/animation/ChangeSize;
 
-    if-eqz v1, :cond_a8
+    if-eqz v1, :cond_3
 
     .local v1, "it":Landroidx/compose/animation/ChangeSize;
     const/4 v3, 0x0
@@ -923,30 +923,30 @@
     .end local v13    # "targetOffset":J
     move-wide v3, v6
 
-    goto :goto_bc
+    goto :goto_0
 
     .line 1150
-    :cond_a8
+    :cond_3
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
 
     move-result-wide v3
 
-    goto :goto_bc
+    goto :goto_0
 
     .line 1136
-    :pswitch_af
+    :pswitch_1
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
 
     move-result-wide v3
 
-    goto :goto_bc
+    goto :goto_0
 
     .line 1135
-    :pswitch_b6
+    :pswitch_2
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
@@ -954,15 +954,15 @@
     move-result-wide v3
 
     .line 1152
-    :goto_bc
+    :goto_0
     return-wide v3
 
     nop
 
-    :pswitch_data_be
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_b6
-        :pswitch_af
-        :pswitch_4d
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

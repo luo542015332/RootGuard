@@ -61,7 +61,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Z)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 131
     invoke-virtual {p0}, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$2$1;->invoke()V
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 3
+    .locals 2
 
     .line 131
     iget-object v0, p0, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$2$1;->$onExpandedChange:Lkotlin/jvm/functions/Function1;

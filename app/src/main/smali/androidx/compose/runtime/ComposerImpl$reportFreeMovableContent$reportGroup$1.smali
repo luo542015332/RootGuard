@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/ComposerImpl;Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/ComposerImpl$reportFreeMovableContent$reportGroup$1;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 5
+    .locals 1
     .param p2, "slots"    # Landroidx/compose/runtime/SlotWriter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -134,7 +134,6 @@
 
     iget-object p3, p0, Landroidx/compose/runtime/ComposerImpl$reportFreeMovableContent$reportGroup$1;->$reference:Landroidx/compose/runtime/MovableContentStateReference;
 
-    # invokes: Landroidx/compose/runtime/ComposerImpl;->releaseMovableGroupAtCurrent(Landroidx/compose/runtime/MovableContentStateReference;Landroidx/compose/runtime/SlotWriter;)V
     invoke-static {p1, p3, p2}, Landroidx/compose/runtime/ComposerImpl;->access$releaseMovableGroupAtCurrent(Landroidx/compose/runtime/ComposerImpl;Landroidx/compose/runtime/MovableContentStateReference;Landroidx/compose/runtime/SlotWriter;)V
 
     return-void

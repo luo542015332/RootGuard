@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 38
     nop
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public fillInStackTrace()Ljava/lang/Throwable;
-    .registers 3
+    .locals 2
 
     .line 43
     const/4 v0, 0x0

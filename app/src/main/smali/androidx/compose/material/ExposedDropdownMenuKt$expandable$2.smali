@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 530
@@ -103,7 +103,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 5
+    .locals 3
     .param p1, "$this$semantics"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "$this$semantics"

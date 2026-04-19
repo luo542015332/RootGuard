@@ -109,7 +109,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -119,7 +119,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "onNewAwaiters"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -178,18 +178,18 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 36
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     .line 37
     const/4 p1, 0x0
 
     .line 36
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/runtime/BroadcastFrameClock;-><init>(Lkotlin/jvm/functions/Function0;)V
 
     .line 131
@@ -197,7 +197,7 @@
 .end method
 
 .method public static final synthetic access$fail(Landroidx/compose/runtime/BroadcastFrameClock;Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/BroadcastFrameClock;
     .param p1, "cause"    # Ljava/lang/Throwable;
 
@@ -208,7 +208,7 @@
 .end method
 
 .method public static final synthetic access$getAwaiters$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/BroadcastFrameClock;
 
     .line 36
@@ -218,7 +218,7 @@
 .end method
 
 .method public static final synthetic access$getFailureCause$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/BroadcastFrameClock;
 
     .line 36
@@ -228,7 +228,7 @@
 .end method
 
 .method public static final synthetic access$getLock$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/BroadcastFrameClock;
 
     .line 36
@@ -238,7 +238,7 @@
 .end method
 
 .method public static final synthetic access$getOnNewAwaiters$p(Landroidx/compose/runtime/BroadcastFrameClock;)Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/BroadcastFrameClock;
 
     .line 36
@@ -248,12 +248,12 @@
 .end method
 
 .method public static synthetic cancel$default(Landroidx/compose/runtime/BroadcastFrameClock;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 126
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 127
     new-instance p1, Ljava/util/concurrent/CancellationException;
@@ -263,14 +263,14 @@
     invoke-direct {p1, p2}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
     .line 126
-    :cond_c
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/BroadcastFrameClock;->cancel(Ljava/util/concurrent/CancellationException;)V
 
     return-void
 .end method
 
 .method private final fail(Ljava/lang/Throwable;)V
-    .registers 14
+    .locals 12
     .param p1, "cause"    # Ljava/lang/Throwable;
 
     .line 112
@@ -287,12 +287,12 @@
 
     .line 113
     .local v2, "$i$a$-synchronized-BroadcastFrameClock$fail$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/BroadcastFrameClock;->failureCause:Ljava/lang/Throwable;
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v3, :cond_b
+    if-eqz v3, :cond_0
 
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
@@ -305,8 +305,8 @@
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
     .restart local v2    # "$i$a$-synchronized-BroadcastFrameClock$fail$1":I
-    :cond_b
-    :try_start_b
+    :cond_0
+    :try_start_1
     iput-object p1, p0, Landroidx/compose/runtime/BroadcastFrameClock;->failureCause:Ljava/lang/Throwable;
 
     .line 115
@@ -327,8 +327,8 @@
 
     move-result v6
 
-    :goto_16
-    if-ge v5, v6, :cond_36
+    :goto_0
+    if-ge v5, v6, :cond_1
 
     .line 150
     invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -374,11 +374,11 @@
     .end local v7    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 153
     .end local v5    # "index$iv":I
-    :cond_36
+    :cond_1
     nop
 
     .line 118
@@ -393,8 +393,8 @@
 
     .end local v2    # "$i$a$-synchronized-BroadcastFrameClock$fail$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_3f
-    .catchall {:try_start_b .. :try_end_3f} :catchall_41
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 147
     monitor-exit v0
@@ -407,7 +407,7 @@
     .line 147
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_41
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -418,7 +418,7 @@
 
 # virtual methods
 .method public final cancel(Ljava/util/concurrent/CancellationException;)V
-    .registers 3
+    .locals 1
     .param p1, "cancellationException"    # Ljava/util/concurrent/CancellationException;
 
     const-string/jumbo v0, "cancellationException"
@@ -437,7 +437,7 @@
 .end method
 
 .method public fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -461,7 +461,7 @@
 .end method
 
 .method public get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -482,7 +482,7 @@
 .end method
 
 .method public final getHasAwaiters()Z
-    .registers 5
+    .locals 4
 
     .line 54
     iget-object v0, p0, Landroidx/compose/runtime/BroadcastFrameClock;->lock:Ljava/lang/Object;
@@ -498,7 +498,7 @@
 
     .line 54
     .local v2, "$i$a$-synchronized-BroadcastFrameClock$hasAwaiters$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/BroadcastFrameClock;->awaiters:Ljava/util/List;
 
     check-cast v3, Ljava/util/Collection;
@@ -506,8 +506,8 @@
     invoke-interface {v3}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v3
-    :try_end_d
-    .catchall {:try_start_5 .. :try_end_d} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     xor-int/lit8 v3, v3, 0x1
 
@@ -523,7 +523,7 @@
     .line 133
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_11
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -532,7 +532,7 @@
 .end method
 
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -552,7 +552,7 @@
 .end method
 
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 
     .line 36
@@ -564,7 +564,7 @@
 .end method
 
 .method public final sendFrame(J)V
-    .registers 10
+    .locals 7
     .param p1, "timeNanos"    # J
 
     .line 62
@@ -581,7 +581,7 @@
 
     .line 66
     .local v2, "$i$a$-synchronized-BroadcastFrameClock$sendFrame$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/BroadcastFrameClock;->awaiters:Ljava/util/List;
 
     .line 67
@@ -601,8 +601,8 @@
 
     move-result v5
 
-    :goto_12
-    if-ge v4, v5, :cond_20
+    :goto_0
+    if-ge v4, v5, :cond_0
 
     .line 71
     invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -616,11 +616,11 @@
     .line 70
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 73
     .end local v4    # "i":I
-    :cond_20
+    :cond_0
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
     .line 74
@@ -629,8 +629,8 @@
     .end local v2    # "$i$a$-synchronized-BroadcastFrameClock$sendFrame$1":I
     .end local v3    # "toResume":Ljava/util/List;
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_26
-    .catchall {:try_start_5 .. :try_end_26} :catchall_28
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 134
     monitor-exit v0
@@ -643,7 +643,7 @@
     .line 134
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_28
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -652,7 +652,7 @@
 .end method
 
 .method public withFrameNanos(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 19
+    .locals 16
     .param p1, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -718,7 +718,6 @@
 
     .line 81
     .local v9, "awaiter":Lkotlin/jvm/internal/Ref$ObjectRef;
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->lock:Ljava/lang/Object;
     invoke-static/range {p0 .. p0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getLock$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/lang/Object;
 
     move-result-object v10
@@ -734,15 +733,14 @@
 
     .line 82
     .local v0, "$i$a$-synchronized-BroadcastFrameClock$withFrameNanos$2$hasNewAwaiters$1":I
-    :try_start_25
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->failureCause:Ljava/lang/Throwable;
+    :try_start_0
     invoke-static/range {p0 .. p0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getFailureCause$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/lang/Throwable;
 
     move-result-object v12
 
     .line 83
     .local v12, "cause":Ljava/lang/Throwable;
-    if-eqz v12, :cond_40
+    if-eqz v12, :cond_0
 
     .line 84
     move-object v6, v7
@@ -760,8 +758,8 @@
     move-result-object v13
 
     invoke-interface {v6, v13}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
-    :try_end_3b
-    .catchall {:try_start_25 .. :try_end_3b} :catchall_ab
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
     .line 85
     nop
@@ -774,32 +772,31 @@
 
     move-object/from16 v15, p1
 
-    goto :goto_99
+    goto :goto_4
 
     .line 87
     .restart local v0    # "$i$a$-synchronized-BroadcastFrameClock$withFrameNanos$2$hasNewAwaiters$1":I
     .restart local v10    # "lock$iv":Ljava/lang/Object;
     .restart local v11    # "$i$f$synchronized":I
     .restart local v12    # "cause":Ljava/lang/Throwable;
-    :cond_40
-    :try_start_40
+    :cond_0
+    :try_start_1
     new-instance v13, Landroidx/compose/runtime/BroadcastFrameClock$FrameAwaiter;
 
     move-object v14, v7
 
     check-cast v14, Lkotlin/coroutines/Continuation;
-    :try_end_45
-    .catchall {:try_start_40 .. :try_end_45} :catchall_ab
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     move-object/from16 v15, p1
 
-    :try_start_47
+    :try_start_2
     invoke-direct {v13, v15, v14}, Landroidx/compose/runtime/BroadcastFrameClock$FrameAwaiter;-><init>(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
 
     iput-object v13, v9, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     .line 88
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->awaiters:Ljava/util/List;
     invoke-static/range {p0 .. p0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getAwaiters$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/util/List;
 
     move-result-object v13
@@ -810,26 +807,25 @@
 
     move-result v13
 
-    if-nez v13, :cond_5a
+    if-nez v13, :cond_1
 
     move v13, v6
 
-    goto :goto_5b
+    goto :goto_0
 
-    :cond_5a
+    :cond_1
     const/4 v13, 0x0
 
     .line 89
     .local v13, "hadAwaiters":Z
-    :goto_5b
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->awaiters:Ljava/util/List;
+    :goto_0
     invoke-static/range {p0 .. p0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getAwaiters$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/util/List;
 
     move-result-object v6
 
     iget-object v14, v9, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    if-nez v14, :cond_6b
+    if-nez v14, :cond_2
 
     const-string/jumbo v14, "awaiter"
 
@@ -837,33 +833,33 @@
 
     const/4 v14, 0x0
 
-    goto :goto_6f
+    goto :goto_1
 
-    :cond_6b
+    :cond_2
     iget-object v14, v9, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v14, Landroidx/compose/runtime/BroadcastFrameClock$FrameAwaiter;
 
-    :goto_6f
+    :goto_1
     invoke-interface {v6, v14}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-    :try_end_72
-    .catchall {:try_start_47 .. :try_end_72} :catchall_a9
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 90
-    if-nez v13, :cond_76
+    if-nez v13, :cond_3
 
     const/4 v6, 0x1
 
-    goto :goto_77
+    goto :goto_2
 
-    :cond_76
+    :cond_3
     const/4 v6, 0x0
 
     .line 144
     .end local v0    # "$i$a$-synchronized-BroadcastFrameClock$withFrameNanos$2$hasNewAwaiters$1":I
     .end local v12    # "cause":Ljava/lang/Throwable;
     .end local v13    # "hadAwaiters":Z
-    :goto_77
+    :goto_2
     monitor-exit v10
 
     .line 81
@@ -882,44 +878,41 @@
     invoke-interface {v7, v0}, Lkotlinx/coroutines/CancellableContinuation;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
 
     .line 100
-    if-eqz v6, :cond_98
+    if-eqz v6, :cond_4
 
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->onNewAwaiters:Lkotlin/jvm/functions/Function0;
     invoke-static/range {p0 .. p0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getOnNewAwaiters$p(Landroidx/compose/runtime/BroadcastFrameClock;)Lkotlin/jvm/functions/Function0;
 
     move-result-object v0
 
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_4
 
     .line 101
     nop
 
     .line 103
-    :try_start_8c
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->onNewAwaiters:Lkotlin/jvm/functions/Function0;
+    :try_start_3
     invoke-static/range {p0 .. p0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getOnNewAwaiters$p(Landroidx/compose/runtime/BroadcastFrameClock;)Lkotlin/jvm/functions/Function0;
 
     move-result-object v0
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
-    :try_end_93
-    .catchall {:try_start_8c .. :try_end_93} :catchall_94
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    goto :goto_98
+    goto :goto_3
 
     .line 104
-    :catchall_94
+    :catchall_0
     move-exception v0
 
     .line 106
     .local v0, "t":Ljava/lang/Throwable;
-    # invokes: Landroidx/compose/runtime/BroadcastFrameClock;->fail(Ljava/lang/Throwable;)V
     invoke-static {v1, v0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$fail(Landroidx/compose/runtime/BroadcastFrameClock;Ljava/lang/Throwable;)V
 
     .line 109
     .end local v0    # "t":Ljava/lang/Throwable;
-    :cond_98
-    :goto_98
+    :cond_4
+    :goto_3
     nop
 
     .line 143
@@ -927,7 +920,7 @@
     .end local v7    # "co":Lkotlinx/coroutines/CancellableContinuation;
     .end local v8    # "$i$a$-suspendCancellableCoroutine-BroadcastFrameClock$withFrameNanos$2":I
     .end local v9    # "awaiter":Lkotlin/jvm/internal/Ref$ObjectRef;
-    :goto_99
+    :goto_4
     nop
 
     .line 145
@@ -943,12 +936,12 @@
 
     move-result-object v3
 
-    if-ne v0, v3, :cond_a7
+    if-ne v0, v3, :cond_5
 
     invoke-static/range {p2 .. p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
     .line 146
-    :cond_a7
+    :cond_5
     nop
 
     .line 109
@@ -965,17 +958,17 @@
     .restart local v9    # "awaiter":Lkotlin/jvm/internal/Ref$ObjectRef;
     .restart local v10    # "lock$iv":Ljava/lang/Object;
     .restart local v11    # "$i$f$synchronized":I
-    :catchall_a9
+    :catchall_1
     move-exception v0
 
-    goto :goto_ae
+    goto :goto_5
 
-    :catchall_ab
+    :catchall_2
     move-exception v0
 
     move-object/from16 v15, p1
 
-    :goto_ae
+    :goto_5
     monitor-exit v10
 
     throw v0

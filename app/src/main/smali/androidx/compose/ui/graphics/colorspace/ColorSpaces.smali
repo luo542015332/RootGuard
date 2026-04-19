@@ -139,7 +139,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$JTil3hD4pNI5JrfqjgorhWtJqlk(D)D
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->ExtendedSrgb$lambda$0(D)D
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public static synthetic $r8$lambda$ZBI1_TKEGKDkhEJCw6ApGeuxJiI(D)D
-    .registers 2
+    .locals 0
 
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->ExtendedSrgb$lambda$1(D)D
 
@@ -159,7 +159,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 49
+    .locals 49
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
@@ -172,14 +172,14 @@
 
     new-array v12, v0, [F
 
-    fill-array-data v12, :array_34e
+    fill-array-data v12, :array_0
 
     sput-object v12, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->SrgbPrimaries:[F
 
     .line 23
     new-array v13, v0, [F
 
-    fill-array-data v13, :array_35e
+    fill-array-data v13, :array_1
 
     sput-object v13, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Ntsc1953Primaries:[F
 
@@ -390,7 +390,7 @@
     .line 105
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_36e
+    fill-array-data v1, :array_2
 
     .line 106
     sget-object v2, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -437,7 +437,7 @@
     .line 117
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_37e
+    fill-array-data v1, :array_3
 
     .line 118
     sget-object v2, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -480,7 +480,7 @@
     .line 129
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_38e
+    fill-array-data v1, :array_4
 
     .line 130
     new-instance v2, Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -522,7 +522,7 @@
     .line 142
     new-array v3, v0, [F
 
-    fill-array-data v3, :array_39e
+    fill-array-data v3, :array_5
 
     .line 143
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -608,7 +608,7 @@
     .line 166
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_3ae
+    fill-array-data v1, :array_6
 
     .line 167
     sget-object v2, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -663,7 +663,7 @@
     .line 178
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_3be
+    fill-array-data v1, :array_7
 
     .line 179
     sget-object v2, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -701,7 +701,7 @@
     .line 191
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_3ce
+    fill-array-data v1, :array_8
 
     .line 192
     sget-object v2, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -756,7 +756,7 @@
     .line 203
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_3de
+    fill-array-data v1, :array_9
 
     .line 204
     sget-object v2, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -794,7 +794,7 @@
     .line 216
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_3ee
+    fill-array-data v1, :array_a
 
     .line 217
     sget-object v2, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -1071,7 +1071,7 @@
 
     return-void
 
-    :array_34e
+    :array_0
     .array-data 4
         0x3f23d70a    # 0.64f
         0x3ea8f5c3    # 0.33f
@@ -1081,7 +1081,7 @@
         0x3d75c28f    # 0.06f
     .end array-data
 
-    :array_35e
+    :array_1
     .array-data 4
         0x3f2b851f    # 0.67f
         0x3ea8f5c3    # 0.33f
@@ -1091,7 +1091,7 @@
         0x3da3d70a    # 0.08f
     .end array-data
 
-    :array_36e
+    :array_2
     .array-data 4
         0x3f23d70a    # 0.64f
         0x3ea8f5c3    # 0.33f
@@ -1101,7 +1101,7 @@
         0x3d75c28f    # 0.06f
     .end array-data
 
-    :array_37e
+    :array_3
     .array-data 4
         0x3f353f7d    # 0.708f
         0x3e958106    # 0.292f
@@ -1111,7 +1111,7 @@
         0x3d3c6a7f    # 0.046f
     .end array-data
 
-    :array_38e
+    :array_4
     .array-data 4
         0x3f2e147b    # 0.68f
         0x3ea3d70a    # 0.32f
@@ -1121,7 +1121,7 @@
         0x3d75c28f    # 0.06f
     .end array-data
 
-    :array_39e
+    :array_5
     .array-data 4
         0x3f2e147b    # 0.68f
         0x3ea3d70a    # 0.32f
@@ -1131,7 +1131,7 @@
         0x3d75c28f    # 0.06f
     .end array-data
 
-    :array_3ae
+    :array_6
     .array-data 4
         0x3f2147ae    # 0.63f
         0x3eae147b    # 0.34f
@@ -1141,7 +1141,7 @@
         0x3d8f5c29    # 0.07f
     .end array-data
 
-    :array_3be
+    :array_7
     .array-data 4
         0x3f23d70a    # 0.64f
         0x3ea8f5c3    # 0.33f
@@ -1151,7 +1151,7 @@
         0x3d75c28f    # 0.06f
     .end array-data
 
-    :array_3ce
+    :array_8
     .array-data 4
         0x3f3c154d    # 0.7347f
         0x3e87d567    # 0.2653f
@@ -1161,7 +1161,7 @@
         0x38d1b717    # 1.0E-4f
     .end array-data
 
-    :array_3de
+    :array_9
     .array-data 4
         0x3f3c154d    # 0.7347f
         0x3e87d567    # 0.2653f
@@ -1171,7 +1171,7 @@
         -0x42624dd3    # -0.077f
     .end array-data
 
-    :array_3ee
+    :array_a
     .array-data 4
         0x3f36872b    # 0.713f
         0x3e960419    # 0.293f
@@ -1183,7 +1183,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -1192,7 +1192,7 @@
 .end method
 
 .method private static final ExtendedSrgb$lambda$0(D)D
-    .registers 14
+    .locals 12
     .param p0, "x"    # D
 
     .line 64
@@ -1224,7 +1224,7 @@
 .end method
 
 .method private static final ExtendedSrgb$lambda$1(D)D
-    .registers 14
+    .locals 12
     .param p0, "x"    # D
 
     .line 74
@@ -1258,7 +1258,7 @@
 
 # virtual methods
 .method public final getAces()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 201
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Aces:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1267,7 +1267,7 @@
 .end method
 
 .method public final getAcescg()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 214
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Acescg:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1276,7 +1276,7 @@
 .end method
 
 .method public final getAdobeRgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 176
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->AdobeRgb:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1285,7 +1285,7 @@
 .end method
 
 .method public final getBt2020()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 115
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Bt2020:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1294,7 +1294,7 @@
 .end method
 
 .method public final getBt709()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 103
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Bt709:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1303,7 +1303,7 @@
 .end method
 
 .method public final getCieLab()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 2
+    .locals 1
 
     .line 252
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->CieLab:Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -1312,7 +1312,7 @@
 .end method
 
 .method public final getCieXyz()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 2
+    .locals 1
 
     .line 235
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->CieXyz:Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -1321,7 +1321,7 @@
 .end method
 
 .method public final getColorSpace$ui_graphics_release(I)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 4
+    .locals 2
     .param p1, "id"    # I
 
     const/4 v0, 0x0
@@ -1338,7 +1338,7 @@
 .end method
 
 .method public final getColorSpacesArray$ui_graphics_release()[Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 2
+    .locals 1
 
     .line 325
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->ColorSpacesArray:[Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -1347,7 +1347,7 @@
 .end method
 
 .method public final getDciP3()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 127
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->DciP3:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1356,7 +1356,7 @@
 .end method
 
 .method public final getDisplayP3()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 140
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->DisplayP3:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1365,7 +1365,7 @@
 .end method
 
 .method public final getExtendedSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 58
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->ExtendedSrgb:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1374,7 +1374,7 @@
 .end method
 
 .method public final getLinearExtendedSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 90
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->LinearExtendedSrgb:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1383,7 +1383,7 @@
 .end method
 
 .method public final getLinearSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 45
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->LinearSrgb:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1392,7 +1392,7 @@
 .end method
 
 .method public final getNtsc1953()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 152
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Ntsc1953:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1401,7 +1401,7 @@
 .end method
 
 .method public final getNtsc1953Primaries$ui_graphics_release()[F
-    .registers 2
+    .locals 1
 
     .line 23
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Ntsc1953Primaries:[F
@@ -1410,7 +1410,7 @@
 .end method
 
 .method public final getOklab()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 2
+    .locals 1
 
     .line 280
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Oklab:Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -1419,7 +1419,7 @@
 .end method
 
 .method public final getProPhotoRgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 189
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->ProPhotoRgb:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1428,7 +1428,7 @@
 .end method
 
 .method public final getSmpteC()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 164
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->SmpteC:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1437,7 +1437,7 @@
 .end method
 
 .method public final getSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 33
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Srgb:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1446,7 +1446,7 @@
 .end method
 
 .method public final getSrgbPrimaries$ui_graphics_release()[F
-    .registers 2
+    .locals 1
 
     .line 22
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->SrgbPrimaries:[F
@@ -1455,7 +1455,7 @@
 .end method
 
 .method public final getSrgbTransferParameters$ui_graphics_release()Landroidx/compose/ui/graphics/colorspace/TransferParameters;
-    .registers 2
+    .locals 1
 
     .line 24
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->SrgbTransferParameters:Landroidx/compose/ui/graphics/colorspace/TransferParameters;
@@ -1464,7 +1464,7 @@
 .end method
 
 .method public final getUnspecified$ui_graphics_release()Landroidx/compose/ui/graphics/colorspace/Rgb;
-    .registers 2
+    .locals 1
 
     .line 260
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->Unspecified:Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1473,7 +1473,7 @@
 .end method
 
 .method public final match([FLandroidx/compose/ui/graphics/colorspace/TransferParameters;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 12
+    .locals 9
     .param p1, "toXYZD50"    # [F
     .param p2, "function"    # Landroidx/compose/ui/graphics/colorspace/TransferParameters;
 
@@ -1492,10 +1492,10 @@
 
     const/4 v2, 0x0
 
-    :goto_10
+    :goto_0
     const/4 v3, 0x0
 
-    if-ge v2, v1, :cond_51
+    if-ge v2, v1, :cond_1
 
     aget-object v4, v0, v2
 
@@ -1515,7 +1515,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4e
+    if-eqz v5, :cond_0
 
     .line 305
     sget-object v5, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
@@ -1549,7 +1549,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4e
+    if-eqz v5, :cond_0
 
     .line 308
     invoke-virtual {v3}, Landroidx/compose/ui/graphics/colorspace/Rgb;->getTransferParameters()Landroidx/compose/ui/graphics/colorspace/TransferParameters;
@@ -1560,7 +1560,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4e
+    if-eqz v5, :cond_0
 
     .line 311
     return-object v4
@@ -1568,12 +1568,12 @@
     .line 303
     .end local v3    # "rgb":Landroidx/compose/ui/graphics/colorspace/Rgb;
     .end local v4    # "colorSpace":Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    :cond_4e
+    :cond_0
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 316
-    :cond_51
+    :cond_1
     return-object v3
 .end method

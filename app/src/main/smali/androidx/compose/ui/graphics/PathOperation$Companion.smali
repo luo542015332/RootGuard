@@ -48,7 +48,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/PathOperation$Companion;-><init>()V
 
@@ -67,10 +67,9 @@
 
 # virtual methods
 .method public final getDifference-b3I0S0c()I
-    .registers 2
+    .locals 1
 
     .line 45
-    # getter for: Landroidx/compose/ui/graphics/PathOperation;->Difference:I
     invoke-static {}, Landroidx/compose/ui/graphics/PathOperation;->access$getDifference$cp()I
 
     move-result v0
@@ -79,10 +78,9 @@
 .end method
 
 .method public final getIntersect-b3I0S0c()I
-    .registers 2
+    .locals 1
 
     .line 57
-    # getter for: Landroidx/compose/ui/graphics/PathOperation;->Intersect:I
     invoke-static {}, Landroidx/compose/ui/graphics/PathOperation;->access$getIntersect$cp()I
 
     move-result v0
@@ -91,10 +89,9 @@
 .end method
 
 .method public final getReverseDifference-b3I0S0c()I
-    .registers 2
+    .locals 1
 
     .line 92
-    # getter for: Landroidx/compose/ui/graphics/PathOperation;->ReverseDifference:I
     invoke-static {}, Landroidx/compose/ui/graphics/PathOperation;->access$getReverseDifference$cp()I
 
     move-result v0
@@ -103,10 +100,9 @@
 .end method
 
 .method public final getUnion-b3I0S0c()I
-    .registers 2
+    .locals 1
 
     .line 66
-    # getter for: Landroidx/compose/ui/graphics/PathOperation;->Union:I
     invoke-static {}, Landroidx/compose/ui/graphics/PathOperation;->access$getUnion$cp()I
 
     move-result v0
@@ -115,10 +111,9 @@
 .end method
 
 .method public final getXor-b3I0S0c()I
-    .registers 2
+    .locals 1
 
     .line 78
-    # getter for: Landroidx/compose/ui/graphics/PathOperation;->Xor:I
     invoke-static {}, Landroidx/compose/ui/graphics/PathOperation;->access$getXor$cp()I
 
     move-result v0

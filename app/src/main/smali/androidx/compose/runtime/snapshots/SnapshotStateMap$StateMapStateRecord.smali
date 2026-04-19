@@ -80,7 +80,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
-    .registers 3
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public assign(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 7
+    .locals 5
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -121,7 +121,6 @@
 
     .line 174
     .local v0, "other":Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->sync:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotStateMapKt;->access$getSync$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -137,7 +136,7 @@
 
     .line 175
     .local v3, "$i$a$-synchronized-SnapshotStateMap$StateMapStateRecord$assign$1":I
-    :try_start_10
+    :try_start_0
     iget-object v4, v0, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
 
     iput-object v4, p0, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
@@ -152,8 +151,8 @@
 
     .end local v3    # "$i$a$-synchronized-SnapshotStateMap$StateMapStateRecord$assign$1":I
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_1b
-    .catchall {:try_start_10 .. :try_end_1b} :catchall_1d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 361
     monitor-exit v1
@@ -166,7 +165,7 @@
     .line 361
     .restart local v1    # "lock$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_1d
+    :catchall_0
     move-exception v3
 
     monitor-exit v1
@@ -175,7 +174,7 @@
 .end method
 
 .method public create()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 3
+    .locals 2
 
     .line 180
     new-instance v0, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;
@@ -190,7 +189,7 @@
 .end method
 
 .method public final getMap$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -206,7 +205,7 @@
 .end method
 
 .method public final getModification$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 170
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateMap$StateMapStateRecord;->modification:I
@@ -215,7 +214,7 @@
 .end method
 
 .method public final setMap$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -236,7 +235,7 @@
 .end method
 
 .method public final setModification$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 170

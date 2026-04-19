@@ -61,13 +61,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(F)V
-    .registers 2
+    .locals 0
     .param p1, "bias"    # F
 
     .line 207
@@ -80,7 +80,7 @@
 .end method
 
 .method private final component1()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/BiasAlignment$Vertical;->bias:F
 
@@ -88,15 +88,15 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/BiasAlignment$Vertical;FILjava/lang/Object;)Landroidx/compose/ui/BiasAlignment$Vertical;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     iget p1, p0, Landroidx/compose/ui/BiasAlignment$Vertical;->bias:F
 
-    :cond_6
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/ui/BiasAlignment$Vertical;->copy(F)Landroidx/compose/ui/BiasAlignment$Vertical;
 
     move-result-object p0
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public align(II)I
-    .registers 6
+    .locals 3
     .param p1, "size"    # I
     .param p2, "space"    # I
 
@@ -140,7 +140,7 @@
 .end method
 
 .method public final copy(F)Landroidx/compose/ui/BiasAlignment$Vertical;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/BiasAlignment$Vertical;
 
@@ -150,24 +150,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/BiasAlignment$Vertical;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/BiasAlignment$Vertical;
@@ -180,16 +180,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/BiasAlignment$Vertical;->bias:F
 
@@ -201,7 +201,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

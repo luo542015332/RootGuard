@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static synthetic access$getValue$jd(Landroidx/compose/runtime/LongState;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/runtime/LongState;
 
     .line 62
@@ -71,7 +71,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Long;
-    .registers 3
+    .locals 2
 
     .line 67
     invoke-interface {p0}, Landroidx/compose/runtime/LongState;->getLongValue()J
@@ -86,7 +86,7 @@
 .end method
 
 .method public bridge synthetic getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 62
     invoke-interface {p0}, Landroidx/compose/runtime/LongState;->getValue()Ljava/lang/Long;

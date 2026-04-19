@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/ListImplementation;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,22 +71,22 @@
 .end method
 
 .method public static final checkElementIndex$runtime_release(II)V
-    .registers 5
+    .locals 3
     .param p0, "index"    # I
     .param p1, "size"    # I
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
     .line 14
-    if-ltz p0, :cond_5
+    if-ltz p0, :cond_0
 
-    if-ge p0, p1, :cond_5
+    if-ge p0, p1, :cond_0
 
     .line 17
     return-void
 
     .line 15
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -123,22 +123,22 @@
 .end method
 
 .method public static final checkPositionIndex$runtime_release(II)V
-    .registers 5
+    .locals 3
     .param p0, "index"    # I
     .param p1, "size"    # I
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
     .line 21
-    if-ltz p0, :cond_5
+    if-ltz p0, :cond_0
 
-    if-gt p0, p1, :cond_5
+    if-gt p0, p1, :cond_0
 
     .line 24
     return-void
 
     .line 22
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -175,7 +175,7 @@
 .end method
 
 .method public static final checkRangeIndexes$runtime_release(III)V
-    .registers 6
+    .locals 3
     .param p0, "fromIndex"    # I
     .param p1, "toIndex"    # I
     .param p2, "size"    # I
@@ -185,18 +185,18 @@
     .line 28
     const-string/jumbo v0, "fromIndex: "
 
-    if-ltz p0, :cond_2b
+    if-ltz p0, :cond_1
 
-    if-gt p1, p2, :cond_2b
+    if-gt p1, p2, :cond_1
 
     .line 31
-    if-gt p0, p1, :cond_a
+    if-gt p0, p1, :cond_0
 
     .line 34
     return-void
 
     .line 32
-    :cond_a
+    :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -230,7 +230,7 @@
     throw v1
 
     .line 29
-    :cond_2b
+    :cond_1
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -275,7 +275,7 @@
 .end method
 
 .method public static final orderedEquals$runtime_release(Ljava/util/Collection;Ljava/util/Collection;)Z
-    .registers 8
+    .locals 6
     .param p0, "c"    # Ljava/util/Collection;
     .param p1, "other"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
@@ -310,12 +310,12 @@
 
     const/4 v2, 0x0
 
-    if-eq v0, v1, :cond_18
+    if-eq v0, v1, :cond_0
 
     return v2
 
     .line 49
-    :cond_18
+    :cond_0
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -326,12 +326,12 @@
 
     move-result-object v1
 
-    :cond_20
+    :cond_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_2
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -349,7 +349,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_20
+    if-nez v5, :cond_1
 
     .line 53
     return v2
@@ -357,14 +357,14 @@
     .line 56
     .end local v3    # "elem":Ljava/lang/Object;
     .end local v4    # "elemOther":Ljava/lang/Object;
-    :cond_35
+    :cond_2
     const/4 v1, 0x1
 
     return v1
 .end method
 
 .method public static final orderedHashCode$runtime_release(Ljava/util/Collection;)I
-    .registers 6
+    .locals 5
     .param p0, "c"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -390,12 +390,12 @@
 
     move-result-object v1
 
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_1
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -405,24 +405,24 @@
     .local v2, "e":Ljava/lang/Object;
     mul-int/lit8 v3, v0, 0x1f
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v4
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_0
     const/4 v4, 0x0
 
-    :goto_1f
+    :goto_1
     add-int v0, v3, v4
 
     .end local v2    # "e":Ljava/lang/Object;
-    goto :goto_b
+    goto :goto_0
 
     .line 42
-    :cond_22
+    :cond_1
     return v0
 .end method

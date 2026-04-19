@@ -53,7 +53,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 366
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/RecomposeScopeImpl$Companion;-><init>()V
 
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public final adoptAnchoredScopes$runtime_release(Landroidx/compose/runtime/SlotWriter;Ljava/util/List;Landroidx/compose/runtime/RecomposeScopeOwner;)V
-    .registers 13
+    .locals 9
     .param p1, "slots"    # Landroidx/compose/runtime/SlotWriter;
     .param p2, "anchors"    # Ljava/util/List;
     .param p3, "newOwner"    # Landroidx/compose/runtime/RecomposeScopeOwner;
@@ -111,7 +111,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_3
 
     .line 373
     move-object v0, p2
@@ -131,8 +131,8 @@
 
     move-result v3
 
-    :goto_25
-    if-ge v2, v3, :cond_46
+    :goto_0
+    if-ge v2, v3, :cond_2
 
     .line 391
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -158,24 +158,24 @@
 
     instance-of v8, v7, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v8, :cond_3b
+    if-eqz v8, :cond_0
 
     check-cast v7, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    goto :goto_3c
+    goto :goto_1
 
-    :cond_3b
+    :cond_0
     const/4 v7, 0x0
 
     .line 377
     .local v7, "recomposeScope":Landroidx/compose/runtime/RecomposeScopeImpl;
-    :goto_3c
-    if-eqz v7, :cond_41
+    :goto_1
+    if-eqz v7, :cond_1
 
     invoke-virtual {v7, p3}, Landroidx/compose/runtime/RecomposeScopeImpl;->adoptedBy(Landroidx/compose/runtime/RecomposeScopeOwner;)V
 
     .line 378
-    :cond_41
+    :cond_1
     nop
 
     .line 392
@@ -188,22 +188,22 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_25
+    goto :goto_0
 
     .line 394
     .end local v2    # "index$iv":I
-    :cond_46
+    :cond_2
     nop
 
     .line 380
     .end local v0    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v1    # "$i$f$fastForEach":I
-    :cond_47
+    :cond_3
     return-void
 .end method
 
 .method public final hasAnchoredRecomposeScopes$runtime_release(Landroidx/compose/runtime/SlotTable;Ljava/util/List;)Z
-    .registers 19
+    .locals 16
     .param p1, "slots"    # Landroidx/compose/runtime/SlotTable;
     .param p2, "anchors"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -243,7 +243,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v2, :cond_57
+    if-eqz v2, :cond_3
 
     move-object/from16 v2, p2
 
@@ -272,8 +272,8 @@
 
     move-result v9
 
-    :goto_28
-    if-ge v8, v9, :cond_52
+    :goto_0
+    if-ge v8, v9, :cond_2
 
     .line 399
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -302,7 +302,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_48
+    if-eqz v15, :cond_0
 
     invoke-virtual {v0, v13}, Landroidx/compose/runtime/SlotTable;->anchorIndex(Landroidx/compose/runtime/Anchor;)I
 
@@ -314,27 +314,27 @@
 
     instance-of v15, v15, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v15, :cond_48
+    if-eqz v15, :cond_0
 
     move v13, v3
 
-    goto :goto_49
+    goto :goto_1
 
-    :cond_48
+    :cond_0
     move v13, v4
 
     .line 401
     .end local v13    # "it":Landroidx/compose/runtime/Anchor;
     .end local v14    # "$i$a$-fastAny-RecomposeScopeImpl$Companion$hasAnchoredRecomposeScopes$1":I
-    :goto_49
-    if-eqz v13, :cond_4d
+    :goto_1
+    if-eqz v13, :cond_1
 
     move v2, v3
 
-    goto :goto_54
+    goto :goto_2
 
     .line 402
-    :cond_4d
+    :cond_1
     nop
 
     .line 400
@@ -346,11 +346,11 @@
     .end local v10    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_28
+    goto :goto_0
 
     .line 403
     .end local v8    # "index$iv$iv":I
-    :cond_52
+    :cond_2
     nop
 
     .line 404
@@ -360,15 +360,15 @@
 
     .end local v2    # "$this$fastAny$iv":Ljava/util/List;
     .end local v5    # "$i$f$fastAny":I
-    :goto_54
-    if-eqz v2, :cond_57
+    :goto_2
+    if-eqz v2, :cond_3
 
-    goto :goto_58
+    goto :goto_3
 
-    :cond_57
+    :cond_3
     move v3, v4
 
     .line 385
-    :goto_58
+    :goto_3
     return v3
 .end method

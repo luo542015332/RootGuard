@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public computeScaleFactor-H7hwNQA(JJ)J
-    .registers 7
+    .locals 2
     .param p1, "srcSize"    # J
     .param p3, "dstSize"    # J
 
@@ -70,7 +70,7 @@
 
     cmpg-float v0, v0, v1
 
-    if-gtz v0, :cond_1f
+    if-gtz v0, :cond_0
 
     .line 114
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
@@ -83,7 +83,7 @@
 
     cmpg-float v0, v0, v1
 
-    if-gtz v0, :cond_1f
+    if-gtz v0, :cond_0
 
     .line 116
     const/high16 v0, 0x3f800000    # 1.0f
@@ -92,11 +92,10 @@
 
     move-result-wide v0
 
-    goto :goto_29
+    goto :goto_0
 
     .line 118
-    :cond_1f
-    # invokes: Landroidx/compose/ui/layout/ContentScaleKt;->computeFillMinDimension-iLBOSCw(JJ)F
+    :cond_0
     invoke-static {p1, p2, p3, p4}, Landroidx/compose/ui/layout/ContentScaleKt;->access$computeFillMinDimension-iLBOSCw(JJ)F
 
     move-result v0
@@ -116,6 +115,6 @@
     nop
 
     .line 113
-    :goto_29
+    :goto_0
     return-wide v0
 .end method

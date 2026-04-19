@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/UpdatableAnimationState;FLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 100
@@ -116,13 +116,12 @@
 .end method
 
 .method public final invoke(J)V
-    .registers 15
+    .locals 12
     .param p1, "frameTime"    # J
 
     .line 101
     iget-object v0, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
 
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->lastFrameTime:J
     invoke-static {v0}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getLastFrameTime$p(Landroidx/compose/foundation/gestures/UpdatableAnimationState;)J
 
     move-result-wide v0
@@ -131,7 +130,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 102
     iget-object v0, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
@@ -139,7 +138,7 @@
     invoke-static {v0, p1, p2}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$setLastFrameTime$p(Landroidx/compose/foundation/gestures/UpdatableAnimationState;J)V
 
     .line 105
-    :cond_11
+    :cond_0
     new-instance v0, Landroidx/compose/animation/core/AnimationVector1D;
 
     iget-object v1, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
@@ -158,20 +157,19 @@
 
     cmpg-float v1, v1, v2
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_26
-    if-eqz v1, :cond_55
+    :goto_0
+    if-eqz v1, :cond_2
 
     .line 109
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->Companion:Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
     invoke-static {}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getCompanion$p()Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
 
     move-result-object v1
@@ -194,7 +192,6 @@
     check-cast v2, Landroidx/compose/animation/core/AnimationVector;
 
     .line 111
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->Companion:Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
     invoke-static {}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getCompanion$p()Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
 
     move-result-object v3
@@ -208,7 +205,6 @@
     .line 112
     iget-object v4, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
 
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->lastVelocity:Landroidx/compose/animation/core/AnimationVector1D;
     invoke-static {v4}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getLastVelocity$p(Landroidx/compose/foundation/gestures/UpdatableAnimationState;)Landroidx/compose/animation/core/AnimationVector1D;
 
     move-result-object v4
@@ -222,13 +218,12 @@
 
     move-wide v4, v1
 
-    goto :goto_66
+    goto :goto_1
 
     .line 115
-    :cond_55
+    :cond_2
     iget-object v1, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
 
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->lastFrameTime:J
     invoke-static {v1}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getLastFrameTime$p(Landroidx/compose/foundation/gestures/UpdatableAnimationState;)J
 
     move-result-wide v1
@@ -248,12 +243,11 @@
     move-wide v4, v1
 
     .line 106
-    :goto_66
+    :goto_1
     nop
 
     .line 117
     .local v4, "playTime":J
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->Companion:Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
     invoke-static {}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getCompanion$p()Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
 
     move-result-object v1
@@ -271,7 +265,6 @@
     check-cast v6, Landroidx/compose/animation/core/AnimationVector;
 
     .line 120
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->Companion:Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
     invoke-static {}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getCompanion$p()Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
 
     move-result-object v1
@@ -287,7 +280,6 @@
     .line 121
     iget-object v1, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
 
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->lastVelocity:Landroidx/compose/animation/core/AnimationVector1D;
     invoke-static {v1}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getLastVelocity$p(Landroidx/compose/foundation/gestures/UpdatableAnimationState;)Landroidx/compose/animation/core/AnimationVector1D;
 
     move-result-object v1
@@ -315,7 +307,6 @@
     .local v1, "newValue":F
     iget-object v2, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
 
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->Companion:Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
     invoke-static {}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getCompanion$p()Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
 
     move-result-object v3
@@ -333,7 +324,6 @@
     check-cast v9, Landroidx/compose/animation/core/AnimationVector;
 
     .line 126
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->Companion:Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
     invoke-static {}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getCompanion$p()Landroidx/compose/foundation/gestures/UpdatableAnimationState$Companion;
 
     move-result-object v3
@@ -349,7 +339,6 @@
     .line 127
     iget-object v3, p0, Landroidx/compose/foundation/gestures/UpdatableAnimationState$animateToZero$3;->this$0:Landroidx/compose/foundation/gestures/UpdatableAnimationState;
 
-    # getter for: Landroidx/compose/foundation/gestures/UpdatableAnimationState;->lastVelocity:Landroidx/compose/animation/core/AnimationVector1D;
     invoke-static {v3}, Landroidx/compose/foundation/gestures/UpdatableAnimationState;->access$getLastVelocity$p(Landroidx/compose/foundation/gestures/UpdatableAnimationState;)Landroidx/compose/animation/core/AnimationVector1D;
 
     move-result-object v3

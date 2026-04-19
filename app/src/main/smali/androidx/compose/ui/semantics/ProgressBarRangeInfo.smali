@@ -79,7 +79,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 8
+    .locals 8
 
     new-instance v0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo$Companion;
 
@@ -116,7 +116,7 @@
 .end method
 
 .method public constructor <init>(FLkotlin/ranges/ClosedFloatingPointRange;I)V
-    .registers 6
+    .locals 2
     .param p1, "current"    # F
     .param p2, "range"    # Lkotlin/ranges/ClosedFloatingPointRange;
     .param p3, "steps"    # I
@@ -155,7 +155,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 520
     nop
@@ -164,7 +164,7 @@
     return-void
 
     .line 1292
-    :cond_1a
+    :cond_0
     const/4 v0, 0x0
 
     .line 519
@@ -186,18 +186,18 @@
 .end method
 
 .method public synthetic constructor <init>(FLkotlin/ranges/ClosedFloatingPointRange;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 512
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 516
     const/4 p3, 0x0
 
     .line 512
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;-><init>(FLkotlin/ranges/ClosedFloatingPointRange;I)V
 
     .line 550
@@ -205,7 +205,7 @@
 .end method
 
 .method public static final synthetic access$getIndeterminate$cp()Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
-    .registers 1
+    .locals 1
 
     .line 512
     sget-object v0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->Indeterminate:Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
@@ -216,28 +216,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 530
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 531
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 533
-    :cond_a
+    :cond_1
     iget v1, p0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->current:F
 
     move-object v3, p1
@@ -248,22 +248,22 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_2
 
     move v1, v0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_2
     move v1, v2
 
-    :goto_18
-    if-nez v1, :cond_1b
+    :goto_0
+    if-nez v1, :cond_3
 
     return v2
 
     .line 534
-    :cond_1b
+    :cond_3
     iget-object v1, p0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->range:Lkotlin/ranges/ClosedFloatingPointRange;
 
     move-object v3, p1
@@ -276,12 +276,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_4
 
     return v2
 
     .line 535
-    :cond_29
+    :cond_4
     iget v1, p0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->steps:I
 
     move-object v3, p1
@@ -290,17 +290,17 @@
 
     iget v3, v3, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->steps:I
 
-    if-eq v1, v3, :cond_33
+    if-eq v1, v3, :cond_5
 
     return v2
 
     .line 537
-    :cond_33
+    :cond_5
     return v0
 .end method
 
 .method public final getCurrent()F
-    .registers 2
+    .locals 1
 
     .line 513
     iget v0, p0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->current:F
@@ -309,7 +309,7 @@
 .end method
 
 .method public final getRange()Lkotlin/ranges/ClosedFloatingPointRange;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -326,7 +326,7 @@
 .end method
 
 .method public final getSteps()I
-    .registers 2
+    .locals 1
 
     .line 516
     iget v0, p0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->steps:I
@@ -335,7 +335,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 541
     iget v0, p0, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->current:F
@@ -372,7 +372,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 548
     new-instance v0, Ljava/lang/StringBuilder;

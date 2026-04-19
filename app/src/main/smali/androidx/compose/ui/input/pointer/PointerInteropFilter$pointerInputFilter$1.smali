@@ -63,7 +63,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/input/pointer/PointerInteropFilter;)V
-    .registers 3
+    .locals 1
     .param p1, "$receiver"    # Landroidx/compose/ui/input/pointer/PointerInteropFilter;
 
     iput-object p1, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->this$0:Landroidx/compose/ui/input/pointer/PointerInteropFilter;
@@ -81,7 +81,7 @@
 .end method
 
 .method public static final synthetic access$setState$p(Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;
     .param p1, "<set-?>"    # Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
@@ -92,7 +92,7 @@
 .end method
 
 .method private final dispatchToView(Landroidx/compose/ui/input/pointer/PointerEvent;)V
-    .registers 15
+    .locals 13
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerEvent;
 
     .line 278
@@ -129,10 +129,10 @@
 
     move-result v6
 
-    :goto_f
+    :goto_0
     const/4 v7, 0x1
 
-    if-ge v5, v6, :cond_28
+    if-ge v5, v6, :cond_1
 
     .line 372
     invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -164,27 +164,27 @@
     .line 369
     .end local v11    # "it":Landroidx/compose/ui/input/pointer/PointerInputChange;
     .end local v12    # "$i$a$-fastAny-PointerInteropFilter$pointerInputFilter$1$dispatchToView$1":I
-    if-eqz v11, :cond_24
+    if-eqz v11, :cond_0
 
     move v3, v7
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 373
     .end local v9    # "it$iv":Ljava/lang/Object;
     .end local v10    # "$i$a$-fastForEach-ListUtilsKt$fastAny$2$iv":I
-    :cond_24
+    :cond_0
     nop
 
     .line 371
     .end local v8    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 375
     .end local v5    # "index$iv$iv":I
-    :cond_28
+    :cond_1
     nop
 
     .line 376
@@ -195,17 +195,17 @@
     .line 280
     .end local v1    # "$this$fastAny$iv":Ljava/util/List;
     .end local v2    # "$i$f$fastAny":I
-    :goto_2a
+    :goto_1
     const-string/jumbo v1, "layoutCoordinates not set"
 
-    if-eqz v3, :cond_62
+    if-eqz v3, :cond_4
 
     .line 282
     iget-object v2, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->state:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
     sget-object v3, Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;->Dispatching:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
-    if-ne v2, v3, :cond_5d
+    if-ne v2, v3, :cond_3
 
     .line 284
     nop
@@ -215,7 +215,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_53
+    if-eqz v2, :cond_2
 
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
@@ -238,10 +238,10 @@
 
     invoke-static {p1, v1, v2, v3}, Landroidx/compose/ui/input/pointer/PointerInteropUtils_androidKt;->toCancelMotionEventScope-d-4ec7I(Landroidx/compose/ui/input/pointer/PointerEvent;JLkotlin/jvm/functions/Function1;)V
 
-    goto :goto_5d
+    goto :goto_2
 
     .line 285
-    :cond_53
+    :cond_2
     new-instance v2, Ljava/lang/IllegalStateException;
 
     .line 286
@@ -254,16 +254,16 @@
     throw v2
 
     .line 291
-    :cond_5d
-    :goto_5d
+    :cond_3
+    :goto_2
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;->NotDispatching:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
     iput-object v1, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->state:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
-    goto :goto_b1
+    goto :goto_4
 
     .line 294
-    :cond_62
+    :cond_4
     nop
 
     .line 295
@@ -271,7 +271,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_b2
+    if-eqz v2, :cond_8
 
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
@@ -299,7 +299,7 @@
 
     sget-object v2, Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;->Dispatching:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
-    if-ne v1, v2, :cond_b1
+    if-ne v1, v2, :cond_7
 
     .line 314
     move-object v1, v0
@@ -319,8 +319,8 @@
 
     move-result v4
 
-    :goto_8d
-    if-ge v3, v4, :cond_9f
+    :goto_3
+    if-ge v3, v4, :cond_5
 
     .line 379
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -352,11 +352,11 @@
     .end local v5    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_8d
+    goto :goto_3
 
     .line 382
     .end local v3    # "index$iv":I
-    :cond_9f
+    :cond_5
     nop
 
     .line 317
@@ -366,12 +366,12 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_a7
+    if-nez v1, :cond_6
 
-    goto :goto_b1
+    goto :goto_4
 
     .line 318
-    :cond_a7
+    :cond_6
     iget-object v2, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->this$0:Landroidx/compose/ui/input/pointer/PointerInteropFilter;
 
     invoke-virtual {v2}, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->getDisallowIntercept$ui_release()Z
@@ -384,12 +384,12 @@
     invoke-virtual {v1, v2}, Landroidx/compose/ui/input/pointer/InternalPointerEvent;->setSuppressMovementConsumption(Z)V
 
     .line 321
-    :cond_b1
-    :goto_b1
+    :cond_7
+    :goto_4
     return-void
 
     .line 295
-    :cond_b2
+    :cond_8
     new-instance v2, Ljava/lang/IllegalStateException;
 
     .line 296
@@ -403,7 +403,7 @@
 .end method
 
 .method private final reset()V
-    .registers 3
+    .locals 2
 
     .line 261
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;->Unknown:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
@@ -424,7 +424,7 @@
 
 # virtual methods
 .method public getShareWithSiblings()Z
-    .registers 2
+    .locals 1
 
     .line 209
     const/4 v0, 0x1
@@ -433,14 +433,14 @@
 .end method
 
 .method public onCancel()V
-    .registers 5
+    .locals 4
 
     .line 247
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->state:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;->Dispatching:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_0
 
     .line 249
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -462,12 +462,12 @@
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->reset()V
 
     .line 255
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public onPointerEvent-H0pRuoY(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V
-    .registers 23
+    .locals 18
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p2, "pass"    # Landroidx/compose/ui/input/pointer/PointerEventPass;
     .param p3, "bounds"    # J
@@ -503,7 +503,7 @@
 
     const/4 v6, 0x1
 
-    if-nez v4, :cond_57
+    if-nez v4, :cond_5
 
     .line 223
     move-object v4, v2
@@ -533,8 +533,8 @@
 
     move-result v11
 
-    :goto_2b
-    if-ge v10, v11, :cond_50
+    :goto_0
+    if-ge v10, v11, :cond_3
 
     .line 354
     invoke-interface {v8, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -563,50 +563,50 @@
 
     move-result v17
 
-    if-nez v17, :cond_47
+    if-nez v17, :cond_1
 
     invoke-static {v15}, Landroidx/compose/ui/input/pointer/PointerEventKt;->changedToUpIgnoreConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
 
     move-result v17
 
-    if-eqz v17, :cond_45
+    if-eqz v17, :cond_0
 
-    goto :goto_47
+    goto :goto_1
 
-    :cond_45
+    :cond_0
     move v15, v5
 
-    goto :goto_48
+    goto :goto_2
 
-    :cond_47
-    :goto_47
+    :cond_1
+    :goto_1
     move v15, v6
 
     .line 351
     .end local v15    # "it":Landroidx/compose/ui/input/pointer/PointerInputChange;
     .end local v16    # "$i$a$-fastAny-PointerInteropFilter$pointerInputFilter$1$onPointerEvent$dispatchDuringInitialTunnel$1":I
-    :goto_48
-    if-eqz v15, :cond_4c
+    :goto_2
+    if-eqz v15, :cond_2
 
     move v4, v6
 
-    goto :goto_52
+    goto :goto_3
 
     .line 355
     .end local v13    # "it$iv":Ljava/lang/Object;
     .end local v14    # "$i$a$-fastForEach-ListUtilsKt$fastAny$2$iv":I
-    :cond_4c
+    :cond_2
     nop
 
     .line 353
     .end local v12    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 357
     .end local v10    # "index$iv$iv":I
-    :cond_50
+    :cond_3
     nop
 
     .line 358
@@ -616,22 +616,22 @@
 
     .end local v4    # "$this$fastAny$iv":Ljava/util/List;
     .end local v7    # "$i$f$fastAny":I
-    :goto_52
-    if-eqz v4, :cond_55
+    :goto_3
+    if-eqz v4, :cond_4
 
-    goto :goto_57
+    goto :goto_4
 
-    :cond_55
+    :cond_4
     move v4, v5
 
-    goto :goto_58
+    goto :goto_5
 
-    :cond_57
-    :goto_57
+    :cond_5
+    :goto_4
     move v4, v6
 
     .line 222
-    :goto_58
+    :goto_5
     nop
 
     .line 227
@@ -640,34 +640,34 @@
 
     sget-object v8, Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;->NotDispatching:Landroidx/compose/ui/input/pointer/PointerInteropFilter$DispatchToViewState;
 
-    if-eq v7, v8, :cond_71
+    if-eq v7, v8, :cond_7
 
     .line 228
     sget-object v7, Landroidx/compose/ui/input/pointer/PointerEventPass;->Initial:Landroidx/compose/ui/input/pointer/PointerEventPass;
 
-    if-ne v1, v7, :cond_68
+    if-ne v1, v7, :cond_6
 
-    if-eqz v4, :cond_68
+    if-eqz v4, :cond_6
 
     .line 229
     invoke-direct/range {p0 .. p1}, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->dispatchToView(Landroidx/compose/ui/input/pointer/PointerEvent;)V
 
     .line 231
-    :cond_68
+    :cond_6
     sget-object v7, Landroidx/compose/ui/input/pointer/PointerEventPass;->Final:Landroidx/compose/ui/input/pointer/PointerEventPass;
 
-    if-ne v1, v7, :cond_71
+    if-ne v1, v7, :cond_7
 
-    if-nez v4, :cond_71
+    if-nez v4, :cond_7
 
     .line 232
     invoke-direct/range {p0 .. p1}, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->dispatchToView(Landroidx/compose/ui/input/pointer/PointerEvent;)V
 
     .line 235
-    :cond_71
+    :cond_7
     sget-object v7, Landroidx/compose/ui/input/pointer/PointerEventPass;->Final:Landroidx/compose/ui/input/pointer/PointerEventPass;
 
-    if-ne v1, v7, :cond_a0
+    if-ne v1, v7, :cond_a
 
     .line 238
     move-object v7, v2
@@ -697,8 +697,8 @@
 
     move-result v12
 
-    :goto_80
-    if-ge v11, v12, :cond_99
+    :goto_6
+    if-ge v11, v12, :cond_9
 
     .line 363
     invoke-interface {v9, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -730,25 +730,25 @@
     .line 360
     .end local v16    # "it":Landroidx/compose/ui/input/pointer/PointerInputChange;
     .end local v17    # "$i$a$-fastAll-PointerInteropFilter$pointerInputFilter$1$onPointerEvent$1":I
-    if-nez v16, :cond_95
+    if-nez v16, :cond_8
 
-    goto :goto_9b
+    goto :goto_7
 
     .line 364
     .end local v14    # "it$iv":Ljava/lang/Object;
     .end local v15    # "$i$a$-fastForEach-ListUtilsKt$fastAll$2$iv":I
-    :cond_95
+    :cond_8
     nop
 
     .line 362
     .end local v13    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_80
+    goto :goto_6
 
     .line 366
     .end local v11    # "index$iv$iv":I
-    :cond_99
+    :cond_9
     nop
 
     .line 367
@@ -759,13 +759,13 @@
     .line 238
     .end local v7    # "$this$fastAll$iv":Ljava/util/List;
     .end local v8    # "$i$f$fastAll":I
-    :goto_9b
-    if-eqz v5, :cond_a0
+    :goto_7
+    if-eqz v5, :cond_a
 
     .line 239
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1;->reset()V
 
     .line 242
-    :cond_a0
+    :cond_a
     return-void
 .end method

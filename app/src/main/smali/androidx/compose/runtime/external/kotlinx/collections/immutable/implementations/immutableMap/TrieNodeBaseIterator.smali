@@ -85,7 +85,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final currentKey()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TK;"
@@ -135,7 +135,7 @@
 .end method
 
 .method public final currentNode()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -168,7 +168,7 @@
 .end method
 
 .method protected final getBuffer()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 13
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->buffer:[Ljava/lang/Object;
@@ -177,7 +177,7 @@
 .end method
 
 .method protected final getIndex()I
-    .registers 2
+    .locals 1
 
     .line 16
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->index:I
@@ -186,7 +186,7 @@
 .end method
 
 .method public hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 60
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->hasNextKey()Z
@@ -197,28 +197,28 @@
 .end method
 
 .method public final hasNextKey()Z
-    .registers 3
+    .locals 2
 
     .line 29
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->index:I
 
     iget v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->dataSize:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final hasNextNode()Z
-    .registers 5
+    .locals 4
 
     .line 44
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->index:I
@@ -229,16 +229,16 @@
 
     const/4 v3, 0x0
 
-    if-lt v0, v1, :cond_a
+    if-lt v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v3
 
-    :goto_b
+    :goto_0
     invoke-static {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 45
@@ -248,19 +248,19 @@
 
     array-length v1, v1
 
-    if-ge v0, v1, :cond_16
+    if-ge v0, v1, :cond_1
 
-    goto :goto_17
+    goto :goto_1
 
-    :cond_16
+    :cond_1
     move v2, v3
 
-    :goto_17
+    :goto_1
     return v2
 .end method
 
 .method public final moveToNextKey()V
-    .registers 2
+    .locals 1
 
     .line 39
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->hasNextKey()Z
@@ -281,7 +281,7 @@
 .end method
 
 .method public final moveToNextNode()V
-    .registers 2
+    .locals 1
 
     .line 55
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->hasNextNode()Z
@@ -302,7 +302,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -314,7 +314,7 @@
 .end method
 
 .method public final reset([Ljava/lang/Object;I)V
-    .registers 4
+    .locals 1
     .param p1, "buffer"    # [Ljava/lang/Object;
     .param p2, "dataSize"    # I
 
@@ -332,7 +332,7 @@
 .end method
 
 .method public final reset([Ljava/lang/Object;II)V
-    .registers 5
+    .locals 1
     .param p1, "buffer"    # [Ljava/lang/Object;
     .param p2, "dataSize"    # I
     .param p3, "index"    # I
@@ -355,7 +355,7 @@
 .end method
 
 .method protected final setIndex(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 16

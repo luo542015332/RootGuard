@@ -75,7 +75,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;)V
-    .registers 3
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -100,19 +100,19 @@
 
 # virtual methods
 .method public final bridge contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 11
     instance-of v0, p1, Ljava/util/Map$Entry;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
@@ -125,7 +125,7 @@
 .end method
 
 .method public contains(Ljava/util/Map$Entry;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -155,7 +155,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 53
     .local v0, "candidate":Ljava/lang/Object;
@@ -173,15 +173,15 @@
 
     .end local v0    # "candidate":Ljava/lang/Object;
     .end local v1    # "$i$a$-let-PersistentHashMapEntries$contains$1":I
-    goto :goto_34
+    goto :goto_0
 
     .line 19
-    :cond_1f
+    :cond_0
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapEntries;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
 
@@ -193,22 +193,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_33
+    :cond_1
     const/4 v0, 0x0
 
     .line 18
-    :goto_34
+    :goto_0
     return v0
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 12
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapEntries;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
@@ -221,7 +221,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

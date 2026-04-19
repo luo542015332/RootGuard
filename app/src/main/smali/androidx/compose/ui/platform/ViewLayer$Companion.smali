@@ -63,7 +63,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 393
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -72,7 +72,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/ViewLayer$Companion;-><init>()V
 
@@ -82,10 +82,9 @@
 
 # virtual methods
 .method public final getHasRetrievedMethod()Z
-    .registers 2
+    .locals 1
 
     .line 407
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->hasRetrievedMethod:Z
     invoke-static {}, Landroidx/compose/ui/platform/ViewLayer;->access$getHasRetrievedMethod$cp()Z
 
     move-result v0
@@ -94,10 +93,9 @@
 .end method
 
 .method public final getOutlineProvider()Landroid/view/ViewOutlineProvider;
-    .registers 2
+    .locals 1
 
     .line 399
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->OutlineProvider:Landroid/view/ViewOutlineProvider;
     invoke-static {}, Landroidx/compose/ui/platform/ViewLayer;->access$getOutlineProvider$cp()Landroid/view/ViewOutlineProvider;
 
     move-result-object v0
@@ -106,10 +104,9 @@
 .end method
 
 .method public final getShouldUseDispatchDraw()Z
-    .registers 2
+    .locals 1
 
     .line 410
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->shouldUseDispatchDraw:Z
     invoke-static {}, Landroidx/compose/ui/platform/ViewLayer;->access$getShouldUseDispatchDraw$cp()Z
 
     move-result v0
@@ -118,7 +115,7 @@
 .end method
 
 .method public final setShouldUseDispatchDraw$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 411
@@ -128,7 +125,7 @@
 .end method
 
 .method public final updateDisplayList(Landroid/view/View;)V
-    .registers 11
+    .locals 9
     .param p1, "view"    # Landroid/view/View;
 
     const-string/jumbo v0, "view"
@@ -141,22 +138,22 @@
     .line 416
     const/4 v0, 0x1
 
-    :try_start_8
+    :try_start_0
     invoke-virtual {p0}, Landroidx/compose/ui/platform/ViewLayer$Companion;->getHasRetrievedMethod()Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_92
+    if-nez v1, :cond_3
 
     .line 417
     invoke-static {v0}, Landroidx/compose/ui/platform/ViewLayer;->access$setHasRetrievedMethod$cp(Z)V
 
     .line 418
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_14
-    .catchall {:try_start_8 .. :try_end_14} :catchall_a7
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     const/16 v3, 0x1c
 
@@ -164,10 +161,10 @@
 
     const-string/jumbo v5, "updateDisplayListIfDirty"
 
-    if-ge v1, v3, :cond_33
+    if-ge v1, v3, :cond_0
 
     .line 419
-    :try_start_1e
+    :try_start_1
     const-class v1, Landroid/view/View;
 
     .line 420
@@ -191,9 +188,9 @@
     .line 421
     invoke-static {v1}, Landroidx/compose/ui/platform/ViewLayer;->access$setRecreateDisplayList$cp(Ljava/lang/reflect/Field;)V
 
-    goto :goto_7e
+    goto :goto_0
 
-    :cond_33
+    :cond_0
     const-class v1, Ljava/lang/Class;
 
     .line 425
@@ -289,64 +286,60 @@
     .line 442
     .end local v1    # "getDeclaredMethod":Ljava/lang/reflect/Method;
     .end local v3    # "getDeclaredField":Ljava/lang/reflect/Method;
-    :goto_7e
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->updateDisplayListIfDirtyMethod:Ljava/lang/reflect/Method;
+    :goto_0
     invoke-static {}, Landroidx/compose/ui/platform/ViewLayer;->access$getUpdateDisplayListIfDirtyMethod$cp()Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    if-nez v1, :cond_85
+    if-nez v1, :cond_1
 
-    goto :goto_88
+    goto :goto_1
 
-    :cond_85
+    :cond_1
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     .line 443
-    :goto_88
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->recreateDisplayList:Ljava/lang/reflect/Field;
+    :goto_1
     invoke-static {}, Landroidx/compose/ui/platform/ViewLayer;->access$getRecreateDisplayList$cp()Ljava/lang/reflect/Field;
 
     move-result-object v1
 
-    if-nez v1, :cond_8f
+    if-nez v1, :cond_2
 
-    goto :goto_92
+    goto :goto_2
 
-    :cond_8f
+    :cond_2
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 445
-    :cond_92
-    :goto_92
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->recreateDisplayList:Ljava/lang/reflect/Field;
+    :cond_3
+    :goto_2
     invoke-static {}, Landroidx/compose/ui/platform/ViewLayer;->access$getRecreateDisplayList$cp()Ljava/lang/reflect/Field;
 
     move-result-object v1
 
-    if-eqz v1, :cond_9b
+    if-eqz v1, :cond_4
 
     invoke-virtual {v1, p1, v0}, Ljava/lang/reflect/Field;->setBoolean(Ljava/lang/Object;Z)V
 
     .line 446
-    :cond_9b
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->updateDisplayListIfDirtyMethod:Ljava/lang/reflect/Method;
+    :cond_4
     invoke-static {}, Landroidx/compose/ui/platform/ViewLayer;->access$getUpdateDisplayListIfDirtyMethod$cp()Ljava/lang/reflect/Method;
 
     move-result-object v1
 
-    if-eqz v1, :cond_ab
+    if-eqz v1, :cond_5
 
     new-array v2, v2, [Ljava/lang/Object;
 
     invoke-virtual {v1, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_a6
-    .catchall {:try_start_1e .. :try_end_a6} :catchall_a7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_ab
+    goto :goto_3
 
     .line 447
-    :catchall_a7
+    :catchall_0
     move-exception v1
 
     .line 448
@@ -355,7 +348,7 @@
 
     .line 450
     .end local v1    # "_":Ljava/lang/Throwable;
-    :cond_ab
-    :goto_ab
+    :cond_5
+    :goto_3
     return-void
 .end method

@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/internal/PopupLayout;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$ExposedDropdownMenuPopup$5;->$popupLayout:Landroidx/compose/material/internal/PopupLayout;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 152
@@ -83,7 +83,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 11
+    .locals 9
     .param p1, "childCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "childCoordinates"

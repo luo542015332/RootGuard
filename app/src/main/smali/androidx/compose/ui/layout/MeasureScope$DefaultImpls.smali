@@ -26,13 +26,12 @@
 
 # direct methods
 .method public static isLookingAhead(Landroidx/compose/ui/layout/MeasureScope;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->isLookingAhead()Z
     invoke-static {p0}, Landroidx/compose/ui/layout/MeasureScope;->access$isLookingAhead$jd(Landroidx/compose/ui/layout/MeasureScope;)Z
 
     move-result v0
@@ -42,7 +41,7 @@
 .end method
 
 .method public static layout(Landroidx/compose/ui/layout/MeasureScope;IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 6
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "width"    # I
     .param p2, "height"    # I
@@ -78,7 +77,6 @@
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 42
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->layout(IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/layout/MeasureScope;->access$layout$jd(Landroidx/compose/ui/layout/MeasureScope;IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
 
     move-result-object v0
@@ -88,7 +86,7 @@
 .end method
 
 .method public static synthetic layout$default(Landroidx/compose/ui/layout/MeasureScope;IILjava/util/Map;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 7
+    .locals 0
 
     .line 42
     invoke-static/range {p0 .. p6}, Landroidx/compose/ui/layout/MeasureScope;->layout$default(Landroidx/compose/ui/layout/MeasureScope;IILjava/util/Map;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/layout/MeasureResult;
@@ -100,14 +98,13 @@
 .end method
 
 .method public static roundToPx--R2X_6o(Landroidx/compose/ui/layout/MeasureScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->roundToPx--R2X_6o(J)I
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/layout/MeasureScope;->access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/layout/MeasureScope;J)I
 
     move-result v0
@@ -117,14 +114,13 @@
 .end method
 
 .method public static roundToPx-0680j_4(Landroidx/compose/ui/layout/MeasureScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->roundToPx-0680j_4(F)I
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$roundToPx-0680j_4$jd(Landroidx/compose/ui/layout/MeasureScope;F)I
 
     move-result v0
@@ -134,14 +130,13 @@
 .end method
 
 .method public static toDp-GaN1DYA(Landroidx/compose/ui/layout/MeasureScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toDp-GaN1DYA(J)F
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/layout/MeasureScope;->access$toDp-GaN1DYA$jd(Landroidx/compose/ui/layout/MeasureScope;J)F
 
     move-result v0
@@ -151,14 +146,13 @@
 .end method
 
 .method public static toDp-u2uoSUM(Landroidx/compose/ui/layout/MeasureScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toDp-u2uoSUM(F)F
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$toDp-u2uoSUM$jd(Landroidx/compose/ui/layout/MeasureScope;F)F
 
     move-result v0
@@ -168,14 +162,13 @@
 .end method
 
 .method public static toDp-u2uoSUM(Landroidx/compose/ui/layout/MeasureScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toDp-u2uoSUM(I)F
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$toDp-u2uoSUM$jd(Landroidx/compose/ui/layout/MeasureScope;I)F
 
     move-result v0
@@ -185,14 +178,13 @@
 .end method
 
 .method public static toDpSize-k-rfVVM(Landroidx/compose/ui/layout/MeasureScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toDpSize-k-rfVVM(J)J
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/layout/MeasureScope;->access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/layout/MeasureScope;J)J
 
     move-result-wide v0
@@ -202,14 +194,13 @@
 .end method
 
 .method public static toPx--R2X_6o(Landroidx/compose/ui/layout/MeasureScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toPx--R2X_6o(J)F
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/layout/MeasureScope;->access$toPx--R2X_6o$jd(Landroidx/compose/ui/layout/MeasureScope;J)F
 
     move-result v0
@@ -219,14 +210,13 @@
 .end method
 
 .method public static toPx-0680j_4(Landroidx/compose/ui/layout/MeasureScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toPx-0680j_4(F)F
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$toPx-0680j_4$jd(Landroidx/compose/ui/layout/MeasureScope;F)F
 
     move-result v0
@@ -236,7 +226,7 @@
 .end method
 
 .method public static toRect(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
     .annotation runtime Ljava/lang/Deprecated;
@@ -247,7 +237,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toRect(Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$toRect$jd(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v0
@@ -257,14 +246,13 @@
 .end method
 
 .method public static toSize-XkaWNTQ(Landroidx/compose/ui/layout/MeasureScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toSize-XkaWNTQ(J)J
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/layout/MeasureScope;->access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/layout/MeasureScope;J)J
 
     move-result-wide v0
@@ -274,14 +262,13 @@
 .end method
 
 .method public static toSp-0xMU5do(Landroidx/compose/ui/layout/MeasureScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toSp-0xMU5do(F)J
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$toSp-0xMU5do$jd(Landroidx/compose/ui/layout/MeasureScope;F)J
 
     move-result-wide v0
@@ -291,14 +278,13 @@
 .end method
 
 .method public static toSp-kPz2Gy4(Landroidx/compose/ui/layout/MeasureScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toSp-kPz2Gy4(F)J
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/layout/MeasureScope;F)J
 
     move-result-wide v0
@@ -308,14 +294,13 @@
 .end method
 
 .method public static toSp-kPz2Gy4(Landroidx/compose/ui/layout/MeasureScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 27
-    # invokes: Landroidx/compose/ui/layout/MeasureScope;->toSp-kPz2Gy4(I)J
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/MeasureScope;->access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/layout/MeasureScope;I)J
 
     move-result-wide v0

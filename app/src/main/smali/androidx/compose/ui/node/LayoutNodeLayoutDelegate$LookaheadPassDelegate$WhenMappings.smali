@@ -32,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     invoke-static {}, Landroidx/compose/ui/node/LayoutNode$LayoutState;->values()[Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x1
 
-    :try_start_8
+    :try_start_0
     sget-object v2, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LookaheadMeasuring:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
     invoke-virtual {v2}, Landroidx/compose/ui/node/LayoutNode$LayoutState;->ordinal()I
@@ -52,18 +52,18 @@
     move-result v2
 
     aput v1, v0, v2
-    :try_end_10
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_11
+    :catch_0
     move-exception v2
 
-    :goto_12
+    :goto_0
     const/4 v2, 0x2
 
-    :try_start_13
+    :try_start_1
     sget-object v3, Landroidx/compose/ui/node/LayoutNode$LayoutState;->Measuring:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
     invoke-virtual {v3}, Landroidx/compose/ui/node/LayoutNode$LayoutState;->ordinal()I
@@ -71,16 +71,16 @@
     move-result v3
 
     aput v2, v0, v3
-    :try_end_1b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_13 .. :try_end_1b} :catch_1c
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_1d
+    goto :goto_1
 
-    :catch_1c
+    :catch_1
     move-exception v3
 
-    :goto_1d
-    :try_start_1d
+    :goto_1
+    :try_start_2
     sget-object v3, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LayingOut:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
     invoke-virtual {v3}, Landroidx/compose/ui/node/LayoutNode$LayoutState;->ordinal()I
@@ -90,16 +90,16 @@
     const/4 v4, 0x3
 
     aput v4, v0, v3
-    :try_end_26
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1d .. :try_end_26} :catch_27
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    goto :goto_28
+    goto :goto_2
 
-    :catch_27
+    :catch_2
     move-exception v3
 
-    :goto_28
-    :try_start_28
+    :goto_2
+    :try_start_3
     sget-object v3, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LookaheadLayingOut:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
     invoke-virtual {v3}, Landroidx/compose/ui/node/LayoutNode$LayoutState;->ordinal()I
@@ -109,15 +109,15 @@
     const/4 v4, 0x4
 
     aput v4, v0, v3
-    :try_end_31
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_28 .. :try_end_31} :catch_32
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-    goto :goto_33
+    goto :goto_3
 
-    :catch_32
+    :catch_3
     move-exception v3
 
-    :goto_33
+    :goto_3
     sput-object v0, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$LookaheadPassDelegate$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-static {}, Landroidx/compose/ui/node/LayoutNode$UsageByParent;->values()[Landroidx/compose/ui/node/LayoutNode$UsageByParent;
@@ -128,7 +128,7 @@
 
     new-array v0, v0, [I
 
-    :try_start_3c
+    :try_start_4
     sget-object v3, Landroidx/compose/ui/node/LayoutNode$UsageByParent;->InMeasureBlock:Landroidx/compose/ui/node/LayoutNode$UsageByParent;
 
     invoke-virtual {v3}, Landroidx/compose/ui/node/LayoutNode$UsageByParent;->ordinal()I
@@ -136,16 +136,16 @@
     move-result v3
 
     aput v1, v0, v3
-    :try_end_44
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3c .. :try_end_44} :catch_45
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
-    goto :goto_46
+    goto :goto_4
 
-    :catch_45
+    :catch_4
     move-exception v1
 
-    :goto_46
-    :try_start_46
+    :goto_4
+    :try_start_5
     sget-object v1, Landroidx/compose/ui/node/LayoutNode$UsageByParent;->InLayoutBlock:Landroidx/compose/ui/node/LayoutNode$UsageByParent;
 
     invoke-virtual {v1}, Landroidx/compose/ui/node/LayoutNode$UsageByParent;->ordinal()I
@@ -153,15 +153,15 @@
     move-result v1
 
     aput v2, v0, v1
-    :try_end_4e
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_46 .. :try_end_4e} :catch_4f
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
-    goto :goto_50
+    goto :goto_5
 
-    :catch_4f
+    :catch_5
     move-exception v1
 
-    :goto_50
+    :goto_5
     sput-object v0, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$LookaheadPassDelegate$WhenMappings;->$EnumSwitchMapping$1:[I
 
     return-void

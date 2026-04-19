@@ -196,7 +196,7 @@
 
 # direct methods
 .method private constructor <init>(JIIIIIIFFFFFIIFFFFFFZZFLandroidx/compose/ui/graphics/RenderEffect;I)V
-    .registers 43
+    .locals 16
     .param p1, "uniqueId"    # J
     .param p3, "left"    # I
     .param p4, "top"    # I
@@ -358,7 +358,7 @@
 .end method
 
 .method public synthetic constructor <init>(JIIIIIIFFFFFIIFFFFFFZZFLandroidx/compose/ui/graphics/RenderEffect;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 28
+    .locals 0
 
     invoke-direct/range {p0 .. p26}, Landroidx/compose/ui/platform/DeviceRenderNodeData;-><init>(JIIIIIIFFFFFIIFFFFFFZZFLandroidx/compose/ui/graphics/RenderEffect;I)V
 
@@ -366,7 +366,7 @@
 .end method
 
 .method public static synthetic copy-fuCbV5c$default(Landroidx/compose/ui/platform/DeviceRenderNodeData;JIIIIIIFFFFFIIFFFFFFZZFLandroidx/compose/ui/graphics/RenderEffect;IILjava/lang/Object;)Landroidx/compose/ui/platform/DeviceRenderNodeData;
-    .registers 46
+    .locals 17
 
     move-object/from16 v0, p0
 
@@ -374,346 +374,346 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     iget-wide v2, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->uniqueId:J
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
     iget v4, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->left:I
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_14
+    :cond_1
     move/from16 v4, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v5, v1, 0x4
 
-    if-eqz v5, :cond_1d
+    if-eqz v5, :cond_2
 
     iget v5, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->top:I
 
-    goto :goto_1f
+    goto :goto_2
 
-    :cond_1d
+    :cond_2
     move/from16 v5, p4
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v6, v1, 0x8
 
-    if-eqz v6, :cond_26
+    if-eqz v6, :cond_3
 
     iget v6, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->right:I
 
-    goto :goto_28
+    goto :goto_3
 
-    :cond_26
+    :cond_3
     move/from16 v6, p5
 
-    :goto_28
+    :goto_3
     and-int/lit8 v7, v1, 0x10
 
-    if-eqz v7, :cond_2f
+    if-eqz v7, :cond_4
 
     iget v7, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->bottom:I
 
-    goto :goto_31
+    goto :goto_4
 
-    :cond_2f
+    :cond_4
     move/from16 v7, p6
 
-    :goto_31
+    :goto_4
     and-int/lit8 v8, v1, 0x20
 
-    if-eqz v8, :cond_38
+    if-eqz v8, :cond_5
 
     iget v8, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->width:I
 
-    goto :goto_3a
+    goto :goto_5
 
-    :cond_38
+    :cond_5
     move/from16 v8, p7
 
-    :goto_3a
+    :goto_5
     and-int/lit8 v9, v1, 0x40
 
-    if-eqz v9, :cond_41
+    if-eqz v9, :cond_6
 
     iget v9, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->height:I
 
-    goto :goto_43
+    goto :goto_6
 
-    :cond_41
+    :cond_6
     move/from16 v9, p8
 
-    :goto_43
+    :goto_6
     and-int/lit16 v10, v1, 0x80
 
-    if-eqz v10, :cond_4a
+    if-eqz v10, :cond_7
 
     iget v10, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleX:F
 
-    goto :goto_4c
+    goto :goto_7
 
-    :cond_4a
+    :cond_7
     move/from16 v10, p9
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v11, v1, 0x100
 
-    if-eqz v11, :cond_53
+    if-eqz v11, :cond_8
 
     iget v11, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleY:F
 
-    goto :goto_55
+    goto :goto_8
 
-    :cond_53
+    :cond_8
     move/from16 v11, p10
 
-    :goto_55
+    :goto_8
     and-int/lit16 v12, v1, 0x200
 
-    if-eqz v12, :cond_5c
+    if-eqz v12, :cond_9
 
     iget v12, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationX:F
 
-    goto :goto_5e
+    goto :goto_9
 
-    :cond_5c
+    :cond_9
     move/from16 v12, p11
 
-    :goto_5e
+    :goto_9
     and-int/lit16 v13, v1, 0x400
 
-    if-eqz v13, :cond_65
+    if-eqz v13, :cond_a
 
     iget v13, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationY:F
 
-    goto :goto_67
+    goto :goto_a
 
-    :cond_65
+    :cond_a
     move/from16 v13, p12
 
-    :goto_67
+    :goto_a
     and-int/lit16 v14, v1, 0x800
 
-    if-eqz v14, :cond_6e
+    if-eqz v14, :cond_b
 
     iget v14, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->elevation:F
 
-    goto :goto_70
+    goto :goto_b
 
-    :cond_6e
+    :cond_b
     move/from16 v14, p13
 
-    :goto_70
+    :goto_b
     and-int/lit16 v15, v1, 0x1000
 
-    if-eqz v15, :cond_77
+    if-eqz v15, :cond_c
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->ambientShadowColor:I
 
-    goto :goto_79
+    goto :goto_c
 
-    :cond_77
+    :cond_c
     move/from16 v15, p14
 
-    :goto_79
+    :goto_c
     move/from16 p14, v15
 
     and-int/lit16 v15, v1, 0x2000
 
-    if-eqz v15, :cond_82
+    if-eqz v15, :cond_d
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->spotShadowColor:I
 
-    goto :goto_84
+    goto :goto_d
 
-    :cond_82
+    :cond_d
     move/from16 v15, p15
 
-    :goto_84
+    :goto_d
     move/from16 p15, v15
 
     and-int/lit16 v15, v1, 0x4000
 
-    if-eqz v15, :cond_8d
+    if-eqz v15, :cond_e
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationZ:F
 
-    goto :goto_8f
+    goto :goto_e
 
-    :cond_8d
+    :cond_e
     move/from16 v15, p16
 
-    :goto_8f
+    :goto_e
     const v16, 0x8000
 
     and-int v16, v1, v16
 
     move/from16 p16, v15
 
-    if-eqz v16, :cond_9b
+    if-eqz v16, :cond_f
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationX:F
 
-    goto :goto_9d
+    goto :goto_f
 
-    :cond_9b
+    :cond_f
     move/from16 v15, p17
 
-    :goto_9d
+    :goto_f
     const/high16 v16, 0x10000
 
     and-int v16, v1, v16
 
     move/from16 p17, v15
 
-    if-eqz v16, :cond_a8
+    if-eqz v16, :cond_10
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationY:F
 
-    goto :goto_aa
+    goto :goto_10
 
-    :cond_a8
+    :cond_10
     move/from16 v15, p18
 
-    :goto_aa
+    :goto_10
     const/high16 v16, 0x20000
 
     and-int v16, v1, v16
 
     move/from16 p18, v15
 
-    if-eqz v16, :cond_b5
+    if-eqz v16, :cond_11
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->cameraDistance:F
 
-    goto :goto_b7
+    goto :goto_11
 
-    :cond_b5
+    :cond_11
     move/from16 v15, p19
 
-    :goto_b7
+    :goto_11
     const/high16 v16, 0x40000
 
     and-int v16, v1, v16
 
     move/from16 p19, v15
 
-    if-eqz v16, :cond_c2
+    if-eqz v16, :cond_12
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotX:F
 
-    goto :goto_c4
+    goto :goto_12
 
-    :cond_c2
+    :cond_12
     move/from16 v15, p20
 
-    :goto_c4
+    :goto_12
     const/high16 v16, 0x80000
 
     and-int v16, v1, v16
 
     move/from16 p20, v15
 
-    if-eqz v16, :cond_cf
+    if-eqz v16, :cond_13
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotY:F
 
-    goto :goto_d1
+    goto :goto_13
 
-    :cond_cf
+    :cond_13
     move/from16 v15, p21
 
-    :goto_d1
+    :goto_13
     const/high16 v16, 0x100000
 
     and-int v16, v1, v16
 
     move/from16 p21, v15
 
-    if-eqz v16, :cond_dc
+    if-eqz v16, :cond_14
 
     iget-boolean v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToOutline:Z
 
-    goto :goto_de
+    goto :goto_14
 
-    :cond_dc
+    :cond_14
     move/from16 v15, p22
 
-    :goto_de
+    :goto_14
     const/high16 v16, 0x200000
 
     and-int v16, v1, v16
 
     move/from16 p22, v15
 
-    if-eqz v16, :cond_e9
+    if-eqz v16, :cond_15
 
     iget-boolean v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToBounds:Z
 
-    goto :goto_eb
+    goto :goto_15
 
-    :cond_e9
+    :cond_15
     move/from16 v15, p23
 
-    :goto_eb
+    :goto_15
     const/high16 v16, 0x400000
 
     and-int v16, v1, v16
 
     move/from16 p23, v15
 
-    if-eqz v16, :cond_f6
+    if-eqz v16, :cond_16
 
     iget v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->alpha:F
 
-    goto :goto_f8
+    goto :goto_16
 
-    :cond_f6
+    :cond_16
     move/from16 v15, p24
 
-    :goto_f8
+    :goto_16
     const/high16 v16, 0x800000
 
     and-int v16, v1, v16
 
     move/from16 p24, v15
 
-    if-eqz v16, :cond_103
+    if-eqz v16, :cond_17
 
     iget-object v15, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
-    goto :goto_105
+    goto :goto_17
 
-    :cond_103
+    :cond_17
     move-object/from16 v15, p25
 
-    :goto_105
+    :goto_17
     const/high16 v16, 0x1000000
 
     and-int v1, v1, v16
 
-    if-eqz v1, :cond_10e
+    if-eqz v1, :cond_18
 
     iget v1, v0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->compositingStrategy:I
 
-    goto :goto_110
+    goto :goto_18
 
-    :cond_10e
+    :cond_18
     move/from16 v1, p26
 
-    :goto_110
+    :goto_18
     move-wide/from16 p1, v2
 
     move/from16 p3, v4
@@ -752,7 +752,7 @@
 
 # virtual methods
 .method public final component1()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->uniqueId:J
 
@@ -760,7 +760,7 @@
 .end method
 
 .method public final component10()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationX:F
 
@@ -768,7 +768,7 @@
 .end method
 
 .method public final component11()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationY:F
 
@@ -776,7 +776,7 @@
 .end method
 
 .method public final component12()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->elevation:F
 
@@ -784,7 +784,7 @@
 .end method
 
 .method public final component13()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->ambientShadowColor:I
 
@@ -792,7 +792,7 @@
 .end method
 
 .method public final component14()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->spotShadowColor:I
 
@@ -800,7 +800,7 @@
 .end method
 
 .method public final component15()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationZ:F
 
@@ -808,7 +808,7 @@
 .end method
 
 .method public final component16()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationX:F
 
@@ -816,7 +816,7 @@
 .end method
 
 .method public final component17()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationY:F
 
@@ -824,7 +824,7 @@
 .end method
 
 .method public final component18()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->cameraDistance:F
 
@@ -832,7 +832,7 @@
 .end method
 
 .method public final component19()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotX:F
 
@@ -840,7 +840,7 @@
 .end method
 
 .method public final component2()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->left:I
 
@@ -848,7 +848,7 @@
 .end method
 
 .method public final component20()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotY:F
 
@@ -856,7 +856,7 @@
 .end method
 
 .method public final component21()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToOutline:Z
 
@@ -864,7 +864,7 @@
 .end method
 
 .method public final component22()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToBounds:Z
 
@@ -872,7 +872,7 @@
 .end method
 
 .method public final component23()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->alpha:F
 
@@ -880,7 +880,7 @@
 .end method
 
 .method public final component24()Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
@@ -888,7 +888,7 @@
 .end method
 
 .method public final component25--NrFUSI()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->compositingStrategy:I
 
@@ -896,7 +896,7 @@
 .end method
 
 .method public final component3()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->top:I
 
@@ -904,7 +904,7 @@
 .end method
 
 .method public final component4()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->right:I
 
@@ -912,7 +912,7 @@
 .end method
 
 .method public final component5()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->bottom:I
 
@@ -920,7 +920,7 @@
 .end method
 
 .method public final component6()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->width:I
 
@@ -928,7 +928,7 @@
 .end method
 
 .method public final component7()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->height:I
 
@@ -936,7 +936,7 @@
 .end method
 
 .method public final component8()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleX:F
 
@@ -944,7 +944,7 @@
 .end method
 
 .method public final component9()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleY:F
 
@@ -952,7 +952,7 @@
 .end method
 
 .method public final copy-fuCbV5c(JIIIIIIFFFFFIIFFFFFFZZFLandroidx/compose/ui/graphics/RenderEffect;I)Landroidx/compose/ui/platform/DeviceRenderNodeData;
-    .registers 56
+    .locals 29
 
     move-wide/from16 v1, p1
 
@@ -1016,24 +1016,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/platform/DeviceRenderNodeData;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;
@@ -1044,65 +1044,65 @@
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_2
 
     return v2
 
-    :cond_16
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->left:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->left:I
 
-    if-eq v3, v4, :cond_1d
+    if-eq v3, v4, :cond_3
 
     return v2
 
-    :cond_1d
+    :cond_3
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->top:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->top:I
 
-    if-eq v3, v4, :cond_24
+    if-eq v3, v4, :cond_4
 
     return v2
 
-    :cond_24
+    :cond_4
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->right:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->right:I
 
-    if-eq v3, v4, :cond_2b
+    if-eq v3, v4, :cond_5
 
     return v2
 
-    :cond_2b
+    :cond_5
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->bottom:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->bottom:I
 
-    if-eq v3, v4, :cond_32
+    if-eq v3, v4, :cond_6
 
     return v2
 
-    :cond_32
+    :cond_6
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->width:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->width:I
 
-    if-eq v3, v4, :cond_39
+    if-eq v3, v4, :cond_7
 
     return v2
 
-    :cond_39
+    :cond_7
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->height:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->height:I
 
-    if-eq v3, v4, :cond_40
+    if-eq v3, v4, :cond_8
 
     return v2
 
-    :cond_40
+    :cond_8
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleX:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleX:F
@@ -1111,11 +1111,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4b
+    if-eqz v3, :cond_9
 
     return v2
 
-    :cond_4b
+    :cond_9
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleY:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleY:F
@@ -1124,11 +1124,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_56
+    if-eqz v3, :cond_a
 
     return v2
 
-    :cond_56
+    :cond_a
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationX:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationX:F
@@ -1137,11 +1137,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_61
+    if-eqz v3, :cond_b
 
     return v2
 
-    :cond_61
+    :cond_b
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationY:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationY:F
@@ -1150,11 +1150,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_6c
+    if-eqz v3, :cond_c
 
     return v2
 
-    :cond_6c
+    :cond_c
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->elevation:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->elevation:F
@@ -1163,29 +1163,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_77
+    if-eqz v3, :cond_d
 
     return v2
 
-    :cond_77
+    :cond_d
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->ambientShadowColor:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->ambientShadowColor:I
 
-    if-eq v3, v4, :cond_7e
+    if-eq v3, v4, :cond_e
 
     return v2
 
-    :cond_7e
+    :cond_e
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->spotShadowColor:I
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->spotShadowColor:I
 
-    if-eq v3, v4, :cond_85
+    if-eq v3, v4, :cond_f
 
     return v2
 
-    :cond_85
+    :cond_f
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationZ:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationZ:F
@@ -1194,11 +1194,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_90
+    if-eqz v3, :cond_10
 
     return v2
 
-    :cond_90
+    :cond_10
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationX:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationX:F
@@ -1207,11 +1207,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_9b
+    if-eqz v3, :cond_11
 
     return v2
 
-    :cond_9b
+    :cond_11
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationY:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationY:F
@@ -1220,11 +1220,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_a6
+    if-eqz v3, :cond_12
 
     return v2
 
-    :cond_a6
+    :cond_12
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->cameraDistance:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->cameraDistance:F
@@ -1233,11 +1233,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_b1
+    if-eqz v3, :cond_13
 
     return v2
 
-    :cond_b1
+    :cond_13
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotX:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotX:F
@@ -1246,11 +1246,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_bc
+    if-eqz v3, :cond_14
 
     return v2
 
-    :cond_bc
+    :cond_14
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotY:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotY:F
@@ -1259,29 +1259,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_c7
+    if-eqz v3, :cond_15
 
     return v2
 
-    :cond_c7
+    :cond_15
     iget-boolean v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToOutline:Z
 
     iget-boolean v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToOutline:Z
 
-    if-eq v3, v4, :cond_ce
+    if-eq v3, v4, :cond_16
 
     return v2
 
-    :cond_ce
+    :cond_16
     iget-boolean v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToBounds:Z
 
     iget-boolean v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToBounds:Z
 
-    if-eq v3, v4, :cond_d5
+    if-eq v3, v4, :cond_17
 
     return v2
 
-    :cond_d5
+    :cond_17
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->alpha:F
 
     iget v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->alpha:F
@@ -1290,11 +1290,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_e0
+    if-eqz v3, :cond_18
 
     return v2
 
-    :cond_e0
+    :cond_18
     iget-object v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
     iget-object v4, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
@@ -1303,11 +1303,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_eb
+    if-nez v3, :cond_19
 
     return v2
 
-    :cond_eb
+    :cond_19
     iget v3, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->compositingStrategy:I
 
     iget v1, v1, Landroidx/compose/ui/platform/DeviceRenderNodeData;->compositingStrategy:I
@@ -1316,16 +1316,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_f6
+    if-nez v1, :cond_1a
 
     return v2
 
-    :cond_f6
+    :cond_1a
     return v0
 .end method
 
 .method public final getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 113
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->alpha:F
@@ -1334,7 +1334,7 @@
 .end method
 
 .method public final getAmbientShadowColor()I
-    .registers 2
+    .locals 1
 
     .line 103
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->ambientShadowColor:I
@@ -1343,7 +1343,7 @@
 .end method
 
 .method public final getBottom()I
-    .registers 2
+    .locals 1
 
     .line 95
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->bottom:I
@@ -1352,7 +1352,7 @@
 .end method
 
 .method public final getCameraDistance()F
-    .registers 2
+    .locals 1
 
     .line 108
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->cameraDistance:F
@@ -1361,7 +1361,7 @@
 .end method
 
 .method public final getClipToBounds()Z
-    .registers 2
+    .locals 1
 
     .line 112
     iget-boolean v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToBounds:Z
@@ -1370,7 +1370,7 @@
 .end method
 
 .method public final getClipToOutline()Z
-    .registers 2
+    .locals 1
 
     .line 111
     iget-boolean v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToOutline:Z
@@ -1379,7 +1379,7 @@
 .end method
 
 .method public final getCompositingStrategy--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 115
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->compositingStrategy:I
@@ -1388,7 +1388,7 @@
 .end method
 
 .method public final getElevation()F
-    .registers 2
+    .locals 1
 
     .line 102
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->elevation:F
@@ -1397,7 +1397,7 @@
 .end method
 
 .method public final getHeight()I
-    .registers 2
+    .locals 1
 
     .line 97
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->height:I
@@ -1406,7 +1406,7 @@
 .end method
 
 .method public final getLeft()I
-    .registers 2
+    .locals 1
 
     .line 92
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->left:I
@@ -1415,7 +1415,7 @@
 .end method
 
 .method public final getPivotX()F
-    .registers 2
+    .locals 1
 
     .line 109
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotX:F
@@ -1424,7 +1424,7 @@
 .end method
 
 .method public final getPivotY()F
-    .registers 2
+    .locals 1
 
     .line 110
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->pivotY:F
@@ -1433,7 +1433,7 @@
 .end method
 
 .method public final getRenderEffect()Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     .line 114
     iget-object v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
@@ -1442,7 +1442,7 @@
 .end method
 
 .method public final getRight()I
-    .registers 2
+    .locals 1
 
     .line 94
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->right:I
@@ -1451,7 +1451,7 @@
 .end method
 
 .method public final getRotationX()F
-    .registers 2
+    .locals 1
 
     .line 106
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationX:F
@@ -1460,7 +1460,7 @@
 .end method
 
 .method public final getRotationY()F
-    .registers 2
+    .locals 1
 
     .line 107
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationY:F
@@ -1469,7 +1469,7 @@
 .end method
 
 .method public final getRotationZ()F
-    .registers 2
+    .locals 1
 
     .line 105
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->rotationZ:F
@@ -1478,7 +1478,7 @@
 .end method
 
 .method public final getScaleX()F
-    .registers 2
+    .locals 1
 
     .line 98
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleX:F
@@ -1487,7 +1487,7 @@
 .end method
 
 .method public final getScaleY()F
-    .registers 2
+    .locals 1
 
     .line 99
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->scaleY:F
@@ -1496,7 +1496,7 @@
 .end method
 
 .method public final getSpotShadowColor()I
-    .registers 2
+    .locals 1
 
     .line 104
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->spotShadowColor:I
@@ -1505,7 +1505,7 @@
 .end method
 
 .method public final getTop()I
-    .registers 2
+    .locals 1
 
     .line 93
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->top:I
@@ -1514,7 +1514,7 @@
 .end method
 
 .method public final getTranslationX()F
-    .registers 2
+    .locals 1
 
     .line 100
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationX:F
@@ -1523,7 +1523,7 @@
 .end method
 
 .method public final getTranslationY()F
-    .registers 2
+    .locals 1
 
     .line 101
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->translationY:F
@@ -1532,7 +1532,7 @@
 .end method
 
 .method public final getUniqueId()J
-    .registers 3
+    .locals 2
 
     .line 91
     iget-wide v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->uniqueId:J
@@ -1541,7 +1541,7 @@
 .end method
 
 .method public final getWidth()I
-    .registers 2
+    .locals 1
 
     .line 96
     iget v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->width:I
@@ -1550,7 +1550,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget-wide v0, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->uniqueId:J
 
@@ -1754,25 +1754,25 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_b9
+    if-eqz v2, :cond_0
 
     move v2, v3
 
-    :cond_b9
+    :cond_0
     add-int/2addr v0, v2
 
     mul-int/lit8 v1, v0, 0x1f
 
     iget-boolean v2, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->clipToBounds:Z
 
-    if-eqz v2, :cond_c1
+    if-eqz v2, :cond_1
 
-    goto :goto_c2
+    goto :goto_0
 
-    :cond_c1
+    :cond_1
     move v3, v2
 
-    :goto_c2
+    :goto_0
     add-int/2addr v1, v3
 
     mul-int/lit8 v0, v1, 0x1f
@@ -1789,18 +1789,18 @@
 
     iget-object v2, p0, Landroidx/compose/ui/platform/DeviceRenderNodeData;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
-    if-nez v2, :cond_d4
+    if-nez v2, :cond_2
 
     const/4 v2, 0x0
 
-    goto :goto_d8
+    goto :goto_1
 
-    :cond_d4
+    :cond_2
     invoke-virtual {v2}, Landroidx/compose/ui/graphics/RenderEffect;->hashCode()I
 
     move-result v2
 
-    :goto_d8
+    :goto_1
     add-int/2addr v1, v2
 
     mul-int/lit8 v0, v1, 0x1f
@@ -1817,7 +1817,7 @@
 .end method
 
 .method public final setAlpha(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 113
@@ -1827,7 +1827,7 @@
 .end method
 
 .method public final setAmbientShadowColor(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 103
@@ -1837,7 +1837,7 @@
 .end method
 
 .method public final setCameraDistance(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 108
@@ -1847,7 +1847,7 @@
 .end method
 
 .method public final setClipToBounds(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 112
@@ -1857,7 +1857,7 @@
 .end method
 
 .method public final setClipToOutline(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 111
@@ -1867,7 +1867,7 @@
 .end method
 
 .method public final setCompositingStrategy-aDBOjCE(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 115
@@ -1877,7 +1877,7 @@
 .end method
 
 .method public final setElevation(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 102
@@ -1887,7 +1887,7 @@
 .end method
 
 .method public final setPivotX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 109
@@ -1897,7 +1897,7 @@
 .end method
 
 .method public final setPivotY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 110
@@ -1907,7 +1907,7 @@
 .end method
 
 .method public final setRenderEffect(Landroidx/compose/ui/graphics/RenderEffect;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/RenderEffect;
 
     .line 114
@@ -1917,7 +1917,7 @@
 .end method
 
 .method public final setRotationX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 106
@@ -1927,7 +1927,7 @@
 .end method
 
 .method public final setRotationY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 107
@@ -1937,7 +1937,7 @@
 .end method
 
 .method public final setRotationZ(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 105
@@ -1947,7 +1947,7 @@
 .end method
 
 .method public final setScaleX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 98
@@ -1957,7 +1957,7 @@
 .end method
 
 .method public final setScaleY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 99
@@ -1967,7 +1967,7 @@
 .end method
 
 .method public final setSpotShadowColor(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 104
@@ -1977,7 +1977,7 @@
 .end method
 
 .method public final setTranslationX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 100
@@ -1987,7 +1987,7 @@
 .end method
 
 .method public final setTranslationY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 101
@@ -1997,7 +1997,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     new-instance v0, Ljava/lang/StringBuilder;
 

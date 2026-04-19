@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;Landroidx/compose/foundation/lazy/LazyListMeasuredItem;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 310
@@ -108,7 +108,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 10
+    .locals 8
     .param p1, "$this$invoke"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$invoke"
@@ -135,8 +135,8 @@
 
     move-result v4
 
-    :goto_10
-    if-ge v3, v4, :cond_24
+    :goto_0
+    if-ge v3, v4, :cond_1
 
     .line 479
     invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -154,13 +154,13 @@
 
     .line 312
     .local v7, "$i$a$-fastForEach-LazyListMeasureKt$measureLazyList$5$1":I
-    if-eq v6, v1, :cond_1f
+    if-eq v6, v1, :cond_0
 
     .line 313
     invoke-virtual {v6, p1}, Landroidx/compose/foundation/lazy/LazyListMeasuredItem;->place(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
 
     .line 315
-    :cond_1f
+    :cond_0
     nop
 
     .line 480
@@ -172,11 +172,11 @@
     .end local v5    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 482
     .end local v3    # "index$iv":I
-    :cond_24
+    :cond_1
     nop
 
     .line 317
@@ -184,11 +184,11 @@
     .end local v2    # "$i$f$fastForEach":I
     iget-object v0, p0, Landroidx/compose/foundation/lazy/LazyListMeasureKt$measureLazyList$5;->$headerItem:Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0, p1}, Landroidx/compose/foundation/lazy/LazyListMeasuredItem;->place(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
 
     .line 318
-    :cond_2c
+    :cond_2
     return-void
 .end method

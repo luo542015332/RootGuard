@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "maxSlotsToRetainForReuse"    # I
 
     .line 1033
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public areCompatible(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 1
     .param p1, "slotId"    # Ljava/lang/Object;
     .param p2, "reusableSlotId"    # Ljava/lang/Object;
 
@@ -71,7 +71,7 @@
 .end method
 
 .method public getSlotsToRetain(Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;)V
-    .registers 6
+    .locals 4
     .param p1, "slotIds"    # Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;
 
     const-string/jumbo v0, "slotIds"
@@ -85,7 +85,7 @@
 
     iget v1, p0, Landroidx/compose/ui/layout/FixedCountSubcomposeSlotReusePolicy;->maxSlotsToRetainForReuse:I
 
-    if-le v0, v1, :cond_29
+    if-le v0, v1, :cond_2
 
     .line 1039
     const/4 v0, 0x0
@@ -101,13 +101,13 @@
 
     .line 1042
     .local v2, "$i$a$-with-FixedCountSubcomposeSlotReusePolicy$getSlotsToRetain$1":I
-    :cond_14
-    :goto_14
+    :cond_0
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_1
 
     .line 1043
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -118,15 +118,15 @@
     .line 1045
     iget v3, p0, Landroidx/compose/ui/layout/FixedCountSubcomposeSlotReusePolicy;->maxSlotsToRetainForReuse:I
 
-    if-le v0, v3, :cond_14
+    if-le v0, v3, :cond_0
 
     .line 1046
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_14
+    goto :goto_0
 
     .line 1049
-    :cond_27
+    :cond_1
     nop
 
     .line 1040
@@ -136,6 +136,6 @@
 
     .line 1051
     .end local v0    # "count":I
-    :cond_29
+    :cond_2
     return-void
 .end method

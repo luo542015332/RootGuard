@@ -56,7 +56,7 @@
 
 # direct methods
 .method public static synthetic access$find$jd(Landroidx/compose/runtime/tooling/CompositionGroup;Ljava/lang/Object;)Landroidx/compose/runtime/tooling/CompositionGroup;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
     .param p1, "identityToFind"    # Ljava/lang/Object;
 
@@ -69,7 +69,7 @@
 .end method
 
 .method public static synthetic access$getGroupSize$jd(Landroidx/compose/runtime/tooling/CompositionGroup;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
 
     .line 61
@@ -81,7 +81,7 @@
 .end method
 
 .method public static synthetic access$getIdentity$jd(Landroidx/compose/runtime/tooling/CompositionGroup;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
 
     .line 61
@@ -93,7 +93,7 @@
 .end method
 
 .method public static synthetic access$getSlotsSize$jd(Landroidx/compose/runtime/tooling/CompositionGroup;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
 
     .line 61
@@ -118,7 +118,7 @@
 .end method
 
 .method public getGroupSize()I
-    .registers 2
+    .locals 1
 
     .line 99
     const/4 v0, 0x0
@@ -127,7 +127,7 @@
 .end method
 
 .method public getIdentity()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 94
     const/4 v0, 0x0
@@ -142,7 +142,7 @@
 .end method
 
 .method public getSlotsSize()I
-    .registers 2
+    .locals 1
 
     .line 101
     const/4 v0, 0x0

@@ -68,7 +68,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/BroadcastFrameClock;Lkotlin/jvm/internal/Ref$ObjectRef;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 93
@@ -109,13 +109,12 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 8
+    .locals 6
     .param p1, "it"    # Ljava/lang/Throwable;
 
     .line 94
     iget-object v0, p0, Landroidx/compose/runtime/BroadcastFrameClock$withFrameNanos$2$1;->this$0:Landroidx/compose/runtime/BroadcastFrameClock;
 
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->lock:Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getLock$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/lang/Object;
 
     move-result-object v0
@@ -135,15 +134,14 @@
 
     .line 95
     .local v4, "$i$a$-synchronized-BroadcastFrameClock$withFrameNanos$2$1$1":I
-    :try_start_d
-    # getter for: Landroidx/compose/runtime/BroadcastFrameClock;->awaiters:Ljava/util/List;
+    :try_start_0
     invoke-static {v1}, Landroidx/compose/runtime/BroadcastFrameClock;->access$getAwaiters$p(Landroidx/compose/runtime/BroadcastFrameClock;)Ljava/util/List;
 
     move-result-object v1
 
     iget-object v5, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    if-nez v5, :cond_1d
+    if-nez v5, :cond_0
 
     const-string/jumbo v2, "awaiter"
 
@@ -151,14 +149,14 @@
 
     const/4 v2, 0x0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     iget-object v2, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v2, Landroidx/compose/runtime/BroadcastFrameClock$FrameAwaiter;
 
-    :goto_21
+    :goto_0
     invoke-interface {v1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     .line 96
@@ -166,8 +164,8 @@
 
     .end local v4    # "$i$a$-synchronized-BroadcastFrameClock$withFrameNanos$2$1$1":I
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_27
-    .catchall {:try_start_d .. :try_end_27} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 133
     monitor-exit v0
@@ -180,7 +178,7 @@
     .line 133
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_29
+    :catchall_0
     move-exception v1
 
     monitor-exit v0

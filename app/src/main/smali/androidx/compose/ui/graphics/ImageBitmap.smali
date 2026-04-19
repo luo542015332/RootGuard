@@ -63,7 +63,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmap$Companion;->$$INSTANCE:Landroidx/compose/ui/graphics/ImageBitmap$Companion;
 
@@ -73,99 +73,99 @@
 .end method
 
 .method public static synthetic readPixels$default(Landroidx/compose/ui/graphics/ImageBitmap;[IIIIIIIILjava/lang/Object;)V
-    .registers 16
+    .locals 6
 
     .line 77
-    if-nez p9, :cond_3e
+    if-nez p9, :cond_6
 
     and-int/lit8 v0, p8, 0x2
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 79
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 77
-    :cond_9
+    :cond_0
     move v0, p2
 
-    :goto_a
+    :goto_0
     and-int/lit8 v2, p8, 0x4
 
-    if-eqz v2, :cond_10
+    if-eqz v2, :cond_1
 
     .line 80
     move v2, v1
 
-    goto :goto_11
+    goto :goto_1
 
     .line 77
-    :cond_10
+    :cond_1
     move v2, p3
 
-    :goto_11
+    :goto_1
     and-int/lit8 v3, p8, 0x8
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_2
 
     .line 81
     invoke-interface {p0}, Landroidx/compose/ui/graphics/ImageBitmap;->getWidth()I
 
     move-result v3
 
-    goto :goto_1b
+    goto :goto_2
 
     .line 77
-    :cond_1a
+    :cond_2
     move v3, p4
 
-    :goto_1b
+    :goto_2
     and-int/lit8 v4, p8, 0x10
 
-    if-eqz v4, :cond_24
+    if-eqz v4, :cond_3
 
     .line 82
     invoke-interface {p0}, Landroidx/compose/ui/graphics/ImageBitmap;->getHeight()I
 
     move-result v4
 
-    goto :goto_25
+    goto :goto_3
 
     .line 77
-    :cond_24
+    :cond_3
     move v4, p5
 
-    :goto_25
+    :goto_3
     and-int/lit8 v5, p8, 0x20
 
-    if-eqz v5, :cond_2a
+    if-eqz v5, :cond_4
 
     .line 83
-    goto :goto_2b
+    goto :goto_4
 
     .line 77
-    :cond_2a
+    :cond_4
     move v1, p6
 
-    :goto_2b
+    :goto_4
     and-int/lit8 v5, p8, 0x40
 
-    if-eqz v5, :cond_31
+    if-eqz v5, :cond_5
 
     .line 84
     move v5, v3
 
-    goto :goto_32
+    goto :goto_5
 
     .line 77
-    :cond_31
+    :cond_5
     move v5, p7
 
-    :goto_32
+    :goto_5
     move-object p2, p0
 
     move-object p3, p1
@@ -186,7 +186,7 @@
 
     return-void
 
-    :cond_3e
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: readPixels"

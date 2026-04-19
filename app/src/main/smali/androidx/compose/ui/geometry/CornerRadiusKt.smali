@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static final CornerRadius(FF)J
-    .registers 11
+    .locals 9
     .param p0, "x"    # F
     .param p1, "y"    # F
 
@@ -86,16 +86,16 @@
 .end method
 
 .method public static synthetic CornerRadius$default(FFILjava/lang/Object;)J
-    .registers 4
+    .locals 0
 
     .line 33
     and-int/lit8 p2, p2, 0x2
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     move p1, p0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/geometry/CornerRadiusKt;->CornerRadius(FF)J
 
     move-result-wide p0
@@ -104,7 +104,7 @@
 .end method
 
 .method public static final lerp-3Ry4LBc(JJF)J
-    .registers 8
+    .locals 3
     .param p0, "start"    # J
     .param p2, "stop"    # J
     .param p4, "fraction"    # F

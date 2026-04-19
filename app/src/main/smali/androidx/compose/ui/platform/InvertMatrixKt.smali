@@ -33,7 +33,7 @@
 
 # direct methods
 .method public static final invertTo-JiSxe2E([F[F)Z
-    .registers 40
+    .locals 38
     .param p0, "$this$invertTo_u2dJiSxe2E"    # [F
     .param p1, "other"    # [F
 
@@ -565,23 +565,23 @@
 
     const/16 v33, 0x0
 
-    if-nez v31, :cond_119
+    if-nez v31, :cond_0
 
     move/from16 v31, v32
 
-    goto :goto_11b
+    goto :goto_0
 
-    :cond_119
+    :cond_0
     move/from16 v31, v33
 
-    :goto_11b
-    if-eqz v31, :cond_11e
+    :goto_0
+    if-eqz v31, :cond_1
 
     .line 57
     return v33
 
     .line 59
-    :cond_11e
+    :cond_1
     const/high16 v31, 0x3f800000    # 1.0f
 
     div-float v31, v31, v30

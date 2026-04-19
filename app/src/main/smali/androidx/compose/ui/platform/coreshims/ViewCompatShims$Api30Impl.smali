@@ -16,7 +16,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 180
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,7 +26,7 @@
 .end method
 
 .method static setImportantForContentCapture(Landroid/view/View;I)V
-    .registers 2
+    .locals 0
     .param p0, "view"    # Landroid/view/View;
     .param p1, "mode"    # I
 

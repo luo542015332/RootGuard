@@ -71,7 +71,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 993
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -80,7 +80,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;-><init>()V
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public static final synthetic access$computeWhitePoint(Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;[F)Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;
     .param p1, "toXYZ"    # [F
 
@@ -101,7 +101,7 @@
 .end method
 
 .method public static final synthetic access$computeXYZMatrix(Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;)[F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;
     .param p1, "primaries"    # [F
     .param p2, "whitePoint"    # Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -115,7 +115,7 @@
 .end method
 
 .method public static final synthetic access$isSrgb(Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;[FLandroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/DoubleFunction;Landroidx/compose/ui/graphics/colorspace/DoubleFunction;FFI)Z
-    .registers 9
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;
     .param p1, "primaries"    # [F
     .param p2, "whitePoint"    # Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -134,7 +134,7 @@
 .end method
 
 .method public static final synthetic access$isWideGamut(Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;[FFF)Z
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;
     .param p1, "primaries"    # [F
     .param p2, "min"    # F
@@ -149,7 +149,7 @@
 .end method
 
 .method public static final synthetic access$xyPrimaries(Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;[F)[F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/colorspace/Rgb$Companion;
     .param p1, "primaries"    # [F
 
@@ -162,7 +162,7 @@
 .end method
 
 .method private final area([F)F
-    .registers 11
+    .locals 9
     .param p1, "primaries"    # [F
 
     .line 1109
@@ -236,21 +236,21 @@
 
     cmpg-float v8, v7, v8
 
-    if-gez v8, :cond_2d
+    if-gez v8, :cond_0
 
     neg-float v8, v7
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     move v8, v7
 
-    :goto_2e
+    :goto_0
     return v8
 .end method
 
 .method private final compare(DLandroidx/compose/ui/graphics/colorspace/DoubleFunction;Landroidx/compose/ui/graphics/colorspace/DoubleFunction;)Z
-    .registers 13
+    .locals 8
     .param p1, "point"    # D
     .param p3, "a"    # Landroidx/compose/ui/graphics/colorspace/DoubleFunction;
     .param p4, "b"    # Landroidx/compose/ui/graphics/colorspace/DoubleFunction;
@@ -278,21 +278,21 @@
 
     cmpg-double v4, v4, v6
 
-    if-gtz v4, :cond_19
+    if-gtz v4, :cond_0
 
     const/4 v4, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v4, 0x0
 
-    :goto_1a
+    :goto_0
     return v4
 .end method
 
 .method private final computeWhitePoint([F)Landroidx/compose/ui/graphics/colorspace/WhitePoint;
-    .registers 7
+    .locals 5
     .param p1, "toXYZ"    # [F
 
     .line 1299
@@ -303,7 +303,7 @@
 
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_22
+    fill-array-data v0, :array_0
 
     .line 1298
     invoke-static {p1, v0}, Landroidx/compose/ui/graphics/colorspace/ColorSpaceKt;->mul3x3Float3([F[F)[F
@@ -344,7 +344,7 @@
 
     return-object v4
 
-    :array_22
+    :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x3f800000    # 1.0f
@@ -353,7 +353,7 @@
 .end method
 
 .method private final computeXYZMatrix([FLandroidx/compose/ui/graphics/colorspace/WhitePoint;)[F
-    .registers 35
+    .locals 32
     .param p1, "primaries"    # [F
     .param p2, "whitePoint"    # Landroidx/compose/ui/graphics/colorspace/WhitePoint;
 
@@ -607,7 +607,7 @@
 .end method
 
 .method private final contains([F[F)Z
-    .registers 16
+    .locals 13
     .param p1, "p1"    # [F
     .param p2, "p2"    # [F
 
@@ -732,7 +732,7 @@
 
     cmpg-float v7, v7, v8
 
-    if-ltz v7, :cond_cc
+    if-ltz v7, :cond_4
 
     .line 1209
     nop
@@ -765,12 +765,12 @@
     .line 1214
     cmpg-float v7, v7, v8
 
-    if-gez v7, :cond_69
+    if-gez v7, :cond_0
 
-    goto :goto_cc
+    goto :goto_2
 
     .line 1220
-    :cond_69
+    :cond_0
     nop
 
     .line 1221
@@ -804,7 +804,7 @@
     .line 1226
     cmpg-float v7, v7, v8
 
-    if-ltz v7, :cond_cb
+    if-ltz v7, :cond_3
 
     .line 1227
     nop
@@ -837,12 +837,12 @@
     .line 1232
     cmpg-float v7, v7, v8
 
-    if-gez v7, :cond_99
+    if-gez v7, :cond_1
 
-    goto :goto_cb
+    goto :goto_1
 
     .line 1239
-    :cond_99
+    :cond_1
     nop
 
     .line 1240
@@ -873,7 +873,7 @@
     .line 1244
     cmpg-float v3, v3, v8
 
-    if-ltz v3, :cond_c9
+    if-ltz v3, :cond_2
 
     .line 1245
     nop
@@ -906,32 +906,32 @@
     .line 1250
     cmpg-float v3, v3, v8
 
-    if-ltz v3, :cond_c9
+    if-ltz v3, :cond_2
 
     move v1, v2
 
-    goto :goto_ca
+    goto :goto_0
 
-    :cond_c9
+    :cond_2
     nop
 
     .line 1238
-    :goto_ca
+    :goto_0
     return v1
 
     .line 1235
-    :cond_cb
-    :goto_cb
+    :cond_3
+    :goto_1
     return v1
 
     .line 1217
-    :cond_cc
-    :goto_cc
+    :cond_4
+    :goto_2
     return v1
 .end method
 
 .method private final cross(FFFF)F
-    .registers 7
+    .locals 2
     .param p1, "ax"    # F
     .param p2, "ay"    # F
     .param p3, "bx"    # F
@@ -948,7 +948,7 @@
 .end method
 
 .method private final isSrgb([FLandroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/DoubleFunction;Landroidx/compose/ui/graphics/colorspace/DoubleFunction;FFI)Z
-    .registers 15
+    .locals 7
     .param p1, "primaries"    # [F
     .param p2, "whitePoint"    # Landroidx/compose/ui/graphics/colorspace/WhitePoint;
     .param p3, "OETF"    # Landroidx/compose/ui/graphics/colorspace/DoubleFunction;
@@ -960,12 +960,12 @@
     .line 1020
     const/4 v0, 0x1
 
-    if-nez p7, :cond_4
+    if-nez p7, :cond_0
 
     return v0
 
     .line 1021
-    :cond_4
+    :cond_0
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getSrgbPrimaries$ui_graphics_release()[F
@@ -978,13 +978,13 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_12
+    if-nez v1, :cond_1
 
     .line 1022
     return v2
 
     .line 1024
-    :cond_12
+    :cond_1
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/Illuminant;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/Illuminant;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/Illuminant;->getD65()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
@@ -995,53 +995,53 @@
 
     move-result v1
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_2
 
     .line 1025
     return v2
 
     .line 1028
-    :cond_1f
+    :cond_2
     const/4 v1, 0x0
 
     cmpg-float v1, p5, v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     move v1, v0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_3
     move v1, v2
 
-    :goto_27
-    if-nez v1, :cond_2a
+    :goto_0
+    if-nez v1, :cond_4
 
     return v2
 
     .line 1029
-    :cond_2a
+    :cond_4
     const/high16 v1, 0x3f800000    # 1.0f
 
     cmpg-float v1, p6, v1
 
-    if-nez v1, :cond_32
+    if-nez v1, :cond_5
 
     move v1, v0
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_32
+    :cond_5
     move v1, v2
 
-    :goto_33
-    if-nez v1, :cond_36
+    :goto_1
+    if-nez v1, :cond_6
 
     return v2
 
     .line 1033
-    :cond_36
+    :cond_6
     sget-object v1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -1054,12 +1054,12 @@
 
     .line 1036
     .local v3, "x":D
-    :goto_3e
+    :goto_2
     const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
 
     cmpg-double v5, v3, v5
 
-    if-gtz v5, :cond_67
+    if-gtz v5, :cond_9
 
     .line 1037
     nop
@@ -1080,13 +1080,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_52
+    if-nez v5, :cond_7
 
     .line 1042
     return v2
 
     .line 1043
-    :cond_52
+    :cond_7
     nop
 
     .line 1044
@@ -1105,26 +1105,26 @@
 
     move-result v5
 
-    if-nez v5, :cond_60
+    if-nez v5, :cond_8
 
     .line 1048
     return v2
 
     .line 1049
-    :cond_60
+    :cond_8
     const-wide v5, 0x3f70101010101010L    # 0.00392156862745098
 
     add-double/2addr v3, v5
 
-    goto :goto_3e
+    goto :goto_2
 
     .line 1052
-    :cond_67
+    :cond_9
     return v0
 .end method
 
 .method private final isWideGamut([FFF)Z
-    .registers 6
+    .locals 2
     .param p1, "primaries"    # [F
     .param p2, "min"    # F
     .param p3, "max"    # F
@@ -1153,7 +1153,7 @@
 
     cmpl-float v0, v0, v1
 
-    if-lez v0, :cond_23
+    if-lez v0, :cond_0
 
     .line 1091
     nop
@@ -1170,37 +1170,37 @@
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_1
 
     .line 1095
-    :cond_23
+    :cond_0
     const/4 v0, 0x0
 
     cmpg-float v0, p2, v0
 
-    if-gez v0, :cond_30
+    if-gez v0, :cond_2
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     cmpl-float v0, p3, v0
 
-    if-lez v0, :cond_30
+    if-lez v0, :cond_2
 
-    :cond_2e
+    :cond_1
     const/4 v0, 0x1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_2
     const/4 v0, 0x0
 
     .line 1085
-    :goto_31
+    :goto_0
     return v0
 .end method
 
 .method private final xyPrimaries([F)[F
-    .registers 11
+    .locals 9
     .param p1, "primaries"    # [F
 
     .line 1315
@@ -1214,7 +1214,7 @@
 
     const/16 v2, 0x9
 
-    if-ne v1, v2, :cond_48
+    if-ne v1, v2, :cond_0
 
     .line 1319
     const/4 v1, 0x0
@@ -1313,10 +1313,10 @@
     aput v0, v8, v6
 
     .end local v1    # "sum":F
-    goto :goto_52
+    goto :goto_0
 
     .line 1331
-    :cond_48
+    :cond_0
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -1334,14 +1334,14 @@
     invoke-static/range {v1 .. v7}, Lkotlin/collections/ArraysKt;->copyInto$default([F[FIIIILjava/lang/Object;)[F
 
     .line 1334
-    :goto_52
+    :goto_0
     return-object v8
 .end method
 
 
 # virtual methods
 .method public final computePrimaries$ui_graphics_release([F)[F
-    .registers 14
+    .locals 12
     .param p1, "toXYZ"    # [F
 
     const-string/jumbo v0, "toXYZ"
@@ -1356,7 +1356,7 @@
 
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_68
+    fill-array-data v1, :array_0
 
     .line 1264
     invoke-static {p1, v1}, Landroidx/compose/ui/graphics/colorspace/ColorSpaceKt;->mul3x3Float3([F[F)[F
@@ -1370,7 +1370,7 @@
     .line 1270
     new-array v2, v0, [F
 
-    fill-array-data v2, :array_72
+    fill-array-data v2, :array_1
 
     .line 1268
     invoke-static {p1, v2}, Landroidx/compose/ui/graphics/colorspace/ColorSpaceKt;->mul3x3Float3([F[F)[F
@@ -1384,7 +1384,7 @@
     .line 1274
     new-array v3, v0, [F
 
-    fill-array-data v3, :array_7c
+    fill-array-data v3, :array_2
 
     .line 1272
     invoke-static {p1, v3}, Landroidx/compose/ui/graphics/colorspace/ColorSpaceKt;->mul3x3Float3([F[F)[F
@@ -1498,21 +1498,21 @@
     .line 1281
     return-object v10
 
-    :array_68
+    :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x0
         0x0
     .end array-data
 
-    :array_72
+    :array_1
     .array-data 4
         0x0
         0x3f800000    # 1.0f
         0x0
     .end array-data
 
-    :array_7c
+    :array_2
     .array-data 4
         0x0
         0x0

@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/vector/ImageVector;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/vector/VectorPainterKt$rememberVectorPainter$3;->$image:Landroidx/compose/ui/graphics/vector/ImageVector;
 
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 4
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -115,7 +115,7 @@
 .end method
 
 .method public final invoke(FFLandroidx/compose/runtime/Composer;I)V
-    .registers 7
+    .locals 2
     .param p3, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p4, "$changed"    # I
 
@@ -128,28 +128,28 @@
 
     const/4 p2, 0x2
 
-    if-ne p1, p2, :cond_15
+    if-ne p1, p2, :cond_1
 
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result p1
 
-    if-nez p1, :cond_11
+    if-nez p1, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result p1
 
-    if-eqz p1, :cond_25
+    if-eqz p1, :cond_2
 
     const/4 p1, -0x1
 
@@ -159,7 +159,7 @@
 
     invoke-static {v1, p4, p1, v0}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_25
+    :cond_2
     iget-object p1, p0, Landroidx/compose/ui/graphics/vector/VectorPainterKt$rememberVectorPainter$3;->$image:Landroidx/compose/ui/graphics/vector/ImageVector;
 
     invoke-virtual {p1}, Landroidx/compose/ui/graphics/vector/ImageVector;->getRoot()Landroidx/compose/ui/graphics/vector/VectorGroup;
@@ -176,11 +176,11 @@
 
     move-result p1
 
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_3
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_39
-    :goto_39
+    :cond_3
+    :goto_1
     return-void
 .end method

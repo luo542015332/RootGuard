@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 4
+    .locals 2
     .param p1, "root"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "root"
@@ -107,18 +107,18 @@
 .end method
 
 .method public static synthetic process-BIzXfog$default(Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;Landroidx/compose/ui/input/pointer/PointerInputEvent;Landroidx/compose/ui/input/pointer/PositionCalculator;ZILjava/lang/Object;)I
-    .registers 6
+    .locals 0
 
     .line 56
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 59
     const/4 p3, 0x1
 
     .line 56
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->process-BIzXfog(Landroidx/compose/ui/input/pointer/PointerInputEvent;Landroidx/compose/ui/input/pointer/PositionCalculator;Z)I
 
     move-result p0
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public final getRoot()Landroidx/compose/ui/node/LayoutNode;
-    .registers 2
+    .locals 1
 
     .line 34
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -138,7 +138,7 @@
 .end method
 
 .method public final process-BIzXfog(Landroidx/compose/ui/input/pointer/PointerInputEvent;Landroidx/compose/ui/input/pointer/PositionCalculator;Z)I
-    .registers 27
+    .locals 23
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerInputEvent;
     .param p2, "positionCalculator"    # Landroidx/compose/ui/input/pointer/PositionCalculator;
     .param p3, "isInBounds"    # Z
@@ -162,7 +162,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 64
     nop
@@ -178,13 +178,13 @@
     return v0
 
     .line 68
-    :cond_1e
+    :cond_0
     nop
 
     .line 69
     const/4 v0, 0x1
 
-    :try_start_20
+    :try_start_0
     iput-boolean v0, v1, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->isProcessing:Z
 
     .line 73
@@ -216,7 +216,7 @@
     .local v7, "$i$f$any":I
     instance-of v8, v6, Ljava/util/Collection;
 
-    if-eqz v8, :cond_43
+    if-eqz v8, :cond_1
 
     move-object v8, v6
 
@@ -226,24 +226,24 @@
 
     move-result v8
 
-    if-eqz v8, :cond_43
+    if-eqz v8, :cond_1
 
     move v6, v4
 
-    goto :goto_6a
+    goto :goto_2
 
     .line 237
-    :cond_43
+    :cond_1
     invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
 
-    :cond_47
+    :cond_2
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v9
 
-    if-eqz v9, :cond_69
+    if-eqz v9, :cond_5
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -263,55 +263,55 @@
 
     move-result v12
 
-    if-nez v12, :cond_64
+    if-nez v12, :cond_4
 
     invoke-virtual {v10}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPreviousPressed()Z
 
     move-result v12
 
-    if-eqz v12, :cond_62
+    if-eqz v12, :cond_3
 
-    goto :goto_64
+    goto :goto_0
 
-    :cond_62
+    :cond_3
     move v10, v4
 
-    goto :goto_65
+    goto :goto_1
 
-    :cond_64
-    :goto_64
+    :cond_4
+    :goto_0
     move v10, v0
 
     .line 237
     .end local v10    # "it":Landroidx/compose/ui/input/pointer/PointerInputChange;
     .end local v11    # "$i$a$-any-PointerInputEventProcessor$process$isHover$1":I
-    :goto_65
-    if-eqz v10, :cond_47
+    :goto_1
+    if-eqz v10, :cond_2
 
     move v6, v0
 
-    goto :goto_6a
+    goto :goto_2
 
     .line 238
     .end local v9    # "element$iv":Ljava/lang/Object;
-    :cond_69
+    :cond_5
     move v6, v4
 
     .line 76
     .end local v6    # "$this$any$iv":Ljava/lang/Iterable;
     .end local v7    # "$i$f$any":I
-    :goto_6a
-    if-nez v6, :cond_6e
+    :goto_2
+    if-nez v6, :cond_6
 
     move v6, v0
 
-    goto :goto_6f
+    goto :goto_3
 
-    :cond_6e
+    :cond_6
     move v6, v4
 
     .line 75
-    :goto_6f
+    :goto_3
     nop
 
     .line 79
@@ -335,12 +335,12 @@
 
     move-result-object v9
 
-    :goto_7f
+    :goto_4
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v10
 
-    if-eqz v10, :cond_d6
+    if-eqz v10, :cond_9
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -356,16 +356,16 @@
 
     .line 80
     .local v12, "$i$a$-forEach-PointerInputEventProcessor$process$1":I
-    if-nez v6, :cond_95
+    if-nez v6, :cond_7
 
     invoke-static {v11}, Landroidx/compose/ui/input/pointer/PointerEventKt;->changedToDownIgnoreConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
 
     move-result v13
 
-    if-eqz v13, :cond_d3
+    if-eqz v13, :cond_8
 
     .line 81
-    :cond_95
+    :cond_7
     invoke-virtual {v11}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getType-T8wyACA()I
 
     move-result v13
@@ -411,7 +411,7 @@
 
     xor-int/2addr v13, v0
 
-    if-eqz v13, :cond_d3
+    if-eqz v13, :cond_8
 
     .line 84
     iget-object v13, v1, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->hitPathTracker:Landroidx/compose/ui/input/pointer/HitPathTracker;
@@ -433,7 +433,7 @@
 
     .line 88
     .end local v19    # "isTouchEvent":Z
-    :cond_d3
+    :cond_8
     nop
 
     .line 239
@@ -442,10 +442,10 @@
     const/4 v0, 0x1
 
     .end local v10    # "element$iv":Ljava/lang/Object;
-    goto :goto_7f
+    goto :goto_4
 
     .line 240
-    :cond_d6
+    :cond_9
     nop
 
     .line 92
@@ -457,12 +457,12 @@
 
     .line 96
     iget-object v0, v1, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->hitPathTracker:Landroidx/compose/ui/input/pointer/HitPathTracker;
-    :try_end_de
-    .catchall {:try_start_20 .. :try_end_de} :catchall_13f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move/from16 v7, p3
 
-    :try_start_e0
+    :try_start_1
     invoke-virtual {v0, v5, v7}, Landroidx/compose/ui/input/pointer/HitPathTracker;->dispatchChanges(Landroidx/compose/ui/input/pointer/InternalPointerEvent;Z)Z
 
     move-result v0
@@ -476,15 +476,15 @@
 
     move-result v8
 
-    if-eqz v8, :cond_ee
+    if-eqz v8, :cond_a
 
     .line 99
     move/from16 v16, v4
 
-    goto :goto_132
+    goto :goto_6
 
     .line 101
-    :cond_ee
+    :cond_a
     invoke-virtual {v5}, Landroidx/compose/ui/input/pointer/InternalPointerEvent;->getChanges()Ljava/util/Map;
 
     move-result-object v8
@@ -505,7 +505,7 @@
     .local v9, "$i$f$any":I
     instance-of v10, v8, Ljava/util/Collection;
 
-    if-eqz v10, :cond_10a
+    if-eqz v10, :cond_b
 
     move-object v10, v8
 
@@ -515,24 +515,24 @@
 
     move-result v10
 
-    if-eqz v10, :cond_10a
+    if-eqz v10, :cond_b
 
     move/from16 v16, v4
 
-    goto :goto_132
+    goto :goto_6
 
     .line 242
-    :cond_10a
+    :cond_b
     invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
 
-    :cond_10e
+    :cond_c
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v11
 
-    if-eqz v11, :cond_130
+    if-eqz v11, :cond_e
 
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -552,40 +552,40 @@
 
     move-result v14
 
-    if-eqz v14, :cond_12a
+    if-eqz v14, :cond_d
 
     invoke-virtual {v12}, Landroidx/compose/ui/input/pointer/PointerInputChange;->isConsumed()Z
 
     move-result v14
 
-    if-eqz v14, :cond_12a
+    if-eqz v14, :cond_d
 
     const/4 v12, 0x1
 
-    goto :goto_12b
+    goto :goto_5
 
-    :cond_12a
+    :cond_d
     move v12, v4
 
     .line 242
     .end local v12    # "it":Landroidx/compose/ui/input/pointer/PointerInputChange;
     .end local v13    # "$i$a$-any-PointerInputEventProcessor$process$anyMovementConsumed$1":I
-    :goto_12b
-    if-eqz v12, :cond_10e
+    :goto_5
+    if-eqz v12, :cond_c
 
     const/16 v16, 0x1
 
-    goto :goto_132
+    goto :goto_6
 
     .line 243
     .end local v11    # "element$iv":Ljava/lang/Object;
-    :cond_130
+    :cond_e
     move/from16 v16, v4
 
     .line 98
     .end local v8    # "$this$any$iv":Ljava/lang/Iterable;
     .end local v9    # "$i$f$any":I
-    :goto_132
+    :goto_6
     move/from16 v8, v16
 
     .line 105
@@ -593,8 +593,8 @@
     invoke-static {v0, v8}, Landroidx/compose/ui/input/pointer/PointerInputEventProcessorKt;->ProcessResult(ZZ)I
 
     move-result v9
-    :try_end_138
-    .catchall {:try_start_e0 .. :try_end_138} :catchall_13d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 107
     .end local v0    # "dispatchedToSomething":Z
@@ -619,29 +619,29 @@
     .end local v4    # "internalPointerEvent":Landroidx/compose/ui/input/pointer/InternalPointerEvent;
     .end local v5    # "anyMovementConsumed":Z
     .end local v6    # "isHover":Z
-    :catchall_13d
+    :catchall_0
     move-exception v0
 
-    goto :goto_142
+    goto :goto_7
 
-    :catchall_13f
+    :catchall_1
     move-exception v0
 
     move/from16 v7, p3
 
-    :goto_142
+    :goto_7
     iput-boolean v4, v1, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->isProcessing:Z
 
     throw v0
 .end method
 
 .method public final processCancel()V
-    .registers 2
+    .locals 1
 
     .line 120
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->isProcessing:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 122
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventProcessor;->pointerInputChangeEventProducer:Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;
@@ -654,6 +654,6 @@
     invoke-virtual {v0}, Landroidx/compose/ui/input/pointer/HitPathTracker;->processCancel()V
 
     .line 125
-    :cond_e
+    :cond_0
     return-void
 .end method

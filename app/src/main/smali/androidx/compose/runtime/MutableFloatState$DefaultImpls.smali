@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getValue(Landroidx/compose/runtime/MutableFloatState;)Ljava/lang/Float;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/MutableFloatState;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -44,14 +44,13 @@
 .end method
 
 .method public static setValue(Landroidx/compose/runtime/MutableFloatState;F)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/MutableFloatState;
     .param p1, "value"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 94
-    # invokes: Landroidx/compose/runtime/MutableFloatState;->setValue(F)V
     invoke-static {p0, p1}, Landroidx/compose/runtime/MutableFloatState;->access$setValue$jd(Landroidx/compose/runtime/MutableFloatState;F)V
 
     return-void

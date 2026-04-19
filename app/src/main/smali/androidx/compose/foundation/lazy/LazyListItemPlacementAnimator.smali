@@ -139,7 +139,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -208,7 +208,7 @@
 .end method
 
 .method public static final synthetic access$getKeyIndexMap$p(Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;)Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
 
     .line 31
@@ -218,7 +218,7 @@
 .end method
 
 .method private final forEachNode(Landroidx/compose/foundation/lazy/LazyListMeasuredItem;Lkotlin/jvm/functions/Function2;)V
-    .registers 11
+    .locals 8
     .param p1, "$this$forEachNode"    # Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -245,8 +245,8 @@
 
     const/4 v2, 0x0
 
-    :goto_6
-    if-ge v2, v1, :cond_20
+    :goto_0
+    if-ge v2, v1, :cond_1
 
     move v3, v2
 
@@ -263,7 +263,7 @@
 
     move-result-object v5
 
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_0
 
     .line 265
     .local v5, "it":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
@@ -280,7 +280,7 @@
     .line 248
     .end local v5    # "it":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .end local v6    # "$i$a$-let-LazyListItemPlacementAnimator$forEachNode$1$1":I
-    :cond_1c
+    :cond_0
     nop
 
     .line 246
@@ -288,15 +288,15 @@
     .end local v4    # "$i$a$-repeat-LazyListItemPlacementAnimator$forEachNode$1":I
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 249
-    :cond_20
+    :cond_1
     return-void
 .end method
 
 .method private final getHasAnimations(Landroidx/compose/foundation/lazy/LazyListMeasuredItem;)Z
-    .registers 11
+    .locals 9
     .param p1, "$this$hasAnimations"    # Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
 
     .line 239
@@ -318,8 +318,8 @@
 
     move v5, v4
 
-    :goto_9
-    if-ge v5, v3, :cond_20
+    :goto_0
+    if-ge v5, v3, :cond_1
 
     move v6, v5
 
@@ -336,7 +336,7 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_1c
+    if-eqz v8, :cond_0
 
     move-object v3, v8
 
@@ -358,7 +358,7 @@
     .end local v3    # "it$iv":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .end local v4    # "$i$a$-let-LazyListItemPlacementAnimator$forEachNode$1$1$iv":I
     .end local v5    # "$i$a$-forEachNode-LazyListItemPlacementAnimator$hasAnimations$1":I
-    :cond_1c
+    :cond_0
     nop
 
     .line 320
@@ -366,10 +366,10 @@
     .end local v7    # "$i$a$-repeat-LazyListItemPlacementAnimator$forEachNode$1$iv":I
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
     .line 324
-    :cond_20
+    :cond_1
     nop
 
     .line 240
@@ -380,29 +380,29 @@
 .end method
 
 .method private final getNode(Ljava/lang/Object;)Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
-    .registers 3
+    .locals 1
     .param p1, "$this$node"    # Ljava/lang/Object;
 
     .line 235
     instance-of v0, p1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return-object v0
 .end method
 
 .method private final initializeNode(Landroidx/compose/foundation/lazy/LazyListMeasuredItem;I)V
-    .registers 26
+    .locals 23
     .param p1, "item"    # Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .param p2, "mainAxisOffset"    # I
 
@@ -421,7 +421,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 209
     const/4 v4, 0x0
@@ -438,10 +438,10 @@
 
     move-result-wide v2
 
-    goto :goto_22
+    goto :goto_0
 
     .line 211
-    :cond_18
+    :cond_0
     const/4 v5, 0x0
 
     const/4 v6, 0x2
@@ -457,7 +457,7 @@
     move-result-wide v2
 
     .line 208
-    :goto_22
+    :goto_0
     nop
 
     .line 215
@@ -476,8 +476,8 @@
 
     move-result v7
 
-    :goto_2c
-    if-ge v1, v7, :cond_92
+    :goto_1
+    if-ge v1, v7, :cond_2
 
     move v10, v1
 
@@ -494,7 +494,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_84
+    if-eqz v12, :cond_1
 
     .line 309
     .local v12, "it$iv":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
@@ -611,13 +611,13 @@
 
     .end local v12    # "it$iv":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .end local v13    # "$i$a$-let-LazyListItemPlacementAnimator$forEachNode$1$1$iv":I
-    goto :goto_88
+    goto :goto_2
 
     .end local v19    # "targetFirstPlaceableOffset":J
     .end local v22    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v2    # "targetFirstPlaceableOffset":J
     .restart local v4    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
-    :cond_84
+    :cond_1
     move-wide/from16 v19, v2
 
     move-object/from16 v22, v4
@@ -627,7 +627,7 @@
     .end local v4    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v19    # "targetFirstPlaceableOffset":J
     .restart local v22    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
-    :goto_88
+    :goto_2
     nop
 
     .line 307
@@ -641,14 +641,14 @@
 
     move-object/from16 v4, v22
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 313
     .end local v19    # "targetFirstPlaceableOffset":J
     .end local v22    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v2    # "targetFirstPlaceableOffset":J
     .restart local v4    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
-    :cond_92
+    :cond_2
     nop
 
     .line 220
@@ -659,7 +659,7 @@
 .end method
 
 .method private final startAnimationsIfNeeded(Landroidx/compose/foundation/lazy/LazyListMeasuredItem;)V
-    .registers 25
+    .locals 23
     .param p1, "item"    # Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
 
     .line 223
@@ -679,8 +679,8 @@
 
     const/4 v4, 0x0
 
-    :goto_a
-    if-ge v4, v3, :cond_7d
+    :goto_0
+    if-ge v4, v3, :cond_3
 
     move v5, v4
 
@@ -697,7 +697,7 @@
 
     move-result-object v7
 
-    if-eqz v7, :cond_69
+    if-eqz v7, :cond_2
 
     .line 316
     .local v7, "it$iv":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
@@ -753,14 +753,14 @@
 
     move-result v2
 
-    if-nez v2, :cond_61
+    if-nez v2, :cond_1
 
     .line 227
     invoke-static {v0, v1, v13, v14}, Landroidx/compose/ui/unit/IntOffset;->equals-impl0(JJ)Z
 
     move-result v2
 
-    if-nez v2, :cond_5e
+    if-nez v2, :cond_0
 
     .line 229
     const/4 v2, 0x0
@@ -799,28 +799,28 @@
     .end local v2    # "$i$f$minus-qkQi6aY":I
     invoke-virtual {v10, v0, v1}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->animatePlacementDelta--gyyYBs(J)V
 
-    goto :goto_63
+    goto :goto_1
 
     .line 227
     .end local v21    # "currentTarget":J
     .restart local v0    # "currentTarget":J
-    :cond_5e
+    :cond_0
     move-wide/from16 v21, v0
 
     .end local v0    # "currentTarget":J
     .restart local v21    # "currentTarget":J
-    goto :goto_63
+    goto :goto_1
 
     .line 226
     .end local v21    # "currentTarget":J
     .restart local v0    # "currentTarget":J
-    :cond_61
+    :cond_1
     move-wide/from16 v21, v0
 
     .line 231
     .end local v0    # "currentTarget":J
     .restart local v21    # "currentTarget":J
-    :goto_63
+    :goto_1
     invoke-virtual {v10, v13, v14}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->setRawOffset--gyyYBs(J)V
 
     .line 232
@@ -836,7 +836,7 @@
 
     .end local v7    # "it$iv":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .end local v8    # "$i$a$-let-LazyListItemPlacementAnimator$forEachNode$1$1$iv":I
-    goto :goto_72
+    goto :goto_2
 
     .end local v15    # "this_$iv":Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
     .end local v16    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
@@ -844,7 +844,7 @@
     .local v0, "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v1    # "this_$iv":Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
     .local v2, "$i$f$forEachNode":I
-    :cond_69
+    :cond_2
     move-object/from16 v12, p1
 
     move-object/from16 v16, v0
@@ -862,7 +862,7 @@
     .restart local v15    # "this_$iv":Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
     .restart local v16    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v18    # "$i$f$forEachNode":I
-    :goto_72
+    :goto_2
     nop
 
     .line 314
@@ -878,7 +878,7 @@
 
     move/from16 v3, v19
 
-    goto :goto_a
+    goto :goto_0
 
     .line 319
     .end local v15    # "this_$iv":Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
@@ -887,7 +887,7 @@
     .restart local v0    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v1    # "this_$iv":Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
     .restart local v2    # "$i$f$forEachNode":I
-    :cond_7d
+    :cond_3
     nop
 
     .line 233
@@ -900,7 +900,7 @@
 
 # virtual methods
 .method public final onMeasured(IIILjava/util/List;Landroidx/compose/foundation/lazy/LazyListMeasuredItemProvider;Z)V
-    .registers 42
+    .locals 35
     .param p1, "consumedScroll"    # I
     .param p2, "layoutWidth"    # I
     .param p3, "layoutHeight"    # I
@@ -966,10 +966,10 @@
 
     move-result v11
 
-    :goto_24
+    :goto_0
     const/4 v12, 0x0
 
-    if-ge v10, v11, :cond_3f
+    if-ge v10, v11, :cond_1
 
     .line 256
     invoke-interface {v8, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1001,27 +1001,27 @@
     .line 253
     .end local v13    # "it":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .end local v18    # "$i$a$-fastAny-LazyListItemPlacementAnimator$onMeasured$1":I
-    if-eqz v13, :cond_3b
+    if-eqz v13, :cond_0
 
     const/4 v6, 0x1
 
-    goto :goto_41
+    goto :goto_1
 
     .line 257
     .end local v15    # "it$iv":Ljava/lang/Object;
     .end local v16    # "$i$a$-fastForEach-ListUtilsKt$fastAny$2$iv":I
-    :cond_3b
+    :cond_0
     nop
 
     .line 255
     .end local v14    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_24
+    goto :goto_0
 
     .line 259
     .end local v10    # "index$iv$iv":I
-    :cond_3f
+    :cond_1
     nop
 
     .line 260
@@ -1032,8 +1032,8 @@
     .line 61
     .end local v6    # "$this$fastAny$iv":Ljava/util/List;
     .end local v7    # "$i$f$fastAny":I
-    :goto_41
-    if-nez v6, :cond_4f
+    :goto_1
+    if-nez v6, :cond_2
 
     iget-object v6, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->activeKeys:Ljava/util/Set;
 
@@ -1041,7 +1041,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_4f
+    if-eqz v6, :cond_2
 
     .line 63
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->reset()V
@@ -1050,7 +1050,7 @@
     return-void
 
     .line 67
-    :cond_4f
+    :cond_2
     iget v6, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->firstVisibleIndex:I
 
     .line 68
@@ -1061,18 +1061,18 @@
 
     check-cast v7, Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
 
-    if-eqz v7, :cond_5e
+    if-eqz v7, :cond_3
 
     invoke-virtual {v7}, Landroidx/compose/foundation/lazy/LazyListMeasuredItem;->getIndex()I
 
     move-result v7
 
-    goto :goto_5f
+    goto :goto_2
 
-    :cond_5e
+    :cond_3
     move v7, v12
 
-    :goto_5f
+    :goto_2
     iput v7, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->firstVisibleIndex:I
 
     .line 69
@@ -1087,35 +1087,35 @@
     iput-object v8, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->keyIndexMap:Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;
 
     .line 72
-    if-eqz p6, :cond_6d
+    if-eqz p6, :cond_4
 
     move v8, v3
 
-    goto :goto_6e
+    goto :goto_3
 
-    :cond_6d
+    :cond_4
     move v8, v2
 
     .line 75
     .local v8, "mainAxisLayoutSize":I
-    :goto_6e
-    if-eqz p6, :cond_75
+    :goto_3
+    if-eqz p6, :cond_5
 
     .line 76
     invoke-static {v12, v1}, Landroidx/compose/ui/unit/IntOffsetKt;->IntOffset(II)J
 
     move-result-wide v9
 
-    goto :goto_79
+    goto :goto_4
 
     .line 78
-    :cond_75
+    :cond_5
     invoke-static {v1, v12}, Landroidx/compose/ui/unit/IntOffsetKt;->IntOffset(II)J
 
     move-result-wide v9
 
     .line 75
-    :goto_79
+    :goto_4
     nop
 
     .line 82
@@ -1146,8 +1146,8 @@
 
     move-result v15
 
-    :goto_8c
-    if-ge v14, v15, :cond_1b9
+    :goto_5
+    if-ge v14, v15, :cond_e
 
     .line 263
     invoke-interface {v11, v14}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1182,7 +1182,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_193
+    if-eqz v1, :cond_d
 
     .line 88
     iget-object v1, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->activeKeys:Ljava/util/Set;
@@ -1195,7 +1195,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_113
+    if-nez v1, :cond_9
 
     .line 89
     iget-object v1, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->activeKeys:Ljava/util/Set;
@@ -1221,16 +1221,16 @@
     .local v1, "previousIndex":I
     const/4 v11, -0x1
 
-    if-eq v1, v11, :cond_ed
+    if-eq v1, v11, :cond_7
 
     invoke-virtual {v12}, Landroidx/compose/foundation/lazy/LazyListMeasuredItem;->getIndex()I
 
     move-result v11
 
-    if-eq v11, v1, :cond_ed
+    if-eq v11, v1, :cond_7
 
     .line 92
-    if-ge v1, v6, :cond_e0
+    if-ge v1, v6, :cond_6
 
     .line 94
     iget-object v11, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->movingInFromStartBound:Ljava/util/List;
@@ -1243,10 +1243,10 @@
 
     move/from16 v24, v15
 
-    goto/16 :goto_1a2
+    goto/16 :goto_a
 
     .line 96
-    :cond_e0
+    :cond_6
     iget-object v11, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->movingInFromEndBound:Ljava/util/List;
 
     invoke-interface {v11, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -1257,10 +1257,10 @@
 
     move/from16 v24, v15
 
-    goto/16 :goto_1a2
+    goto/16 :goto_a
 
     .line 99
-    :cond_ed
+    :cond_7
     nop
 
     .line 100
@@ -1285,20 +1285,20 @@
 
     move-result v19
 
-    if-eqz v19, :cond_102
+    if-eqz v19, :cond_8
 
     invoke-static/range {v22 .. v23}, Landroidx/compose/ui/unit/IntOffset;->getY-impl(J)I
 
     move-result v19
 
-    goto :goto_106
+    goto :goto_6
 
-    :cond_102
+    :cond_8
     invoke-static/range {v22 .. v23}, Landroidx/compose/ui/unit/IntOffset;->getX-impl(J)I
 
     move-result v19
 
-    :goto_106
+    :goto_6
     move/from16 v11, v19
 
     .line 99
@@ -1313,10 +1313,10 @@
     move/from16 v24, v15
 
     .end local v1    # "previousIndex":I
-    goto/16 :goto_1a2
+    goto/16 :goto_a
 
     .line 105
-    :cond_113
+    :cond_9
     move-object v1, v12
 
     .local v1, "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
@@ -1341,8 +1341,8 @@
 
     .end local v13    # "$i$f$fastForEach":I
     .local v23, "$i$f$fastForEach":I
-    :goto_121
-    if-ge v13, v6, :cond_18b
+    :goto_7
+    if-ge v13, v6, :cond_c
 
     move/from16 v24, v13
 
@@ -1367,7 +1367,7 @@
 
     move-result-object v15
 
-    if-eqz v15, :cond_179
+    if-eqz v15, :cond_b
 
     .line 268
     .local v15, "it$iv":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
@@ -1400,7 +1400,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_174
+    if-nez v1, :cond_a
 
     .line 107
     invoke-virtual/range {v28 .. v28}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->getRawOffset-nOcc-ac()J
@@ -1449,18 +1449,18 @@
     .local v3, "node":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     invoke-virtual {v3, v1, v2}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->setRawOffset--gyyYBs(J)V
 
-    goto :goto_176
+    goto :goto_8
 
     .line 106
     .end local v3    # "node":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .restart local v28    # "node":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
-    :cond_174
+    :cond_a
     move-object/from16 v3, v28
 
     .line 109
     .end local v28    # "node":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .restart local v3    # "node":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
-    :goto_176
+    :goto_8
     nop
 
     .line 267
@@ -1470,17 +1470,17 @@
 
     .end local v15    # "it$iv":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .end local v27    # "$i$a$-let-LazyListItemPlacementAnimator$forEachNode$1$1$iv":I
-    goto :goto_17b
+    goto :goto_9
 
     .end local v30    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .local v1, "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
-    :cond_179
+    :cond_b
     move-object/from16 v30, v1
 
     .line 270
     .end local v1    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v30    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
-    :goto_17b
+    :goto_9
     nop
 
     .line 266
@@ -1500,12 +1500,12 @@
 
     move-object/from16 v1, v30
 
-    goto :goto_121
+    goto :goto_7
 
     .line 271
     .end local v30    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .restart local v1    # "$this$forEachNode$iv":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
-    :cond_18b
+    :cond_c
     move-object/from16 v30, v1
 
     move/from16 v24, v15
@@ -1516,14 +1516,14 @@
     .end local v19    # "$i$f$forEachNode":I
     invoke-direct {v0, v12}, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->startAnimationsIfNeeded(Landroidx/compose/foundation/lazy/LazyListMeasuredItem;)V
 
-    goto :goto_1a2
+    goto :goto_a
 
     .line 114
     .end local v22    # "previousFirstVisibleIndex":I
     .end local v23    # "$i$f$fastForEach":I
     .local v6, "previousFirstVisibleIndex":I
     .restart local v13    # "$i$f$fastForEach":I
-    :cond_193
+    :cond_d
     move/from16 v22, v6
 
     move/from16 v23, v13
@@ -1543,7 +1543,7 @@
     invoke-interface {v1, v2}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     .line 116
-    :goto_1a2
+    :goto_a
     nop
 
     .line 264
@@ -1573,7 +1573,7 @@
 
     const/4 v12, 0x0
 
-    goto/16 :goto_8c
+    goto/16 :goto_5
 
     .end local v21    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v22    # "previousFirstVisibleIndex":I
@@ -1581,7 +1581,7 @@
     .restart local v6    # "previousFirstVisibleIndex":I
     .local v11, "$this$fastForEach$iv":Ljava/util/List;
     .restart local v13    # "$i$f$fastForEach":I
-    :cond_1b9
+    :cond_e
     move/from16 v22, v6
 
     move-object/from16 v21, v11
@@ -1618,7 +1618,7 @@
 
     const/4 v6, 0x1
 
-    if-le v4, v6, :cond_1d5
+    if-le v4, v6, :cond_f
 
     new-instance v4, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator$onMeasured$$inlined$sortByDescending$1;
 
@@ -1629,7 +1629,7 @@
     invoke-static {v2, v4}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 274
-    :cond_1d5
+    :cond_f
     nop
 
     .line 120
@@ -1652,8 +1652,8 @@
 
     move-result v6
 
-    :goto_1df
-    if-ge v4, v6, :cond_1fb
+    :goto_b
+    if-ge v4, v6, :cond_10
 
     .line 277
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1700,11 +1700,11 @@
     .end local v11    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1df
+    goto :goto_b
 
     .line 280
     .end local v4    # "index$iv":I
-    :cond_1fb
+    :cond_10
     nop
 
     .line 126
@@ -1726,7 +1726,7 @@
 
     const/4 v6, 0x1
 
-    if-le v4, v6, :cond_211
+    if-le v4, v6, :cond_11
 
     new-instance v4, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator$onMeasured$$inlined$sortBy$1;
 
@@ -1737,7 +1737,7 @@
     invoke-static {v2, v4}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 282
-    :cond_211
+    :cond_11
     nop
 
     .line 128
@@ -1760,8 +1760,8 @@
 
     move-result v6
 
-    :goto_21b
-    if-ge v4, v6, :cond_237
+    :goto_c
+    if-ge v4, v6, :cond_12
 
     .line 285
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1808,11 +1808,11 @@
     .end local v11    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_21b
+    goto :goto_c
 
     .line 288
     .end local v4    # "index$iv":I
-    :cond_237
+    :cond_12
     nop
 
     .line 135
@@ -1831,12 +1831,12 @@
 
     move-result-object v4
 
-    :goto_241
+    :goto_d
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_2cc
+    if-eqz v6, :cond_1a
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1860,7 +1860,7 @@
     .local v13, "newIndex":I
     const/4 v14, -0x1
 
-    if-ne v13, v14, :cond_263
+    if-ne v13, v14, :cond_13
 
     .line 141
     iget-object v15, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->activeKeys:Ljava/util/Set;
@@ -1873,10 +1873,10 @@
 
     move/from16 v21, v3
 
-    goto/16 :goto_2c3
+    goto/16 :goto_11
 
     .line 143
-    :cond_263
+    :cond_13
     invoke-virtual {v5, v13}, Landroidx/compose/foundation/lazy/LazyListMeasuredItemProvider;->getAndMeasure(I)Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
 
     move-result-object v15
@@ -1897,8 +1897,8 @@
 
     .end local v1    # "accumulatedOffset":I
     .local v20, "accumulatedOffset":I
-    :goto_270
-    if-ge v1, v14, :cond_2a2
+    :goto_e
+    if-ge v1, v14, :cond_17
 
     move/from16 v21, v1
 
@@ -1925,7 +1925,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_291
+    if-eqz v3, :cond_14
 
     invoke-virtual {v3}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->isAnimationInProgress()Z
 
@@ -1937,24 +1937,24 @@
 
     .end local v2    # "it":I
     .local v25, "it":I
-    if-ne v3, v2, :cond_293
+    if-ne v3, v2, :cond_15
 
     const/4 v2, 0x1
 
-    goto :goto_294
+    goto :goto_f
 
     .end local v25    # "it":I
     .restart local v2    # "it":I
-    :cond_291
+    :cond_14
     move/from16 v25, v2
 
     .end local v2    # "it":I
     .restart local v25    # "it":I
-    :cond_293
+    :cond_15
     const/4 v2, 0x0
 
-    :goto_294
-    if-eqz v2, :cond_29a
+    :goto_f
+    if-eqz v2, :cond_16
 
     .line 148
     const/4 v2, 0x1
@@ -1964,32 +1964,32 @@
     .local v2, "inProgress":Z
     move/from16 v18, v2
 
-    goto :goto_29b
+    goto :goto_10
 
     .line 151
     .end local v2    # "inProgress":Z
     .restart local v18    # "inProgress":Z
-    :cond_29a
+    :cond_16
     nop
 
     .line 146
     .end local v23    # "$i$a$-repeat-LazyListItemPlacementAnimator$onMeasured$7$1":I
     .end local v25    # "it":I
-    :goto_29b
+    :goto_10
     add-int/lit8 v1, v1, 0x1
 
     move/from16 v3, v21
 
     move-object/from16 v2, v24
 
-    goto :goto_270
+    goto :goto_e
 
     .line 152
     .end local v21    # "$i$f$forEach":I
     .end local v24    # "$this$forEach$iv":Ljava/lang/Iterable;
     .local v2, "$this$forEach$iv":Ljava/lang/Iterable;
     .restart local v3    # "$i$f$forEach":I
-    :cond_2a2
+    :cond_17
     move-object/from16 v24, v2
 
     move/from16 v21, v3
@@ -1998,36 +1998,36 @@
     .end local v3    # "$i$f$forEach":I
     .restart local v21    # "$i$f$forEach":I
     .restart local v24    # "$this$forEach$iv":Ljava/lang/Iterable;
-    if-nez v18, :cond_2b4
+    if-nez v18, :cond_18
 
     invoke-interface {v7, v11}, Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;->getIndex(Ljava/lang/Object;)I
 
     move-result v1
 
-    if-ne v13, v1, :cond_2b4
+    if-ne v13, v1, :cond_18
 
     .line 153
     iget-object v1, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->activeKeys:Ljava/util/Set;
 
     invoke-interface {v1, v11}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_2c3
+    goto :goto_11
 
     .line 155
-    :cond_2b4
+    :cond_18
     iget v1, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->firstVisibleIndex:I
 
-    if-ge v13, v1, :cond_2be
+    if-ge v13, v1, :cond_19
 
     .line 156
     iget-object v1, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->movingAwayToStartBound:Ljava/util/List;
 
     invoke-interface {v1, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2c3
+    goto :goto_11
 
     .line 158
-    :cond_2be
+    :cond_19
     iget-object v1, v0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->movingAwayToEndBound:Ljava/util/List;
 
     invoke-interface {v1, v15}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -2035,7 +2035,7 @@
     .line 162
     .end local v15    # "item":Landroidx/compose/foundation/lazy/LazyListMeasuredItem;
     .end local v18    # "inProgress":Z
-    :goto_2c3
+    :goto_11
     nop
 
     .line 289
@@ -2049,7 +2049,7 @@
     move-object/from16 v2, v24
 
     .end local v6    # "element$iv":Ljava/lang/Object;
-    goto/16 :goto_241
+    goto/16 :goto_d
 
     .line 290
     .end local v20    # "accumulatedOffset":I
@@ -2058,7 +2058,7 @@
     .restart local v1    # "accumulatedOffset":I
     .restart local v2    # "$this$forEach$iv":Ljava/lang/Iterable;
     .restart local v3    # "$i$f$forEach":I
-    :cond_2cc
+    :cond_1a
     move/from16 v20, v1
 
     move-object/from16 v24, v2
@@ -2088,7 +2088,7 @@
 
     const/4 v6, 0x1
 
-    if-le v4, v6, :cond_2e7
+    if-le v4, v6, :cond_1b
 
     new-instance v4, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator$onMeasured$$inlined$sortByDescending$2;
 
@@ -2099,7 +2099,7 @@
     invoke-static {v2, v4}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 292
-    :cond_2e7
+    :cond_1b
     nop
 
     .line 166
@@ -2122,8 +2122,8 @@
 
     move-result v6
 
-    :goto_2f1
-    if-ge v4, v6, :cond_31e
+    :goto_12
+    if-ge v4, v6, :cond_1c
 
     .line 295
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2191,13 +2191,13 @@
 
     move-object/from16 v2, v18
 
-    goto :goto_2f1
+    goto :goto_12
 
     .end local v16    # "accumulatedOffset":I
     .end local v18    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v1    # "accumulatedOffset":I
     .restart local v2    # "$this$fastForEach$iv":Ljava/util/List;
-    :cond_31e
+    :cond_1c
     move/from16 v15, p2
 
     move/from16 v16, v1
@@ -2237,7 +2237,7 @@
 
     const/4 v12, 0x1
 
-    if-le v11, v12, :cond_33e
+    if-le v11, v12, :cond_1d
 
     new-instance v11, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator$onMeasured$$inlined$sortBy$2;
 
@@ -2248,7 +2248,7 @@
     invoke-static {v4, v11}, Lkotlin/collections/CollectionsKt;->sortWith(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 300
-    :cond_33e
+    :cond_1d
     nop
 
     .line 176
@@ -2271,8 +2271,8 @@
 
     move-result v12
 
-    :goto_348
-    if-ge v11, v12, :cond_36d
+    :goto_13
+    if-ge v11, v12, :cond_1e
 
     .line 303
     invoke-interface {v4, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2328,11 +2328,11 @@
 
     move-object/from16 v4, v17
 
-    goto :goto_348
+    goto :goto_13
 
     .end local v17    # "$this$fastForEach$iv":Ljava/util/List;
     .local v4, "$this$fastForEach$iv":Ljava/util/List;
-    :cond_36d
+    :cond_1e
     move-object/from16 v17, v4
 
     .line 306
@@ -2373,7 +2373,7 @@
 .end method
 
 .method public final reset()V
-    .registers 2
+    .locals 1
 
     .line 197
     iget-object v0, p0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->activeKeys:Ljava/util/Set;

@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;)V
-    .registers 4
+    .locals 1
     .param p1, "connection"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p2, "dispatcher"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 339
     invoke-virtual {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollElement;->create()Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
@@ -98,7 +98,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
-    .registers 4
+    .locals 3
 
     .line 344
     new-instance v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
@@ -113,7 +113,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 358
@@ -121,12 +121,12 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
     .line 359
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollElement;
@@ -139,12 +139,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v1
 
     .line 360
-    :cond_14
+    :cond_1
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollElement;
@@ -157,19 +157,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_22
+    if-nez v0, :cond_2
 
     return v1
 
     .line 361
-    :cond_22
+    :cond_2
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public final getConnection()Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
-    .registers 2
+    .locals 1
 
     .line 340
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollElement;->connection:Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
@@ -178,7 +178,7 @@
 .end method
 
 .method public final getDispatcher()Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
-    .registers 2
+    .locals 1
 
     .line 341
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollElement;->dispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
@@ -187,7 +187,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 352
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollElement;->connection:Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
@@ -202,18 +202,18 @@
 
     iget-object v2, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollElement;->dispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_12
+    :goto_0
     add-int/2addr v1, v2
 
     .line 354
@@ -223,7 +223,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 5
+    .locals 3
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -262,7 +262,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 339
@@ -276,7 +276,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;)V
-    .registers 4
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
 
     const-string/jumbo v0, "node"

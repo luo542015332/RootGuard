@@ -99,7 +99,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)V
-    .registers 4
+    .locals 2
     .param p1, "this$0"    # Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -129,7 +129,7 @@
 
 # virtual methods
 .method public getCoroutineContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 331
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
@@ -146,7 +146,7 @@
 .end method
 
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     .line 327
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
@@ -165,7 +165,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     .line 329
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
@@ -184,7 +184,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 325
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
@@ -203,7 +203,7 @@
 .end method
 
 .method public getLookaheadScopeCoordinates(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 4
+    .locals 2
     .param p1, "$this$lookaheadScopeCoordinates"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "<this>"
@@ -213,7 +213,6 @@
     .line 282
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    # getter for: Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->closestLookaheadScope:Landroidx/compose/ui/layout/LookaheadScope;
     invoke-static {v0}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->access$getClosestLookaheadScope$p(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)Landroidx/compose/ui/layout/LookaheadScope;
 
     move-result-object v0
@@ -237,7 +236,7 @@
 .end method
 
 .method public getLookaheadSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 276
     iget-wide v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->lookaheadSize:J
@@ -246,7 +245,7 @@
 .end method
 
 .method public isLookingAhead()Z
-    .registers 2
+    .locals 1
 
     .line 322
     const/4 v0, 0x0
@@ -255,7 +254,7 @@
 .end method
 
 .method public layout(IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 13
+    .locals 8
     .param p1, "width"    # I
     .param p2, "height"    # I
     .param p3, "alignmentLines"    # Ljava/util/Map;
@@ -310,7 +309,7 @@
 .end method
 
 .method public onPlaced(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 2
     .param p1, "$this$onPlaced"    # Landroidx/compose/ui/Modifier;
     .param p2, "onPlaced"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -343,7 +342,6 @@
     .line 297
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    # getter for: Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->closestLookaheadScope:Landroidx/compose/ui/layout/LookaheadScope;
     invoke-static {v0}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->access$getClosestLookaheadScope$p(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)Landroidx/compose/ui/layout/LookaheadScope;
 
     move-result-object v0
@@ -367,7 +365,7 @@
 .end method
 
 .method public setLookaheadSize-ozmzZPI(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 276
@@ -377,7 +375,7 @@
 .end method
 
 .method public toLookaheadCoordinates(Landroidx/compose/ui/layout/LayoutCoordinates;)Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 4
+    .locals 2
     .param p1, "$this$toLookaheadCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -387,7 +385,6 @@
     .line 279
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    # getter for: Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->closestLookaheadScope:Landroidx/compose/ui/layout/LookaheadScope;
     invoke-static {v0}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->access$getClosestLookaheadScope$p(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)Landroidx/compose/ui/layout/LookaheadScope;
 
     move-result-object v0

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static onPostFling-RZ2iAVY(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "consumed"    # J
     .param p3, "available"    # J
@@ -48,7 +48,6 @@
     .end annotation
 
     .line 95
-    # invokes: Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->onPostFling-RZ2iAVY(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
     invoke-static/range {p0 .. p5}, Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->access$onPostFling-RZ2iAVY$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
@@ -57,7 +56,7 @@
 .end method
 
 .method public static onPostScroll-DzOQY0M(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JJI)J
-    .registers 8
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "consumed"    # J
     .param p3, "available"    # J
@@ -66,7 +65,6 @@
     .end annotation
 
     .line 69
-    # invokes: Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->onPostScroll-DzOQY0M(JJI)J
     invoke-static/range {p0 .. p5}, Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->access$onPostScroll-DzOQY0M$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JJI)J
 
     move-result-wide v0
@@ -76,7 +74,7 @@
 .end method
 
 .method public static onPreFling-QWom1Mo(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "available"    # J
     .param p3, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -97,7 +95,6 @@
     .end annotation
 
     .line 84
-    # invokes: Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->onPreFling-QWom1Mo(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->access$onPreFling-QWom1Mo$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v0
@@ -106,7 +103,7 @@
 .end method
 
 .method public static onPreScroll-OzD1aCk(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JI)J
-    .registers 6
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p1, "available"    # J
     .param p3, "source"    # I
@@ -114,7 +111,6 @@
     .end annotation
 
     .line 55
-    # invokes: Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->onPreScroll-OzD1aCk(JI)J
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->access$onPreScroll-OzD1aCk$jd(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;JI)J
 
     move-result-wide v0

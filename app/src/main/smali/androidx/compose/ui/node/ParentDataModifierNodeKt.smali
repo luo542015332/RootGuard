@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final invalidateParentData(Landroidx/compose/ui/node/ParentDataModifierNode;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$invalidateParentData"    # Landroidx/compose/ui/node/ParentDataModifierNode;
 
     const-string v0, "<this>"

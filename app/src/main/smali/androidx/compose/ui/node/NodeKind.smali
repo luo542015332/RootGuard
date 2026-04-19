@@ -63,7 +63,7 @@
 
 # direct methods
 .method private synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "mask"    # I
 
     .line 46
@@ -75,7 +75,7 @@
 .end method
 
 .method public static final synthetic box-impl(I)Landroidx/compose/ui/node/NodeKind;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/NodeKind;
 
@@ -85,7 +85,7 @@
 .end method
 
 .method public static constructor-impl(I)I
-    .registers 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -98,17 +98,17 @@
 .end method
 
 .method public static equals-impl(ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/node/NodeKind;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/node/NodeKind;
@@ -117,34 +117,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(II)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -154,7 +154,7 @@
 .end method
 
 .method public static final or-H91voCI(II)I
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # I
     .param p1, "other"    # I
 
@@ -168,7 +168,7 @@
 .end method
 
 .method public static final or-impl(II)I
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # I
     .param p1, "other"    # I
 
@@ -182,7 +182,7 @@
 .end method
 
 .method public static toString-impl(I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -214,7 +214,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/node/NodeKind;->mask:I
 
@@ -226,7 +226,7 @@
 .end method
 
 .method public final getMask()I
-    .registers 2
+    .locals 1
 
     .line 46
     iget v0, p0, Landroidx/compose/ui/node/NodeKind;->mask:I
@@ -235,7 +235,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/node/NodeKind;->mask:I
 
@@ -247,7 +247,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/node/NodeKind;->mask:I
 
@@ -259,7 +259,7 @@
 .end method
 
 .method public final synthetic unbox-impl()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/node/NodeKind;->mask:I
 

@@ -35,7 +35,7 @@
 .end method
 
 .method public hasText()Z
-    .registers 4
+    .locals 3
 
     .line 45
     invoke-interface {p0}, Landroidx/compose/ui/platform/ClipboardManager;->getText()Landroidx/compose/ui/text/AnnotatedString;
@@ -44,7 +44,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     check-cast v0, Ljava/lang/CharSequence;
 
@@ -54,21 +54,21 @@
 
     const/4 v2, 0x1
 
-    if-lez v0, :cond_12
+    if-lez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v0, v1
 
-    :goto_13
-    if-ne v0, v2, :cond_16
+    :goto_0
+    if-ne v0, v2, :cond_1
 
     move v1, v2
 
-    :cond_16
+    :cond_1
     return v1
 .end method
 

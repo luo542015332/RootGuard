@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final scale(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$scale"    # Landroidx/compose/ui/Modifier;
     .param p1, "scale"    # F
 
@@ -45,7 +45,7 @@
 .end method
 
 .method public static final scale(Landroidx/compose/ui/Modifier;FF)Landroidx/compose/ui/Modifier;
-    .registers 27
+    .locals 24
     .param p0, "$this$scale"    # Landroidx/compose/ui/Modifier;
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
@@ -65,39 +65,39 @@
 
     const/4 v4, 0x0
 
-    if-nez v1, :cond_11
+    if-nez v1, :cond_0
 
     move v1, v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move v1, v4
 
-    :goto_12
-    if-eqz v1, :cond_1e
+    :goto_0
+    if-eqz v1, :cond_3
 
     cmpg-float v0, p2, v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     move v2, v4
 
-    :goto_1a
-    if-nez v2, :cond_1d
+    :goto_1
+    if-nez v2, :cond_2
 
-    goto :goto_1e
+    goto :goto_2
 
     .line 42
-    :cond_1d
-    goto :goto_41
+    :cond_2
+    goto :goto_3
 
     .line 40
-    :cond_1e
-    :goto_1e
+    :cond_3
+    :goto_2
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -143,6 +143,6 @@
     move-result-object v3
 
     .line 43
-    :goto_41
+    :goto_3
     return-object v3
 .end method

@@ -55,7 +55,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/compose/runtime/ParcelableSnapshotMutableLongState;
-    .registers 5
+    .locals 3
     .param p1, "parcel"    # Landroid/os/Parcel;
 
     const-string/jumbo v0, "parcel"
@@ -88,7 +88,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p0"    # Landroid/os/Parcel;
 
     .line 39
@@ -100,7 +100,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/compose/runtime/ParcelableSnapshotMutableLongState;
-    .registers 3
+    .locals 1
     .param p1, "size"    # I
 
     .line 47
@@ -110,7 +110,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p0"    # I
 
     .line 39

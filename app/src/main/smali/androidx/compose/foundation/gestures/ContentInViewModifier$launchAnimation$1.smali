@@ -71,7 +71,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/ContentInViewModifier;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,7 +122,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -136,7 +136,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -165,7 +165,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 15
+    .locals 13
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -176,7 +176,7 @@
 
     const/4 v2, 0x0
 
-    packed-switch v1, :pswitch_data_9c
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -186,7 +186,7 @@
 
     throw p1
 
-    :pswitch_13
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
@@ -194,31 +194,31 @@
     const/4 v1, 0x0
 
     .local v1, "cancellationException":Ljava/util/concurrent/CancellationException;
-    :try_start_15
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_18
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_15 .. :try_end_18} :catch_1c
-    .catchall {:try_start_15 .. :try_end_18} :catchall_19
+    :try_end_0
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_58
+    goto :goto_0
 
     .line 279
-    :catchall_19
+    :catchall_0
     move-exception v3
 
-    goto/16 :goto_84
+    goto/16 :goto_2
 
     .line 275
-    :catch_1c
+    :catch_0
     move-exception v3
 
-    goto :goto_81
+    goto :goto_1
 
     .line 187
     .end local v0    # "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
     .end local v1    # "cancellationException":Ljava/util/concurrent/CancellationException;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1e
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -249,7 +249,7 @@
     nop
 
     .line 192
-    :try_start_30
+    :try_start_1
     iget-object v3, v1, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     const/4 v6, 0x1
@@ -259,7 +259,6 @@
     .line 193
     iget-object v3, v1, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->scrollState:Landroidx/compose/foundation/gestures/ScrollableState;
     invoke-static {v3}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getScrollState$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/ScrollableState;
 
     move-result-object v7
@@ -291,18 +290,18 @@
     invoke-static/range {v7 .. v12}, Landroidx/compose/foundation/gestures/ScrollableState;->scroll$default(Landroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
-    :try_end_53
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_30 .. :try_end_53} :catch_7e
-    .catchall {:try_start_30 .. :try_end_53} :catchall_7a
+    :try_end_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .end local v5    # "animationJob":Lkotlinx/coroutines/Job;
-    if-ne v3, v0, :cond_56
+    if-ne v3, v0, :cond_0
 
     .line 187
     return-object v0
 
     .line 193
-    :cond_56
+    :cond_0
     move-object v0, v1
 
     move-object v1, v4
@@ -311,22 +310,21 @@
     .end local v4    # "cancellationException":Ljava/util/concurrent/CancellationException;
     .restart local v0    # "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
     .local v1, "cancellationException":Ljava/util/concurrent/CancellationException;
-    :goto_58
+    :goto_0
     nop
 
     .line 274
-    :try_start_59
+    :try_start_2
     iget-object v3, v0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->bringIntoViewRequests:Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     invoke-static {v3}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getBringIntoViewRequests$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
 
     move-result-object v3
 
     invoke-virtual {v3}, Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;->resumeAndRemoveAll()V
-    :try_end_62
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_59 .. :try_end_62} :catch_1c
-    .catchall {:try_start_59 .. :try_end_62} :catchall_19
+    :try_end_2
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 279
     nop
@@ -339,7 +337,6 @@
     .line 288
     iget-object v3, v0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->bringIntoViewRequests:Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     invoke-static {v3}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getBringIntoViewRequests$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
 
     move-result-object v3
@@ -365,17 +362,17 @@
     .end local v0    # "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
     .local v1, "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
     .restart local v4    # "cancellationException":Ljava/util/concurrent/CancellationException;
-    :catchall_7a
+    :catchall_1
     move-exception v3
 
     move-object v0, v1
 
     move-object v1, v4
 
-    goto :goto_84
+    goto :goto_2
 
     .line 275
-    :catch_7e
+    :catch_1
     move-exception v3
 
     move-object v0, v1
@@ -387,7 +384,7 @@
     .restart local v0    # "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
     .local v1, "cancellationException":Ljava/util/concurrent/CancellationException;
     .local v3, "e":Ljava/util/concurrent/CancellationException;
-    :goto_81
+    :goto_1
     move-object v1, v3
 
     .line 277
@@ -396,17 +393,17 @@
     .end local v0    # "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
     .end local v1    # "cancellationException":Ljava/util/concurrent/CancellationException;
     .end local p1    # "$result":Ljava/lang/Object;
-    :try_start_83
+    :try_start_3
     throw v3
-    :try_end_84
-    .catchall {:try_start_83 .. :try_end_84} :catchall_19
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 286
     .end local v3    # "e":Ljava/util/concurrent/CancellationException;
     .restart local v0    # "this":Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;
     .restart local v1    # "cancellationException":Ljava/util/concurrent/CancellationException;
     .restart local p1    # "$result":Ljava/lang/Object;
-    :goto_84
+    :goto_2
     iget-object v4, v0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
     invoke-static {v4, v2}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$setAnimationRunning$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;Z)V
@@ -414,7 +411,6 @@
     .line 288
     iget-object v4, v0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->bringIntoViewRequests:Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
     invoke-static {v4}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getBringIntoViewRequests$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Landroidx/compose/foundation/gestures/BringIntoViewRequestPriorityQueue;
 
     move-result-object v4
@@ -434,9 +430,9 @@
 
     nop
 
-    :pswitch_data_9c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1e
-        :pswitch_13
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

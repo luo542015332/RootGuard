@@ -49,7 +49,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/vector/FastFloatParser$Companion;
 
@@ -67,7 +67,7 @@
 
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_50e
+    fill-array-data v0, :array_0
 
     .line 38
     sput-object v0, Landroidx/compose/ui/graphics/vector/FastFloatParser;->PowersOfTen:[F
@@ -80,7 +80,7 @@
 
     new-array v0, v0, [J
 
-    fill-array-data v0, :array_528
+    fill-array-data v0, :array_1
 
     .line 270
     nop
@@ -3881,7 +3881,7 @@
 
     nop
 
-    :array_50e
+    :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x41200000    # 10.0f
@@ -3896,7 +3896,7 @@
         0x501502f9    # 1.0E10f
     .end array-data
 
-    :array_528
+    :array_1
     .array-data 8
         -0x5a312bc481c16e78L
         -0x30bd76b5a231ca16L    # -6.550158266089568E73
@@ -4536,7 +4536,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -4545,7 +4545,7 @@
 .end method
 
 .method public static final synthetic access$getMantissa64$cp()[J
-    .registers 1
+    .locals 1
 
     .line 31
     sget-object v0, Landroidx/compose/ui/graphics/vector/FastFloatParser;->Mantissa64:[J
@@ -4554,7 +4554,7 @@
 .end method
 
 .method public static final synthetic access$getPowersOfTen$cp()[F
-    .registers 1
+    .locals 1
 
     .line 31
     sget-object v0, Landroidx/compose/ui/graphics/vector/FastFloatParser;->PowersOfTen:[F

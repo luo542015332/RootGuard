@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;)V
-    .registers 11
+    .locals 8
     .param p1, "id"    # I
     .param p2, "invalid"    # Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
@@ -90,8 +90,7 @@
     nop
 
     .line 1328
-    :try_start_11
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->globalWriteObservers:Ljava/util/List;
+    :try_start_0
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getGlobalWriteObservers$p()Ljava/util/List;
 
     move-result-object v4
@@ -106,10 +105,9 @@
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_0
 
     .line 1329
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->globalWriteObservers:Ljava/util/List;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getGlobalWriteObservers$p()Ljava/util/List;
 
     move-result-object v4
@@ -120,18 +118,18 @@
 
     move-result-object v4
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 1330
-    :cond_2b
+    :cond_0
     move-object v4, v5
 
     .line 1328
-    :goto_2c
+    :goto_0
     nop
 
     .line 1331
-    if-eqz v4, :cond_42
+    if-eqz v4, :cond_2
 
     .line 1328
     nop
@@ -150,28 +148,28 @@
 
     check-cast v7, Lkotlin/jvm/functions/Function1;
 
-    if-nez v7, :cond_41
+    if-nez v7, :cond_1
 
     new-instance v7, Landroidx/compose/runtime/snapshots/GlobalSnapshot$1$1$1;
 
     invoke-direct {v7, v4}, Landroidx/compose/runtime/snapshots/GlobalSnapshot$1$1$1;-><init>(Ljava/util/List;)V
 
     check-cast v7, Lkotlin/jvm/functions/Function1;
-    :try_end_41
-    .catchall {:try_start_11 .. :try_end_41} :catchall_49
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1331
     .end local v4    # "it":Ljava/util/List;
     .end local v6    # "$i$a$-let-GlobalSnapshot$1$1":I
-    :cond_41
-    goto :goto_43
+    :cond_1
+    goto :goto_1
 
-    :cond_42
+    :cond_2
     move-object v7, v5
 
     .line 2292
     .end local v3    # "$i$a$-sync-GlobalSnapshot$1":I
-    :goto_43
+    :goto_1
     monitor-exit v1
 
     .line 2291
@@ -190,7 +188,7 @@
     .restart local v0    # "$i$f$sync":I
     .restart local v1    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_49
+    :catchall_0
     move-exception v3
 
     monitor-exit v1
@@ -201,7 +199,7 @@
 
 # virtual methods
 .method public apply()Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -218,7 +216,7 @@
 .end method
 
 .method public dispose()V
-    .registers 5
+    .locals 4
 
     .line 1376
     const/4 v0, 0x0
@@ -240,7 +238,7 @@
 
     .line 1377
     .local v3, "$i$a$-sync-GlobalSnapshot$dispose$1":I
-    :try_start_8
+    :try_start_0
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/GlobalSnapshot;->releasePinnedSnapshotLocked$runtime_release()V
 
     .line 1378
@@ -248,8 +246,8 @@
 
     .end local v3    # "$i$a$-sync-GlobalSnapshot$dispose$1":I
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_e
-    .catchall {:try_start_8 .. :try_end_e} :catchall_11
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2294
     monitor-exit v1
@@ -267,7 +265,7 @@
     .restart local v0    # "$i$f$sync":I
     .restart local v1    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_11
+    :catchall_0
     move-exception v3
 
     monitor-exit v1
@@ -276,7 +274,7 @@
 .end method
 
 .method public nestedActivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)Ljava/lang/Void;
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -294,7 +292,7 @@
 .end method
 
 .method public bridge synthetic nestedActivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 2
+    .locals 0
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     .line 1319
@@ -304,7 +302,7 @@
 .end method
 
 .method public nestedDeactivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)Ljava/lang/Void;
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -322,7 +320,7 @@
 .end method
 
 .method public bridge synthetic nestedDeactivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 2
+    .locals 0
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     .line 1319
@@ -332,10 +330,9 @@
 .end method
 
 .method public notifyObjectsInitialized$runtime_release()V
-    .registers 1
+    .locals 0
 
     .line 1367
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->advanceGlobalSnapshot()V
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$advanceGlobalSnapshot()V
 
     .line 1368
@@ -343,7 +340,7 @@
 .end method
 
 .method public takeNestedMutableSnapshot(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    .registers 4
+    .locals 1
     .param p1, "readObserver"    # Lkotlin/jvm/functions/Function1;
     .param p2, "writeObserver"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -368,7 +365,6 @@
 
     check-cast v0, Lkotlin/jvm/functions/Function1;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->takeNewSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$takeNewSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v0
@@ -380,7 +376,7 @@
 .end method
 
 .method public takeNestedSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 3
+    .locals 1
     .param p1, "readObserver"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -400,7 +396,6 @@
 
     check-cast v0, Lkotlin/jvm/functions/Function1;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->takeNewSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$takeNewSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v0

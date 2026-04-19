@@ -42,7 +42,7 @@
 
 # direct methods
 .method public static final shadow-s4CzXII(Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/graphics/Shape;ZJJ)Landroidx/compose/ui/Modifier;
-    .registers 25
+    .locals 17
     .param p0, "$this$shadow_u2ds4CzXII"    # Landroidx/compose/ui/Modifier;
     .param p1, "elevation"    # F
     .param p2, "shape"    # Landroidx/compose/ui/graphics/Shape;
@@ -85,21 +85,21 @@
 
     move-result v0
 
-    if-gtz v0, :cond_23
+    if-gtz v0, :cond_1
 
-    if-eqz p3, :cond_21
+    if-eqz p3, :cond_0
 
-    goto :goto_23
+    goto :goto_0
 
     .line 121
-    :cond_21
+    :cond_0
     move-object v0, v1
 
-    goto :goto_68
+    goto :goto_2
 
     .line 102
-    :cond_23
-    :goto_23
+    :cond_1
+    :goto_0
     nop
 
     .line 103
@@ -111,7 +111,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3e
+    if-eqz v2, :cond_2
 
     new-instance v12, Landroidx/compose/ui/draw/ShadowKt$shadow-s4CzXII$$inlined$debugInspectorInfo$1;
 
@@ -131,16 +131,16 @@
 
     check-cast v12, Lkotlin/jvm/functions/Function1;
 
-    goto :goto_42
+    goto :goto_1
 
-    :cond_3e
+    :cond_2
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
 
     move-result-object v12
 
     .line 102
     .end local v0    # "$i$f$debugInspectorInfo":I
-    :goto_42
+    :goto_1
     move-object/from16 v0, p0
 
     .local v0, "$this$inspectable$iv":Landroidx/compose/ui/Modifier;
@@ -195,33 +195,33 @@
     .end local v0    # "$this$inspectable$iv":Landroidx/compose/ui/Modifier;
     .end local v12    # "inspectorInfo$iv":Lkotlin/jvm/functions/Function1;
     .end local v13    # "$i$f$inspectable":I
-    :goto_68
+    :goto_2
     return-object v0
 .end method
 
 .method public static synthetic shadow-s4CzXII$default(Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/graphics/Shape;ZJJILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 17
+    .locals 7
 
     .line 95
     and-int/lit8 v0, p8, 0x2
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 97
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
     .line 95
-    :cond_9
+    :cond_0
     move-object v0, p2
 
-    :goto_a
+    :goto_0
     and-int/lit8 v1, p8, 0x4
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_2
 
     .line 98
     const/4 v1, 0x0
@@ -246,56 +246,56 @@
 
     move-result v1
 
-    if-lez v1, :cond_1e
+    if-lez v1, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     const/4 v1, 0x0
 
-    goto :goto_22
+    goto :goto_1
 
     .line 95
-    :cond_20
+    :cond_2
     move v2, p1
 
     move v1, p3
 
-    :goto_22
+    :goto_1
     and-int/lit8 v3, p8, 0x8
 
-    if-eqz v3, :cond_2b
+    if-eqz v3, :cond_3
 
     .line 99
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
 
     move-result-wide v3
 
-    goto :goto_2c
+    goto :goto_2
 
     .line 95
-    :cond_2b
+    :cond_3
     move-wide v3, p4
 
-    :goto_2c
+    :goto_2
     and-int/lit8 v5, p8, 0x10
 
-    if-eqz v5, :cond_35
+    if-eqz v5, :cond_4
 
     .line 100
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
 
     move-result-wide v5
 
-    goto :goto_36
+    goto :goto_3
 
     .line 95
-    :cond_35
+    :cond_4
     move-wide v5, p6
 
-    :goto_36
+    :goto_3
     move-object p2, p0
 
     move p3, p1
@@ -316,7 +316,7 @@
 .end method
 
 .method public static final synthetic shadow-ziNgDLE(Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/graphics/Shape;Z)Landroidx/compose/ui/Modifier;
-    .registers 13
+    .locals 9
     .param p0, "$this$shadow_u2dziNgDLE"    # Landroidx/compose/ui/Modifier;
     .param p1, "elevation"    # F
     .param p2, "shape"    # Landroidx/compose/ui/graphics/Shape;
@@ -380,12 +380,12 @@
 .end method
 
 .method public static synthetic shadow-ziNgDLE$default(Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/graphics/Shape;ZILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 6
+    .locals 0
 
     .line 61
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 63
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
@@ -393,10 +393,10 @@
     move-result-object p2
 
     .line 61
-    :cond_8
+    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_1c
+    if-eqz p4, :cond_2
 
     .line 64
     const/4 p3, 0x0
@@ -419,18 +419,18 @@
 
     move-result p3
 
-    if-lez p3, :cond_1b
+    if-lez p3, :cond_1
 
     const/4 p3, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 p3, 0x0
 
     .line 61
-    :cond_1c
-    :goto_1c
+    :cond_2
+    :goto_0
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/draw/ShadowKt;->shadow-ziNgDLE(Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/graphics/Shape;Z)Landroidx/compose/ui/Modifier;
 
     move-result-object p0

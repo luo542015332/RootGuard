@@ -73,7 +73,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator$Companion;
 
@@ -101,7 +101,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 341
     invoke-direct {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$AbstractTextSegmentIterator;-><init>()V
@@ -110,7 +110,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;-><init>()V
 
@@ -118,7 +118,7 @@
 .end method
 
 .method public static final synthetic access$getLineInstance$cp()Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;
-    .registers 1
+    .locals 1
 
     .line 341
     sget-object v0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->lineInstance:Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;
@@ -127,7 +127,7 @@
 .end method
 
 .method public static final synthetic access$setLineInstance$cp(Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;
 
     .line 341
@@ -137,7 +137,7 @@
 .end method
 
 .method private final getLineEdgeIndex(ILandroidx/compose/ui/text/style/ResolvedTextDirection;)I
-    .registers 9
+    .locals 6
     .param p1, "lineNumber"    # I
     .param p2, "direction"    # Landroidx/compose/ui/text/style/ResolvedTextDirection;
 
@@ -148,13 +148,13 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v0, v2
 
-    :cond_c
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLineStart(I)I
 
     move-result v0
@@ -163,51 +163,51 @@
     .local v0, "lineStart":I
     iget-object v3, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_1
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v3, v2
 
-    :cond_18
+    :cond_1
     invoke-virtual {v3, v0}, Landroidx/compose/ui/text/TextLayoutResult;->getParagraphDirection(I)Landroidx/compose/ui/text/style/ResolvedTextDirection;
 
     move-result-object v3
 
     .line 417
     .local v3, "paragraphDirection":Landroidx/compose/ui/text/style/ResolvedTextDirection;
-    if-eq p2, v3, :cond_2c
+    if-eq p2, v3, :cond_3
 
     .line 418
     iget-object v4, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v4, :cond_26
+    if-nez v4, :cond_2
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_2
     move-object v2, v4
 
-    :goto_27
+    :goto_0
     invoke-virtual {v2, p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLineStart(I)I
 
     move-result v1
 
-    goto :goto_3c
+    goto :goto_1
 
     .line 420
-    :cond_2c
+    :cond_3
     iget-object v4, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v4, :cond_34
+    if-nez v4, :cond_4
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v4, v2
 
-    :cond_34
+    :cond_4
     const/4 v1, 0x0
 
     const/4 v5, 0x2
@@ -219,14 +219,14 @@
     add-int/lit8 v1, v1, -0x1
 
     .line 417
-    :goto_3c
+    :goto_1
     return v1
 .end method
 
 
 # virtual methods
 .method public following(I)[I
-    .registers 7
+    .locals 5
     .param p1, "current"    # I
 
     .line 363
@@ -242,13 +242,13 @@
     .local v0, "textLength":I
     const/4 v1, 0x0
 
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     .line 365
     return-object v1
 
     .line 367
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->getText()Ljava/lang/String;
 
     move-result-object v2
@@ -257,46 +257,46 @@
 
     move-result v2
 
-    if-lt p1, v2, :cond_17
+    if-lt p1, v2, :cond_1
 
     .line 368
     return-object v1
 
     .line 370
-    :cond_17
+    :cond_1
     const-string/jumbo v2, "layoutResult"
 
-    if-gez p1, :cond_2a
+    if-gez p1, :cond_3
 
     .line 371
     iget-object v3, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v3, :cond_24
+    if-nez v3, :cond_2
 
     invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v3, v1
 
-    :cond_24
+    :cond_2
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForOffset(I)I
 
     move-result v3
 
-    goto :goto_42
+    goto :goto_0
 
     .line 373
-    :cond_2a
+    :cond_3
     iget-object v3, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v3, :cond_32
+    if-nez v3, :cond_4
 
     invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v3, v1
 
-    :cond_32
+    :cond_4
     invoke-virtual {v3, p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForOffset(I)I
 
     move-result v3
@@ -309,44 +309,44 @@
 
     move-result v4
 
-    if-ne v4, p1, :cond_3f
+    if-ne v4, p1, :cond_5
 
     .line 375
-    goto :goto_42
+    goto :goto_0
 
     .line 377
-    :cond_3f
+    :cond_5
     add-int/lit8 v4, v3, 0x1
 
     move v3, v4
 
     .line 370
     .end local v3    # "currentLine":I
-    :goto_42
+    :goto_0
     nop
 
     .line 380
     .local v3, "nextLine":I
     iget-object v4, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v4, :cond_4b
+    if-nez v4, :cond_6
 
     invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v4, v1
 
-    :cond_4b
+    :cond_6
     invoke-virtual {v4}, Landroidx/compose/ui/text/TextLayoutResult;->getLineCount()I
 
     move-result v2
 
-    if-lt v3, v2, :cond_52
+    if-lt v3, v2, :cond_7
 
     .line 381
     return-object v1
 
     .line 383
-    :cond_52
+    :cond_7
     sget-object v1, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->DirectionStart:Landroidx/compose/ui/text/style/ResolvedTextDirection;
 
     invoke-direct {p0, v3, v1}, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->getLineEdgeIndex(ILandroidx/compose/ui/text/style/ResolvedTextDirection;)I
@@ -373,7 +373,7 @@
 .end method
 
 .method public final initialize(Ljava/lang/String;Landroidx/compose/ui/text/TextLayoutResult;)V
-    .registers 4
+    .locals 1
     .param p1, "text"    # Ljava/lang/String;
     .param p2, "layoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
 
@@ -396,7 +396,7 @@
 .end method
 
 .method public preceding(I)[I
-    .registers 7
+    .locals 5
     .param p1, "current"    # I
 
     .line 389
@@ -412,20 +412,20 @@
     .local v0, "textLength":I
     const/4 v1, 0x0
 
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     .line 391
     return-object v1
 
     .line 393
-    :cond_c
-    if-gtz p1, :cond_f
+    :cond_0
+    if-gtz p1, :cond_1
 
     .line 394
     return-object v1
 
     .line 396
-    :cond_f
+    :cond_1
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->getText()Ljava/lang/String;
 
     move-result-object v2
@@ -436,18 +436,18 @@
 
     const-string/jumbo v3, "layoutResult"
 
-    if-le p1, v2, :cond_31
+    if-le p1, v2, :cond_3
 
     .line 397
     iget-object v2, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v2, :cond_24
+    if-nez v2, :cond_2
 
     invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v2, v1
 
-    :cond_24
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->getText()Ljava/lang/String;
 
     move-result-object v3
@@ -460,19 +460,19 @@
 
     move-result v2
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 399
-    :cond_31
+    :cond_3
     iget-object v2, p0, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v2, :cond_39
+    if-nez v2, :cond_4
 
     invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v2, v1
 
-    :cond_39
+    :cond_4
     invoke-virtual {v2, p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForOffset(I)I
 
     move-result v2
@@ -487,31 +487,31 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    if-ne v3, p1, :cond_48
+    if-ne v3, p1, :cond_5
 
     .line 401
-    goto :goto_4b
+    goto :goto_0
 
     .line 403
-    :cond_48
+    :cond_5
     add-int/lit8 v3, v2, -0x1
 
     move v2, v3
 
     .line 396
     .end local v2    # "currentLine":I
-    :goto_4b
+    :goto_0
     nop
 
     .line 406
     .local v2, "previousLine":I
-    if-gez v2, :cond_4f
+    if-gez v2, :cond_6
 
     .line 407
     return-object v1
 
     .line 409
-    :cond_4f
+    :cond_6
     sget-object v1, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->DirectionStart:Landroidx/compose/ui/text/style/ResolvedTextDirection;
 
     invoke-direct {p0, v2, v1}, Landroidx/compose/ui/platform/AccessibilityIterators$LineTextSegmentIterator;->getLineEdgeIndex(ILandroidx/compose/ui/text/style/ResolvedTextDirection;)I

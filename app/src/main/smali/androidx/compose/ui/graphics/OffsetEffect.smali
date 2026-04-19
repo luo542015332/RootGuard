@@ -46,7 +46,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/compose/ui/graphics/RenderEffect;J)V
-    .registers 5
+    .locals 1
     .param p1, "renderEffect"    # Landroidx/compose/ui/graphics/RenderEffect;
     .param p2, "offset"    # J
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/RenderEffect;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/OffsetEffect;-><init>(Landroidx/compose/ui/graphics/RenderEffect;J)V
 
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method protected createRenderEffect()Landroid/graphics/RenderEffect;
-    .registers 5
+    .locals 4
 
     .line 106
     sget-object v0, Landroidx/compose/ui/graphics/RenderEffectVerificationHelper;->INSTANCE:Landroidx/compose/ui/graphics/RenderEffectVerificationHelper;
@@ -93,28 +93,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 109
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 110
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/OffsetEffect;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 112
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/OffsetEffect;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
     move-object v3, p1
@@ -127,12 +127,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 113
-    :cond_18
+    :cond_2
     iget-wide v3, p0, Landroidx/compose/ui/graphics/OffsetEffect;->offset:J
 
     move-object v1, p1
@@ -145,35 +145,35 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 115
-    :cond_26
+    :cond_3
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 119
     iget-object v0, p0, Landroidx/compose/ui/graphics/OffsetEffect;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/RenderEffect;->hashCode()I
 
     move-result v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 120
     .local v0, "result":I
-    :goto_a
+    :goto_0
     mul-int/lit8 v1, v0, 0x1f
 
     iget-wide v2, p0, Landroidx/compose/ui/graphics/OffsetEffect;->offset:J
@@ -191,7 +191,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 125
     new-instance v0, Ljava/lang/StringBuilder;

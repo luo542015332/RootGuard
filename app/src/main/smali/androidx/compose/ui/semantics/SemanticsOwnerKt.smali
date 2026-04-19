@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final getAllSemanticsNodes(Landroidx/compose/ui/semantics/SemanticsOwner;Z)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p0, "$this$getAllSemanticsNodes"    # Landroidx/compose/ui/semantics/SemanticsOwner;
     .param p1, "mergingEnabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
@@ -76,7 +76,7 @@
 .end method
 
 .method public static final getAllSemanticsNodesToMap(Landroidx/compose/ui/semantics/SemanticsOwner;Z)Ljava/util/Map;
-    .registers 4
+    .locals 2
     .param p0, "$this$getAllSemanticsNodesToMap"    # Landroidx/compose/ui/semantics/SemanticsOwner;
     .param p1, "useUnmergedTree"    # Z
     .annotation system Ldalvik/annotation/Signature;
@@ -104,22 +104,22 @@
 
     .line 78
     .local v0, "nodes":Ljava/util/Map;
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsOwner;->getUnmergedRootSemanticsNode()Landroidx/compose/ui/semantics/SemanticsNode;
 
     move-result-object v1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsOwner;->getRootSemanticsNode()Landroidx/compose/ui/semantics/SemanticsNode;
 
     move-result-object v1
 
     .line 79
     .local v1, "root":Landroidx/compose/ui/semantics/SemanticsNode;
-    :goto_17
+    :goto_0
     invoke-static {v0, v1}, Landroidx/compose/ui/semantics/SemanticsOwnerKt;->getAllSemanticsNodesToMap$findAllSemanticNodesRecursive(Ljava/util/Map;Landroidx/compose/ui/semantics/SemanticsNode;)V
 
     .line 80
@@ -127,18 +127,18 @@
 .end method
 
 .method public static synthetic getAllSemanticsNodesToMap$default(Landroidx/compose/ui/semantics/SemanticsOwner;ZILjava/lang/Object;)Ljava/util/Map;
-    .registers 4
+    .locals 0
 
     .line 66
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     .line 67
     const/4 p1, 0x0
 
     .line 66
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/semantics/SemanticsOwnerKt;->getAllSemanticsNodesToMap(Landroidx/compose/ui/semantics/SemanticsOwner;Z)Ljava/util/Map;
 
     move-result-object p0
@@ -147,7 +147,7 @@
 .end method
 
 .method private static final getAllSemanticsNodesToMap$findAllSemanticNodesRecursive(Ljava/util/Map;Landroidx/compose/ui/semantics/SemanticsNode;)V
-    .registers 9
+    .locals 7
     .param p0, "nodes"    # Ljava/util/Map;
     .param p1, "currentNode"    # Landroidx/compose/ui/semantics/SemanticsNode;
     .annotation system Ldalvik/annotation/Signature;
@@ -193,8 +193,8 @@
 
     move-result v3
 
-    :goto_16
-    if-ge v2, v3, :cond_28
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 85
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -226,11 +226,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 88
     .end local v2    # "index$iv":I
-    :cond_28
+    :cond_0
     nop
 
     .line 76

@@ -116,7 +116,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/BlendMode$Companion;
 
@@ -391,7 +391,7 @@
 .end method
 
 .method private synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # I
 
     .line 54
@@ -403,7 +403,7 @@
 .end method
 
 .method public static final synthetic access$getClear$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Clear:I
@@ -412,7 +412,7 @@
 .end method
 
 .method public static final synthetic access$getColor$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Color:I
@@ -421,7 +421,7 @@
 .end method
 
 .method public static final synthetic access$getColorBurn$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->ColorBurn:I
@@ -430,7 +430,7 @@
 .end method
 
 .method public static final synthetic access$getColorDodge$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->ColorDodge:I
@@ -439,7 +439,7 @@
 .end method
 
 .method public static final synthetic access$getDarken$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Darken:I
@@ -448,7 +448,7 @@
 .end method
 
 .method public static final synthetic access$getDifference$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Difference:I
@@ -457,7 +457,7 @@
 .end method
 
 .method public static final synthetic access$getDst$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Dst:I
@@ -466,7 +466,7 @@
 .end method
 
 .method public static final synthetic access$getDstAtop$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstAtop:I
@@ -475,7 +475,7 @@
 .end method
 
 .method public static final synthetic access$getDstIn$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstIn:I
@@ -484,7 +484,7 @@
 .end method
 
 .method public static final synthetic access$getDstOut$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstOut:I
@@ -493,7 +493,7 @@
 .end method
 
 .method public static final synthetic access$getDstOver$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstOver:I
@@ -502,7 +502,7 @@
 .end method
 
 .method public static final synthetic access$getExclusion$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Exclusion:I
@@ -511,7 +511,7 @@
 .end method
 
 .method public static final synthetic access$getHardlight$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Hardlight:I
@@ -520,7 +520,7 @@
 .end method
 
 .method public static final synthetic access$getHue$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Hue:I
@@ -529,7 +529,7 @@
 .end method
 
 .method public static final synthetic access$getLighten$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Lighten:I
@@ -538,7 +538,7 @@
 .end method
 
 .method public static final synthetic access$getLuminosity$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Luminosity:I
@@ -547,7 +547,7 @@
 .end method
 
 .method public static final synthetic access$getModulate$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Modulate:I
@@ -556,7 +556,7 @@
 .end method
 
 .method public static final synthetic access$getMultiply$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Multiply:I
@@ -565,7 +565,7 @@
 .end method
 
 .method public static final synthetic access$getOverlay$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Overlay:I
@@ -574,7 +574,7 @@
 .end method
 
 .method public static final synthetic access$getPlus$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Plus:I
@@ -583,7 +583,7 @@
 .end method
 
 .method public static final synthetic access$getSaturation$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Saturation:I
@@ -592,7 +592,7 @@
 .end method
 
 .method public static final synthetic access$getScreen$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Screen:I
@@ -601,7 +601,7 @@
 .end method
 
 .method public static final synthetic access$getSoftlight$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Softlight:I
@@ -610,7 +610,7 @@
 .end method
 
 .method public static final synthetic access$getSrc$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Src:I
@@ -619,7 +619,7 @@
 .end method
 
 .method public static final synthetic access$getSrcAtop$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcAtop:I
@@ -628,7 +628,7 @@
 .end method
 
 .method public static final synthetic access$getSrcIn$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcIn:I
@@ -637,7 +637,7 @@
 .end method
 
 .method public static final synthetic access$getSrcOut$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcOut:I
@@ -646,7 +646,7 @@
 .end method
 
 .method public static final synthetic access$getSrcOver$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcOver:I
@@ -655,7 +655,7 @@
 .end method
 
 .method public static final synthetic access$getXor$cp()I
-    .registers 1
+    .locals 1
 
     .line 52
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Xor:I
@@ -664,7 +664,7 @@
 .end method
 
 .method public static final synthetic box-impl(I)Landroidx/compose/ui/graphics/BlendMode;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/BlendMode;
 
@@ -674,23 +674,23 @@
 .end method
 
 .method public static constructor-impl(I)I
-    .registers 1
+    .locals 0
 
     return p0
 .end method
 
 .method public static equals-impl(ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/graphics/BlendMode;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/graphics/BlendMode;
@@ -699,34 +699,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(II)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -736,7 +736,7 @@
 .end method
 
 .method public static toString-impl(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # I
 
     .line 464
@@ -749,15 +749,365 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const-string v0, "Clear"
 
-    goto/16 :goto_165
+    goto/16 :goto_0
 
     .line 466
-    :cond_d
+    :cond_0
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Src:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string/jumbo v0, "Src"
+
+    goto/16 :goto_0
+
+    .line 467
+    :cond_1
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Dst:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "Dst"
+
+    goto/16 :goto_0
+
+    .line 468
+    :cond_2
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcOver:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const-string/jumbo v0, "SrcOver"
+
+    goto/16 :goto_0
+
+    .line 469
+    :cond_3
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstOver:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    const-string v0, "DstOver"
+
+    goto/16 :goto_0
+
+    .line 470
+    :cond_4
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcIn:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    const-string/jumbo v0, "SrcIn"
+
+    goto/16 :goto_0
+
+    .line 471
+    :cond_5
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstIn:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    const-string v0, "DstIn"
+
+    goto/16 :goto_0
+
+    .line 472
+    :cond_6
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcOut:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    const-string/jumbo v0, "SrcOut"
+
+    goto/16 :goto_0
+
+    .line 473
+    :cond_7
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstOut:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    const-string v0, "DstOut"
+
+    goto/16 :goto_0
+
+    .line 474
+    :cond_8
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcAtop:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    const-string/jumbo v0, "SrcAtop"
+
+    goto/16 :goto_0
+
+    .line 475
+    :cond_9
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstAtop:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    const-string v0, "DstAtop"
+
+    goto/16 :goto_0
+
+    .line 476
+    :cond_a
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Xor:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    const-string/jumbo v0, "Xor"
+
+    goto/16 :goto_0
+
+    .line 477
+    :cond_b
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Plus:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const-string/jumbo v0, "Plus"
+
+    goto/16 :goto_0
+
+    .line 478
+    :cond_c
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Modulate:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    const-string/jumbo v0, "Modulate"
+
+    goto/16 :goto_0
+
+    .line 479
+    :cond_d
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Screen:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    const-string/jumbo v0, "Screen"
+
+    goto/16 :goto_0
+
+    .line 480
+    :cond_e
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Overlay:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    const-string/jumbo v0, "Overlay"
+
+    goto/16 :goto_0
+
+    .line 481
+    :cond_f
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Darken:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    const-string v0, "Darken"
+
+    goto/16 :goto_0
+
+    .line 482
+    :cond_10
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Lighten:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
+    const-string v0, "Lighten"
+
+    goto/16 :goto_0
+
+    .line 483
+    :cond_11
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->ColorDodge:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12
+
+    const-string v0, "ColorDodge"
+
+    goto/16 :goto_0
+
+    .line 484
+    :cond_12
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->ColorBurn:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const-string v0, "ColorBurn"
+
+    goto/16 :goto_0
+
+    .line 485
+    :cond_13
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Hardlight:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    const-string v0, "HardLight"
+
+    goto :goto_0
+
+    .line 486
+    :cond_14
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Softlight:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_15
+
+    const-string/jumbo v0, "Softlight"
+
+    goto :goto_0
+
+    .line 487
+    :cond_15
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Difference:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    const-string v0, "Difference"
+
+    goto :goto_0
+
+    .line 488
+    :cond_16
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Exclusion:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    const-string v0, "Exclusion"
+
+    goto :goto_0
+
+    .line 489
+    :cond_17
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Multiply:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_18
+
+    const-string/jumbo v0, "Multiply"
+
+    goto :goto_0
+
+    .line 490
+    :cond_18
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Hue:I
+
+    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    const-string v0, "Hue"
+
+    goto :goto_0
+
+    .line 491
+    :cond_19
+    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Saturation:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
 
@@ -765,401 +1115,51 @@
 
     if-eqz v0, :cond_1a
 
-    const-string/jumbo v0, "Src"
-
-    goto/16 :goto_165
-
-    .line 467
-    :cond_1a
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Dst:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_26
-
-    const-string v0, "Dst"
-
-    goto/16 :goto_165
-
-    .line 468
-    :cond_26
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcOver:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_33
-
-    const-string/jumbo v0, "SrcOver"
-
-    goto/16 :goto_165
-
-    .line 469
-    :cond_33
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstOver:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3f
-
-    const-string v0, "DstOver"
-
-    goto/16 :goto_165
-
-    .line 470
-    :cond_3f
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcIn:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_4c
-
-    const-string/jumbo v0, "SrcIn"
-
-    goto/16 :goto_165
-
-    .line 471
-    :cond_4c
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstIn:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_58
-
-    const-string v0, "DstIn"
-
-    goto/16 :goto_165
-
-    .line 472
-    :cond_58
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcOut:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_65
-
-    const-string/jumbo v0, "SrcOut"
-
-    goto/16 :goto_165
-
-    .line 473
-    :cond_65
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstOut:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_71
-
-    const-string v0, "DstOut"
-
-    goto/16 :goto_165
-
-    .line 474
-    :cond_71
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->SrcAtop:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_7e
-
-    const-string/jumbo v0, "SrcAtop"
-
-    goto/16 :goto_165
-
-    .line 475
-    :cond_7e
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->DstAtop:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8a
-
-    const-string v0, "DstAtop"
-
-    goto/16 :goto_165
-
-    .line 476
-    :cond_8a
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Xor:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_97
-
-    const-string/jumbo v0, "Xor"
-
-    goto/16 :goto_165
-
-    .line 477
-    :cond_97
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Plus:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_a4
-
-    const-string/jumbo v0, "Plus"
-
-    goto/16 :goto_165
-
-    .line 478
-    :cond_a4
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Modulate:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b1
-
-    const-string/jumbo v0, "Modulate"
-
-    goto/16 :goto_165
-
-    .line 479
-    :cond_b1
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Screen:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_be
-
-    const-string/jumbo v0, "Screen"
-
-    goto/16 :goto_165
-
-    .line 480
-    :cond_be
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Overlay:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_cb
-
-    const-string/jumbo v0, "Overlay"
-
-    goto/16 :goto_165
-
-    .line 481
-    :cond_cb
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Darken:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d7
-
-    const-string v0, "Darken"
-
-    goto/16 :goto_165
-
-    .line 482
-    :cond_d7
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Lighten:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_e3
-
-    const-string v0, "Lighten"
-
-    goto/16 :goto_165
-
-    .line 483
-    :cond_e3
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->ColorDodge:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_ef
-
-    const-string v0, "ColorDodge"
-
-    goto/16 :goto_165
-
-    .line 484
-    :cond_ef
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->ColorBurn:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_fb
-
-    const-string v0, "ColorBurn"
-
-    goto/16 :goto_165
-
-    .line 485
-    :cond_fb
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Hardlight:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_106
-
-    const-string v0, "HardLight"
-
-    goto :goto_165
-
-    .line 486
-    :cond_106
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Softlight:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_112
-
-    const-string/jumbo v0, "Softlight"
-
-    goto :goto_165
-
-    .line 487
-    :cond_112
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Difference:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_11d
-
-    const-string v0, "Difference"
-
-    goto :goto_165
-
-    .line 488
-    :cond_11d
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Exclusion:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_128
-
-    const-string v0, "Exclusion"
-
-    goto :goto_165
-
-    .line 489
-    :cond_128
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Multiply:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_134
-
-    const-string/jumbo v0, "Multiply"
-
-    goto :goto_165
-
-    .line 490
-    :cond_134
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Hue:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13f
-
-    const-string v0, "Hue"
-
-    goto :goto_165
-
-    .line 491
-    :cond_13f
-    sget v0, Landroidx/compose/ui/graphics/BlendMode;->Saturation:I
-
-    invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_14b
-
     const-string/jumbo v0, "Saturation"
 
-    goto :goto_165
+    goto :goto_0
 
     .line 492
-    :cond_14b
+    :cond_1a
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Color:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_156
+    if-eqz v0, :cond_1b
 
     const-string v0, "Color"
 
-    goto :goto_165
+    goto :goto_0
 
     .line 493
-    :cond_156
+    :cond_1b
     sget v0, Landroidx/compose/ui/graphics/BlendMode;->Luminosity:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/BlendMode;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_162
+    if-eqz v0, :cond_1c
 
     const-string/jumbo v0, "Luminosity"
 
-    goto :goto_165
+    goto :goto_0
 
     .line 494
-    :cond_162
+    :cond_1c
     const-string/jumbo v0, "Unknown"
 
     .line 495
-    :goto_165
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/BlendMode;->value:I
 
@@ -1171,7 +1171,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/BlendMode;->value:I
 
@@ -1183,7 +1183,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 464
     iget v0, p0, Landroidx/compose/ui/graphics/BlendMode;->value:I
@@ -1197,7 +1197,7 @@
 .end method
 
 .method public final synthetic unbox-impl()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/BlendMode;->value:I
 

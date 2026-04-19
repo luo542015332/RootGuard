@@ -50,13 +50,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(IIII)V
-    .registers 5
+    .locals 0
     .param p1, "rowIndex"    # I
     .param p2, "rowSpan"    # I
     .param p3, "columnIndex"    # I
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public final getColumnIndex()I
-    .registers 2
+    .locals 1
 
     .line 581
     iget v0, p0, Landroidx/compose/ui/semantics/CollectionItemInfo;->columnIndex:I
@@ -93,7 +93,7 @@
 .end method
 
 .method public final getColumnSpan()I
-    .registers 2
+    .locals 1
 
     .line 582
     iget v0, p0, Landroidx/compose/ui/semantics/CollectionItemInfo;->columnSpan:I
@@ -102,7 +102,7 @@
 .end method
 
 .method public final getRowIndex()I
-    .registers 2
+    .locals 1
 
     .line 579
     iget v0, p0, Landroidx/compose/ui/semantics/CollectionItemInfo;->rowIndex:I
@@ -111,7 +111,7 @@
 .end method
 
 .method public final getRowSpan()I
-    .registers 2
+    .locals 1
 
     .line 580
     iget v0, p0, Landroidx/compose/ui/semantics/CollectionItemInfo;->rowSpan:I

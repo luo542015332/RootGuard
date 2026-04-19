@@ -93,7 +93,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/internal/Ref$ObjectRef;Landroidx/compose/runtime/Recomposer;Landroidx/lifecycle/LifecycleOwner;Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2;Landroid/view/View;Lkotlin/coroutines/Continuation;)V
-    .registers 8
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 11
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -170,7 +170,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -213,7 +213,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 20
+    .locals 18
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -228,7 +228,7 @@
 
     const/4 v4, 0x0
 
-    packed-switch v2, :pswitch_data_b4
+    packed-switch v2, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -238,7 +238,7 @@
 
     throw v0
 
-    :pswitch_16
+    :pswitch_0
     move-object/from16 v2, p0
 
     .local v2, "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1;
@@ -252,24 +252,24 @@
     check-cast v6, Lkotlinx/coroutines/Job;
 
     .local v6, "durationScaleJob":Lkotlinx/coroutines/Job;
-    :try_start_1f
+    :try_start_0
     invoke-static {v5}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_22
-    .catchall {:try_start_1f .. :try_end_22} :catchall_23
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_88
+    goto :goto_1
 
     .line 396
-    :catchall_23
+    :catchall_0
     move-exception v0
 
-    goto/16 :goto_a1
+    goto/16 :goto_2
 
     .line 380
     .end local v2    # "this":Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1;
     .end local v5    # "$result":Ljava/lang/Object;
     .end local v6    # "durationScaleJob":Lkotlinx/coroutines/Job;
-    :pswitch_26
+    :pswitch_1
     invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v2, p0
@@ -291,14 +291,14 @@
     nop
 
     .line 383
-    :try_start_33
+    :try_start_1
     iget-object v7, v2, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1;->$systemDurationScaleSettingConsumer:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v7, v7, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v7, Landroidx/compose/ui/platform/MotionDurationScaleImpl;
 
-    if-eqz v7, :cond_76
+    if-eqz v7, :cond_0
 
     iget-object v8, v2, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1;->$this_createLifecycleAwareWindowRecomposer:Landroid/view/View;
 
@@ -322,7 +322,6 @@
     invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 384
-    # invokes: Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->getAnimationScaleFlowFor(Landroid/content/Context;)Lkotlinx/coroutines/flow/StateFlow;
     invoke-static {v7}, Landroidx/compose/ui/platform/WindowRecomposer_androidKt;->access$getAnimationScaleFlowFor(Landroid/content/Context;)Lkotlinx/coroutines/flow/StateFlow;
 
     move-result-object v7
@@ -371,26 +370,26 @@
     invoke-static/range {v7 .. v12}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     move-result-object v7
-    :try_end_75
-    .catchall {:try_start_33 .. :try_end_75} :catchall_9f
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 383
     .end local v6    # "$this$launch":Lkotlinx/coroutines/CoroutineScope;
     .end local v14    # "it":Landroidx/compose/ui/platform/MotionDurationScaleImpl;
     .end local v15    # "$i$a$-let-WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1$1":I
     .end local v17    # "durationScaleStateFlow":Lkotlinx/coroutines/flow/StateFlow;
-    goto :goto_77
+    goto :goto_0
 
-    :cond_76
+    :cond_0
     move-object v7, v4
 
-    :goto_77
+    :goto_0
     move-object v6, v7
 
     .line 394
     .end local v13    # "durationScaleJob":Lkotlinx/coroutines/Job;
     .local v6, "durationScaleJob":Lkotlinx/coroutines/Job;
-    :try_start_78
+    :try_start_2
     iget-object v7, v2, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1;->$recomposer:Landroidx/compose/runtime/Recomposer;
 
     move-object v8, v2
@@ -404,26 +403,26 @@
     invoke-virtual {v7, v8}, Landroidx/compose/runtime/Recomposer;->runRecomposeAndApplyChanges(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v7
-    :try_end_85
-    .catchall {:try_start_78 .. :try_end_85} :catchall_23
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-ne v7, v0, :cond_88
+    if-ne v7, v0, :cond_1
 
     .line 380
     return-object v0
 
     .line 396
-    :cond_88
-    :goto_88
+    :cond_1
+    :goto_1
     nop
 
     .end local v6    # "durationScaleJob":Lkotlinx/coroutines/Job;
-    if-eqz v6, :cond_8e
+    if-eqz v6, :cond_2
 
     invoke-static {v6, v4, v3, v4}, Lkotlinx/coroutines/Job$DefaultImpls;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     .line 400
-    :cond_8e
+    :cond_2
     iget-object v0, v2, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1;->$source:Landroidx/lifecycle/LifecycleOwner;
 
     invoke-interface {v0}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -446,19 +445,19 @@
 
     .line 396
     .restart local v13    # "durationScaleJob":Lkotlinx/coroutines/Job;
-    :catchall_9f
+    :catchall_1
     move-exception v0
 
     move-object v6, v13
 
     .end local v13    # "durationScaleJob":Lkotlinx/coroutines/Job;
-    :goto_a1
-    if-eqz v6, :cond_a6
+    :goto_2
+    if-eqz v6, :cond_3
 
     invoke-static {v6, v4, v3, v4}, Lkotlinx/coroutines/Job$DefaultImpls;->cancel$default(Lkotlinx/coroutines/Job;Ljava/util/concurrent/CancellationException;ILjava/lang/Object;)V
 
     .line 400
-    :cond_a6
+    :cond_3
     iget-object v3, v2, Landroidx/compose/ui/platform/WindowRecomposer_androidKt$createLifecycleAwareWindowRecomposer$2$onStateChanged$1;->$source:Landroidx/lifecycle/LifecycleOwner;
 
     invoke-interface {v3}, Landroidx/lifecycle/LifecycleOwner;->getLifecycle()Landroidx/lifecycle/Lifecycle;
@@ -473,9 +472,9 @@
 
     throw v0
 
-    :pswitch_data_b4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_26
-        :pswitch_16
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -66,7 +66,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/compose/ui/graphics/colorspace/Rgb;Landroidx/compose/ui/graphics/colorspace/Rgb;I)V
-    .registers 13
+    .locals 9
     .param p1, "mSource"    # Landroidx/compose/ui/graphics/colorspace/Rgb;
     .param p2, "mDestination"    # Landroidx/compose/ui/graphics/colorspace/Rgb;
     .param p3, "intent"    # I
@@ -130,7 +130,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/colorspace/Rgb;Landroidx/compose/ui/graphics/colorspace/Rgb;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/colorspace/Connector$RgbConnector;-><init>(Landroidx/compose/ui/graphics/colorspace/Rgb;Landroidx/compose/ui/graphics/colorspace/Rgb;I)V
 
@@ -138,7 +138,7 @@
 .end method
 
 .method private final computeTransform-YBCOT_4(Landroidx/compose/ui/graphics/colorspace/Rgb;Landroidx/compose/ui/graphics/colorspace/Rgb;I)[F
-    .registers 12
+    .locals 8
     .param p1, "source"    # Landroidx/compose/ui/graphics/colorspace/Rgb;
     .param p2, "destination"    # Landroidx/compose/ui/graphics/colorspace/Rgb;
     .param p3, "intent"    # I
@@ -156,7 +156,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 234
     invoke-virtual {p2}, Landroidx/compose/ui/graphics/colorspace/Rgb;->getInverseTransform$ui_graphics_release()[F
@@ -174,7 +174,7 @@
     return-object v0
 
     .line 237
-    :cond_1b
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/graphics/colorspace/Rgb;->getTransform$ui_graphics_release()[F
 
     move-result-object v0
@@ -223,7 +223,7 @@
 
     const-string/jumbo v5, "copyOf(this, size)"
 
-    if-nez v4, :cond_6b
+    if-nez v4, :cond_1
 
     .line 245
     sget-object v4, Landroidx/compose/ui/graphics/colorspace/Adaptation;->Companion:Landroidx/compose/ui/graphics/colorspace/Adaptation$Companion;
@@ -271,7 +271,7 @@
 
     .line 252
     .end local v4    # "srcAdaptation":[F
-    :cond_6b
+    :cond_1
     invoke-virtual {p2}, Landroidx/compose/ui/graphics/colorspace/Rgb;->getWhitePoint()Landroidx/compose/ui/graphics/colorspace/WhitePoint;
 
     move-result-object v4
@@ -286,7 +286,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_a6
+    if-nez v4, :cond_2
 
     .line 254
     sget-object v4, Landroidx/compose/ui/graphics/colorspace/Adaptation;->Companion:Landroidx/compose/ui/graphics/colorspace/Adaptation$Companion;
@@ -346,7 +346,7 @@
 
     .line 266
     .end local v4    # "dstAdaptation":[F
-    :cond_a6
+    :cond_2
     sget-object v4, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Companion:Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;
 
     invoke-virtual {v4}, Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;->getAbsolute-uksYyKA()I
@@ -357,7 +357,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_d5
+    if-eqz v4, :cond_3
 
     .line 267
     nop
@@ -414,7 +414,7 @@
     move-result-object v0
 
     .line 277
-    :cond_d5
+    :cond_3
     invoke-static {v1, v0}, Landroidx/compose/ui/graphics/colorspace/ColorSpaceKt;->mul3x3([F[F)[F
 
     move-result-object v4
@@ -425,7 +425,7 @@
 
 # virtual methods
 .method public transform([F)[F
-    .registers 8
+    .locals 6
     .param p1, "v"    # [F
 
     const-string/jumbo v0, "v"
@@ -562,7 +562,7 @@
 .end method
 
 .method public transformToColor-wmQWz5c$ui_graphics_release(FFFF)J
-    .registers 16
+    .locals 11
     .param p1, "r"    # F
     .param p2, "g"    # F
     .param p3, "b"    # F

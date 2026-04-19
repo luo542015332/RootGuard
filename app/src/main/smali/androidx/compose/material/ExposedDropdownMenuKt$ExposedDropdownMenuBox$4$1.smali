@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(ZLandroidx/compose/ui/focus/FocusRequester;)V
-    .registers 4
+    .locals 1
 
     iput-boolean p1, p0, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$4$1;->$expanded:Z
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 138
     invoke-virtual {p0}, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$4$1;->invoke()V
@@ -79,18 +79,18 @@
 .end method
 
 .method public final invoke()V
-    .registers 2
+    .locals 1
 
     .line 139
     iget-boolean v0, p0, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$4$1;->$expanded:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$4$1;->$focusRequester:Landroidx/compose/ui/focus/FocusRequester;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusRequester;->requestFocus()V
 
     .line 140
-    :cond_9
+    :cond_0
     return-void
 .end method

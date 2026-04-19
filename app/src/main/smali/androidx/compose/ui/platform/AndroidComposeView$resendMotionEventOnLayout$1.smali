@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventOnLayout$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 534
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventOnLayout$1;->invoke()V
@@ -75,32 +75,31 @@
 .end method
 
 .method public final invoke()V
-    .registers 5
+    .locals 4
 
     .line 535
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventOnLayout$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->previousMotionEvent:Landroid/view/MotionEvent;
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getPreviousMotionEvent$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
     .line 536
     .local v0, "lastEvent":Landroid/view/MotionEvent;
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .line 537
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
 
-    packed-switch v1, :pswitch_data_26
+    packed-switch v1, :pswitch_data_0
 
-    :pswitch_f
-    goto :goto_24
+    :pswitch_0
+    goto :goto_0
 
     .line 540
-    :pswitch_10
+    :pswitch_1
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventOnLayout$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -112,7 +111,6 @@
     .line 541
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventOnLayout$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->resendMotionEventRunnable:Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;
     invoke-static {v1}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getResendMotionEventRunnable$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;
 
     move-result-object v2
@@ -122,16 +120,16 @@
     invoke-virtual {v1, v2}, Landroidx/compose/ui/platform/AndroidComposeView;->post(Ljava/lang/Runnable;)Z
 
     .line 545
-    :cond_24
-    :goto_24
+    :cond_0
+    :goto_0
     return-void
 
     nop
 
-    :pswitch_data_26
+    :pswitch_data_0
     .packed-switch 0x7
-        :pswitch_10
-        :pswitch_f
-        :pswitch_10
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

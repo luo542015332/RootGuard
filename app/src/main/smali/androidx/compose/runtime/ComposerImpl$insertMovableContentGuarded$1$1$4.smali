@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/MovableContentState;Landroidx/compose/runtime/ComposerImpl;Landroidx/compose/runtime/MovableContentStateReference;Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 6
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/ComposerImpl$insertMovableContentGuarded$1$1$4;->$resolvedState:Landroidx/compose/runtime/MovableContentState;
 
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -112,7 +112,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 7
+    .locals 3
     .param p2, "slots"    # Landroidx/compose/runtime/SlotWriter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -140,11 +140,10 @@
     .line 3121
     iget-object p1, p0, Landroidx/compose/runtime/ComposerImpl$insertMovableContentGuarded$1$1$4;->$resolvedState:Landroidx/compose/runtime/MovableContentState;
 
-    if-nez p1, :cond_2e
+    if-nez p1, :cond_1
 
     iget-object p1, p0, Landroidx/compose/runtime/ComposerImpl$insertMovableContentGuarded$1$1$4;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->parentContext:Landroidx/compose/runtime/CompositionContext;
     invoke-static {p1}, Landroidx/compose/runtime/ComposerImpl;->access$getParentContext$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/CompositionContext;
 
     move-result-object p1
@@ -155,12 +154,12 @@
 
     move-result-object p1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 3122
-    :cond_23
+    :cond_0
     const-string p1, "Could not resolve state for movable content"
 
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->composeRuntimeError(Ljava/lang/String;)Ljava/lang/Void;
@@ -173,8 +172,8 @@
 
     .line 3129
     .local p1, "state":Landroidx/compose/runtime/MovableContentState;
-    :cond_2e
-    :goto_2e
+    :cond_1
+    :goto_0
     invoke-virtual {p1}, Landroidx/compose/runtime/MovableContentState;->getSlotTable$runtime_release()Landroidx/compose/runtime/SlotTable;
 
     move-result-object p3

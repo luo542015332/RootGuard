@@ -56,7 +56,7 @@
 
 # direct methods
 .method public static synthetic $r8$lambda$fxmMOjfIK0OrAcx22ga9_XhotFQ(Lkotlin/jvm/functions/Function0;)V
-    .registers 1
+    .locals 0
 
     invoke-static {p0}, Landroidx/compose/ui/platform/AndroidComposeView$snapshotObserver$1;->invoke$lambda$0(Lkotlin/jvm/functions/Function0;)V
 
@@ -64,7 +64,7 @@
 .end method
 
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView$snapshotObserver$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -76,7 +76,7 @@
 .end method
 
 .method private static final invoke$lambda$0(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 1
     .param p0, "$tmp0"    # Lkotlin/jvm/functions/Function0;
 
     const-string v0, "$tmp0"
@@ -92,7 +92,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 278
@@ -108,7 +108,7 @@
 .end method
 
 .method public final invoke(Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 2
     .param p1, "command"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -130,38 +130,38 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
 
     move-result-object v0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_1
 
     .line 280
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 282
-    :cond_1e
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$snapshotObserver$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/AndroidComposeView;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     new-instance v1, Landroidx/compose/ui/platform/AndroidComposeView$snapshotObserver$1$$ExternalSyntheticLambda0;
 
@@ -170,7 +170,7 @@
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 284
-    :cond_2e
-    :goto_2e
+    :cond_2
+    :goto_1
     return-void
 .end method

@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "type"    # I
 
     .line 24
@@ -58,46 +58,46 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 27
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 28
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 v2, 0x0
 
-    :goto_10
+    :goto_0
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 30
-    :cond_18
+    :cond_2
     const-string/jumbo v1, "null cannot be cast to non-null type androidx.compose.ui.input.pointer.AndroidPointerIconType"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -115,17 +115,17 @@
 
     iget v3, v3, Landroidx/compose/ui/input/pointer/AndroidPointerIconType;->type:I
 
-    if-eq v1, v3, :cond_2b
+    if-eq v1, v3, :cond_3
 
     return v2
 
     .line 34
-    :cond_2b
+    :cond_3
     return v0
 .end method
 
 .method public final getType()I
-    .registers 2
+    .locals 1
 
     .line 24
     iget v0, p0, Landroidx/compose/ui/input/pointer/AndroidPointerIconType;->type:I
@@ -134,7 +134,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 38
     iget v0, p0, Landroidx/compose/ui/input/pointer/AndroidPointerIconType;->type:I
@@ -143,7 +143,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 42
     new-instance v0, Ljava/lang/StringBuilder;

@@ -149,7 +149,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/SlotTable;)V
-    .registers 4
+    .locals 2
     .param p1, "table"    # Landroidx/compose/runtime/SlotTable;
 
     const-string/jumbo v0, "table"
@@ -203,16 +203,16 @@
 .end method
 
 .method public static synthetic anchor$default(Landroidx/compose/runtime/SlotReader;IILjava/lang/Object;)Landroidx/compose/runtime/Anchor;
-    .registers 4
+    .locals 0
 
     .line 1065
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     iget p1, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    :cond_6
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/SlotReader;->anchor(I)Landroidx/compose/runtime/Anchor;
 
     move-result-object p0
@@ -221,116 +221,110 @@
 .end method
 
 .method private final aux([II)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "$this$aux"    # [I
     .param p2, "index"    # I
 
     .line 1073
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->hasAux([II)Z
     invoke-static {p1, p2}, Landroidx/compose/runtime/SlotTableKt;->access$hasAux([II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 1074
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->slots:[Ljava/lang/Object;
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->auxIndex([II)I
     invoke-static {p1, p2}, Landroidx/compose/runtime/SlotTableKt;->access$auxIndex([II)I
 
     move-result v1
 
     aget-object v0, v0, v1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1075
-    :cond_f
+    :cond_0
     sget-object v0, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/Composer$Companion;->getEmpty()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_15
+    :goto_0
     return-object v0
 .end method
 
 .method private final node([II)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "$this$node"    # [I
     .param p2, "index"    # I
 
     .line 1069
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {p1, p2}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 1070
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->slots:[Ljava/lang/Object;
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->nodeIndex([II)I
     invoke-static {p1, p2}, Landroidx/compose/runtime/SlotTableKt;->access$nodeIndex([II)I
 
     move-result v1
 
     aget-object v0, v0, v1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1071
-    :cond_f
+    :cond_0
     sget-object v0, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/Composer$Companion;->getEmpty()Ljava/lang/Object;
 
     move-result-object v0
 
-    :goto_15
+    :goto_0
     return-object v0
 .end method
 
 .method private final objectKey([II)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "$this$objectKey"    # [I
     .param p2, "index"    # I
 
     .line 1077
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->hasObjectKey([II)Z
     invoke-static {p1, p2}, Landroidx/compose/runtime/SlotTableKt;->access$hasObjectKey([II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 1078
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->slots:[Ljava/lang/Object;
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->objectKeyIndex([II)I
     invoke-static {p1, p2}, Landroidx/compose/runtime/SlotTableKt;->access$objectKeyIndex([II)I
 
     move-result v1
 
     aget-object v0, v0, v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 1079
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public final anchor(I)Landroidx/compose/runtime/Anchor;
-    .registers 8
+    .locals 6
     .param p1, "index"    # I
 
     .line 1065
@@ -348,14 +342,13 @@
 
     .line 3498
     .local v2, "$i$f$getOrAdd":I
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->search(Ljava/util/ArrayList;II)I
     invoke-static {v0, p1, v1}, Landroidx/compose/runtime/SlotTableKt;->access$search(Ljava/util/ArrayList;II)I
 
     move-result v3
 
     .line 3499
     .local v3, "location$iv":I
-    if-gez v3, :cond_1e
+    if-gez v3, :cond_0
 
     .line 3500
     const/4 v4, 0x0
@@ -382,10 +375,10 @@
     nop
 
     .end local v4    # "anchor$iv":Landroidx/compose/runtime/Anchor;
-    goto :goto_2a
+    goto :goto_0
 
     .line 3503
-    :cond_1e
+    :cond_0
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -397,7 +390,7 @@
     check-cast v4, Landroidx/compose/runtime/Anchor;
 
     .line 3499
-    :goto_2a
+    :goto_0
     nop
 
     .line 1067
@@ -409,7 +402,7 @@
 .end method
 
 .method public final beginEmpty()V
-    .registers 2
+    .locals 1
 
     .line 913
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
@@ -423,7 +416,7 @@
 .end method
 
 .method public final close()V
-    .registers 2
+    .locals 1
 
     .line 929
     const/4 v0, 0x1
@@ -440,13 +433,12 @@
 .end method
 
 .method public final containsMark(I)Z
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 847
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->containsMark([II)Z
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$containsMark([II)Z
 
     move-result v0
@@ -455,22 +447,22 @@
 .end method
 
 .method public final endEmpty()V
-    .registers 3
+    .locals 2
 
     .line 920
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_7
-    if-eqz v1, :cond_e
+    :goto_0
+    if-eqz v1, :cond_1
 
     .line 921
     add-int/lit8 v0, v0, -0x1
@@ -481,7 +473,7 @@
     return-void
 
     .line 3472
-    :cond_e
+    :cond_1
     const/4 v0, 0x0
 
     .line 920
@@ -503,34 +495,34 @@
 .end method
 
 .method public final endGroup()V
-    .registers 5
+    .locals 4
 
     .line 1013
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_3
 
     .line 1014
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .local v0, "value$iv":Z
-    :goto_d
+    :goto_0
     const/4 v1, 0x0
 
     .line 3493
     .local v1, "$i$f$runtimeCheck":I
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 3497
     nop
@@ -542,7 +534,6 @@
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->parent:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->parentAnchor([II)I
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$parentAnchor([II)I
 
     move-result v0
@@ -552,18 +543,17 @@
     iput v0, p0, Landroidx/compose/runtime/SlotReader;->parent:I
 
     .line 1019
-    if-gez v0, :cond_20
+    if-gez v0, :cond_1
 
     .line 1020
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->groupsSize:I
 
-    goto :goto_27
+    goto :goto_1
 
     .line 1022
-    :cond_20
+    :cond_1
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v1, v0}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v1
@@ -571,15 +561,15 @@
     add-int/2addr v1, v0
 
     .line 1019
-    :goto_27
+    :goto_1
     iput v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    goto :goto_3c
+    goto :goto_2
 
     .line 3494
     .local v0, "value$iv":Z
     .restart local v1    # "$i$f$runtimeCheck":I
-    :cond_2a
+    :cond_2
     const/4 v2, 0x0
 
     .line 1015
@@ -608,13 +598,13 @@
     .end local v0    # "value$iv":Z
     .end local v1    # "$i$f$runtimeCheck":I
     .end local v2    # "message$iv":Ljava/lang/Object;
-    :cond_3c
-    :goto_3c
+    :cond_3
+    :goto_2
     return-void
 .end method
 
 .method public final extractKeys()Ljava/util/List;
-    .registers 11
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -635,12 +625,12 @@
     .local v0, "result":Ljava/util/List;
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-lez v1, :cond_c
+    if-lez v1, :cond_0
 
     return-object v0
 
     .line 1033
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
     .line 1034
@@ -653,10 +643,10 @@
     .end local v1    # "index":I
     .local v2, "childIndex":I
     .local v8, "index":I
-    :goto_10
+    :goto_0
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    if-ge v2, v1, :cond_48
+    if-ge v2, v1, :cond_2
 
     .line 1036
     nop
@@ -667,7 +657,6 @@
     .line 1038
     iget-object v3, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->key([II)I
     invoke-static {v3, v2}, Landroidx/compose/runtime/SlotTableKt;->access$key([II)I
 
     move-result v4
@@ -685,26 +674,24 @@
     .line 1041
     iget-object v3, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {v3, v2}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_1
 
     const/4 v3, 0x1
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_2e
+    :cond_1
     iget-object v3, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->nodeCount([II)I
     invoke-static {v3, v2}, Landroidx/compose/runtime/SlotTableKt;->access$nodeCount([II)I
 
     move-result v3
 
-    :goto_34
+    :goto_1
     move v7, v3
 
     .line 1042
@@ -725,7 +712,6 @@
     .line 1045
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v1, v2}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v1
@@ -734,17 +720,17 @@
 
     move v8, v9
 
-    goto :goto_10
+    goto :goto_0
 
     .line 1047
     .end local v9    # "index":I
     .restart local v8    # "index":I
-    :cond_48
+    :cond_2
     return-object v0
 .end method
 
 .method public final forEachData$runtime_release(ILkotlin/jvm/functions/Function2;)V
-    .registers 8
+    .locals 5
     .param p1, "group"    # I
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -766,7 +752,6 @@
     .line 1051
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->slotAnchor([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$slotAnchor([II)I
 
     move-result v0
@@ -781,7 +766,7 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_23
+    if-ge v1, v2, :cond_0
 
     .line 1053
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->table:Landroidx/compose/runtime/SlotTable;
@@ -792,14 +777,13 @@
 
     add-int/lit8 v2, p1, 0x1
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->dataAnchor([II)I
     invoke-static {v1, v2}, Landroidx/compose/runtime/SlotTableKt;->access$dataAnchor([II)I
 
     move-result v1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->table:Landroidx/compose/runtime/SlotTable;
 
     invoke-virtual {v1}, Landroidx/compose/runtime/SlotTable;->getSlotsSize()I
@@ -807,7 +791,7 @@
     move-result v1
 
     .line 1052
-    :goto_29
+    :goto_0
     nop
 
     .line 1054
@@ -815,8 +799,8 @@
     move v2, v0
 
     .local v2, "index":I
-    :goto_2b
-    if-ge v2, v1, :cond_3d
+    :goto_1
+    if-ge v2, v1, :cond_1
 
     .line 1055
     sub-int v3, v2, v0
@@ -834,16 +818,16 @@
     .line 1054
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 1057
     .end local v2    # "index":I
-    :cond_3d
+    :cond_1
     return-void
 .end method
 
 .method public final get(I)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "index"    # I
 
     .line 878
@@ -858,15 +842,15 @@
     .local v1, "$i$a$-let-SlotReader$get$1":I
     iget v2, p0, Landroidx/compose/runtime/SlotReader;->currentSlotEnd:I
 
-    if-ge v0, v2, :cond_d
+    if-ge v0, v2, :cond_0
 
     iget-object v2, p0, Landroidx/compose/runtime/SlotReader;->slots:[Ljava/lang/Object;
 
     aget-object v2, v2, v0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     sget-object v2, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/runtime/Composer$Companion;->getEmpty()Ljava/lang/Object;
@@ -876,7 +860,7 @@
     .line 878
     .end local v0    # "slotIndex":I
     .end local v1    # "$i$a$-let-SlotReader$get$1":I
-    :goto_13
+    :goto_0
     nop
 
     .line 880
@@ -884,7 +868,7 @@
 .end method
 
 .method public final getClosed()Z
-    .registers 2
+    .locals 1
 
     .line 673
     iget-boolean v0, p0, Landroidx/compose/runtime/SlotReader;->closed:Z
@@ -893,7 +877,7 @@
 .end method
 
 .method public final getCurrentEnd()I
-    .registers 2
+    .locals 1
 
     .line 685
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
@@ -902,7 +886,7 @@
 .end method
 
 .method public final getCurrentGroup()I
-    .registers 2
+    .locals 1
 
     .line 679
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
@@ -911,14 +895,14 @@
 .end method
 
 .method public final getGroupAux()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 821
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    if-ge v0, v1, :cond_d
+    if-ge v0, v1, :cond_0
 
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
@@ -926,21 +910,21 @@
 
     move-result-object v0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    :goto_12
+    :goto_0
     return-object v0
 .end method
 
 .method public final getGroupEnd()I
-    .registers 2
+    .locals 1
 
     .line 775
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
@@ -949,42 +933,41 @@
 .end method
 
 .method public final getGroupKey()I
-    .registers 3
+    .locals 2
 
     .line 786
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    if-ge v0, v1, :cond_d
+    if-ge v0, v1, :cond_0
 
     .line 787
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->key([II)I
     invoke-static {v1, v0}, Landroidx/compose/runtime/SlotTableKt;->access$key([II)I
 
     move-result v0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 788
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return v0
 .end method
 
 .method public final getGroupNode()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 831
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    if-ge v0, v1, :cond_d
+    if-ge v0, v1, :cond_0
 
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
@@ -992,24 +975,24 @@
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return-object v0
 .end method
 
 .method public final getGroupObjectKey()Ljava/lang/Object;
-    .registers 3
+    .locals 2
 
     .line 811
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    if-ge v0, v1, :cond_d
+    if-ge v0, v1, :cond_0
 
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
@@ -1017,24 +1000,23 @@
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return-object v0
 .end method
 
 .method public final getGroupSize()I
-    .registers 3
+    .locals 2
 
     .line 764
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v0
@@ -1043,7 +1025,7 @@
 .end method
 
 .method public final getGroupSlotCount()I
-    .registers 6
+    .locals 5
 
     .line 868
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
@@ -1052,7 +1034,6 @@
     .local v0, "current":I
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->slotAnchor([II)I
     invoke-static {v1, v0}, Landroidx/compose/runtime/SlotTableKt;->access$slotAnchor([II)I
 
     move-result v1
@@ -1065,30 +1046,29 @@
     .local v2, "next":I
     iget v3, p0, Landroidx/compose/runtime/SlotReader;->groupsSize:I
 
-    if-ge v2, v3, :cond_15
+    if-ge v2, v3, :cond_0
 
     iget-object v3, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->dataAnchor([II)I
     invoke-static {v3, v2}, Landroidx/compose/runtime/SlotTableKt;->access$dataAnchor([II)I
 
     move-result v3
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     iget v3, p0, Landroidx/compose/runtime/SlotReader;->slotsSize:I
 
     .line 872
     .local v3, "end":I
-    :goto_17
+    :goto_0
     sub-int v4, v3, v1
 
     return v4
 .end method
 
 .method public final getGroupSlotIndex()I
-    .registers 4
+    .locals 3
 
     .line 799
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentSlot:I
@@ -1097,7 +1077,6 @@
 
     iget v2, p0, Landroidx/compose/runtime/SlotReader;->parent:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->slotAnchor([II)I
     invoke-static {v1, v2}, Landroidx/compose/runtime/SlotTableKt;->access$slotAnchor([II)I
 
     move-result v1
@@ -1108,33 +1087,32 @@
 .end method
 
 .method public final getInEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 759
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public final getNodeCount()I
-    .registers 3
+    .locals 2
 
     .line 739
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->nodeCount([II)I
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$nodeCount([II)I
 
     move-result v0
@@ -1143,7 +1121,7 @@
 .end method
 
 .method public final getParent()I
-    .registers 2
+    .locals 1
 
     .line 691
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->parent:I
@@ -1152,31 +1130,30 @@
 .end method
 
 .method public final getParentNodes()I
-    .registers 3
+    .locals 2
 
     .line 852
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->parent:I
 
-    if-ltz v0, :cond_b
+    if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->nodeCount([II)I
     invoke-static {v1, v0}, Landroidx/compose/runtime/SlotTableKt;->access$nodeCount([II)I
 
     move-result v0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 713
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->groupsSize:I
@@ -1185,7 +1162,7 @@
 .end method
 
 .method public final getSlot()I
-    .registers 4
+    .locals 3
 
     .line 718
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentSlot:I
@@ -1194,7 +1171,6 @@
 
     iget v2, p0, Landroidx/compose/runtime/SlotReader;->parent:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->slotAnchor([II)I
     invoke-static {v1, v2}, Landroidx/compose/runtime/SlotTableKt;->access$slotAnchor([II)I
 
     move-result v1
@@ -1205,7 +1181,7 @@
 .end method
 
 .method public final getTable$runtime_release()Landroidx/compose/runtime/SlotTable;
-    .registers 2
+    .locals 1
 
     .line 647
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->table:Landroidx/compose/runtime/SlotTable;
@@ -1214,7 +1190,7 @@
 .end method
 
 .method public final groupAux(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 826
@@ -1228,13 +1204,12 @@
 .end method
 
 .method public final groupEnd(I)I
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 780
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v0
@@ -1245,7 +1220,7 @@
 .end method
 
 .method public final groupGet(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 885
@@ -1259,14 +1234,13 @@
 .end method
 
 .method public final groupGet(II)Ljava/lang/Object;
-    .registers 8
+    .locals 5
     .param p1, "group"    # I
     .param p2, "index"    # I
 
     .line 891
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->slotAnchor([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$slotAnchor([II)I
 
     move-result v0
@@ -1279,54 +1253,52 @@
     .local v1, "next":I
     iget v2, p0, Landroidx/compose/runtime/SlotReader;->groupsSize:I
 
-    if-ge v1, v2, :cond_13
+    if-ge v1, v2, :cond_0
 
     iget-object v2, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->dataAnchor([II)I
     invoke-static {v2, v1}, Landroidx/compose/runtime/SlotTableKt;->access$dataAnchor([II)I
 
     move-result v2
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     iget v2, p0, Landroidx/compose/runtime/SlotReader;->slotsSize:I
 
     .line 894
     .local v2, "end":I
-    :goto_15
+    :goto_0
     add-int v3, v0, p2
 
     .line 895
     .local v3, "address":I
-    if-ge v3, v2, :cond_1e
+    if-ge v3, v2, :cond_1
 
     iget-object v4, p0, Landroidx/compose/runtime/SlotReader;->slots:[Ljava/lang/Object;
 
     aget-object v4, v4, v3
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     sget-object v4, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
     invoke-virtual {v4}, Landroidx/compose/runtime/Composer$Companion;->getEmpty()Ljava/lang/Object;
 
     move-result-object v4
 
-    :goto_24
+    :goto_1
     return-object v4
 .end method
 
 .method public final groupKey(I)I
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 793
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->key([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$key([II)I
 
     move-result v0
@@ -1335,7 +1307,7 @@
 .end method
 
 .method public final groupKey(Landroidx/compose/runtime/Anchor;)I
-    .registers 4
+    .locals 2
     .param p1, "anchor"    # Landroidx/compose/runtime/Anchor;
 
     const-string/jumbo v0, "anchor"
@@ -1347,7 +1319,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
@@ -1357,22 +1329,21 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->key([II)I
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$key([II)I
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1a
+    :goto_0
     return v0
 .end method
 
 .method public final groupObjectKey(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 816
@@ -1386,13 +1357,12 @@
 .end method
 
 .method public final groupSize(I)I
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 770
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v0
@@ -1401,13 +1371,12 @@
 .end method
 
 .method public final hasMark(I)Z
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 841
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->hasMark([II)Z
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$hasMark([II)Z
 
     move-result v0
@@ -1416,13 +1385,12 @@
 .end method
 
 .method public final hasObjectKey(I)Z
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 804
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->hasObjectKey([II)Z
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$hasObjectKey([II)Z
 
     move-result v0
@@ -1431,45 +1399,44 @@
 .end method
 
 .method public final isGroupEnd()Z
-    .registers 3
+    .locals 2
 
     .line 754
     invoke-virtual {p0}, Landroidx/compose/runtime/SlotReader;->getInEmpty()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_1
 
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method
 
 .method public final isNode()Z
-    .registers 3
+    .locals 2
 
     .line 728
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v0
@@ -1478,13 +1445,12 @@
 .end method
 
 .method public final isNode(I)Z
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 733
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v0
@@ -1493,23 +1459,23 @@
 .end method
 
 .method public final next()Ljava/lang/Object;
-    .registers 4
+    .locals 3
 
     .line 904
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-gtz v0, :cond_14
+    if-gtz v0, :cond_1
 
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentSlot:I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentSlotEnd:I
 
-    if-lt v0, v1, :cond_b
+    if-lt v0, v1, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 905
-    :cond_b
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->slots:[Ljava/lang/Object;
 
     add-int/lit8 v2, v0, 0x1
@@ -1521,8 +1487,8 @@
     return-object v0
 
     .line 904
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     sget-object v0, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/Composer$Companion;->getEmpty()Ljava/lang/Object;
@@ -1533,18 +1499,17 @@
 .end method
 
 .method public final node(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 749
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
@@ -1552,23 +1517,22 @@
 
     move-result-object v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return-object v0
 .end method
 
 .method public final nodeCount(I)I
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 744
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->nodeCount([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$nodeCount([II)I
 
     move-result v0
@@ -1577,13 +1541,12 @@
 .end method
 
 .method public final parent(I)I
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 723
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->parentAnchor([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$parentAnchor([II)I
 
     move-result v0
@@ -1592,30 +1555,29 @@
 .end method
 
 .method public final parentOf(I)I
-    .registers 5
+    .locals 3
     .param p1, "index"    # I
 
     .line 859
-    if-ltz p1, :cond_8
+    if-ltz p1, :cond_0
 
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->groupsSize:I
 
-    if-ge p1, v0, :cond_8
+    if-ge p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-eqz v0, :cond_12
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 860
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->parentAnchor([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$parentAnchor([II)I
 
     move-result v0
@@ -1623,7 +1585,7 @@
     return v0
 
     .line 3472
-    :cond_12
+    :cond_1
     const/4 v0, 0x0
 
     .line 859
@@ -1659,7 +1621,7 @@
 .end method
 
 .method public final reposition(I)V
-    .registers 6
+    .locals 4
     .param p1, "index"    # I
 
     .line 981
@@ -1667,22 +1629,22 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     move v0, v1
 
     .local v0, "value$iv":Z
-    :goto_8
+    :goto_0
     const/4 v2, 0x0
 
     .line 3483
     .local v2, "$i$f$runtimeCheck":I
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_3
 
     .line 3487
     nop
@@ -1695,40 +1657,38 @@
     .line 983
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->groupsSize:I
 
-    if-ge p1, v0, :cond_19
+    if-ge p1, v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->parentAnchor([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$parentAnchor([II)I
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     const/4 v0, -0x1
 
     .line 984
     .local v0, "parent":I
-    :goto_1a
+    :goto_1
     iput v0, p0, Landroidx/compose/runtime/SlotReader;->parent:I
 
     .line 985
-    if-gez v0, :cond_23
+    if-gez v0, :cond_2
 
     .line 986
     iget v2, p0, Landroidx/compose/runtime/SlotReader;->groupsSize:I
 
     iput v2, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
-    goto :goto_2c
+    goto :goto_2
 
     .line 988
-    :cond_23
+    :cond_2
     iget-object v2, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v2, v0}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v2
@@ -1738,7 +1698,7 @@
     iput v2, p0, Landroidx/compose/runtime/SlotReader;->currentEnd:I
 
     .line 989
-    :goto_2c
+    :goto_2
     iput v1, p0, Landroidx/compose/runtime/SlotReader;->currentSlot:I
 
     .line 990
@@ -1750,7 +1710,7 @@
     .line 3484
     .local v0, "value$iv":Z
     .restart local v2    # "$i$f$runtimeCheck":I
-    :cond_31
+    :cond_3
     const/4 v1, 0x0
 
     .line 981
@@ -1777,13 +1737,12 @@
 .end method
 
 .method public final restoreParent(I)V
-    .registers 9
+    .locals 7
     .param p1, "index"    # I
 
     .line 997
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v0
@@ -1798,24 +1757,24 @@
     .local v1, "current":I
     const/4 v2, 0x0
 
-    if-lt v1, p1, :cond_10
+    if-lt v1, p1, :cond_0
 
-    if-gt v1, v0, :cond_10
+    if-gt v1, v0, :cond_0
 
     const/4 v3, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move v3, v2
 
     .local v3, "value$iv":Z
-    :goto_11
+    :goto_0
     const/4 v4, 0x0
 
     .line 3488
     .local v4, "$i$f$runtimeCheck":I
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1
 
     .line 3492
     nop
@@ -1840,7 +1799,7 @@
     .line 3489
     .restart local v3    # "value$iv":Z
     .restart local v4    # "$i$f$runtimeCheck":I
-    :cond_1e
+    :cond_1
     const/4 v2, 0x0
 
     .line 1001
@@ -1893,29 +1852,29 @@
 .end method
 
 .method public final skipGroup()I
-    .registers 5
+    .locals 4
 
     .line 963
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .local v0, "value$iv":Z
-    :goto_8
+    :goto_0
     const/4 v2, 0x0
 
     .line 3473
     .local v2, "$i$f$runtimeCheck":I
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2
 
     .line 3477
     nop
@@ -1927,26 +1886,24 @@
 
     iget v2, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {v0, v2}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_17
+    :cond_1
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->nodeCount([II)I
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$nodeCount([II)I
 
     move-result v1
 
-    :goto_1f
+    :goto_1
     move v0, v1
 
     .line 965
@@ -1955,7 +1912,6 @@
 
     iget-object v2, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v2, v1}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v2
@@ -1970,7 +1926,7 @@
     .line 3474
     .local v0, "value$iv":Z
     .restart local v2    # "$i$f$runtimeCheck":I
-    :cond_2c
+    :cond_2
     const/4 v1, 0x0
 
     .line 963
@@ -1997,27 +1953,27 @@
 .end method
 
 .method public final skipToGroupEnd()V
-    .registers 5
+    .locals 4
 
     .line 973
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
     .local v0, "value$iv":Z
-    :goto_7
+    :goto_0
     const/4 v1, 0x0
 
     .line 3478
     .local v1, "$i$f$runtimeCheck":I
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 3482
     nop
@@ -2035,7 +1991,7 @@
     .line 3479
     .restart local v0    # "value$iv":Z
     .restart local v1    # "$i$f$runtimeCheck":I
-    :cond_10
+    :cond_1
     const/4 v2, 0x0
 
     .line 973
@@ -2062,19 +2018,18 @@
 .end method
 
 .method public final startGroup()V
-    .registers 4
+    .locals 3
 
     .line 937
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-gtz v0, :cond_52
+    if-gtz v0, :cond_3
 
     .line 938
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->parentAnchor([II)I
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$parentAnchor([II)I
 
     move-result v0
@@ -2083,17 +2038,17 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
-    if-eqz v0, :cond_44
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 939
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
@@ -2103,7 +2058,6 @@
     .line 940
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->groupSize([II)I
     invoke-static {v1, v0}, Landroidx/compose/runtime/SlotTableKt;->access$groupSize([II)I
 
     move-result v1
@@ -2123,7 +2077,6 @@
     .local v0, "current":I
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->slotAnchor([II)I
     invoke-static {v1, v0}, Landroidx/compose/runtime/SlotTableKt;->access$slotAnchor([II)I
 
     move-result v1
@@ -2135,33 +2088,32 @@
 
     sub-int/2addr v1, v2
 
-    if-lt v0, v1, :cond_39
+    if-lt v0, v1, :cond_1
 
     .line 944
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->slotsSize:I
 
-    goto :goto_41
+    goto :goto_1
 
     .line 945
-    :cond_39
+    :cond_1
     iget-object v1, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
     add-int/lit8 v2, v0, 0x1
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->dataAnchor([II)I
     invoke-static {v1, v2}, Landroidx/compose/runtime/SlotTableKt;->access$dataAnchor([II)I
 
     move-result v1
 
     .line 943
-    :goto_41
+    :goto_1
     iput v1, p0, Landroidx/compose/runtime/SlotReader;->currentSlotEnd:I
 
-    goto :goto_52
+    goto :goto_2
 
     .line 3472
     .end local v0    # "current":I
-    :cond_44
+    :cond_2
     const/4 v0, 0x0
 
     .line 938
@@ -2182,38 +2134,37 @@
     throw v0
 
     .line 947
-    :cond_52
-    :goto_52
+    :cond_3
+    :goto_2
     return-void
 .end method
 
 .method public final startNode()V
-    .registers 3
+    .locals 2
 
     .line 953
     iget v0, p0, Landroidx/compose/runtime/SlotReader;->emptyCount:I
 
-    if-gtz v0, :cond_20
+    if-gtz v0, :cond_1
 
     .line 954
     iget-object v0, p0, Landroidx/compose/runtime/SlotReader;->groups:[I
 
     iget v1, p0, Landroidx/compose/runtime/SlotReader;->currentGroup:I
 
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->isNode([II)Z
     invoke-static {v0, v1}, Landroidx/compose/runtime/SlotTableKt;->access$isNode([II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 955
     invoke-virtual {p0}, Landroidx/compose/runtime/SlotReader;->startGroup()V
 
-    goto :goto_20
+    goto :goto_0
 
     .line 3472
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     .line 954
@@ -2234,13 +2185,13 @@
     throw v0
 
     .line 957
-    :cond_20
-    :goto_20
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 1059
     new-instance v0, Ljava/lang/StringBuilder;

@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final focusOrder(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/focus/FocusRequester;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$focusOrder"    # Landroidx/compose/ui/Modifier;
     .param p1, "focusRequester"    # Landroidx/compose/ui/focus/FocusRequester;
     .annotation runtime Lkotlin/Deprecated;
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final focusOrder(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/focus/FocusRequester;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 2
     .param p0, "$this$focusOrder"    # Landroidx/compose/ui/Modifier;
     .param p1, "focusRequester"    # Landroidx/compose/ui/focus/FocusRequester;
     .param p2, "focusOrderReceiver"    # Lkotlin/jvm/functions/Function1;
@@ -125,7 +125,7 @@
 .end method
 
 .method public static final focusOrder(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$focusOrder"    # Landroidx/compose/ui/Modifier;
     .param p1, "focusOrderReceiver"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

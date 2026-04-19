@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(J)V
-    .registers 3
+    .locals 0
     .param p1, "value"    # J
 
     .line 175
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public assign(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -84,7 +84,7 @@
 .end method
 
 .method public create()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 4
+    .locals 3
 
     .line 180
     new-instance v0, Landroidx/compose/runtime/SnapshotMutableLongStateImpl$LongStateStateRecord;
@@ -99,7 +99,7 @@
 .end method
 
 .method public final getValue()J
-    .registers 3
+    .locals 2
 
     .line 174
     iget-wide v0, p0, Landroidx/compose/runtime/SnapshotMutableLongStateImpl$LongStateStateRecord;->value:J
@@ -108,7 +108,7 @@
 .end method
 
 .method public final setValue(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 174

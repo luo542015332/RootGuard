@@ -60,7 +60,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/ViewRootForTest$Companion;
 
@@ -72,7 +72,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -81,7 +81,7 @@
 .end method
 
 .method public static synthetic getOnViewCreatedCallback$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public final getOnViewCreatedCallback()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -107,7 +107,7 @@
 .end method
 
 .method public final setOnViewCreatedCallback(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

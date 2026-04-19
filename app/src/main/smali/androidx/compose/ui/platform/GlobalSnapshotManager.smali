@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/GlobalSnapshotManager;
 
@@ -57,7 +57,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final ensureStarted()V
-    .registers 10
+    .locals 9
 
     .line 42
     sget-object v0, Landroidx/compose/ui/platform/GlobalSnapshotManager;->started:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -81,7 +81,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     .line 43
     const/4 v0, -0x1
@@ -137,6 +137,6 @@
 
     .line 53
     .end local v0    # "channel":Lkotlinx/coroutines/channels/Channel;
-    :cond_36
+    :cond_0
     return-void
 .end method

@@ -109,7 +109,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     new-instance v0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator$Companion;
 
@@ -165,7 +165,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 4
+    .locals 1
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "measureNode"    # Landroidx/compose/ui/node/LayoutModifierNode;
 
@@ -188,7 +188,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     new-instance v0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator$LookaheadDelegateForLayoutModifierNode;
 
@@ -196,12 +196,12 @@
 
     check-cast v0, Landroidx/compose/ui/node/LookaheadDelegate;
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_20
+    :goto_0
     iput-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->lookaheadDelegate:Landroidx/compose/ui/node/LookaheadDelegate;
 
     .line 36
@@ -209,7 +209,7 @@
 .end method
 
 .method public static final synthetic access$getLookaheadConstraints$p(Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;)Landroidx/compose/ui/unit/Constraints;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;
 
     .line 35
@@ -219,7 +219,7 @@
 .end method
 
 .method public static final synthetic access$getModifierBoundsPaint$cp()Landroidx/compose/ui/graphics/Paint;
-    .registers 1
+    .locals 1
 
     .line 35
     sget-object v0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->modifierBoundsPaint:Landroidx/compose/ui/graphics/Paint;
@@ -228,7 +228,7 @@
 .end method
 
 .method public static final synthetic access$setLookaheadConstraints$p(Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;Landroidx/compose/ui/unit/Constraints;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;
     .param p1, "<set-?>"    # Landroidx/compose/ui/unit/Constraints;
 
@@ -241,7 +241,7 @@
 
 # virtual methods
 .method public calculateAlignmentLine(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 3
+    .locals 1
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -253,39 +253,38 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/node/LookaheadDelegate;->getCachedAlignmentLine$ui_release(Landroidx/compose/ui/layout/AlignmentLine;)I
 
     move-result v0
 
-    goto :goto_18
+    goto :goto_0
 
     .line 178
-    :cond_11
+    :cond_0
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
-    # invokes: Landroidx/compose/ui/node/LayoutModifierNodeCoordinatorKt;->calculateAlignmentAndPlaceChildAsNeeded(Landroidx/compose/ui/node/LookaheadCapablePlaceable;Landroidx/compose/ui/layout/AlignmentLine;)I
     invoke-static {v0, p1}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinatorKt;->access$calculateAlignmentAndPlaceChildAsNeeded(Landroidx/compose/ui/node/LookaheadCapablePlaceable;Landroidx/compose/ui/layout/AlignmentLine;)I
 
     move-result v0
 
     .line 177
-    :goto_18
+    :goto_0
     return v0
 .end method
 
 .method public ensureLookaheadDelegateCreated()V
-    .registers 2
+    .locals 1
 
     .line 100
     invoke-virtual {p0}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->getLookaheadDelegate()Landroidx/compose/ui/node/LookaheadDelegate;
 
     move-result-object v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 101
     new-instance v0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator$LookaheadDelegateForLayoutModifierNode;
@@ -297,12 +296,12 @@
     invoke-virtual {p0, v0}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->setLookaheadDelegate(Landroidx/compose/ui/node/LookaheadDelegate;)V
 
     .line 103
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public final getLayoutModifierNode()Landroidx/compose/ui/node/LayoutModifierNode;
-    .registers 2
+    .locals 1
 
     .line 40
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->layoutModifierNode:Landroidx/compose/ui/node/LayoutModifierNode;
@@ -311,7 +310,7 @@
 .end method
 
 .method public getLookaheadDelegate()Landroidx/compose/ui/node/LookaheadDelegate;
-    .registers 2
+    .locals 1
 
     .line 50
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->lookaheadDelegate:Landroidx/compose/ui/node/LookaheadDelegate;
@@ -320,7 +319,7 @@
 .end method
 
 .method public getTail()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->layoutModifierNode:Landroidx/compose/ui/node/LayoutModifierNode;
@@ -333,7 +332,7 @@
 .end method
 
 .method public final getWrappedNonNull()Landroidx/compose/ui/node/NodeCoordinator;
-    .registers 2
+    .locals 1
 
     .line 46
     invoke-virtual {p0}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->getWrapped$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
@@ -346,7 +345,7 @@
 .end method
 
 .method public maxIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 148
@@ -354,17 +353,17 @@
 
     instance-of v1, v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_1
 
     .local v0, "$this$maxIntrinsicHeight_u24lambda_u249":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     const/4 v1, 0x0
@@ -388,10 +387,10 @@
     .line 148
     .end local v0    # "$this$maxIntrinsicHeight_u24lambda_u249":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     .end local v1    # "$i$a$-run-LayoutModifierNodeCoordinator$maxIntrinsicHeight$1":I
-    goto :goto_2c
+    goto :goto_1
 
     .line 150
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->layoutModifierNode:Landroidx/compose/ui/node/LayoutModifierNode;
 
     .local v0, "$this$maxIntrinsicHeight_u24lambda_u2410":Landroidx/compose/ui/node/LayoutModifierNode;
@@ -419,12 +418,12 @@
     nop
 
     .line 152
-    :goto_2c
+    :goto_1
     return v0
 .end method
 
 .method public maxIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 134
@@ -432,17 +431,17 @@
 
     instance-of v1, v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_1
 
     .local v0, "$this$maxIntrinsicWidth_u24lambda_u245":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     const/4 v1, 0x0
@@ -466,10 +465,10 @@
     .line 134
     .end local v0    # "$this$maxIntrinsicWidth_u24lambda_u245":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     .end local v1    # "$i$a$-run-LayoutModifierNodeCoordinator$maxIntrinsicWidth$1":I
-    goto :goto_2c
+    goto :goto_1
 
     .line 136
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->layoutModifierNode:Landroidx/compose/ui/node/LayoutModifierNode;
 
     .local v0, "$this$maxIntrinsicWidth_u24lambda_u246":Landroidx/compose/ui/node/LayoutModifierNode;
@@ -497,12 +496,12 @@
     nop
 
     .line 138
-    :goto_2c
+    :goto_1
     return v0
 .end method
 
 .method public measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
-    .registers 20
+    .locals 17
     .param p1, "constraints"    # J
 
     .line 106
@@ -519,7 +518,6 @@
 
     .line 224
     .local v13, "$i$f$performingMeasure-K40F9xA":I
-    # invokes: Landroidx/compose/ui/node/NodeCoordinator;->setMeasurementConstraints-BRTryo0(J)V
     invoke-static {v12, v10, v11}, Landroidx/compose/ui/node/NodeCoordinator;->access$setMeasurementConstraints-BRTryo0(Landroidx/compose/ui/node/NodeCoordinator;J)V
 
     .line 225
@@ -538,7 +536,7 @@
     .local v16, "$i$a$-with-LayoutModifierNodeCoordinator$measure$1$1":I
     instance-of v1, v15, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_0
 
     .line 109
     move-object v1, v15
@@ -593,7 +591,6 @@
     .line 113
     .end local v4    # "it":Landroidx/compose/ui/layout/MeasureResult;
     .end local v5    # "$i$a$-let-LayoutModifierNodeCoordinator$measure$1$1$1":I
-    # getter for: Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->lookaheadConstraints:Landroidx/compose/ui/unit/Constraints;
     invoke-static/range {p0 .. p0}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->access$getLookaheadConstraints$p(Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;)Landroidx/compose/ui/unit/Constraints;
 
     move-result-object v4
@@ -611,10 +608,10 @@
 
     move-result-object v1
 
-    goto :goto_5b
+    goto :goto_0
 
     .line 116
-    :cond_4e
+    :cond_0
     move-object v1, v0
 
     check-cast v1, Landroidx/compose/ui/layout/MeasureScope;
@@ -630,7 +627,7 @@
     move-result-object v1
 
     .line 108
-    :goto_5b
+    :goto_0
     invoke-virtual {v0, v1}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->setMeasureResult$ui_release(Landroidx/compose/ui/layout/MeasureResult;)V
 
     .line 118
@@ -661,7 +658,7 @@
 .end method
 
 .method public minIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 141
@@ -669,17 +666,17 @@
 
     instance-of v1, v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_1
 
     .local v0, "$this$minIntrinsicHeight_u24lambda_u247":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     const/4 v1, 0x0
@@ -703,10 +700,10 @@
     .line 141
     .end local v0    # "$this$minIntrinsicHeight_u24lambda_u247":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     .end local v1    # "$i$a$-run-LayoutModifierNodeCoordinator$minIntrinsicHeight$1":I
-    goto :goto_2c
+    goto :goto_1
 
     .line 143
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->layoutModifierNode:Landroidx/compose/ui/node/LayoutModifierNode;
 
     .local v0, "$this$minIntrinsicHeight_u24lambda_u248":Landroidx/compose/ui/node/LayoutModifierNode;
@@ -734,12 +731,12 @@
     nop
 
     .line 145
-    :goto_2c
+    :goto_1
     return v0
 .end method
 
 .method public minIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 126
@@ -747,17 +744,17 @@
 
     instance-of v1, v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_1
 
     .local v0, "$this$minIntrinsicWidth_u24lambda_u243":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     const/4 v1, 0x0
@@ -781,10 +778,10 @@
     .line 126
     .end local v0    # "$this$minIntrinsicWidth_u24lambda_u243":Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
     .end local v1    # "$i$a$-run-LayoutModifierNodeCoordinator$minIntrinsicWidth$1":I
-    goto :goto_2c
+    goto :goto_1
 
     .line 128
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->layoutModifierNode:Landroidx/compose/ui/node/LayoutModifierNode;
 
     .local v0, "$this$minIntrinsicWidth_u24lambda_u244":Landroidx/compose/ui/node/LayoutModifierNode;
@@ -812,12 +809,12 @@
     nop
 
     .line 126
-    :goto_2c
+    :goto_1
     return v0
 .end method
 
 .method public performDraw(Landroidx/compose/ui/graphics/Canvas;)V
-    .registers 3
+    .locals 1
     .param p1, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
 
     const-string/jumbo v0, "canvas"
@@ -844,7 +841,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 184
     sget-object v0, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->modifierBoundsPaint:Landroidx/compose/ui/graphics/Paint;
@@ -852,12 +849,12 @@
     invoke-virtual {p0, p1, v0}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->drawBorder(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Paint;)V
 
     .line 186
-    :cond_20
+    :cond_0
     return-void
 .end method
 
 .method protected placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
-    .registers 17
+    .locals 12
     .param p1, "position"    # J
     .param p3, "zIndex"    # F
     .param p4, "layerBlock"    # Lkotlin/jvm/functions/Function1;
@@ -880,12 +877,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     return-void
 
     .line 166
-    :cond_a
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;->onPlaced()V
 
     .line 167
@@ -915,7 +912,6 @@
 
     .line 227
     .local v3, "$i$f$executeWithRtlMirroringValues":I
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->_coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$get_coordinates$cp()Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v4
@@ -924,7 +920,6 @@
     .local v4, "previousLayoutCoordinates$iv":Landroidx/compose/ui/layout/LayoutCoordinates;
     sget-object v5, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->getParentWidth()I
     invoke-static {v5}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)I
 
     move-result v5
@@ -933,14 +928,12 @@
     .local v5, "previousParentWidth$iv":I
     sget-object v6, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v6
 
     .line 230
     .local v6, "previousParentLayoutDirection$iv":Landroidx/compose/ui/unit/LayoutDirection;
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->layoutDelegate:Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getLayoutDelegate$cp()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
 
     move-result-object v7
@@ -961,7 +954,6 @@
 
     check-cast v8, Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->configureForPlacingForAlignment(Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
     invoke-static {v0, v8}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$configureForPlacingForAlignment(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
 
     move-result v8
@@ -1034,7 +1026,7 @@
 .end method
 
 .method public final setLayoutModifierNode$ui_release(Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/node/LayoutModifierNode;
 
     const-string v0, "<set-?>"
@@ -1048,7 +1040,7 @@
 .end method
 
 .method protected setLookaheadDelegate(Landroidx/compose/ui/node/LookaheadDelegate;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/node/LookaheadDelegate;
 
     .line 50

@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/ClipboardManager;)V
-    .registers 3
+    .locals 1
     .param p1, "clipboardManager"    # Landroid/content/ClipboardManager;
 
     const-string/jumbo v0, "clipboardManager"
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
 
     const-string/jumbo v0, "context"
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public getText()Landroidx/compose/ui/text/AnnotatedString;
-    .registers 5
+    .locals 4
 
     .line 67
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidClipboardManager;->clipboardManager:Landroid/content/ClipboardManager;
@@ -107,7 +107,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .local v0, "primaryClip":Landroid/content/ClipData;
     const/4 v2, 0x0
@@ -118,7 +118,7 @@
 
     move-result v3
 
-    if-lez v3, :cond_20
+    if-lez v3, :cond_1
 
     .line 70
     const/4 v3, 0x0
@@ -127,25 +127,25 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_0
 
     invoke-virtual {v3}, Landroid/content/ClipData$Item;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    :cond_1b
+    :cond_0
     invoke-static {v1}, Landroidx/compose/ui/platform/AndroidClipboardManager_androidKt;->convertToAnnotatedString(Ljava/lang/CharSequence;)Landroidx/compose/ui/text/AnnotatedString;
 
     move-result-object v1
 
-    goto :goto_21
+    goto :goto_0
 
     .line 72
-    :cond_20
+    :cond_1
     nop
 
     .line 68
-    :goto_21
+    :goto_0
     nop
 
     .line 67
@@ -153,12 +153,12 @@
     .end local v2    # "$i$a$-let-AndroidClipboardManager$getText$1":I
     nop
 
-    :cond_23
+    :cond_2
     return-object v1
 .end method
 
 .method public hasText()Z
-    .registers 3
+    .locals 2
 
     .line 78
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidClipboardManager;->clipboardManager:Landroid/content/ClipboardManager;
@@ -167,7 +167,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const-string/jumbo v1, "text/*"
 
@@ -175,17 +175,17 @@
 
     move-result v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public setText(Landroidx/compose/ui/text/AnnotatedString;)V
-    .registers 5
+    .locals 3
     .param p1, "annotatedString"    # Landroidx/compose/ui/text/AnnotatedString;
 
     const-string/jumbo v0, "annotatedString"

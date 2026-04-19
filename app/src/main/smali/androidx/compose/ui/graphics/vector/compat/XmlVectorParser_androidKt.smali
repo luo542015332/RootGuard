@@ -94,13 +94,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final createVectorImageBuilder(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 28
+    .locals 24
     .param p0, "$this$createVectorImageBuilder"    # Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
@@ -239,12 +239,12 @@
     .local v7, "viewportHeight":F
     cmpg-float v9, v6, v8
 
-    if-lez v9, :cond_17f
+    if-lez v9, :cond_5
 
     .line 178
     cmpg-float v9, v7, v8
 
-    if-lez v9, :cond_162
+    if-lez v9, :cond_4
 
     .line 184
     nop
@@ -298,7 +298,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_c7
+    if-eqz v8, :cond_2
 
     .line 196
     new-instance v8, Landroid/util/TypedValue;
@@ -320,7 +320,7 @@
 
     const/4 v10, 0x2
 
-    if-ne v9, v10, :cond_a4
+    if-ne v9, v10, :cond_0
 
     .line 203
     sget-object v9, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -331,10 +331,10 @@
 
     move-wide v14, v9
 
-    goto :goto_ce
+    goto :goto_0
 
     .line 205
-    :cond_a4
+    :cond_0
     nop
 
     .line 206
@@ -356,7 +356,7 @@
 
     .line 209
     .local v9, "tintColorStateList":Landroid/content/res/ColorStateList;
-    if-eqz v9, :cond_bf
+    if-eqz v9, :cond_1
 
     .line 210
     invoke-virtual {v9}, Landroid/content/res/ColorStateList;->getDefaultColor()I
@@ -369,10 +369,10 @@
 
     move-wide v14, v10
 
-    goto :goto_ce
+    goto :goto_0
 
     .line 212
-    :cond_bf
+    :cond_1
     sget-object v10, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
 
     invoke-virtual {v10}, Landroidx/compose/ui/graphics/Color$Companion;->getUnspecified-0d7_KjU()J
@@ -383,10 +383,10 @@
 
     .end local v8    # "value":Landroid/util/TypedValue;
     .end local v9    # "tintColorStateList":Landroid/content/res/ColorStateList;
-    goto :goto_ce
+    goto :goto_0
 
     .line 216
-    :cond_c7
+    :cond_2
     sget-object v8, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/Color$Companion;->getUnspecified-0d7_KjU()J
@@ -396,7 +396,7 @@
     move-wide v14, v8
 
     .line 193
-    :goto_ce
+    :goto_0
     nop
 
     .line 219
@@ -422,10 +422,10 @@
 
     .line 223
     .local v13, "blendModeValue":I
-    if-eq v13, v9, :cond_120
+    if-eq v13, v9, :cond_3
 
     .line 224
-    sparse-switch v13, :sswitch_data_19c
+    sparse-switch v13, :sswitch_data_0
 
     .line 233
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
@@ -436,10 +436,10 @@
 
     move/from16 v16, v8
 
-    goto :goto_128
+    goto :goto_1
 
     .line 232
-    :sswitch_ea
+    :sswitch_0
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/BlendMode$Companion;->getPlus-0nO6VwU()I
@@ -448,10 +448,10 @@
 
     move/from16 v16, v8
 
-    goto :goto_128
+    goto :goto_1
 
     .line 231
-    :sswitch_f3
+    :sswitch_1
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/BlendMode$Companion;->getScreen-0nO6VwU()I
@@ -460,10 +460,10 @@
 
     move/from16 v16, v8
 
-    goto :goto_128
+    goto :goto_1
 
     .line 230
-    :sswitch_fc
+    :sswitch_2
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/BlendMode$Companion;->getModulate-0nO6VwU()I
@@ -472,10 +472,10 @@
 
     move/from16 v16, v8
 
-    goto :goto_128
+    goto :goto_1
 
     .line 227
-    :sswitch_105
+    :sswitch_3
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/BlendMode$Companion;->getSrcAtop-0nO6VwU()I
@@ -484,10 +484,10 @@
 
     move/from16 v16, v8
 
-    goto :goto_128
+    goto :goto_1
 
     .line 226
-    :sswitch_10e
+    :sswitch_4
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/BlendMode$Companion;->getSrcIn-0nO6VwU()I
@@ -496,10 +496,10 @@
 
     move/from16 v16, v8
 
-    goto :goto_128
+    goto :goto_1
 
     .line 225
-    :sswitch_117
+    :sswitch_5
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/BlendMode$Companion;->getSrcOver-0nO6VwU()I
@@ -508,10 +508,10 @@
 
     move/from16 v16, v8
 
-    goto :goto_128
+    goto :goto_1
 
     .line 236
-    :cond_120
+    :cond_3
     sget-object v8, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/BlendMode$Companion;->getSrcIn-0nO6VwU()I
@@ -521,7 +521,7 @@
     move/from16 v16, v8
 
     .line 223
-    :goto_128
+    :goto_1
     nop
 
     .line 239
@@ -631,7 +631,7 @@
     .end local v20    # "defaultWidth":F
     .end local v21    # "defaultHeight":F
     .end local v23    # "blendModeValue":I
-    :cond_162
+    :cond_4
     new-instance v8, Lorg/xmlpull/v1/XmlPullParserException;
 
     .line 180
@@ -663,7 +663,7 @@
     throw v8
 
     .line 175
-    :cond_17f
+    :cond_5
     new-instance v8, Lorg/xmlpull/v1/XmlPullParserException;
 
     .line 176
@@ -694,52 +694,52 @@
 
     throw v8
 
-    :sswitch_data_19c
+    :sswitch_data_0
     .sparse-switch
-        0x3 -> :sswitch_117
-        0x5 -> :sswitch_10e
-        0x9 -> :sswitch_105
-        0xe -> :sswitch_fc
-        0xf -> :sswitch_f3
-        0x10 -> :sswitch_ea
+        0x3 -> :sswitch_5
+        0x5 -> :sswitch_4
+        0x9 -> :sswitch_3
+        0xe -> :sswitch_2
+        0xf -> :sswitch_1
+        0x10 -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method private static final getStrokeLineCap-CSYIeUk(II)I
-    .registers 3
+    .locals 1
     .param p0, "id"    # I
     .param p1, "defValue"    # I
 
     .line 66
-    packed-switch p0, :pswitch_data_1a
+    packed-switch p0, :pswitch_data_0
 
     .line 70
     move v0, p1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 69
-    :pswitch_5
+    :pswitch_0
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getSquare-KaPHkGw()I
 
     move-result v0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 68
-    :pswitch_c
+    :pswitch_1
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getRound-KaPHkGw()I
 
     move-result v0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 67
-    :pswitch_13
+    :pswitch_2
     sget-object v0, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeCap$Companion;->getButt-KaPHkGw()I
@@ -747,24 +747,24 @@
     move-result v0
 
     .line 71
-    :goto_19
+    :goto_0
     return v0
 
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_c
-        :pswitch_5
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method static synthetic getStrokeLineCap-CSYIeUk$default(IIILjava/lang/Object;)I
-    .registers 4
+    .locals 0
 
     .line 65
     and-int/lit8 p2, p2, 0x2
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     sget-object p1, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
 
@@ -772,7 +772,7 @@
 
     move-result p1
 
-    :cond_a
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/vector/compat/XmlVectorParser_androidKt;->getStrokeLineCap-CSYIeUk(II)I
 
     move-result p0
@@ -781,40 +781,40 @@
 .end method
 
 .method private static final getStrokeLineJoin-kLtJ_vA(II)I
-    .registers 3
+    .locals 1
     .param p0, "id"    # I
     .param p1, "defValue"    # I
 
     .line 74
-    packed-switch p0, :pswitch_data_1a
+    packed-switch p0, :pswitch_data_0
 
     .line 78
     move v0, p1
 
-    goto :goto_19
+    goto :goto_0
 
     .line 77
-    :pswitch_5
+    :pswitch_0
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getBevel-LxFBmk8()I
 
     move-result v0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 76
-    :pswitch_c
+    :pswitch_1
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getRound-LxFBmk8()I
 
     move-result v0
 
-    goto :goto_19
+    goto :goto_0
 
     .line 75
-    :pswitch_13
+    :pswitch_2
     sget-object v0, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;->getMiter-LxFBmk8()I
@@ -822,24 +822,24 @@
     move-result v0
 
     .line 79
-    :goto_19
+    :goto_0
     return v0
 
-    :pswitch_data_1a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_13
-        :pswitch_c
-        :pswitch_5
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method static synthetic getStrokeLineJoin-kLtJ_vA$default(IIILjava/lang/Object;)I
-    .registers 4
+    .locals 0
 
     .line 73
     and-int/lit8 p2, p2, 0x2
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_0
 
     sget-object p1, Landroidx/compose/ui/graphics/StrokeJoin;->Companion:Landroidx/compose/ui/graphics/StrokeJoin$Companion;
 
@@ -847,7 +847,7 @@
 
     move-result p1
 
-    :cond_a
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/vector/compat/XmlVectorParser_androidKt;->getStrokeLineJoin-kLtJ_vA(II)I
 
     move-result p0
@@ -856,7 +856,7 @@
 .end method
 
 .method public static final isAtEnd(Lorg/xmlpull/v1/XmlPullParser;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$isAtEnd"    # Lorg/xmlpull/v1/XmlPullParser;
 
     const-string v0, "<this>"
@@ -870,14 +870,14 @@
 
     const/4 v1, 0x1
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     .line 83
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v0
 
-    if-ge v0, v1, :cond_1a
+    if-ge v0, v1, :cond_0
 
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
@@ -885,25 +885,25 @@
 
     const/4 v2, 0x3
 
-    if-ne v0, v2, :cond_1a
+    if-ne v0, v2, :cond_0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
-    :goto_1c
+    :cond_1
+    :goto_0
     nop
 
-    :goto_1d
+    :goto_1
     return v1
 .end method
 
 .method private static final obtainBrushFromComplexColor(Landroidx/core/content/res/ComplexColorCompat;)Landroidx/compose/ui/graphics/Brush;
-    .registers 6
+    .locals 5
     .param p0, "complexColor"    # Landroidx/core/content/res/ComplexColorCompat;
 
     .line 383
@@ -913,7 +913,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 384
     invoke-virtual {p0}, Landroidx/core/content/res/ComplexColorCompat;->getShader()Landroid/graphics/Shader;
@@ -922,7 +922,7 @@
 
     .line 385
     .local v0, "shader":Landroid/graphics/Shader;
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 386
     invoke-static {v0}, Landroidx/compose/ui/graphics/BrushKt;->ShaderBrush(Landroid/graphics/Shader;)Landroidx/compose/ui/graphics/ShaderBrush;
@@ -931,10 +931,10 @@
 
     check-cast v1, Landroidx/compose/ui/graphics/Brush;
 
-    goto :goto_26
+    goto :goto_0
 
     .line 388
-    :cond_14
+    :cond_0
     new-instance v2, Landroidx/compose/ui/graphics/SolidColor;
 
     invoke-virtual {p0}, Landroidx/core/content/res/ComplexColorCompat;->getColor()I
@@ -952,19 +952,19 @@
     check-cast v1, Landroidx/compose/ui/graphics/Brush;
 
     .end local v0    # "shader":Landroid/graphics/Shader;
-    goto :goto_26
+    goto :goto_0
 
     .line 391
-    :cond_25
+    :cond_1
     nop
 
     .line 392
-    :goto_26
+    :goto_0
     return-object v1
 .end method
 
 .method public static final parseClipPath(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;)V
-    .registers 24
+    .locals 19
     .param p0, "$this$parseClipPath"    # Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
@@ -1040,20 +1040,20 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_41
+    if-nez v4, :cond_0
 
     .line 410
     const-string v4, ""
 
     move-object v5, v4
 
-    goto :goto_42
+    goto :goto_0
 
     .line 407
-    :cond_41
+    :cond_0
     move-object v5, v4
 
-    :goto_42
+    :goto_0
     nop
 
     .line 412
@@ -1128,7 +1128,7 @@
 .end method
 
 .method public static final parseCurrentVectorNode(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;I)I
-    .registers 11
+    .locals 5
     .param p0, "$this$parseCurrentVectorNode"    # Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
@@ -1163,12 +1163,12 @@
 
     const-string/jumbo v1, "group"
 
-    packed-switch v0, :pswitch_data_82
+    packed-switch v0, :pswitch_data_0
 
-    goto :goto_80
+    goto :goto_2
 
     .line 113
-    :pswitch_26
+    :pswitch_0
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->getXmlParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v0
@@ -1181,7 +1181,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_80
+    if-eqz v0, :cond_4
 
     .line 114
     add-int/lit8 v0, p5, 0x1
@@ -1190,8 +1190,8 @@
 
     move v2, v1
 
-    :goto_38
-    if-ge v2, v0, :cond_43
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     move v3, v2
 
@@ -1210,14 +1210,14 @@
     .end local v4    # "$i$a$-repeat-XmlVectorParser_androidKt$parseCurrentVectorNode$1":I
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_38
+    goto :goto_0
 
     .line 117
-    :cond_43
+    :cond_0
     return v1
 
     .line 99
-    :pswitch_44
+    :pswitch_1
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;->getXmlParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v0
@@ -1226,63 +1226,63 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_80
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
-    sparse-switch v2, :sswitch_data_8a
+    sparse-switch v2, :sswitch_data_0
 
-    goto :goto_7f
+    goto :goto_1
 
-    :sswitch_56
+    :sswitch_0
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5d
+    if-nez v0, :cond_1
 
-    goto :goto_80
+    goto :goto_2
 
     .line 108
-    :cond_5d
+    :cond_1
     invoke-static {p0, p1, p3, p2, p4}, Landroidx/compose/ui/graphics/vector/compat/XmlVectorParser_androidKt;->parseGroup(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;)V
 
-    goto :goto_7f
+    goto :goto_1
 
     .line 99
-    :sswitch_61
+    :sswitch_1
     const-string/jumbo v1, "path"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_2
 
-    goto :goto_80
+    goto :goto_2
 
     .line 101
-    :cond_6b
+    :cond_2
     invoke-static {p0, p1, p3, p2, p4}, Landroidx/compose/ui/graphics/vector/compat/XmlVectorParser_androidKt;->parsePath(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;)V
 
-    goto :goto_80
+    goto :goto_2
 
     .line 99
-    :sswitch_6f
+    :sswitch_2
     const-string/jumbo v1, "clip-path"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_79
+    if-nez v0, :cond_3
 
-    goto :goto_80
+    goto :goto_2
 
     .line 104
-    :cond_79
+    :cond_3
     invoke-static {p0, p1, p3, p2, p4}, Landroidx/compose/ui/graphics/vector/compat/XmlVectorParser_androidKt;->parseClipPath(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;)V
 
     .line 105
@@ -1291,50 +1291,50 @@
     return v0
 
     .line 108
-    :goto_7f
+    :goto_1
     nop
 
     .line 121
-    :cond_80
-    :goto_80
+    :cond_4
+    :goto_2
     return p5
 
     nop
 
-    :pswitch_data_82
+    :pswitch_data_0
     .packed-switch 0x2
-        :pswitch_44
-        :pswitch_26
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
-    :sswitch_data_8a
+    :sswitch_data_0
     .sparse-switch
-        -0x624e8b7e -> :sswitch_6f
-        0x346425 -> :sswitch_61
-        0x5e0f67f -> :sswitch_56
+        -0x624e8b7e -> :sswitch_2
+        0x346425 -> :sswitch_1
+        0x5e0f67f -> :sswitch_0
     .end sparse-switch
 .end method
 
 .method public static synthetic parseCurrentVectorNode$default(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;IILjava/lang/Object;)I
-    .registers 14
+    .locals 6
 
     .line 90
     and-int/lit8 p6, p6, 0x4
 
-    if-eqz p6, :cond_7
+    if-eqz p6, :cond_0
 
     .line 93
     const/4 p3, 0x0
 
     move-object v3, p3
 
-    goto :goto_8
+    goto :goto_0
 
     .line 90
-    :cond_7
+    :cond_0
     move-object v3, p3
 
-    :goto_8
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -1353,7 +1353,7 @@
 .end method
 
 .method public static final parseGroup(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;)V
-    .registers 28
+    .locals 23
     .param p0, "$this$parseGroup"    # Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
@@ -1612,20 +1612,20 @@
 
     move-result-object v4
 
-    if-nez v4, :cond_b3
+    if-nez v4, :cond_0
 
     .line 499
     const-string v4, ""
 
     move-object v5, v4
 
-    goto :goto_b4
+    goto :goto_0
 
     .line 496
-    :cond_b3
+    :cond_0
     move-object v5, v4
 
-    :goto_b4
+    :goto_0
     nop
 
     .line 501
@@ -1688,7 +1688,7 @@
 .end method
 
 .method public static final parsePath(Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;Landroidx/compose/ui/graphics/vector/ImageVector$Builder;)V
-    .registers 40
+    .locals 35
     .param p0, "$this$parsePath"    # Landroidx/compose/ui/graphics/vector/compat/AndroidVectorParser;
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "theme"    # Landroid/content/res/Resources$Theme;
@@ -1764,7 +1764,7 @@
 
     .line 271
     .local v24, "hasPathData":Z
-    if-eqz v24, :cond_18f
+    if-eqz v24, :cond_2
 
     .line 277
     nop
@@ -1781,20 +1781,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_4d
+    if-nez v0, :cond_0
 
     .line 279
     const-string v0, ""
 
     move-object v12, v0
 
-    goto :goto_4e
+    goto :goto_0
 
     .line 277
-    :cond_4d
+    :cond_0
     move-object v12, v0
 
-    :goto_4e
+    :goto_0
     nop
 
     .line 281
@@ -2183,20 +2183,20 @@
     .local v31, "strokeBrush":Landroidx/compose/ui/graphics/Brush;
     sget-object v9, Landroidx/compose/ui/graphics/PathFillType;->Companion:Landroidx/compose/ui/graphics/PathFillType$Companion;
 
-    if-nez v7, :cond_15a
+    if-nez v7, :cond_1
 
     invoke-virtual {v9}, Landroidx/compose/ui/graphics/PathFillType$Companion;->getNonZero-Rg-k1Os()I
 
     move-result v9
 
-    goto :goto_15e
+    goto :goto_1
 
-    :cond_15a
+    :cond_1
     invoke-virtual {v9}, Landroidx/compose/ui/graphics/PathFillType$Companion;->getEvenOdd-Rg-k1Os()I
 
     move-result v9
 
-    :goto_15e
+    :goto_1
     move/from16 v32, v11
 
     .end local v11    # "lineJoin":I
@@ -2310,7 +2310,7 @@
     .end local v33    # "lineCap":I
     .end local v34    # "a":Landroid/content/res/TypedArray;
     .restart local v13    # "a":Landroid/content/res/TypedArray;
-    :cond_18f
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "No path data available"
@@ -2321,7 +2321,7 @@
 .end method
 
 .method public static final seekToStartTag(Lorg/xmlpull/v1/XmlPullParser;)Lorg/xmlpull/v1/XmlPullParser;
-    .registers 4
+    .locals 3
     .param p0, "$this$seekToStartTag"    # Lorg/xmlpull/v1/XmlPullParser;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -2340,31 +2340,31 @@
 
     .line 130
     .local v0, "type":I
-    :goto_9
+    :goto_0
     const/4 v1, 0x2
 
-    if-eq v0, v1, :cond_14
+    if-eq v0, v1, :cond_0
 
     const/4 v2, 0x1
 
-    if-eq v0, v2, :cond_14
+    if-eq v0, v2, :cond_0
 
     .line 132
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 134
-    :cond_14
-    if-ne v0, v1, :cond_17
+    :cond_0
+    if-ne v0, v1, :cond_1
 
     .line 137
     return-object p0
 
     .line 135
-    :cond_17
+    :cond_1
     new-instance v1, Lorg/xmlpull/v1/XmlPullParserException;
 
     const-string/jumbo v2, "No start tag found"

@@ -387,7 +387,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/runtime/Recomposer$Companion;
 
@@ -429,7 +429,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;)V
-    .registers 7
+    .locals 5
     .param p1, "effectCoroutineContext"    # Lkotlin/coroutines/CoroutineContext;
 
     const-string/jumbo v0, "effectCoroutineContext"
@@ -594,7 +594,7 @@
 .end method
 
 .method public static final synthetic access$awaitWorkAvailable(Landroidx/compose/runtime/Recomposer;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
 
@@ -607,7 +607,7 @@
 .end method
 
 .method public static final synthetic access$deriveStateLocked(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/CancellableContinuation;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -619,7 +619,7 @@
 .end method
 
 .method public static final synthetic access$discardUnusedValues(Landroidx/compose/runtime/Recomposer;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -629,7 +629,7 @@
 .end method
 
 .method public static final synthetic access$getBroadcastFrameClock$p(Landroidx/compose/runtime/Recomposer;)Landroidx/compose/runtime/BroadcastFrameClock;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -639,7 +639,7 @@
 .end method
 
 .method public static final synthetic access$getCloseCause$p(Landroidx/compose/runtime/Recomposer;)Ljava/lang/Throwable;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -649,7 +649,7 @@
 .end method
 
 .method public static final synthetic access$getCompositionInvalidations$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -659,7 +659,7 @@
 .end method
 
 .method public static final synthetic access$getCompositionValuesAwaitingInsert$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -669,7 +669,7 @@
 .end method
 
 .method public static final synthetic access$getCompositionsAwaitingApply$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -679,7 +679,7 @@
 .end method
 
 .method public static final synthetic access$getConcurrentCompositionsOutstanding$p(Landroidx/compose/runtime/Recomposer;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -689,7 +689,7 @@
 .end method
 
 .method public static final synthetic access$getErrorState$p(Landroidx/compose/runtime/Recomposer;)Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -699,7 +699,7 @@
 .end method
 
 .method public static final synthetic access$getHasBroadcastFrameClockAwaiters(Landroidx/compose/runtime/Recomposer;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -711,7 +711,7 @@
 .end method
 
 .method public static final synthetic access$getHasConcurrentFrameWorkLocked(Landroidx/compose/runtime/Recomposer;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -723,7 +723,7 @@
 .end method
 
 .method public static final synthetic access$getHasSchedulingWork(Landroidx/compose/runtime/Recomposer;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -735,7 +735,7 @@
 .end method
 
 .method public static final synthetic access$getKnownCompositions$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -745,7 +745,7 @@
 .end method
 
 .method public static final synthetic access$getRecomposerInfo$p(Landroidx/compose/runtime/Recomposer;)Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -755,7 +755,7 @@
 .end method
 
 .method public static final synthetic access$getRunnerJob$p(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/Job;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -765,7 +765,7 @@
 .end method
 
 .method public static final synthetic access$getShouldKeepRecomposing(Landroidx/compose/runtime/Recomposer;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -777,7 +777,7 @@
 .end method
 
 .method public static final synthetic access$getSnapshotInvalidations$p(Landroidx/compose/runtime/Recomposer;)Landroidx/compose/runtime/collection/IdentityArraySet;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -787,7 +787,7 @@
 .end method
 
 .method public static final synthetic access$getStateLock$p(Landroidx/compose/runtime/Recomposer;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -797,7 +797,7 @@
 .end method
 
 .method public static final synthetic access$getWorkContinuation$p(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/CancellableContinuation;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -807,7 +807,7 @@
 .end method
 
 .method public static final synthetic access$get_hotReloadEnabled$cp()Ljava/util/concurrent/atomic/AtomicReference;
-    .registers 1
+    .locals 1
 
     .line 124
     sget-object v0, Landroidx/compose/runtime/Recomposer;->_hotReloadEnabled:Ljava/util/concurrent/atomic/AtomicReference;
@@ -816,7 +816,7 @@
 .end method
 
 .method public static final synthetic access$get_runningRecomposers$cp()Lkotlinx/coroutines/flow/MutableStateFlow;
-    .registers 1
+    .locals 1
 
     .line 124
     sget-object v0, Landroidx/compose/runtime/Recomposer;->_runningRecomposers:Lkotlinx/coroutines/flow/MutableStateFlow;
@@ -825,7 +825,7 @@
 .end method
 
 .method public static final synthetic access$get_state$p(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/flow/MutableStateFlow;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -835,7 +835,7 @@
 .end method
 
 .method public static final synthetic access$isClosed$p(Landroidx/compose/runtime/Recomposer;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -845,7 +845,7 @@
 .end method
 
 .method public static final synthetic access$performInsertValues(Landroidx/compose/runtime/Recomposer;Ljava/util/List;Landroidx/compose/runtime/collection/IdentityArraySet;)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "references"    # Ljava/util/List;
     .param p2, "modifiedValues"    # Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -859,7 +859,7 @@
 .end method
 
 .method public static final synthetic access$performRecompose(Landroidx/compose/runtime/Recomposer;Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/collection/IdentityArraySet;)Landroidx/compose/runtime/ControlledComposition;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "modifiedValues"    # Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -873,7 +873,7 @@
 .end method
 
 .method public static final synthetic access$recompositionRunner(Landroidx/compose/runtime/Recomposer;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "block"    # Lkotlin/jvm/functions/Function3;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -887,7 +887,7 @@
 .end method
 
 .method public static final synthetic access$recordComposerModifications(Landroidx/compose/runtime/Recomposer;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -899,7 +899,7 @@
 .end method
 
 .method public static final synthetic access$registerRunnerJob(Landroidx/compose/runtime/Recomposer;Lkotlinx/coroutines/Job;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "callingJob"    # Lkotlinx/coroutines/Job;
 
@@ -910,7 +910,7 @@
 .end method
 
 .method public static final synthetic access$resetErrorState(Landroidx/compose/runtime/Recomposer;)Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -922,7 +922,7 @@
 .end method
 
 .method public static final synthetic access$retryFailedCompositions(Landroidx/compose/runtime/Recomposer;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
 
     .line 124
@@ -932,7 +932,7 @@
 .end method
 
 .method public static final synthetic access$runFrameLoop(Landroidx/compose/runtime/Recomposer;Landroidx/compose/runtime/MonotonicFrameClock;Landroidx/compose/runtime/ProduceFrameSignal;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "parentFrameClock"    # Landroidx/compose/runtime/MonotonicFrameClock;
     .param p2, "frameSignal"    # Landroidx/compose/runtime/ProduceFrameSignal;
@@ -947,7 +947,7 @@
 .end method
 
 .method public static final synthetic access$setChangeCount$p(Landroidx/compose/runtime/Recomposer;J)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "<set-?>"    # J
 
@@ -958,7 +958,7 @@
 .end method
 
 .method public static final synthetic access$setCloseCause$p(Landroidx/compose/runtime/Recomposer;Ljava/lang/Throwable;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "<set-?>"    # Ljava/lang/Throwable;
 
@@ -969,7 +969,7 @@
 .end method
 
 .method public static final synthetic access$setCompositionsRemoved$p(Landroidx/compose/runtime/Recomposer;Ljava/util/Set;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "<set-?>"    # Ljava/util/Set;
 
@@ -980,7 +980,7 @@
 .end method
 
 .method public static final synthetic access$setConcurrentCompositionsOutstanding$p(Landroidx/compose/runtime/Recomposer;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "<set-?>"    # I
 
@@ -991,7 +991,7 @@
 .end method
 
 .method public static final synthetic access$setRunnerJob$p(Landroidx/compose/runtime/Recomposer;Lkotlinx/coroutines/Job;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "<set-?>"    # Lkotlinx/coroutines/Job;
 
@@ -1002,7 +1002,7 @@
 .end method
 
 .method public static final synthetic access$setSnapshotInvalidations$p(Landroidx/compose/runtime/Recomposer;Landroidx/compose/runtime/collection/IdentityArraySet;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "<set-?>"    # Landroidx/compose/runtime/collection/IdentityArraySet;
 
@@ -1013,7 +1013,7 @@
 .end method
 
 .method public static final synthetic access$setWorkContinuation$p(Landroidx/compose/runtime/Recomposer;Lkotlinx/coroutines/CancellableContinuation;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Recomposer;
     .param p1, "<set-?>"    # Lkotlinx/coroutines/CancellableContinuation;
 
@@ -1024,14 +1024,14 @@
 .end method
 
 .method private final applyAndCheck(Landroidx/compose/runtime/snapshots/MutableSnapshot;)V
-    .registers 5
+    .locals 3
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     .line 1173
     nop
 
     .line 1174
-    :try_start_1
+    :try_start_0
     invoke-virtual {p1}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->apply()Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
 
     move-result-object v0
@@ -1039,10 +1039,10 @@
     .line 1175
     .local v0, "applyResult":Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
     instance-of v1, v0, Landroidx/compose/runtime/snapshots/SnapshotApplyResult$Failure;
-    :try_end_7
-    .catchall {:try_start_1 .. :try_end_7} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     .line 1183
     .end local v0    # "applyResult":Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
@@ -1056,8 +1056,8 @@
 
     .line 1176
     .restart local v0    # "applyResult":Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
-    :cond_e
-    :try_start_e
+    :cond_0
+    :try_start_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 1177
@@ -1071,13 +1071,13 @@
 
     .end local p1    # "snapshot":Landroidx/compose/runtime/snapshots/MutableSnapshot;
     throw v1
-    :try_end_1b
-    .catchall {:try_start_e .. :try_end_1b} :catchall_1b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1183
     .end local v0    # "applyResult":Landroidx/compose/runtime/snapshots/SnapshotApplyResult;
     .restart local p1    # "snapshot":Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    :catchall_1b
+    :catchall_0
     move-exception v0
 
     invoke-virtual {p1}, Landroidx/compose/runtime/snapshots/MutableSnapshot;->dispose()V
@@ -1086,7 +1086,7 @@
 .end method
 
 .method private final awaitWorkAvailable(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 12
+    .locals 10
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1104,7 +1104,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_5d
+    if-nez v0, :cond_4
 
     .line 901
     const/4 v0, 0x0
@@ -1145,7 +1145,6 @@
     nop
 
     .line 902
-    # getter for: Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
     invoke-static {p0}, Landroidx/compose/runtime/Recomposer;->access$getStateLock$p(Landroidx/compose/runtime/Recomposer;)Ljava/lang/Object;
 
     move-result-object v6
@@ -1161,30 +1160,29 @@
 
     .line 903
     .local v8, "$i$a$-synchronized-Recomposer$awaitWorkAvailable$2$1":I
-    :try_start_22
-    # invokes: Landroidx/compose/runtime/Recomposer;->getHasSchedulingWork()Z
+    :try_start_0
     invoke-static {p0}, Landroidx/compose/runtime/Recomposer;->access$getHasSchedulingWork(Landroidx/compose/runtime/Recomposer;)Z
 
     move-result v9
 
-    if-eqz v9, :cond_2a
+    if-eqz v9, :cond_0
 
     .line 904
     move-object v9, v4
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 906
-    :cond_2a
+    :cond_0
     invoke-static {p0, v4}, Landroidx/compose/runtime/Recomposer;->access$setWorkContinuation$p(Landroidx/compose/runtime/Recomposer;Lkotlinx/coroutines/CancellableContinuation;)V
-    :try_end_2d
-    .catchall {:try_start_22 .. :try_end_2d} :catchall_5a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 907
     const/4 v9, 0x0
 
     .line 903
-    :goto_2e
+    :goto_0
     nop
 
     .line 1545
@@ -1197,7 +1195,7 @@
     nop
 
     .line 909
-    if-eqz v9, :cond_40
+    if-eqz v9, :cond_1
 
     .line 902
     check-cast v9, Lkotlin/coroutines/Continuation;
@@ -1214,7 +1212,7 @@
     invoke-interface {v9, v6}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 910
-    :cond_40
+    :cond_1
     nop
 
     .line 1544
@@ -1235,21 +1233,21 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_4f
+    if-ne v1, v2, :cond_2
 
     invoke-static {p1}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
-    :cond_4f
+    :cond_2
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_56
+    if-ne v1, v2, :cond_3
 
     return-object v1
 
     .line 1547
-    :cond_56
+    :cond_3
     nop
 
     .end local v0    # "$i$f$suspendCancellableCoroutine":I
@@ -1267,7 +1265,7 @@
     .restart local v5    # "$i$a$-suspendCancellableCoroutine-Recomposer$awaitWorkAvailable$2":I
     .restart local v6    # "lock$iv":Ljava/lang/Object;
     .restart local v7    # "$i$f$synchronized":I
-    :catchall_5a
+    :catchall_0
     move-exception v8
 
     monitor-exit v6
@@ -1283,14 +1281,14 @@
     .end local v5    # "$i$a$-suspendCancellableCoroutine-Recomposer$awaitWorkAvailable$2":I
     .end local v6    # "lock$iv":Ljava/lang/Object;
     .end local v7    # "$i$f$synchronized":I
-    :cond_5d
+    :cond_4
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
 
 .method private final composing(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/collection/IdentityArraySet;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 11
+    .locals 7
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "modifiedValues"    # Landroidx/compose/runtime/collection/IdentityArraySet;
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
@@ -1335,7 +1333,7 @@
     .line 1166
     const/4 v2, 0x1
 
-    :try_start_11
+    :try_start_0
     move-object v3, v1
 
     check-cast v3, Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1348,30 +1346,30 @@
     invoke-virtual {v3}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v5
-    :try_end_19
-    .catchall {:try_start_11 .. :try_end_19} :catchall_3d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 1645
     .local v5, "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     nop
 
     .line 1646
-    :try_start_1a
+    :try_start_1
     invoke-interface {p3}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v6
-    :try_end_1e
-    .catchall {:try_start_1a .. :try_end_1e} :catchall_32
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    :try_start_1e
+    :try_start_2
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     .line 1648
     invoke-virtual {v3, v5}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
-    :try_end_27
-    .catchall {:try_start_1e .. :try_end_27} :catchall_3d
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1646
     nop
@@ -1394,10 +1392,10 @@
     .restart local v3    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .restart local v4    # "$i$f$enter":I
     .restart local v5    # "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :catchall_32
+    :catchall_0
     move-exception v6
 
-    :try_start_33
+    :try_start_3
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     invoke-virtual {v3, v5}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
@@ -1410,8 +1408,8 @@
     .end local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local p3    # "block":Lkotlin/jvm/functions/Function0;
     throw v6
-    :try_end_3d
-    .catchall {:try_start_33 .. :try_end_3d} :catchall_3d
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1168
     .end local v3    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1422,7 +1420,7 @@
     .restart local p1    # "composition":Landroidx/compose/runtime/ControlledComposition;
     .restart local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local p3    # "block":Lkotlin/jvm/functions/Function0;
-    :catchall_3d
+    :catchall_1
     move-exception v3
 
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -1435,7 +1433,7 @@
 .end method
 
 .method private final deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1466,7 +1464,7 @@
 
     const/4 v2, 0x0
 
-    if-gtz v0, :cond_3d
+    if-gtz v0, :cond_1
 
     .line 289
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->knownCompositions:Ljava/util/List;
@@ -1501,12 +1499,12 @@
     .line 295
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->workContinuation:Lkotlinx/coroutines/CancellableContinuation;
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_0
 
     invoke-static {v0, v2, v1, v2}, Lkotlinx/coroutines/CancellableContinuation$DefaultImpls;->cancel$default(Lkotlinx/coroutines/CancellableContinuation;Ljava/lang/Throwable;ILjava/lang/Object;)Z
 
     .line 296
-    :cond_38
+    :cond_0
     iput-object v2, p0, Landroidx/compose/runtime/Recomposer;->workContinuation:Lkotlinx/coroutines/CancellableContinuation;
 
     .line 297
@@ -1516,24 +1514,24 @@
     return-object v2
 
     .line 301
-    :cond_3d
+    :cond_1
     nop
 
     .line 302
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->errorState:Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
 
-    if-eqz v0, :cond_45
+    if-eqz v0, :cond_2
 
     .line 303
     sget-object v0, Landroidx/compose/runtime/Recomposer$State;->Inactive:Landroidx/compose/runtime/Recomposer$State;
 
-    goto :goto_9a
+    goto :goto_1
 
     .line 305
-    :cond_45
+    :cond_2
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->runnerJob:Lkotlinx/coroutines/Job;
 
-    if-nez v0, :cond_61
+    if-nez v0, :cond_4
 
     .line 306
     new-instance v0, Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1552,20 +1550,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_3
 
     sget-object v0, Landroidx/compose/runtime/Recomposer$State;->InactivePendingWork:Landroidx/compose/runtime/Recomposer$State;
 
-    goto :goto_9a
+    goto :goto_1
 
     .line 309
-    :cond_5e
+    :cond_3
     sget-object v0, Landroidx/compose/runtime/Recomposer$State;->Inactive:Landroidx/compose/runtime/Recomposer$State;
 
-    goto :goto_9a
+    goto :goto_1
 
     .line 311
-    :cond_61
+    :cond_4
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
 
     check-cast v0, Ljava/util/Collection;
@@ -1576,7 +1574,7 @@
 
     xor-int/2addr v0, v1
 
-    if-nez v0, :cond_98
+    if-nez v0, :cond_6
 
     .line 312
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1585,7 +1583,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_98
+    if-nez v0, :cond_6
 
     .line 313
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->compositionsAwaitingApply:Ljava/util/List;
@@ -1598,7 +1596,7 @@
 
     xor-int/2addr v0, v1
 
-    if-nez v0, :cond_98
+    if-nez v0, :cond_6
 
     .line 314
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->compositionValuesAwaitingInsert:Ljava/util/List;
@@ -1611,35 +1609,35 @@
 
     xor-int/2addr v0, v1
 
-    if-nez v0, :cond_98
+    if-nez v0, :cond_6
 
     .line 315
     iget v0, p0, Landroidx/compose/runtime/Recomposer;->concurrentCompositionsOutstanding:I
 
-    if-gtz v0, :cond_98
+    if-gtz v0, :cond_6
 
     .line 316
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasBroadcastFrameClockAwaitersLocked()Z
 
     move-result v0
 
-    if-eqz v0, :cond_95
+    if-eqz v0, :cond_5
 
-    goto :goto_98
+    goto :goto_0
 
     .line 317
-    :cond_95
+    :cond_5
     sget-object v0, Landroidx/compose/runtime/Recomposer$State;->Idle:Landroidx/compose/runtime/Recomposer$State;
 
-    goto :goto_9a
+    goto :goto_1
 
     .line 316
-    :cond_98
-    :goto_98
+    :cond_6
+    :goto_0
     sget-object v0, Landroidx/compose/runtime/Recomposer$State;->PendingWork:Landroidx/compose/runtime/Recomposer$State;
 
     .line 301
-    :goto_9a
+    :goto_1
     nop
 
     .line 320
@@ -1651,7 +1649,7 @@
     .line 321
     sget-object v1, Landroidx/compose/runtime/Recomposer$State;->PendingWork:Landroidx/compose/runtime/Recomposer$State;
 
-    if-ne v0, v1, :cond_ad
+    if-ne v0, v1, :cond_7
 
     .line 322
     iget-object v1, p0, Landroidx/compose/runtime/Recomposer;->workContinuation:Lkotlinx/coroutines/CancellableContinuation;
@@ -1673,19 +1671,19 @@
     .end local v4    # "$i$a$-also-Recomposer$deriveStateLocked$1":I
     move-object v2, v1
 
-    goto :goto_ae
+    goto :goto_2
 
     .line 325
-    :cond_ad
+    :cond_7
     nop
 
     .line 321
-    :goto_ae
+    :goto_2
     return-object v2
 .end method
 
 .method private final discardUnusedValues()V
-    .registers 21
+    .locals 20
 
     .line 1125
     move-object/from16 v1, p0
@@ -1703,7 +1701,7 @@
 
     .line 1126
     .local v0, "$i$a$-synchronized-Recomposer$discardUnusedValues$unusedValues$1":I
-    :try_start_7
+    :try_start_0
     iget-object v4, v1, Landroidx/compose/runtime/Recomposer;->compositionValuesRemoved:Ljava/util/Map;
 
     invoke-interface {v4}, Ljava/util/Map;->isEmpty()Z
@@ -1712,7 +1710,7 @@
 
     xor-int/lit8 v4, v4, 0x1
 
-    if-eqz v4, :cond_75
+    if-eqz v4, :cond_1
 
     .line 1127
     iget-object v4, v1, Landroidx/compose/runtime/Recomposer;->compositionValuesRemoved:Ljava/util/Map;
@@ -1771,8 +1769,8 @@
 
     move-result v11
 
-    :goto_36
-    if-ge v10, v11, :cond_65
+    :goto_0
+    if-ge v10, v11, :cond_0
 
     .line 1632
     invoke-interface {v8, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1808,8 +1806,8 @@
     .end local v0    # "$i$a$-synchronized-Recomposer$discardUnusedValues$unusedValues$1":I
     .local v18, "$i$a$-synchronized-Recomposer$discardUnusedValues$unusedValues$1":I
     iget-object v0, v1, Landroidx/compose/runtime/Recomposer;->compositionValueStatesAvailable:Ljava/util/Map;
-    :try_end_4d
-    .catchall {:try_start_7 .. :try_end_4d} :catchall_b0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move/from16 v19, v3
 
@@ -1818,7 +1816,7 @@
     .end local v17    # "it":Landroidx/compose/runtime/MovableContentStateReference;
     .local v3, "it":Landroidx/compose/runtime/MovableContentStateReference;
     .local v19, "$i$f$synchronized":I
-    :try_start_51
+    :try_start_1
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -1848,13 +1846,13 @@
 
     move/from16 v3, v19
 
-    goto :goto_36
+    goto :goto_0
 
     .end local v18    # "$i$a$-synchronized-Recomposer$discardUnusedValues$unusedValues$1":I
     .end local v19    # "$i$f$synchronized":I
     .restart local v0    # "$i$a$-synchronized-Recomposer$discardUnusedValues$unusedValues$1":I
     .local v3, "$i$f$synchronized":I
-    :cond_65
+    :cond_0
     move/from16 v18, v0
 
     move/from16 v19, v3
@@ -1891,14 +1889,14 @@
 
     .end local v0    # "unusedValues":Ljava/util/List;
     .end local v4    # "references":Ljava/util/List;
-    goto :goto_7d
+    goto :goto_1
 
     .line 1134
     .end local v18    # "$i$a$-synchronized-Recomposer$discardUnusedValues$unusedValues$1":I
     .end local v19    # "$i$f$synchronized":I
     .local v0, "$i$a$-synchronized-Recomposer$discardUnusedValues$unusedValues$1":I
     .restart local v3    # "$i$f$synchronized":I
-    :cond_75
+    :cond_1
     move/from16 v18, v0
 
     move/from16 v19, v3
@@ -1910,11 +1908,11 @@
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
-    :try_end_7d
-    .catchall {:try_start_51 .. :try_end_7d} :catchall_ae
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1126
-    :goto_7d
+    :goto_1
     nop
 
     .line 1626
@@ -1945,8 +1943,8 @@
 
     move-result v5
 
-    :goto_88
-    if-ge v4, v5, :cond_ac
+    :goto_2
+    if-ge v4, v5, :cond_3
 
     .line 1640
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1978,7 +1976,7 @@
 
     .line 1137
     .local v7, "state":Landroidx/compose/runtime/MovableContentState;
-    if-eqz v7, :cond_a7
+    if-eqz v7, :cond_2
 
     .line 1138
     invoke-virtual {v9}, Landroidx/compose/runtime/MovableContentStateReference;->getComposition$runtime_release()Landroidx/compose/runtime/ControlledComposition;
@@ -1988,7 +1986,7 @@
     invoke-interface {v10, v7}, Landroidx/compose/runtime/ControlledComposition;->disposeUnusedMovableContent(Landroidx/compose/runtime/MovableContentState;)V
 
     .line 1140
-    :cond_a7
+    :cond_2
     nop
 
     .line 1641
@@ -2001,11 +1999,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_88
+    goto :goto_2
 
     .line 1643
     .end local v4    # "index$iv":I
-    :cond_ac
+    :cond_3
     nop
 
     .line 1141
@@ -2017,28 +2015,28 @@
     .end local v0    # "unusedValues":Ljava/util/List;
     .local v2, "lock$iv":Ljava/lang/Object;
     .restart local v19    # "$i$f$synchronized":I
-    :catchall_ae
+    :catchall_0
     move-exception v0
 
-    goto :goto_b3
+    goto :goto_3
 
     .end local v19    # "$i$f$synchronized":I
     .local v3, "$i$f$synchronized":I
-    :catchall_b0
+    :catchall_1
     move-exception v0
 
     move/from16 v19, v3
 
     .end local v3    # "$i$f$synchronized":I
     .restart local v19    # "$i$f$synchronized":I
-    :goto_b3
+    :goto_3
     monitor-exit v2
 
     throw v0
 .end method
 
 .method private final getHasBroadcastFrameClockAwaiters()Z
-    .registers 5
+    .locals 4
 
     .line 282
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -2054,12 +2052,12 @@
 
     .line 282
     .local v2, "$i$a$-synchronized-Recomposer$hasBroadcastFrameClockAwaiters$1":I
-    :try_start_5
+    :try_start_0
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasBroadcastFrameClockAwaitersLocked()Z
 
     move-result v3
-    :try_end_9
-    .catchall {:try_start_5 .. :try_end_9} :catchall_b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1503
     .end local v2    # "$i$a$-synchronized-Recomposer$hasBroadcastFrameClockAwaiters$1":I
@@ -2073,7 +2071,7 @@
     .line 1503
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_b
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -2082,12 +2080,12 @@
 .end method
 
 .method private final getHasBroadcastFrameClockAwaitersLocked()Z
-    .registers 2
+    .locals 1
 
     .line 279
     iget-boolean v0, p0, Landroidx/compose/runtime/Recomposer;->frameClockPaused:Z
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->broadcastFrameClock:Landroidx/compose/runtime/BroadcastFrameClock;
 
@@ -2095,21 +2093,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method private final getHasConcurrentFrameWorkLocked()Z
-    .registers 3
+    .locals 2
 
     .line 1204
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->compositionsAwaitingApply:Ljava/util/List;
@@ -2124,26 +2122,26 @@
 
     xor-int/2addr v0, v1
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasBroadcastFrameClockAwaitersLocked()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method private final getHasFrameWorkLocked()Z
-    .registers 3
+    .locals 2
 
     .line 1201
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
@@ -2158,26 +2156,26 @@
 
     xor-int/2addr v0, v1
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasBroadcastFrameClockAwaitersLocked()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v1, 0x0
 
-    :cond_14
-    :goto_14
+    :cond_1
+    :goto_0
     return v1
 .end method
 
 .method private final getHasSchedulingWork()Z
-    .registers 6
+    .locals 5
 
     .line 890
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -2193,7 +2191,7 @@
 
     .line 891
     .local v2, "$i$a$-synchronized-Recomposer$hasSchedulingWork$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/collection/IdentityArraySet;->isNotEmpty()Z
@@ -2202,7 +2200,7 @@
 
     const/4 v4, 0x1
 
-    if-nez v3, :cond_22
+    if-nez v3, :cond_1
 
     .line 892
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
@@ -2215,30 +2213,30 @@
 
     xor-int/2addr v3, v4
 
-    if-nez v3, :cond_22
+    if-nez v3, :cond_1
 
     .line 893
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasBroadcastFrameClockAwaitersLocked()Z
 
     move-result v3
-    :try_end_1d
-    .catchall {:try_start_5 .. :try_end_1d} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_0
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 v4, 0x0
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     nop
 
     .line 891
-    :goto_23
+    :goto_1
     nop
 
     .line 1535
@@ -2253,7 +2251,7 @@
     .line 1535
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_26
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -2262,7 +2260,7 @@
 .end method
 
 .method private final getShouldKeepRecomposing()Z
-    .registers 9
+    .locals 8
 
     .line 332
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -2278,10 +2276,10 @@
 
     .line 332
     .local v2, "$i$a$-synchronized-Recomposer$shouldKeepRecomposing$1":I
-    :try_start_5
+    :try_start_0
     iget-boolean v3, p0, Landroidx/compose/runtime/Recomposer;->isClosed:Z
-    :try_end_7
-    .catchall {:try_start_5 .. :try_end_7} :catchall_36
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1504
     .end local v2    # "$i$a$-synchronized-Recomposer$shouldKeepRecomposing$1":I
@@ -2293,7 +2291,7 @@
 
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
-    if-nez v3, :cond_34
+    if-nez v3, :cond_3
 
     .line 333
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->effectJob:Lkotlinx/coroutines/CompletableJob;
@@ -2311,14 +2309,14 @@
 
     move-result-object v3
 
-    :cond_17
+    :cond_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
     const/4 v5, 0x0
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_1
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2341,41 +2339,41 @@
     .line 1505
     .end local v6    # "it":Lkotlinx/coroutines/Job;
     .end local v7    # "$i$a$-any-Recomposer$shouldKeepRecomposing$2":I
-    if-eqz v6, :cond_17
+    if-eqz v6, :cond_0
 
     move v0, v2
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 1506
     .end local v4    # "element$iv":Ljava/lang/Object;
-    :cond_2e
+    :cond_1
     move v0, v5
 
     .end local v0    # "$this$any$iv":Lkotlin/sequences/Sequence;
     .end local v1    # "$i$f$any":I
-    :goto_2f
-    if-eqz v0, :cond_32
+    :goto_0
+    if-eqz v0, :cond_2
 
-    goto :goto_34
+    goto :goto_1
 
-    :cond_32
+    :cond_2
     move v2, v5
 
-    goto :goto_35
+    goto :goto_2
 
-    :cond_34
-    :goto_34
+    :cond_3
+    :goto_1
     nop
 
     .line 333
-    :goto_35
+    :goto_2
     return v2
 
     .line 1504
     .local v0, "lock$iv":Ljava/lang/Object;
     .local v1, "$i$f$synchronized":I
-    :catchall_36
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -2384,7 +2382,7 @@
 .end method
 
 .method public static synthetic getState$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Replaced by currentState as a StateFlow"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -2397,7 +2395,7 @@
 .end method
 
 .method private final performInitialMovableContentInserts(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 19
+    .locals 17
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     .line 1056
@@ -2418,7 +2416,7 @@
 
     .line 1057
     .local v0, "$i$a$-synchronized-Recomposer$performInitialMovableContentInserts$1":I
-    :try_start_9
+    :try_start_0
     iget-object v5, v1, Landroidx/compose/runtime/Recomposer;->compositionValuesAwaitingInsert:Ljava/util/List;
 
     .local v5, "$this$fastAny$iv":Ljava/util/List;
@@ -2446,8 +2444,8 @@
 
     move-result v10
 
-    :goto_15
-    if-ge v9, v10, :cond_33
+    :goto_0
+    if-ge v9, v10, :cond_1
 
     .line 1567
     invoke-interface {v7, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2479,20 +2477,20 @@
     invoke-static {v11, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v11
-    :try_end_2a
-    .catchall {:try_start_9 .. :try_end_2a} :catchall_5b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1569
     .end local v15    # "it":Landroidx/compose/runtime/MovableContentStateReference;
     .end local v16    # "$i$a$-fastAny-Recomposer$performInitialMovableContentInserts$1$1":I
-    if-eqz v11, :cond_2e
+    if-eqz v11, :cond_0
 
     const/4 v7, 0x1
 
-    goto :goto_35
+    goto :goto_1
 
     .line 1570
-    :cond_2e
+    :cond_0
     nop
 
     .line 1568
@@ -2504,11 +2502,11 @@
     .end local v12    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 1571
     .end local v9    # "index$iv$iv":I
-    :cond_33
+    :cond_1
     nop
 
     .line 1572
@@ -2519,8 +2517,8 @@
     .line 1057
     .end local v5    # "$this$fastAny$iv":Ljava/util/List;
     .end local v6    # "$i$f$fastAny":I
-    :goto_35
-    if-nez v7, :cond_39
+    :goto_1
+    if-nez v7, :cond_2
 
     .end local v0    # "$i$a$-synchronized-Recomposer$performInitialMovableContentInserts$1":I
     .end local v3    # "lock$iv":Ljava/lang/Object;
@@ -2533,14 +2531,14 @@
     .restart local v0    # "$i$a$-synchronized-Recomposer$performInitialMovableContentInserts$1":I
     .restart local v3    # "lock$iv":Ljava/lang/Object;
     .restart local v4    # "$i$f$synchronized":I
-    :cond_39
+    :cond_2
     nop
 
     .end local v0    # "$i$a$-synchronized-Recomposer$performInitialMovableContentInserts$1":I
-    :try_start_3a
+    :try_start_1
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_3c
-    .catchall {:try_start_3a .. :try_end_3c} :catchall_5b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1562
     monitor-exit v3
@@ -2559,7 +2557,7 @@
     invoke-static {v0, v1, v2}, Landroidx/compose/runtime/Recomposer;->performInitialMovableContentInserts$fillToInsert(Ljava/util/List;Landroidx/compose/runtime/Recomposer;Landroidx/compose/runtime/ControlledComposition;)V
 
     .line 1074
-    :goto_47
+    :goto_2
     move-object v3, v0
 
     check-cast v3, Ljava/util/Collection;
@@ -2572,7 +2570,7 @@
 
     xor-int/2addr v3, v4
 
-    if-eqz v3, :cond_5a
+    if-eqz v3, :cond_3
 
     .line 1075
     const/4 v3, 0x0
@@ -2582,17 +2580,17 @@
     .line 1076
     invoke-static {v0, v1, v2}, Landroidx/compose/runtime/Recomposer;->performInitialMovableContentInserts$fillToInsert(Ljava/util/List;Landroidx/compose/runtime/Recomposer;Landroidx/compose/runtime/ControlledComposition;)V
 
-    goto :goto_47
+    goto :goto_2
 
     .line 1078
-    :cond_5a
+    :cond_3
     return-void
 
     .line 1562
     .end local v0    # "toInsert":Ljava/util/List;
     .restart local v3    # "lock$iv":Ljava/lang/Object;
     .restart local v4    # "$i$f$synchronized":I
-    :catchall_5b
+    :catchall_0
     move-exception v0
 
     monitor-exit v3
@@ -2601,7 +2599,7 @@
 .end method
 
 .method private static final performInitialMovableContentInserts$fillToInsert(Ljava/util/List;Landroidx/compose/runtime/Recomposer;Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 9
+    .locals 6
     .param p0, "toInsert"    # Ljava/util/List;
     .param p1, "this$0"    # Landroidx/compose/runtime/Recomposer;
     .param p2, "$composition"    # Landroidx/compose/runtime/ControlledComposition;
@@ -2634,7 +2632,7 @@
 
     .line 1063
     .local v2, "$i$a$-synchronized-Recomposer$performInitialMovableContentInserts$fillToInsert$1":I
-    :try_start_8
+    :try_start_0
     iget-object v3, p1, Landroidx/compose/runtime/Recomposer;->compositionValuesAwaitingInsert:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2643,13 +2641,13 @@
 
     .line 1064
     .local v3, "iterator":Ljava/util/Iterator;
-    :cond_e
-    :goto_e
+    :cond_0
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_1
 
     .line 1065
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -2668,7 +2666,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_e
+    if-eqz v5, :cond_0
 
     .line 1067
     invoke-interface {p0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -2677,17 +2675,17 @@
     invoke-interface {v3}, Ljava/util/Iterator;->remove()V
 
     .end local v4    # "value":Landroidx/compose/runtime/MovableContentStateReference;
-    goto :goto_e
+    goto :goto_0
 
     .line 1071
-    :cond_2b
+    :cond_1
     nop
 
     .end local v2    # "$i$a$-synchronized-Recomposer$performInitialMovableContentInserts$fillToInsert$1":I
     .end local v3    # "iterator":Ljava/util/Iterator;
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_2e
-    .catchall {:try_start_8 .. :try_end_2e} :catchall_30
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1660
     monitor-exit v0
@@ -2700,7 +2698,7 @@
     .line 1660
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_30
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -2709,7 +2707,7 @@
 .end method
 
 .method private final performInsertValues(Ljava/util/List;Landroidx/compose/runtime/collection/IdentityArraySet;)Ljava/util/List;
-    .registers 32
+    .locals 29
     .param p1, "references"    # Ljava/util/List;
     .param p2, "modifiedValues"    # Landroidx/compose/runtime/collection/IdentityArraySet;
     .annotation system Ldalvik/annotation/Signature;
@@ -2767,8 +2765,8 @@
 
     move-result v7
 
-    :goto_17
-    if-ge v6, v7, :cond_4c
+    :goto_0
+    if-ge v6, v7, :cond_1
 
     .line 1589
     invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2819,7 +2817,7 @@
 
     .line 1594
     .local v14, "value$iv$iv":Ljava/lang/Object;
-    if-nez v14, :cond_3f
+    if-nez v14, :cond_0
 
     .line 1595
     const/4 v15, 0x0
@@ -2842,14 +2840,14 @@
     nop
 
     .end local v15    # "answer$iv$iv":Ljava/lang/Object;
-    goto :goto_40
+    goto :goto_1
 
     .line 1599
-    :cond_3f
+    :cond_0
     move-object v15, v14
 
     .line 1594
-    :goto_40
+    :goto_1
     nop
 
     .line 1592
@@ -2878,11 +2876,11 @@
     .end local v8    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 1602
     .end local v6    # "index$iv$iv":I
-    :cond_4c
+    :cond_1
     nop
 
     .line 1603
@@ -2908,12 +2906,12 @@
 
     move-result-object v0
 
-    :goto_59
+    :goto_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_136
+    if-eqz v3, :cond_3
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2975,7 +2973,7 @@
     nop
 
     .line 1608
-    :try_start_8e
+    :try_start_0
     move-object v8, v7
 
     check-cast v8, Landroidx/compose/runtime/snapshots/Snapshot;
@@ -2988,8 +2986,8 @@
     invoke-virtual {v8}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v11
-    :try_end_96
-    .catchall {:try_start_8e .. :try_end_96} :catchall_12d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_6
 
     .line 1610
     .local v11, "previous$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3000,7 +2998,7 @@
 
     .line 1112
     .local v12, "$i$a$-composing-Recomposer$performInsertValues$1":I
-    :try_start_98
+    :try_start_1
     iget-object v13, v1, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
 
     .local v13, "lock$iv":Ljava/lang/Object;
@@ -3009,8 +3007,8 @@
     .line 1612
     .local v14, "$i$f$synchronized":I
     monitor-enter v13
-    :try_end_9c
-    .catchall {:try_start_98 .. :try_end_9c} :catchall_122
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
     const/4 v15, 0x0
 
@@ -3028,23 +3026,23 @@
     .line 1614
     move-object/from16 v18, v0
 
-    :try_start_a4
+    :try_start_2
     new-instance v0, Ljava/util/ArrayList;
-    :try_end_a6
-    .catchall {:try_start_a4 .. :try_end_a6} :catchall_119
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     move-object/from16 v19, v3
 
     .end local v3    # "refs":Ljava/util/List;
     .local v19, "refs":Ljava/util/List;
-    :try_start_a8
+    :try_start_3
     invoke-interface/range {v16 .. v16}, Ljava/util/List;->size()I
 
     move-result v3
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
-    :try_end_af
-    .catchall {:try_start_a8 .. :try_end_af} :catchall_115
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1615
     .local v0, "target$iv":Ljava/util/ArrayList;
@@ -3065,7 +3063,7 @@
     .end local v6    # "$i$f$composing":I
     .local v21, "index$iv$iv":I
     .local v22, "$i$f$composing":I
-    :try_start_b8
+    :try_start_4
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v6
@@ -3074,8 +3072,8 @@
 
     .end local v21    # "index$iv$iv":I
     .local v9, "index$iv$iv":I
-    :goto_be
-    if-ge v9, v6, :cond_f6
+    :goto_3
+    if-ge v9, v6, :cond_2
 
     .line 1618
     invoke-interface {v3, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3157,11 +3155,11 @@
 
     move/from16 v6, v28
 
-    goto :goto_be
+    goto :goto_3
 
     .end local v25    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .restart local v3    # "$this$fastForEach$iv$iv":Ljava/util/List;
-    :cond_f6
+    :cond_2
     move-object/from16 v25, v3
 
     .line 1622
@@ -3176,8 +3174,8 @@
     move-object v1, v0
 
     check-cast v1, Ljava/util/List;
-    :try_end_fc
-    .catchall {:try_start_b8 .. :try_end_fc} :catchall_113
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 1113
     .end local v0    # "target$iv":Ljava/util/ArrayList;
@@ -3187,7 +3185,7 @@
 
     .line 1612
     .end local v15    # "$i$a$-synchronized-Recomposer$performInsertValues$1$pairs$1":I
-    :try_start_fd
+    :try_start_5
     monitor-exit v13
 
     .line 1112
@@ -3205,17 +3203,17 @@
     .end local v0    # "pairs":Ljava/util/List;
     .end local v12    # "$i$a$-composing-Recomposer$performInsertValues$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_105
-    .catchall {:try_start_fd .. :try_end_105} :catchall_120
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
 
     .line 1611
     nop
 
     .line 1624
-    :try_start_106
+    :try_start_6
     invoke-virtual {v8, v11}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    :try_end_109
-    .catchall {:try_start_106 .. :try_end_109} :catchall_12b
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
     .line 1611
     nop
@@ -3231,7 +3229,7 @@
 
     move-object/from16 v0, v18
 
-    goto/16 :goto_59
+    goto/16 :goto_2
 
     .line 1612
     .restart local v8    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3240,27 +3238,27 @@
     .restart local v12    # "$i$a$-composing-Recomposer$performInsertValues$1":I
     .restart local v13    # "lock$iv":Ljava/lang/Object;
     .restart local v14    # "$i$f$synchronized":I
-    :catchall_113
+    :catchall_0
     move-exception v0
 
-    goto :goto_11e
+    goto :goto_4
 
     .end local v22    # "$i$f$composing":I
     .local v6, "$i$f$composing":I
-    :catchall_115
+    :catchall_1
     move-exception v0
 
     move/from16 v22, v6
 
     .end local v6    # "$i$f$composing":I
     .restart local v22    # "$i$f$composing":I
-    goto :goto_11e
+    goto :goto_4
 
     .end local v19    # "refs":Ljava/util/List;
     .end local v22    # "$i$f$composing":I
     .local v3, "refs":Ljava/util/List;
     .restart local v6    # "$i$f$composing":I
-    :catchall_119
+    :catchall_2
     move-exception v0
 
     move-object/from16 v19, v3
@@ -3271,8 +3269,8 @@
     .end local v6    # "$i$f$composing":I
     .restart local v19    # "refs":Ljava/util/List;
     .restart local v22    # "$i$f$composing":I
-    :goto_11e
-    :try_start_11e
+    :goto_4
+    :try_start_7
     monitor-exit v13
 
     .end local v2    # "tasks":Ljava/util/Map;
@@ -3287,8 +3285,8 @@
     .end local p1    # "references":Ljava/util/List;
     .end local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
     throw v0
-    :try_end_120
-    .catchall {:try_start_11e .. :try_end_120} :catchall_120
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_3
 
     .line 1624
     .end local v12    # "$i$a$-composing-Recomposer$performInsertValues$1":I
@@ -3305,16 +3303,16 @@
     .restart local v22    # "$i$f$composing":I
     .restart local p1    # "references":Ljava/util/List;
     .restart local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :catchall_120
+    :catchall_3
     move-exception v0
 
-    goto :goto_127
+    goto :goto_5
 
     .end local v19    # "refs":Ljava/util/List;
     .end local v22    # "$i$f$composing":I
     .restart local v3    # "refs":Ljava/util/List;
     .restart local v6    # "$i$f$composing":I
-    :catchall_122
+    :catchall_4
     move-exception v0
 
     move-object/from16 v19, v3
@@ -3325,8 +3323,8 @@
     .end local v6    # "$i$f$composing":I
     .restart local v19    # "refs":Ljava/util/List;
     .restart local v22    # "$i$f$composing":I
-    :goto_127
-    :try_start_127
+    :goto_5
+    :try_start_8
     invoke-virtual {v8, v11}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .end local v2    # "tasks":Ljava/util/Map;
@@ -3338,8 +3336,8 @@
     .end local p1    # "references":Ljava/util/List;
     .end local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
     throw v0
-    :try_end_12b
-    .catchall {:try_start_127 .. :try_end_12b} :catchall_12b
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_5
 
     .line 1625
     .end local v8    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3353,16 +3351,16 @@
     .restart local v22    # "$i$f$composing":I
     .restart local p1    # "references":Ljava/util/List;
     .restart local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :catchall_12b
+    :catchall_5
     move-exception v0
 
-    goto :goto_132
+    goto :goto_6
 
     .end local v19    # "refs":Ljava/util/List;
     .end local v22    # "$i$f$composing":I
     .restart local v3    # "refs":Ljava/util/List;
     .restart local v6    # "$i$f$composing":I
-    :catchall_12d
+    :catchall_6
     move-exception v0
 
     move-object/from16 v19, v3
@@ -3373,7 +3371,7 @@
     .end local v6    # "$i$f$composing":I
     .restart local v19    # "refs":Ljava/util/List;
     .restart local v22    # "$i$f$composing":I
-    :goto_132
+    :goto_6
     invoke-direct {v5, v7}, Landroidx/compose/runtime/Recomposer;->applyAndCheck(Landroidx/compose/runtime/snapshots/MutableSnapshot;)V
 
     throw v0
@@ -3384,7 +3382,7 @@
     .end local v7    # "snapshot$iv":Landroidx/compose/runtime/snapshots/MutableSnapshot;
     .end local v19    # "refs":Ljava/util/List;
     .end local v22    # "$i$f$composing":I
-    :cond_136
+    :cond_3
     invoke-interface {v2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -3399,7 +3397,7 @@
 .end method
 
 .method private final performRecompose(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/collection/IdentityArraySet;)Landroidx/compose/runtime/ControlledComposition;
-    .registers 14
+    .locals 11
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "modifiedValues"    # Landroidx/compose/runtime/collection/IdentityArraySet;
     .annotation system Ldalvik/annotation/Signature;
@@ -3420,14 +3418,14 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6f
+    if-nez v0, :cond_5
 
     .line 1085
     invoke-interface {p1}, Landroidx/compose/runtime/ControlledComposition;->isDisposed()Z
 
     move-result v0
 
-    if-nez v0, :cond_6f
+    if-nez v0, :cond_5
 
     .line 1086
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->compositionsRemoved:Ljava/util/Set;
@@ -3436,28 +3434,28 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-ne v0, v2, :cond_1b
+    if-ne v0, v2, :cond_0
 
     move v0, v2
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move v0, v3
 
-    :goto_1c
-    if-eqz v0, :cond_1f
+    :goto_0
+    if-eqz v0, :cond_1
 
-    goto :goto_6f
+    goto :goto_4
 
     .line 1088
-    :cond_1f
+    :cond_1
     nop
 
     .line 1089
@@ -3489,7 +3487,7 @@
     nop
 
     .line 1577
-    :try_start_31
+    :try_start_0
     move-object v6, v5
 
     check-cast v6, Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3502,8 +3500,8 @@
     invoke-virtual {v6}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v8
-    :try_end_39
-    .catchall {:try_start_31 .. :try_end_39} :catchall_6a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 1579
     .local v8, "previous$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3514,31 +3512,31 @@
 
     .line 1090
     .local v9, "$i$a$-composing-Recomposer$performRecompose$1":I
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_2
 
-    :try_start_3d
+    :try_start_1
     invoke-virtual {p2}, Landroidx/compose/runtime/collection/IdentityArraySet;->isNotEmpty()Z
 
     move-result v10
 
-    if-ne v10, v2, :cond_46
+    if-ne v10, v2, :cond_2
 
-    goto :goto_47
+    goto :goto_1
 
     .line 1582
     .end local v9    # "$i$a$-composing-Recomposer$performRecompose$1":I
-    :catchall_44
+    :catchall_0
     move-exception v1
 
-    goto :goto_66
+    goto :goto_3
 
     .line 1090
     .restart local v9    # "$i$a$-composing-Recomposer$performRecompose$1":I
-    :cond_46
+    :cond_2
     move v2, v3
 
-    :goto_47
-    if-eqz v2, :cond_53
+    :goto_1
+    if-eqz v2, :cond_3
 
     .line 1093
     new-instance v2, Landroidx/compose/runtime/Recomposer$performRecompose$1$1;
@@ -3550,22 +3548,22 @@
     invoke-interface {p1, v2}, Landroidx/compose/runtime/ControlledComposition;->prepareCompose(Lkotlin/jvm/functions/Function0;)V
 
     .line 1097
-    :cond_53
+    :cond_3
     invoke-interface {p1}, Landroidx/compose/runtime/ControlledComposition;->recompose()Z
 
     move-result v2
-    :try_end_57
-    .catchall {:try_start_3d .. :try_end_57} :catchall_44
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1580
     .end local v9    # "$i$a$-composing-Recomposer$performRecompose$1":I
     nop
 
     .line 1582
-    :try_start_58
+    :try_start_2
     invoke-virtual {v6, v8}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    :try_end_5b
-    .catchall {:try_start_58 .. :try_end_5b} :catchall_6a
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1580
     nop
@@ -3583,18 +3581,18 @@
     .end local v0    # "this_$iv":Landroidx/compose/runtime/Recomposer;
     .end local v4    # "$i$f$composing":I
     .end local v5    # "snapshot$iv":Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    if-eqz v2, :cond_64
+    if-eqz v2, :cond_4
 
     .line 1099
     move-object v1, p1
 
-    goto :goto_65
+    goto :goto_2
 
-    :cond_64
+    :cond_4
     nop
 
     .line 1088
-    :goto_65
+    :goto_2
     return-object v1
 
     .line 1582
@@ -3604,8 +3602,8 @@
     .restart local v6    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .restart local v7    # "$i$f$enter":I
     .restart local v8    # "previous$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :goto_66
-    :try_start_66
+    :goto_3
+    :try_start_3
     invoke-virtual {v6, v8}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .end local v0    # "this_$iv":Landroidx/compose/runtime/Recomposer;
@@ -3614,8 +3612,8 @@
     .end local p1    # "composition":Landroidx/compose/runtime/ControlledComposition;
     .end local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
     throw v1
-    :try_end_6a
-    .catchall {:try_start_66 .. :try_end_6a} :catchall_6a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1583
     .end local v6    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -3626,7 +3624,7 @@
     .restart local v5    # "snapshot$iv":Landroidx/compose/runtime/snapshots/MutableSnapshot;
     .restart local p1    # "composition":Landroidx/compose/runtime/ControlledComposition;
     .restart local p2    # "modifiedValues":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :catchall_6a
+    :catchall_1
     move-exception v1
 
     invoke-direct {v0, v5}, Landroidx/compose/runtime/Recomposer;->applyAndCheck(Landroidx/compose/runtime/snapshots/MutableSnapshot;)V
@@ -3637,13 +3635,13 @@
     .end local v0    # "this_$iv":Landroidx/compose/runtime/Recomposer;
     .end local v4    # "$i$f$composing":I
     .end local v5    # "snapshot$iv":Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    :cond_6f
-    :goto_6f
+    :cond_5
+    :goto_4
     return-object v1
 .end method
 
 .method private final processCompositionError(Ljava/lang/Exception;Landroidx/compose/runtime/ControlledComposition;Z)V
-    .registers 10
+    .locals 6
     .param p1, "e"    # Ljava/lang/Exception;
     .param p2, "failedInitialComposition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p3, "recoverable"    # Z
@@ -3665,11 +3663,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7d
+    if-eqz v0, :cond_3
 
     instance-of v0, p1, Landroidx/compose/runtime/ComposeRuntimeError;
 
-    if-nez v0, :cond_7d
+    if-nez v0, :cond_3
 
     .line 689
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -3685,7 +3683,7 @@
 
     .line 690
     .local v2, "$i$a$-synchronized-Recomposer$processCompositionError$1":I
-    :try_start_1d
+    :try_start_0
     const-string v3, "Error was captured in composition while live edit was enabled."
 
     move-object v4, p1
@@ -3741,12 +3739,12 @@
     iput-object v3, p0, Landroidx/compose/runtime/Recomposer;->errorState:Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
 
     .line 705
-    if-eqz p2, :cond_75
+    if-eqz p2, :cond_2
 
     .line 706
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->failedCompositions:Ljava/util/List;
 
-    if-nez v3, :cond_61
+    if-nez v3, :cond_0
 
     .line 707
     new-instance v3, Ljava/util/ArrayList;
@@ -3773,7 +3771,7 @@
     nop
 
     .line 706
-    :cond_61
+    :cond_0
     nop
 
     .line 711
@@ -3782,7 +3780,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_6e
+    if-nez v4, :cond_1
 
     .line 712
     move-object v4, v3
@@ -3792,7 +3790,7 @@
     invoke-interface {v4, p2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     .line 714
-    :cond_6e
+    :cond_1
     iget-object v4, p0, Landroidx/compose/runtime/Recomposer;->knownCompositions:Ljava/util/List;
 
     check-cast v4, Ljava/util/Collection;
@@ -3801,10 +3799,10 @@
 
     .line 717
     .end local v3    # "failedCompositions":Ljava/util/List;
-    :cond_75
+    :cond_2
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
-    :try_end_78
-    .catchall {:try_start_1d .. :try_end_78} :catchall_7a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1531
     .end local v2    # "$i$a$-synchronized-Recomposer$processCompositionError$1":I
@@ -3818,7 +3816,7 @@
     .line 1531
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_7a
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -3828,39 +3826,39 @@
     .line 720
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
-    :cond_7d
+    :cond_3
     throw p1
 .end method
 
 .method static synthetic processCompositionError$default(Landroidx/compose/runtime/Recomposer;Ljava/lang/Exception;Landroidx/compose/runtime/ControlledComposition;ZILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 683
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     .line 685
     const/4 p2, 0x0
 
     .line 683
-    :cond_5
+    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_1
 
     .line 686
     const/4 p3, 0x0
 
     .line 683
-    :cond_a
+    :cond_1
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/runtime/Recomposer;->processCompositionError(Ljava/lang/Exception;Landroidx/compose/runtime/ControlledComposition;Z)V
 
     return-void
 .end method
 
 .method private final readObserverOf(Landroidx/compose/runtime/ControlledComposition;)Lkotlin/jvm/functions/Function1;
-    .registers 3
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3885,7 +3883,7 @@
 .end method
 
 .method private final recompositionRunner(Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 4
     .param p1, "block"    # Lkotlin/jvm/functions/Function3;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -3942,11 +3940,11 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_1f
+    if-ne v1, v2, :cond_0
 
     return-object v1
 
-    :cond_1f
+    :cond_0
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 959
@@ -3954,7 +3952,7 @@
 .end method
 
 .method private final recordComposerModifications(Lkotlin/jvm/functions/Function1;)V
-    .registers 12
+    .locals 10
     .param p1, "onEachInvalidComposition"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3971,7 +3969,6 @@
 
     .line 467
     .local v0, "$i$f$recordComposerModifications":I
-    # getter for: Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {p0}, Landroidx/compose/runtime/Recomposer;->access$getSnapshotInvalidations$p(Landroidx/compose/runtime/Recomposer;)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v1
@@ -3982,10 +3979,9 @@
 
     move-result v2
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_1
 
     .line 469
-    # getter for: Landroidx/compose/runtime/Recomposer;->knownCompositions:Ljava/util/List;
     invoke-static {p0}, Landroidx/compose/runtime/Recomposer;->access$getKnownCompositions$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
 
     move-result-object v2
@@ -4005,8 +4001,8 @@
 
     move-result v5
 
-    :goto_16
-    if-ge v4, v5, :cond_2b
+    :goto_0
+    if-ge v4, v5, :cond_0
 
     .line 1520
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4042,11 +4038,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 1523
     .end local v4    # "index$iv":I
-    :cond_2b
+    :cond_0
     nop
 
     .line 472
@@ -4059,8 +4055,7 @@
     invoke-static {p0, v2}, Landroidx/compose/runtime/Recomposer;->access$setSnapshotInvalidations$p(Landroidx/compose/runtime/Recomposer;Landroidx/compose/runtime/collection/IdentityArraySet;)V
 
     .line 474
-    :cond_34
-    # getter for: Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
+    :cond_1
     invoke-static {p0}, Landroidx/compose/runtime/Recomposer;->access$getCompositionInvalidations$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
 
     move-result-object v2
@@ -4080,8 +4075,8 @@
 
     move-result v5
 
-    :goto_3f
-    if-ge v4, v5, :cond_4b
+    :goto_1
+    if-ge v4, v5, :cond_2
 
     .line 1526
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4096,17 +4091,16 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_3f
+    goto :goto_1
 
     .line 1529
     .end local v4    # "index$iv":I
-    :cond_4b
+    :cond_2
     nop
 
     .line 475
     .end local v2    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v3    # "$i$f$fastForEach":I
-    # getter for: Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
     invoke-static {p0}, Landroidx/compose/runtime/Recomposer;->access$getCompositionInvalidations$p(Landroidx/compose/runtime/Recomposer;)Ljava/util/List;
 
     move-result-object v2
@@ -4114,18 +4108,17 @@
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
     .line 476
-    # invokes: Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
     invoke-static {p0}, Landroidx/compose/runtime/Recomposer;->access$deriveStateLocked(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/CancellableContinuation;
 
     move-result-object v2
 
-    if-nez v2, :cond_5a
+    if-nez v2, :cond_3
 
     .line 479
     return-void
 
     .line 476
-    :cond_5a
+    :cond_3
     new-instance v2, Ljava/lang/IllegalStateException;
 
     .line 477
@@ -4141,7 +4134,7 @@
 .end method
 
 .method private final recordComposerModifications()Z
-    .registers 15
+    .locals 14
 
     .line 426
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -4157,20 +4150,20 @@
 
     .line 427
     .local v2, "$i$a$-synchronized-Recomposer$recordComposerModifications$changes$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/collection/IdentityArraySet;->isEmpty()Z
 
     move-result v3
 
-    if-eqz v3, :cond_13
+    if-eqz v3, :cond_0
 
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasFrameWorkLocked()Z
 
     move-result v3
-    :try_end_11
-    .catchall {:try_start_5 .. :try_end_11} :catchall_ab
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
@@ -4183,8 +4176,8 @@
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
     .restart local v2    # "$i$a$-synchronized-Recomposer$recordComposerModifications$changes$1":I
-    :cond_13
-    :try_start_13
+    :cond_0
+    :try_start_1
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-object v4, v3
@@ -4200,8 +4193,8 @@
     invoke-direct {v6}, Landroidx/compose/runtime/collection/IdentityArraySet;-><init>()V
 
     iput-object v6, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
-    :try_end_1e
-    .catchall {:try_start_13 .. :try_end_1e} :catchall_ab
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_4
 
     .line 1507
     .end local v2    # "$i$a$-synchronized-Recomposer$recordComposerModifications$changes$1":I
@@ -4229,7 +4222,7 @@
 
     .line 431
     .local v3, "$i$a$-synchronized-Recomposer$recordComposerModifications$compositions$1":I
-    :try_start_25
+    :try_start_2
     iget-object v4, p0, Landroidx/compose/runtime/Recomposer;->knownCompositions:Ljava/util/List;
 
     check-cast v4, Ljava/util/Collection;
@@ -4237,8 +4230,8 @@
     invoke-static {v4}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v4
-    :try_end_2d
-    .catchall {:try_start_25 .. :try_end_2d} :catchall_a8
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_3
 
     .line 1509
     .end local v3    # "$i$a$-synchronized-Recomposer$recordComposerModifications$compositions$1":I
@@ -4258,7 +4251,7 @@
     nop
 
     .line 435
-    :try_start_31
+    :try_start_3
     move-object v3, p0
 
     check-cast v3, Landroidx/compose/runtime/Recomposer;
@@ -4285,8 +4278,8 @@
 
     move-result v8
 
-    :goto_3d
-    if-ge v7, v8, :cond_64
+    :goto_0
+    if-ge v7, v8, :cond_1
 
     .line 1512
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4327,7 +4320,7 @@
 
     move-result v12
 
-    if-lez v12, :cond_66
+    if-lez v12, :cond_2
 
     .line 442
     nop
@@ -4341,11 +4334,11 @@
     .end local v9    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 1515
     .end local v7    # "index$iv":I
-    :cond_64
+    :cond_1
     nop
 
     .line 443
@@ -4356,7 +4349,7 @@
     .line 435
     .end local v3    # "$this$recordComposerModifications_u24lambda_u249":Landroidx/compose/runtime/Recomposer;
     .end local v4    # "$i$a$-run-Recomposer$recordComposerModifications$1":I
-    :cond_66
+    :cond_2
     nop
 
     .line 444
@@ -4365,8 +4358,8 @@
     invoke-direct {v3}, Landroidx/compose/runtime/collection/IdentityArraySet;-><init>()V
 
     iput-object v3, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
-    :try_end_6e
-    .catchall {:try_start_31 .. :try_end_6e} :catchall_92
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 445
     const/4 v2, 0x1
@@ -4391,19 +4384,19 @@
 
     .line 457
     .local v5, "$i$a$-synchronized-Recomposer$recordComposerModifications$3":I
-    :try_start_76
+    :try_start_4
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
 
     move-result-object v6
 
-    if-nez v6, :cond_82
+    if-nez v6, :cond_3
 
     .line 460
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasFrameWorkLocked()Z
 
     move-result v6
-    :try_end_80
-    .catchall {:try_start_76 .. :try_end_80} :catchall_8f
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 1517
     .end local v5    # "$i$a$-synchronized-Recomposer$recordComposerModifications$3":I
@@ -4418,8 +4411,8 @@
     .restart local v3    # "lock$iv":Ljava/lang/Object;
     .restart local v4    # "$i$f$synchronized":I
     .restart local v5    # "$i$a$-synchronized-Recomposer$recordComposerModifications$3":I
-    :cond_82
-    :try_start_82
+    :cond_3
+    :try_start_5
     new-instance v6, Ljava/lang/IllegalStateException;
 
     .line 458
@@ -4437,8 +4430,8 @@
     .end local v3    # "lock$iv":Ljava/lang/Object;
     .end local v4    # "$i$f$synchronized":I
     throw v6
-    :try_end_8f
-    .catchall {:try_start_82 .. :try_end_8f} :catchall_8f
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 1517
     .end local v5    # "$i$a$-synchronized-Recomposer$recordComposerModifications$3":I
@@ -4447,7 +4440,7 @@
     .restart local v2    # "complete":Z
     .restart local v3    # "lock$iv":Ljava/lang/Object;
     .restart local v4    # "$i$f$synchronized":I
-    :catchall_8f
+    :catchall_0
     move-exception v5
 
     monitor-exit v3
@@ -4457,7 +4450,7 @@
     .line 447
     .end local v3    # "lock$iv":Ljava/lang/Object;
     .end local v4    # "$i$f$synchronized":I
-    :catchall_92
+    :catchall_1
     move-exception v3
 
     .line 451
@@ -4474,7 +4467,7 @@
 
     .line 452
     .local v6, "$i$a$-synchronized-Recomposer$recordComposerModifications$2":I
-    :try_start_98
+    :try_start_6
     iget-object v7, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-object v8, v0
@@ -4488,8 +4481,8 @@
 
     .end local v6    # "$i$a$-synchronized-Recomposer$recordComposerModifications$2":I
     sget-object v6, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_a3
-    .catchall {:try_start_98 .. :try_end_a3} :catchall_a5
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 1516
     monitor-exit v4
@@ -4500,7 +4493,7 @@
 
     .restart local v4    # "lock$iv":Ljava/lang/Object;
     .restart local v5    # "$i$f$synchronized":I
-    :catchall_a5
+    :catchall_2
     move-exception v3
 
     monitor-exit v4
@@ -4512,7 +4505,7 @@
     .end local v5    # "$i$f$synchronized":I
     .local v1, "lock$iv":Ljava/lang/Object;
     .local v2, "$i$f$synchronized":I
-    :catchall_a8
+    :catchall_3
     move-exception v3
 
     monitor-exit v1
@@ -4523,7 +4516,7 @@
     .end local v2    # "$i$f$synchronized":I
     .local v0, "lock$iv":Ljava/lang/Object;
     .local v1, "$i$f$synchronized":I
-    :catchall_ab
+    :catchall_4
     move-exception v2
 
     monitor-exit v0
@@ -4532,7 +4525,7 @@
 .end method
 
 .method private final registerRunnerJob(Lkotlinx/coroutines/Job;)V
-    .registers 7
+    .locals 5
     .param p1, "callingJob"    # Lkotlinx/coroutines/Job;
 
     .line 482
@@ -4549,10 +4542,10 @@
 
     .line 483
     .local v2, "$i$a$-synchronized-Recomposer$registerRunnerJob$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->closeCause:Ljava/lang/Throwable;
 
-    if-nez v3, :cond_40
+    if-nez v3, :cond_2
 
     .line 484
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->_state:Lkotlinx/coroutines/flow/MutableStateFlow;
@@ -4571,20 +4564,20 @@
 
     move-result v3
 
-    if-lez v3, :cond_33
+    if-lez v3, :cond_1
 
     .line 485
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->runnerJob:Lkotlinx/coroutines/Job;
 
-    if-nez v3, :cond_26
+    if-nez v3, :cond_0
 
     .line 486
     iput-object p1, p0, Landroidx/compose/runtime/Recomposer;->runnerJob:Lkotlinx/coroutines/Job;
 
     .line 487
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
-    :try_end_24
-    .catchall {:try_start_5 .. :try_end_24} :catchall_43
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1530
     .end local v2    # "$i$a$-synchronized-Recomposer$registerRunnerJob$1":I
@@ -4599,8 +4592,8 @@
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
     .restart local v2    # "$i$a$-synchronized-Recomposer$registerRunnerJob$1":I
-    :cond_26
-    :try_start_26
+    :cond_0
+    :try_start_1
     new-instance v3, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v4, "Recomposer already running"
@@ -4620,7 +4613,7 @@
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
     .restart local p1    # "callingJob":Lkotlinx/coroutines/Job;
-    :cond_33
+    :cond_1
     new-instance v3, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v4, "Recomposer shut down"
@@ -4641,7 +4634,7 @@
     .restart local v1    # "$i$f$synchronized":I
     .local v3, "it":Ljava/lang/Throwable;
     .restart local p1    # "callingJob":Lkotlinx/coroutines/Job;
-    :cond_40
+    :cond_2
     const/4 v4, 0x0
 
     .line 483
@@ -4652,8 +4645,8 @@
     .end local v1    # "$i$f$synchronized":I
     .end local p1    # "callingJob":Lkotlinx/coroutines/Job;
     throw v3
-    :try_end_43
-    .catchall {:try_start_26 .. :try_end_43} :catchall_43
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1530
     .end local v2    # "$i$a$-synchronized-Recomposer$registerRunnerJob$1":I
@@ -4662,7 +4655,7 @@
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
     .restart local p1    # "callingJob":Lkotlinx/coroutines/Job;
-    :catchall_43
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -4671,7 +4664,7 @@
 .end method
 
 .method private final resetErrorState()Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
-    .registers 6
+    .locals 5
 
     .line 725
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -4687,12 +4680,12 @@
 
     .line 726
     .local v2, "$i$a$-synchronized-Recomposer$resetErrorState$errorState$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->errorState:Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
 
     .line 727
     .local v3, "error":Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_0
 
     .line 728
     const/4 v4, 0x0
@@ -4701,11 +4694,11 @@
 
     .line 729
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
-    :try_end_f
-    .catchall {:try_start_5 .. :try_end_f} :catchall_13
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 731
-    :cond_f
+    :cond_0
     nop
 
     .line 1532
@@ -4725,7 +4718,7 @@
     .line 1532
     .local v0, "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_13
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -4734,7 +4727,7 @@
 .end method
 
 .method private final retryFailedCompositions()V
-    .registers 10
+    .locals 9
 
     .line 737
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -4750,7 +4743,7 @@
 
     .line 738
     .local v2, "$i$a$-synchronized-Recomposer$retryFailedCompositions$compositionsToRetry$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->failedCompositions:Ljava/util/List;
 
     move-object v4, v3
@@ -4764,8 +4757,8 @@
     const/4 v6, 0x0
 
     iput-object v6, p0, Landroidx/compose/runtime/Recomposer;->failedCompositions:Ljava/util/List;
-    :try_end_c
-    .catchall {:try_start_5 .. :try_end_c} :catchall_90
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 1533
     .end local v2    # "$i$a$-synchronized-Recomposer$retryFailedCompositions$compositionsToRetry$1":I
@@ -4776,13 +4769,13 @@
     .line 737
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
-    if-nez v3, :cond_10
+    if-nez v3, :cond_0
 
     .line 739
     return-void
 
     .line 737
-    :cond_10
+    :cond_0
     move-object v0, v3
 
     .line 740
@@ -4790,8 +4783,8 @@
     nop
 
     .line 741
-    :cond_12
-    :try_start_12
+    :cond_1
+    :try_start_1
     move-object v1, v0
 
     check-cast v1, Ljava/util/Collection;
@@ -4802,7 +4795,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 742
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->removeLast(Ljava/util/List;)Ljava/lang/Object;
@@ -4815,7 +4808,7 @@
     .local v1, "composition":Landroidx/compose/runtime/ControlledComposition;
     instance-of v2, v1, Landroidx/compose/runtime/CompositionImpl;
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_1
 
     .line 745
     invoke-interface {v1}, Landroidx/compose/runtime/ControlledComposition;->invalidateAll()V
@@ -4833,14 +4826,14 @@
 
     .line 748
     iget-object v2, p0, Landroidx/compose/runtime/Recomposer;->errorState:Landroidx/compose/runtime/Recomposer$RecomposerErrorState;
-    :try_end_36
-    .catchall {:try_start_12 .. :try_end_36} :catchall_64
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_1
 
     .line 751
     .end local v1    # "composition":Landroidx/compose/runtime/ControlledComposition;
-    :cond_38
+    :cond_2
     move-object v1, v0
 
     check-cast v1, Ljava/util/Collection;
@@ -4851,7 +4844,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_5
 
     .line 754
     iget-object v1, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -4870,10 +4863,10 @@
     nop
 
     .line 756
-    :try_start_49
+    :try_start_2
     iget-object v4, p0, Landroidx/compose/runtime/Recomposer;->failedCompositions:Ljava/util/List;
 
-    if-eqz v4, :cond_57
+    if-eqz v4, :cond_3
 
     .line 1508
     move-object v5, v4
@@ -4891,14 +4884,14 @@
 
     .end local v5    # "it":Ljava/util/List;
     .end local v6    # "$i$a$-also-Recomposer$retryFailedCompositions$1$1":I
-    if-nez v4, :cond_58
+    if-nez v4, :cond_4
 
     .line 757
-    :cond_57
+    :cond_3
     move-object v4, v0
 
     .line 755
-    :cond_58
+    :cond_4
     iput-object v4, p0, Landroidx/compose/runtime/Recomposer;->failedCompositions:Ljava/util/List;
 
     .line 758
@@ -4906,15 +4899,15 @@
 
     .end local v3    # "$i$a$-synchronized-Recomposer$retryFailedCompositions$1":I
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_5d
-    .catchall {:try_start_49 .. :try_end_5d} :catchall_5f
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 1534
     monitor-exit v1
 
-    goto :goto_62
+    goto :goto_0
 
-    :catchall_5f
+    :catchall_0
     move-exception v3
 
     monitor-exit v1
@@ -4924,15 +4917,15 @@
     .line 760
     .end local v1    # "lock$iv":Ljava/lang/Object;
     .end local v2    # "$i$f$synchronized":I
-    :cond_62
-    :goto_62
+    :cond_5
+    :goto_0
     nop
 
     .line 761
     return-void
 
     .line 751
-    :catchall_64
+    :catchall_1
     move-exception v1
 
     move-object v2, v0
@@ -4945,7 +4938,7 @@
 
     xor-int/lit8 v2, v2, 0x1
 
-    if-eqz v2, :cond_8f
+    if-eqz v2, :cond_8
 
     .line 754
     iget-object v2, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -4964,10 +4957,10 @@
     nop
 
     .line 756
-    :try_start_76
+    :try_start_3
     iget-object v5, p0, Landroidx/compose/runtime/Recomposer;->failedCompositions:Ljava/util/List;
 
-    if-eqz v5, :cond_84
+    if-eqz v5, :cond_6
 
     .line 1508
     move-object v6, v5
@@ -4985,14 +4978,14 @@
 
     .end local v6    # "it":Ljava/util/List;
     .end local v7    # "$i$a$-also-Recomposer$retryFailedCompositions$1$1":I
-    if-nez v5, :cond_85
+    if-nez v5, :cond_7
 
     .line 757
-    :cond_84
+    :cond_6
     move-object v5, v0
 
     .line 755
-    :cond_85
+    :cond_7
     iput-object v5, p0, Landroidx/compose/runtime/Recomposer;->failedCompositions:Ljava/util/List;
 
     .line 758
@@ -5000,15 +4993,15 @@
 
     .end local v4    # "$i$a$-synchronized-Recomposer$retryFailedCompositions$1":I
     sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_8a
-    .catchall {:try_start_76 .. :try_end_8a} :catchall_8c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 1534
     monitor-exit v2
 
-    goto :goto_8f
+    goto :goto_1
 
-    :catchall_8c
+    :catchall_2
     move-exception v1
 
     monitor-exit v2
@@ -5017,14 +5010,14 @@
 
     .end local v2    # "lock$iv":Ljava/lang/Object;
     .end local v3    # "$i$f$synchronized":I
-    :cond_8f
-    :goto_8f
+    :cond_8
+    :goto_1
     throw v1
 
     .line 1533
     .local v0, "lock$iv":Ljava/lang/Object;
     .local v1, "$i$f$synchronized":I
-    :catchall_90
+    :catchall_3
     move-exception v2
 
     monitor-exit v0
@@ -5033,7 +5026,7 @@
 .end method
 
 .method private final runFrameLoop(Landroidx/compose/runtime/MonotonicFrameClock;Landroidx/compose/runtime/ProduceFrameSignal;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 12
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5049,7 +5042,7 @@
 
     instance-of v0, p3, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p3
 
@@ -5061,7 +5054,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p3, v0, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;->label:I
 
@@ -5069,14 +5062,14 @@
 
     iput p3, v0, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;
 
     invoke-direct {v0, p0, p3}, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;-><init>(Landroidx/compose/runtime/Recomposer;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     move-object p3, v0
 
     .local p3, "$continuation":Lkotlin/coroutines/Continuation;
@@ -5090,7 +5083,7 @@
     .line 815
     iget v2, p3, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;->label:I
 
-    packed-switch v2, :pswitch_data_b6
+    packed-switch v2, :pswitch_data_0
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local p3    # "$continuation":Lkotlin/coroutines/Continuation;
@@ -5104,7 +5097,7 @@
 
     .restart local v0    # "$result":Ljava/lang/Object;
     .restart local p3    # "$continuation":Lkotlin/coroutines/Continuation;
-    :pswitch_2e
+    :pswitch_0
     iget-object p1, p3, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;->L$4:Ljava/lang/Object;
 
     check-cast p1, Ljava/util/List;
@@ -5144,14 +5137,14 @@
 
     move-object v2, v7
 
-    goto/16 :goto_b5
+    goto/16 :goto_3
 
     .end local v2    # "frameSignal":Landroidx/compose/runtime/ProduceFrameSignal;
     .end local v3    # "parentFrameClock":Landroidx/compose/runtime/MonotonicFrameClock;
     .end local v4    # "this":Landroidx/compose/runtime/Recomposer;
     .end local p1    # "toApply":Ljava/util/List;
     .end local p2    # "toRecompose":Ljava/util/List;
-    :pswitch_4d
+    :pswitch_1
     iget-object p1, p3, Landroidx/compose/runtime/Recomposer$runFrameLoop$1;->L$4:Ljava/lang/Object;
 
     check-cast p1, Ljava/util/List;
@@ -5179,14 +5172,14 @@
     .restart local v4    # "this":Landroidx/compose/runtime/Recomposer;
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_94
+    goto :goto_2
 
     .end local v2    # "frameSignal":Landroidx/compose/runtime/ProduceFrameSignal;
     .end local v3    # "parentFrameClock":Landroidx/compose/runtime/MonotonicFrameClock;
     .end local v4    # "this":Landroidx/compose/runtime/Recomposer;
     .end local p1    # "toApply":Ljava/util/List;
     .end local p2    # "toRecompose":Ljava/util/List;
-    :pswitch_65
+    :pswitch_2
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v2, p0
@@ -5211,7 +5204,7 @@
 
     .line 821
     .local v4, "toApply":Ljava/util/List;
-    :goto_77
+    :goto_1
     nop
 
     .line 822
@@ -5235,13 +5228,13 @@
 
     move-result-object v5
 
-    if-ne v5, v1, :cond_8e
+    if-ne v5, v1, :cond_1
 
     .line 815
     return-object v1
 
     .line 822
-    :cond_8e
+    :cond_1
     move-object v7, v3
 
     move-object v3, p1
@@ -5260,7 +5253,7 @@
     .local v4, "this":Landroidx/compose/runtime/Recomposer;
     .local p1, "toApply":Ljava/util/List;
     .local p2, "toRecompose":Ljava/util/List;
-    :goto_94
+    :goto_2
     new-instance v5, Landroidx/compose/runtime/Recomposer$runFrameLoop$2;
 
     invoke-direct {v5, v4, p2, p1, v2}, Landroidx/compose/runtime/Recomposer$runFrameLoop$2;-><init>(Landroidx/compose/runtime/Recomposer;Ljava/util/List;Ljava/util/List;Landroidx/compose/runtime/ProduceFrameSignal;)V
@@ -5285,13 +5278,13 @@
 
     move-result-object v5
 
-    if-ne v5, v1, :cond_af
+    if-ne v5, v1, :cond_2
 
     .line 815
     return-object v1
 
     .line 829
-    :cond_af
+    :cond_2
     move-object v7, v4
 
     move-object v4, p1
@@ -5309,19 +5302,19 @@
     .local v4, "toApply":Ljava/util/List;
     .local p1, "parentFrameClock":Landroidx/compose/runtime/MonotonicFrameClock;
     .local p2, "frameSignal":Landroidx/compose/runtime/ProduceFrameSignal;
-    :goto_b5
-    goto :goto_77
+    :goto_3
+    goto :goto_1
 
-    :pswitch_data_b6
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_65
-        :pswitch_4d
-        :pswitch_2e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private final writeObserverOf(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/collection/IdentityArraySet;)Lkotlin/jvm/functions/Function1;
-    .registers 4
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "modifiedValues"    # Landroidx/compose/runtime/collection/IdentityArraySet;
     .annotation system Ldalvik/annotation/Signature;
@@ -5351,7 +5344,7 @@
 
 # virtual methods
 .method public final asRecomposerInfo()Landroidx/compose/runtime/RecomposerInfo;
-    .registers 2
+    .locals 1
 
     .line 417
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->recomposerInfo:Landroidx/compose/runtime/Recomposer$RecomposerInfoImpl;
@@ -5362,7 +5355,7 @@
 .end method
 
 .method public final awaitIdle(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -5402,11 +5395,11 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_1d
+    if-ne v0, v1, :cond_0
 
     return-object v0
 
-    :cond_1d
+    :cond_0
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 1216
@@ -5414,7 +5407,7 @@
 .end method
 
 .method public final cancel()V
-    .registers 6
+    .locals 5
 
     .line 977
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -5430,7 +5423,7 @@
 
     .line 978
     .local v2, "$i$a$-synchronized-Recomposer$cancel$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->_state:Lkotlinx/coroutines/flow/MutableStateFlow;
 
     invoke-interface {v3}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
@@ -5447,7 +5440,7 @@
 
     move-result v3
 
-    if-ltz v3, :cond_1e
+    if-ltz v3, :cond_0
 
     .line 979
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->_state:Lkotlinx/coroutines/flow/MutableStateFlow;
@@ -5457,13 +5450,13 @@
     invoke-interface {v3, v4}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
 
     .line 981
-    :cond_1e
+    :cond_0
     nop
 
     .end local v2    # "$i$a$-synchronized-Recomposer$cancel$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_21
-    .catchall {:try_start_5 .. :try_end_21} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1548
     monitor-exit v0
@@ -5487,7 +5480,7 @@
     .line 1548
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_2c
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -5496,7 +5489,7 @@
 .end method
 
 .method public final close()V
-    .registers 5
+    .locals 4
 
     .line 992
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->effectJob:Lkotlinx/coroutines/CompletableJob;
@@ -5505,7 +5498,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 993
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -5523,7 +5516,7 @@
     .local v2, "$i$a$-synchronized-Recomposer$close$1":I
     const/4 v3, 0x1
 
-    :try_start_e
+    :try_start_0
     iput-boolean v3, p0, Landroidx/compose/runtime/Recomposer;->isClosed:Z
 
     .line 995
@@ -5531,15 +5524,15 @@
 
     .end local v2    # "$i$a$-synchronized-Recomposer$close$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_13
-    .catchall {:try_start_e .. :try_end_13} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1549
     monitor-exit v0
 
-    goto :goto_18
+    goto :goto_0
 
-    :catchall_15
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -5549,13 +5542,13 @@
     .line 997
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
-    :cond_18
-    :goto_18
+    :cond_0
+    :goto_0
     return-void
 .end method
 
 .method public composeInitial$runtime_release(Landroidx/compose/runtime/ControlledComposition;Lkotlin/jvm/functions/Function2;)V
-    .registers 13
+    .locals 10
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -5602,7 +5595,7 @@
     .local v3, "$i$f$composing":I
     const/4 v4, 0x1
 
-    :try_start_15
+    :try_start_0
     sget-object v5, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     .line 1551
@@ -5618,15 +5611,15 @@
     invoke-virtual {v5, v6, v7}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->takeMutableSnapshot(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/MutableSnapshot;
 
     move-result-object v5
-    :try_end_23
-    .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_23} :catch_9f
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
     .line 1553
     .local v5, "snapshot$iv":Landroidx/compose/runtime/snapshots/MutableSnapshot;
     nop
 
     .line 1554
-    :try_start_24
+    :try_start_1
     move-object v6, v5
 
     check-cast v6, Landroidx/compose/runtime/snapshots/Snapshot;
@@ -5639,8 +5632,8 @@
     invoke-virtual {v6}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v8
-    :try_end_2c
-    .catchall {:try_start_24 .. :try_end_2c} :catchall_9a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 1556
     .local v8, "previous$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -5651,7 +5644,7 @@
 
     .line 1013
     .local v9, "$i$a$-composing-Recomposer$composeInitial$1":I
-    :try_start_2e
+    :try_start_2
     invoke-interface {p1, p2}, Landroidx/compose/runtime/ControlledComposition;->composeContent(Lkotlin/jvm/functions/Function2;)V
 
     .line 1014
@@ -5659,17 +5652,17 @@
 
     .end local v9    # "$i$a$-composing-Recomposer$composeInitial$1":I
     sget-object v9, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_34
-    .catchall {:try_start_2e .. :try_end_34} :catchall_95
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1557
     nop
 
     .line 1559
-    :try_start_35
+    :try_start_3
     invoke-virtual {v6, v8}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    :try_end_38
-    .catchall {:try_start_35 .. :try_end_38} :catchall_9a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
     .line 1557
     nop
@@ -5681,10 +5674,10 @@
     nop
 
     .line 1560
-    :try_start_3a
+    :try_start_4
     invoke-direct {v2, v5}, Landroidx/compose/runtime/Recomposer;->applyAndCheck(Landroidx/compose/runtime/snapshots/MutableSnapshot;)V
-    :try_end_3d
-    .catch Ljava/lang/Exception; {:try_start_3a .. :try_end_3d} :catch_9f
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
     .line 1554
     nop
@@ -5694,7 +5687,7 @@
     .end local v2    # "this_$iv":Landroidx/compose/runtime/Recomposer;
     .end local v3    # "$i$f$composing":I
     .end local v5    # "snapshot$iv":Landroidx/compose/runtime/snapshots/MutableSnapshot;
-    if-nez v0, :cond_45
+    if-nez v0, :cond_0
 
     .line 1022
     sget-object v1, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
@@ -5702,7 +5695,7 @@
     invoke-virtual {v1}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->notifyObjectsInitialized()V
 
     .line 1025
-    :cond_45
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
 
     .local v1, "lock$iv":Ljava/lang/Object;
@@ -5716,7 +5709,7 @@
 
     .line 1026
     .local v3, "$i$a$-synchronized-Recomposer$composeInitial$2":I
-    :try_start_4a
+    :try_start_5
     iget-object v5, p0, Landroidx/compose/runtime/Recomposer;->_state:Lkotlinx/coroutines/flow/MutableStateFlow;
 
     invoke-interface {v5}, Lkotlinx/coroutines/flow/MutableStateFlow;->getValue()Ljava/lang/Object;
@@ -5733,7 +5726,7 @@
 
     move-result v5
 
-    if-lez v5, :cond_6b
+    if-lez v5, :cond_1
 
     .line 1027
     iget-object v5, p0, Landroidx/compose/runtime/Recomposer;->knownCompositions:Ljava/util/List;
@@ -5742,7 +5735,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_6b
+    if-nez v5, :cond_1
 
     .line 1028
     iget-object v5, p0, Landroidx/compose/runtime/Recomposer;->knownCompositions:Ljava/util/List;
@@ -5752,13 +5745,13 @@
     invoke-interface {v5, p1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     .line 1031
-    :cond_6b
+    :cond_1
     nop
 
     .end local v3    # "$i$a$-synchronized-Recomposer$composeInitial$2":I
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_6e
-    .catchall {:try_start_4a .. :try_end_6e} :catchall_92
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 1561
     monitor-exit v1
@@ -5769,25 +5762,25 @@
     nop
 
     .line 1034
-    :try_start_70
+    :try_start_6
     invoke-direct {p0, p1}, Landroidx/compose/runtime/Recomposer;->performInitialMovableContentInserts(Landroidx/compose/runtime/ControlledComposition;)V
-    :try_end_73
-    .catch Ljava/lang/Exception; {:try_start_70 .. :try_end_73} :catch_8d
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_1
 
     .line 1040
     nop
 
     .line 1041
-    :try_start_74
+    :try_start_7
     invoke-interface {p1}, Landroidx/compose/runtime/ControlledComposition;->applyChanges()V
 
     .line 1042
     invoke-interface {p1}, Landroidx/compose/runtime/ControlledComposition;->applyLateChanges()V
-    :try_end_7a
-    .catch Ljava/lang/Exception; {:try_start_74 .. :try_end_7a} :catch_82
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
 
     .line 1048
-    if-nez v0, :cond_81
+    if-nez v0, :cond_2
 
     .line 1051
     sget-object v1, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
@@ -5795,11 +5788,11 @@
     invoke-virtual {v1}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->notifyObjectsInitialized()V
 
     .line 1053
-    :cond_81
+    :cond_2
     return-void
 
     .line 1043
-    :catch_82
+    :catch_0
     move-exception v1
 
     move-object v3, v1
@@ -5823,7 +5816,7 @@
 
     .line 1035
     .end local v3    # "e":Ljava/lang/Exception;
-    :catch_8d
+    :catch_1
     move-exception v1
 
     .line 1036
@@ -5836,7 +5829,7 @@
     .line 1561
     .local v1, "lock$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_92
+    :catchall_0
     move-exception v3
 
     monitor-exit v1
@@ -5851,10 +5844,10 @@
     .restart local v6    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .restart local v7    # "$i$f$enter":I
     .restart local v8    # "previous$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :catchall_95
+    :catchall_1
     move-exception v9
 
-    :try_start_96
+    :try_start_8
     invoke-virtual {v6, v8}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .end local v0    # "composerWasComposing":Z
@@ -5865,8 +5858,8 @@
     .end local p1    # "composition":Landroidx/compose/runtime/ControlledComposition;
     .end local p2    # "content":Lkotlin/jvm/functions/Function2;
     throw v9
-    :try_end_9a
-    .catchall {:try_start_96 .. :try_end_9a} :catchall_9a
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     .line 1560
     .end local v6    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -5879,18 +5872,18 @@
     .restart local v5    # "snapshot$iv":Landroidx/compose/runtime/snapshots/MutableSnapshot;
     .restart local p1    # "composition":Landroidx/compose/runtime/ControlledComposition;
     .restart local p2    # "content":Lkotlin/jvm/functions/Function2;
-    :catchall_9a
+    :catchall_2
     move-exception v6
 
-    :try_start_9b
+    :try_start_9
     invoke-direct {v2, v5}, Landroidx/compose/runtime/Recomposer;->applyAndCheck(Landroidx/compose/runtime/snapshots/MutableSnapshot;)V
 
     .end local v0    # "composerWasComposing":Z
     .end local p1    # "composition":Landroidx/compose/runtime/ControlledComposition;
     .end local p2    # "content":Lkotlin/jvm/functions/Function2;
     throw v6
-    :try_end_9f
-    .catch Ljava/lang/Exception; {:try_start_9b .. :try_end_9f} :catch_9f
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_2
 
     .line 1015
     .end local v1    # "modifiedValues$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -5900,7 +5893,7 @@
     .restart local v0    # "composerWasComposing":Z
     .restart local p1    # "composition":Landroidx/compose/runtime/ControlledComposition;
     .restart local p2    # "content":Lkotlin/jvm/functions/Function2;
-    :catch_9f
+    :catch_2
     move-exception v1
 
     .line 1016
@@ -5912,7 +5905,7 @@
 .end method
 
 .method public deletedMovableContent$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 7
+    .locals 5
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
     const-string/jumbo v0, "reference"
@@ -5933,7 +5926,7 @@
 
     .line 1302
     .local v2, "$i$a$-synchronized-Recomposer$deletedMovableContent$1":I
-    :try_start_b
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionValuesRemoved:Ljava/util/Map;
 
     invoke-virtual {p1}, Landroidx/compose/runtime/MovableContentStateReference;->getContent$runtime_release()Landroidx/compose/runtime/MovableContent;
@@ -5941,8 +5934,8 @@
     move-result-object v4
 
     invoke-static {v3, v4, p1}, Landroidx/compose/runtime/RecomposerKt;->addMultiValue(Ljava/util/Map;Ljava/lang/Object;Ljava/lang/Object;)Z
-    :try_end_14
-    .catchall {:try_start_b .. :try_end_14} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1656
     .end local v2    # "$i$a$-synchronized-Recomposer$deletedMovableContent$1":I
@@ -5956,7 +5949,7 @@
     .line 1656
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_16
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -5965,7 +5958,7 @@
 .end method
 
 .method public final getChangeCount()J
-    .registers 3
+    .locals 2
 
     .line 134
     iget-wide v0, p0, Landroidx/compose/runtime/Recomposer;->changeCount:J
@@ -5974,7 +5967,7 @@
 .end method
 
 .method public getCollectingParameterInformation$runtime_release()Z
-    .registers 2
+    .locals 1
 
     .line 1258
     const/4 v0, 0x0
@@ -5983,7 +5976,7 @@
 .end method
 
 .method public getCompoundHashKey$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 1254
     const/16 v0, 0x3e8
@@ -5992,7 +5985,7 @@
 .end method
 
 .method public final getCurrentState()Lkotlinx/coroutines/flow/StateFlow;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -6011,7 +6004,7 @@
 .end method
 
 .method public getEffectCoroutineContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 272
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->effectCoroutineContext:Lkotlin/coroutines/CoroutineContext;
@@ -6020,7 +6013,7 @@
 .end method
 
 .method public final getHasPendingWork()Z
-    .registers 6
+    .locals 5
 
     .line 1192
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -6036,7 +6029,7 @@
 
     .line 1193
     .local v2, "$i$a$-synchronized-Recomposer$hasPendingWork$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/collection/IdentityArraySet;->isNotEmpty()Z
@@ -6045,7 +6038,7 @@
 
     const/4 v4, 0x1
 
-    if-nez v3, :cond_31
+    if-nez v3, :cond_1
 
     .line 1194
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
@@ -6058,12 +6051,12 @@
 
     xor-int/2addr v3, v4
 
-    if-nez v3, :cond_31
+    if-nez v3, :cond_1
 
     .line 1195
     iget v3, p0, Landroidx/compose/runtime/Recomposer;->concurrentCompositionsOutstanding:I
 
-    if-gtz v3, :cond_31
+    if-gtz v3, :cond_1
 
     .line 1196
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionsAwaitingApply:Ljava/util/List;
@@ -6076,30 +6069,30 @@
 
     xor-int/2addr v3, v4
 
-    if-nez v3, :cond_31
+    if-nez v3, :cond_1
 
     .line 1197
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->getHasBroadcastFrameClockAwaitersLocked()Z
 
     move-result v3
-    :try_end_2c
-    .catchall {:try_start_5 .. :try_end_2c} :catchall_35
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_0
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_2f
+    :cond_0
     const/4 v4, 0x0
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
-    :goto_31
+    :cond_1
+    :goto_0
     nop
 
     .line 1193
-    :goto_32
+    :goto_1
     nop
 
     .line 1649
@@ -6114,7 +6107,7 @@
     .line 1649
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_35
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6123,7 +6116,7 @@
 .end method
 
 .method public getRecomposeCoroutineContext$runtime_release()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 276
     sget-object v0, Lkotlin/coroutines/EmptyCoroutineContext;->INSTANCE:Lkotlin/coroutines/EmptyCoroutineContext;
@@ -6134,7 +6127,7 @@
 .end method
 
 .method public final getState()Lkotlinx/coroutines/flow/Flow;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -6155,7 +6148,7 @@
 .end method
 
 .method public insertMovableContent$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 6
+    .locals 4
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
     const-string/jumbo v0, "reference"
@@ -6179,7 +6172,7 @@
 
     .line 1295
     .local v2, "$i$a$-synchronized-Recomposer$insertMovableContent$1":I
-    :try_start_c
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionValuesAwaitingInsert:Ljava/util/List;
 
     check-cast v3, Ljava/util/Collection;
@@ -6190,8 +6183,8 @@
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
 
     move-result-object v3
-    :try_end_17
-    .catchall {:try_start_c .. :try_end_17} :catchall_29
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1655
     .end local v2    # "$i$a$-synchronized-Recomposer$insertMovableContent$1":I
@@ -6203,7 +6196,7 @@
     nop
 
     .line 1297
-    if-eqz v3, :cond_28
+    if-eqz v3, :cond_0
 
     .line 1294
     check-cast v3, Lkotlin/coroutines/Continuation;
@@ -6220,13 +6213,13 @@
     invoke-interface {v3, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 1298
-    :cond_28
+    :cond_0
     return-void
 
     .line 1655
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_29
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6235,7 +6228,7 @@
 .end method
 
 .method public invalidate$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 6
+    .locals 4
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -6259,14 +6252,14 @@
 
     .line 1279
     .local v2, "$i$a$-synchronized-Recomposer$invalidate$1":I
-    :try_start_c
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
 
     invoke-interface {v3, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_20
+    if-nez v3, :cond_0
 
     .line 1280
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionInvalidations:Ljava/util/List;
@@ -6279,17 +6272,17 @@
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
 
     move-result-object v3
-    :try_end_1f
-    .catchall {:try_start_c .. :try_end_1f} :catchall_34
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_21
+    goto :goto_0
 
     .line 1282
-    :cond_20
+    :cond_0
     const/4 v3, 0x0
 
     .line 1279
-    :goto_21
+    :goto_0
     nop
 
     .line 1653
@@ -6302,7 +6295,7 @@
     nop
 
     .line 1283
-    if-eqz v3, :cond_33
+    if-eqz v3, :cond_1
 
     .line 1278
     check-cast v3, Lkotlin/coroutines/Continuation;
@@ -6319,13 +6312,13 @@
     invoke-interface {v3, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 1284
-    :cond_33
+    :cond_1
     return-void
 
     .line 1653
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_34
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6334,7 +6327,7 @@
 .end method
 
 .method public invalidateScope$runtime_release(Landroidx/compose/runtime/RecomposeScopeImpl;)V
-    .registers 6
+    .locals 4
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
 
     const-string/jumbo v0, "scope"
@@ -6358,7 +6351,7 @@
 
     .line 1288
     .local v2, "$i$a$-synchronized-Recomposer$invalidateScope$1":I
-    :try_start_c
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->snapshotInvalidations:Landroidx/compose/runtime/collection/IdentityArraySet;
 
     invoke-virtual {v3, p1}, Landroidx/compose/runtime/collection/IdentityArraySet;->add(Ljava/lang/Object;)Z
@@ -6367,8 +6360,8 @@
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
 
     move-result-object v3
-    :try_end_15
-    .catchall {:try_start_c .. :try_end_15} :catchall_27
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1654
     .end local v2    # "$i$a$-synchronized-Recomposer$invalidateScope$1":I
@@ -6380,7 +6373,7 @@
     nop
 
     .line 1290
-    if-eqz v3, :cond_26
+    if-eqz v3, :cond_0
 
     .line 1287
     check-cast v3, Lkotlin/coroutines/Continuation;
@@ -6397,13 +6390,13 @@
     invoke-interface {v3, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 1291
-    :cond_26
+    :cond_0
     return-void
 
     .line 1654
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_27
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6412,7 +6405,7 @@
 .end method
 
 .method public final join(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -6448,11 +6441,11 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_19
+    if-ne v0, v1, :cond_0
 
     return-object v0
 
-    :cond_19
+    :cond_0
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 1004
@@ -6460,7 +6453,7 @@
 .end method
 
 .method public movableContentStateReleased$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;Landroidx/compose/runtime/MovableContentState;)V
-    .registers 7
+    .locals 4
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
     .param p2, "data"    # Landroidx/compose/runtime/MovableContentState;
 
@@ -6486,7 +6479,7 @@
 
     .line 1311
     .local v2, "$i$a$-synchronized-Recomposer$movableContentStateReleased$1":I
-    :try_start_11
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionValueStatesAvailable:Ljava/util/Map;
 
     invoke-interface {v3, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -6496,8 +6489,8 @@
 
     .end local v2    # "$i$a$-synchronized-Recomposer$movableContentStateReleased$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_19
-    .catchall {:try_start_11 .. :try_end_19} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1657
     monitor-exit v0
@@ -6510,7 +6503,7 @@
     .line 1657
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_1b
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6519,7 +6512,7 @@
 .end method
 
 .method public movableContentStateResolve$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;)Landroidx/compose/runtime/MovableContentState;
-    .registers 6
+    .locals 4
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
     const-string/jumbo v0, "reference"
@@ -6540,7 +6533,7 @@
 
     .line 1329
     .local v2, "$i$a$-synchronized-Recomposer$movableContentStateResolve$1":I
-    :try_start_b
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionValueStatesAvailable:Ljava/util/Map;
 
     invoke-interface {v3, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -6548,8 +6541,8 @@
     move-result-object v3
 
     check-cast v3, Landroidx/compose/runtime/MovableContentState;
-    :try_end_13
-    .catchall {:try_start_b .. :try_end_13} :catchall_15
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1659
     .end local v2    # "$i$a$-synchronized-Recomposer$movableContentStateResolve$1":I
@@ -6563,7 +6556,7 @@
     .line 1659
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_15
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6572,7 +6565,7 @@
 .end method
 
 .method public final pauseCompositionFrameClock()V
-    .registers 5
+    .locals 4
 
     .line 1229
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
@@ -6590,7 +6583,7 @@
     .local v2, "$i$a$-synchronized-Recomposer$pauseCompositionFrameClock$1":I
     const/4 v3, 0x1
 
-    :try_start_6
+    :try_start_0
     iput-boolean v3, p0, Landroidx/compose/runtime/Recomposer;->frameClockPaused:Z
 
     .line 1231
@@ -6598,8 +6591,8 @@
 
     .end local v2    # "$i$a$-synchronized-Recomposer$pauseCompositionFrameClock$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_b
-    .catchall {:try_start_6 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1650
     monitor-exit v0
@@ -6612,7 +6605,7 @@
     .line 1650
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_d
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6621,7 +6614,7 @@
 .end method
 
 .method public recordInspectionTable$runtime_release(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .param p1, "table"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -6641,7 +6634,7 @@
 .end method
 
 .method public registerComposition$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 3
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -6653,7 +6646,7 @@
 .end method
 
 .method public reportRemovedComposition$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 8
+    .locals 6
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -6674,10 +6667,10 @@
 
     .line 1317
     .local v2, "$i$a$-synchronized-Recomposer$reportRemovedComposition$1":I
-    :try_start_b
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->compositionsRemoved:Ljava/util/Set;
 
-    if-nez v3, :cond_1c
+    if-nez v3, :cond_0
 
     .line 1318
     new-instance v3, Ljava/util/LinkedHashSet;
@@ -6704,14 +6697,14 @@
     nop
 
     .line 1317
-    :cond_1c
+    :cond_0
     nop
 
     .line 1321
     .local v3, "compositionsRemoved":Ljava/util/Set;
     invoke-interface {v3, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-    :try_end_20
-    .catchall {:try_start_b .. :try_end_20} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1658
     .end local v2    # "$i$a$-synchronized-Recomposer$reportRemovedComposition$1":I
@@ -6726,7 +6719,7 @@
     .line 1658
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_22
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6735,7 +6728,7 @@
 .end method
 
 .method public final resumeCompositionFrameClock()V
-    .registers 5
+    .locals 4
 
     .line 1249
     nop
@@ -6754,10 +6747,10 @@
 
     .line 1245
     .local v2, "$i$a$-synchronized-Recomposer$resumeCompositionFrameClock$1":I
-    :try_start_6
+    :try_start_0
     iget-boolean v3, p0, Landroidx/compose/runtime/Recomposer;->frameClockPaused:Z
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_0
 
     .line 1246
     const/4 v3, 0x0
@@ -6768,17 +6761,17 @@
     invoke-direct {p0}, Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
 
     move-result-object v3
-    :try_end_11
-    .catchall {:try_start_6 .. :try_end_11} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_13
+    goto :goto_0
 
     .line 1248
-    :cond_12
+    :cond_0
     const/4 v3, 0x0
 
     .line 1245
-    :goto_13
+    :goto_0
     nop
 
     .line 1651
@@ -6791,7 +6784,7 @@
     nop
 
     .line 1249
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_1
 
     .line 1244
     check-cast v3, Lkotlin/coroutines/Continuation;
@@ -6808,13 +6801,13 @@
     invoke-interface {v3, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 1250
-    :cond_25
+    :cond_1
     return-void
 
     .line 1651
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_26
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6823,7 +6816,7 @@
 .end method
 
 .method public final runRecomposeAndApplyChanges(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -6853,11 +6846,11 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     return-object v0
 
-    :cond_13
+    :cond_0
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 681
@@ -6865,7 +6858,7 @@
 .end method
 
 .method public final runRecomposeConcurrentlyAndApplyChanges(Lkotlin/coroutines/CoroutineContext;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "recomposeCoroutineContext"    # Lkotlin/coroutines/CoroutineContext;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -6897,11 +6890,11 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     return-object v0
 
-    :cond_13
+    :cond_0
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 813
@@ -6909,7 +6902,7 @@
 .end method
 
 .method public unregisterComposition$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 6
+    .locals 4
     .param p1, "composition"    # Landroidx/compose/runtime/ControlledComposition;
 
     const-string/jumbo v0, "composition"
@@ -6930,7 +6923,7 @@
 
     .line 1271
     .local v2, "$i$a$-synchronized-Recomposer$unregisterComposition$1":I
-    :try_start_b
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/Recomposer;->knownCompositions:Ljava/util/List;
 
     check-cast v3, Ljava/util/Collection;
@@ -6956,8 +6949,8 @@
 
     .end local v2    # "$i$a$-synchronized-Recomposer$unregisterComposition$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_23
-    .catchall {:try_start_b .. :try_end_23} :catchall_25
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1652
     monitor-exit v0
@@ -6970,7 +6963,7 @@
     .line 1652
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_25
+    :catchall_0
     move-exception v2
 
     monitor-exit v0

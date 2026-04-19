@@ -68,7 +68,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 48
     new-instance v0, Landroidx/compose/ui/focus/FocusPropertiesImpl;
@@ -93,7 +93,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/focus/FocusProperties;)V
-    .registers 3
+    .locals 1
     .param p1, "focusProperties"    # Landroidx/compose/ui/focus/FocusProperties;
 
     const-string/jumbo v0, "focusProperties"
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final getDown()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -125,7 +125,7 @@
 .end method
 
 .method public final getEnd()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 135
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -138,7 +138,7 @@
 .end method
 
 .method public final getLeft()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 100
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -151,7 +151,7 @@
 .end method
 
 .method public final getNext()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -164,7 +164,7 @@
 .end method
 
 .method public final getPrevious()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -177,7 +177,7 @@
 .end method
 
 .method public final getRight()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 111
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -190,7 +190,7 @@
 .end method
 
 .method public final getStart()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -203,7 +203,7 @@
 .end method
 
 .method public final getUp()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusOrder;->focusProperties:Landroidx/compose/ui/focus/FocusProperties;
@@ -216,7 +216,7 @@
 .end method
 
 .method public final setDown(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "down"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "down"
@@ -233,7 +233,7 @@
 .end method
 
 .method public final setEnd(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "end"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "end"
@@ -250,7 +250,7 @@
 .end method
 
 .method public final setLeft(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "left"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "left"
@@ -267,7 +267,7 @@
 .end method
 
 .method public final setNext(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "next"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "next"
@@ -284,7 +284,7 @@
 .end method
 
 .method public final setPrevious(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "previous"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "previous"
@@ -301,7 +301,7 @@
 .end method
 
 .method public final setRight(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "right"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "right"
@@ -318,7 +318,7 @@
 .end method
 
 .method public final setStart(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "start"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "start"
@@ -335,7 +335,7 @@
 .end method
 
 .method public final setUp(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
     .param p1, "up"    # Landroidx/compose/ui/focus/FocusRequester;
 
     const-string/jumbo v0, "up"

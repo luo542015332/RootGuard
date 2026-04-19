@@ -42,7 +42,7 @@
 
 # direct methods
 .method constructor <init>(I)V
-    .registers 3
+    .locals 1
 
     iput p1, p0, Landroidx/compose/foundation/pager/PagerKt$HorizontalPager$2$1;->$pageCount:I
 
@@ -56,7 +56,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Integer;
-    .registers 2
+    .locals 1
 
     .line 216
     iget v0, p0, Landroidx/compose/foundation/pager/PagerKt$HorizontalPager$2$1;->$pageCount:I
@@ -69,7 +69,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 216
     invoke-virtual {p0}, Landroidx/compose/foundation/pager/PagerKt$HorizontalPager$2$1;->invoke()Ljava/lang/Integer;

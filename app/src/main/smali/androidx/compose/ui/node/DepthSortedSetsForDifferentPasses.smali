@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Z)V
-    .registers 3
+    .locals 1
     .param p1, "extraAssertions"    # Z
 
     .line 107
@@ -81,7 +81,7 @@
 .end method
 
 .method public static final synthetic access$getLookaheadSet$p(Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;)Landroidx/compose/ui/node/DepthSortedSet;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;
 
     .line 107
@@ -91,7 +91,7 @@
 .end method
 
 .method public static final synthetic access$getSet$p(Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;)Landroidx/compose/ui/node/DepthSortedSet;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;
 
     .line 107
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public final add(Landroidx/compose/ui/node/LayoutNode;Z)V
-    .registers 4
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
 
@@ -112,24 +112,24 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 138
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 139
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/node/DepthSortedSet;->add(Landroidx/compose/ui/node/LayoutNode;)V
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 141
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/node/DepthSortedSet;->contains(Landroidx/compose/ui/node/LayoutNode;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1
 
     .line 144
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->set:Landroidx/compose/ui/node/DepthSortedSet;
@@ -137,13 +137,13 @@
     invoke-virtual {v0, p1}, Landroidx/compose/ui/node/DepthSortedSet;->add(Landroidx/compose/ui/node/LayoutNode;)V
 
     .line 147
-    :cond_1b
-    :goto_1b
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final contains(Landroidx/compose/ui/node/LayoutNode;)Z
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "node"
@@ -157,7 +157,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->set:Landroidx/compose/ui/node/DepthSortedSet;
 
@@ -165,25 +165,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_1a
+    :goto_1
     return v0
 .end method
 
 .method public final contains(Landroidx/compose/ui/node/LayoutNode;Z)Z
-    .registers 5
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
 
@@ -200,16 +200,16 @@
 
     .line 117
     .local v0, "constainsInLookahead":Z
-    if-eqz p2, :cond_10
+    if-eqz p2, :cond_0
 
     .line 118
     move v1, v0
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 120
-    :cond_10
-    if-nez v0, :cond_1d
+    :cond_0
+    if-nez v0, :cond_2
 
     iget-object v1, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->set:Landroidx/compose/ui/node/DepthSortedSet;
 
@@ -217,26 +217,26 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1b
+    :cond_1
     const/4 v1, 0x0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1d
-    :goto_1d
+    :cond_2
+    :goto_0
     const/4 v1, 0x1
 
     .line 117
-    :goto_1e
+    :goto_1
     return v1
 .end method
 
 .method public final isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 182
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->set:Landroidx/compose/ui/node/DepthSortedSet;
@@ -245,7 +245,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
 
@@ -253,21 +253,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method public final isNotEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 184
     invoke-virtual {p0}, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->isEmpty()Z
@@ -280,7 +280,7 @@
 .end method
 
 .method public final pop()Landroidx/compose/ui/node/LayoutNode;
-    .registers 4
+    .locals 3
 
     .line 164
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
@@ -299,7 +299,7 @@
     .end local v1    # "$i$f$isNotEmpty":I
     xor-int/lit8 v0, v2, 0x1
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 165
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
@@ -311,7 +311,7 @@
     return-object v0
 
     .line 167
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->set:Landroidx/compose/ui/node/DepthSortedSet;
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/DepthSortedSet;->pop()Landroidx/compose/ui/node/LayoutNode;
@@ -322,7 +322,7 @@
 .end method
 
 .method public final popEach(Lkotlin/jvm/functions/Function2;)V
-    .registers 6
+    .locals 4
     .param p1, "block"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -345,15 +345,14 @@
 
     .line 175
     .local v0, "$i$f$popEach":I
-    :goto_7
+    :goto_0
     invoke-virtual {p0}, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->isNotEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_1
 
     .line 176
-    # getter for: Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
     invoke-static {p0}, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->access$getLookaheadSet$p(Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;)Landroidx/compose/ui/node/DepthSortedSet;
 
     move-result-object v1
@@ -374,22 +373,20 @@
 
     .line 177
     .local v1, "affectsLookahead":Z
-    if-eqz v1, :cond_1f
+    if-eqz v1, :cond_0
 
-    # getter for: Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
     invoke-static {p0}, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->access$getLookaheadSet$p(Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;)Landroidx/compose/ui/node/DepthSortedSet;
 
     move-result-object v2
 
-    goto :goto_23
+    goto :goto_1
 
-    :cond_1f
-    # getter for: Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->set:Landroidx/compose/ui/node/DepthSortedSet;
+    :cond_0
     invoke-static {p0}, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->access$getSet$p(Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;)Landroidx/compose/ui/node/DepthSortedSet;
 
     move-result-object v2
 
-    :goto_23
+    :goto_1
     invoke-virtual {v2}, Landroidx/compose/ui/node/DepthSortedSet;->pop()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v2
@@ -402,17 +399,17 @@
 
     invoke-interface {p1, v2, v3}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_7
+    goto :goto_0
 
     .line 180
     .end local v1    # "affectsLookahead":Z
     .end local v2    # "node":Landroidx/compose/ui/node/LayoutNode;
-    :cond_2f
+    :cond_1
     return-void
 .end method
 
 .method public final remove(Landroidx/compose/ui/node/LayoutNode;)Z
-    .registers 4
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "node"
@@ -434,27 +431,27 @@
 
     move-result v1
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
-    :goto_19
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
-    :goto_1a
+    :goto_1
     return v1
 .end method
 
 .method public final remove(Landroidx/compose/ui/node/LayoutNode;Z)Z
-    .registers 4
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
 
@@ -463,7 +460,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 150
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_0
 
     .line 151
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->lookaheadSet:Landroidx/compose/ui/node/DepthSortedSet;
@@ -472,10 +469,10 @@
 
     move-result v0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 153
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/node/DepthSortedSetsForDifferentPasses;->set:Landroidx/compose/ui/node/DepthSortedSet;
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/node/DepthSortedSet;->remove(Landroidx/compose/ui/node/LayoutNode;)Z
@@ -483,7 +480,7 @@
     move-result v0
 
     .line 150
-    :goto_15
+    :goto_0
     nop
 
     .line 155

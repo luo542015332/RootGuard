@@ -63,7 +63,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 159
     nop
@@ -122,7 +122,7 @@
 .end method
 
 .method public static final DisposableSaveableStateRegistry(Landroid/view/View;Landroidx/savedstate/SavedStateRegistryOwner;)Landroidx/compose/ui/platform/DisposableSaveableStateRegistry;
-    .registers 6
+    .locals 4
     .param p0, "view"    # Landroid/view/View;
     .param p1, "owner"    # Landroidx/savedstate/SavedStateRegistryOwner;
 
@@ -155,19 +155,19 @@
 
     instance-of v2, v1, Ljava/lang/String;
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     check-cast v1, Ljava/lang/String;
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     const/4 v1, 0x0
 
     .line 53
     .local v1, "idFromTag":Ljava/lang/String;
-    :goto_26
-    if-nez v1, :cond_31
+    :goto_0
+    if-nez v1, :cond_1
 
     invoke-virtual {v0}, Landroid/view/View;->getId()I
 
@@ -177,14 +177,14 @@
 
     move-result-object v2
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_1
     move-object v2, v1
 
     .line 54
     .local v2, "id":Ljava/lang/String;
-    :goto_32
+    :goto_1
     invoke-static {v2, p1}, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt;->DisposableSaveableStateRegistry(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistryOwner;)Landroidx/compose/ui/platform/DisposableSaveableStateRegistry;
 
     move-result-object v3
@@ -193,7 +193,7 @@
 .end method
 
 .method public static final DisposableSaveableStateRegistry(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistryOwner;)Landroidx/compose/ui/platform/DisposableSaveableStateRegistry;
-    .registers 10
+    .locals 8
     .param p0, "id"    # Ljava/lang/String;
     .param p1, "savedStateRegistryOwner"    # Landroidx/savedstate/SavedStateRegistryOwner;
 
@@ -248,20 +248,20 @@
 
     .line 76
     .local v2, "bundle":Landroid/os/Bundle;
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_0
 
     invoke-static {v2}, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt;->toMap(Landroid/os/Bundle;)Ljava/util/Map;
 
     move-result-object v3
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_38
+    :cond_0
     const/4 v3, 0x0
 
     .line 78
     .local v3, "restored":Ljava/util/Map;
-    :goto_39
+    :goto_0
     sget-object v4, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt$DisposableSaveableStateRegistry$saveableStateRegistry$1;->INSTANCE:Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt$DisposableSaveableStateRegistry$saveableStateRegistry$1;
 
     check-cast v4, Lkotlin/jvm/functions/Function1;
@@ -275,7 +275,7 @@
     nop
 
     .line 82
-    :try_start_42
+    :try_start_0
     new-instance v5, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt$DisposableSaveableStateRegistry$registered$1;
 
     invoke-direct {v5, v4}, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt$DisposableSaveableStateRegistry$registered$1;-><init>(Landroidx/compose/runtime/saveable/SaveableStateRegistry;)V
@@ -283,16 +283,16 @@
     check-cast v5, Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;
 
     invoke-virtual {v1, v0, v5}, Landroidx/savedstate/SavedStateRegistry;->registerSavedStateProvider(Ljava/lang/String;Landroidx/savedstate/SavedStateRegistry$SavedStateProvider;)V
-    :try_end_4c
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_42 .. :try_end_4c} :catch_4e
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 85
     const/4 v5, 0x1
 
-    goto :goto_51
+    goto :goto_1
 
     .line 86
-    :catch_4e
+    :catch_0
     move-exception v5
 
     .line 91
@@ -303,7 +303,7 @@
 
     .line 81
     .end local v5    # "ignore":Ljava/lang/IllegalArgumentException;
-    :goto_51
+    :goto_1
     nop
 
     .line 93
@@ -322,7 +322,7 @@
 .end method
 
 .method public static final synthetic access$canBeSavedToBundle(Ljava/lang/Object;)Z
-    .registers 2
+    .locals 1
     .param p0, "value"    # Ljava/lang/Object;
 
     .line 1
@@ -334,7 +334,7 @@
 .end method
 
 .method public static final synthetic access$toBundle(Ljava/util/Map;)Landroid/os/Bundle;
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/Map;
 
     .line 1
@@ -346,7 +346,7 @@
 .end method
 
 .method private static final canBeSavedToBundle(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 7
     .param p0, "value"    # Ljava/lang/Object;
 
     .line 118
@@ -356,7 +356,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_3
 
     .line 119
     move-object v0, p0
@@ -371,7 +371,7 @@
 
     move-result-object v3
 
-    if-eq v0, v3, :cond_2f
+    if-eq v0, v3, :cond_1
 
     .line 120
     move-object v0, p0
@@ -386,7 +386,7 @@
 
     move-result-object v3
 
-    if-eq v0, v3, :cond_2f
+    if-eq v0, v3, :cond_1
 
     .line 121
     move-object v0, p0
@@ -401,17 +401,17 @@
 
     move-result-object v3
 
-    if-ne v0, v3, :cond_2e
+    if-ne v0, v3, :cond_0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 126
-    :cond_2e
+    :cond_0
     return v2
 
     .line 123
-    :cond_2f
-    :goto_2f
+    :cond_1
+    :goto_0
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/snapshots/SnapshotMutableState;
@@ -422,42 +422,42 @@
 
     .line 124
     .local v0, "stateValue":Ljava/lang/Object;
-    if-nez v0, :cond_39
+    if-nez v0, :cond_2
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_39
+    :cond_2
     invoke-static {v0}, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt;->canBeSavedToBundle(Ljava/lang/Object;)Z
 
     move-result v1
 
-    :goto_3d
+    :goto_1
     return v1
 
     .line 132
     .end local v0    # "stateValue":Ljava/lang/Object;
-    :cond_3e
+    :cond_3
     instance-of v0, p0, Lkotlin/Function;
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_4
 
     instance-of v0, p0, Ljava/io/Serializable;
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_4
 
     .line 133
     return v2
 
     .line 135
-    :cond_47
+    :cond_4
     sget-object v0, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry_androidKt;->AcceptableClasses:[Ljava/lang/Class;
 
     array-length v3, v0
 
     move v4, v2
 
-    :goto_4b
-    if-ge v4, v3, :cond_59
+    :goto_2
+    if-ge v4, v3, :cond_6
 
     aget-object v5, v0, v4
 
@@ -467,25 +467,25 @@
 
     move-result v6
 
-    if-eqz v6, :cond_56
+    if-eqz v6, :cond_5
 
     .line 137
     return v1
 
     .line 135
     .end local v5    # "cl":Ljava/lang/Class;
-    :cond_56
+    :cond_5
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_4b
+    goto :goto_2
 
     .line 140
-    :cond_59
+    :cond_6
     return v2
 .end method
 
 .method private static final toBundle(Ljava/util/Map;)Landroid/os/Bundle;
-    .registers 11
+    .locals 10
     .param p0, "$this$toBundle"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -523,12 +523,12 @@
 
     move-result-object v3
 
-    :goto_f
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_41
+    if-eqz v4, :cond_1
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -558,15 +558,15 @@
     .local v7, "list":Ljava/util/List;
     instance-of v8, v7, Ljava/util/ArrayList;
 
-    if-eqz v8, :cond_30
+    if-eqz v8, :cond_0
 
     move-object v8, v7
 
     check-cast v8, Ljava/util/ArrayList;
 
-    goto :goto_38
+    goto :goto_1
 
-    :cond_30
+    :cond_0
     new-instance v8, Ljava/util/ArrayList;
 
     move-object v9, v7
@@ -577,7 +577,7 @@
 
     .line 183
     .local v8, "arrayList":Ljava/util/ArrayList;
-    :goto_38
+    :goto_1
     nop
 
     .line 184
@@ -600,10 +600,10 @@
     nop
 
     .end local v4    # "element$iv":Ljava/util/Map$Entry;
-    goto :goto_f
+    goto :goto_0
 
     .line 194
-    :cond_41
+    :cond_1
     nop
 
     .line 188
@@ -613,7 +613,7 @@
 .end method
 
 .method private static final toMap(Landroid/os/Bundle;)Ljava/util/Map;
-    .registers 10
+    .locals 9
     .param p0, "$this$toMap"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -656,12 +656,12 @@
 
     move-result-object v3
 
-    :goto_18
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_3c
+    if-eqz v4, :cond_0
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -703,10 +703,10 @@
     nop
 
     .end local v4    # "element$iv":Ljava/lang/Object;
-    goto :goto_18
+    goto :goto_0
 
     .line 192
-    :cond_3c
+    :cond_0
     nop
 
     .line 176

@@ -61,7 +61,7 @@
 
 # direct methods
 .method private constructor <init>(J)V
-    .registers 5
+    .locals 2
     .param p1, "color"    # J
 
     .line 27
@@ -88,7 +88,7 @@
 .end method
 
 .method public synthetic constructor <init>(JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/graphics/painter/ColorPainter;-><init>(J)V
 
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method protected applyAlpha(F)Z
-    .registers 3
+    .locals 1
     .param p1, "alpha"    # F
 
     .line 37
@@ -111,7 +111,7 @@
 .end method
 
 .method protected applyColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Z
-    .registers 3
+    .locals 1
     .param p1, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 42
@@ -124,28 +124,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 47
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 48
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/painter/ColorPainter;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 50
-    :cond_a
+    :cond_1
     iget-wide v3, p0, Landroidx/compose/ui/graphics/painter/ColorPainter;->color:J
 
     move-object v1, p1
@@ -158,17 +158,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 52
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public final getColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 27
     iget-wide v0, p0, Landroidx/compose/ui/graphics/painter/ColorPainter;->color:J
@@ -177,7 +177,7 @@
 .end method
 
 .method public getIntrinsicSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 66
     iget-wide v0, p0, Landroidx/compose/ui/graphics/painter/ColorPainter;->intrinsicSize:J
@@ -186,7 +186,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     .line 56
     iget-wide v0, p0, Landroidx/compose/ui/graphics/painter/ColorPainter;->color:J
@@ -199,7 +199,7 @@
 .end method
 
 .method protected onDraw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 16
+    .locals 14
     .param p1, "$this$onDraw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     const-string v0, "<this>"
@@ -234,7 +234,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 60
     new-instance v0, Ljava/lang/StringBuilder;

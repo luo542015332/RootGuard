@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;I)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/ComposerImpl$updateValue$2;->$value:Ljava/lang/Object;
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 5
+    .locals 1
     .param p2, "slots"    # Landroidx/compose/runtime/SlotWriter;
     .param p3, "rememberManager"    # Landroidx/compose/runtime/RememberManager;
     .annotation system Ldalvik/annotation/Signature;
@@ -135,7 +135,7 @@
 
     instance-of v0, p1, Landroidx/compose/runtime/RememberObserver;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 1894
     check-cast p1, Landroidx/compose/runtime/RememberObserver;
@@ -143,7 +143,7 @@
     invoke-interface {p3, p1}, Landroidx/compose/runtime/RememberManager;->remembering(Landroidx/compose/runtime/RememberObserver;)V
 
     .line 1896
-    :cond_1c
+    :cond_0
     iget p1, p0, Landroidx/compose/runtime/ComposerImpl$updateValue$2;->$groupSlotIndex:I
 
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$updateValue$2;->$value:Ljava/lang/Object;
@@ -156,7 +156,7 @@
     .local p1, "previous":Ljava/lang/Object;
     instance-of v0, p1, Landroidx/compose/runtime/RememberObserver;
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     .line 1898
     move-object v0, p1
@@ -165,13 +165,13 @@
 
     invoke-interface {p3, v0}, Landroidx/compose/runtime/RememberManager;->forgetting(Landroidx/compose/runtime/RememberObserver;)V
 
-    goto :goto_39
+    goto :goto_0
 
     .line 1899
-    :cond_2f
+    :cond_1
     instance-of v0, p1, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_2
 
     move-object v0, p1
 
@@ -181,7 +181,7 @@
 
     .line 1901
     .end local p1    # "previous":Ljava/lang/Object;
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_0
     return-void
 .end method

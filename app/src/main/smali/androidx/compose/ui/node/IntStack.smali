@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
     .param p1, "initialCapacity"    # I
 
     .line 411
@@ -82,7 +82,7 @@
 .end method
 
 .method private final compareDiagonal(II)Z
-    .registers 8
+    .locals 5
     .param p1, "a"    # I
     .param p2, "b"    # I
 
@@ -99,9 +99,9 @@
 
     .line 501
     .local v2, "b0":I
-    if-lt v1, v2, :cond_17
+    if-lt v1, v2, :cond_1
 
-    if-ne v1, v2, :cond_15
+    if-ne v1, v2, :cond_0
 
     add-int/lit8 v3, p1, 0x1
 
@@ -111,25 +111,25 @@
 
     aget v4, v0, v4
 
-    if-gt v3, v4, :cond_15
+    if-gt v3, v4, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v3, 0x0
 
-    goto :goto_18
+    goto :goto_1
 
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     const/4 v3, 0x1
 
-    :goto_18
+    :goto_1
     return v3
 .end method
 
 .method private final partition(III)I
-    .registers 7
+    .locals 3
     .param p1, "start"    # I
     .param p2, "end"    # I
     .param p3, "elSize"    # I
@@ -143,15 +143,15 @@
 
     .line 479
     .local v1, "j":I
-    :goto_3
-    if-ge v1, p2, :cond_11
+    :goto_0
+    if-ge v1, p2, :cond_1
 
     .line 480
     invoke-direct {p0, v1, p2}, Landroidx/compose/ui/node/IntStack;->compareDiagonal(II)Z
 
     move-result v2
 
-    if-eqz v2, :cond_f
+    if-eqz v2, :cond_0
 
     .line 481
     add-int/2addr v0, p3
@@ -160,13 +160,13 @@
     invoke-direct {p0, v0, v1}, Landroidx/compose/ui/node/IntStack;->swapDiagonal(II)V
 
     .line 484
-    :cond_f
+    :cond_0
     add-int/2addr v1, p3
 
-    goto :goto_3
+    goto :goto_0
 
     .line 486
-    :cond_11
+    :cond_1
     add-int v2, v0, p3
 
     invoke-direct {p0, v2, p2}, Landroidx/compose/ui/node/IntStack;->swapDiagonal(II)V
@@ -178,13 +178,13 @@
 .end method
 
 .method private final quickSort(III)V
-    .registers 6
+    .locals 2
     .param p1, "start"    # I
     .param p2, "end"    # I
     .param p3, "elSize"    # I
 
     .line 469
-    if-ge p1, p2, :cond_10
+    if-ge p1, p2, :cond_0
 
     .line 470
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/node/IntStack;->partition(III)I
@@ -204,12 +204,12 @@
 
     .line 474
     .end local v0    # "i":I
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method private final swapDiagonal(II)V
-    .registers 6
+    .locals 3
     .param p1, "i"    # I
     .param p2, "j"    # I
 
@@ -218,7 +218,6 @@
 
     .line 492
     .local v0, "stack":[I
-    # invokes: Landroidx/compose/ui/node/MyersDiffKt;->swap([III)V
     invoke-static {v0, p1, p2}, Landroidx/compose/ui/node/MyersDiffKt;->access$swap([III)V
 
     .line 493
@@ -226,7 +225,6 @@
 
     add-int/lit8 v2, p2, 0x1
 
-    # invokes: Landroidx/compose/ui/node/MyersDiffKt;->swap([III)V
     invoke-static {v0, v1, v2}, Landroidx/compose/ui/node/MyersDiffKt;->access$swap([III)V
 
     .line 494
@@ -234,7 +232,6 @@
 
     add-int/lit8 v2, p2, 0x2
 
-    # invokes: Landroidx/compose/ui/node/MyersDiffKt;->swap([III)V
     invoke-static {v0, v1, v2}, Landroidx/compose/ui/node/MyersDiffKt;->access$swap([III)V
 
     .line 495
@@ -244,7 +241,7 @@
 
 # virtual methods
 .method public final get(I)I
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 415
@@ -256,7 +253,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 416
     iget v0, p0, Landroidx/compose/ui/node/IntStack;->lastIndex:I
@@ -265,26 +262,26 @@
 .end method
 
 .method public final isNotEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 454
     iget v0, p0, Landroidx/compose/ui/node/IntStack;->lastIndex:I
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public final pop()I
-    .registers 3
+    .locals 2
 
     .line 452
     iget-object v0, p0, Landroidx/compose/ui/node/IntStack;->stack:[I
@@ -301,7 +298,7 @@
 .end method
 
 .method public final pushDiagonal(III)V
-    .registers 8
+    .locals 4
     .param p1, "x"    # I
     .param p2, "y"    # I
     .param p3, "size"    # I
@@ -317,7 +314,7 @@
 
     array-length v3, v2
 
-    if-lt v1, v3, :cond_18
+    if-lt v1, v3, :cond_0
 
     .line 443
     array-length v1, v2
@@ -335,7 +332,7 @@
     iput-object v1, p0, Landroidx/compose/ui/node/IntStack;->stack:[I
 
     .line 445
-    :cond_18
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/node/IntStack;->stack:[I
 
     .line 446
@@ -368,7 +365,7 @@
 .end method
 
 .method public final pushRange(IIII)V
-    .registers 9
+    .locals 4
     .param p1, "oldStart"    # I
     .param p2, "oldEnd"    # I
     .param p3, "newStart"    # I
@@ -385,7 +382,7 @@
 
     array-length v3, v2
 
-    if-lt v1, v3, :cond_18
+    if-lt v1, v3, :cond_0
 
     .line 426
     array-length v1, v2
@@ -403,7 +400,7 @@
     iput-object v1, p0, Landroidx/compose/ui/node/IntStack;->stack:[I
 
     .line 428
-    :cond_18
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/node/IntStack;->stack:[I
 
     .line 429
@@ -437,7 +434,7 @@
 .end method
 
 .method public final sortDiagonals()V
-    .registers 5
+    .locals 4
 
     .line 461
     iget v0, p0, Landroidx/compose/ui/node/IntStack;->lastIndex:I
@@ -448,22 +445,22 @@
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_9
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move v1, v2
 
-    :goto_a
-    if-eqz v1, :cond_15
+    :goto_0
+    if-eqz v1, :cond_2
 
     .line 463
     const/4 v1, 0x3
 
-    if-le v0, v1, :cond_14
+    if-le v0, v1, :cond_1
 
     .line 464
     add-int/lit8 v3, v0, -0x3
@@ -471,11 +468,11 @@
     invoke-direct {p0, v2, v3, v1}, Landroidx/compose/ui/node/IntStack;->quickSort(III)V
 
     .line 466
-    :cond_14
+    :cond_1
     return-void
 
     .line 462
-    :cond_15
+    :cond_2
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Check failed."

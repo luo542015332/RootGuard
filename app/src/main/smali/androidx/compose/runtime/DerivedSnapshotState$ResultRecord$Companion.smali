@@ -38,7 +38,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -47,7 +47,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord$Companion;-><init>()V
 
@@ -57,10 +57,9 @@
 
 # virtual methods
 .method public final getUnset()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 79
-    # getter for: Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->Unset:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->access$getUnset$cp()Ljava/lang/Object;
 
     move-result-object v0

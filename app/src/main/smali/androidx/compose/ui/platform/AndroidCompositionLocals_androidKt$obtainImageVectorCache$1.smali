@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$obtainImageVectorCache$callbacks$1$1;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$obtainImageVectorCache$1;->$context:Landroid/content/Context;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/runtime/DisposableEffectScope;)Landroidx/compose/runtime/DisposableEffectResult;
-    .registers 7
+    .locals 5
     .param p1, "$this$DisposableEffect"    # Landroidx/compose/runtime/DisposableEffectScope;
 
     const-string v0, "$this$DisposableEffect"
@@ -122,7 +122,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 154

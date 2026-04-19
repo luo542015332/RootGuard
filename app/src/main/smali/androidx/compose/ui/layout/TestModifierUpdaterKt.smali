@@ -33,7 +33,7 @@
 
 # direct methods
 .method public static final TestModifierUpdaterLayout(Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)V
-    .registers 19
+    .locals 16
     .param p0, "onAttached"    # Lkotlin/jvm/functions/Function1;
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -85,53 +85,53 @@
 
     const/4 v6, 0x2
 
-    if-nez v5, :cond_29
+    if-nez v5, :cond_1
 
     invoke-interface {v3, v0}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_27
+    if-eqz v5, :cond_0
 
     const/4 v5, 0x4
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_27
+    :cond_0
     move v5, v6
 
-    :goto_28
+    :goto_0
     or-int/2addr v4, v5
 
-    :cond_29
+    :cond_1
     and-int/lit8 v5, v4, 0xb
 
-    if-ne v5, v6, :cond_3b
+    if-ne v5, v6, :cond_3
 
     invoke-interface {v3}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v5
 
-    if-nez v5, :cond_34
+    if-nez v5, :cond_2
 
-    goto :goto_3b
+    goto :goto_1
 
     .line 63
-    :cond_34
+    :cond_2
     invoke-interface {v3}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
     move/from16 p1, v4
 
-    goto/16 :goto_e4
+    goto/16 :goto_4
 
     .line 49
-    :cond_3b
-    :goto_3b
+    :cond_3
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v5
 
-    if-eqz v5, :cond_48
+    if-eqz v5, :cond_4
 
     const/4 v5, -0x1
 
@@ -140,7 +140,7 @@
     invoke-static {v2, v1, v5, v6}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 50
-    :cond_48
+    :cond_4
     const/4 v2, 0x0
 
     invoke-static {v3, v2}, Landroidx/compose/runtime/ComposablesKt;->getCurrentCompositeKeyHash(Landroidx/compose/runtime/Composer;I)I
@@ -186,12 +186,12 @@
 
     instance-of v9, v9, Landroidx/compose/runtime/Applier;
 
-    if-nez v9, :cond_70
+    if-nez v9, :cond_5
 
     invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
 
     .line 66
-    :cond_70
+    :cond_5
     invoke-interface {v3}, Landroidx/compose/runtime/Composer;->startNode()V
 
     .line 67
@@ -199,7 +199,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_84
+    if-eqz v9, :cond_6
 
     .line 68
     new-instance v9, Landroidx/compose/ui/layout/TestModifierUpdaterKt$TestModifierUpdaterLayout$$inlined$ComposeNode$1;
@@ -210,14 +210,14 @@
 
     invoke-interface {v3, v9}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_87
+    goto :goto_2
 
     .line 70
-    :cond_84
+    :cond_6
     invoke-interface {v3}, Landroidx/compose/runtime/Composer;->useNode()V
 
     .line 72
-    :goto_87
+    :goto_2
     invoke-static {v3}, Landroidx/compose/runtime/Updater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
 
     move-result-object v9
@@ -258,7 +258,7 @@
 
     move-result v15
 
-    if-nez v15, :cond_b5
+    if-nez v15, :cond_7
 
     invoke-interface {v13}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
 
@@ -276,19 +276,19 @@
 
     move-result v4
 
-    if-nez v4, :cond_c5
+    if-nez v4, :cond_8
 
-    goto :goto_b7
+    goto :goto_3
 
     .end local p1    # "$dirty":I
     .restart local v4    # "$dirty":I
-    :cond_b5
+    :cond_7
     move/from16 p1, v4
 
     .line 75
     .end local v4    # "$dirty":I
     .restart local p1    # "$dirty":I
-    :goto_b7
+    :goto_3
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -303,7 +303,7 @@
     invoke-interface {v9, v4, v11}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 78
-    :cond_c5
+    :cond_8
     nop
 
     .line 73
@@ -348,24 +348,24 @@
 
     move-result v4
 
-    if-eqz v4, :cond_e4
+    if-eqz v4, :cond_9
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 63
     .end local v2    # "compositeKeyHash":I
     .end local v5    # "measurePolicy":Landroidx/compose/ui/layout/MeasurePolicy;
-    :cond_e4
-    :goto_e4
+    :cond_9
+    :goto_4
     invoke-interface {v3}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v2
 
-    if-nez v2, :cond_eb
+    if-nez v2, :cond_a
 
-    goto :goto_f5
+    goto :goto_5
 
-    :cond_eb
+    :cond_a
     new-instance v4, Landroidx/compose/ui/layout/TestModifierUpdaterKt$TestModifierUpdaterLayout$2;
 
     invoke-direct {v4, v0, v1}, Landroidx/compose/ui/layout/TestModifierUpdaterKt$TestModifierUpdaterLayout$2;-><init>(Lkotlin/jvm/functions/Function1;I)V
@@ -374,6 +374,6 @@
 
     invoke-interface {v2, v4}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_f5
+    :goto_5
     return-void
 .end method

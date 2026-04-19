@@ -36,7 +36,7 @@
 
 # direct methods
 .method public static final performAutofill(Landroidx/compose/ui/autofill/AndroidAutofill;Landroid/util/SparseArray;)V
-    .registers 8
+    .locals 6
     .param p0, "$this$performAutofill"    # Landroidx/compose/ui/autofill/AndroidAutofill;
     .param p1, "values"    # Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
@@ -65,8 +65,8 @@
 
     move-result v1
 
-    :goto_10
-    if-ge v0, v1, :cond_a9
+    :goto_0
+    if-ge v0, v1, :cond_4
 
     .line 129
     invoke-virtual {p1, v0}, Landroid/util/SparseArray;->keyAt(I)I
@@ -96,7 +96,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3e
+    if-eqz v4, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/autofill/AndroidAutofill;->getAutofillTree()Landroidx/compose/ui/autofill/AutofillTree;
 
@@ -119,10 +119,10 @@
     .line 132
     invoke-virtual {v4, v2, v5}, Landroidx/compose/ui/autofill/AutofillTree;->performAutofill(ILjava/lang/String;)Lkotlin/Unit;
 
-    goto :goto_58
+    goto :goto_1
 
     .line 136
-    :cond_3e
+    :cond_0
     sget-object v4, Landroidx/compose/ui/autofill/AutofillApi26Helper;->INSTANCE:Landroidx/compose/ui/autofill/AutofillApi26Helper;
 
     invoke-virtual {v4, v3}, Landroidx/compose/ui/autofill/AutofillApi26Helper;->isDate(Landroid/view/autofill/AutofillValue;)Z
@@ -131,7 +131,7 @@
 
     const-string v5, "An operation is not implemented: "
 
-    if-nez v4, :cond_8f
+    if-nez v4, :cond_3
 
     .line 138
     sget-object v4, Landroidx/compose/ui/autofill/AutofillApi26Helper;->INSTANCE:Landroidx/compose/ui/autofill/AutofillApi26Helper;
@@ -140,7 +140,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_75
+    if-nez v4, :cond_2
 
     .line 140
     sget-object v4, Landroidx/compose/ui/autofill/AutofillApi26Helper;->INSTANCE:Landroidx/compose/ui/autofill/AutofillApi26Helper;
@@ -149,20 +149,20 @@
 
     move-result v4
 
-    if-nez v4, :cond_5b
+    if-nez v4, :cond_1
 
     .line 128
     .end local v2    # "itemId":I
     .end local v3    # "value":Landroid/view/autofill/AutofillValue;
-    :goto_58
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 141
     .restart local v2    # "itemId":I
     .restart local v3    # "value":Landroid/view/autofill/AutofillValue;
-    :cond_5b
+    :cond_1
     new-instance v1, Lkotlin/NotImplementedError;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -188,7 +188,7 @@
     throw v1
 
     .line 139
-    :cond_75
+    :cond_2
     new-instance v1, Lkotlin/NotImplementedError;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -214,7 +214,7 @@
     throw v1
 
     .line 137
-    :cond_8f
+    :cond_3
     new-instance v1, Lkotlin/NotImplementedError;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -243,12 +243,12 @@
     .end local v0    # "index":I
     .end local v2    # "itemId":I
     .end local v3    # "value":Landroid/view/autofill/AutofillValue;
-    :cond_a9
+    :cond_4
     return-void
 .end method
 
 .method public static final populateViewStructure(Landroidx/compose/ui/autofill/AndroidAutofill;Landroid/view/ViewStructure;)V
-    .registers 23
+    .locals 21
     .param p0, "$this$populateViewStructure"    # Landroidx/compose/ui/autofill/AndroidAutofill;
     .param p1, "root"    # Landroid/view/ViewStructure;
 
@@ -301,12 +301,12 @@
 
     move-result-object v3
 
-    :goto_31
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_122
+    if-eqz v4, :cond_3
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -339,7 +339,7 @@
 
     move-result-object v6
 
-    if-eqz v6, :cond_119
+    if-eqz v6, :cond_2
 
     move-object v15, v6
 
@@ -446,8 +446,8 @@
 
     move-result v13
 
-    :goto_9d
-    if-ge v12, v13, :cond_c0
+    :goto_1
+    if-ge v12, v13, :cond_0
 
     .line 236
     invoke-interface {v10, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -501,11 +501,11 @@
 
     move-object/from16 v0, p1
 
-    goto :goto_9d
+    goto :goto_1
 
     .line 240
     .end local v12    # "index$iv$iv":I
-    :cond_c0
+    :cond_0
     nop
 
     .line 241
@@ -555,7 +555,7 @@
 
     .line 100
     .local v0, "boundingBox":Landroidx/compose/ui/geometry/Rect;
-    if-nez v0, :cond_e5
+    if-nez v0, :cond_1
 
     .line 104
     nop
@@ -570,10 +570,10 @@
 
     invoke-static {v2, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_117
+    goto :goto_2
 
     .line 109
-    :cond_e5
+    :cond_1
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
     move-result v2
@@ -647,7 +647,7 @@
     .end local v18    # "bottom":I
     .end local v19    # "width":I
     .end local v20    # "height":I
-    :goto_117
+    :goto_2
     nop
 
     .line 86
@@ -657,7 +657,7 @@
     nop
 
     .line 118
-    :cond_119
+    :cond_2
     nop
 
     .end local v4    # "autofillNode":Landroidx/compose/ui/autofill/AutofillNode;
@@ -668,9 +668,9 @@
 
     move-object/from16 v0, p1
 
-    goto/16 :goto_31
+    goto/16 :goto_0
 
     .line 120
-    :cond_122
+    :cond_3
     return-void
 .end method

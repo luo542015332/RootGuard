@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/AnchoredDraggableState;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 255
     iget-object v0, p0, Landroidx/compose/material/AnchoredDraggableState$minOffset$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
@@ -89,23 +89,22 @@
 
     move-result-object v0
 
-    # invokes: Landroidx/compose/material/AnchoredDraggableKt;->minOrNull(Ljava/util/Map;)Ljava/lang/Float;
     invoke-static {v0}, Landroidx/compose/material/AnchoredDraggableKt;->access$minOrNull(Ljava/util/Map;)Ljava/lang/Float;
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
     move-result v0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/high16 v0, -0x800000    # Float.NEGATIVE_INFINITY
 
-    :goto_13
+    :goto_0
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
@@ -114,7 +113,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 255
     invoke-virtual {p0}, Landroidx/compose/material/AnchoredDraggableState$minOffset$2;->invoke()Ljava/lang/Float;

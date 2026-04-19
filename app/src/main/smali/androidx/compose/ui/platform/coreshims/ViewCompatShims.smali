@@ -27,7 +27,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,7 +37,7 @@
 .end method
 
 .method public static getAutofillId(Landroid/view/View;)Landroidx/compose/ui/platform/coreshims/AutofillIdCompat;
-    .registers 2
+    .locals 1
     .param p0, "v"    # Landroid/view/View;
 
     .line 149
@@ -56,7 +56,7 @@
 .end method
 
 .method public static getContentCaptureSession(Landroid/view/View;)Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;
-    .registers 4
+    .locals 3
     .param p0, "v"    # Landroid/view/View;
 
     .line 120
@@ -66,7 +66,7 @@
 
     const/4 v2, 0x0
 
-    if-lt v0, v1, :cond_13
+    if-lt v0, v1, :cond_1
 
     .line 121
     invoke-static {p0}, Landroidx/compose/ui/platform/coreshims/ViewCompatShims$Api29Impl;->getContentCaptureSession(Landroid/view/View;)Landroid/view/contentcapture/ContentCaptureSession;
@@ -75,13 +75,13 @@
 
     .line 122
     .local v0, "session":Landroid/view/contentcapture/ContentCaptureSession;
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     .line 123
     return-object v2
 
     .line 125
-    :cond_e
+    :cond_0
     invoke-static {v0, p0}, Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;->toContentCaptureSessionCompat(Landroid/view/contentcapture/ContentCaptureSession;Landroid/view/View;)Landroidx/compose/ui/platform/coreshims/ContentCaptureSessionCompat;
 
     move-result-object v1
@@ -90,12 +90,12 @@
 
     .line 127
     .end local v0    # "session":Landroid/view/contentcapture/ContentCaptureSession;
-    :cond_13
+    :cond_1
     return-object v2
 .end method
 
 .method public static setImportantForContentCapture(Landroid/view/View;I)V
-    .registers 4
+    .locals 2
     .param p0, "v"    # Landroid/view/View;
     .param p1, "mode"    # I
 
@@ -104,12 +104,12 @@
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_9
+    if-lt v0, v1, :cond_0
 
     .line 100
     invoke-static {p0, p1}, Landroidx/compose/ui/platform/coreshims/ViewCompatShims$Api30Impl;->setImportantForContentCapture(Landroid/view/View;I)V
 
     .line 102
-    :cond_9
+    :cond_0
     return-void
 .end method

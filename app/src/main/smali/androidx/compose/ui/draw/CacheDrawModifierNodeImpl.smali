@@ -88,7 +88,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/draw/CacheDrawScope;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .param p1, "cacheDrawScope"    # Landroidx/compose/ui/draw/CacheDrawScope;
     .param p2, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -138,12 +138,12 @@
 .end method
 
 .method private final getOrBuildCachedDrawBlock()Landroidx/compose/ui/draw/DrawResult;
-    .registers 5
+    .locals 4
 
     .line 207
     iget-boolean v0, p0, Landroidx/compose/ui/draw/CacheDrawModifierNodeImpl;->isCacheValid:Z
 
-    if-nez v0, :cond_32
+    if-nez v0, :cond_1
 
     .line 208
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawModifierNodeImpl;->cacheDrawScope:Landroidx/compose/ui/draw/CacheDrawScope;
@@ -175,7 +175,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_0
 
     .line 214
     nop
@@ -190,12 +190,12 @@
 
     iput-boolean v0, p0, Landroidx/compose/ui/draw/CacheDrawModifierNodeImpl;->isCacheValid:Z
 
-    goto :goto_32
+    goto :goto_0
 
     .line 211
     .restart local v0    # "$this$getOrBuildCachedDrawBlock_u24lambda_u241":Landroidx/compose/ui/draw/CacheDrawScope;
     .restart local v1    # "$i$a$-apply-CacheDrawModifierNodeImpl$getOrBuildCachedDrawBlock$1":I
-    :cond_24
+    :cond_0
     const/4 v2, 0x0
 
     .line 212
@@ -219,8 +219,8 @@
     .line 217
     .end local v0    # "$this$getOrBuildCachedDrawBlock_u24lambda_u241":Landroidx/compose/ui/draw/CacheDrawScope;
     .end local v1    # "$i$a$-apply-CacheDrawModifierNodeImpl$getOrBuildCachedDrawBlock$1":I
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     iget-object v0, p0, Landroidx/compose/ui/draw/CacheDrawModifierNodeImpl;->cacheDrawScope:Landroidx/compose/ui/draw/CacheDrawScope;
 
     invoke-virtual {v0}, Landroidx/compose/ui/draw/CacheDrawScope;->getDrawResult$ui_release()Landroidx/compose/ui/draw/DrawResult;
@@ -235,7 +235,7 @@
 
 # virtual methods
 .method public draw(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
 
     const-string v0, "<this>"
@@ -258,7 +258,7 @@
 .end method
 
 .method public final getBlock()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -276,7 +276,7 @@
 .end method
 
 .method public getDensity()Landroidx/compose/ui/unit/Density;
-    .registers 2
+    .locals 1
 
     .line 188
     move-object v0, p0
@@ -291,7 +291,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 189
     move-object v0, p0
@@ -306,7 +306,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 4
+    .locals 3
 
     .line 190
     move-object v0, p0
@@ -341,7 +341,7 @@
 .end method
 
 .method public invalidateDrawCache()V
-    .registers 3
+    .locals 2
 
     .line 201
     const/4 v0, 0x0
@@ -367,7 +367,7 @@
 .end method
 
 .method public onMeasureResultChanged()V
-    .registers 1
+    .locals 0
 
     .line 193
     invoke-virtual {p0}, Landroidx/compose/ui/draw/CacheDrawModifierNodeImpl;->invalidateDrawCache()V
@@ -377,7 +377,7 @@
 .end method
 
 .method public onObservedReadsChanged()V
-    .registers 1
+    .locals 0
 
     .line 197
     invoke-virtual {p0}, Landroidx/compose/ui/draw/CacheDrawModifierNodeImpl;->invalidateDrawCache()V
@@ -387,7 +387,7 @@
 .end method
 
 .method public final setBlock(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

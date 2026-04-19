@@ -93,7 +93,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/graphics/painter/Painter;ZLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 8
+    .locals 1
     .param p1, "painter"    # Landroidx/compose/ui/graphics/painter/Painter;
     .param p2, "sizeToIntrinsics"    # Z
     .param p3, "alignment"    # Landroidx/compose/ui/Alignment;
@@ -139,58 +139,58 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/draw/PainterElement;Landroidx/compose/ui/graphics/painter/Painter;ZLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;ILjava/lang/Object;)Landroidx/compose/ui/draw/PainterElement;
-    .registers 13
+    .locals 4
 
     and-int/lit8 p8, p7, 0x1
 
-    if-eqz p8, :cond_6
+    if-eqz p8, :cond_0
 
     iget-object p1, p0, Landroidx/compose/ui/draw/PainterElement;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
-    :cond_6
+    :cond_0
     and-int/lit8 p8, p7, 0x2
 
-    if-eqz p8, :cond_c
+    if-eqz p8, :cond_1
 
     iget-boolean p2, p0, Landroidx/compose/ui/draw/PainterElement;->sizeToIntrinsics:Z
 
-    :cond_c
+    :cond_1
     move p8, p2
 
     and-int/lit8 p2, p7, 0x4
 
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_2
 
     iget-object p3, p0, Landroidx/compose/ui/draw/PainterElement;->alignment:Landroidx/compose/ui/Alignment;
 
-    :cond_13
+    :cond_2
     move-object v0, p3
 
     and-int/lit8 p2, p7, 0x8
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_3
 
     iget-object p4, p0, Landroidx/compose/ui/draw/PainterElement;->contentScale:Landroidx/compose/ui/layout/ContentScale;
 
-    :cond_1a
+    :cond_3
     move-object v1, p4
 
     and-int/lit8 p2, p7, 0x10
 
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_4
 
     iget p5, p0, Landroidx/compose/ui/draw/PainterElement;->alpha:F
 
-    :cond_21
+    :cond_4
     move v2, p5
 
     and-int/lit8 p2, p7, 0x20
 
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_5
 
     iget-object p6, p0, Landroidx/compose/ui/draw/PainterElement;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
 
-    :cond_28
+    :cond_5
     move-object v3, p6
 
     move-object p2, p0
@@ -217,7 +217,7 @@
 
 # virtual methods
 .method public final component1()Landroidx/compose/ui/graphics/painter/Painter;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
@@ -225,7 +225,7 @@
 .end method
 
 .method public final component2()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/draw/PainterElement;->sizeToIntrinsics:Z
 
@@ -233,7 +233,7 @@
 .end method
 
 .method public final component3()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->alignment:Landroidx/compose/ui/Alignment;
 
@@ -241,7 +241,7 @@
 .end method
 
 .method public final component4()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->contentScale:Landroidx/compose/ui/layout/ContentScale;
 
@@ -249,7 +249,7 @@
 .end method
 
 .method public final component5()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/draw/PainterElement;->alpha:F
 
@@ -257,7 +257,7 @@
 .end method
 
 .method public final component6()Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
 
@@ -265,7 +265,7 @@
 .end method
 
 .method public final copy(Landroidx/compose/ui/graphics/painter/Painter;ZLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;)Landroidx/compose/ui/draw/PainterElement;
-    .registers 15
+    .locals 8
 
     const-string/jumbo v0, "painter"
 
@@ -301,7 +301,7 @@
 .end method
 
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 88
     invoke-virtual {p0}, Landroidx/compose/ui/draw/PainterElement;->create()Landroidx/compose/ui/draw/PainterNode;
@@ -314,7 +314,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/draw/PainterNode;
-    .registers 9
+    .locals 8
 
     .line 97
     new-instance v7, Landroidx/compose/ui/draw/PainterNode;
@@ -346,24 +346,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/draw/PainterElement;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/draw/PainterElement;
@@ -376,20 +376,20 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget-boolean v3, p0, Landroidx/compose/ui/draw/PainterElement;->sizeToIntrinsics:Z
 
     iget-boolean v4, v1, Landroidx/compose/ui/draw/PainterElement;->sizeToIntrinsics:Z
 
-    if-eq v3, v4, :cond_1f
+    if-eq v3, v4, :cond_3
 
     return v2
 
-    :cond_1f
+    :cond_3
     iget-object v3, p0, Landroidx/compose/ui/draw/PainterElement;->alignment:Landroidx/compose/ui/Alignment;
 
     iget-object v4, v1, Landroidx/compose/ui/draw/PainterElement;->alignment:Landroidx/compose/ui/Alignment;
@@ -398,11 +398,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_4
 
     return v2
 
-    :cond_2a
+    :cond_4
     iget-object v3, p0, Landroidx/compose/ui/draw/PainterElement;->contentScale:Landroidx/compose/ui/layout/ContentScale;
 
     iget-object v4, v1, Landroidx/compose/ui/draw/PainterElement;->contentScale:Landroidx/compose/ui/layout/ContentScale;
@@ -411,11 +411,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_35
+    if-nez v3, :cond_5
 
     return v2
 
-    :cond_35
+    :cond_5
     iget v3, p0, Landroidx/compose/ui/draw/PainterElement;->alpha:F
 
     iget v4, v1, Landroidx/compose/ui/draw/PainterElement;->alpha:F
@@ -424,11 +424,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_40
+    if-eqz v3, :cond_6
 
     return v2
 
-    :cond_40
+    :cond_6
     iget-object v3, p0, Landroidx/compose/ui/draw/PainterElement;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
 
     iget-object v1, v1, Landroidx/compose/ui/draw/PainterElement;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
@@ -437,16 +437,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_4b
+    if-nez v1, :cond_7
 
     return v2
 
-    :cond_4b
+    :cond_7
     return v0
 .end method
 
 .method public final getAlignment()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->alignment:Landroidx/compose/ui/Alignment;
@@ -455,7 +455,7 @@
 .end method
 
 .method public final getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 93
     iget v0, p0, Landroidx/compose/ui/draw/PainterElement;->alpha:F
@@ -464,7 +464,7 @@
 .end method
 
 .method public final getColorFilter()Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 2
+    .locals 1
 
     .line 94
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
@@ -473,7 +473,7 @@
 .end method
 
 .method public final getContentScale()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->contentScale:Landroidx/compose/ui/layout/ContentScale;
@@ -482,7 +482,7 @@
 .end method
 
 .method public final getPainter()Landroidx/compose/ui/graphics/painter/Painter;
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->painter:Landroidx/compose/ui/graphics/painter/Painter;
@@ -491,7 +491,7 @@
 .end method
 
 .method public final getSizeToIntrinsics()Z
-    .registers 2
+    .locals 1
 
     .line 90
     iget-boolean v0, p0, Landroidx/compose/ui/draw/PainterElement;->sizeToIntrinsics:Z
@@ -500,7 +500,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterElement;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
@@ -512,11 +512,11 @@
 
     iget-boolean v2, p0, Landroidx/compose/ui/draw/PainterElement;->sizeToIntrinsics:Z
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
-    :cond_d
+    :cond_0
     add-int/2addr v1, v2
 
     mul-int/lit8 v0, v1, 0x1f
@@ -553,25 +553,25 @@
 
     iget-object v2, p0, Landroidx/compose/ui/draw/PainterElement;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
 
-    if-nez v2, :cond_31
+    if-nez v2, :cond_1
 
     const/4 v2, 0x0
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_31
+    :cond_1
     invoke-virtual {v2}, Landroidx/compose/ui/graphics/ColorFilter;->hashCode()I
 
     move-result v2
 
-    :goto_35
+    :goto_0
     add-int/2addr v1, v2
 
     return v1
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 5
+    .locals 3
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -662,7 +662,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -754,7 +754,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 88
@@ -768,7 +768,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/draw/PainterNode;)V
-    .registers 6
+    .locals 4
     .param p1, "node"    # Landroidx/compose/ui/draw/PainterNode;
 
     const-string/jumbo v0, "node"
@@ -782,10 +782,10 @@
 
     iget-boolean v1, p0, Landroidx/compose/ui/draw/PainterElement;->sizeToIntrinsics:Z
 
-    if-ne v0, v1, :cond_27
+    if-ne v0, v1, :cond_1
 
     .line 109
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/ui/draw/PainterNode;->getPainter()Landroidx/compose/ui/graphics/painter/Painter;
 
@@ -805,21 +805,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_28
+    goto :goto_1
 
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
     .line 108
-    :goto_28
+    :goto_1
     nop
 
     .line 111
@@ -854,7 +854,7 @@
     invoke-virtual {p1, v1}, Landroidx/compose/ui/draw/PainterNode;->setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
 
     .line 119
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_2
 
     .line 120
     move-object v1, p1
@@ -864,7 +864,7 @@
     invoke-static {v1}, Landroidx/compose/ui/node/LayoutModifierNodeKt;->invalidateMeasurement(Landroidx/compose/ui/node/LayoutModifierNode;)V
 
     .line 123
-    :cond_4f
+    :cond_2
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/node/DrawModifierNode;

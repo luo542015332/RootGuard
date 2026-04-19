@@ -199,7 +199,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/RenderNodeApi23$Companion;
 
@@ -218,7 +218,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 6
+    .locals 4
     .param p1, "ownerView"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     const-string/jumbo v0, "ownerView"
@@ -263,7 +263,7 @@
     .line 45
     sget-boolean v1, Landroidx/compose/ui/platform/RenderNodeApi23;->needToValidateAccess:Z
 
-    if-eqz v1, :cond_a7
+    if-eqz v1, :cond_0
 
     .line 50
     const/4 v1, 0x0
@@ -398,10 +398,10 @@
 
     .line 79
     .end local v1    # "displayListCanvas":Landroid/view/DisplayListCanvas;
-    :cond_a7
+    :cond_0
     sget-boolean v0, Landroidx/compose/ui/platform/RenderNodeApi23;->testFailCreateRenderNode:Z
 
-    if-nez v0, :cond_ad
+    if-nez v0, :cond_1
 
     .line 82
     nop
@@ -410,7 +410,7 @@
     return-void
 
     .line 80
-    :cond_ad
+    :cond_1
     new-instance v0, Ljava/lang/NoClassDefFoundError;
 
     invoke-direct {v0}, Ljava/lang/NoClassDefFoundError;-><init>()V
@@ -419,7 +419,7 @@
 .end method
 
 .method public static final synthetic access$getTestFailCreateRenderNode$cp()Z
-    .registers 1
+    .locals 1
 
     .line 38
     sget-boolean v0, Landroidx/compose/ui/platform/RenderNodeApi23;->testFailCreateRenderNode:Z
@@ -428,7 +428,7 @@
 .end method
 
 .method public static final synthetic access$setTestFailCreateRenderNode$cp(Z)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Z
 
     .line 38
@@ -438,7 +438,7 @@
 .end method
 
 .method private final discardDisplayListInternal()V
-    .registers 3
+    .locals 2
 
     .line 344
     nop
@@ -455,7 +455,7 @@
 .end method
 
 .method private final verifyShadowColorProperties(Landroid/view/RenderNode;)V
-    .registers 4
+    .locals 2
     .param p1, "renderNode"    # Landroid/view/RenderNode;
 
     .line 352
@@ -463,7 +463,7 @@
 
     const/16 v1, 0x1c
 
-    if-lt v0, v1, :cond_1e
+    if-lt v0, v1, :cond_0
 
     .line 353
     sget-object v0, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->INSTANCE:Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;
@@ -498,14 +498,14 @@
     invoke-virtual {v0, p1, v1}, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->setSpotShadowColor(Landroid/view/RenderNode;I)V
 
     .line 362
-    :cond_1e
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public discardDisplayList()V
-    .registers 1
+    .locals 0
 
     .line 336
     invoke-direct {p0}, Landroidx/compose/ui/platform/RenderNodeApi23;->discardDisplayListInternal()V
@@ -515,7 +515,7 @@
 .end method
 
 .method public drawInto(Landroid/graphics/Canvas;)V
-    .registers 4
+    .locals 2
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     const-string/jumbo v0, "canvas"
@@ -536,7 +536,7 @@
 .end method
 
 .method public dumpRenderNodeData()Landroidx/compose/ui/platform/DeviceRenderNodeData;
-    .registers 31
+    .locals 30
 
     .line 304
     move-object/from16 v0, p0
@@ -694,7 +694,7 @@
 .end method
 
 .method public getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 210
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -707,14 +707,14 @@
 .end method
 
 .method public getAmbientShadowColor()I
-    .registers 3
+    .locals 2
 
     .line 132
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     .line 133
     sget-object v0, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->INSTANCE:Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;
@@ -725,19 +725,19 @@
 
     move-result v0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 135
-    :cond_f
+    :cond_0
     const/high16 v0, -0x1000000
 
     .line 132
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public getBottom()I
-    .registers 2
+    .locals 1
 
     .line 89
     iget v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->bottom:I
@@ -746,7 +746,7 @@
 .end method
 
 .method public getCameraDistance()F
-    .registers 2
+    .locals 1
 
     .line 180
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -761,7 +761,7 @@
 .end method
 
 .method public getClipToBounds()Z
-    .registers 2
+    .locals 1
 
     .line 203
     iget-boolean v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->clipToBounds:Z
@@ -770,7 +770,7 @@
 .end method
 
 .method public getClipToOutline()Z
-    .registers 2
+    .locals 1
 
     .line 198
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -783,7 +783,7 @@
 .end method
 
 .method public getCompositingStrategy--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 216
     iget v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->internalCompositingStrategy:I
@@ -792,7 +792,7 @@
 .end method
 
 .method public getElevation()F
-    .registers 2
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -805,7 +805,7 @@
 .end method
 
 .method public getHasDisplayList()Z
-    .registers 2
+    .locals 1
 
     .line 243
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -818,7 +818,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 3
+    .locals 2
 
     .line 91
     invoke-virtual {p0}, Landroidx/compose/ui/platform/RenderNodeApi23;->getBottom()I
@@ -835,7 +835,7 @@
 .end method
 
 .method public getInverseMatrix(Landroid/graphics/Matrix;)V
-    .registers 3
+    .locals 1
     .param p1, "matrix"    # Landroid/graphics/Matrix;
 
     const-string/jumbo v0, "matrix"
@@ -851,7 +851,7 @@
 .end method
 
 .method public final getLayerType$ui_release()I
-    .registers 3
+    .locals 2
 
     .line 235
     iget v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->internalCompositingStrategy:I
@@ -867,23 +867,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
-    goto :goto_11
+    goto :goto_0
 
     .line 237
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
     .line 238
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public getLeft()I
-    .registers 2
+    .locals 1
 
     .line 86
     iget v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->left:I
@@ -892,7 +892,7 @@
 .end method
 
 .method public getMatrix(Landroid/graphics/Matrix;)V
-    .registers 3
+    .locals 1
     .param p1, "matrix"    # Landroid/graphics/Matrix;
 
     const-string/jumbo v0, "matrix"
@@ -908,7 +908,7 @@
 .end method
 
 .method public final getOwnerView()Landroidx/compose/ui/platform/AndroidComposeView;
-    .registers 2
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->ownerView:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -917,7 +917,7 @@
 .end method
 
 .method public getPivotX()F
-    .registers 2
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -930,7 +930,7 @@
 .end method
 
 .method public getPivotY()F
-    .registers 2
+    .locals 1
 
     .line 192
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -943,7 +943,7 @@
 .end method
 
 .method public getRenderEffect()Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     .line 98
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
@@ -952,7 +952,7 @@
 .end method
 
 .method public getRight()I
-    .registers 2
+    .locals 1
 
     .line 88
     iget v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->right:I
@@ -961,7 +961,7 @@
 .end method
 
 .method public getRotationX()F
-    .registers 2
+    .locals 1
 
     .line 165
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -974,7 +974,7 @@
 .end method
 
 .method public getRotationY()F
-    .registers 2
+    .locals 1
 
     .line 171
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -987,7 +987,7 @@
 .end method
 
 .method public getRotationZ()F
-    .registers 2
+    .locals 1
 
     .line 159
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1000,7 +1000,7 @@
 .end method
 
 .method public getScaleX()F
-    .registers 2
+    .locals 1
 
     .line 101
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1013,7 +1013,7 @@
 .end method
 
 .method public getScaleY()F
-    .registers 2
+    .locals 1
 
     .line 107
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1026,14 +1026,14 @@
 .end method
 
 .method public getSpotShadowColor()I
-    .registers 3
+    .locals 2
 
     .line 146
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1c
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     .line 147
     sget-object v0, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->INSTANCE:Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;
@@ -1044,19 +1044,19 @@
 
     move-result v0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 149
-    :cond_f
+    :cond_0
     const/high16 v0, -0x1000000
 
     .line 146
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public getTop()I
-    .registers 2
+    .locals 1
 
     .line 87
     iget v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->top:I
@@ -1065,7 +1065,7 @@
 .end method
 
 .method public getTranslationX()F
-    .registers 2
+    .locals 1
 
     .line 113
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1078,7 +1078,7 @@
 .end method
 
 .method public getTranslationY()F
-    .registers 2
+    .locals 1
 
     .line 119
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1091,7 +1091,7 @@
 .end method
 
 .method public getUniqueId()J
-    .registers 3
+    .locals 2
 
     .line 84
     const-wide/16 v0, 0x0
@@ -1100,7 +1100,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 3
+    .locals 2
 
     .line 90
     invoke-virtual {p0}, Landroidx/compose/ui/platform/RenderNodeApi23;->getRight()I
@@ -1117,7 +1117,7 @@
 .end method
 
 .method public final hasOverlappingRendering$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 240
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1130,7 +1130,7 @@
 .end method
 
 .method public offsetLeftAndRight(I)V
-    .registers 3
+    .locals 1
     .param p1, "offset"    # I
 
     .line 258
@@ -1161,7 +1161,7 @@
 .end method
 
 .method public offsetTopAndBottom(I)V
-    .registers 3
+    .locals 1
     .param p1, "offset"    # I
 
     .line 264
@@ -1192,7 +1192,7 @@
 .end method
 
 .method public record(Landroidx/compose/ui/graphics/CanvasHolder;Landroidx/compose/ui/graphics/Path;Lkotlin/jvm/functions/Function1;)V
-    .registers 13
+    .locals 9
     .param p1, "canvasHolder"    # Landroidx/compose/ui/graphics/CanvasHolder;
     .param p2, "clipPath"    # Landroidx/compose/ui/graphics/Path;
     .param p3, "drawBlock"    # Lkotlin/jvm/functions/Function1;
@@ -1277,7 +1277,7 @@
 
     .line 276
     .local v5, "$i$a$-drawInto-RenderNodeApi23$record$1":I
-    if-eqz p2, :cond_46
+    if-eqz p2, :cond_0
 
     .line 277
     invoke-interface {v4}, Landroidx/compose/ui/graphics/Canvas;->save()V
@@ -1292,17 +1292,17 @@
     invoke-static {v4, p2, v8, v6, v7}, Landroidx/compose/ui/graphics/Canvas;->clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
 
     .line 280
-    :cond_46
+    :cond_0
     invoke-interface {p3, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 281
-    if-eqz p2, :cond_4e
+    if-eqz p2, :cond_1
 
     .line 282
     invoke-interface {v4}, Landroidx/compose/ui/graphics/Canvas;->restore()V
 
     .line 284
-    :cond_4e
+    :cond_1
     nop
 
     .line 420
@@ -1333,7 +1333,7 @@
 .end method
 
 .method public setAlpha(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 212
@@ -1346,7 +1346,7 @@
 .end method
 
 .method public setAmbientShadowColor(I)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # I
 
     .line 139
@@ -1354,7 +1354,7 @@
 
     const/16 v1, 0x1c
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     .line 140
     sget-object v0, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->INSTANCE:Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;
@@ -1364,12 +1364,12 @@
     invoke-virtual {v0, v1, p1}, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->setAmbientShadowColor(Landroid/view/RenderNode;I)V
 
     .line 142
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public setBottom(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 89
@@ -1379,7 +1379,7 @@
 .end method
 
 .method public setCameraDistance(F)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # F
 
     .line 182
@@ -1394,7 +1394,7 @@
 .end method
 
 .method public setClipToBounds(Z)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Z
 
     .line 205
@@ -1410,7 +1410,7 @@
 .end method
 
 .method public setClipToOutline(Z)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Z
 
     .line 200
@@ -1423,7 +1423,7 @@
 .end method
 
 .method public setCompositingStrategy-aDBOjCE(I)V
-    .registers 5
+    .locals 3
     .param p1, "value"    # I
 
     .line 218
@@ -1442,7 +1442,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 220
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1456,10 +1456,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/RenderNode;->setHasOverlappingRendering(Z)Z
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 223
-    :cond_1a
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/CompositingStrategy;->Companion:Landroidx/compose/ui/graphics/CompositingStrategy$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/CompositingStrategy$Companion;->getModulateAlpha--NrFUSI()I
@@ -1472,7 +1472,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 224
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
@@ -1484,10 +1484,10 @@
 
     invoke-virtual {v0, v2}, Landroid/view/RenderNode;->setHasOverlappingRendering(Z)Z
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 228
-    :cond_32
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->renderNode:Landroid/view/RenderNode;
 
     invoke-virtual {v0, v2}, Landroid/view/RenderNode;->setLayerType(I)Z
@@ -1498,7 +1498,7 @@
     invoke-virtual {v0, v1}, Landroid/view/RenderNode;->setHasOverlappingRendering(Z)Z
 
     .line 232
-    :goto_3c
+    :goto_0
     iput p1, p0, Landroidx/compose/ui/platform/RenderNodeApi23;->internalCompositingStrategy:I
 
     .line 233
@@ -1506,7 +1506,7 @@
 .end method
 
 .method public setElevation(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 127
@@ -1519,7 +1519,7 @@
 .end method
 
 .method public setHasOverlappingRendering(Z)Z
-    .registers 3
+    .locals 1
     .param p1, "hasOverlappingRendering"    # Z
 
     .line 301
@@ -1533,7 +1533,7 @@
 .end method
 
 .method public setLeft(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 86
@@ -1543,7 +1543,7 @@
 .end method
 
 .method public setOutline(Landroid/graphics/Outline;)V
-    .registers 3
+    .locals 1
     .param p1, "outline"    # Landroid/graphics/Outline;
 
     .line 246
@@ -1556,7 +1556,7 @@
 .end method
 
 .method public setPivotX(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 188
@@ -1569,7 +1569,7 @@
 .end method
 
 .method public setPivotY(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 194
@@ -1582,7 +1582,7 @@
 .end method
 
 .method public setPosition(IIII)Z
-    .registers 6
+    .locals 1
     .param p1, "left"    # I
     .param p2, "top"    # I
     .param p3, "right"    # I
@@ -1611,7 +1611,7 @@
 .end method
 
 .method public setRenderEffect(Landroidx/compose/ui/graphics/RenderEffect;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/RenderEffect;
 
     .line 98
@@ -1621,7 +1621,7 @@
 .end method
 
 .method public setRight(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 88
@@ -1631,7 +1631,7 @@
 .end method
 
 .method public setRotationX(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 167
@@ -1644,7 +1644,7 @@
 .end method
 
 .method public setRotationY(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 173
@@ -1657,7 +1657,7 @@
 .end method
 
 .method public setRotationZ(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 161
@@ -1670,7 +1670,7 @@
 .end method
 
 .method public setScaleX(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 103
@@ -1683,7 +1683,7 @@
 .end method
 
 .method public setScaleY(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 109
@@ -1696,7 +1696,7 @@
 .end method
 
 .method public setSpotShadowColor(I)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # I
 
     .line 153
@@ -1704,7 +1704,7 @@
 
     const/16 v1, 0x1c
 
-    if-lt v0, v1, :cond_d
+    if-lt v0, v1, :cond_0
 
     .line 154
     sget-object v0, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->INSTANCE:Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;
@@ -1714,12 +1714,12 @@
     invoke-virtual {v0, v1, p1}, Landroidx/compose/ui/platform/RenderNodeVerificationHelper28;->setSpotShadowColor(Landroid/view/RenderNode;I)V
 
     .line 156
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method public setTop(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 87
@@ -1729,7 +1729,7 @@
 .end method
 
 .method public setTranslationX(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 115
@@ -1742,7 +1742,7 @@
 .end method
 
 .method public setTranslationY(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 121

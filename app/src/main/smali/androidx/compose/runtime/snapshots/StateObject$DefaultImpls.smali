@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static mergeRecords(Landroidx/compose/runtime/snapshots/StateObject;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/snapshots/StateObject;
     .param p1, "previous"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p2, "current"    # Landroidx/compose/runtime/snapshots/StateRecord;
@@ -47,7 +47,6 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1209
-    # invokes: Landroidx/compose/runtime/snapshots/StateObject;->mergeRecords(Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/runtime/snapshots/StateObject;->access$mergeRecords$jd(Landroidx/compose/runtime/snapshots/StateObject;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
 
     move-result-object v0

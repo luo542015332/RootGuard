@@ -82,7 +82,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -104,27 +104,27 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 94
     instance-of v0, p1, Ljava/util/Map$Entry;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_1
 
     .line 186
     .local v0, "it":Ljava/util/Map$Entry;
@@ -144,7 +144,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_1
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -158,18 +158,18 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_1
 
     const/4 v1, 0x1
 
     .end local v0    # "it":Ljava/util/Map$Entry;
     .end local v2    # "$i$a$-let-MapEntry$equals$1":I
-    :cond_2a
+    :cond_1
     return v1
 .end method
 
 .method public getKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TK;"
@@ -183,7 +183,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -197,7 +197,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 92
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/MapEntry;->getKey()Ljava/lang/Object;
@@ -206,36 +206,36 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move v0, v1
 
-    :goto_d
+    :goto_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/MapEntry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :cond_17
+    :cond_1
     xor-int/2addr v0, v1
 
     return v0
 .end method
 
 .method public setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TV;)TV;"
@@ -252,7 +252,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 96
     new-instance v0, Ljava/lang/StringBuilder;

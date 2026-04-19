@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static final listSaver(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/saveable/Saver;
-    .registers 4
+    .locals 2
     .param p0, "save"    # Lkotlin/jvm/functions/Function2;
     .param p1, "restore"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

@@ -34,14 +34,14 @@
 
 
 # static fields
-.field private static final DebugChanges:Z
+.field private static final DebugChanges:Z = false
 
 .field private static final DefaultDensity:Landroidx/compose/ui/unit/Density;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 70
     const/4 v0, 0x2
@@ -62,7 +62,7 @@
 .end method
 
 .method public static final synthetic access$getDefaultDensity$p()Landroidx/compose/ui/unit/Density;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/node/LayoutNodeKt;->DefaultDensity:Landroidx/compose/ui/unit/Density;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static final add(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$add"    # Landroidx/compose/ui/node/LayoutNode;
     .param p1, "child"    # Landroidx/compose/ui/node/LayoutNode;
 
@@ -99,13 +99,13 @@
 .end method
 
 .method private static synthetic getDebugChanges$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final requireOwner(Landroidx/compose/ui/node/LayoutNode;)Landroidx/compose/ui/node/Owner;
-    .registers 4
+    .locals 3
     .param p0, "$this$requireOwner"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string v0, "<this>"
@@ -119,13 +119,13 @@
 
     .line 1448
     .local v0, "owner":Landroidx/compose/ui/node/Owner;
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 1451
     return-object v0
 
     .line 1448
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
     .line 1449

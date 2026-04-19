@@ -52,7 +52,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 614
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/semantics/Role$Companion;-><init>()V
 
@@ -71,10 +71,9 @@
 
 # virtual methods
 .method public final getButton-o7Vup1c()I
-    .registers 2
+    .locals 1
 
     .line 619
-    # getter for: Landroidx/compose/ui/semantics/Role;->Button:I
     invoke-static {}, Landroidx/compose/ui/semantics/Role;->access$getButton$cp()I
 
     move-result v0
@@ -83,10 +82,9 @@
 .end method
 
 .method public final getCheckbox-o7Vup1c()I
-    .registers 2
+    .locals 1
 
     .line 627
-    # getter for: Landroidx/compose/ui/semantics/Role;->Checkbox:I
     invoke-static {}, Landroidx/compose/ui/semantics/Role;->access$getCheckbox$cp()I
 
     move-result v0
@@ -95,10 +93,9 @@
 .end method
 
 .method public final getDropdownList-o7Vup1c()I
-    .registers 2
+    .locals 1
 
     .line 663
-    # getter for: Landroidx/compose/ui/semantics/Role;->DropdownList:I
     invoke-static {}, Landroidx/compose/ui/semantics/Role;->access$getDropdownList$cp()I
 
     move-result v0
@@ -107,10 +104,9 @@
 .end method
 
 .method public final getImage-o7Vup1c()I
-    .registers 2
+    .locals 1
 
     .line 656
-    # getter for: Landroidx/compose/ui/semantics/Role;->Image:I
     invoke-static {}, Landroidx/compose/ui/semantics/Role;->access$getImage$cp()I
 
     move-result v0
@@ -119,10 +115,9 @@
 .end method
 
 .method public final getRadioButton-o7Vup1c()I
-    .registers 2
+    .locals 1
 
     .line 642
-    # getter for: Landroidx/compose/ui/semantics/Role;->RadioButton:I
     invoke-static {}, Landroidx/compose/ui/semantics/Role;->access$getRadioButton$cp()I
 
     move-result v0
@@ -131,10 +126,9 @@
 .end method
 
 .method public final getSwitch-o7Vup1c()I
-    .registers 2
+    .locals 1
 
     .line 635
-    # getter for: Landroidx/compose/ui/semantics/Role;->Switch:I
     invoke-static {}, Landroidx/compose/ui/semantics/Role;->access$getSwitch$cp()I
 
     move-result v0
@@ -143,10 +137,9 @@
 .end method
 
 .method public final getTab-o7Vup1c()I
-    .registers 2
+    .locals 1
 
     .line 650
-    # getter for: Landroidx/compose/ui/semantics/Role;->Tab:I
     invoke-static {}, Landroidx/compose/ui/semantics/Role;->access$getTab$cp()I
 
     move-result v0

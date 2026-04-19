@@ -42,7 +42,7 @@
 
 # direct methods
 .method public static final emptyCancelMotionEventScope(JLkotlin/jvm/functions/Function1;)V
-    .registers 12
+    .locals 9
     .param p0, "nowMillis"    # J
     .param p2, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -101,12 +101,12 @@
 .end method
 
 .method public static synthetic emptyCancelMotionEventScope$default(JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 51
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_0
 
     .line 52
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -114,14 +114,14 @@
     move-result-wide p0
 
     .line 51
-    :cond_8
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/input/pointer/PointerInteropUtils_androidKt;->emptyCancelMotionEventScope(JLkotlin/jvm/functions/Function1;)V
 
     return-void
 .end method
 
 .method public static final toCancelMotionEventScope-d-4ec7I(Landroidx/compose/ui/input/pointer/PointerEvent;JLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .param p0, "$this$toCancelMotionEventScope_u2dd_u2d4ec7I"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p1, "offset"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function1;
@@ -156,7 +156,7 @@
 .end method
 
 .method public static final toMotionEventScope-d-4ec7I(Landroidx/compose/ui/input/pointer/PointerEvent;JLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .param p0, "$this$toMotionEventScope_u2dd_u2d4ec7I"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p1, "offset"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function1;
@@ -191,7 +191,7 @@
 .end method
 
 .method private static final toMotionEventScope-ubNVwUQ(Landroidx/compose/ui/input/pointer/PointerEvent;JLkotlin/jvm/functions/Function1;Z)V
-    .registers 11
+    .locals 6
     .param p0, "$this$toMotionEventScope_u2dubNVwUQ"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p1, "offset"    # J
     .param p3, "block"    # Lkotlin/jvm/functions/Function1;
@@ -216,7 +216,7 @@
 
     .line 69
     .local v0, "motionEvent":Landroid/view/MotionEvent;
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     .line 73
     move-object v1, v0
@@ -232,7 +232,7 @@
 
     .line 75
     .local v3, "oldAction":I
-    if-eqz p4, :cond_12
+    if-eqz p4, :cond_0
 
     .line 76
     const/4 v4, 0x3
@@ -240,7 +240,7 @@
     invoke-virtual {v1, v4}, Landroid/view/MotionEvent;->setAction(I)V
 
     .line 79
-    :cond_12
+    :cond_0
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result v4
@@ -285,7 +285,7 @@
     return-void
 
     .line 69
-    :cond_33
+    :cond_1
     const/4 v1, 0x0
 
     .line 70

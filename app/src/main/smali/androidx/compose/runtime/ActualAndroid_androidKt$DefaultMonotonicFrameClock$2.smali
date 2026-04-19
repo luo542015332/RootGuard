@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/ActualAndroid_androidKt$DefaultMonotonicFrameClock$2;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/runtime/MonotonicFrameClock;
-    .registers 2
+    .locals 1
 
     .line 81
     nop
@@ -84,27 +84,27 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroidx/compose/runtime/DefaultChoreographerFrameClock;->INSTANCE:Landroidx/compose/runtime/DefaultChoreographerFrameClock;
 
     check-cast v0, Landroidx/compose/runtime/MonotonicFrameClock;
 
-    goto :goto_10
+    goto :goto_0
 
     .line 87
-    :cond_c
+    :cond_0
     sget-object v0, Landroidx/compose/runtime/SdkStubsFallbackFrameClock;->INSTANCE:Landroidx/compose/runtime/SdkStubsFallbackFrameClock;
 
     check-cast v0, Landroidx/compose/runtime/MonotonicFrameClock;
 
     .line 86
-    :goto_10
+    :goto_0
     return-object v0
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 80
     invoke-virtual {p0}, Landroidx/compose/runtime/ActualAndroid_androidKt$DefaultMonotonicFrameClock$2;->invoke()Landroidx/compose/runtime/MonotonicFrameClock;

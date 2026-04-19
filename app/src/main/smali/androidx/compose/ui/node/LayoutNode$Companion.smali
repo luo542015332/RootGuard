@@ -52,7 +52,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1351
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/node/LayoutNode$Companion;-><init>()V
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final getConstructor$ui_release()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -82,7 +82,6 @@
     .end annotation
 
     .line 1370
-    # getter for: Landroidx/compose/ui/node/LayoutNode;->Constructor:Lkotlin/jvm/functions/Function0;
     invoke-static {}, Landroidx/compose/ui/node/LayoutNode;->access$getConstructor$cp()Lkotlin/jvm/functions/Function0;
 
     move-result-object v0
@@ -91,10 +90,9 @@
 .end method
 
 .method public final getDummyViewConfiguration$ui_release()Landroidx/compose/ui/platform/ViewConfiguration;
-    .registers 2
+    .locals 1
 
     .line 1376
-    # getter for: Landroidx/compose/ui/node/LayoutNode;->DummyViewConfiguration:Landroidx/compose/ui/platform/ViewConfiguration;
     invoke-static {}, Landroidx/compose/ui/node/LayoutNode;->access$getDummyViewConfiguration$cp()Landroidx/compose/ui/platform/ViewConfiguration;
 
     move-result-object v0
@@ -103,7 +101,7 @@
 .end method
 
 .method public final getZComparator$ui_release()Ljava/util/Comparator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -114,7 +112,6 @@
     .end annotation
 
     .line 1392
-    # getter for: Landroidx/compose/ui/node/LayoutNode;->ZComparator:Ljava/util/Comparator;
     invoke-static {}, Landroidx/compose/ui/node/LayoutNode;->access$getZComparator$cp()Ljava/util/Comparator;
 
     move-result-object v0

@@ -45,7 +45,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$maxIntermediateIntrinsicWidth$1;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 8
+    .locals 3
     .param p1, "$this$maxWidth"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "intrinsicMeasurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -79,7 +79,6 @@
 
     iget-object v1, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$maxIntermediateIntrinsicWidth$1;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
-    # getter for: Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->intermediateMeasureScope:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;
     invoke-static {v1}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;->access$getIntermediateMeasureScope$p(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$IntermediateMeasureScopeImpl;
 
     move-result-object v1

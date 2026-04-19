@@ -145,7 +145,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V
-    .registers 10
+    .locals 8
     .param p1, "this$0"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -159,7 +159,6 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1018
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->scope:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
     invoke-static {p1}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getScope$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
     move-result-object v0
@@ -201,7 +200,7 @@
 
 # virtual methods
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -213,7 +212,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -225,7 +224,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -237,7 +236,7 @@
 .end method
 
 .method public getLookaheadConstraints-msEJaDk()J
-    .registers 3
+    .locals 2
 
     .line 1029
     iget-wide v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->lookaheadConstraints:J
@@ -246,7 +245,7 @@
 .end method
 
 .method public getLookaheadMeasurePolicy()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -261,11 +260,11 @@
     .line 1027
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->lookaheadMeasurePolicy:Lkotlin/jvm/functions/Function2;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     const-string/jumbo v0, "lookaheadMeasurePolicy"
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
@@ -277,7 +276,7 @@
 .end method
 
 .method public getLookaheadSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 1026
     iget-wide v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->lookaheadSize:J
@@ -286,7 +285,7 @@
 .end method
 
 .method public isLookingAhead()Z
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -298,7 +297,7 @@
 .end method
 
 .method public layout(IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II",
@@ -333,7 +332,7 @@
 .end method
 
 .method public measurablesForSlot(Ljava/lang/Object;)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p1, "slotId"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -349,7 +348,6 @@
     .line 1020
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->slotIdToNode:Ljava/util/Map;
     invoke-static {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getSlotIdToNode$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Ljava/util/Map;
 
     move-result-object v0
@@ -360,25 +358,25 @@
 
     check-cast v0, Landroidx/compose/ui/node/LayoutNode;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getChildMeasurables$ui_release()Ljava/util/List;
 
     move-result-object v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
-    :cond_14
+    :cond_0
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    :cond_18
+    :cond_1
     return-object v0
 .end method
 
 .method public roundToPx--R2X_6o(J)I
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -390,7 +388,7 @@
 .end method
 
 .method public roundToPx-0680j_4(F)I
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -402,7 +400,7 @@
 .end method
 
 .method public setLookaheadConstraints-BRTryo0(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 1029
@@ -412,7 +410,7 @@
 .end method
 
 .method public setLookaheadMeasurePolicy(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -440,7 +438,7 @@
 .end method
 
 .method public setLookaheadSize-ozmzZPI(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 1026
@@ -450,7 +448,7 @@
 .end method
 
 .method public toDp-GaN1DYA(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -462,7 +460,7 @@
 .end method
 
 .method public toDp-u2uoSUM(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -474,7 +472,7 @@
 .end method
 
 .method public toDp-u2uoSUM(I)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -486,7 +484,7 @@
 .end method
 
 .method public toDpSize-k-rfVVM(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -498,7 +496,7 @@
 .end method
 
 .method public toPx--R2X_6o(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -510,7 +508,7 @@
 .end method
 
 .method public toPx-0680j_4(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -522,7 +520,7 @@
 .end method
 
 .method public toRect(Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
 
     const-string v0, "<this>"
 
@@ -538,7 +536,7 @@
 .end method
 
 .method public toSize-XkaWNTQ(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -550,7 +548,7 @@
 .end method
 
 .method public toSp-0xMU5do(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -562,7 +560,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 
@@ -574,7 +572,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(I)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;->$$delegate_0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
 

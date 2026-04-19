@@ -23,7 +23,7 @@
 
 # direct methods
 .method public static final collectAsState(Lkotlinx/coroutines/flow/Flow;Ljava/lang/Object;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;
-    .registers 6
+    .locals 0
     .param p0, "$this$collectAsState"    # Lkotlinx/coroutines/flow/Flow;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "context"    # Lkotlin/coroutines/CoroutineContext;
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final collectAsState(Lkotlinx/coroutines/flow/StateFlow;Lkotlin/coroutines/CoroutineContext;Landroidx/compose/runtime/Composer;II)Landroidx/compose/runtime/State;
-    .registers 5
+    .locals 0
     .param p0, "$this$collectAsState"    # Lkotlinx/coroutines/flow/StateFlow;
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -82,7 +82,7 @@
 .end method
 
 .method public static final derivedStateObservers()Landroidx/compose/runtime/collection/MutableVector;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -101,7 +101,7 @@
 .end method
 
 .method public static final derivedStateOf(Landroidx/compose/runtime/SnapshotMutationPolicy;Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/State;
-    .registers 3
+    .locals 1
     .param p0, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .param p1, "calculation"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -127,7 +127,7 @@
 .end method
 
 .method public static final derivedStateOf(Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/State;
-    .registers 2
+    .locals 1
     .param p0, "calculation"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -150,7 +150,7 @@
 .end method
 
 .method public static final getValue(Landroidx/compose/runtime/State;Ljava/lang/Object;Lkotlin/reflect/KProperty;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this$getValue"    # Landroidx/compose/runtime/State;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;
@@ -176,7 +176,7 @@
 .end method
 
 .method public static final mutableStateListOf()Landroidx/compose/runtime/snapshots/SnapshotStateList;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -196,7 +196,7 @@
 .end method
 
 .method public static final varargs mutableStateListOf([Ljava/lang/Object;)Landroidx/compose/runtime/snapshots/SnapshotStateList;
-    .registers 2
+    .locals 1
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -217,7 +217,7 @@
 .end method
 
 .method public static final mutableStateMapOf()Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -239,7 +239,7 @@
 .end method
 
 .method public static final varargs mutableStateMapOf([Lkotlin/Pair;)Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    .registers 2
+    .locals 1
     .param p0, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -264,7 +264,7 @@
 .end method
 
 .method public static final mutableStateOf(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;)Landroidx/compose/runtime/MutableState;
-    .registers 3
+    .locals 1
     .param p0, "value"    # Ljava/lang/Object;
     .param p1, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .annotation system Ldalvik/annotation/Signature;
@@ -288,7 +288,7 @@
 .end method
 
 .method public static synthetic mutableStateOf$default(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;ILjava/lang/Object;)Landroidx/compose/runtime/MutableState;
-    .registers 4
+    .locals 0
 
     .line 1
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/runtime/SnapshotStateKt__SnapshotStateKt;->mutableStateOf$default(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;ILjava/lang/Object;)Landroidx/compose/runtime/MutableState;
@@ -299,7 +299,7 @@
 .end method
 
 .method public static final neverEqualPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -319,7 +319,7 @@
 .end method
 
 .method public static final observeDerivedStateRecalculations(Landroidx/compose/runtime/DerivedStateObserver;Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p0, "observer"    # Landroidx/compose/runtime/DerivedStateObserver;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -340,7 +340,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 8
+    .locals 1
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "key2"    # Ljava/lang/Object;
@@ -382,7 +382,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 7
+    .locals 1
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "key2"    # Ljava/lang/Object;
@@ -422,7 +422,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 6
+    .locals 1
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "producer"    # Lkotlin/jvm/functions/Function2;
@@ -460,7 +460,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 5
+    .locals 1
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "producer"    # Lkotlin/jvm/functions/Function2;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -496,7 +496,7 @@
 .end method
 
 .method public static final produceState(Ljava/lang/Object;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 6
+    .locals 1
     .param p0, "initialValue"    # Ljava/lang/Object;
     .param p1, "keys"    # [Ljava/lang/Object;
     .param p2, "producer"    # Lkotlin/jvm/functions/Function2;
@@ -534,7 +534,7 @@
 .end method
 
 .method public static final referentialEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -554,7 +554,7 @@
 .end method
 
 .method public static final rememberUpdatedState(Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 4
+    .locals 1
     .param p0, "newValue"    # Ljava/lang/Object;
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -579,7 +579,7 @@
 .end method
 
 .method public static final setValue(Landroidx/compose/runtime/MutableState;Ljava/lang/Object;Lkotlin/reflect/KProperty;Ljava/lang/Object;)V
-    .registers 4
+    .locals 0
     .param p0, "$this$setValue"    # Landroidx/compose/runtime/MutableState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;
@@ -604,7 +604,7 @@
 .end method
 
 .method public static final snapshotFlow(Lkotlin/jvm/functions/Function0;)Lkotlinx/coroutines/flow/Flow;
-    .registers 2
+    .locals 1
     .param p0, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -627,7 +627,7 @@
 .end method
 
 .method public static final structuralEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -647,7 +647,7 @@
 .end method
 
 .method public static final toMutableStateList(Ljava/util/Collection;)Landroidx/compose/runtime/snapshots/SnapshotStateList;
-    .registers 2
+    .locals 1
     .param p0, "$this$toMutableStateList"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -670,7 +670,7 @@
 .end method
 
 .method public static final toMutableStateMap(Ljava/lang/Iterable;)Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    .registers 2
+    .locals 1
     .param p0, "$this$toMutableStateMap"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {

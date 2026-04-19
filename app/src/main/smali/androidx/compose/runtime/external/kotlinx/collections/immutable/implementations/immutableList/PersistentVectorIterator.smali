@@ -70,7 +70,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;[Ljava/lang/Object;III)V
-    .registers 9
+    .locals 3
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "tail"    # [Ljava/lang/Object;
     .param p3, "index"    # I
@@ -132,7 +132,7 @@
 
 # virtual methods
 .method public next()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -149,7 +149,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 24
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorIterator;->getIndex()I
@@ -170,7 +170,7 @@
     return-object v0
 
     .line 27
-    :cond_1b
+    :cond_0
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorIterator;->tail:[Ljava/lang/Object;
 
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorIterator;->getIndex()I
@@ -195,7 +195,7 @@
 .end method
 
 .method public previous()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -216,7 +216,7 @@
 
     move-result v1
 
-    if-le v0, v1, :cond_28
+    if-le v0, v1, :cond_0
 
     .line 33
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorIterator;->tail:[Ljava/lang/Object;
@@ -246,7 +246,7 @@
     return-object v0
 
     .line 35
-    :cond_28
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorIterator;->getIndex()I
 
     move-result v0

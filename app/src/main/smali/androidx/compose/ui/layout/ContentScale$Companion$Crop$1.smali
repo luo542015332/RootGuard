@@ -44,7 +44,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,12 +55,11 @@
 
 # virtual methods
 .method public computeScaleFactor-H7hwNQA(JJ)J
-    .registers 7
+    .locals 2
     .param p1, "srcSize"    # J
     .param p3, "dstSize"    # J
 
     .line 53
-    # invokes: Landroidx/compose/ui/layout/ContentScaleKt;->computeFillMaxDimension-iLBOSCw(JJ)F
     invoke-static {p1, p2, p3, p4}, Landroidx/compose/ui/layout/ContentScaleKt;->access$computeFillMaxDimension-iLBOSCw(JJ)F
 
     move-result v0

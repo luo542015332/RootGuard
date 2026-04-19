@@ -83,7 +83,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;I)V
-    .registers 4
+    .locals 1
     .param p1, "list"    # Ljava/util/List;
     .param p2, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -114,7 +114,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -141,7 +141,7 @@
 .end method
 
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 889
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$VectorListIterator;->index:I
@@ -152,40 +152,40 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_c
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public hasPrevious()Z
-    .registers 2
+    .locals 1
 
     .line 902
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$VectorListIterator;->index:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -209,7 +209,7 @@
 .end method
 
 .method public nextIndex()I
-    .registers 2
+    .locals 1
 
     .line 906
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$VectorListIterator;->index:I
@@ -218,7 +218,7 @@
 .end method
 
 .method public previous()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -243,7 +243,7 @@
 .end method
 
 .method public previousIndex()I
-    .registers 2
+    .locals 1
 
     .line 915
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$VectorListIterator;->index:I
@@ -254,7 +254,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     .line 897
     iget v0, p0, Landroidx/compose/runtime/collection/MutableVector$VectorListIterator;->index:I
@@ -273,7 +273,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

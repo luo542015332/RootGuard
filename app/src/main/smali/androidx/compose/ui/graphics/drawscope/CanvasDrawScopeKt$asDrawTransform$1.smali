@@ -81,7 +81,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/drawscope/DrawContext;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/ui/graphics/drawscope/DrawContext;
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt$asDrawTransform$1;->$this_asDrawTransform:Landroidx/compose/ui/graphics/drawscope/DrawContext;
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public clipPath-mtrdD-E(Landroidx/compose/ui/graphics/Path;I)V
-    .registers 4
+    .locals 1
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "clipOp"    # I
 
@@ -117,7 +117,7 @@
 .end method
 
 .method public clipRect-N_I0leg(FFFFI)V
-    .registers 13
+    .locals 7
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -148,7 +148,7 @@
 .end method
 
 .method public getCenter-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 754
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt$asDrawTransform$1;->getSize-NH-jbRc()J
@@ -163,7 +163,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 751
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt$asDrawTransform$1;->$this_asDrawTransform:Landroidx/compose/ui/graphics/drawscope/DrawContext;
@@ -176,7 +176,7 @@
 .end method
 
 .method public inset(FFFF)V
-    .registers 12
+    .locals 7
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -234,7 +234,7 @@
 
     cmpl-float v5, v5, v6
 
-    if-ltz v5, :cond_36
+    if-ltz v5, :cond_0
 
     invoke-static {v3, v4}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
@@ -242,17 +242,17 @@
 
     cmpl-float v5, v5, v6
 
-    if-ltz v5, :cond_36
+    if-ltz v5, :cond_0
 
     const/4 v5, 0x1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_36
+    :cond_0
     const/4 v5, 0x0
 
-    :goto_37
-    if-eqz v5, :cond_42
+    :goto_0
+    if-eqz v5, :cond_1
 
     .line 762
     invoke-interface {v1, v3, v4}, Landroidx/compose/ui/graphics/drawscope/DrawContext;->setSize-uvyYCjk(J)V
@@ -276,7 +276,7 @@
     .restart local v0    # "it":Landroidx/compose/ui/graphics/Canvas;
     .restart local v2    # "$i$a$-let-CanvasDrawScopeKt$asDrawTransform$1$inset$1":I
     .restart local v3    # "updatedSize":J
-    :cond_42
+    :cond_1
     const/4 v1, 0x0
 
     .line 760
@@ -299,7 +299,7 @@
 .end method
 
 .method public rotate-Uv8p0NA(FJ)V
-    .registers 8
+    .locals 4
     .param p1, "degrees"    # F
     .param p2, "pivot"    # J
 
@@ -356,7 +356,7 @@
 .end method
 
 .method public scale-0AR0LA0(FFJ)V
-    .registers 9
+    .locals 4
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
     .param p3, "pivot"    # J
@@ -414,7 +414,7 @@
 .end method
 
 .method public transform-58bKbWc([F)V
-    .registers 3
+    .locals 1
     .param p1, "matrix"    # [F
 
     const-string/jumbo v0, "matrix"
@@ -435,7 +435,7 @@
 .end method
 
 .method public translate(FF)V
-    .registers 4
+    .locals 1
     .param p1, "left"    # F
     .param p2, "top"    # F
 

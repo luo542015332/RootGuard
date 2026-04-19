@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,8 +88,8 @@
 
     const/4 v2, 0x0
 
-    :goto_10
-    if-ge v2, v0, :cond_18
+    :goto_0
+    if-ge v2, v0, :cond_0
 
     add-int/lit8 v3, v2, 0x1
 
@@ -97,9 +97,9 @@
 
     move v2, v3
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     iput-object v1, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->handles:[I
 
     .line 37
@@ -107,7 +107,7 @@
 .end method
 
 .method private final allocateHandle()I
-    .registers 13
+    .locals 12
 
     .line 189
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->handles:[I
@@ -118,7 +118,7 @@
     .local v0, "capacity":I
     iget v1, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->firstFreeHandle:I
 
-    if-lt v1, v0, :cond_23
+    if-lt v1, v0, :cond_1
 
     .line 191
     mul-int/lit8 v1, v0, 0x2
@@ -127,8 +127,8 @@
 
     const/4 v3, 0x0
 
-    :goto_c
-    if-ge v3, v1, :cond_14
+    :goto_0
+    if-ge v3, v1, :cond_0
 
     add-int/lit8 v4, v3, 0x1
 
@@ -136,9 +136,9 @@
 
     move v3, v4
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move-object v1, v2
 
     .line 192
@@ -164,7 +164,7 @@
 
     .line 195
     .end local v1    # "newHandles":[I
-    :cond_23
+    :cond_1
     iget v1, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->firstFreeHandle:I
 
     .line 196
@@ -182,7 +182,7 @@
 .end method
 
 .method private final ensure(I)V
-    .registers 21
+    .locals 19
     .param p1, "atLeast"    # I
 
     .line 174
@@ -196,12 +196,12 @@
     .local v8, "capacity":I
     move/from16 v9, p1
 
-    if-gt v9, v8, :cond_a
+    if-gt v9, v8, :cond_0
 
     return-void
 
     .line 176
-    :cond_a
+    :cond_0
     mul-int/lit8 v10, v8, 0x2
 
     .line 177
@@ -262,7 +262,7 @@
 .end method
 
 .method private final freeHandle(I)V
-    .registers 4
+    .locals 2
     .param p1, "handle"    # I
 
     .line 205
@@ -280,16 +280,16 @@
 .end method
 
 .method public static synthetic lowestOrDefault$default(Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;IILjava/lang/Object;)I
-    .registers 4
+    .locals 0
 
     .line 55
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->lowestOrDefault(I)I
 
     move-result p0
@@ -298,7 +298,7 @@
 .end method
 
 .method private final shiftDown(I)V
-    .registers 9
+    .locals 7
     .param p1, "index"    # I
 
     .line 131
@@ -316,8 +316,8 @@
 
     .line 134
     .local v2, "current":I
-    :goto_7
-    if-ge v2, v1, :cond_31
+    :goto_0
+    if-ge v2, v1, :cond_3
 
     .line 135
     add-int/lit8 v3, v2, 0x1
@@ -332,20 +332,20 @@
     .local v4, "left":I
     iget v5, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->size:I
 
-    if-ge v3, v5, :cond_25
+    if-ge v3, v5, :cond_1
 
     aget v5, v0, v3
 
     aget v6, v0, v4
 
-    if-ge v5, v6, :cond_25
+    if-ge v5, v6, :cond_1
 
     .line 138
     aget v5, v0, v3
 
     aget v6, v0, v2
 
-    if-ge v5, v6, :cond_24
+    if-ge v5, v6, :cond_0
 
     .line 139
     invoke-direct {p0, v3, v2}, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->swap(II)V
@@ -353,19 +353,19 @@
     .line 140
     move v2, v3
 
-    goto :goto_7
+    goto :goto_0
 
     .line 142
-    :cond_24
+    :cond_0
     return-void
 
     .line 143
-    :cond_25
+    :cond_1
     aget v5, v0, v4
 
     aget v6, v0, v2
 
-    if-ge v5, v6, :cond_30
+    if-ge v5, v6, :cond_2
 
     .line 144
     invoke-direct {p0, v4, v2}, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->swap(II)V
@@ -373,21 +373,21 @@
     .line 145
     move v2, v4
 
-    goto :goto_7
+    goto :goto_0
 
     .line 147
-    :cond_30
+    :cond_2
     return-void
 
     .line 149
     .end local v3    # "right":I
     .end local v4    # "left":I
-    :cond_31
+    :cond_3
     return-void
 .end method
 
 .method private final shiftUp(I)V
-    .registers 7
+    .locals 5
     .param p1, "index"    # I
 
     .line 112
@@ -403,8 +403,8 @@
 
     .line 115
     .local v2, "current":I
-    :goto_5
-    if-lez v2, :cond_17
+    :goto_0
+    if-lez v2, :cond_1
 
     .line 116
     add-int/lit8 v3, v2, 0x1
@@ -417,7 +417,7 @@
     .local v3, "parent":I
     aget v4, v0, v3
 
-    if-le v4, v1, :cond_16
+    if-le v4, v1, :cond_0
 
     .line 118
     invoke-direct {p0, v3, v2}, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->swap(II)V
@@ -426,20 +426,20 @@
     move v2, v3
 
     .line 120
-    goto :goto_5
+    goto :goto_0
 
     .line 122
-    :cond_16
+    :cond_0
     nop
 
     .line 124
     .end local v3    # "parent":I
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 .method private final swap(II)V
-    .registers 8
+    .locals 5
     .param p1, "a"    # I
     .param p2, "b"    # I
 
@@ -495,7 +495,7 @@
 
 # virtual methods
 .method public final add(I)I
-    .registers 5
+    .locals 3
     .param p1, "value"    # I
 
     .line 62
@@ -542,7 +542,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 38
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->size:I
@@ -551,13 +551,13 @@
 .end method
 
 .method public final lowestOrDefault(I)I
-    .registers 4
+    .locals 2
     .param p1, "default"    # I
 
     .line 55
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->size:I
 
-    if-lez v0, :cond_a
+    if-lez v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->values:[I
 
@@ -565,17 +565,17 @@
 
     aget v0, v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, p1
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public final remove(I)V
-    .registers 4
+    .locals 2
     .param p1, "handle"    # I
 
     .line 78
@@ -612,7 +612,7 @@
 .end method
 
 .method public final validate()V
-    .registers 6
+    .locals 5
 
     .line 91
     const/4 v0, 0x1
@@ -620,8 +620,8 @@
     .local v0, "index":I
     iget v1, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->size:I
 
-    :goto_3
-    if-ge v0, v1, :cond_39
+    :goto_0
+    if-ge v0, v1, :cond_1
 
     .line 92
     add-int/lit8 v2, v0, 0x1
@@ -638,17 +638,17 @@
 
     aget v3, v3, v0
 
-    if-gt v4, v3, :cond_16
+    if-gt v4, v3, :cond_0
 
     .line 91
     .end local v2    # "parent":I
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_3
+    goto :goto_0
 
     .line 93
     .restart local v2    # "parent":I
-    :cond_16
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -686,12 +686,12 @@
     .line 95
     .end local v0    # "index":I
     .end local v2    # "parent":I
-    :cond_39
+    :cond_1
     return-void
 .end method
 
 .method public final validateHandle(II)V
-    .registers 7
+    .locals 4
     .param p1, "handle"    # I
     .param p2, "value"    # I
 
@@ -706,20 +706,20 @@
 
     aget v1, v1, v0
 
-    if-ne v1, p1, :cond_47
+    if-ne v1, p1, :cond_1
 
     .line 104
     iget-object v1, p0, Landroidx/compose/runtime/snapshots/SnapshotDoubleIndexHeap;->values:[I
 
     aget v1, v1, v0
 
-    if-ne v1, p2, :cond_11
+    if-ne v1, p2, :cond_0
 
     .line 106
     return-void
 
     .line 104
-    :cond_11
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 105
@@ -774,7 +774,7 @@
     throw v1
 
     .line 103
-    :cond_47
+    :cond_1
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;

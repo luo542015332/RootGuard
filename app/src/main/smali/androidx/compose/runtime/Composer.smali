@@ -166,7 +166,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/runtime/Composer$Companion;->$$INSTANCE:Landroidx/compose/runtime/Composer$Companion;
 
@@ -176,7 +176,7 @@
 .end method
 
 .method public static synthetic getApplier$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -184,19 +184,19 @@
 .end method
 
 .method public static synthetic getApplyCoroutineContext$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCompoundKeyHash$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCurrentMarker$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -204,7 +204,7 @@
 .end method
 
 .method public static synthetic getDefaultsInvalid$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -212,7 +212,7 @@
 .end method
 
 .method public static synthetic getInserting$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -220,13 +220,13 @@
 .end method
 
 .method public static synthetic getRecomposeScope$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getRecomposeScopeIdentity$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -234,7 +234,7 @@
 .end method
 
 .method public static synthetic getSkipping$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
 
@@ -266,7 +266,7 @@
 .end method
 
 .method public changed(B)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # B
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -280,7 +280,7 @@
 .end method
 
 .method public changed(C)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # C
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -294,7 +294,7 @@
 .end method
 
 .method public changed(D)Z
-    .registers 4
+    .locals 1
     .param p1, "value"    # D
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -308,7 +308,7 @@
 .end method
 
 .method public changed(F)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -322,7 +322,7 @@
 .end method
 
 .method public changed(I)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -336,7 +336,7 @@
 .end method
 
 .method public changed(J)Z
-    .registers 4
+    .locals 1
     .param p1, "value"    # J
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -355,7 +355,7 @@
 .end method
 
 .method public changed(S)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # S
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -369,7 +369,7 @@
 .end method
 
 .method public changed(Z)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Z
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation
@@ -383,7 +383,7 @@
 .end method
 
 .method public changedInstance(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation

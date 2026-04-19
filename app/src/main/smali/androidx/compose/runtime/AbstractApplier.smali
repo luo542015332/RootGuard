@@ -95,7 +95,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "root"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 211
     iget-object v0, p0, Landroidx/compose/runtime/AbstractApplier;->stack:Ljava/util/List;
@@ -157,7 +157,7 @@
 .end method
 
 .method public down(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "node"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -182,7 +182,7 @@
 .end method
 
 .method public getCurrent()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -196,7 +196,7 @@
 .end method
 
 .method public final getRoot()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -210,7 +210,7 @@
 .end method
 
 .method protected final move(Ljava/util/List;III)V
-    .registers 9
+    .locals 4
     .param p1, "$this$move"    # Ljava/util/List;
     .param p2, "from"    # I
     .param p3, "to"    # I
@@ -228,35 +228,35 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 230
-    if-le p2, p3, :cond_9
+    if-le p2, p3, :cond_0
 
     move v0, p3
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     sub-int v0, p3, p4
 
     .line 231
     .local v0, "dest":I
-    :goto_b
+    :goto_0
     const/4 v1, 0x1
 
-    if-ne p4, v1, :cond_2b
+    if-ne p4, v1, :cond_3
 
     .line 232
     add-int/lit8 v1, p3, 0x1
 
-    if-eq p2, v1, :cond_1f
+    if-eq p2, v1, :cond_2
 
     add-int/lit8 v1, p3, -0x1
 
-    if-ne p2, v1, :cond_17
+    if-ne p2, v1, :cond_1
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 238
-    :cond_17
+    :cond_1
     invoke-interface {p1, p2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -266,11 +266,11 @@
     invoke-interface {p1, v0, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
     .end local v1    # "fromEl":Ljava/lang/Object;
-    goto :goto_41
+    goto :goto_2
 
     .line 234
-    :cond_1f
-    :goto_1f
+    :cond_2
+    :goto_1
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -285,12 +285,12 @@
     .local v2, "toEl":Ljava/lang/Object;
     invoke-interface {p1, p2, v2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_41
+    goto :goto_2
 
     .line 242
     .end local v1    # "fromEl":Ljava/lang/Object;
     .end local v2    # "toEl":Ljava/lang/Object;
-    :cond_2b
+    :cond_3
     add-int v1, p2, p4
 
     invoke-interface {p1, p2, v1}, Ljava/util/List;->subList(II)Ljava/util/List;
@@ -321,7 +321,7 @@
     .line 247
     .end local v1    # "subView":Ljava/util/List;
     .end local v2    # "subCopy":Ljava/util/List;
-    :goto_41
+    :goto_2
     return-void
 .end method
 
@@ -329,7 +329,7 @@
 .end method
 
 .method protected final remove(Ljava/util/List;II)V
-    .registers 5
+    .locals 1
     .param p1, "$this$remove"    # Ljava/util/List;
     .param p2, "index"    # I
     .param p3, "count"    # I
@@ -348,15 +348,15 @@
     .line 222
     const/4 v0, 0x1
 
-    if-ne p3, v0, :cond_c
+    if-ne p3, v0, :cond_0
 
     .line 223
     invoke-interface {p1, p2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    goto :goto_15
+    goto :goto_0
 
     .line 225
-    :cond_c
+    :cond_0
     add-int v0, p2, p3
 
     invoke-interface {p1, p2, v0}, Ljava/util/List;->subList(II)Ljava/util/List;
@@ -366,12 +366,12 @@
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
     .line 227
-    :goto_15
+    :goto_0
     return-void
 .end method
 
 .method protected setCurrent(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -386,7 +386,7 @@
 .end method
 
 .method public up()V
-    .registers 3
+    .locals 2
 
     .line 206
     iget-object v0, p0, Landroidx/compose/runtime/AbstractApplier;->stack:Ljava/util/List;
@@ -399,7 +399,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 207
     iget-object v0, p0, Landroidx/compose/runtime/AbstractApplier;->stack:Ljava/util/List;
@@ -420,7 +420,7 @@
     return-void
 
     .line 206
-    :cond_1c
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."

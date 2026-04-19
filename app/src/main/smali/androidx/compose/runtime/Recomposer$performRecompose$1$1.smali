@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/collection/IdentityArraySet;Landroidx/compose/runtime/ControlledComposition;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1093
     invoke-virtual {p0}, Landroidx/compose/runtime/Recomposer$performRecompose$1$1;->invoke()V
@@ -101,7 +101,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 9
+    .locals 8
 
     .line 1094
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$performRecompose$1$1;->$modifiedValues:Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -129,8 +129,8 @@
 
     move-result v5
 
-    :goto_f
-    if-ge v4, v5, :cond_21
+    :goto_0
+    if-ge v4, v5, :cond_0
 
     .line 1507
     aget-object v6, v3, v4
@@ -154,11 +154,11 @@
     .line 1505
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
     .line 1509
     .end local v4    # "i$iv":I
-    :cond_21
+    :cond_0
     nop
 
     .line 1095

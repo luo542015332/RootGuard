@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/animation/core/EasingFunctionsKt$EaseInOutElastic$1;
 
@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final transform(F)F
-    .registers 12
+    .locals 10
     .param p1, "fraction"    # F
 
     .line 207
@@ -82,60 +82,60 @@
 
     const/4 v5, 0x0
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_0
 
     move v3, v4
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v3, v5
 
-    :goto_10
-    if-eqz v3, :cond_13
+    :goto_0
+    if-eqz v3, :cond_1
 
-    goto :goto_68
+    goto :goto_3
 
     .line 210
-    :cond_13
+    :cond_1
     const/high16 v3, 0x3f800000    # 1.0f
 
     cmpg-float v6, p1, v3
 
-    if-nez v6, :cond_1b
+    if-nez v6, :cond_2
 
     move v6, v4
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1b
+    :cond_2
     move v6, v5
 
-    :goto_1c
-    if-eqz v6, :cond_20
+    :goto_1
+    if-eqz v6, :cond_3
 
     move v2, v3
 
-    goto :goto_68
+    goto :goto_3
 
     .line 211
-    :cond_20
+    :cond_3
     cmpg-float v2, v2, p1
 
-    if-gtz v2, :cond_2b
+    if-gtz v2, :cond_4
 
     const/high16 v2, 0x3f000000    # 0.5f
 
     cmpg-float v2, p1, v2
 
-    if-gtz v2, :cond_2b
+    if-gtz v2, :cond_4
 
-    goto :goto_2c
+    goto :goto_2
 
-    :cond_2b
+    :cond_4
     move v4, v5
 
-    :goto_2c
+    :goto_2
     const/high16 v2, 0x41320000    # 11.125f
 
     const/high16 v5, 0x41200000    # 10.0f
@@ -144,7 +144,7 @@
 
     const/high16 v7, 0x41a00000    # 20.0f
 
-    if-eqz v4, :cond_4f
+    if-eqz v4, :cond_5
 
     .line 212
     float-to-double v3, v6
@@ -190,10 +190,10 @@
     .line 213
     double-to-float v2, v5
 
-    goto :goto_68
+    goto :goto_3
 
     .line 215
-    :cond_4f
+    :cond_5
     float-to-double v8, v6
 
     const/high16 v4, -0x3e600000    # -20.0f
@@ -241,6 +241,6 @@
     add-float/2addr v2, v3
 
     .line 208
-    :goto_68
+    :goto_3
     return v2
 .end method

@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/animation/core/EasingFunctionsKt$EaseInElastic$1;
 
@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final transform(F)F
-    .registers 9
+    .locals 7
     .param p1, "fraction"    # F
 
     .line 177
@@ -82,40 +82,40 @@
 
     const/4 v5, 0x0
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_0
 
     move v3, v4
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move v3, v5
 
-    :goto_10
-    if-eqz v3, :cond_13
+    :goto_0
+    if-eqz v3, :cond_1
 
-    goto :goto_3a
+    goto :goto_2
 
     .line 181
-    :cond_13
+    :cond_1
     const/high16 v2, 0x3f800000    # 1.0f
 
     cmpg-float v3, p1, v2
 
-    if-nez v3, :cond_1a
+    if-nez v3, :cond_2
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_2
     move v4, v5
 
-    :goto_1b
-    if-eqz v4, :cond_1e
+    :goto_1
+    if-eqz v4, :cond_3
 
-    goto :goto_3a
+    goto :goto_2
 
     .line 183
-    :cond_1e
+    :cond_3
     const/high16 v2, 0x40000000    # 2.0f
 
     float-to-double v2, v2
@@ -160,6 +160,6 @@
     double-to-float v2, v2
 
     .line 179
-    :goto_3a
+    :goto_2
     return v2
 .end method

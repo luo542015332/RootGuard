@@ -41,7 +41,7 @@
 
 # direct methods
 .method public static final getChildrenOfVirtualChildren(Landroidx/compose/ui/layout/IntrinsicMeasureScope;)Ljava/util/List;
-    .registers 18
+    .locals 17
     .param p0, "scope"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -117,8 +117,8 @@
 
     move-result v9
 
-    :goto_2a
-    if-ge v8, v9, :cond_4e
+    :goto_0
+    if-ge v8, v9, :cond_1
 
     .line 53
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -147,20 +147,20 @@
 
     .line 33
     .local v15, "$i$a$-fastMap-MeasureScopeWithLayoutNodeKt$getChildrenOfVirtualChildren$1":I
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_0
 
     invoke-virtual {v14}, Landroidx/compose/ui/node/LayoutNode;->getChildLookaheadMeasurables$ui_release()Ljava/util/List;
 
     move-result-object v16
 
-    goto :goto_44
+    goto :goto_1
 
-    :cond_40
+    :cond_0
     invoke-virtual {v14}, Landroidx/compose/ui/node/LayoutNode;->getChildMeasurables$ui_release()Ljava/util/List;
 
     move-result-object v16
 
-    :goto_44
+    :goto_1
     move-object/from16 v14, v16
 
     .line 55
@@ -180,11 +180,11 @@
     .end local v10    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 57
     .end local v8    # "index$iv$iv":I
-    :cond_4e
+    :cond_1
     nop
 
     .line 58
@@ -202,7 +202,7 @@
 .end method
 
 .method private static final isInLookaheadPass(Landroidx/compose/ui/node/LayoutNode;)Z
-    .registers 3
+    .locals 2
     .param p0, "$this$isInLookaheadPass"    # Landroidx/compose/ui/node/LayoutNode;
 
     .line 38
@@ -218,7 +218,7 @@
 
     aget v0, v1, v0
 
-    packed-switch v0, :pswitch_data_32
+    packed-switch v0, :pswitch_data_0
 
     .line 43
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -227,20 +227,20 @@
 
     throw v0
 
-    :pswitch_15
+    :pswitch_0
     invoke-virtual {p0}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v0}, Landroidx/compose/ui/node/MeasureScopeWithLayoutNodeKt;->isInLookaheadPass(Landroidx/compose/ui/node/LayoutNode;)Z
 
     move-result v0
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "Required value was null."
@@ -254,27 +254,27 @@
     throw v0
 
     .line 40
-    :pswitch_2d
+    :pswitch_1
     const/4 v0, 0x0
 
-    goto :goto_30
+    goto :goto_0
 
     .line 39
-    :pswitch_2f
+    :pswitch_2
     const/4 v0, 0x1
 
     .line 38
-    :goto_30
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_32
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_2f
-        :pswitch_2f
-        :pswitch_2d
-        :pswitch_2d
-        :pswitch_15
+        :pswitch_2
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

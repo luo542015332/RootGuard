@@ -72,13 +72,13 @@
 
 # direct methods
 .method public static synthetic getEnter$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getExit$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -89,7 +89,7 @@
 .end method
 
 .method public getDown()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 71
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -102,7 +102,7 @@
 .end method
 
 .method public getEnd()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 109
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -115,7 +115,7 @@
 .end method
 
 .method public getEnter()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -135,7 +135,7 @@
 .end method
 
 .method public getExit()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -155,7 +155,7 @@
 .end method
 
 .method public getLeft()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 80
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -168,7 +168,7 @@
 .end method
 
 .method public getNext()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 44
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -181,7 +181,7 @@
 .end method
 
 .method public getPrevious()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 53
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -194,7 +194,7 @@
 .end method
 
 .method public getRight()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 89
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -207,7 +207,7 @@
 .end method
 
 .method public getStart()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 99
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -220,7 +220,7 @@
 .end method
 
 .method public getUp()Landroidx/compose/ui/focus/FocusRequester;
-    .registers 2
+    .locals 1
 
     .line 62
     sget-object v0, Landroidx/compose/ui/focus/FocusRequester;->Companion:Landroidx/compose/ui/focus/FocusRequester$Companion;
@@ -236,7 +236,7 @@
 .end method
 
 .method public setDown(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -247,7 +247,7 @@
 .end method
 
 .method public setEnd(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -258,7 +258,7 @@
 .end method
 
 .method public setEnter(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -279,7 +279,7 @@
 .end method
 
 .method public setExit(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -300,7 +300,7 @@
 .end method
 
 .method public setLeft(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -311,7 +311,7 @@
 .end method
 
 .method public setNext(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -322,7 +322,7 @@
 .end method
 
 .method public setPrevious(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -333,7 +333,7 @@
 .end method
 
 .method public setRight(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -344,7 +344,7 @@
 .end method
 
 .method public setStart(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 
@@ -355,7 +355,7 @@
 .end method
 
 .method public setUp(Landroidx/compose/ui/focus/FocusRequester;)V
-    .registers 3
+    .locals 1
 
     const-string v0, "<anonymous parameter 0>"
 

@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 3
+    .locals 1
     .param p1, "$receiver"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView$pointerIconService$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public getIcon()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 2
+    .locals 1
 
     .line 1762
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$pointerIconService$1;->currentIcon:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -82,11 +82,11 @@
 .end method
 
 .method public setIcon(Landroidx/compose/ui/input/pointer/PointerIcon;)V
-    .registers 5
+    .locals 3
     .param p1, "value"    # Landroidx/compose/ui/input/pointer/PointerIcon;
 
     .line 1766
-    if-nez p1, :cond_9
+    if-nez p1, :cond_0
 
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon;->Companion:Landroidx/compose/ui/input/pointer/PointerIcon$Companion;
 
@@ -94,12 +94,12 @@
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     move-object v0, p1
 
-    :goto_a
+    :goto_0
     iput-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$pointerIconService$1;->currentIcon:Landroidx/compose/ui/input/pointer/PointerIcon;
 
     .line 1767

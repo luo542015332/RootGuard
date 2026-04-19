@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(F)V
-    .registers 2
+    .locals 0
 
     iput p1, p0, Landroidx/compose/material/ListItemKt$OffsetToBaselineOrCenter$1;->$offset:F
 
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 23
+    .locals 18
     .param p1, "$this$Layout"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -139,7 +139,7 @@
     .local v2, "containerHeight":I
     const/high16 v3, -0x80000000
 
-    if-eq v10, v3, :cond_51
+    if-eq v10, v3, :cond_0
 
     .line 401
     move-object/from16 v11, p0
@@ -175,13 +175,13 @@
 
     .end local v2    # "containerHeight":I
     .local v1, "containerHeight":I
-    goto :goto_84
+    goto :goto_0
 
     .line 404
     .end local v0    # "y":I
     .local v1, "y":I
     .restart local v2    # "containerHeight":I
-    :cond_51
+    :cond_0
     move-object/from16 v11, p0
 
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/unit/Constraints;->getMinHeight-impl(J)I
@@ -249,7 +249,7 @@
     .end local v2    # "containerHeight":I
     .local v12, "y":I
     .local v13, "containerHeight":I
-    :goto_84
+    :goto_0
     invoke-virtual {v9}, Landroidx/compose/ui/layout/Placeable;->getWidth()I
 
     move-result v1

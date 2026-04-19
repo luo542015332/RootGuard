@@ -100,7 +100,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/AnimatedContentTransitionScopeImpl;Ljava/lang/Object;Landroidx/compose/runtime/snapshots/SnapshotStateList;Lkotlin/jvm/functions/Function4;I)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -140,7 +140,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -170,7 +170,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/animation/AnimatedVisibilityScope;Landroidx/compose/runtime/Composer;I)V
-    .registers 14
+    .locals 10
     .param p1, "$this$AnimatedVisibility"    # Landroidx/compose/animation/AnimatedVisibilityScope;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -188,54 +188,54 @@
     .local v0, "$dirty":I
     and-int/lit8 v1, p3, 0xe
 
-    if-nez v1, :cond_19
+    if-nez v1, :cond_1
 
     invoke-interface {p2, p1}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x4
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v1, 0x2
 
-    :goto_18
+    :goto_0
     or-int/2addr v0, v1
 
     .line 771
-    :cond_19
+    :cond_1
     and-int/lit8 v1, v0, 0x5b
 
     const/16 v2, 0x12
 
-    if-ne v1, v2, :cond_2b
+    if-ne v1, v2, :cond_3
 
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_2
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 781
-    :cond_26
+    :cond_2
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_ad
+    goto/16 :goto_3
 
     .line 771
-    :cond_2b
-    :goto_2b
+    :cond_3
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_4
 
     const/4 v1, -0x1
 
@@ -245,7 +245,7 @@
 
     invoke-static {v3, v0, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_3b
+    :cond_4
     new-instance v1, Landroidx/compose/animation/AnimatedContentKt$AnimatedContent$6$1$4$1;
 
     iget-object v2, p0, Landroidx/compose/animation/AnimatedContentKt$AnimatedContent$6$1$4;->$currentlyVisible:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -323,7 +323,7 @@
 
     move-result-object v8
 
-    if-ne v6, v8, :cond_88
+    if-ne v6, v8, :cond_5
 
     .line 866
     const/4 v8, 0x0
@@ -346,14 +346,14 @@
     nop
 
     .end local v8    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_89
+    goto :goto_2
 
     .line 869
-    :cond_88
+    :cond_5
     move-object v8, v6
 
     .line 865
-    :goto_89
+    :goto_2
     nop
 
     .line 864
@@ -405,12 +405,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_ad
+    if-eqz v1, :cond_6
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 782
-    :cond_ad
-    :goto_ad
+    :cond_6
+    :goto_3
     return-void
 .end method

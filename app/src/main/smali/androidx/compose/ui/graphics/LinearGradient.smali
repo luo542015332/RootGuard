@@ -84,7 +84,7 @@
 
 # direct methods
 .method private constructor <init>(Ljava/util/List;Ljava/util/List;JJI)V
-    .registers 9
+    .locals 1
     .param p1, "colors"    # Ljava/util/List;
     .param p2, "stops"    # Ljava/util/List;
     .param p3, "start"    # J
@@ -129,28 +129,28 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/List;Ljava/util/List;JJIILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 20
+    .locals 10
 
     .line 447
     and-int/lit8 v0, p8, 0x2
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 449
     const/4 v0, 0x0
 
     move-object v3, v0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 447
-    :cond_7
+    :cond_0
     move-object v3, p2
 
-    :goto_8
+    :goto_0
     and-int/lit8 v0, p8, 0x10
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     .line 452
     sget-object v0, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -161,13 +161,13 @@
 
     move v8, v0
 
-    goto :goto_16
+    goto :goto_1
 
     .line 447
-    :cond_14
+    :cond_1
     move/from16 v8, p7
 
-    :goto_16
+    :goto_1
     const/4 v9, 0x0
 
     move-object v1, p0
@@ -185,7 +185,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/List;Ljava/util/List;JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 9
+    .locals 0
 
     invoke-direct/range {p0 .. p7}, Landroidx/compose/ui/graphics/LinearGradient;-><init>(Ljava/util/List;Ljava/util/List;JJI)V
 
@@ -195,7 +195,7 @@
 
 # virtual methods
 .method public createShader-uvyYCjk(J)Landroid/graphics/Shader;
-    .registers 16
+    .locals 13
     .param p1, "size"    # J
 
     .line 463
@@ -213,25 +213,25 @@
 
     const/4 v3, 0x0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move v0, v3
 
-    :goto_11
-    if-eqz v0, :cond_18
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
     move-result v0
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     iget-wide v4, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
 
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -240,7 +240,7 @@
 
     .line 464
     .local v0, "startX":F
-    :goto_1e
+    :goto_1
     iget-wide v4, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
 
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -249,25 +249,25 @@
 
     cmpg-float v4, v4, v1
 
-    if-nez v4, :cond_2a
+    if-nez v4, :cond_2
 
     move v4, v2
 
-    goto :goto_2b
+    goto :goto_2
 
-    :cond_2a
+    :cond_2
     move v4, v3
 
-    :goto_2b
-    if-eqz v4, :cond_32
+    :goto_2
+    if-eqz v4, :cond_3
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
     move-result v4
 
-    goto :goto_38
+    goto :goto_3
 
-    :cond_32
+    :cond_3
     iget-wide v4, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
 
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -276,7 +276,7 @@
 
     .line 465
     .local v4, "startY":F
-    :goto_38
+    :goto_3
     iget-wide v5, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
     invoke-static {v5, v6}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -285,25 +285,25 @@
 
     cmpg-float v5, v5, v1
 
-    if-nez v5, :cond_44
+    if-nez v5, :cond_4
 
     move v5, v2
 
-    goto :goto_45
+    goto :goto_4
 
-    :cond_44
+    :cond_4
     move v5, v3
 
-    :goto_45
-    if-eqz v5, :cond_4c
+    :goto_4
+    if-eqz v5, :cond_5
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
     move-result v5
 
-    goto :goto_52
+    goto :goto_5
 
-    :cond_4c
+    :cond_5
     iget-wide v5, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
     invoke-static {v5, v6}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -312,7 +312,7 @@
 
     .line 466
     .local v5, "endX":F
-    :goto_52
+    :goto_5
     iget-wide v6, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
     invoke-static {v6, v7}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -321,23 +321,23 @@
 
     cmpg-float v1, v6, v1
 
-    if-nez v1, :cond_5d
+    if-nez v1, :cond_6
 
-    goto :goto_5e
+    goto :goto_6
 
-    :cond_5d
+    :cond_6
     move v2, v3
 
-    :goto_5e
-    if-eqz v2, :cond_65
+    :goto_6
+    if-eqz v2, :cond_7
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
     move-result v1
 
-    goto :goto_6b
+    goto :goto_7
 
-    :cond_65
+    :cond_7
     iget-wide v1, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
     invoke-static {v1, v2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -346,7 +346,7 @@
 
     .line 468
     .local v1, "endY":F
-    :goto_6b
+    :goto_7
     iget-object v10, p0, Landroidx/compose/ui/graphics/LinearGradient;->colors:Ljava/util/List;
 
     .line 469
@@ -389,28 +389,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 477
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 478
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/LinearGradient;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 480
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/LinearGradient;->colors:Ljava/util/List;
 
     move-object v3, p1
@@ -423,12 +423,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 481
-    :cond_18
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/graphics/LinearGradient;->stops:Ljava/util/List;
 
     move-object v3, p1
@@ -441,12 +441,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 482
-    :cond_26
+    :cond_3
     iget-wide v3, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
 
     move-object v1, p1
@@ -459,12 +459,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_4
 
     return v2
 
     .line 483
-    :cond_34
+    :cond_4
     iget-wide v3, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
     move-object v1, p1
@@ -477,12 +477,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_42
+    if-nez v1, :cond_5
 
     return v2
 
     .line 484
-    :cond_42
+    :cond_5
     iget v1, p0, Landroidx/compose/ui/graphics/LinearGradient;->tileMode:I
 
     move-object v3, p1
@@ -495,17 +495,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_50
+    if-nez v1, :cond_6
 
     return v2
 
     .line 486
-    :cond_50
+    :cond_6
     return v0
 .end method
 
 .method public getIntrinsicSize-NH-jbRc()J
-    .registers 7
+    .locals 6
 
     .line 458
     iget-wide v0, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
@@ -522,25 +522,25 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_16
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v0, v3
 
-    :goto_17
+    :goto_0
     const/high16 v1, 0x7fc00000    # Float.NaN
 
-    if-eqz v0, :cond_44
+    if-eqz v0, :cond_2
 
     iget-wide v4, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
@@ -552,23 +552,23 @@
 
     move-result v4
 
-    if-nez v4, :cond_2f
+    if-nez v4, :cond_1
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
+    :cond_1
     move v0, v3
 
-    :goto_30
-    if-eqz v0, :cond_44
+    :goto_1
+    if-eqz v0, :cond_2
 
     iget-wide v4, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
 
@@ -588,13 +588,13 @@
 
     move-result v0
 
-    goto :goto_45
+    goto :goto_2
 
-    :cond_44
+    :cond_2
     move v0, v1
 
     .line 459
-    :goto_45
+    :goto_2
     iget-wide v4, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
 
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -605,23 +605,23 @@
 
     move-result v5
 
-    if-nez v5, :cond_59
+    if-nez v5, :cond_3
 
     invoke-static {v4}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v4
 
-    if-nez v4, :cond_59
+    if-nez v4, :cond_3
 
     move v4, v2
 
-    goto :goto_5a
+    goto :goto_3
 
-    :cond_59
+    :cond_3
     move v4, v3
 
-    :goto_5a
-    if-eqz v4, :cond_83
+    :goto_3
+    if-eqz v4, :cond_5
 
     iget-wide v4, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
@@ -633,21 +633,21 @@
 
     move-result v5
 
-    if-nez v5, :cond_6f
+    if-nez v5, :cond_4
 
     invoke-static {v4}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v4
 
-    if-nez v4, :cond_6f
+    if-nez v4, :cond_4
 
-    goto :goto_70
+    goto :goto_4
 
-    :cond_6f
+    :cond_4
     move v2, v3
 
-    :goto_70
-    if-eqz v2, :cond_83
+    :goto_4
+    if-eqz v2, :cond_5
 
     iget-wide v1, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
 
@@ -668,7 +668,7 @@
     move-result v1
 
     .line 457
-    :cond_83
+    :cond_5
     invoke-static {v0, v1}, Landroidx/compose/ui/geometry/SizeKt;->Size(FF)J
 
     move-result-wide v0
@@ -678,7 +678,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 490
     iget-object v0, p0, Landroidx/compose/ui/graphics/LinearGradient;->colors:Ljava/util/List;
@@ -693,18 +693,18 @@
 
     iget-object v2, p0, Landroidx/compose/ui/graphics/LinearGradient;->stops:Ljava/util/List;
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_12
+    :goto_0
     add-int/2addr v1, v2
 
     .line 492
@@ -753,7 +753,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .locals 5
 
     .line 499
     iget-wide v0, p0, Landroidx/compose/ui/graphics/LinearGradient;->start:J
@@ -766,7 +766,7 @@
 
     const-string v2, ", "
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -796,21 +796,21 @@
 
     move-result-object v0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     move-object v0, v1
 
     .line 500
     .local v0, "startValue":Ljava/lang/String;
-    :goto_2c
+    :goto_0
     iget-wide v3, p0, Landroidx/compose/ui/graphics/LinearGradient;->end:J
 
     invoke-static {v3, v4}, Landroidx/compose/ui/geometry/OffsetKt;->isFinite-k-4lQ0M(J)Z
 
     move-result v3
 
-    if-eqz v3, :cond_52
+    if-eqz v3, :cond_1
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -842,7 +842,7 @@
 
     .line 501
     .local v1, "endValue":Ljava/lang/String;
-    :cond_52
+    :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V

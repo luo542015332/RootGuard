@@ -43,7 +43,7 @@
 
 # direct methods
 .method public static final loadVectorResourceInner(Landroid/content/res/Resources$Theme;Landroid/content/res/Resources;Landroid/content/res/XmlResourceParser;I)Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
-    .registers 14
+    .locals 10
     .param p0, "theme"    # Landroid/content/res/Resources$Theme;
     .param p1, "res"    # Landroid/content/res/Resources;
     .param p2, "parser"    # Landroid/content/res/XmlResourceParser;
@@ -107,7 +107,7 @@
 
     .line 92
     .local v9, "nestedGroups":I
-    :goto_2b
+    :goto_0
     move-object v1, p2
 
     check-cast v1, Lorg/xmlpull/v1/XmlPullParser;
@@ -116,7 +116,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_48
+    if-nez v1, :cond_0
 
     .line 93
     nop
@@ -156,10 +156,10 @@
     .line 100
     invoke-interface {p2}, Landroid/content/res/XmlResourceParser;->next()I
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 102
-    :cond_48
+    :cond_0
     new-instance v1, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
 
     invoke-virtual {v8}, Landroidx/compose/ui/graphics/vector/ImageVector$Builder;->build()Landroidx/compose/ui/graphics/vector/ImageVector;
@@ -172,7 +172,7 @@
 .end method
 
 .method public static synthetic loadVectorResourceInner$default(Landroid/content/res/Resources$Theme;Landroid/content/res/Resources;Landroid/content/res/XmlResourceParser;IILjava/lang/Object;)Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
@@ -182,13 +182,13 @@
     .line 81
     and-int/lit8 p4, p4, 0x1
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 82
     const/4 p0, 0x0
 
     .line 81
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/res/VectorResources_androidKt;->loadVectorResourceInner(Landroid/content/res/Resources$Theme;Landroid/content/res/Resources;Landroid/content/res/XmlResourceParser;I)Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
 
     move-result-object p0
@@ -197,7 +197,7 @@
 .end method
 
 .method public static final vectorResource(Landroidx/compose/ui/graphics/vector/ImageVector$Companion;ILandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/vector/ImageVector;
-    .registers 16
+    .locals 12
     .param p0, "$this$vectorResource"    # Landroidx/compose/ui/graphics/vector/ImageVector$Companion;
     .param p1, "id"    # I
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -219,7 +219,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 48
     const/4 v1, -0x1
@@ -229,7 +229,7 @@
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 49
-    :cond_1d
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -314,8 +314,8 @@
     .local v7, "invalid$iv":Z
     array-length v8, v4
 
-    :goto_5c
-    if-ge v1, v8, :cond_68
+    :goto_0
+    if-ge v1, v8, :cond_1
 
     aget-object v9, v4, v1
 
@@ -329,10 +329,10 @@
     .end local v9    # "key$iv":Ljava/lang/Object;
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5c
+    goto :goto_0
 
     .line 157
-    :cond_68
+    :cond_1
     move-object v1, p2
 
     .local v1, "$this$cache$iv$iv":Landroidx/compose/runtime/Composer;
@@ -349,7 +349,7 @@
 
     .line 159
     .local v10, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v7, :cond_7c
+    if-nez v7, :cond_3
 
     sget-object v11, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -357,19 +357,19 @@
 
     move-result-object v11
 
-    if-ne v9, v11, :cond_7a
+    if-ne v9, v11, :cond_2
 
-    goto :goto_7c
+    goto :goto_1
 
     .line 163
-    :cond_7a
+    :cond_2
     move-object v11, v9
 
-    goto :goto_86
+    goto :goto_2
 
     .line 160
-    :cond_7c
-    :goto_7c
+    :cond_3
+    :goto_1
     const/4 v11, 0x0
 
     .line 54
@@ -391,7 +391,7 @@
 
     .line 159
     .end local v11    # "value$iv$iv":Ljava/lang/Object;
-    :goto_86
+    :goto_2
     nop
 
     .line 158
@@ -415,18 +415,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_4
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_96
+    :cond_4
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v11
 .end method
 
 .method public static final vectorResource(Landroidx/compose/ui/graphics/vector/ImageVector$Companion;Landroid/content/res/Resources$Theme;Landroid/content/res/Resources;I)Landroidx/compose/ui/graphics/vector/ImageVector;
-    .registers 9
+    .locals 5
     .param p0, "$this$vectorResource"    # Landroidx/compose/ui/graphics/vector/ImageVector$Companion;
     .param p1, "theme"    # Landroid/content/res/Resources$Theme;
     .param p2, "res"    # Landroid/content/res/Resources;
@@ -511,7 +511,7 @@
 .end method
 
 .method public static synthetic vectorResource$default(Landroidx/compose/ui/graphics/vector/ImageVector$Companion;Landroid/content/res/Resources$Theme;Landroid/content/res/Resources;IILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/ImageVector;
-    .registers 6
+    .locals 0
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/xmlpull/v1/XmlPullParserException;
@@ -521,13 +521,13 @@
     .line 59
     and-int/lit8 p4, p4, 0x1
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 60
     const/4 p1, 0x0
 
     .line 59
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/res/VectorResources_androidKt;->vectorResource(Landroidx/compose/ui/graphics/vector/ImageVector$Companion;Landroid/content/res/Resources$Theme;Landroid/content/res/Resources;I)Landroidx/compose/ui/graphics/vector/ImageVector;
 
     move-result-object p0

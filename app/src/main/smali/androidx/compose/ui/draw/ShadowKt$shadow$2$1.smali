@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(FLandroidx/compose/ui/graphics/Shape;ZJJ)V
-    .registers 9
+    .locals 1
 
     iput p1, p0, Landroidx/compose/ui/draw/ShadowKt$shadow$2$1;->$elevation:F
 
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 112
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/graphics/GraphicsLayerScope;)V
-    .registers 4
+    .locals 2
     .param p1, "$this$graphicsLayer"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     const-string v0, "$this$graphicsLayer"

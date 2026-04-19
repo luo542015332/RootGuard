@@ -31,7 +31,7 @@
 
 # direct methods
 .method public static final degrees(F)F
-    .registers 2
+    .locals 1
     .param p0, "radians"    # F
 
     .line 27

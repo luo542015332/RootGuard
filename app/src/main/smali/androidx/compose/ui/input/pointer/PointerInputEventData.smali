@@ -115,7 +115,7 @@
 
 # direct methods
 .method private constructor <init>(JJJJZFIZLjava/util/List;J)V
-    .registers 32
+    .locals 16
     .param p1, "id"    # J
     .param p3, "uptime"    # J
     .param p5, "positionOnScreen"    # J
@@ -199,30 +199,30 @@
 .end method
 
 .method public synthetic constructor <init>(JJJJZFIZLjava/util/List;JILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 37
+    .locals 19
 
     .line 42
     move/from16 v0, p16
 
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 50
     const/4 v1, 0x0
 
     move v14, v1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 42
-    :cond_9
+    :cond_0
     move/from16 v14, p12
 
-    :goto_b
+    :goto_0
     and-int/lit16 v1, v0, 0x100
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     .line 51
     new-instance v1, Ljava/util/ArrayList;
@@ -233,16 +233,16 @@
 
     move-object v15, v1
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 42
-    :cond_18
+    :cond_1
     move-object/from16 v15, p13
 
-    :goto_1a
+    :goto_1
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     .line 52
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -253,13 +253,13 @@
 
     move-wide/from16 v16, v0
 
-    goto :goto_29
+    goto :goto_2
 
     .line 42
-    :cond_27
+    :cond_2
     move-wide/from16 v16, p14
 
-    :goto_29
+    :goto_2
     const/16 v18, 0x0
 
     move-object/from16 v2, p0
@@ -285,7 +285,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJJJZFIZLjava/util/List;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 17
+    .locals 0
 
     invoke-direct/range {p0 .. p15}, Landroidx/compose/ui/input/pointer/PointerInputEventData;-><init>(JJJJZFIZLjava/util/List;J)V
 
@@ -293,7 +293,7 @@
 .end method
 
 .method public static synthetic copy-gYeeOSc$default(Landroidx/compose/ui/input/pointer/PointerInputEventData;JJJJZFIZLjava/util/List;JILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputEventData;
-    .registers 34
+    .locals 16
 
     move-object/from16 v0, p0
 
@@ -301,126 +301,126 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     iget-wide v2, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->id:J
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
     iget-wide v4, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->uptime:J
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_14
+    :cond_1
     move-wide/from16 v4, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v6, v1, 0x4
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_2
 
     iget-wide v6, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->positionOnScreen:J
 
-    goto :goto_1f
+    goto :goto_2
 
-    :cond_1d
+    :cond_2
     move-wide/from16 v6, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v8, v1, 0x8
 
-    if-eqz v8, :cond_26
+    if-eqz v8, :cond_3
 
     iget-wide v8, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->position:J
 
-    goto :goto_28
+    goto :goto_3
 
-    :cond_26
+    :cond_3
     move-wide/from16 v8, p7
 
-    :goto_28
+    :goto_3
     and-int/lit8 v10, v1, 0x10
 
-    if-eqz v10, :cond_2f
+    if-eqz v10, :cond_4
 
     iget-boolean v10, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->down:Z
 
-    goto :goto_31
+    goto :goto_4
 
-    :cond_2f
+    :cond_4
     move/from16 v10, p9
 
-    :goto_31
+    :goto_4
     and-int/lit8 v11, v1, 0x20
 
-    if-eqz v11, :cond_38
+    if-eqz v11, :cond_5
 
     iget v11, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->pressure:F
 
-    goto :goto_3a
+    goto :goto_5
 
-    :cond_38
+    :cond_5
     move/from16 v11, p10
 
-    :goto_3a
+    :goto_5
     and-int/lit8 v12, v1, 0x40
 
-    if-eqz v12, :cond_41
+    if-eqz v12, :cond_6
 
     iget v12, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->type:I
 
-    goto :goto_43
+    goto :goto_6
 
-    :cond_41
+    :cond_6
     move/from16 v12, p11
 
-    :goto_43
+    :goto_6
     and-int/lit16 v13, v1, 0x80
 
-    if-eqz v13, :cond_4a
+    if-eqz v13, :cond_7
 
     iget-boolean v13, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->issuesEnterExit:Z
 
-    goto :goto_4c
+    goto :goto_7
 
-    :cond_4a
+    :cond_7
     move/from16 v13, p12
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v14, v1, 0x100
 
-    if-eqz v14, :cond_53
+    if-eqz v14, :cond_8
 
     iget-object v14, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->historical:Ljava/util/List;
 
-    goto :goto_55
+    goto :goto_8
 
-    :cond_53
+    :cond_8
     move-object/from16 v14, p13
 
-    :goto_55
+    :goto_8
     and-int/lit16 v1, v1, 0x200
 
     move-object/from16 p13, v14
 
-    if-eqz v1, :cond_5e
+    if-eqz v1, :cond_9
 
     iget-wide v14, v0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->scrollDelta:J
 
-    goto :goto_60
+    goto :goto_9
 
-    :cond_5e
+    :cond_9
     move-wide/from16 v14, p14
 
-    :goto_60
+    :goto_9
     move-wide/from16 p1, v2
 
     move-wide/from16 p3, v4
@@ -449,7 +449,7 @@
 
 # virtual methods
 .method public final component1-J3iCeTQ()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->id:J
 
@@ -457,7 +457,7 @@
 .end method
 
 .method public final component10-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->scrollDelta:J
 
@@ -465,7 +465,7 @@
 .end method
 
 .method public final component2()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->uptime:J
 
@@ -473,7 +473,7 @@
 .end method
 
 .method public final component3-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->positionOnScreen:J
 
@@ -481,7 +481,7 @@
 .end method
 
 .method public final component4-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->position:J
 
@@ -489,7 +489,7 @@
 .end method
 
 .method public final component5()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->down:Z
 
@@ -497,7 +497,7 @@
 .end method
 
 .method public final component6()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->pressure:F
 
@@ -505,7 +505,7 @@
 .end method
 
 .method public final component7-T8wyACA()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->type:I
 
@@ -513,7 +513,7 @@
 .end method
 
 .method public final component8()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->issuesEnterExit:Z
 
@@ -521,7 +521,7 @@
 .end method
 
 .method public final component9()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -537,7 +537,7 @@
 .end method
 
 .method public final copy-gYeeOSc(JJJJZFIZLjava/util/List;J)Landroidx/compose/ui/input/pointer/PointerInputEventData;
-    .registers 36
+    .locals 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJJJZFIZ",
@@ -590,24 +590,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/input/pointer/PointerInputEventData;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;
@@ -620,22 +620,22 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget-wide v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->uptime:J
 
     iget-wide v5, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->uptime:J
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_3
 
     return v2
 
-    :cond_21
+    :cond_3
     iget-wide v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->positionOnScreen:J
 
     iget-wide v5, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->positionOnScreen:J
@@ -644,11 +644,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_4
 
     return v2
 
-    :cond_2c
+    :cond_4
     iget-wide v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->position:J
 
     iget-wide v5, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->position:J
@@ -657,20 +657,20 @@
 
     move-result v3
 
-    if-nez v3, :cond_37
+    if-nez v3, :cond_5
 
     return v2
 
-    :cond_37
+    :cond_5
     iget-boolean v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->down:Z
 
     iget-boolean v4, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->down:Z
 
-    if-eq v3, v4, :cond_3e
+    if-eq v3, v4, :cond_6
 
     return v2
 
-    :cond_3e
+    :cond_6
     iget v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->pressure:F
 
     iget v4, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->pressure:F
@@ -679,11 +679,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_49
+    if-eqz v3, :cond_7
 
     return v2
 
-    :cond_49
+    :cond_7
     iget v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->type:I
 
     iget v4, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->type:I
@@ -692,20 +692,20 @@
 
     move-result v3
 
-    if-nez v3, :cond_54
+    if-nez v3, :cond_8
 
     return v2
 
-    :cond_54
+    :cond_8
     iget-boolean v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->issuesEnterExit:Z
 
     iget-boolean v4, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->issuesEnterExit:Z
 
-    if-eq v3, v4, :cond_5b
+    if-eq v3, v4, :cond_9
 
     return v2
 
-    :cond_5b
+    :cond_9
     iget-object v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->historical:Ljava/util/List;
 
     iget-object v4, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->historical:Ljava/util/List;
@@ -714,11 +714,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_66
+    if-nez v3, :cond_a
 
     return v2
 
-    :cond_66
+    :cond_a
     iget-wide v3, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->scrollDelta:J
 
     iget-wide v5, v1, Landroidx/compose/ui/input/pointer/PointerInputEventData;->scrollDelta:J
@@ -727,16 +727,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_71
+    if-nez v1, :cond_b
 
     return v2
 
-    :cond_71
+    :cond_b
     return v0
 .end method
 
 .method public final getDown()Z
-    .registers 2
+    .locals 1
 
     .line 47
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->down:Z
@@ -745,7 +745,7 @@
 .end method
 
 .method public final getHistorical()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -762,7 +762,7 @@
 .end method
 
 .method public final getId-J3iCeTQ()J
-    .registers 3
+    .locals 2
 
     .line 43
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->id:J
@@ -771,7 +771,7 @@
 .end method
 
 .method public final getIssuesEnterExit()Z
-    .registers 2
+    .locals 1
 
     .line 50
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->issuesEnterExit:Z
@@ -780,7 +780,7 @@
 .end method
 
 .method public final getPosition-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 46
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->position:J
@@ -789,7 +789,7 @@
 .end method
 
 .method public final getPositionOnScreen-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 45
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->positionOnScreen:J
@@ -798,7 +798,7 @@
 .end method
 
 .method public final getPressure()F
-    .registers 2
+    .locals 1
 
     .line 48
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->pressure:F
@@ -807,7 +807,7 @@
 .end method
 
 .method public final getScrollDelta-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 52
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->scrollDelta:J
@@ -816,7 +816,7 @@
 .end method
 
 .method public final getType-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->type:I
@@ -825,7 +825,7 @@
 .end method
 
 .method public final getUptime()J
-    .registers 3
+    .locals 2
 
     .line 44
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->uptime:J
@@ -834,7 +834,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->id:J
 
@@ -878,11 +878,11 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_29
+    if-eqz v2, :cond_0
 
     move v2, v3
 
-    :cond_29
+    :cond_0
     add-int/2addr v0, v2
 
     mul-int/lit8 v1, v0, 0x1f
@@ -909,14 +909,14 @@
 
     iget-boolean v2, p0, Landroidx/compose/ui/input/pointer/PointerInputEventData;->issuesEnterExit:Z
 
-    if-eqz v2, :cond_43
+    if-eqz v2, :cond_1
 
-    goto :goto_44
+    goto :goto_0
 
-    :cond_43
+    :cond_1
     move v3, v2
 
-    :goto_44
+    :goto_0
     add-int/2addr v1, v3
 
     mul-int/lit8 v0, v1, 0x1f
@@ -943,7 +943,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 

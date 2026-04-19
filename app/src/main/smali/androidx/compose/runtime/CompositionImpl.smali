@@ -333,7 +333,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/CompositionContext;Landroidx/compose/runtime/Applier;Lkotlin/coroutines/CoroutineContext;)V
-    .registers 14
+    .locals 10
     .param p1, "parent"    # Landroidx/compose/runtime/CompositionContext;
     .param p2, "applier"    # Landroidx/compose/runtime/Applier;
     .param p3, "recomposeContext"    # Lkotlin/coroutines/CoroutineContext;
@@ -539,18 +539,18 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/runtime/CompositionContext;Landroidx/compose/runtime/Applier;Lkotlin/coroutines/CoroutineContext;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 339
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 351
     const/4 p3, 0x0
 
     .line 339
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/runtime/CompositionImpl;-><init>(Landroidx/compose/runtime/CompositionContext;Landroidx/compose/runtime/Applier;Lkotlin/coroutines/CoroutineContext;)V
 
     .line 1181
@@ -558,7 +558,7 @@
 .end method
 
 .method private final abandonChanges()V
-    .registers 3
+    .locals 2
 
     .line 899
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->pendingModifications:Ljava/util/concurrent/atomic/AtomicReference;
@@ -587,7 +587,7 @@
 .end method
 
 .method private final addPendingInvalidationsLocked(Ljava/util/HashSet;Ljava/lang/Object;Z)Ljava/util/HashSet;
-    .registers 19
+    .locals 15
     .param p1, "$this$addPendingInvalidationsLocked"    # Ljava/util/HashSet;
     .param p2, "value"    # Ljava/lang/Object;
     .param p3, "forgetConditionalScopes"    # Z
@@ -623,17 +623,15 @@
 
     .line 1325
     .local v4, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v3, v1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v5
 
     .line 1326
     .local v5, "index$iv":I
-    if-ltz v5, :cond_5b
+    if-ltz v5, :cond_4
 
     .line 1327
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v3, v5}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v6
@@ -659,8 +657,8 @@
 
     move-result v10
 
-    :goto_1e
-    if-ge v9, v10, :cond_5a
+    :goto_0
+    if-ge v9, v10, :cond_3
 
     .line 1332
     aget-object v11, v8, v9
@@ -685,7 +683,7 @@
 
     move-result v13
 
-    if-nez v13, :cond_55
+    if-nez v13, :cond_2
 
     .line 684
     invoke-virtual {v11, v1}, Landroidx/compose/runtime/RecomposeScopeImpl;->invalidateForResult(Ljava/lang/Object;)Landroidx/compose/runtime/InvalidationResult;
@@ -694,27 +692,27 @@
 
     sget-object v14, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
 
-    if-eq v13, v14, :cond_55
+    if-eq v13, v14, :cond_2
 
     .line 686
     invoke-virtual {v11}, Landroidx/compose/runtime/RecomposeScopeImpl;->isConditional()Z
 
     move-result v13
 
-    if-eqz v13, :cond_4a
+    if-eqz v13, :cond_0
 
-    if-nez p3, :cond_4a
+    if-nez p3, :cond_0
 
     .line 687
     iget-object v13, v0, Landroidx/compose/runtime/CompositionImpl;->conditionallyInvalidatedScopes:Ljava/util/HashSet;
 
     invoke-virtual {v13, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    goto :goto_55
+    goto :goto_1
 
     .line 689
-    :cond_4a
-    if-nez v2, :cond_52
+    :cond_0
+    if-nez v2, :cond_1
 
     new-instance v13, Ljava/util/HashSet;
 
@@ -723,12 +721,12 @@
     move-object v2, v13
 
     .line 690
-    :cond_52
+    :cond_1
     invoke-virtual {v2, v11}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 693
-    :cond_55
-    :goto_55
+    :cond_2
+    :goto_1
     nop
 
     .line 1332
@@ -739,18 +737,18 @@
     .line 1330
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 1334
     .end local v9    # "i$iv$iv":I
-    :cond_5a
+    :cond_3
     nop
 
     .line 1335
     .end local v6    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v7    # "$i$f$fastForEach":I
     .end local v8    # "values$iv$iv":[Ljava/lang/Object;
-    :cond_5b
+    :cond_4
     nop
 
     .line 694
@@ -761,7 +759,7 @@
 .end method
 
 .method private final addPendingInvalidationsLocked(Ljava/util/Set;Z)V
-    .registers 34
+    .locals 31
     .param p1, "values"    # Ljava/util/Set;
     .param p2, "forgetConditionalScopes"    # Z
     .annotation system Ldalvik/annotation/Signature;
@@ -796,7 +794,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v5, :cond_97
+    if-eqz v5, :cond_4
 
     .line 1337
     move-object v5, v3
@@ -824,8 +822,8 @@
 
     move-result v11
 
-    :goto_1e
-    if-ge v10, v11, :cond_8f
+    :goto_0
+    if-ge v10, v11, :cond_3
 
     .line 1342
     aget-object v12, v9, v10
@@ -839,7 +837,7 @@
     .local v13, "$i$a$-fastForEach-CompositionImpl$addPendingInvalidationsLocked$2":I
     instance-of v14, v12, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v14, :cond_35
+    if-eqz v14, :cond_0
 
     .line 702
     move-object v14, v12
@@ -852,10 +850,10 @@
 
     move-object/from16 v19, v5
 
-    goto :goto_85
+    goto :goto_3
 
     .line 704
-    :cond_35
+    :cond_0
     nop
 
     .line 705
@@ -874,17 +872,15 @@
 
     .line 1343
     .local v15, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v14, v12}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v7
 
     .line 1344
     .local v7, "index$iv":I
-    if-ltz v7, :cond_7e
+    if-ltz v7, :cond_2
 
     .line 1345
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v14, v7}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v16
@@ -929,8 +925,8 @@
     .local v5, "i$iv$iv":I
     .local v19, "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .local v21, "$i$f$fastForEach":I
-    :goto_61
-    if-ge v5, v2, :cond_7c
+    :goto_1
+    if-ge v5, v2, :cond_1
 
     .line 1350
     move/from16 v22, v2
@@ -969,14 +965,14 @@
 
     move/from16 v2, v22
 
-    goto :goto_61
+    goto :goto_1
 
     .line 1352
     .end local v5    # "i$iv$iv":I
-    :cond_7c
+    :cond_1
     move-object v2, v4
 
-    goto :goto_84
+    goto :goto_2
 
     .line 1344
     .end local v16    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -987,7 +983,7 @@
     .local v2, "invalidated":Ljava/lang/Object;
     .local v4, "$i$f$fastForEach":I
     .local v5, "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_7e
+    :cond_2
     move-object/from16 v20, v2
 
     move/from16 v21, v4
@@ -999,14 +995,14 @@
     .end local v5    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local v19    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local v21    # "$i$f$fastForEach":I
-    :goto_84
+    :goto_2
     nop
 
     .line 711
     .end local v7    # "index$iv":I
     .end local v14    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v15    # "$i$f$forEachScopeOf":I
-    :goto_85
+    :goto_3
     nop
 
     .line 1342
@@ -1023,13 +1019,13 @@
 
     const/4 v7, 0x0
 
-    goto :goto_1e
+    goto :goto_0
 
     .end local v19    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v21    # "$i$f$fastForEach":I
     .restart local v4    # "$i$f$fastForEach":I
     .restart local v5    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_8f
+    :cond_3
     move/from16 v21, v4
 
     move-object/from16 v19, v5
@@ -1045,12 +1041,12 @@
     .end local v8    # "$i$f$fastForEach":I
     .end local v9    # "values$iv$iv":[Ljava/lang/Object;
     .end local v19    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
-    goto/16 :goto_116
+    goto/16 :goto_8
 
     .line 1355
     .end local v21    # "$i$f$fastForEach":I
     .restart local v4    # "$i$f$fastForEach":I
-    :cond_97
+    :cond_4
     move/from16 v21, v4
 
     .end local v4    # "$i$f$fastForEach":I
@@ -1068,12 +1064,12 @@
 
     move-result-object v7
 
-    :goto_a1
+    :goto_4
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_112
+    if-eqz v8, :cond_8
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1089,7 +1085,7 @@
     .local v10, "$i$a$-fastForEach-CompositionImpl$addPendingInvalidationsLocked$2":I
     instance-of v11, v9, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v11, :cond_bd
+    if-eqz v11, :cond_5
 
     .line 702
     move-object v11, v9
@@ -1104,10 +1100,10 @@
 
     move-object/from16 v17, v4
 
-    goto :goto_10c
+    goto :goto_7
 
     .line 704
-    :cond_bd
+    :cond_5
     nop
 
     .line 705
@@ -1126,17 +1122,15 @@
 
     .line 1343
     .local v12, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v11, v9}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v13
 
     .line 1344
     .local v13, "index$iv":I
-    if-ltz v13, :cond_105
+    if-ltz v13, :cond_7
 
     .line 1345
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v11, v13}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v14
@@ -1181,8 +1175,8 @@
     .local v4, "i$iv$iv":I
     .local v17, "$this$forEach$iv$iv":Ljava/lang/Iterable;
     .local v19, "$this$fastForEach$iv":Ljava/util/Set;
-    :goto_e8
-    if-ge v4, v2, :cond_103
+    :goto_5
+    if-ge v4, v2, :cond_6
 
     .line 1361
     move/from16 v20, v2
@@ -1221,14 +1215,14 @@
 
     move/from16 v2, v20
 
-    goto :goto_e8
+    goto :goto_5
 
     .line 1363
     .end local v4    # "i$iv$iv":I
-    :cond_103
+    :cond_6
     move-object v2, v3
 
-    goto :goto_10b
+    goto :goto_6
 
     .line 1344
     .end local v14    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1239,7 +1233,7 @@
     .local v2, "invalidated":Ljava/lang/Object;
     .local v3, "$this$fastForEach$iv":Ljava/util/Set;
     .local v4, "$this$forEach$iv$iv":Ljava/lang/Iterable;
-    :cond_105
+    :cond_7
     move-object/from16 v18, v2
 
     move-object/from16 v19, v3
@@ -1251,14 +1245,14 @@
     .end local v4    # "$this$forEach$iv$iv":Ljava/lang/Iterable;
     .restart local v17    # "$this$forEach$iv$iv":Ljava/lang/Iterable;
     .restart local v19    # "$this$fastForEach$iv":Ljava/util/Set;
-    :goto_10b
+    :goto_6
     nop
 
     .line 711
     .end local v11    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v12    # "$i$f$forEachScopeOf":I
     .end local v13    # "index$iv":I
-    :goto_10c
+    :goto_7
     nop
 
     .line 1356
@@ -1269,14 +1263,14 @@
     move-object/from16 v3, v19
 
     .end local v8    # "element$iv$iv":Ljava/lang/Object;
-    goto :goto_a1
+    goto :goto_4
 
     .line 1364
     .end local v17    # "$this$forEach$iv$iv":Ljava/lang/Iterable;
     .end local v19    # "$this$fastForEach$iv":Ljava/util/Set;
     .restart local v3    # "$this$fastForEach$iv":Ljava/util/Set;
     .restart local v4    # "$this$forEach$iv$iv":Ljava/lang/Iterable;
-    :cond_112
+    :cond_8
     move-object/from16 v19, v3
 
     move-object/from16 v17, v4
@@ -1286,13 +1280,13 @@
     .end local v4    # "$this$forEach$iv$iv":Ljava/lang/Iterable;
     .end local v5    # "$i$f$forEach":I
     .restart local v19    # "$this$fastForEach$iv":Ljava/util/Set;
-    :goto_116
+    :goto_8
     nop
 
     .line 713
     .end local v19    # "$this$fastForEach$iv":Ljava/util/Set;
     .end local v21    # "$i$f$fastForEach":I
-    if-eqz v1, :cond_209
+    if-eqz v1, :cond_15
 
     iget-object v3, v0, Landroidx/compose/runtime/CompositionImpl;->conditionallyInvalidatedScopes:Ljava/util/HashSet;
 
@@ -1306,7 +1300,7 @@
 
     xor-int/2addr v3, v4
 
-    if-eqz v3, :cond_209
+    if-eqz v3, :cond_15
 
     .line 714
     iget-object v3, v0, Landroidx/compose/runtime/CompositionImpl;->observations:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -1352,8 +1346,8 @@
 
     move-result v14
 
-    :goto_13c
-    if-ge v13, v14, :cond_1e1
+    :goto_9
+    if-ge v13, v14, :cond_13
 
     .line 1372
     aget v15, v9, v13
@@ -1407,8 +1401,8 @@
     .local v1, "destinationIndex$iv$iv":I
     .local v3, "i$iv$iv":I
     .local v23, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :goto_15f
-    if-ge v3, v4, :cond_1aa
+    :goto_a
+    if-ge v3, v4, :cond_f
 
     .line 1382
     move/from16 v24, v5
@@ -1444,9 +1438,9 @@
 
     move-result v10
 
-    if-nez v10, :cond_195
+    if-nez v10, :cond_c
 
-    if-eqz v2, :cond_18c
+    if-eqz v2, :cond_9
 
     move-object/from16 v28, v2
 
@@ -1472,65 +1466,65 @@
     .end local v10    # "it":Ljava/util/HashSet;
     .end local v29    # "$i$a$-let-CompositionImpl$addPendingInvalidationsLocked$3$1":I
     .local v28, "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
-    if-ne v10, v8, :cond_18f
+    if-ne v10, v8, :cond_a
 
     move v10, v8
 
-    goto :goto_190
+    goto :goto_b
 
     .end local v28    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
     .restart local v8    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
-    :cond_18c
+    :cond_9
     move-object/from16 v28, v8
 
     const/4 v8, 0x1
 
     .end local v8    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
     .restart local v28    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
-    :cond_18f
+    :cond_a
     const/4 v10, 0x0
 
-    :goto_190
-    if-eqz v10, :cond_193
+    :goto_b
+    if-eqz v10, :cond_b
 
-    goto :goto_198
+    goto :goto_c
 
-    :cond_193
+    :cond_b
     const/4 v10, 0x0
 
-    goto :goto_199
+    goto :goto_d
 
     .end local v28    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
     .restart local v8    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
-    :cond_195
+    :cond_c
     move-object/from16 v28, v8
 
     const/4 v8, 0x1
 
     .end local v8    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
     .restart local v28    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
-    :goto_198
+    :goto_c
     move v10, v8
 
     .line 1383
     .end local v26    # "$i$a$-removeValueIf-CompositionImpl$addPendingInvalidationsLocked$3":I
     .end local v28    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
-    :goto_199
-    if-nez v10, :cond_1a1
+    :goto_d
+    if-nez v10, :cond_e
 
     .line 1384
-    if-eq v1, v3, :cond_19f
+    if-eq v1, v3, :cond_d
 
     .line 1385
     aput-object v5, v21, v1
 
     .line 1387
-    :cond_19f
+    :cond_d
     add-int/lit8 v1, v1, 0x1
 
     .line 1380
     .end local v5    # "item$iv$iv":Ljava/lang/Object;
-    :cond_1a1
+    :cond_e
     add-int/lit8 v3, v3, 0x1
 
     move/from16 v5, v24
@@ -1539,7 +1533,7 @@
 
     move-object/from16 v10, v27
 
-    goto :goto_15f
+    goto :goto_a
 
     .end local v24    # "$i$f$removeValueIf":I
     .end local v25    # "$i$f$removingScopes":I
@@ -1547,7 +1541,7 @@
     .local v5, "$i$f$removeValueIf":I
     .local v8, "$i$f$removingScopes":I
     .local v10, "scopeSets$iv$iv":[Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_1aa
+    :cond_f
     move/from16 v24, v5
 
     move/from16 v25, v8
@@ -1567,8 +1561,8 @@
     move v3, v1
 
     .restart local v3    # "i$iv$iv":I
-    :goto_1b2
-    if-ge v3, v4, :cond_1ba
+    :goto_e
+    if-ge v3, v4, :cond_10
 
     .line 1391
     const/4 v5, 0x0
@@ -1578,11 +1572,11 @@
     .line 1390
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1b2
+    goto :goto_e
 
     .line 1393
     .end local v3    # "i$iv$iv":I
-    :cond_1ba
+    :cond_10
     move-object/from16 v3, v19
 
     .end local v19    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1610,10 +1604,10 @@
 
     move-result v1
 
-    if-lez v1, :cond_1d2
+    if-lez v1, :cond_12
 
     .line 1397
-    if-eq v12, v13, :cond_1d0
+    if-eq v12, v13, :cond_11
 
     .line 1400
     aget v1, v9, v12
@@ -1627,13 +1621,13 @@
 
     .line 1404
     .end local v1    # "destinationKeyOrder$iv$iv":I
-    :cond_1d0
+    :cond_11
     add-int/lit8 v12, v12, 0x1
 
     .line 1371
     .end local v15    # "valueIndex$iv$iv":I
     .end local v16    # "set$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_1d2
+    :cond_12
     add-int/lit8 v13, v13, 0x1
 
     move/from16 v1, p2
@@ -1648,7 +1642,7 @@
 
     move-object/from16 v10, v27
 
-    goto/16 :goto_13c
+    goto/16 :goto_9
 
     .end local v23    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v24    # "$i$f$removeValueIf":I
@@ -1658,7 +1652,7 @@
     .restart local v5    # "$i$f$removeValueIf":I
     .restart local v8    # "$i$f$removingScopes":I
     .restart local v10    # "scopeSets$iv$iv":[Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_1e1
+    :cond_13
     move-object/from16 v23, v3
 
     move/from16 v24, v5
@@ -1684,8 +1678,8 @@
 
     move-result v3
 
-    :goto_1ee
-    if-ge v1, v3, :cond_1f8
+    :goto_f
+    if-ge v1, v3, :cond_14
 
     .line 1409
     aget v4, v9, v1
@@ -1697,11 +1691,11 @@
     .line 1408
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1ee
+    goto :goto_f
 
     .line 1411
     .end local v1    # "i$iv$iv":I
-    :cond_1f8
+    :cond_14
     invoke-virtual {v7, v12}, Landroidx/compose/runtime/collection/IdentityScopeMap;->setSize(I)V
 
     .line 1412
@@ -1728,11 +1722,11 @@
 
     move-object/from16 v24, v2
 
-    goto/16 :goto_2c2
+    goto/16 :goto_15
 
     .line 720
-    :cond_209
-    if-eqz v2, :cond_2bf
+    :cond_15
+    if-eqz v2, :cond_1e
 
     move-object v1, v2
 
@@ -1784,8 +1778,8 @@
 
     move-result v14
 
-    :goto_224
-    if-ge v13, v14, :cond_29e
+    :goto_10
+    if-ge v13, v14, :cond_1c
 
     .line 1420
     aget v15, v9, v13
@@ -1842,8 +1836,8 @@
     .local v3, "i$iv$iv":I
     .local v22, "$i$a$-let-CompositionImpl$addPendingInvalidationsLocked$4":I
     .local v24, "invalidated":Ljava/lang/Object;
-    :goto_249
-    if-ge v3, v0, :cond_26c
+    :goto_11
+    if-ge v3, v0, :cond_18
 
     .line 1430
     move-object/from16 v23, v4
@@ -1876,34 +1870,34 @@
     .line 1431
     .end local v5    # "scope":Landroidx/compose/runtime/RecomposeScopeImpl;
     .end local v26    # "$i$a$-removeValueIf-CompositionImpl$addPendingInvalidationsLocked$4$1":I
-    if-nez v5, :cond_265
+    if-nez v5, :cond_17
 
     .line 1432
-    if-eq v2, v3, :cond_263
+    if-eq v2, v3, :cond_16
 
     .line 1433
     aput-object v4, v21, v2
 
     .line 1435
-    :cond_263
+    :cond_16
     add-int/lit8 v2, v2, 0x1
 
     .line 1428
     .end local v4    # "item$iv$iv":Ljava/lang/Object;
-    :cond_265
+    :cond_17
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v4, v23
 
     move/from16 v5, v25
 
-    goto :goto_249
+    goto :goto_11
 
     .end local v23    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v25    # "$i$f$removeValueIf":I
     .local v4, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .local v5, "$i$f$removeValueIf":I
-    :cond_26c
+    :cond_18
     move-object/from16 v23, v4
 
     move/from16 v25, v5
@@ -1917,8 +1911,8 @@
     move v3, v2
 
     .restart local v3    # "i$iv$iv":I
-    :goto_271
-    if-ge v3, v0, :cond_279
+    :goto_12
+    if-ge v3, v0, :cond_19
 
     .line 1439
     const/4 v4, 0x0
@@ -1928,11 +1922,11 @@
     .line 1438
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_271
+    goto :goto_12
 
     .line 1441
     .end local v3    # "i$iv$iv":I
-    :cond_279
+    :cond_19
     move-object/from16 v3, v19
 
     .end local v19    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1960,10 +1954,10 @@
 
     move-result v0
 
-    if-lez v0, :cond_291
+    if-lez v0, :cond_1b
 
     .line 1445
-    if-eq v12, v13, :cond_28f
+    if-eq v12, v13, :cond_1a
 
     .line 1448
     aget v0, v9, v12
@@ -1977,13 +1971,13 @@
 
     .line 1452
     .end local v0    # "destinationKeyOrder$iv$iv":I
-    :cond_28f
+    :cond_1a
     add-int/lit8 v12, v12, 0x1
 
     .line 1419
     .end local v15    # "valueIndex$iv$iv":I
     .end local v16    # "set$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_291
+    :cond_1b
     add-int/lit8 v13, v13, 0x1
 
     move-object/from16 v0, p0
@@ -1996,7 +1990,7 @@
 
     move/from16 v5, v25
 
-    goto :goto_224
+    goto :goto_10
 
     .end local v22    # "$i$a$-let-CompositionImpl$addPendingInvalidationsLocked$4":I
     .end local v23    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -2006,7 +2000,7 @@
     .local v3, "$i$a$-let-CompositionImpl$addPendingInvalidationsLocked$4":I
     .restart local v4    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v5    # "$i$f$removeValueIf":I
-    :cond_29e
+    :cond_1c
     move-object/from16 v24, v2
 
     move/from16 v22, v3
@@ -2032,8 +2026,8 @@
 
     move-result v2
 
-    :goto_2ab
-    if-ge v0, v2, :cond_2b5
+    :goto_13
+    if-ge v0, v2, :cond_1d
 
     .line 1457
     aget v3, v9, v0
@@ -2045,11 +2039,11 @@
     .line 1456
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2ab
+    goto :goto_13
 
     .line 1459
     .end local v0    # "i$iv$iv":I
-    :cond_2b5
+    :cond_1d
     invoke-virtual {v7, v12}, Landroidx/compose/runtime/collection/IdentityScopeMap;->setSize(I)V
 
     .line 1460
@@ -2074,26 +2068,26 @@
 
     .end local v1    # "it":Ljava/util/HashSet;
     .end local v22    # "$i$a$-let-CompositionImpl$addPendingInvalidationsLocked$4":I
-    goto :goto_2c1
+    goto :goto_14
 
     .line 720
     .end local v24    # "invalidated":Ljava/lang/Object;
     .restart local v2    # "invalidated":Ljava/lang/Object;
-    :cond_2bf
+    :cond_1e
     move-object/from16 v24, v2
 
     .end local v2    # "invalidated":Ljava/lang/Object;
     .restart local v24    # "invalidated":Ljava/lang/Object;
-    :goto_2c1
+    :goto_14
     nop
 
     .line 725
-    :goto_2c2
+    :goto_15
     return-void
 .end method
 
 .method private final applyChangesInLocked(Ljava/util/List;)V
-    .registers 33
+    .locals 31
     .param p1, "changes"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2127,14 +2121,14 @@
     nop
 
     .line 810
-    :try_start_d
+    :try_start_0
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
-    :try_end_11
-    .catchall {:try_start_d .. :try_end_11} :catchall_199
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_6
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 841
     iget-object v0, v1, Landroidx/compose/runtime/CompositionImpl;->lateChanges:Ljava/util/List;
@@ -2143,18 +2137,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     .line 842
     invoke-virtual {v2}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
     .line 810
-    :cond_1e
+    :cond_0
     return-void
 
     .line 811
-    :cond_1f
-    :try_start_1f
+    :cond_1
+    :try_start_1
     const-string v0, "Compose:applyChanges"
 
     move-object v3, v0
@@ -2169,8 +2163,8 @@
     invoke-virtual {v0, v3}, Landroidx/compose/runtime/Trace;->beginSection(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_29
-    .catchall {:try_start_1f .. :try_end_29} :catchall_199
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_6
 
     move-object v5, v0
 
@@ -2183,7 +2177,7 @@
 
     .line 812
     .local v6, "$i$a$-trace-CompositionImpl$applyChangesInLocked$1":I
-    :try_start_2c
+    :try_start_2
     iget-object v0, v1, Landroidx/compose/runtime/CompositionImpl;->applier:Landroidx/compose/runtime/Applier;
 
     invoke-interface {v0}, Landroidx/compose/runtime/Applier;->onBeginChanges()V
@@ -2201,8 +2195,8 @@
     invoke-virtual {v7}, Landroidx/compose/runtime/SlotTable;->openWriter()Landroidx/compose/runtime/SlotWriter;
 
     move-result-object v0
-    :try_end_39
-    .catchall {:try_start_2c .. :try_end_39} :catchall_190
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_5
 
     .line 1600
     move-object v9, v0
@@ -2222,10 +2216,10 @@
 
     .line 816
     .local v11, "$i$a$-write-CompositionImpl$applyChangesInLocked$1$1":I
-    :try_start_3e
+    :try_start_3
     iget-object v12, v1, Landroidx/compose/runtime/CompositionImpl;->applier:Landroidx/compose/runtime/Applier;
-    :try_end_40
-    .catchall {:try_start_3e .. :try_end_40} :catchall_187
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
     .line 817
     .local v12, "applier":Landroidx/compose/runtime/Applier;
@@ -2246,13 +2240,13 @@
     .end local v3    # "sectionName$iv":Ljava/lang/String;
     .local v15, "index$iv":I
     .local v16, "sectionName$iv":Ljava/lang/String;
-    :try_start_47
+    :try_start_4
     invoke-interface {v13}, Ljava/util/List;->size()I
 
     move-result v3
 
-    :goto_4b
-    if-ge v15, v3, :cond_67
+    :goto_0
+    if-ge v15, v3, :cond_2
 
     .line 1605
     invoke-interface {v13, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2294,11 +2288,11 @@
 
     move/from16 v3, v20
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 1608
     .end local v15    # "index$iv":I
-    :cond_67
+    :cond_2
     nop
 
     .line 820
@@ -2313,14 +2307,14 @@
     .end local v11    # "$i$a$-write-CompositionImpl$applyChangesInLocked$1$1":I
     .end local v12    # "applier":Landroidx/compose/runtime/Applier;
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_6e
-    .catchall {:try_start_47 .. :try_end_6e} :catchall_185
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 1602
     nop
 
     .line 1609
-    :try_start_6f
+    :try_start_5
     invoke-virtual {v9}, Landroidx/compose/runtime/SlotWriter;->close()V
 
     .line 1610
@@ -2349,14 +2343,14 @@
 
     .end local v6    # "$i$a$-trace-CompositionImpl$applyChangesInLocked$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_7e
-    .catchall {:try_start_6f .. :try_end_7e} :catchall_18e
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 1598
     nop
 
     .line 1612
-    :try_start_7f
+    :try_start_6
     sget-object v0, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
 
     invoke-virtual {v0, v5}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
@@ -2376,7 +2370,7 @@
     .line 831
     iget-boolean v0, v1, Landroidx/compose/runtime/CompositionImpl;->pendingInvalidScopes:Z
 
-    if-eqz v0, :cond_178
+    if-eqz v0, :cond_b
 
     .line 832
     const-string v0, "Compose:unobserve"
@@ -2393,8 +2387,8 @@
     invoke-virtual {v0, v3}, Landroidx/compose/runtime/Trace;->beginSection(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
-    :try_end_99
-    .catchall {:try_start_7f .. :try_end_99} :catchall_199
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_6
 
     move-object v5, v0
 
@@ -2409,7 +2403,7 @@
     .local v0, "$i$a$-trace-CompositionImpl$applyChangesInLocked$2":I
     const/4 v6, 0x0
 
-    :try_start_9d
+    :try_start_7
     iput-boolean v6, v1, Landroidx/compose/runtime/CompositionImpl;->pendingInvalidScopes:Z
 
     .line 834
@@ -2456,10 +2450,10 @@
 
     move-result v15
 
-    :goto_b6
+    :goto_1
     const/16 v16, 0x0
 
-    if-ge v14, v15, :cond_141
+    if-ge v14, v15, :cond_9
 
     .line 1622
     aget v17, v10, v14
@@ -2495,8 +2489,8 @@
     invoke-virtual/range {v21 .. v21}, Landroidx/compose/runtime/collection/IdentityArraySet;->size()I
 
     move-result v24
-    :try_end_d1
-    .catchall {:try_start_9d .. :try_end_d1} :catchall_16d
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_1
 
     move/from16 v25, v24
 
@@ -2520,7 +2514,7 @@
     .local v3, "i$iv$iv":I
     .local v24, "sectionName$iv":Ljava/lang/String;
     .local v27, "$i$a$-trace-CompositionImpl$applyChangesInLocked$2":I
-    :goto_df
+    :goto_2
     move/from16 v26, v4
 
     move/from16 v4, v25
@@ -2528,14 +2522,14 @@
     .end local v25    # "size$iv$iv":I
     .local v4, "size$iv$iv":I
     .local v26, "$i$f$trace":I
-    if-ge v3, v4, :cond_10f
+    if-ge v3, v4, :cond_5
 
     .line 1632
     move-object/from16 v25, v6
 
     .end local v6    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .local v25, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :try_start_e7
+    :try_start_8
     aget-object v6, v23, v3
 
     move/from16 v28, v7
@@ -2566,21 +2560,21 @@
     .end local v29    # "$i$a$-removeValueIf-CompositionImpl$applyChangesInLocked$2$1":I
     xor-int/lit8 v7, v30, 0x1
 
-    if-nez v7, :cond_104
+    if-nez v7, :cond_4
 
     .line 1634
-    if-eq v0, v3, :cond_102
+    if-eq v0, v3, :cond_3
 
     .line 1635
     aput-object v6, v23, v0
 
     .line 1637
-    :cond_102
+    :cond_3
     add-int/lit8 v0, v0, 0x1
 
     .line 1630
     .end local v6    # "item$iv$iv":Ljava/lang/Object;
-    :cond_104
+    :cond_4
     add-int/lit8 v3, v3, 0x1
 
     move-object/from16 v6, v25
@@ -2591,13 +2585,13 @@
 
     move/from16 v4, v26
 
-    goto :goto_df
+    goto :goto_2
 
     .end local v25    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v28    # "$i$f$removeValueIf":I
     .local v6, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .local v7, "$i$f$removeValueIf":I
-    :cond_10f
+    :cond_5
     move-object/from16 v25, v6
 
     move/from16 v28, v7
@@ -2611,8 +2605,8 @@
     move v3, v0
 
     .restart local v3    # "i$iv$iv":I
-    :goto_114
-    if-ge v3, v4, :cond_11b
+    :goto_3
+    if-ge v3, v4, :cond_6
 
     .line 1641
     aput-object v16, v23, v3
@@ -2620,11 +2614,11 @@
     .line 1640
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_114
+    goto :goto_3
 
     .line 1643
     .end local v3    # "i$iv$iv":I
-    :cond_11b
+    :cond_6
     move-object/from16 v3, v21
 
     .end local v21    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -2652,10 +2646,10 @@
 
     move-result v0
 
-    if-lez v0, :cond_133
+    if-lez v0, :cond_8
 
     .line 1647
-    if-eq v13, v14, :cond_131
+    if-eq v13, v14, :cond_7
 
     .line 1650
     aget v0, v10, v13
@@ -2669,13 +2663,13 @@
 
     .line 1654
     .end local v0    # "destinationKeyOrder$iv$iv":I
-    :cond_131
+    :cond_7
     add-int/lit8 v13, v13, 0x1
 
     .line 1621
     .end local v17    # "valueIndex$iv$iv":I
     .end local v18    # "set$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_133
+    :cond_8
     add-int/lit8 v14, v14, 0x1
 
     move-object/from16 v3, v24
@@ -2688,7 +2682,7 @@
 
     move/from16 v7, v28
 
-    goto/16 :goto_b6
+    goto/16 :goto_1
 
     .end local v24    # "sectionName$iv":Ljava/lang/String;
     .end local v25    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -2700,7 +2694,7 @@
     .local v4, "$i$f$trace":I
     .restart local v6    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v7    # "$i$f$removeValueIf":I
-    :cond_141
+    :cond_9
     move/from16 v27, v0
 
     move-object/from16 v24, v3
@@ -2730,8 +2724,8 @@
 
     move-result v3
 
-    :goto_150
-    if-ge v0, v3, :cond_159
+    :goto_4
+    if-ge v0, v3, :cond_a
 
     .line 1659
     aget v4, v10, v0
@@ -2741,11 +2735,11 @@
     .line 1658
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_150
+    goto :goto_4
 
     .line 1661
     .end local v0    # "i$iv$iv":I
-    :cond_159
+    :cond_a
     invoke-virtual {v8, v13}, Landroidx/compose/runtime/collection/IdentityScopeMap;->setSize(I)V
 
     .line 1662
@@ -2770,32 +2764,32 @@
 
     .end local v27    # "$i$a$-trace-CompositionImpl$applyChangesInLocked$2":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_164
-    .catchall {:try_start_e7 .. :try_end_164} :catchall_16b
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 1615
     nop
 
     .line 1664
-    :try_start_165
+    :try_start_9
     sget-object v0, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
 
     invoke-virtual {v0, v5}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
 
     .line 1615
-    goto :goto_178
+    goto :goto_6
 
     .line 1664
-    :catchall_16b
+    :catchall_0
     move-exception v0
 
-    goto :goto_172
+    goto :goto_5
 
     .end local v24    # "sectionName$iv":Ljava/lang/String;
     .end local v26    # "$i$f$trace":I
     .restart local v3    # "sectionName$iv":Ljava/lang/String;
     .restart local v4    # "$i$f$trace":I
-    :catchall_16d
+    :catchall_1
     move-exception v0
 
     move-object/from16 v24, v3
@@ -2806,7 +2800,7 @@
     .end local v4    # "$i$f$trace":I
     .restart local v24    # "sectionName$iv":Ljava/lang/String;
     .restart local v26    # "$i$f$trace":I
-    :goto_172
+    :goto_5
     sget-object v3, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
 
     invoke-virtual {v3, v5}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
@@ -2814,8 +2808,8 @@
     .end local v2    # "manager":Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
     .end local p1    # "changes":Ljava/util/List;
     throw v0
-    :try_end_178
-    .catchall {:try_start_165 .. :try_end_178} :catchall_199
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_6
 
     .line 841
     .end local v5    # "token$iv":Ljava/lang/Object;
@@ -2823,21 +2817,21 @@
     .end local v26    # "$i$f$trace":I
     .restart local v2    # "manager":Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
     .restart local p1    # "changes":Ljava/util/List;
-    :cond_178
-    :goto_178
+    :cond_b
+    :goto_6
     iget-object v0, v1, Landroidx/compose/runtime/CompositionImpl;->lateChanges:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_183
+    if-eqz v0, :cond_c
 
     .line 842
     invoke-virtual {v2}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
     .line 843
-    :cond_183
+    :cond_c
     nop
 
     .line 844
@@ -2852,22 +2846,22 @@
     .local v9, "writer$iv":Landroidx/compose/runtime/SlotWriter;
     .local v10, "$i$a$-let-SlotTable$write$1$iv":I
     .restart local v16    # "sectionName$iv":Ljava/lang/String;
-    :catchall_185
+    :catchall_2
     move-exception v0
 
-    goto :goto_18a
+    goto :goto_7
 
     .end local v16    # "sectionName$iv":Ljava/lang/String;
     .restart local v3    # "sectionName$iv":Ljava/lang/String;
-    :catchall_187
+    :catchall_3
     move-exception v0
 
     move-object/from16 v16, v3
 
     .end local v3    # "sectionName$iv":Ljava/lang/String;
     .restart local v16    # "sectionName$iv":Ljava/lang/String;
-    :goto_18a
-    :try_start_18a
+    :goto_7
+    :try_start_a
     invoke-virtual {v9}, Landroidx/compose/runtime/SlotWriter;->close()V
 
     .end local v2    # "manager":Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -2876,8 +2870,8 @@
     .end local v16    # "sectionName$iv":Ljava/lang/String;
     .end local p1    # "changes":Ljava/util/List;
     throw v0
-    :try_end_18e
-    .catchall {:try_start_18a .. :try_end_18e} :catchall_18e
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_4
 
     .line 1612
     .end local v6    # "$i$a$-trace-CompositionImpl$applyChangesInLocked$1":I
@@ -2890,22 +2884,22 @@
     .restart local v5    # "token$iv":Ljava/lang/Object;
     .restart local v16    # "sectionName$iv":Ljava/lang/String;
     .restart local p1    # "changes":Ljava/util/List;
-    :catchall_18e
+    :catchall_4
     move-exception v0
 
-    goto :goto_193
+    goto :goto_8
 
     .end local v16    # "sectionName$iv":Ljava/lang/String;
     .restart local v3    # "sectionName$iv":Ljava/lang/String;
-    :catchall_190
+    :catchall_5
     move-exception v0
 
     move-object/from16 v16, v3
 
     .end local v3    # "sectionName$iv":Ljava/lang/String;
     .restart local v16    # "sectionName$iv":Ljava/lang/String;
-    :goto_193
-    :try_start_193
+    :goto_8
+    :try_start_b
     sget-object v3, Landroidx/compose/runtime/Trace;->INSTANCE:Landroidx/compose/runtime/Trace;
 
     invoke-virtual {v3, v5}, Landroidx/compose/runtime/Trace;->endSection(Ljava/lang/Object;)V
@@ -2913,8 +2907,8 @@
     .end local v2    # "manager":Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
     .end local p1    # "changes":Ljava/util/List;
     throw v0
-    :try_end_199
-    .catchall {:try_start_193 .. :try_end_199} :catchall_199
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_6
 
     .line 841
     .end local v4    # "$i$f$trace":I
@@ -2922,7 +2916,7 @@
     .end local v16    # "sectionName$iv":Ljava/lang/String;
     .restart local v2    # "manager":Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
     .restart local p1    # "changes":Ljava/util/List;
-    :catchall_199
+    :catchall_6
     move-exception v0
 
     iget-object v3, v1, Landroidx/compose/runtime/CompositionImpl;->lateChanges:Ljava/util/List;
@@ -2931,17 +2925,17 @@
 
     move-result v3
 
-    if-eqz v3, :cond_1a5
+    if-eqz v3, :cond_d
 
     .line 842
     invoke-virtual {v2}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_1a5
+    :cond_d
     throw v0
 .end method
 
 .method private final cleanUpDerivedStateObservations()V
-    .registers 26
+    .locals 25
 
     .line 728
     move-object/from16 v0, p0
@@ -2989,8 +2983,8 @@
 
     move-result v10
 
-    :goto_19
-    if-ge v9, v10, :cond_9f
+    :goto_0
+    if-ge v9, v10, :cond_6
 
     .line 1468
     aget v12, v5, v9
@@ -3047,8 +3041,8 @@
     .local v2, "i$iv$iv":I
     .local v19, "$i$f$removeValueIf":I
     .local v21, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :goto_3c
-    if-ge v2, v11, :cond_6a
+    :goto_1
+    if-ge v2, v11, :cond_2
 
     .line 1478
     move/from16 v20, v4
@@ -3089,21 +3083,21 @@
     .end local v23    # "$i$a$-removeValueIf-CompositionImpl$cleanUpDerivedStateObservations$1":I
     xor-int/lit8 v6, v10, 0x1
 
-    if-nez v6, :cond_61
+    if-nez v6, :cond_1
 
     .line 1480
-    if-eq v1, v2, :cond_5f
+    if-eq v1, v2, :cond_0
 
     .line 1481
     aput-object v4, v18, v1
 
     .line 1483
-    :cond_5f
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
     .line 1476
     .end local v4    # "item$iv$iv":Ljava/lang/Object;
-    :cond_61
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     move/from16 v4, v20
@@ -3112,13 +3106,13 @@
 
     move/from16 v10, v24
 
-    goto :goto_3c
+    goto :goto_1
 
     .end local v20    # "$i$f$removingScopes":I
     .end local v22    # "scopeSets$iv$iv":[Landroidx/compose/runtime/collection/IdentityArraySet;
     .local v4, "$i$f$removingScopes":I
     .local v6, "scopeSets$iv$iv":[Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_6a
+    :cond_2
     move/from16 v20, v4
 
     move-object/from16 v22, v6
@@ -3134,8 +3128,8 @@
     move v2, v1
 
     .restart local v2    # "i$iv$iv":I
-    :goto_71
-    if-ge v2, v11, :cond_79
+    :goto_2
+    if-ge v2, v11, :cond_3
 
     .line 1487
     const/4 v4, 0x0
@@ -3145,11 +3139,11 @@
     .line 1486
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_71
+    goto :goto_2
 
     .line 1489
     .end local v2    # "i$iv$iv":I
-    :cond_79
+    :cond_3
     move-object/from16 v2, v16
 
     .end local v16    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -3177,10 +3171,10 @@
 
     move-result v1
 
-    if-lez v1, :cond_91
+    if-lez v1, :cond_5
 
     .line 1493
-    if-eq v8, v9, :cond_8f
+    if-eq v8, v9, :cond_4
 
     .line 1496
     aget v1, v5, v8
@@ -3194,13 +3188,13 @@
 
     .line 1500
     .end local v1    # "destinationKeyOrder$iv$iv":I
-    :cond_8f
+    :cond_4
     add-int/lit8 v8, v8, 0x1
 
     .line 1467
     .end local v12    # "valueIndex$iv$iv":I
     .end local v13    # "set$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_91
+    :cond_5
     add-int/lit8 v9, v9, 0x1
 
     move/from16 v2, v19
@@ -3213,7 +3207,7 @@
 
     move/from16 v10, v24
 
-    goto/16 :goto_19
+    goto/16 :goto_0
 
     .end local v19    # "$i$f$removeValueIf":I
     .end local v20    # "$i$f$removingScopes":I
@@ -3223,7 +3217,7 @@
     .local v2, "$i$f$removeValueIf":I
     .restart local v4    # "$i$f$removingScopes":I
     .restart local v6    # "scopeSets$iv$iv":[Landroidx/compose/runtime/collection/IdentityArraySet;
-    :cond_9f
+    :cond_6
     move-object/from16 v21, v1
 
     move/from16 v19, v2
@@ -3249,8 +3243,8 @@
 
     move-result v2
 
-    :goto_ac
-    if-ge v1, v2, :cond_b6
+    :goto_3
+    if-ge v1, v2, :cond_7
 
     .line 1505
     aget v4, v5, v1
@@ -3262,11 +3256,11 @@
     .line 1504
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_ac
+    goto :goto_3
 
     .line 1507
     .end local v1    # "i$iv$iv":I
-    :cond_b6
+    :cond_7
     invoke-virtual {v3, v8}, Landroidx/compose/runtime/collection/IdentityScopeMap;->setSize(I)V
 
     .line 1508
@@ -3294,7 +3288,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_ee
+    if-eqz v1, :cond_a
 
     .line 730
     iget-object v1, v0, Landroidx/compose/runtime/CompositionImpl;->conditionallyInvalidatedScopes:Ljava/util/HashSet;
@@ -3314,13 +3308,13 @@
 
     .line 1511
     .local v3, "iter$iv":Ljava/util/Iterator;
-    :cond_d4
-    :goto_d4
+    :cond_8
+    :goto_4
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_ed
+    if-eqz v4, :cond_9
 
     .line 1512
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -3343,32 +3337,31 @@
     .end local v5    # "$i$a$-removeValueIf-CompositionImpl$cleanUpDerivedStateObservations$2":I
     xor-int/lit8 v4, v6, 0x1
 
-    if-eqz v4, :cond_d4
+    if-eqz v4, :cond_8
 
     .line 1513
     invoke-interface {v3}, Ljava/util/Iterator;->remove()V
 
-    goto :goto_d4
+    goto :goto_4
 
     .line 1516
-    :cond_ed
+    :cond_9
     nop
 
     .line 732
     .end local v1    # "$this$removeValueIf$iv":Ljava/util/HashSet;
     .end local v2    # "$i$f$removeValueIf":I
     .end local v3    # "iter$iv":Ljava/util/Iterator;
-    :cond_ee
+    :cond_a
     return-void
 .end method
 
 .method private final drainPendingModificationsForCompositionLocked()V
-    .registers 7
+    .locals 6
 
     .line 543
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->pendingModifications:Ljava/util/concurrent/atomic/AtomicReference;
 
-    # getter for: Landroidx/compose/runtime/CompositionKt;->PendingApplyNoModifications:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/CompositionKt;->access$getPendingApplyNoModifications$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -3379,10 +3372,9 @@
 
     .line 544
     .local v0, "toRecord":Ljava/lang/Object;
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_3
 
     .line 547
-    # getter for: Landroidx/compose/runtime/CompositionKt;->PendingApplyNoModifications:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/CompositionKt;->access$getPendingApplyNoModifications$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -3391,14 +3383,14 @@
 
     move-result v1
 
-    if-nez v1, :cond_54
+    if-nez v1, :cond_2
 
     .line 550
     instance-of v1, v0, Ljava/util/Set;
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 551
     move-object v1, v0
@@ -3407,13 +3399,13 @@
 
     invoke-direct {p0, v1, v2}, Landroidx/compose/runtime/CompositionImpl;->addPendingInvalidationsLocked(Ljava/util/Set;Z)V
 
-    goto :goto_60
+    goto :goto_1
 
     .line 553
-    :cond_22
+    :cond_0
     instance-of v1, v0, [Ljava/lang/Object;
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_1
 
     move-object v1, v0
 
@@ -3423,8 +3415,8 @@
 
     const/4 v4, 0x0
 
-    :goto_2b
-    if-ge v4, v3, :cond_60
+    :goto_0
+    if-ge v4, v3, :cond_3
 
     aget-object v5, v1, v4
 
@@ -3436,10 +3428,10 @@
     .end local v5    # "changed":Ljava/util/Set;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 556
-    :cond_35
+    :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3469,7 +3461,7 @@
     throw v1
 
     .line 548
-    :cond_54
+    :cond_2
     const-string/jumbo v1, "pending composition has not been applied"
 
     invoke-static {v1}, Landroidx/compose/runtime/ComposerKt;->composeRuntimeError(Ljava/lang/String;)Ljava/lang/Void;
@@ -3482,13 +3474,13 @@
 
     .line 558
     .end local v0    # "toRecord":Ljava/lang/Object;
-    :cond_60
-    :goto_60
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method private final drainPendingModificationsLocked()V
-    .registers 7
+    .locals 6
 
     .line 562
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->pendingModifications:Ljava/util/concurrent/atomic/AtomicReference;
@@ -3501,7 +3493,6 @@
 
     .line 563
     .local v0, "toRecord":Ljava/lang/Object;
-    # getter for: Landroidx/compose/runtime/CompositionKt;->PendingApplyNoModifications:Ljava/lang/Object;
     invoke-static {}, Landroidx/compose/runtime/CompositionKt;->access$getPendingApplyNoModifications$p()Ljava/lang/Object;
 
     move-result-object v1
@@ -3510,14 +3501,14 @@
 
     move-result v1
 
-    if-nez v1, :cond_5e
+    if-nez v1, :cond_3
 
     .line 566
     instance-of v1, v0, Ljava/util/Set;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 567
     move-object v1, v0
@@ -3526,13 +3517,13 @@
 
     invoke-direct {p0, v1, v2}, Landroidx/compose/runtime/CompositionImpl;->addPendingInvalidationsLocked(Ljava/util/Set;Z)V
 
-    goto :goto_5e
+    goto :goto_1
 
     .line 569
-    :cond_1d
+    :cond_0
     instance-of v1, v0, [Ljava/lang/Object;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_1
 
     move-object v1, v0
 
@@ -3542,8 +3533,8 @@
 
     move v4, v2
 
-    :goto_26
-    if-ge v4, v3, :cond_5e
+    :goto_0
+    if-ge v4, v3, :cond_3
 
     aget-object v5, v1, v4
 
@@ -3555,11 +3546,11 @@
     .end local v5    # "changed":Ljava/util/Set;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 572
-    :cond_30
-    if-nez v0, :cond_3f
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 573
     nop
@@ -3576,7 +3567,7 @@
     throw v1
 
     .line 576
-    :cond_3f
+    :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3608,13 +3599,13 @@
 
     .line 579
     .end local v0    # "toRecord":Ljava/lang/Object;
-    :cond_5e
-    :goto_5e
+    :cond_3
+    :goto_1
     return-void
 .end method
 
 .method private final getAreChildrenComposing()Z
-    .registers 2
+    .locals 1
 
     .line 501
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
@@ -3627,7 +3618,7 @@
 .end method
 
 .method private final guardChanges(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 10
+    .locals 8
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3662,12 +3653,12 @@
     .line 1718
     const/4 v4, 0x1
 
-    :try_start_7
+    :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v5
-    :try_end_b
-    .catchall {:try_start_7 .. :try_end_b} :catchall_1a
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-object v6, v5
 
@@ -3684,7 +3675,7 @@
     .line 1718
     .end local v6    # "it$iv":Ljava/lang/Object;
     .end local v7    # "$i$a$-also-CompositionImpl$trackAbandonedValues$1$iv":I
-    :try_start_f
+    :try_start_1
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
     .line 1722
@@ -3703,21 +3694,21 @@
     return-object v5
 
     .line 893
-    :catch_18
+    :catch_0
     move-exception v1
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 1722
     .restart local v1    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v2    # "$i$f$trackAbandonedValues":I
     .restart local v3    # "success$iv":Z
-    :catchall_1a
+    :catchall_0
     move-exception v5
 
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    if-nez v3, :cond_37
+    if-nez v3, :cond_0
 
     iget-object v6, v1, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
@@ -3729,7 +3720,7 @@
 
     xor-int/2addr v6, v4
 
-    if-eqz v6, :cond_37
+    if-eqz v6, :cond_0
 
     .line 1723
     new-instance v6, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -3742,14 +3733,14 @@
 
     invoke-virtual {v6}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_37
+    :cond_0
     invoke-static {v4}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
     .end local v0    # "$i$f$guardChanges":I
     .end local p1    # "block":Lkotlin/jvm/functions/Function0;
     throw v5
-    :try_end_3b
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_3b} :catch_18
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 894
     .end local v2    # "$i$f$trackAbandonedValues":I
@@ -3757,7 +3748,7 @@
     .restart local v0    # "$i$f$guardChanges":I
     .local v1, "e":Ljava/lang/Exception;
     .restart local p1    # "block":Lkotlin/jvm/functions/Function0;
-    :goto_3b
+    :goto_0
     invoke-direct {p0}, Landroidx/compose/runtime/CompositionImpl;->abandonChanges()V
 
     .line 895
@@ -3765,7 +3756,7 @@
 .end method
 
 .method private final guardInvalidationsLocked(Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3795,18 +3786,18 @@
     nop
 
     .line 883
-    :try_start_6
+    :try_start_0
     invoke-interface {p1, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_a} :catch_b
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 882
     return-object v2
 
     .line 884
-    :catch_b
+    :catch_0
     move-exception v2
 
     .line 885
@@ -3818,7 +3809,7 @@
 .end method
 
 .method private final invalidateChecked(Landroidx/compose/runtime/RecomposeScopeImpl;Landroidx/compose/runtime/Anchor;Ljava/lang/Object;)Landroidx/compose/runtime/InvalidationResult;
-    .registers 12
+    .locals 8
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
     .param p2, "anchor"    # Landroidx/compose/runtime/Anchor;
     .param p3, "instance"    # Ljava/lang/Object;
@@ -3837,12 +3828,12 @@
 
     .line 971
     .local v2, "$i$a$-synchronized-CompositionImpl$invalidateChecked$delegate$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->invalidationDelegate:Landroidx/compose/runtime/CompositionImpl;
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_1a
+    if-eqz v3, :cond_1
 
     .local v3, "changeDelegate":Landroidx/compose/runtime/CompositionImpl;
     const/4 v5, 0x0
@@ -3857,47 +3848,47 @@
 
     move-result v6
 
-    if-eqz v6, :cond_17
+    if-eqz v6, :cond_0
 
     .line 978
     move-object v6, v3
 
-    goto :goto_18
+    goto :goto_0
 
     .line 979
-    :cond_17
+    :cond_0
     move-object v6, v4
 
     .line 977
-    :goto_18
+    :goto_0
     nop
 
     .line 971
     .end local v3    # "changeDelegate":Landroidx/compose/runtime/CompositionImpl;
     .end local v5    # "$i$a$-let-CompositionImpl$invalidateChecked$delegate$1$delegate$1":I
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move-object v6, v4
 
-    :goto_1b
+    :goto_1
     move-object v3, v6
 
     .line 981
     .local v3, "delegate":Landroidx/compose/runtime/CompositionImpl;
-    if-nez v3, :cond_35
+    if-nez v3, :cond_4
 
     .line 982
     invoke-direct {p0, p1, p3}, Landroidx/compose/runtime/CompositionImpl;->tryImminentInvalidation(Landroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_28
+    if-eqz v5, :cond_2
 
     .line 984
     sget-object v4, Landroidx/compose/runtime/InvalidationResult;->IMMINENT:Landroidx/compose/runtime/InvalidationResult;
-    :try_end_26
-    .catchall {:try_start_5 .. :try_end_26} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
@@ -3912,29 +3903,28 @@
     .restart local v1    # "$i$f$synchronized":I
     .restart local v2    # "$i$a$-synchronized-CompositionImpl$invalidateChecked$delegate$1":I
     .restart local v3    # "delegate":Landroidx/compose/runtime/CompositionImpl;
-    :cond_28
-    if-nez p3, :cond_30
+    :cond_2
+    if-nez p3, :cond_3
 
     .line 990
-    :try_start_2a
+    :try_start_1
     iget-object v5, p0, Landroidx/compose/runtime/CompositionImpl;->invalidations:Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     invoke-virtual {v5, p1, v4}, Landroidx/compose/runtime/collection/IdentityArrayMap;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto :goto_35
+    goto :goto_2
 
     .line 992
-    :cond_30
+    :cond_3
     iget-object v4, p0, Landroidx/compose/runtime/CompositionImpl;->invalidations:Landroidx/compose/runtime/collection/IdentityArrayMap;
 
-    # invokes: Landroidx/compose/runtime/CompositionKt;->addValue(Landroidx/compose/runtime/collection/IdentityArrayMap;Ljava/lang/Object;Ljava/lang/Object;)V
     invoke-static {v4, p1, p3}, Landroidx/compose/runtime/CompositionKt;->access$addValue(Landroidx/compose/runtime/collection/IdentityArrayMap;Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_35
-    .catchall {:try_start_2a .. :try_end_35} :catchall_53
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 995
-    :cond_35
-    :goto_35
+    :cond_4
+    :goto_2
     nop
 
     .line 1731
@@ -3949,7 +3939,7 @@
 
     .line 999
     .local v0, "delegate":Landroidx/compose/runtime/CompositionImpl;
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_5
 
     .line 1000
     invoke-direct {v0, p1, p2, p3}, Landroidx/compose/runtime/CompositionImpl;->invalidateChecked(Landroidx/compose/runtime/RecomposeScopeImpl;Landroidx/compose/runtime/Anchor;Ljava/lang/Object;)Landroidx/compose/runtime/InvalidationResult;
@@ -3959,7 +3949,7 @@
     return-object v1
 
     .line 1002
-    :cond_3f
+    :cond_5
     iget-object v1, p0, Landroidx/compose/runtime/CompositionImpl;->parent:Landroidx/compose/runtime/CompositionContext;
 
     move-object v2, p0
@@ -3973,22 +3963,22 @@
 
     move-result v1
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_6
 
     sget-object v1, Landroidx/compose/runtime/InvalidationResult;->DEFERRED:Landroidx/compose/runtime/InvalidationResult;
 
-    goto :goto_52
+    goto :goto_3
 
-    :cond_50
+    :cond_6
     sget-object v1, Landroidx/compose/runtime/InvalidationResult;->SCHEDULED:Landroidx/compose/runtime/InvalidationResult;
 
-    :goto_52
+    :goto_3
     return-object v1
 
     .line 1731
     .local v0, "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_53
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -3997,7 +3987,7 @@
 .end method
 
 .method private final invalidateScopeOfLocked(Ljava/lang/Object;)V
-    .registers 14
+    .locals 12
     .param p1, "value"    # Ljava/lang/Object;
 
     .line 759
@@ -4008,17 +3998,15 @@
 
     .line 1517
     .local v1, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v0, p1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v2
 
     .line 1518
     .local v2, "index$iv":I
-    if-ltz v2, :cond_38
+    if-ltz v2, :cond_2
 
     .line 1519
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v0, v2}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v3
@@ -4044,8 +4032,8 @@
 
     move-result v7
 
-    :goto_18
-    if-ge v6, v7, :cond_37
+    :goto_0
+    if-ge v6, v7, :cond_1
 
     .line 1524
     aget-object v8, v5, v6
@@ -4067,7 +4055,7 @@
 
     sget-object v11, Landroidx/compose/runtime/InvalidationResult;->IMMINENT:Landroidx/compose/runtime/InvalidationResult;
 
-    if-ne v10, v11, :cond_32
+    if-ne v10, v11, :cond_0
 
     .line 762
     iget-object v10, p0, Landroidx/compose/runtime/CompositionImpl;->observationsProcessed:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -4075,7 +4063,7 @@
     invoke-virtual {v10, p1, v8}, Landroidx/compose/runtime/collection/IdentityScopeMap;->add(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 764
-    :cond_32
+    :cond_0
     nop
 
     .line 1524
@@ -4086,18 +4074,18 @@
     .line 1522
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
     .line 1526
     .end local v6    # "i$iv$iv":I
-    :cond_37
+    :cond_1
     nop
 
     .line 1527
     .end local v3    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v4    # "$i$f$fastForEach":I
     .end local v5    # "values$iv$iv":[Ljava/lang/Object;
-    :cond_38
+    :cond_2
     nop
 
     .line 765
@@ -4108,7 +4096,7 @@
 .end method
 
 .method private final takeInvalidations()Landroidx/compose/runtime/collection/IdentityArrayMap;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -4142,7 +4130,7 @@
 .end method
 
 .method private final trackAbandonedValues(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 8
+    .locals 6
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4167,12 +4155,12 @@
     .line 1047
     const/4 v2, 0x1
 
-    :try_start_4
+    :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v3
-    :try_end_8
-    .catchall {:try_start_4 .. :try_end_8} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-object v4, v3
 
@@ -4201,12 +4189,12 @@
     return-object v3
 
     .line 1051
-    :catchall_14
+    :catchall_0
     move-exception v3
 
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
-    if-nez v1, :cond_31
+    if-nez v1, :cond_0
 
     iget-object v4, p0, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
@@ -4218,7 +4206,7 @@
 
     xor-int/2addr v4, v2
 
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_0
 
     .line 1052
     new-instance v4, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -4231,14 +4219,14 @@
 
     invoke-virtual {v4}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_31
+    :cond_0
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyEnd(I)V
 
     throw v3
 .end method
 
 .method private final tryImminentInvalidation(Landroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 1
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
     .param p2, "instance"    # Ljava/lang/Object;
 
@@ -4247,7 +4235,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
@@ -4255,21 +4243,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method private final validateRecomposeScopeAnchors(Landroidx/compose/runtime/SlotTable;)V
-    .registers 18
+    .locals 16
     .param p1, "slotTable"    # Landroidx/compose/runtime/SlotTable;
 
     .line 1032
@@ -4309,8 +4297,8 @@
 
     const/4 v9, 0x0
 
-    :goto_14
-    if-ge v9, v8, :cond_30
+    :goto_0
+    if-ge v9, v8, :cond_2
 
     aget-object v10, v6, v9
 
@@ -4331,22 +4319,22 @@
     .local v14, "$i$a$-mapNotNull-CompositionImpl$validateRecomposeScopeAnchors$scopes$1":I
     instance-of v15, v13, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v15, :cond_24
+    if-eqz v15, :cond_0
 
     move-object v15, v13
 
     check-cast v15, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_0
     const/4 v15, 0x0
 
     .line 1740
     .end local v13    # "it":Ljava/lang/Object;
     .end local v14    # "$i$a$-mapNotNull-CompositionImpl$validateRecomposeScopeAnchors$scopes$1":I
-    :goto_25
-    if-eqz v15, :cond_2c
+    :goto_1
+    if-eqz v15, :cond_1
 
     move-object v13, v15
 
@@ -4363,16 +4351,16 @@
     .end local v12    # "$i$a$-forEach-ArraysKt___ArraysKt$mapNotNullTo$1$iv$iv":I
     .end local v13    # "it$iv$iv":Ljava/lang/Object;
     .end local v14    # "$i$a$-let-ArraysKt___ArraysKt$mapNotNullTo$1$1$iv$iv":I
-    :cond_2c
+    :cond_1
     nop
 
     .end local v10    # "element$iv$iv$iv":Ljava/lang/Object;
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 1743
-    :cond_30
+    :cond_2
     nop
 
     .line 1744
@@ -4412,8 +4400,8 @@
 
     move-result v5
 
-    :goto_3e
-    if-ge v4, v5, :cond_a0
+    :goto_2
+    if-ge v4, v5, :cond_5
 
     .line 1747
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4435,7 +4423,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_9b
+    if-eqz v9, :cond_4
 
     .local v9, "anchor":Landroidx/compose/runtime/Anchor;
     const/4 v10, 0x0
@@ -4454,7 +4442,7 @@
 
     move-result v11
 
-    if-eqz v11, :cond_5f
+    if-eqz v11, :cond_3
 
     .line 1040
     nop
@@ -4462,12 +4450,12 @@
     .line 1034
     .end local v9    # "anchor":Landroidx/compose/runtime/Anchor;
     .end local v10    # "$i$a$-let-CompositionImpl$validateRecomposeScopeAnchors$1$1":I
-    goto :goto_9b
+    goto :goto_3
 
     .line 1035
     .restart local v9    # "anchor":Landroidx/compose/runtime/Anchor;
     .restart local v10    # "$i$a$-let-CompositionImpl$validateRecomposeScopeAnchors$1$1":I
-    :cond_5f
+    :cond_3
     const/4 v5, 0x0
 
     .line 1036
@@ -4540,8 +4528,8 @@
     .line 1041
     .end local v9    # "anchor":Landroidx/compose/runtime/Anchor;
     .end local v10    # "$i$a$-let-CompositionImpl$validateRecomposeScopeAnchors$1$1":I
-    :cond_9b
-    :goto_9b
+    :cond_4
+    :goto_3
     nop
 
     .line 1748
@@ -4553,11 +4541,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_3e
+    goto :goto_2
 
     .line 1750
     .end local v4    # "index$iv":I
-    :cond_a0
+    :cond_5
     nop
 
     .line 1042
@@ -4569,7 +4557,7 @@
 
 # virtual methods
 .method public applyChanges()V
-    .registers 12
+    .locals 11
 
     .line 847
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -4613,7 +4601,7 @@
 
     .line 849
     .local v8, "$i$a$-guardChanges-CompositionImpl$applyChanges$1$1":I
-    :try_start_d
+    :try_start_0
     iget-object v9, p0, Landroidx/compose/runtime/CompositionImpl;->changes:Ljava/util/List;
 
     invoke-direct {p0, v9}, Landroidx/compose/runtime/CompositionImpl;->applyChangesInLocked(Ljava/util/List;)V
@@ -4626,8 +4614,8 @@
 
     .end local v8    # "$i$a$-guardChanges-CompositionImpl$applyChanges$1$1":I
     sget-object v8, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_18
-    .catchall {:try_start_d .. :try_end_18} :catchall_26
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1670
     nop
@@ -4668,10 +4656,10 @@
     nop
 
     .end local v2    # "$i$a$-synchronized-CompositionImpl$applyChanges$1":I
-    :try_start_22
+    :try_start_1
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_24
-    .catchall {:try_start_22 .. :try_end_24} :catchall_43
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1665
     monitor-exit v0
@@ -4690,12 +4678,12 @@
     .restart local v5    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v6    # "$i$f$trackAbandonedValues":I
     .restart local v7    # "success$iv$iv":Z
-    :catchall_26
+    :catchall_0
     move-exception v8
 
-    if-nez v7, :cond_41
+    if-nez v7, :cond_0
 
-    :try_start_29
+    :try_start_2
     iget-object v9, v5, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
     check-cast v9, Ljava/util/Collection;
@@ -4706,7 +4694,7 @@
 
     xor-int/lit8 v9, v9, 0x1
 
-    if-eqz v9, :cond_41
+    if-eqz v9, :cond_0
 
     .line 1675
     new-instance v9, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -4719,7 +4707,7 @@
 
     invoke-virtual {v9}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_41
+    :cond_0
     nop
 
     .end local v0    # "lock$iv":Ljava/lang/Object;
@@ -4728,9 +4716,9 @@
     .end local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .end local v4    # "$i$f$guardChanges":I
     throw v8
-    :try_end_43
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_43} :catch_45
-    .catchall {:try_start_29 .. :try_end_43} :catchall_43
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1665
     .end local v5    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
@@ -4738,21 +4726,21 @@
     .end local v7    # "success$iv$iv":Z
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_43
+    :catchall_1
     move-exception v2
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 1678
     .restart local v2    # "$i$a$-synchronized-CompositionImpl$applyChanges$1":I
     .restart local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v4    # "$i$f$guardChanges":I
-    :catch_45
+    :catch_0
     move-exception v5
 
     .line 1679
     .local v5, "e$iv":Ljava/lang/Exception;
-    :try_start_46
+    :try_start_3
     invoke-direct {v3}, Landroidx/compose/runtime/CompositionImpl;->abandonChanges()V
 
     .line 1680
@@ -4761,8 +4749,8 @@
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
     throw v5
-    :try_end_4b
-    .catchall {:try_start_46 .. :try_end_4b} :catchall_43
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1665
     .end local v2    # "$i$a$-synchronized-CompositionImpl$applyChanges$1":I
@@ -4771,14 +4759,14 @@
     .end local v5    # "e$iv":Ljava/lang/Exception;
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :goto_4b
+    :goto_0
     monitor-exit v0
 
     throw v2
 .end method
 
 .method public applyLateChanges()V
-    .registers 12
+    .locals 11
 
     .line 856
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -4822,7 +4810,7 @@
 
     .line 858
     .local v8, "$i$a$-guardChanges-CompositionImpl$applyLateChanges$1$1":I
-    :try_start_d
+    :try_start_0
     iget-object v9, p0, Landroidx/compose/runtime/CompositionImpl;->lateChanges:Ljava/util/List;
 
     check-cast v9, Ljava/util/Collection;
@@ -4833,7 +4821,7 @@
 
     xor-int/lit8 v9, v9, 0x1
 
-    if-eqz v9, :cond_1e
+    if-eqz v9, :cond_0
 
     .line 859
     iget-object v9, p0, Landroidx/compose/runtime/CompositionImpl;->lateChanges:Ljava/util/List;
@@ -4841,13 +4829,13 @@
     invoke-direct {p0, v9}, Landroidx/compose/runtime/CompositionImpl;->applyChangesInLocked(Ljava/util/List;)V
 
     .line 861
-    :cond_1e
+    :cond_0
     nop
 
     .end local v8    # "$i$a$-guardChanges-CompositionImpl$applyLateChanges$1$1":I
     sget-object v8, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_21
-    .catchall {:try_start_d .. :try_end_21} :catchall_2f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1687
     nop
@@ -4888,10 +4876,10 @@
     nop
 
     .end local v2    # "$i$a$-synchronized-CompositionImpl$applyLateChanges$1":I
-    :try_start_2b
+    :try_start_1
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_2d
-    .catchall {:try_start_2b .. :try_end_2d} :catchall_4c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1682
     monitor-exit v0
@@ -4910,12 +4898,12 @@
     .restart local v5    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v6    # "$i$f$trackAbandonedValues":I
     .restart local v7    # "success$iv$iv":Z
-    :catchall_2f
+    :catchall_0
     move-exception v8
 
-    if-nez v7, :cond_4a
+    if-nez v7, :cond_1
 
-    :try_start_32
+    :try_start_2
     iget-object v9, v5, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
     check-cast v9, Ljava/util/Collection;
@@ -4926,7 +4914,7 @@
 
     xor-int/lit8 v9, v9, 0x1
 
-    if-eqz v9, :cond_4a
+    if-eqz v9, :cond_1
 
     .line 1692
     new-instance v9, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -4939,7 +4927,7 @@
 
     invoke-virtual {v9}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_4a
+    :cond_1
     nop
 
     .end local v0    # "lock$iv":Ljava/lang/Object;
@@ -4948,9 +4936,9 @@
     .end local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .end local v4    # "$i$f$guardChanges":I
     throw v8
-    :try_end_4c
-    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_4c} :catch_4e
-    .catchall {:try_start_32 .. :try_end_4c} :catchall_4c
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1682
     .end local v5    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
@@ -4958,21 +4946,21 @@
     .end local v7    # "success$iv$iv":Z
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_4c
+    :catchall_1
     move-exception v2
 
-    goto :goto_54
+    goto :goto_0
 
     .line 1695
     .restart local v2    # "$i$a$-synchronized-CompositionImpl$applyLateChanges$1":I
     .restart local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v4    # "$i$f$guardChanges":I
-    :catch_4e
+    :catch_0
     move-exception v5
 
     .line 1696
     .local v5, "e$iv":Ljava/lang/Exception;
-    :try_start_4f
+    :try_start_3
     invoke-direct {v3}, Landroidx/compose/runtime/CompositionImpl;->abandonChanges()V
 
     .line 1697
@@ -4981,8 +4969,8 @@
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
     throw v5
-    :try_end_54
-    .catchall {:try_start_4f .. :try_end_54} :catchall_4c
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1682
     .end local v2    # "$i$a$-synchronized-CompositionImpl$applyLateChanges$1":I
@@ -4991,14 +4979,14 @@
     .end local v5    # "e$iv":Ljava/lang/Exception;
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :goto_54
+    :goto_0
     monitor-exit v0
 
     throw v2
 .end method
 
 .method public changesApplied()V
-    .registers 12
+    .locals 11
 
     .line 866
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -5042,7 +5030,7 @@
 
     .line 868
     .local v8, "$i$a$-guardChanges-CompositionImpl$changesApplied$1$1":I
-    :try_start_d
+    :try_start_0
     iget-object v9, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
     invoke-virtual {v9}, Landroidx/compose/runtime/ComposerImpl;->changesApplied$runtime_release()V
@@ -5058,7 +5046,7 @@
 
     xor-int/lit8 v9, v9, 0x1
 
-    if-eqz v9, :cond_2a
+    if-eqz v9, :cond_0
 
     .line 872
     new-instance v9, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -5072,13 +5060,13 @@
     invoke-virtual {v9}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
     .line 874
-    :cond_2a
+    :cond_0
     nop
 
     .end local v8    # "$i$a$-guardChanges-CompositionImpl$changesApplied$1$1":I
     sget-object v8, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_2d
-    .catchall {:try_start_d .. :try_end_2d} :catchall_3b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1704
     nop
@@ -5119,10 +5107,10 @@
     nop
 
     .end local v2    # "$i$a$-synchronized-CompositionImpl$changesApplied$1":I
-    :try_start_37
+    :try_start_1
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_39
-    .catchall {:try_start_37 .. :try_end_39} :catchall_58
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1699
     monitor-exit v0
@@ -5141,12 +5129,12 @@
     .restart local v5    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v6    # "$i$f$trackAbandonedValues":I
     .restart local v7    # "success$iv$iv":Z
-    :catchall_3b
+    :catchall_0
     move-exception v8
 
-    if-nez v7, :cond_56
+    if-nez v7, :cond_1
 
-    :try_start_3e
+    :try_start_2
     iget-object v9, v5, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
     check-cast v9, Ljava/util/Collection;
@@ -5157,7 +5145,7 @@
 
     xor-int/lit8 v9, v9, 0x1
 
-    if-eqz v9, :cond_56
+    if-eqz v9, :cond_1
 
     .line 1709
     new-instance v9, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -5170,7 +5158,7 @@
 
     invoke-virtual {v9}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_56
+    :cond_1
     nop
 
     .end local v0    # "lock$iv":Ljava/lang/Object;
@@ -5179,9 +5167,9 @@
     .end local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .end local v4    # "$i$f$guardChanges":I
     throw v8
-    :try_end_58
-    .catch Ljava/lang/Exception; {:try_start_3e .. :try_end_58} :catch_5a
-    .catchall {:try_start_3e .. :try_end_58} :catchall_58
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1699
     .end local v5    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
@@ -5189,21 +5177,21 @@
     .end local v7    # "success$iv$iv":Z
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_58
+    :catchall_1
     move-exception v2
 
-    goto :goto_60
+    goto :goto_0
 
     .line 1712
     .restart local v2    # "$i$a$-synchronized-CompositionImpl$changesApplied$1":I
     .restart local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v4    # "$i$f$guardChanges":I
-    :catch_5a
+    :catch_0
     move-exception v5
 
     .line 1713
     .local v5, "e$iv":Ljava/lang/Exception;
-    :try_start_5b
+    :try_start_3
     invoke-direct {v3}, Landroidx/compose/runtime/CompositionImpl;->abandonChanges()V
 
     .line 1714
@@ -5212,8 +5200,8 @@
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v1    # "$i$f$synchronized":I
     throw v5
-    :try_end_60
-    .catchall {:try_start_5b .. :try_end_60} :catchall_58
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 1699
     .end local v2    # "$i$a$-synchronized-CompositionImpl$changesApplied$1":I
@@ -5222,14 +5210,14 @@
     .end local v5    # "e$iv":Ljava/lang/Exception;
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :goto_60
+    :goto_0
     monitor-exit v0
 
     throw v2
 .end method
 
 .method public composeContent(Lkotlin/jvm/functions/Function2;)V
-    .registers 19
+    .locals 17
     .param p1, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -5281,7 +5269,7 @@
 
     .line 585
     .local v8, "$i$a$-guardChanges-CompositionImpl$composeContent$1":I
-    :try_start_13
+    :try_start_0
     iget-object v0, v1, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
 
     move-object v9, v0
@@ -5292,14 +5280,14 @@
     .line 1296
     .local v10, "$i$f$synchronized":I
     monitor-enter v9
-    :try_end_18
-    .catchall {:try_start_13 .. :try_end_18} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     const/4 v11, 0x0
 
     .line 586
     .local v11, "$i$a$-synchronized-CompositionImpl$composeContent$1$1":I
-    :try_start_19
+    :try_start_1
     invoke-direct/range {p0 .. p0}, Landroidx/compose/runtime/CompositionImpl;->drainPendingModificationsForCompositionLocked()V
 
     .line 587
@@ -5313,8 +5301,8 @@
     invoke-direct {v12}, Landroidx/compose/runtime/CompositionImpl;->takeInvalidations()Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     move-result-object v0
-    :try_end_23
-    .catchall {:try_start_19 .. :try_end_23} :catchall_4b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     move-object v14, v0
 
@@ -5334,7 +5322,7 @@
 
     .end local v4    # "$i$f$guardChanges":I
     .local v16, "$i$f$guardChanges":I
-    :try_start_29
+    :try_start_2
     iget-object v4, v1, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
     invoke-virtual {v4, v0, v2}, Landroidx/compose/runtime/ComposerImpl;->composeContent$runtime_release(Landroidx/compose/runtime/collection/IdentityArrayMap;Lkotlin/jvm/functions/Function2;)V
@@ -5345,9 +5333,9 @@
     .end local v0    # "invalidations":Landroidx/compose/runtime/collection/IdentityArrayMap;
     .end local v15    # "$i$a$-guardInvalidationsLocked-CompositionImpl$composeContent$1$1$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_31
-    .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_31} :catch_46
-    .catchall {:try_start_29 .. :try_end_31} :catchall_44
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 1299
     nop
@@ -5362,13 +5350,13 @@
     nop
 
     .end local v11    # "$i$a$-synchronized-CompositionImpl$composeContent$1$1":I
-    :try_start_34
+    :try_start_3
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_36
-    .catchall {:try_start_34 .. :try_end_36} :catchall_44
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 1296
-    :try_start_36
+    :try_start_4
     monitor-exit v9
 
     .line 591
@@ -5378,8 +5366,8 @@
 
     .end local v8    # "$i$a$-guardChanges-CompositionImpl$composeContent$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_3a
-    .catchall {:try_start_36 .. :try_end_3a} :catchall_50
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 1295
     nop
@@ -5428,22 +5416,22 @@
     .restart local v9    # "lock$iv":Ljava/lang/Object;
     .restart local v10    # "$i$f$synchronized":I
     .restart local v16    # "$i$f$guardChanges":I
-    :catchall_44
+    :catchall_0
     move-exception v0
 
-    goto :goto_4e
+    goto :goto_0
 
     .line 1300
     .restart local v11    # "$i$a$-synchronized-CompositionImpl$composeContent$1$1":I
     .restart local v12    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v13    # "$i$f$guardInvalidationsLocked":I
     .restart local v14    # "invalidations$iv":Landroidx/compose/runtime/collection/IdentityArrayMap;
-    :catch_46
+    :catch_0
     move-exception v0
 
     .line 1301
     .local v0, "e$iv":Ljava/lang/Exception;
-    :try_start_47
+    :try_start_5
     iput-object v14, v12, Landroidx/compose/runtime/CompositionImpl;->invalidations:Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     .line 1302
@@ -5459,8 +5447,8 @@
     .end local v16    # "$i$f$guardChanges":I
     .end local p1    # "content":Lkotlin/jvm/functions/Function2;
     throw v0
-    :try_end_4b
-    .catchall {:try_start_47 .. :try_end_4b} :catchall_44
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 1296
     .end local v0    # "e$iv":Ljava/lang/Exception;
@@ -5477,15 +5465,15 @@
     .restart local v9    # "lock$iv":Ljava/lang/Object;
     .restart local v10    # "$i$f$synchronized":I
     .restart local p1    # "content":Lkotlin/jvm/functions/Function2;
-    :catchall_4b
+    :catchall_1
     move-exception v0
 
     move/from16 v16, v4
 
     .end local v4    # "$i$f$guardChanges":I
     .restart local v16    # "$i$f$guardChanges":I
-    :goto_4e
-    :try_start_4e
+    :goto_0
+    :try_start_6
     monitor-exit v9
 
     .end local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
@@ -5495,8 +5483,8 @@
     .end local v16    # "$i$f$guardChanges":I
     .end local p1    # "content":Lkotlin/jvm/functions/Function2;
     throw v0
-    :try_end_50
-    .catchall {:try_start_4e .. :try_end_50} :catchall_50
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 1306
     .end local v8    # "$i$a$-guardChanges-CompositionImpl$composeContent$1":I
@@ -5508,24 +5496,24 @@
     .restart local v7    # "success$iv$iv":Z
     .restart local v16    # "$i$f$guardChanges":I
     .restart local p1    # "content":Lkotlin/jvm/functions/Function2;
-    :catchall_50
+    :catchall_2
     move-exception v0
 
-    goto :goto_55
+    goto :goto_1
 
     .end local v16    # "$i$f$guardChanges":I
     .restart local v4    # "$i$f$guardChanges":I
-    :catchall_52
+    :catchall_3
     move-exception v0
 
     move/from16 v16, v4
 
     .end local v4    # "$i$f$guardChanges":I
     .restart local v16    # "$i$f$guardChanges":I
-    :goto_55
-    if-nez v7, :cond_6f
+    :goto_1
+    if-nez v7, :cond_0
 
-    :try_start_57
+    :try_start_7
     iget-object v4, v5, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
     check-cast v4, Ljava/util/Collection;
@@ -5536,7 +5524,7 @@
 
     xor-int/lit8 v4, v4, 0x1
 
-    if-eqz v4, :cond_6f
+    if-eqz v4, :cond_0
 
     .line 1307
     new-instance v4, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -5549,15 +5537,15 @@
 
     invoke-virtual {v4}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_6f
+    :cond_0
     nop
 
     .end local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .end local v16    # "$i$f$guardChanges":I
     .end local p1    # "content":Lkotlin/jvm/functions/Function2;
     throw v0
-    :try_end_71
-    .catch Ljava/lang/Exception; {:try_start_57 .. :try_end_71} :catch_71
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_1
 
     .line 1310
     .end local v5    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
@@ -5566,7 +5554,7 @@
     .restart local v3    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v16    # "$i$f$guardChanges":I
     .restart local p1    # "content":Lkotlin/jvm/functions/Function2;
-    :catch_71
+    :catch_1
     move-exception v0
 
     .line 1311
@@ -5578,7 +5566,7 @@
 .end method
 
 .method public delegateInvalidations(Landroidx/compose/runtime/ControlledComposition;ILkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "to"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "groupIndex"    # I
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
@@ -5599,15 +5587,15 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 926
-    if-eqz p1, :cond_2a
+    if-eqz p1, :cond_0
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2a
+    if-nez v0, :cond_0
 
-    if-ltz p2, :cond_2a
+    if-ltz p2, :cond_0
 
     .line 927
     move-object v0, p1
@@ -5627,12 +5615,12 @@
 
     const/4 v1, 0x0
 
-    :try_start_1a
+    :try_start_0
     invoke-interface {p3}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v2
-    :try_end_1e
-    .catchall {:try_start_1a .. :try_end_1e} :catchall_24
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 932
     iput-object v1, p0, Landroidx/compose/runtime/CompositionImpl;->invalidationDelegate:Landroidx/compose/runtime/CompositionImpl;
@@ -5644,10 +5632,10 @@
     nop
 
     .line 933
-    goto :goto_2e
+    goto :goto_0
 
     .line 932
-    :catchall_24
+    :catchall_0
     move-exception v2
 
     iput-object v1, p0, Landroidx/compose/runtime/CompositionImpl;->invalidationDelegate:Landroidx/compose/runtime/CompositionImpl;
@@ -5658,18 +5646,18 @@
     throw v2
 
     .line 935
-    :cond_2a
+    :cond_0
     invoke-interface {p3}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v2
 
     .line 926
-    :goto_2e
+    :goto_0
     return-object v2
 .end method
 
 .method public dispose()V
-    .registers 14
+    .locals 13
 
     .line 595
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -5685,10 +5673,10 @@
 
     .line 596
     .local v2, "$i$a$-synchronized-CompositionImpl$dispose$1":I
-    :try_start_5
+    :try_start_0
     iget-boolean v3, p0, Landroidx/compose/runtime/CompositionImpl;->disposed:Z
 
-    if-nez v3, :cond_7f
+    if-nez v3, :cond_5
 
     .line 597
     const/4 v3, 0x1
@@ -5713,32 +5701,32 @@
 
     .line 608
     .local v4, "deferredChanges":Ljava/util/List;
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_0
 
     .line 609
     invoke-direct {p0, v4}, Landroidx/compose/runtime/CompositionImpl;->applyChangesInLocked(Ljava/util/List;)V
 
     .line 617
-    :cond_1f
+    :cond_0
     iget-object v5, p0, Landroidx/compose/runtime/CompositionImpl;->slotTable:Landroidx/compose/runtime/SlotTable;
 
     invoke-virtual {v5}, Landroidx/compose/runtime/SlotTable;->getGroupsSize()I
 
     move-result v5
 
-    if-lez v5, :cond_29
+    if-lez v5, :cond_1
 
     move v5, v3
 
-    goto :goto_2a
+    goto :goto_0
 
-    :cond_29
+    :cond_1
     const/4 v5, 0x0
 
     .line 618
     .local v5, "nonEmptySlotTable":Z
-    :goto_2a
-    if-nez v5, :cond_37
+    :goto_0
+    if-nez v5, :cond_2
 
     iget-object v6, p0, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
@@ -5750,10 +5738,10 @@
 
     xor-int/2addr v3, v6
 
-    if-eqz v3, :cond_7a
+    if-eqz v3, :cond_4
 
     .line 619
-    :cond_37
+    :cond_2
     new-instance v3, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
 
     iget-object v6, p0, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
@@ -5764,7 +5752,7 @@
 
     .line 620
     .local v3, "manager":Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
-    if-eqz v5, :cond_77
+    if-eqz v5, :cond_3
 
     .line 621
     iget-object v6, p0, Landroidx/compose/runtime/CompositionImpl;->applier:Landroidx/compose/runtime/Applier;
@@ -5782,8 +5770,8 @@
     invoke-virtual {v6}, Landroidx/compose/runtime/SlotTable;->openWriter()Landroidx/compose/runtime/SlotWriter;
 
     move-result-object v8
-    :try_end_4e
-    .catchall {:try_start_5 .. :try_end_4e} :catchall_8c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 1316
     nop
@@ -5803,7 +5791,7 @@
 
     .line 623
     .local v11, "$i$a$-write-CompositionImpl$dispose$1$1":I
-    :try_start_53
+    :try_start_1
     move-object v12, v3
 
     check-cast v12, Landroidx/compose/runtime/RememberManager;
@@ -5816,14 +5804,14 @@
     .end local v10    # "writer":Landroidx/compose/runtime/SlotWriter;
     .end local v11    # "$i$a$-write-CompositionImpl$dispose$1$1":I
     sget-object v10, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_5c
-    .catchall {:try_start_53 .. :try_end_5c} :catchall_72
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1318
     nop
 
     .line 1320
-    :try_start_5d
+    :try_start_2
     invoke-virtual {v8}, Landroidx/compose/runtime/SlotWriter;->close()V
 
     .line 1321
@@ -5855,14 +5843,14 @@
     .line 627
     invoke-virtual {v3}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchRememberObservers()V
 
-    goto :goto_77
+    goto :goto_1
 
     .line 1320
     .restart local v6    # "this_$iv":Landroidx/compose/runtime/SlotTable;
     .restart local v7    # "$i$f$write":I
     .restart local v8    # "writer$iv":Landroidx/compose/runtime/SlotWriter;
     .restart local v9    # "$i$a$-let-SlotTable$write$1$iv":I
-    :catchall_72
+    :catchall_0
     move-exception v10
 
     invoke-virtual {v8}, Landroidx/compose/runtime/SlotWriter;->close()V
@@ -5878,13 +5866,13 @@
     .end local v9    # "$i$a$-let-SlotTable$write$1$iv":I
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :cond_77
-    :goto_77
+    :cond_3
+    :goto_1
     invoke-virtual {v3}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
     .line 631
     .end local v3    # "manager":Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
-    :cond_7a
+    :cond_4
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/ComposerImpl;->dispose$runtime_release()V
@@ -5892,13 +5880,13 @@
     .line 633
     .end local v4    # "deferredChanges":Ljava/util/List;
     .end local v5    # "nonEmptySlotTable":Z
-    :cond_7f
+    :cond_5
     nop
 
     .end local v2    # "$i$a$-synchronized-CompositionImpl$dispose$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_82
-    .catchall {:try_start_5d .. :try_end_82} :catchall_8c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 1314
     monitor-exit v0
@@ -5920,7 +5908,7 @@
     .line 1314
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_8c
+    :catchall_1
     move-exception v2
 
     monitor-exit v0
@@ -5929,7 +5917,7 @@
 .end method
 
 .method public disposeUnusedMovableContent(Landroidx/compose/runtime/MovableContentState;)V
-    .registers 11
+    .locals 9
     .param p1, "state"    # Landroidx/compose/runtime/MovableContentState;
 
     const-string/jumbo v0, "state"
@@ -5982,7 +5970,7 @@
 
     .line 802
     .local v7, "$i$a$-write-CompositionImpl$disposeUnusedMovableContent$1":I
-    :try_start_1e
+    :try_start_0
     move-object v8, v0
 
     check-cast v8, Landroidx/compose/runtime/RememberManager;
@@ -5995,8 +5983,8 @@
     .end local v6    # "writer":Landroidx/compose/runtime/SlotWriter;
     .end local v7    # "$i$a$-write-CompositionImpl$disposeUnusedMovableContent$1":I
     sget-object v6, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_27
-    .catchall {:try_start_1e .. :try_end_27} :catchall_33
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1591
     nop
@@ -6031,7 +6019,7 @@
     .restart local v3    # "$i$f$write":I
     .restart local v4    # "writer$iv":Landroidx/compose/runtime/SlotWriter;
     .restart local v5    # "$i$a$-let-SlotTable$write$1$iv":I
-    :catchall_33
+    :catchall_0
     move-exception v6
 
     invoke-virtual {v4}, Landroidx/compose/runtime/SlotWriter;->close()V
@@ -6040,7 +6028,7 @@
 .end method
 
 .method public final getComposable()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -6059,7 +6047,7 @@
 .end method
 
 .method public final getConditionalScopes$runtime_release()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -6082,7 +6070,7 @@
 .end method
 
 .method public final getDerivedStateDependencies$runtime_release()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -6107,7 +6095,7 @@
 .end method
 
 .method public getHasInvalidations()Z
-    .registers 5
+    .locals 4
 
     .line 637
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -6123,27 +6111,27 @@
 
     .line 637
     .local v2, "$i$a$-synchronized-CompositionImpl$hasInvalidations$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->invalidations:Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/collection/IdentityArrayMap;->getSize()I
 
     move-result v3
-    :try_end_b
-    .catchall {:try_start_5 .. :try_end_b} :catchall_12
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-lez v3, :cond_f
+    if-lez v3, :cond_0
 
     const/4 v3, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v3, 0x0
 
     .line 1323
     .end local v2    # "$i$a$-synchronized-CompositionImpl$hasInvalidations$1":I
-    :goto_10
+    :goto_0
     monitor-exit v0
 
     .line 637
@@ -6154,7 +6142,7 @@
     .line 1323
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_12
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6163,7 +6151,7 @@
 .end method
 
 .method public getHasPendingChanges()Z
-    .registers 5
+    .locals 4
 
     .line 515
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -6179,14 +6167,14 @@
 
     .line 515
     .local v2, "$i$a$-synchronized-CompositionImpl$hasPendingChanges$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/ComposerImpl;->getHasPendingChanges$runtime_release()Z
 
     move-result v3
-    :try_end_b
-    .catchall {:try_start_5 .. :try_end_b} :catchall_d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1278
     .end local v2    # "$i$a$-synchronized-CompositionImpl$hasPendingChanges$1":I
@@ -6200,7 +6188,7 @@
     .line 1278
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_d
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6209,7 +6197,7 @@
 .end method
 
 .method public final getObservedObjects$runtime_release()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -6234,7 +6222,7 @@
 .end method
 
 .method public final getPendingInvalidScopes$runtime_release()Z
-    .registers 2
+    .locals 1
 
     .line 455
     iget-boolean v0, p0, Landroidx/compose/runtime/CompositionImpl;->pendingInvalidScopes:Z
@@ -6243,12 +6231,12 @@
 .end method
 
 .method public final getRecomposeContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 486
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->_recomposeContext:Lkotlin/coroutines/CoroutineContext;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->parent:Landroidx/compose/runtime/CompositionContext;
 
@@ -6256,12 +6244,12 @@
 
     move-result-object v0
 
-    :cond_a
+    :cond_0
     return-object v0
 .end method
 
 .method public final getSlotTable$runtime_release()Landroidx/compose/runtime/SlotTable;
-    .registers 2
+    .locals 1
 
     .line 377
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->slotTable:Landroidx/compose/runtime/SlotTable;
@@ -6270,7 +6258,7 @@
 .end method
 
 .method public insertMovableContent(Ljava/util/List;)V
-    .registers 15
+    .locals 13
     .param p1, "references"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -6315,10 +6303,10 @@
 
     move-result v5
 
-    :goto_11
+    :goto_0
     const/4 v6, 0x1
 
-    if-ge v4, v5, :cond_34
+    if-ge v4, v5, :cond_1
 
     .line 1567
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -6360,27 +6348,27 @@
     .line 1564
     .end local v10    # "it":Lkotlin/Pair;
     .end local v11    # "$i$a$-fastAll-CompositionImpl$insertMovableContent$1":I
-    if-nez v10, :cond_30
+    if-nez v10, :cond_0
 
     const/4 v5, 0x0
 
-    goto :goto_36
+    goto :goto_1
 
     .line 1568
     .end local v8    # "it$iv":Ljava/lang/Object;
     .end local v9    # "$i$a$-fastForEach-ListUtilsKt$fastAll$2$iv":I
-    :cond_30
+    :cond_0
     nop
 
     .line 1566
     .end local v7    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 1570
     .end local v4    # "index$iv$iv":I
-    :cond_34
+    :cond_1
     nop
 
     .line 1571
@@ -6391,7 +6379,7 @@
     .line 792
     .end local v0    # "$this$fastAll$iv":Ljava/util/List;
     .end local v1    # "$i$f$fastAll":I
-    :goto_36
+    :goto_1
     invoke-static {v5}, Landroidx/compose/runtime/ComposerKt;->runtimeCheck(Z)V
 
     .line 793
@@ -6423,7 +6411,7 @@
 
     .line 794
     .local v5, "$i$a$-guardChanges-CompositionImpl$insertMovableContent$2":I
-    :try_start_41
+    :try_start_0
     iget-object v7, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
     invoke-virtual {v7, p1}, Landroidx/compose/runtime/ComposerImpl;->insertMovableContentReferences(Ljava/util/List;)V
@@ -6433,8 +6421,8 @@
 
     .end local v5    # "$i$a$-guardChanges-CompositionImpl$insertMovableContent$2":I
     sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_49
-    .catchall {:try_start_41 .. :try_end_49} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1576
     nop
@@ -6480,12 +6468,12 @@
     .restart local v2    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v3    # "$i$f$trackAbandonedValues":I
     .restart local v4    # "success$iv$iv":Z
-    :catchall_53
+    :catchall_0
     move-exception v5
 
-    if-nez v4, :cond_6d
+    if-nez v4, :cond_2
 
-    :try_start_56
+    :try_start_1
     iget-object v7, v2, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
     check-cast v7, Ljava/util/Collection;
@@ -6496,7 +6484,7 @@
 
     xor-int/2addr v6, v7
 
-    if-eqz v6, :cond_6d
+    if-eqz v6, :cond_2
 
     .line 1581
     new-instance v6, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -6509,15 +6497,15 @@
 
     invoke-virtual {v6}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_6d
+    :cond_2
     nop
 
     .end local v0    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .end local v1    # "$i$f$guardChanges":I
     .end local p1    # "references":Ljava/util/List;
     throw v5
-    :try_end_6f
-    .catch Ljava/lang/Exception; {:try_start_56 .. :try_end_6f} :catch_6f
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 1584
     .end local v2    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
@@ -6526,7 +6514,7 @@
     .restart local v0    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v1    # "$i$f$guardChanges":I
     .restart local p1    # "references":Ljava/util/List;
-    :catch_6f
+    :catch_0
     move-exception v2
 
     .line 1585
@@ -6538,7 +6526,7 @@
 .end method
 
 .method public invalidate(Landroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)Landroidx/compose/runtime/InvalidationResult;
-    .registers 9
+    .locals 6
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
     .param p2, "instance"    # Ljava/lang/Object;
 
@@ -6553,38 +6541,38 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 940
     invoke-virtual {p1, v1}, Landroidx/compose/runtime/RecomposeScopeImpl;->setDefaultsInvalid(Z)V
 
     .line 942
-    :cond_10
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/runtime/RecomposeScopeImpl;->getAnchor()Landroidx/compose/runtime/Anchor;
 
     move-result-object v0
 
     .line 943
     .local v0, "anchor":Landroidx/compose/runtime/Anchor;
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_6
 
     invoke-virtual {v0}, Landroidx/compose/runtime/Anchor;->getValid()Z
 
     move-result v2
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1
 
-    goto :goto_52
+    goto :goto_1
 
     .line 945
-    :cond_1d
+    :cond_1
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl;->slotTable:Landroidx/compose/runtime/SlotTable;
 
     invoke-virtual {v2, v0}, Landroidx/compose/runtime/SlotTable;->ownsAnchor(Landroidx/compose/runtime/Anchor;)Z
 
     move-result v2
 
-    if-nez v2, :cond_44
+    if-nez v2, :cond_4
 
     .line 947
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -6600,10 +6588,10 @@
 
     .line 947
     .local v4, "$i$a$-synchronized-CompositionImpl$invalidate$delegate$1":I
-    :try_start_2a
+    :try_start_0
     iget-object v5, p0, Landroidx/compose/runtime/CompositionImpl;->invalidationDelegate:Landroidx/compose/runtime/CompositionImpl;
-    :try_end_2c
-    .catchall {:try_start_2a .. :try_end_2c} :catchall_41
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1730
     .end local v4    # "$i$a$-synchronized-CompositionImpl$invalidate$delegate$1":I
@@ -6618,21 +6606,21 @@
     .local v2, "delegate":Landroidx/compose/runtime/CompositionImpl;
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_2
 
     invoke-direct {v2, p1, p2}, Landroidx/compose/runtime/CompositionImpl;->tryImminentInvalidation(Landroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-ne v4, v1, :cond_38
+    if-ne v4, v1, :cond_2
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_38
+    :cond_2
     move v1, v3
 
-    :goto_39
-    if-eqz v1, :cond_3e
+    :goto_0
+    if-eqz v1, :cond_3
 
     .line 949
     sget-object v1, Landroidx/compose/runtime/InvalidationResult;->IMMINENT:Landroidx/compose/runtime/InvalidationResult;
@@ -6640,7 +6628,7 @@
     return-object v1
 
     .line 951
-    :cond_3e
+    :cond_3
     sget-object v1, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
 
     return-object v1
@@ -6648,7 +6636,7 @@
     .line 1730
     .local v2, "lock$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_41
+    :catchall_0
     move-exception v1
 
     monitor-exit v2
@@ -6658,12 +6646,12 @@
     .line 953
     .end local v2    # "lock$iv":Ljava/lang/Object;
     .end local v3    # "$i$f$synchronized":I
-    :cond_44
+    :cond_4
     invoke-virtual {p1}, Landroidx/compose/runtime/RecomposeScopeImpl;->getCanRecompose()Z
 
     move-result v1
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_5
 
     .line 954
     sget-object v1, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
@@ -6671,7 +6659,7 @@
     return-object v1
 
     .line 955
-    :cond_4d
+    :cond_5
     invoke-direct {p0, p1, v0, p2}, Landroidx/compose/runtime/CompositionImpl;->invalidateChecked(Landroidx/compose/runtime/RecomposeScopeImpl;Landroidx/compose/runtime/Anchor;Ljava/lang/Object;)Landroidx/compose/runtime/InvalidationResult;
 
     move-result-object v1
@@ -6679,15 +6667,15 @@
     return-object v1
 
     .line 944
-    :cond_52
-    :goto_52
+    :cond_6
+    :goto_1
     sget-object v1, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
 
     return-object v1
 .end method
 
 .method public invalidateAll()V
-    .registers 12
+    .locals 11
 
     .line 906
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -6703,7 +6691,7 @@
 
     .line 907
     .local v2, "$i$a$-synchronized-CompositionImpl$invalidateAll$1":I
-    :try_start_5
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->slotTable:Landroidx/compose/runtime/SlotTable;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/SlotTable;->getSlots()[Ljava/lang/Object;
@@ -6719,8 +6707,8 @@
 
     const/4 v6, 0x0
 
-    :goto_e
-    if-ge v6, v5, :cond_26
+    :goto_0
+    if-ge v6, v5, :cond_2
 
     aget-object v7, v3, v6
 
@@ -6734,35 +6722,35 @@
     .local v9, "$i$a$-forEach-CompositionImpl$invalidateAll$1$1":I
     instance-of v10, v8, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v10, :cond_1c
+    if-eqz v10, :cond_0
 
     move-object v10, v8
 
     check-cast v10, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_0
     const/4 v10, 0x0
 
-    :goto_1d
-    if-eqz v10, :cond_22
+    :goto_1
+    if-eqz v10, :cond_1
 
     invoke-virtual {v10}, Landroidx/compose/runtime/RecomposeScopeImpl;->invalidate()V
 
     .line 1727
     .end local v8    # "it":Ljava/lang/Object;
     .end local v9    # "$i$a$-forEach-CompositionImpl$invalidateAll$1$1":I
-    :cond_22
+    :cond_1
     nop
 
     .end local v7    # "element$iv":Ljava/lang/Object;
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 1728
-    :cond_26
+    :cond_2
     nop
 
     .line 908
@@ -6772,8 +6760,8 @@
 
     .end local v2    # "$i$a$-synchronized-CompositionImpl$invalidateAll$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_2a
-    .catchall {:try_start_5 .. :try_end_2a} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1726
     monitor-exit v0
@@ -6786,7 +6774,7 @@
     .line 1726
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_2c
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -6795,7 +6783,7 @@
 .end method
 
 .method public final invalidateGroupsWithKey(I)V
-    .registers 18
+    .locals 16
     .param p1, "key"    # I
 
     .line 524
@@ -6814,19 +6802,19 @@
 
     .line 525
     .local v0, "$i$a$-synchronized-CompositionImpl$invalidateGroupsWithKey$scopesToInvalidate$1":I
-    :try_start_7
+    :try_start_0
     iget-object v4, v1, Landroidx/compose/runtime/CompositionImpl;->slotTable:Landroidx/compose/runtime/SlotTable;
-    :try_end_9
-    .catchall {:try_start_7 .. :try_end_9} :catchall_5d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     move/from16 v5, p1
 
-    :try_start_b
+    :try_start_1
     invoke-virtual {v4, v5}, Landroidx/compose/runtime/SlotTable;->invalidateGroupsWithKey$runtime_release(I)Ljava/util/List;
 
     move-result-object v4
-    :try_end_f
-    .catchall {:try_start_b .. :try_end_f} :catchall_5b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1280
     .end local v0    # "$i$a$-synchronized-CompositionImpl$invalidateGroupsWithKey$scopesToInvalidate$1":I
@@ -6839,7 +6827,7 @@
 
     .line 531
     .local v0, "scopesToInvalidate":Ljava/util/List;
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     move-object v3, v0
 
@@ -6868,8 +6856,8 @@
 
     move-result v9
 
-    :goto_1e
-    if-ge v8, v9, :cond_3f
+    :goto_0
+    if-ge v8, v9, :cond_2
 
     .line 1285
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -6902,27 +6890,27 @@
 
     sget-object v10, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
 
-    if-ne v2, v10, :cond_35
+    if-ne v2, v10, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_35
+    :cond_0
     const/4 v2, 0x0
 
     .line 1287
     .end local v14    # "it":Landroidx/compose/runtime/RecomposeScopeImpl;
     .end local v15    # "$i$a$-fastAny-CompositionImpl$invalidateGroupsWithKey$forceComposition$1":I
-    :goto_36
-    if-eqz v2, :cond_3a
+    :goto_1
+    if-eqz v2, :cond_1
 
     const/4 v2, 0x1
 
-    goto :goto_41
+    goto :goto_2
 
     .line 1288
-    :cond_3a
+    :cond_1
     nop
 
     .line 1286
@@ -6934,11 +6922,11 @@
     .end local v11    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 1289
     .end local v8    # "index$iv$iv":I
-    :cond_3f
+    :cond_2
     nop
 
     .line 1290
@@ -6948,27 +6936,27 @@
 
     .end local v3    # "$this$fastAny$iv":Ljava/util/List;
     .end local v4    # "$i$f$fastAny":I
-    :goto_41
-    if-eqz v2, :cond_44
+    :goto_2
+    if-eqz v2, :cond_3
 
-    goto :goto_46
+    goto :goto_3
 
-    :cond_44
+    :cond_3
     const/4 v2, 0x0
 
-    goto :goto_47
+    goto :goto_4
 
-    :cond_46
-    :goto_46
+    :cond_4
+    :goto_3
     const/4 v2, 0x1
 
     .line 531
-    :goto_47
+    :goto_4
     nop
 
     .line 534
     .local v2, "forceComposition":Z
-    if-eqz v2, :cond_5a
+    if-eqz v2, :cond_5
 
     iget-object v3, v1, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
@@ -6976,7 +6964,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5a
+    if-eqz v3, :cond_5
 
     .line 535
     iget-object v3, v1, Landroidx/compose/runtime/CompositionImpl;->parent:Landroidx/compose/runtime/CompositionContext;
@@ -6988,31 +6976,31 @@
     invoke-virtual {v3, v4}, Landroidx/compose/runtime/CompositionContext;->invalidate$runtime_release(Landroidx/compose/runtime/ControlledComposition;)V
 
     .line 537
-    :cond_5a
+    :cond_5
     return-void
 
     .line 1280
     .end local v0    # "scopesToInvalidate":Ljava/util/List;
     .local v2, "lock$iv":Ljava/lang/Object;
     .local v3, "$i$f$synchronized":I
-    :catchall_5b
+    :catchall_0
     move-exception v0
 
-    goto :goto_60
+    goto :goto_5
 
-    :catchall_5d
+    :catchall_1
     move-exception v0
 
     move/from16 v5, p1
 
-    :goto_60
+    :goto_5
     monitor-exit v2
 
     throw v0
 .end method
 
 .method public isComposing()Z
-    .registers 2
+    .locals 1
 
     .line 510
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
@@ -7025,7 +7013,7 @@
 .end method
 
 .method public isDisposed()Z
-    .registers 2
+    .locals 1
 
     .line 512
     iget-boolean v0, p0, Landroidx/compose/runtime/CompositionImpl;->disposed:Z
@@ -7034,7 +7022,7 @@
 .end method
 
 .method public final isRoot()Z
-    .registers 2
+    .locals 1
 
     .line 491
     iget-boolean v0, p0, Landroidx/compose/runtime/CompositionImpl;->isRoot:Z
@@ -7043,7 +7031,7 @@
 .end method
 
 .method public observesAnyOf(Ljava/util/Set;)Z
-    .registers 5
+    .locals 3
     .param p1, "values"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -7064,12 +7052,12 @@
 
     move-result-object v0
 
-    :cond_a
+    :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_26
+    if-eqz v1, :cond_2
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -7083,7 +7071,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_24
+    if-nez v2, :cond_1
 
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl;->derivedStates:Landroidx/compose/runtime/collection/IdentityScopeMap;
 
@@ -7091,23 +7079,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_0
 
-    :cond_24
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 
     .line 671
     .end local v1    # "value":Ljava/lang/Object;
-    :cond_26
+    :cond_2
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public prepareCompose(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -7131,7 +7119,7 @@
 .end method
 
 .method public recompose()Z
-    .registers 19
+    .locals 18
 
     .line 777
     move-object/from16 v1, p0
@@ -7149,10 +7137,10 @@
 
     .line 778
     .local v4, "$i$a$-synchronized-CompositionImpl$recompose$1":I
-    :try_start_7
+    :try_start_0
     invoke-direct/range {p0 .. p0}, Landroidx/compose/runtime/CompositionImpl;->drainPendingModificationsForCompositionLocked()V
-    :try_end_a
-    .catchall {:try_start_7 .. :try_end_a} :catchall_66
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 779
     move-object/from16 v5, p0
@@ -7190,12 +7178,12 @@
 
     .line 1546
     .local v12, "$i$f$guardInvalidationsLocked":I
-    :try_start_16
+    :try_start_1
     invoke-direct {v11}, Landroidx/compose/runtime/CompositionImpl;->takeInvalidations()Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     move-result-object v0
-    :try_end_1a
-    .catchall {:try_start_16 .. :try_end_1a} :catchall_43
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-object v13, v0
 
@@ -7211,7 +7199,7 @@
 
     .line 781
     .local v14, "$i$a$-guardInvalidationsLocked-CompositionImpl$recompose$1$1$1":I
-    :try_start_1e
+    :try_start_2
     iget-object v15, v1, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
 
     invoke-virtual {v15, v0}, Landroidx/compose/runtime/ComposerImpl;->recompose$runtime_release(Landroidx/compose/runtime/collection/IdentityArrayMap;)Z
@@ -7225,15 +7213,15 @@
 
     .line 783
     .local v17, "$i$a$-also-CompositionImpl$recompose$1$1$1$1":I
-    if-nez v16, :cond_2d
+    if-nez v16, :cond_0
 
     invoke-direct/range {p0 .. p0}, Landroidx/compose/runtime/CompositionImpl;->drainPendingModificationsLocked()V
-    :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_1e .. :try_end_2d} :catch_3e
-    .catchall {:try_start_1e .. :try_end_2d} :catchall_43
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 784
-    :cond_2d
+    :cond_0
     nop
 
     .line 781
@@ -7316,12 +7304,12 @@
     .restart local v11    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v12    # "$i$f$guardInvalidationsLocked":I
     .restart local v13    # "invalidations$iv":Landroidx/compose/runtime/collection/IdentityArrayMap;
-    :catch_3e
+    :catch_0
     move-exception v0
 
     .line 1550
     .local v0, "e$iv":Ljava/lang/Exception;
-    :try_start_3f
+    :try_start_3
     iput-object v13, v11, Landroidx/compose/runtime/CompositionImpl;->invalidations:Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     .line 1551
@@ -7336,8 +7324,8 @@
     .end local v8    # "$i$f$trackAbandonedValues":I
     .end local v9    # "success$iv$iv":Z
     throw v0
-    :try_end_43
-    .catchall {:try_start_3f .. :try_end_43} :catchall_43
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 1555
     .end local v0    # "e$iv":Ljava/lang/Exception;
@@ -7353,12 +7341,12 @@
     .restart local v7    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v8    # "$i$f$trackAbandonedValues":I
     .restart local v9    # "success$iv$iv":Z
-    :catchall_43
+    :catchall_0
     move-exception v0
 
-    if-nez v9, :cond_5e
+    if-nez v9, :cond_1
 
-    :try_start_46
+    :try_start_4
     iget-object v10, v7, Landroidx/compose/runtime/CompositionImpl;->abandonSet:Ljava/util/HashSet;
 
     check-cast v10, Ljava/util/Collection;
@@ -7369,7 +7357,7 @@
 
     xor-int/lit8 v10, v10, 0x1
 
-    if-eqz v10, :cond_5e
+    if-eqz v10, :cond_1
 
     .line 1556
     new-instance v10, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;
@@ -7382,7 +7370,7 @@
 
     invoke-virtual {v10}, Landroidx/compose/runtime/CompositionImpl$RememberEventDispatcher;->dispatchAbandons()V
 
-    :cond_5e
+    :cond_1
     nop
 
     .end local v2    # "lock$iv":Ljava/lang/Object;
@@ -7391,9 +7379,9 @@
     .end local v5    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .end local v6    # "$i$f$guardChanges":I
     throw v0
-    :try_end_60
-    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_60} :catch_60
-    .catchall {:try_start_46 .. :try_end_60} :catchall_66
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 1559
     .end local v7    # "this_$iv$iv":Landroidx/compose/runtime/CompositionImpl;
@@ -7404,12 +7392,12 @@
     .restart local v4    # "$i$a$-synchronized-CompositionImpl$recompose$1":I
     .restart local v5    # "this_$iv":Landroidx/compose/runtime/CompositionImpl;
     .restart local v6    # "$i$f$guardChanges":I
-    :catch_60
+    :catch_1
     move-exception v0
 
     .line 1560
     .restart local v0    # "e$iv":Ljava/lang/Exception;
-    :try_start_61
+    :try_start_5
     invoke-direct {v5}, Landroidx/compose/runtime/CompositionImpl;->abandonChanges()V
 
     .line 1561
@@ -7418,8 +7406,8 @@
     .end local v2    # "lock$iv":Ljava/lang/Object;
     .end local v3    # "$i$f$synchronized":I
     throw v0
-    :try_end_66
-    .catchall {:try_start_61 .. :try_end_66} :catchall_66
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     .line 1540
     .end local v0    # "e$iv":Ljava/lang/Exception;
@@ -7428,7 +7416,7 @@
     .end local v6    # "$i$f$guardChanges":I
     .restart local v2    # "lock$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_66
+    :catchall_1
     move-exception v0
 
     monitor-exit v2
@@ -7437,7 +7425,7 @@
 .end method
 
 .method public recomposeScopeReleased(Landroidx/compose/runtime/RecomposeScopeImpl;)V
-    .registers 3
+    .locals 1
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
 
     const-string/jumbo v0, "scope"
@@ -7454,7 +7442,7 @@
 .end method
 
 .method public recordModificationsOf(Ljava/util/Set;)V
-    .registers 7
+    .locals 5
     .param p1, "values"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -7471,7 +7459,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 648
-    :cond_6
+    :cond_0
     nop
 
     .line 649
@@ -7488,14 +7476,13 @@
     .line 651
     const/4 v1, 0x1
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     move v2, v1
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_13
-    # getter for: Landroidx/compose/runtime/CompositionKt;->PendingApplyNoModifications:Ljava/lang/Object;
+    :cond_1
     invoke-static {}, Landroidx/compose/runtime/CompositionKt;->access$getPendingApplyNoModifications$p()Ljava/lang/Object;
 
     move-result-object v2
@@ -7504,18 +7491,18 @@
 
     move-result v2
 
-    :goto_1b
-    if-eqz v2, :cond_1f
+    :goto_0
+    if-eqz v2, :cond_2
 
     move-object v2, p1
 
-    goto :goto_3d
+    goto :goto_1
 
     .line 652
-    :cond_1f
+    :cond_2
     instance-of v2, v0, Ljava/util/Set;
 
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_3
 
     const/4 v2, 0x2
 
@@ -7527,13 +7514,13 @@
 
     aput-object p1, v2, v1
 
-    goto :goto_3d
+    goto :goto_1
 
     .line 653
-    :cond_2c
+    :cond_3
     instance-of v1, v0, [Ljava/lang/Object;
 
-    if-eqz v1, :cond_5a
+    if-eqz v1, :cond_5
 
     const-string/jumbo v1, "null cannot be cast to non-null type kotlin.Array<kotlin.collections.Set<kotlin.Any>>"
 
@@ -7548,7 +7535,7 @@
     move-result-object v2
 
     .line 650
-    :goto_3d
+    :goto_1
     move-object v1, v2
 
     .line 656
@@ -7559,10 +7546,10 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_0
 
     .line 657
-    if-nez v0, :cond_58
+    if-nez v0, :cond_4
 
     .line 658
     iget-object v2, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -7578,7 +7565,7 @@
 
     .line 659
     .local v4, "$i$a$-synchronized-CompositionImpl$recordModificationsOf$1":I
-    :try_start_4d
+    :try_start_0
     invoke-direct {p0}, Landroidx/compose/runtime/CompositionImpl;->drainPendingModificationsLocked()V
 
     .line 660
@@ -7586,15 +7573,15 @@
 
     .end local v4    # "$i$a$-synchronized-CompositionImpl$recordModificationsOf$1":I
     sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_53
-    .catchall {:try_start_4d .. :try_end_53} :catchall_55
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1324
     monitor-exit v2
 
-    goto :goto_58
+    goto :goto_2
 
-    :catchall_55
+    :catchall_0
     move-exception v4
 
     monitor-exit v2
@@ -7604,8 +7591,8 @@
     .line 662
     .end local v2    # "lock$iv":Ljava/lang/Object;
     .end local v3    # "$i$f$synchronized":I
-    :cond_58
-    :goto_58
+    :cond_4
+    :goto_2
     nop
 
     .line 665
@@ -7615,7 +7602,7 @@
 
     .line 653
     .restart local v0    # "old":Ljava/lang/Object;
-    :cond_5a
+    :cond_5
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 654
@@ -7649,7 +7636,7 @@
 .end method
 
 .method public recordReadOf(Ljava/lang/Object;)V
-    .registers 10
+    .locals 8
     .param p1, "value"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "value"
@@ -7661,7 +7648,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_1
 
     .line 737
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
@@ -7670,7 +7657,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_1
 
     .local v0, "it":Landroidx/compose/runtime/RecomposeScopeImpl;
     const/4 v1, 0x0
@@ -7688,7 +7675,7 @@
 
     .line 740
     .local v2, "alreadyRead":Z
-    if-nez v2, :cond_48
+    if-nez v2, :cond_0
 
     .line 741
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->observations:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -7698,7 +7685,7 @@
     .line 744
     instance-of v3, p1, Landroidx/compose/runtime/DerivedState;
 
-    if-eqz v3, :cond_48
+    if-eqz v3, :cond_0
 
     .line 745
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->derivedStates:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -7722,14 +7709,14 @@
 
     const/4 v5, 0x0
 
-    :goto_3a
-    if-ge v5, v4, :cond_48
+    :goto_0
+    if-ge v5, v4, :cond_0
 
     aget-object v6, v3, v5
 
     .line 748
     .local v6, "dependency":Ljava/lang/Object;
-    if-eqz v6, :cond_48
+    if-eqz v6, :cond_0
 
     .line 749
     iget-object v7, p0, Landroidx/compose/runtime/CompositionImpl;->derivedStates:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -7740,10 +7727,10 @@
     .end local v6    # "dependency":Ljava/lang/Object;
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 753
-    :cond_48
+    :cond_0
     nop
 
     .line 737
@@ -7753,12 +7740,12 @@
     nop
 
     .line 755
-    :cond_4a
+    :cond_1
     return-void
 .end method
 
 .method public recordWriteOf(Ljava/lang/Object;)V
-    .registers 15
+    .locals 13
     .param p1, "value"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "value"
@@ -7779,7 +7766,7 @@
 
     .line 768
     .local v2, "$i$a$-synchronized-CompositionImpl$recordWriteOf$1":I
-    :try_start_b
+    :try_start_0
     invoke-direct {p0, p1}, Landroidx/compose/runtime/CompositionImpl;->invalidateScopeOfLocked(Ljava/lang/Object;)V
 
     .line 772
@@ -7790,17 +7777,15 @@
 
     .line 1529
     .local v4, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v3, p1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v5
 
     .line 1530
     .local v5, "index$iv":I
-    if-ltz v5, :cond_3c
+    if-ltz v5, :cond_1
 
     .line 1531
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v3, v5}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v6
@@ -7826,8 +7811,8 @@
 
     move-result v10
 
-    :goto_26
-    if-ge v9, v10, :cond_3b
+    :goto_0
+    if-ge v9, v10, :cond_0
 
     .line 1536
     aget-object v11, v8, v9
@@ -7856,18 +7841,18 @@
     .line 1534
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 1538
     .end local v9    # "i$iv$iv":I
-    :cond_3b
+    :cond_0
     nop
 
     .line 1539
     .end local v6    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v7    # "$i$f$fastForEach":I
     .end local v8    # "values$iv$iv":[Ljava/lang/Object;
-    :cond_3c
+    :cond_1
     nop
 
     .line 775
@@ -7878,8 +7863,8 @@
 
     .end local v2    # "$i$a$-synchronized-CompositionImpl$recordWriteOf$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_40
-    .catchall {:try_start_b .. :try_end_40} :catchall_42
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1528
     monitor-exit v0
@@ -7892,7 +7877,7 @@
     .line 1528
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_42
+    :catchall_0
     move-exception v2
 
     monitor-exit v0
@@ -7901,7 +7886,7 @@
 .end method
 
 .method public final removeDerivedStateObservation$runtime_release(Landroidx/compose/runtime/DerivedState;)V
-    .registers 3
+    .locals 1
     .param p1, "state"    # Landroidx/compose/runtime/DerivedState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -7922,7 +7907,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     .line 1013
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->derivedStates:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -7930,12 +7915,12 @@
     invoke-virtual {v0, p1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->removeScope(Ljava/lang/Object;)V
 
     .line 1015
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public final removeObservation$runtime_release(Ljava/lang/Object;Landroidx/compose/runtime/RecomposeScopeImpl;)V
-    .registers 4
+    .locals 1
     .param p1, "instance"    # Ljava/lang/Object;
     .param p2, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
 
@@ -7957,7 +7942,7 @@
 .end method
 
 .method public final setComposable(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -7983,7 +7968,7 @@
 .end method
 
 .method public setContent(Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 2
     .param p1, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -8007,7 +7992,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 519
     iput-object p1, p0, Landroidx/compose/runtime/CompositionImpl;->composable:Lkotlin/jvm/functions/Function2;
@@ -8025,7 +8010,7 @@
     return-void
 
     .line 1279
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
     .line 518
@@ -8047,7 +8032,7 @@
 .end method
 
 .method public final setPendingInvalidScopes$runtime_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 455
@@ -8057,7 +8042,7 @@
 .end method
 
 .method public verifyConsistent()V
-    .registers 5
+    .locals 4
 
     .line 912
     iget-object v0, p0, Landroidx/compose/runtime/CompositionImpl;->lock:Ljava/lang/Object;
@@ -8073,12 +8058,12 @@
 
     .line 913
     .local v2, "$i$a$-synchronized-CompositionImpl$verifyConsistent$1":I
-    :try_start_5
+    :try_start_0
     invoke-virtual {p0}, Landroidx/compose/runtime/CompositionImpl;->isComposing()Z
 
     move-result v3
 
-    if-nez v3, :cond_1a
+    if-nez v3, :cond_0
 
     .line 914
     iget-object v3, p0, Landroidx/compose/runtime/CompositionImpl;->composer:Landroidx/compose/runtime/ComposerImpl;
@@ -8096,13 +8081,13 @@
     invoke-direct {p0, v3}, Landroidx/compose/runtime/CompositionImpl;->validateRecomposeScopeAnchors(Landroidx/compose/runtime/SlotTable;)V
 
     .line 918
-    :cond_1a
+    :cond_0
     nop
 
     .end local v2    # "$i$a$-synchronized-CompositionImpl$verifyConsistent$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_1d
-    .catchall {:try_start_5 .. :try_end_1d} :catchall_1f
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1729
     monitor-exit v0
@@ -8115,7 +8100,7 @@
     .line 1729
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v1    # "$i$f$synchronized":I
-    :catchall_1f
+    :catchall_0
     move-exception v2
 
     monitor-exit v0

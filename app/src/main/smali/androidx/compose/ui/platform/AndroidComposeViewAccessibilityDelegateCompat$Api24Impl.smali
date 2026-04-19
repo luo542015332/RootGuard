@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Api24Impl;
 
@@ -57,7 +57,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3219
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 .end method
 
 .method public static final addSetProgressAction(Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;Landroidx/compose/ui/semantics/SemanticsNode;)V
-    .registers 7
+    .locals 5
     .param p0, "info"    # Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
     .param p1, "semanticsNode"    # Landroidx/compose/ui/semantics/SemanticsNode;
     .annotation runtime Lkotlin/jvm/JvmStatic;
@@ -81,12 +81,11 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 3227
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat_androidKt;->enabled(Landroidx/compose/ui/semantics/SemanticsNode;)Z
     invoke-static {p1}, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat_androidKt;->access$enabled(Landroidx/compose/ui/semantics/SemanticsNode;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     .line 3228
     invoke-virtual {p1}, Landroidx/compose/ui/semantics/SemanticsNode;->getUnmergedConfig$ui_release()Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -105,7 +104,7 @@
 
     check-cast v0, Landroidx/compose/ui/semantics/AccessibilityAction;
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_0
 
     .local v0, "it":Landroidx/compose/ui/semantics/AccessibilityAction;
     const/4 v1, 0x0
@@ -144,6 +143,6 @@
     nop
 
     .line 3237
-    :cond_3a
+    :cond_0
     return-void
 .end method

@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(FFILandroidx/compose/ui/graphics/Shape;Z)V
-    .registers 7
+    .locals 1
 
     iput p1, p0, Landroidx/compose/ui/draw/BlurKt$blur$1;->$radiusX:F
 
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 113
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/graphics/GraphicsLayerScope;)V
-    .registers 6
+    .locals 4
     .param p1, "$this$graphicsLayer"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     const-string v0, "$this$graphicsLayer"
@@ -129,11 +129,11 @@
 
     cmpl-float v3, v0, v2
 
-    if-lez v3, :cond_24
+    if-lez v3, :cond_0
 
     cmpl-float v2, v1, v2
 
-    if-lez v2, :cond_24
+    if-lez v2, :cond_0
 
     .line 119
     iget v2, p0, Landroidx/compose/ui/draw/BlurKt$blur$1;->$tileMode:I
@@ -144,26 +144,26 @@
 
     check-cast v2, Landroidx/compose/ui/graphics/RenderEffect;
 
-    goto :goto_25
+    goto :goto_0
 
     .line 121
-    :cond_24
+    :cond_0
     const/4 v2, 0x0
 
     .line 116
-    :goto_25
+    :goto_0
     invoke-interface {p1, v2}, Landroidx/compose/ui/graphics/GraphicsLayerScope;->setRenderEffect(Landroidx/compose/ui/graphics/RenderEffect;)V
 
     .line 123
     iget-object v2, p0, Landroidx/compose/ui/draw/BlurKt$blur$1;->$edgeTreatment:Landroidx/compose/ui/graphics/Shape;
 
-    if-nez v2, :cond_30
+    if-nez v2, :cond_1
 
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v2
 
-    :cond_30
+    :cond_1
     invoke-interface {p1, v2}, Landroidx/compose/ui/graphics/GraphicsLayerScope;->setShape(Landroidx/compose/ui/graphics/Shape;)V
 
     .line 124

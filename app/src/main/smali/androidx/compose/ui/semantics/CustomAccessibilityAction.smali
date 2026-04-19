@@ -58,13 +58,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 1
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -98,28 +98,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 482
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 483
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/semantics/CustomAccessibilityAction;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 485
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/semantics/CustomAccessibilityAction;->label:Ljava/lang/String;
 
     move-object v3, p1
@@ -132,12 +132,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 486
-    :cond_18
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/semantics/CustomAccessibilityAction;->action:Lkotlin/jvm/functions/Function0;
 
     move-object v3, p1
@@ -150,17 +150,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 488
-    :cond_26
+    :cond_3
     return v0
 .end method
 
 .method public final getAction()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -177,7 +177,7 @@
 .end method
 
 .method public final getLabel()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 480
     iget-object v0, p0, Landroidx/compose/ui/semantics/CustomAccessibilityAction;->label:Ljava/lang/String;
@@ -186,7 +186,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 492
     iget-object v0, p0, Landroidx/compose/ui/semantics/CustomAccessibilityAction;->label:Ljava/lang/String;
@@ -214,7 +214,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 498
     new-instance v0, Ljava/lang/StringBuilder;

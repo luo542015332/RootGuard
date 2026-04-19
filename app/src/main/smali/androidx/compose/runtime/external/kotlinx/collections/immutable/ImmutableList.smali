@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public subList(II)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
-    .registers 4
+    .locals 1
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -79,7 +79,7 @@
 .end method
 
 .method public bridge synthetic subList(II)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
 

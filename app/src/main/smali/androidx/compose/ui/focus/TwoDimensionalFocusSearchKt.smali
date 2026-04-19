@@ -87,7 +87,7 @@
 
 # direct methods
 .method public static final synthetic access$searchChildren-4C6V_qg(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
-    .registers 5
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p1, "focusedItem"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p2, "direction"    # I
@@ -102,7 +102,7 @@
 .end method
 
 .method private static final activeNode(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/focus/FocusTargetNode;
-    .registers 3
+    .locals 2
     .param p0, "$this$activeNode"    # Landroidx/compose/ui/focus/FocusTargetNode;
 
     .line 383
@@ -112,28 +112,28 @@
 
     sget-object v1, Landroidx/compose/ui/focus/FocusStateImpl;->ActiveParent:Landroidx/compose/ui/focus/FocusStateImpl;
 
-    if-ne v0, v1, :cond_a
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
-    if-eqz v0, :cond_20
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 384
     invoke-static {p0}, Landroidx/compose/ui/focus/FocusTraversalKt;->findActiveFocusNode(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/focus/FocusTargetNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_1
 
     return-object v0
 
-    :cond_14
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "ActiveParent must have a focusedChild"
@@ -147,7 +147,7 @@
     throw v0
 
     .line 383
-    :cond_20
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -162,7 +162,7 @@
 .end method
 
 .method private static final beamBeats-I7lrPNg(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;I)Z
-    .registers 8
+    .locals 4
     .param p0, "source"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "rect1"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "rect2"    # Landroidx/compose/ui/geometry/Rect;
@@ -178,32 +178,32 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_40
+    if-nez v0, :cond_4
 
     invoke-static {p1, p3, p0}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->beamBeats_I7lrPNg$inSourceBeam(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
-    goto :goto_40
+    goto :goto_1
 
     .line 364
-    :cond_f
+    :cond_0
     invoke-static {p2, p3, p0}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->beamBeats_I7lrPNg$isInDirectionOfSearch(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)Z
 
     move-result v0
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     move v1, v2
 
-    goto :goto_40
+    goto :goto_1
 
     .line 367
-    :cond_18
+    :cond_1
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getLeft-dhqQ-8s()I
@@ -214,7 +214,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3f
+    if-nez v0, :cond_3
 
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
@@ -226,12 +226,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_2
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 373
-    :cond_31
+    :cond_2
     invoke-static {p1, p3, p0}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->beamBeats_I7lrPNg$majorAxisDistance$6(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)F
 
     move-result v0
@@ -242,25 +242,25 @@
 
     cmpg-float v0, v0, v3
 
-    if-gez v0, :cond_40
+    if-gez v0, :cond_4
 
     move v1, v2
 
-    goto :goto_40
+    goto :goto_1
 
     .line 367
-    :cond_3f
-    :goto_3f
+    :cond_3
+    :goto_0
     move v1, v2
 
     .line 358
-    :cond_40
-    :goto_40
+    :cond_4
+    :goto_1
     return v1
 .end method
 
 .method private static final beamBeats_I7lrPNg$inSourceBeam(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)Z
-    .registers 7
+    .locals 4
     .param p0, "$this$beamBeats_I7lrPNg_u24inSourceBeam"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "$direction"    # I
     .param p2, "$source"    # Landroidx/compose/ui/geometry/Rect;
@@ -281,13 +281,13 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -298,10 +298,10 @@
 
     move-result v0
 
-    :goto_1a
+    :goto_0
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_2
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
 
@@ -313,7 +313,7 @@
 
     cmpl-float v0, v0, v3
 
-    if-lez v0, :cond_36
+    if-lez v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -325,17 +325,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-gez v0, :cond_36
+    if-gez v0, :cond_1
 
-    goto :goto_6c
+    goto :goto_2
 
-    :cond_36
+    :cond_1
     move v1, v2
 
-    goto :goto_6c
+    goto :goto_2
 
     .line 318
-    :cond_38
+    :cond_2
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -346,13 +346,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     move v0, v1
 
-    goto :goto_50
+    goto :goto_1
 
-    :cond_46
+    :cond_3
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -363,8 +363,8 @@
 
     move-result v0
 
-    :goto_50
-    if-eqz v0, :cond_6d
+    :goto_1
+    if-eqz v0, :cond_5
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getRight()F
 
@@ -376,7 +376,7 @@
 
     cmpl-float v0, v0, v3
 
-    if-lez v0, :cond_6b
+    if-lez v0, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -388,19 +388,19 @@
 
     cmpg-float v0, v0, v3
 
-    if-gez v0, :cond_6b
+    if-gez v0, :cond_4
 
-    goto :goto_6c
+    goto :goto_2
 
-    :cond_6b
+    :cond_4
     move v1, v2
 
     .line 320
-    :goto_6c
+    :goto_2
     return v1
 
     .line 318
-    :cond_6d
+    :cond_5
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 319
@@ -416,7 +416,7 @@
 .end method
 
 .method private static final beamBeats_I7lrPNg$isInDirectionOfSearch(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)Z
-    .registers 7
+    .locals 4
     .param p0, "$this$beamBeats_I7lrPNg_u24isInDirectionOfSearch"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "$direction"    # I
     .param p2, "$source"    # Landroidx/compose/ui/geometry/Rect;
@@ -439,7 +439,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -451,17 +451,17 @@
 
     cmpl-float v0, v0, v3
 
-    if-ltz v0, :cond_1c
+    if-ltz v0, :cond_0
 
-    goto :goto_6e
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     move v1, v2
 
-    goto :goto_6e
+    goto :goto_0
 
     .line 325
-    :cond_1e
+    :cond_1
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -472,7 +472,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getRight()F
 
@@ -484,17 +484,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-gtz v0, :cond_37
+    if-gtz v0, :cond_2
 
-    goto :goto_6e
+    goto :goto_0
 
-    :cond_37
+    :cond_2
     move v1, v2
 
-    goto :goto_6e
+    goto :goto_0
 
     .line 326
-    :cond_39
+    :cond_3
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -505,7 +505,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_5
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -517,17 +517,17 @@
 
     cmpl-float v0, v0, v3
 
-    if-ltz v0, :cond_52
+    if-ltz v0, :cond_4
 
-    goto :goto_6e
+    goto :goto_0
 
-    :cond_52
+    :cond_4
     move v1, v2
 
-    goto :goto_6e
+    goto :goto_0
 
     .line 327
-    :cond_54
+    :cond_5
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -538,7 +538,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6f
+    if-eqz v0, :cond_7
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
 
@@ -550,19 +550,19 @@
 
     cmpg-float v0, v0, v3
 
-    if-gtz v0, :cond_6d
+    if-gtz v0, :cond_6
 
-    goto :goto_6e
+    goto :goto_0
 
-    :cond_6d
+    :cond_6
     move v1, v2
 
     .line 329
-    :goto_6e
+    :goto_0
     return v1
 
     .line 327
-    :cond_6f
+    :cond_7
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 328
@@ -578,7 +578,7 @@
 .end method
 
 .method private static final beamBeats_I7lrPNg$majorAxisDistance$6(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)F
-    .registers 5
+    .locals 2
     .param p0, "$this$beamBeats_I7lrPNg_u24majorAxisDistance_u246"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "$direction"    # I
     .param p2, "$source"    # Landroidx/compose/ui/geometry/Rect;
@@ -597,7 +597,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -609,10 +609,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 336
-    :cond_17
+    :cond_0
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -623,7 +623,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -635,10 +635,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 337
-    :cond_2d
+    :cond_1
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -649,7 +649,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -661,10 +661,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 338
-    :cond_43
+    :cond_2
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -675,7 +675,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -688,7 +688,7 @@
     sub-float/2addr v0, v1
 
     .line 334
-    :goto_58
+    :goto_0
     nop
 
     .line 341
@@ -703,7 +703,7 @@
 
     .line 338
     .end local v0    # "majorAxisDistance":F
-    :cond_5f
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 339
@@ -719,7 +719,7 @@
 .end method
 
 .method private static final beamBeats_I7lrPNg$majorAxisDistanceToFarEdge(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)F
-    .registers 5
+    .locals 2
     .param p0, "$this$beamBeats_I7lrPNg_u24majorAxisDistanceToFarEdge"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "$direction"    # I
     .param p2, "$source"    # Landroidx/compose/ui/geometry/Rect;
@@ -738,7 +738,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -750,10 +750,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 350
-    :cond_17
+    :cond_0
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -764,7 +764,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getRight()F
 
@@ -776,10 +776,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 351
-    :cond_2d
+    :cond_1
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -790,7 +790,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -802,10 +802,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 352
-    :cond_43
+    :cond_2
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -816,7 +816,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
 
@@ -829,7 +829,7 @@
     sub-float/2addr v0, v1
 
     .line 348
-    :goto_58
+    :goto_0
     nop
 
     .line 355
@@ -844,7 +844,7 @@
 
     .line 352
     .end local v0    # "majorAxisDistance":F
-    :cond_60
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 353
@@ -860,7 +860,7 @@
 .end method
 
 .method private static final bottomRight(Landroidx/compose/ui/geometry/Rect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 5
     .param p0, "$this$bottomRight"    # Landroidx/compose/ui/geometry/Rect;
 
     .line 378
@@ -888,7 +888,7 @@
 .end method
 
 .method private static final collectAccessibleChildren(Landroidx/compose/ui/node/DelegatableNode;Landroidx/compose/runtime/collection/MutableVector;)V
-    .registers 31
+    .locals 29
     .param p0, "$this$collectAccessibleChildren"    # Landroidx/compose/ui/node/DelegatableNode;
     .param p1, "accessibleChildren"    # Landroidx/compose/runtime/collection/MutableVector;
     .annotation system Ldalvik/annotation/Signature;
@@ -942,7 +942,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_173
+    if-eqz v7, :cond_14
 
     .line 469
     const/4 v7, 0x0
@@ -988,29 +988,28 @@
 
     .line 474
     .local v8, "child$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    if-nez v8, :cond_3a
+    if-nez v8, :cond_0
 
     .line 475
     invoke-interface {v5}, Landroidx/compose/ui/node/DelegatableNode;->getNode()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v9
 
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
     invoke-static {v7, v9}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 477
-    :cond_3a
+    :cond_0
     invoke-virtual {v7, v8}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 478
-    :goto_3d
+    :goto_0
     invoke-virtual {v7}, Landroidx/compose/runtime/collection/MutableVector;->isNotEmpty()Z
 
     move-result v9
 
-    if-eqz v9, :cond_170
+    if-eqz v9, :cond_13
 
     .line 479
     move-object v9, v7
@@ -1045,23 +1044,22 @@
 
     and-int/2addr v10, v4
 
-    if-nez v10, :cond_5c
+    if-nez v10, :cond_1
 
     .line 482
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
     invoke-static {v7, v9}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
 
     .line 484
-    goto :goto_3d
+    goto :goto_0
 
     .line 486
-    :cond_5c
+    :cond_1
     move-object v10, v9
 
     .line 487
     .local v10, "node$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_5d
-    if-eqz v10, :cond_167
+    :goto_1
+    if-eqz v10, :cond_12
 
     .line 488
     invoke-virtual {v10}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
@@ -1070,7 +1068,7 @@
 
     and-int/2addr v11, v4
 
-    if-eqz v11, :cond_159
+    if-eqz v11, :cond_11
 
     .line 489
     move-object v11, v10
@@ -1101,13 +1099,13 @@
     .line 492
     .end local v18    # "node$iv$iv":Ljava/lang/Object;
     .local v12, "node$iv$iv":Ljava/lang/Object;
-    :goto_73
-    if-eqz v12, :cond_14e
+    :goto_2
+    if-eqz v12, :cond_10
 
     .line 493
     instance-of v13, v12, Landroidx/compose/ui/focus/FocusTargetNode;
 
-    if-eqz v13, :cond_a4
+    if-eqz v13, :cond_4
 
     .line 494
     move-object v13, v12
@@ -1123,7 +1121,7 @@
 
     move-result v20
 
-    if-eqz v20, :cond_9d
+    if-eqz v20, :cond_3
 
     .line 194
     invoke-virtual {v13}, Landroidx/compose/ui/focus/FocusTargetNode;->fetchFocusProperties$ui_release()Landroidx/compose/ui/focus/FocusProperties;
@@ -1134,17 +1132,17 @@
 
     move-result v20
 
-    if-eqz v20, :cond_94
+    if-eqz v20, :cond_2
 
     .line 195
     invoke-virtual {v0, v13}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     move-object/from16 v20, v2
 
-    goto :goto_9c
+    goto :goto_3
 
     .line 197
-    :cond_94
+    :cond_2
     move-object/from16 v20, v2
 
     .end local v2    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
@@ -1156,13 +1154,13 @@
     invoke-static {v2, v0}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->collectAccessibleChildren(Landroidx/compose/ui/node/DelegatableNode;Landroidx/compose/runtime/collection/MutableVector;)V
 
     .line 199
-    :goto_9c
-    goto :goto_9f
+    :goto_3
+    goto :goto_4
 
     .line 192
     .end local v20    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v2    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_9d
+    :cond_3
     move-object/from16 v20, v2
 
     .line 494
@@ -1170,17 +1168,17 @@
     .end local v13    # "it":Landroidx/compose/ui/focus/FocusTargetNode;
     .end local v19    # "$i$a$-visitChildren-6rFNWt0-TwoDimensionalFocusSearchKt$collectAccessibleChildren$1":I
     .restart local v20    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :goto_9f
+    :goto_4
     move/from16 v26, v1
 
     const/4 v0, 0x1
 
-    goto/16 :goto_141
+    goto/16 :goto_b
 
     .line 495
     .end local v20    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v2    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_a4
+    :cond_4
     move-object/from16 v20, v2
 
     .end local v2    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
@@ -1198,24 +1196,24 @@
 
     and-int v19, v19, v1
 
-    if-eqz v19, :cond_b2
+    if-eqz v19, :cond_5
 
     const/4 v2, 0x1
 
-    goto :goto_b3
+    goto :goto_5
 
-    :cond_b2
+    :cond_5
     const/4 v2, 0x0
 
     .line 495
     .end local v2    # "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v13    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_b3
-    if-eqz v2, :cond_13e
+    :goto_5
+    if-eqz v2, :cond_e
 
     instance-of v2, v12, Landroidx/compose/ui/node/DelegatingNode;
 
-    if-eqz v2, :cond_13e
+    if-eqz v2, :cond_e
 
     .line 497
     const/4 v2, 0x0
@@ -1237,8 +1235,8 @@
 
     .line 500
     .local v21, "node$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_c3
-    if-eqz v21, :cond_130
+    :goto_6
+    if-eqz v21, :cond_d
 
     .line 501
     move-object/from16 v22, v21
@@ -1261,20 +1259,20 @@
 
     and-int v26, v26, v1
 
-    if-eqz v26, :cond_d8
+    if-eqz v26, :cond_6
 
     const/16 v24, 0x1
 
-    goto :goto_da
+    goto :goto_7
 
-    :cond_d8
+    :cond_6
     const/16 v24, 0x0
 
     .line 502
     .end local v24    # "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v25    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_da
-    if-eqz v24, :cond_121
+    :goto_7
+    if-eqz v24, :cond_c
 
     .line 503
     add-int/lit8 v2, v2, 0x1
@@ -1282,7 +1280,7 @@
     .line 504
     const/4 v0, 0x1
 
-    if-ne v2, v0, :cond_e8
+    if-ne v2, v0, :cond_7
 
     .line 505
     move-object/from16 v12, v22
@@ -1291,11 +1289,11 @@
 
     move-object/from16 v0, v22
 
-    goto :goto_125
+    goto :goto_a
 
     .line 509
-    :cond_e8
-    if-nez v17, :cond_101
+    :cond_7
+    if-nez v17, :cond_8
 
     const/4 v0, 0x0
 
@@ -1338,7 +1336,7 @@
     .line 470
     .end local v25    # "$i$f$MutableVector":I
     .end local v28    # "capacity$iv$iv$iv$iv":I
-    goto :goto_108
+    goto :goto_8
 
     .line 509
     .end local v24    # "$i$f$mutableVectorOf":I
@@ -1346,7 +1344,7 @@
     .end local v27    # "count$iv$iv":I
     .restart local v1    # "type$iv":I
     .restart local v2    # "count$iv$iv":I
-    :cond_101
+    :cond_8
     move/from16 v26, v1
 
     move/from16 v27, v2
@@ -1359,7 +1357,7 @@
     .restart local v27    # "count$iv$iv":I
     move-object/from16 v1, v17
 
-    :goto_108
+    :goto_8
     nop
 
     .line 510
@@ -1369,20 +1367,20 @@
 
     .line 511
     .local v2, "theNode$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    if-eqz v2, :cond_112
+    if-eqz v2, :cond_a
 
     .line 512
-    if-eqz v1, :cond_111
+    if-eqz v1, :cond_9
 
     invoke-virtual {v1, v2}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 513
-    :cond_111
+    :cond_9
     const/4 v12, 0x0
 
     .line 515
-    :cond_112
-    if-eqz v1, :cond_11a
+    :cond_a
+    if-eqz v1, :cond_b
 
     move-object/from16 v0, v22
 
@@ -1390,23 +1388,23 @@
     .local v0, "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     invoke-virtual {v1, v0}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
-    goto :goto_11c
+    goto :goto_9
 
     .end local v0    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_11a
+    :cond_b
     move-object/from16 v0, v22
 
     .line 518
     .end local v2    # "theNode$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v0    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_11c
+    :goto_9
     move-object/from16 v17, v1
 
     move/from16 v2, v27
 
-    goto :goto_125
+    goto :goto_a
 
     .line 502
     .end local v0    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
@@ -1416,7 +1414,7 @@
     .local v2, "count$iv$iv":I
     .restart local v17    # "stack$iv$iv":Ljava/lang/Object;
     .restart local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_121
+    :cond_c
     move/from16 v26, v1
 
     move-object/from16 v0, v22
@@ -1426,7 +1424,7 @@
     .end local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v0    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v26    # "type$iv":I
-    :goto_125
+    :goto_a
     nop
 
     .line 501
@@ -1443,12 +1441,12 @@
 
     move/from16 v1, v26
 
-    goto :goto_c3
+    goto :goto_6
 
     .line 521
     .end local v26    # "type$iv":I
     .restart local v1    # "type$iv":I
-    :cond_130
+    :cond_d
     move/from16 v26, v1
 
     .line 522
@@ -1459,7 +1457,7 @@
     .restart local v26    # "type$iv":I
     const/4 v0, 0x1
 
-    if-ne v2, v0, :cond_141
+    if-ne v2, v0, :cond_f
 
     .line 524
     move v13, v0
@@ -1470,13 +1468,13 @@
 
     move-object/from16 v0, p1
 
-    goto/16 :goto_73
+    goto/16 :goto_2
 
     .line 495
     .end local v2    # "count$iv$iv":I
     .end local v26    # "type$iv":I
     .restart local v1    # "type$iv":I
-    :cond_13e
+    :cond_e
     move/from16 v26, v1
 
     const/4 v0, 0x1
@@ -1484,9 +1482,8 @@
     .line 527
     .end local v1    # "type$iv":I
     .restart local v26    # "type$iv":I
-    :cond_141
-    :goto_141
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
+    :cond_f
+    :goto_b
     invoke-static/range {v17 .. v17}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v12
@@ -1499,14 +1496,14 @@
 
     move-object/from16 v0, p1
 
-    goto/16 :goto_73
+    goto/16 :goto_2
 
     .line 529
     .end local v20    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v26    # "type$iv":I
     .restart local v1    # "type$iv":I
     .local v2, "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_14e
+    :cond_10
     move/from16 v26, v1
 
     move-object/from16 v20, v2
@@ -1532,14 +1529,14 @@
 
     const/4 v12, 0x0
 
-    goto/16 :goto_3d
+    goto/16 :goto_0
 
     .line 532
     .end local v20    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v26    # "type$iv":I
     .restart local v1    # "type$iv":I
     .restart local v2    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_159
+    :cond_11
     move/from16 v26, v1
 
     move-object/from16 v20, v2
@@ -1558,14 +1555,14 @@
 
     move-object/from16 v0, p1
 
-    goto/16 :goto_5d
+    goto/16 :goto_1
 
     .line 487
     .end local v20    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v26    # "type$iv":I
     .restart local v1    # "type$iv":I
     .restart local v2    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_167
+    :cond_12
     move/from16 v26, v1
 
     move-object/from16 v20, v2
@@ -1578,7 +1575,7 @@
 
     const/4 v12, 0x0
 
-    goto/16 :goto_3d
+    goto/16 :goto_0
 
     .line 535
     .end local v9    # "branch$iv$iv":Landroidx/compose/ui/Modifier$Node;
@@ -1587,7 +1584,7 @@
     .end local v26    # "type$iv":I
     .restart local v1    # "type$iv":I
     .restart local v2    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_170
+    :cond_13
     nop
 
     .line 466
@@ -1611,7 +1608,7 @@
     .restart local v4    # "mask$iv$iv":I
     .restart local v5    # "$this$visitChildren$iv$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v6    # "$i$f$visitChildren":I
-    :cond_173
+    :cond_14
     move/from16 v26, v1
 
     .end local v1    # "type$iv":I
@@ -1637,7 +1634,7 @@
 .end method
 
 .method private static final findBestCandidate-4WY_MpI(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/geometry/Rect;I)Landroidx/compose/ui/focus/FocusTargetNode;
-    .registers 14
+    .locals 11
     .param p0, "$this$findBestCandidate_u2d4WY_MpI"    # Landroidx/compose/runtime/collection/MutableVector;
     .param p1, "focusRect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "direction"    # I
@@ -1672,7 +1669,7 @@
 
     const/4 v3, 0x1
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getWidth()F
 
@@ -1686,10 +1683,10 @@
 
     move-result-object v1
 
-    goto :goto_60
+    goto :goto_0
 
     .line 214
-    :cond_1a
+    :cond_0
     sget-object v1, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -1700,7 +1697,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_1
 
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getWidth()F
 
@@ -1716,10 +1713,10 @@
 
     move-result-object v1
 
-    goto :goto_60
+    goto :goto_0
 
     .line 215
-    :cond_32
+    :cond_1
     sget-object v1, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -1730,7 +1727,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_2
 
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getHeight()F
 
@@ -1744,10 +1741,10 @@
 
     move-result-object v1
 
-    goto :goto_60
+    goto :goto_0
 
     .line 216
-    :cond_49
+    :cond_2
     sget-object v1, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -1758,7 +1755,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_8f
+    if-eqz v1, :cond_6
 
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getHeight()F
 
@@ -1775,7 +1772,7 @@
     move-result-object v1
 
     .line 212
-    :goto_60
+    :goto_0
     move-object v0, v1
 
     .line 220
@@ -1799,7 +1796,7 @@
 
     .line 538
     .local v4, "size$iv":I
-    if-lez v4, :cond_8d
+    if-lez v4, :cond_5
 
     .line 539
     const/4 v5, 0x0
@@ -1812,7 +1809,7 @@
 
     .line 542
     .local v6, "content$iv":[Ljava/lang/Object;
-    :cond_70
+    :cond_3
     aget-object v7, v6, v5
 
     check-cast v7, Landroidx/compose/ui/focus/FocusTargetNode;
@@ -1826,7 +1823,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_87
+    if-eqz v9, :cond_4
 
     .line 223
     invoke-static {v7}, Landroidx/compose/ui/focus/FocusTraversalKt;->focusRect(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/geometry/Rect;
@@ -1839,7 +1836,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_87
+    if-eqz v10, :cond_4
 
     .line 225
     move-object v0, v9
@@ -1849,7 +1846,7 @@
 
     .line 229
     .end local v9    # "candidateRect":Landroidx/compose/ui/geometry/Rect;
-    :cond_87
+    :cond_4
     nop
 
     .line 542
@@ -1861,12 +1858,12 @@
     add-int/lit8 v5, v5, 0x1
 
     .line 544
-    if-lt v5, v4, :cond_70
+    if-lt v5, v4, :cond_3
 
     .line 546
     .end local v5    # "i$iv":I
     .end local v6    # "content$iv":[Ljava/lang/Object;
-    :cond_8d
+    :cond_5
     nop
 
     .line 230
@@ -1877,7 +1874,7 @@
 
     .line 216
     .end local v1    # "searchResult":Ljava/lang/Object;
-    :cond_8f
+    :cond_6
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 217
@@ -1893,7 +1890,7 @@
 .end method
 
 .method public static final findChildCorrespondingToFocusEnter--OM-vw8(Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
-    .registers 11
+    .locals 8
     .param p0, "$this$findChildCorrespondingToFocusEnter_u2d_u2dOM_u2dvw8"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p1, "direction"    # I
     .param p2, "onFound"    # Lkotlin/jvm/functions/Function1;
@@ -1957,7 +1954,7 @@
 
     const/4 v2, 0x1
 
-    if-gt v1, v2, :cond_4b
+    if-gt v1, v2, :cond_2
 
     .line 109
     move-object v1, v0
@@ -1971,13 +1968,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_0
 
     const/4 v3, 0x0
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_2f
+    :cond_0
     const/4 v3, 0x0
 
     .local v3, "index$iv$iv":I
@@ -2000,7 +1997,7 @@
     .end local v3    # "index$iv$iv":I
     .end local v5    # "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .end local v6    # "$i$f$get":I
-    :goto_39
+    :goto_0
     nop
 
     .line 109
@@ -2008,7 +2005,7 @@
     .end local v2    # "$i$f$firstOrNull":I
     check-cast v3, Landroidx/compose/ui/focus/FocusTargetNode;
 
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_1
 
     move-object v1, v3
 
@@ -2030,11 +2027,11 @@
 
     .end local v1    # "it":Landroidx/compose/ui/focus/FocusTargetNode;
     .end local v2    # "$i$a$-let-TwoDimensionalFocusSearchKt$findChildCorrespondingToFocusEnter$1":I
-    :cond_4a
+    :cond_1
     return v4
 
     .line 115
-    :cond_4b
+    :cond_2
     nop
 
     .line 117
@@ -2052,7 +2049,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_60
+    if-eqz v1, :cond_3
 
     .line 118
     sget-object v1, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
@@ -2061,14 +2058,14 @@
 
     move-result v1
 
-    goto :goto_61
+    goto :goto_1
 
     .line 119
-    :cond_60
+    :cond_3
     move v1, p1
 
     .line 115
-    :goto_61
+    :goto_1
     nop
 
     .line 124
@@ -2086,13 +2083,13 @@
 
     move-result v3
 
-    if-eqz v3, :cond_71
+    if-eqz v3, :cond_4
 
     move v3, v2
 
-    goto :goto_7b
+    goto :goto_2
 
-    :cond_71
+    :cond_4
     sget-object v3, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v3}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -2103,8 +2100,8 @@
 
     move-result v3
 
-    :goto_7b
-    if-eqz v3, :cond_86
+    :goto_2
+    if-eqz v3, :cond_5
 
     invoke-static {p0}, Landroidx/compose/ui/focus/FocusTraversalKt;->focusRect(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/geometry/Rect;
 
@@ -2114,10 +2111,10 @@
 
     move-result-object v2
 
-    goto :goto_a7
+    goto :goto_4
 
     .line 126
-    :cond_86
+    :cond_5
     sget-object v3, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v3}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getLeft-dhqQ-8s()I
@@ -2128,11 +2125,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_93
+    if-eqz v3, :cond_6
 
-    goto :goto_9d
+    goto :goto_3
 
-    :cond_93
+    :cond_6
     sget-object v2, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -2143,8 +2140,8 @@
 
     move-result v2
 
-    :goto_9d
-    if-eqz v2, :cond_bb
+    :goto_3
+    if-eqz v2, :cond_8
 
     invoke-static {p0}, Landroidx/compose/ui/focus/FocusTraversalKt;->focusRect(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/geometry/Rect;
 
@@ -2155,7 +2152,7 @@
     move-result-object v2
 
     .line 124
-    :goto_a7
+    :goto_4
     nop
 
     .line 129
@@ -2166,7 +2163,7 @@
 
     .line 130
     .local v3, "nextCandidate":Landroidx/compose/ui/focus/FocusTargetNode;
-    if-eqz v3, :cond_ba
+    if-eqz v3, :cond_7
 
     move-object v4, v3
 
@@ -2188,13 +2185,13 @@
 
     .end local v4    # "it":Landroidx/compose/ui/focus/FocusTargetNode;
     .end local v5    # "$i$a$-let-TwoDimensionalFocusSearchKt$findChildCorrespondingToFocusEnter$2":I
-    :cond_ba
+    :cond_7
     return v4
 
     .line 126
     .end local v2    # "initialFocusRect":Landroidx/compose/ui/geometry/Rect;
     .end local v3    # "nextCandidate":Landroidx/compose/ui/focus/FocusTargetNode;
-    :cond_bb
+    :cond_8
     new-instance v2, Ljava/lang/IllegalStateException;
 
     .line 127
@@ -2210,7 +2207,7 @@
 .end method
 
 .method private static final generateAndSearchChildren-4C6V_qg(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
-    .registers 5
+    .locals 1
     .param p0, "$this$generateAndSearchChildren_u2d4C6V_qg"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p1, "focusedItem"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p2, "direction"    # I
@@ -2234,7 +2231,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 142
     const/4 v0, 0x1
@@ -2242,7 +2239,7 @@
     return v0
 
     .line 146
-    :cond_8
+    :cond_0
     new-instance v0, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt$generateAndSearchChildren$1;
 
     invoke-direct {v0, p0, p1, p2, p3}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt$generateAndSearchChildren$1;-><init>(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)V
@@ -2255,37 +2252,37 @@
 
     check-cast v0, Ljava/lang/Boolean;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 152
-    :cond_1c
+    :cond_1
     const/4 v0, 0x0
 
     .line 146
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
 .method private static synthetic getInvalidFocusDirection$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static synthetic getNoActiveChild$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static final isBetterCandidate-I7lrPNg(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;I)Z
-    .registers 11
+    .locals 7
     .param p0, "proposedCandidate"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "currentCandidate"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "focusedRect"    # Landroidx/compose/ui/geometry/Rect;
@@ -2301,48 +2298,48 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 291
-    :cond_9
+    :cond_0
     invoke-static {p1, p3, p2}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->isBetterCandidate_I7lrPNg$isCandidate(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)Z
 
     move-result v0
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_1
 
     move v1, v2
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 294
-    :cond_12
+    :cond_1
     invoke-static {p2, p0, p1, p3}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->beamBeats-I7lrPNg(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_2
 
     move v1, v2
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 297
-    :cond_1a
+    :cond_2
     invoke-static {p2, p1, p0, p3}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->beamBeats-I7lrPNg(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_3
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 299
-    :cond_21
+    :cond_3
     invoke-static {p3, p2, p0}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->isBetterCandidate_I7lrPNg$weightedDistance(ILandroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;)J
 
     move-result-wide v3
@@ -2353,18 +2350,18 @@
 
     cmp-long v0, v3, v5
 
-    if-gez v0, :cond_2e
+    if-gez v0, :cond_4
 
     move v1, v2
 
     .line 286
-    :cond_2e
-    :goto_2e
+    :cond_4
+    :goto_0
     return v1
 .end method
 
 .method private static final isBetterCandidate_I7lrPNg$isCandidate(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)Z
-    .registers 7
+    .locals 4
     .param p0, "$this$isBetterCandidate_I7lrPNg_u24isCandidate"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "$direction"    # I
     .param p2, "$focusedRect"    # Landroidx/compose/ui/geometry/Rect;
@@ -2387,7 +2384,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_38
+    if-eqz v0, :cond_2
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getRight()F
 
@@ -2399,7 +2396,7 @@
 
     cmpl-float v0, v0, v3
 
-    if-gtz v0, :cond_27
+    if-gtz v0, :cond_0
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -2411,9 +2408,9 @@
 
     cmpl-float v0, v0, v3
 
-    if-ltz v0, :cond_35
+    if-ltz v0, :cond_1
 
-    :cond_27
+    :cond_0
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
     move-result v0
@@ -2424,17 +2421,17 @@
 
     cmpl-float v0, v0, v3
 
-    if-lez v0, :cond_35
+    if-lez v0, :cond_1
 
-    goto/16 :goto_d1
+    goto/16 :goto_0
 
-    :cond_35
+    :cond_1
     move v1, v2
 
-    goto/16 :goto_d1
+    goto/16 :goto_0
 
     .line 249
-    :cond_38
+    :cond_2
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -2445,7 +2442,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_5
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -2457,7 +2454,7 @@
 
     cmpg-float v0, v0, v3
 
-    if-ltz v0, :cond_5c
+    if-ltz v0, :cond_3
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getRight()F
 
@@ -2469,9 +2466,9 @@
 
     cmpg-float v0, v0, v3
 
-    if-gtz v0, :cond_6a
+    if-gtz v0, :cond_4
 
-    :cond_5c
+    :cond_3
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getRight()F
 
     move-result v0
@@ -2482,17 +2479,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-gez v0, :cond_6a
+    if-gez v0, :cond_4
 
-    goto/16 :goto_d1
+    goto/16 :goto_0
 
-    :cond_6a
+    :cond_4
     move v1, v2
 
-    goto :goto_d1
+    goto :goto_0
 
     .line 250
-    :cond_6c
+    :cond_5
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -2503,7 +2500,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9f
+    if-eqz v0, :cond_8
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
 
@@ -2515,7 +2512,7 @@
 
     cmpl-float v0, v0, v3
 
-    if-gtz v0, :cond_90
+    if-gtz v0, :cond_6
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -2527,9 +2524,9 @@
 
     cmpl-float v0, v0, v3
 
-    if-ltz v0, :cond_9d
+    if-ltz v0, :cond_7
 
-    :cond_90
+    :cond_6
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
     move-result v0
@@ -2540,17 +2537,17 @@
 
     cmpl-float v0, v0, v3
 
-    if-lez v0, :cond_9d
+    if-lez v0, :cond_7
 
-    goto :goto_d1
+    goto :goto_0
 
-    :cond_9d
+    :cond_7
     move v1, v2
 
-    goto :goto_d1
+    goto :goto_0
 
     .line 251
-    :cond_9f
+    :cond_8
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -2561,7 +2558,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d2
+    if-eqz v0, :cond_b
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -2573,7 +2570,7 @@
 
     cmpg-float v0, v0, v3
 
-    if-ltz v0, :cond_c3
+    if-ltz v0, :cond_9
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
 
@@ -2585,9 +2582,9 @@
 
     cmpg-float v0, v0, v3
 
-    if-gtz v0, :cond_d0
+    if-gtz v0, :cond_a
 
-    :cond_c3
+    :cond_9
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
 
     move-result v0
@@ -2598,19 +2595,19 @@
 
     cmpg-float v0, v0, v3
 
-    if-gez v0, :cond_d0
+    if-gez v0, :cond_a
 
-    goto :goto_d1
+    goto :goto_0
 
-    :cond_d0
+    :cond_a
     move v1, v2
 
     .line 253
-    :goto_d1
+    :goto_0
     return v1
 
     .line 251
-    :cond_d2
+    :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 252
@@ -2626,7 +2623,7 @@
 .end method
 
 .method private static final isBetterCandidate_I7lrPNg$majorAxisDistance(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)F
-    .registers 5
+    .locals 2
     .param p0, "$this$isBetterCandidate_I7lrPNg_u24majorAxisDistance"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "$direction"    # I
     .param p2, "$focusedRect"    # Landroidx/compose/ui/geometry/Rect;
@@ -2645,7 +2642,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -2657,10 +2654,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 260
-    :cond_17
+    :cond_0
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -2671,7 +2668,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -2683,10 +2680,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 261
-    :cond_2d
+    :cond_1
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -2697,7 +2694,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_2
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -2709,10 +2706,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_58
+    goto :goto_0
 
     .line 262
-    :cond_43
+    :cond_2
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -2723,7 +2720,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_3
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -2736,7 +2733,7 @@
     sub-float/2addr v0, v1
 
     .line 258
-    :goto_58
+    :goto_0
     nop
 
     .line 265
@@ -2751,7 +2748,7 @@
 
     .line 262
     .end local v0    # "majorAxisDistance":F
-    :cond_5f
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 263
@@ -2767,7 +2764,7 @@
 .end method
 
 .method private static final isBetterCandidate_I7lrPNg$minorAxisDistance(Landroidx/compose/ui/geometry/Rect;ILandroidx/compose/ui/geometry/Rect;)F
-    .registers 7
+    .locals 4
     .param p0, "$this$isBetterCandidate_I7lrPNg_u24minorAxisDistance"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "$direction"    # I
     .param p2, "$focusedRect"    # Landroidx/compose/ui/geometry/Rect;
@@ -2788,13 +2785,13 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getRight-dhqQ-8s()I
@@ -2805,10 +2802,10 @@
 
     move-result v0
 
-    :goto_1a
+    :goto_0
     const/4 v2, 0x2
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -2838,10 +2835,10 @@
 
     sub-float/2addr v0, v1
 
-    goto :goto_63
+    goto :goto_2
 
     .line 274
-    :cond_34
+    :cond_1
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getUp-dhqQ-8s()I
@@ -2852,11 +2849,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_2
 
-    goto :goto_4b
+    goto :goto_1
 
-    :cond_41
+    :cond_2
     sget-object v0, Landroidx/compose/ui/focus/FocusDirection;->Companion:Landroidx/compose/ui/focus/FocusDirection$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/focus/FocusDirection$Companion;->getDown-dhqQ-8s()I
@@ -2867,8 +2864,8 @@
 
     move-result v1
 
-    :goto_4b
-    if-eqz v1, :cond_64
+    :goto_1
+    if-eqz v1, :cond_3
 
     invoke-virtual {p2}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
 
@@ -2899,11 +2896,11 @@
     sub-float/2addr v0, v1
 
     .line 276
-    :goto_63
+    :goto_2
     return v0
 
     .line 274
-    :cond_64
+    :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 275
@@ -2919,7 +2916,7 @@
 .end method
 
 .method private static final isBetterCandidate_I7lrPNg$weightedDistance(ILandroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;)J
-    .registers 11
+    .locals 8
     .param p0, "$direction"    # I
     .param p1, "$focusedRect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "candidate"    # Landroidx/compose/ui/geometry/Rect;
@@ -2965,7 +2962,7 @@
 .end method
 
 .method private static final searchChildren-4C6V_qg(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
-    .registers 38
+    .locals 34
     .param p0, "$this$searchChildren_u2d4C6V_qg"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p1, "focusedItem"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p2, "direction"    # I
@@ -3057,7 +3054,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_1c0
+    if-eqz v12, :cond_16
 
     .line 398
     const/4 v12, 0x0
@@ -3105,31 +3102,30 @@
 
     .line 403
     .local v12, "child$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    if-nez v12, :cond_4d
+    if-nez v12, :cond_0
 
     .line 404
     invoke-interface {v10}, Landroidx/compose/ui/node/DelegatableNode;->getNode()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v13
 
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
     invoke-static {v3, v13}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
 
-    goto :goto_50
+    goto :goto_0
 
     .line 406
-    :cond_4d
+    :cond_0
     invoke-virtual {v3, v12}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 407
-    :goto_50
+    :goto_0
     invoke-virtual {v3}, Landroidx/compose/runtime/collection/MutableVector;->isNotEmpty()Z
 
     move-result v13
 
     const/4 v14, 0x1
 
-    if-eqz v13, :cond_17d
+    if-eqz v13, :cond_11
 
     .line 408
     move-object v13, v3
@@ -3162,23 +3158,22 @@
 
     and-int/2addr v15, v9
 
-    if-nez v15, :cond_70
+    if-nez v15, :cond_1
 
     .line 411
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
     invoke-static {v3, v13}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$addLayoutNodeChildren(Landroidx/compose/runtime/collection/MutableVector;Landroidx/compose/ui/Modifier$Node;)V
 
     .line 413
-    goto :goto_50
+    goto :goto_0
 
     .line 415
-    :cond_70
+    :cond_1
     move-object v15, v13
 
     .line 416
     .local v15, "node$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_71
-    if-eqz v15, :cond_174
+    :goto_1
+    if-eqz v15, :cond_10
 
     .line 417
     invoke-virtual {v15}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
@@ -3187,7 +3182,7 @@
 
     and-int v17, v17, v9
 
-    if-eqz v17, :cond_166
+    if-eqz v17, :cond_f
 
     .line 418
     move-object/from16 v17, v15
@@ -3218,13 +3213,13 @@
     .line 421
     .end local v22    # "node$iv$iv":Ljava/lang/Object;
     .local v6, "node$iv$iv":Ljava/lang/Object;
-    :goto_8b
-    if-eqz v6, :cond_15b
+    :goto_2
+    if-eqz v6, :cond_e
 
     .line 422
     instance-of v14, v6, Landroidx/compose/ui/focus/FocusTargetNode;
 
-    if-eqz v14, :cond_a2
+    if-eqz v14, :cond_2
 
     .line 423
     move-object v14, v6
@@ -3250,10 +3245,10 @@
 
     move-object/from16 v32, v5
 
-    goto/16 :goto_14e
+    goto/16 :goto_9
 
     .line 424
-    :cond_a2
+    :cond_2
     move-object v14, v6
 
     .local v14, "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
@@ -3267,24 +3262,24 @@
 
     and-int v24, v24, v7
 
-    if-eqz v24, :cond_af
+    if-eqz v24, :cond_3
 
     const/4 v14, 0x1
 
-    goto :goto_b0
+    goto :goto_3
 
-    :cond_af
+    :cond_3
     const/4 v14, 0x0
 
     .line 424
     .end local v14    # "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v23    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_b0
-    if-eqz v14, :cond_148
+    :goto_3
+    if-eqz v14, :cond_c
 
     instance-of v14, v6, Landroidx/compose/ui/node/DelegatingNode;
 
-    if-eqz v14, :cond_148
+    if-eqz v14, :cond_c
 
     .line 426
     const/4 v14, 0x0
@@ -3306,8 +3301,8 @@
 
     .line 429
     .local v25, "node$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_c1
-    if-eqz v25, :cond_136
+    :goto_4
+    if-eqz v25, :cond_b
 
     .line 430
     move-object/from16 v26, v25
@@ -3330,20 +3325,20 @@
 
     and-int v30, v30, v7
 
-    if-eqz v30, :cond_d6
+    if-eqz v30, :cond_4
 
     const/16 v28, 0x1
 
-    goto :goto_d8
+    goto :goto_5
 
-    :cond_d6
+    :cond_4
     const/16 v28, 0x0
 
     .line 431
     .end local v28    # "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v29    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_d8
-    if-eqz v28, :cond_121
+    :goto_5
+    if-eqz v28, :cond_a
 
     .line 432
     add-int/lit8 v14, v14, 0x1
@@ -3355,7 +3350,7 @@
 
     .end local v2    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .local v28, "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
-    if-ne v14, v2, :cond_ea
+    if-ne v14, v2, :cond_5
 
     .line 434
     move-object/from16 v6, v26
@@ -3366,11 +3361,11 @@
 
     move-object/from16 v5, v26
 
-    goto :goto_129
+    goto :goto_8
 
     .line 438
-    :cond_ea
-    if-nez v21, :cond_103
+    :cond_5
+    if-nez v21, :cond_6
 
     const/4 v2, 0x0
 
@@ -3413,7 +3408,7 @@
     .line 399
     .end local v30    # "$i$f$MutableVector":I
     .end local v33    # "capacity$iv$iv$iv$iv":I
-    goto :goto_109
+    goto :goto_6
 
     .line 438
     .end local v29    # "$i$f$mutableVectorOf":I
@@ -3421,7 +3416,7 @@
     .end local v32    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v3    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v5    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_103
+    :cond_6
     move-object/from16 v31, v3
 
     move-object/from16 v32, v5
@@ -3432,7 +3427,7 @@
     .restart local v32    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     move-object/from16 v3, v21
 
-    :goto_109
+    :goto_6
     move-object v2, v3
 
     .line 439
@@ -3442,22 +3437,22 @@
 
     .line 440
     .local v3, "theNode$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    if-eqz v3, :cond_114
+    if-eqz v3, :cond_8
 
     .line 441
-    if-eqz v2, :cond_112
+    if-eqz v2, :cond_7
 
     invoke-virtual {v2, v3}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 442
-    :cond_112
+    :cond_7
     const/4 v5, 0x0
 
     move-object v6, v5
 
     .line 444
-    :cond_114
-    if-eqz v2, :cond_11c
+    :cond_8
+    if-eqz v2, :cond_9
 
     move-object/from16 v5, v26
 
@@ -3465,21 +3460,21 @@
     .local v5, "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     invoke-virtual {v2, v5}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
-    goto :goto_11e
+    goto :goto_7
 
     .end local v5    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v26    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_11c
+    :cond_9
     move-object/from16 v5, v26
 
     .line 447
     .end local v3    # "theNode$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v26    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v5    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_11e
+    :goto_7
     move-object/from16 v21, v2
 
-    goto :goto_129
+    goto :goto_8
 
     .line 431
     .end local v28    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
@@ -3490,7 +3485,7 @@
     .local v5, "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v21    # "stack$iv$iv":Ljava/lang/Object;
     .restart local v26    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_121
+    :cond_a
     move-object/from16 v28, v2
 
     move-object/from16 v31, v3
@@ -3507,7 +3502,7 @@
     .restart local v28    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v31    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v32    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :goto_129
+    :goto_8
     nop
 
     .line 430
@@ -3526,7 +3521,7 @@
 
     move-object/from16 v5, v32
 
-    goto :goto_c1
+    goto :goto_4
 
     .line 450
     .end local v28    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
@@ -3535,7 +3530,7 @@
     .restart local v2    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v3    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .local v5, "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_136
+    :cond_b
     move-object/from16 v28, v2
 
     move-object/from16 v31, v3
@@ -3554,7 +3549,7 @@
     .restart local v32    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     const/4 v2, 0x1
 
-    if-ne v14, v2, :cond_14e
+    if-ne v14, v2, :cond_d
 
     .line 453
     move-object/from16 v2, v28
@@ -3565,7 +3560,7 @@
 
     const/4 v14, 0x1
 
-    goto/16 :goto_8b
+    goto/16 :goto_2
 
     .line 424
     .end local v14    # "count$iv$iv":I
@@ -3575,7 +3570,7 @@
     .restart local v2    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v3    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v5    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_148
+    :cond_c
     move-object/from16 v28, v2
 
     move-object/from16 v31, v3
@@ -3589,9 +3584,8 @@
     .restart local v28    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v31    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v32    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_14e
-    :goto_14e
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
+    :cond_d
+    :goto_9
     invoke-static/range {v21 .. v21}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v6
@@ -3604,7 +3598,7 @@
 
     const/4 v14, 0x1
 
-    goto/16 :goto_8b
+    goto/16 :goto_2
 
     .line 458
     .end local v28    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
@@ -3613,7 +3607,7 @@
     .restart local v2    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v3    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v5    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_15b
+    :cond_e
     move-object/from16 v28, v2
 
     move-object/from16 v31, v3
@@ -3641,7 +3635,7 @@
     .line 459
     const/4 v6, 0x0
 
-    goto/16 :goto_50
+    goto/16 :goto_0
 
     .line 461
     .end local v28    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
@@ -3650,7 +3644,7 @@
     .restart local v2    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v3    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v5    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_166
+    :cond_f
     move-object/from16 v28, v2
 
     move-object/from16 v31, v3
@@ -3671,7 +3665,7 @@
 
     const/4 v14, 0x1
 
-    goto/16 :goto_71
+    goto/16 :goto_1
 
     .line 416
     .end local v28    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
@@ -3680,7 +3674,7 @@
     .restart local v2    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v3    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v5    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_174
+    :cond_10
     move-object/from16 v28, v2
 
     move-object/from16 v31, v3
@@ -3695,7 +3689,7 @@
     .restart local v32    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
     const/4 v6, 0x0
 
-    goto/16 :goto_50
+    goto/16 :goto_0
 
     .line 464
     .end local v13    # "branch$iv$iv":Landroidx/compose/ui/Modifier$Node;
@@ -3706,7 +3700,7 @@
     .restart local v2    # "$this$searchChildren_4C6V_qg_u24lambda_u243":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v3    # "branches$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v5    # "$this$visitChildren_u2d6rFNWt0$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_17d
+    :cond_11
     move-object/from16 v28, v2
 
     move-object/from16 v31, v3
@@ -3738,12 +3732,12 @@
 
     .line 165
     .local v2, "children":Landroidx/compose/runtime/collection/MutableVector;
-    :goto_186
+    :goto_a
     invoke-virtual {v2}, Landroidx/compose/runtime/collection/MutableVector;->isNotEmpty()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1bc
+    if-eqz v3, :cond_15
 
     .line 166
     invoke-static/range {p1 .. p1}, Landroidx/compose/ui/focus/FocusTraversalKt;->focusRect(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/geometry/Rect;
@@ -3754,7 +3748,7 @@
 
     move-result-object v3
 
-    if-nez v3, :cond_198
+    if-nez v3, :cond_12
 
     .line 167
     const/4 v3, 0x0
@@ -3763,7 +3757,7 @@
 
     .line 170
     .local v3, "nextItem":Landroidx/compose/ui/focus/FocusTargetNode;
-    :cond_198
+    :cond_12
     invoke-virtual {v3}, Landroidx/compose/ui/focus/FocusTargetNode;->fetchFocusProperties$ui_release()Landroidx/compose/ui/focus/FocusProperties;
 
     move-result-object v4
@@ -3772,7 +3766,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1ad
+    if-eqz v4, :cond_13
 
     invoke-interface {v1, v3}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -3787,30 +3781,30 @@
     return v4
 
     .line 173
-    :cond_1ad
+    :cond_13
     move-object/from16 v4, p1
 
     invoke-static {v3, v4, v0, v1}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->generateAndSearchChildren-4C6V_qg(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_1b7
+    if-eqz v5, :cond_14
 
     const/4 v5, 0x1
 
     return v5
 
     .line 177
-    :cond_1b7
+    :cond_14
     const/4 v5, 0x1
 
     invoke-virtual {v2, v3}, Landroidx/compose/runtime/collection/MutableVector;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_186
+    goto :goto_a
 
     .line 179
     .end local v3    # "nextItem":Landroidx/compose/ui/focus/FocusTargetNode;
-    :cond_1bc
+    :cond_15
     move-object/from16 v4, p1
 
     const/4 v3, 0x0
@@ -3826,7 +3820,7 @@
     .restart local v9    # "mask$iv$iv":I
     .restart local v10    # "$this$visitChildren$iv$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v11    # "$i$f$visitChildren":I
-    :cond_1c0
+    :cond_16
     move-object/from16 v28, v2
 
     move/from16 v16, v3
@@ -3856,7 +3850,7 @@
 .end method
 
 .method private static final topLeft(Landroidx/compose/ui/geometry/Rect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 5
     .param p0, "$this$topLeft"    # Landroidx/compose/ui/geometry/Rect;
 
     .line 377
@@ -3884,7 +3878,7 @@
 .end method
 
 .method public static final twoDimensionalFocusSearch--OM-vw8(Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Ljava/lang/Boolean;
-    .registers 8
+    .locals 5
     .param p0, "$this$twoDimensionalFocusSearch_u2d_u2dOM_u2dvw8"    # Landroidx/compose/ui/focus/FocusTargetNode;
     .param p1, "direction"    # I
     .param p2, "onFound"    # Lkotlin/jvm/functions/Function1;
@@ -3931,7 +3925,7 @@
     move-result-object v1
 
     .line 57
-    packed-switch v0, :pswitch_data_92
+    packed-switch v0, :pswitch_data_0
 
     .line 86
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -3941,7 +3935,7 @@
     throw v0
 
     .line 58
-    :pswitch_25
+    :pswitch_0
     invoke-virtual {p0}, Landroidx/compose/ui/focus/FocusTargetNode;->fetchFocusProperties$ui_release()Landroidx/compose/ui/focus/FocusProperties;
 
     move-result-object v0
@@ -3950,7 +3944,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_0
 
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -3960,11 +3954,11 @@
 
     check-cast v1, Ljava/lang/Boolean;
 
-    :cond_36
+    :cond_0
     return-object v1
 
     .line 86
-    :pswitch_37
+    :pswitch_1
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->findChildCorrespondingToFocusEnter--OM-vw8(Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
 
     move-result v0
@@ -3976,14 +3970,14 @@
     return-object v0
 
     .line 60
-    :pswitch_40
+    :pswitch_2
     invoke-static {p0}, Landroidx/compose/ui/focus/FocusTraversalKt;->getActiveChild(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/focus/FocusTargetNode;
 
     move-result-object v0
 
     const-string v2, "ActiveParent must have a focusedChild"
 
-    if-eqz v0, :cond_88
+    if-eqz v0, :cond_2
 
     .line 66
     .local v0, "focusedChild":Landroidx/compose/ui/focus/FocusTargetNode;
@@ -3999,7 +3993,7 @@
 
     aget v3, v4, v3
 
-    packed-switch v3, :pswitch_data_9e
+    packed-switch v3, :pswitch_data_1
 
     .line 79
     new-instance v1, Lkotlin/NoWhenBranchMatchedException;
@@ -4009,7 +4003,7 @@
     throw v1
 
     .line 78
-    :pswitch_5d
+    :pswitch_3
     new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 79
@@ -4022,7 +4016,7 @@
     throw v1
 
     .line 78
-    :pswitch_67
+    :pswitch_4
     invoke-static {p0, v0, p1, p2}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->generateAndSearchChildren-4C6V_qg(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
 
     move-result v1
@@ -4034,7 +4028,7 @@
     return-object v1
 
     .line 70
-    :pswitch_70
+    :pswitch_5
     invoke-static {v0, p1, p2}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->twoDimensionalFocusSearch--OM-vw8(Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Ljava/lang/Boolean;
 
     move-result-object v2
@@ -4045,12 +4039,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_7b
+    if-nez v1, :cond_1
 
     return-object v2
 
     .line 74
-    :cond_7b
+    :cond_1
     invoke-static {v0}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->activeNode(Landroidx/compose/ui/focus/FocusTargetNode;)Landroidx/compose/ui/focus/FocusTargetNode;
 
     move-result-object v1
@@ -4068,7 +4062,7 @@
     .line 60
     .end local v0    # "focusedChild":Landroidx/compose/ui/focus/FocusTargetNode;
     .end local v2    # "found":Ljava/lang/Boolean;
-    :cond_88
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -4079,19 +4073,19 @@
 
     throw v0
 
-    :pswitch_data_92
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_40
-        :pswitch_37
-        :pswitch_37
-        :pswitch_25
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
-    :pswitch_data_9e
+    :pswitch_data_1
     .packed-switch 0x1
-        :pswitch_70
-        :pswitch_67
-        :pswitch_67
-        :pswitch_5d
+        :pswitch_5
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
     .end packed-switch
 .end method

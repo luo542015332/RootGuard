@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final invalidateFocusProperties(Landroidx/compose/ui/focus/FocusPropertiesModifierNode;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$invalidateFocusProperties"    # Landroidx/compose/ui/focus/FocusPropertiesModifierNode;
 
     const-string v0, "<this>"

@@ -50,7 +50,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection$Companion;-><init>()V
 
@@ -69,10 +69,9 @@
 
 # virtual methods
 .method public final getAbove-hoxUOeE()I
-    .registers 2
+    .locals 1
 
     .line 105
-    # getter for: Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->Above:I
     invoke-static {}, Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->access$getAbove$cp()I
 
     move-result v0
@@ -81,10 +80,9 @@
 .end method
 
 .method public final getAfter-hoxUOeE()I
-    .registers 2
+    .locals 1
 
     .line 90
-    # getter for: Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->After:I
     invoke-static {}, Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->access$getAfter$cp()I
 
     move-result v0
@@ -93,10 +91,9 @@
 .end method
 
 .method public final getBefore-hoxUOeE()I
-    .registers 2
+    .locals 1
 
     .line 85
-    # getter for: Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->Before:I
     invoke-static {}, Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->access$getBefore$cp()I
 
     move-result v0
@@ -105,10 +102,9 @@
 .end method
 
 .method public final getBelow-hoxUOeE()I
-    .registers 2
+    .locals 1
 
     .line 110
-    # getter for: Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->Below:I
     invoke-static {}, Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->access$getBelow$cp()I
 
     move-result v0
@@ -117,10 +113,9 @@
 .end method
 
 .method public final getLeft-hoxUOeE()I
-    .registers 2
+    .locals 1
 
     .line 95
-    # getter for: Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->Left:I
     invoke-static {}, Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->access$getLeft$cp()I
 
     move-result v0
@@ -129,10 +124,9 @@
 .end method
 
 .method public final getRight-hoxUOeE()I
-    .registers 2
+    .locals 1
 
     .line 100
-    # getter for: Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->Right:I
     invoke-static {}, Landroidx/compose/ui/layout/BeyondBoundsLayout$LayoutDirection;->access$getRight$cp()I
 
     move-result v0

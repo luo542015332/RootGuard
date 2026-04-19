@@ -82,7 +82,7 @@
 
 # direct methods
 .method public constructor <init>(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;Lkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .param p1, "id"    # I
     .param p2, "invalid"    # Landroidx/compose/runtime/snapshots/SnapshotIdSet;
     .param p3, "readObserver"    # Lkotlin/jvm/functions/Function1;
@@ -121,14 +121,14 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 2
+    .locals 1
 
     .line 1250
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/ReadonlySnapshot;->getDisposed$runtime_release()Z
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 1251
     move-object v0, p0
@@ -141,12 +141,12 @@
     invoke-super {p0}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     .line 1254
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public getModified$runtime_release()Landroidx/compose/runtime/collection/IdentityArraySet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -163,7 +163,7 @@
 .end method
 
 .method public getReadObserver$runtime_release()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -181,7 +181,7 @@
 .end method
 
 .method public getReadOnly()Z
-    .registers 2
+    .locals 1
 
     .line 1230
     const/4 v0, 0x1
@@ -190,7 +190,7 @@
 .end method
 
 .method public getRoot()Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 2
+    .locals 1
 
     .line 1231
     move-object v0, p0
@@ -201,7 +201,7 @@
 .end method
 
 .method public getWriteObserver$runtime_release()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -219,7 +219,7 @@
 .end method
 
 .method public hasPendingChanges()Z
-    .registers 2
+    .locals 1
 
     .line 1232
     const/4 v0, 0x0
@@ -228,7 +228,7 @@
 .end method
 
 .method public nestedActivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -246,7 +246,7 @@
 .end method
 
 .method public nestedDeactivated$runtime_release(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -260,25 +260,25 @@
 
     iput v0, p0, Landroidx/compose/runtime/snapshots/ReadonlySnapshot;->snapshots:I
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 1261
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/ReadonlySnapshot;->closeAndReleasePinning$runtime_release()V
 
     .line 1263
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public notifyObjectsInitialized$runtime_release()V
-    .registers 1
+    .locals 0
 
     .line 1247
     return-void
 .end method
 
 .method public recordModified$runtime_release(Landroidx/compose/runtime/snapshots/StateObject;)V
-    .registers 3
+    .locals 1
     .param p1, "state"    # Landroidx/compose/runtime/snapshots/StateObject;
 
     const-string/jumbo v0, "state"
@@ -286,7 +286,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1266
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->reportReadonlySnapshotWrite()Ljava/lang/Void;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$reportReadonlySnapshotWrite()Ljava/lang/Void;
 
     new-instance v0, Lkotlin/KotlinNothingValueException;
@@ -297,7 +296,7 @@
 .end method
 
 .method public setModified(Landroidx/compose/runtime/collection/IdentityArraySet;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/collection/IdentityArraySet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -319,7 +318,7 @@
 .end method
 
 .method public takeNestedSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 6
+    .locals 4
     .param p1, "readObserver"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -337,7 +336,6 @@
 
     check-cast v0, Landroidx/compose/runtime/snapshots/Snapshot;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotKt;->validateOpen(Landroidx/compose/runtime/snapshots/Snapshot;)V
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$validateOpen(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .line 1242

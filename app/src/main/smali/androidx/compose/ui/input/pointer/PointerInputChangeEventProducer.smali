@@ -62,7 +62,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 196
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;->previousPointerInputData:Ljava/util/Map;
@@ -95,7 +95,7 @@
 .end method
 
 .method public final produce(Landroidx/compose/ui/input/pointer/PointerInputEvent;Landroidx/compose/ui/input/pointer/PositionCalculator;)Landroidx/compose/ui/input/pointer/InternalPointerEvent;
-    .registers 43
+    .locals 40
     .param p1, "pointerInputEvent"    # Landroidx/compose/ui/input/pointer/PointerInputEvent;
     .param p2, "positionCalculator"    # Landroidx/compose/ui/input/pointer/PositionCalculator;
 
@@ -152,8 +152,8 @@
 
     move-result v7
 
-    :goto_2d
-    if-ge v6, v7, :cond_f9
+    :goto_0
+    if-ge v6, v7, :cond_2
 
     .line 238
     invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -206,7 +206,7 @@
 
     .line 151
     .local v4, "previousData":Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;
-    if-nez v4, :cond_5f
+    if-nez v4, :cond_0
 
     .line 152
     invoke-virtual {v9}, Landroidx/compose/ui/input/pointer/PointerInputEventData;->getUptime()J
@@ -227,12 +227,12 @@
 
     .end local v15    # "previousDown":Z
     .local v5, "previousDown":Z
-    goto :goto_73
+    goto :goto_1
 
     .line 156
     .end local v5    # "previousDown":Z
     .restart local v15    # "previousDown":Z
-    :cond_5f
+    :cond_0
     invoke-virtual {v4}, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer$PointerInputData;->getUptime()J
 
     move-result-wide v11
@@ -263,7 +263,7 @@
     move-wide v13, v7
 
     .line 162
-    :goto_73
+    :goto_1
     invoke-virtual {v9}, Landroidx/compose/ui/input/pointer/PointerInputEventData;->getId-J3iCeTQ()J
 
     move-result-wide v7
@@ -347,7 +347,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_df
+    if-eqz v7, :cond_1
 
     .line 178
     iget-object v7, v0, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;->previousPointerInputData:Ljava/util/Map;
@@ -391,10 +391,10 @@
 
     invoke-interface {v7, v8, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_ec
+    goto :goto_2
 
     .line 185
-    :cond_df
+    :cond_1
     iget-object v2, v0, Landroidx/compose/ui/input/pointer/PointerInputChangeEventProducer;->previousPointerInputData:Ljava/util/Map;
 
     invoke-virtual {v9}, Landroidx/compose/ui/input/pointer/PointerInputEventData;->getId-J3iCeTQ()J
@@ -408,7 +408,7 @@
     invoke-interface {v2, v7}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 187
-    :goto_ec
+    :goto_2
     nop
 
     .line 239
@@ -432,7 +432,7 @@
 
     move/from16 v5, v19
 
-    goto/16 :goto_2d
+    goto/16 :goto_0
 
     .line 241
     .end local v6    # "index$iv":I
@@ -440,7 +440,7 @@
     .end local v19    # "$i$f$fastForEach":I
     .local v4, "$this$fastForEach$iv":Ljava/util/List;
     .local v5, "$i$f$fastForEach":I
-    :cond_f9
+    :cond_2
     nop
 
     .line 189

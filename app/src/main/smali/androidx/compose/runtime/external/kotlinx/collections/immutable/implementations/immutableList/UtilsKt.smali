@@ -51,7 +51,7 @@
 
 # direct methods
 .method public static final indexSegment(II)I
-    .registers 3
+    .locals 1
     .param p0, "index"    # I
     .param p1, "shift"    # I
 
@@ -64,7 +64,7 @@
 .end method
 
 .method public static final persistentVectorOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -88,7 +88,7 @@
 .end method
 
 .method public static final presizedBufferWith(Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .param p0, "element"    # Ljava/lang/Object;
 
     .line 24
@@ -107,7 +107,7 @@
 .end method
 
 .method public static final rootSize(I)I
-    .registers 2
+    .locals 1
     .param p0, "vectorSize"    # I
 
     .line 42

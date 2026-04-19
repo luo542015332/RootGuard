@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/internal/Ref$ObjectRef;Landroidx/compose/ui/focus/FocusTargetNode;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,7 +86,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 152
     invoke-virtual {p0}, Landroidx/compose/ui/focus/FocusTargetNode$invalidateFocus$1;->invoke()V
@@ -97,7 +97,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 3
+    .locals 2
 
     .line 153
     iget-object v0, p0, Landroidx/compose/ui/focus/FocusTargetNode$invalidateFocus$1;->$focusProperties:Lkotlin/jvm/internal/Ref$ObjectRef;

@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final clip(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
-    .registers 25
+    .locals 23
     .param p0, "$this$clip"    # Landroidx/compose/ui/Modifier;
     .param p1, "shape"    # Landroidx/compose/ui/graphics/Shape;
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public static final clipToBounds(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 24
+    .locals 23
     .param p0, "$this$clipToBounds"    # Landroidx/compose/ui/Modifier;
 
     move-object/from16 v0, p0

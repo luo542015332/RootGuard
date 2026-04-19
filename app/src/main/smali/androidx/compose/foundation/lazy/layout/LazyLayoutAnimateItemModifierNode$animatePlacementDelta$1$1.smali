@@ -63,7 +63,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;J)V
-    .registers 5
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 103
@@ -95,7 +95,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/animation/core/Animatable;)V
-    .registers 11
+    .locals 9
     .param p1, "$this$animateTo"    # Landroidx/compose/animation/core/Animatable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -160,7 +160,6 @@
     .end local v1    # "arg0$iv":J
     .end local v3    # "other$iv":J
     .end local v5    # "$i$f$minus-qkQi6aY":I
-    # invokes: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->setPlacementDelta--gyyYBs(J)V
     invoke-static {v0, v1, v2}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->access$setPlacementDelta--gyyYBs(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;J)V
 
     .line 106

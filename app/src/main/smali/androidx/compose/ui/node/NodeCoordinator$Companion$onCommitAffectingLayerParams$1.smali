@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/NodeCoordinator$Companion$onCommitAffectingLayerParams$1;
 
@@ -65,7 +65,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 1193
@@ -93,7 +93,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 9
+    .locals 7
     .param p1, "coordinator"    # Landroidx/compose/ui/node/NodeCoordinator;
 
     const-string/jumbo v0, "coordinator"
@@ -105,10 +105,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_4
 
     .line 1197
-    # getter for: Landroidx/compose/ui/node/NodeCoordinator;->layerPositionalProperties:Landroidx/compose/ui/node/LayerPositionalProperties;
     invoke-static {p1}, Landroidx/compose/ui/node/NodeCoordinator;->access$getLayerPositionalProperties$p(Landroidx/compose/ui/node/NodeCoordinator;)Landroidx/compose/ui/node/LayerPositionalProperties;
 
     move-result-object v0
@@ -121,16 +120,15 @@
 
     const/4 v3, 0x0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 1199
     invoke-static {p1, v3, v2, v1}, Landroidx/compose/ui/node/NodeCoordinator;->updateLayerParameters$default(Landroidx/compose/ui/node/NodeCoordinator;ZILjava/lang/Object;)V
 
-    goto :goto_5a
+    goto :goto_0
 
     .line 1201
-    :cond_19
-    # getter for: Landroidx/compose/ui/node/NodeCoordinator;->tmpLayerPositionalProperties:Landroidx/compose/ui/node/LayerPositionalProperties;
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/node/NodeCoordinator;->access$getTmpLayerPositionalProperties$cp()Landroidx/compose/ui/node/LayerPositionalProperties;
 
     move-result-object v4
@@ -141,7 +139,6 @@
     invoke-static {p1, v3, v2, v1}, Landroidx/compose/ui/node/NodeCoordinator;->updateLayerParameters$default(Landroidx/compose/ui/node/NodeCoordinator;ZILjava/lang/Object;)V
 
     .line 1203
-    # getter for: Landroidx/compose/ui/node/NodeCoordinator;->tmpLayerPositionalProperties:Landroidx/compose/ui/node/LayerPositionalProperties;
     invoke-static {}, Landroidx/compose/ui/node/NodeCoordinator;->access$getTmpLayerPositionalProperties$cp()Landroidx/compose/ui/node/LayerPositionalProperties;
 
     move-result-object v4
@@ -150,7 +147,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_5a
+    if-nez v4, :cond_4
 
     .line 1204
     invoke-virtual {p1}, Landroidx/compose/ui/node/NodeCoordinator;->getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
@@ -169,28 +166,28 @@
 
     move-result v6
 
-    if-lez v6, :cond_51
+    if-lez v6, :cond_3
 
     .line 1207
     invoke-virtual {v5}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;->getCoordinatesAccessedDuringModifierPlacement()Z
 
     move-result v6
 
-    if-nez v6, :cond_47
+    if-nez v6, :cond_1
 
     .line 1208
     invoke-virtual {v5}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;->getCoordinatesAccessedDuringPlacement()Z
 
     move-result v6
 
-    if-eqz v6, :cond_4a
+    if-eqz v6, :cond_2
 
     .line 1209
-    :cond_47
+    :cond_1
     invoke-static {v4, v3, v2, v1}, Landroidx/compose/ui/node/LayoutNode;->requestRelayout$ui_release$default(Landroidx/compose/ui/node/LayoutNode;ZILjava/lang/Object;)V
 
     .line 1211
-    :cond_4a
+    :cond_2
     invoke-virtual {v5}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;->getMeasurePassDelegate$ui_release()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$MeasurePassDelegate;
 
     move-result-object v1
@@ -199,12 +196,12 @@
     invoke-virtual {v1}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$MeasurePassDelegate;->notifyChildrenUsingCoordinatesWhilePlacing()V
 
     .line 1214
-    :cond_51
+    :cond_3
     invoke-virtual {v4}, Landroidx/compose/ui/node/LayoutNode;->getOwner$ui_release()Landroidx/compose/ui/node/Owner;
 
     move-result-object v1
 
-    if-eqz v1, :cond_5a
+    if-eqz v1, :cond_4
 
     invoke-interface {v1, v4}, Landroidx/compose/ui/node/Owner;->requestOnPositionedCallback(Landroidx/compose/ui/node/LayoutNode;)V
 
@@ -212,7 +209,7 @@
     .end local v0    # "layerPositionalProperties":Landroidx/compose/ui/node/LayerPositionalProperties;
     .end local v4    # "layoutNode":Landroidx/compose/ui/node/LayoutNode;
     .end local v5    # "layoutDelegate":Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
-    :cond_5a
-    :goto_5a
+    :cond_4
+    :goto_0
     return-void
 .end method

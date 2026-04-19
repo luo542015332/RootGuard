@@ -55,7 +55,7 @@
 
 # direct methods
 .method public static final updateChangedFlags(I)I
-    .registers 5
+    .locals 4
     .param p0, "flags"    # I
 
     .line 49

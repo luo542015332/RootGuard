@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/flow/MutableSharedFlow;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 378
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 4
+    .locals 2
     .param p1, "$this$drawBehind"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     const-string v0, "$this$drawBehind"

@@ -47,7 +47,7 @@
 
 # direct methods
 .method public static final getKey-ZmokQxo(Landroid/view/KeyEvent;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$key"    # Landroid/view/KeyEvent;
 
     const-string v0, "$this$key"
@@ -67,7 +67,7 @@
 .end method
 
 .method public static final getType-ZmokQxo(Landroid/view/KeyEvent;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$type"    # Landroid/view/KeyEvent;
 
     const-string v0, "$this$type"
@@ -79,7 +79,7 @@
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_22
+    packed-switch v0, :pswitch_data_0
 
     .line 71
     sget-object v0, Landroidx/compose/ui/input/key/KeyEventType;->Companion:Landroidx/compose/ui/input/key/KeyEventType$Companion;
@@ -88,20 +88,20 @@
 
     move-result v0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 70
-    :pswitch_13
+    :pswitch_0
     sget-object v0, Landroidx/compose/ui/input/key/KeyEventType;->Companion:Landroidx/compose/ui/input/key/KeyEventType$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/input/key/KeyEventType$Companion;->getKeyUp-CS__XNY()I
 
     move-result v0
 
-    goto :goto_20
+    goto :goto_0
 
     .line 69
-    :pswitch_1a
+    :pswitch_1
     sget-object v0, Landroidx/compose/ui/input/key/KeyEventType;->Companion:Landroidx/compose/ui/input/key/KeyEventType$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/input/key/KeyEventType$Companion;->getKeyDown-CS__XNY()I
@@ -109,20 +109,20 @@
     move-result v0
 
     .line 72
-    :goto_20
+    :goto_0
     return v0
 
     nop
 
-    :pswitch_data_22
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1a
-        :pswitch_13
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public static final getUtf16CodePoint-ZmokQxo(Landroid/view/KeyEvent;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$utf16CodePoint"    # Landroid/view/KeyEvent;
 
     const-string v0, "$this$utf16CodePoint"
@@ -138,7 +138,7 @@
 .end method
 
 .method public static final isAltPressed-ZmokQxo(Landroid/view/KeyEvent;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isAltPressed"    # Landroid/view/KeyEvent;
 
     const-string v0, "$this$isAltPressed"
@@ -154,7 +154,7 @@
 .end method
 
 .method public static final isCtrlPressed-ZmokQxo(Landroid/view/KeyEvent;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isCtrlPressed"    # Landroid/view/KeyEvent;
 
     const-string v0, "$this$isCtrlPressed"
@@ -170,7 +170,7 @@
 .end method
 
 .method public static final isMetaPressed-ZmokQxo(Landroid/view/KeyEvent;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isMetaPressed"    # Landroid/view/KeyEvent;
 
     const-string v0, "$this$isMetaPressed"
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final isShiftPressed-ZmokQxo(Landroid/view/KeyEvent;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isShiftPressed"    # Landroid/view/KeyEvent;
 
     const-string v0, "$this$isShiftPressed"

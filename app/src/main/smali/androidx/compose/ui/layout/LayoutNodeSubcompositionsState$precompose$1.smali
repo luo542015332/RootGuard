@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .param p2, "$slotId"    # Ljava/lang/Object;
 
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 8
+    .locals 7
 
     .line 919
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
@@ -86,7 +86,6 @@
     .line 920
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposeMap:Ljava/util/Map;
     invoke-static {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getPrecomposeMap$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Ljava/util/Map;
 
     move-result-object v0
@@ -101,12 +100,11 @@
 
     .line 921
     .local v0, "node":Landroidx/compose/ui/node/LayoutNode;
-    if-eqz v0, :cond_9e
+    if-eqz v0, :cond_4
 
     .line 922
     iget-object v1, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposedCount:I
     invoke-static {v1}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getPrecomposedCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
 
     move-result v1
@@ -115,24 +113,23 @@
 
     const/4 v3, 0x1
 
-    if-lez v1, :cond_21
+    if-lez v1, :cond_0
 
     move v1, v3
 
-    goto :goto_22
+    goto :goto_0
 
-    :cond_21
+    :cond_0
     move v1, v2
 
-    :goto_22
+    :goto_0
     const-string v4, "Check failed."
 
-    if-eqz v1, :cond_94
+    if-eqz v1, :cond_3
 
     .line 923
     iget-object v1, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
     invoke-static {v1}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getRoot$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v1
@@ -149,7 +146,6 @@
     .local v1, "itemIndex":I
     iget-object v5, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
     invoke-static {v5}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getRoot$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v5
@@ -164,24 +160,22 @@
 
     iget-object v6, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposedCount:I
     invoke-static {v6}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getPrecomposedCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
 
     move-result v6
 
     sub-int/2addr v5, v6
 
-    if-lt v1, v5, :cond_4c
+    if-lt v1, v5, :cond_1
 
     move v2, v3
 
-    :cond_4c
-    if-eqz v2, :cond_8a
+    :cond_1
+    if-eqz v2, :cond_2
 
     .line 927
     iget-object v2, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->reusableCount:I
     invoke-static {v2}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getReusableCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
 
     move-result v4
@@ -193,7 +187,6 @@
     .line 928
     iget-object v2, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposedCount:I
     invoke-static {v2}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getPrecomposedCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
 
     move-result v4
@@ -205,7 +198,6 @@
     .line 929
     iget-object v2, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
     invoke-static {v2}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getRoot$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v2
@@ -220,7 +212,6 @@
 
     iget-object v4, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposedCount:I
     invoke-static {v4}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getPrecomposedCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
 
     move-result v4
@@ -229,7 +220,6 @@
 
     iget-object v4, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->reusableCount:I
     invoke-static {v4}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getReusableCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
 
     move-result v4
@@ -240,7 +230,6 @@
     .local v2, "reusableStart":I
     iget-object v4, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # invokes: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->move(III)V
     invoke-static {v4, v1, v2, v3}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$move(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;III)V
 
     .line 931
@@ -248,11 +237,11 @@
 
     invoke-virtual {v3, v2}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->disposeOrReuseStartingFromIndex(I)V
 
-    goto :goto_9e
+    goto :goto_1
 
     .line 925
     .end local v2    # "reusableStart":I
-    :cond_8a
+    :cond_2
     new-instance v2, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -265,7 +254,7 @@
 
     .line 922
     .end local v1    # "itemIndex":I
-    :cond_94
+    :cond_3
     new-instance v1, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -277,18 +266,17 @@
     throw v1
 
     .line 933
-    :cond_9e
-    :goto_9e
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method public getPlaceablesCount()I
-    .registers 3
+    .locals 2
 
     .line 936
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposeMap:Ljava/util/Map;
     invoke-static {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getPrecomposeMap$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Ljava/util/Map;
 
     move-result-object v0
@@ -301,36 +289,35 @@
 
     check-cast v0, Landroidx/compose/ui/node/LayoutNode;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getChildren$ui_release()Ljava/util/List;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1c
+    :goto_0
     return v0
 .end method
 
 .method public premeasure-0kLqBqw(IJ)V
-    .registers 11
+    .locals 7
     .param p1, "index"    # I
     .param p2, "constraints"    # J
 
     .line 939
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposeMap:Ljava/util/Map;
     invoke-static {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getPrecomposeMap$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Ljava/util/Map;
 
     move-result-object v0
@@ -345,13 +332,13 @@
 
     .line 940
     .local v0, "node":Landroidx/compose/ui/node/LayoutNode;
-    if-eqz v0, :cond_82
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->isAttached()Z
 
     move-result v1
 
-    if-eqz v1, :cond_82
+    if-eqz v1, :cond_2
 
     .line 941
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getChildren$ui_release()Ljava/util/List;
@@ -364,9 +351,9 @@
 
     .line 942
     .local v1, "size":I
-    if-ltz p1, :cond_59
+    if-ltz p1, :cond_1
 
-    if-ge p1, v1, :cond_59
+    if-ge p1, v1, :cond_1
 
     .line 947
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->isPlaced()Z
@@ -377,12 +364,11 @@
 
     xor-int/2addr v2, v3
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_0
 
     .line 948
     iget-object v2, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
     invoke-static {v2}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getRoot$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v2
@@ -428,12 +414,12 @@
     invoke-static {v2, v3}, Landroidx/compose/ui/node/LayoutNode;->access$setIgnoreRemeasureRequests$p(Landroidx/compose/ui/node/LayoutNode;Z)V
 
     .line 1067
-    goto :goto_82
+    goto :goto_0
 
     .line 947
     .end local v2    # "this_$iv":Landroidx/compose/ui/node/LayoutNode;
     .end local v4    # "$i$f$ignoreRemeasureRequests$ui_release":I
-    :cond_4d
+    :cond_0
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "Failed requirement."
@@ -447,7 +433,7 @@
     throw v2
 
     .line 943
-    :cond_59
+    :cond_1
     new-instance v2, Ljava/lang/IndexOutOfBoundsException;
 
     .line 944
@@ -492,7 +478,7 @@
 
     .line 952
     .end local v1    # "size":I
-    :cond_82
-    :goto_82
+    :cond_2
+    :goto_0
     return-void
 .end method

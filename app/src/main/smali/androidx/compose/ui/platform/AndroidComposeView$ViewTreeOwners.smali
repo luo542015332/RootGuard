@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/lifecycle/LifecycleOwner;Landroidx/savedstate/SavedStateRegistryOwner;)V
-    .registers 4
+    .locals 1
     .param p1, "lifecycleOwner"    # Landroidx/lifecycle/LifecycleOwner;
     .param p2, "savedStateRegistryOwner"    # Landroidx/savedstate/SavedStateRegistryOwner;
 
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public final getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
-    .registers 2
+    .locals 1
 
     .line 1843
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->lifecycleOwner:Landroidx/lifecycle/LifecycleOwner;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final getSavedStateRegistryOwner()Landroidx/savedstate/SavedStateRegistryOwner;
-    .registers 2
+    .locals 1
 
     .line 1847
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->savedStateRegistryOwner:Landroidx/savedstate/SavedStateRegistryOwner;

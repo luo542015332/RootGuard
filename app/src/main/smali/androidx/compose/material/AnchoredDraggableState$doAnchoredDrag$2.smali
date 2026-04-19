@@ -110,7 +110,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;Landroidx/compose/material/AnchoredDraggableState;Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function3;Lkotlin/coroutines/Continuation;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -156,7 +156,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -191,7 +191,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -205,7 +205,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -234,7 +234,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 16
+    .locals 14
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -251,7 +251,7 @@
 
     const/4 v5, 0x0
 
-    packed-switch v1, :pswitch_data_15a
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -261,28 +261,28 @@
 
     throw p1
 
-    :pswitch_17
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
     .local p1, "$result":Ljava/lang/Object;
-    :try_start_18
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_1b
-    .catchall {:try_start_18 .. :try_end_1b} :catchall_1c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_76
+    goto :goto_1
 
     .line 446
-    :catchall_1c
+    :catchall_0
     move-exception v1
 
-    goto/16 :goto_eb
+    goto/16 :goto_5
 
     .line 438
     .end local v0    # "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1f
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -292,7 +292,7 @@
     .restart local p1    # "$result":Ljava/lang/Object;
     iget-object v6, v1, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->$targetValue:Ljava/lang/Object;
 
-    if-eqz v6, :cond_53
+    if-eqz v6, :cond_1
 
     iget-object v6, v1, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
@@ -306,12 +306,12 @@
 
     move-result v6
 
-    if-eqz v6, :cond_36
+    if-eqz v6, :cond_0
 
-    goto :goto_53
+    goto :goto_0
 
     .line 457
-    :cond_36
+    :cond_0
     iget-object v0, v1, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
     invoke-virtual {v0}, Landroidx/compose/material/AnchoredDraggableState;->getConfirmValueChange$material_release()Lkotlin/jvm/functions/Function1;
@@ -330,28 +330,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e4
+    if-eqz v0, :cond_9
 
     .line 458
     iget-object v0, v1, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
     iget-object v2, v1, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->$targetValue:Ljava/lang/Object;
 
-    # invokes: Landroidx/compose/material/AnchoredDraggableState;->setCurrentValue(Ljava/lang/Object;)V
     invoke-static {v0, v2}, Landroidx/compose/material/AnchoredDraggableState;->access$setCurrentValue(Landroidx/compose/material/AnchoredDraggableState;Ljava/lang/Object;)V
 
-    goto/16 :goto_e4
+    goto/16 :goto_4
 
     .line 440
-    :cond_53
-    :goto_53
+    :cond_1
+    :goto_0
     nop
 
     .line 441
-    :try_start_54
+    :try_start_1
     iget-object v6, v1, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
-    # getter for: Landroidx/compose/material/AnchoredDraggableState;->dragMutex:Landroidx/compose/material/InternalMutatorMutex;
     invoke-static {v6}, Landroidx/compose/material/AnchoredDraggableState;->access$getDragMutex$p(Landroidx/compose/material/AnchoredDraggableState;)Landroidx/compose/material/InternalMutatorMutex;
 
     move-result-object v6
@@ -379,33 +377,32 @@
     invoke-virtual {v6, v7, v8, v9}, Landroidx/compose/material/InternalMutatorMutex;->mutate(Landroidx/compose/foundation/MutatePriority;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v6
-    :try_end_72
-    .catchall {:try_start_54 .. :try_end_72} :catchall_e7
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-ne v6, v0, :cond_75
+    if-ne v6, v0, :cond_2
 
     .line 438
     return-object v0
 
     .line 441
-    :cond_75
+    :cond_2
     move-object v0, v1
 
     .line 446
     .end local v1    # "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
     .restart local v0    # "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
-    :goto_76
+    :goto_1
     iget-object v1, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->$targetValue:Ljava/lang/Object;
 
-    if-eqz v1, :cond_7f
+    if-eqz v1, :cond_3
 
     iget-object v1, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
-    # invokes: Landroidx/compose/material/AnchoredDraggableState;->setAnimationTarget(Ljava/lang/Object;)V
     invoke-static {v1, v5}, Landroidx/compose/material/AnchoredDraggableState;->access$setAnimationTarget(Landroidx/compose/material/AnchoredDraggableState;Ljava/lang/Object;)V
 
     .line 451
-    :cond_7f
+    :cond_3
     nop
 
     .line 448
@@ -435,12 +432,12 @@
     move-result-object v8
 
     .end local v1    # "$this$firstOrNull$iv":Ljava/lang/Iterable;
-    :cond_93
+    :cond_4
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_bf
+    if-eqz v1, :cond_6
 
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -479,34 +476,34 @@
     .end local v9    # "anchorOffset":F
     cmpg-float v9, v9, v3
 
-    if-gez v9, :cond_bb
+    if-gez v9, :cond_5
 
     move v9, v4
 
-    goto :goto_bc
+    goto :goto_2
 
-    :cond_bb
+    :cond_5
     move v9, v2
 
     .line 711
     .end local v10    # "$i$a$-firstOrNull-AnchoredDraggableState$doAnchoredDrag$2$endState$1":I
-    :goto_bc
-    if-eqz v9, :cond_93
+    :goto_2
+    if-eqz v9, :cond_4
 
-    goto :goto_c0
+    goto :goto_3
 
     .line 712
     .end local v1    # "element$iv":Ljava/lang/Object;
-    :cond_bf
+    :cond_6
     move-object v1, v5
 
     .line 450
     .end local v7    # "$i$f$firstOrNull":I
-    :goto_c0
+    :goto_3
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 451
-    if-eqz v1, :cond_c9
+    if-eqz v1, :cond_7
 
     .line 450
     nop
@@ -517,12 +514,12 @@
     move-result-object v5
 
     .line 447
-    :cond_c9
+    :cond_7
     move-object v1, v5
 
     .line 453
     .local v1, "endState":Ljava/lang/Object;
-    if-eqz v1, :cond_e3
+    if-eqz v1, :cond_8
 
     iget-object v2, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
@@ -540,30 +537,29 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e3
+    if-eqz v2, :cond_8
 
     .line 454
     iget-object v2, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
-    # invokes: Landroidx/compose/material/AnchoredDraggableState;->setCurrentValue(Ljava/lang/Object;)V
     invoke-static {v2, v1}, Landroidx/compose/material/AnchoredDraggableState;->access$setCurrentValue(Landroidx/compose/material/AnchoredDraggableState;Ljava/lang/Object;)V
 
     .line 456
     .end local v1    # "endState":Ljava/lang/Object;
-    :cond_e3
+    :cond_8
     move-object v1, v0
 
     .line 460
     .end local v0    # "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
     .local v1, "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
-    :cond_e4
-    :goto_e4
+    :cond_9
+    :goto_4
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
     .line 446
-    :catchall_e7
+    :catchall_1
     move-exception v0
 
     move-object v13, v1
@@ -574,18 +570,17 @@
 
     .end local v1    # "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
     .restart local v0    # "this":Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;
-    :goto_eb
+    :goto_5
     iget-object v6, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->$targetValue:Ljava/lang/Object;
 
-    if-eqz v6, :cond_f4
+    if-eqz v6, :cond_a
 
     iget-object v6, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
-    # invokes: Landroidx/compose/material/AnchoredDraggableState;->setAnimationTarget(Ljava/lang/Object;)V
     invoke-static {v6, v5}, Landroidx/compose/material/AnchoredDraggableState;->access$setAnimationTarget(Landroidx/compose/material/AnchoredDraggableState;Ljava/lang/Object;)V
 
     .line 451
-    :cond_f4
+    :cond_a
     nop
 
     .line 448
@@ -615,12 +610,12 @@
     move-result-object v9
 
     .end local v6    # "$this$firstOrNull$iv":Ljava/lang/Iterable;
-    :cond_108
+    :cond_b
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_134
+    if-eqz v6, :cond_d
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -659,34 +654,34 @@
     .end local v10    # "anchorOffset":F
     cmpg-float v10, v10, v3
 
-    if-gez v10, :cond_130
+    if-gez v10, :cond_c
 
     move v10, v4
 
-    goto :goto_131
+    goto :goto_6
 
-    :cond_130
+    :cond_c
     move v10, v2
 
     .line 711
     .end local v11    # "$i$a$-firstOrNull-AnchoredDraggableState$doAnchoredDrag$2$endState$1":I
-    :goto_131
-    if-eqz v10, :cond_108
+    :goto_6
+    if-eqz v10, :cond_b
 
-    goto :goto_135
+    goto :goto_7
 
     .line 712
     .end local v6    # "element$iv":Ljava/lang/Object;
-    :cond_134
+    :cond_d
     move-object v6, v5
 
     .line 450
     .end local v8    # "$i$f$firstOrNull":I
-    :goto_135
+    :goto_7
     check-cast v6, Ljava/util/Map$Entry;
 
     .line 451
-    if-eqz v6, :cond_13e
+    if-eqz v6, :cond_e
 
     .line 450
     nop
@@ -697,12 +692,12 @@
     move-result-object v5
 
     .line 447
-    :cond_13e
+    :cond_e
     move-object v2, v5
 
     .line 453
     .local v2, "endState":Ljava/lang/Object;
-    if-eqz v2, :cond_158
+    if-eqz v2, :cond_f
 
     iget-object v3, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
@@ -720,23 +715,22 @@
 
     move-result v3
 
-    if-eqz v3, :cond_158
+    if-eqz v3, :cond_f
 
     .line 454
     iget-object v3, v0, Landroidx/compose/material/AnchoredDraggableState$doAnchoredDrag$2;->this$0:Landroidx/compose/material/AnchoredDraggableState;
 
-    # invokes: Landroidx/compose/material/AnchoredDraggableState;->setCurrentValue(Ljava/lang/Object;)V
     invoke-static {v3, v2}, Landroidx/compose/material/AnchoredDraggableState;->access$setCurrentValue(Landroidx/compose/material/AnchoredDraggableState;Ljava/lang/Object;)V
 
     .end local v2    # "endState":Ljava/lang/Object;
-    :cond_158
+    :cond_f
     throw v1
 
     nop
 
-    :pswitch_data_15a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1f
-        :pswitch_17
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

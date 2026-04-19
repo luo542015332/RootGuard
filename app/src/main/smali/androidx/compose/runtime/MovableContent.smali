@@ -65,13 +65,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function3;)V
-    .registers 3
+    .locals 1
     .param p1, "content"    # Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final getContent()Lkotlin/jvm/functions/Function3;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

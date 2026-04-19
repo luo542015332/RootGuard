@@ -57,7 +57,7 @@
 
 # direct methods
 .method public constructor <init>(ZIII)V
-    .registers 5
+    .locals 0
     .param p1, "isComposable"    # Z
     .param p2, "realParamsCount"    # I
     .param p3, "changedParams"    # I
@@ -83,36 +83,36 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/runtime/reflect/ComposableInfo;ZIIIILjava/lang/Object;)Landroidx/compose/runtime/reflect/ComposableInfo;
-    .registers 7
+    .locals 0
 
     and-int/lit8 p6, p5, 0x1
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     iget-boolean p1, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->isComposable:Z
 
-    :cond_6
+    :cond_0
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_c
+    if-eqz p6, :cond_1
 
     iget p2, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->realParamsCount:I
 
-    :cond_c
+    :cond_1
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_12
+    if-eqz p6, :cond_2
 
     iget p3, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->changedParams:I
 
-    :cond_12
+    :cond_2
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_18
+    if-eqz p5, :cond_3
 
     iget p4, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->defaultParams:I
 
-    :cond_18
+    :cond_3
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/runtime/reflect/ComposableInfo;->copy(ZIII)Landroidx/compose/runtime/reflect/ComposableInfo;
 
     move-result-object p0
@@ -123,7 +123,7 @@
 
 # virtual methods
 .method public final component1()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->isComposable:Z
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public final component2()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->realParamsCount:I
 
@@ -139,7 +139,7 @@
 .end method
 
 .method public final component3()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->changedParams:I
 
@@ -147,7 +147,7 @@
 .end method
 
 .method public final component4()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->defaultParams:I
 
@@ -155,7 +155,7 @@
 .end method
 
 .method public final copy(ZIII)Landroidx/compose/runtime/reflect/ComposableInfo;
-    .registers 6
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/reflect/ComposableInfo;
 
@@ -165,24 +165,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/runtime/reflect/ComposableInfo;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/runtime/reflect/ComposableInfo;
@@ -191,43 +191,43 @@
 
     iget-boolean v4, v1, Landroidx/compose/runtime/reflect/ComposableInfo;->isComposable:Z
 
-    if-eq v3, v4, :cond_14
+    if-eq v3, v4, :cond_2
 
     return v2
 
-    :cond_14
+    :cond_2
     iget v3, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->realParamsCount:I
 
     iget v4, v1, Landroidx/compose/runtime/reflect/ComposableInfo;->realParamsCount:I
 
-    if-eq v3, v4, :cond_1b
+    if-eq v3, v4, :cond_3
 
     return v2
 
-    :cond_1b
+    :cond_3
     iget v3, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->changedParams:I
 
     iget v4, v1, Landroidx/compose/runtime/reflect/ComposableInfo;->changedParams:I
 
-    if-eq v3, v4, :cond_22
+    if-eq v3, v4, :cond_4
 
     return v2
 
-    :cond_22
+    :cond_4
     iget v3, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->defaultParams:I
 
     iget v1, v1, Landroidx/compose/runtime/reflect/ComposableInfo;->defaultParams:I
 
-    if-eq v3, v1, :cond_29
+    if-eq v3, v1, :cond_5
 
     return v2
 
-    :cond_29
+    :cond_5
     return v0
 .end method
 
 .method public final getChangedParams()I
-    .registers 2
+    .locals 1
 
     .line 48
     iget v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->changedParams:I
@@ -236,7 +236,7 @@
 .end method
 
 .method public final getDefaultParams()I
-    .registers 2
+    .locals 1
 
     .line 49
     iget v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->defaultParams:I
@@ -245,7 +245,7 @@
 .end method
 
 .method public final getRealParamsCount()I
-    .registers 2
+    .locals 1
 
     .line 47
     iget v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->realParamsCount:I
@@ -254,15 +254,15 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget-boolean v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->isComposable:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_5
+    :cond_0
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->realParamsCount:I
@@ -297,7 +297,7 @@
 .end method
 
 .method public final isComposable()Z
-    .registers 2
+    .locals 1
 
     .line 46
     iget-boolean v0, p0, Landroidx/compose/runtime/reflect/ComposableInfo;->isComposable:Z
@@ -306,7 +306,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

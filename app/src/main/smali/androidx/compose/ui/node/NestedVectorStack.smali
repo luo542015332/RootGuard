@@ -74,7 +74,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -128,7 +128,7 @@
 .end method
 
 .method private final pushIndex(I)V
-    .registers 5
+    .locals 3
     .param p1, "value"    # I
 
     .line 28
@@ -138,7 +138,7 @@
 
     array-length v2, v1
 
-    if-lt v0, v2, :cond_16
+    if-lt v0, v2, :cond_0
 
     .line 29
     array-length v0, v1
@@ -156,7 +156,7 @@
     iput-object v0, p0, Landroidx/compose/ui/node/NestedVectorStack;->indexes:[I
 
     .line 31
-    :cond_16
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/node/NestedVectorStack;->indexes:[I
 
     iget v1, p0, Landroidx/compose/ui/node/NestedVectorStack;->lastIndex:I
@@ -174,32 +174,32 @@
 
 # virtual methods
 .method public final isNotEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 35
     iget v0, p0, Landroidx/compose/ui/node/NestedVectorStack;->current:I
 
-    if-ltz v0, :cond_c
+    if-ltz v0, :cond_0
 
     iget-object v1, p0, Landroidx/compose/ui/node/NestedVectorStack;->indexes:[I
 
     aget v0, v1, v0
 
-    if-ltz v0, :cond_c
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public final pop()Ljava/lang/Object;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -237,7 +237,7 @@
 
     .line 42
     .local v2, "vector":Landroidx/compose/runtime/collection/MutableVector;
-    if-lez v1, :cond_1c
+    if-lez v1, :cond_0
 
     iget-object v3, p0, Landroidx/compose/ui/node/NestedVectorStack;->indexes:[I
 
@@ -247,11 +247,11 @@
 
     aput v4, v3, v0
 
-    goto :goto_29
+    goto :goto_0
 
     .line 43
-    :cond_1c
-    if-nez v1, :cond_29
+    :cond_0
+    if-nez v1, :cond_1
 
     .line 44
     iget-object v3, p0, Landroidx/compose/ui/node/NestedVectorStack;->vectors:Landroidx/compose/runtime/collection/MutableVector;
@@ -266,8 +266,8 @@
     iput v3, p0, Landroidx/compose/ui/node/NestedVectorStack;->current:I
 
     .line 47
-    :cond_29
-    :goto_29
+    :cond_1
+    :goto_0
     move-object v3, v2
 
     .local v3, "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
@@ -288,7 +288,7 @@
 .end method
 
 .method public final push(Landroidx/compose/runtime/collection/MutableVector;)V
-    .registers 3
+    .locals 1
     .param p1, "vector"    # Landroidx/compose/runtime/collection/MutableVector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -307,7 +307,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 52
     iget-object v0, p0, Landroidx/compose/ui/node/NestedVectorStack;->vectors:Landroidx/compose/runtime/collection/MutableVector;
@@ -331,6 +331,6 @@
     iput v0, p0, Landroidx/compose/ui/node/NestedVectorStack;->current:I
 
     .line 56
-    :cond_20
+    :cond_0
     return-void
 .end method

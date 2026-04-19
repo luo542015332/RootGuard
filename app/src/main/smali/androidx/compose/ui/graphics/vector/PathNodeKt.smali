@@ -134,7 +134,7 @@
 
 # direct methods
 .method public static final addPathNodes(CLjava/util/List;[FI)V
-    .registers 26
+    .locals 22
     .param p0, "$this$addPathNodes"    # C
     .param p1, "nodes"    # Ljava/util/List;
     .param p2, "args"    # [F
@@ -172,39 +172,39 @@
 
     const/4 v5, 0x1
 
-    if-ne v0, v3, :cond_1b
+    if-ne v0, v3, :cond_0
 
-    :goto_19
+    :goto_0
     move v3, v5
 
-    goto :goto_21
+    goto :goto_1
 
-    :cond_1b
+    :cond_0
     const/16 v3, 0x5a
 
-    if-ne v0, v3, :cond_20
+    if-ne v0, v3, :cond_1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_20
+    :cond_1
     move v3, v4
 
-    :goto_21
-    if-eqz v3, :cond_2a
+    :goto_1
+    if-eqz v3, :cond_2
 
     sget-object v3, Landroidx/compose/ui/graphics/vector/PathNode$Close;->INSTANCE:Landroidx/compose/ui/graphics/vector/PathNode$Close;
 
     invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 154
-    :cond_2a
+    :cond_2
     const/16 v3, 0x6d
 
     const/4 v6, 0x2
 
-    if-ne v0, v3, :cond_77
+    if-ne v0, v3, :cond_6
 
     .line 158
     nop
@@ -225,8 +225,8 @@
 
     .line 402
     .local v6, "index$iv":I
-    :goto_35
-    if-gt v6, v5, :cond_74
+    :goto_2
+    if-gt v6, v5, :cond_5
 
     .line 403
     move-object/from16 v7, p2
@@ -264,9 +264,9 @@
     .line 407
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_5e
+    if-eqz v8, :cond_3
 
-    if-lez v6, :cond_5e
+    if-lez v6, :cond_3
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -280,11 +280,11 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_6f
+    goto :goto_3
 
     .line 408
-    :cond_5e
-    if-lez v6, :cond_6e
+    :cond_3
+    if-lez v6, :cond_4
 
     .line 409
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -299,37 +299,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_6f
+    goto :goto_3
 
     .line 410
-    :cond_6e
+    :cond_4
     move-object v8, v7
 
     .line 404
-    :goto_6f
+    :goto_3
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 412
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_35
+    goto :goto_2
 
     .line 414
-    :cond_74
+    :cond_5
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 163
-    :cond_77
+    :cond_6
     const/16 v3, 0x4d
 
-    if-ne v0, v3, :cond_c2
+    if-ne v0, v3, :cond_a
 
     const/4 v3, 0x2
 
@@ -346,8 +346,8 @@
 
     .line 417
     .restart local v6    # "index$iv":I
-    :goto_80
-    if-gt v6, v5, :cond_bf
+    :goto_4
+    if-gt v6, v5, :cond_9
 
     .line 418
     move-object/from16 v7, p2
@@ -383,7 +383,7 @@
     nop
 
     .line 422
-    if-lez v6, :cond_a5
+    if-lez v6, :cond_7
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -397,15 +397,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_ba
+    goto :goto_5
 
     .line 423
-    :cond_a5
+    :cond_7
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_b9
+    if-eqz v8, :cond_8
 
-    if-lez v6, :cond_b9
+    if-lez v6, :cond_8
 
     .line 424
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -420,37 +420,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_ba
+    goto :goto_5
 
     .line 425
-    :cond_b9
+    :cond_8
     move-object v8, v7
 
     .line 419
-    :goto_ba
+    :goto_5
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 427
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_80
+    goto :goto_4
 
     .line 429
-    :cond_bf
+    :cond_9
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 167
-    :cond_c2
+    :cond_a
     const/16 v3, 0x6c
 
-    if-ne v0, v3, :cond_112
+    if-ne v0, v3, :cond_e
 
     .line 171
     nop
@@ -471,8 +471,8 @@
 
     .line 432
     .restart local v6    # "index$iv":I
-    :goto_cc
-    if-gt v6, v5, :cond_10f
+    :goto_6
+    if-gt v6, v5, :cond_d
 
     .line 433
     move-object/from16 v7, p2
@@ -510,9 +510,9 @@
     .line 437
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_f5
+    if-eqz v8, :cond_b
 
-    if-lez v6, :cond_f5
+    if-lez v6, :cond_b
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -526,15 +526,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_10a
+    goto :goto_7
 
     .line 438
-    :cond_f5
+    :cond_b
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_109
+    if-eqz v8, :cond_c
 
-    if-lez v6, :cond_109
+    if-lez v6, :cond_c
 
     .line 439
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -549,37 +549,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_10a
+    goto :goto_7
 
     .line 440
-    :cond_109
+    :cond_c
     move-object v8, v7
 
     .line 434
-    :goto_10a
+    :goto_7
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 442
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_cc
+    goto :goto_6
 
     .line 444
-    :cond_10f
+    :cond_d
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 176
-    :cond_112
+    :cond_e
     const/16 v3, 0x4c
 
-    if-ne v0, v3, :cond_161
+    if-ne v0, v3, :cond_12
 
     const/4 v3, 0x2
 
@@ -596,8 +596,8 @@
 
     .line 447
     .restart local v6    # "index$iv":I
-    :goto_11b
-    if-gt v6, v5, :cond_15e
+    :goto_8
+    if-gt v6, v5, :cond_11
 
     .line 448
     move-object/from16 v7, p2
@@ -635,9 +635,9 @@
     .line 452
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_144
+    if-eqz v8, :cond_f
 
-    if-lez v6, :cond_144
+    if-lez v6, :cond_f
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -651,15 +651,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_159
+    goto :goto_9
 
     .line 453
-    :cond_144
+    :cond_f
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_158
+    if-eqz v8, :cond_10
 
-    if-lez v6, :cond_158
+    if-lez v6, :cond_10
 
     .line 454
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -674,37 +674,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_159
+    goto :goto_9
 
     .line 455
-    :cond_158
+    :cond_10
     move-object v8, v7
 
     .line 449
-    :goto_159
+    :goto_9
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 457
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_11b
+    goto :goto_8
 
     .line 459
-    :cond_15e
+    :cond_11
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 180
-    :cond_161
+    :cond_12
     const/16 v3, 0x68
 
-    if-ne v0, v3, :cond_1ad
+    if-ne v0, v3, :cond_16
 
     .line 184
     nop
@@ -725,8 +725,8 @@
 
     .line 462
     .restart local v6    # "index$iv":I
-    :goto_16b
-    if-gt v6, v5, :cond_1aa
+    :goto_a
+    if-gt v6, v5, :cond_15
 
     .line 463
     move-object/from16 v7, p2
@@ -760,9 +760,9 @@
     .line 467
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_190
+    if-eqz v8, :cond_13
 
-    if-lez v6, :cond_190
+    if-lez v6, :cond_13
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -776,15 +776,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_1a5
+    goto :goto_b
 
     .line 468
-    :cond_190
+    :cond_13
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_1a4
+    if-eqz v8, :cond_14
 
-    if-lez v6, :cond_1a4
+    if-lez v6, :cond_14
 
     .line 469
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -799,37 +799,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_1a5
+    goto :goto_b
 
     .line 470
-    :cond_1a4
+    :cond_14
     move-object v8, v7
 
     .line 464
-    :goto_1a5
+    :goto_b
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 472
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_16b
+    goto :goto_a
 
     .line 474
-    :cond_1aa
+    :cond_15
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 189
-    :cond_1ad
+    :cond_16
     const/16 v3, 0x48
 
-    if-ne v0, v3, :cond_1f9
+    if-ne v0, v3, :cond_1a
 
     .line 193
     nop
@@ -850,8 +850,8 @@
 
     .line 477
     .restart local v6    # "index$iv":I
-    :goto_1b7
-    if-gt v6, v5, :cond_1f6
+    :goto_c
+    if-gt v6, v5, :cond_19
 
     .line 478
     move-object/from16 v7, p2
@@ -885,9 +885,9 @@
     .line 482
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_1dc
+    if-eqz v8, :cond_17
 
-    if-lez v6, :cond_1dc
+    if-lez v6, :cond_17
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -901,15 +901,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_1f1
+    goto :goto_d
 
     .line 483
-    :cond_1dc
+    :cond_17
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_1f0
+    if-eqz v8, :cond_18
 
-    if-lez v6, :cond_1f0
+    if-lez v6, :cond_18
 
     .line 484
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -924,37 +924,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_1f1
+    goto :goto_d
 
     .line 485
-    :cond_1f0
+    :cond_18
     move-object v8, v7
 
     .line 479
-    :goto_1f1
+    :goto_d
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 487
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_1b7
+    goto :goto_c
 
     .line 489
-    :cond_1f6
+    :cond_19
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 198
-    :cond_1f9
+    :cond_1a
     const/16 v3, 0x76
 
-    if-ne v0, v3, :cond_245
+    if-ne v0, v3, :cond_1e
 
     .line 202
     nop
@@ -975,8 +975,8 @@
 
     .line 492
     .restart local v6    # "index$iv":I
-    :goto_203
-    if-gt v6, v5, :cond_242
+    :goto_e
+    if-gt v6, v5, :cond_1d
 
     .line 493
     move-object/from16 v7, p2
@@ -1010,9 +1010,9 @@
     .line 497
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_228
+    if-eqz v8, :cond_1b
 
-    if-lez v6, :cond_228
+    if-lez v6, :cond_1b
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -1026,15 +1026,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_23d
+    goto :goto_f
 
     .line 498
-    :cond_228
+    :cond_1b
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_23c
+    if-eqz v8, :cond_1c
 
-    if-lez v6, :cond_23c
+    if-lez v6, :cond_1c
 
     .line 499
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -1049,37 +1049,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_23d
+    goto :goto_f
 
     .line 500
-    :cond_23c
+    :cond_1c
     move-object v8, v7
 
     .line 494
-    :goto_23d
+    :goto_f
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 502
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_203
+    goto :goto_e
 
     .line 504
-    :cond_242
+    :cond_1d
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 207
-    :cond_245
+    :cond_1e
     const/16 v3, 0x56
 
-    if-ne v0, v3, :cond_291
+    if-ne v0, v3, :cond_22
 
     .line 211
     nop
@@ -1100,8 +1100,8 @@
 
     .line 507
     .restart local v6    # "index$iv":I
-    :goto_24f
-    if-gt v6, v5, :cond_28e
+    :goto_10
+    if-gt v6, v5, :cond_21
 
     .line 508
     move-object/from16 v7, p2
@@ -1135,9 +1135,9 @@
     .line 512
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_274
+    if-eqz v8, :cond_1f
 
-    if-lez v6, :cond_274
+    if-lez v6, :cond_1f
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -1151,15 +1151,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_289
+    goto :goto_11
 
     .line 513
-    :cond_274
+    :cond_1f
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_288
+    if-eqz v8, :cond_20
 
-    if-lez v6, :cond_288
+    if-lez v6, :cond_20
 
     .line 514
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -1174,37 +1174,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_289
+    goto :goto_11
 
     .line 515
-    :cond_288
+    :cond_20
     move-object v8, v7
 
     .line 509
-    :goto_289
+    :goto_11
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 517
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_24f
+    goto :goto_10
 
     .line 519
-    :cond_28e
+    :cond_21
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 216
-    :cond_291
+    :cond_22
     const/16 v3, 0x63
 
-    if-ne v0, v3, :cond_2f4
+    if-ne v0, v3, :cond_26
 
     .line 220
     nop
@@ -1225,8 +1225,8 @@
 
     .line 522
     .restart local v6    # "index$iv":I
-    :goto_29b
-    if-gt v6, v5, :cond_2f1
+    :goto_12
+    if-gt v6, v5, :cond_25
 
     .line 523
     move-object/from16 v7, p2
@@ -1289,9 +1289,9 @@
     .line 527
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_2d7
+    if-eqz v8, :cond_23
 
-    if-lez v6, :cond_2d7
+    if-lez v6, :cond_23
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -1305,15 +1305,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_2ec
+    goto :goto_13
 
     .line 528
-    :cond_2d7
+    :cond_23
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_2eb
+    if-eqz v8, :cond_24
 
-    if-lez v6, :cond_2eb
+    if-lez v6, :cond_24
 
     .line 529
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -1328,37 +1328,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_2ec
+    goto :goto_13
 
     .line 530
-    :cond_2eb
+    :cond_24
     move-object v8, v7
 
     .line 524
-    :goto_2ec
+    :goto_13
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 532
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_29b
+    goto :goto_12
 
     .line 534
-    :cond_2f1
+    :cond_25
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 232
-    :cond_2f4
+    :cond_26
     const/16 v3, 0x43
 
-    if-ne v0, v3, :cond_356
+    if-ne v0, v3, :cond_2a
 
     const/4 v3, 0x6
 
@@ -1375,8 +1375,8 @@
 
     .line 537
     .restart local v6    # "index$iv":I
-    :goto_2fd
-    if-gt v6, v5, :cond_353
+    :goto_14
+    if-gt v6, v5, :cond_29
 
     .line 538
     move-object/from16 v7, p2
@@ -1439,9 +1439,9 @@
     .line 542
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_339
+    if-eqz v8, :cond_27
 
-    if-lez v6, :cond_339
+    if-lez v6, :cond_27
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -1455,15 +1455,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_34e
+    goto :goto_15
 
     .line 543
-    :cond_339
+    :cond_27
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_34d
+    if-eqz v8, :cond_28
 
-    if-lez v6, :cond_34d
+    if-lez v6, :cond_28
 
     .line 544
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -1478,39 +1478,39 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_34e
+    goto :goto_15
 
     .line 545
-    :cond_34d
+    :cond_28
     move-object v8, v7
 
     .line 539
-    :goto_34e
+    :goto_15
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 547
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_2fd
+    goto :goto_14
 
     .line 549
-    :cond_353
+    :cond_29
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 243
-    :cond_356
+    :cond_2a
     const/16 v3, 0x73
 
     const/4 v7, 0x4
 
-    if-ne v0, v3, :cond_3af
+    if-ne v0, v3, :cond_2e
 
     .line 247
     nop
@@ -1531,8 +1531,8 @@
 
     .line 552
     .restart local v6    # "index$iv":I
-    :goto_361
-    if-gt v6, v5, :cond_3ac
+    :goto_16
+    if-gt v6, v5, :cond_2d
 
     .line 553
     move-object/from16 v7, p2
@@ -1583,9 +1583,9 @@
     .line 557
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_392
+    if-eqz v8, :cond_2b
 
-    if-lez v6, :cond_392
+    if-lez v6, :cond_2b
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -1599,15 +1599,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_3a7
+    goto :goto_17
 
     .line 558
-    :cond_392
+    :cond_2b
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_3a6
+    if-eqz v8, :cond_2c
 
-    if-lez v6, :cond_3a6
+    if-lez v6, :cond_2c
 
     .line 559
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -1622,37 +1622,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_3a7
+    goto :goto_17
 
     .line 560
-    :cond_3a6
+    :cond_2c
     move-object v8, v7
 
     .line 554
-    :goto_3a7
+    :goto_17
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 562
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_361
+    goto :goto_16
 
     .line 564
-    :cond_3ac
+    :cond_2d
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 257
-    :cond_3af
+    :cond_2e
     const/16 v3, 0x53
 
-    if-ne v0, v3, :cond_407
+    if-ne v0, v3, :cond_32
 
     .line 261
     nop
@@ -1673,8 +1673,8 @@
 
     .line 567
     .restart local v6    # "index$iv":I
-    :goto_3b9
-    if-gt v6, v5, :cond_404
+    :goto_18
+    if-gt v6, v5, :cond_31
 
     .line 568
     move-object/from16 v7, p2
@@ -1725,9 +1725,9 @@
     .line 572
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_3ea
+    if-eqz v8, :cond_2f
 
-    if-lez v6, :cond_3ea
+    if-lez v6, :cond_2f
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -1741,15 +1741,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_3ff
+    goto :goto_19
 
     .line 573
-    :cond_3ea
+    :cond_2f
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_3fe
+    if-eqz v8, :cond_30
 
-    if-lez v6, :cond_3fe
+    if-lez v6, :cond_30
 
     .line 574
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -1764,37 +1764,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_3ff
+    goto :goto_19
 
     .line 575
-    :cond_3fe
+    :cond_30
     move-object v8, v7
 
     .line 569
-    :goto_3ff
+    :goto_19
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 577
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_3b9
+    goto :goto_18
 
     .line 579
-    :cond_404
+    :cond_31
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 271
-    :cond_407
+    :cond_32
     const/16 v3, 0x71
 
-    if-ne v0, v3, :cond_45f
+    if-ne v0, v3, :cond_36
 
     .line 275
     nop
@@ -1815,8 +1815,8 @@
 
     .line 582
     .restart local v6    # "index$iv":I
-    :goto_411
-    if-gt v6, v5, :cond_45c
+    :goto_1a
+    if-gt v6, v5, :cond_35
 
     .line 583
     move-object/from16 v7, p2
@@ -1867,9 +1867,9 @@
     .line 587
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_442
+    if-eqz v8, :cond_33
 
-    if-lez v6, :cond_442
+    if-lez v6, :cond_33
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -1883,15 +1883,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_457
+    goto :goto_1b
 
     .line 588
-    :cond_442
+    :cond_33
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_456
+    if-eqz v8, :cond_34
 
-    if-lez v6, :cond_456
+    if-lez v6, :cond_34
 
     .line 589
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -1906,37 +1906,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_457
+    goto :goto_1b
 
     .line 590
-    :cond_456
+    :cond_34
     move-object v8, v7
 
     .line 584
-    :goto_457
+    :goto_1b
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 592
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_411
+    goto :goto_1a
 
     .line 594
-    :cond_45c
+    :cond_35
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 285
-    :cond_45f
+    :cond_36
     const/16 v3, 0x51
 
-    if-ne v0, v3, :cond_4b6
+    if-ne v0, v3, :cond_3a
 
     const/4 v3, 0x4
 
@@ -1953,8 +1953,8 @@
 
     .line 597
     .restart local v6    # "index$iv":I
-    :goto_468
-    if-gt v6, v5, :cond_4b3
+    :goto_1c
+    if-gt v6, v5, :cond_39
 
     .line 598
     move-object/from16 v7, p2
@@ -2005,9 +2005,9 @@
     .line 602
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_499
+    if-eqz v8, :cond_37
 
-    if-lez v6, :cond_499
+    if-lez v6, :cond_37
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -2021,15 +2021,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_4ae
+    goto :goto_1d
 
     .line 603
-    :cond_499
+    :cond_37
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_4ad
+    if-eqz v8, :cond_38
 
-    if-lez v6, :cond_4ad
+    if-lez v6, :cond_38
 
     .line 604
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -2044,37 +2044,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_4ae
+    goto :goto_1d
 
     .line 605
-    :cond_4ad
+    :cond_38
     move-object v8, v7
 
     .line 599
-    :goto_4ae
+    :goto_1d
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 607
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_468
+    goto :goto_1c
 
     .line 609
-    :cond_4b3
+    :cond_39
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 294
-    :cond_4b6
+    :cond_3a
     const/16 v3, 0x74
 
-    if-ne v0, v3, :cond_506
+    if-ne v0, v3, :cond_3e
 
     .line 298
     nop
@@ -2095,8 +2095,8 @@
 
     .line 612
     .restart local v6    # "index$iv":I
-    :goto_4c0
-    if-gt v6, v5, :cond_503
+    :goto_1e
+    if-gt v6, v5, :cond_3d
 
     .line 613
     move-object/from16 v7, p2
@@ -2134,9 +2134,9 @@
     .line 617
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_4e9
+    if-eqz v8, :cond_3b
 
-    if-lez v6, :cond_4e9
+    if-lez v6, :cond_3b
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -2150,15 +2150,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_4fe
+    goto :goto_1f
 
     .line 618
-    :cond_4e9
+    :cond_3b
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_4fd
+    if-eqz v8, :cond_3c
 
-    if-lez v6, :cond_4fd
+    if-lez v6, :cond_3c
 
     .line 619
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -2173,37 +2173,37 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_4fe
+    goto :goto_1f
 
     .line 620
-    :cond_4fd
+    :cond_3c
     move-object v8, v7
 
     .line 614
-    :goto_4fe
+    :goto_1f
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 622
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_4c0
+    goto :goto_1e
 
     .line 624
-    :cond_503
+    :cond_3d
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 303
-    :cond_506
+    :cond_3e
     const/16 v3, 0x54
 
-    if-ne v0, v3, :cond_556
+    if-ne v0, v3, :cond_42
 
     .line 307
     nop
@@ -2224,8 +2224,8 @@
 
     .line 627
     .restart local v6    # "index$iv":I
-    :goto_510
-    if-gt v6, v5, :cond_553
+    :goto_20
+    if-gt v6, v5, :cond_41
 
     .line 628
     move-object/from16 v7, p2
@@ -2263,9 +2263,9 @@
     .line 632
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v8, :cond_539
+    if-eqz v8, :cond_3f
 
-    if-lez v6, :cond_539
+    if-lez v6, :cond_3f
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -2279,15 +2279,15 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_54e
+    goto :goto_21
 
     .line 633
-    :cond_539
+    :cond_3f
     instance-of v8, v7, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v8, :cond_54d
+    if-eqz v8, :cond_40
 
-    if-lez v6, :cond_54d
+    if-lez v6, :cond_40
 
     .line 634
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -2302,39 +2302,39 @@
 
     check-cast v8, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_54e
+    goto :goto_21
 
     .line 635
-    :cond_54d
+    :cond_40
     move-object v8, v7
 
     .line 629
-    :goto_54e
+    :goto_21
     invoke-interface {v1, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 637
     add-int/2addr v6, v3
 
     .end local v7    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_510
+    goto :goto_20
 
     .line 639
-    :cond_553
+    :cond_41
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v4    # "$i$f$pathNodesFromArgs":I
     .end local v5    # "end$iv":I
     .end local v6    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 312
-    :cond_556
+    :cond_42
     const/16 v3, 0x61
 
     const/4 v6, 0x0
 
-    if-ne v0, v3, :cond_5d3
+    if-ne v0, v3, :cond_48
 
     const/4 v3, 0x7
 
@@ -2351,8 +2351,8 @@
 
     .line 642
     .local v9, "index$iv":I
-    :goto_560
-    if-gt v9, v8, :cond_5d0
+    :goto_22
+    if-gt v9, v8, :cond_47
 
     .line 643
     move-object/from16 v10, p2
@@ -2389,17 +2389,17 @@
 
     move-result v13
 
-    if-eqz v13, :cond_57f
+    if-eqz v13, :cond_43
 
     move/from16 v17, v5
 
-    goto :goto_581
+    goto :goto_23
 
-    :cond_57f
+    :cond_43
     move/from16 v17, v4
 
     .line 318
-    :goto_581
+    :goto_23
     add-int/lit8 v13, v11, 0x4
 
     aget v13, v10, v13
@@ -2408,17 +2408,17 @@
 
     move-result v13
 
-    if-eqz v13, :cond_58e
+    if-eqz v13, :cond_44
 
     move/from16 v18, v5
 
-    goto :goto_590
+    goto :goto_24
 
-    :cond_58e
+    :cond_44
     move/from16 v18, v4
 
     .line 319
-    :goto_590
+    :goto_24
     add-int/lit8 v13, v11, 0x5
 
     aget v19, v10, v13
@@ -2448,9 +2448,9 @@
     .line 647
     instance-of v11, v10, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v11, :cond_5b6
+    if-eqz v11, :cond_45
 
-    if-lez v9, :cond_5b6
+    if-lez v9, :cond_45
 
     new-instance v11, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -2464,15 +2464,15 @@
 
     check-cast v11, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_5cb
+    goto :goto_25
 
     .line 648
-    :cond_5b6
+    :cond_45
     instance-of v11, v10, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v11, :cond_5ca
+    if-eqz v11, :cond_46
 
-    if-lez v9, :cond_5ca
+    if-lez v9, :cond_46
 
     .line 649
     new-instance v11, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -2487,37 +2487,37 @@
 
     check-cast v11, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_5cb
+    goto :goto_25
 
     .line 650
-    :cond_5ca
+    :cond_46
     move-object v11, v10
 
     .line 644
-    :goto_5cb
+    :goto_25
     invoke-interface {v1, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 652
     add-int/2addr v9, v3
 
     .end local v10    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_560
+    goto :goto_22
 
     .line 654
-    :cond_5d0
+    :cond_47
     nop
 
     .end local v3    # "numArgs$iv":I
     .end local v7    # "$i$f$pathNodesFromArgs":I
     .end local v8    # "end$iv":I
     .end local v9    # "index$iv":I
-    goto/16 :goto_64d
+    goto/16 :goto_2a
 
     .line 324
-    :cond_5d3
+    :cond_48
     const/16 v3, 0x41
 
-    if-ne v0, v3, :cond_64e
+    if-ne v0, v3, :cond_4e
 
     const/4 v3, 0x7
 
@@ -2534,8 +2534,8 @@
 
     .line 657
     .restart local v9    # "index$iv":I
-    :goto_5dc
-    if-gt v9, v8, :cond_64c
+    :goto_26
+    if-gt v9, v8, :cond_4d
 
     .line 658
     move-object/from16 v10, p2
@@ -2572,17 +2572,17 @@
 
     move-result v13
 
-    if-eqz v13, :cond_5fb
+    if-eqz v13, :cond_49
 
     move/from16 v17, v5
 
-    goto :goto_5fd
+    goto :goto_27
 
-    :cond_5fb
+    :cond_49
     move/from16 v17, v4
 
     .line 330
-    :goto_5fd
+    :goto_27
     add-int/lit8 v13, v11, 0x4
 
     aget v13, v10, v13
@@ -2591,17 +2591,17 @@
 
     move-result v13
 
-    if-eqz v13, :cond_60a
+    if-eqz v13, :cond_4a
 
     move/from16 v18, v5
 
-    goto :goto_60c
+    goto :goto_28
 
-    :cond_60a
+    :cond_4a
     move/from16 v18, v4
 
     .line 331
-    :goto_60c
+    :goto_28
     add-int/lit8 v13, v11, 0x5
 
     aget v19, v10, v13
@@ -2631,9 +2631,9 @@
     .line 662
     instance-of v11, v10, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v11, :cond_632
+    if-eqz v11, :cond_4b
 
-    if-lez v9, :cond_632
+    if-lez v9, :cond_4b
 
     new-instance v11, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -2647,15 +2647,15 @@
 
     check-cast v11, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_647
+    goto :goto_29
 
     .line 663
-    :cond_632
+    :cond_4b
     instance-of v11, v10, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v11, :cond_646
+    if-eqz v11, :cond_4c
 
-    if-lez v9, :cond_646
+    if-lez v9, :cond_4c
 
     .line 664
     new-instance v11, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -2670,24 +2670,24 @@
 
     check-cast v11, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_647
+    goto :goto_29
 
     .line 665
-    :cond_646
+    :cond_4c
     move-object v11, v10
 
     .line 659
-    :goto_647
+    :goto_29
     invoke-interface {v1, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 667
     add-int/2addr v9, v3
 
     .end local v10    # "node$iv":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_5dc
+    goto :goto_26
 
     .line 669
-    :cond_64c
+    :cond_4d
     nop
 
     .line 338
@@ -2695,11 +2695,11 @@
     .end local v7    # "$i$f$pathNodesFromArgs":I
     .end local v8    # "end$iv":I
     .end local v9    # "index$iv":I
-    :goto_64d
+    :goto_2a
     return-void
 
     .line 336
-    :cond_64e
+    :cond_4e
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -2726,7 +2726,7 @@
 .end method
 
 .method private static final pathNodesFromArgs(Ljava/util/List;[FIILkotlin/jvm/functions/Function2;)V
-    .registers 12
+    .locals 7
     .param p0, "nodes"    # Ljava/util/List;
     .param p1, "args"    # [F
     .param p2, "count"    # I
@@ -2759,8 +2759,8 @@
 
     .line 349
     .local v2, "index":I
-    :goto_4
-    if-gt v2, v1, :cond_3f
+    :goto_0
+    if-gt v2, v1, :cond_2
 
     .line 350
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2780,9 +2780,9 @@
     .line 354
     instance-of v4, v3, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_0
 
-    if-lez v2, :cond_25
+    if-lez v2, :cond_0
 
     new-instance v4, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
@@ -2796,15 +2796,15 @@
 
     check-cast v4, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 355
-    :cond_25
+    :cond_0
     instance-of v4, v3, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v4, :cond_39
+    if-eqz v4, :cond_1
 
-    if-lez v2, :cond_39
+    if-lez v2, :cond_1
 
     .line 356
     new-instance v4, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
@@ -2819,23 +2819,23 @@
 
     check-cast v4, Landroidx/compose/ui/graphics/vector/PathNode;
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 357
-    :cond_39
+    :cond_1
     move-object v4, v3
 
     .line 351
-    :goto_3a
+    :goto_1
     invoke-interface {p0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 359
     add-int/2addr v2, p3
 
     .end local v3    # "node":Landroidx/compose/ui/graphics/vector/PathNode;
-    goto :goto_4
+    goto :goto_0
 
     .line 361
-    :cond_3f
+    :cond_2
     return-void
 .end method

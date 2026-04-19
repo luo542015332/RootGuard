@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final layout(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$layout"    # Landroidx/compose/ui/Modifier;
     .param p1, "measure"    # Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;

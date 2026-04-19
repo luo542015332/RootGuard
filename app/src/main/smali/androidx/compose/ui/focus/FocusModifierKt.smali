@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final focusModifier(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 2
+    .locals 1
     .param p0, "$this$focusModifier"    # Landroidx/compose/ui/Modifier;
     .annotation runtime Lkotlin/Deprecated;
         message = "Replaced by focusTarget"
@@ -51,7 +51,7 @@
 .end method
 
 .method public static final focusTarget(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 2
+    .locals 1
     .param p0, "$this$focusTarget"    # Landroidx/compose/ui/Modifier;
 
     const-string v0, "<this>"

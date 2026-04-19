@@ -1,0 +1,22 @@
+[
+{
+  "directory": "D:/PandaProjects/PandaTurbo/app/.cxx/RelWithDebInfo/16r3i1b4/arm64-v8a",
+  "command": "C:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android26 --sysroot=C:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dturbo_nativeloader_EXPORTS -ID:/PandaProjects/PandaTurbo/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++17 -fno-rtti -fno-exceptions -O2 -g -DNDEBUG -fPIC -std=c++17 -o CMakeFiles\\turbo_nativeloader.dir\\turbo_jni.cpp.o -c D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\turbo_jni.cpp",
+  "file": "D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\turbo_jni.cpp"
+},
+{
+  "directory": "D:/PandaProjects/PandaTurbo/app/.cxx/RelWithDebInfo/16r3i1b4/arm64-v8a",
+  "command": "C:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android26 --sysroot=C:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dturbo_nativeloader_EXPORTS -ID:/PandaProjects/PandaTurbo/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++17 -fno-rtti -fno-exceptions -O2 -g -DNDEBUG -fPIC -std=c++17 -o CMakeFiles\\turbo_nativeloader.dir\\mount_ns.cpp.o -c D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\mount_ns.cpp",
+  "file": "D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\mount_ns.cpp"
+},
+{
+  "directory": "D:/PandaProjects/PandaTurbo/app/.cxx/RelWithDebInfo/16r3i1b4/arm64-v8a",
+  "command": "C:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android26 --sysroot=C:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dturbo_nativeloader_EXPORTS -ID:/PandaProjects/PandaTurbo/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++17 -fno-rtti -fno-exceptions -O2 -g -DNDEBUG -fPIC -std=c++17 -o CMakeFiles\\turbo_nativeloader.dir\\mountinfo_parser.cpp.o -c D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\mountinfo_parser.cpp",
+  "file": "D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\mountinfo_parser.cpp"
+},
+{
+  "directory": "D:/PandaProjects/PandaTurbo/app/.cxx/RelWithDebInfo/16r3i1b4/arm64-v8a",
+  "command": "C:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android26 --sysroot=C:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dturbo_nativeloader_EXPORTS -ID:/PandaProjects/PandaTurbo/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++17 -fno-rtti -fno-exceptions -O2 -g -DNDEBUG -fPIC -std=c++17 -o CMakeFiles\\turbo_nativeloader.dir\\map_parser.cpp.o -c D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\map_parser.cpp",
+  "file": "D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\map_parser.cpp"
+}
+]

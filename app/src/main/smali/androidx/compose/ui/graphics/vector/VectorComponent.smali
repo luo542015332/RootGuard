@@ -119,7 +119,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 6
+    .locals 5
 
     .line 89
     const/4 v0, 0x0
@@ -213,7 +213,7 @@
 .end method
 
 .method public static final synthetic access$doInvalidate(Landroidx/compose/ui/graphics/vector/VectorComponent;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/vector/VectorComponent;
 
     .line 89
@@ -223,7 +223,7 @@
 .end method
 
 .method private final doInvalidate()V
-    .registers 2
+    .locals 1
 
     .line 105
     const/4 v0, 0x1
@@ -242,7 +242,7 @@
 
 # virtual methods
 .method public draw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 4
+    .locals 2
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     const-string v0, "<this>"
@@ -261,7 +261,7 @@
 .end method
 
 .method public final draw(Landroidx/compose/ui/graphics/drawscope/DrawScope;FLandroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 13
+    .locals 9
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p2, "alpha"    # F
     .param p3, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
@@ -271,23 +271,23 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 143
-    if-nez p3, :cond_c
+    if-nez p3, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/VectorComponent;->getIntrinsicColorFilter$ui_release()Landroidx/compose/ui/graphics/ColorFilter;
 
     move-result-object v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     move-object v0, p3
 
     .line 146
     .local v0, "targetColorFilter":Landroidx/compose/ui/graphics/ColorFilter;
-    :goto_d
+    :goto_0
     iget-boolean v1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->isDirty:Z
 
-    if-nez v1, :cond_1d
+    if-nez v1, :cond_1
 
     iget-wide v1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->previousDrawSize:J
 
@@ -299,10 +299,10 @@
 
     move-result v1
 
-    if-nez v1, :cond_76
+    if-nez v1, :cond_2
 
     .line 147
-    :cond_1d
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->root:Landroidx/compose/ui/graphics/vector/GroupComponent;
 
     invoke-interface {p1}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -409,7 +409,7 @@
     iput-wide v1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->previousDrawSize:J
 
     .line 158
-    :cond_76
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->cacheDrawScope:Landroidx/compose/ui/graphics/vector/DrawCache;
 
     invoke-virtual {v1, p1, p2, v0}, Landroidx/compose/ui/graphics/vector/DrawCache;->drawInto(Landroidx/compose/ui/graphics/drawscope/DrawScope;FLandroidx/compose/ui/graphics/ColorFilter;)V
@@ -419,7 +419,7 @@
 .end method
 
 .method public final getIntrinsicColorFilter$ui_release()Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 4
+    .locals 3
 
     .line 115
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->intrinsicColorFilter$delegate:Landroidx/compose/runtime/MutableState;
@@ -448,7 +448,7 @@
 .end method
 
 .method public final getInvalidateCallback$ui_release()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -465,7 +465,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 99
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->root:Landroidx/compose/ui/graphics/vector/GroupComponent;
@@ -478,7 +478,7 @@
 .end method
 
 .method public final getRoot()Landroidx/compose/ui/graphics/vector/GroupComponent;
-    .registers 2
+    .locals 1
 
     .line 90
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->root:Landroidx/compose/ui/graphics/vector/GroupComponent;
@@ -487,7 +487,7 @@
 .end method
 
 .method public final getViewportHeight()F
-    .registers 2
+    .locals 1
 
     .line 125
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->viewportHeight:F
@@ -496,7 +496,7 @@
 .end method
 
 .method public final getViewportWidth()F
-    .registers 2
+    .locals 1
 
     .line 117
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->viewportWidth:F
@@ -505,7 +505,7 @@
 .end method
 
 .method public final setIntrinsicColorFilter$ui_release(Landroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 115
@@ -532,7 +532,7 @@
 .end method
 
 .method public final setInvalidateCallback$ui_release(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -554,7 +554,7 @@
 .end method
 
 .method public final setName(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
     const-string/jumbo v0, "value"
@@ -571,7 +571,7 @@
 .end method
 
 .method public final setViewportHeight(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 127
@@ -579,17 +579,17 @@
 
     cmpg-float v0, v0, p1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-nez v0, :cond_10
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 128
     iput p1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->viewportHeight:F
@@ -598,12 +598,12 @@
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/VectorComponent;->doInvalidate()V
 
     .line 131
-    :cond_10
+    :cond_1
     return-void
 .end method
 
 .method public final setViewportWidth(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 119
@@ -611,17 +611,17 @@
 
     cmpg-float v0, v0, p1
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-nez v0, :cond_10
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 120
     iput p1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent;->viewportWidth:F
@@ -630,12 +630,12 @@
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/VectorComponent;->doInvalidate()V
 
     .line 123
-    :cond_10
+    :cond_1
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 166
     new-instance v0, Ljava/lang/StringBuilder;

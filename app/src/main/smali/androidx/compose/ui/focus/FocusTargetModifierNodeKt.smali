@@ -25,7 +25,7 @@
 
 # direct methods
 .method public static final FocusTargetModifierNode()Landroidx/compose/ui/focus/FocusTargetModifierNode;
-    .registers 1
+    .locals 1
 
     .line 39
     new-instance v0, Landroidx/compose/ui/focus/FocusTargetNode;

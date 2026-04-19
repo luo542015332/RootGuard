@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/foundation/gestures/DraggableKt$onDragOrUp$motionFromChange$1;
 
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/input/pointer/PointerInputChange;)Ljava/lang/Float;
-    .registers 4
+    .locals 2
     .param p1, "it"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string/jumbo v0, "it"
@@ -102,7 +102,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 537

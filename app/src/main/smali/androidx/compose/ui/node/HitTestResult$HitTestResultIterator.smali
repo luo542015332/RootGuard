@@ -77,7 +77,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/HitTestResult;III)V
-    .registers 5
+    .locals 0
     .param p1, "this$0"    # Landroidx/compose/ui/node/HitTestResult;
     .param p2, "index"    # I
     .param p3, "minIndex"    # I
@@ -107,32 +107,32 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/node/HitTestResult;IIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 8
+    .locals 1
 
     .line 243
     and-int/lit8 p6, p5, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     .line 244
     move p2, v0
 
     .line 243
-    :cond_6
+    :cond_0
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_1
 
     .line 245
     move p3, v0
 
     .line 243
-    :cond_b
+    :cond_1
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_13
+    if-eqz p5, :cond_2
 
     .line 246
     invoke-virtual {p1}, Landroidx/compose/ui/node/HitTestResult;->size()I
@@ -140,7 +140,7 @@
     move-result p4
 
     .line 243
-    :cond_13
+    :cond_2
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;-><init>(Landroidx/compose/ui/node/HitTestResult;III)V
 
     .line 261
@@ -150,7 +150,7 @@
 
 # virtual methods
 .method public add(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -162,7 +162,7 @@
 .end method
 
 .method public bridge synthetic add(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -174,7 +174,7 @@
 .end method
 
 .method public final getIndex()I
-    .registers 2
+    .locals 1
 
     .line 244
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->index:I
@@ -183,7 +183,7 @@
 .end method
 
 .method public final getMaxIndex()I
-    .registers 2
+    .locals 1
 
     .line 246
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->maxIndex:I
@@ -192,7 +192,7 @@
 .end method
 
 .method public final getMinIndex()I
-    .registers 2
+    .locals 1
 
     .line 245
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->minIndex:I
@@ -201,54 +201,53 @@
 .end method
 
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 248
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->index:I
 
     iget v1, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->maxIndex:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public hasPrevious()Z
-    .registers 3
+    .locals 2
 
     .line 250
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->index:I
 
     iget v1, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->minIndex:I
 
-    if-le v0, v1, :cond_8
+    if-le v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public next()Landroidx/compose/ui/Modifier$Node;
-    .registers 4
+    .locals 3
 
     .line 253
     iget-object v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->this$0:Landroidx/compose/ui/node/HitTestResult;
 
-    # getter for: Landroidx/compose/ui/node/HitTestResult;->values:[Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/ui/node/HitTestResult;->access$getValues$p(Landroidx/compose/ui/node/HitTestResult;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -271,7 +270,7 @@
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 243
     invoke-virtual {p0}, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->next()Landroidx/compose/ui/Modifier$Node;
@@ -282,7 +281,7 @@
 .end method
 
 .method public nextIndex()I
-    .registers 3
+    .locals 2
 
     .line 255
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->index:I
@@ -295,12 +294,11 @@
 .end method
 
 .method public previous()Landroidx/compose/ui/Modifier$Node;
-    .registers 3
+    .locals 2
 
     .line 258
     iget-object v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->this$0:Landroidx/compose/ui/node/HitTestResult;
 
-    # getter for: Landroidx/compose/ui/node/HitTestResult;->values:[Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/ui/node/HitTestResult;->access$getValues$p(Landroidx/compose/ui/node/HitTestResult;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -323,7 +321,7 @@
 .end method
 
 .method public bridge synthetic previous()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 243
     invoke-virtual {p0}, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->previous()Landroidx/compose/ui/Modifier$Node;
@@ -334,7 +332,7 @@
 .end method
 
 .method public previousIndex()I
-    .registers 3
+    .locals 2
 
     .line 260
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult$HitTestResultIterator;->index:I
@@ -349,7 +347,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -361,7 +359,7 @@
 .end method
 
 .method public set(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -373,7 +371,7 @@
 .end method
 
 .method public bridge synthetic set(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -385,7 +383,7 @@
 .end method
 
 .method public final setIndex(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 244

@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroid/view/Choreographer$FrameCallback;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/DefaultChoreographerFrameClock$withFrameNanos$2$1;->$callback:Landroid/view/Choreographer$FrameCallback;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 69
@@ -84,11 +84,10 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
     .param p1, "it"    # Ljava/lang/Throwable;
 
     .line 69
-    # getter for: Landroidx/compose/runtime/DefaultChoreographerFrameClock;->choreographer:Landroid/view/Choreographer;
     invoke-static {}, Landroidx/compose/runtime/DefaultChoreographerFrameClock;->access$getChoreographer$p()Landroid/view/Choreographer;
 
     move-result-object v0

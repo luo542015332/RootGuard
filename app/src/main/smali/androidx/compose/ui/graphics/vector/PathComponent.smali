@@ -166,7 +166,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 175
     const/4 v0, 0x0
@@ -258,7 +258,7 @@
 .end method
 
 .method private final getPathMeasure()Landroidx/compose/ui/graphics/PathMeasure;
-    .registers 2
+    .locals 1
 
     .line 283
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->pathMeasure$delegate:Lkotlin/Lazy;
@@ -273,7 +273,7 @@
 .end method
 
 .method private final updatePath()V
-    .registers 3
+    .locals 2
 
     .line 287
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->pathData:Ljava/util/List;
@@ -290,7 +290,7 @@
 .end method
 
 .method private final updateRenderPath()V
-    .registers 8
+    .locals 7
 
     .line 292
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathStart:F
@@ -303,45 +303,45 @@
 
     const/4 v3, 0x1
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_0
 
     move v0, v3
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v2
 
-    :goto_c
+    :goto_0
     const/high16 v4, 0x3f800000    # 1.0f
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_2
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathEnd:F
 
     cmpg-float v0, v0, v4
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     move v0, v3
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move v0, v2
 
-    :goto_19
-    if-eqz v0, :cond_20
+    :goto_1
+    if-eqz v0, :cond_2
 
     .line 293
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->path:Landroidx/compose/ui/graphics/Path;
 
     iput-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->renderPath:Landroidx/compose/ui/graphics/Path;
 
-    goto :goto_7e
+    goto :goto_3
 
     .line 295
-    :cond_20
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->renderPath:Landroidx/compose/ui/graphics/Path;
 
     iget-object v5, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->path:Landroidx/compose/ui/graphics/Path;
@@ -350,7 +350,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_3
 
     .line 296
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
@@ -359,10 +359,10 @@
 
     iput-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->renderPath:Landroidx/compose/ui/graphics/Path;
 
-    goto :goto_41
+    goto :goto_2
 
     .line 299
-    :cond_31
+    :cond_3
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->renderPath:Landroidx/compose/ui/graphics/Path;
 
     invoke-interface {v0}, Landroidx/compose/ui/graphics/Path;->getFillType-Rg-k1Os()I
@@ -382,7 +382,7 @@
 
     .line 304
     .end local v0    # "fillType":I
-    :goto_41
+    :goto_2
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->getPathMeasure()Landroidx/compose/ui/graphics/PathMeasure;
 
     move-result-object v0
@@ -426,7 +426,7 @@
     .local v6, "end":F
     cmpl-float v4, v2, v6
 
-    if-lez v4, :cond_75
+    if-lez v4, :cond_4
 
     .line 309
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->getPathMeasure()Landroidx/compose/ui/graphics/PathMeasure;
@@ -446,10 +446,10 @@
 
     invoke-interface {v4, v1, v6, v5, v3}, Landroidx/compose/ui/graphics/PathMeasure;->getSegment(FFLandroidx/compose/ui/graphics/Path;Z)Z
 
-    goto :goto_7e
+    goto :goto_3
 
     .line 312
-    :cond_75
+    :cond_4
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->getPathMeasure()Landroidx/compose/ui/graphics/PathMeasure;
 
     move-result-object v1
@@ -462,14 +462,14 @@
     .end local v0    # "length":F
     .end local v2    # "start":F
     .end local v6    # "end":F
-    :goto_7e
+    :goto_3
     return-void
 .end method
 
 
 # virtual methods
 .method public draw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 23
+    .locals 21
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     move-object/from16 v0, p0
@@ -483,25 +483,25 @@
     .line 318
     iget-boolean v1, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->isPathDirty:Z
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 319
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->updatePath()V
 
-    goto :goto_18
+    goto :goto_0
 
     .line 320
-    :cond_11
+    :cond_0
     iget-boolean v1, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->isTrimPathDirty:Z
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_1
 
     .line 321
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->updateRenderPath()V
 
     .line 323
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->isPathDirty:Z
@@ -512,7 +512,7 @@
     .line 326
     iget-object v4, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->fill:Landroidx/compose/ui/graphics/Brush;
 
-    if-eqz v4, :cond_31
+    if-eqz v4, :cond_2
 
     .line 537
     .local v4, "it":Landroidx/compose/ui/graphics/Brush;
@@ -541,10 +541,10 @@
     .line 327
     .end local v4    # "it":Landroidx/compose/ui/graphics/Brush;
     .end local v12    # "$i$a$-let-PathComponent$draw$1":I
-    :cond_31
+    :cond_2
     iget-object v4, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->stroke:Landroidx/compose/ui/graphics/Brush;
 
-    if-eqz v4, :cond_72
+    if-eqz v4, :cond_5
 
     .restart local v4    # "it":Landroidx/compose/ui/graphics/Brush;
     const/4 v12, 0x0
@@ -557,20 +557,20 @@
     .local v2, "targetStroke":Landroidx/compose/ui/graphics/drawscope/Stroke;
     iget-boolean v3, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->isStrokeDirty:Z
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_4
 
-    if-nez v2, :cond_3f
+    if-nez v2, :cond_3
 
-    goto :goto_41
+    goto :goto_1
 
-    :cond_3f
+    :cond_3
     move-object v1, v2
 
-    goto :goto_5f
+    goto :goto_2
 
     .line 331
-    :cond_41
-    :goto_41
+    :cond_4
+    :goto_1
     new-instance v3, Landroidx/compose/ui/graphics/drawscope/Stroke;
 
     iget v14, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->strokeLineWidth:F
@@ -609,7 +609,7 @@
     .line 335
     .end local v2    # "targetStroke":Landroidx/compose/ui/graphics/drawscope/Stroke;
     .local v1, "targetStroke":Landroidx/compose/ui/graphics/drawscope/Stroke;
-    :goto_5f
+    :goto_2
     iget-object v3, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->renderPath:Landroidx/compose/ui/graphics/Path;
 
     iget v5, v0, Landroidx/compose/ui/graphics/vector/PathComponent;->strokeAlpha:F
@@ -640,12 +640,12 @@
     nop
 
     .line 337
-    :cond_72
+    :cond_5
     return-void
 .end method
 
 .method public final getFill()Landroidx/compose/ui/graphics/Brush;
-    .registers 2
+    .locals 1
 
     .line 182
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->fill:Landroidx/compose/ui/graphics/Brush;
@@ -654,7 +654,7 @@
 .end method
 
 .method public final getFillAlpha()F
-    .registers 2
+    .locals 1
 
     .line 188
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->fillAlpha:F
@@ -663,7 +663,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->name:Ljava/lang/String;
@@ -672,7 +672,7 @@
 .end method
 
 .method public final getPathData()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -689,7 +689,7 @@
 .end method
 
 .method public final getPathFillType-Rg-k1Os()I
-    .registers 2
+    .locals 1
 
     .line 201
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->pathFillType:I
@@ -698,7 +698,7 @@
 .end method
 
 .method public final getStroke()Landroidx/compose/ui/graphics/Brush;
-    .registers 2
+    .locals 1
 
     .line 220
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->stroke:Landroidx/compose/ui/graphics/Brush;
@@ -707,7 +707,7 @@
 .end method
 
 .method public final getStrokeAlpha()F
-    .registers 2
+    .locals 1
 
     .line 208
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->strokeAlpha:F
@@ -716,7 +716,7 @@
 .end method
 
 .method public final getStrokeLineCap-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 226
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->strokeLineCap:I
@@ -725,7 +725,7 @@
 .end method
 
 .method public final getStrokeLineJoin-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 233
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->strokeLineJoin:I
@@ -734,7 +734,7 @@
 .end method
 
 .method public final getStrokeLineMiter()F
-    .registers 2
+    .locals 1
 
     .line 240
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->strokeLineMiter:F
@@ -743,7 +743,7 @@
 .end method
 
 .method public final getStrokeLineWidth()F
-    .registers 2
+    .locals 1
 
     .line 214
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->strokeLineWidth:F
@@ -752,7 +752,7 @@
 .end method
 
 .method public final getTrimPathEnd()F
-    .registers 2
+    .locals 1
 
     .line 256
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathEnd:F
@@ -761,7 +761,7 @@
 .end method
 
 .method public final getTrimPathOffset()F
-    .registers 2
+    .locals 1
 
     .line 265
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathOffset:F
@@ -770,7 +770,7 @@
 .end method
 
 .method public final getTrimPathStart()F
-    .registers 2
+    .locals 1
 
     .line 247
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathStart:F
@@ -779,7 +779,7 @@
 .end method
 
 .method public final setFill(Landroidx/compose/ui/graphics/Brush;)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # Landroidx/compose/ui/graphics/Brush;
 
     .line 184
@@ -793,7 +793,7 @@
 .end method
 
 .method public final setFillAlpha(F)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # F
 
     .line 190
@@ -807,7 +807,7 @@
 .end method
 
 .method public final setName(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
     const-string/jumbo v0, "value"
@@ -825,7 +825,7 @@
 .end method
 
 .method public final setPathData(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -857,7 +857,7 @@
 .end method
 
 .method public final setPathFillType-oQ8Xj4U(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 203
@@ -876,7 +876,7 @@
 .end method
 
 .method public final setStroke(Landroidx/compose/ui/graphics/Brush;)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # Landroidx/compose/ui/graphics/Brush;
 
     .line 222
@@ -890,7 +890,7 @@
 .end method
 
 .method public final setStrokeAlpha(F)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # F
 
     .line 210
@@ -904,7 +904,7 @@
 .end method
 
 .method public final setStrokeLineCap-BeK7IIE(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 228
@@ -923,7 +923,7 @@
 .end method
 
 .method public final setStrokeLineJoin-Ww9F2mQ(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 235
@@ -942,7 +942,7 @@
 .end method
 
 .method public final setStrokeLineMiter(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 242
@@ -961,7 +961,7 @@
 .end method
 
 .method public final setStrokeLineWidth(F)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # F
 
     .line 216
@@ -975,7 +975,7 @@
 .end method
 
 .method public final setTrimPathEnd(F)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # F
 
     .line 258
@@ -985,17 +985,17 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-nez v0, :cond_13
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 259
     iput p1, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathEnd:F
@@ -1007,12 +1007,12 @@
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->invalidate()V
 
     .line 263
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method public final setTrimPathOffset(F)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # F
 
     .line 267
@@ -1022,17 +1022,17 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-nez v0, :cond_13
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 268
     iput p1, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathOffset:F
@@ -1044,12 +1044,12 @@
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->invalidate()V
 
     .line 272
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method public final setTrimPathStart(F)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # F
 
     .line 249
@@ -1059,17 +1059,17 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
-    if-nez v0, :cond_13
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 250
     iput p1, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->trimPathStart:F
@@ -1081,12 +1081,12 @@
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/PathComponent;->invalidate()V
 
     .line 254
-    :cond_13
+    :cond_1
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 339
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/PathComponent;->path:Landroidx/compose/ui/graphics/Path;

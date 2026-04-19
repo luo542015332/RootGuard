@@ -36,7 +36,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/CanvasZHelper;
 
@@ -48,7 +48,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 91
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final enableZ(Landroid/graphics/Canvas;Z)V
-    .registers 4
+    .locals 1
     .param p1, "canvas"    # Landroid/graphics/Canvas;
     .param p2, "enable"    # Z
 
@@ -68,18 +68,18 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 95
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     .line 96
     invoke-virtual {p1}, Landroid/graphics/Canvas;->enableZ()V
 
-    goto :goto_f
+    goto :goto_0
 
     .line 98
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->disableZ()V
 
     .line 100
-    :goto_f
+    :goto_0
     return-void
 .end method

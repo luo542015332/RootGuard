@@ -159,7 +159,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/PlatformMagnifierFactory;Landroidx/compose/foundation/MagnifierStyle;Landroid/view/View;Landroidx/compose/ui/unit/Density;FLkotlinx/coroutines/flow/MutableSharedFlow;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;Lkotlin/coroutines/Continuation;)V
-    .registers 15
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -238,7 +238,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 19
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -295,7 +295,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -309,7 +309,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -338,7 +338,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 22
+    .locals 20
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -349,7 +349,7 @@
 
     iget v2, v1, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1;->label:I
 
-    packed-switch v2, :pswitch_data_c2
+    packed-switch v2, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -359,7 +359,7 @@
 
     throw v0
 
-    :pswitch_14
+    :pswitch_0
     move-object/from16 v2, p0
 
     .local v2, "this":Landroidx/compose/foundation/MagnifierKt$magnifier$4$1;
@@ -373,24 +373,24 @@
     check-cast v4, Landroidx/compose/foundation/PlatformMagnifier;
 
     .local v4, "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
-    :try_start_1d
+    :try_start_0
     invoke-static {v3}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_20
-    .catchall {:try_start_1d .. :try_end_20} :catchall_22
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto/16 :goto_b5
+    goto/16 :goto_1
 
     .line 367
-    :catchall_22
+    :catchall_0
     move-exception v0
 
-    goto/16 :goto_be
+    goto/16 :goto_2
 
     .line 65535
     .end local v2    # "this":Landroidx/compose/foundation/MagnifierKt$magnifier$4$1;
     .end local v3    # "$result":Ljava/lang/Object;
     .end local v4    # "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
-    :pswitch_25
+    :pswitch_1
     invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v2, p0
@@ -441,12 +441,11 @@
 
     .line 318
     .local v13, "$i$a$-also-MagnifierKt$magnifier$4$1$previousSize$1":I
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$6(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
     invoke-static {v10}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$6(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
 
     move-result-object v10
 
-    if-eqz v10, :cond_69
+    if-eqz v10, :cond_0
 
     .line 319
     nop
@@ -485,19 +484,19 @@
     .line 318
     invoke-interface {v10, v9}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_6b
+    goto :goto_0
 
     .end local p1    # "$i$a$-also-MagnifierKt$magnifier$4$1$previousSize$1":I
     .restart local v11    # "newSize":J
     .restart local v13    # "$i$a$-also-MagnifierKt$magnifier$4$1$previousSize$1":I
-    :cond_69
+    :cond_0
     move/from16 p1, v13
 
     .line 323
     .end local v11    # "newSize":J
     .end local v13    # "$i$a$-also-MagnifierKt$magnifier$4$1$previousSize$1":I
     .restart local p1    # "$i$a$-also-MagnifierKt$magnifier$4$1$previousSize$1":I
-    :goto_6b
+    :goto_0
     nop
 
     .line 317
@@ -530,7 +529,7 @@
     nop
 
     .line 333
-    :try_start_82
+    :try_start_1
     new-instance v4, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1$2;
 
     iget-object v12, v2, Landroidx/compose/foundation/MagnifierKt$magnifier$4$1;->$density:Landroidx/compose/ui/unit/Density;
@@ -582,22 +581,22 @@
     invoke-static {v4, v7}, Lkotlinx/coroutines/flow/FlowKt;->collect(Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v4
-    :try_end_b1
-    .catchall {:try_start_82 .. :try_end_b1} :catchall_bc
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-ne v4, v0, :cond_b4
+    if-ne v4, v0, :cond_1
 
     .line 65535
     return-object v0
 
     .line 363
-    :cond_b4
+    :cond_1
     move-object v4, v5
 
     .line 367
     .end local v5    # "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
     .local v4, "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
-    :goto_b5
+    :goto_1
     invoke-interface {v4}, Landroidx/compose/foundation/PlatformMagnifier;->dismiss()V
 
     .line 368
@@ -613,21 +612,21 @@
     .line 367
     .end local v0    # "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
     .restart local v5    # "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
-    :catchall_bc
+    :catchall_1
     move-exception v0
 
     move-object v4, v5
 
     .end local v5    # "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
     .restart local v4    # "magnifier":Landroidx/compose/foundation/PlatformMagnifier;
-    :goto_be
+    :goto_2
     invoke-interface {v4}, Landroidx/compose/foundation/PlatformMagnifier;->dismiss()V
 
     throw v0
 
-    :pswitch_data_c2
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_25
-        :pswitch_14
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -52,7 +52,7 @@
 
 # direct methods
 .method public static synthetic access$all$jd(Landroidx/compose/ui/layout/LayoutModifier;Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
 
@@ -65,7 +65,7 @@
 .end method
 
 .method public static synthetic access$any$jd(Landroidx/compose/ui/layout/LayoutModifier;Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public static synthetic access$foldIn$jd(Landroidx/compose/ui/layout/LayoutModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -92,7 +92,7 @@
 .end method
 
 .method public static synthetic access$foldOut$jd(Landroidx/compose/ui/layout/LayoutModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -106,7 +106,7 @@
 .end method
 
 .method public static synthetic access$maxIntrinsicHeight$jd(Landroidx/compose/ui/layout/LayoutModifier;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -121,7 +121,7 @@
 .end method
 
 .method public static synthetic access$maxIntrinsicWidth$jd(Landroidx/compose/ui/layout/LayoutModifier;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -136,7 +136,7 @@
 .end method
 
 .method public static synthetic access$minIntrinsicHeight$jd(Landroidx/compose/ui/layout/LayoutModifier;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -151,7 +151,7 @@
 .end method
 
 .method public static synthetic access$minIntrinsicWidth$jd(Landroidx/compose/ui/layout/LayoutModifier;Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "$receiver"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
@@ -166,7 +166,7 @@
 .end method
 
 .method public static synthetic access$then$jd(Landroidx/compose/ui/layout/LayoutModifier;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutModifier;
     .param p1, "other"    # Landroidx/compose/ui/Modifier;
 
@@ -181,7 +181,7 @@
 
 # virtual methods
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -219,7 +219,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I
@@ -260,7 +260,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -298,7 +298,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I

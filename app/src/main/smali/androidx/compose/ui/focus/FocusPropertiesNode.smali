@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "focusPropertiesScope"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public applyFocusProperties(Landroidx/compose/ui/focus/FocusProperties;)V
-    .registers 3
+    .locals 1
     .param p1, "focusProperties"    # Landroidx/compose/ui/focus/FocusProperties;
 
     const-string/jumbo v0, "focusProperties"
@@ -101,7 +101,7 @@
 .end method
 
 .method public final getFocusPropertiesScope()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -119,7 +119,7 @@
 .end method
 
 .method public final setFocusPropertiesScope(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

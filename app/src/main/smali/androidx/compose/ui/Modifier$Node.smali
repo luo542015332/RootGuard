@@ -152,7 +152,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -162,7 +162,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 184
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -180,13 +180,13 @@
 .end method
 
 .method public static synthetic getNode$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getShouldAutoInvalidate$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -194,7 +194,7 @@
 
 # virtual methods
 .method public final getAggregateChildKindSet$ui_release()I
-    .registers 2
+    .locals 1
 
     .line 216
     iget v0, p0, Landroidx/compose/ui/Modifier$Node;->aggregateChildKindSet:I
@@ -203,7 +203,7 @@
 .end method
 
 .method public final getChild$ui_release()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 218
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->child:Landroidx/compose/ui/Modifier$Node;
@@ -212,7 +212,7 @@
 .end method
 
 .method public final getCoordinator$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
-    .registers 2
+    .locals 1
 
     .line 220
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
@@ -221,12 +221,12 @@
 .end method
 
 .method public final getCoroutineScope()Lkotlinx/coroutines/CoroutineScope;
-    .registers 4
+    .locals 3
 
     .line 203
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->scope:Lkotlinx/coroutines/CoroutineScope;
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_0
 
     .line 204
     move-object v0, p0
@@ -299,12 +299,12 @@
     nop
 
     .line 208
-    :cond_38
+    :cond_0
     return-object v0
 .end method
 
 .method public final getInsertedNodeAwaitingAttachForInvalidation$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 222
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->insertedNodeAwaitingAttachForInvalidation:Z
@@ -313,7 +313,7 @@
 .end method
 
 .method public final getKindSet$ui_release()I
-    .registers 2
+    .locals 1
 
     .line 210
     iget v0, p0, Landroidx/compose/ui/Modifier$Node;->kindSet:I
@@ -322,7 +322,7 @@
 .end method
 
 .method public final getNode()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 186
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->node:Landroidx/compose/ui/Modifier$Node;
@@ -331,7 +331,7 @@
 .end method
 
 .method public final getOwnerScope$ui_release()Landroidx/compose/ui/node/ObserverNodeOwnerScope;
-    .registers 2
+    .locals 1
 
     .line 219
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->ownerScope:Landroidx/compose/ui/node/ObserverNodeOwnerScope;
@@ -340,7 +340,7 @@
 .end method
 
 .method public final getParent$ui_release()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 217
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->parent:Landroidx/compose/ui/Modifier$Node;
@@ -349,7 +349,7 @@
 .end method
 
 .method public getShouldAutoInvalidate()Z
-    .registers 2
+    .locals 1
 
     .line 254
     const/4 v0, 0x1
@@ -358,7 +358,7 @@
 .end method
 
 .method public final getUpdatedNodeAwaitingAttachForInvalidation$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 223
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->updatedNodeAwaitingAttachForInvalidation:Z
@@ -367,7 +367,7 @@
 .end method
 
 .method public final isAttached()Z
-    .registers 2
+    .locals 1
 
     .line 235
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->isAttached:Z
@@ -376,7 +376,7 @@
 .end method
 
 .method public final isKind-H91voCI$ui_release(I)Z
-    .registers 4
+    .locals 2
     .param p1, "kind"    # I
 
     const/4 v0, 0x0
@@ -389,21 +389,21 @@
 
     and-int/2addr v1, p1
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     return v1
 .end method
 
 .method public markAsAttached$ui_release()V
-    .registers 3
+    .locals 2
 
     .line 264
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->isAttached:Z
@@ -412,22 +412,22 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     .line 265
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     move v0, v1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 266
     iput-boolean v1, p0, Landroidx/compose/ui/Modifier$Node;->isAttached:Z
@@ -439,7 +439,7 @@
     return-void
 
     .line 417
-    :cond_14
+    :cond_1
     const/4 v0, 0x0
 
     .line 265
@@ -460,7 +460,7 @@
     throw v0
 
     .line 417
-    :cond_23
+    :cond_2
     const/4 v0, 0x0
 
     .line 264
@@ -482,26 +482,26 @@
 .end method
 
 .method public markAsDetached$ui_release()V
-    .registers 4
+    .locals 3
 
     .line 292
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->isAttached:Z
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     .line 293
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->onAttachRunExpected:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_2
 
     .line 294
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->onDetachRunExpected:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_1
 
     .line 295
     const/4 v0, 0x0
@@ -511,7 +511,7 @@
     .line 297
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->scope:Lkotlinx/coroutines/CoroutineScope;
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .local v0, "it":Lkotlinx/coroutines/CoroutineScope;
     const/4 v1, 0x0
@@ -540,11 +540,11 @@
     nop
 
     .line 301
-    :cond_27
+    :cond_0
     return-void
 
     .line 417
-    :cond_28
+    :cond_1
     const/4 v0, 0x0
 
     .line 294
@@ -565,7 +565,7 @@
     throw v0
 
     .line 417
-    :cond_37
+    :cond_2
     const/4 v0, 0x0
 
     .line 293
@@ -586,7 +586,7 @@
     throw v0
 
     .line 417
-    :cond_46
+    :cond_3
     const/4 v0, 0x0
 
     .line 292
@@ -608,33 +608,33 @@
 .end method
 
 .method public onAttach()V
-    .registers 1
+    .locals 0
 
     .line 320
     return-void
 .end method
 
 .method public onDetach()V
-    .registers 1
+    .locals 0
 
     .line 330
     return-void
 .end method
 
 .method public onReset()V
-    .registers 1
+    .locals 0
 
     .line 346
     return-void
 .end method
 
 .method public reset$ui_release()V
-    .registers 3
+    .locals 2
 
     .line 304
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->isAttached:Z
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 305
     invoke-virtual {p0}, Landroidx/compose/ui/Modifier$Node;->onReset()V
@@ -643,7 +643,7 @@
     return-void
 
     .line 304
-    :cond_8
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -658,17 +658,17 @@
 .end method
 
 .method public runAttachLifecycle$ui_release()V
-    .registers 3
+    .locals 2
 
     .line 271
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->isAttached:Z
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_1
 
     .line 272
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->onAttachRunExpected:Z
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 275
     const/4 v0, 0x0
@@ -687,7 +687,7 @@
     return-void
 
     .line 417
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
     .line 272
@@ -708,7 +708,7 @@
     throw v0
 
     .line 417
-    :cond_21
+    :cond_1
     const/4 v0, 0x0
 
     .line 271
@@ -730,34 +730,34 @@
 .end method
 
 .method public runDetachLifecycle$ui_release()V
-    .registers 3
+    .locals 2
 
     .line 281
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->isAttached:Z
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 282
     iget-object v0, p0, Landroidx/compose/ui/Modifier$Node;->coordinator:Landroidx/compose/ui/node/NodeCoordinator;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move v0, v1
 
-    :goto_c
-    if-eqz v0, :cond_27
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 283
     iget-boolean v0, p0, Landroidx/compose/ui/Modifier$Node;->onDetachRunExpected:Z
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 287
     iput-boolean v1, p0, Landroidx/compose/ui/Modifier$Node;->onDetachRunExpected:Z
@@ -769,7 +769,7 @@
     return-void
 
     .line 283
-    :cond_18
+    :cond_1
     const/4 v0, 0x0
 
     .line 284
@@ -791,7 +791,7 @@
     throw v0
 
     .line 417
-    :cond_27
+    :cond_2
     const/4 v0, 0x0
 
     .line 282
@@ -812,7 +812,7 @@
     throw v0
 
     .line 417
-    :cond_36
+    :cond_3
     const/4 v0, 0x0
 
     .line 281
@@ -834,7 +834,7 @@
 .end method
 
 .method public final setAggregateChildKindSet$ui_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 216
@@ -844,7 +844,7 @@
 .end method
 
 .method public final setAsDelegateTo$ui_release(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "owner"    # Landroidx/compose/ui/Modifier$Node;
 
     const-string/jumbo v0, "owner"
@@ -859,7 +859,7 @@
 .end method
 
 .method public final setChild$ui_release(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 218
@@ -869,7 +869,7 @@
 .end method
 
 .method public final setInsertedNodeAwaitingAttachForInvalidation$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 222
@@ -879,7 +879,7 @@
 .end method
 
 .method public final setKindSet$ui_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 210
@@ -889,7 +889,7 @@
 .end method
 
 .method public final setOwnerScope$ui_release(Landroidx/compose/ui/node/ObserverNodeOwnerScope;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/node/ObserverNodeOwnerScope;
 
     .line 219
@@ -899,7 +899,7 @@
 .end method
 
 .method public final setParent$ui_release(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 217
@@ -909,7 +909,7 @@
 .end method
 
 .method public final setUpdatedNodeAwaitingAttachForInvalidation$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 223
@@ -919,7 +919,7 @@
 .end method
 
 .method public final sideEffect(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "effect"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -950,7 +950,7 @@
 .end method
 
 .method public updateCoordinator$ui_release(Landroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 2
+    .locals 0
     .param p1, "coordinator"    # Landroidx/compose/ui/node/NodeCoordinator;
 
     .line 257

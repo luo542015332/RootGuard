@@ -66,7 +66,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/node/OnPositionedDispatcher$Companion;
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 7
+    .locals 6
 
     .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -122,7 +122,7 @@
 .end method
 
 .method private final dispatchHierarchy(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 11
+    .locals 9
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
 
     .line 55
@@ -159,7 +159,7 @@
 
     .line 97
     .local v4, "size$iv$iv":I
-    if-lez v4, :cond_28
+    if-lez v4, :cond_1
 
     .line 98
     const/4 v5, 0x0
@@ -172,7 +172,7 @@
 
     .line 101
     .local v6, "content$iv$iv":[Ljava/lang/Object;
-    :cond_1a
+    :cond_0
     aget-object v7, v6, v5
 
     check-cast v7, Landroidx/compose/ui/node/LayoutNode;
@@ -196,12 +196,12 @@
     add-int/lit8 v5, v5, 0x1
 
     .line 103
-    if-lt v5, v4, :cond_1a
+    if-lt v5, v4, :cond_0
 
     .line 105
     .end local v5    # "i$iv$iv":I
     .end local v6    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_28
+    :cond_1
     nop
 
     .line 94
@@ -219,7 +219,7 @@
 
 # virtual methods
 .method public final dispatch()V
-    .registers 9
+    .locals 8
 
     .line 43
     iget-object v0, p0, Landroidx/compose/ui/node/OnPositionedDispatcher;->layoutNodes:Landroidx/compose/runtime/collection/MutableVector;
@@ -247,7 +247,7 @@
 
     .line 85
     .local v2, "size$iv":I
-    if-lez v2, :cond_2d
+    if-lez v2, :cond_2
 
     .line 86
     add-int/lit8 v3, v2, -0x1
@@ -260,7 +260,7 @@
 
     .line 89
     .local v4, "content$iv":[Ljava/lang/Object;
-    :cond_19
+    :cond_0
     aget-object v5, v4, v3
 
     check-cast v5, Landroidx/compose/ui/node/LayoutNode;
@@ -274,13 +274,13 @@
 
     move-result v7
 
-    if-eqz v7, :cond_27
+    if-eqz v7, :cond_1
 
     .line 46
     invoke-direct {p0, v5}, Landroidx/compose/ui/node/OnPositionedDispatcher;->dispatchHierarchy(Landroidx/compose/ui/node/LayoutNode;)V
 
     .line 48
-    :cond_27
+    :cond_1
     nop
 
     .line 89
@@ -292,12 +292,12 @@
     add-int/lit8 v3, v3, -0x1
 
     .line 91
-    if-gez v3, :cond_19
+    if-gez v3, :cond_0
 
     .line 93
     .end local v3    # "i$iv":I
     .end local v4    # "content$iv":[Ljava/lang/Object;
-    :cond_2d
+    :cond_2
     nop
 
     .line 49
@@ -313,7 +313,7 @@
 .end method
 
 .method public final isNotEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 28
     iget-object v0, p0, Landroidx/compose/ui/node/OnPositionedDispatcher;->layoutNodes:Landroidx/compose/runtime/collection/MutableVector;
@@ -326,7 +326,7 @@
 .end method
 
 .method public final onNodePositioned(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 4
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "node"
@@ -358,7 +358,7 @@
 .end method
 
 .method public final onRootNodePositioned(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 4
+    .locals 2
     .param p1, "rootNode"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "rootNode"

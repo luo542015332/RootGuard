@@ -71,7 +71,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 12
     invoke-direct {p0}, Lkotlin/collections/AbstractList;-><init>()V
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic addAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
 
     .line 12
@@ -96,7 +96,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 5
     .param p1, "index"    # I
     .param p2, "c"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
@@ -152,7 +152,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 7
+    .locals 5
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -207,7 +207,7 @@
 .end method
 
 .method public bridge synthetic clear()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractPersistentList;->clear()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -220,7 +220,7 @@
 .end method
 
 .method public clear()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -238,7 +238,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 46
@@ -248,21 +248,21 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_9
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 9
+    .locals 7
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -298,22 +298,22 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 64
-    :cond_15
+    :cond_0
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :cond_19
+    :cond_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_2d
+    if-eqz v4, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -334,26 +334,26 @@
     .line 64
     .end local v5    # "it":Ljava/lang/Object;
     .end local v6    # "$i$a$-all-AbstractPersistentList$containsAll$1":I
-    if-nez v5, :cond_19
+    if-nez v5, :cond_1
 
     const/4 v3, 0x0
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 65
     .end local v4    # "element$iv":Ljava/lang/Object;
-    :cond_2d
+    :cond_2
     nop
 
     .line 50
     .end local v0    # "$this$all$iv":Ljava/lang/Iterable;
     .end local v1    # "$i$f$all":I
-    :goto_2e
+    :goto_0
     return v3
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -373,7 +373,7 @@
 .end method
 
 .method public listIterator()Ljava/util/ListIterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -393,7 +393,7 @@
 .end method
 
 .method public bridge synthetic remove(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 12
@@ -407,7 +407,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 4
+    .locals 2
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -426,7 +426,7 @@
     .local v0, "index":I
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     .line 28
     invoke-virtual {p0, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractPersistentList;->removeAt(I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -436,7 +436,7 @@
     return-object v1
 
     .line 30
-    :cond_c
+    :cond_0
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -445,7 +445,7 @@
 .end method
 
 .method public bridge synthetic removeAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
 
     .line 12
@@ -459,7 +459,7 @@
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -490,7 +490,7 @@
 .end method
 
 .method public bridge synthetic retainAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
 
     .line 12
@@ -504,7 +504,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -535,7 +535,7 @@
 .end method
 
 .method public subList(II)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
-    .registers 4
+    .locals 1
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -555,7 +555,7 @@
 .end method
 
 .method public bridge synthetic subList(II)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
 

@@ -74,7 +74,7 @@
 
 # direct methods
 .method private synthetic constructor <init>([I)V
-    .registers 2
+    .locals 0
     .param p1, "data"    # [I
 
     .line 319
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final addDiagonalToStack-impl([ILandroidx/compose/ui/node/IntStack;)V
-    .registers 6
+    .locals 4
     .param p0, "arg0"    # [I
     .param p1, "diagonals"    # Landroidx/compose/ui/node/IntStack;
 
@@ -99,14 +99,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_2
 
     .line 359
     invoke-static {p0}, Landroidx/compose/ui/node/Snake;->getReverse-impl([I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     .line 361
     invoke-static {p0}, Landroidx/compose/ui/node/Snake;->getStartX-impl([I)I
@@ -123,15 +123,15 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroidx/compose/ui/node/IntStack;->pushDiagonal(III)V
 
-    goto :goto_60
+    goto :goto_0
 
     .line 364
-    :cond_22
+    :cond_0
     invoke-static {p0}, Landroidx/compose/ui/node/Snake;->isAddition-impl([I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_1
 
     .line 365
     invoke-static {p0}, Landroidx/compose/ui/node/Snake;->getStartX-impl([I)I
@@ -150,10 +150,10 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroidx/compose/ui/node/IntStack;->pushDiagonal(III)V
 
-    goto :goto_60
+    goto :goto_0
 
     .line 367
-    :cond_3a
+    :cond_1
     invoke-static {p0}, Landroidx/compose/ui/node/Snake;->getStartX-impl([I)I
 
     move-result v0
@@ -170,10 +170,10 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroidx/compose/ui/node/IntStack;->pushDiagonal(III)V
 
-    goto :goto_60
+    goto :goto_0
 
     .line 372
-    :cond_4c
+    :cond_2
     invoke-static {p0}, Landroidx/compose/ui/node/Snake;->getStartX-impl([I)I
 
     move-result v0
@@ -195,12 +195,12 @@
     invoke-virtual {p1, v0, v1, v2}, Landroidx/compose/ui/node/IntStack;->pushDiagonal(III)V
 
     .line 374
-    :goto_60
+    :goto_0
     return-void
 .end method
 
 .method public static final synthetic box-impl([I)Landroidx/compose/ui/node/Snake;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/Snake;
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public static constructor-impl([I)[I
-    .registers 2
+    .locals 1
 
     const-string/jumbo v0, "data"
 
@@ -220,17 +220,17 @@
 .end method
 
 .method public static equals-impl([ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/node/Snake;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/node/Snake;
@@ -243,18 +243,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_14
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0([I[I)Z
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -264,7 +264,7 @@
 .end method
 
 .method public static final getDiagonalSize-impl([I)I
-    .registers 4
+    .locals 3
     .param p0, "arg0"    # [I
 
     .line 345
@@ -296,7 +296,7 @@
 .end method
 
 .method public static final getEndX-impl([I)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # [I
 
     .line 333
@@ -308,7 +308,7 @@
 .end method
 
 .method public static final getEndY-impl([I)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # [I
 
     .line 338
@@ -320,7 +320,7 @@
 .end method
 
 .method private static final getHasAdditionOrRemoval-impl([I)Z
-    .registers 4
+    .locals 3
     .param p0, "arg0"    # [I
 
     .line 348
@@ -344,21 +344,21 @@
 
     sub-int/2addr v1, v2
 
-    if-eq v0, v1, :cond_16
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method public static final getReverse-impl([I)Z
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # [I
 
     .line 343
@@ -366,21 +366,21 @@
 
     aget v0, p0, v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public static final getStartX-impl([I)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # [I
 
     .line 323
@@ -392,7 +392,7 @@
 .end method
 
 .method public static final getStartY-impl([I)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # [I
 
     .line 328
@@ -404,7 +404,7 @@
 .end method
 
 .method public static hashCode-impl([I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
 
@@ -414,7 +414,7 @@
 .end method
 
 .method private static final isAddition-impl([I)Z
-    .registers 4
+    .locals 3
     .param p0, "arg0"    # [I
 
     .line 351
@@ -438,21 +438,21 @@
 
     sub-int/2addr v1, v2
 
-    if-le v0, v1, :cond_16
+    if-le v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_17
+    :goto_0
     return v0
 .end method
 
 .method public static toString-impl([I)Ljava/lang/String;
-    .registers 4
+    .locals 3
     .param p0, "arg0"    # [I
 
     .line 376
@@ -540,7 +540,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/Snake;->data:[I
 
@@ -552,7 +552,7 @@
 .end method
 
 .method public final getData()[I
-    .registers 2
+    .locals 1
 
     .line 319
     iget-object v0, p0, Landroidx/compose/ui/node/Snake;->data:[I
@@ -561,7 +561,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/Snake;->data:[I
 
@@ -573,7 +573,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 376
     iget-object v0, p0, Landroidx/compose/ui/node/Snake;->data:[I
@@ -586,7 +586,7 @@
 .end method
 
 .method public final synthetic unbox-impl()[I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/Snake;->data:[I
 

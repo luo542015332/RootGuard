@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/State;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 929
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/graphics/GraphicsLayerScope;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$graphicsLayer"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     const-string v0, "$this$graphicsLayer"
@@ -108,7 +108,6 @@
     .line 930
     iget-object v0, p0, Landroidx/compose/animation/EnterExitTransitionKt$createModifier$2$1;->$alpha$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/animation/EnterExitTransitionKt;->createModifier$lambda$8(Landroidx/compose/runtime/State;)F
     invoke-static {v0}, Landroidx/compose/animation/EnterExitTransitionKt;->access$createModifier$lambda$8(Landroidx/compose/runtime/State;)F
 
     move-result v0

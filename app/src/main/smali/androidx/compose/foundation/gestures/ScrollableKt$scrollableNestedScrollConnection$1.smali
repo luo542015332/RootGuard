@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/State;Z)V
-    .registers 3
+    .locals 0
     .param p1, "$scrollLogic"    # Landroidx/compose/runtime/State;
     .param p2, "$enabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public onPostFling-RZ2iAVY(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 9
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJ",
@@ -105,7 +105,7 @@
 
     instance-of p1, p5, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_0
 
     move-object p1, p5
 
@@ -117,7 +117,7 @@
 
     and-int/2addr p2, v0
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_0
 
     iget p2, p1, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;->label:I
 
@@ -125,15 +125,15 @@
 
     iput p2, p1, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance p1, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;
 
     invoke-direct {p1, p0, p5}, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;-><init>(Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;Lkotlin/coroutines/Continuation;)V
 
     .local p1, "$continuation":Lkotlin/coroutines/Continuation;
-    :goto_19
+    :goto_0
     iget-object p2, p1, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;->result:Ljava/lang/Object;
 
     .local p2, "$result":Ljava/lang/Object;
@@ -144,7 +144,7 @@
     .line 569
     iget v0, p1, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;->label:I
 
-    packed-switch v0, :pswitch_data_80
+    packed-switch v0, :pswitch_data_0
 
     .end local p1    # "$continuation":Lkotlin/coroutines/Continuation;
     .end local p2    # "$result":Ljava/lang/Object;
@@ -158,7 +158,7 @@
 
     .restart local p1    # "$continuation":Lkotlin/coroutines/Continuation;
     .restart local p2    # "$result":Ljava/lang/Object;
-    :pswitch_2d
+    :pswitch_0
     iget-wide p3, p1, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1$onPostFling$1;->J$0:J
 
     .local p3, "available":J
@@ -171,11 +171,11 @@
 
     move-object v1, p2
 
-    goto :goto_57
+    goto :goto_1
 
     .end local p3    # "available":J
     .end local p5    # "this":Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;
-    :pswitch_38
+    :pswitch_1
     invoke-static {p2}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v0, p0
@@ -185,7 +185,7 @@
     .restart local p3    # "available":J
     iget-boolean v1, v0, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;->$enabled:Z
 
-    if-eqz v1, :cond_63
+    if-eqz v1, :cond_2
 
     .line 574
     iget-object v1, v0, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;->$scrollLogic:Landroidx/compose/runtime/State;
@@ -208,18 +208,18 @@
 
     move-result-object v1
 
-    if-ne v1, p5, :cond_56
+    if-ne v1, p5, :cond_1
 
     .line 569
     return-object p5
 
     .line 574
-    :cond_56
+    :cond_1
     move-object p5, v0
 
     .end local v0    # "this":Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;
     .restart local p5    # "this":Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;
-    :goto_57
+    :goto_1
     check-cast v1, Landroidx/compose/ui/unit/Velocity;
 
     invoke-virtual {v1}, Landroidx/compose/ui/unit/Velocity;->unbox-impl()J
@@ -236,19 +236,19 @@
 
     .end local v0    # "velocityLeft":J
     .end local p3    # "available":J
-    goto :goto_69
+    goto :goto_2
 
     .line 577
     .end local p5    # "this":Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;
     .local v0, "this":Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;
-    :cond_63
+    :cond_2
     sget-object p3, Landroidx/compose/ui/unit/Velocity;->Companion:Landroidx/compose/ui/unit/Velocity$Companion;
 
     invoke-virtual {p3}, Landroidx/compose/ui/unit/Velocity$Companion;->getZero-9UxMQ8M()J
 
     move-result-wide p3
 
-    :goto_69
+    :goto_2
     invoke-static {p3, p4}, Landroidx/compose/ui/unit/Velocity;->box-impl(J)Landroidx/compose/ui/unit/Velocity;
 
     move-result-object p3
@@ -282,15 +282,15 @@
     .line 573
     return-object p3
 
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_38
-        :pswitch_2d
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onPostScroll-DzOQY0M(JJI)J
-    .registers 8
+    .locals 2
     .param p1, "consumed"    # J
     .param p3, "available"    # J
     .param p5, "source"    # I
@@ -298,7 +298,7 @@
     .line 563
     iget-boolean v0, p0, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;->$enabled:Z
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     .line 564
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;->$scrollLogic:Landroidx/compose/runtime/State;
@@ -313,10 +313,10 @@
 
     move-result-wide v0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 566
-    :cond_11
+    :cond_0
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
@@ -324,12 +324,12 @@
     move-result-wide v0
 
     .line 567
-    :goto_17
+    :goto_0
     return-wide v0
 .end method
 
 .method public onPreScroll-OzD1aCk(JI)J
-    .registers 6
+    .locals 2
     .param p1, "available"    # J
     .param p3, "source"    # I
 
@@ -344,7 +344,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 554
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ScrollableKt$scrollableNestedScrollConnection$1;->$scrollLogic:Landroidx/compose/runtime/State;
@@ -360,7 +360,7 @@
     invoke-virtual {v0, v1}, Landroidx/compose/foundation/gestures/ScrollingLogic;->registerNestedFling(Z)V
 
     .line 556
-    :cond_18
+    :cond_0
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J

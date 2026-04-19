@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public final get()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -127,7 +127,7 @@
 .end method
 
 .method public final set(Ljava/lang/Object;)V
-    .registers 10
+    .locals 8
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -159,7 +159,7 @@
 
     .line 59
     .local v4, "$i$a$-synchronized-SnapshotThreadLocal$set$1":I
-    :try_start_d
+    :try_start_0
     iget-object v5, p0, Landroidx/compose/runtime/SnapshotThreadLocal;->map:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v5}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -173,10 +173,10 @@
     invoke-virtual {v5, v0, v1, p1}, Landroidx/compose/runtime/internal/ThreadMap;->trySet(JLjava/lang/Object;)Z
 
     move-result v6
-    :try_end_19
-    .catchall {:try_start_d .. :try_end_19} :catchall_2b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_0
 
     .end local v2    # "lock$iv":Ljava/lang/Object;
     .end local v3    # "$i$f$synchronized":I
@@ -191,8 +191,8 @@
     .restart local v3    # "$i$f$synchronized":I
     .restart local v4    # "$i$a$-synchronized-SnapshotThreadLocal$set$1":I
     .restart local v5    # "current":Landroidx/compose/runtime/internal/ThreadMap;
-    :cond_1d
-    :try_start_1d
+    :cond_0
+    :try_start_1
     iget-object v6, p0, Landroidx/compose/runtime/SnapshotThreadLocal;->map:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v5, v0, v1, p1}, Landroidx/compose/runtime/internal/ThreadMap;->newWith(JLjava/lang/Object;)Landroidx/compose/runtime/internal/ThreadMap;
@@ -207,8 +207,8 @@
     .end local v4    # "$i$a$-synchronized-SnapshotThreadLocal$set$1":I
     .end local v5    # "current":Landroidx/compose/runtime/internal/ThreadMap;
     sget-object v4, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_29
-    .catchall {:try_start_1d .. :try_end_29} :catchall_2b
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 120
     monitor-exit v2
@@ -221,7 +221,7 @@
     .line 120
     .restart local v2    # "lock$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_2b
+    :catchall_0
     move-exception v4
 
     monitor-exit v2

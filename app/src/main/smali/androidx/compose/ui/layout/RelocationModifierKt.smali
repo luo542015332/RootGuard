@@ -41,7 +41,7 @@
 
 # direct methods
 .method public static final onRelocationRequest(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 1
     .param p0, "$this$onRelocationRequest"    # Landroidx/compose/ui/Modifier;
     .param p1, "onProvideDestination"    # Lkotlin/jvm/functions/Function2;
     .param p2, "onPerformRelocation"    # Lkotlin/jvm/functions/Function3;

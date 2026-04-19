@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic clearFocus$default(Landroidx/compose/ui/focus/FocusManager;ZILjava/lang/Object;)V
-    .registers 4
+    .locals 0
 
     .line 32
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/focus/FocusManager;->clearFocus$default(Landroidx/compose/ui/focus/FocusManager;ZILjava/lang/Object;)V

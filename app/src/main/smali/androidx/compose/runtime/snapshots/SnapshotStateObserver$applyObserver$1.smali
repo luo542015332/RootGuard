@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$applyObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public final invoke(Ljava/util/Set;Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 4
+    .locals 1
     .param p1, "applied"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -120,25 +120,22 @@
     .line 45
     iget-object p2, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$applyObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->addChanges(Ljava/util/Set;)V
     invoke-static {p2, p1}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$addChanges(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;Ljava/util/Set;)V
 
     .line 46
     iget-object p2, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$applyObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->drainChanges()Z
     invoke-static {p2}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$drainChanges(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Z
 
     move-result p2
 
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_0
 
     iget-object p2, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$applyObserver$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->sendNotifications()V
     invoke-static {p2}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$sendNotifications(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)V
 
     .line 47
-    :cond_1d
+    :cond_0
     return-void
 .end method

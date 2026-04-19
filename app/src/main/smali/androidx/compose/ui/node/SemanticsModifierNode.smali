@@ -40,7 +40,7 @@
 .end method
 
 .method public getShouldClearDescendantSemantics()Z
-    .registers 2
+    .locals 1
 
     .line 53
     const/4 v0, 0x0
@@ -49,7 +49,7 @@
 .end method
 
 .method public getShouldMergeDescendantSemantics()Z
-    .registers 2
+    .locals 1
 
     .line 68
     const/4 v0, 0x0

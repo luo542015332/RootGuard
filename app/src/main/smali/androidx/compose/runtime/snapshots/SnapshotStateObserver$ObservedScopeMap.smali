@@ -176,7 +176,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 8
+    .locals 6
     .param p1, "onChanged"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -288,7 +288,7 @@
 .end method
 
 .method public static final synthetic access$getDeriveStateScopeCount$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
 
     .line 330
@@ -298,7 +298,7 @@
 .end method
 
 .method public static final synthetic access$setDeriveStateScopeCount$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
     .param p1, "<set-?>"    # I
 
@@ -309,7 +309,7 @@
 .end method
 
 .method private final clearObsoleteStateReads(Ljava/lang/Object;)V
-    .registers 20
+    .locals 18
     .param p1, "scope"    # Ljava/lang/Object;
 
     .line 478
@@ -321,7 +321,7 @@
     .local v1, "currentToken":I
     iget-object v2, v0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->currentScopeReads:Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
-    if-eqz v2, :cond_5f
+    if-eqz v2, :cond_6
 
     .local v2, "this_$iv":Landroidx/compose/runtime/collection/IdentityArrayIntMap;
     const/4 v3, 0x0
@@ -353,8 +353,8 @@
     const/4 v8, 0x0
 
     .local v8, "i$iv":I
-    :goto_17
-    if-ge v8, v6, :cond_4d
+    :goto_0
+    if-ge v8, v6, :cond_4
 
     .line 630
     aget-object v9, v4, v8
@@ -379,16 +379,16 @@
 
     .line 480
     .local v13, "$i$a$-removeValueIf-SnapshotStateObserver$ObservedScopeMap$clearObsoleteStateReads$1":I
-    if-eq v12, v1, :cond_2a
+    if-eq v12, v1, :cond_0
 
     const/4 v14, 0x1
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_2a
+    :cond_0
     const/4 v14, 0x0
 
-    :goto_2b
+    :goto_1
     move v15, v14
 
     .local v15, "willRemove":Z
@@ -396,7 +396,7 @@
 
     .line 481
     .local v16, "$i$a$-also-SnapshotStateObserver$ObservedScopeMap$clearObsoleteStateReads$1$1":I
-    if-eqz v15, :cond_38
+    if-eqz v15, :cond_1
 
     .line 482
     move/from16 v17, v1
@@ -407,12 +407,12 @@
     .local v17, "currentToken":I
     invoke-direct {v0, v1, v11}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->removeObservation(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto :goto_3c
+    goto :goto_2
 
     .line 481
     .end local v17    # "currentToken":I
     .restart local v1    # "currentToken":I
-    :cond_38
+    :cond_1
     move/from16 v17, v1
 
     move-object/from16 v1, p1
@@ -420,7 +420,7 @@
     .line 484
     .end local v1    # "currentToken":I
     .restart local v17    # "currentToken":I
-    :goto_3c
+    :goto_2
     nop
 
     .line 480
@@ -432,10 +432,10 @@
     .end local v11    # "value":Ljava/lang/Object;
     .end local v12    # "token":I
     .end local v13    # "$i$a$-removeValueIf-SnapshotStateObserver$ObservedScopeMap$clearObsoleteStateReads$1":I
-    if-nez v14, :cond_48
+    if-nez v14, :cond_3
 
     .line 633
-    if-eq v7, v8, :cond_46
+    if-eq v7, v8, :cond_2
 
     .line 634
     aput-object v9, v4, v7
@@ -444,22 +444,22 @@
     aput v10, v5, v7
 
     .line 637
-    :cond_46
+    :cond_2
     add-int/lit8 v7, v7, 0x1
 
     .line 628
     .end local v9    # "key$iv":Ljava/lang/Object;
     .end local v10    # "value$iv":I
-    :cond_48
+    :cond_3
     add-int/lit8 v8, v8, 0x1
 
     move/from16 v1, v17
 
-    goto :goto_17
+    goto :goto_0
 
     .end local v17    # "currentToken":I
     .restart local v1    # "currentToken":I
-    :cond_4d
+    :cond_4
     move/from16 v17, v1
 
     move-object/from16 v1, p1
@@ -471,8 +471,8 @@
     move v8, v7
 
     .restart local v8    # "i$iv":I
-    :goto_52
-    if-ge v8, v6, :cond_5a
+    :goto_3
+    if-ge v8, v6, :cond_5
 
     .line 641
     const/4 v9, 0x0
@@ -482,11 +482,11 @@
     .line 640
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_52
+    goto :goto_3
 
     .line 643
     .end local v8    # "i$iv":I
-    :cond_5a
+    :cond_5
     invoke-static {v2, v7}, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->access$setSize$p(Landroidx/compose/runtime/collection/IdentityArrayIntMap;I)V
 
     .line 644
@@ -498,12 +498,12 @@
     .end local v5    # "values$iv":[I
     .end local v6    # "size$iv":I
     .end local v7    # "destinationIndex$iv":I
-    goto :goto_63
+    goto :goto_4
 
     .line 479
     .end local v17    # "currentToken":I
     .restart local v1    # "currentToken":I
-    :cond_5f
+    :cond_6
     move/from16 v17, v1
 
     move-object/from16 v1, p1
@@ -511,12 +511,12 @@
     .line 486
     .end local v1    # "currentToken":I
     .restart local v17    # "currentToken":I
-    :goto_63
+    :goto_4
     return-void
 .end method
 
 .method private final recordRead(Ljava/lang/Object;ILjava/lang/Object;Landroidx/compose/runtime/collection/IdentityArrayIntMap;)V
-    .registers 12
+    .locals 7
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "currentToken"    # I
     .param p3, "currentScope"    # Ljava/lang/Object;
@@ -525,13 +525,13 @@
     .line 425
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->deriveStateScopeCount:I
 
-    if-lez v0, :cond_5
+    if-lez v0, :cond_0
 
     .line 427
     return-void
 
     .line 430
-    :cond_5
+    :cond_0
     invoke-virtual {p4, p1, p2}, Landroidx/compose/runtime/collection/IdentityArrayIntMap;->add(Ljava/lang/Object;I)I
 
     move-result v0
@@ -540,9 +540,9 @@
     .local v0, "previousToken":I
     instance-of v1, p1, Landroidx/compose/runtime/DerivedState;
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_1
 
-    if-eq v0, p2, :cond_38
+    if-eq v0, p2, :cond_1
 
     .line 432
     move-object v1, p1
@@ -583,14 +583,14 @@
 
     const/4 v5, 0x0
 
-    :goto_2c
-    if-ge v5, v4, :cond_38
+    :goto_0
+    if-ge v5, v4, :cond_1
 
     aget-object v6, v2, v5
 
     .line 442
     .local v6, "dependency":Ljava/lang/Object;
-    if-eqz v6, :cond_38
+    if-eqz v6, :cond_1
 
     .line 443
     invoke-virtual {v3, v6, p1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->add(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -599,16 +599,16 @@
     .end local v6    # "dependency":Ljava/lang/Object;
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 447
     .end local v1    # "record":Landroidx/compose/runtime/DerivedState$Record;
     .end local v2    # "dependencies":[Ljava/lang/Object;
     .end local v3    # "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :cond_38
+    :cond_1
     const/4 v1, -0x1
 
-    if-ne v0, v1, :cond_40
+    if-ne v0, v1, :cond_2
 
     .line 448
     iget-object v1, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->valueToScopes:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -616,12 +616,12 @@
     invoke-virtual {v1, p1, p3}, Landroidx/compose/runtime/collection/IdentityScopeMap;->add(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 450
-    :cond_40
+    :cond_2
     return-void
 .end method
 
 .method private final removeObservation(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "scope"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
 
@@ -633,7 +633,7 @@
     .line 515
     instance-of v0, p2, Landroidx/compose/runtime/DerivedState;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->valueToScopes:Landroidx/compose/runtime/collection/IdentityScopeMap;
 
@@ -641,7 +641,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     .line 516
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->dependencyToDerivedStates:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -654,14 +654,14 @@
     invoke-virtual {v0, p2}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 519
-    :cond_1b
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 525
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->valueToScopes:Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -688,7 +688,7 @@
 .end method
 
 .method public final clearScopeObservations(Ljava/lang/Object;)V
-    .registers 11
+    .locals 9
     .param p1, "scope"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "scope"
@@ -704,13 +704,13 @@
 
     check-cast v0, Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     return-void
 
     .line 493
     .local v0, "recordedValues":Landroidx/compose/runtime/collection/IdentityArrayIntMap;
-    :cond_11
+    :cond_0
     move-object v1, v0
 
     .local v1, "this_$iv":Landroidx/compose/runtime/collection/IdentityArrayIntMap;
@@ -739,8 +739,8 @@
     const/4 v6, 0x0
 
     .local v6, "i$iv":I
-    :goto_20
-    if-ge v6, v5, :cond_35
+    :goto_0
+    if-ge v6, v5, :cond_1
 
     .line 650
     aget-object v7, v3, v6
@@ -769,11 +769,11 @@
     .line 649
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
     .line 652
     .end local v6    # "i$iv":I
-    :cond_35
+    :cond_1
     nop
 
     .line 496
@@ -786,7 +786,7 @@
 .end method
 
 .method public final getDerivedStateObserver()Landroidx/compose/runtime/DerivedStateObserver;
-    .registers 2
+    .locals 1
 
     .line 375
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->derivedStateObserver:Landroidx/compose/runtime/DerivedStateObserver;
@@ -795,7 +795,7 @@
 .end method
 
 .method public final getOnChanged()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -813,7 +813,7 @@
 .end method
 
 .method public final notifyInvalidatedScopes()V
-    .registers 10
+    .locals 9
 
     .line 604
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->invalidated:Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -846,8 +846,8 @@
 
     move-result v6
 
-    :goto_10
-    if-ge v5, v6, :cond_20
+    :goto_0
+    if-ge v5, v6, :cond_0
 
     .line 782
     aget-object v7, v4, v5
@@ -861,11 +861,11 @@
     .line 780
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 784
     .end local v5    # "i$iv":I
-    :cond_20
+    :cond_0
     nop
 
     .line 606
@@ -880,7 +880,7 @@
 .end method
 
 .method public final observe(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
-    .registers 14
+    .locals 10
     .param p1, "scope"    # Ljava/lang/Object;
     .param p2, "readObserver"    # Lkotlin/jvm/functions/Function1;
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
@@ -941,7 +941,7 @@
 
     const/4 v4, -0x1
 
-    if-ne v3, v4, :cond_33
+    if-ne v3, v4, :cond_0
 
     .line 463
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->currentSnapshot()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -955,7 +955,7 @@
     iput v3, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->currentToken:I
 
     .line 466
-    :cond_33
+    :cond_0
     iget-object v3, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->derivedStateObserver:Landroidx/compose/runtime/DerivedStateObserver;
 
     .local v3, "observer$iv":Landroidx/compose/runtime/DerivedStateObserver;
@@ -972,7 +972,7 @@
     nop
 
     .line 616
-    :try_start_3b
+    :try_start_0
     invoke-virtual {v5, v3}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 617
@@ -985,8 +985,8 @@
     const/4 v8, 0x0
 
     invoke-virtual {v7, p2, v8, p3}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->observe(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    :try_end_45
-    .catchall {:try_start_3b .. :try_end_45} :catchall_63
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 468
     nop
@@ -1046,7 +1046,7 @@
     .restart local v3    # "observer$iv":Landroidx/compose/runtime/DerivedStateObserver;
     .restart local v4    # "$i$f$observeDerivedStateRecalculations":I
     .restart local v5    # "observers$iv":Landroidx/compose/runtime/collection/MutableVector;
-    :catchall_63
+    :catchall_0
     move-exception v6
 
     move-object v7, v5
@@ -1071,7 +1071,7 @@
 .end method
 
 .method public final recordInvalidation(Ljava/util/Set;)Z
-    .registers 42
+    .locals 40
     .param p1, "changes"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1125,7 +1125,7 @@
 
     const-string/jumbo v11, "null cannot be cast to non-null type T of androidx.compose.runtime.collection.IdentityArraySet"
 
-    if-eqz v9, :cond_172
+    if-eqz v9, :cond_a
 
     .line 684
     move-object v9, v7
@@ -1153,8 +1153,8 @@
 
     move-result v15
 
-    :goto_2e
-    if-ge v14, v15, :cond_160
+    :goto_0
+    if-ge v14, v15, :cond_9
 
     .line 689
     move/from16 v16, v1
@@ -1174,7 +1174,7 @@
 
     move-result v18
 
-    if-eqz v18, :cond_107
+    if-eqz v18, :cond_6
 
     .line 546
     move-object/from16 v18, v3
@@ -1191,17 +1191,15 @@
     .end local v8    # "$i$f$fastForEach":I
     .local v2, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .local v18, "$i$f$fastForEach":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v2, v1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v8
 
     .line 691
     .local v8, "index$iv":I
-    if-ltz v8, :cond_fc
+    if-ltz v8, :cond_5
 
     .line 692
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v2, v8}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v20
@@ -1239,8 +1237,8 @@
 
     .local v8, "i$iv$iv":I
     .local v23, "index$iv":I
-    :goto_66
-    if-ge v8, v2, :cond_f5
+    :goto_1
+    if-ge v8, v2, :cond_4
 
     .line 697
     move/from16 v25, v2
@@ -1273,13 +1271,13 @@
 
     move-result-object v28
 
-    if-nez v28, :cond_86
+    if-nez v28, :cond_0
 
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->structuralEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v28
 
-    :cond_86
+    :cond_0
     move-object/from16 v29, v28
 
     .line 552
@@ -1314,7 +1312,7 @@
 
     move-result v12
 
-    if-nez v12, :cond_e0
+    if-nez v12, :cond_3
 
     .line 557
     move-object v12, v5
@@ -1328,17 +1326,15 @@
 
     .end local v9    # "previousValue":Ljava/lang/Object;
     .local v31, "previousValue":Ljava/lang/Object;
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v12, v2}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v9
 
     .line 699
     .local v9, "index$iv":I
-    if-ltz v9, :cond_da
+    if-ltz v9, :cond_2
 
     .line 700
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v12, v9}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v32
@@ -1376,8 +1372,8 @@
 
     .local v12, "i$iv$iv":I
     .local v35, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :goto_c2
-    if-ge v12, v9, :cond_d9
+    :goto_2
+    if-ge v12, v9, :cond_1
 
     .line 705
     move/from16 v37, v9
@@ -1409,12 +1405,12 @@
 
     move/from16 v9, v37
 
-    goto :goto_c2
+    goto :goto_2
 
     .line 707
     .end local v12    # "i$iv$iv":I
-    :cond_d9
-    goto :goto_de
+    :cond_1
+    goto :goto_3
 
     .line 699
     .end local v32    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1424,7 +1420,7 @@
     .end local v36    # "index$iv":I
     .local v9, "index$iv":I
     .local v12, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :cond_da
+    :cond_2
     move/from16 v36, v9
 
     move-object/from16 v35, v12
@@ -1434,18 +1430,18 @@
     .end local v12    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v35    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v36    # "index$iv":I
-    :goto_de
+    :goto_3
     nop
 
     .end local v29    # "$i$f$forEachScopeOf":I
     .end local v35    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v36    # "index$iv":I
-    goto :goto_e7
+    goto :goto_4
 
     .line 563
     .end local v31    # "previousValue":Ljava/lang/Object;
     .local v9, "previousValue":Ljava/lang/Object;
-    :cond_e0
+    :cond_3
     move-object/from16 v31, v9
 
     .end local v9    # "previousValue":Ljava/lang/Object;
@@ -1455,7 +1451,7 @@
     invoke-virtual {v9, v2}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 565
-    :goto_e7
+    :goto_4
     nop
 
     .line 697
@@ -1476,7 +1472,7 @@
 
     move/from16 v12, v30
 
-    goto/16 :goto_66
+    goto/16 :goto_1
 
     .end local v27    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v28    # "values$iv$iv":[Ljava/lang/Object;
@@ -1484,7 +1480,7 @@
     .local v9, "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .local v12, "$i$f$fastForEach":I
     .local v13, "values$iv$iv":[Ljava/lang/Object;
-    :cond_f5
+    :cond_4
     move-object/from16 v27, v9
 
     move/from16 v30, v12
@@ -1499,7 +1495,7 @@
     .restart local v27    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local v28    # "values$iv$iv":[Ljava/lang/Object;
     .restart local v30    # "$i$f$fastForEach":I
-    goto :goto_106
+    goto :goto_5
 
     .line 691
     .end local v20    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1515,7 +1511,7 @@
     .restart local v9    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local v12    # "$i$f$fastForEach":I
     .restart local v13    # "values$iv$iv":[Ljava/lang/Object;
-    :cond_fc
+    :cond_5
     move-object/from16 v24, v2
 
     move/from16 v23, v8
@@ -1537,8 +1533,8 @@
     .restart local v27    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local v28    # "values$iv$iv":[Ljava/lang/Object;
     .restart local v30    # "$i$f$fastForEach":I
-    :goto_106
-    goto :goto_10f
+    :goto_5
+    goto :goto_6
 
     .line 544
     .end local v18    # "$i$f$fastForEach":I
@@ -1552,7 +1548,7 @@
     .restart local v9    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local v12    # "$i$f$fastForEach":I
     .restart local v13    # "values$iv$iv":[Ljava/lang/Object;
-    :cond_107
+    :cond_6
     move/from16 v18, v8
 
     move-object/from16 v27, v9
@@ -1570,7 +1566,7 @@
     .restart local v27    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .restart local v28    # "values$iv$iv":[Ljava/lang/Object;
     .restart local v30    # "$i$f$fastForEach":I
-    :goto_10f
+    :goto_6
     move-object v2, v5
 
     .restart local v2    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -1578,17 +1574,15 @@
 
     .line 711
     .local v8, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v2, v1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v9
 
     .line 712
     .local v9, "index$iv":I
-    if-ltz v9, :cond_149
+    if-ltz v9, :cond_8
 
     .line 713
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v2, v9}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v12
@@ -1626,8 +1620,8 @@
 
     .local v2, "i$iv$iv":I
     .local v20, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :goto_12f
-    if-ge v2, v1, :cond_146
+    :goto_7
+    if-ge v2, v1, :cond_7
 
     .line 718
     move/from16 v22, v1
@@ -1659,14 +1653,14 @@
 
     move/from16 v1, v22
 
-    goto :goto_12f
+    goto :goto_7
 
     .line 720
     .end local v2    # "i$iv$iv":I
-    :cond_146
+    :cond_7
     move/from16 v1, v16
 
-    goto :goto_14f
+    goto :goto_8
 
     .line 712
     .end local v12    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1676,7 +1670,7 @@
     .end local v21    # "value":Ljava/lang/Object;
     .local v1, "value":Ljava/lang/Object;
     .local v2, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :cond_149
+    :cond_8
     move-object/from16 v21, v1
 
     move-object/from16 v20, v2
@@ -1690,7 +1684,7 @@
     .line 721
     .end local v16    # "hasValues":Z
     .local v1, "hasValues":Z
-    :goto_14f
+    :goto_8
     nop
 
     .line 572
@@ -1717,7 +1711,7 @@
 
     move/from16 v12, v30
 
-    goto/16 :goto_2e
+    goto/16 :goto_0
 
     .end local v18    # "$i$f$fastForEach":I
     .end local v27    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -1727,7 +1721,7 @@
     .local v9, "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .local v12, "$i$f$fastForEach":I
     .local v13, "values$iv$iv":[Ljava/lang/Object;
-    :cond_160
+    :cond_9
     move/from16 v16, v1
 
     move/from16 v18, v8
@@ -1759,14 +1753,14 @@
     .end local v27    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v28    # "values$iv$iv":[Ljava/lang/Object;
     .end local v30    # "$i$f$fastForEach":I
-    goto/16 :goto_2b5
+    goto/16 :goto_12
 
     .line 723
     .end local v16    # "hasValues":Z
     .end local v18    # "$i$f$fastForEach":I
     .restart local v1    # "hasValues":Z
     .restart local v8    # "$i$f$fastForEach":I
-    :cond_172
+    :cond_a
     move/from16 v18, v8
 
     .end local v8    # "$i$f$fastForEach":I
@@ -1784,12 +1778,12 @@
 
     move-result-object v9
 
-    :goto_17c
+    :goto_9
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v12
 
-    if-eqz v12, :cond_2ab
+    if-eqz v12, :cond_14
 
     invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1807,7 +1801,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_257
+    if-eqz v15, :cond_11
 
     .line 546
     move-object v15, v3
@@ -1821,17 +1815,15 @@
 
     .end local v1    # "hasValues":Z
     .local v17, "hasValues":Z
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v15, v13}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v1
 
     .line 691
     .local v1, "index$iv":I
-    if-ltz v1, :cond_24a
+    if-ltz v1, :cond_10
 
     .line 692
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v15, v1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v19
@@ -1869,8 +1861,8 @@
 
     .local v2, "i$iv$iv":I
     .local v22, "$this$forEach$iv$iv":Ljava/lang/Iterable;
-    :goto_1b2
-    if-ge v2, v1, :cond_241
+    :goto_a
+    if-ge v2, v1, :cond_f
 
     .line 729
     move/from16 v24, v1
@@ -1903,13 +1895,13 @@
 
     move-result-object v27
 
-    if-nez v27, :cond_1d2
+    if-nez v27, :cond_b
 
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->structuralEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v27
 
-    :cond_1d2
+    :cond_b
     move-object/from16 v28, v27
 
     .line 552
@@ -1944,7 +1936,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_22c
+    if-nez v4, :cond_e
 
     .line 557
     move-object v4, v5
@@ -1958,17 +1950,15 @@
 
     .end local v3    # "previousValue":Ljava/lang/Object;
     .local v30, "previousValue":Ljava/lang/Object;
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v4, v1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v3
 
     .line 731
     .local v3, "index$iv":I
-    if-ltz v3, :cond_226
+    if-ltz v3, :cond_d
 
     .line 732
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v4, v3}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v31
@@ -2006,8 +1996,8 @@
 
     .local v4, "i$iv$iv":I
     .local v34, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :goto_20e
-    if-ge v4, v3, :cond_225
+    :goto_b
+    if-ge v4, v3, :cond_c
 
     .line 737
     move/from16 v36, v3
@@ -2039,12 +2029,12 @@
 
     move/from16 v3, v36
 
-    goto :goto_20e
+    goto :goto_b
 
     .line 739
     .end local v4    # "i$iv$iv":I
-    :cond_225
-    goto :goto_22a
+    :cond_c
+    goto :goto_c
 
     .line 731
     .end local v31    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -2054,7 +2044,7 @@
     .end local v35    # "index$iv":I
     .local v3, "index$iv":I
     .local v4, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :cond_226
+    :cond_d
     move/from16 v35, v3
 
     move-object/from16 v34, v4
@@ -2064,18 +2054,18 @@
     .end local v4    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v34    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v35    # "index$iv":I
-    :goto_22a
+    :goto_c
     nop
 
     .end local v28    # "$i$f$forEachScopeOf":I
     .end local v34    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v35    # "index$iv":I
-    goto :goto_233
+    goto :goto_d
 
     .line 563
     .end local v30    # "previousValue":Ljava/lang/Object;
     .local v3, "previousValue":Ljava/lang/Object;
-    :cond_22c
+    :cond_e
     move-object/from16 v30, v3
 
     .end local v3    # "previousValue":Ljava/lang/Object;
@@ -2085,7 +2075,7 @@
     invoke-virtual {v3, v1}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 565
-    :goto_233
+    :goto_d
     nop
 
     .line 729
@@ -2106,7 +2096,7 @@
 
     move-object/from16 v4, v29
 
-    goto/16 :goto_1b2
+    goto/16 :goto_a
 
     .end local v26    # "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .end local v27    # "$this$fastForEach$iv":Ljava/util/Set;
@@ -2114,7 +2104,7 @@
     .local v3, "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .local v4, "recordedDerivedStateValues":Ljava/util/HashMap;
     .local v7, "$this$fastForEach$iv":Ljava/util/Set;
-    :cond_241
+    :cond_f
     move-object/from16 v26, v3
 
     move-object/from16 v29, v4
@@ -2131,7 +2121,7 @@
     .restart local v29    # "recordedDerivedStateValues":Ljava/util/HashMap;
     move/from16 v1, v17
 
-    goto :goto_256
+    goto :goto_e
 
     .line 691
     .end local v19    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -2147,7 +2137,7 @@
     .restart local v3    # "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v4    # "recordedDerivedStateValues":Ljava/util/HashMap;
     .restart local v7    # "$this$fastForEach$iv":Ljava/util/Set;
-    :cond_24a
+    :cond_10
     move/from16 v23, v1
 
     move-object/from16 v22, v2
@@ -2173,8 +2163,8 @@
     .line 742
     .end local v17    # "hasValues":Z
     .local v1, "hasValues":Z
-    :goto_256
-    goto :goto_261
+    :goto_e
+    goto :goto_f
 
     .line 544
     .end local v15    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -2188,7 +2178,7 @@
     .restart local v3    # "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v4    # "recordedDerivedStateValues":Ljava/util/HashMap;
     .restart local v7    # "$this$fastForEach$iv":Ljava/util/Set;
-    :cond_257
+    :cond_11
     move/from16 v17, v1
 
     move-object/from16 v22, v2
@@ -2208,7 +2198,7 @@
     .restart local v26    # "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v27    # "$this$fastForEach$iv":Ljava/util/Set;
     .restart local v29    # "recordedDerivedStateValues":Ljava/util/HashMap;
-    :goto_261
+    :goto_f
     move-object v2, v5
 
     .local v2, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
@@ -2216,17 +2206,15 @@
 
     .line 743
     .local v3, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v2, v13}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v4
 
     .line 744
     .local v4, "index$iv":I
-    if-ltz v4, :cond_29b
+    if-ltz v4, :cond_13
 
     .line 745
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v2, v4}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v7
@@ -2264,8 +2252,8 @@
 
     .local v2, "i$iv$iv":I
     .local v17, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :goto_281
-    if-ge v2, v1, :cond_298
+    :goto_10
+    if-ge v2, v1, :cond_12
 
     .line 750
     move/from16 v20, v1
@@ -2297,14 +2285,14 @@
 
     move/from16 v1, v20
 
-    goto :goto_281
+    goto :goto_10
 
     .line 752
     .end local v2    # "i$iv$iv":I
-    :cond_298
+    :cond_12
     move/from16 v1, v19
 
-    goto :goto_29f
+    goto :goto_11
 
     .line 744
     .end local v7    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
@@ -2314,7 +2302,7 @@
     .end local v19    # "hasValues":Z
     .local v1, "hasValues":Z
     .local v2, "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :cond_29b
+    :cond_13
     move/from16 v19, v1
 
     move-object/from16 v17, v2
@@ -2322,7 +2310,7 @@
     .line 753
     .end local v2    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v17    # "this_$iv":Landroidx/compose/runtime/collection/IdentityScopeMap;
-    :goto_29f
+    :goto_11
     nop
 
     .line 572
@@ -2343,7 +2331,7 @@
     move-object/from16 v4, v29
 
     .end local v12    # "element$iv$iv":Ljava/lang/Object;
-    goto/16 :goto_17c
+    goto/16 :goto_9
 
     .line 754
     .end local v22    # "$this$forEach$iv$iv":Ljava/lang/Iterable;
@@ -2354,7 +2342,7 @@
     .local v3, "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .local v4, "recordedDerivedStateValues":Ljava/util/HashMap;
     .local v7, "$this$fastForEach$iv":Ljava/util/Set;
-    :cond_2ab
+    :cond_14
     move/from16 v17, v1
 
     move-object/from16 v22, v2
@@ -2374,7 +2362,7 @@
     .restart local v26    # "dependencyToDerivedStates":Landroidx/compose/runtime/collection/IdentityScopeMap;
     .restart local v27    # "$this$fastForEach$iv":Ljava/util/Set;
     .restart local v29    # "recordedDerivedStateValues":Ljava/util/HashMap;
-    :goto_2b5
+    :goto_12
     nop
 
     .line 574
@@ -2386,7 +2374,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2e1
+    if-eqz v2, :cond_17
 
     .line 575
     iget-object v2, v0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->statesToReread:Landroidx/compose/runtime/collection/MutableVector;
@@ -2405,7 +2393,7 @@
 
     .line 758
     .local v4, "size$iv":I
-    if-lez v4, :cond_2db
+    if-lez v4, :cond_16
 
     .line 759
     const/4 v7, 0x0
@@ -2418,7 +2406,7 @@
 
     .line 762
     .local v8, "content$iv":[Ljava/lang/Object;
-    :cond_2cd
+    :cond_15
     aget-object v9, v8, v7
 
     check-cast v9, Landroidx/compose/runtime/DerivedState;
@@ -2442,12 +2430,12 @@
     add-int/lit8 v7, v7, 0x1
 
     .line 764
-    if-lt v7, v4, :cond_2cd
+    if-lt v7, v4, :cond_15
 
     .line 766
     .end local v7    # "i$iv":I
     .end local v8    # "content$iv":[Ljava/lang/Object;
-    :cond_2db
+    :cond_16
     nop
 
     .line 578
@@ -2459,12 +2447,12 @@
     invoke-virtual {v2}, Landroidx/compose/runtime/collection/MutableVector;->clear()V
 
     .line 581
-    :cond_2e1
+    :cond_17
     return v1
 .end method
 
 .method public final recordRead(Ljava/lang/Object;)V
-    .registers 8
+    .locals 6
     .param p1, "value"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "value"
@@ -2492,7 +2480,7 @@
     .line 409
     iget-object v2, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->currentScopeReads:Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
-    if-nez v2, :cond_26
+    if-nez v2, :cond_0
 
     new-instance v2, Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
@@ -2523,7 +2511,7 @@
     nop
 
     .line 405
-    :cond_26
+    :cond_0
     invoke-direct {p0, p1, v1, v0, v2}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->recordRead(Ljava/lang/Object;ILjava/lang/Object;Landroidx/compose/runtime/collection/IdentityArrayIntMap;)V
 
     .line 414
@@ -2531,7 +2519,7 @@
 .end method
 
 .method public final removeScopeIf(Lkotlin/jvm/functions/Function1;)V
-    .registers 24
+    .locals 22
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2570,8 +2558,8 @@
 
     move-result v6
 
-    :goto_13
-    if-ge v5, v6, :cond_9b
+    :goto_0
+    if-ge v5, v6, :cond_4
 
     .line 656
     invoke-virtual {v2}, Landroidx/compose/runtime/collection/IdentityArrayMap;->getKeys()[Ljava/lang/Object;
@@ -2621,7 +2609,7 @@
 
     .line 504
     .local v14, "$i$a$-also-SnapshotStateObserver$ObservedScopeMap$removeScopeIf$1$1":I
-    if-eqz v13, :cond_70
+    if-eqz v13, :cond_1
 
     .line 505
     move-object v15, v9
@@ -2657,8 +2645,8 @@
 
     .local v3, "i$iv":I
     .local v20, "$i$f$removeIf":I
-    :goto_4e
-    if-ge v3, v1, :cond_6b
+    :goto_1
+    if-ge v3, v1, :cond_0
 
     .line 665
     move/from16 v19, v1
@@ -2697,11 +2685,11 @@
 
     move/from16 v6, v21
 
-    goto :goto_4e
+    goto :goto_1
 
     .end local v19    # "size$iv":I
     .local v1, "size$iv":I
-    :cond_6b
+    :cond_0
     move/from16 v19, v1
 
     move/from16 v21, v6
@@ -2710,7 +2698,7 @@
     .end local v1    # "size$iv":I
     .end local v3    # "i$iv":I
     .restart local v19    # "size$iv":I
-    goto :goto_74
+    goto :goto_2
 
     .line 504
     .end local v15    # "this_$iv":Landroidx/compose/runtime/collection/IdentityArrayIntMap;
@@ -2720,7 +2708,7 @@
     .end local v19    # "size$iv":I
     .end local v20    # "$i$f$removeIf":I
     .local v3, "$i$f$removeIf":I
-    :cond_70
+    :cond_1
     move/from16 v20, v3
 
     move/from16 v21, v6
@@ -2728,7 +2716,7 @@
     .line 509
     .end local v3    # "$i$f$removeIf":I
     .restart local v20    # "$i$f$removeIf":I
-    :goto_74
+    :goto_2
     nop
 
     .line 503
@@ -2742,10 +2730,10 @@
     .end local v9    # "valueSet":Landroidx/compose/runtime/collection/IdentityArrayIntMap;
     .end local v10    # "scope":Ljava/lang/Object;
     .end local v11    # "$i$a$-removeIf-SnapshotStateObserver$ObservedScopeMap$removeScopeIf$1":I
-    if-nez v1, :cond_91
+    if-nez v1, :cond_3
 
     .line 668
-    if-eq v4, v5, :cond_8f
+    if-eq v4, v5, :cond_2
 
     .line 669
     invoke-virtual {v2}, Landroidx/compose/runtime/collection/IdentityArrayMap;->getKeys()[Ljava/lang/Object;
@@ -2768,13 +2756,13 @@
     aput-object v3, v1, v4
 
     .line 672
-    :cond_8f
+    :cond_2
     add-int/lit8 v4, v4, 0x1
 
     .line 654
     .end local v7    # "key$iv":Ljava/lang/Object;
     .end local v8    # "value$iv":Ljava/lang/Object;
-    :cond_91
+    :cond_3
     add-int/lit8 v5, v5, 0x1
 
     move-object/from16 v1, p1
@@ -2783,11 +2771,11 @@
 
     move/from16 v6, v21
 
-    goto/16 :goto_13
+    goto/16 :goto_0
 
     .end local v20    # "$i$f$removeIf":I
     .restart local v3    # "$i$f$removeIf":I
-    :cond_9b
+    :cond_4
     move/from16 v20, v3
 
     .line 675
@@ -2798,7 +2786,7 @@
 
     move-result v1
 
-    if-le v1, v4, :cond_bd
+    if-le v1, v4, :cond_6
 
     .line 676
     move v1, v4
@@ -2808,8 +2796,8 @@
 
     move-result v3
 
-    :goto_a8
-    if-ge v1, v3, :cond_ba
+    :goto_3
+    if-ge v1, v3, :cond_5
 
     .line 677
     invoke-virtual {v2}, Landroidx/compose/runtime/collection/IdentityArrayMap;->getKeys()[Ljava/lang/Object;
@@ -2830,15 +2818,15 @@
     .line 676
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_a8
+    goto :goto_3
 
     .line 680
     .end local v1    # "index$iv":I
-    :cond_ba
+    :cond_5
     invoke-static {v2, v4}, Landroidx/compose/runtime/collection/IdentityArrayMap;->access$setSize$p(Landroidx/compose/runtime/collection/IdentityArrayMap;I)V
 
     .line 682
-    :cond_bd
+    :cond_6
     nop
 
     .line 511
@@ -2849,7 +2837,7 @@
 .end method
 
 .method public final rereadDerivedState(Landroidx/compose/runtime/DerivedState;)V
-    .registers 19
+    .locals 17
     .param p1, "derivedState"    # Landroidx/compose/runtime/DerivedState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2889,17 +2877,15 @@
 
     .line 767
     .local v5, "$i$f$forEachScopeOf":I
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->find(Ljava/lang/Object;)I
     invoke-static {v4, v1}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$find(Landroidx/compose/runtime/collection/IdentityScopeMap;Ljava/lang/Object;)I
 
     move-result v6
 
     .line 768
     .local v6, "index$iv":I
-    if-ltz v6, :cond_5b
+    if-ltz v6, :cond_2
 
     .line 769
-    # invokes: Landroidx/compose/runtime/collection/IdentityScopeMap;->scopeSetAt(I)Landroidx/compose/runtime/collection/IdentityArraySet;
     invoke-static {v4, v6}, Landroidx/compose/runtime/collection/IdentityScopeMap;->access$scopeSetAt(Landroidx/compose/runtime/collection/IdentityScopeMap;I)Landroidx/compose/runtime/collection/IdentityArraySet;
 
     move-result-object v7
@@ -2925,8 +2911,8 @@
 
     move-result v11
 
-    :goto_2c
-    if-ge v10, v11, :cond_5a
+    :goto_0
+    if-ge v10, v11, :cond_1
 
     .line 774
     aget-object v12, v9, v10
@@ -2958,7 +2944,7 @@
 
     check-cast v14, Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
-    if-nez v14, :cond_52
+    if-nez v14, :cond_0
 
     new-instance v14, Landroidx/compose/runtime/collection/IdentityArrayIntMap;
 
@@ -2984,7 +2970,7 @@
     nop
 
     .line 589
-    :cond_52
+    :cond_0
     invoke-direct {v0, v1, v3, v12, v14}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->recordRead(Ljava/lang/Object;ILjava/lang/Object;Landroidx/compose/runtime/collection/IdentityArrayIntMap;)V
 
     .line 597
@@ -2998,18 +2984,18 @@
     .line 772
     add-int/lit8 v10, v10, 0x1
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 776
     .end local v10    # "i$iv$iv":I
-    :cond_5a
+    :cond_1
     nop
 
     .line 777
     .end local v7    # "this_$iv$iv":Landroidx/compose/runtime/collection/IdentityArraySet;
     .end local v8    # "$i$f$fastForEach":I
     .end local v9    # "values$iv$iv":[Ljava/lang/Object;
-    :cond_5b
+    :cond_2
     nop
 
     .line 598

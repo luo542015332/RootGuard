@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(F)V
-    .registers 5
+    .locals 3
     .param p1, "dy"    # F
 
     .line 53
@@ -71,15 +71,15 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;FILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     iget p1, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;->dy:F
 
-    :cond_6
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;->copy(F)Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;
 
     move-result-object p0
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final component1()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;->dy:F
 
@@ -98,7 +98,7 @@
 .end method
 
 .method public final copy(F)Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;
 
@@ -108,24 +108,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;
@@ -138,16 +138,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public final getDy()F
-    .registers 2
+    .locals 1
 
     .line 53
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;->dy:F
@@ -156,7 +156,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;->dy:F
 
@@ -168,7 +168,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

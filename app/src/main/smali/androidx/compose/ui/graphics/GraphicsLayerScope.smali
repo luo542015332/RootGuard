@@ -110,7 +110,7 @@
 
 # direct methods
 .method public static synthetic access$getAmbientShadowColor-0d7_KjU$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     .line 38
@@ -122,7 +122,7 @@
 .end method
 
 .method public static synthetic access$getCompositingStrategy--NrFUSI$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     .line 38
@@ -134,7 +134,7 @@
 .end method
 
 .method public static synthetic access$getRenderEffect$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;)Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     .line 38
@@ -146,7 +146,7 @@
 .end method
 
 .method public static synthetic access$getSize-NH-jbRc$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     .line 38
@@ -158,7 +158,7 @@
 .end method
 
 .method public static synthetic access$getSpotShadowColor-0d7_KjU$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     .line 38
@@ -170,7 +170,7 @@
 .end method
 
 .method public static synthetic access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # J
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public static synthetic access$roundToPx-0680j_4$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # F
 
@@ -196,7 +196,7 @@
 .end method
 
 .method public static synthetic access$setAmbientShadowColor-8_81llA$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;J)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "ambientShadowColor"    # J
 
@@ -207,7 +207,7 @@
 .end method
 
 .method public static synthetic access$setCompositingStrategy-aDBOjCE$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "compositingStrategy"    # I
 
@@ -218,7 +218,7 @@
 .end method
 
 .method public static synthetic access$setRenderEffect$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;Landroidx/compose/ui/graphics/RenderEffect;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "<anonymous parameter 0>"    # Landroidx/compose/ui/graphics/RenderEffect;
 
@@ -229,7 +229,7 @@
 .end method
 
 .method public static synthetic access$setSpotShadowColor-8_81llA$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;J)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "spotShadowColor"    # J
 
@@ -240,7 +240,7 @@
 .end method
 
 .method public static synthetic access$toDp-GaN1DYA$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # J
 
@@ -253,7 +253,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # F
 
@@ -266,7 +266,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # I
 
@@ -279,7 +279,7 @@
 .end method
 
 .method public static synthetic access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # J
 
@@ -292,7 +292,7 @@
 .end method
 
 .method public static synthetic access$toPx--R2X_6o$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # J
 
@@ -305,7 +305,7 @@
 .end method
 
 .method public static synthetic access$toPx-0680j_4$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # F
 
@@ -318,7 +318,7 @@
 .end method
 
 .method public static synthetic access$toRect$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
 
@@ -331,7 +331,7 @@
 .end method
 
 .method public static synthetic access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # J
 
@@ -344,7 +344,7 @@
 .end method
 
 .method public static synthetic access$toSp-0xMU5do$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # F
 
@@ -357,7 +357,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # F
 
@@ -370,7 +370,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/GraphicsLayerScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
     .param p1, "$receiver"    # I
 
@@ -388,7 +388,7 @@
 .end method
 
 .method public getAmbientShadowColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 96
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
@@ -405,7 +405,7 @@
 .end method
 
 .method public getCompositingStrategy--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 206
     sget-object v0, Landroidx/compose/ui/graphics/CompositingStrategy;->Companion:Landroidx/compose/ui/graphics/CompositingStrategy$Companion;
@@ -418,7 +418,7 @@
 .end method
 
 .method public getRenderEffect()Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     .line 198
     const/4 v0, 0x0
@@ -448,7 +448,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 217
     sget-object v0, Landroidx/compose/ui/geometry/Size;->Companion:Landroidx/compose/ui/geometry/Size$Companion;
@@ -461,7 +461,7 @@
 .end method
 
 .method public getSpotShadowColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 117
     invoke-static {}, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->getDefaultShadowColor()J
@@ -484,7 +484,7 @@
 .end method
 
 .method public setAmbientShadowColor-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "ambientShadowColor"    # J
 
     .line 99
@@ -498,7 +498,7 @@
 .end method
 
 .method public setCompositingStrategy-aDBOjCE(I)V
-    .registers 2
+    .locals 0
     .param p1, "compositingStrategy"    # I
 
     .line 209
@@ -506,7 +506,7 @@
 .end method
 
 .method public setRenderEffect(Landroidx/compose/ui/graphics/RenderEffect;)V
-    .registers 2
+    .locals 0
 
     .line 199
     return-void
@@ -534,7 +534,7 @@
 .end method
 
 .method public setSpotShadowColor-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "spotShadowColor"    # J
 
     .line 120

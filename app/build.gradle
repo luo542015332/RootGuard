@@ -15,19 +15,7 @@ android {
         versionName "3.2.13"
         multiDexEnabled true
 
-        // NDK configuration for native mount namespace isolation
-        ndk {
-            abiFilters 'arm64-v8a', 'armeabi-v7a'
-            // Additional ABI: 'x86', 'x86_64'
-        }
-
-        externalNativeBuild {
-            cmake {
-                cppFlags "-std=c++17 -fno-rtti -fno-exceptions"
-                arguments "-DANDROID_STL=c++_shared"
-                // NDK log library is linked via target_link_libraries
-            }
-        }
+        // NDK disabled - smali-only LSPosed module
     }
 
     buildTypes {
@@ -46,15 +34,6 @@ android {
     sourceSets {
         main {
             jniLibs.srcDirs = ['src/main/jniLibs']
-            // Native C++ sources
-            jni.srcDirs = ['src/main/cpp']
-        }
-    }
-
-    externalNativeBuild {
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
         }
     }
 

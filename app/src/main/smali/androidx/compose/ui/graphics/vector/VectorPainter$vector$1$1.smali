@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/vector/VectorPainter;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/vector/VectorPainter$vector$1$1;->this$0:Landroidx/compose/ui/graphics/vector/VectorPainter;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 192
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/VectorPainter$vector$1$1;->invoke()V
@@ -75,14 +75,13 @@
 .end method
 
 .method public final invoke()V
-    .registers 3
+    .locals 2
 
     .line 193
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorPainter$vector$1$1;->this$0:Landroidx/compose/ui/graphics/vector/VectorPainter;
 
     const/4 v1, 0x1
 
-    # invokes: Landroidx/compose/ui/graphics/vector/VectorPainter;->setDirty(Z)V
     invoke-static {v0, v1}, Landroidx/compose/ui/graphics/vector/VectorPainter;->access$setDirty(Landroidx/compose/ui/graphics/vector/VectorPainter;Z)V
 
     .line 194

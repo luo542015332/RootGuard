@@ -40,7 +40,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/TransformOrigin$Companion;-><init>()V
 
@@ -59,10 +59,9 @@
 
 # virtual methods
 .method public final getCenter-SzJe1aQ()J
-    .registers 3
+    .locals 2
 
     .line 80
-    # getter for: Landroidx/compose/ui/graphics/TransformOrigin;->Center:J
     invoke-static {}, Landroidx/compose/ui/graphics/TransformOrigin;->access$getCenter$cp()J
 
     move-result-wide v0

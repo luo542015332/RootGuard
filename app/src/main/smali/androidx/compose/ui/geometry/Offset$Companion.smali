@@ -47,7 +47,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 95
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/geometry/Offset$Companion;-><init>()V
 
@@ -64,19 +64,19 @@
 .end method
 
 .method public static synthetic getInfinite-F1C5BW0$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getUnspecified-F1C5BW0$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getZero-F1C5BW0$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -84,10 +84,9 @@
 
 # virtual methods
 .method public final getInfinite-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 114
-    # getter for: Landroidx/compose/ui/geometry/Offset;->Infinite:J
     invoke-static {}, Landroidx/compose/ui/geometry/Offset;->access$getInfinite$cp()J
 
     move-result-wide v0
@@ -96,10 +95,9 @@
 .end method
 
 .method public final getUnspecified-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 121
-    # getter for: Landroidx/compose/ui/geometry/Offset;->Unspecified:J
     invoke-static {}, Landroidx/compose/ui/geometry/Offset;->access$getUnspecified$cp()J
 
     move-result-wide v0
@@ -108,10 +106,9 @@
 .end method
 
 .method public final getZero-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 102
-    # getter for: Landroidx/compose/ui/geometry/Offset;->Zero:J
     invoke-static {}, Landroidx/compose/ui/geometry/Offset;->access$getZero$cp()J
 
     move-result-wide v0

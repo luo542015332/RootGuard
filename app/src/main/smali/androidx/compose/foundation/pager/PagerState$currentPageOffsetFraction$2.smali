@@ -55,7 +55,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/pager/PagerState;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/pager/PagerState$currentPageOffsetFraction$2;->this$0:Landroidx/compose/foundation/pager/PagerState;
 
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Float;
-    .registers 17
+    .locals 16
 
     .line 359
     move-object/from16 v0, p0
@@ -111,10 +111,10 @@
 
     move-result v7
 
-    :goto_18
+    :goto_0
     const/4 v9, 0x0
 
-    if-ge v6, v7, :cond_39
+    if-ge v6, v7, :cond_2
 
     .line 689
     invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -147,38 +147,38 @@
 
     move-result v8
 
-    if-ne v15, v8, :cond_31
+    if-ne v15, v8, :cond_0
 
     const/4 v8, 0x1
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_0
     move v8, v9
 
     .line 686
     .end local v13    # "it":Landroidx/compose/foundation/pager/PageInfo;
     .end local v14    # "$i$a$-fastFirstOrNull-PagerState$currentPageOffsetFraction$2$currentPagePositionOffset$1":I
-    :goto_32
-    if-eqz v8, :cond_35
+    :goto_1
+    if-eqz v8, :cond_1
 
-    goto :goto_3b
+    goto :goto_2
 
     .line 690
     .end local v11    # "it$iv":Ljava/lang/Object;
     .end local v12    # "$i$a$-fastForEach-ListUtilsKt$fastFirstOrNull$2$iv":I
-    :cond_35
+    :cond_1
     nop
 
     .line 688
     .end local v10    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
     .line 692
     .end local v6    # "index$iv$iv":I
-    :cond_39
+    :cond_2
     nop
 
     .line 693
@@ -189,29 +189,28 @@
     .line 359
     .end local v1    # "$this$fastFirstOrNull$iv":Ljava/util/List;
     .end local v3    # "$i$f$fastFirstOrNull":I
-    :goto_3b
+    :goto_2
     check-cast v11, Landroidx/compose/foundation/pager/PageInfo;
 
-    if-eqz v11, :cond_44
+    if-eqz v11, :cond_3
 
     invoke-interface {v11}, Landroidx/compose/foundation/pager/PageInfo;->getOffset()I
 
     move-result v1
 
-    goto :goto_45
+    goto :goto_3
 
-    :cond_44
+    :cond_3
     move v1, v9
 
     .line 358
-    :goto_45
+    :goto_3
     nop
 
     .line 360
     .local v1, "currentPagePositionOffset":I
     iget-object v2, v0, Landroidx/compose/foundation/pager/PagerState$currentPageOffsetFraction$2;->this$0:Landroidx/compose/foundation/pager/PagerState;
 
-    # invokes: Landroidx/compose/foundation/pager/PagerState;->getPageAvailableSpace()I
     invoke-static {v2}, Landroidx/compose/foundation/pager/PagerState;->access$getPageAvailableSpace(Landroidx/compose/foundation/pager/PagerState;)I
 
     move-result v2
@@ -224,17 +223,17 @@
 
     cmpg-float v3, v2, v3
 
-    if-nez v3, :cond_54
+    if-nez v3, :cond_4
 
     const/4 v8, 0x1
 
-    goto :goto_55
+    goto :goto_4
 
-    :cond_54
+    :cond_4
     move v8, v9
 
-    :goto_55
-    if-eqz v8, :cond_5e
+    :goto_4
+    if-eqz v8, :cond_5
 
     .line 363
     iget-object v3, v0, Landroidx/compose/foundation/pager/PagerState$currentPageOffsetFraction$2;->this$0:Landroidx/compose/foundation/pager/PagerState;
@@ -243,10 +242,10 @@
 
     move-result v3
 
-    goto :goto_6a
+    goto :goto_5
 
     .line 365
-    :cond_5e
+    :cond_5
     neg-int v3, v1
 
     int-to-float v3, v3
@@ -265,7 +264,7 @@
 
     move-result v3
 
-    :goto_6a
+    :goto_5
     invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v3
@@ -275,7 +274,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 357
     invoke-virtual {p0}, Landroidx/compose/foundation/pager/PagerState$currentPageOffsetFraction$2;->invoke()Ljava/lang/Float;

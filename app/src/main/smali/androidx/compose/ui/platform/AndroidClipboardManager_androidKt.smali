@@ -141,21 +141,21 @@
 
 # direct methods
 .method public static final convertToAnnotatedString(Ljava/lang/CharSequence;)Landroidx/compose/ui/text/AnnotatedString;
-    .registers 11
+    .locals 10
     .param p0, "$this$convertToAnnotatedString"    # Ljava/lang/CharSequence;
 
     .line 82
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
     .line 83
-    :cond_4
+    :cond_0
     instance-of v0, p0, Landroid/text/Spanned;
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 84
     new-instance v0, Landroidx/compose/ui/text/AnnotatedString;
@@ -179,7 +179,7 @@
     return-object v0
 
     .line 86
-    :cond_17
+    :cond_1
     move-object v0, p0
 
     check-cast v0, Landroid/text/Spanned;
@@ -219,10 +219,10 @@
 
     move-result v3
 
-    if-gt v2, v3, :cond_79
+    if-gt v2, v3, :cond_3
 
     .line 89
-    :goto_3b
+    :goto_0
     aget-object v4, v0, v2
 
     .line 90
@@ -237,13 +237,13 @@
 
     move-result v5
 
-    if-nez v5, :cond_4b
+    if-nez v5, :cond_2
 
     .line 91
-    goto :goto_74
+    goto :goto_1
 
     .line 93
-    :cond_4b
+    :cond_2
     move-object v5, p0
 
     check-cast v5, Landroid/text/Spanned;
@@ -296,16 +296,16 @@
     .end local v6    # "end":I
     .end local v7    # "decodeHelper":Landroidx/compose/ui/platform/DecodeHelper;
     .end local v8    # "spanStyle":Landroidx/compose/ui/text/SpanStyle;
-    :goto_74
-    if-eq v2, v3, :cond_79
+    :goto_1
+    if-eq v2, v3, :cond_3
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 99
     .end local v2    # "i":I
-    :cond_79
+    :cond_3
     new-instance v8, Landroidx/compose/ui/text/AnnotatedString;
 
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -328,7 +328,7 @@
 .end method
 
 .method public static final convertToCharSequence(Landroidx/compose/ui/text/AnnotatedString;)Ljava/lang/CharSequence;
-    .registers 15
+    .locals 14
     .param p0, "$this$convertToCharSequence"    # Landroidx/compose/ui/text/AnnotatedString;
 
     const-string v0, "<this>"
@@ -344,7 +344,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 104
     invoke-virtual {p0}, Landroidx/compose/ui/text/AnnotatedString;->getText()Ljava/lang/String;
@@ -356,7 +356,7 @@
     return-object v0
 
     .line 106
-    :cond_16
+    :cond_0
     new-instance v0, Landroid/text/SpannableString;
 
     invoke-virtual {p0}, Landroidx/compose/ui/text/AnnotatedString;->getText()Ljava/lang/String;
@@ -394,8 +394,8 @@
 
     move-result v5
 
-    :goto_31
-    if-ge v4, v5, :cond_6d
+    :goto_0
+    if-ge v4, v5, :cond_1
 
     .line 553
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -492,11 +492,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_31
+    goto :goto_0
 
     .line 556
     .end local v4    # "index$iv":I
-    :cond_6d
+    :cond_1
     nop
 
     .line 122

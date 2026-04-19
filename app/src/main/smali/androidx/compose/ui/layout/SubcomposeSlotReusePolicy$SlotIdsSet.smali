@@ -91,7 +91,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -101,7 +101,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -113,7 +113,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .param p1, "set"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -139,12 +139,12 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/Set;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 518
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 519
     new-instance p1, Ljava/util/LinkedHashSet;
@@ -154,7 +154,7 @@
     check-cast p1, Ljava/util/Set;
 
     .line 518
-    :cond_b
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;-><init>(Ljava/util/Set;)V
 
     .line 565
@@ -164,7 +164,7 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 518
@@ -176,7 +176,7 @@
 .end method
 
 .method public final add$ui_release(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "slotId"    # Ljava/lang/Object;
 
     .line 522
@@ -190,7 +190,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -211,7 +211,7 @@
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 564
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;->set:Ljava/util/Set;
@@ -222,7 +222,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;->set:Ljava/util/Set;
 
@@ -234,7 +234,7 @@
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -259,7 +259,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;->set:Ljava/util/Set;
 
@@ -271,7 +271,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;->set:Ljava/util/Set;
 
@@ -283,7 +283,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -304,7 +304,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "slotId"    # Ljava/lang/Object;
 
     .line 531
@@ -318,7 +318,7 @@
 .end method
 
 .method public final removeAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .param p1, "slotIds"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -345,7 +345,7 @@
 .end method
 
 .method public final removeAll(Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -374,7 +374,7 @@
 .end method
 
 .method public removeIf(Ljava/util/function/Predicate;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -395,7 +395,7 @@
 .end method
 
 .method public final retainAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .param p1, "slotIds"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -422,7 +422,7 @@
 .end method
 
 .method public final retainAll(Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -451,7 +451,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 518
     invoke-virtual {p0}, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;->getSize()I
@@ -462,7 +462,7 @@
 .end method
 
 .method public toArray()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     move-object v0, p0
 
@@ -476,7 +476,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

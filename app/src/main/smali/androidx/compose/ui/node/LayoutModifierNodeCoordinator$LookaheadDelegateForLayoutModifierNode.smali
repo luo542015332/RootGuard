@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;)V
-    .registers 3
+    .locals 1
     .param p1, "this$0"    # Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public calculateAlignmentLine(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 7
+    .locals 5
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -94,7 +94,6 @@
 
     check-cast v0, Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
-    # invokes: Landroidx/compose/ui/node/LayoutModifierNodeCoordinatorKt;->calculateAlignmentAndPlaceChildAsNeeded(Landroidx/compose/ui/node/LookaheadCapablePlaceable;Landroidx/compose/ui/layout/AlignmentLine;)I
     invoke-static {v0, p1}, Landroidx/compose/ui/node/LayoutModifierNodeCoordinatorKt;->access$calculateAlignmentAndPlaceChildAsNeeded(Landroidx/compose/ui/node/LookaheadCapablePlaceable;Landroidx/compose/ui/layout/AlignmentLine;)I
 
     move-result v0
@@ -126,7 +125,7 @@
 .end method
 
 .method public maxIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 94
@@ -173,7 +172,7 @@
 .end method
 
 .method public maxIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 84
@@ -220,7 +219,7 @@
 .end method
 
 .method public measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
-    .registers 10
+    .locals 7
     .param p1, "constraints"    # J
 
     .line 61
@@ -235,7 +234,6 @@
 
     .line 224
     .local v2, "$i$f$performingMeasure-K40F9xA":I
-    # invokes: Landroidx/compose/ui/node/LookaheadDelegate;->setMeasurementConstraints-BRTryo0(J)V
     invoke-static {v0, p1, p2}, Landroidx/compose/ui/node/LookaheadDelegate;->access$setMeasurementConstraints-BRTryo0(Landroidx/compose/ui/node/LookaheadDelegate;J)V
 
     .line 225
@@ -288,7 +286,6 @@
 
     .line 225
     .end local v3    # "$i$a$-performingMeasure-K40F9xA-LayoutModifierNodeCoordinator$LookaheadDelegateForLayoutModifierNode$measure$1":I
-    # invokes: Landroidx/compose/ui/node/LookaheadDelegate;->set_measureResult(Landroidx/compose/ui/layout/MeasureResult;)V
     invoke-static {v0, v1}, Landroidx/compose/ui/node/LookaheadDelegate;->access$set_measureResult(Landroidx/compose/ui/node/LookaheadDelegate;Landroidx/compose/ui/layout/MeasureResult;)V
 
     .line 226
@@ -301,7 +298,7 @@
 .end method
 
 .method public minIntrinsicHeight(I)I
-    .registers 6
+    .locals 4
     .param p1, "width"    # I
 
     .line 89
@@ -348,7 +345,7 @@
 .end method
 
 .method public minIntrinsicWidth(I)I
-    .registers 6
+    .locals 4
     .param p1, "height"    # I
 
     .line 79

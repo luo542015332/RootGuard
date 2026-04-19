@@ -99,7 +99,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     new-instance v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector$Companion;
 
@@ -130,7 +130,7 @@
 .end method
 
 .method public constructor <init>([Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "buffer"    # [Ljava/lang/Object;
 
     const-string/jumbo v0, "buffer"
@@ -150,16 +150,16 @@
 
     const/16 v1, 0x20
 
-    if-gt v0, v1, :cond_13
+    if-gt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     invoke-static {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 19
@@ -170,7 +170,7 @@
 .end method
 
 .method public static final synthetic access$getEMPTY$cp()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
-    .registers 1
+    .locals 1
 
     .line 15
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->EMPTY:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
@@ -179,7 +179,7 @@
 .end method
 
 .method private final bufferOfSize(I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "size"    # I
 
     .line 25
@@ -191,7 +191,7 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 15
@@ -205,7 +205,7 @@
 .end method
 
 .method public add(ILjava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 11
+    .locals 8
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -228,7 +228,7 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_12
+    if-ne p1, v0, :cond_0
 
     .line 97
     invoke-virtual {p0, p2}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -238,14 +238,14 @@
     return-object v0
 
     .line 100
-    :cond_12
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->size()I
 
     move-result v0
 
     const/16 v1, 0x20
 
-    if-ge v0, v1, :cond_44
+    if-ge v0, v1, :cond_1
 
     .line 102
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->size()I
@@ -301,7 +301,7 @@
 
     .line 109
     .end local v0    # "newBuffer":[Ljava/lang/Object;
-    :cond_44
+    :cond_1
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->buffer:[Ljava/lang/Object;
 
     array-length v1, v0
@@ -362,7 +362,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 7
+    .locals 5
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -379,7 +379,7 @@
 
     const/16 v1, 0x20
 
-    if-ge v0, v1, :cond_28
+    if-ge v0, v1, :cond_0
 
     .line 30
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->buffer:[Ljava/lang/Object;
@@ -417,7 +417,7 @@
 
     .line 34
     .end local v0    # "newBuffer":[Ljava/lang/Object;
-    :cond_28
+    :cond_0
     invoke-static {p1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/UtilsKt;->presizedBufferWith(Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -444,7 +444,7 @@
 .end method
 
 .method public bridge synthetic addAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
 
     .line 15
@@ -458,7 +458,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 11
+    .locals 8
     .param p1, "index"    # I
     .param p2, "c"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
@@ -495,7 +495,7 @@
 
     const/16 v1, 0x20
 
-    if-gt v0, v1, :cond_5d
+    if-gt v0, v1, :cond_1
 
     .line 82
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->size()I
@@ -554,12 +554,12 @@
 
     move-result-object v2
 
-    :goto_45
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_55
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -576,12 +576,12 @@
     move v1, v4
 
     .end local v3    # "element":Ljava/lang/Object;
-    goto :goto_45
+    goto :goto_0
 
     .line 89
     .end local v4    # "position":I
     .restart local v1    # "position":I
-    :cond_55
+    :cond_0
     new-instance v2, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
 
     invoke-direct {v2, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;-><init>([Ljava/lang/Object;)V
@@ -593,7 +593,7 @@
     .line 91
     .end local v0    # "newBuffer":[Ljava/lang/Object;
     .end local v1    # "position":I
-    :cond_5d
+    :cond_1
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -632,7 +632,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 7
+    .locals 5
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -661,7 +661,7 @@
 
     const/16 v1, 0x20
 
-    if-gt v0, v1, :cond_48
+    if-gt v0, v1, :cond_1
 
     .line 40
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->buffer:[Ljava/lang/Object;
@@ -696,12 +696,12 @@
 
     move-result-object v2
 
-    :goto_30
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_40
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -718,12 +718,12 @@
     move v1, v4
 
     .end local v3    # "element":Ljava/lang/Object;
-    goto :goto_30
+    goto :goto_0
 
     .line 46
     .end local v4    # "index":I
     .restart local v1    # "index":I
-    :cond_40
+    :cond_0
     new-instance v2, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
 
     invoke-direct {v2, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;-><init>([Ljava/lang/Object;)V
@@ -735,7 +735,7 @@
     .line 48
     .end local v0    # "newBuffer":[Ljava/lang/Object;
     .end local v1    # "index":I
-    :cond_48
+    :cond_1
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -774,7 +774,7 @@
 .end method
 
 .method public bridge synthetic builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection$Builder;
-    .registers 2
+    .locals 1
 
     .line 15
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList$Builder;
@@ -787,7 +787,7 @@
 .end method
 
 .method public builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList$Builder;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -817,7 +817,7 @@
 .end method
 
 .method public get(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -841,7 +841,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 22
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->buffer:[Ljava/lang/Object;
@@ -852,7 +852,7 @@
 .end method
 
 .method public indexOf(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 131
@@ -866,7 +866,7 @@
 .end method
 
 .method public lastIndexOf(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 135
@@ -880,7 +880,7 @@
 .end method
 
 .method public listIterator(I)Ljava/util/ListIterator;
-    .registers 5
+    .locals 3
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -914,7 +914,7 @@
 .end method
 
 .method public bridge synthetic removeAll(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
 
     .line 15
@@ -928,7 +928,7 @@
 .end method
 
 .method public removeAll(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 10
+    .locals 8
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -968,8 +968,8 @@
 
     move-result v4
 
-    :goto_12
-    if-ge v3, v4, :cond_41
+    :goto_0
+    if-ge v3, v4, :cond_2
 
     .line 59
     iget-object v5, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->buffer:[Ljava/lang/Object;
@@ -988,10 +988,10 @@
 
     move-result v6
 
-    if-eqz v6, :cond_37
+    if-eqz v6, :cond_0
 
     .line 62
-    if-nez v2, :cond_3e
+    if-nez v2, :cond_1
 
     .line 63
     iget-object v6, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->buffer:[Ljava/lang/Object;
@@ -1014,11 +1014,11 @@
     .line 66
     const/4 v2, 0x1
 
-    goto :goto_3e
+    goto :goto_1
 
     .line 68
-    :cond_37
-    if-eqz v2, :cond_3e
+    :cond_0
+    if-eqz v2, :cond_1
 
     .line 69
     add-int/lit8 v6, v1, 0x1
@@ -1033,15 +1033,15 @@
     .end local v5    # "element":Ljava/lang/Object;
     .end local v6    # "newSize":I
     .restart local v1    # "newSize":I
-    :cond_3e
-    :goto_3e
+    :cond_1
+    :goto_1
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 72
     .end local v3    # "index":I
-    :cond_41
+    :cond_2
     nop
 
     .line 73
@@ -1049,26 +1049,26 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_4c
+    if-ne v1, v3, :cond_3
 
     move-object v3, p0
 
     check-cast v3, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
 
-    goto :goto_5f
+    goto :goto_2
 
     .line 74
-    :cond_4c
-    if-nez v1, :cond_53
+    :cond_3
+    if-nez v1, :cond_4
 
     sget-object v3, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->EMPTY:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
 
     check-cast v3, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
 
-    goto :goto_5f
+    goto :goto_2
 
     .line 75
-    :cond_53
+    :cond_4
     new-instance v3, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
 
     const/4 v4, 0x0
@@ -1082,12 +1082,12 @@
     check-cast v3, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
 
     .line 72
-    :goto_5f
+    :goto_2
     return-object v3
 .end method
 
 .method public removeAt(I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 6
+    .locals 4
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1111,7 +1111,7 @@
 
     const/4 v1, 0x1
 
-    if-ne v0, v1, :cond_13
+    if-ne v0, v1, :cond_0
 
     .line 119
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->EMPTY:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
@@ -1121,7 +1121,7 @@
     return-object v0
 
     .line 121
-    :cond_13
+    :cond_0
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->buffer:[Ljava/lang/Object;
 
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;->size()I
@@ -1161,7 +1161,7 @@
 .end method
 
 .method public set(ILjava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 5
+    .locals 2
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

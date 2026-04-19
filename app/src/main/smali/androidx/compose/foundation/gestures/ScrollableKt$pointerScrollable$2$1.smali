@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/State;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Boolean;
-    .registers 2
+    .locals 1
 
     .line 282
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ScrollableKt$pointerScrollable$2$1;->$scrollLogic:Landroidx/compose/runtime/State;
@@ -104,7 +104,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 282
     invoke-virtual {p0}, Landroidx/compose/foundation/gestures/ScrollableKt$pointerScrollable$2$1;->invoke()Ljava/lang/Boolean;

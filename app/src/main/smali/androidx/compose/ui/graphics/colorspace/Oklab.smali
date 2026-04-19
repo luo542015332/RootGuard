@@ -81,7 +81,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/Oklab$Companion;
 
@@ -99,7 +99,7 @@
 
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_66
+    fill-array-data v1, :array_0
 
     .line 141
     nop
@@ -188,7 +188,7 @@
     .line 155
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_7c
+    fill-array-data v0, :array_1
 
     .line 156
     nop
@@ -247,7 +247,7 @@
 
     nop
 
-    :array_66
+    :array_0
     .array-data 4
         0x3f51a598
         0x3d071acd
@@ -260,7 +260,7 @@
         0x3f22441b
     .end array-data
 
-    :array_7c
+    :array_1
     .array-data 4
         0x3e578152
         0x3ffd2f0e
@@ -275,7 +275,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 10
+    .locals 7
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "id"    # I
 
@@ -314,7 +314,7 @@
 
 # virtual methods
 .method public fromXyz([F)[F
-    .registers 8
+    .locals 6
     .param p1, "v"    # [F
 
     const-string/jumbo v0, "v"
@@ -421,43 +421,43 @@
 .end method
 
 .method public getMaxValue(I)F
-    .registers 3
+    .locals 1
     .param p1, "component"    # I
 
     .line 45
-    if-nez p1, :cond_5
+    if-nez p1, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/high16 v0, 0x3f000000    # 0.5f
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public getMinValue(I)F
-    .registers 3
+    .locals 1
     .param p1, "component"    # I
 
     .line 41
-    if-nez p1, :cond_4
+    if-nez p1, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/high16 v0, -0x41000000    # -0.5f
 
-    :goto_6
+    :goto_0
     return v0
 .end method
 
 .method public isWideGamut()Z
-    .registers 2
+    .locals 1
 
     .line 38
     const/4 v0, 0x1
@@ -466,7 +466,7 @@
 .end method
 
 .method public toXy$ui_graphics_release(FFF)J
-    .registers 27
+    .locals 23
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -606,7 +606,7 @@
 .end method
 
 .method public toXyz([F)[F
-    .registers 8
+    .locals 6
     .param p1, "v"    # [F
 
     const-string/jumbo v0, "v"
@@ -708,7 +708,7 @@
 .end method
 
 .method public toZ$ui_graphics_release(FFF)F
-    .registers 14
+    .locals 10
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -790,7 +790,7 @@
 .end method
 
 .method public xyzaToColor-JlNiLsg$ui_graphics_release(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J
-    .registers 14
+    .locals 8
     .param p1, "x"    # F
     .param p2, "y"    # F
     .param p3, "z"    # F

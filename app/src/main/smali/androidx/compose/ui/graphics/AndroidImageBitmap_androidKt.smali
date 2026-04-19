@@ -45,7 +45,7 @@
 
 # direct methods
 .method public static final ActualImageBitmap-x__-hDU(IIIZLandroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroidx/compose/ui/graphics/ImageBitmap;
-    .registers 8
+    .locals 3
     .param p0, "width"    # I
     .param p1, "height"    # I
     .param p2, "config"    # I
@@ -84,7 +84,7 @@
 .end method
 
 .method public static final asAndroidBitmap(Landroidx/compose/ui/graphics/ImageBitmap;)Landroid/graphics/Bitmap;
-    .registers 3
+    .locals 2
     .param p0, "$this$asAndroidBitmap"    # Landroidx/compose/ui/graphics/ImageBitmap;
 
     const-string v0, "<this>"
@@ -97,7 +97,7 @@
     .line 63
     instance-of v0, p0, Landroidx/compose/ui/graphics/AndroidImageBitmap;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
@@ -111,7 +111,7 @@
     return-object v0
 
     .line 64
-    :cond_12
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Unable to obtain android.graphics.Bitmap"
@@ -122,7 +122,7 @@
 .end method
 
 .method public static final asImageBitmap(Landroid/graphics/Bitmap;)Landroidx/compose/ui/graphics/ImageBitmap;
-    .registers 2
+    .locals 1
     .param p0, "$this$asImageBitmap"    # Landroid/graphics/Bitmap;
 
     const-string v0, "<this>"
@@ -140,7 +140,7 @@
 .end method
 
 .method public static final toBitmapConfig-1JJdX4A(I)Landroid/graphics/Bitmap$Config;
-    .registers 2
+    .locals 1
     .param p0, "$this$toBitmapConfig_u2d1JJdX4A"    # I
 
     .line 145
@@ -154,15 +154,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 146
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 147
-    :cond_f
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;->getAlpha8-_sVssgQ()I
@@ -173,15 +173,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 148
     sget-object v0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 149
-    :cond_1e
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;->getRgb565-_sVssgQ()I
@@ -192,15 +192,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 150
     sget-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 151
-    :cond_2d
+    :cond_2
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;->getF16-_sVssgQ()I
@@ -211,15 +211,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3
 
     .line 152
     sget-object v0, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 153
-    :cond_3c
+    :cond_3
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;->getGpu-_sVssgQ()I
@@ -230,24 +230,24 @@
 
     move-result v0
 
-    if-eqz v0, :cond_4b
+    if-eqz v0, :cond_4
 
     .line 154
     sget-object v0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 156
-    :cond_4b
+    :cond_4
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 145
-    :goto_4d
+    :goto_0
     return-object v0
 .end method
 
 .method public static final toImageConfig(Landroid/graphics/Bitmap$Config;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$toImageConfig"    # Landroid/graphics/Bitmap$Config;
 
     const-string v0, "<this>"
@@ -257,7 +257,7 @@
     .line 166
     sget-object v0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
-    if-ne p0, v0, :cond_10
+    if-ne p0, v0, :cond_0
 
     .line 167
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
@@ -266,13 +266,13 @@
 
     move-result v0
 
-    goto :goto_42
+    goto :goto_0
 
     .line 168
-    :cond_10
+    :cond_0
     sget-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    if-ne p0, v0, :cond_1b
+    if-ne p0, v0, :cond_1
 
     .line 169
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
@@ -281,13 +281,13 @@
 
     move-result v0
 
-    goto :goto_42
+    goto :goto_0
 
     .line 170
-    :cond_1b
+    :cond_1
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
-    if-ne p0, v0, :cond_26
+    if-ne p0, v0, :cond_2
 
     .line 171
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
@@ -296,13 +296,13 @@
 
     move-result v0
 
-    goto :goto_42
+    goto :goto_0
 
     .line 172
-    :cond_26
+    :cond_2
     sget-object v0, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
-    if-ne p0, v0, :cond_31
+    if-ne p0, v0, :cond_3
 
     .line 173
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
@@ -311,13 +311,13 @@
 
     move-result v0
 
-    goto :goto_42
+    goto :goto_0
 
     .line 174
-    :cond_31
+    :cond_3
     sget-object v0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
-    if-ne p0, v0, :cond_3c
+    if-ne p0, v0, :cond_4
 
     .line 175
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
@@ -326,10 +326,10 @@
 
     move-result v0
 
-    goto :goto_42
+    goto :goto_0
 
     .line 177
-    :cond_3c
+    :cond_4
     sget-object v0, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;->getArgb8888-_sVssgQ()I
@@ -337,6 +337,6 @@
     move-result v0
 
     .line 166
-    :goto_42
+    :goto_0
     return v0
 .end method

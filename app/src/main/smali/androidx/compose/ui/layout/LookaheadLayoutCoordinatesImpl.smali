@@ -92,7 +92,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/LookaheadDelegate;)V
-    .registers 3
+    .locals 1
     .param p1, "lookaheadDelegate"    # Landroidx/compose/ui/node/LookaheadDelegate;
 
     const-string/jumbo v0, "lookaheadDelegate"
@@ -109,7 +109,7 @@
 .end method
 
 .method private final getLookaheadOffset-F1C5BW0()J
-    .registers 9
+    .locals 8
 
     .line 72
     iget-object v0, p0, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->lookaheadDelegate:Landroidx/compose/ui/node/LookaheadDelegate;
@@ -175,7 +175,7 @@
 
 # virtual methods
 .method public get(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 3
+    .locals 1
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -193,7 +193,7 @@
 .end method
 
 .method public final getCoordinator()Landroidx/compose/ui/node/NodeCoordinator;
-    .registers 2
+    .locals 1
 
     .line 48
     iget-object v0, p0, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->lookaheadDelegate:Landroidx/compose/ui/node/LookaheadDelegate;
@@ -206,7 +206,7 @@
 .end method
 
 .method public final getLookaheadDelegate()Landroidx/compose/ui/node/LookaheadDelegate;
-    .registers 2
+    .locals 1
 
     .line 45
     iget-object v0, p0, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->lookaheadDelegate:Landroidx/compose/ui/node/LookaheadDelegate;
@@ -215,14 +215,14 @@
 .end method
 
 .method public getParentCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 3
+    .locals 2
 
     .line 64
     invoke-virtual {p0}, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->isAttached()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     .line 65
     invoke-virtual {p0}, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->getCoordinator()Landroidx/compose/ui/node/NodeCoordinator;
@@ -233,28 +233,28 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->getLookaheadDelegate()Landroidx/compose/ui/node/LookaheadDelegate;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/LookaheadDelegate;->getCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1c
+    :goto_0
     return-object v0
 
     .line 149
-    :cond_1d
+    :cond_1
     const/4 v0, 0x0
 
     .line 64
@@ -276,14 +276,14 @@
 .end method
 
 .method public getParentLayoutCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 5
+    .locals 4
 
     .line 57
     invoke-virtual {p0}, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->isAttached()Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1
 
     .line 58
     invoke-virtual {p0}, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->getCoordinator()Landroidx/compose/ui/node/NodeCoordinator;
@@ -304,7 +304,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     .local v0, "it":Landroidx/compose/ui/node/NodeCoordinator;
     const/4 v2, 0x0
@@ -315,7 +315,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_0
 
     invoke-virtual {v3}, Landroidx/compose/ui/node/LookaheadDelegate;->getCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
 
@@ -324,11 +324,11 @@
     .line 58
     .end local v0    # "it":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v2    # "$i$a$-let-LookaheadLayoutCoordinatesImpl$parentLayoutCoordinates$2":I
-    :cond_24
+    :cond_0
     return-object v1
 
     .line 149
-    :cond_25
+    :cond_1
     const/4 v0, 0x0
 
     .line 57
@@ -350,7 +350,7 @@
 .end method
 
 .method public getProvidedAlignmentLines()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -373,7 +373,7 @@
 .end method
 
 .method public getSize-YbymL2g()J
-    .registers 5
+    .locals 4
 
     .line 51
     iget-object v0, p0, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->lookaheadDelegate:Landroidx/compose/ui/node/LookaheadDelegate;
@@ -402,7 +402,7 @@
 .end method
 
 .method public isAttached()Z
-    .registers 2
+    .locals 1
 
     .line 69
     invoke-virtual {p0}, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->getCoordinator()Landroidx/compose/ui/node/NodeCoordinator;
@@ -417,7 +417,7 @@
 .end method
 
 .method public localBoundingBoxOf(Landroidx/compose/ui/layout/LayoutCoordinates;Z)Landroidx/compose/ui/geometry/Rect;
-    .registers 4
+    .locals 1
     .param p1, "sourceCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p2, "clipBounds"    # Z
 
@@ -438,7 +438,7 @@
 .end method
 
 .method public localPositionOf-R5De75A(Landroidx/compose/ui/layout/LayoutCoordinates;J)J
-    .registers 24
+    .locals 20
     .param p1, "sourceCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p2, "relativeToSource"    # J
 
@@ -453,7 +453,7 @@
     .line 90
     instance-of v2, v1, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;
 
-    if-eqz v2, :cond_169
+    if-eqz v2, :cond_1
 
     .line 91
     move-object v2, v1
@@ -489,7 +489,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_95
+    if-eqz v4, :cond_0
 
     .local v4, "ancestor":Landroidx/compose/ui/node/LookaheadDelegate;
     const/4 v5, 0x0
@@ -644,10 +644,10 @@
 
     move-object/from16 v19, v3
 
-    goto/16 :goto_168
+    goto/16 :goto_0
 
     .line 99
-    :cond_95
+    :cond_0
     move-object v4, v3
 
     .local v4, "it":Landroidx/compose/ui/node/NodeCoordinator;
@@ -953,13 +953,13 @@
     nop
 
     .line 95
-    :goto_168
+    :goto_0
     return-wide v6
 
     .line 113
     .end local v18    # "source":Landroidx/compose/ui/node/LookaheadDelegate;
     .end local v19    # "commonAncestor":Landroidx/compose/ui/node/NodeCoordinator;
-    :cond_169
+    :cond_1
     iget-object v2, v0, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesImpl;->lookaheadDelegate:Landroidx/compose/ui/node/LookaheadDelegate;
 
     invoke-static {v2}, Landroidx/compose/ui/layout/LookaheadLayoutCoordinatesKt;->getRootLookaheadDelegate(Landroidx/compose/ui/node/LookaheadDelegate;)Landroidx/compose/ui/node/LookaheadDelegate;
@@ -1008,7 +1008,7 @@
 .end method
 
 .method public localToRoot-MK-Hz9U(J)J
-    .registers 6
+    .locals 3
     .param p1, "relativeToLocal"    # J
 
     .line 84
@@ -1032,7 +1032,7 @@
 .end method
 
 .method public localToWindow-MK-Hz9U(J)J
-    .registers 6
+    .locals 3
     .param p1, "relativeToLocal"    # J
 
     .line 81
@@ -1056,7 +1056,7 @@
 .end method
 
 .method public transformFrom-EL8BTi8(Landroidx/compose/ui/layout/LayoutCoordinates;[F)V
-    .registers 4
+    .locals 1
     .param p1, "sourceCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p2, "matrix"    # [F
 
@@ -1080,7 +1080,7 @@
 .end method
 
 .method public windowToLocal-MK-Hz9U(J)J
-    .registers 7
+    .locals 4
     .param p1, "relativeToWindow"    # J
 
     .line 78

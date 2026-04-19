@@ -32,7 +32,7 @@
 
 # direct methods
 .method public static final withInfiniteAnimationFrameNanos(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p0, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -67,18 +67,18 @@
 
     .line 64
     .local v0, "policy":Landroidx/compose/ui/platform/InfiniteAnimationPolicy;
-    if-nez v0, :cond_15
+    if-nez v0, :cond_0
 
     invoke-static {p0, p1}, Landroidx/compose/runtime/MonotonicFrameClockKt;->withFrameNanos(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v1
 
     .line 66
-    :goto_14
+    :goto_0
     return-object v1
 
     .line 65
-    :cond_15
+    :cond_0
     new-instance v1, Landroidx/compose/ui/platform/InfiniteAnimationPolicyKt$withInfiniteAnimationFrameNanos$2;
 
     const/4 v2, 0x0
@@ -91,5 +91,5 @@
 
     move-result-object v1
 
-    goto :goto_14
+    goto :goto_0
 .end method

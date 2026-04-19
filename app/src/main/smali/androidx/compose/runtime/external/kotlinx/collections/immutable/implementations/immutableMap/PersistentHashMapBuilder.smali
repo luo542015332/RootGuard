@@ -138,7 +138,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;)V
-    .registers 3
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -189,7 +189,7 @@
 
 # virtual methods
 .method public bridge synthetic build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
@@ -202,7 +202,7 @@
 .end method
 
 .method public build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -220,15 +220,15 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 28
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 30
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
 
     invoke-direct {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;-><init>()V
@@ -247,7 +247,7 @@
     invoke-direct {v0, v1, v2}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;-><init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;I)V
 
     .line 27
-    :goto_1f
+    :goto_0
     iput-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->map:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
 
     .line 33
@@ -255,7 +255,7 @@
 .end method
 
 .method public clear()V
-    .registers 3
+    .locals 2
 
     .line 93
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode$Companion;
@@ -280,7 +280,7 @@
 .end method
 
 .method public containsKey(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -293,18 +293,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v1
 
-    :goto_b
+    :goto_0
     invoke-virtual {v0, v2, p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->containsKey(ILjava/lang/Object;I)Z
 
     move-result v0
@@ -313,7 +313,7 @@
 .end method
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -326,18 +326,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v1
 
-    :goto_b
+    :goto_0
     invoke-virtual {v0, v2, p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->get(ILjava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v0
@@ -346,7 +346,7 @@
 .end method
 
 .method public getEntries()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -367,7 +367,7 @@
 .end method
 
 .method public getKeys()Ljava/util/Set;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -387,7 +387,7 @@
 .end method
 
 .method public final getModCount$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 17
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->modCount:I
@@ -396,7 +396,7 @@
 .end method
 
 .method public final getNode$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -412,7 +412,7 @@
 .end method
 
 .method public final getOperationResult$runtime_release()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -426,7 +426,7 @@
 .end method
 
 .method public final getOwnership()Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
-    .registers 2
+    .locals 1
 
     .line 13
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->ownership:Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
@@ -435,7 +435,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 20
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->size:I
@@ -444,7 +444,7 @@
 .end method
 
 .method public getValues()Ljava/util/Collection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -464,7 +464,7 @@
 .end method
 
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 10
+    .locals 7
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -481,18 +481,18 @@
     .line 61
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
 
-    if-eqz p1, :cond_c
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     move v2, v0
 
     const/4 v5, 0x0
@@ -516,7 +516,7 @@
 .end method
 
 .method public putAll(Ljava/util/Map;)V
-    .registers 9
+    .locals 7
     .param p1, "from"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -535,50 +535,50 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object v0, v1
 
-    :goto_10
-    if-nez v0, :cond_23
+    :goto_0
+    if-nez v0, :cond_3
 
     instance-of v0, p1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move-object v0, v1
 
-    :goto_1b
-    if-eqz v0, :cond_22
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
 
     move-result-object v0
 
-    goto :goto_23
+    goto :goto_2
 
-    :cond_22
+    :cond_2
     move-object v0, v1
 
     .line 67
     .local v0, "map":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
-    :cond_23
-    :goto_23
-    if-eqz v0, :cond_53
+    :cond_3
+    :goto_2
+    if-eqz v0, :cond_4
 
     .line 68
     new-instance v2, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;
@@ -630,27 +630,27 @@
 
     .line 72
     .local v3, "newSize":I
-    if-eq v2, v3, :cond_56
+    if-eq v2, v3, :cond_5
 
     invoke-virtual {p0, v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->setSize(I)V
 
     .end local v1    # "intersectionCounter":Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;
     .end local v2    # "oldSize":I
     .end local v3    # "newSize":I
-    goto :goto_56
+    goto :goto_3
 
     .line 74
-    :cond_53
+    :cond_4
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableMap;->putAll(Ljava/util/Map;)V
 
     .line 75
-    :cond_56
-    :goto_56
+    :cond_5
+    :goto_3
     return-void
 .end method
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -668,23 +668,23 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     move v2, v1
 
-    :goto_e
+    :goto_0
     invoke-virtual {v0, v2, p1, v1, p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->mutableRemove(ILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
 
     move-result-object v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_1
 
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode$Companion;
 
@@ -696,7 +696,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_20
+    :cond_1
     iput-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
 
     .line 81
@@ -706,7 +706,7 @@
 .end method
 
 .method public final remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 11
+    .locals 8
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "value"    # Ljava/lang/Object;
 
@@ -721,18 +721,18 @@
 
     const/4 v7, 0x0
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v2, v7
 
-    :goto_f
+    :goto_0
     const/4 v5, 0x0
 
     move-object v3, p1
@@ -745,7 +745,7 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
     sget-object v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode$Companion;
 
@@ -757,7 +757,7 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    :cond_25
+    :cond_1
     iput-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
 
     .line 88
@@ -765,16 +765,16 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_2e
+    if-eq v0, v1, :cond_2
 
     const/4 v7, 0x1
 
-    :cond_2e
+    :cond_2
     return v7
 .end method
 
 .method public final setModCount$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 17
@@ -784,7 +784,7 @@
 .end method
 
 .method public final setNode$runtime_release(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -805,7 +805,7 @@
 .end method
 
 .method public final setOperationResult$runtime_release(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -820,7 +820,7 @@
 .end method
 
 .method protected final setOwnership(Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
 
     const-string v0, "<set-?>"
@@ -834,7 +834,7 @@
 .end method
 
 .method public setSize(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 22

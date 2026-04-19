@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 31
     sget-object v0, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final GraphicsLayerScope()Landroidx/compose/ui/graphics/GraphicsLayerScope;
-    .registers 1
+    .locals 1
 
     .line 223
     new-instance v0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;
@@ -66,7 +66,7 @@
 .end method
 
 .method public static final getDefaultShadowColor()J
-    .registers 2
+    .locals 2
 
     .line 31
     sget-wide v0, Landroidx/compose/ui/graphics/GraphicsLayerScopeKt;->DefaultShadowColor:J

@@ -45,7 +45,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/node/LayoutModifierNode$minIntrinsicWidth$1;->this$0:Landroidx/compose/ui/node/LayoutModifierNode;
 
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 6
+    .locals 1
     .param p1, "$this$minWidth"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "intrinsicMeasurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J

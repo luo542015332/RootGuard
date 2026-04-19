@@ -63,7 +63,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/material/AnchoredDraggableState;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public final onAnchorsChanged(Ljava/lang/Object;Ljava/util/Map;Ljava/util/Map;)V
-    .registers 23
+    .locals 19
     .param p1, "previousTarget"    # Ljava/lang/Object;
     .param p2, "previousAnchors"    # Ljava/util/Map;
     .param p3, "newAnchors"    # Ljava/util/Map;
@@ -140,12 +140,12 @@
 
     move-result v6
 
-    if-nez v6, :cond_52
+    if-nez v6, :cond_1
 
     .line 684
     const/4 v6, 0x0
 
-    if-eqz v5, :cond_3c
+    if-eqz v5, :cond_0
 
     .line 685
     iget-object v7, v0, Landroidx/compose/material/AnchoredDraggableDefaults$ReconcileAnimationOnAnchorChangedCallback$1;->$scope:Lkotlinx/coroutines/CoroutineScope;
@@ -168,10 +168,10 @@
 
     invoke-static/range {v7 .. v12}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    goto :goto_52
+    goto :goto_0
 
     .line 689
-    :cond_3c
+    :cond_0
     iget-object v13, v0, Landroidx/compose/material/AnchoredDraggableDefaults$ReconcileAnimationOnAnchorChangedCallback$1;->$scope:Lkotlinx/coroutines/CoroutineScope;
 
     const/4 v14, 0x0
@@ -195,7 +195,7 @@
     invoke-static/range {v13 .. v18}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     .line 694
-    :cond_52
-    :goto_52
+    :cond_1
+    :goto_0
     return-void
 .end method

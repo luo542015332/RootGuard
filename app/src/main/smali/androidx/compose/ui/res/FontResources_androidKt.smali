@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 29
     new-instance v0, Ljava/lang/Object;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static final fontResource(Landroidx/compose/ui/text/font/FontFamily;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/text/font/Typeface;
-    .registers 8
+    .locals 5
     .param p0, "fontFamily"    # Landroidx/compose/ui/text/font/FontFamily;
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -105,7 +105,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -114,7 +114,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 55
-    :cond_1b
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -155,19 +155,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 54
-    :cond_41
+    :cond_1
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v0
 .end method
 
 .method private static final fontResourceFromContext(Landroid/content/Context;Landroidx/compose/ui/text/font/FontFamily;)Landroidx/compose/ui/text/font/Typeface;
-    .registers 10
+    .locals 8
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "a"    # Landroidx/compose/ui/text/font/FontFamily;
     .annotation runtime Lkotlin/Deprecated;
@@ -186,16 +186,16 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_1
 
     instance-of v0, p1, Landroidx/compose/ui/text/font/LoadedFontFamily;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 74
-    :cond_b
+    :cond_0
     invoke-static {p0, p1, v2, v1, v2}, Landroidx/compose/ui/text/font/AndroidTypeface_androidKt;->Typeface$default(Landroid/content/Context;Landroidx/compose/ui/text/font/FontFamily;Ljava/util/List;ILjava/lang/Object;)Landroidx/compose/ui/text/font/Typeface;
 
     move-result-object v0
@@ -203,8 +203,8 @@
     return-object v0
 
     .line 68
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     sget-object v0, Landroidx/compose/ui/res/FontResources_androidKt;->cacheLock:Ljava/lang/Object;
 
     monitor-enter v0
@@ -213,7 +213,7 @@
 
     .line 69
     .local v3, "$i$a$-synchronized-FontResources_androidKt$fontResourceFromContext$1":I
-    :try_start_14
+    :try_start_0
     sget-object v4, Landroidx/compose/ui/res/FontResources_androidKt;->syncLoadedTypefaces:Ljava/util/Map;
 
     .local v4, "$this$getOrPut$iv":Ljava/util/Map;
@@ -227,7 +227,7 @@
 
     .line 80
     .local v6, "value$iv":Ljava/lang/Object;
-    if-nez v6, :cond_28
+    if-nez v6, :cond_2
 
     .line 81
     const/4 v7, 0x0
@@ -250,22 +250,22 @@
     nop
 
     .end local v1    # "answer$iv":Ljava/lang/Object;
-    goto :goto_29
+    goto :goto_1
 
     .line 85
-    :cond_28
+    :cond_2
     move-object v1, v6
 
     .line 80
-    :goto_29
+    :goto_1
     nop
 
     .end local v4    # "$this$getOrPut$iv":Ljava/util/Map;
     .end local v5    # "$i$f$getOrPut":I
     .end local v6    # "value$iv":Ljava/lang/Object;
     check-cast v1, Landroidx/compose/ui/text/font/Typeface;
-    :try_end_2c
-    .catchall {:try_start_14 .. :try_end_2c} :catchall_2e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 69
     .end local v3    # "$i$a$-synchronized-FontResources_androidKt$fontResourceFromContext$1":I
@@ -273,7 +273,7 @@
 
     return-object v1
 
-    :catchall_2e
+    :catchall_0
     move-exception v1
 
     monitor-exit v0

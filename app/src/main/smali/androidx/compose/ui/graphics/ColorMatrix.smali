@@ -111,7 +111,7 @@
 
 # direct methods
 .method private synthetic constructor <init>([F)V
-    .registers 2
+    .locals 0
     .param p1, "values"    # [F
 
     .line 64
@@ -123,7 +123,7 @@
 .end method
 
 .method public static final synthetic box-impl([F)Landroidx/compose/ui/graphics/ColorMatrix;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/ColorMatrix;
 
@@ -133,7 +133,7 @@
 .end method
 
 .method public static constructor-impl([F)[F
-    .registers 2
+    .locals 1
 
     const-string/jumbo v0, "values"
 
@@ -143,19 +143,19 @@
 .end method
 
 .method public static synthetic constructor-impl$default([FILkotlin/jvm/internal/DefaultConstructorMarker;)[F
-    .registers 3
+    .locals 0
 
     .line 64
     and-int/lit8 p1, p1, 0x1
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_0
 
     .line 66
     const/16 p0, 0x14
 
     new-array p0, p0, [F
 
-    fill-array-data p0, :array_2e
+    fill-array-data p0, :array_0
 
     .line 67
     nop
@@ -248,14 +248,14 @@
     nop
 
     .line 64
-    :cond_29
+    :cond_0
     invoke-static {p0}, Landroidx/compose/ui/graphics/ColorMatrix;->constructor-impl([F)[F
 
     move-result-object p0
 
     return-object p0
 
-    :array_2e
+    :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x0
@@ -281,7 +281,7 @@
 .end method
 
 .method public static final convertRgbToYuv-impl([F)V
-    .registers 6
+    .locals 5
     .param p0, "arg0"    # [F
 
     .line 301
@@ -535,7 +535,7 @@
 .end method
 
 .method public static final convertYuvToRgb-impl([F)V
-    .registers 6
+    .locals 5
     .param p0, "arg0"    # [F
 
     .line 318
@@ -735,7 +735,7 @@
 .end method
 
 .method private static final dot-Me4OoYI([F[FI[FI)F
-    .registers 10
+    .locals 5
     .param p0, "arg0"    # [F
     .param p1, "m1"    # [F
     .param p2, "row"    # I
@@ -895,17 +895,17 @@
 .end method
 
 .method public static equals-impl([FLjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/graphics/ColorMatrix;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/graphics/ColorMatrix;
@@ -918,18 +918,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_14
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0([F[F)Z
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -939,7 +939,7 @@
 .end method
 
 .method public static final get-impl([FII)F
-    .registers 5
+    .locals 2
     .param p0, "arg0"    # [F
     .param p1, "row"    # I
     .param p2, "column"    # I
@@ -958,7 +958,7 @@
 .end method
 
 .method public static hashCode-impl([F)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([F)I
 
@@ -968,7 +968,7 @@
 .end method
 
 .method public static final reset-impl([F)V
-    .registers 7
+    .locals 6
     .param p0, "arg0"    # [F
 
     .line 110
@@ -1099,7 +1099,7 @@
 .end method
 
 .method private static final rotateInternal-impl([FFLkotlin/jvm/functions/Function2;)V
-    .registers 10
+    .locals 7
     .param p0, "arg0"    # [F
     .param p1, "degrees"    # F
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
@@ -1166,7 +1166,7 @@
 .end method
 
 .method public static final set-impl([FIIF)V
-    .registers 6
+    .locals 2
     .param p0, "arg0"    # [F
     .param p1, "row"    # I
     .param p2, "column"    # I
@@ -1187,7 +1187,7 @@
 .end method
 
 .method public static final set-jHG-Opc([F[F)V
-    .registers 10
+    .locals 8
     .param p0, "arg0"    # [F
     .param p1, "src"    # [F
 
@@ -1217,7 +1217,7 @@
 .end method
 
 .method public static final setToRotateBlue-impl([FF)V
-    .registers 15
+    .locals 13
     .param p0, "arg0"    # [F
     .param p1, "degrees"    # F
 
@@ -1383,7 +1383,7 @@
 .end method
 
 .method public static final setToRotateGreen-impl([FF)V
-    .registers 15
+    .locals 13
     .param p0, "arg0"    # [F
     .param p1, "degrees"    # F
 
@@ -1549,7 +1549,7 @@
 .end method
 
 .method public static final setToRotateRed-impl([FF)V
-    .registers 15
+    .locals 13
     .param p0, "arg0"    # [F
     .param p1, "degrees"    # F
 
@@ -1715,7 +1715,7 @@
 .end method
 
 .method public static final setToSaturation-impl([FF)V
-    .registers 11
+    .locals 9
     .param p0, "arg0"    # [F
     .param p1, "sat"    # F
 
@@ -1972,7 +1972,7 @@
 .end method
 
 .method public static final setToScale-impl([FFFFF)V
-    .registers 9
+    .locals 4
     .param p0, "arg0"    # [F
     .param p1, "redScale"    # F
     .param p2, "greenScale"    # F
@@ -2079,7 +2079,7 @@
 .end method
 
 .method public static final timesAssign-jHG-Opc([F[F)V
-    .registers 29
+    .locals 27
     .param p0, "arg0"    # [F
     .param p1, "colorMatrix"    # [F
 
@@ -3480,7 +3480,7 @@
 .end method
 
 .method public static toString-impl([F)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -3516,7 +3516,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/ColorMatrix;->values:[F
 
@@ -3528,7 +3528,7 @@
 .end method
 
 .method public final getValues()[F
-    .registers 2
+    .locals 1
 
     .line 65
     iget-object v0, p0, Landroidx/compose/ui/graphics/ColorMatrix;->values:[F
@@ -3537,7 +3537,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/ColorMatrix;->values:[F
 
@@ -3549,7 +3549,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/ColorMatrix;->values:[F
 
@@ -3561,7 +3561,7 @@
 .end method
 
 .method public final synthetic unbox-impl()[F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/ColorMatrix;->values:[F
 

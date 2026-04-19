@@ -125,7 +125,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/graphics/painter/Painter;ZLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 8
+    .locals 1
     .param p1, "painter"    # Landroidx/compose/ui/graphics/painter/Painter;
     .param p2, "sizeToIntrinsics"    # Z
     .param p3, "alignment"    # Landroidx/compose/ui/Alignment;
@@ -171,12 +171,12 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/painter/Painter;ZLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 16
+    .locals 7
 
     .line 147
     and-int/lit8 p8, p7, 0x4
 
-    if-eqz p8, :cond_c
+    if-eqz p8, :cond_0
 
     .line 150
     sget-object p3, Landroidx/compose/ui/Alignment;->Companion:Landroidx/compose/ui/Alignment$Companion;
@@ -187,16 +187,16 @@
 
     move-object v3, p3
 
-    goto :goto_d
+    goto :goto_0
 
     .line 147
-    :cond_c
+    :cond_0
     move-object v3, p3
 
-    :goto_d
+    :goto_0
     and-int/lit8 p3, p7, 0x8
 
-    if-eqz p3, :cond_19
+    if-eqz p3, :cond_1
 
     .line 151
     sget-object p3, Landroidx/compose/ui/layout/ContentScale;->Companion:Landroidx/compose/ui/layout/ContentScale$Companion;
@@ -207,45 +207,45 @@
 
     move-object v4, p4
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 147
-    :cond_19
+    :cond_1
     move-object v4, p4
 
-    :goto_1a
+    :goto_1
     and-int/lit8 p3, p7, 0x10
 
-    if-eqz p3, :cond_22
+    if-eqz p3, :cond_2
 
     .line 152
     const/high16 p5, 0x3f800000    # 1.0f
 
     move v5, p5
 
-    goto :goto_23
+    goto :goto_2
 
     .line 147
-    :cond_22
+    :cond_2
     move v5, p5
 
-    :goto_23
+    :goto_2
     and-int/lit8 p3, p7, 0x20
 
-    if-eqz p3, :cond_2a
+    if-eqz p3, :cond_3
 
     .line 153
     const/4 p6, 0x0
 
     move-object v6, p6
 
-    goto :goto_2b
+    goto :goto_3
 
     .line 147
-    :cond_2a
+    :cond_3
     move-object v6, p6
 
-    :goto_2b
+    :goto_3
     move-object v0, p0
 
     move-object v1, p1
@@ -259,7 +259,7 @@
 .end method
 
 .method private final calculateScaledSize-E7KxVPU(J)J
-    .registers 11
+    .locals 8
     .param p1, "dstSize"    # J
 
     .line 230
@@ -267,15 +267,15 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     .line 231
     move-wide v4, p1
 
-    goto/16 :goto_72
+    goto/16 :goto_4
 
     .line 233
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterNode;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/painter/Painter;->getIntrinsicSize-NH-jbRc()J
@@ -286,17 +286,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
     .line 234
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 236
-    :cond_1a
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterNode;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/painter/Painter;->getIntrinsicSize-NH-jbRc()J
@@ -308,7 +308,7 @@
     move-result v0
 
     .line 233
-    :goto_24
+    :goto_0
     nop
 
     .line 239
@@ -323,17 +323,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_36
+    if-nez v1, :cond_2
 
     .line 240
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
     move-result v1
 
-    goto :goto_40
+    goto :goto_1
 
     .line 242
-    :cond_36
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/draw/PainterNode;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/painter/Painter;->getIntrinsicSize-NH-jbRc()J
@@ -345,7 +345,7 @@
     move-result v1
 
     .line 239
-    :goto_40
+    :goto_1
     nop
 
     .line 245
@@ -368,17 +368,17 @@
 
     const/4 v7, 0x0
 
-    if-nez v4, :cond_52
+    if-nez v4, :cond_3
 
     move v4, v6
 
-    goto :goto_53
+    goto :goto_2
 
-    :cond_52
+    :cond_3
     move v4, v7
 
-    :goto_53
-    if-nez v4, :cond_6c
+    :goto_2
+    if-nez v4, :cond_5
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
@@ -386,15 +386,15 @@
 
     cmpg-float v4, v4, v5
 
-    if-nez v4, :cond_5e
+    if-nez v4, :cond_4
 
-    goto :goto_5f
+    goto :goto_3
 
-    :cond_5e
+    :cond_4
     move v6, v7
 
-    :goto_5f
-    if-nez v6, :cond_6c
+    :goto_3
+    if-nez v6, :cond_5
 
     .line 247
     iget-object v4, p0, Landroidx/compose/ui/draw/PainterNode;->contentScale:Landroidx/compose/ui/layout/ContentScale;
@@ -407,10 +407,10 @@
 
     move-result-wide v4
 
-    goto :goto_72
+    goto :goto_4
 
     .line 249
-    :cond_6c
+    :cond_5
     sget-object v4, Landroidx/compose/ui/geometry/Size;->Companion:Landroidx/compose/ui/geometry/Size$Companion;
 
     invoke-virtual {v4}, Landroidx/compose/ui/geometry/Size$Companion;->getZero-NH-jbRc()J
@@ -421,19 +421,19 @@
     .end local v0    # "srcWidth":F
     .end local v1    # "srcHeight":F
     .end local v2    # "srcSize":J
-    :goto_72
+    :goto_4
     return-wide v4
 .end method
 
 .method private final getUseIntrinsicSize()Z
-    .registers 7
+    .locals 6
 
     .line 162
     iget-boolean v0, p0, Landroidx/compose/ui/draw/PainterNode;->sizeToIntrinsics:Z
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterNode;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
@@ -456,34 +456,34 @@
 
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_19
+    if-eqz v4, :cond_0
 
     move v0, v5
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move v0, v1
 
     .end local v0    # "$i$f$isSpecified-uvyYCjk":I
     .end local v2    # "$this$isSpecified$iv":J
-    :goto_1a
-    if-eqz v0, :cond_1e
+    :goto_0
+    if-eqz v0, :cond_1
 
     move v1, v5
 
-    goto :goto_1f
+    goto :goto_1
 
-    :cond_1e
+    :cond_1
     nop
 
     .line 162
-    :goto_1f
+    :goto_1
     return v1
 .end method
 
 .method private final hasSpecifiedAndFiniteHeight-uvyYCjk(J)Z
-    .registers 7
+    .locals 4
     .param p1, "$this$hasSpecifiedAndFiniteHeight_u2duvyYCjk"    # J
 
     .line 351
@@ -499,7 +499,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
@@ -511,32 +511,32 @@
 
     const/4 v3, 0x1
 
-    if-nez v2, :cond_20
+    if-nez v2, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     move v0, v3
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     move v0, v1
 
-    :goto_21
-    if-eqz v0, :cond_24
+    :goto_0
+    if-eqz v0, :cond_1
 
     move v1, v3
 
-    :cond_24
+    :cond_1
     return v1
 .end method
 
 .method private final hasSpecifiedAndFiniteWidth-uvyYCjk(J)Z
-    .registers 7
+    .locals 4
     .param p1, "$this$hasSpecifiedAndFiniteWidth_u2duvyYCjk"    # J
 
     .line 350
@@ -552,7 +552,7 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
@@ -564,32 +564,32 @@
 
     const/4 v3, 0x1
 
-    if-nez v2, :cond_20
+    if-nez v2, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_0
 
     move v0, v3
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     move v0, v1
 
-    :goto_21
-    if-eqz v0, :cond_24
+    :goto_0
+    if-eqz v0, :cond_1
 
     move v1, v3
 
-    :cond_24
+    :cond_1
     return v1
 .end method
 
 .method private final modifyConstraints-ZezNO4M(J)J
-    .registers 27
+    .locals 24
     .param p1, "constraints"    # J
 
     .line 255
@@ -605,22 +605,22 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/unit/Constraints;->getHasBoundedHeight-impl(J)Z
 
     move-result v1
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     move v1, v2
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v1, v3
 
-    :goto_15
+    :goto_0
     move v11, v1
 
     .line 256
@@ -629,20 +629,20 @@
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/unit/Constraints;->getHasFixedHeight-impl(J)Z
 
     move-result v1
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_1
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     move v2, v3
 
-    :goto_24
+    :goto_1
     move v12, v2
 
     .line 257
@@ -651,15 +651,15 @@
 
     move-result v1
 
-    if-nez v1, :cond_2d
+    if-nez v1, :cond_2
 
-    if-nez v11, :cond_2f
+    if-nez v11, :cond_3
 
-    :cond_2d
-    if-eqz v12, :cond_44
+    :cond_2
+    if-eqz v12, :cond_4
 
     .line 263
-    :cond_2f
+    :cond_3
     nop
 
     .line 264
@@ -691,7 +691,7 @@
     return-wide v1
 
     .line 269
-    :cond_44
+    :cond_4
     iget-object v1, v0, Landroidx/compose/ui/draw/PainterNode;->painter:Landroidx/compose/ui/graphics/painter/Painter;
 
     invoke-virtual {v1}, Landroidx/compose/ui/graphics/painter/Painter;->getIntrinsicSize-NH-jbRc()J
@@ -704,7 +704,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_59
+    if-eqz v1, :cond_5
 
     .line 272
     invoke-static {v13, v14}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
@@ -715,16 +715,16 @@
 
     move-result v1
 
-    goto :goto_5d
+    goto :goto_2
 
     .line 274
-    :cond_59
+    :cond_5
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/unit/Constraints;->getMinWidth-impl(J)I
 
     move-result v1
 
     .line 271
-    :goto_5d
+    :goto_2
     nop
 
     .line 270
@@ -736,7 +736,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_6e
+    if-eqz v1, :cond_6
 
     .line 279
     invoke-static {v13, v14}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
@@ -747,16 +747,16 @@
 
     move-result v1
 
-    goto :goto_72
+    goto :goto_3
 
     .line 281
-    :cond_6e
+    :cond_6
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/unit/Constraints;->getMinHeight-impl(J)I
 
     move-result v1
 
     .line 278
-    :goto_72
+    :goto_3
     nop
 
     .line 277
@@ -864,7 +864,7 @@
 
 # virtual methods
 .method public draw(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)V
-    .registers 24
+    .locals 22
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
 
     move-object/from16 v0, p0
@@ -888,17 +888,17 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1a
+    if-eqz v4, :cond_0
 
     .line 306
     invoke-static {v2, v3}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
     move-result v4
 
-    goto :goto_22
+    goto :goto_0
 
     .line 308
-    :cond_1a
+    :cond_0
     invoke-interface/range {p1 .. p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->getSize-NH-jbRc()J
 
     move-result-wide v4
@@ -908,7 +908,7 @@
     move-result v4
 
     .line 305
-    :goto_22
+    :goto_0
     nop
 
     .line 311
@@ -917,17 +917,17 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_1
 
     .line 312
     invoke-static {v2, v3}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
     move-result v5
 
-    goto :goto_36
+    goto :goto_1
 
     .line 314
-    :cond_2e
+    :cond_1
     invoke-interface/range {p1 .. p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->getSize-NH-jbRc()J
 
     move-result-wide v5
@@ -937,7 +937,7 @@
     move-result v5
 
     .line 311
-    :goto_36
+    :goto_1
     nop
 
     .line 317
@@ -964,17 +964,17 @@
 
     const/4 v11, 0x0
 
-    if-nez v8, :cond_4c
+    if-nez v8, :cond_2
 
     move v8, v10
 
-    goto :goto_4d
+    goto :goto_2
 
-    :cond_4c
+    :cond_2
     move v8, v11
 
-    :goto_4d
-    if-nez v8, :cond_6f
+    :goto_2
+    if-nez v8, :cond_4
 
     invoke-interface/range {p1 .. p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->getSize-NH-jbRc()J
 
@@ -986,15 +986,15 @@
 
     cmpg-float v8, v8, v9
 
-    if-nez v8, :cond_5c
+    if-nez v8, :cond_3
 
-    goto :goto_5d
+    goto :goto_3
 
-    :cond_5c
+    :cond_3
     move v10, v11
 
-    :goto_5d
-    if-nez v10, :cond_6f
+    :goto_3
+    if-nez v10, :cond_4
 
     .line 322
     iget-object v8, v0, Landroidx/compose/ui/draw/PainterNode;->contentScale:Landroidx/compose/ui/layout/ContentScale;
@@ -1013,10 +1013,10 @@
 
     move-wide v12, v8
 
-    goto :goto_76
+    goto :goto_4
 
     .line 324
-    :cond_6f
+    :cond_4
     sget-object v8, Landroidx/compose/ui/geometry/Size;->Companion:Landroidx/compose/ui/geometry/Size$Companion;
 
     invoke-virtual {v8}, Landroidx/compose/ui/geometry/Size$Companion;->getZero-NH-jbRc()J
@@ -1026,7 +1026,7 @@
     move-wide v12, v8
 
     .line 321
-    :goto_76
+    :goto_4
     nop
 
     .line 327
@@ -1215,7 +1215,7 @@
 .end method
 
 .method public final getAlignment()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 150
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterNode;->alignment:Landroidx/compose/ui/Alignment;
@@ -1224,7 +1224,7 @@
 .end method
 
 .method public final getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 152
     iget v0, p0, Landroidx/compose/ui/draw/PainterNode;->alpha:F
@@ -1233,7 +1233,7 @@
 .end method
 
 .method public final getColorFilter()Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 2
+    .locals 1
 
     .line 153
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterNode;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
@@ -1242,7 +1242,7 @@
 .end method
 
 .method public final getContentScale()Landroidx/compose/ui/layout/ContentScale;
-    .registers 2
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterNode;->contentScale:Landroidx/compose/ui/layout/ContentScale;
@@ -1251,7 +1251,7 @@
 .end method
 
 .method public final getPainter()Landroidx/compose/ui/graphics/painter/Painter;
-    .registers 2
+    .locals 1
 
     .line 148
     iget-object v0, p0, Landroidx/compose/ui/draw/PainterNode;->painter:Landroidx/compose/ui/graphics/painter/Painter;
@@ -1260,7 +1260,7 @@
 .end method
 
 .method public getShouldAutoInvalidate()Z
-    .registers 2
+    .locals 1
 
     .line 165
     const/4 v0, 0x0
@@ -1269,7 +1269,7 @@
 .end method
 
 .method public final getSizeToIntrinsics()Z
-    .registers 2
+    .locals 1
 
     .line 149
     iget-boolean v0, p0, Landroidx/compose/ui/draw/PainterNode;->sizeToIntrinsics:Z
@@ -1278,7 +1278,7 @@
 .end method
 
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 11
+    .locals 7
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -1296,7 +1296,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_0
 
     .line 221
     const/4 v1, 0x0
@@ -1337,21 +1337,21 @@
 
     .end local v0    # "constraints":J
     .end local v2    # "layoutHeight":I
-    goto :goto_31
+    goto :goto_0
 
     .line 225
-    :cond_2d
+    :cond_0
     invoke-interface {p2, p3}, Landroidx/compose/ui/layout/IntrinsicMeasurable;->maxIntrinsicHeight(I)I
 
     move-result v0
 
     .line 220
-    :goto_31
+    :goto_0
     return v0
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 11
+    .locals 7
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I
@@ -1369,7 +1369,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     .line 195
     const/4 v1, 0x0
@@ -1410,21 +1410,21 @@
 
     .end local v0    # "constraints":J
     .end local v2    # "layoutWidth":I
-    goto :goto_30
+    goto :goto_0
 
     .line 199
-    :cond_2c
+    :cond_0
     invoke-interface {p2, p3}, Landroidx/compose/ui/layout/IntrinsicMeasurable;->maxIntrinsicWidth(I)I
 
     move-result v0
 
     .line 194
-    :goto_30
+    :goto_0
     return v0
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 13
+    .locals 8
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -1480,7 +1480,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 11
+    .locals 7
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -1498,7 +1498,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_0
 
     .line 208
     const/4 v1, 0x0
@@ -1539,21 +1539,21 @@
 
     .end local v0    # "constraints":J
     .end local v2    # "layoutHeight":I
-    goto :goto_31
+    goto :goto_0
 
     .line 212
-    :cond_2d
+    :cond_0
     invoke-interface {p2, p3}, Landroidx/compose/ui/layout/IntrinsicMeasurable;->minIntrinsicHeight(I)I
 
     move-result v0
 
     .line 207
-    :goto_31
+    :goto_0
     return v0
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 11
+    .locals 7
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I
@@ -1571,7 +1571,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_0
 
     .line 182
     const/4 v1, 0x0
@@ -1612,21 +1612,21 @@
 
     .end local v0    # "constraints":J
     .end local v2    # "layoutWidth":I
-    goto :goto_30
+    goto :goto_0
 
     .line 186
-    :cond_2c
+    :cond_0
     invoke-interface {p2, p3}, Landroidx/compose/ui/layout/IntrinsicMeasurable;->minIntrinsicWidth(I)I
 
     move-result v0
 
     .line 181
-    :goto_30
+    :goto_0
     return v0
 .end method
 
 .method public final setAlignment(Landroidx/compose/ui/Alignment;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/Alignment;
 
     const-string v0, "<set-?>"
@@ -1640,7 +1640,7 @@
 .end method
 
 .method public final setAlpha(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 152
@@ -1650,7 +1650,7 @@
 .end method
 
 .method public final setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 153
@@ -1660,7 +1660,7 @@
 .end method
 
 .method public final setContentScale(Landroidx/compose/ui/layout/ContentScale;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/layout/ContentScale;
 
     const-string v0, "<set-?>"
@@ -1674,7 +1674,7 @@
 .end method
 
 .method public final setPainter(Landroidx/compose/ui/graphics/painter/Painter;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/painter/Painter;
 
     const-string v0, "<set-?>"
@@ -1688,7 +1688,7 @@
 .end method
 
 .method public final setSizeToIntrinsics(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 149
@@ -1698,7 +1698,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 354
     new-instance v0, Ljava/lang/StringBuilder;

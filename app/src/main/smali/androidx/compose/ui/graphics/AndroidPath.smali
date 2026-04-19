@@ -134,7 +134,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -146,7 +146,7 @@
 .end method
 
 .method public constructor <init>(Landroid/graphics/Path;)V
-    .registers 3
+    .locals 1
     .param p1, "internalPath"    # Landroid/graphics/Path;
 
     const-string/jumbo v0, "internalPath"
@@ -185,12 +185,12 @@
 .end method
 
 .method public synthetic constructor <init>(Landroid/graphics/Path;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 41
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 42
     new-instance p1, Landroid/graphics/Path;
@@ -198,7 +198,7 @@
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
     .line 41
-    :cond_9
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/graphics/AndroidPath;-><init>(Landroid/graphics/Path;)V
 
     .line 243
@@ -206,7 +206,7 @@
 .end method
 
 .method private final _rectIsValid(Landroidx/compose/ui/geometry/Rect;)Z
-    .registers 4
+    .locals 2
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
 
     .line 229
@@ -222,7 +222,7 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_5b
+    if-eqz v0, :cond_3
 
     .line 232
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getTop()F
@@ -235,7 +235,7 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_2
 
     .line 235
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getRight()F
@@ -248,7 +248,7 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 238
     invoke-virtual {p1}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
@@ -261,13 +261,13 @@
 
     xor-int/2addr v0, v1
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_0
 
     .line 241
     return v1
 
     .line 238
-    :cond_2e
+    :cond_0
     const/4 v0, 0x0
 
     .line 239
@@ -289,7 +289,7 @@
     throw v0
 
     .line 235
-    :cond_3d
+    :cond_1
     const/4 v0, 0x0
 
     .line 236
@@ -311,7 +311,7 @@
     throw v0
 
     .line 232
-    :cond_4c
+    :cond_2
     const/4 v0, 0x0
 
     .line 233
@@ -333,7 +333,7 @@
     throw v0
 
     .line 229
-    :cond_5b
+    :cond_3
     const/4 v0, 0x0
 
     .line 230
@@ -356,7 +356,7 @@
 .end method
 
 .method public static synthetic isConvex$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -364,7 +364,7 @@
 
 # virtual methods
 .method public addArc(Landroidx/compose/ui/geometry/Rect;FF)V
-    .registers 9
+    .locals 5
     .param p1, "oval"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngleDegrees"    # F
     .param p3, "sweepAngleDegrees"    # F
@@ -378,7 +378,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     .line 151
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->rectF:Landroid/graphics/RectF;
@@ -412,7 +412,7 @@
     return-void
 
     .line 150
-    :cond_29
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -427,7 +427,7 @@
 .end method
 
 .method public addArcRad(Landroidx/compose/ui/geometry/Rect;FF)V
-    .registers 6
+    .locals 2
     .param p1, "oval"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngleRadians"    # F
     .param p3, "sweepAngleRadians"    # F
@@ -452,7 +452,7 @@
 .end method
 
 .method public addOval(Landroidx/compose/ui/geometry/Rect;)V
-    .registers 7
+    .locals 5
     .param p1, "oval"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string/jumbo v0, "oval"
@@ -494,7 +494,7 @@
 .end method
 
 .method public addPath-Uv8p0NA(Landroidx/compose/ui/graphics/Path;J)V
-    .registers 8
+    .locals 4
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "offset"    # J
 
@@ -514,7 +514,7 @@
     .local v2, "$i$f$asAndroidPath":I
     instance-of v3, v1, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_0
 
     .line 246
     move-object v3, v1
@@ -547,7 +547,7 @@
     .line 248
     .restart local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v2    # "$i$f$asAndroidPath":I
-    :cond_22
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v3, "Unable to obtain android.graphics.Path"
@@ -558,7 +558,7 @@
 .end method
 
 .method public addRect(Landroidx/compose/ui/geometry/Rect;)V
-    .registers 7
+    .locals 5
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string/jumbo v0, "rect"
@@ -570,7 +570,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     .line 136
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->rectF:Landroid/graphics/RectF;
@@ -606,7 +606,7 @@
     return-void
 
     .line 135
-    :cond_2b
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -621,7 +621,7 @@
 .end method
 
 .method public addRoundRect(Landroidx/compose/ui/geometry/RoundRect;)V
-    .registers 7
+    .locals 5
     .param p1, "roundRect"    # Landroidx/compose/ui/geometry/RoundRect;
 
     const-string/jumbo v0, "roundRect"
@@ -785,7 +785,7 @@
 .end method
 
 .method public arcTo(Landroidx/compose/ui/geometry/Rect;FFZ)V
-    .registers 11
+    .locals 6
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngleDegrees"    # F
     .param p3, "sweepAngleDegrees"    # F
@@ -847,7 +847,7 @@
 .end method
 
 .method public close()V
-    .registers 2
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -859,7 +859,7 @@
 .end method
 
 .method public cubicTo(FFFFFF)V
-    .registers 14
+    .locals 7
     .param p1, "x1"    # F
     .param p2, "y1"    # F
     .param p3, "x2"    # F
@@ -899,7 +899,7 @@
 .end method
 
 .method public getBounds()Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 5
 
     .line 199
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -940,7 +940,7 @@
 .end method
 
 .method public getFillType-Rg-k1Os()I
-    .registers 3
+    .locals 2
 
     .line 52
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -951,7 +951,7 @@
 
     sget-object v1, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
 
-    if-ne v0, v1, :cond_11
+    if-ne v0, v1, :cond_0
 
     .line 53
     sget-object v0, Landroidx/compose/ui/graphics/PathFillType;->Companion:Landroidx/compose/ui/graphics/PathFillType$Companion;
@@ -963,7 +963,7 @@
     return v0
 
     .line 55
-    :cond_11
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/PathFillType;->Companion:Landroidx/compose/ui/graphics/PathFillType$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PathFillType$Companion;->getNonZero-Rg-k1Os()I
@@ -974,7 +974,7 @@
 .end method
 
 .method public final getInternalPath()Landroid/graphics/Path;
-    .registers 2
+    .locals 1
 
     .line 42
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -983,7 +983,7 @@
 .end method
 
 .method public isConvex()Z
-    .registers 2
+    .locals 1
 
     .line 224
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -996,7 +996,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 226
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -1009,7 +1009,7 @@
 .end method
 
 .method public lineTo(FF)V
-    .registers 4
+    .locals 1
     .param p1, "x"    # F
     .param p2, "y"    # F
 
@@ -1023,7 +1023,7 @@
 .end method
 
 .method public moveTo(FF)V
-    .registers 4
+    .locals 1
     .param p1, "x"    # F
     .param p2, "y"    # F
 
@@ -1037,7 +1037,7 @@
 .end method
 
 .method public op-N5in7k0(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;I)Z
-    .registers 11
+    .locals 7
     .param p1, "path1"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "path2"    # Landroidx/compose/ui/graphics/Path;
     .param p3, "operation"    # I
@@ -1064,14 +1064,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/graphics/Path$Op;->DIFFERENCE:Landroid/graphics/Path$Op;
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 215
-    :cond_1c
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/PathOperation;->Companion:Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PathOperation$Companion;->getIntersect-b3I0S0c()I
@@ -1082,14 +1082,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_1
 
     sget-object v0, Landroid/graphics/Path$Op;->INTERSECT:Landroid/graphics/Path$Op;
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 216
-    :cond_2b
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/PathOperation;->Companion:Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PathOperation$Companion;->getReverseDifference-b3I0S0c()I
@@ -1100,14 +1100,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_2
 
     sget-object v0, Landroid/graphics/Path$Op;->REVERSE_DIFFERENCE:Landroid/graphics/Path$Op;
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 217
-    :cond_3a
+    :cond_2
     sget-object v0, Landroidx/compose/ui/graphics/PathOperation;->Companion:Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PathOperation$Companion;->getUnion-b3I0S0c()I
@@ -1118,18 +1118,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_3
 
     sget-object v0, Landroid/graphics/Path$Op;->UNION:Landroid/graphics/Path$Op;
 
-    goto :goto_4b
+    goto :goto_0
 
     .line 218
-    :cond_49
+    :cond_3
     sget-object v0, Landroid/graphics/Path$Op;->XOR:Landroid/graphics/Path$Op;
 
     .line 213
-    :goto_4b
+    :goto_0
     nop
 
     .line 220
@@ -1147,7 +1147,7 @@
 
     const-string/jumbo v5, "Unable to obtain android.graphics.Path"
 
-    if-eqz v4, :cond_78
+    if-eqz v4, :cond_5
 
     .line 251
     move-object v4, v2
@@ -1173,7 +1173,7 @@
     .restart local v3    # "$i$f$asAndroidPath":I
     instance-of v6, v2, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v6, :cond_72
+    if-eqz v6, :cond_4
 
     .line 251
     move-object v5, v2
@@ -1199,14 +1199,14 @@
     .line 253
     .restart local v2    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v3    # "$i$f$asAndroidPath":I
-    :cond_72
+    :cond_4
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v1, v5}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
-    :cond_78
+    :cond_5
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v1, v5}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
@@ -1215,7 +1215,7 @@
 .end method
 
 .method public quadraticBezierTo(FFFF)V
-    .registers 6
+    .locals 1
     .param p1, "x1"    # F
     .param p2, "y1"    # F
     .param p3, "x2"    # F
@@ -1231,7 +1231,7 @@
 .end method
 
 .method public relativeCubicTo(FFFFFF)V
-    .registers 14
+    .locals 7
     .param p1, "dx1"    # F
     .param p2, "dy1"    # F
     .param p3, "dx2"    # F
@@ -1271,7 +1271,7 @@
 .end method
 
 .method public relativeLineTo(FF)V
-    .registers 4
+    .locals 1
     .param p1, "dx"    # F
     .param p2, "dy"    # F
 
@@ -1285,7 +1285,7 @@
 .end method
 
 .method public relativeMoveTo(FF)V
-    .registers 4
+    .locals 1
     .param p1, "dx"    # F
     .param p2, "dy"    # F
 
@@ -1299,7 +1299,7 @@
 .end method
 
 .method public relativeQuadraticBezierTo(FFFF)V
-    .registers 6
+    .locals 1
     .param p1, "dx1"    # F
     .param p2, "dy1"    # F
     .param p3, "dx2"    # F
@@ -1315,7 +1315,7 @@
 .end method
 
 .method public reset()V
-    .registers 2
+    .locals 1
 
     .line 180
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -1327,7 +1327,7 @@
 .end method
 
 .method public rewind()V
-    .registers 2
+    .locals 1
 
     .line 184
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPath;->internalPath:Landroid/graphics/Path;
@@ -1339,7 +1339,7 @@
 .end method
 
 .method public setFillType-oQ8Xj4U(I)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # I
 
     .line 60
@@ -1356,19 +1356,19 @@
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 62
     sget-object v1, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
 
-    goto :goto_13
+    goto :goto_0
 
     .line 64
-    :cond_11
+    :cond_0
     sget-object v1, Landroid/graphics/Path$FillType;->WINDING:Landroid/graphics/Path$FillType;
 
     .line 60
-    :goto_13
+    :goto_0
     invoke-virtual {v0, v1}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
     .line 66
@@ -1376,7 +1376,7 @@
 .end method
 
 .method public transform-58bKbWc([F)V
-    .registers 4
+    .locals 2
     .param p1, "matrix"    # [F
 
     const-string/jumbo v0, "matrix"
@@ -1400,7 +1400,7 @@
 .end method
 
 .method public translate-k-4lQ0M(J)V
-    .registers 6
+    .locals 3
     .param p1, "offset"    # J
 
     .line 188

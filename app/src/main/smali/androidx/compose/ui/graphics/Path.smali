@@ -115,7 +115,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/graphics/Path$Companion;->$$INSTANCE:Landroidx/compose/ui/graphics/Path$Companion;
 
@@ -125,7 +125,7 @@
 .end method
 
 .method public static synthetic access$arcToRad$jd(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/geometry/Rect;FFZ)V
-    .registers 5
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngleRadians"    # F
@@ -139,7 +139,7 @@
 .end method
 
 .method public static synthetic access$rewind$jd(Landroidx/compose/ui/graphics/Path;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Path;
 
     .line 26
@@ -149,7 +149,7 @@
 .end method
 
 .method public static synthetic access$transform-58bKbWc$jd(Landroidx/compose/ui/graphics/Path;[F)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "matrix"    # [F
 
@@ -160,14 +160,14 @@
 .end method
 
 .method public static synthetic addPath-Uv8p0NA$default(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;JILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 205
-    if-nez p5, :cond_10
+    if-nez p5, :cond_1
 
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_c
+    if-eqz p4, :cond_0
 
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
@@ -175,12 +175,12 @@
 
     move-result-wide p2
 
-    :cond_c
+    :cond_0
     invoke-interface {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/Path;->addPath-Uv8p0NA(Landroidx/compose/ui/graphics/Path;J)V
 
     return-void
 
-    :cond_10
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: addPath-Uv8p0NA"
@@ -214,7 +214,7 @@
 .end method
 
 .method public arcToRad(Landroidx/compose/ui/geometry/Rect;FFZ)V
-    .registers 7
+    .locals 2
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngleRadians"    # F
     .param p3, "sweepAngleRadians"    # F
@@ -285,7 +285,7 @@
 .end method
 
 .method public rewind()V
-    .registers 1
+    .locals 0
 
     .line 227
     invoke-interface {p0}, Landroidx/compose/ui/graphics/Path;->reset()V
@@ -298,7 +298,7 @@
 .end method
 
 .method public transform-58bKbWc([F)V
-    .registers 3
+    .locals 1
     .param p1, "matrix"    # [F
 
     const-string/jumbo v0, "matrix"

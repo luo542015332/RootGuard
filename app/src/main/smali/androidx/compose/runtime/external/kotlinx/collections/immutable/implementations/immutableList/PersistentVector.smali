@@ -112,7 +112,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;[Ljava/lang/Object;II)V
-    .registers 10
+    .locals 5
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "tail"    # [Ljava/lang/Object;
     .param p3, "size"    # I
@@ -155,17 +155,17 @@
 
     const/16 v3, 0x20
 
-    if-le v0, v3, :cond_24
+    if-le v0, v3, :cond_0
 
     move v0, v1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     move v0, v2
 
-    :goto_25
-    if-eqz v0, :cond_42
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 31
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->size()I
@@ -188,14 +188,14 @@
 
     move-result v3
 
-    if-gt v0, v3, :cond_3c
+    if-gt v0, v3, :cond_1
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_3c
+    :cond_1
     move v1, v2
 
-    :goto_3d
+    :goto_1
     invoke-static {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 32
@@ -205,7 +205,7 @@
     return-void
 
     .line 326
-    :cond_42
+    :cond_2
     const/4 v0, 0x0
 
     .line 30
@@ -245,7 +245,7 @@
 .end method
 
 .method private final bufferFor(I)[Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "index"    # I
 
     .line 280
@@ -253,7 +253,7 @@
 
     move-result v0
 
-    if-gt v0, p1, :cond_9
+    if-gt v0, p1, :cond_0
 
     .line 281
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->tail:[Ljava/lang/Object;
@@ -261,7 +261,7 @@
     return-object v0
 
     .line 283
-    :cond_9
+    :cond_0
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->root:[Ljava/lang/Object;
 
     .line 284
@@ -270,8 +270,8 @@
 
     .line 285
     .local v1, "shift":I
-    :goto_d
-    if-lez v1, :cond_21
+    :goto_0
+    if-lez v1, :cond_1
 
     .line 287
     invoke-static {p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/UtilsKt;->indexSegment(II)I
@@ -291,15 +291,15 @@
     add-int/lit8 v1, v1, -0x5
 
     .line 288
-    goto :goto_d
+    goto :goto_0
 
     .line 290
-    :cond_21
+    :cond_1
     return-object v0
 .end method
 
 .method private final insertIntoRoot([Ljava/lang/Object;IILjava/lang/Object;Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/ObjectRef;)[Ljava/lang/Object;
-    .registers 25
+    .locals 19
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "shift"    # I
     .param p3, "index"    # I
@@ -323,16 +323,16 @@
 
     const/16 v10, 0x20
 
-    if-nez v1, :cond_2f
+    if-nez v1, :cond_1
 
     .line 124
-    if-nez v9, :cond_16
+    if-nez v9, :cond_0
 
     new-array v2, v10, [Ljava/lang/Object;
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     invoke-static {v0, v10}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v3
@@ -343,7 +343,7 @@
 
     .line 125
     .local v2, "newRoot":[Ljava/lang/Object;
-    :goto_1e
+    :goto_0
     add-int/lit8 v3, v9, 0x1
 
     const/16 v4, 0x1f
@@ -365,7 +365,7 @@
 
     .line 131
     .end local v2    # "newRoot":[Ljava/lang/Object;
-    :cond_2f
+    :cond_1
     move-object/from16 v15, p5
 
     invoke-static {v0, v10}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -412,13 +412,13 @@
     add-int/lit8 v2, v9, 0x1
 
     .local v2, "i":I
-    :goto_59
-    if-ge v2, v10, :cond_81
+    :goto_1
+    if-ge v2, v10, :cond_2
 
     .line 138
     aget-object v3, v17, v2
 
-    if-eqz v3, :cond_81
+    if-eqz v3, :cond_2
 
     .line 141
     aget-object v3, v0, v2
@@ -460,16 +460,16 @@
 
     move-object v14, v5
 
-    goto :goto_59
+    goto :goto_1
 
     .line 144
     .end local v2    # "i":I
-    :cond_81
+    :cond_2
     return-object v17
 .end method
 
 .method private final insertIntoTail([Ljava/lang/Object;ILjava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;
-    .registers 10
+    .locals 6
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "tailIndex"    # I
     .param p3, "element"    # Ljava/lang/Object;
@@ -512,7 +512,7 @@
 
     .line 101
     .local v1, "newTail":[Ljava/lang/Object;
-    if-ge v0, v2, :cond_30
+    if-ge v0, v2, :cond_0
 
     .line 102
     iget-object v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->tail:[Ljava/lang/Object;
@@ -540,7 +540,7 @@
     return-object v2
 
     .line 107
-    :cond_30
+    :cond_0
     iget-object v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->tail:[Ljava/lang/Object;
 
     const/16 v3, 0x1f
@@ -571,7 +571,7 @@
 .end method
 
 .method private final pullLastBuffer([Ljava/lang/Object;IILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/ObjectRef;)[Ljava/lang/Object;
-    .registers 9
+    .locals 4
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "shift"    # I
     .param p3, "index"    # I
@@ -588,7 +588,7 @@
 
     const/4 v2, 0x0
 
-    if-ne p2, v1, :cond_f
+    if-ne p2, v1, :cond_0
 
     .line 210
     aget-object v1, p1, v0
@@ -598,10 +598,10 @@
     .line 211
     move-object v1, v2
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 214
-    :cond_f
+    :cond_0
     aget-object v1, p1, v0
 
     const-string/jumbo v3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
@@ -617,20 +617,20 @@
     move-result-object v1
 
     .line 209
-    :goto_1f
+    :goto_0
     nop
 
     .line 217
     .local v1, "newBufferAtIndex":[Ljava/lang/Object;
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_1
 
     .line 218
     return-object v2
 
     .line 221
-    :cond_25
+    :cond_1
     const/16 v2, 0x20
 
     invoke-static {p1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -650,7 +650,7 @@
 .end method
 
 .method private final pullLastBufferFromRoot([Ljava/lang/Object;II)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 10
+    .locals 6
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "rootSize"    # I
     .param p3, "shift"    # I
@@ -665,14 +665,14 @@
     .end annotation
 
     .line 182
-    if-nez p3, :cond_1d
+    if-nez p3, :cond_1
 
     .line 183
     array-length v0, p1
 
     const/16 v1, 0x21
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_0
 
     const/16 v0, 0x20
 
@@ -684,14 +684,14 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move-object v0, p1
 
     .line 184
     .local v0, "buffer":[Ljava/lang/Object;
-    :goto_15
+    :goto_0
     new-instance v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;
 
     invoke-direct {v1, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/SmallPersistentVector;-><init>([Ljava/lang/Object;)V
@@ -702,7 +702,7 @@
 
     .line 186
     .end local v0    # "buffer":[Ljava/lang/Object;
-    :cond_1d
+    :cond_1
     new-instance v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/ObjectRef;
 
     const/4 v1, 0x0
@@ -737,7 +737,7 @@
 
     aget-object v4, v1, v4
 
-    if-nez v4, :cond_50
+    if-nez v4, :cond_2
 
     .line 195
     const/4 v4, 0x0
@@ -764,7 +764,7 @@
 
     .line 198
     .end local v3    # "lowerLevelRoot":[Ljava/lang/Object;
-    :cond_50
+    :cond_2
     new-instance v3, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;
 
     invoke-direct {v3, v1, v2, p2, p3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;-><init>([Ljava/lang/Object;[Ljava/lang/Object;II)V
@@ -775,7 +775,7 @@
 .end method
 
 .method private final pushFilledTail([Ljava/lang/Object;[Ljava/lang/Object;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;
-    .registers 9
+    .locals 5
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "filledTail"    # [Ljava/lang/Object;
     .param p3, "newTail"    # [Ljava/lang/Object;
@@ -806,7 +806,7 @@
 
     shl-int v3, v2, v1
 
-    if-le v0, v3, :cond_24
+    if-le v0, v3, :cond_0
 
     .line 54
     invoke-static {p1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/UtilsKt;->presizedBufferWith(Ljava/lang/Object;)[Ljava/lang/Object;
@@ -841,7 +841,7 @@
     .line 60
     .end local v0    # "newRoot":[Ljava/lang/Object;
     .end local v1    # "newRootShift":I
-    :cond_24
+    :cond_0
     invoke-direct {p0, p1, v1, p2}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->pushTail([Ljava/lang/Object;I[Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
@@ -864,7 +864,7 @@
 .end method
 
 .method private final pushTail([Ljava/lang/Object;I[Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 8
+    .locals 4
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "shift"    # I
     .param p3, "tail"    # [Ljava/lang/Object;
@@ -884,7 +884,7 @@
     .local v0, "bufferIndex":I
     const/16 v1, 0x20
 
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     invoke-static {p1, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
@@ -894,27 +894,27 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-nez v2, :cond_1c
+    if-nez v2, :cond_1
 
-    :cond_1a
+    :cond_0
     new-array v2, v1, [Ljava/lang/Object;
 
-    :cond_1c
+    :cond_1
     move-object v1, v2
 
     .line 72
     .local v1, "newRootNode":[Ljava/lang/Object;
     const/4 v2, 0x5
 
-    if-ne p2, v2, :cond_23
+    if-ne p2, v2, :cond_2
 
     .line 73
     aput-object p3, v1, v0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 77
-    :cond_23
+    :cond_2
     aget-object v2, v1, v0
 
     check-cast v2, [Ljava/lang/Object;
@@ -928,12 +928,12 @@
     aput-object v2, v1, v0
 
     .line 79
-    :goto_2f
+    :goto_0
     return-object v1
 .end method
 
 .method private final removeFromRootAt([Ljava/lang/Object;IILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/ObjectRef;)[Ljava/lang/Object;
-    .registers 14
+    .locals 9
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "shift"    # I
     .param p3, "index"    # I
@@ -950,16 +950,16 @@
 
     const/16 v2, 0x20
 
-    if-nez p2, :cond_2b
+    if-nez p2, :cond_1
 
     .line 238
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     new-array v1, v2, [Ljava/lang/Object;
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     invoke-static {p1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v3
@@ -970,7 +970,7 @@
 
     .line 239
     .local v1, "newRoot":[Ljava/lang/Object;
-    :goto_18
+    :goto_0
     add-int/lit8 v3, v0, 0x1
 
     invoke-static {p1, v1, v0, v3, v2}, Lkotlin/collections/ArraysKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
@@ -994,14 +994,14 @@
 
     .line 245
     .end local v1    # "newRoot":[Ljava/lang/Object;
-    :cond_2b
+    :cond_1
     const/16 v3, 0x1f
 
     .line 246
     .local v3, "bufferLastIndex":I
     aget-object v4, p1, v3
 
-    if-nez v4, :cond_3b
+    if-nez v4, :cond_2
 
     .line 247
     invoke-direct {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->rootSize()I
@@ -1015,7 +1015,7 @@
     move-result v3
 
     .line 250
-    :cond_3b
+    :cond_2
     invoke-static {p1, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v2
@@ -1037,10 +1037,10 @@
 
     const-string/jumbo v6, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
 
-    if-gt v5, v4, :cond_60
+    if-gt v5, v4, :cond_3
 
     .line 255
-    :goto_4d
+    :goto_1
     aget-object v7, v1, v4
 
     invoke-static {v7, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1056,15 +1056,15 @@
     aput-object v7, v1, v4
 
     .line 253
-    if-eq v4, v5, :cond_60
+    if-eq v4, v5, :cond_3
 
     add-int/lit8 v4, v4, -0x1
 
-    goto :goto_4d
+    goto :goto_1
 
     .line 258
     .end local v4    # "i":I
-    :cond_60
+    :cond_3
     aget-object v4, v1, v0
 
     invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1082,7 +1082,7 @@
 .end method
 
 .method private final removeFromTailAt([Ljava/lang/Object;III)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 10
+    .locals 5
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "rootSize"    # I
     .param p3, "shift"    # I
@@ -1108,20 +1108,20 @@
     .local v0, "tailSize":I
     const/4 v1, 0x1
 
-    if-ge p4, v0, :cond_a
+    if-ge p4, v0, :cond_0
 
     move v2, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v2}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 161
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_1
 
     .line 162
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->pullLastBufferFromRoot([Ljava/lang/Object;II)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -1131,7 +1131,7 @@
     return-object v1
 
     .line 164
-    :cond_15
+    :cond_1
     iget-object v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->tail:[Ljava/lang/Object;
 
     const/16 v3, 0x20
@@ -1148,7 +1148,7 @@
     .local v2, "newTail":[Ljava/lang/Object;
     add-int/lit8 v3, v0, -0x1
 
-    if-ge p4, v3, :cond_2e
+    if-ge p4, v3, :cond_2
 
     .line 166
     iget-object v3, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->tail:[Ljava/lang/Object;
@@ -1158,7 +1158,7 @@
     invoke-static {v3, v2, p4, v4, v0}, Lkotlin/collections/ArraysKt;->copyInto([Ljava/lang/Object;[Ljava/lang/Object;III)[Ljava/lang/Object;
 
     .line 168
-    :cond_2e
+    :cond_2
     add-int/lit8 v3, v0, -0x1
 
     const/4 v4, 0x0
@@ -1180,7 +1180,7 @@
 .end method
 
 .method private final rootSize()I
-    .registers 2
+    .locals 1
 
     .line 34
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->size()I
@@ -1195,7 +1195,7 @@
 .end method
 
 .method private final setInRoot([Ljava/lang/Object;IILjava/lang/Object;)[Ljava/lang/Object;
-    .registers 9
+    .locals 4
     .param p1, "root"    # [Ljava/lang/Object;
     .param p2, "shift"    # I
     .param p3, "index"    # I
@@ -1220,15 +1220,15 @@
 
     .line 315
     .local v1, "newRoot":[Ljava/lang/Object;
-    if-nez p2, :cond_15
+    if-nez p2, :cond_0
 
     .line 316
     aput-object p4, v1, v0
 
-    goto :goto_27
+    goto :goto_0
 
     .line 319
-    :cond_15
+    :cond_0
     aget-object v2, v1, v0
 
     const-string/jumbo v3, "null cannot be cast to non-null type kotlin.Array<kotlin.Any?>"
@@ -1248,14 +1248,14 @@
     aput-object v2, v1, v0
 
     .line 322
-    :goto_27
+    :goto_0
     return-object v1
 .end method
 
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 24
@@ -1269,7 +1269,7 @@
 .end method
 
 .method public add(ILjava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 11
+    .locals 8
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1292,7 +1292,7 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_12
+    if-ne p1, v0, :cond_0
 
     .line 85
     invoke-virtual {p0, p2}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -1302,14 +1302,14 @@
     return-object v0
 
     .line 88
-    :cond_12
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->rootSize()I
 
     move-result v0
 
     .line 89
     .local v0, "rootSize":I
-    if-lt p1, v0, :cond_23
+    if-lt p1, v0, :cond_1
 
     .line 90
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->root:[Ljava/lang/Object;
@@ -1325,7 +1325,7 @@
     return-object v1
 
     .line 93
-    :cond_23
+    :cond_1
     new-instance v7, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/ObjectRef;
 
     const/4 v1, 0x0
@@ -1366,7 +1366,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1391,7 +1391,7 @@
     .local v0, "tailSize":I
     const/16 v1, 0x20
 
-    if-ge v0, v1, :cond_2d
+    if-ge v0, v1, :cond_0
 
     .line 39
     iget-object v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->tail:[Ljava/lang/Object;
@@ -1429,7 +1429,7 @@
 
     .line 44
     .end local v1    # "newTail":[Ljava/lang/Object;
-    :cond_2d
+    :cond_0
     invoke-static {p1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/UtilsKt;->presizedBufferWith(Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
@@ -1450,7 +1450,7 @@
 .end method
 
 .method public bridge synthetic builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection$Builder;
-    .registers 2
+    .locals 1
 
     .line 24
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
@@ -1463,7 +1463,7 @@
 .end method
 
 .method public bridge synthetic builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList$Builder;
-    .registers 2
+    .locals 1
 
     .line 24
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
@@ -1476,7 +1476,7 @@
 .end method
 
 .method public builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVectorBuilder;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1504,7 +1504,7 @@
 .end method
 
 .method public get(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1534,7 +1534,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 26
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->size:I
@@ -1543,7 +1543,7 @@
 .end method
 
 .method public listIterator(I)Ljava/util/ListIterator;
-    .registers 9
+    .locals 7
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1589,7 +1589,7 @@
 .end method
 
 .method public bridge synthetic removeAll(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
 
     .line 24
@@ -1603,7 +1603,7 @@
 .end method
 
 .method public removeAll(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 5
+    .locals 3
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1646,7 +1646,7 @@
 .end method
 
 .method public removeAt(I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1670,7 +1670,7 @@
 
     .line 150
     .local v0, "rootSize":I
-    if-lt p1, v0, :cond_18
+    if-lt p1, v0, :cond_0
 
     .line 151
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->root:[Ljava/lang/Object;
@@ -1686,7 +1686,7 @@
     return-object v1
 
     .line 153
-    :cond_18
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->root:[Ljava/lang/Object;
 
     iget v2, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->rootShift:I
@@ -1717,7 +1717,7 @@
 .end method
 
 .method public set(ILjava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 5
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1740,7 +1740,7 @@
 
     move-result v0
 
-    if-gt v0, p1, :cond_2f
+    if-gt v0, p1, :cond_0
 
     .line 303
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->tail:[Ljava/lang/Object;
@@ -1780,7 +1780,7 @@
 
     .line 308
     .end local v0    # "newTail":[Ljava/lang/Object;
-    :cond_2f
+    :cond_0
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->root:[Ljava/lang/Object;
 
     iget v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/PersistentVector;->rootShift:I

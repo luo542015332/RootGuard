@@ -40,7 +40,7 @@
 
 # direct methods
 .method public static final modifierLocalMapOf()Landroidx/compose/ui/modifier/ModifierLocalMap;
-    .registers 1
+    .locals 1
 
     .line 176
     sget-object v0, Landroidx/compose/ui/modifier/EmptyMap;->INSTANCE:Landroidx/compose/ui/modifier/EmptyMap;
@@ -51,7 +51,7 @@
 .end method
 
 .method public static final modifierLocalMapOf(Landroidx/compose/ui/modifier/ModifierLocal;)Landroidx/compose/ui/modifier/ModifierLocalMap;
-    .registers 2
+    .locals 1
     .param p0, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -79,7 +79,7 @@
 .end method
 
 .method public static final modifierLocalMapOf(Lkotlin/Pair;)Landroidx/compose/ui/modifier/ModifierLocalMap;
-    .registers 6
+    .locals 5
     .param p0, "entry"    # Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -137,7 +137,7 @@
 .end method
 
 .method public static final varargs modifierLocalMapOf([Landroidx/compose/ui/modifier/ModifierLocal;)Landroidx/compose/ui/modifier/ModifierLocalMap;
-    .registers 13
+    .locals 12
     .param p0, "keys"    # [Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -182,8 +182,8 @@
 
     move v7, v6
 
-    :goto_15
-    if-ge v7, v5, :cond_26
+    :goto_0
+    if-ge v7, v5, :cond_0
 
     aget-object v8, v3, v7
 
@@ -211,10 +211,10 @@
     .end local v8    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
     .line 213
-    :cond_26
+    :cond_0
     nop
 
     .end local v2    # "destination$iv$iv":Ljava/util/Collection;
@@ -271,7 +271,7 @@
 .end method
 
 .method public static final varargs modifierLocalMapOf([Lkotlin/Pair;)Landroidx/compose/ui/modifier/ModifierLocalMap;
-    .registers 3
+    .locals 2
     .param p0, "entries"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {

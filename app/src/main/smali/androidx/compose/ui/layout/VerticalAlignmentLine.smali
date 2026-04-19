@@ -33,13 +33,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .param p1, "merger"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {

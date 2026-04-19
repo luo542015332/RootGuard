@@ -67,7 +67,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/semantics/SemanticsProperties$ContentDescription$1;
 
@@ -79,7 +79,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -112,7 +112,7 @@
 .end method
 
 .method public final invoke(Ljava/util/List;Ljava/util/List;)Ljava/util/List;
-    .registers 7
+    .locals 4
     .param p1, "parentValue"    # Ljava/util/List;
     .param p2, "childValue"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -135,7 +135,7 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 42
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_0
 
     move-object v0, p1
 
@@ -145,7 +145,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     move-object v1, v0
 
@@ -163,11 +163,11 @@
 
     .end local v1    # "it":Ljava/util/List;
     .end local v2    # "$i$a$-also-SemanticsProperties$ContentDescription$1$1":I
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     move-object v0, p2
 
-    :goto_1b
+    :goto_0
     return-object v0
 .end method

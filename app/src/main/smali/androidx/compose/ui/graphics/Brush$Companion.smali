@@ -76,7 +76,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -85,7 +85,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/Brush$Companion;-><init>()V
 
@@ -93,30 +93,30 @@
 .end method
 
 .method public static synthetic horizontalGradient-8A-3gB4$default(Landroidx/compose/ui/graphics/Brush$Companion;Ljava/util/List;FFIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 7
+    .locals 0
 
     .line 147
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_5
+    if-eqz p6, :cond_0
 
     .line 149
     const/4 p2, 0x0
 
     .line 147
-    :cond_5
+    :cond_0
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_1
 
     .line 150
     const/high16 p3, 0x7f800000    # Float.POSITIVE_INFINITY
 
     .line 147
-    :cond_b
+    :cond_1
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_15
+    if-eqz p5, :cond_2
 
     .line 151
     sget-object p4, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -126,7 +126,7 @@
     move-result p4
 
     .line 147
-    :cond_15
+    :cond_2
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Brush$Companion;->horizontalGradient-8A-3gB4(Ljava/util/List;FFI)Landroidx/compose/ui/graphics/Brush;
 
     move-result-object p0
@@ -135,30 +135,30 @@
 .end method
 
 .method public static synthetic horizontalGradient-8A-3gB4$default(Landroidx/compose/ui/graphics/Brush$Companion;[Lkotlin/Pair;FFIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 7
+    .locals 0
 
     .line 183
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_5
+    if-eqz p6, :cond_0
 
     .line 185
     const/4 p2, 0x0
 
     .line 183
-    :cond_5
+    :cond_0
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_1
 
     .line 186
     const/high16 p3, 0x7f800000    # Float.POSITIVE_INFINITY
 
     .line 183
-    :cond_b
+    :cond_1
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_15
+    if-eqz p5, :cond_2
 
     .line 187
     sget-object p4, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -168,7 +168,7 @@
     move-result p4
 
     .line 183
-    :cond_15
+    :cond_2
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Brush$Companion;->horizontalGradient-8A-3gB4([Lkotlin/Pair;FFI)Landroidx/compose/ui/graphics/Brush;
 
     move-result-object p0
@@ -177,12 +177,12 @@
 .end method
 
 .method public static synthetic linearGradient-mHitzGk$default(Landroidx/compose/ui/graphics/Brush$Companion;Ljava/util/List;JJIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 16
+    .locals 7
 
     .line 109
     and-int/lit8 p8, p7, 0x2
 
-    if-eqz p8, :cond_c
+    if-eqz p8, :cond_0
 
     .line 111
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -193,16 +193,16 @@
 
     move-wide v2, p2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 109
-    :cond_c
+    :cond_0
     move-wide v2, p2
 
-    :goto_d
+    :goto_0
     and-int/lit8 p2, p7, 0x4
 
-    if-eqz p2, :cond_19
+    if-eqz p2, :cond_1
 
     .line 112
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -213,16 +213,16 @@
 
     move-wide v4, p4
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 109
-    :cond_19
+    :cond_1
     move-wide v4, p4
 
-    :goto_1a
+    :goto_1
     and-int/lit8 p2, p7, 0x8
 
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_2
 
     .line 113
     sget-object p2, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -233,13 +233,13 @@
 
     move v6, p6
 
-    goto :goto_27
+    goto :goto_2
 
     .line 109
-    :cond_26
+    :cond_2
     move v6, p6
 
-    :goto_27
+    :goto_2
     move-object v0, p0
 
     move-object v1, p1
@@ -252,12 +252,12 @@
 .end method
 
 .method public static synthetic linearGradient-mHitzGk$default(Landroidx/compose/ui/graphics/Brush$Companion;[Lkotlin/Pair;JJIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 16
+    .locals 7
 
     .line 72
     and-int/lit8 p8, p7, 0x2
 
-    if-eqz p8, :cond_c
+    if-eqz p8, :cond_0
 
     .line 74
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -268,16 +268,16 @@
 
     move-wide v2, p2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 72
-    :cond_c
+    :cond_0
     move-wide v2, p2
 
-    :goto_d
+    :goto_0
     and-int/lit8 p2, p7, 0x4
 
-    if-eqz p2, :cond_19
+    if-eqz p2, :cond_1
 
     .line 75
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -288,16 +288,16 @@
 
     move-wide v4, p4
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 72
-    :cond_19
+    :cond_1
     move-wide v4, p4
 
-    :goto_1a
+    :goto_1
     and-int/lit8 p2, p7, 0x8
 
-    if-eqz p2, :cond_26
+    if-eqz p2, :cond_2
 
     .line 76
     sget-object p2, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -308,13 +308,13 @@
 
     move v6, p6
 
-    goto :goto_27
+    goto :goto_2
 
     .line 72
-    :cond_26
+    :cond_2
     move v6, p6
 
-    :goto_27
+    :goto_2
     move-object v0, p0
 
     move-object v1, p1
@@ -327,12 +327,12 @@
 .end method
 
 .method public static synthetic radialGradient-P_Vx-Ks$default(Landroidx/compose/ui/graphics/Brush$Companion;Ljava/util/List;JFIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 14
+    .locals 6
 
     .line 334
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_0
 
     .line 336
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -343,32 +343,32 @@
 
     move-wide v2, p2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 334
-    :cond_c
+    :cond_0
     move-wide v2, p2
 
-    :goto_d
+    :goto_0
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     .line 337
     const/high16 p4, 0x7f800000    # Float.POSITIVE_INFINITY
 
     move v4, p4
 
-    goto :goto_16
+    goto :goto_1
 
     .line 334
-    :cond_15
+    :cond_1
     move v4, p4
 
-    :goto_16
+    :goto_1
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_2
 
     .line 338
     sget-object p2, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -379,13 +379,13 @@
 
     move v5, p5
 
-    goto :goto_23
+    goto :goto_2
 
     .line 334
-    :cond_22
+    :cond_2
     move v5, p5
 
-    :goto_23
+    :goto_2
     move-object v0, p0
 
     move-object v1, p1
@@ -398,12 +398,12 @@
 .end method
 
 .method public static synthetic radialGradient-P_Vx-Ks$default(Landroidx/compose/ui/graphics/Brush$Companion;[Lkotlin/Pair;JFIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 14
+    .locals 6
 
     .line 296
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_0
 
     .line 298
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -414,32 +414,32 @@
 
     move-wide v2, p2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 296
-    :cond_c
+    :cond_0
     move-wide v2, p2
 
-    :goto_d
+    :goto_0
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     .line 299
     const/high16 p4, 0x7f800000    # Float.POSITIVE_INFINITY
 
     move v4, p4
 
-    goto :goto_16
+    goto :goto_1
 
     .line 296
-    :cond_15
+    :cond_1
     move v4, p4
 
-    :goto_16
+    :goto_1
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_2
 
     .line 300
     sget-object p2, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -450,13 +450,13 @@
 
     move v5, p5
 
-    goto :goto_23
+    goto :goto_2
 
     .line 296
-    :cond_22
+    :cond_2
     move v5, p5
 
-    :goto_23
+    :goto_2
     move-object v0, p0
 
     move-object v1, p1
@@ -469,12 +469,12 @@
 .end method
 
 .method public static synthetic sweepGradient-Uv8p0NA$default(Landroidx/compose/ui/graphics/Brush$Companion;Ljava/util/List;JILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 6
+    .locals 0
 
     .line 403
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_0
 
     .line 405
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -484,7 +484,7 @@
     move-result-wide p2
 
     .line 403
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/Brush$Companion;->sweepGradient-Uv8p0NA(Ljava/util/List;J)Landroidx/compose/ui/graphics/Brush;
 
     move-result-object p0
@@ -493,12 +493,12 @@
 .end method
 
 .method public static synthetic sweepGradient-Uv8p0NA$default(Landroidx/compose/ui/graphics/Brush$Companion;[Lkotlin/Pair;JILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 6
+    .locals 0
 
     .line 372
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_0
 
     .line 374
     sget-object p2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -508,7 +508,7 @@
     move-result-wide p2
 
     .line 372
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/Brush$Companion;->sweepGradient-Uv8p0NA([Lkotlin/Pair;J)Landroidx/compose/ui/graphics/Brush;
 
     move-result-object p0
@@ -517,30 +517,30 @@
 .end method
 
 .method public static synthetic verticalGradient-8A-3gB4$default(Landroidx/compose/ui/graphics/Brush$Companion;Ljava/util/List;FFIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 7
+    .locals 0
 
     .line 219
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_5
+    if-eqz p6, :cond_0
 
     .line 221
     const/4 p2, 0x0
 
     .line 219
-    :cond_5
+    :cond_0
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_1
 
     .line 222
     const/high16 p3, 0x7f800000    # Float.POSITIVE_INFINITY
 
     .line 219
-    :cond_b
+    :cond_1
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_15
+    if-eqz p5, :cond_2
 
     .line 223
     sget-object p4, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -550,7 +550,7 @@
     move-result p4
 
     .line 219
-    :cond_15
+    :cond_2
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Brush$Companion;->verticalGradient-8A-3gB4(Ljava/util/List;FFI)Landroidx/compose/ui/graphics/Brush;
 
     move-result-object p0
@@ -559,30 +559,30 @@
 .end method
 
 .method public static synthetic verticalGradient-8A-3gB4$default(Landroidx/compose/ui/graphics/Brush$Companion;[Lkotlin/Pair;FFIILjava/lang/Object;)Landroidx/compose/ui/graphics/Brush;
-    .registers 7
+    .locals 0
 
     .line 255
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_5
+    if-eqz p6, :cond_0
 
     .line 257
     const/4 p2, 0x0
 
     .line 255
-    :cond_5
+    :cond_0
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_b
+    if-eqz p6, :cond_1
 
     .line 258
     const/high16 p3, 0x7f800000    # Float.POSITIVE_INFINITY
 
     .line 255
-    :cond_b
+    :cond_1
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_15
+    if-eqz p5, :cond_2
 
     .line 259
     sget-object p4, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -592,7 +592,7 @@
     move-result p4
 
     .line 255
-    :cond_15
+    :cond_2
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Brush$Companion;->verticalGradient-8A-3gB4([Lkotlin/Pair;FFI)Landroidx/compose/ui/graphics/Brush;
 
     move-result-object p0
@@ -603,7 +603,7 @@
 
 # virtual methods
 .method public final horizontalGradient-8A-3gB4(Ljava/util/List;FFI)Landroidx/compose/ui/graphics/Brush;
-    .registers 13
+    .locals 8
     .param p1, "colors"    # Ljava/util/List;
     .param p2, "startX"    # F
     .param p3, "endX"    # F
@@ -647,7 +647,7 @@
 .end method
 
 .method public final horizontalGradient-8A-3gB4([Lkotlin/Pair;FFI)Landroidx/compose/ui/graphics/Brush;
-    .registers 13
+    .locals 8
     .param p1, "colorStops"    # [Lkotlin/Pair;
     .param p2, "startX"    # F
     .param p3, "endX"    # F
@@ -710,7 +710,7 @@
 .end method
 
 .method public final linearGradient-mHitzGk(Ljava/util/List;JJI)Landroidx/compose/ui/graphics/Brush;
-    .registers 18
+    .locals 11
     .param p1, "colors"    # Ljava/util/List;
     .param p2, "start"    # J
     .param p4, "end"    # J
@@ -769,7 +769,7 @@
 .end method
 
 .method public final linearGradient-mHitzGk([Lkotlin/Pair;JJI)Landroidx/compose/ui/graphics/Brush;
-    .registers 21
+    .locals 14
     .param p1, "colorStops"    # [Lkotlin/Pair;
     .param p2, "start"    # J
     .param p4, "end"    # J
@@ -805,8 +805,8 @@
 
     move v4, v3
 
-    :goto_10
-    if-ge v4, v1, :cond_2a
+    :goto_0
+    if-ge v4, v1, :cond_0
 
     .line 670
     move v5, v4
@@ -838,9 +838,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     move-object v6, v2
 
     check-cast v6, Ljava/util/List;
@@ -852,8 +852,8 @@
 
     invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    :goto_33
-    if-ge v3, v1, :cond_4d
+    :goto_1
+    if-ge v3, v1, :cond_1
 
     .line 670
     move v4, v3
@@ -885,9 +885,9 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_4d
+    :cond_1
     move-object v7, v2
 
     check-cast v7, Ljava/util/List;
@@ -921,7 +921,7 @@
 .end method
 
 .method public final radialGradient-P_Vx-Ks(Ljava/util/List;JFI)Landroidx/compose/ui/graphics/Brush;
-    .registers 15
+    .locals 9
     .param p1, "colors"    # Ljava/util/List;
     .param p2, "center"    # J
     .param p4, "radius"    # F
@@ -978,7 +978,7 @@
 .end method
 
 .method public final radialGradient-P_Vx-Ks([Lkotlin/Pair;JFI)Landroidx/compose/ui/graphics/Brush;
-    .registers 19
+    .locals 13
     .param p1, "colorStops"    # [Lkotlin/Pair;
     .param p2, "center"    # J
     .param p4, "radius"    # F
@@ -1014,8 +1014,8 @@
 
     move v4, v3
 
-    :goto_10
-    if-ge v4, v1, :cond_2a
+    :goto_0
+    if-ge v4, v1, :cond_0
 
     .line 670
     move v5, v4
@@ -1047,9 +1047,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_2a
+    :cond_0
     move-object v6, v2
 
     check-cast v6, Ljava/util/List;
@@ -1061,8 +1061,8 @@
 
     invoke-direct {v2, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    :goto_33
-    if-ge v3, v1, :cond_4d
+    :goto_1
+    if-ge v3, v1, :cond_1
 
     .line 670
     move v4, v3
@@ -1094,9 +1094,9 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_4d
+    :cond_1
     move-object v7, v2
 
     check-cast v7, Ljava/util/List;
@@ -1130,7 +1130,7 @@
 .end method
 
 .method public final sweepGradient-Uv8p0NA(Ljava/util/List;J)Landroidx/compose/ui/graphics/Brush;
-    .registers 11
+    .locals 7
     .param p1, "colors"    # Ljava/util/List;
     .param p2, "center"    # J
     .annotation system Ldalvik/annotation/Signature;
@@ -1177,7 +1177,7 @@
 .end method
 
 .method public final sweepGradient-Uv8p0NA([Lkotlin/Pair;J)Landroidx/compose/ui/graphics/Brush;
-    .registers 14
+    .locals 10
     .param p1, "colorStops"    # [Lkotlin/Pair;
     .param p2, "center"    # J
     .annotation system Ldalvik/annotation/Signature;
@@ -1206,8 +1206,8 @@
 
     move v3, v2
 
-    :goto_e
-    if-ge v3, v0, :cond_28
+    :goto_0
+    if-ge v3, v0, :cond_0
 
     .line 670
     move v4, v3
@@ -1239,9 +1239,9 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_28
+    :cond_0
     move-object v7, v1
 
     check-cast v7, Ljava/util/List;
@@ -1253,8 +1253,8 @@
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    :goto_31
-    if-ge v2, v0, :cond_4b
+    :goto_1
+    if-ge v2, v0, :cond_1
 
     .line 670
     move v3, v2
@@ -1286,9 +1286,9 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_4b
+    :cond_1
     move-object v8, v1
 
     check-cast v8, Ljava/util/List;
@@ -1319,7 +1319,7 @@
 .end method
 
 .method public final verticalGradient-8A-3gB4(Ljava/util/List;FFI)Landroidx/compose/ui/graphics/Brush;
-    .registers 13
+    .locals 8
     .param p1, "colors"    # Ljava/util/List;
     .param p2, "startY"    # F
     .param p3, "endY"    # F
@@ -1363,7 +1363,7 @@
 .end method
 
 .method public final verticalGradient-8A-3gB4([Lkotlin/Pair;FFI)Landroidx/compose/ui/graphics/Brush;
-    .registers 13
+    .locals 8
     .param p1, "colorStops"    # [Lkotlin/Pair;
     .param p2, "startY"    # F
     .param p3, "endY"    # F

@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 26
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
@@ -65,7 +65,7 @@
 .end method
 
 .method public static final synthetic access$addSemanticsPropertiesFrom(Landroidx/compose/ui/platform/InspectorInfo;Landroidx/compose/ui/semantics/SemanticsConfiguration;)V
-    .registers 2
+    .locals 0
     .param p0, "$receiver"    # Landroidx/compose/ui/platform/InspectorInfo;
     .param p1, "semanticsConfiguration"    # Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
@@ -76,7 +76,7 @@
 .end method
 
 .method private static final addSemanticsPropertiesFrom(Landroidx/compose/ui/platform/InspectorInfo;Landroidx/compose/ui/semantics/SemanticsConfiguration;)V
-    .registers 15
+    .locals 13
     .param p0, "$this$addSemanticsPropertiesFrom"    # Landroidx/compose/ui/platform/InspectorInfo;
     .param p1, "semanticsConfiguration"    # Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
@@ -130,12 +130,12 @@
 
     move-result-object v7
 
-    :goto_25
+    :goto_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_51
+    if-eqz v8, :cond_0
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -186,11 +186,11 @@
 
     invoke-interface {v4, v10, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_25
+    goto :goto_0
 
     .line 214
     .end local v8    # "element$iv$iv":Ljava/lang/Object;
-    :cond_51
+    :cond_0
     nop
 
     .line 210
@@ -212,7 +212,7 @@
 .end method
 
 .method public static final clearAndSetSemantics(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$clearAndSetSemantics"    # Landroidx/compose/ui/Modifier;
     .param p1, "properties"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -251,7 +251,7 @@
 .end method
 
 .method public static final generateSemanticsId()I
-    .registers 2
+    .locals 2
 
     .line 27
     sget-object v0, Landroidx/compose/ui/semantics/SemanticsModifierKt;->lastIdentifier:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -266,7 +266,7 @@
 .end method
 
 .method public static final semantics(Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 1
     .param p0, "$this$semantics"    # Landroidx/compose/ui/Modifier;
     .param p1, "mergeDescendants"    # Z
     .param p2, "properties"    # Lkotlin/jvm/functions/Function1;
@@ -315,18 +315,18 @@
 .end method
 
 .method public static synthetic semantics$default(Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 0
 
     .line 111
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_0
 
     .line 112
     const/4 p1, 0x0
 
     .line 111
-    :cond_5
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/semantics/SemanticsModifierKt;->semantics(Landroidx/compose/ui/Modifier;ZLkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
 
     move-result-object p0

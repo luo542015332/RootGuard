@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -69,7 +69,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final addPosition-Uv8p0NA(JJ)V
-    .registers 7
+    .locals 2
     .param p1, "timeMillis"    # J
     .param p3, "position"    # J
 
@@ -137,7 +137,7 @@
 .end method
 
 .method public final calculateVelocity-9UxMQ8M()J
-    .registers 3
+    .locals 2
 
     .line 74
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker;->xVelocityTracker:Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;
@@ -160,7 +160,7 @@
 .end method
 
 .method public final getCurrentPointerPositionAccumulator-F1C5BW0$ui_release()J
-    .registers 3
+    .locals 2
 
     .line 51
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker;->currentPointerPositionAccumulator:J
@@ -169,7 +169,7 @@
 .end method
 
 .method public final resetTracking()V
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker;->xVelocityTracker:Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;
@@ -186,7 +186,7 @@
 .end method
 
 .method public final setCurrentPointerPositionAccumulator-k-4lQ0M$ui_release(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 51

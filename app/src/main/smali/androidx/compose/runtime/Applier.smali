@@ -63,7 +63,7 @@
 
 # direct methods
 .method public static synthetic access$onBeginChanges$jd(Landroidx/compose/runtime/Applier;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Applier;
 
     .line 35
@@ -73,7 +73,7 @@
 .end method
 
 .method public static synthetic access$onEndChanges$jd(Landroidx/compose/runtime/Applier;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/Applier;
 
     .line 35
@@ -123,14 +123,14 @@
 .end method
 
 .method public onBeginChanges()V
-    .registers 1
+    .locals 0
 
     .line 47
     return-void
 .end method
 
 .method public onEndChanges()V
-    .registers 1
+    .locals 0
 
     .line 53
     return-void

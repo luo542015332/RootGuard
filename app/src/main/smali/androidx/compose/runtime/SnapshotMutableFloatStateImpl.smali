@@ -87,7 +87,7 @@
 
 # direct methods
 .method public constructor <init>(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 124
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public component1()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 146
     invoke-virtual {p0}, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;->getFloatValue()F
@@ -122,7 +122,7 @@
 .end method
 
 .method public bridge synthetic component1()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 124
     invoke-virtual {p0}, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;->component1()Ljava/lang/Float;
@@ -133,7 +133,7 @@
 .end method
 
 .method public component2()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -155,7 +155,7 @@
 .end method
 
 .method public getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 2
+    .locals 1
 
     .line 131
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$FloatStateStateRecord;
@@ -166,7 +166,7 @@
 .end method
 
 .method public getFloatValue()F
-    .registers 3
+    .locals 2
 
     .line 134
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$FloatStateStateRecord;
@@ -191,7 +191,7 @@
 .end method
 
 .method public getPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -210,7 +210,7 @@
 .end method
 
 .method public mergeRecords(Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 8
+    .locals 4
     .param p1, "previous"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p2, "current"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p3, "applied"    # Landroidx/compose/runtime/snapshots/StateRecord;
@@ -250,34 +250,34 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_26
+    if-nez v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_27
-    if-eqz v2, :cond_2b
+    :goto_0
+    if-eqz v2, :cond_1
 
     .line 162
     move-object v2, p2
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 164
-    :cond_2b
+    :cond_1
     const/4 v2, 0x0
 
     .line 161
-    :goto_2c
+    :goto_1
     return-object v2
 .end method
 
 .method public prependStateRecord(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -296,7 +296,7 @@
 .end method
 
 .method public setFloatValue(F)V
-    .registers 15
+    .locals 13
     .param p1, "value"    # F
 
     .line 135
@@ -326,17 +326,17 @@
 
     cmpg-float v4, v4, p1
 
-    if-nez v4, :cond_16
+    if-nez v4, :cond_0
 
     const/4 v4, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v4, 0x0
 
-    :goto_17
-    if-nez v4, :cond_55
+    :goto_0
+    if-nez v4, :cond_1
 
     .line 137
     iget-object v4, p0, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$FloatStateStateRecord;
@@ -375,7 +375,7 @@
 
     .line 188
     .local v10, "$i$a$-sync-SnapshotKt$overwritable$1$iv":I
-    :try_start_2b
+    :try_start_0
     sget-object v11, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v11}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -409,8 +409,8 @@
     .end local v11    # "$this$_set_floatValue__u24lambda_u241_u24lambda_u240":Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$FloatStateStateRecord;
     .end local v12    # "$i$a$-overwritable-SnapshotMutableFloatStateImpl$floatValue$1$1":I
     sget-object v11, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_44
-    .catchall {:try_start_2b .. :try_end_44} :catchall_52
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 189
     nop
@@ -448,13 +448,13 @@
     nop
 
     .line 185
-    goto :goto_55
+    goto :goto_1
 
     .line 187
     .local v7, "$i$f$sync":I
     .local v8, "lock$iv$iv$iv":Ljava/lang/Object;
     .restart local v9    # "$i$f$synchronized":I
-    :catchall_52
+    :catchall_0
     move-exception v10
 
     monitor-exit v8
@@ -468,8 +468,8 @@
     .end local v7    # "$i$f$sync":I
     .end local v8    # "lock$iv$iv$iv":Ljava/lang/Object;
     .end local v9    # "$i$f$synchronized":I
-    :cond_55
-    :goto_55
+    :cond_1
+    :goto_1
     nop
 
     .line 183
@@ -484,7 +484,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 168
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$FloatStateStateRecord;

@@ -61,7 +61,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/MutableState;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 93
@@ -99,7 +99,7 @@
 .end method
 
 .method public final invoke(Landroid/content/res/Configuration;)V
-    .registers 4
+    .locals 2
     .param p1, "it"    # Landroid/content/res/Configuration;
 
     const-string/jumbo v0, "it"
@@ -113,7 +113,6 @@
 
     invoke-direct {v1, p1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
 
-    # invokes: Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->ProvideAndroidCompositionLocals$lambda$2(Landroidx/compose/runtime/MutableState;Landroid/content/res/Configuration;)V
     invoke-static {v0, v1}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->access$ProvideAndroidCompositionLocals$lambda$2(Landroidx/compose/runtime/MutableState;Landroid/content/res/Configuration;)V
 
     return-void

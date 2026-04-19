@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(ZLandroidx/compose/ui/Alignment;)V
-    .registers 3
+    .locals 0
 
     iput-boolean p1, p0, Landroidx/compose/foundation/layout/BoxKt$boxMeasurePolicy$1;->$propagateMinConstraints:Z
 
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 26
+    .locals 21
     .param p1, "$this$MeasurePolicy"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -101,7 +101,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     .line 96
     nop
@@ -138,18 +138,18 @@
     return-object v1
 
     .line 102
-    :cond_2f
+    :cond_0
     iget-boolean v1, v0, Landroidx/compose/foundation/layout/BoxKt$boxMeasurePolicy$1;->$propagateMinConstraints:Z
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_1
 
     .line 103
     move-wide/from16 v1, p3
 
-    goto :goto_44
+    goto :goto_0
 
     .line 105
-    :cond_36
+    :cond_1
     const/4 v11, 0x0
 
     const/4 v12, 0x0
@@ -169,7 +169,7 @@
     move-result-wide v1
 
     .line 102
-    :goto_44
+    :goto_0
     move-wide v5, v1
 
     .line 108
@@ -182,7 +182,7 @@
 
     const/4 v3, 0x1
 
-    if-ne v1, v3, :cond_b6
+    if-ne v1, v3, :cond_3
 
     .line 109
     invoke-interface {v8, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -202,12 +202,11 @@
 
     .line 113
     .local v4, "placeable":Landroidx/compose/ui/layout/Placeable;
-    # invokes: Landroidx/compose/foundation/layout/BoxKt;->getMatchesParentSize(Landroidx/compose/ui/layout/Measurable;)Z
     invoke-static {v1}, Landroidx/compose/foundation/layout/BoxKt;->access$getMatchesParentSize(Landroidx/compose/ui/layout/Measurable;)Z
 
     move-result v9
 
-    if-nez v9, :cond_79
+    if-nez v9, :cond_2
 
     .line 114
     invoke-interface {v1, v5, v6}, Landroidx/compose/ui/layout/Measurable;->measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
@@ -240,10 +239,10 @@
 
     move-result v3
 
-    goto :goto_94
+    goto :goto_1
 
     .line 118
-    :cond_79
+    :cond_2
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/unit/Constraints;->getMinWidth-impl(J)I
 
     move-result v2
@@ -277,7 +276,7 @@
     move-result-object v4
 
     .line 124
-    :goto_94
+    :goto_1
     const/16 v16, 0x0
 
     new-instance v17, Landroidx/compose/foundation/layout/BoxKt$boxMeasurePolicy$1$measure$2;
@@ -325,7 +324,7 @@
     .end local v2    # "boxWidth":I
     .end local v3    # "boxHeight":I
     .end local v4    # "placeable":Landroidx/compose/ui/layout/Placeable;
-    :cond_b6
+    :cond_3
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
     move-result v1
@@ -387,8 +386,8 @@
 
     .end local v1    # "hasMatchParentSizeChildren":Z
     .local v16, "hasMatchParentSizeChildren":Z
-    :goto_e0
-    if-ge v9, v10, :cond_11e
+    :goto_2
+    if-ge v9, v10, :cond_5
 
     .line 304
     invoke-interface {v3, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -409,12 +408,11 @@
 
     .line 135
     .local v17, "$i$a$-fastForEachIndexed-BoxKt$boxMeasurePolicy$1$measure$3":I
-    # invokes: Landroidx/compose/foundation/layout/BoxKt;->getMatchesParentSize(Landroidx/compose/ui/layout/Measurable;)Z
     invoke-static {v11}, Landroidx/compose/foundation/layout/BoxKt;->access$getMatchesParentSize(Landroidx/compose/ui/layout/Measurable;)Z
 
     move-result v18
 
-    if-nez v18, :cond_113
+    if-nez v18, :cond_4
 
     .line 136
     invoke-interface {v11, v5, v6}, Landroidx/compose/ui/layout/Measurable;->measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
@@ -456,12 +454,12 @@
     iput v1, v13, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     .end local v18    # "placeable":Landroidx/compose/ui/layout/Placeable;
-    goto :goto_118
+    goto :goto_3
 
     .line 141
     .end local v20    # "item$iv":Ljava/lang/Object;
     .restart local v1    # "item$iv":Ljava/lang/Object;
-    :cond_113
+    :cond_4
     move-object/from16 v20, v1
 
     .end local v1    # "item$iv":Ljava/lang/Object;
@@ -471,7 +469,7 @@
     move/from16 v16, v1
 
     .line 143
-    :goto_118
+    :goto_3
     nop
 
     .line 305
@@ -486,47 +484,47 @@
 
     const/4 v2, 0x0
 
-    goto :goto_e0
+    goto :goto_2
 
     .line 307
     .end local v9    # "index$iv":I
-    :cond_11e
+    :cond_5
     nop
 
     .line 146
     .end local v3    # "$this$fastForEachIndexed$iv":Ljava/util/List;
     .end local v4    # "$i$f$fastForEachIndexed":I
-    if-eqz v16, :cond_168
+    if-eqz v16, :cond_a
 
     .line 149
     iget v1, v14, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     const v2, 0x7fffffff
 
-    if-eq v1, v2, :cond_12b
+    if-eq v1, v2, :cond_6
 
     iget v1, v14, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    goto :goto_12c
+    goto :goto_4
 
-    :cond_12b
+    :cond_6
     const/4 v1, 0x0
 
     .line 150
-    :goto_12c
+    :goto_4
     iget v3, v13, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    if-eq v3, v2, :cond_133
+    if-eq v3, v2, :cond_7
 
     iget v2, v13, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
-    goto :goto_134
+    goto :goto_5
 
-    :cond_133
+    :cond_7
     const/4 v2, 0x0
 
     .line 151
-    :goto_134
+    :goto_5
     iget v3, v14, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     .line 152
@@ -568,8 +566,8 @@
 
     move-result v10
 
-    :goto_149
-    if-ge v9, v10, :cond_167
+    :goto_6
+    if-ge v9, v10, :cond_9
 
     .line 310
     invoke-interface {v3, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -590,12 +588,11 @@
 
     .line 155
     .local v18, "$i$a$-fastForEachIndexed-BoxKt$boxMeasurePolicy$1$measure$4":I
-    # invokes: Landroidx/compose/foundation/layout/BoxKt;->getMatchesParentSize(Landroidx/compose/ui/layout/Measurable;)Z
     invoke-static {v12}, Landroidx/compose/foundation/layout/BoxKt;->access$getMatchesParentSize(Landroidx/compose/ui/layout/Measurable;)Z
 
     move-result v19
 
-    if-eqz v19, :cond_162
+    if-eqz v19, :cond_8
 
     .line 156
     invoke-interface {v12, v1, v2}, Landroidx/compose/ui/layout/Measurable;->measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
@@ -605,7 +602,7 @@
     aput-object v19, v15, v17
 
     .line 158
-    :cond_162
+    :cond_8
     nop
 
     .line 311
@@ -618,18 +615,18 @@
     .end local v11    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v9, v9, 0x1
 
-    goto :goto_149
+    goto :goto_6
 
     .line 313
     .end local v9    # "index$iv":I
-    :cond_167
+    :cond_9
     nop
 
     .line 162
     .end local v1    # "matchParentSizeConstraints":J
     .end local v3    # "$this$fastForEachIndexed$iv":Ljava/util/List;
     .end local v4    # "$i$f$fastForEachIndexed":I
-    :cond_168
+    :cond_a
     iget v10, v14, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     iget v11, v13, Lkotlin/jvm/internal/Ref$IntRef;->element:I

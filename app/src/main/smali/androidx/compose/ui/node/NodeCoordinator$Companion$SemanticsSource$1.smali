@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1258
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public childHitTest-YqVAtuI(Landroidx/compose/ui/node/LayoutNode;JLandroidx/compose/ui/node/HitTestResult;ZZ)V
-    .registers 8
+    .locals 1
     .param p1, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "pointerPosition"    # J
     .param p4, "hitTestResult"    # Landroidx/compose/ui/node/HitTestResult;
@@ -113,7 +113,7 @@
 .end method
 
 .method public entityType-OLwlOKw()I
-    .registers 3
+    .locals 2
 
     .line 1259
     const/4 v0, 0x0
@@ -132,7 +132,7 @@
 .end method
 
 .method public interceptOutOfBoundsChildEvents(Landroidx/compose/ui/Modifier$Node;)Z
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     const-string/jumbo v0, "node"
@@ -146,7 +146,7 @@
 .end method
 
 .method public shouldHitTestChildren(Landroidx/compose/ui/node/LayoutNode;)Z
-    .registers 5
+    .locals 3
     .param p1, "parentLayoutNode"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "parentLayoutNode"
@@ -162,17 +162,17 @@
 
     const/4 v2, 0x1
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/semantics/SemanticsConfiguration;->isClearingSemantics()Z
 
     move-result v0
 
-    if-ne v0, v2, :cond_15
+    if-ne v0, v2, :cond_0
 
     move v1, v2
 
-    :cond_15
+    :cond_0
     xor-int/lit8 v0, v1, 0x1
 
     return v0

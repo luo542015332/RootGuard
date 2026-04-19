@@ -61,7 +61,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/SnapshotMutableStateImpl;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 206
@@ -94,7 +94,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "it"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

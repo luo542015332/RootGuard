@@ -55,7 +55,7 @@
 
 # direct methods
 .method public static final synthetic access$getDefaultValue(Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Ljava/lang/Class;
 
     .line 1
@@ -67,7 +67,7 @@
 .end method
 
 .method public static final asComposableMethod(Ljava/lang/reflect/Method;)Landroidx/compose/runtime/reflect/ComposableMethod;
-    .registers 3
+    .locals 2
     .param p0, "$this$asComposableMethod"    # Ljava/lang/reflect/Method;
 
     const-string v0, "<this>"
@@ -85,7 +85,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     .line 179
     new-instance v1, Landroidx/compose/runtime/reflect/ComposableMethod;
@@ -95,26 +95,26 @@
     return-object v1
 
     .line 181
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
     return-object v1
 .end method
 
 .method private static final changedParamCount(II)I
-    .registers 7
+    .locals 5
     .param p0, "realValueParams"    # I
     .param p1, "thisParams"    # I
 
     .line 29
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
     .line 30
-    :cond_4
+    :cond_0
     add-int v0, p0, p1
 
     .line 31
@@ -140,7 +140,7 @@
 .end method
 
 .method private static final defaultParamCount(I)I
-    .registers 5
+    .locals 4
     .param p0, "realValueParams"    # I
 
     .line 37
@@ -165,7 +165,7 @@
 .end method
 
 .method private static final synthetic dup(Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 13
+    .locals 11
     .param p0, "$this$dup"    # Ljava/lang/Object;
     .param p1, "count"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -217,12 +217,12 @@
 
     move-result-object v7
 
-    :goto_1c
+    :goto_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_30
+    if-eqz v8, :cond_0
 
     move-object v8, v7
 
@@ -248,11 +248,11 @@
     .end local v10    # "$i$a$-map-ComposableMethodKt$dup$1":I
     invoke-interface {v4, p0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_1c
+    goto :goto_0
 
     .line 229
     .end local v8    # "item$iv$iv":I
-    :cond_30
+    :cond_0
     nop
 
     .end local v4    # "destination$iv$iv":Ljava/util/Collection;
@@ -299,7 +299,7 @@
 .end method
 
 .method private static final getComposableInfo(Ljava/lang/reflect/Method;)Landroidx/compose/runtime/reflect/ComposableInfo;
-    .registers 12
+    .locals 11
     .param p0, "$this$getComposableInfo"    # Ljava/lang/reflect/Method;
 
     .line 57
@@ -324,9 +324,9 @@
 
     add-int/2addr v2, v3
 
-    if-ltz v2, :cond_24
+    if-ltz v2, :cond_2
 
-    :cond_12
+    :cond_0
     move v4, v2
 
     .local v4, "index$iv":I
@@ -351,31 +351,31 @@
     .line 221
     .end local v5    # "it":Ljava/lang/Class;
     .end local v6    # "$i$a$-indexOfLast-ComposableMethodKt$getComposableInfo$realParamsCount$1":I
-    if-eqz v5, :cond_22
+    if-eqz v5, :cond_1
 
     .line 222
-    goto :goto_25
+    goto :goto_0
 
     .line 220
-    :cond_22
-    if-gez v2, :cond_12
+    :cond_1
+    if-gez v2, :cond_0
 
     .line 225
     .end local v4    # "index$iv":I
-    :cond_24
+    :cond_2
     move v4, v3
 
     .line 57
     .end local v0    # "$this$indexOfLast$iv":[Ljava/lang/Object;
     .end local v1    # "$i$f$indexOfLast":I
-    :goto_25
+    :goto_0
     move v0, v4
 
     .line 58
     .local v0, "realParamsCount":I
     const/4 v1, 0x0
 
-    if-ne v0, v3, :cond_34
+    if-ne v0, v3, :cond_3
 
     .line 59
     new-instance v2, Landroidx/compose/runtime/reflect/ComposableInfo;
@@ -391,7 +391,7 @@
     return-object v2
 
     .line 61
-    :cond_34
+    :cond_3
     invoke-virtual {p0}, Ljava/lang/reflect/Method;->getModifiers()I
 
     move-result v2
@@ -436,33 +436,33 @@
 
     .line 67
     .local v6, "totalParams":I
-    if-eq v6, v5, :cond_51
+    if-eq v6, v5, :cond_4
 
     move v7, v3
 
-    goto :goto_52
+    goto :goto_1
 
-    :cond_51
+    :cond_4
     move v7, v1
 
     .line 68
     .local v7, "isDefault":Z
-    :goto_52
-    if-eqz v7, :cond_59
+    :goto_1
+    if-eqz v7, :cond_5
 
     .line 69
     invoke-static {v0}, Landroidx/compose/runtime/reflect/ComposableMethodKt;->defaultParamCount(I)I
 
     move-result v8
 
-    goto :goto_5a
+    goto :goto_2
 
     .line 71
-    :cond_59
+    :cond_5
     move v8, v1
 
     .line 68
-    :goto_5a
+    :goto_2
     nop
 
     .line 72
@@ -472,12 +472,12 @@
     .line 73
     add-int v10, v5, v8
 
-    if-ne v10, v6, :cond_62
+    if-ne v10, v6, :cond_6
 
     move v1, v3
 
     .line 74
-    :cond_62
+    :cond_6
     nop
 
     .line 75
@@ -493,7 +493,7 @@
 .end method
 
 .method public static final varargs getDeclaredComposableMethod(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Landroidx/compose/runtime/reflect/ComposableMethod;
-    .registers 23
+    .locals 20
     .param p0, "$this$getDeclaredComposableMethod"    # Ljava/lang/Class;
     .param p1, "methodName"    # Ljava/lang/String;
     .param p2, "args"    # [Ljava/lang/Class;
@@ -556,7 +556,7 @@
     .line 199
     const/16 v6, 0xa
 
-    :try_start_22
+    :try_start_0
     new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
 
     const/4 v7, 0x3
@@ -612,12 +612,12 @@
 
     move-result-object v14
 
-    :goto_4c
+    :goto_0
     invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v15
 
-    if-eqz v15, :cond_62
+    if-eqz v15, :cond_0
 
     move-object v15, v14
 
@@ -643,11 +643,11 @@
     .end local v17    # "$i$a$-map-ComposableMethodKt$dup$1$iv":I
     invoke-interface {v11, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_4c
+    goto :goto_0
 
     .line 236
     .end local v15    # "item$iv$iv$iv":I
-    :cond_62
+    :cond_0
     nop
 
     .end local v11    # "destination$iv$iv$iv":Ljava/util/Collection;
@@ -710,13 +710,13 @@
     invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
-    :try_end_86
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_22 .. :try_end_86} :catch_88
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_144
+    goto/16 :goto_4
 
     .line 203
-    :catch_88
+    :catch_0
     move-exception v0
 
     move-object v7, v0
@@ -740,7 +740,7 @@
     nop
 
     .line 208
-    :try_start_92
+    :try_start_1
     new-instance v0, Lkotlin/jvm/internal/SpreadBuilder;
 
     const/4 v9, 0x4
@@ -796,12 +796,12 @@
 
     move-result-object v16
 
-    :goto_bc
+    :goto_1
     invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v17
 
-    if-eqz v17, :cond_d3
+    if-eqz v17, :cond_1
 
     move-object/from16 v17, v16
 
@@ -827,11 +827,11 @@
     .end local v19    # "$i$a$-map-ComposableMethodKt$dup$1$iv":I
     invoke-interface {v13, v9}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_bc
+    goto :goto_1
 
     .line 243
     .end local v17    # "item$iv$iv$iv":I
-    :cond_d3
+    :cond_1
     nop
 
     .end local v13    # "destination$iv$iv$iv":Ljava/util/Collection;
@@ -923,12 +923,12 @@
 
     move-result-object v15
 
-    :goto_104
+    :goto_2
     invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v16
 
-    if-eqz v16, :cond_11b
+    if-eqz v16, :cond_2
 
     move-object/from16 v16, v15
 
@@ -954,11 +954,11 @@
     .end local v18    # "$i$a$-map-ComposableMethodKt$dup$1$iv":I
     invoke-interface {v6, v9}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_104
+    goto :goto_2
 
     .line 250
     .end local v16    # "item$iv$iv$iv":I
-    :cond_11b
+    :cond_2
     nop
 
     .end local v6    # "destination$iv$iv$iv":Ljava/util/Collection;
@@ -1021,13 +1021,13 @@
     invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
-    :try_end_13f
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_92 .. :try_end_13f} :catch_140
+    :try_end_1
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_143
+    goto :goto_3
 
     .line 213
-    :catch_140
+    :catch_1
     move-exception v0
 
     .line 214
@@ -1037,14 +1037,14 @@
     move-object v0, v4
 
     .end local v0    # "e2":Ljava/lang/ReflectiveOperationException;
-    :goto_143
+    :goto_3
     nop
 
     .line 195
     .end local v7    # "e":Ljava/lang/ReflectiveOperationException;
     .end local v8    # "defaultParams":I
-    :goto_144
-    if-eqz v0, :cond_14e
+    :goto_4
+    if-eqz v0, :cond_3
 
     .line 218
     .local v0, "method":Ljava/lang/reflect/Method;
@@ -1058,7 +1058,7 @@
 
     .line 216
     .end local v0    # "method":Ljava/lang/reflect/Method;
-    :cond_14e
+    :cond_3
     new-instance v0, Ljava/lang/NoSuchMethodException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1093,7 +1093,7 @@
 .end method
 
 .method private static final getDefaultValue(Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .param p0, "$this$getDefaultValue"    # Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1109,7 +1109,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_90
+    if-eqz v0, :cond_8
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -1117,193 +1117,193 @@
 
     const/4 v2, 0x0
 
-    sparse-switch v1, :sswitch_data_92
+    sparse-switch v1, :sswitch_data_0
 
-    goto/16 :goto_90
+    goto/16 :goto_0
 
-    :sswitch_10
+    :sswitch_0
     const-string/jumbo v1, "short"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
-    goto/16 :goto_90
+    goto/16 :goto_0
 
     .line 86
-    :cond_1b
+    :cond_0
     invoke-static {v2}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
 
     move-result-object v0
 
-    goto/16 :goto_91
+    goto/16 :goto_1
 
     .line 84
-    :sswitch_21
+    :sswitch_1
     const-string/jumbo v1, "float"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_1
 
-    goto/16 :goto_90
+    goto/16 :goto_0
 
     .line 90
-    :cond_2c
+    :cond_1
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    goto :goto_91
+    goto :goto_1
 
     .line 84
-    :sswitch_32
+    :sswitch_2
     const-string/jumbo v1, "boolean"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_2
 
-    goto :goto_90
+    goto :goto_0
 
     .line 91
-    :cond_3c
+    :cond_2
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    goto :goto_91
+    goto :goto_1
 
     .line 84
-    :sswitch_41
+    :sswitch_3
     const-string/jumbo v1, "long"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_4b
+    if-nez v0, :cond_3
 
-    goto :goto_90
+    goto :goto_0
 
     .line 88
-    :cond_4b
+    :cond_3
     const-wide/16 v0, 0x0
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    goto :goto_91
+    goto :goto_1
 
     .line 84
-    :sswitch_52
+    :sswitch_4
     const-string/jumbo v1, "char"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5c
+    if-nez v0, :cond_4
 
-    goto :goto_90
+    goto :goto_0
 
     .line 92
-    :cond_5c
+    :cond_4
     invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     move-result-object v0
 
-    goto :goto_91
+    goto :goto_1
 
     .line 84
-    :sswitch_61
+    :sswitch_5
     const-string/jumbo v1, "byte"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_6b
+    if-nez v0, :cond_5
 
-    goto :goto_90
+    goto :goto_0
 
     .line 87
-    :cond_6b
+    :cond_5
     invoke-static {v2}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
 
     move-result-object v0
 
-    goto :goto_91
+    goto :goto_1
 
     .line 84
-    :sswitch_70
+    :sswitch_6
     const-string/jumbo v1, "int"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_7a
+    if-nez v0, :cond_6
 
-    goto :goto_90
+    goto :goto_0
 
     .line 85
-    :cond_7a
+    :cond_6
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    goto :goto_91
+    goto :goto_1
 
     .line 84
-    :sswitch_7f
+    :sswitch_7
     const-string/jumbo v1, "double"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_89
+    if-nez v0, :cond_7
 
-    goto :goto_90
+    goto :goto_0
 
     .line 89
-    :cond_89
+    :cond_7
     const-wide/16 v0, 0x0
 
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v0
 
-    goto :goto_91
+    goto :goto_1
 
     .line 93
-    :cond_90
-    :goto_90
+    :cond_8
+    :goto_0
     const/4 v0, 0x0
 
     .line 94
-    :goto_91
+    :goto_1
     return-object v0
 
-    :sswitch_data_92
+    :sswitch_data_0
     .sparse-switch
-        -0x4f08842f -> :sswitch_7f
-        0x197ef -> :sswitch_70
-        0x2e6108 -> :sswitch_61
-        0x2e9356 -> :sswitch_52
-        0x32c67c -> :sswitch_41
-        0x3db6c28 -> :sswitch_32
-        0x5d0225c -> :sswitch_21
-        0x685847c -> :sswitch_10
+        -0x4f08842f -> :sswitch_7
+        0x197ef -> :sswitch_6
+        0x2e6108 -> :sswitch_5
+        0x2e9356 -> :sswitch_4
+        0x32c67c -> :sswitch_3
+        0x3db6c28 -> :sswitch_2
+        0x5d0225c -> :sswitch_1
+        0x685847c -> :sswitch_0
     .end sparse-switch
 .end method

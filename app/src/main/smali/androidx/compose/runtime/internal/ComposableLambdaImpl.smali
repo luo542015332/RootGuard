@@ -90,7 +90,7 @@
 
 # direct methods
 .method public constructor <init>(IZ)V
-    .registers 3
+    .locals 0
     .param p1, "key"    # I
     .param p2, "tracked"    # Z
 
@@ -108,13 +108,13 @@
 .end method
 
 .method private final trackRead(Landroidx/compose/runtime/Composer;)V
-    .registers 9
+    .locals 7
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
 
     .line 65
     iget-boolean v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->tracked:Z
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     .line 66
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getRecomposeScope()Landroidx/compose/runtime/RecomposeScope;
@@ -123,7 +123,7 @@
 
     .line 67
     .local v0, "scope":Landroidx/compose/runtime/RecomposeScope;
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_4
 
     .line 69
     invoke-interface {p1, v0}, Landroidx/compose/runtime/Composer;->recordUsed(Landroidx/compose/runtime/RecomposeScope;)V
@@ -137,20 +137,20 @@
 
     move-result v2
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     .line 72
     iput-object v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->scope:Landroidx/compose/runtime/RecomposeScope;
 
-    goto :goto_46
+    goto :goto_1
 
     .line 74
-    :cond_18
+    :cond_0
     iget-object v2, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->scopes:Ljava/util/List;
 
     .line 75
     .local v2, "lastScopes":Ljava/util/List;
-    if-nez v2, :cond_29
+    if-nez v2, :cond_1
 
     .line 76
     new-instance v3, Ljava/util/ArrayList;
@@ -166,11 +166,11 @@
     .line 78
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_46
+    goto :goto_1
 
     .line 80
     .end local v3    # "newScopes":Ljava/util/List;
-    :cond_29
+    :cond_1
     const/4 v3, 0x0
 
     .local v3, "index":I
@@ -178,8 +178,8 @@
 
     move-result v4
 
-    :goto_2e
-    if-ge v3, v4, :cond_43
+    :goto_0
+    if-ge v3, v4, :cond_3
 
     .line 81
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -194,7 +194,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_40
+    if-eqz v6, :cond_2
 
     .line 83
     invoke-interface {v2, v3, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
@@ -204,39 +204,39 @@
 
     .line 80
     .end local v5    # "scopeAtIndex":Landroidx/compose/runtime/RecomposeScope;
-    :cond_40
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 87
     .end local v3    # "index":I
-    :cond_43
+    :cond_3
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 92
     .end local v0    # "scope":Landroidx/compose/runtime/RecomposeScope;
     .end local v1    # "lastScope":Landroidx/compose/runtime/RecomposeScope;
     .end local v2    # "lastScopes":Ljava/util/List;
-    :cond_46
-    :goto_46
+    :cond_4
+    :goto_1
     return-void
 .end method
 
 .method private final trackWrite()V
-    .registers 6
+    .locals 5
 
     .line 47
     iget-boolean v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->tracked:Z
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_2
 
     .line 48
     iget-object v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->scope:Landroidx/compose/runtime/RecomposeScope;
 
     .line 49
     .local v0, "scope":Landroidx/compose/runtime/RecomposeScope;
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 50
     invoke-interface {v0}, Landroidx/compose/runtime/RecomposeScope;->invalidate()V
@@ -247,12 +247,12 @@
     iput-object v1, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->scope:Landroidx/compose/runtime/RecomposeScope;
 
     .line 53
-    :cond_e
+    :cond_0
     iget-object v1, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->scopes:Ljava/util/List;
 
     .line 54
     .local v1, "scopes":Ljava/util/List;
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_2
 
     .line 55
     const/4 v2, 0x0
@@ -262,8 +262,8 @@
 
     move-result v3
 
-    :goto_17
-    if-ge v2, v3, :cond_25
+    :goto_0
+    if-ge v2, v3, :cond_1
 
     .line 56
     invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -280,24 +280,24 @@
     .end local v4    # "item":Landroidx/compose/runtime/RecomposeScope;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 59
     .end local v2    # "index":I
-    :cond_25
+    :cond_1
     invoke-interface {v1}, Ljava/util/List;->clear()V
 
     .line 62
     .end local v0    # "scope":Landroidx/compose/runtime/RecomposeScope;
     .end local v1    # "scopes":Ljava/util/List;
-    :cond_28
+    :cond_2
     return-void
 .end method
 
 
 # virtual methods
 .method public final getKey()I
-    .registers 2
+    .locals 1
 
     .line 39
     iget v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->key:I
@@ -306,7 +306,7 @@
 .end method
 
 .method public invoke(Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 9
+    .locals 6
     .param p1, "c"    # Landroidx/compose/runtime/Composer;
     .param p2, "changed"    # I
 
@@ -332,20 +332,20 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-static {v2}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     invoke-static {v2}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v1
 
-    :goto_1f
+    :goto_0
     or-int/2addr v1, p2
 
     .line 108
@@ -378,7 +378,7 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_4c
+    if-eqz v4, :cond_1
 
     const-string/jumbo v5, "null cannot be cast to non-null type kotlin.Function2<androidx.compose.runtime.Composer, kotlin.Int, kotlin.Unit>"
 
@@ -393,12 +393,12 @@
     invoke-interface {v4, v3}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 110
-    :cond_4c
+    :cond_1
     return-object v2
 .end method
 
 .method public invoke(Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 9
+    .locals 5
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "c"    # Landroidx/compose/runtime/Composer;
     .param p3, "changed"    # I
@@ -425,20 +425,20 @@
 
     const/4 v2, 0x1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-static {v2}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     invoke-static {v2}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v1
 
-    :goto_1f
+    :goto_0
     or-int/2addr v1, p3
 
     .line 118
@@ -479,7 +479,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_49
+    if-eqz v3, :cond_1
 
     new-instance v4, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$1;
 
@@ -490,12 +490,12 @@
     invoke-interface {v3, v4}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 131
-    :cond_49
+    :cond_1
     return-object v2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -520,7 +520,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 10
+    .locals 5
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "c"    # Landroidx/compose/runtime/Composer;
@@ -548,20 +548,20 @@
 
     const/4 v2, 0x2
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     invoke-static {v2}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v1
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     invoke-static {v2}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v1
 
-    :goto_1f
+    :goto_0
     or-int/2addr v1, p4
 
     .line 138
@@ -605,7 +605,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_1
 
     new-instance v4, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$2;
 
@@ -616,12 +616,12 @@
     invoke-interface {v3, v4}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 147
-    :cond_4a
+    :cond_1
     return-object v2
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -647,7 +647,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 22
+    .locals 16
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -680,20 +680,20 @@
 
     const/4 v1, 0x3
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_23
+    :goto_0
     or-int v15, p5, v0
 
     .line 155
@@ -750,7 +750,7 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_63
+    if-eqz v9, :cond_1
 
     new-instance v10, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$3;
 
@@ -773,12 +773,12 @@
     invoke-interface {v9, v10}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 172
-    :cond_63
+    :cond_1
     return-object v8
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -805,7 +805,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 24
+    .locals 17
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -839,20 +839,20 @@
 
     const/4 v1, 0x4
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_23
+    :goto_0
     or-int v16, p6, v0
 
     .line 187
@@ -914,7 +914,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_6a
+    if-eqz v10, :cond_1
 
     new-instance v11, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$4;
 
@@ -942,22 +942,22 @@
 
     invoke-interface {v10, v11}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_6b
+    goto :goto_1
 
     .end local v12    # "c":Landroidx/compose/runtime/Composer;
     .restart local v6    # "c":Landroidx/compose/runtime/Composer;
-    :cond_6a
+    :cond_1
     move-object v12, v6
 
     .line 206
     .end local v6    # "c":Landroidx/compose/runtime/Composer;
     .restart local v12    # "c":Landroidx/compose/runtime/Composer;
-    :goto_6b
+    :goto_1
     return-object v9
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    .locals 6
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -993,7 +993,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 27
+    .locals 19
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1028,20 +1028,20 @@
 
     const/4 v1, 0x5
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_23
+    :goto_0
     or-int v18, p7, v0
 
     .line 222
@@ -1108,7 +1108,7 @@
 
     move-result-object v11
 
-    if-eqz v11, :cond_70
+    if-eqz v11, :cond_1
 
     new-instance v12, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$5;
 
@@ -1138,22 +1138,22 @@
 
     invoke-interface {v11, v12}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_71
+    goto :goto_1
 
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v7    # "c":Landroidx/compose/runtime/Composer;
-    :cond_70
+    :cond_1
     move-object v13, v7
 
     .line 243
     .end local v7    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :goto_71
+    :goto_1
     return-object v10
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 14
+    .locals 7
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1192,7 +1192,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 30
+    .locals 21
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1228,20 +1228,20 @@
 
     const/4 v1, 0x6
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_23
+    :goto_0
     or-int v20, p8, v0
 
     .line 260
@@ -1313,7 +1313,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_76
+    if-eqz v12, :cond_1
 
     new-instance v13, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$6;
 
@@ -1345,22 +1345,22 @@
 
     invoke-interface {v12, v13}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_77
+    goto :goto_1
 
     .end local v14    # "c":Landroidx/compose/runtime/Composer;
     .restart local v8    # "c":Landroidx/compose/runtime/Composer;
-    :cond_76
+    :cond_1
     move-object v14, v8
 
     .line 283
     .end local v8    # "c":Landroidx/compose/runtime/Composer;
     .restart local v14    # "c":Landroidx/compose/runtime/Composer;
-    :goto_77
+    :goto_1
     return-object v11
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 16
+    .locals 8
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1402,7 +1402,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 33
+    .locals 23
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1439,20 +1439,20 @@
 
     const/4 v1, 0x7
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_23
+    :goto_0
     or-int v22, p9, v0
 
     .line 301
@@ -1529,7 +1529,7 @@
 
     move-result-object v13
 
-    if-eqz v13, :cond_7b
+    if-eqz v13, :cond_1
 
     new-instance v14, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$7;
 
@@ -1563,22 +1563,22 @@
 
     invoke-interface {v13, v14}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_7c
+    goto :goto_1
 
     .end local v15    # "c":Landroidx/compose/runtime/Composer;
     .restart local v9    # "c":Landroidx/compose/runtime/Composer;
-    :cond_7b
+    :cond_1
     move-object v15, v9
 
     .line 326
     .end local v9    # "c":Landroidx/compose/runtime/Composer;
     .restart local v15    # "c":Landroidx/compose/runtime/Composer;
-    :goto_7c
+    :goto_1
     return-object v12
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 18
+    .locals 9
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1623,7 +1623,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 36
+    .locals 25
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1661,20 +1661,20 @@
 
     const/16 v1, 0x8
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v24, p10, v0
 
     .line 345
@@ -1756,7 +1756,7 @@
 
     move-result-object v14
 
-    if-eqz v14, :cond_82
+    if-eqz v14, :cond_1
 
     new-instance v15, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$8;
 
@@ -1792,22 +1792,22 @@
 
     invoke-interface {v14, v15}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_84
+    goto :goto_1
 
     .end local v16    # "c":Landroidx/compose/runtime/Composer;
     .restart local v10    # "c":Landroidx/compose/runtime/Composer;
-    :cond_82
+    :cond_1
     move-object/from16 v16, v10
 
     .line 372
     .end local v10    # "c":Landroidx/compose/runtime/Composer;
     .restart local v16    # "c":Landroidx/compose/runtime/Composer;
-    :goto_84
+    :goto_1
     return-object v13
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 20
+    .locals 10
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1855,7 +1855,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 39
+    .locals 27
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -1894,20 +1894,20 @@
 
     const/16 v1, 0x9
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v26, p11, v0
 
     .line 392
@@ -1994,7 +1994,7 @@
 
     move-result-object v15
 
-    if-eqz v15, :cond_8a
+    if-eqz v15, :cond_1
 
     new-instance v16, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$9;
 
@@ -2034,22 +2034,22 @@
 
     invoke-interface {v15, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_8c
+    goto :goto_1
 
     .end local v17    # "c":Landroidx/compose/runtime/Composer;
     .restart local v11    # "c":Landroidx/compose/runtime/Composer;
-    :cond_8a
+    :cond_1
     move-object/from16 v17, v11
 
     .line 421
     .end local v11    # "c":Landroidx/compose/runtime/Composer;
     .restart local v17    # "c":Landroidx/compose/runtime/Composer;
-    :goto_8c
+    :goto_1
     return-object v14
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 22
+    .locals 11
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -2100,7 +2100,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 44
+    .locals 30
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -2141,20 +2141,20 @@
 
     const/16 v1, 0xa
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v29, p13, v0
 
     .line 443
@@ -2251,7 +2251,7 @@
 
     move-result-object v11
 
-    if-eqz v11, :cond_94
+    if-eqz v11, :cond_1
 
     new-instance v16, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$10;
 
@@ -2295,22 +2295,22 @@
 
     invoke-interface {v13, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_96
+    goto :goto_1
 
     .end local v17    # "c":Landroidx/compose/runtime/Composer;
     .restart local v12    # "c":Landroidx/compose/runtime/Composer;
-    :cond_94
+    :cond_1
     move-object/from16 v17, v12
 
     .line 476
     .end local v12    # "c":Landroidx/compose/runtime/Composer;
     .restart local v17    # "c":Landroidx/compose/runtime/Composer;
-    :goto_96
+    :goto_1
     return-object v15
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 24
+    .locals 12
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -2364,7 +2364,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 47
+    .locals 32
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -2406,20 +2406,20 @@
 
     const/16 v1, 0xb
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v31, p14, v0
 
     .line 499
@@ -2521,7 +2521,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_9c
+    if-eqz v12, :cond_1
 
     new-instance v17, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$11;
 
@@ -2569,22 +2569,22 @@
 
     invoke-interface {v15, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_9e
+    goto :goto_1
 
     .end local v18    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_9c
+    :cond_1
     move-object/from16 v18, v13
 
     .line 547
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v18    # "c":Landroidx/compose/runtime/Composer;
-    :goto_9e
+    :goto_1
     return-object v16
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 50
+    .locals 34
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -2627,20 +2627,20 @@
 
     const/16 v1, 0xc
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v32, p15, v0
 
     .line 571
@@ -2747,7 +2747,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_a4
+    if-eqz v12, :cond_1
 
     new-instance v17, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$12;
 
@@ -2799,22 +2799,22 @@
 
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_a6
+    goto :goto_1
 
     .end local v18    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_a4
+    :cond_1
     move-object/from16 v18, v13
 
     .line 624
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v18    # "c":Landroidx/compose/runtime/Composer;
-    :goto_a6
+    :goto_1
     return-object v16
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 28
+    .locals 14
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -2880,7 +2880,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 52
+    .locals 35
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -2924,20 +2924,20 @@
 
     const/16 v1, 0xd
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v33, p16, v0
 
     .line 649
@@ -3049,7 +3049,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_a9
+    if-eqz v12, :cond_1
 
     new-instance v18, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$13;
 
@@ -3103,22 +3103,22 @@
 
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_ab
+    goto :goto_1
 
     .end local v19    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_a9
+    :cond_1
     move-object/from16 v19, v13
 
     .line 705
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v19    # "c":Landroidx/compose/runtime/Composer;
-    :goto_ab
+    :goto_1
     return-object v17
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 30
+    .locals 15
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -3187,7 +3187,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 54
+    .locals 36
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -3232,20 +3232,20 @@
 
     const/16 v1, 0xe
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v34, p17, v0
 
     .line 731
@@ -3362,7 +3362,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_ae
+    if-eqz v12, :cond_1
 
     new-instance v19, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$14;
 
@@ -3418,22 +3418,22 @@
 
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_b0
+    goto :goto_1
 
     .end local v20    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_ae
+    :cond_1
     move-object/from16 v20, v13
 
     .line 790
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v20    # "c":Landroidx/compose/runtime/Composer;
-    :goto_b0
+    :goto_1
     return-object v18
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 32
+    .locals 16
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -3505,7 +3505,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 56
+    .locals 37
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -3551,20 +3551,20 @@
 
     const/16 v1, 0xf
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v35, p18, v0
 
     .line 817
@@ -3686,7 +3686,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_b3
+    if-eqz v12, :cond_1
 
     new-instance v20, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$15;
 
@@ -3744,22 +3744,22 @@
 
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_b5
+    goto :goto_1
 
     .end local v21    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_b3
+    :cond_1
     move-object/from16 v21, v13
 
     .line 879
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v21    # "c":Landroidx/compose/runtime/Composer;
-    :goto_b5
+    :goto_1
     return-object v19
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 34
+    .locals 17
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -3834,7 +3834,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 58
+    .locals 38
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -3881,20 +3881,20 @@
 
     const/16 v1, 0x10
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v36, p19, v0
 
     .line 907
@@ -4021,7 +4021,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_b8
+    if-eqz v12, :cond_1
 
     new-instance v21, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$16;
 
@@ -4081,22 +4081,22 @@
 
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_ba
+    goto :goto_1
 
     .end local v22    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_b8
+    :cond_1
     move-object/from16 v22, v13
 
     .line 972
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v22    # "c":Landroidx/compose/runtime/Composer;
-    :goto_ba
+    :goto_1
     return-object v20
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 36
+    .locals 18
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -4174,7 +4174,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 60
+    .locals 39
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -4222,20 +4222,20 @@
 
     const/16 v1, 0x11
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v37, p20, v0
 
     .line 1001
@@ -4367,7 +4367,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_bd
+    if-eqz v12, :cond_1
 
     new-instance v22, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$17;
 
@@ -4429,22 +4429,22 @@
 
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_bf
+    goto :goto_1
 
     .end local v23    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_bd
+    :cond_1
     move-object/from16 v23, v13
 
     .line 1069
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v23    # "c":Landroidx/compose/runtime/Composer;
-    :goto_bf
+    :goto_1
     return-object v21
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 38
+    .locals 19
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -4525,7 +4525,7 @@
 .end method
 
 .method public invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/runtime/Composer;II)Ljava/lang/Object;
-    .registers 62
+    .locals 40
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -4574,20 +4574,20 @@
 
     const/16 v1, 0x12
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->differentBits(I)I
 
     move-result v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     invoke-static {v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->sameBits(I)I
 
     move-result v0
 
-    :goto_24
+    :goto_0
     or-int v38, p21, v0
 
     .line 1099
@@ -4724,7 +4724,7 @@
 
     move-result-object v12
 
-    if-eqz v12, :cond_c2
+    if-eqz v12, :cond_1
 
     new-instance v23, Landroidx/compose/runtime/internal/ComposableLambdaImpl$invoke$18;
 
@@ -4788,22 +4788,22 @@
 
     invoke-interface {v1, v0}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    goto :goto_c4
+    goto :goto_1
 
     .end local v24    # "c":Landroidx/compose/runtime/Composer;
     .restart local v13    # "c":Landroidx/compose/runtime/Composer;
-    :cond_c2
+    :cond_1
     move-object/from16 v24, v13
 
     .line 1170
     .end local v13    # "c":Landroidx/compose/runtime/Composer;
     .restart local v24    # "c":Landroidx/compose/runtime/Composer;
-    :goto_c4
+    :goto_1
     return-object v22
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 40
+    .locals 20
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -4887,7 +4887,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 42
+    .locals 21
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -4974,7 +4974,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 44
+    .locals 22
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -5064,7 +5064,7 @@
 .end method
 
 .method public final update(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "block"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "block"
@@ -5078,33 +5078,33 @@
 
     move-result v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     .line 96
     iget-object v0, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->_block:Ljava/lang/Object;
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v0, 0x0
 
     .line 97
     .local v0, "oldBlockNull":Z
-    :goto_15
+    :goto_0
     iput-object p1, p0, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->_block:Ljava/lang/Object;
 
     .line 98
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     .line 99
     invoke-direct {p0}, Landroidx/compose/runtime/internal/ComposableLambdaImpl;->trackWrite()V
 
     .line 102
     .end local v0    # "oldBlockNull":Z
-    :cond_1c
+    :cond_1
     return-void
 .end method

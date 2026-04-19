@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidUiDispatcher;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidUiDispatcher$dispatchCallback$1;->this$0:Landroidx/compose/ui/platform/AndroidUiDispatcher;
@@ -66,13 +66,12 @@
 
 # virtual methods
 .method public doFrame(J)V
-    .registers 5
+    .locals 2
     .param p1, "frameTimeNanos"    # J
 
     .line 67
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidUiDispatcher$dispatchCallback$1;->this$0:Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidUiDispatcher;->handler:Landroid/os/Handler;
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$getHandler$p(Landroidx/compose/ui/platform/AndroidUiDispatcher;)Landroid/os/Handler;
 
     move-result-object v0
@@ -86,13 +85,11 @@
     .line 68
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidUiDispatcher$dispatchCallback$1;->this$0:Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    # invokes: Landroidx/compose/ui/platform/AndroidUiDispatcher;->performTrampolineDispatch()V
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$performTrampolineDispatch(Landroidx/compose/ui/platform/AndroidUiDispatcher;)V
 
     .line 69
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidUiDispatcher$dispatchCallback$1;->this$0:Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    # invokes: Landroidx/compose/ui/platform/AndroidUiDispatcher;->performFrameDispatch(J)V
     invoke-static {v0, p1, p2}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$performFrameDispatch(Landroidx/compose/ui/platform/AndroidUiDispatcher;J)V
 
     .line 70
@@ -100,18 +97,16 @@
 .end method
 
 .method public run()V
-    .registers 7
+    .locals 6
 
     .line 57
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidUiDispatcher$dispatchCallback$1;->this$0:Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    # invokes: Landroidx/compose/ui/platform/AndroidUiDispatcher;->performTrampolineDispatch()V
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$performTrampolineDispatch(Landroidx/compose/ui/platform/AndroidUiDispatcher;)V
 
     .line 58
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidUiDispatcher$dispatchCallback$1;->this$0:Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidUiDispatcher;->lock:Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$getLock$p(Landroidx/compose/ui/platform/AndroidUiDispatcher;)Ljava/lang/Object;
 
     move-result-object v0
@@ -129,8 +124,7 @@
 
     .line 59
     .local v3, "$i$a$-synchronized-AndroidUiDispatcher$dispatchCallback$1$run$1":I
-    :try_start_10
-    # getter for: Landroidx/compose/ui/platform/AndroidUiDispatcher;->toRunOnFrame:Ljava/util/List;
+    :try_start_0
     invoke-static {v1}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$getToRunOnFrame$p(Landroidx/compose/ui/platform/AndroidUiDispatcher;)Ljava/util/List;
 
     move-result-object v4
@@ -139,7 +133,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_28
+    if-eqz v4, :cond_0
 
     .line 60
     invoke-virtual {v1}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->getChoreographer()Landroid/view/Choreographer;
@@ -158,13 +152,13 @@
     invoke-static {v1, v4}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$setScheduledFrameDispatch$p(Landroidx/compose/ui/platform/AndroidUiDispatcher;Z)V
 
     .line 63
-    :cond_28
+    :cond_0
     nop
 
     .end local v3    # "$i$a$-synchronized-AndroidUiDispatcher$dispatchCallback$1$run$1":I
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_2b
-    .catchall {:try_start_10 .. :try_end_2b} :catchall_2d
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 192
     monitor-exit v0
@@ -177,7 +171,7 @@
     .line 192
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_2d
+    :catchall_0
     move-exception v1
 
     monitor-exit v0

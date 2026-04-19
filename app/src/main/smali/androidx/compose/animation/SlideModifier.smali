@@ -118,7 +118,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/animation/core/Transition$DeferredAnimation;Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;)V
-    .registers 5
+    .locals 1
     .param p1, "lazyAnimation"    # Landroidx/compose/animation/core/Transition$DeferredAnimation;
     .param p2, "slideIn"    # Landroidx/compose/runtime/State;
     .param p3, "slideOut"    # Landroidx/compose/runtime/State;
@@ -180,7 +180,7 @@
 
 # virtual methods
 .method public final getLazyAnimation()Landroidx/compose/animation/core/Transition$DeferredAnimation;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,7 +200,7 @@
 .end method
 
 .method public final getSlideIn()Landroidx/compose/runtime/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -217,7 +217,7 @@
 .end method
 
 .method public final getSlideOut()Landroidx/compose/runtime/State;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -234,7 +234,7 @@
 .end method
 
 .method public final getTransitionSpec()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -255,7 +255,7 @@
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 15
+    .locals 10
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -321,7 +321,7 @@
 .end method
 
 .method public final targetValueByState-oFUgxo0(Landroidx/compose/animation/EnterExitState;J)J
-    .registers 10
+    .locals 6
     .param p1, "targetState"    # Landroidx/compose/animation/EnterExitState;
     .param p2, "fullSize"    # J
 
@@ -338,13 +338,13 @@
 
     check-cast v0, Landroidx/compose/animation/Slide;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/animation/Slide;->getSlideOffset()Lkotlin/jvm/functions/Function1;
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     invoke-static {p2, p3}, Landroidx/compose/ui/unit/IntSize;->box-impl(J)Landroidx/compose/ui/unit/IntSize;
 
@@ -360,9 +360,9 @@
 
     move-result-wide v0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     sget-object v0, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
@@ -371,7 +371,7 @@
 
     .line 1000
     .local v0, "preEnter":J
-    :goto_2b
+    :goto_0
     iget-object v2, p0, Landroidx/compose/animation/SlideModifier;->slideOut:Landroidx/compose/runtime/State;
 
     invoke-interface {v2}, Landroidx/compose/runtime/State;->getValue()Ljava/lang/Object;
@@ -380,13 +380,13 @@
 
     check-cast v2, Landroidx/compose/animation/Slide;
 
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Landroidx/compose/animation/Slide;->getSlideOffset()Lkotlin/jvm/functions/Function1;
 
     move-result-object v2
 
-    if-eqz v2, :cond_4a
+    if-eqz v2, :cond_1
 
     invoke-static {p2, p3}, Landroidx/compose/ui/unit/IntSize;->box-impl(J)Landroidx/compose/ui/unit/IntSize;
 
@@ -402,9 +402,9 @@
 
     move-result-wide v2
 
-    goto :goto_50
+    goto :goto_1
 
-    :cond_4a
+    :cond_1
     sget-object v2, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
@@ -413,7 +413,7 @@
 
     .line 1001
     .local v2, "postExit":J
-    :goto_50
+    :goto_1
     sget-object v4, Landroidx/compose/animation/SlideModifier$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Landroidx/compose/animation/EnterExitState;->ordinal()I
@@ -422,7 +422,7 @@
 
     aget v4, v4, v5
 
-    packed-switch v4, :pswitch_data_6c
+    packed-switch v4, :pswitch_data_0
 
     .line 1004
     new-instance v4, Lkotlin/NoWhenBranchMatchedException;
@@ -431,19 +431,19 @@
 
     throw v4
 
-    :pswitch_61
+    :pswitch_0
     move-wide v4, v2
 
-    goto :goto_6b
+    goto :goto_2
 
     .line 1003
-    :pswitch_63
+    :pswitch_1
     move-wide v4, v0
 
-    goto :goto_6b
+    goto :goto_2
 
     .line 1002
-    :pswitch_65
+    :pswitch_2
     sget-object v4, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
 
     invoke-virtual {v4}, Landroidx/compose/ui/unit/IntOffset$Companion;->getZero-nOcc-ac()J
@@ -451,13 +451,13 @@
     move-result-wide v4
 
     .line 1001
-    :goto_6b
+    :goto_2
     return-wide v4
 
-    :pswitch_data_6c
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_65
-        :pswitch_63
-        :pswitch_61
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

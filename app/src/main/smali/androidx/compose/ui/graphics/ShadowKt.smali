@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final lerp(Landroidx/compose/ui/graphics/Shadow;Landroidx/compose/ui/graphics/Shadow;F)Landroidx/compose/ui/graphics/Shadow;
-    .registers 11
+    .locals 8
     .param p0, "start"    # Landroidx/compose/ui/graphics/Shadow;
     .param p1, "stop"    # Landroidx/compose/ui/graphics/Shadow;
     .param p2, "fraction"    # F

@@ -44,7 +44,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/layout/AlignmentLineKt$FirstBaseline$1;
 
@@ -56,7 +56,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 7
+    .locals 6
 
     const/4 v1, 0x2
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final invoke(II)Ljava/lang/Integer;
-    .registers 4
+    .locals 1
     .param p1, "p0"    # I
     .param p2, "p1"    # I
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 

@@ -108,7 +108,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/geometry/Offset$Companion;
 
@@ -149,7 +149,7 @@
 .end method
 
 .method private synthetic constructor <init>(J)V
-    .registers 3
+    .locals 0
     .param p1, "packedValue"    # J
 
     .line 61
@@ -161,7 +161,7 @@
 .end method
 
 .method public static final synthetic access$getInfinite$cp()J
-    .registers 2
+    .locals 2
 
     .line 59
     sget-wide v0, Landroidx/compose/ui/geometry/Offset;->Infinite:J
@@ -170,7 +170,7 @@
 .end method
 
 .method public static final synthetic access$getUnspecified$cp()J
-    .registers 2
+    .locals 2
 
     .line 59
     sget-wide v0, Landroidx/compose/ui/geometry/Offset;->Unspecified:J
@@ -179,7 +179,7 @@
 .end method
 
 .method public static final synthetic access$getZero$cp()J
-    .registers 2
+    .locals 2
 
     .line 59
     sget-wide v0, Landroidx/compose/ui/geometry/Offset;->Zero:J
@@ -188,7 +188,7 @@
 .end method
 
 .method public static final synthetic box-impl(J)Landroidx/compose/ui/geometry/Offset;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/geometry/Offset;
 
@@ -198,7 +198,7 @@
 .end method
 
 .method public static final component1-impl(J)F
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # J
 
     .line 84
@@ -210,7 +210,7 @@
 .end method
 
 .method public static final component2-impl(J)F
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # J
 
     .line 87
@@ -222,13 +222,13 @@
 .end method
 
 .method public static constructor-impl(J)J
-    .registers 2
+    .locals 0
 
     return-wide p0
 .end method
 
 .method public static final copy-dBAh8RU(JFF)J
-    .registers 6
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "x"    # F
     .param p3, "y"    # F
@@ -242,27 +242,27 @@
 .end method
 
 .method public static synthetic copy-dBAh8RU$default(JFFILjava/lang/Object;)J
-    .registers 6
+    .locals 0
 
     .line 93
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     invoke-static {p0, p1}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
 
     move-result p2
 
-    :cond_8
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_10
+    if-eqz p4, :cond_1
 
     invoke-static {p0, p1}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
     move-result p3
 
-    :cond_10
+    :cond_1
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/geometry/Offset;->copy-dBAh8RU(JFF)J
 
     move-result-wide p0
@@ -271,7 +271,7 @@
 .end method
 
 .method public static final div-tuRUvjQ(JF)J
-    .registers 5
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "operand"    # F
 
@@ -296,17 +296,17 @@
 .end method
 
 .method public static equals-impl(JLjava/lang/Object;)Z
-    .registers 7
+    .locals 4
 
     instance-of v0, p2, Landroidx/compose/ui/geometry/Offset;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p2
 
     check-cast v0, Landroidx/compose/ui/geometry/Offset;
@@ -317,36 +317,36 @@
 
     cmp-long v0, p0, v2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     return v1
 
-    :cond_12
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(JJ)Z
-    .registers 5
+    .locals 1
 
     cmp-long v0, p0, p2
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static final getDistance-impl(J)F
-    .registers 5
+    .locals 3
     .param p0, "arg0"    # J
 
     .line 139
@@ -384,7 +384,7 @@
 .end method
 
 .method public static final getDistanceSquared-impl(J)F
-    .registers 5
+    .locals 3
     .param p0, "arg0"    # J
 
     .line 147
@@ -414,13 +414,13 @@
 .end method
 
 .method public static synthetic getX$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getX-impl(J)F
-    .registers 7
+    .locals 5
     .param p0, "arg0"    # J
 
     .line 67
@@ -428,17 +428,17 @@
 
     cmp-long v0, p0, v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-eqz v0, :cond_19
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 70
     move-wide v0, p0
@@ -466,7 +466,7 @@
     return v3
 
     .line 67
-    :cond_19
+    :cond_1
     const/4 v0, 0x0
 
     .line 68
@@ -489,13 +489,13 @@
 .end method
 
 .method public static synthetic getY$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getY-impl(J)F
-    .registers 7
+    .locals 5
     .param p0, "arg0"    # J
 
     .line 77
@@ -503,17 +503,17 @@
 
     cmp-long v0, p0, v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 80
     move-wide v0, p0
@@ -541,7 +541,7 @@
     return v3
 
     .line 77
-    :cond_1b
+    :cond_1
     const/4 v0, 0x0
 
     .line 78
@@ -564,7 +564,7 @@
 .end method
 
 .method public static hashCode-impl(J)I
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Ljava/lang/Long;->hashCode(J)I
 
@@ -574,7 +574,7 @@
 .end method
 
 .method public static final isValid-impl(J)Z
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # J
 
     .line 126
@@ -588,7 +588,7 @@
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     invoke-static {p0, p1}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -598,23 +598,23 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 129
     return v1
 
     .line 126
-    :cond_1b
+    :cond_1
     const/4 v0, 0x0
 
     .line 127
@@ -637,7 +637,7 @@
 .end method
 
 .method public static final minus-MK-Hz9U(JJ)J
-    .registers 7
+    .locals 3
     .param p0, "arg0"    # J
     .param p2, "other"    # J
 
@@ -670,7 +670,7 @@
 .end method
 
 .method public static final plus-MK-Hz9U(JJ)J
-    .registers 7
+    .locals 3
     .param p0, "arg0"    # J
     .param p2, "other"    # J
 
@@ -703,7 +703,7 @@
 .end method
 
 .method public static final rem-tuRUvjQ(JF)J
-    .registers 5
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "operand"    # F
 
@@ -728,7 +728,7 @@
 .end method
 
 .method public static final times-tuRUvjQ(JF)J
-    .registers 5
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "operand"    # F
 
@@ -753,7 +753,7 @@
 .end method
 
 .method public static toString-impl(J)Ljava/lang/String;
-    .registers 5
+    .locals 3
     .param p0, "arg0"    # J
 
     .line 210
@@ -761,7 +761,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_0
 
     .line 211
     new-instance v0, Ljava/lang/StringBuilder;
@@ -816,19 +816,19 @@
 
     move-result-object v0
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 215
-    :cond_3c
+    :cond_0
     const-string/jumbo v0, "Offset.Unspecified"
 
     .line 216
-    :goto_3f
+    :goto_0
     return-object v0
 .end method
 
 .method public static final unaryMinus-F1C5BW0(J)J
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # J
 
     .line 158
@@ -854,7 +854,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/geometry/Offset;->packedValue:J
 
@@ -866,7 +866,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/geometry/Offset;->packedValue:J
 
@@ -878,7 +878,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 210
     iget-wide v0, p0, Landroidx/compose/ui/geometry/Offset;->packedValue:J
@@ -892,7 +892,7 @@
 .end method
 
 .method public final synthetic unbox-impl()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/geometry/Offset;->packedValue:J
 

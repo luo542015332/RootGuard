@@ -70,7 +70,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .param p1, "onEvent"    # Lkotlin/jvm/functions/Function1;
     .param p2, "onPreEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public final getOnEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -123,7 +123,7 @@
 .end method
 
 .method public final getOnPreEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -141,7 +141,7 @@
 .end method
 
 .method public onPreRotaryScrollEvent(Landroidx/compose/ui/input/rotary/RotaryScrollEvent;)Z
-    .registers 3
+    .locals 1
     .param p1, "event"    # Landroidx/compose/ui/input/rotary/RotaryScrollEvent;
 
     const-string/jumbo v0, "event"
@@ -151,7 +151,7 @@
     .line 110
     iget-object v0, p0, Landroidx/compose/ui/input/rotary/RotaryInputNode;->onPreEvent:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -163,17 +163,17 @@
 
     move-result v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_16
+    :goto_0
     return v0
 .end method
 
 .method public onRotaryScrollEvent(Landroidx/compose/ui/input/rotary/RotaryScrollEvent;)Z
-    .registers 3
+    .locals 1
     .param p1, "event"    # Landroidx/compose/ui/input/rotary/RotaryScrollEvent;
 
     const-string/jumbo v0, "event"
@@ -183,7 +183,7 @@
     .line 108
     iget-object v0, p0, Landroidx/compose/ui/input/rotary/RotaryInputNode;->onEvent:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -195,17 +195,17 @@
 
     move-result v0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_16
+    :goto_0
     return v0
 .end method
 
 .method public final setOnEvent(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -225,7 +225,7 @@
 .end method
 
 .method public final setOnPreEvent(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -43,7 +43,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/ViewLayer$UniqueDrawingIdApi29;
 
@@ -55,7 +55,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 104
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 .end method
 
 .method public static final getUniqueDrawingId(Landroid/view/View;)J
-    .registers 3
+    .locals 2
     .param p0, "view"    # Landroid/view/View;
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation

@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public createOutline-Pq9zytI(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline$Rectangle;
-    .registers 7
+    .locals 2
     .param p1, "size"    # J
     .param p3, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
     .param p4, "density"    # Landroidx/compose/ui/unit/Density;
@@ -86,7 +86,7 @@
 .end method
 
 .method public bridge synthetic createOutline-Pq9zytI(JLandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)Landroidx/compose/ui/graphics/Outline;
-    .registers 6
+    .locals 1
     .param p1, "size"    # J
     .param p3, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
     .param p4, "density"    # Landroidx/compose/ui/unit/Density;
@@ -102,7 +102,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 33
     const-string/jumbo v0, "RectangleShape"

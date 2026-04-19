@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/saveable/Saver;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/runtime/saveable/SaverScope;Landroidx/compose/runtime/MutableState;)Landroidx/compose/runtime/MutableState;
-    .registers 6
+    .locals 3
     .param p1, "$this$Saver"    # Landroidx/compose/runtime/saveable/SaverScope;
     .param p2, "state"    # Landroidx/compose/runtime/MutableState;
     .annotation system Ldalvik/annotation/Signature;
@@ -116,7 +116,7 @@
     .line 153
     instance-of v0, p2, Landroidx/compose/runtime/snapshots/SnapshotMutableState;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_0
 
     .line 157
     iget-object v0, p0, Landroidx/compose/runtime/saveable/RememberSaveableKt$mutableStateSaver$1$1;->$this_with:Landroidx/compose/runtime/saveable/Saver;
@@ -148,7 +148,7 @@
     return-object v0
 
     .line 153
-    :cond_2b
+    :cond_0
     const/4 v0, 0x0
 
     .line 154
@@ -171,7 +171,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 

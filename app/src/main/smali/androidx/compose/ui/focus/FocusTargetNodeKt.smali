@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final invalidateFocusTarget(Landroidx/compose/ui/focus/FocusTargetNode;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$invalidateFocusTarget"    # Landroidx/compose/ui/focus/FocusTargetNode;
 
     const-string v0, "<this>"

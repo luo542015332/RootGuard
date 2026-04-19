@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/StrokeJoin$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getBevel-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 46
-    # getter for: Landroidx/compose/ui/graphics/StrokeJoin;->Bevel:I
     invoke-static {}, Landroidx/compose/ui/graphics/StrokeJoin;->access$getBevel$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getMiter-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 35
-    # getter for: Landroidx/compose/ui/graphics/StrokeJoin;->Miter:I
     invoke-static {}, Landroidx/compose/ui/graphics/StrokeJoin;->access$getMiter$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getRound-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 40
-    # getter for: Landroidx/compose/ui/graphics/StrokeJoin;->Round:I
     invoke-static {}, Landroidx/compose/ui/graphics/StrokeJoin;->access$getRound$cp()I
 
     move-result v0

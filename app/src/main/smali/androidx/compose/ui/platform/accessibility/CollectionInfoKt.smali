@@ -49,7 +49,7 @@
 
 # direct methods
 .method private static final calculateIfHorizontallyStacked(Ljava/util/List;)Z
-    .registers 17
+    .locals 16
     .param p0, "items"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -73,12 +73,12 @@
 
     const/4 v2, 0x1
 
-    if-ge v0, v1, :cond_d
+    if-ge v0, v1, :cond_0
 
     return v2
 
     .line 122
-    :cond_d
+    :cond_0
     move-object/from16 v0, p0
 
     .local v0, "$this$fastZipWithNext$iv":Ljava/util/List;
@@ -95,18 +95,18 @@
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_88
+    if-eqz v3, :cond_3
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
 
-    if-ne v3, v2, :cond_1f
+    if-ne v3, v2, :cond_1
 
-    goto :goto_88
+    goto :goto_1
 
     .line 168
-    :cond_1f
+    :cond_1
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
@@ -128,8 +128,8 @@
 
     move-result v7
 
-    :goto_2f
-    if-ge v6, v7, :cond_87
+    :goto_0
+    if-ge v6, v7, :cond_2
 
     .line 172
     add-int/lit8 v8, v6, 0x1
@@ -237,18 +237,18 @@
     .end local v8    # "next$iv":Ljava/lang/Object;
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 176
     .end local v6    # "i$iv":I
-    :cond_87
-    goto :goto_8c
+    :cond_2
+    goto :goto_2
 
     .line 167
     .end local v3    # "result$iv":Ljava/util/List;
     .end local v5    # "current$iv":Ljava/lang/Object;
-    :cond_88
-    :goto_88
+    :cond_3
+    :goto_1
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v3
@@ -256,7 +256,7 @@
     .line 122
     .end local v0    # "$this$fastZipWithNext$iv":Ljava/util/List;
     .end local v1    # "$i$f$fastZipWithNext":I
-    :goto_8c
+    :goto_2
     move-object v0, v3
 
     .line 128
@@ -270,7 +270,7 @@
     move-result v1
 
     .line 129
-    if-ne v1, v2, :cond_a1
+    if-ne v1, v2, :cond_4
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
 
@@ -282,10 +282,10 @@
 
     move-result-wide v5
 
-    goto :goto_dd
+    goto :goto_4
 
     .line 130
-    :cond_a1
+    :cond_4
     move-object v1, v0
 
     .local v1, "$this$fastReduce$iv":Ljava/util/List;
@@ -300,7 +300,7 @@
 
     move-result v5
 
-    if-nez v5, :cond_ec
+    if-nez v5, :cond_7
 
     .line 179
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
@@ -316,10 +316,10 @@
 
     move-result v7
 
-    if-gt v6, v7, :cond_d5
+    if-gt v6, v7, :cond_5
 
     .line 181
-    :goto_b5
+    :goto_3
     invoke-interface {v1, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -359,15 +359,15 @@
     move-object v5, v8
 
     .line 180
-    if-eq v6, v7, :cond_d5
+    if-eq v6, v7, :cond_5
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_b5
+    goto :goto_3
 
     .line 183
     .end local v6    # "i$iv":I
-    :cond_d5
+    :cond_5
     nop
 
     .end local v1    # "$this$fastReduce$iv":Ljava/util/List;
@@ -382,7 +382,7 @@
     move-result-wide v5
 
     .line 128
-    :goto_dd
+    :goto_4
     invoke-static {v5, v6}, Landroidx/compose/ui/geometry/Offset;->component1-impl(J)F
 
     move-result v1
@@ -396,20 +396,20 @@
     .local v3, "deltaY":F
     cmpg-float v5, v3, v1
 
-    if-gez v5, :cond_ea
+    if-gez v5, :cond_6
 
-    goto :goto_eb
+    goto :goto_5
 
-    :cond_ea
+    :cond_6
     move v2, v4
 
-    :goto_eb
+    :goto_5
     return v2
 
     .line 178
     .local v1, "$this$fastReduce$iv":Ljava/util/List;
     .local v3, "$i$f$fastReduce":I
-    :cond_ec
+    :cond_7
     new-instance v2, Ljava/lang/UnsupportedOperationException;
 
     const-string v4, "Empty collection can\'t be reduced."
@@ -420,7 +420,7 @@
 .end method
 
 .method public static final hasCollectionInfo(Landroidx/compose/ui/semantics/SemanticsNode;)Z
-    .registers 3
+    .locals 2
     .param p0, "$this$hasCollectionInfo"    # Landroidx/compose/ui/semantics/SemanticsNode;
 
     const-string v0, "<this>"
@@ -442,7 +442,7 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_1
 
     .line 116
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->getConfig()Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -459,25 +459,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
-    goto :goto_28
+    goto :goto_0
 
-    :cond_26
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
-    :goto_28
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_29
+    :goto_1
     return v0
 .end method
 
 .method private static final isLazyCollection(Landroidx/compose/ui/semantics/CollectionInfo;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$isLazyCollection"    # Landroidx/compose/ui/semantics/CollectionInfo;
 
     .line 135
@@ -485,31 +485,31 @@
 
     move-result v0
 
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/CollectionInfo;->getColumnCount()I
 
     move-result v0
 
-    if-gez v0, :cond_d
+    if-gez v0, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_10
+    :goto_1
     return v0
 .end method
 
 .method public static final setCollectionInfo(Landroidx/compose/ui/semantics/SemanticsNode;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
-    .registers 13
+    .locals 11
     .param p0, "node"    # Landroidx/compose/ui/semantics/SemanticsNode;
     .param p1, "info"    # Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
 
@@ -540,7 +540,7 @@
 
     .line 34
     .local v0, "collectionInfo":Landroidx/compose/ui/semantics/CollectionInfo;
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .line 35
     invoke-static {v0}, Landroidx/compose/ui/platform/accessibility/CollectionInfoKt;->toAccessibilityCollectionInfo(Landroidx/compose/ui/semantics/CollectionInfo;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;
@@ -553,7 +553,7 @@
     return-void
 
     .line 40
-    :cond_26
+    :cond_0
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -576,7 +576,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_6b
+    if-eqz v2, :cond_3
 
     .line 43
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->getReplacedChildren$ui_release()Ljava/util/List;
@@ -598,8 +598,8 @@
 
     move-result v5
 
-    :goto_48
-    if-ge v4, v5, :cond_6a
+    :goto_0
+    if-ge v4, v5, :cond_2
 
     .line 156
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -631,13 +631,13 @@
 
     move-result v9
 
-    if-eqz v9, :cond_65
+    if-eqz v9, :cond_1
 
     .line 46
     invoke-interface {v1, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 48
-    :cond_65
+    :cond_1
     nop
 
     .line 157
@@ -649,17 +649,17 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_48
+    goto :goto_0
 
     .line 159
     .end local v4    # "index$iv":I
-    :cond_6a
+    :cond_2
     nop
 
     .line 51
     .end local v2    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v3    # "$i$f$fastForEach":I
-    :cond_6b
+    :cond_3
     move-object v2, v1
 
     check-cast v2, Ljava/util/Collection;
@@ -672,7 +672,7 @@
 
     xor-int/2addr v2, v3
 
-    if-eqz v2, :cond_99
+    if-eqz v2, :cond_6
 
     .line 52
     invoke-static {v1}, Landroidx/compose/ui/platform/accessibility/CollectionInfoKt;->calculateIfHorizontallyStacked(Ljava/util/List;)Z
@@ -684,13 +684,13 @@
     nop
 
     .line 55
-    if-eqz v2, :cond_7f
+    if-eqz v2, :cond_4
 
     move v4, v3
 
-    goto :goto_86
+    goto :goto_1
 
-    :cond_7f
+    :cond_4
     move-object v4, v1
 
     check-cast v4, Ljava/util/Collection;
@@ -700,8 +700,8 @@
     move-result v4
 
     .line 56
-    :goto_86
-    if-eqz v2, :cond_8f
+    :goto_1
+    if-eqz v2, :cond_5
 
     move-object v3, v1
 
@@ -712,7 +712,7 @@
     move-result v3
 
     .line 57
-    :cond_8f
+    :cond_5
     nop
 
     .line 58
@@ -730,12 +730,12 @@
 
     .line 62
     .end local v2    # "isHorizontal":Z
-    :cond_99
+    :cond_6
     return-void
 .end method
 
 .method public static final setCollectionItemInfo(Landroidx/compose/ui/semantics/SemanticsNode;Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;)V
-    .registers 16
+    .locals 14
     .param p0, "node"    # Landroidx/compose/ui/semantics/SemanticsNode;
     .param p1, "info"    # Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;
 
@@ -766,7 +766,7 @@
 
     .line 67
     .local v0, "collectionItemInfo":Landroidx/compose/ui/semantics/CollectionItemInfo;
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_0
 
     .line 68
     invoke-static {v0, p0}, Landroidx/compose/ui/platform/accessibility/CollectionInfoKt;->toAccessibilityCollectionItemInfo(Landroidx/compose/ui/semantics/CollectionItemInfo;Landroidx/compose/ui/semantics/SemanticsNode;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
@@ -776,18 +776,18 @@
     invoke-virtual {p1, v1}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setCollectionItemInfo(Ljava/lang/Object;)V
 
     .line 72
-    :cond_25
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->getParent()Landroidx/compose/ui/semantics/SemanticsNode;
 
     move-result-object v1
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     return-void
 
     .line 73
     .local v1, "parentNode":Landroidx/compose/ui/semantics/SemanticsNode;
-    :cond_2c
+    :cond_1
     invoke-virtual {v1}, Landroidx/compose/ui/semantics/SemanticsNode;->getConfig()Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
     move-result-object v2
@@ -802,7 +802,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_ee
+    if-eqz v2, :cond_8
 
     .line 77
     invoke-virtual {v1}, Landroidx/compose/ui/semantics/SemanticsNode;->getConfig()Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -823,18 +823,18 @@
 
     .line 78
     .local v2, "collectionInfo":Landroidx/compose/ui/semantics/CollectionInfo;
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_2
 
     invoke-static {v2}, Landroidx/compose/ui/platform/accessibility/CollectionInfoKt;->isLazyCollection(Landroidx/compose/ui/semantics/CollectionInfo;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_55
+    if-eqz v3, :cond_2
 
     return-void
 
     .line 81
-    :cond_55
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->getConfig()Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
     move-result-object v3
@@ -849,12 +849,12 @@
 
     move-result v3
 
-    if-nez v3, :cond_66
+    if-nez v3, :cond_3
 
     return-void
 
     .line 83
-    :cond_66
+    :cond_3
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
@@ -886,8 +886,8 @@
 
     move-result v8
 
-    :goto_79
-    if-ge v7, v8, :cond_af
+    :goto_0
+    if-ge v7, v8, :cond_5
 
     .line 162
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -919,7 +919,7 @@
 
     move-result v12
 
-    if-eqz v12, :cond_aa
+    if-eqz v12, :cond_4
 
     .line 89
     invoke-interface {v3, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -941,13 +941,13 @@
 
     move-result v13
 
-    if-ge v12, v13, :cond_aa
+    if-ge v12, v13, :cond_4
 
     .line 92
     add-int/lit8 v4, v4, 0x1
 
     .line 95
-    :cond_aa
+    :cond_4
     nop
 
     .line 163
@@ -959,11 +959,11 @@
     .end local v9    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_79
+    goto :goto_0
 
     .line 165
     .end local v7    # "index$iv":I
-    :cond_af
+    :cond_5
     nop
 
     .line 97
@@ -979,7 +979,7 @@
 
     xor-int/lit8 v5, v5, 0x1
 
-    if-eqz v5, :cond_ee
+    if-eqz v5, :cond_8
 
     .line 98
     invoke-static {v3}, Landroidx/compose/ui/platform/accessibility/CollectionInfoKt;->calculateIfHorizontallyStacked(Ljava/util/List;)Z
@@ -990,31 +990,31 @@
     .local v5, "isHorizontal":Z
     const/4 v6, 0x0
 
-    if-eqz v5, :cond_c4
+    if-eqz v5, :cond_6
 
     move v7, v6
 
-    goto :goto_c5
+    goto :goto_1
 
-    :cond_c4
+    :cond_6
     move v7, v4
 
     .line 101
-    :goto_c5
+    :goto_1
     const/4 v8, 0x1
 
     .line 102
-    if-eqz v5, :cond_ca
+    if-eqz v5, :cond_7
 
     move v9, v4
 
-    goto :goto_cb
+    goto :goto_2
 
-    :cond_ca
+    :cond_7
     move v9, v6
 
     .line 103
-    :goto_cb
+    :goto_2
     const/4 v10, 0x1
 
     .line 104
@@ -1052,7 +1052,7 @@
 
     .line 107
     .local v6, "itemInfo":Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
-    if-eqz v6, :cond_ee
+    if-eqz v6, :cond_8
 
     .line 108
     invoke-virtual {p1, v6}, Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat;->setCollectionItemInfo(Ljava/lang/Object;)V
@@ -1063,12 +1063,12 @@
     .end local v4    # "index":I
     .end local v5    # "isHorizontal":Z
     .end local v6    # "itemInfo":Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
-    :cond_ee
+    :cond_8
     return-void
 .end method
 
 .method private static final toAccessibilityCollectionInfo(Landroidx/compose/ui/semantics/CollectionInfo;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionInfoCompat;
-    .registers 4
+    .locals 3
     .param p0, "$this$toAccessibilityCollectionInfo"    # Landroidx/compose/ui/semantics/CollectionInfo;
 
     .line 139
@@ -1099,7 +1099,7 @@
 .end method
 
 .method private static final toAccessibilityCollectionItemInfo(Landroidx/compose/ui/semantics/CollectionItemInfo;Landroidx/compose/ui/semantics/SemanticsNode;)Landroidx/core/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
-    .registers 10
+    .locals 8
     .param p0, "$this$toAccessibilityCollectionItemInfo"    # Landroidx/compose/ui/semantics/CollectionItemInfo;
     .param p1, "itemNode"    # Landroidx/compose/ui/semantics/SemanticsNode;
 

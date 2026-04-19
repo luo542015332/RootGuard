@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/Api26Bitmap;
 
@@ -57,7 +57,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 186
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -66,7 +66,7 @@
 .end method
 
 .method public static final composeColorSpace$ui_graphics_release(Landroid/graphics/Bitmap;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 2
+    .locals 1
     .param p0, "$this$composeColorSpace"    # Landroid/graphics/Bitmap;
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
@@ -80,15 +80,15 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     invoke-static {v0}, Landroidx/compose/ui/graphics/AndroidColorSpace_androidKt;->toComposeColorSpace(Landroid/graphics/ColorSpace;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     move-result-object v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_1
 
-    :cond_11
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getSrgb()Landroidx/compose/ui/graphics/colorspace/Rgb;
@@ -97,12 +97,12 @@
 
     check-cast v0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
-    :cond_19
+    :cond_1
     return-object v0
 .end method
 
 .method public static final createBitmap-x__-hDU$ui_graphics_release(IIIZLandroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroid/graphics/Bitmap;
-    .registers 12
+    .locals 7
     .param p0, "width"    # I
     .param p1, "height"    # I
     .param p2, "bitmapConfig"    # I

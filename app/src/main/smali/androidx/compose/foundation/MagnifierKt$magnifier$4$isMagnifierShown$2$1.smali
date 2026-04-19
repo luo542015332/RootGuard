@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/State;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,12 +81,11 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Boolean;
-    .registers 3
+    .locals 2
 
     .line 289
     iget-object v0, p0, Landroidx/compose/foundation/MagnifierKt$magnifier$4$isMagnifierShown$2$1;->$sourceCenterInRoot$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/foundation/MagnifierKt$magnifier$4;->invoke$lambda$8(Landroidx/compose/runtime/State;)J
     invoke-static {v0}, Landroidx/compose/foundation/MagnifierKt$magnifier$4;->access$invoke$lambda$8(Landroidx/compose/runtime/State;)J
 
     move-result-wide v0
@@ -103,7 +102,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 289
     invoke-virtual {p0}, Landroidx/compose/foundation/MagnifierKt$magnifier$4$isMagnifierShown$2$1;->invoke()Ljava/lang/Boolean;

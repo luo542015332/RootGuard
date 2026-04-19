@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/geometry/Size$Companion;-><init>()V
 
@@ -61,13 +61,13 @@
 .end method
 
 .method public static synthetic getUnspecified-NH-jbRc$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getZero-NH-jbRc$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -75,10 +75,9 @@
 
 # virtual methods
 .method public final getUnspecified-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 92
-    # getter for: Landroidx/compose/ui/geometry/Size;->Unspecified:J
     invoke-static {}, Landroidx/compose/ui/geometry/Size;->access$getUnspecified$cp()J
 
     move-result-wide v0
@@ -87,10 +86,9 @@
 .end method
 
 .method public final getZero-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 84
-    # getter for: Landroidx/compose/ui/geometry/Size;->Zero:J
     invoke-static {}, Landroidx/compose/ui/geometry/Size;->access$getZero$cp()J
 
     move-result-wide v0

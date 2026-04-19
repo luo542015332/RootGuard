@@ -129,7 +129,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/SubcomposeMeasureScope;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;IIZIJLkotlin/jvm/functions/Function2;ILkotlin/jvm/functions/Function3;)V
-    .registers 15
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -208,7 +208,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 243
@@ -224,7 +224,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 41
+    .locals 39
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     move-object/from16 v0, p0
@@ -283,8 +283,8 @@
 
     move-result v10
 
-    :goto_28
-    if-ge v8, v10, :cond_44
+    :goto_0
+    if-ge v8, v10, :cond_0
 
     .line 381
     invoke-interface {v6, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -334,11 +334,11 @@
     .end local v11    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v8, v8, 0x1
 
-    goto :goto_28
+    goto :goto_0
 
     .line 385
     .end local v8    # "index$iv$iv":I
-    :cond_44
+    :cond_0
     nop
 
     .line 386
@@ -372,14 +372,14 @@
 
     const/4 v10, 0x0
 
-    if-eqz v4, :cond_55
+    if-eqz v4, :cond_1
 
     const/4 v4, 0x0
 
-    goto :goto_80
+    goto :goto_2
 
     .line 389
-    :cond_55
+    :cond_1
     invoke-interface {v2, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -413,10 +413,10 @@
 
     move-result v8
 
-    if-gt v7, v8, :cond_7f
+    if-gt v7, v8, :cond_3
 
     .line 392
-    :goto_69
+    :goto_1
     invoke-interface {v2, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -443,7 +443,7 @@
 
     .line 394
     .local v12, "v$iv":I
-    if-ge v6, v12, :cond_7a
+    if-ge v6, v12, :cond_2
 
     .line 395
     move-object v4, v11
@@ -454,16 +454,16 @@
     .line 391
     .end local v11    # "e$iv":Ljava/lang/Object;
     .end local v12    # "v$iv":I
-    :cond_7a
-    if-eq v7, v8, :cond_7f
+    :cond_2
+    if-eq v7, v8, :cond_3
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_69
+    goto :goto_1
 
     .line 399
     .end local v7    # "i$iv":I
-    :cond_7f
+    :cond_3
     nop
 
     .line 248
@@ -471,21 +471,21 @@
     .end local v3    # "$i$f$fastMaxBy":I
     .end local v4    # "maxElem$iv":Ljava/lang/Object;
     .end local v6    # "maxValue$iv":I
-    :goto_80
+    :goto_2
     check-cast v4, Landroidx/compose/ui/layout/Placeable;
 
-    if-eqz v4, :cond_89
+    if-eqz v4, :cond_4
 
     invoke-virtual {v4}, Landroidx/compose/ui/layout/Placeable;->getHeight()I
 
     move-result v2
 
-    goto :goto_8a
+    goto :goto_3
 
-    :cond_89
+    :cond_4
     move v2, v10
 
-    :goto_8a
+    :goto_3
     move v11, v2
 
     .line 250
@@ -537,8 +537,8 @@
 
     move-result v14
 
-    :goto_aa
-    if-ge v13, v14, :cond_ca
+    :goto_4
+    if-ge v13, v14, :cond_5
 
     .line 405
     invoke-interface {v8, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -590,11 +590,11 @@
 
     const/4 v10, 0x0
 
-    goto :goto_aa
+    goto :goto_4
 
     .line 409
     .end local v13    # "index$iv$iv":I
-    :cond_ca
+    :cond_5
     nop
 
     .line 410
@@ -626,14 +626,14 @@
 
     move-result v4
 
-    if-eqz v4, :cond_da
+    if-eqz v4, :cond_6
 
     const/4 v5, 0x0
 
-    goto :goto_106
+    goto :goto_6
 
     .line 413
-    :cond_da
+    :cond_6
     const/4 v4, 0x0
 
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -669,10 +669,10 @@
 
     move-result v7
 
-    if-gt v6, v7, :cond_105
+    if-gt v6, v7, :cond_8
 
     .line 416
-    :goto_ef
+    :goto_5
     invoke-interface {v2, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -699,7 +699,7 @@
 
     .line 418
     .local v12, "v$iv":I
-    if-ge v4, v12, :cond_100
+    if-ge v4, v12, :cond_7
 
     .line 419
     move-object v5, v8
@@ -710,16 +710,16 @@
     .line 415
     .end local v8    # "e$iv":Ljava/lang/Object;
     .end local v12    # "v$iv":I
-    :cond_100
-    if-eq v6, v7, :cond_105
+    :cond_7
+    if-eq v6, v7, :cond_8
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_ef
+    goto :goto_5
 
     .line 423
     .end local v6    # "i$iv":I
-    :cond_105
+    :cond_8
     nop
 
     .line 254
@@ -727,21 +727,21 @@
     .end local v3    # "$i$f$fastMaxBy":I
     .end local v4    # "maxValue$iv":I
     .end local v5    # "maxElem$iv":Ljava/lang/Object;
-    :goto_106
+    :goto_6
     check-cast v5, Landroidx/compose/ui/layout/Placeable;
 
-    if-eqz v5, :cond_10f
+    if-eqz v5, :cond_9
 
     invoke-virtual {v5}, Landroidx/compose/ui/layout/Placeable;->getHeight()I
 
     move-result v2
 
-    goto :goto_110
+    goto :goto_7
 
-    :cond_10f
+    :cond_9
     const/4 v2, 0x0
 
-    :goto_110
+    :goto_7
     move v12, v2
 
     .line 257
@@ -793,8 +793,8 @@
 
     move-result v14
 
-    :goto_130
-    if-ge v13, v14, :cond_157
+    :goto_8
+    if-ge v13, v14, :cond_a
 
     .line 429
     invoke-interface {v7, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -856,13 +856,13 @@
 
     move/from16 v5, v21
 
-    goto :goto_130
+    goto :goto_8
 
     .end local v20    # "$this$fastMap$iv":Ljava/util/List;
     .end local v21    # "$i$f$fastMap":I
     .restart local v2    # "$this$fastMap$iv":Ljava/util/List;
     .local v5, "$i$f$fastMap":I
-    :cond_157
+    :cond_a
     move-object/from16 v20, v2
 
     move/from16 v21, v5
@@ -905,7 +905,7 @@
 
     xor-int/2addr v2, v3
 
-    if-eqz v2, :cond_23f
+    if-eqz v2, :cond_16
 
     .line 262
     move-object v2, v13
@@ -922,14 +922,14 @@
 
     move-result v5
 
-    if-eqz v5, :cond_177
+    if-eqz v5, :cond_b
 
     const/4 v6, 0x0
 
-    goto :goto_1a4
+    goto :goto_a
 
     .line 437
-    :cond_177
+    :cond_b
     const/4 v5, 0x0
 
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -965,10 +965,10 @@
 
     move-result v8
 
-    if-gt v7, v8, :cond_1a3
+    if-gt v7, v8, :cond_d
 
     .line 440
-    :goto_18c
+    :goto_9
     invoke-interface {v2, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v14
@@ -995,7 +995,7 @@
 
     .line 442
     .local v15, "v$iv":I
-    if-ge v5, v15, :cond_19e
+    if-ge v5, v15, :cond_c
 
     .line 443
     move-object v6, v14
@@ -1006,16 +1006,16 @@
     .line 439
     .end local v14    # "e$iv":Ljava/lang/Object;
     .end local v15    # "v$iv":I
-    :cond_19e
-    if-eq v7, v8, :cond_1a3
+    :cond_c
+    if-eq v7, v8, :cond_d
 
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_18c
+    goto :goto_9
 
     .line 447
     .end local v7    # "i$iv":I
-    :cond_1a3
+    :cond_d
     nop
 
     .line 262
@@ -1023,23 +1023,23 @@
     .end local v4    # "$i$f$fastMaxBy":I
     .end local v5    # "maxValue$iv":I
     .end local v6    # "maxElem$iv":Ljava/lang/Object;
-    :goto_1a4
+    :goto_a
     check-cast v6, Landroidx/compose/ui/layout/Placeable;
 
-    if-eqz v6, :cond_1ad
+    if-eqz v6, :cond_e
 
     invoke-virtual {v6}, Landroidx/compose/ui/layout/Placeable;->getWidth()I
 
     move-result v2
 
-    goto :goto_1ae
+    goto :goto_b
 
-    :cond_1ad
+    :cond_e
     const/4 v2, 0x0
 
     .line 263
     .local v2, "fabWidth":I
-    :goto_1ae
+    :goto_b
     move-object v4, v13
 
     .local v4, "$this$fastMaxBy$iv":Ljava/util/List;
@@ -1054,14 +1054,14 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1b9
+    if-eqz v6, :cond_f
 
     const/4 v7, 0x0
 
-    goto :goto_1eb
+    goto :goto_d
 
     .line 450
-    :cond_1b9
+    :cond_f
     const/4 v6, 0x0
 
     invoke-interface {v4, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1097,10 +1097,10 @@
 
     move-result v14
 
-    if-gt v8, v14, :cond_1ea
+    if-gt v8, v14, :cond_11
 
     .line 453
-    :goto_1ce
+    :goto_c
     invoke-interface {v4, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v15
@@ -1131,7 +1131,7 @@
 
     .end local v17    # "v$iv":I
     .local v3, "v$iv":I
-    if-ge v6, v3, :cond_1e4
+    if-ge v6, v3, :cond_10
 
     .line 456
     move-object v7, v15
@@ -1142,18 +1142,18 @@
     .line 452
     .end local v3    # "v$iv":I
     .end local v15    # "e$iv":Ljava/lang/Object;
-    :cond_1e4
-    if-eq v8, v14, :cond_1ea
+    :cond_10
+    if-eq v8, v14, :cond_11
 
     add-int/lit8 v8, v8, 0x1
 
     const/4 v3, 0x1
 
-    goto :goto_1ce
+    goto :goto_c
 
     .line 460
     .end local v8    # "i$iv":I
-    :cond_1ea
+    :cond_11
     nop
 
     .line 263
@@ -1161,28 +1161,28 @@
     .end local v5    # "$i$f$fastMaxBy":I
     .end local v6    # "maxValue$iv":I
     .end local v7    # "maxElem$iv":Ljava/lang/Object;
-    :goto_1eb
+    :goto_d
     check-cast v7, Landroidx/compose/ui/layout/Placeable;
 
-    if-eqz v7, :cond_1f4
+    if-eqz v7, :cond_12
 
     invoke-virtual {v7}, Landroidx/compose/ui/layout/Placeable;->getHeight()I
 
     move-result v4
 
-    goto :goto_1f5
+    goto :goto_e
 
-    :cond_1f4
+    :cond_12
     const/4 v4, 0x0
 
-    :goto_1f5
+    :goto_e
     move v3, v4
 
     .line 265
     .local v3, "fabHeight":I
-    if-eqz v2, :cond_23d
+    if-eqz v2, :cond_15
 
-    if-eqz v3, :cond_23d
+    if-eqz v3, :cond_15
 
     .line 266
     iget v4, v0, Landroidx/compose/material/ScaffoldKt$ScaffoldLayout$1$1$1;->$fabPosition:I
@@ -1197,7 +1197,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_22c
+    if-eqz v4, :cond_14
 
     .line 267
     iget-object v4, v0, Landroidx/compose/material/ScaffoldKt$ScaffoldLayout$1$1$1;->$this_SubcomposeLayout:Landroidx/compose/ui/layout/SubcomposeMeasureScope;
@@ -1208,14 +1208,13 @@
 
     sget-object v5, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-ne v4, v5, :cond_221
+    if-ne v4, v5, :cond_13
 
     .line 268
     iget v4, v0, Landroidx/compose/material/ScaffoldKt$ScaffoldLayout$1$1$1;->$layoutWidth:I
 
     iget-object v5, v0, Landroidx/compose/material/ScaffoldKt$ScaffoldLayout$1$1$1;->$this_SubcomposeLayout:Landroidx/compose/ui/layout/SubcomposeMeasureScope;
 
-    # getter for: Landroidx/compose/material/ScaffoldKt;->FabSpacing:F
     invoke-static {}, Landroidx/compose/material/ScaffoldKt;->access$getFabSpacing$p()F
 
     move-result v6
@@ -1228,13 +1227,12 @@
 
     sub-int/2addr v4, v2
 
-    goto :goto_231
+    goto :goto_f
 
     .line 270
-    :cond_221
+    :cond_13
     iget-object v4, v0, Landroidx/compose/material/ScaffoldKt$ScaffoldLayout$1$1$1;->$this_SubcomposeLayout:Landroidx/compose/ui/layout/SubcomposeMeasureScope;
 
-    # getter for: Landroidx/compose/material/ScaffoldKt;->FabSpacing:F
     invoke-static {}, Landroidx/compose/material/ScaffoldKt;->access$getFabSpacing$p()F
 
     move-result v5
@@ -1243,10 +1241,10 @@
 
     move-result v4
 
-    goto :goto_231
+    goto :goto_f
 
     .line 273
-    :cond_22c
+    :cond_14
     iget v4, v0, Landroidx/compose/material/ScaffoldKt$ScaffoldLayout$1$1$1;->$layoutWidth:I
 
     sub-int/2addr v4, v2
@@ -1254,7 +1252,7 @@
     div-int/lit8 v4, v4, 0x2
 
     .line 266
-    :goto_231
+    :goto_f
     nop
 
     .line 276
@@ -1277,22 +1275,22 @@
     invoke-direct {v5, v6, v4, v2, v3}, Landroidx/compose/material/FabPlacement;-><init>(ZIII)V
 
     .end local v4    # "fabLeftOffset":I
-    goto :goto_240
+    goto :goto_10
 
     .line 283
-    :cond_23d
+    :cond_15
     const/4 v5, 0x0
 
     .end local v2    # "fabWidth":I
     .end local v3    # "fabHeight":I
-    goto :goto_240
+    goto :goto_10
 
     .line 286
-    :cond_23f
+    :cond_16
     const/4 v5, 0x0
 
     .line 261
-    :goto_240
+    :goto_10
     move-object v14, v5
 
     .line 289
@@ -1365,8 +1363,8 @@
 
     move-result v2
 
-    :goto_273
-    if-ge v15, v2, :cond_29a
+    :goto_11
+    if-ge v15, v2, :cond_17
 
     .line 466
     invoke-interface {v7, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1426,11 +1424,11 @@
 
     move/from16 v5, v24
 
-    goto :goto_273
+    goto :goto_11
 
     .end local v24    # "$i$f$fastMap":I
     .local v5, "$i$f$fastMap":I
-    :cond_29a
+    :cond_17
     move/from16 v24, v5
 
     .line 470
@@ -1471,14 +1469,14 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2ad
+    if-eqz v4, :cond_18
 
     const/4 v4, 0x0
 
-    goto :goto_2e0
+    goto :goto_13
 
     .line 474
-    :cond_2ad
+    :cond_18
     const/4 v8, 0x0
 
     invoke-interface {v2, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1514,10 +1512,10 @@
 
     move-result v7
 
-    if-gt v6, v7, :cond_2df
+    if-gt v6, v7, :cond_1a
 
     .line 477
-    :goto_2c2
+    :goto_12
     invoke-interface {v2, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v17
@@ -1548,7 +1546,7 @@
 
     .end local v20    # "v$iv":I
     .local v8, "v$iv":I
-    if-ge v5, v8, :cond_2d9
+    if-ge v5, v8, :cond_19
 
     .line 480
     move-object/from16 v4, v17
@@ -1559,18 +1557,18 @@
     .line 476
     .end local v8    # "v$iv":I
     .end local v17    # "e$iv":Ljava/lang/Object;
-    :cond_2d9
-    if-eq v6, v7, :cond_2df
+    :cond_19
+    if-eq v6, v7, :cond_1a
 
     add-int/lit8 v6, v6, 0x1
 
     const/4 v8, 0x0
 
-    goto :goto_2c2
+    goto :goto_12
 
     .line 484
     .end local v6    # "i$iv":I
-    :cond_2df
+    :cond_1a
     nop
 
     .line 296
@@ -1578,26 +1576,26 @@
     .end local v3    # "$i$f$fastMaxBy":I
     .end local v4    # "maxElem$iv":Ljava/lang/Object;
     .end local v5    # "maxValue$iv":I
-    :goto_2e0
+    :goto_13
     check-cast v4, Landroidx/compose/ui/layout/Placeable;
 
-    if-eqz v4, :cond_2e9
+    if-eqz v4, :cond_1b
 
     invoke-virtual {v4}, Landroidx/compose/ui/layout/Placeable;->getHeight()I
 
     move-result v4
 
-    goto :goto_2ea
+    goto :goto_14
 
-    :cond_2e9
+    :cond_1b
     const/4 v4, 0x0
 
-    :goto_2ea
+    :goto_14
     move v8, v4
 
     .line 297
     .local v8, "bottomBarHeight":I
-    if-eqz v14, :cond_322
+    if-eqz v14, :cond_1e
 
     iget-object v2, v0, Landroidx/compose/material/ScaffoldKt$ScaffoldLayout$1$1$1;->$this_SubcomposeLayout:Landroidx/compose/ui/layout/SubcomposeMeasureScope;
 
@@ -1610,14 +1608,13 @@
 
     .line 298
     .local v5, "$i$a$-let-ScaffoldKt$ScaffoldLayout$1$1$1$fabOffsetFromBottom$1":I
-    if-nez v8, :cond_303
+    if-nez v8, :cond_1c
 
     .line 299
     invoke-virtual {v4}, Landroidx/compose/material/FabPlacement;->getHeight()I
 
     move-result v3
 
-    # getter for: Landroidx/compose/material/ScaffoldKt;->FabSpacing:F
     invoke-static {}, Landroidx/compose/material/ScaffoldKt;->access$getFabSpacing$p()F
 
     move-result v6
@@ -1628,11 +1625,11 @@
 
     add-int/2addr v3, v2
 
-    goto :goto_31c
+    goto :goto_15
 
     .line 301
-    :cond_303
-    if-eqz v3, :cond_30e
+    :cond_1c
+    if-eqz v3, :cond_1d
 
     .line 303
     invoke-virtual {v4}, Landroidx/compose/material/FabPlacement;->getHeight()I
@@ -1643,17 +1640,16 @@
 
     add-int v3, v8, v2
 
-    goto :goto_31c
+    goto :goto_15
 
     .line 307
-    :cond_30e
+    :cond_1d
     invoke-virtual {v4}, Landroidx/compose/material/FabPlacement;->getHeight()I
 
     move-result v3
 
     add-int/2addr v3, v8
 
-    # getter for: Landroidx/compose/material/ScaffoldKt;->FabSpacing:F
     invoke-static {}, Landroidx/compose/material/ScaffoldKt;->access$getFabSpacing$p()F
 
     move-result v6
@@ -1665,7 +1661,7 @@
     add-int/2addr v3, v2
 
     .line 298
-    :goto_31c
+    :goto_15
     nop
 
     .end local v4    # "it":Landroidx/compose/material/FabPlacement;
@@ -1675,41 +1671,41 @@
     move-result-object v5
 
     .line 297
-    goto :goto_323
+    goto :goto_16
 
-    :cond_322
+    :cond_1e
     const/4 v5, 0x0
 
-    :goto_323
+    :goto_16
     move-object/from16 v17, v5
 
     .line 312
     .local v17, "fabOffsetFromBottom":Ljava/lang/Integer;
-    if-eqz v12, :cond_332
+    if-eqz v12, :cond_20
 
     .line 313
-    if-eqz v17, :cond_32e
+    if-eqz v17, :cond_1f
 
     invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    goto :goto_32f
+    goto :goto_17
 
-    :cond_32e
+    :cond_1f
     move v2, v8
 
-    :goto_32f
+    :goto_17
     add-int v4, v12, v2
 
-    goto :goto_333
+    goto :goto_18
 
     .line 315
-    :cond_332
+    :cond_20
     const/4 v4, 0x0
 
     .line 312
-    :goto_333
+    :goto_18
     move/from16 v18, v4
 
     .line 318
@@ -1797,8 +1793,8 @@
     .end local v20    # "index$iv$iv":I
     .local v5, "index$iv$iv":I
     .local v30, "$i$f$fastMap":I
-    :goto_373
-    if-ge v5, v2, :cond_3b0
+    :goto_19
+    if-ge v5, v2, :cond_21
 
     .line 490
     invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1880,11 +1876,11 @@
 
     move-wide/from16 v3, v37
 
-    goto :goto_373
+    goto :goto_19
 
     .end local v35    # "$this$fastForEach$iv$iv":Ljava/util/List;
     .local v7, "$this$fastForEach$iv$iv":Ljava/util/List;
-    :cond_3b0
+    :cond_21
     move-object/from16 v35, v7
 
     .line 494
@@ -1932,8 +1928,8 @@
 
     .end local v2    # "index$iv":I
     .local v5, "index$iv":I
-    :goto_3c4
-    if-ge v5, v6, :cond_3fa
+    :goto_1a
+    if-ge v5, v6, :cond_22
 
     .line 498
     invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2009,13 +2005,13 @@
 
     .end local v27    # "index$iv":I
     .restart local v5    # "index$iv":I
-    goto :goto_3c4
+    goto :goto_1a
 
     .end local v19    # "bottomBarHeight":I
     .end local v24    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v7    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v8    # "bottomBarHeight":I
-    :cond_3fa
+    :cond_22
     move/from16 v27, v5
 
     move-object/from16 v24, v7
@@ -2056,8 +2052,8 @@
 
     .end local v2    # "index$iv":I
     .local v6, "index$iv":I
-    :goto_40d
-    if-ge v6, v7, :cond_43d
+    :goto_1b
+    if-ge v6, v7, :cond_23
 
     .line 504
     invoke-interface {v8, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2125,11 +2121,11 @@
 
     .end local v29    # "index$iv":I
     .restart local v6    # "index$iv":I
-    goto :goto_40d
+    goto :goto_1b
 
     .end local v26    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v8    # "$this$fastForEach$iv":Ljava/util/List;
-    :cond_43d
+    :cond_23
     move/from16 v29, v6
 
     move-object/from16 v26, v8
@@ -2166,8 +2162,8 @@
 
     .end local v2    # "index$iv":I
     .restart local v5    # "index$iv":I
-    :goto_44e
-    if-ge v5, v6, :cond_485
+    :goto_1c
+    if-ge v5, v6, :cond_24
 
     .line 510
     invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2241,11 +2237,11 @@
 
     .end local v30    # "index$iv":I
     .restart local v5    # "index$iv":I
-    goto :goto_44e
+    goto :goto_1c
 
     .end local v26    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v7    # "$this$fastForEach$iv":Ljava/util/List;
-    :cond_485
+    :cond_24
     move/from16 v30, v5
 
     move-object/from16 v26, v7
@@ -2282,8 +2278,8 @@
 
     .end local v2    # "index$iv":I
     .restart local v5    # "index$iv":I
-    :goto_496
-    if-ge v5, v6, :cond_4cd
+    :goto_1d
+    if-ge v5, v6, :cond_25
 
     .line 516
     invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2357,11 +2353,11 @@
 
     .end local v30    # "index$iv":I
     .restart local v5    # "index$iv":I
-    goto :goto_496
+    goto :goto_1d
 
     .end local v26    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v7    # "$this$fastForEach$iv":Ljava/util/List;
-    :cond_4cd
+    :cond_25
     move/from16 v30, v5
 
     move-object/from16 v26, v7
@@ -2398,8 +2394,8 @@
 
     .end local v2    # "index$iv":I
     .restart local v5    # "index$iv":I
-    :goto_4de
-    if-ge v5, v6, :cond_527
+    :goto_1e
+    if-ge v5, v6, :cond_28
 
     .line 522
     invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2417,7 +2413,7 @@
 
     .line 342
     .local v23, "$i$a$-fastForEach-ScaffoldKt$ScaffoldLayout$1$1$1$5":I
-    if-eqz v14, :cond_4f2
+    if-eqz v14, :cond_26
 
     invoke-virtual {v14}, Landroidx/compose/material/FabPlacement;->getLeft()I
 
@@ -2425,24 +2421,24 @@
 
     move v4, v2
 
-    goto :goto_4f4
+    goto :goto_1f
 
-    :cond_4f2
+    :cond_26
     move/from16 v4, v25
 
-    :goto_4f4
-    if-eqz v17, :cond_4fb
+    :goto_1f
+    if-eqz v17, :cond_27
 
     invoke-virtual/range {v17 .. v17}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
-    goto :goto_4fd
+    goto :goto_20
 
-    :cond_4fb
+    :cond_27
     move/from16 v2, v25
 
-    :goto_4fd
+    :goto_20
     sub-int v24, v8, v2
 
     const/16 v26, 0x0
@@ -2497,13 +2493,13 @@
 
     .end local v30    # "index$iv":I
     .restart local v5    # "index$iv":I
-    goto :goto_4de
+    goto :goto_1e
 
     .line 525
     .end local v5    # "index$iv":I
     .end local v26    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v7    # "$this$fastForEach$iv":Ljava/util/List;
-    :cond_527
+    :cond_28
     nop
 
     .line 344

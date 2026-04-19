@@ -39,7 +39,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 522
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/semantics/ProgressBarRangeInfo$Companion;-><init>()V
 
@@ -58,10 +58,9 @@
 
 # virtual methods
 .method public final getIndeterminate()Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
-    .registers 2
+    .locals 1
 
     .line 526
-    # getter for: Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->Indeterminate:Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
     invoke-static {}, Landroidx/compose/ui/semantics/ProgressBarRangeInfo;->access$getIndeterminate$cp()Landroidx/compose/ui/semantics/ProgressBarRangeInfo;
 
     move-result-object v0

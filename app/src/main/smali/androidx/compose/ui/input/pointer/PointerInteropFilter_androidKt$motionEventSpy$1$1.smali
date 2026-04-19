@@ -86,7 +86,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,7 +114,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -141,7 +141,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -170,7 +170,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -193,7 +193,7 @@
     .line 342
     iget v1, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$motionEventSpy$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_52
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -203,7 +203,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$motionEventSpy$1$1;
@@ -223,12 +223,12 @@
 
     move-object v0, p1
 
-    goto :goto_3f
+    goto :goto_1
 
     .end local v1    # "this":Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$motionEventSpy$1$1;
     .end local v2    # "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1f
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -241,7 +241,7 @@
 
     .line 343
     .restart local v2    # "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_27
+    :goto_0
     nop
 
     .line 344
@@ -261,13 +261,13 @@
 
     move-result-object v3
 
-    if-ne v3, v0, :cond_39
+    if-ne v3, v0, :cond_0
 
     .line 342
     return-object v0
 
     .line 344
-    :cond_39
+    :cond_0
     move-object v6, v0
 
     move-object v0, p1
@@ -286,7 +286,7 @@
     .local v0, "$result":Ljava/lang/Object;
     .local v2, "this":Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$motionEventSpy$1$1;
     .local v3, "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_3f
+    :goto_1
     check-cast p1, Landroidx/compose/ui/input/pointer/PointerEvent;
 
     .line 345
@@ -296,14 +296,14 @@
     move-result-object p1
 
     .end local p1    # "event":Landroidx/compose/ui/input/pointer/PointerEvent;
-    if-eqz p1, :cond_4c
+    if-eqz p1, :cond_1
 
     iget-object v4, v2, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt$motionEventSpy$1$1;->$watcher:Lkotlin/jvm/functions/Function1;
 
     invoke-interface {v4, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 343
-    :cond_4c
+    :cond_1
     move-object p1, v0
 
     move-object v0, v1
@@ -312,13 +312,13 @@
 
     move-object v2, v3
 
-    goto :goto_27
+    goto :goto_0
 
     nop
 
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1f
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

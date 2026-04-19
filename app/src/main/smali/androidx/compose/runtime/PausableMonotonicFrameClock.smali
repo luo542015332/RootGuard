@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/MonotonicFrameClock;)V
-    .registers 3
+    .locals 1
     .param p1, "frameClock"    # Landroidx/compose/runtime/MonotonicFrameClock;
 
     const-string/jumbo v0, "frameClock"
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -118,7 +118,7 @@
 .end method
 
 .method public get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -139,7 +139,7 @@
 .end method
 
 .method public final isPaused()Z
-    .registers 2
+    .locals 1
 
     .line 41
     iget-object v0, p0, Landroidx/compose/runtime/PausableMonotonicFrameClock;->latch:Landroidx/compose/runtime/Latch;
@@ -154,7 +154,7 @@
 .end method
 
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -174,7 +174,7 @@
 .end method
 
 .method public final pause()V
-    .registers 2
+    .locals 1
 
     .line 50
     iget-object v0, p0, Landroidx/compose/runtime/PausableMonotonicFrameClock;->latch:Landroidx/compose/runtime/Latch;
@@ -186,7 +186,7 @@
 .end method
 
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 
     .line 31
@@ -198,7 +198,7 @@
 .end method
 
 .method public final resume()V
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/compose/runtime/PausableMonotonicFrameClock;->latch:Landroidx/compose/runtime/Latch;
@@ -210,7 +210,7 @@
 .end method
 
 .method public withFrameNanos(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 8
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -228,7 +228,7 @@
 
     instance-of v0, p2, Landroidx/compose/runtime/PausableMonotonicFrameClock$withFrameNanos$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p2
 
@@ -240,7 +240,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p2, v0, Landroidx/compose/runtime/PausableMonotonicFrameClock$withFrameNanos$1;->label:I
 
@@ -248,14 +248,14 @@
 
     iput p2, v0, Landroidx/compose/runtime/PausableMonotonicFrameClock$withFrameNanos$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/PausableMonotonicFrameClock$withFrameNanos$1;
 
     invoke-direct {v0, p0, p2}, Landroidx/compose/runtime/PausableMonotonicFrameClock$withFrameNanos$1;-><init>(Landroidx/compose/runtime/PausableMonotonicFrameClock;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     move-object p2, v0
 
     .local p2, "$continuation":Lkotlin/coroutines/Continuation;
@@ -269,7 +269,7 @@
     .line 61
     iget v2, p2, Landroidx/compose/runtime/PausableMonotonicFrameClock$withFrameNanos$1;->label:I
 
-    packed-switch v2, :pswitch_data_66
+    packed-switch v2, :pswitch_data_0
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local p2    # "$continuation":Lkotlin/coroutines/Continuation;
@@ -283,14 +283,14 @@
 
     .restart local v0    # "$result":Ljava/lang/Object;
     .restart local p2    # "$continuation":Lkotlin/coroutines/Continuation;
-    :pswitch_2e
+    :pswitch_0
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object p1, v0
 
-    goto :goto_64
+    goto :goto_2
 
-    :pswitch_33
+    :pswitch_1
     iget-object p1, p2, Landroidx/compose/runtime/PausableMonotonicFrameClock$withFrameNanos$1;->L$1:Ljava/lang/Object;
 
     check-cast p1, Lkotlin/jvm/functions/Function1;
@@ -303,11 +303,11 @@
     .local v2, "this":Landroidx/compose/runtime/PausableMonotonicFrameClock;
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_53
+    goto :goto_1
 
     .end local v2    # "this":Landroidx/compose/runtime/PausableMonotonicFrameClock;
     .end local p1    # "onFrame":Lkotlin/jvm/functions/Function1;
-    :pswitch_3f
+    :pswitch_2
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v2, p0
@@ -329,14 +329,14 @@
 
     move-result-object v3
 
-    if-ne v3, v1, :cond_53
+    if-ne v3, v1, :cond_1
 
     .line 61
     return-object v1
 
     .line 63
-    :cond_53
-    :goto_53
+    :cond_1
+    :goto_1
     iget-object v3, v2, Landroidx/compose/runtime/PausableMonotonicFrameClock;->frameClock:Landroidx/compose/runtime/MonotonicFrameClock;
 
     const/4 v4, 0x0
@@ -355,22 +355,22 @@
 
     .end local v2    # "this":Landroidx/compose/runtime/PausableMonotonicFrameClock;
     .end local p1    # "onFrame":Lkotlin/jvm/functions/Function1;
-    if-ne p1, v1, :cond_64
+    if-ne p1, v1, :cond_2
 
     .line 61
     return-object v1
 
     .line 63
-    :cond_64
-    :goto_64
+    :cond_2
+    :goto_2
     return-object p1
 
     nop
 
-    :pswitch_data_66
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3f
-        :pswitch_33
-        :pswitch_2e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

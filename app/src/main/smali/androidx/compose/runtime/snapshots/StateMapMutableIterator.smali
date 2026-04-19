@@ -117,7 +117,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateMap;Ljava/util/Iterator;)V
-    .registers 4
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/snapshots/SnapshotStateMap;
     .param p2, "iterator"    # Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
@@ -164,7 +164,7 @@
 .end method
 
 .method public static final synthetic access$getModification(Landroidx/compose/runtime/snapshots/StateMapMutableIterator;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/snapshots/StateMapMutableIterator;
 
     .line 276
@@ -174,7 +174,7 @@
 .end method
 
 .method public static final synthetic access$setModification(Landroidx/compose/runtime/snapshots/StateMapMutableIterator;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/snapshots/StateMapMutableIterator;
     .param p1, "<set-?>"    # I
 
@@ -187,7 +187,7 @@
 
 # virtual methods
 .method protected final advance()V
-    .registers 2
+    .locals 1
 
     .line 300
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->next:Ljava/util/Map$Entry;
@@ -201,7 +201,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->iterator:Ljava/util/Iterator;
 
@@ -211,12 +211,12 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_16
+    :goto_0
     iput-object v0, p0, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->next:Ljava/util/Map$Entry;
 
     .line 302
@@ -224,7 +224,7 @@
 .end method
 
 .method protected final getCurrent()Ljava/util/Map$Entry;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -240,7 +240,7 @@
 .end method
 
 .method public final getIterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -257,7 +257,7 @@
 .end method
 
 .method public final getMap()Landroidx/compose/runtime/snapshots/SnapshotStateMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -273,7 +273,7 @@
 .end method
 
 .method protected final getModification()I
-    .registers 2
+    .locals 1
 
     .line 280
     iget v0, p0, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->modification:I
@@ -282,7 +282,7 @@
 .end method
 
 .method protected final getNext()Ljava/util/Map$Entry;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -298,26 +298,26 @@
 .end method
 
 .method public final hasNext()Z
-    .registers 2
+    .locals 1
 
     .line 297
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->next:Ljava/util/Map$Entry;
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method protected final modify(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 7
+    .locals 5
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -345,12 +345,11 @@
 
     move-result v1
 
-    # getter for: Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->modification:I
     invoke-static {p0}, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->access$getModification(Landroidx/compose/runtime/snapshots/StateMapMutableIterator;)I
 
     move-result v2
 
-    if-ne v1, v2, :cond_27
+    if-ne v1, v2, :cond_0
 
     .line 308
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
@@ -380,7 +379,7 @@
     return-object v1
 
     .line 306
-    :cond_27
+    :cond_0
     new-instance v1, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v1}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -389,7 +388,7 @@
 .end method
 
 .method public final remove()V
-    .registers 7
+    .locals 6
 
     .line 286
     move-object v0, p0
@@ -407,12 +406,11 @@
 
     move-result v2
 
-    # getter for: Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->modification:I
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->access$getModification(Landroidx/compose/runtime/snapshots/StateMapMutableIterator;)I
 
     move-result v3
 
-    if-ne v2, v3, :cond_38
+    if-ne v2, v3, :cond_1
 
     .line 364
     const/4 v2, 0x0
@@ -423,7 +421,7 @@
 
     .line 289
     .local v3, "value":Ljava/util/Map$Entry;
-    if-eqz v3, :cond_32
+    if-eqz v3, :cond_0
 
     .line 290
     iget-object v4, p0, Landroidx/compose/runtime/snapshots/StateMapMutableIterator;->map:Landroidx/compose/runtime/snapshots/SnapshotStateMap;
@@ -477,7 +475,7 @@
     .restart local v1    # "$i$f$modify":I
     .local v2, "$i$a$-modify-StateMapMutableIterator$remove$1":I
     .local v3, "value":Ljava/util/Map$Entry;
-    :cond_32
+    :cond_0
     new-instance v4, Ljava/lang/IllegalStateException;
 
     invoke-direct {v4}, Ljava/lang/IllegalStateException;-><init>()V
@@ -487,7 +485,7 @@
     .line 362
     .end local v2    # "$i$a$-modify-StateMapMutableIterator$remove$1":I
     .end local v3    # "value":Ljava/util/Map$Entry;
-    :cond_38
+    :cond_1
     new-instance v2, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v2}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -496,7 +494,7 @@
 .end method
 
 .method protected final setCurrent(Ljava/util/Map$Entry;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -513,7 +511,7 @@
 .end method
 
 .method protected final setModification(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 280
@@ -523,7 +521,7 @@
 .end method
 
 .method protected final setNext(Ljava/util/Map$Entry;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/util/Map$Entry;
     .annotation system Ldalvik/annotation/Signature;
         value = {

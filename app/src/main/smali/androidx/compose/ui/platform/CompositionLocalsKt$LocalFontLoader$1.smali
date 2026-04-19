@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/CompositionLocalsKt$LocalFontLoader$1;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,12 +74,11 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/ui/text/font/Font$ResourceLoader;
-    .registers 2
+    .locals 1
 
     .line 103
     const-string v0, "LocalFontLoader"
 
-    # invokes: Landroidx/compose/ui/platform/CompositionLocalsKt;->noLocalProvidedFor(Ljava/lang/String;)Ljava/lang/Void;
     invoke-static {v0}, Landroidx/compose/ui/platform/CompositionLocalsKt;->access$noLocalProvidedFor(Ljava/lang/String;)Ljava/lang/Void;
 
     new-instance v0, Lkotlin/KotlinNothingValueException;
@@ -90,7 +89,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 102
     invoke-virtual {p0}, Landroidx/compose/ui/platform/CompositionLocalsKt$LocalFontLoader$1;->invoke()Landroidx/compose/ui/text/font/Font$ResourceLoader;

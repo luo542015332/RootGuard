@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$ExposedDropdownMenuPopup$popupId$1;
 
@@ -63,7 +63,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 91
     invoke-virtual {p0}, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$ExposedDropdownMenuPopup$popupId$1;->invoke()Ljava/util/UUID;
@@ -86,7 +86,7 @@
 .end method
 
 .method public final invoke()Ljava/util/UUID;
-    .registers 2
+    .locals 1
 
     .line 91
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;

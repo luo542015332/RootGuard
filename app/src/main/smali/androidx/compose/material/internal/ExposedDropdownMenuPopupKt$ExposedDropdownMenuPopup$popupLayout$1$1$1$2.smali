@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/internal/PopupLayout;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/internal/ExposedDropdownMenuPopupKt$ExposedDropdownMenuPopup$popupLayout$1$1$1$2;->$this_apply:Landroidx/compose/material/internal/PopupLayout;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 106
@@ -88,7 +88,7 @@
 .end method
 
 .method public final invoke-ozmzZPI(J)V
-    .registers 5
+    .locals 2
     .param p1, "it"    # J
 
     .line 107

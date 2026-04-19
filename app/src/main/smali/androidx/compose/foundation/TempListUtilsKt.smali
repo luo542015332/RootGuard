@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static final fastFilter(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/util/List;
-    .registers 12
+    .locals 10
     .param p0, "$this$fastFilter"    # Ljava/util/List;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -111,8 +111,8 @@
 
     move-result v5
 
-    :goto_1e
-    if-ge v4, v5, :cond_3d
+    :goto_0
+    if-ge v4, v5, :cond_1
 
     .line 111
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -138,7 +138,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_38
+    if-eqz v9, :cond_0
 
     move-object v9, v1
 
@@ -147,7 +147,7 @@
     invoke-interface {v9, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     .line 40
-    :cond_38
+    :cond_0
     nop
 
     .line 112
@@ -159,11 +159,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 114
     .end local v4    # "index$iv":I
-    :cond_3d
+    :cond_1
     nop
 
     .line 41
@@ -177,7 +177,7 @@
 .end method
 
 .method public static final fastFold(Ljava/util/List;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 12
+    .locals 9
     .param p0, "$this$fastFold"    # Ljava/util/List;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -233,8 +233,8 @@
 
     move-result v5
 
-    :goto_17
-    if-ge v4, v5, :cond_28
+    :goto_0
+    if-ge v4, v5, :cond_0
 
     .line 117
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -266,11 +266,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_17
+    goto :goto_0
 
     .line 120
     .end local v4    # "index$iv":I
-    :cond_28
+    :cond_0
     nop
 
     .line 64
@@ -280,7 +280,7 @@
 .end method
 
 .method public static final fastMapIndexedNotNull(Ljava/util/List;Lkotlin/jvm/functions/Function2;)Ljava/util/List;
-    .registers 15
+    .locals 13
     .param p0, "$this$fastMapIndexedNotNull"    # Ljava/util/List;
     .param p1, "transform"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -343,8 +343,8 @@
 
     move-result v5
 
-    :goto_1e
-    if-ge v4, v5, :cond_3d
+    :goto_0
+    if-ge v4, v5, :cond_1
 
     .line 123
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -371,7 +371,7 @@
 
     move-result-object v10
 
-    if-eqz v10, :cond_38
+    if-eqz v10, :cond_0
 
     .line 125
     .local v10, "it":Ljava/lang/Object;
@@ -388,7 +388,7 @@
     .line 84
     .end local v10    # "it":Ljava/lang/Object;
     .end local v11    # "$i$a$-let-TempListUtilsKt$fastMapIndexedNotNull$2$1":I
-    :cond_38
+    :cond_0
     nop
 
     .line 124
@@ -401,11 +401,11 @@
     .end local v6    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 126
     .end local v4    # "index$iv":I
-    :cond_3d
+    :cond_1
     nop
 
     .line 85
@@ -419,7 +419,7 @@
 .end method
 
 .method public static final fastMaxOfOrNull(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Ljava/lang/Comparable;
-    .registers 8
+    .locals 6
     .param p0, "$this$fastMaxOfOrNull"    # Ljava/util/List;
     .param p1, "selector"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -455,14 +455,14 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x0
 
     return-object v1
 
     .line 101
-    :cond_15
+    :cond_0
     const/4 v1, 0x0
 
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -484,10 +484,10 @@
 
     move-result v3
 
-    if-gt v2, v3, :cond_3d
+    if-gt v2, v3, :cond_2
 
     .line 103
-    :goto_27
+    :goto_0
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -504,21 +504,21 @@
 
     move-result v5
 
-    if-lez v5, :cond_38
+    if-lez v5, :cond_1
 
     move-object v1, v4
 
     .line 102
     .end local v4    # "v":Ljava/lang/Comparable;
-    :cond_38
-    if-eq v2, v3, :cond_3d
+    :cond_1
+    if-eq v2, v3, :cond_2
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_27
+    goto :goto_0
 
     .line 106
     .end local v2    # "i":I
-    :cond_3d
+    :cond_2
     return-object v1
 .end method

@@ -65,7 +65,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/WrappedComposition;Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 133
@@ -110,7 +110,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;)V
-    .registers 7
+    .locals 5
     .param p1, "it"    # Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;
 
     const-string/jumbo v0, "it"
@@ -120,12 +120,11 @@
     .line 134
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition$setContent$1;->this$0:Landroidx/compose/ui/platform/WrappedComposition;
 
-    # getter for: Landroidx/compose/ui/platform/WrappedComposition;->disposed:Z
     invoke-static {v0}, Landroidx/compose/ui/platform/WrappedComposition;->access$getDisposed$p(Landroidx/compose/ui/platform/WrappedComposition;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5a
+    if-nez v0, :cond_1
 
     .line 135
     invoke-virtual {p1}, Landroidx/compose/ui/platform/AndroidComposeView$ViewTreeOwners;->getLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
@@ -147,12 +146,11 @@
     .line 137
     iget-object v1, p0, Landroidx/compose/ui/platform/WrappedComposition$setContent$1;->this$0:Landroidx/compose/ui/platform/WrappedComposition;
 
-    # getter for: Landroidx/compose/ui/platform/WrappedComposition;->addedToLifecycle:Landroidx/lifecycle/Lifecycle;
     invoke-static {v1}, Landroidx/compose/ui/platform/WrappedComposition;->access$getAddedToLifecycle$p(Landroidx/compose/ui/platform/WrappedComposition;)Landroidx/lifecycle/Lifecycle;
 
     move-result-object v1
 
-    if-nez v1, :cond_32
+    if-nez v1, :cond_0
 
     .line 138
     iget-object v1, p0, Landroidx/compose/ui/platform/WrappedComposition$setContent$1;->this$0:Landroidx/compose/ui/platform/WrappedComposition;
@@ -166,10 +164,10 @@
 
     invoke-virtual {v0, v1}, Landroidx/lifecycle/Lifecycle;->addObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
-    goto :goto_5a
+    goto :goto_0
 
     .line 141
-    :cond_32
+    :cond_0
     invoke-virtual {v0}, Landroidx/lifecycle/Lifecycle;->getCurrentState()Landroidx/lifecycle/Lifecycle$State;
 
     move-result-object v1
@@ -180,7 +178,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5a
+    if-eqz v1, :cond_1
 
     .line 142
     iget-object v1, p0, Landroidx/compose/ui/platform/WrappedComposition$setContent$1;->this$0:Landroidx/compose/ui/platform/WrappedComposition;
@@ -211,7 +209,7 @@
 
     .line 163
     .end local v0    # "lifecycle":Landroidx/lifecycle/Lifecycle;
-    :cond_5a
-    :goto_5a
+    :cond_1
+    :goto_0
     return-void
 .end method

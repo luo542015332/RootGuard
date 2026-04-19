@@ -73,7 +73,7 @@
 
 # direct methods
 .method private constructor <init>(JLjava/util/List;Ljava/util/List;)V
-    .registers 6
+    .locals 1
     .param p1, "center"    # J
     .param p3, "colors"    # Ljava/util/List;
     .param p4, "stops"    # Ljava/util/List;
@@ -110,25 +110,25 @@
 .end method
 
 .method public synthetic constructor <init>(JLjava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 13
+    .locals 6
 
     .line 583
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_0
 
     .line 586
     const/4 p4, 0x0
 
     move-object v4, p4
 
-    goto :goto_8
+    goto :goto_0
 
     .line 583
-    :cond_7
+    :cond_0
     move-object v4, p4
 
-    :goto_8
+    :goto_0
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -144,7 +144,7 @@
 .end method
 
 .method public synthetic constructor <init>(JLjava/util/List;Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/SweepGradient;-><init>(JLjava/util/List;Ljava/util/List;)V
 
@@ -154,7 +154,7 @@
 
 # virtual methods
 .method public createShader-uvyYCjk(J)Landroid/graphics/Shader;
-    .registers 9
+    .locals 6
     .param p1, "size"    # J
 
     .line 591
@@ -164,17 +164,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 592
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/SizeKt;->getCenter-uvyYCjk(J)J
 
     move-result-wide v0
 
-    goto :goto_48
+    goto :goto_4
 
     .line 595
-    :cond_d
+    :cond_0
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SweepGradient;->center:J
 
     invoke-static {v0, v1}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -189,25 +189,25 @@
 
     const/4 v3, 0x0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_1
     move v0, v3
 
-    :goto_1e
-    if-eqz v0, :cond_25
+    :goto_0
+    if-eqz v0, :cond_2
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
     move-result v0
 
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_25
+    :cond_2
     iget-wide v4, p0, Landroidx/compose/ui/graphics/SweepGradient;->center:J
 
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getX-impl(J)F
@@ -215,7 +215,7 @@
     move-result v0
 
     .line 596
-    :goto_2b
+    :goto_1
     iget-wide v4, p0, Landroidx/compose/ui/graphics/SweepGradient;->center:J
 
     invoke-static {v4, v5}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -224,23 +224,23 @@
 
     cmpg-float v1, v4, v1
 
-    if-nez v1, :cond_36
+    if-nez v1, :cond_3
 
-    goto :goto_37
+    goto :goto_2
 
-    :cond_36
+    :cond_3
     move v2, v3
 
-    :goto_37
-    if-eqz v2, :cond_3e
+    :goto_2
+    if-eqz v2, :cond_4
 
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
     move-result v1
 
-    goto :goto_44
+    goto :goto_3
 
-    :cond_3e
+    :cond_4
     iget-wide v1, p0, Landroidx/compose/ui/graphics/SweepGradient;->center:J
 
     invoke-static {v1, v2}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
@@ -248,13 +248,13 @@
     move-result v1
 
     .line 594
-    :goto_44
+    :goto_3
     invoke-static {v0, v1}, Landroidx/compose/ui/geometry/OffsetKt;->Offset(FF)J
 
     move-result-wide v0
 
     .line 599
-    :goto_48
+    :goto_4
     iget-object v2, p0, Landroidx/compose/ui/graphics/SweepGradient;->colors:Ljava/util/List;
 
     .line 600
@@ -270,28 +270,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 604
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 605
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/SweepGradient;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 607
-    :cond_a
+    :cond_1
     iget-wide v3, p0, Landroidx/compose/ui/graphics/SweepGradient;->center:J
 
     move-object v1, p1
@@ -304,12 +304,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 608
-    :cond_18
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/graphics/SweepGradient;->colors:Ljava/util/List;
 
     move-object v3, p1
@@ -322,12 +322,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 609
-    :cond_26
+    :cond_3
     iget-object v1, p0, Landroidx/compose/ui/graphics/SweepGradient;->stops:Ljava/util/List;
 
     move-object v3, p1
@@ -340,17 +340,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_4
 
     return v2
 
     .line 611
-    :cond_34
+    :cond_4
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 615
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SweepGradient;->center:J
@@ -378,18 +378,18 @@
 
     iget-object v2, p0, Landroidx/compose/ui/graphics/SweepGradient;->stops:Ljava/util/List;
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_1b
+    goto :goto_0
 
-    :cond_1a
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_1b
+    :goto_0
     add-int/2addr v0, v2
 
     .line 618
@@ -399,7 +399,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 622
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SweepGradient;->center:J
@@ -408,7 +408,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_0
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -440,14 +440,14 @@
 
     move-result-object v0
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_29
+    :cond_0
     const-string v0, ""
 
     .line 623
     .local v0, "centerValue":Ljava/lang/String;
-    :goto_2b
+    :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static synthetic getKeyboardModifiers-k7X9c1A$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -42,7 +42,7 @@
 
 # virtual methods
 .method public getKeyboardModifiers-k7X9c1A()I
-    .registers 2
+    .locals 1
 
     .line 50
     sget-object v0, Landroidx/compose/ui/platform/WindowInfoImpl;->Companion:Landroidx/compose/ui/platform/WindowInfoImpl$Companion;

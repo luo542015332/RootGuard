@@ -84,7 +84,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Landroidx/compose/ui/layout/Placeable;-><init>()V
@@ -93,7 +93,7 @@
 .end method
 
 .method public static synthetic isLookingAhead$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -104,7 +104,7 @@
 .end method
 
 .method public final get(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 5
+    .locals 3
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -118,27 +118,27 @@
 
     const/high16 v1, -0x80000000
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     return v1
 
     .line 46
-    :cond_f
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->calculateAlignmentLine(Landroidx/compose/ui/layout/AlignmentLine;)I
 
     move-result v0
 
     .line 47
     .local v0, "measuredPosition":I
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_1
 
     return v1
 
     .line 48
-    :cond_16
+    :cond_1
     instance-of v1, p1, Landroidx/compose/ui/layout/VerticalAlignmentLine;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_2
 
     .line 49
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getApparentToRealOffset-nOcc-ac()J
@@ -149,10 +149,10 @@
 
     move-result v1
 
-    goto :goto_2b
+    goto :goto_0
 
     .line 51
-    :cond_23
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getApparentToRealOffset-nOcc-ac()J
 
     move-result-wide v1
@@ -162,7 +162,7 @@
     move-result v1
 
     .line 48
-    :goto_2b
+    :goto_0
     add-int/2addr v1, v0
 
     return v1
@@ -193,7 +193,7 @@
 .end method
 
 .method protected final invalidateAlignmentLinesFromPositionChange(Landroidx/compose/ui/node/NodeCoordinator;)V
-    .registers 4
+    .locals 2
     .param p1, "$this$invalidateAlignmentLinesFromPositionChange"    # Landroidx/compose/ui/node/NodeCoordinator;
 
     const-string v0, "<this>"
@@ -205,18 +205,18 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     invoke-virtual {p1}, Landroidx/compose/ui/node/NodeCoordinator;->getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v1
@@ -225,7 +225,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 75
     invoke-virtual {p1}, Landroidx/compose/ui/node/NodeCoordinator;->getAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
@@ -238,10 +238,10 @@
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/AlignmentLines;->onAlignmentsChanged()V
 
-    goto :goto_3a
+    goto :goto_1
 
     .line 77
-    :cond_27
+    :cond_1
     invoke-virtual {p1}, Landroidx/compose/ui/node/NodeCoordinator;->getAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     move-result-object v0
@@ -250,24 +250,24 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
     move-result-object v0
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/AlignmentLines;->onAlignmentsChanged()V
 
     .line 79
-    :cond_3a
-    :goto_3a
+    :cond_2
+    :goto_1
     return-void
 .end method
 
 .method public isLookingAhead()Z
-    .registers 2
+    .locals 1
 
     .line 83
     const/4 v0, 0x0
@@ -276,7 +276,7 @@
 .end method
 
 .method public final isPlacingForAlignment$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 71
     iget-boolean v0, p0, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->isPlacingForAlignment:Z
@@ -285,7 +285,7 @@
 .end method
 
 .method public final isShallowPlacing$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 59
     iget-boolean v0, p0, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->isShallowPlacing:Z
@@ -297,7 +297,7 @@
 .end method
 
 .method public final setPlacingForAlignment$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 71
@@ -307,7 +307,7 @@
 .end method
 
 .method public final setShallowPlacing$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 59

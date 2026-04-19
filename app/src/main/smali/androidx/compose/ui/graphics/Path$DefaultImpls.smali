@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic addPath-Uv8p0NA$default(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;JILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 205
     invoke-static/range {p0 .. p5}, Landroidx/compose/ui/graphics/Path;->addPath-Uv8p0NA$default(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;JILjava/lang/Object;)V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static arcToRad(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/geometry/Rect;FFZ)V
-    .registers 6
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "startAngleRadians"    # F
@@ -49,7 +49,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 123
-    # invokes: Landroidx/compose/ui/graphics/Path;->arcToRad(Landroidx/compose/ui/geometry/Rect;FFZ)V
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/Path;->access$arcToRad$jd(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/geometry/Rect;FFZ)V
 
     .line 130
@@ -57,13 +56,12 @@
 .end method
 
 .method public static rewind(Landroidx/compose/ui/graphics/Path;)V
-    .registers 1
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Path;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 224
-    # invokes: Landroidx/compose/ui/graphics/Path;->rewind()V
     invoke-static {p0}, Landroidx/compose/ui/graphics/Path;->access$rewind$jd(Landroidx/compose/ui/graphics/Path;)V
 
     .line 228
@@ -71,7 +69,7 @@
 .end method
 
 .method public static transform-58bKbWc(Landroidx/compose/ui/graphics/Path;[F)V
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "matrix"    # [F
     .annotation runtime Ljava/lang/Deprecated;
@@ -82,7 +80,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 238
-    # invokes: Landroidx/compose/ui/graphics/Path;->transform-58bKbWc([F)V
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/Path;->access$transform-58bKbWc$jd(Landroidx/compose/ui/graphics/Path;[F)V
 
     .line 240

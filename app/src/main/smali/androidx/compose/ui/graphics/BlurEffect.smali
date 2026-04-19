@@ -53,7 +53,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/compose/ui/graphics/RenderEffect;FFI)V
-    .registers 6
+    .locals 1
     .param p1, "renderEffect"    # Landroidx/compose/ui/graphics/RenderEffect;
     .param p2, "radiusX"    # F
     .param p3, "radiusY"    # F
@@ -81,26 +81,26 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/RenderEffect;FFIILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 13
+    .locals 6
 
     .line 56
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     .line 65
     move v3, p2
 
-    goto :goto_7
+    goto :goto_0
 
     .line 56
-    :cond_6
+    :cond_0
     move v3, p3
 
-    :goto_7
+    :goto_0
     and-int/lit8 p3, p5, 0x8
 
-    if-eqz p3, :cond_13
+    if-eqz p3, :cond_1
 
     .line 66
     sget-object p3, Landroidx/compose/ui/graphics/TileMode;->Companion:Landroidx/compose/ui/graphics/TileMode$Companion;
@@ -111,13 +111,13 @@
 
     move v4, p4
 
-    goto :goto_14
+    goto :goto_1
 
     .line 56
-    :cond_13
+    :cond_1
     move v4, p4
 
-    :goto_14
+    :goto_1
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -133,7 +133,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/RenderEffect;FFILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/BlurEffect;-><init>(Landroidx/compose/ui/graphics/RenderEffect;FFI)V
 
@@ -143,7 +143,7 @@
 
 # virtual methods
 .method protected createRenderEffect()Landroid/graphics/RenderEffect;
-    .registers 6
+    .locals 5
 
     .line 65
     sget-object v0, Landroidx/compose/ui/graphics/RenderEffectVerificationHelper;->INSTANCE:Landroidx/compose/ui/graphics/RenderEffectVerificationHelper;
@@ -170,28 +170,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 73
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 74
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/BlurEffect;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 76
-    :cond_a
+    :cond_1
     iget v1, p0, Landroidx/compose/ui/graphics/BlurEffect;->radiusX:F
 
     move-object v3, p1
@@ -202,22 +202,22 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_17
+    if-nez v1, :cond_2
 
     move v1, v0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_2
     move v1, v2
 
-    :goto_18
-    if-nez v1, :cond_1b
+    :goto_0
+    if-nez v1, :cond_3
 
     return v2
 
     .line 77
-    :cond_1b
+    :cond_3
     iget v1, p0, Landroidx/compose/ui/graphics/BlurEffect;->radiusY:F
 
     move-object v3, p1
@@ -228,22 +228,22 @@
 
     cmpg-float v1, v1, v3
 
-    if-nez v1, :cond_28
+    if-nez v1, :cond_4
 
     move v1, v0
 
-    goto :goto_29
+    goto :goto_1
 
-    :cond_28
+    :cond_4
     move v1, v2
 
-    :goto_29
-    if-nez v1, :cond_2c
+    :goto_1
+    if-nez v1, :cond_5
 
     return v2
 
     .line 78
-    :cond_2c
+    :cond_5
     iget v1, p0, Landroidx/compose/ui/graphics/BlurEffect;->edgeTreatment:I
 
     move-object v3, p1
@@ -256,12 +256,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_3a
+    if-nez v1, :cond_6
 
     return v2
 
     .line 79
-    :cond_3a
+    :cond_6
     iget-object v1, p0, Landroidx/compose/ui/graphics/BlurEffect;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
     move-object v3, p1
@@ -274,35 +274,35 @@
 
     move-result v1
 
-    if-nez v1, :cond_48
+    if-nez v1, :cond_7
 
     return v2
 
     .line 81
-    :cond_48
+    :cond_7
     return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 85
     iget-object v0, p0, Landroidx/compose/ui/graphics/BlurEffect;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/RenderEffect;->hashCode()I
 
     move-result v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
     .line 86
     .local v0, "result":I
-    :goto_a
+    :goto_0
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Landroidx/compose/ui/graphics/BlurEffect;->radiusX:F
@@ -346,7 +346,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 93
     new-instance v0, Ljava/lang/StringBuilder;

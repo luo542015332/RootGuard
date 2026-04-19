@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/input/pointer/PointerIcon;Z)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2;->$icon:Landroidx/compose/ui/input/pointer/PointerIcon;
 
@@ -76,7 +76,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 23
+    .locals 19
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -103,7 +103,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_0
 
     .line 91
     const/4 v4, -0x1
@@ -114,14 +114,14 @@
 
     invoke-static {v3, v6, v4, v5}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 0
-    :cond_26
+    :cond_0
     move/from16 v6, p3
 
     .line 91
-    :goto_28
+    :goto_0
     invoke-static {}, Landroidx/compose/ui/platform/CompositionLocalsKt;->getLocalPointerIconService()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v3
@@ -158,7 +158,7 @@
 
     .line 92
     .local v3, "pointerIconService":Landroidx/compose/ui/input/pointer/PointerIconService;
-    if-nez v3, :cond_4c
+    if-nez v3, :cond_1
 
     .line 93
     sget-object v4, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -167,10 +167,10 @@
 
     move-object/from16 v16, v3
 
-    goto/16 :goto_139
+    goto/16 :goto_8
 
     .line 95
-    :cond_4c
+    :cond_1
     new-instance v4, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2$onSetIcon$1;
 
     invoke-direct {v4, v3}, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2$onSetIcon$1;-><init>(Landroidx/compose/ui/input/pointer/PointerIconService;)V
@@ -223,7 +223,7 @@
 
     move-result-object v15
 
-    if-ne v13, v15, :cond_83
+    if-ne v13, v15, :cond_2
 
     .line 247
     const/4 v15, 0x0
@@ -250,12 +250,12 @@
     nop
 
     .end local v3    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_86
+    goto :goto_1
 
     .line 250
     .end local v16    # "pointerIconService":Landroidx/compose/ui/input/pointer/PointerIconService;
     .local v3, "pointerIconService":Landroidx/compose/ui/input/pointer/PointerIconService;
-    :cond_83
+    :cond_2
     move-object/from16 v16, v3
 
     .end local v3    # "pointerIconService":Landroidx/compose/ui/input/pointer/PointerIconService;
@@ -263,7 +263,7 @@
     move-object v3, v13
 
     .line 246
-    :goto_86
+    :goto_1
     nop
 
     .line 245
@@ -324,8 +324,8 @@
 
     const/4 v15, 0x0
 
-    :goto_ae
-    if-ge v15, v13, :cond_bb
+    :goto_2
+    if-ge v15, v13, :cond_3
 
     aget-object v14, v5, v15
 
@@ -339,10 +339,10 @@
     .end local v14    # "key$iv":Ljava/lang/Object;
     add-int/lit8 v15, v15, 0x1
 
-    goto :goto_ae
+    goto :goto_2
 
     .line 253
-    :cond_bb
+    :cond_3
     move-object/from16 v13, p2
 
     .local v13, "$this$cache$iv$iv":Landroidx/compose/runtime/Composer;
@@ -359,7 +359,7 @@
 
     .line 255
     .local v17, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v12, :cond_d1
+    if-nez v12, :cond_5
 
     sget-object v18, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -367,19 +367,19 @@
 
     move-result-object v0
 
-    if-ne v15, v0, :cond_cf
+    if-ne v15, v0, :cond_4
 
-    goto :goto_d1
+    goto :goto_3
 
     .line 259
-    :cond_cf
+    :cond_4
     move-object v0, v15
 
-    goto :goto_e0
+    goto :goto_4
 
     .line 256
-    :cond_d1
-    :goto_d1
+    :cond_5
+    :goto_3
     const/4 v0, 0x0
 
     .line 101
@@ -407,7 +407,7 @@
 
     .line 255
     .end local v0    # "value$iv$iv":Ljava/lang/Object;
-    :goto_e0
+    :goto_4
     nop
 
     .line 254
@@ -436,7 +436,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_12f
+    if-eqz v0, :cond_8
 
     .line 109
     const/4 v0, 0x6
@@ -473,7 +473,7 @@
 
     .line 262
     .local v11, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v7, :cond_115
+    if-nez v7, :cond_7
 
     sget-object v12, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -481,19 +481,19 @@
 
     move-result-object v12
 
-    if-ne v10, v12, :cond_113
+    if-ne v10, v12, :cond_6
 
-    goto :goto_115
+    goto :goto_5
 
     .line 266
-    :cond_113
+    :cond_6
     move-object v12, v10
 
-    goto :goto_123
+    goto :goto_6
 
     .line 263
-    :cond_115
-    :goto_115
+    :cond_7
+    :goto_5
     const/4 v12, 0x0
 
     .line 109
@@ -519,7 +519,7 @@
 
     .line 262
     .end local v12    # "value$iv$iv":Ljava/lang/Object;
-    :goto_123
+    :goto_6
     nop
 
     .line 261
@@ -542,16 +542,16 @@
 
     move-result-object v0
 
-    goto :goto_133
+    goto :goto_7
 
     .line 123
-    :cond_12f
+    :cond_8
     sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
     check-cast v0, Landroidx/compose/ui/Modifier;
 
     .line 108
-    :goto_133
+    :goto_7
     nop
 
     .line 126
@@ -566,23 +566,23 @@
     .end local v0    # "pointerInputModifier":Landroidx/compose/ui/Modifier;
     .end local v3    # "pointerIconModifierLocal":Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
     .end local v4    # "onSetIcon":Lkotlin/jvm/functions/Function1;
-    :goto_139
+    :goto_8
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_142
+    if-eqz v0, :cond_9
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_142
+    :cond_9
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v4
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

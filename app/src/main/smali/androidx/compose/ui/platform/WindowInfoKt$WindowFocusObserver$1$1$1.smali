@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/WindowInfo;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/WindowInfoKt$WindowFocusObserver$1$1$1;->$windowInfo:Landroidx/compose/ui/platform/WindowInfo;
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Boolean;
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/compose/ui/platform/WindowInfoKt$WindowFocusObserver$1$1$1;->$windowInfo:Landroidx/compose/ui/platform/WindowInfo;
@@ -82,7 +82,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 58
     invoke-virtual {p0}, Landroidx/compose/ui/platform/WindowInfoKt$WindowFocusObserver$1$1$1;->invoke()Ljava/lang/Boolean;

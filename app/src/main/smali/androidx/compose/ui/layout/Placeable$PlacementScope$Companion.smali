@@ -61,7 +61,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 340
     invoke-direct {p0}, Landroidx/compose/ui/layout/Placeable$PlacementScope;-><init>()V
@@ -70,7 +70,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;-><init>()V
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public static final synthetic access$configureForPlacingForAlignment(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
     .param p1, "scope"    # Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
@@ -91,7 +91,7 @@
 .end method
 
 .method public static final synthetic access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
     .line 340
@@ -103,7 +103,7 @@
 .end method
 
 .method public static final synthetic access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
     .line 340
@@ -115,7 +115,7 @@
 .end method
 
 .method private final configureForPlacingForAlignment(Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
-    .registers 7
+    .locals 5
     .param p1, "scope"    # Landroidx/compose/ui/node/LookaheadCapablePlaceable;
 
     const/4 v0, 0x0
@@ -124,7 +124,7 @@
     .local v0, "wasPlacingForAlignment":Z
     const/4 v1, 0x0
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_0
 
     .line 400
     invoke-static {v1}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$set_coordinates$cp(Landroidx/compose/ui/layout/LayoutCoordinates;)V
@@ -135,10 +135,10 @@
     .line 402
     const/4 v0, 0x0
 
-    goto :goto_47
+    goto :goto_1
 
     .line 404
-    :cond_c
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->isPlacingForAlignment$ui_release()Z
 
     move-result v0
@@ -152,24 +152,24 @@
 
     const/4 v4, 0x1
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->isPlacingForAlignment$ui_release()Z
 
     move-result v2
 
-    if-ne v2, v4, :cond_1f
+    if-ne v2, v4, :cond_1
 
     move v3, v4
 
-    :cond_1f
-    if-eqz v3, :cond_24
+    :cond_1
+    if-eqz v3, :cond_2
 
     .line 406
     invoke-virtual {p1, v4}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->setPlacingForAlignment$ui_release(Z)V
 
     .line 408
-    :cond_24
+    :cond_2
     invoke-virtual {p1}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getLayoutNode()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v2
@@ -185,40 +185,40 @@
 
     move-result v2
 
-    if-nez v2, :cond_44
+    if-nez v2, :cond_4
 
     invoke-virtual {p1}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->isShallowPlacing$ui_release()Z
 
     move-result v2
 
-    if-eqz v2, :cond_3c
+    if-eqz v2, :cond_3
 
-    goto :goto_44
+    goto :goto_0
 
     .line 412
-    :cond_3c
+    :cond_3
     invoke-virtual {p1}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->getCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v1
 
     invoke-static {v1}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$set_coordinates$cp(Landroidx/compose/ui/layout/LayoutCoordinates;)V
 
-    goto :goto_47
+    goto :goto_1
 
     .line 410
-    :cond_44
-    :goto_44
+    :cond_4
+    :goto_0
     invoke-static {v1}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$set_coordinates$cp(Landroidx/compose/ui/layout/LayoutCoordinates;)V
 
     .line 415
-    :goto_47
+    :goto_1
     return v0
 .end method
 
 
 # virtual methods
 .method public final executeWithRtlMirroringValues(ILandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/node/LookaheadCapablePlaceable;Lkotlin/jvm/functions/Function1;)V
-    .registers 12
+    .locals 7
     .param p1, "parentWidth"    # I
     .param p2, "parentLayoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
     .param p3, "lookaheadCapablePlaceable"    # Landroidx/compose/ui/node/LookaheadCapablePlaceable;
@@ -248,7 +248,6 @@
 
     .line 365
     .local v0, "$i$f$executeWithRtlMirroringValues":I
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->_coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$get_coordinates$cp()Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v1
@@ -257,7 +256,6 @@
     .local v1, "previousLayoutCoordinates":Landroidx/compose/ui/layout/LayoutCoordinates;
     sget-object v2, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->getParentWidth()I
     invoke-static {v2}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)I
 
     move-result v2
@@ -266,14 +264,12 @@
     .local v2, "previousParentWidth":I
     sget-object v3, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {v3}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v3
 
     .line 368
     .local v3, "previousParentLayoutDirection":Landroidx/compose/ui/unit/LayoutDirection;
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->layoutDelegate:Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getLayoutDelegate$cp()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
 
     move-result-object v4
@@ -290,7 +286,6 @@
     invoke-static {p2}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$setParentLayoutDirection$cp(Landroidx/compose/ui/unit/LayoutDirection;)V
 
     .line 372
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->configureForPlacingForAlignment(Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
     invoke-static {p0, p3}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->access$configureForPlacingForAlignment(Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;Landroidx/compose/ui/node/LookaheadCapablePlaceable;)Z
 
     move-result v5
@@ -303,15 +298,15 @@
     invoke-interface {p4, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 374
-    if-nez p3, :cond_36
+    if-nez p3, :cond_0
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_36
+    :cond_0
     invoke-virtual {p3, v5}, Landroidx/compose/ui/node/LookaheadCapablePlaceable;->setPlacingForAlignment$ui_release(Z)V
 
     .line 375
-    :goto_39
+    :goto_0
     sget-object v6, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
     invoke-static {v2}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$setParentWidth$cp(I)V
@@ -332,29 +327,26 @@
 .end method
 
 .method public getCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 2
+    .locals 1
 
     .line 351
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->_coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$get_coordinates$cp()Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 352
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->layoutDelegate:Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getLayoutDelegate$cp()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;->onCoordinatesUsed()V
 
     .line 354
-    :cond_f
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->_coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$get_coordinates$cp()Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v0
@@ -363,10 +355,9 @@
 .end method
 
 .method protected getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 341
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->parentLayoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentLayoutDirection$cp()Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v0
@@ -375,10 +366,9 @@
 .end method
 
 .method protected getParentWidth()I
-    .registers 2
+    .locals 1
 
     .line 343
-    # getter for: Landroidx/compose/ui/layout/Placeable$PlacementScope;->parentWidth:I
     invoke-static {}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth$cp()I
 
     move-result v0

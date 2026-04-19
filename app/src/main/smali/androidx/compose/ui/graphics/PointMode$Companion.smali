@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/PointMode$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getLines-r_lszbg()I
-    .registers 2
+    .locals 1
 
     .line 53
-    # getter for: Landroidx/compose/ui/graphics/PointMode;->Lines:I
     invoke-static {}, Landroidx/compose/ui/graphics/PointMode;->access$getLines$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getPoints-r_lszbg()I
-    .registers 2
+    .locals 1
 
     .line 43
-    # getter for: Landroidx/compose/ui/graphics/PointMode;->Points:I
     invoke-static {}, Landroidx/compose/ui/graphics/PointMode;->access$getPoints$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getPolygon-r_lszbg()I
-    .registers 2
+    .locals 1
 
     .line 61
-    # getter for: Landroidx/compose/ui/graphics/PointMode;->Polygon:I
     invoke-static {}, Landroidx/compose/ui/graphics/PointMode;->access$getPolygon$cp()I
 
     move-result v0

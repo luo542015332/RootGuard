@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/internal/Ref$IntRef;Landroidx/compose/runtime/Anchor;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/ComposerImpl$insertMovableContentGuarded$1$1$1;->$effectiveNodeIndex:Lkotlin/jvm/internal/Ref$IntRef;
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Applier;Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/RememberManager;)V
-    .registers 5
+    .locals 1
     .param p1, "applier"    # Landroidx/compose/runtime/Applier;
     .param p2, "slots"    # Landroidx/compose/runtime/SlotWriter;
     .annotation system Ldalvik/annotation/Signature;
@@ -138,7 +138,6 @@
 
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$insertMovableContentGuarded$1$1$1;->$anchor:Landroidx/compose/runtime/Anchor;
 
-    # invokes: Landroidx/compose/runtime/ComposerImpl;->insertMovableContentGuarded$positionToInsert(Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/Anchor;Landroidx/compose/runtime/Applier;)I
     invoke-static {p2, v0, p1}, Landroidx/compose/runtime/ComposerImpl;->access$insertMovableContentGuarded$positionToInsert(Landroidx/compose/runtime/SlotWriter;Landroidx/compose/runtime/Anchor;Landroidx/compose/runtime/Applier;)I
 
     move-result v0

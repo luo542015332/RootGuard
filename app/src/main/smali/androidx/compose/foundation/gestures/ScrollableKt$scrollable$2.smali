@@ -70,7 +70,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/Orientation;Landroidx/compose/foundation/gestures/ScrollableState;ZLandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/foundation/gestures/FlingBehavior;Landroidx/compose/foundation/OverscrollEffect;Z)V
-    .registers 9
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/gestures/ScrollableKt$scrollable$2;->$orientation:Landroidx/compose/foundation/gestures/Orientation;
 
@@ -96,7 +96,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 22
+    .locals 18
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -123,7 +123,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_0
 
     .line 163
     const/4 v2, -0x1
@@ -134,14 +134,14 @@
 
     invoke-static {v1, v13, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 0
-    :cond_26
+    :cond_0
     move/from16 v13, p3
 
     .line 163
-    :goto_28
+    :goto_0
     const/4 v1, 0x0
 
     .local v1, "$changed$iv":I
@@ -206,7 +206,7 @@
 
     move-result-object v15
 
-    if-ne v10, v15, :cond_72
+    if-ne v10, v15, :cond_1
 
     .line 645
     const/4 v15, 0x0
@@ -253,12 +253,12 @@
     nop
 
     .end local v1    # "value$iv$iv$iv":Ljava/lang/Object;
-    goto :goto_75
+    goto :goto_1
 
     .line 651
     .end local v16    # "$changed$iv":I
     .local v1, "$changed$iv":I
-    :cond_72
+    :cond_1
     move/from16 v16, v1
 
     .end local v1    # "$changed$iv":I
@@ -266,7 +266,7 @@
     move-object v1, v10
 
     .line 644
-    :goto_75
+    :goto_1
     nop
 
     .line 643
@@ -350,8 +350,8 @@
 
     .end local v7    # "invalid$iv":Z
     .local v9, "invalid$iv":Z
-    :goto_aa
-    if-ge v7, v8, :cond_b6
+    :goto_2
+    if-ge v7, v8, :cond_2
 
     aget-object v10, v1, v7
 
@@ -365,10 +365,10 @@
     .end local v10    # "key$iv":Ljava/lang/Object;
     add-int/lit8 v7, v7, 0x1
 
-    goto :goto_aa
+    goto :goto_2
 
     .line 655
-    :cond_b6
+    :cond_2
     move-object/from16 v7, p2
 
     .local v7, "$this$cache$iv$iv":Landroidx/compose/runtime/Composer;
@@ -385,7 +385,7 @@
 
     .line 657
     .local v15, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v9, :cond_cd
+    if-nez v9, :cond_4
 
     sget-object v16, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -397,26 +397,26 @@
 
     move-result-object v1
 
-    if-ne v10, v1, :cond_cb
+    if-ne v10, v1, :cond_3
 
-    goto :goto_cf
+    goto :goto_3
 
     .line 661
-    :cond_cb
+    :cond_3
     move-object v1, v10
 
-    goto :goto_dc
+    goto :goto_4
 
     .line 657
     .end local v17    # "keys$iv":[Ljava/lang/Object;
     .restart local v1    # "keys$iv":[Ljava/lang/Object;
-    :cond_cd
+    :cond_4
     move-object/from16 v17, v1
 
     .line 658
     .end local v1    # "keys$iv":[Ljava/lang/Object;
     .restart local v17    # "keys$iv":[Ljava/lang/Object;
-    :goto_cf
+    :goto_3
     const/4 v1, 0x0
 
     .line 166
@@ -442,7 +442,7 @@
 
     .line 657
     .end local v1    # "value$iv$iv":Ljava/lang/Object;
-    :goto_dc
+    :goto_4
     nop
 
     .line 656
@@ -511,7 +511,6 @@
     .line 172
     move-object/from16 v9, p2
 
-    # invokes: Landroidx/compose/foundation/gestures/ScrollableKt;->pointerScrollable(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/foundation/gestures/Orientation;ZLandroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/gestures/FlingBehavior;Landroidx/compose/foundation/OverscrollEffect;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
     invoke-static/range {v1 .. v10}, Landroidx/compose/foundation/gestures/ScrollableKt;->access$pointerScrollable(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/foundation/gestures/Orientation;ZLandroidx/compose/foundation/gestures/ScrollableState;Landroidx/compose/foundation/gestures/FlingBehavior;Landroidx/compose/foundation/OverscrollEffect;ZLandroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
 
     move-result-object v1
@@ -519,16 +518,16 @@
     .line 181
     iget-boolean v2, v0, Landroidx/compose/foundation/gestures/ScrollableKt$scrollable$2;->$enabled:Z
 
-    if-eqz v2, :cond_110
+    if-eqz v2, :cond_5
 
     sget-object v2, Landroidx/compose/foundation/gestures/ModifierLocalScrollableContainerProvider;->INSTANCE:Landroidx/compose/foundation/gestures/ModifierLocalScrollableContainerProvider;
 
-    goto :goto_112
+    goto :goto_5
 
-    :cond_110
+    :cond_5
     sget-object v2, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
-    :goto_112
+    :goto_5
     check-cast v2, Landroidx/compose/ui/Modifier;
 
     invoke-interface {v1, v2}, Landroidx/compose/ui/Modifier;->then(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
@@ -539,18 +538,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_121
+    if-eqz v2, :cond_6
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_121
+    :cond_6
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v1
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

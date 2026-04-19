@@ -48,7 +48,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;-><init>()V
 
@@ -67,10 +67,9 @@
 
 # virtual methods
 .method public final getAlpha8-_sVssgQ()I
-    .registers 2
+    .locals 1
 
     .line 176
-    # getter for: Landroidx/compose/ui/graphics/ImageBitmapConfig;->Alpha8:I
     invoke-static {}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->access$getAlpha8$cp()I
 
     move-result v0
@@ -79,10 +78,9 @@
 .end method
 
 .method public final getArgb8888-_sVssgQ()I
-    .registers 2
+    .locals 1
 
     .line 168
-    # getter for: Landroidx/compose/ui/graphics/ImageBitmapConfig;->Argb8888:I
     invoke-static {}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->access$getArgb8888$cp()I
 
     move-result v0
@@ -91,10 +89,9 @@
 .end method
 
 .method public final getF16-_sVssgQ()I
-    .registers 2
+    .locals 1
 
     .line 219
-    # getter for: Landroidx/compose/ui/graphics/ImageBitmapConfig;->F16:I
     invoke-static {}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->access$getF16$cp()I
 
     move-result v0
@@ -103,10 +100,9 @@
 .end method
 
 .method public final getGpu-_sVssgQ()I
-    .registers 2
+    .locals 1
 
     .line 228
-    # getter for: Landroidx/compose/ui/graphics/ImageBitmapConfig;->Gpu:I
     invoke-static {}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->access$getGpu$cp()I
 
     move-result v0
@@ -115,10 +111,9 @@
 .end method
 
 .method public final getRgb565-_sVssgQ()I
-    .registers 2
+    .locals 1
 
     .line 200
-    # getter for: Landroidx/compose/ui/graphics/ImageBitmapConfig;->Rgb565:I
     invoke-static {}, Landroidx/compose/ui/graphics/ImageBitmapConfig;->access$getRgb565$cp()I
 
     move-result v0

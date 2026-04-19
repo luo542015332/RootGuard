@@ -63,7 +63,7 @@
 
 # direct methods
 .method public static final ScaleFactor(FF)J
-    .registers 11
+    .locals 9
     .param p0, "scaleX"    # F
     .param p1, "scaleY"    # F
 
@@ -110,7 +110,7 @@
 .end method
 
 .method public static final synthetic access$roundToTenths(F)F
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # F
 
     .line 1
@@ -122,7 +122,7 @@
 .end method
 
 .method public static final div-UQTWf7w(JJ)J
-    .registers 7
+    .locals 3
     .param p0, "$this$div_u2dUQTWf7w"    # J
     .param p2, "scaleFactor"    # J
 
@@ -155,7 +155,7 @@
 .end method
 
 .method public static final isSpecified-FK8aYYs(J)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isSpecified"    # J
 
     const/4 v0, 0x0
@@ -170,27 +170,27 @@
 
     cmp-long v1, p0, v1
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     return v1
 .end method
 
 .method public static synthetic isSpecified-FK8aYYs$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final isUnspecified-FK8aYYs(J)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isUnspecified"    # J
 
     const/4 v0, 0x0
@@ -205,27 +205,27 @@
 
     cmp-long v1, p0, v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_e
+    :goto_0
     return v1
 .end method
 
 .method public static synthetic isUnspecified-FK8aYYs$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final lerp--bDIf60(JJF)J
-    .registers 8
+    .locals 3
     .param p0, "start"    # J
     .param p2, "stop"    # J
     .param p4, "fraction"    # F
@@ -265,7 +265,7 @@
 .end method
 
 .method private static final roundToTenths(F)F
-    .registers 6
+    .locals 5
     .param p0, "$this$roundToTenths"    # F
 
     .line 113
@@ -289,21 +289,21 @@
 
     cmpl-float v3, v2, v3
 
-    if-ltz v3, :cond_13
+    if-ltz v3, :cond_0
 
     .line 118
     float-to-int v3, v1
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 120
-    :cond_13
+    :cond_0
     float-to-int v3, v1
 
     .line 117
-    :goto_14
+    :goto_0
     nop
 
     .line 122
@@ -316,7 +316,7 @@
 .end method
 
 .method public static final takeOrElse-oyDd2qo(JLkotlin/jvm/functions/Function0;)J
-    .registers 9
+    .locals 6
     .param p0, "$this$takeOrElse_u2doyDd2qo"    # J
     .param p2, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -351,26 +351,26 @@
 
     cmp-long v4, v1, v4
 
-    if-eqz v4, :cond_15
+    if-eqz v4, :cond_0
 
     const/4 v4, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v4, 0x0
 
     .line 144
     .end local v1    # "$this$isSpecified$iv":J
     .end local v3    # "$i$f$isSpecified-FK8aYYs":I
-    :goto_16
-    if-eqz v4, :cond_1a
+    :goto_0
+    if-eqz v4, :cond_1
 
     move-wide v1, p0
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v1
@@ -381,12 +381,12 @@
 
     move-result-wide v1
 
-    :goto_24
+    :goto_1
     return-wide v1
 .end method
 
 .method public static final times-UQTWf7w(JJ)J
-    .registers 7
+    .locals 3
     .param p0, "$this$times_u2dUQTWf7w"    # J
     .param p2, "scaleFactor"    # J
 
@@ -419,7 +419,7 @@
 .end method
 
 .method public static final times-m-w2e94(JJ)J
-    .registers 6
+    .locals 2
     .param p0, "$this$times_u2dm_u2dw2e94"    # J
     .param p2, "size"    # J
 

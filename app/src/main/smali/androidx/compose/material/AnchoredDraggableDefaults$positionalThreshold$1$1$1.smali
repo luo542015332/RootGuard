@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/unit/Density;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/AnchoredDraggableDefaults$positionalThreshold$1$1$1;->$this_with:Landroidx/compose/ui/unit/Density;
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final invoke(F)Ljava/lang/Float;
-    .registers 6
+    .locals 4
     .param p1, "it"    # F
 
     .line 665
@@ -105,7 +105,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 665

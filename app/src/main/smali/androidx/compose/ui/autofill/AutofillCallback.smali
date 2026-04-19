@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/autofill/AutofillCallback;
 
@@ -53,7 +53,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 34
     invoke-direct {p0}, Landroid/view/autofill/AutofillManager$AutofillCallback;-><init>()V
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public onAutofillEvent(Landroid/view/View;II)V
-    .registers 6
+    .locals 2
     .param p1, "view"    # Landroid/view/View;
     .param p2, "virtualId"    # I
     .param p3, "event"    # I
@@ -81,31 +81,31 @@
     nop
 
     .line 39
-    packed-switch p3, :pswitch_data_20
+    packed-switch p3, :pswitch_data_0
 
     .line 54
     const-string/jumbo v0, "Unknown status event."
 
-    goto :goto_19
+    goto :goto_0
 
     .line 53
-    :pswitch_11
+    :pswitch_0
     const-string v0, "Autofill popup isn\'t shown because autofill is not available.\n\nDid you set up autofill?\n1. Go to Settings > System > Languages&input > Advanced > Autofill Service\n2. Pick a service\n\nDid you add an account?\n1. Go to Settings > System > Languages&input > Advanced\n2. Click on the settings icon next to the Autofill Service\n3. Add your account"
 
-    goto :goto_19
+    goto :goto_0
 
     .line 41
-    :pswitch_14
+    :pswitch_1
     const-string v0, "Autofill popup was hidden."
 
-    goto :goto_19
+    goto :goto_0
 
     .line 40
-    :pswitch_17
+    :pswitch_2
     const-string v0, "Autofill popup was shown."
 
     .line 37
-    :goto_19
+    :goto_0
     const-string v1, "Autofill Status"
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
@@ -115,16 +115,16 @@
 
     nop
 
-    :pswitch_data_20
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_17
-        :pswitch_14
-        :pswitch_11
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final register(Landroidx/compose/ui/autofill/AndroidAutofill;)V
-    .registers 4
+    .locals 2
     .param p1, "autofill"    # Landroidx/compose/ui/autofill/AndroidAutofill;
 
     const-string/jumbo v0, "autofill"
@@ -147,7 +147,7 @@
 .end method
 
 .method public final unregister(Landroidx/compose/ui/autofill/AndroidAutofill;)V
-    .registers 4
+    .locals 2
     .param p1, "autofill"    # Landroidx/compose/ui/autofill/AndroidAutofill;
 
     const-string/jumbo v0, "autofill"

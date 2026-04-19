@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$localLookaheadScope$1;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final invoke()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 2
+    .locals 1
 
     .line 59
     iget-object v0, p0, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$localLookaheadScope$1;->this$0:Landroidx/compose/ui/layout/IntermediateLayoutModifierNode;
@@ -81,7 +81,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 58
     invoke-virtual {p0}, Landroidx/compose/ui/layout/IntermediateLayoutModifierNode$localLookaheadScope$1;->invoke()Landroidx/compose/ui/layout/LayoutCoordinates;

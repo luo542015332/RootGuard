@@ -76,7 +76,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 10
+    .locals 10
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/ColorModel$Companion;
 
@@ -218,7 +218,7 @@
 .end method
 
 .method private synthetic constructor <init>(J)V
-    .registers 3
+    .locals 0
     .param p1, "packedValue"    # J
 
     .line 32
@@ -230,7 +230,7 @@
 .end method
 
 .method public static final synthetic access$getCmyk$cp()J
-    .registers 2
+    .locals 2
 
     .line 30
     sget-wide v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->Cmyk:J
@@ -239,7 +239,7 @@
 .end method
 
 .method public static final synthetic access$getLab$cp()J
-    .registers 2
+    .locals 2
 
     .line 30
     sget-wide v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->Lab:J
@@ -248,7 +248,7 @@
 .end method
 
 .method public static final synthetic access$getRgb$cp()J
-    .registers 2
+    .locals 2
 
     .line 30
     sget-wide v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->Rgb:J
@@ -257,7 +257,7 @@
 .end method
 
 .method public static final synthetic access$getXyz$cp()J
-    .registers 2
+    .locals 2
 
     .line 30
     sget-wide v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->Xyz:J
@@ -266,7 +266,7 @@
 .end method
 
 .method public static final synthetic box-impl(J)Landroidx/compose/ui/graphics/colorspace/ColorModel;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;
 
@@ -276,23 +276,23 @@
 .end method
 
 .method public static constructor-impl(J)J
-    .registers 2
+    .locals 0
 
     return-wide p0
 .end method
 
 .method public static equals-impl(JLjava/lang/Object;)Z
-    .registers 7
+    .locals 4
 
     instance-of v0, p2, Landroidx/compose/ui/graphics/colorspace/ColorModel;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p2
 
     check-cast v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;
@@ -303,42 +303,42 @@
 
     cmp-long v0, p0, v2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     return v1
 
-    :cond_12
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(JJ)Z
-    .registers 5
+    .locals 1
 
     cmp-long v0, p0, p2
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic getComponentCount$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getComponentCount-impl(J)I
-    .registers 7
+    .locals 5
     .param p0, "arg0"    # J
 
     .line 48
@@ -362,7 +362,7 @@
 .end method
 
 .method public static hashCode-impl(J)I
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Ljava/lang/Long;->hashCode(J)I
 
@@ -372,7 +372,7 @@
 .end method
 
 .method public static toString-impl(J)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # J
 
     .line 82
@@ -385,67 +385,67 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     const-string/jumbo v0, "Rgb"
 
-    goto :goto_32
+    goto :goto_0
 
     .line 84
-    :cond_d
+    :cond_0
     sget-wide v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->Xyz:J
 
     invoke-static {p0, p1, v0, v1}, Landroidx/compose/ui/graphics/colorspace/ColorModel;->equals-impl0(JJ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     const-string/jumbo v0, "Xyz"
 
-    goto :goto_32
+    goto :goto_0
 
     .line 85
-    :cond_19
+    :cond_1
     sget-wide v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->Lab:J
 
     invoke-static {p0, p1, v0, v1}, Landroidx/compose/ui/graphics/colorspace/ColorModel;->equals-impl0(JJ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_2
 
     const-string v0, "Lab"
 
-    goto :goto_32
+    goto :goto_0
 
     .line 86
-    :cond_24
+    :cond_2
     sget-wide v0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->Cmyk:J
 
     invoke-static {p0, p1, v0, v1}, Landroidx/compose/ui/graphics/colorspace/ColorModel;->equals-impl0(JJ)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_3
 
     const-string v0, "Cmyk"
 
-    goto :goto_32
+    goto :goto_0
 
     .line 87
-    :cond_2f
+    :cond_3
     const-string/jumbo v0, "Unknown"
 
     .line 88
-    :goto_32
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->packedValue:J
 
@@ -457,7 +457,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->packedValue:J
 
@@ -469,7 +469,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 82
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->packedValue:J
@@ -483,7 +483,7 @@
 .end method
 
 .method public final synthetic unbox-impl()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorModel;->packedValue:J
 

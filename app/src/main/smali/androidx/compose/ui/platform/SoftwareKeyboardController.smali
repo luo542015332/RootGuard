@@ -33,7 +33,7 @@
 .end method
 
 .method public hideSoftwareKeyboard()V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use hide instead."
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -52,7 +52,7 @@
 .end method
 
 .method public showSoftwareKeyboard()V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use show instead."
         replaceWith = .subannotation Lkotlin/ReplaceWith;

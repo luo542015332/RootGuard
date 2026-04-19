@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator$onMeasured$$inlined$sortByDescending$2;->this$0:Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
 
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 8
+    .locals 5
     .param p1, "a"    # Ljava/lang/Object;
     .param p2, "b"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -94,7 +94,6 @@
     .local v1, "$i$a$-sortByDescending-LazyListItemPlacementAnimator$onMeasured$8":I
     iget-object v2, p0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator$onMeasured$$inlined$sortByDescending$2;->this$0:Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
 
-    # getter for: Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->keyIndexMap:Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;
     invoke-static {v2}, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->access$getKeyIndexMap$p(Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;)Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;
 
     move-result-object v2
@@ -127,7 +126,6 @@
     .local v2, "$i$a$-sortByDescending-LazyListItemPlacementAnimator$onMeasured$8":I
     iget-object v3, p0, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator$onMeasured$$inlined$sortByDescending$2;->this$0:Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;
 
-    # getter for: Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->keyIndexMap:Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;
     invoke-static {v3}, Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;->access$getKeyIndexMap$p(Landroidx/compose/foundation/lazy/LazyListItemPlacementAnimator;)Landroidx/compose/foundation/lazy/layout/LazyLayoutKeyIndexMap;
 
     move-result-object v3

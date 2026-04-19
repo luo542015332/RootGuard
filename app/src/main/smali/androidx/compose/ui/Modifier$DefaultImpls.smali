@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static then(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/Modifier;
     .param p1, "other"    # Landroidx/compose/ui/Modifier;
     .annotation runtime Ljava/lang/Deprecated;
@@ -37,7 +37,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 127
-    # invokes: Landroidx/compose/ui/Modifier;->then(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
     invoke-static {p0, p1}, Landroidx/compose/ui/Modifier;->access$then$jd(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
 
     move-result-object v0

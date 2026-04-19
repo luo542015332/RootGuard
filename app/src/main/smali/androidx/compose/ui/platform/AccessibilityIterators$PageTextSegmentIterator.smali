@@ -81,7 +81,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator$Companion;
 
@@ -109,7 +109,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 426
     invoke-direct {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$AbstractTextSegmentIterator;-><init>()V
@@ -126,7 +126,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;-><init>()V
 
@@ -134,7 +134,7 @@
 .end method
 
 .method public static final synthetic access$getPageInstance$cp()Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;
-    .registers 1
+    .locals 1
 
     .line 426
     sget-object v0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->pageInstance:Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;
@@ -143,7 +143,7 @@
 .end method
 
 .method public static final synthetic access$setPageInstance$cp(Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;
 
     .line 426
@@ -153,7 +153,7 @@
 .end method
 
 .method private final getLineEdgeIndex(ILandroidx/compose/ui/text/style/ResolvedTextDirection;)I
-    .registers 9
+    .locals 6
     .param p1, "lineNumber"    # I
     .param p2, "direction"    # Landroidx/compose/ui/text/style/ResolvedTextDirection;
 
@@ -164,13 +164,13 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v0, v2
 
-    :cond_c
+    :cond_0
     invoke-virtual {v0, p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLineStart(I)I
 
     move-result v0
@@ -179,51 +179,51 @@
     .local v0, "lineStart":I
     iget-object v3, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_1
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v3, v2
 
-    :cond_18
+    :cond_1
     invoke-virtual {v3, v0}, Landroidx/compose/ui/text/TextLayoutResult;->getParagraphDirection(I)Landroidx/compose/ui/text/style/ResolvedTextDirection;
 
     move-result-object v3
 
     .line 525
     .local v3, "paragraphDirection":Landroidx/compose/ui/text/style/ResolvedTextDirection;
-    if-eq p2, v3, :cond_2c
+    if-eq p2, v3, :cond_3
 
     .line 526
     iget-object v4, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v4, :cond_26
+    if-nez v4, :cond_2
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_26
+    :cond_2
     move-object v2, v4
 
-    :goto_27
+    :goto_0
     invoke-virtual {v2, p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLineStart(I)I
 
     move-result v1
 
-    goto :goto_3c
+    goto :goto_1
 
     .line 528
-    :cond_2c
+    :cond_3
     iget-object v4, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v4, :cond_34
+    if-nez v4, :cond_4
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v4, v2
 
-    :cond_34
+    :cond_4
     const/4 v1, 0x0
 
     const/4 v5, 0x2
@@ -235,14 +235,14 @@
     add-int/lit8 v1, v1, -0x1
 
     .line 525
-    :goto_3c
+    :goto_1
     return v1
 .end method
 
 
 # virtual methods
 .method public following(I)[I
-    .registers 12
+    .locals 10
     .param p1, "current"    # I
 
     .line 451
@@ -258,13 +258,13 @@
     .local v0, "textLength":I
     const/4 v1, 0x0
 
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     .line 453
     return-object v1
 
     .line 455
-    :cond_c
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->getText()Ljava/lang/String;
 
     move-result-object v2
@@ -273,12 +273,12 @@
 
     move-result v2
 
-    if-lt p1, v2, :cond_17
+    if-lt p1, v2, :cond_1
 
     .line 456
     return-object v1
 
-    :cond_17
+    :cond_1
     const/4 v2, 0x0
 
     .line 459
@@ -286,10 +286,10 @@
     nop
 
     .line 460
-    :try_start_19
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->node:Landroidx/compose/ui/semantics/SemanticsNode;
 
-    if-nez v3, :cond_24
+    if-nez v3, :cond_2
 
     const-string/jumbo v3, "node"
 
@@ -297,7 +297,7 @@
 
     move-object v3, v1
 
-    :cond_24
+    :cond_2
     invoke-virtual {v3}, Landroidx/compose/ui/semantics/SemanticsNode;->getBoundsInRoot()Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v3
@@ -309,8 +309,8 @@
     invoke-static {v3}, Lkotlin/math/MathKt;->roundToInt(F)I
 
     move-result v3
-    :try_end_30
-    .catch Ljava/lang/IllegalStateException; {:try_start_19 .. :try_end_30} :catch_9e
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     move v2, v3
 
@@ -327,13 +327,13 @@
 
     const-string/jumbo v5, "layoutResult"
 
-    if-nez v4, :cond_41
+    if-nez v4, :cond_3
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v4, v1
 
-    :cond_41
+    :cond_3
     invoke-virtual {v4, v3}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForOffset(I)I
 
     move-result v4
@@ -342,13 +342,13 @@
     .local v4, "currentLine":I
     iget-object v6, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v6, :cond_4d
+    if-nez v6, :cond_4
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v6, v1
 
-    :cond_4d
+    :cond_4
     invoke-virtual {v6, v4}, Landroidx/compose/ui/text/TextLayoutResult;->getLineTop(I)F
 
     move-result v6
@@ -363,22 +363,22 @@
     .local v7, "nextPageStartY":F
     iget-object v8, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v8, :cond_5b
+    if-nez v8, :cond_5
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v8, v1
 
-    :cond_5b
+    :cond_5
     iget-object v9, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v9, :cond_63
+    if-nez v9, :cond_6
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v9, v1
 
-    :cond_63
+    :cond_6
     invoke-virtual {v9}, Landroidx/compose/ui/text/TextLayoutResult;->getLineCount()I
 
     move-result v9
@@ -393,43 +393,43 @@
     .local v8, "lastLineTop":F
     cmpg-float v9, v7, v8
 
-    if-gez v9, :cond_81
+    if-gez v9, :cond_8
 
     .line 476
     iget-object v9, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v9, :cond_79
+    if-nez v9, :cond_7
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_7a
+    goto :goto_0
 
-    :cond_79
+    :cond_7
     move-object v1, v9
 
-    :goto_7a
+    :goto_0
     invoke-virtual {v1, v7}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForVerticalPosition(F)I
 
     move-result v1
 
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_90
+    goto :goto_2
 
     .line 477
-    :cond_81
+    :cond_8
     iget-object v9, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v9, :cond_89
+    if-nez v9, :cond_9
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_8a
+    goto :goto_1
 
-    :cond_89
+    :cond_9
     move-object v1, v9
 
-    :goto_8a
+    :goto_1
     invoke-virtual {v1}, Landroidx/compose/ui/text/TextLayoutResult;->getLineCount()I
 
     move-result v1
@@ -437,7 +437,7 @@
     add-int/lit8 v1, v1, -0x1
 
     .line 475
-    :goto_90
+    :goto_2
     nop
 
     .line 479
@@ -466,7 +466,7 @@
     .end local v6    # "currentLineTop":F
     .end local v7    # "nextPageStartY":F
     .end local v8    # "lastLineTop":F
-    :catch_9e
+    :catch_0
     move-exception v3
 
     .line 463
@@ -475,7 +475,7 @@
 .end method
 
 .method public final initialize(Ljava/lang/String;Landroidx/compose/ui/text/TextLayoutResult;Landroidx/compose/ui/semantics/SemanticsNode;)V
-    .registers 5
+    .locals 1
     .param p1, "text"    # Ljava/lang/String;
     .param p2, "layoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p3, "node"    # Landroidx/compose/ui/semantics/SemanticsNode;
@@ -506,7 +506,7 @@
 .end method
 
 .method public preceding(I)[I
-    .registers 11
+    .locals 9
     .param p1, "current"    # I
 
     .line 485
@@ -522,19 +522,19 @@
     .local v0, "textLength":I
     const/4 v1, 0x0
 
-    if-gtz v0, :cond_c
+    if-gtz v0, :cond_0
 
     .line 487
     return-object v1
 
     .line 489
-    :cond_c
-    if-gtz p1, :cond_f
+    :cond_0
+    if-gtz p1, :cond_1
 
     .line 490
     return-object v1
 
-    :cond_f
+    :cond_1
     const/4 v2, 0x0
 
     .line 493
@@ -542,10 +542,10 @@
     nop
 
     .line 494
-    :try_start_11
+    :try_start_0
     iget-object v3, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->node:Landroidx/compose/ui/semantics/SemanticsNode;
 
-    if-nez v3, :cond_1c
+    if-nez v3, :cond_2
 
     const-string/jumbo v3, "node"
 
@@ -553,7 +553,7 @@
 
     move-object v3, v1
 
-    :cond_1c
+    :cond_2
     invoke-virtual {v3}, Landroidx/compose/ui/semantics/SemanticsNode;->getBoundsInRoot()Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v3
@@ -565,8 +565,8 @@
     invoke-static {v3}, Lkotlin/math/MathKt;->roundToInt(F)I
 
     move-result v3
-    :try_end_28
-    .catch Ljava/lang/IllegalStateException; {:try_start_11 .. :try_end_28} :catch_82
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
     move v2, v3
 
@@ -589,13 +589,13 @@
 
     const-string/jumbo v5, "layoutResult"
 
-    if-nez v4, :cond_40
+    if-nez v4, :cond_3
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v4, v1
 
-    :cond_40
+    :cond_3
     invoke-virtual {v4, v3}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForOffset(I)I
 
     move-result v4
@@ -604,13 +604,13 @@
     .local v4, "currentLine":I
     iget-object v6, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v6, :cond_4c
+    if-nez v6, :cond_4
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
     move-object v6, v1
 
-    :cond_4c
+    :cond_4
     invoke-virtual {v6, v4}, Landroidx/compose/ui/text/TextLayoutResult;->getLineTop(I)F
 
     move-result v6
@@ -627,32 +627,32 @@
 
     cmpl-float v8, v7, v8
 
-    if-lez v8, :cond_66
+    if-lez v8, :cond_6
 
     .line 510
     iget-object v8, p0, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->layoutResult:Landroidx/compose/ui/text/TextLayoutResult;
 
-    if-nez v8, :cond_60
+    if-nez v8, :cond_5
 
     invoke-static {v5}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_60
+    :cond_5
     move-object v1, v8
 
-    :goto_61
+    :goto_0
     invoke-virtual {v1, v7}, Landroidx/compose/ui/text/TextLayoutResult;->getLineForVerticalPosition(F)I
 
     move-result v1
 
-    goto :goto_67
+    goto :goto_1
 
-    :cond_66
+    :cond_6
     const/4 v1, 0x0
 
     .line 509
-    :goto_67
+    :goto_1
     nop
 
     .line 513
@@ -665,9 +665,9 @@
 
     move-result v5
 
-    if-ne v3, v5, :cond_77
+    if-ne v3, v5, :cond_7
 
-    if-ge v1, v4, :cond_77
+    if-ge v1, v4, :cond_7
 
     add-int/lit8 v1, v1, 0x1
 
@@ -675,7 +675,7 @@
     nop
 
     .line 517
-    :cond_77
+    :cond_7
     sget-object v5, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->DirectionStart:Landroidx/compose/ui/text/style/ResolvedTextDirection;
 
     invoke-direct {p0, v1, v5}, Landroidx/compose/ui/platform/AccessibilityIterators$PageTextSegmentIterator;->getLineEdgeIndex(ILandroidx/compose/ui/text/style/ResolvedTextDirection;)I
@@ -697,7 +697,7 @@
     .end local v5    # "start":I
     .end local v6    # "currentLineTop":F
     .end local v7    # "previousPageEndY":F
-    :catch_82
+    :catch_0
     move-exception v3
 
     .line 497

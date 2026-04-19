@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final nativeClass(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this$nativeClass"    # Ljava/lang/Object;
 
     const-string v0, "<this>"
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final simpleIdentityToString(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
-    .registers 6
+    .locals 4
     .param p0, "obj"    # Ljava/lang/Object;
     .param p1, "name"    # Ljava/lang/String;
 
@@ -62,7 +62,7 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 22
-    if-nez p1, :cond_24
+    if-nez p1, :cond_1
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -72,7 +72,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 23
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -83,10 +83,10 @@
 
     move-result-object v0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 25
-    :cond_1b
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -95,13 +95,13 @@
 
     move-result-object v0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 22
-    :cond_24
+    :cond_1
     move-object v0, p1
 
-    :goto_25
+    :goto_0
     nop
 
     .line 28
@@ -162,7 +162,7 @@
 .end method
 
 .method public static final synchronized(Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p0, "lock"    # Ljava/lang/Object;
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -192,12 +192,12 @@
 
     const/4 v1, 0x1
 
-    :try_start_f
+    :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v2
-    :try_end_13
-    .catchall {:try_start_f .. :try_end_13} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -207,7 +207,7 @@
 
     return-object v2
 
-    :catchall_1b
+    :catchall_0
     move-exception v2
 
     invoke-static {v1}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V

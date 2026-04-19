@@ -186,7 +186,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/Modifier$Element;)V
-    .registers 3
+    .locals 1
     .param p1, "element"    # Landroidx/compose/ui/Modifier$Element;
 
     const-string/jumbo v0, "element"
@@ -229,7 +229,7 @@
 .end method
 
 .method public static final synthetic access$getLastOnPlacedCoordinates$p(Landroidx/compose/ui/node/BackwardsCompatNode;)Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/node/BackwardsCompatNode;
 
     .line 76
@@ -239,7 +239,7 @@
 .end method
 
 .method private final initializeModifier(Z)V
-    .registers 9
+    .locals 7
     .param p1, "duringAttach"    # Z
 
     .line 135
@@ -247,7 +247,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18e
+    if-eqz v0, :cond_14
 
     .line 136
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -288,26 +288,26 @@
 
     const/4 v6, 0x1
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_0
 
     move v1, v6
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     move v1, v5
 
     .line 137
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_20
-    if-eqz v1, :cond_3a
+    :goto_0
+    if-eqz v1, :cond_2
 
     .line 138
     instance-of v1, v0, Landroidx/compose/ui/modifier/ModifierLocalConsumer;
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_1
 
     .line 139
     new-instance v1, Landroidx/compose/ui/node/BackwardsCompatNode$initializeModifier$1;
@@ -319,10 +319,10 @@
     invoke-virtual {p0, v1}, Landroidx/compose/ui/node/BackwardsCompatNode;->sideEffect(Lkotlin/jvm/functions/Function0;)V
 
     .line 141
-    :cond_30
+    :cond_1
     instance-of v1, v0, Landroidx/compose/ui/modifier/ModifierLocalProvider;
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_2
 
     .line 142
     move-object v1, v0
@@ -332,7 +332,7 @@
     invoke-direct {p0, v1}, Landroidx/compose/ui/node/BackwardsCompatNode;->updateModifierLocalProvider(Landroidx/compose/ui/modifier/ModifierLocalProvider;)V
 
     .line 145
-    :cond_3a
+    :cond_2
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/Modifier$Node;
@@ -363,33 +363,33 @@
 
     and-int/2addr v4, v2
 
-    if-eqz v4, :cond_4e
+    if-eqz v4, :cond_3
 
     move v1, v6
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_4e
+    :cond_3
     move v1, v5
 
     .line 145
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_4f
-    if-eqz v1, :cond_5f
+    :goto_1
+    if-eqz v1, :cond_5
 
     .line 146
     instance-of v1, v0, Landroidx/compose/ui/draw/DrawCacheModifier;
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_4
 
     .line 147
     iput-boolean v6, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->invalidateCache:Z
 
     .line 149
-    :cond_57
-    if-nez p1, :cond_5f
+    :cond_4
+    if-nez p1, :cond_5
 
     .line 150
     move-object v1, p0
@@ -399,7 +399,7 @@
     invoke-static {v1}, Landroidx/compose/ui/node/LayoutModifierNodeKt;->invalidateLayer(Landroidx/compose/ui/node/LayoutModifierNode;)V
 
     .line 153
-    :cond_5f
+    :cond_5
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/Modifier$Node;
@@ -430,31 +430,30 @@
 
     and-int/2addr v4, v2
 
-    if-eqz v4, :cond_73
+    if-eqz v4, :cond_6
 
     move v1, v6
 
-    goto :goto_74
+    goto :goto_2
 
-    :cond_73
+    :cond_6
     move v1, v5
 
     .line 153
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_74
-    if-eqz v1, :cond_a4
+    :goto_2
+    if-eqz v1, :cond_8
 
     .line 154
-    # invokes: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
     invoke-static {p0}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
 
     move-result v1
 
     .line 155
     .local v1, "isChainUpdate":Z
-    if-eqz v1, :cond_92
+    if-eqz v1, :cond_7
 
     .line 156
     invoke-virtual {p0}, Landroidx/compose/ui/node/BackwardsCompatNode;->getCoordinator$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
@@ -485,8 +484,8 @@
 
     .line 161
     .end local v2    # "coordinator":Landroidx/compose/ui/node/NodeCoordinator;
-    :cond_92
-    if-nez p1, :cond_a4
+    :cond_7
+    if-nez p1, :cond_8
 
     .line 162
     move-object v2, p0
@@ -508,10 +507,10 @@
 
     .line 166
     .end local v1    # "isChainUpdate":Z
-    :cond_a4
+    :cond_8
     instance-of v1, v0, Landroidx/compose/ui/layout/RemeasurementModifier;
 
-    if-eqz v1, :cond_b7
+    if-eqz v1, :cond_9
 
     .line 167
     move-object v1, v0
@@ -531,7 +530,7 @@
     invoke-interface {v1, v2}, Landroidx/compose/ui/layout/RemeasurementModifier;->onRemeasurementAvailable(Landroidx/compose/ui/layout/Remeasurement;)V
 
     .line 169
-    :cond_b7
+    :cond_9
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/Modifier$Node;
@@ -562,36 +561,35 @@
 
     and-int/2addr v4, v2
 
-    if-eqz v4, :cond_cc
+    if-eqz v4, :cond_a
 
     move v1, v6
 
-    goto :goto_cd
+    goto :goto_3
 
-    :cond_cc
+    :cond_a
     move v1, v5
 
     .line 169
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_cd
-    if-eqz v1, :cond_101
+    :goto_3
+    if-eqz v1, :cond_c
 
     .line 170
     instance-of v1, v0, Landroidx/compose/ui/layout/OnRemeasuredModifier;
 
-    if-eqz v1, :cond_e3
+    if-eqz v1, :cond_b
 
     .line 173
-    # invokes: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
     invoke-static {p0}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
 
     move-result v1
 
     .line 174
     .local v1, "isChainUpdate":Z
-    if-eqz v1, :cond_e3
+    if-eqz v1, :cond_b
 
     .line 175
     move-object v2, p0
@@ -606,10 +604,10 @@
 
     .line 178
     .end local v1    # "isChainUpdate":Z
-    :cond_e3
+    :cond_b
     instance-of v1, v0, Landroidx/compose/ui/layout/OnPlacedModifier;
 
-    if-eqz v1, :cond_101
+    if-eqz v1, :cond_c
 
     .line 179
     const/4 v1, 0x0
@@ -617,14 +615,13 @@
     iput-object v1, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->lastOnPlacedCoordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
 
     .line 180
-    # invokes: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
     invoke-static {p0}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
 
     move-result v1
 
     .line 181
     .restart local v1    # "isChainUpdate":Z
-    if-eqz v1, :cond_101
+    if-eqz v1, :cond_c
 
     .line 182
     move-object v2, p0
@@ -647,7 +644,7 @@
 
     .line 194
     .end local v1    # "isChainUpdate":Z
-    :cond_101
+    :cond_c
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/Modifier$Node;
@@ -678,36 +675,35 @@
 
     and-int/2addr v4, v2
 
-    if-eqz v4, :cond_116
+    if-eqz v4, :cond_d
 
     move v1, v6
 
-    goto :goto_117
+    goto :goto_4
 
-    :cond_116
+    :cond_d
     move v1, v5
 
     .line 194
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_117
-    if-eqz v1, :cond_12d
+    :goto_4
+    if-eqz v1, :cond_e
 
     .line 197
     instance-of v1, v0, Landroidx/compose/ui/layout/OnGloballyPositionedModifier;
 
-    if-eqz v1, :cond_12d
+    if-eqz v1, :cond_e
 
     .line 198
-    # invokes: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
     invoke-static {p0}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
 
     move-result v1
 
     .line 199
     .local v1, "isChainUpdate":Z
-    if-eqz v1, :cond_12d
+    if-eqz v1, :cond_e
 
     .line 200
     move-object v2, p0
@@ -722,10 +718,10 @@
 
     .line 204
     .end local v1    # "isChainUpdate":Z
-    :cond_12d
+    :cond_e
     instance-of v1, v0, Landroidx/compose/ui/focus/FocusRequesterModifier;
 
-    if-eqz v1, :cond_141
+    if-eqz v1, :cond_f
 
     .line 205
     move-object v1, v0
@@ -753,7 +749,7 @@
     .line 207
     .end local v1    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
     .end local v2    # "$i$f$plusAssign":I
-    :cond_141
+    :cond_f
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/Modifier$Node;
@@ -784,26 +780,26 @@
 
     and-int/2addr v4, v2
 
-    if-eqz v4, :cond_156
+    if-eqz v4, :cond_10
 
     move v1, v6
 
-    goto :goto_157
+    goto :goto_5
 
-    :cond_156
+    :cond_10
     move v1, v5
 
     .line 207
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_157
-    if-eqz v1, :cond_16d
+    :goto_5
+    if-eqz v1, :cond_11
 
     .line 208
     instance-of v1, v0, Landroidx/compose/ui/input/pointer/PointerInputModifier;
 
-    if-eqz v1, :cond_16d
+    if-eqz v1, :cond_11
 
     .line 209
     move-object v1, v0
@@ -823,7 +819,7 @@
     invoke-virtual {v1, v2}, Landroidx/compose/ui/input/pointer/PointerInputFilter;->setLayoutCoordinates$ui_release(Landroidx/compose/ui/layout/LayoutCoordinates;)V
 
     .line 212
-    :cond_16d
+    :cond_11
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/Modifier$Node;
@@ -854,7 +850,7 @@
 
     and-int/2addr v4, v2
 
-    if-eqz v4, :cond_181
+    if-eqz v4, :cond_12
 
     move v5, v6
 
@@ -862,8 +858,8 @@
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :cond_181
-    if-eqz v5, :cond_18d
+    :cond_12
+    if-eqz v5, :cond_13
 
     .line 213
     move-object v1, p0
@@ -877,12 +873,12 @@
     invoke-interface {v1}, Landroidx/compose/ui/node/Owner;->onSemanticsChange()V
 
     .line 215
-    :cond_18d
+    :cond_13
     return-void
 
     .line 135
     .end local v0    # "element":Landroidx/compose/ui/Modifier$Element;
-    :cond_18e
+    :cond_14
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -897,14 +893,14 @@
 .end method
 
 .method private final unInitializeModifier()V
-    .registers 8
+    .locals 7
 
     .line 114
     invoke-virtual {p0}, Landroidx/compose/ui/node/BackwardsCompatNode;->isAttached()Z
 
     move-result v0
 
-    if-eqz v0, :cond_83
+    if-eqz v0, :cond_6
 
     .line 115
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -945,26 +941,26 @@
 
     const/4 v6, 0x0
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_0
 
     move v1, v5
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     move v1, v6
 
     .line 116
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_20
-    if-eqz v1, :cond_4d
+    :goto_0
+    if-eqz v1, :cond_2
 
     .line 117
     instance-of v1, v0, Landroidx/compose/ui/modifier/ModifierLocalProvider;
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_1
 
     .line 118
     move-object v1, p0
@@ -994,17 +990,16 @@
     invoke-virtual {v1, p0, v2}, Landroidx/compose/ui/modifier/ModifierLocalManager;->removedProvider(Landroidx/compose/ui/node/BackwardsCompatNode;Landroidx/compose/ui/modifier/ModifierLocal;)V
 
     .line 122
-    :cond_3d
+    :cond_1
     instance-of v1, v0, Landroidx/compose/ui/modifier/ModifierLocalConsumer;
 
-    if-eqz v1, :cond_4d
+    if-eqz v1, :cond_2
 
     .line 123
     move-object v1, v0
 
     check-cast v1, Landroidx/compose/ui/modifier/ModifierLocalConsumer;
 
-    # getter for: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->DetachedModifierLocalReadScope:Landroidx/compose/ui/node/BackwardsCompatNodeKt$DetachedModifierLocalReadScope$1;
     invoke-static {}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$getDetachedModifierLocalReadScope$p()Landroidx/compose/ui/node/BackwardsCompatNodeKt$DetachedModifierLocalReadScope$1;
 
     move-result-object v2
@@ -1014,7 +1009,7 @@
     invoke-interface {v1, v2}, Landroidx/compose/ui/modifier/ModifierLocalConsumer;->onModifierLocalsUpdated(Landroidx/compose/ui/modifier/ModifierLocalReadScope;)V
 
     .line 126
-    :cond_4d
+    :cond_2
     move-object v1, p0
 
     check-cast v1, Landroidx/compose/ui/Modifier$Node;
@@ -1045,19 +1040,19 @@
 
     and-int/2addr v4, v2
 
-    if-eqz v4, :cond_61
+    if-eqz v4, :cond_3
 
-    goto :goto_62
+    goto :goto_1
 
-    :cond_61
+    :cond_3
     move v5, v6
 
     .line 126
     .end local v1    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "kind$iv":I
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_62
-    if-eqz v5, :cond_6e
+    :goto_1
+    if-eqz v5, :cond_4
 
     .line 127
     move-object v1, p0
@@ -1071,10 +1066,10 @@
     invoke-interface {v1}, Landroidx/compose/ui/node/Owner;->onSemanticsChange()V
 
     .line 129
-    :cond_6e
+    :cond_4
     instance-of v1, v0, Landroidx/compose/ui/focus/FocusRequesterModifier;
 
-    if-eqz v1, :cond_82
+    if-eqz v1, :cond_5
 
     .line 130
     move-object v1, v0
@@ -1102,12 +1097,12 @@
     .line 132
     .end local v1    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
     .end local v2    # "$i$f$minusAssign":I
-    :cond_82
+    :cond_5
     return-void
 
     .line 114
     .end local v0    # "element":Landroidx/compose/ui/Modifier$Element;
-    :cond_83
+    :cond_6
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -1122,7 +1117,7 @@
 .end method
 
 .method private final updateDrawCache()V
-    .registers 6
+    .locals 5
 
     .line 234
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -1131,7 +1126,7 @@
     .local v0, "element":Landroidx/compose/ui/Modifier$Element;
     instance-of v1, v0, Landroidx/compose/ui/draw/DrawCacheModifier;
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     .line 236
     move-object v1, p0
@@ -1152,7 +1147,6 @@
 
     check-cast v2, Landroidx/compose/ui/node/OwnerScope;
 
-    # getter for: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->onDrawCacheReadsChanged:Lkotlin/jvm/functions/Function1;
     invoke-static {}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$getOnDrawCacheReadsChanged$p()Lkotlin/jvm/functions/Function1;
 
     move-result-object v3
@@ -1166,7 +1160,7 @@
     invoke-virtual {v1, v2, v3, v4}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
     .line 242
-    :cond_22
+    :cond_0
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->invalidateCache:Z
@@ -1176,7 +1170,7 @@
 .end method
 
 .method private final updateModifierLocalProvider(Landroidx/compose/ui/modifier/ModifierLocalProvider;)V
-    .registers 6
+    .locals 4
     .param p1, "element"    # Landroidx/compose/ui/modifier/ModifierLocalProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1191,7 +1185,7 @@
 
     .line 281
     .local v0, "providedValues":Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_0
 
     invoke-interface {p1}, Landroidx/compose/ui/modifier/ModifierLocalProvider;->getKey()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
 
@@ -1203,7 +1197,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_0
 
     .line 282
     invoke-virtual {v0, p1}, Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;->setElement(Landroidx/compose/ui/modifier/ModifierLocalProvider;)V
@@ -1231,10 +1225,10 @@
 
     invoke-virtual {v1, p0, v2}, Landroidx/compose/ui/modifier/ModifierLocalManager;->updatedProvider(Landroidx/compose/ui/node/BackwardsCompatNode;Landroidx/compose/ui/modifier/ModifierLocal;)V
 
-    goto :goto_49
+    goto :goto_0
 
     .line 287
-    :cond_28
+    :cond_0
     new-instance v1, Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;
 
     invoke-direct {v1, p1}, Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;-><init>(Landroidx/compose/ui/modifier/ModifierLocalProvider;)V
@@ -1242,14 +1236,13 @@
     iput-object v1, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->_providedValues:Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;
 
     .line 295
-    # invokes: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
     invoke-static {p0}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$isChainUpdate(Landroidx/compose/ui/node/BackwardsCompatNode;)Z
 
     move-result v1
 
     .line 296
     .local v1, "isChainUpdate":Z
-    if-eqz v1, :cond_49
+    if-eqz v1, :cond_1
 
     .line 297
     move-object v2, p0
@@ -1276,15 +1269,15 @@
 
     .line 302
     .end local v1    # "isChainUpdate":Z
-    :cond_49
-    :goto_49
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public applyFocusProperties(Landroidx/compose/ui/focus/FocusProperties;)V
-    .registers 5
+    .locals 3
     .param p1, "focusProperties"    # Landroidx/compose/ui/focus/FocusProperties;
 
     const-string/jumbo v0, "focusProperties"
@@ -1298,7 +1291,7 @@
     .local v0, "focusOrderModifier":Landroidx/compose/ui/Modifier$Element;
     instance-of v1, v0, Landroidx/compose/ui/focus/FocusOrderModifier;
 
-    if-eqz v1, :cond_1a
+    if-eqz v1, :cond_0
 
     .line 422
     new-instance v1, Landroidx/compose/ui/node/FocusOrderModifierToProperties;
@@ -1317,7 +1310,7 @@
     return-void
 
     .line 421
-    :cond_1a
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Check failed."
@@ -1332,7 +1325,7 @@
 .end method
 
 .method public applySemantics(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 4
+    .locals 2
     .param p1, "$this$applySemantics"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -1367,7 +1360,7 @@
 .end method
 
 .method public draw(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)V
-    .registers 6
+    .locals 4
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
 
     const-string v0, "<this>"
@@ -1394,17 +1387,17 @@
     .local v2, "$i$a$-with-BackwardsCompatNode$draw$1":I
     iget-boolean v3, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->invalidateCache:Z
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_0
 
     instance-of v3, v0, Landroidx/compose/ui/draw/DrawCacheModifier;
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_0
 
     .line 347
     invoke-direct {p0}, Landroidx/compose/ui/node/BackwardsCompatNode;->updateDrawCache()V
 
     .line 349
-    :cond_1c
+    :cond_0
     invoke-interface {v1, p1}, Landroidx/compose/ui/draw/DrawModifier;->draw(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)V
 
     .line 350
@@ -1420,7 +1413,7 @@
 .end method
 
 .method public getCurrent(Landroidx/compose/ui/modifier/ModifierLocal;)Ljava/lang/Object;
-    .registers 32
+    .locals 30
     .param p1, "$this$current"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1500,7 +1493,7 @@
 
     move-result v10
 
-    if-eqz v10, :cond_174
+    if-eqz v10, :cond_13
 
     .line 489
     invoke-interface {v8}, Landroidx/compose/ui/node/DelegatableNode;->getNode()Landroidx/compose/ui/Modifier$Node;
@@ -1519,8 +1512,8 @@
 
     .line 491
     .local v11, "layout$iv$iv":Landroidx/compose/ui/node/LayoutNode;
-    :goto_37
-    if-eqz v11, :cond_169
+    :goto_0
+    if-eqz v11, :cond_12
 
     .line 492
     invoke-virtual {v11}, Landroidx/compose/ui/node/LayoutNode;->getNodes$ui_release()Landroidx/compose/ui/node/NodeChain;
@@ -1539,11 +1532,11 @@
 
     and-int/2addr v13, v7
 
-    if-eqz v13, :cond_148
+    if-eqz v13, :cond_10
 
     .line 494
-    :goto_48
-    if-eqz v10, :cond_143
+    :goto_1
+    if-eqz v10, :cond_f
 
     .line 495
     invoke-virtual {v10}, Landroidx/compose/ui/Modifier$Node;->getKindSet$ui_release()I
@@ -1552,7 +1545,7 @@
 
     and-int/2addr v13, v7
 
-    if-eqz v13, :cond_131
+    if-eqz v13, :cond_e
 
     .line 496
     move-object v13, v10
@@ -1583,13 +1576,13 @@
     .line 499
     .end local v18    # "node$iv$iv":Ljava/lang/Object;
     .local v0, "node$iv$iv":Ljava/lang/Object;
-    :goto_5e
-    if-eqz v0, :cond_12b
+    :goto_2
+    if-eqz v0, :cond_d
 
     .line 500
     instance-of v2, v0, Landroidx/compose/ui/modifier/ModifierLocalModifierNode;
 
-    if-eqz v2, :cond_83
+    if-eqz v2, :cond_1
 
     .line 501
     move-object v2, v0
@@ -1613,7 +1606,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7e
+    if-eqz v3, :cond_0
 
     .line 261
     invoke-interface {v2}, Landroidx/compose/ui/modifier/ModifierLocalModifierNode;->getProvidedValues()Landroidx/compose/ui/modifier/ModifierLocalMap;
@@ -1627,7 +1620,7 @@
     return-object v3
 
     .line 263
-    :cond_7e
+    :cond_0
     nop
 
     .line 501
@@ -1635,12 +1628,12 @@
     .end local v18    # "$i$a$-visitAncestors-Y-YKmho$default-BackwardsCompatNode$current$1":I
     move/from16 v28, v4
 
-    goto/16 :goto_11f
+    goto/16 :goto_9
 
     .line 502
     .end local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v3    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
-    :cond_83
+    :cond_1
     move-object/from16 v19, v3
 
     .end local v3    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
@@ -1664,24 +1657,24 @@
     .local v20, "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
     const/4 v2, 0x1
 
-    if-eqz v18, :cond_94
+    if-eqz v18, :cond_2
 
     move v3, v2
 
-    goto :goto_95
+    goto :goto_3
 
-    :cond_94
+    :cond_2
     const/4 v3, 0x0
 
     .line 502
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
     .end local v20    # "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_95
-    if-eqz v3, :cond_11d
+    :goto_3
+    if-eqz v3, :cond_b
 
     instance-of v3, v0, Landroidx/compose/ui/node/DelegatingNode;
 
-    if-eqz v3, :cond_11d
+    if-eqz v3, :cond_b
 
     .line 504
     const/4 v3, 0x0
@@ -1703,8 +1696,8 @@
 
     .line 507
     .local v21, "node$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_a6
-    if-eqz v21, :cond_110
+    :goto_4
+    if-eqz v21, :cond_a
 
     .line 508
     move-object/from16 v22, v21
@@ -1727,26 +1720,26 @@
 
     and-int v26, v26, v4
 
-    if-eqz v26, :cond_bb
+    if-eqz v26, :cond_3
 
     move/from16 v24, v2
 
-    goto :goto_bd
+    goto :goto_5
 
-    :cond_bb
+    :cond_3
     const/16 v24, 0x0
 
     .line 509
     .end local v24    # "this_$iv$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v25    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_bd
-    if-eqz v24, :cond_102
+    :goto_5
+    if-eqz v24, :cond_9
 
     .line 510
     add-int/lit8 v3, v3, 0x1
 
     .line 511
-    if-ne v3, v2, :cond_ca
+    if-ne v3, v2, :cond_4
 
     .line 512
     move-object/from16 v0, v22
@@ -1755,11 +1748,11 @@
 
     move-object/from16 v2, v22
 
-    goto :goto_106
+    goto :goto_8
 
     .line 516
-    :cond_ca
-    if-nez v17, :cond_e2
+    :cond_4
+    if-nez v17, :cond_5
 
     const/16 v24, 0x0
 
@@ -1798,7 +1791,7 @@
     .line 517
     .end local v26    # "$i$f$MutableVector":I
     .end local v29    # "capacity$iv$iv$iv$iv":I
-    goto :goto_e9
+    goto :goto_6
 
     .line 516
     .end local v24    # "$i$f$mutableVectorOf":I
@@ -1806,7 +1799,7 @@
     .end local v28    # "type$iv":I
     .restart local v3    # "count$iv$iv":I
     .restart local v4    # "type$iv":I
-    :cond_e2
+    :cond_5
     move/from16 v27, v3
 
     move/from16 v28, v4
@@ -1819,7 +1812,7 @@
     .restart local v28    # "type$iv":I
     move-object/from16 v3, v17
 
-    :goto_e9
+    :goto_6
     nop
 
     .line 520
@@ -1829,20 +1822,20 @@
 
     .line 521
     .local v4, "theNode$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    if-eqz v4, :cond_f3
+    if-eqz v4, :cond_7
 
     .line 522
-    if-eqz v3, :cond_f2
+    if-eqz v3, :cond_6
 
     invoke-virtual {v3, v4}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 523
-    :cond_f2
+    :cond_6
     const/4 v0, 0x0
 
     .line 525
-    :cond_f3
-    if-eqz v3, :cond_fb
+    :cond_7
+    if-eqz v3, :cond_8
 
     move-object/from16 v2, v22
 
@@ -1850,23 +1843,23 @@
     .local v2, "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     invoke-virtual {v3, v2}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
-    goto :goto_fd
+    goto :goto_7
 
     .end local v2    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_fb
+    :cond_8
     move-object/from16 v2, v22
 
     .line 528
     .end local v4    # "theNode$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v2    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_fd
+    :goto_7
     move-object/from16 v17, v3
 
     move/from16 v3, v27
 
-    goto :goto_106
+    goto :goto_8
 
     .line 509
     .end local v2    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
@@ -1876,7 +1869,7 @@
     .local v4, "type$iv":I
     .restart local v17    # "stack$iv$iv":Ljava/lang/Object;
     .restart local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_102
+    :cond_9
     move/from16 v28, v4
 
     move-object/from16 v2, v22
@@ -1886,7 +1879,7 @@
     .end local v22    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v2    # "next$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v28    # "type$iv":I
-    :goto_106
+    :goto_8
     nop
 
     .line 508
@@ -1903,12 +1896,12 @@
 
     const/4 v2, 0x1
 
-    goto :goto_a6
+    goto :goto_4
 
     .line 531
     .end local v28    # "type$iv":I
     .restart local v4    # "type$iv":I
-    :cond_110
+    :cond_a
     move/from16 v28, v4
 
     .line 532
@@ -1919,7 +1912,7 @@
     .restart local v28    # "type$iv":I
     const/4 v2, 0x1
 
-    if-ne v3, v2, :cond_11f
+    if-ne v3, v2, :cond_c
 
     .line 534
     move-object/from16 v2, p1
@@ -1928,21 +1921,20 @@
 
     move/from16 v4, v28
 
-    goto/16 :goto_5e
+    goto/16 :goto_2
 
     .line 502
     .end local v3    # "count$iv$iv":I
     .end local v28    # "type$iv":I
     .restart local v4    # "type$iv":I
-    :cond_11d
+    :cond_b
     move/from16 v28, v4
 
     .line 537
     .end local v4    # "type$iv":I
     .restart local v28    # "type$iv":I
-    :cond_11f
-    :goto_11f
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
+    :cond_c
+    :goto_9
     invoke-static/range {v17 .. v17}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v0
@@ -1953,14 +1945,14 @@
 
     move/from16 v4, v28
 
-    goto/16 :goto_5e
+    goto/16 :goto_2
 
     .line 539
     .end local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v28    # "type$iv":I
     .local v3, "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v4    # "type$iv":I
-    :cond_12b
+    :cond_d
     move-object/from16 v19, v3
 
     move/from16 v28, v4
@@ -1979,14 +1971,14 @@
     .line 496
     .end local v13    # "it$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v14    # "$i$a$-visitAncestors-DelegatableNodeKt$visitAncestors$2$iv":I
-    goto :goto_135
+    goto :goto_a
 
     .line 495
     .end local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v28    # "type$iv":I
     .restart local v3    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v4    # "type$iv":I
-    :cond_131
+    :cond_e
     move-object/from16 v19, v3
 
     move/from16 v28, v4
@@ -1996,7 +1988,7 @@
     .end local v4    # "type$iv":I
     .restart local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v28    # "type$iv":I
-    :goto_135
+    :goto_a
     invoke-virtual {v10}, Landroidx/compose/ui/Modifier$Node;->getParent$ui_release()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v10
@@ -2009,14 +2001,14 @@
 
     move/from16 v4, v28
 
-    goto/16 :goto_48
+    goto/16 :goto_1
 
     .line 494
     .end local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v28    # "type$iv":I
     .restart local v3    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v4    # "type$iv":I
-    :cond_143
+    :cond_f
     move-object/from16 v19, v3
 
     move/from16 v28, v4
@@ -2025,14 +2017,14 @@
     .end local v4    # "type$iv":I
     .restart local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v28    # "type$iv":I
-    goto :goto_14c
+    goto :goto_b
 
     .line 493
     .end local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v28    # "type$iv":I
     .restart local v3    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v4    # "type$iv":I
-    :cond_148
+    :cond_10
     move-object/from16 v19, v3
 
     move/from16 v28, v4
@@ -2042,30 +2034,30 @@
     .end local v4    # "type$iv":I
     .restart local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v28    # "type$iv":I
-    :goto_14c
+    :goto_b
     invoke-virtual {v11}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v11
 
     .line 544
-    if-eqz v11, :cond_15d
+    if-eqz v11, :cond_11
 
     invoke-virtual {v11}, Landroidx/compose/ui/node/LayoutNode;->getNodes$ui_release()Landroidx/compose/ui/node/NodeChain;
 
     move-result-object v0
 
-    if-eqz v0, :cond_15d
+    if-eqz v0, :cond_11
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeChain;->getTail$ui_release()Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v0
 
-    goto :goto_15e
+    goto :goto_c
 
-    :cond_15d
+    :cond_11
     const/4 v0, 0x0
 
-    :goto_15e
+    :goto_c
     move-object v10, v0
 
     move-object/from16 v0, p0
@@ -2077,14 +2069,14 @@
     move/from16 v4, v28
 
     .end local v12    # "head$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    goto/16 :goto_37
+    goto/16 :goto_0
 
     .line 546
     .end local v19    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .end local v28    # "type$iv":I
     .restart local v3    # "$this$visitAncestors_u2dY_u2dYKmho_u24default$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v4    # "type$iv":I
-    :cond_169
+    :cond_12
     nop
 
     .line 486
@@ -2118,7 +2110,7 @@
     .restart local v7    # "mask$iv$iv":I
     .restart local v8    # "$this$visitAncestors$iv$iv":Landroidx/compose/ui/node/DelegatableNode;
     .restart local v9    # "$i$f$visitAncestors":I
-    :cond_174
+    :cond_13
     const/4 v0, 0x0
 
     .line 487
@@ -2140,7 +2132,7 @@
 .end method
 
 .method public getDensity()Landroidx/compose/ui/unit/Density;
-    .registers 2
+    .locals 1
 
     .line 218
     move-object v0, p0
@@ -2159,7 +2151,7 @@
 .end method
 
 .method public final getElement()Landroidx/compose/ui/Modifier$Element;
-    .registers 2
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -2168,7 +2160,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 219
     move-object v0, p0
@@ -2187,28 +2179,28 @@
 .end method
 
 .method public getProvidedValues()Landroidx/compose/ui/modifier/ModifierLocalMap;
-    .registers 2
+    .locals 1
 
     .line 252
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->_providedValues:Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     check-cast v0, Landroidx/compose/ui/modifier/ModifierLocalMap;
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/modifier/ModifierLocalModifierNodeKt;->modifierLocalMapOf()Landroidx/compose/ui/modifier/ModifierLocalMap;
 
     move-result-object v0
 
-    :goto_b
+    :goto_0
     return-object v0
 .end method
 
 .method public final getReadValues()Ljava/util/HashSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2225,7 +2217,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 4
+    .locals 3
 
     .line 222
     move-object v0, p0
@@ -2260,7 +2252,7 @@
 .end method
 
 .method public interceptOutOfBoundsChildEvents()Z
-    .registers 4
+    .locals 3
 
     .line 382
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -2291,7 +2283,7 @@
 .end method
 
 .method public isValidOwnerScope()Z
-    .registers 2
+    .locals 1
 
     .line 304
     invoke-virtual {p0}, Landroidx/compose/ui/node/BackwardsCompatNode;->isAttached()Z
@@ -2302,7 +2294,7 @@
 .end method
 
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -2343,7 +2335,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I
@@ -2384,7 +2376,7 @@
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 7
+    .locals 2
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -2422,7 +2414,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "width"    # I
@@ -2463,7 +2455,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Landroidx/compose/ui/layout/IntrinsicMeasurable;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/IntrinsicMeasurable;
     .param p3, "height"    # I
@@ -2504,7 +2496,7 @@
 .end method
 
 .method public modifyParentData(Landroidx/compose/ui/unit/Density;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "$this$modifyParentData"    # Landroidx/compose/ui/unit/Density;
     .param p2, "parentData"    # Ljava/lang/Object;
 
@@ -2537,7 +2529,7 @@
 .end method
 
 .method public onAttach()V
-    .registers 2
+    .locals 1
 
     .line 106
     const/4 v0, 0x1
@@ -2549,7 +2541,7 @@
 .end method
 
 .method public onCancelPointerInput()V
-    .registers 4
+    .locals 3
 
     .line 370
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -2584,7 +2576,7 @@
 .end method
 
 .method public onDetach()V
-    .registers 1
+    .locals 0
 
     .line 110
     invoke-direct {p0}, Landroidx/compose/ui/node/BackwardsCompatNode;->unInitializeModifier()V
@@ -2594,7 +2586,7 @@
 .end method
 
 .method public final onDrawCacheReadsChanged$ui_release()V
-    .registers 2
+    .locals 1
 
     .line 246
     const/4 v0, 0x1
@@ -2613,7 +2605,7 @@
 .end method
 
 .method public onFocusEvent(Landroidx/compose/ui/focus/FocusState;)V
-    .registers 5
+    .locals 3
     .param p1, "focusState"    # Landroidx/compose/ui/focus/FocusState;
 
     const-string/jumbo v0, "focusState"
@@ -2627,7 +2619,7 @@
     .local v0, "focusEventModifier":Landroidx/compose/ui/Modifier$Element;
     instance-of v1, v0, Landroidx/compose/ui/focus/FocusEventModifier;
 
-    if-eqz v1, :cond_13
+    if-eqz v1, :cond_0
 
     .line 416
     move-object v1, v0
@@ -2640,7 +2632,7 @@
     return-void
 
     .line 415
-    :cond_13
+    :cond_0
     new-instance v1, Ljava/lang/IllegalStateException;
 
     const-string v2, "Check failed."
@@ -2655,7 +2647,7 @@
 .end method
 
 .method public onGloballyPositioned(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 4
+    .locals 2
     .param p1, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "coordinates"
@@ -2678,7 +2670,7 @@
 .end method
 
 .method public onMeasureResultChanged()V
-    .registers 2
+    .locals 1
 
     .line 229
     const/4 v0, 0x1
@@ -2697,7 +2689,7 @@
 .end method
 
 .method public onPlaced(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 4
+    .locals 2
     .param p1, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "coordinates"
@@ -2714,7 +2706,7 @@
     .local v0, "element":Landroidx/compose/ui/Modifier$Element;
     instance-of v1, v0, Landroidx/compose/ui/layout/OnPlacedModifier;
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     .line 409
     move-object v1, v0
@@ -2724,12 +2716,12 @@
     invoke-interface {v1, p1}, Landroidx/compose/ui/layout/OnPlacedModifier;->onPlaced(Landroidx/compose/ui/layout/LayoutCoordinates;)V
 
     .line 411
-    :cond_14
+    :cond_0
     return-void
 .end method
 
 .method public onPointerEvent-H0pRuoY(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;J)V
-    .registers 8
+    .locals 3
     .param p1, "pointerEvent"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p2, "pass"    # Landroidx/compose/ui/input/pointer/PointerEventPass;
     .param p3, "bounds"    # J
@@ -2775,7 +2767,7 @@
 .end method
 
 .method public onRemeasured-ozmzZPI(J)V
-    .registers 5
+    .locals 2
     .param p1, "size"    # J
 
     .line 398
@@ -2785,7 +2777,7 @@
     .local v0, "element":Landroidx/compose/ui/Modifier$Element;
     instance-of v1, v0, Landroidx/compose/ui/layout/OnRemeasuredModifier;
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_0
 
     .line 400
     move-object v1, v0
@@ -2795,12 +2787,12 @@
     invoke-interface {v1, p1, p2}, Landroidx/compose/ui/layout/OnRemeasuredModifier;->onRemeasured-ozmzZPI(J)V
 
     .line 402
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method public final setElement(Landroidx/compose/ui/Modifier$Element;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/ui/Modifier$Element;
 
     const-string/jumbo v0, "value"
@@ -2812,12 +2804,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-direct {p0}, Landroidx/compose/ui/node/BackwardsCompatNode;->unInitializeModifier()V
 
     .line 100
-    :cond_f
+    :cond_0
     iput-object p1, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
 
     .line 101
@@ -2832,19 +2824,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroidx/compose/ui/node/BackwardsCompatNode;->initializeModifier(Z)V
 
     .line 103
-    :cond_22
+    :cond_1
     return-void
 .end method
 
 .method public final setReadValues(Ljava/util/HashSet;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2866,7 +2858,7 @@
 .end method
 
 .method public sharePointerInputWithSiblings()Z
-    .registers 4
+    .locals 3
 
     .line 376
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -2897,7 +2889,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 425
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->element:Landroidx/compose/ui/Modifier$Element;
@@ -2910,14 +2902,14 @@
 .end method
 
 .method public final updateModifierLocalConsumer()V
-    .registers 5
+    .locals 4
 
     .line 268
     invoke-virtual {p0}, Landroidx/compose/ui/node/BackwardsCompatNode;->isAttached()Z
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     .line 269
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode;->readValues:Ljava/util/HashSet;
@@ -2943,7 +2935,6 @@
     check-cast v1, Landroidx/compose/ui/node/OwnerScope;
 
     .line 272
-    # getter for: Landroidx/compose/ui/node/BackwardsCompatNodeKt;->updateModifierLocalConsumer:Lkotlin/jvm/functions/Function1;
     invoke-static {}, Landroidx/compose/ui/node/BackwardsCompatNodeKt;->access$getUpdateModifierLocalConsumer$p()Lkotlin/jvm/functions/Function1;
 
     move-result-object v2
@@ -2958,6 +2949,6 @@
     invoke-virtual {v0, v1, v2, v3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
     .line 277
-    :cond_27
+    :cond_0
     return-void
 .end method

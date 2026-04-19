@@ -12,7 +12,7 @@
 
 # direct methods
 .method public synthetic constructor <init>(D)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -24,7 +24,7 @@
 
 # virtual methods
 .method public final invoke(D)D
-    .registers 5
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/Rgb$$ExternalSyntheticLambda2;->f$0:D
 

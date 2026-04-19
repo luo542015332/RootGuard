@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x3
 
@@ -76,7 +76,7 @@
 .end method
 
 .method public constructor <init>(ZZ)V
-    .registers 3
+    .locals 0
     .param p1, "positionChange"    # Z
     .param p2, "downChange"    # Z
 
@@ -94,29 +94,29 @@
 .end method
 
 .method public synthetic constructor <init>(ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 1
 
     .line 838
     and-int/lit8 p4, p3, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     .line 843
     move p1, v0
 
     .line 838
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_1
 
     .line 849
     move p2, v0
 
     .line 838
-    :cond_b
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/input/pointer/ConsumedData;-><init>(ZZ)V
 
     .line 850
@@ -124,7 +124,7 @@
 .end method
 
 .method public static synthetic getDownChange$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Partial consumption was deprecated. Use PointerEvent.isConsumed and PointerEvent.consume() instead."
     .end annotation
@@ -133,7 +133,7 @@
 .end method
 
 .method public static synthetic getPositionChange$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Partial consumption was deprecated. Use PointerEvent.isConsumed and PointerEvent.consume() instead."
     .end annotation
@@ -144,7 +144,7 @@
 
 # virtual methods
 .method public final getDownChange()Z
-    .registers 2
+    .locals 1
 
     .line 849
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/ConsumedData;->downChange:Z
@@ -153,7 +153,7 @@
 .end method
 
 .method public final getPositionChange()Z
-    .registers 2
+    .locals 1
 
     .line 843
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/ConsumedData;->positionChange:Z
@@ -162,7 +162,7 @@
 .end method
 
 .method public final setDownChange(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 849
@@ -172,7 +172,7 @@
 .end method
 
 .method public final setPositionChange(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 843

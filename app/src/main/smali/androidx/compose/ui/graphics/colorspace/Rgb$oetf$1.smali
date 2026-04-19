@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/colorspace/Rgb;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/colorspace/Rgb$oetf$1;->this$0:Landroidx/compose/ui/graphics/colorspace/Rgb;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final invoke(D)Ljava/lang/Double;
-    .registers 10
+    .locals 7
     .param p1, "x"    # D
 
     .line 237
@@ -83,7 +83,6 @@
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/colorspace/Rgb$oetf$1;->this$0:Landroidx/compose/ui/graphics/colorspace/Rgb;
 
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Rgb;->min:F
     invoke-static {v0}, Landroidx/compose/ui/graphics/colorspace/Rgb;->access$getMin$p(Landroidx/compose/ui/graphics/colorspace/Rgb;)F
 
     move-result v0
@@ -92,7 +91,6 @@
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/colorspace/Rgb$oetf$1;->this$0:Landroidx/compose/ui/graphics/colorspace/Rgb;
 
-    # getter for: Landroidx/compose/ui/graphics/colorspace/Rgb;->max:F
     invoke-static {v0}, Landroidx/compose/ui/graphics/colorspace/Rgb;->access$getMax$p(Landroidx/compose/ui/graphics/colorspace/Rgb;)F
 
     move-result v0
@@ -111,7 +109,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 236

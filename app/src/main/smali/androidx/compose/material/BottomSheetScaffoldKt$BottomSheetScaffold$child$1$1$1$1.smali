@@ -61,7 +61,7 @@
 
 # direct methods
 .method constructor <init>(IF)V
-    .registers 4
+    .locals 1
 
     iput p1, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffold$child$1$1$1$1;->$layoutHeight:I
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 470
@@ -97,7 +97,7 @@
 .end method
 
 .method public final invoke-ozmzZPI(J)Ljava/util/Map;
-    .registers 10
+    .locals 7
     .param p1, "sheetSize"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -136,36 +136,36 @@
 
     const/4 v5, 0x0
 
-    if-nez v3, :cond_14
+    if-nez v3, :cond_0
 
     move v3, v4
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v3, v5
 
-    :goto_15
-    if-nez v3, :cond_46
+    :goto_0
+    if-nez v3, :cond_3
 
     cmpg-float v2, v0, v2
 
-    if-nez v2, :cond_1d
+    if-nez v2, :cond_1
 
     move v2, v4
 
-    goto :goto_1e
+    goto :goto_1
 
-    :cond_1d
+    :cond_1
     move v2, v5
 
-    :goto_1e
-    if-eqz v2, :cond_21
+    :goto_1
+    if-eqz v2, :cond_2
 
-    goto :goto_46
+    goto :goto_2
 
     .line 477
-    :cond_21
+    :cond_2
     const/4 v2, 0x2
 
     new-array v2, v2, [Lkotlin/Pair;
@@ -209,11 +209,11 @@
 
     move-result-object v2
 
-    goto :goto_54
+    goto :goto_3
 
     .line 474
-    :cond_46
-    :goto_46
+    :cond_3
+    :goto_2
     sget-object v2, Landroidx/compose/material/BottomSheetValue;->Collapsed:Landroidx/compose/material/BottomSheetValue;
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -229,6 +229,6 @@
     move-result-object v2
 
     .line 473
-    :goto_54
+    :goto_3
     return-object v2
 .end method

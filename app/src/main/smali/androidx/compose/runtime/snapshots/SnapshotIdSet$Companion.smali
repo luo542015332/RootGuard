@@ -39,7 +39,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 347
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/snapshots/SnapshotIdSet$Companion;-><init>()V
 
@@ -58,10 +58,9 @@
 
 # virtual methods
 .method public final getEMPTY()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
-    .registers 2
+    .locals 1
 
     .line 351
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotIdSet;->EMPTY:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotIdSet;->access$getEMPTY$cp()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
     move-result-object v0

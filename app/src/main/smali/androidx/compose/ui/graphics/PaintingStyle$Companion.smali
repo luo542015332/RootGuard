@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/PaintingStyle$Companion;-><init>()V
 
@@ -61,10 +61,9 @@
 
 # virtual methods
 .method public final getFill-TiuSbCo()I
-    .registers 2
+    .locals 1
 
     .line 37
-    # getter for: Landroidx/compose/ui/graphics/PaintingStyle;->Fill:I
     invoke-static {}, Landroidx/compose/ui/graphics/PaintingStyle;->access$getFill$cp()I
 
     move-result v0
@@ -73,10 +72,9 @@
 .end method
 
 .method public final getStroke-TiuSbCo()I
-    .registers 2
+    .locals 1
 
     .line 45
-    # getter for: Landroidx/compose/ui/graphics/PaintingStyle;->Stroke:I
     invoke-static {}, Landroidx/compose/ui/graphics/PaintingStyle;->access$getStroke$cp()I
 
     move-result v0

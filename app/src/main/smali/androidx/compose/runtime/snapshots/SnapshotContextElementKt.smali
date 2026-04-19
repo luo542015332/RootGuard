@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final asContextElement(Landroidx/compose/runtime/snapshots/Snapshot;)Landroidx/compose/runtime/snapshots/SnapshotContextElement;
-    .registers 2
+    .locals 1
     .param p0, "$this$asContextElement"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string v0, "<this>"

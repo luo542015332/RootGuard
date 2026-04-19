@@ -101,7 +101,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     new-instance v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet$Companion;
 
@@ -130,7 +130,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;I)V
-    .registers 4
+    .locals 1
     .param p1, "node"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
     .param p2, "size"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -159,7 +159,7 @@
 .end method
 
 .method public static final synthetic access$getEMPTY$cp()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
-    .registers 1
+    .locals 1
 
     .line 11
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->EMPTY:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
@@ -170,7 +170,7 @@
 
 # virtual methods
 .method public bridge synthetic add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 11
@@ -184,7 +184,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -199,18 +199,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v1
 
-    :goto_b
+    :goto_0
     invoke-virtual {v0, v2, p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->add(ILjava/lang/Object;I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
 
     move-result-object v0
@@ -219,7 +219,7 @@
     .local v0, "newNode":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
 
-    if-ne v1, v0, :cond_17
+    if-ne v1, v0, :cond_1
 
     move-object v1, p0
 
@@ -228,7 +228,7 @@
     return-object v1
 
     .line 20
-    :cond_17
+    :cond_1
     new-instance v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->size()I
@@ -245,7 +245,7 @@
 .end method
 
 .method public bridge synthetic addAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
 
     .line 11
@@ -259,7 +259,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 7
+    .locals 5
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -314,7 +314,7 @@
 .end method
 
 .method public bridge synthetic builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection$Builder;
-    .registers 2
+    .locals 1
 
     .line 11
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet$Builder;
@@ -327,7 +327,7 @@
 .end method
 
 .method public builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet$Builder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -347,7 +347,7 @@
 .end method
 
 .method public bridge synthetic clear()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 2
+    .locals 1
 
     .line 11
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->clear()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
@@ -360,7 +360,7 @@
 .end method
 
 .method public clear()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -380,7 +380,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 14
@@ -388,18 +388,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v1
 
-    :goto_b
+    :goto_0
     invoke-virtual {v0, v2, p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->contains(ILjava/lang/Object;I)Z
 
     move-result v0
@@ -408,7 +408,7 @@
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 5
+    .locals 3
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -429,7 +429,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 47
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
@@ -447,10 +447,10 @@
     return v0
 
     .line 49
-    :cond_17
+    :cond_0
     instance-of v0, p1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 50
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
@@ -470,7 +470,7 @@
     return v0
 
     .line 52
-    :cond_29
+    :cond_1
     invoke-super {p0, p1}, Lkotlin/collections/AbstractSet;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
@@ -479,7 +479,7 @@
 .end method
 
 .method public final getNode$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -495,7 +495,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 12
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->size:I
@@ -504,7 +504,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -526,7 +526,7 @@
 .end method
 
 .method public bridge synthetic remove(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 11
@@ -540,7 +540,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -555,18 +555,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v1
 
-    :goto_b
+    :goto_0
     invoke-virtual {v0, v2, p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->remove(ILjava/lang/Object;I)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
 
     move-result-object v0
@@ -575,7 +575,7 @@
     .local v0, "newNode":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
     iget-object v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
 
-    if-ne v1, v0, :cond_17
+    if-ne v1, v0, :cond_1
 
     move-object v1, p0
 
@@ -584,7 +584,7 @@
     return-object v1
 
     .line 30
-    :cond_17
+    :cond_1
     new-instance v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->size()I
@@ -601,7 +601,7 @@
 .end method
 
 .method public bridge synthetic removeAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
 
     .line 11
@@ -615,7 +615,7 @@
 .end method
 
 .method public bridge synthetic removeAll(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
 
     .line 11
@@ -629,7 +629,7 @@
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 7
+    .locals 5
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -684,7 +684,7 @@
 .end method
 
 .method public removeAll(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -745,7 +745,7 @@
 .end method
 
 .method public bridge synthetic retainAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
 
     .line 11
@@ -759,7 +759,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 7
+    .locals 5
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {

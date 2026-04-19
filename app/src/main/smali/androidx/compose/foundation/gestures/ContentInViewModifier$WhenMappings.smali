@@ -30,7 +30,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     invoke-static {}, Landroidx/compose/foundation/gestures/Orientation;->values()[Landroidx/compose/foundation/gestures/Orientation;
 
@@ -40,7 +40,7 @@
 
     new-array v0, v0, [I
 
-    :try_start_7
+    :try_start_0
     sget-object v1, Landroidx/compose/foundation/gestures/Orientation;->Vertical:Landroidx/compose/foundation/gestures/Orientation;
 
     invoke-virtual {v1}, Landroidx/compose/foundation/gestures/Orientation;->ordinal()I
@@ -50,16 +50,16 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_10
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_10} :catch_11
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_12
+    goto :goto_0
 
-    :catch_11
+    :catch_0
     move-exception v1
 
-    :goto_12
-    :try_start_12
+    :goto_0
+    :try_start_1
     sget-object v1, Landroidx/compose/foundation/gestures/Orientation;->Horizontal:Landroidx/compose/foundation/gestures/Orientation;
 
     invoke-virtual {v1}, Landroidx/compose/foundation/gestures/Orientation;->ordinal()I
@@ -69,15 +69,15 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_1b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_12 .. :try_end_1b} :catch_1c
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_1d
+    goto :goto_1
 
-    :catch_1c
+    :catch_1
     move-exception v1
 
-    :goto_1d
+    :goto_1
     sput-object v0, Landroidx/compose/foundation/gestures/ContentInViewModifier$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

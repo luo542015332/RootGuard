@@ -58,7 +58,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     .line 31
     nop
@@ -92,7 +92,7 @@
 .end method
 
 .method public static final synthetic access$fillVector(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/runtime/collection/MutableVector;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/Modifier;
     .param p1, "result"    # Landroidx/compose/runtime/collection/MutableVector;
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public static final synthetic access$getSentinelHead$p()Landroidx/compose/ui/node/NodeChainKt$SentinelHead$1;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/node/NodeChainKt;->SentinelHead:Landroidx/compose/ui/node/NodeChainKt$SentinelHead$1;
@@ -114,7 +114,7 @@
 .end method
 
 .method public static final synthetic access$updateUnsafe(Landroidx/compose/ui/node/ModifierNodeElement;Landroidx/compose/ui/Modifier$Node;)V
-    .registers 2
+    .locals 0
     .param p0, "$receiver"    # Landroidx/compose/ui/node/ModifierNodeElement;
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
@@ -125,7 +125,7 @@
 .end method
 
 .method public static final actionForModifiers(Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Element;)I
-    .registers 3
+    .locals 1
     .param p0, "prev"    # Landroidx/compose/ui/Modifier$Element;
     .param p1, "next"    # Landroidx/compose/ui/Modifier$Element;
 
@@ -142,25 +142,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 808
     const/4 v0, 0x2
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 809
-    :cond_14
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/ActualKt;->areObjectsOfSameType(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_2e
+    if-nez v0, :cond_2
 
     .line 810
     instance-of v0, p0, Landroidx/compose/ui/node/ForceUpdateElement;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     move-object v0, p0
 
@@ -174,28 +174,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
-    goto :goto_2e
+    goto :goto_0
 
     .line 814
-    :cond_2c
+    :cond_1
     const/4 v0, 0x0
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 812
-    :cond_2e
-    :goto_2e
+    :cond_2
+    :goto_0
     const/4 v0, 0x1
 
     .line 807
-    :goto_2f
+    :goto_1
     return v0
 .end method
 
 .method private static final fillVector(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/runtime/collection/MutableVector;
-    .registers 7
+    .locals 5
     .param p0, "$this$fillVector"    # Landroidx/compose/ui/Modifier;
     .param p1, "result"    # Landroidx/compose/runtime/collection/MutableVector;
     .annotation system Ldalvik/annotation/Signature;
@@ -251,12 +251,12 @@
     .line 830
     .end local v3    # "$i$a$-also-NodeChainKt$fillVector$stack$1":I
     .local v1, "stack":Landroidx/compose/runtime/collection/MutableVector;
-    :goto_18
+    :goto_0
     invoke-virtual {v1}, Landroidx/compose/runtime/collection/MutableVector;->isNotEmpty()Z
 
     move-result v2
 
-    if-eqz v2, :cond_56
+    if-eqz v2, :cond_2
 
     .line 831
     invoke-virtual {v1}, Landroidx/compose/runtime/collection/MutableVector;->getSize()I
@@ -275,7 +275,7 @@
     .local v2, "next":Landroidx/compose/ui/Modifier;
     instance-of v3, v2, Landroidx/compose/ui/CombinedModifier;
 
-    if-eqz v3, :cond_43
+    if-eqz v3, :cond_0
 
     .line 833
     move-object v3, v2
@@ -299,20 +299,20 @@
 
     invoke-virtual {v1, v3}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
-    goto :goto_18
+    goto :goto_0
 
     .line 836
-    :cond_43
+    :cond_0
     instance-of v3, v2, Landroidx/compose/ui/Modifier$Element;
 
-    if-eqz v3, :cond_4b
+    if-eqz v3, :cond_1
 
     invoke-virtual {p1, v2}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
-    goto :goto_18
+    goto :goto_0
 
     .line 838
-    :cond_4b
+    :cond_1
     new-instance v3, Landroidx/compose/ui/node/NodeChainKt$fillVector$1;
 
     invoke-direct {v3, p1}, Landroidx/compose/ui/node/NodeChainKt$fillVector$1;-><init>(Landroidx/compose/runtime/collection/MutableVector;)V
@@ -321,16 +321,16 @@
 
     invoke-interface {v2, v3}, Landroidx/compose/ui/Modifier;->all(Lkotlin/jvm/functions/Function1;)Z
 
-    goto :goto_18
+    goto :goto_0
 
     .line 844
     .end local v2    # "next":Landroidx/compose/ui/Modifier;
-    :cond_56
+    :cond_2
     return-object p1
 .end method
 
 .method private static final updateUnsafe(Landroidx/compose/ui/node/ModifierNodeElement;Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p0, "$this$updateUnsafe"    # Landroidx/compose/ui/node/ModifierNodeElement;
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
     .annotation system Ldalvik/annotation/Signature;

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final focusRequester(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/focus/FocusRequester;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$focusRequester"    # Landroidx/compose/ui/Modifier;
     .param p1, "focusRequester"    # Landroidx/compose/ui/focus/FocusRequester;
 

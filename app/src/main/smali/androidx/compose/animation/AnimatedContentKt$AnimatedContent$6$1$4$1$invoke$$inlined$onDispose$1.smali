@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateList;Ljava/lang/Object;Landroidx/compose/animation/AnimatedContentTransitionScopeImpl;)V
-    .registers 4
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/animation/AnimatedContentKt$AnimatedContent$6$1$4$1$invoke$$inlined$onDispose$1;->$currentlyVisible$inlined:Landroidx/compose/runtime/snapshots/SnapshotStateList;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 4
+    .locals 3
 
     .line 65
     const/4 v0, 0x0

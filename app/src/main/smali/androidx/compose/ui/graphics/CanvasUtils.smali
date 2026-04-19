@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/CanvasUtils;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final enableZ(Landroid/graphics/Canvas;Z)V
-    .registers 12
+    .locals 9
     .param p1, "canvas"    # Landroid/graphics/Canvas;
     .param p2, "enable"    # Z
 
@@ -86,22 +86,22 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_13
+    if-lt v0, v1, :cond_0
 
     .line 40
     sget-object v0, Landroidx/compose/ui/graphics/CanvasZHelper;->INSTANCE:Landroidx/compose/ui/graphics/CanvasZHelper;
 
     invoke-virtual {v0, p1, p2}, Landroidx/compose/ui/graphics/CanvasZHelper;->enableZ(Landroid/graphics/Canvas;Z)V
 
-    goto/16 :goto_b5
+    goto/16 :goto_5
 
     .line 42
-    :cond_13
+    :cond_0
     sget-boolean v0, Landroidx/compose/ui/graphics/CanvasUtils;->orderMethodsFetched:Z
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_93
+    if-nez v0, :cond_4
 
     .line 43
     nop
@@ -109,12 +109,12 @@
     .line 44
     const/4 v0, 0x1
 
-    :try_start_1a
+    :try_start_0
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
-    :try_end_1c
-    .catch Ljava/lang/IllegalAccessException; {:try_start_1a .. :try_end_1c} :catch_90
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1a .. :try_end_1c} :catch_8e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_1a .. :try_end_1c} :catch_8c
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
 
     const/16 v3, 0x1c
 
@@ -122,9 +122,9 @@
 
     const-string/jumbo v5, "insertReorderBarrier"
 
-    if-ne v2, v3, :cond_67
+    if-ne v2, v3, :cond_1
 
-    :try_start_26
+    :try_start_1
     const-class v2, Ljava/lang/Class;
 
     .line 47
@@ -214,10 +214,10 @@
     sput-object v3, Landroidx/compose/ui/graphics/CanvasUtils;->inorderBarrierMethod:Ljava/lang/reflect/Method;
 
     .end local v2    # "getDeclaredMethod":Ljava/lang/reflect/Method;
-    goto :goto_7b
+    goto :goto_0
 
     .line 62
-    :cond_67
+    :cond_1
     const-class v2, Landroid/graphics/Canvas;
 
     .line 63
@@ -244,65 +244,65 @@
     sput-object v2, Landroidx/compose/ui/graphics/CanvasUtils;->inorderBarrierMethod:Ljava/lang/reflect/Method;
 
     .line 69
-    :goto_7b
+    :goto_0
     sget-object v2, Landroidx/compose/ui/graphics/CanvasUtils;->reorderBarrierMethod:Ljava/lang/reflect/Method;
 
-    if-nez v2, :cond_80
+    if-nez v2, :cond_2
 
-    goto :goto_83
+    goto :goto_1
 
-    :cond_80
+    :cond_2
     invoke-virtual {v2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
     .line 70
-    :goto_83
+    :goto_1
     sget-object v2, Landroidx/compose/ui/graphics/CanvasUtils;->inorderBarrierMethod:Ljava/lang/reflect/Method;
 
-    if-nez v2, :cond_88
+    if-nez v2, :cond_3
 
-    :goto_87
-    goto :goto_91
+    :goto_2
+    goto :goto_3
 
-    :cond_88
+    :cond_3
     invoke-virtual {v2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_8b
-    .catch Ljava/lang/IllegalAccessException; {:try_start_26 .. :try_end_8b} :catch_90
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_26 .. :try_end_8b} :catch_8e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_26 .. :try_end_8b} :catch_8c
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_2
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_87
+    goto :goto_2
 
     .line 73
-    :catch_8c
+    :catch_0
     move-exception v2
 
-    goto :goto_91
+    goto :goto_3
 
     .line 72
-    :catch_8e
+    :catch_1
     move-exception v2
 
-    goto :goto_91
+    goto :goto_3
 
     .line 71
-    :catch_90
+    :catch_2
     move-exception v2
 
     .line 75
-    :goto_91
+    :goto_3
     sput-boolean v0, Landroidx/compose/ui/graphics/CanvasUtils;->orderMethodsFetched:Z
 
     .line 77
-    :cond_93
+    :cond_4
     nop
 
     .line 78
-    if-eqz p2, :cond_a7
+    if-eqz p2, :cond_5
 
-    :try_start_96
+    :try_start_2
     sget-object v0, Landroidx/compose/ui/graphics/CanvasUtils;->reorderBarrierMethod:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_a7
+    if-eqz v0, :cond_5
 
     .line 79
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
@@ -311,28 +311,28 @@
 
     invoke-virtual {v0, p1, v2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_a7
+    goto :goto_4
 
     .line 85
-    :catch_a3
+    :catch_3
     move-exception v0
 
-    goto :goto_b5
+    goto :goto_5
 
     .line 84
-    :catch_a5
+    :catch_4
     move-exception v0
 
-    goto :goto_b5
+    goto :goto_5
 
     .line 81
-    :cond_a7
-    :goto_a7
-    if-nez p2, :cond_b5
+    :cond_5
+    :goto_4
+    if-nez p2, :cond_6
 
     sget-object v0, Landroidx/compose/ui/graphics/CanvasUtils;->inorderBarrierMethod:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_b5
+    if-eqz v0, :cond_6
 
     .line 82
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
@@ -340,12 +340,12 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     invoke-virtual {v0, p1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_b5
-    .catch Ljava/lang/IllegalAccessException; {:try_start_96 .. :try_end_b5} :catch_a5
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_96 .. :try_end_b5} :catch_a3
+    :try_end_2
+    .catch Ljava/lang/IllegalAccessException; {:try_start_2 .. :try_end_2} :catch_4
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_2 .. :try_end_2} :catch_3
 
     .line 88
-    :cond_b5
-    :goto_b5
+    :cond_6
+    :goto_5
     return-void
 .end method

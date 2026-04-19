@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -67,7 +67,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public final getChildren()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -106,7 +106,7 @@
 .end method
 
 .method public final performAutofill(ILjava/lang/String;)Lkotlin/Unit;
-    .registers 5
+    .locals 2
     .param p1, "id"    # I
     .param p2, "value"    # Ljava/lang/String;
 
@@ -127,29 +127,29 @@
 
     check-cast v0, Landroidx/compose/ui/autofill/AutofillNode;
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/autofill/AutofillNode;->getOnFill()Lkotlin/jvm/functions/Function1;
 
     move-result-object v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p2}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_20
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_21
+    :goto_0
     return-object v0
 .end method
 
 .method public final plusAssign(Landroidx/compose/ui/autofill/AutofillNode;)V
-    .registers 4
+    .locals 2
     .param p1, "autofillNode"    # Landroidx/compose/ui/autofill/AutofillNode;
 
     const-string/jumbo v0, "autofillNode"

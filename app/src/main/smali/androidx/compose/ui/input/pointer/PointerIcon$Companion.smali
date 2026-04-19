@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/input/pointer/PointerIcon$Companion;
 
@@ -97,7 +97,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final getCrosshair()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 2
+    .locals 1
 
     .line 52
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon$Companion;->Crosshair:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -117,7 +117,7 @@
 .end method
 
 .method public final getDefault()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 2
+    .locals 1
 
     .line 49
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon$Companion;->Default:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -126,7 +126,7 @@
 .end method
 
 .method public final getHand()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 2
+    .locals 1
 
     .line 58
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon$Companion;->Hand:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -135,7 +135,7 @@
 .end method
 
 .method public final getText()Landroidx/compose/ui/input/pointer/PointerIcon;
-    .registers 2
+    .locals 1
 
     .line 55
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerIcon$Companion;->Text:Landroidx/compose/ui/input/pointer/PointerIcon;

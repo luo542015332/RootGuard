@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;)V
-    .registers 3
+    .locals 1
     .param p1, "callback"    # Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;
 
     const-string/jumbo v0, "callback"
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .registers 4
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "item"    # Landroid/view/MenuItem;
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 4
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "menu"    # Landroid/view/Menu;
 
@@ -99,7 +99,7 @@
 .end method
 
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
-    .registers 3
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
 
     .line 43
@@ -112,7 +112,7 @@
 .end method
 
 .method public onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
-    .registers 9
+    .locals 5
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "view"    # Landroid/view/View;
     .param p3, "outRect"    # Landroid/graphics/Rect;
@@ -126,7 +126,7 @@
 
     .line 52
     .local v0, "rect":Landroidx/compose/ui/geometry/Rect;
-    if-eqz p3, :cond_1f
+    if-eqz p3, :cond_0
 
     .line 53
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Rect;->getLeft()F
@@ -160,12 +160,12 @@
     invoke-virtual {p3, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 58
-    :cond_1f
+    :cond_0
     return-void
 .end method
 
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 4
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "menu"    # Landroid/view/Menu;
 

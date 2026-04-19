@@ -65,7 +65,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/CancellableContinuation;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final doFrame(J)V
-    .registers 8
+    .locals 5
     .param p1, "frameTimeNanos"    # J
 
     .line 66
@@ -100,7 +100,7 @@
 
     iget-object v2, p0, Landroidx/compose/runtime/DefaultChoreographerFrameClock$withFrameNanos$2$callback$1;->$onFrame:Lkotlin/jvm/functions/Function1;
 
-    :try_start_6
+    :try_start_0
     sget-object v3, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     .line 116
@@ -122,12 +122,12 @@
     invoke-static {v2}, Lkotlin/Result;->constructor-impl(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
-    :try_end_15
-    .catchall {:try_start_6 .. :try_end_15} :catchall_16
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :catchall_16
+    :catchall_0
     move-exception v1
 
     sget-object v2, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
@@ -140,7 +140,7 @@
 
     move-result-object v1
 
-    :goto_21
+    :goto_0
     invoke-interface {v0, v1}, Lkotlinx/coroutines/CancellableContinuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 67

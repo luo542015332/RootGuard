@@ -105,7 +105,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/ColorSpace$Companion;
 
@@ -119,7 +119,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;J)V
-    .registers 11
+    .locals 7
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "model"    # J
 
@@ -144,7 +144,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;JI)V
-    .registers 7
+    .locals 2
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "model"    # J
     .param p4, "id"    # I
@@ -177,26 +177,26 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1c
-    if-nez v0, :cond_30
+    :goto_0
+    if-nez v0, :cond_2
 
     .line 207
     const/4 v0, -0x1
 
-    if-lt p4, v0, :cond_27
+    if-lt p4, v0, :cond_1
 
     const/16 v0, 0x3f
 
-    if-gt p4, v0, :cond_27
+    if-gt p4, v0, :cond_1
 
     .line 210
     nop
@@ -205,7 +205,7 @@
     return-void
 
     .line 208
-    :cond_27
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "The id must be between -1 and 63"
@@ -215,7 +215,7 @@
     throw v0
 
     .line 201
-    :cond_30
+    :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 202
@@ -230,7 +230,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;JILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;-><init>(Ljava/lang/String;JI)V
 
@@ -238,7 +238,7 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;-><init>(Ljava/lang/String;J)V
 
@@ -248,11 +248,11 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 8
+    .locals 6
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 377
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     .line 378
     const/4 v0, 0x1
@@ -260,10 +260,10 @@
     return v0
 
     .line 381
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_4
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -273,12 +273,12 @@
 
     move-result-object v2
 
-    if-eq v1, v2, :cond_12
+    if-eq v1, v2, :cond_1
 
-    goto :goto_30
+    goto :goto_1
 
     .line 385
-    :cond_12
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
@@ -289,12 +289,12 @@
 
     iget v3, v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->id:I
 
-    if-eq v2, v3, :cond_1c
+    if-eq v2, v3, :cond_2
 
     return v0
 
     .line 389
-    :cond_1c
+    :cond_2
     iget-object v2, p0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->name:Ljava/lang/String;
 
     iget-object v3, v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->name:Ljava/lang/String;
@@ -303,11 +303,11 @@
 
     move-result v2
 
-    if-nez v2, :cond_27
+    if-nez v2, :cond_3
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_27
+    :cond_3
     iget-wide v2, p0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->model:J
 
     iget-wide v4, v1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->model:J
@@ -316,18 +316,18 @@
 
     move-result v0
 
-    :goto_2f
+    :goto_0
     return v0
 
     .line 382
     .end local v1    # "that":Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    :cond_30
-    :goto_30
+    :cond_4
+    :goto_1
     return v0
 .end method
 
 .method public final fromXyz(FFF)[F
-    .registers 6
+    .locals 2
     .param p1, "x"    # F
     .param p2, "y"    # F
     .param p3, "z"    # F
@@ -369,7 +369,7 @@
 .end method
 
 .method public final getComponentCount()I
-    .registers 3
+    .locals 2
 
     .line 154
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->model:J
@@ -382,7 +382,7 @@
 .end method
 
 .method public final getId$ui_graphics_release()I
-    .registers 2
+    .locals 1
 
     .line 140
     iget v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->id:I
@@ -397,7 +397,7 @@
 .end method
 
 .method public final getModel-xdoWZVw()J
-    .registers 3
+    .locals 2
 
     .line 133
     iget-wide v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->model:J
@@ -406,7 +406,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->name:Ljava/lang/String;
@@ -415,7 +415,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 393
     iget-object v0, p0, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->name:Ljava/lang/String;
@@ -452,7 +452,7 @@
 .end method
 
 .method public isSrgb()Z
-    .registers 2
+    .locals 1
 
     .line 197
     const/4 v0, 0x0
@@ -464,7 +464,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 373
     new-instance v0, Ljava/lang/StringBuilder;
@@ -519,7 +519,7 @@
 .end method
 
 .method public toXy$ui_graphics_release(FFF)J
-    .registers 16
+    .locals 12
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -581,7 +581,7 @@
 .end method
 
 .method public final toXyz(FFF)[F
-    .registers 6
+    .locals 2
     .param p1, "r"    # F
     .param p2, "g"    # F
     .param p3, "b"    # F
@@ -614,7 +614,7 @@
 .end method
 
 .method public toZ$ui_graphics_release(FFF)F
-    .registers 6
+    .locals 2
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -634,7 +634,7 @@
 .end method
 
 .method public xyzaToColor-JlNiLsg$ui_graphics_release(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J
-    .registers 10
+    .locals 4
     .param p1, "x"    # F
     .param p2, "y"    # F
     .param p3, "z"    # F

@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "onDraw"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public draw(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
 
     const-string v0, "<this>"
@@ -100,7 +100,7 @@
 .end method
 
 .method public final getOnDraw()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -118,7 +118,7 @@
 .end method
 
 .method public final setOnDraw(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final Key(I)J
-    .registers 9
+    .locals 8
     .param p0, "nativeKeyCode"    # I
 
     .line 1421
@@ -70,7 +70,7 @@
 .end method
 
 .method public static final getNativeKeyCode-YVgTNJs(J)I
-    .registers 7
+    .locals 5
     .param p0, "$this$nativeKeyCode"    # J
 
     .line 1419

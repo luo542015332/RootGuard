@@ -55,7 +55,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/SubcomposeLayoutState;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState$setRoot$1;->this$0:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -90,7 +90,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/layout/SubcomposeLayoutState;)V
-    .registers 7
+    .locals 4
     .param p1, "$this$null"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "it"    # Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
@@ -110,13 +110,12 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_25
+    if-nez v1, :cond_0
 
     new-instance v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     iget-object v2, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState$setRoot$1;->this$0:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
-    # getter for: Landroidx/compose/ui/layout/SubcomposeLayoutState;->slotReusePolicy:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
     invoke-static {v2}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->access$getSlotReusePolicy$p(Landroidx/compose/ui/layout/SubcomposeLayoutState;)Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
 
     move-result-object v2
@@ -141,13 +140,12 @@
     nop
 
     .line 423
-    :cond_25
+    :cond_0
     invoke-static {v0, v1}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->access$set_state$p(Landroidx/compose/ui/layout/SubcomposeLayoutState;Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)V
 
     .line 427
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState$setRoot$1;->this$0:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
-    # invokes: Landroidx/compose/ui/layout/SubcomposeLayoutState;->getState()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     invoke-static {v0}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->access$getState(Landroidx/compose/ui/layout/SubcomposeLayoutState;)Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     move-result-object v0
@@ -157,14 +155,12 @@
     .line 428
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState$setRoot$1;->this$0:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
-    # invokes: Landroidx/compose/ui/layout/SubcomposeLayoutState;->getState()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     invoke-static {v0}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->access$getState(Landroidx/compose/ui/layout/SubcomposeLayoutState;)Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     move-result-object v0
 
     iget-object v1, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState$setRoot$1;->this$0:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
-    # getter for: Landroidx/compose/ui/layout/SubcomposeLayoutState;->slotReusePolicy:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
     invoke-static {v1}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->access$getSlotReusePolicy$p(Landroidx/compose/ui/layout/SubcomposeLayoutState;)Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
 
     move-result-object v1

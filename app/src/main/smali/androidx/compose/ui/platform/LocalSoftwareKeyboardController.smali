@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     new-instance v0, Landroidx/compose/ui/platform/LocalSoftwareKeyboardController;
 
@@ -84,7 +84,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -93,7 +93,7 @@
 .end method
 
 .method private final delegatingController(Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/platform/SoftwareKeyboardController;
-    .registers 13
+    .locals 10
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -109,7 +109,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 46
     const/4 v1, -0x1
@@ -119,7 +119,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 47
-    :cond_18
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/CompositionLocalsKt;->getLocalTextInputService()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -152,24 +152,24 @@
     .end local v2    # "$i$f$getCurrent":I
     check-cast v3, Landroidx/compose/ui/text/input/TextInputService;
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_3c
+    :cond_1
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_41
+    :cond_2
     move-object v0, v3
 
     .local v0, "textInputService":Landroidx/compose/ui/text/input/TextInputService;
@@ -212,7 +212,7 @@
 
     .line 81
     .local v7, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v3, :cond_69
+    if-nez v3, :cond_4
 
     sget-object v8, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -220,19 +220,19 @@
 
     move-result-object v8
 
-    if-ne v6, v8, :cond_67
+    if-ne v6, v8, :cond_3
 
-    goto :goto_69
+    goto :goto_0
 
     .line 85
-    :cond_67
+    :cond_3
     move-object v8, v6
 
-    goto :goto_74
+    goto :goto_1
 
     .line 82
-    :cond_69
-    :goto_69
+    :cond_4
+    :goto_0
     const/4 v8, 0x0
 
     .line 49
@@ -254,7 +254,7 @@
 
     .line 81
     .end local v8    # "value$iv$iv":Ljava/lang/Object;
-    :goto_74
+    :goto_1
     nop
 
     .line 80
@@ -277,11 +277,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_84
+    if-eqz v1, :cond_5
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_84
+    :cond_5
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     check-cast v8, Landroidx/compose/ui/platform/SoftwareKeyboardController;
@@ -290,7 +290,7 @@
 .end method
 
 .method public static synthetic getCurrent$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -298,7 +298,7 @@
 
 # virtual methods
 .method public final getCurrent(Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/platform/SoftwareKeyboardController;
-    .registers 8
+    .locals 5
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -314,7 +314,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 41
     const/4 v1, -0x1
@@ -324,7 +324,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 42
-    :cond_18
+    :cond_0
     sget-object v0, Landroidx/compose/ui/platform/LocalSoftwareKeyboardController;->LocalSoftwareKeyboardController:Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -355,7 +355,7 @@
     .end local v2    # "$i$f$getCurrent":I
     check-cast v3, Landroidx/compose/ui/platform/SoftwareKeyboardController;
 
-    if-nez v3, :cond_37
+    if-nez v3, :cond_1
 
     and-int/lit8 v0, p2, 0xe
 
@@ -363,23 +363,23 @@
 
     move-result-object v3
 
-    :cond_37
+    :cond_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_40
+    :cond_2
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v3
 .end method
 
 .method public final provides(Landroidx/compose/ui/platform/SoftwareKeyboardController;)Landroidx/compose/runtime/ProvidedValue;
-    .registers 3
+    .locals 1
     .param p1, "softwareKeyboardController"    # Landroidx/compose/ui/platform/SoftwareKeyboardController;
     .annotation system Ldalvik/annotation/Signature;
         value = {

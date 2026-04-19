@@ -53,7 +53,7 @@
 
 # direct methods
 .method public static final anyChangeConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$anyChangeConsumed"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .annotation runtime Lkotlin/Deprecated;
         message = "Partial consumption has been deprecated. Use isConsumed instead"
@@ -76,7 +76,7 @@
 .end method
 
 .method public static final changedToDown(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$changedToDown"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"
@@ -88,33 +88,33 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPreviousPressed()Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPressed()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1a
+    :goto_0
     return v0
 .end method
 
 .method public static final changedToDownIgnoreConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$changedToDownIgnoreConsumed"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"
@@ -126,27 +126,27 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPressed()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public static final changedToUp(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$changedToUp"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"
@@ -158,33 +158,33 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPreviousPressed()Z
 
     move-result v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPressed()Z
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1a
+    :goto_0
     return v0
 .end method
 
 .method public static final changedToUpIgnoreConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$changedToUpIgnoreConsumed"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"
@@ -196,27 +196,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPressed()Z
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public static final consumeAllChanges(Landroidx/compose/ui/input/pointer/PointerInputChange;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$consumeAllChanges"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .annotation runtime Lkotlin/Deprecated;
         message = "Use consume() instead"
@@ -238,7 +238,7 @@
 .end method
 
 .method public static final consumeDownChange(Landroidx/compose/ui/input/pointer/PointerInputChange;)V
-    .registers 3
+    .locals 2
     .param p0, "$this$consumeDownChange"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .annotation runtime Lkotlin/Deprecated;
         message = "Partial consumption has been deprecated. Use consume() instead."
@@ -261,18 +261,18 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_12
+    if-eq v0, v1, :cond_0
 
     .line 965
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->consume()V
 
     .line 967
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public static final consumePositionChange(Landroidx/compose/ui/input/pointer/PointerInputChange;)V
-    .registers 5
+    .locals 4
     .param p0, "$this$consumePositionChange"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .annotation runtime Lkotlin/Deprecated;
         message = "Partial consumption has been deprecated. Use consume() instead."
@@ -301,18 +301,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     .line 978
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->consume()V
 
     .line 980
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public static final isOutOfBounds-O0kMr_c(Landroidx/compose/ui/input/pointer/PointerInputChange;J)Z
-    .registers 11
+    .locals 8
     .param p0, "$this$isOutOfBounds_u2dO0kMr_c"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .param p1, "size"    # J
     .annotation runtime Lkotlin/Deprecated;
@@ -362,41 +362,41 @@
 
     cmpg-float v7, v2, v6
 
-    if-ltz v7, :cond_2f
+    if-ltz v7, :cond_1
 
     int-to-float v7, v4
 
     cmpl-float v7, v2, v7
 
-    if-gtz v7, :cond_2f
+    if-gtz v7, :cond_1
 
     cmpg-float v6, v3, v6
 
-    if-ltz v6, :cond_2f
+    if-ltz v6, :cond_1
 
     int-to-float v6, v5
 
     cmpl-float v6, v3, v6
 
-    if-lez v6, :cond_2d
+    if-lez v6, :cond_0
 
-    goto :goto_2f
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     const/4 v6, 0x0
 
-    goto :goto_30
+    goto :goto_1
 
-    :cond_2f
-    :goto_2f
+    :cond_1
+    :goto_0
     const/4 v6, 0x1
 
-    :goto_30
+    :goto_1
     return v6
 .end method
 
 .method public static final isOutOfBounds-jwHxaWs(Landroidx/compose/ui/input/pointer/PointerInputChange;JJ)Z
-    .registers 14
+    .locals 9
     .param p0, "$this$isOutOfBounds_u2djwHxaWs"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .param p1, "size"    # J
     .param p3, "extendedTouchPadding"    # J
@@ -420,7 +420,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_0
 
     .line 1018
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/input/pointer/PointerEventKt;->isOutOfBounds-O0kMr_c(Landroidx/compose/ui/input/pointer/PointerInputChange;J)Z
@@ -430,7 +430,7 @@
     return v0
 
     .line 1020
-    :cond_1a
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getPosition-F1C5BW0()J
 
     move-result-wide v0
@@ -495,37 +495,37 @@
     .local v7, "maxY":F
     cmpg-float v8, v2, v4
 
-    if-ltz v8, :cond_57
+    if-ltz v8, :cond_2
 
     cmpl-float v8, v2, v5
 
-    if-gtz v8, :cond_57
+    if-gtz v8, :cond_2
 
     cmpg-float v8, v3, v6
 
-    if-ltz v8, :cond_57
+    if-ltz v8, :cond_2
 
     cmpl-float v8, v3, v7
 
-    if-lez v8, :cond_55
+    if-lez v8, :cond_1
 
-    goto :goto_57
+    goto :goto_0
 
-    :cond_55
+    :cond_1
     const/4 v8, 0x0
 
-    goto :goto_58
+    goto :goto_1
 
-    :cond_57
-    :goto_57
+    :cond_2
+    :goto_0
     const/4 v8, 0x1
 
-    :goto_58
+    :goto_1
     return v8
 .end method
 
 .method public static final positionChange(Landroidx/compose/ui/input/pointer/PointerInputChange;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$positionChange"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"
@@ -543,7 +543,7 @@
 .end method
 
 .method public static final positionChangeConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this$positionChangeConsumed"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .annotation runtime Lkotlin/Deprecated;
         message = "Partial consumption has been deprecated. Use isConsumed instead"
@@ -566,7 +566,7 @@
 .end method
 
 .method public static final positionChangeIgnoreConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$positionChangeIgnoreConsumed"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"
@@ -584,7 +584,7 @@
 .end method
 
 .method private static final positionChangeInternal(Landroidx/compose/ui/input/pointer/PointerInputChange;Z)J
-    .registers 10
+    .locals 8
     .param p0, "$this$positionChangeInternal"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
     .param p1, "ignoreConsumed"    # Z
 
@@ -607,13 +607,13 @@
 
     .line 934
     .local v4, "offset":J
-    if-nez p1, :cond_1b
+    if-nez p1, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->isConsumed()Z
 
     move-result v6
 
-    if-eqz v6, :cond_1b
+    if-eqz v6, :cond_0
 
     sget-object v6, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
@@ -621,26 +621,26 @@
 
     move-result-wide v6
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move-wide v6, v4
 
-    :goto_1c
+    :goto_0
     return-wide v6
 .end method
 
 .method static synthetic positionChangeInternal$default(Landroidx/compose/ui/input/pointer/PointerInputChange;ZILjava/lang/Object;)J
-    .registers 4
+    .locals 0
 
     .line 928
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/input/pointer/PointerEventKt;->positionChangeInternal(Landroidx/compose/ui/input/pointer/PointerInputChange;Z)J
 
     move-result-wide p0
@@ -649,7 +649,7 @@
 .end method
 
 .method public static final positionChanged(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 5
+    .locals 4
     .param p0, "$this$positionChanged"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"
@@ -679,7 +679,7 @@
 .end method
 
 .method public static final positionChangedIgnoreConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
-    .registers 6
+    .locals 5
     .param p0, "$this$positionChangedIgnoreConsumed"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string v0, "<this>"

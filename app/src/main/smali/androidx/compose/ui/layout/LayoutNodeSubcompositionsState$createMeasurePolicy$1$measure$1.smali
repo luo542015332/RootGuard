@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/MeasureResult;Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;I)V
-    .registers 4
+    .locals 0
     .param p1, "$result"    # Landroidx/compose/ui/layout/MeasureResult;
     .param p2, "$receiver"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .param p3, "$indexAfterMeasure"    # I
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public getAlignmentLines()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -100,7 +100,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 2
+    .locals 1
 
     .line 873
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure$1;->$result:Landroidx/compose/ui/layout/MeasureResult;
@@ -113,7 +113,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 2
+    .locals 1
 
     .line 871
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure$1;->$result:Landroidx/compose/ui/layout/MeasureResult;
@@ -126,7 +126,7 @@
 .end method
 
 .method public placeChildren()V
-    .registers 3
+    .locals 2
 
     .line 878
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
@@ -143,7 +143,6 @@
     .line 880
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$createMeasurePolicy$1$measure$1;->this$0:Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
-    # getter for: Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->currentIndex:I
     invoke-static {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->access$getCurrentIndex$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
 
     move-result v1

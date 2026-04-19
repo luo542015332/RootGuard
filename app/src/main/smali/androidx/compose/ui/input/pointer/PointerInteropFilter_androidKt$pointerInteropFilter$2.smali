@@ -69,7 +69,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 13
+    .locals 9
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -118,7 +118,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 79
     const/4 v1, -0x1
@@ -127,7 +127,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_1d
+    :cond_0
     const/4 v0, 0x0
 
     .local v0, "$changed$iv":I
@@ -168,7 +168,7 @@
 
     move-result-object v7
 
-    if-ne v5, v7, :cond_46
+    if-ne v5, v7, :cond_1
 
     .line 353
     const/4 v7, 0x0
@@ -191,14 +191,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_47
+    goto :goto_0
 
     .line 356
-    :cond_46
+    :cond_1
     move-object v7, v5
 
     .line 352
-    :goto_47
+    :goto_0
     nop
 
     .line 351
@@ -234,11 +234,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_62
+    if-eqz v1, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_62
+    :cond_2
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     move-object v1, v0
@@ -249,7 +249,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

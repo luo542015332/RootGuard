@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 72
     iget-object v0, p0, Landroidx/compose/ui/platform/InspectorInfo;->name:Ljava/lang/String;
@@ -91,7 +91,7 @@
 .end method
 
 .method public final getProperties()Landroidx/compose/ui/platform/ValueElementSequence;
-    .registers 2
+    .locals 1
 
     .line 82
     iget-object v0, p0, Landroidx/compose/ui/platform/InspectorInfo;->properties:Landroidx/compose/ui/platform/ValueElementSequence;
@@ -100,7 +100,7 @@
 .end method
 
 .method public final getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 77
     iget-object v0, p0, Landroidx/compose/ui/platform/InspectorInfo;->value:Ljava/lang/Object;
@@ -109,7 +109,7 @@
 .end method
 
 .method public final setName(Ljava/lang/String;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/String;
 
     .line 72
@@ -119,7 +119,7 @@
 .end method
 
 .method public final setValue(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     .line 77

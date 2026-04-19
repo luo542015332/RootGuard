@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final invalidateDraw(Landroidx/compose/ui/node/DrawModifierNode;)V
-    .registers 4
+    .locals 3
     .param p0, "$this$invalidateDraw"    # Landroidx/compose/ui/node/DrawModifierNode;
 
     const-string v0, "<this>"
@@ -46,7 +46,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 41
     move-object v0, p0
@@ -72,6 +72,6 @@
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->invalidateLayer()V
 
     .line 43
-    :cond_1f
+    :cond_0
     return-void
 .end method

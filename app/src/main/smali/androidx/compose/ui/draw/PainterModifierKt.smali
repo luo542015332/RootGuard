@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final paint(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/painter/Painter;ZLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;)Landroidx/compose/ui/Modifier;
-    .registers 15
+    .locals 8
     .param p0, "$this$paint"    # Landroidx/compose/ui/Modifier;
     .param p1, "painter"    # Landroidx/compose/ui/graphics/painter/Painter;
     .param p2, "sizeToIntrinsics"    # Z
@@ -111,28 +111,28 @@
 .end method
 
 .method public static synthetic paint$default(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/painter/Painter;ZLandroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 16
+    .locals 7
 
     .line 60
     and-int/lit8 p8, p7, 0x2
 
-    if-eqz p8, :cond_7
+    if-eqz p8, :cond_0
 
     .line 62
     const/4 p2, 0x1
 
     move v2, p2
 
-    goto :goto_8
+    goto :goto_0
 
     .line 60
-    :cond_7
+    :cond_0
     move v2, p2
 
-    :goto_8
+    :goto_0
     and-int/lit8 p2, p7, 0x4
 
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_1
 
     .line 63
     sget-object p2, Landroidx/compose/ui/Alignment;->Companion:Landroidx/compose/ui/Alignment$Companion;
@@ -143,16 +143,16 @@
 
     move-object v3, p3
 
-    goto :goto_15
+    goto :goto_1
 
     .line 60
-    :cond_14
+    :cond_1
     move-object v3, p3
 
-    :goto_15
+    :goto_1
     and-int/lit8 p2, p7, 0x8
 
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_2
 
     .line 64
     sget-object p2, Landroidx/compose/ui/layout/ContentScale;->Companion:Landroidx/compose/ui/layout/ContentScale$Companion;
@@ -163,45 +163,45 @@
 
     move-object v4, p4
 
-    goto :goto_22
+    goto :goto_2
 
     .line 60
-    :cond_21
+    :cond_2
     move-object v4, p4
 
-    :goto_22
+    :goto_2
     and-int/lit8 p2, p7, 0x10
 
-    if-eqz p2, :cond_2a
+    if-eqz p2, :cond_3
 
     .line 65
     const/high16 p5, 0x3f800000    # 1.0f
 
     move v5, p5
 
-    goto :goto_2b
+    goto :goto_3
 
     .line 60
-    :cond_2a
+    :cond_3
     move v5, p5
 
-    :goto_2b
+    :goto_3
     and-int/lit8 p2, p7, 0x20
 
-    if-eqz p2, :cond_32
+    if-eqz p2, :cond_4
 
     .line 66
     const/4 p6, 0x0
 
     move-object v6, p6
 
-    goto :goto_33
+    goto :goto_4
 
     .line 60
-    :cond_32
+    :cond_4
     move-object v6, p6
 
-    :goto_33
+    :goto_4
     move-object v0, p0
 
     move-object v1, p1

@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .param p1, "$save"    # Lkotlin/jvm/functions/Function2;
     .param p2, "$restore"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -100,7 +100,7 @@
 
 # virtual methods
 .method public restore(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -123,7 +123,7 @@
 .end method
 
 .method public save(Landroidx/compose/runtime/saveable/SaverScope;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "$this$save"    # Landroidx/compose/runtime/saveable/SaverScope;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

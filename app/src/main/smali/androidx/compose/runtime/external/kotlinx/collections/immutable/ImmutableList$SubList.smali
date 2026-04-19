@@ -81,7 +81,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;II)V
-    .registers 5
+    .locals 1
     .param p1, "source"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
     .param p2, "fromIndex"    # I
     .param p3, "toIndex"    # I
@@ -131,7 +131,7 @@
 
 # virtual methods
 .method public get(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -159,7 +159,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 46
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList$SubList;->_size:I
@@ -168,7 +168,7 @@
 .end method
 
 .method public subList(II)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
-    .registers 7
+    .locals 4
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -203,7 +203,7 @@
 .end method
 
 .method public bridge synthetic subList(II)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
 

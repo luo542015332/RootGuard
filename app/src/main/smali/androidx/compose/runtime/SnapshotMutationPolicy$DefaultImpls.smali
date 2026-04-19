@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static merge(Landroidx/compose/runtime/SnapshotMutationPolicy;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .param p1, "previous"    # Ljava/lang/Object;
     .param p2, "current"    # Ljava/lang/Object;
@@ -45,7 +45,6 @@
     .end annotation
 
     .line 57
-    # invokes: Landroidx/compose/runtime/SnapshotMutationPolicy;->merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/runtime/SnapshotMutationPolicy;->access$merge$jd(Landroidx/compose/runtime/SnapshotMutationPolicy;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0

@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;ZLandroidx/compose/foundation/interaction/MutableInteractionSource;Landroidx/compose/material/SwitchColors;II)V
-    .registers 10
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     move-object v0, p1
 
@@ -132,7 +132,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 12
+    .locals 9
 
     iget-boolean v0, p0, Landroidx/compose/material/SwitchKt$Switch$6;->$checked:Z
 

@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final findOneLayerOfSemanticsWrappersSortedByBounds(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$findOneLayerOfSemanticsWrappersSortedByBounds"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string v0, "<this>"
@@ -38,7 +38,7 @@
 .end method
 
 .method private static final findOneLayerOfSemanticsWrappersSortedByBounds$shimToPreserveFilenameAPI()V
-    .registers 0
+    .locals 0
 
     .line 23
     return-void

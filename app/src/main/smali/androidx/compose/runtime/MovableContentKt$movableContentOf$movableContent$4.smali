@@ -76,7 +76,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function6;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -132,7 +132,7 @@
 .end method
 
 .method public final invoke(Lkotlin/Pair;Landroidx/compose/runtime/Composer;I)V
-    .registers 14
+    .locals 10
     .param p1, "it"    # Lkotlin/Pair;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -162,7 +162,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 145
     const v0, 0x6fd65975
@@ -173,7 +173,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_1b
+    :cond_0
     iget-object v3, p0, Landroidx/compose/runtime/MovableContentKt$movableContentOf$movableContent$4;->$content:Lkotlin/jvm/functions/Function6;
 
     invoke-virtual {p1}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
@@ -230,11 +230,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 146
-    :cond_57
+    :cond_1
     return-void
 .end method

@@ -41,7 +41,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/animation/core/EasingFunctionsKt$EaseInOutBounce$1;
 
@@ -53,7 +53,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public final transform(F)F
-    .registers 7
+    .locals 5
     .param p1, "fraction"    # F
 
     .line 253
@@ -79,7 +79,7 @@
 
     const/high16 v3, 0x40000000    # 2.0f
 
-    if-gez v0, :cond_1b
+    if-gez v0, :cond_0
 
     .line 254
     int-to-float v0, v2
@@ -100,10 +100,10 @@
 
     div-float/2addr v0, v3
 
-    goto :goto_29
+    goto :goto_0
 
     .line 256
-    :cond_1b
+    :cond_0
     int-to-float v0, v2
 
     invoke-static {}, Landroidx/compose/animation/core/EasingFunctionsKt;->getEaseOutBounce()Landroidx/compose/animation/core/Easing;
@@ -123,6 +123,6 @@
     div-float/2addr v0, v3
 
     .line 253
-    :goto_29
+    :goto_0
     return v0
 .end method

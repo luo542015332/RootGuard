@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/Path$Companion;
 
@@ -59,7 +59,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 266
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final combine-xh6zSI8(ILandroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;)Landroidx/compose/ui/graphics/Path;
-    .registers 7
+    .locals 3
     .param p1, "operation"    # I
     .param p2, "path1"    # Landroidx/compose/ui/graphics/Path;
     .param p3, "path2"    # Landroidx/compose/ui/graphics/Path;
@@ -94,13 +94,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     .line 285
     return-object v0
 
     .line 287
-    :cond_17
+    :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     .line 288

@@ -84,7 +84,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;Landroidx/compose/runtime/Composition;)V
-    .registers 4
+    .locals 1
     .param p1, "owner"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p2, "original"    # Landroidx/compose/runtime/Composition;
 
@@ -118,7 +118,7 @@
 .end method
 
 .method public static final synthetic access$getAddedToLifecycle$p(Landroidx/compose/ui/platform/WrappedComposition;)Landroidx/lifecycle/Lifecycle;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/WrappedComposition;
 
     .line 123
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final synthetic access$getDisposed$p(Landroidx/compose/ui/platform/WrappedComposition;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/WrappedComposition;
 
     .line 123
@@ -138,7 +138,7 @@
 .end method
 
 .method public static final synthetic access$setAddedToLifecycle$p(Landroidx/compose/ui/platform/WrappedComposition;Landroidx/lifecycle/Lifecycle;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/platform/WrappedComposition;
     .param p1, "<set-?>"    # Landroidx/lifecycle/Lifecycle;
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public static final synthetic access$setLastContent$p(Landroidx/compose/ui/platform/WrappedComposition;Lkotlin/jvm/functions/Function2;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/platform/WrappedComposition;
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function2;
 
@@ -162,12 +162,12 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 4
+    .locals 3
 
     .line 167
     iget-boolean v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->disposed:Z
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     .line 168
     const/4 v0, 0x1
@@ -190,7 +190,7 @@
     .line 170
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->addedToLifecycle:Landroidx/lifecycle/Lifecycle;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     move-object v1, p0
 
@@ -199,7 +199,7 @@
     invoke-virtual {v0, v1}, Landroidx/lifecycle/Lifecycle;->removeObserver(Landroidx/lifecycle/LifecycleObserver;)V
 
     .line 172
-    :cond_1d
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->original:Landroidx/compose/runtime/Composition;
 
     invoke-interface {v0}, Landroidx/compose/runtime/Composition;->dispose()V
@@ -209,7 +209,7 @@
 .end method
 
 .method public getHasInvalidations()Z
-    .registers 2
+    .locals 1
 
     .line 175
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->original:Landroidx/compose/runtime/Composition;
@@ -222,7 +222,7 @@
 .end method
 
 .method public final getOriginal()Landroidx/compose/runtime/Composition;
-    .registers 2
+    .locals 1
 
     .line 125
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->original:Landroidx/compose/runtime/Composition;
@@ -231,7 +231,7 @@
 .end method
 
 .method public final getOwner()Landroidx/compose/ui/platform/AndroidComposeView;
-    .registers 2
+    .locals 1
 
     .line 124
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->owner:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -240,7 +240,7 @@
 .end method
 
 .method public isDisposed()Z
-    .registers 2
+    .locals 1
 
     .line 176
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->original:Landroidx/compose/runtime/Composition;
@@ -253,7 +253,7 @@
 .end method
 
 .method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
-    .registers 4
+    .locals 1
     .param p1, "source"    # Landroidx/lifecycle/LifecycleOwner;
     .param p2, "event"    # Landroidx/lifecycle/Lifecycle$Event;
 
@@ -268,23 +268,23 @@
     .line 179
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne p2, v0, :cond_14
+    if-ne p2, v0, :cond_0
 
     .line 180
     invoke-virtual {p0}, Landroidx/compose/ui/platform/WrappedComposition;->dispose()V
 
-    goto :goto_21
+    goto :goto_0
 
     .line 181
-    :cond_14
+    :cond_0
     sget-object v0, Landroidx/lifecycle/Lifecycle$Event;->ON_CREATE:Landroidx/lifecycle/Lifecycle$Event;
 
-    if-ne p2, v0, :cond_21
+    if-ne p2, v0, :cond_1
 
     .line 182
     iget-boolean v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->disposed:Z
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     .line 183
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition;->lastContent:Lkotlin/jvm/functions/Function2;
@@ -292,13 +292,13 @@
     invoke-virtual {p0, v0}, Landroidx/compose/ui/platform/WrappedComposition;->setContent(Lkotlin/jvm/functions/Function2;)V
 
     .line 186
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public setContent(Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 2
     .param p1, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/CompositionImpl;)V
-    .registers 3
+    .locals 1
     .param p1, "composition"    # Landroidx/compose/runtime/CompositionImpl;
 
     const-string/jumbo v0, "composition"
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public final clearContent()V
-    .registers 3
+    .locals 2
 
     .line 391
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$HotReloadable;->composition:Landroidx/compose/runtime/CompositionImpl;
@@ -99,7 +99,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 392
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$HotReloadable;->composition:Landroidx/compose/runtime/CompositionImpl;
@@ -113,12 +113,12 @@
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/CompositionImpl;->setContent(Lkotlin/jvm/functions/Function2;)V
 
     .line 394
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public final recompose()V
-    .registers 3
+    .locals 2
 
     .line 401
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$HotReloadable;->composition:Landroidx/compose/runtime/CompositionImpl;
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 402
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$HotReloadable;->composition:Landroidx/compose/runtime/CompositionImpl;
@@ -137,12 +137,12 @@
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/CompositionImpl;->setContent(Lkotlin/jvm/functions/Function2;)V
 
     .line 404
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public final resetContent()V
-    .registers 3
+    .locals 2
 
     .line 397
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$HotReloadable;->composition:Landroidx/compose/runtime/CompositionImpl;

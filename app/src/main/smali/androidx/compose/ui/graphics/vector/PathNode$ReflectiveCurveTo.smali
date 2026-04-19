@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>(FFFF)V
-    .registers 9
+    .locals 4
     .param p1, "x1"    # F
     .param p2, "y1"    # F
     .param p3, "x2"    # F
@@ -102,36 +102,36 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;FFFFILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;
-    .registers 7
+    .locals 0
 
     and-int/lit8 p6, p5, 0x1
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     iget p1, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x1:F
 
-    :cond_6
+    :cond_0
     and-int/lit8 p6, p5, 0x2
 
-    if-eqz p6, :cond_c
+    if-eqz p6, :cond_1
 
     iget p2, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y1:F
 
-    :cond_c
+    :cond_1
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_12
+    if-eqz p6, :cond_2
 
     iget p3, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x2:F
 
-    :cond_12
+    :cond_2
     and-int/lit8 p5, p5, 0x8
 
-    if-eqz p5, :cond_18
+    if-eqz p5, :cond_3
 
     iget p4, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y2:F
 
-    :cond_18
+    :cond_3
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->copy(FFFF)Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;
 
     move-result-object p0
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public final component1()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x1:F
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public final component2()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y1:F
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public final component3()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x2:F
 
@@ -166,7 +166,7 @@
 .end method
 
 .method public final component4()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y2:F
 
@@ -174,7 +174,7 @@
 .end method
 
 .method public final copy(FFFF)Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;
-    .registers 6
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;
 
@@ -184,24 +184,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;
@@ -214,11 +214,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y1:F
 
     iget v4, v1, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y1:F
@@ -227,11 +227,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_3
 
     return v2
 
-    :cond_23
+    :cond_3
     iget v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x2:F
 
     iget v4, v1, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x2:F
@@ -240,11 +240,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_4
 
     return v2
 
-    :cond_2e
+    :cond_4
     iget v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y2:F
 
     iget v1, v1, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y2:F
@@ -253,16 +253,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_5
 
     return v2
 
-    :cond_39
+    :cond_5
     return v0
 .end method
 
 .method public final getX1()F
-    .registers 2
+    .locals 1
 
     .line 88
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x1:F
@@ -271,7 +271,7 @@
 .end method
 
 .method public final getX2()F
-    .registers 2
+    .locals 1
 
     .line 90
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x2:F
@@ -280,7 +280,7 @@
 .end method
 
 .method public final getY1()F
-    .registers 2
+    .locals 1
 
     .line 89
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y1:F
@@ -289,7 +289,7 @@
 .end method
 
 .method public final getY2()F
-    .registers 2
+    .locals 1
 
     .line 91
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->y2:F
@@ -298,7 +298,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;->x1:F
 
@@ -340,7 +340,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

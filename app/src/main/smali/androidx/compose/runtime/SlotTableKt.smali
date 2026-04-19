@@ -139,7 +139,7 @@
 
 # direct methods
 .method public static final synthetic access$addAux([II)V
-    .registers 2
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public static final synthetic access$auxIndex([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -163,7 +163,7 @@
 .end method
 
 .method public static final synthetic access$containsAnyMark([II)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -176,7 +176,7 @@
 .end method
 
 .method public static final synthetic access$containsMark([II)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -189,7 +189,7 @@
 .end method
 
 .method public static final synthetic access$countOneBits(I)I
-    .registers 2
+    .locals 1
     .param p0, "value"    # I
 
     .line 1
@@ -201,7 +201,7 @@
 .end method
 
 .method public static final synthetic access$dataAnchor([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -214,7 +214,7 @@
 .end method
 
 .method public static final synthetic access$dataAnchors([II)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "len"    # I
 
@@ -227,7 +227,7 @@
 .end method
 
 .method public static final synthetic access$groupInfo([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -240,7 +240,7 @@
 .end method
 
 .method public static final synthetic access$groupSize([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -253,7 +253,7 @@
 .end method
 
 .method public static final synthetic access$groupSizes([II)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "len"    # I
 
@@ -266,7 +266,7 @@
 .end method
 
 .method public static final synthetic access$hasAux([II)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -279,7 +279,7 @@
 .end method
 
 .method public static final synthetic access$hasMark([II)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -292,7 +292,7 @@
 .end method
 
 .method public static final synthetic access$hasObjectKey([II)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -305,7 +305,7 @@
 .end method
 
 .method public static final synthetic access$initGroup([IIIZZZII)V
-    .registers 8
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
     .param p2, "key"    # I
@@ -322,7 +322,7 @@
 .end method
 
 .method public static final synthetic access$isNode([II)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -335,7 +335,7 @@
 .end method
 
 .method public static final synthetic access$key([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -348,7 +348,7 @@
 .end method
 
 .method public static final synthetic access$keys([II)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "len"    # I
 
@@ -361,7 +361,7 @@
 .end method
 
 .method public static final synthetic access$locationOf(Ljava/util/ArrayList;II)I
-    .registers 4
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/ArrayList;
     .param p1, "index"    # I
     .param p2, "effectiveSize"    # I
@@ -375,7 +375,7 @@
 .end method
 
 .method public static final synthetic access$nodeCount([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -388,7 +388,7 @@
 .end method
 
 .method public static final synthetic access$nodeCounts([II)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "len"    # I
 
@@ -401,7 +401,7 @@
 .end method
 
 .method public static final synthetic access$nodeIndex([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -414,7 +414,7 @@
 .end method
 
 .method public static final synthetic access$objectKeyIndex([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -427,7 +427,7 @@
 .end method
 
 .method public static final synthetic access$parentAnchor([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -440,7 +440,7 @@
 .end method
 
 .method public static final synthetic access$parentAnchors([II)Ljava/util/List;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "len"    # I
 
@@ -453,7 +453,7 @@
 .end method
 
 .method public static final synthetic access$search(Ljava/util/ArrayList;II)I
-    .registers 4
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/ArrayList;
     .param p1, "location"    # I
     .param p2, "effectiveSize"    # I
@@ -467,7 +467,7 @@
 .end method
 
 .method public static final synthetic access$slotAnchor([II)I
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
 
@@ -480,7 +480,7 @@
 .end method
 
 .method public static final synthetic access$updateContainsMark([IIZ)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # Z
@@ -492,7 +492,7 @@
 .end method
 
 .method public static final synthetic access$updateDataAnchor([III)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
     .param p2, "anchor"    # I
@@ -504,7 +504,7 @@
 .end method
 
 .method public static final synthetic access$updateGroupSize([III)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # I
@@ -516,7 +516,7 @@
 .end method
 
 .method public static final synthetic access$updateMark([IIZ)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # Z
@@ -528,7 +528,7 @@
 .end method
 
 .method public static final synthetic access$updateNodeCount([III)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # I
@@ -540,7 +540,7 @@
 .end method
 
 .method public static final synthetic access$updateParentAnchor([III)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # I
@@ -552,7 +552,7 @@
 .end method
 
 .method private static final addAux([II)V
-    .registers 5
+    .locals 3
     .param p0, "$this$addAux"    # [I
     .param p1, "address"    # I
 
@@ -576,7 +576,7 @@
 .end method
 
 .method private static final auxIndex([II)I
-    .registers 6
+    .locals 4
     .param p0, "$this$auxIndex"    # [I
     .param p1, "address"    # I
 
@@ -590,14 +590,14 @@
     .local v1, "$i$a$-let-SlotTableKt$auxIndex$1":I
     array-length v2, p0
 
-    if-lt v0, v2, :cond_8
+    if-lt v0, v2, :cond_0
 
     array-length v2, p0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 3235
-    :cond_8
+    :cond_0
     add-int/lit8 v2, v0, 0x4
 
     aget v2, p0, v2
@@ -617,7 +617,7 @@
     add-int/2addr v2, v3
 
     .line 3234
-    :goto_17
+    :goto_0
     nop
 
     .line 3233
@@ -630,7 +630,7 @@
 .end method
 
 .method private static final containsAnyMark([II)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$containsAnyMark"    # [I
     .param p1, "address"    # I
 
@@ -651,20 +651,20 @@
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
     .line 3231
-    :goto_e
+    :goto_0
     return v1
 .end method
 
 .method private static final containsMark([II)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$containsMark"    # [I
     .param p1, "address"    # I
 
@@ -681,19 +681,19 @@
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_d
+    :goto_0
     return v1
 .end method
 
 .method private static final countOneBits(I)I
-    .registers 3
+    .locals 2
     .param p0, "value"    # I
 
     .line 3245
@@ -701,65 +701,65 @@
 
     const/4 v1, 0x1
 
-    packed-switch p0, :pswitch_data_12
+    packed-switch p0, :pswitch_data_0
 
     .line 3253
     const/4 v0, 0x3
 
-    goto :goto_11
+    goto :goto_0
 
     .line 3252
-    :pswitch_7
-    goto :goto_11
+    :pswitch_0
+    goto :goto_0
 
     .line 3251
-    :pswitch_8
-    goto :goto_11
+    :pswitch_1
+    goto :goto_0
 
     .line 3250
-    :pswitch_9
+    :pswitch_2
     move v0, v1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 3249
-    :pswitch_b
-    goto :goto_11
+    :pswitch_3
+    goto :goto_0
 
     .line 3248
-    :pswitch_c
+    :pswitch_4
     move v0, v1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 3247
-    :pswitch_e
+    :pswitch_5
     move v0, v1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 3246
-    :pswitch_10
+    :pswitch_6
     const/4 v0, 0x0
 
     .line 3254
-    :goto_11
+    :goto_0
     return v0
 
-    :pswitch_data_12
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_10
-        :pswitch_e
-        :pswitch_c
-        :pswitch_b
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static final dataAnchor([II)I
-    .registers 3
+    .locals 1
     .param p0, "$this$dataAnchor"    # [I
     .param p1, "address"    # I
 
@@ -774,7 +774,7 @@
 .end method
 
 .method private static final dataAnchors([II)Ljava/util/List;
-    .registers 4
+    .locals 2
     .param p0, "$this$dataAnchors"    # [I
     .param p1, "len"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -811,16 +811,16 @@
 .end method
 
 .method static synthetic dataAnchors$default([IIILjava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .locals 0
 
     .line 3314
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     array-length p1, p0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/runtime/SlotTableKt;->dataAnchors([II)Ljava/util/List;
 
     move-result-object p0
@@ -829,7 +829,7 @@
 .end method
 
 .method private static final getOrAdd(Ljava/util/ArrayList;IILkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/Anchor;
-    .registers 8
+    .locals 4
     .param p0, "$this$getOrAdd"    # Ljava/util/ArrayList;
     .param p1, "index"    # I
     .param p2, "effectiveSize"    # I
@@ -851,14 +851,13 @@
 
     .line 3351
     .local v0, "$i$f$getOrAdd":I
-    # invokes: Landroidx/compose/runtime/SlotTableKt;->search(Ljava/util/ArrayList;II)I
     invoke-static {p0, p1, p2}, Landroidx/compose/runtime/SlotTableKt;->access$search(Ljava/util/ArrayList;II)I
 
     move-result v1
 
     .line 3352
     .local v1, "location":I
-    if-gez v1, :cond_15
+    if-gez v1, :cond_0
 
     .line 3353
     invoke-interface {p3}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
@@ -879,10 +878,10 @@
     nop
 
     .end local v2    # "anchor":Landroidx/compose/runtime/Anchor;
-    goto :goto_21
+    goto :goto_0
 
     .line 3356
-    :cond_15
+    :cond_0
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -894,12 +893,12 @@
     check-cast v2, Landroidx/compose/runtime/Anchor;
 
     .line 3352
-    :goto_21
+    :goto_0
     return-object v2
 .end method
 
 .method private static final groupInfo([II)I
-    .registers 3
+    .locals 1
     .param p0, "$this$groupInfo"    # [I
     .param p1, "address"    # I
 
@@ -914,7 +913,7 @@
 .end method
 
 .method private static final groupSize([II)I
-    .registers 3
+    .locals 1
     .param p0, "$this$groupSize"    # [I
     .param p1, "address"    # I
 
@@ -929,7 +928,7 @@
 .end method
 
 .method private static final groupSizes([II)Ljava/util/List;
-    .registers 4
+    .locals 2
     .param p0, "$this$groupSizes"    # [I
     .param p1, "len"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -966,16 +965,16 @@
 .end method
 
 .method static synthetic groupSizes$default([IIILjava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .locals 0
 
     .line 3303
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     array-length p1, p0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/runtime/SlotTableKt;->groupSizes([II)Ljava/util/List;
 
     move-result-object p0
@@ -984,7 +983,7 @@
 .end method
 
 .method private static final hasAux([II)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$hasAux"    # [I
     .param p1, "address"    # I
 
@@ -1001,19 +1000,19 @@
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_d
+    :goto_0
     return v1
 .end method
 
 .method private static final hasMark([II)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$hasMark"    # [I
     .param p1, "address"    # I
 
@@ -1030,19 +1029,19 @@
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_d
+    :goto_0
     return v1
 .end method
 
 .method private static final hasObjectKey([II)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$hasObjectKey"    # [I
     .param p1, "address"    # I
 
@@ -1059,19 +1058,19 @@
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_d
+    :goto_0
     return v1
 .end method
 
 .method private static final initGroup([IIIZZZII)V
-    .registers 15
+    .locals 7
     .param p0, "$this$initGroup"    # [I
     .param p1, "address"    # I
     .param p2, "key"    # I
@@ -1084,42 +1083,42 @@
     .line 3327
     const/4 v0, 0x0
 
-    if-eqz p3, :cond_6
+    if-eqz p3, :cond_0
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     move v1, v0
 
     .line 3328
     .local v1, "nodeBit":I
-    :goto_7
-    if-eqz p4, :cond_c
+    :goto_0
+    if-eqz p4, :cond_1
 
     const/high16 v2, 0x20000000
 
-    goto :goto_d
+    goto :goto_1
 
-    :cond_c
+    :cond_1
     move v2, v0
 
     .line 3329
     .local v2, "dataKeyBit":I
-    :goto_d
-    if-eqz p5, :cond_12
+    :goto_1
+    if-eqz p5, :cond_2
 
     const/high16 v3, 0x10000000
 
-    goto :goto_13
+    goto :goto_2
 
-    :cond_12
+    :cond_2
     move v3, v0
 
     .line 3330
     .local v3, "dataBit":I
-    :goto_13
+    :goto_2
     mul-int/lit8 v4, p1, 0x5
 
     .line 3331
@@ -1157,7 +1156,7 @@
 .end method
 
 .method private static final isNode([II)Z
-    .registers 5
+    .locals 3
     .param p0, "$this$isNode"    # [I
     .param p1, "address"    # I
 
@@ -1174,19 +1173,19 @@
 
     and-int/2addr v0, v2
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_d
+    :goto_0
     return v1
 .end method
 
 .method private static final key([II)I
-    .registers 3
+    .locals 1
     .param p0, "$this$key"    # [I
     .param p1, "address"    # I
 
@@ -1199,7 +1198,7 @@
 .end method
 
 .method private static final keys([II)Ljava/util/List;
-    .registers 4
+    .locals 2
     .param p0, "$this$keys"    # [I
     .param p1, "len"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1236,16 +1235,16 @@
 .end method
 
 .method static synthetic keys$default([IIILjava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .locals 0
 
     .line 3258
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     array-length p1, p0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/runtime/SlotTableKt;->keys([II)Ljava/util/List;
 
     move-result-object p0
@@ -1254,7 +1253,7 @@
 .end method
 
 .method private static final locationOf(Ljava/util/ArrayList;II)I
-    .registers 6
+    .locals 3
     .param p0, "$this$locationOf"    # Ljava/util/ArrayList;
     .param p1, "index"    # I
     .param p2, "effectiveSize"    # I
@@ -1278,11 +1277,11 @@
 
     .line 3385
     .local v1, "$i$a$-let-SlotTableKt$locationOf$1":I
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     add-int/lit8 v2, v0, 0x1
 
     neg-int v2, v2
@@ -1291,12 +1290,12 @@
 
     .end local v0    # "it":I
     .end local v1    # "$i$a$-let-SlotTableKt$locationOf$1":I
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method private static final nodeCount([II)I
-    .registers 4
+    .locals 2
     .param p0, "$this$nodeCount"    # [I
     .param p1, "address"    # I
 
@@ -1315,7 +1314,7 @@
 .end method
 
 .method private static final nodeCounts([II)Ljava/util/List;
-    .registers 16
+    .locals 14
     .param p0, "$this$nodeCounts"    # [I
     .param p1, "len"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1386,8 +1385,8 @@
 
     move-result v6
 
-    :goto_26
-    if-ge v5, v6, :cond_49
+    :goto_0
+    if-ge v5, v6, :cond_0
 
     .line 3477
     invoke-interface {v3, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1445,11 +1444,11 @@
     .end local v7    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_26
+    goto :goto_0
 
     .line 3481
     .end local v5    # "index$iv$iv":I
-    :cond_49
+    :cond_0
     nop
 
     .line 3482
@@ -1467,16 +1466,16 @@
 .end method
 
 .method static synthetic nodeCounts$default([IIILjava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .locals 0
 
     .line 3272
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     array-length p1, p0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/runtime/SlotTableKt;->nodeCounts([II)Ljava/util/List;
 
     move-result-object p0
@@ -1485,7 +1484,7 @@
 .end method
 
 .method private static final nodeIndex([II)I
-    .registers 3
+    .locals 1
     .param p0, "$this$nodeIndex"    # [I
     .param p1, "address"    # I
 
@@ -1500,7 +1499,7 @@
 .end method
 
 .method private static final objectKeyIndex([II)I
-    .registers 6
+    .locals 4
     .param p0, "$this$objectKeyIndex"    # [I
     .param p1, "address"    # I
 
@@ -1540,7 +1539,7 @@
 .end method
 
 .method private static final parentAnchor([II)I
-    .registers 3
+    .locals 1
     .param p0, "$this$parentAnchor"    # [I
     .param p1, "address"    # I
 
@@ -1555,7 +1554,7 @@
 .end method
 
 .method private static final parentAnchors([II)Ljava/util/List;
-    .registers 4
+    .locals 2
     .param p0, "$this$parentAnchors"    # [I
     .param p1, "len"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1592,16 +1591,16 @@
 .end method
 
 .method static synthetic parentAnchors$default([IIILjava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .locals 0
 
     .line 3284
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     array-length p1, p0
 
-    :cond_5
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/runtime/SlotTableKt;->parentAnchors([II)Ljava/util/List;
 
     move-result-object p0
@@ -1610,7 +1609,7 @@
 .end method
 
 .method private static final search(Ljava/util/ArrayList;II)I
-    .registers 9
+    .locals 6
     .param p0, "$this$search"    # Ljava/util/ArrayList;
     .param p1, "location"    # I
     .param p2, "effectiveSize"    # I
@@ -1636,8 +1635,8 @@
 
     .line 3366
     .local v1, "high":I
-    :goto_7
-    if-gt v0, v1, :cond_2d
+    :goto_0
+    if-gt v0, v1, :cond_3
 
     .line 3367
     add-int v2, v0, v1
@@ -1662,7 +1661,7 @@
 
     .line 3368
     .local v4, "$i$a$-let-SlotTableKt$search$midVal$1":I
-    if-gez v3, :cond_1d
+    if-gez v3, :cond_0
 
     add-int v5, p2, v3
 
@@ -1671,7 +1670,7 @@
     .line 3369
     .end local v4    # "$i$a$-let-SlotTableKt$search$midVal$1":I
     .local v3, "midVal":I
-    :cond_1d
+    :cond_0
     invoke-static {v3, p1}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
     move-result v4
@@ -1681,29 +1680,29 @@
     nop
 
     .line 3372
-    if-gez v4, :cond_27
+    if-gez v4, :cond_1
 
     add-int/lit8 v0, v2, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 3373
-    :cond_27
-    if-lez v4, :cond_2c
+    :cond_1
+    if-lez v4, :cond_2
 
     add-int/lit8 v1, v2, -0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 3374
-    :cond_2c
+    :cond_2
     return v2
 
     .line 3377
     .end local v2    # "mid":I
     .end local v3    # "midVal":I
     .end local v4    # "cmp":I
-    :cond_2d
+    :cond_3
     add-int/lit8 v2, v0, 0x1
 
     neg-int v2, v2
@@ -1712,7 +1711,7 @@
 .end method
 
 .method private static final slice([ILjava/lang/Iterable;)Ljava/util/List;
-    .registers 6
+    .locals 4
     .param p0, "$this$slice"    # [I
     .param p1, "indices"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -1740,12 +1739,12 @@
 
     move-result-object v1
 
-    :goto_b
+    :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1767,16 +1766,16 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b
+    goto :goto_0
 
     .line 3299
     .end local v2    # "index":I
-    :cond_25
+    :cond_0
     return-object v0
 .end method
 
 .method private static final slotAnchor([II)I
-    .registers 6
+    .locals 4
     .param p0, "$this$slotAnchor"    # [I
     .param p1, "address"    # I
 
@@ -1816,7 +1815,7 @@
 .end method
 
 .method private static final updateContainsMark([IIZ)V
-    .registers 6
+    .locals 3
     .param p0, "$this$updateContainsMark"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # Z
@@ -1828,7 +1827,7 @@
 
     .line 3222
     .local v0, "arrayIndex":I
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 3223
     aget v1, p0, v0
@@ -1839,10 +1838,10 @@
 
     aput v1, p0, v0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 3225
-    :cond_e
+    :cond_0
     aget v1, p0, v0
 
     const v2, -0x4000001
@@ -1852,12 +1851,12 @@
     aput v1, p0, v0
 
     .line 3227
-    :goto_16
+    :goto_0
     return-void
 .end method
 
 .method private static final updateDataAnchor([III)V
-    .registers 4
+    .locals 1
     .param p0, "$this$updateDataAnchor"    # [I
     .param p1, "address"    # I
     .param p2, "anchor"    # I
@@ -1874,7 +1873,7 @@
 .end method
 
 .method private static final updateGroupKey([III)V
-    .registers 5
+    .locals 2
     .param p0, "$this$updateGroupKey"    # [I
     .param p1, "address"    # I
     .param p2, "key"    # I
@@ -1893,22 +1892,22 @@
 .end method
 
 .method private static final updateGroupSize([III)V
-    .registers 4
+    .locals 1
     .param p0, "$this$updateGroupSize"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # I
 
     .line 3290
-    if-ltz p2, :cond_4
+    if-ltz p2, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     invoke-static {v0}, Landroidx/compose/runtime/ComposerKt;->runtimeCheck(Z)V
 
     .line 3291
@@ -1923,7 +1922,7 @@
 .end method
 
 .method private static final updateMark([IIZ)V
-    .registers 6
+    .locals 3
     .param p0, "$this$updateMark"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # Z
@@ -1935,7 +1934,7 @@
 
     .line 3210
     .local v0, "arrayIndex":I
-    if-eqz p2, :cond_e
+    if-eqz p2, :cond_0
 
     .line 3211
     aget v1, p0, v0
@@ -1946,10 +1945,10 @@
 
     aput v1, p0, v0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 3213
-    :cond_e
+    :cond_0
     aget v1, p0, v0
 
     const v2, -0x8000001
@@ -1959,12 +1958,12 @@
     aput v1, p0, v0
 
     .line 3215
-    :goto_16
+    :goto_0
     return-void
 .end method
 
 .method private static final updateNodeCount([III)V
-    .registers 6
+    .locals 3
     .param p0, "$this$updateNodeCount"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # I
@@ -1972,20 +1971,20 @@
     .line 3267
     const/4 v0, 0x1
 
-    if-ltz p2, :cond_a
+    if-ltz p2, :cond_0
 
     const v1, 0x3ffffff
 
-    if-ge p2, v1, :cond_a
+    if-ge p2, v1, :cond_0
 
     move v1, v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_b
+    :goto_0
     invoke-static {v1}, Landroidx/compose/runtime/ComposerKt;->runtimeCheck(Z)V
 
     .line 3268
@@ -2013,7 +2012,7 @@
 .end method
 
 .method private static final updateParentAnchor([III)V
-    .registers 4
+    .locals 1
     .param p0, "$this$updateParentAnchor"    # [I
     .param p1, "address"    # I
     .param p2, "value"    # I

@@ -39,13 +39,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(J)V
-    .registers 5
+    .locals 2
     .param p1, "time"    # J
 
     .line 742
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public fillInStackTrace()Ljava/lang/Throwable;
-    .registers 3
+    .locals 2
 
     .line 745
     const/4 v0, 0x0

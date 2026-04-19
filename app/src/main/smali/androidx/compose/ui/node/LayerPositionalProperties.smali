@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 1286
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public final copyFrom(Landroidx/compose/ui/graphics/GraphicsLayerScope;)V
-    .registers 4
+    .locals 2
     .param p1, "scope"    # Landroidx/compose/ui/graphics/GraphicsLayerScope;
 
     const-string/jumbo v0, "scope"
@@ -174,7 +174,7 @@
 .end method
 
 .method public final copyFrom(Landroidx/compose/ui/node/LayerPositionalProperties;)V
-    .registers 4
+    .locals 2
     .param p1, "other"    # Landroidx/compose/ui/node/LayerPositionalProperties;
 
     const-string/jumbo v0, "other"
@@ -231,7 +231,7 @@
 .end method
 
 .method public final hasSameValuesAs(Landroidx/compose/ui/node/LayerPositionalProperties;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Landroidx/compose/ui/node/LayerPositionalProperties;
 
     const-string/jumbo v0, "other"
@@ -249,17 +249,17 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_12
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v0, v2
 
-    :goto_13
-    if-eqz v0, :cond_7b
+    :goto_0
+    if-eqz v0, :cond_8
 
     .line 1323
     iget v0, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->scaleY:F
@@ -268,17 +268,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_1
 
     move v0, v1
 
-    goto :goto_20
+    goto :goto_1
 
-    :cond_1f
+    :cond_1
     move v0, v2
 
-    :goto_20
-    if-eqz v0, :cond_7b
+    :goto_1
+    if-eqz v0, :cond_8
 
     .line 1324
     iget v0, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->translationX:F
@@ -287,17 +287,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_2
 
     move v0, v1
 
-    goto :goto_2d
+    goto :goto_2
 
-    :cond_2c
+    :cond_2
     move v0, v2
 
-    :goto_2d
-    if-eqz v0, :cond_7b
+    :goto_2
+    if-eqz v0, :cond_8
 
     .line 1325
     iget v0, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->translationY:F
@@ -306,17 +306,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_39
+    if-nez v0, :cond_3
 
     move v0, v1
 
-    goto :goto_3a
+    goto :goto_3
 
-    :cond_39
+    :cond_3
     move v0, v2
 
-    :goto_3a
-    if-eqz v0, :cond_7b
+    :goto_3
+    if-eqz v0, :cond_8
 
     .line 1326
     iget v0, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->rotationX:F
@@ -325,17 +325,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_4
 
     move v0, v1
 
-    goto :goto_47
+    goto :goto_4
 
-    :cond_46
+    :cond_4
     move v0, v2
 
-    :goto_47
-    if-eqz v0, :cond_7b
+    :goto_4
+    if-eqz v0, :cond_8
 
     .line 1327
     iget v0, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->rotationY:F
@@ -344,17 +344,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_53
+    if-nez v0, :cond_5
 
     move v0, v1
 
-    goto :goto_54
+    goto :goto_5
 
-    :cond_53
+    :cond_5
     move v0, v2
 
-    :goto_54
-    if-eqz v0, :cond_7b
+    :goto_5
+    if-eqz v0, :cond_8
 
     .line 1328
     iget v0, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->rotationZ:F
@@ -363,17 +363,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_60
+    if-nez v0, :cond_6
 
     move v0, v1
 
-    goto :goto_61
+    goto :goto_6
 
-    :cond_60
+    :cond_6
     move v0, v2
 
-    :goto_61
-    if-eqz v0, :cond_7b
+    :goto_6
+    if-eqz v0, :cond_8
 
     .line 1329
     iget v0, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->cameraDistance:F
@@ -382,17 +382,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_6d
+    if-nez v0, :cond_7
 
     move v0, v1
 
-    goto :goto_6e
+    goto :goto_7
 
-    :cond_6d
+    :cond_7
     move v0, v2
 
-    :goto_6e
-    if-eqz v0, :cond_7b
+    :goto_7
+    if-eqz v0, :cond_8
 
     .line 1330
     iget-wide v3, p0, Landroidx/compose/ui/node/LayerPositionalProperties;->transformOrigin:J
@@ -403,14 +403,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_7b
+    if-eqz v0, :cond_8
 
-    goto :goto_7c
+    goto :goto_8
 
-    :cond_7b
+    :cond_8
     move v1, v2
 
     .line 1322
-    :goto_7c
+    :goto_8
     return v1
 .end method

@@ -65,7 +65,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/WrappedComposition;Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -119,7 +119,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 9
+    .locals 6
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -132,30 +132,30 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_1
 
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
     .line 159
-    :cond_11
+    :cond_0
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_b5
+    goto/16 :goto_5
 
     .line 144
-    :cond_16
-    :goto_16
+    :cond_1
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_2
 
     const/4 v0, -0x1
 
@@ -166,7 +166,7 @@
     invoke-static {v2, p2, v0, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 146
-    :cond_26
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition$setContent$1$1;->this$0:Landroidx/compose/ui/platform/WrappedComposition;
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/WrappedComposition;->getOwner()Landroidx/compose/ui/platform/AndroidComposeView;
@@ -185,17 +185,17 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3
 
     check-cast v0, Ljava/util/Set;
 
-    goto :goto_3d
+    goto :goto_1
 
-    :cond_3c
+    :cond_3
     move-object v0, v2
 
-    :goto_3d
-    if-nez v0, :cond_65
+    :goto_1
+    if-nez v0, :cond_7
 
     .line 148
     iget-object v0, p0, Landroidx/compose/ui/platform/WrappedComposition$setContent$1$1;->this$0:Landroidx/compose/ui/platform/WrappedComposition;
@@ -210,17 +210,17 @@
 
     instance-of v1, v0, Landroid/view/View;
 
-    if-eqz v1, :cond_50
+    if-eqz v1, :cond_4
 
     check-cast v0, Landroid/view/View;
 
-    goto :goto_51
+    goto :goto_2
 
-    :cond_50
+    :cond_4
     move-object v0, v2
 
-    :goto_51
-    if-eqz v0, :cond_5a
+    :goto_2
+    if-eqz v0, :cond_5
 
     sget v1, Landroidx/compose/ui/R$id;->inspection_slot_table_set:I
 
@@ -228,28 +228,28 @@
 
     move-result-object v0
 
-    goto :goto_5b
+    goto :goto_3
 
-    :cond_5a
+    :cond_5
     move-object v0, v2
 
-    :goto_5b
+    :goto_3
     invoke-static {v0}, Lkotlin/jvm/internal/TypeIntrinsics;->isMutableSet(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_6
 
     check-cast v0, Ljava/util/Set;
 
-    goto :goto_65
+    goto :goto_4
 
-    :cond_64
+    :cond_6
     move-object v0, v2
 
     .line 146
-    :cond_65
-    :goto_65
+    :cond_7
+    :goto_4
     nop
 
     .line 145
@@ -257,7 +257,7 @@
 
     .line 150
     .local v0, "inspectionTable":Ljava/util/Set;
-    if-eqz v0, :cond_73
+    if-eqz v0, :cond_8
 
     .line 151
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getCompositionData()Landroidx/compose/runtime/tooling/CompositionData;
@@ -270,7 +270,7 @@
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->collectParameterInformation()V
 
     .line 155
-    :cond_73
+    :cond_8
     iget-object v1, p0, Landroidx/compose/ui/platform/WrappedComposition$setContent$1$1;->this$0:Landroidx/compose/ui/platform/WrappedComposition;
 
     invoke-virtual {v1}, Landroidx/compose/ui/platform/WrappedComposition;->getOwner()Landroidx/compose/ui/platform/AndroidComposeView;
@@ -330,13 +330,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_b5
+    if-eqz v1, :cond_9
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 160
     .end local v0    # "inspectionTable":Ljava/util/Set;
-    :cond_b5
-    :goto_b5
+    :cond_9
+    :goto_5
     return-void
 .end method

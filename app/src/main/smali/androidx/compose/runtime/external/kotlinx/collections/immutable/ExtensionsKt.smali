@@ -93,7 +93,7 @@
 
 # direct methods
 .method public static final varargs immutableHashMapOf([Lkotlin/Pair;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 2
+    .locals 1
     .param p0, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -138,7 +138,7 @@
 .end method
 
 .method public static final varargs immutableHashSetOf([Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 2
+    .locals 1
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -177,7 +177,7 @@
 .end method
 
 .method public static final immutableListOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -205,7 +205,7 @@
 .end method
 
 .method public static final varargs immutableListOf([Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 2
+    .locals 1
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -244,7 +244,7 @@
 .end method
 
 .method public static final varargs immutableMapOf([Lkotlin/Pair;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 2
+    .locals 1
     .param p0, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -289,7 +289,7 @@
 .end method
 
 .method public static final immutableSetOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -317,7 +317,7 @@
 .end method
 
 .method public static final varargs immutableSetOf([Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 2
+    .locals 1
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -356,7 +356,7 @@
 .end method
 
 .method public static final intersect(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 3
+    .locals 1
     .param p0, "$this$intersect"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -398,7 +398,7 @@
 .end method
 
 .method public static final intersect(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p0, "$this$intersect"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -426,7 +426,7 @@
     .line 304
     instance-of v0, p1, Ljava/util/Collection;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -436,9 +436,9 @@
 
     move-result-object v0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     move-object v0, p0
 
     .local v0, "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
@@ -477,12 +477,12 @@
     .line 304
     .end local v0    # "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .end local v1    # "$i$f$mutate":I
-    :goto_2c
+    :goto_0
     return-object v0
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 6
+    .locals 4
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -510,7 +510,7 @@
     .line 110
     instance-of v0, p1, Ljava/util/Collection;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -520,9 +520,9 @@
 
     move-result-object v0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     invoke-interface {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;->builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection$Builder;
 
     move-result-object v0
@@ -547,12 +547,12 @@
 
     move-result-object v0
 
-    :goto_27
+    :goto_0
     return-object v0
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 4
+    .locals 2
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -583,7 +583,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 6
+    .locals 4
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "elements"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -637,7 +637,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 6
+    .locals 4
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -689,7 +689,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -717,7 +717,7 @@
     .line 192
     instance-of v0, p1, Ljava/util/Collection;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -727,9 +727,9 @@
 
     move-result-object v0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     move-object v0, p0
 
     .local v0, "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -768,12 +768,12 @@
     .line 192
     .end local v0    # "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .end local v1    # "$i$f$mutate":I
-    :goto_2c
+    :goto_0
     return-object v0
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 4
+    .locals 2
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -804,7 +804,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "elements"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -870,7 +870,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -934,7 +934,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "keys"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -1004,7 +1004,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 3
+    .locals 1
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1034,7 +1034,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "keys"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -1104,7 +1104,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "keys"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1172,7 +1172,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -1200,7 +1200,7 @@
     .line 271
     instance-of v0, p1, Ljava/util/Collection;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -1210,9 +1210,9 @@
 
     move-result-object v0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     move-object v0, p0
 
     .local v0, "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
@@ -1251,12 +1251,12 @@
     .line 271
     .end local v0    # "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .end local v1    # "$i$f$mutate":I
-    :goto_2c
+    :goto_0
     return-object v0
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 4
+    .locals 2
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1287,7 +1287,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "elements"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -1353,7 +1353,7 @@
 .end method
 
 .method public static final minus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p0, "$this$minus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -1417,7 +1417,7 @@
 .end method
 
 .method public static final mutate(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 4
+    .locals 2
     .param p0, "$this$mutate"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "mutator"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -1464,7 +1464,7 @@
 .end method
 
 .method public static final mutate(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 4
+    .locals 2
     .param p0, "$this$mutate"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "mutator"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -1513,7 +1513,7 @@
 .end method
 
 .method public static final mutate(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 4
+    .locals 2
     .param p0, "$this$mutate"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "mutator"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -1560,7 +1560,7 @@
 .end method
 
 .method public static final persistentHashMapOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -1586,7 +1586,7 @@
 .end method
 
 .method public static final varargs persistentHashMapOf([Lkotlin/Pair;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 6
+    .locals 5
     .param p0, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1653,7 +1653,7 @@
 .end method
 
 .method public static final persistentHashSetOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -1675,7 +1675,7 @@
 .end method
 
 .method public static final varargs persistentHashSetOf([Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 3
+    .locals 2
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1712,7 +1712,7 @@
 .end method
 
 .method public static final persistentListOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -1732,7 +1732,7 @@
 .end method
 
 .method public static final varargs persistentListOf([Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 3
+    .locals 2
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1767,7 +1767,7 @@
 .end method
 
 .method public static final persistentMapOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -1793,7 +1793,7 @@
 .end method
 
 .method public static final varargs persistentMapOf([Lkotlin/Pair;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 6
+    .locals 5
     .param p0, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1860,7 +1860,7 @@
 .end method
 
 .method public static final persistentSetOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -1882,7 +1882,7 @@
 .end method
 
 .method public static final varargs persistentSetOf([Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 3
+    .locals 2
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1919,7 +1919,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 6
+    .locals 4
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -1947,7 +1947,7 @@
     .line 80
     instance-of v0, p1, Ljava/util/Collection;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -1957,9 +1957,9 @@
 
     move-result-object v0
 
-    goto :goto_27
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     invoke-interface {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;->builder()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection$Builder;
 
     move-result-object v0
@@ -1984,12 +1984,12 @@
 
     move-result-object v0
 
-    :goto_27
+    :goto_0
     return-object v0
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 4
+    .locals 2
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -2020,7 +2020,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 6
+    .locals 4
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "elements"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -2074,7 +2074,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 6
+    .locals 4
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
     .param p1, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -2126,7 +2126,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -2154,7 +2154,7 @@
     .line 158
     instance-of v0, p1, Ljava/util/Collection;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -2164,9 +2164,9 @@
 
     move-result-object v0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     move-object v0, p0
 
     .local v0, "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -2205,12 +2205,12 @@
     .line 158
     .end local v0    # "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .end local v1    # "$i$f$mutate":I
-    :goto_2c
+    :goto_0
     return-object v0
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 4
+    .locals 2
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -2241,7 +2241,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "elements"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -2307,7 +2307,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 8
+    .locals 6
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
     .param p1, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -2371,7 +2371,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 4
+    .locals 2
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "pairs"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -2412,7 +2412,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Ljava/util/Map;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 4
+    .locals 2
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "map"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -2451,7 +2451,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Lkotlin/Pair;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 5
+    .locals 3
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "pair"    # Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
@@ -2498,7 +2498,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 4
+    .locals 2
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "pairs"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -2539,7 +2539,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;[Lkotlin/Pair;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 4
+    .locals 2
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
@@ -2578,7 +2578,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "elements"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -2606,7 +2606,7 @@
     .line 241
     instance-of v0, p1, Ljava/util/Collection;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -2616,9 +2616,9 @@
 
     move-result-object v0
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     move-object v0, p0
 
     .local v0, "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
@@ -2657,12 +2657,12 @@
     .line 241
     .end local v0    # "$this$mutate$iv":Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .end local v1    # "$i$f$mutate":I
-    :goto_2c
+    :goto_0
     return-object v0
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 4
+    .locals 2
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -2693,7 +2693,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "elements"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -2759,7 +2759,7 @@
 .end method
 
 .method public static final plus(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;[Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 8
+    .locals 6
     .param p0, "$this$plus"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
     .param p1, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -2823,7 +2823,7 @@
 .end method
 
 .method public static final putAll(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 7
+    .locals 5
     .param p0, "$this$putAll"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "pairs"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
@@ -2889,7 +2889,7 @@
 .end method
 
 .method public static final putAll(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Ljava/util/Map;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 3
+    .locals 1
     .param p0, "$this$putAll"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "map"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -2925,7 +2925,7 @@
 .end method
 
 .method public static final putAll(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 7
+    .locals 5
     .param p0, "$this$putAll"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "pairs"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
@@ -2991,7 +2991,7 @@
 .end method
 
 .method public static final putAll(Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;[Lkotlin/Pair;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 7
+    .locals 5
     .param p0, "$this$putAll"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
     .param p1, "pairs"    # [Lkotlin/Pair;
     .annotation system Ldalvik/annotation/Signature;
@@ -3055,7 +3055,7 @@
 .end method
 
 .method public static final toImmutableList(Ljava/lang/CharSequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
-    .registers 2
+    .locals 1
     .param p0, "$this$toImmutableList"    # Ljava/lang/CharSequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3083,7 +3083,7 @@
 .end method
 
 .method public static final toImmutableList(Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
-    .registers 2
+    .locals 1
     .param p0, "$this$toImmutableList"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3104,19 +3104,19 @@
     .line 579
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
-    if-nez v0, :cond_16
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 580
     invoke-static {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ExtensionsKt;->toPersistentList(Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -3125,12 +3125,12 @@
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
 
-    :cond_16
+    :cond_1
     return-object v0
 .end method
 
 .method public static final toImmutableList(Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableList;
-    .registers 2
+    .locals 1
     .param p0, "$this$toImmutableList"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3159,7 +3159,7 @@
 .end method
 
 .method public static final toImmutableMap(Ljava/util/Map;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableMap;
-    .registers 3
+    .locals 2
     .param p0, "$this$toImmutableMap"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3184,53 +3184,53 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableMap;
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-nez v0, :cond_30
+    :goto_0
+    if-nez v0, :cond_4
 
     .line 713
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap$Builder;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap$Builder;
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     move-object v0, v1
 
-    :goto_1a
-    if-eqz v0, :cond_20
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap$Builder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
 
     move-result-object v1
 
     .line 712
-    :cond_20
-    if-eqz v1, :cond_26
+    :cond_2
+    if-eqz v1, :cond_3
 
     move-object v0, v1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableMap;
 
-    goto :goto_30
+    goto :goto_2
 
     .line 714
-    :cond_26
+    :cond_3
     invoke-static {}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ExtensionsKt;->persistentMapOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
 
     move-result-object v0
@@ -3241,13 +3241,13 @@
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableMap;
 
-    :cond_30
-    :goto_30
+    :cond_4
+    :goto_2
     return-object v0
 .end method
 
 .method public static final toImmutableSet(Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
-    .registers 3
+    .locals 2
     .param p0, "$this$toImmutableSet"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3270,53 +3270,53 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-nez v0, :cond_30
+    :goto_0
+    if-nez v0, :cond_4
 
     .line 628
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet$Builder;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet$Builder;
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     move-object v0, v1
 
-    :goto_1a
-    if-eqz v0, :cond_20
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet$Builder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
 
     move-result-object v1
 
     .line 627
-    :cond_20
-    if-eqz v1, :cond_26
+    :cond_2
+    if-eqz v1, :cond_3
 
     move-object v0, v1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
 
-    goto :goto_30
+    goto :goto_2
 
     .line 629
-    :cond_26
+    :cond_3
     invoke-static {}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ExtensionsKt;->persistentSetOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
 
     move-result-object v0
@@ -3327,13 +3327,13 @@
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
 
-    :cond_30
-    :goto_30
+    :cond_4
+    :goto_2
     return-object v0
 .end method
 
 .method public static final toImmutableSet(Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
-    .registers 2
+    .locals 1
     .param p0, "$this$toImmutableSet"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3362,7 +3362,7 @@
 .end method
 
 .method public static final toImmutableSet(Ljava/lang/CharSequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 2
+    .locals 1
     .param p0, "$this$toImmutableSet"    # Ljava/lang/CharSequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3388,7 +3388,7 @@
 .end method
 
 .method public static final toPersistentHashMap(Ljava/util/Map;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 3
+    .locals 2
     .param p0, "$this$toPersistentHashMap"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3413,58 +3413,58 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
 
-    goto :goto_33
+    goto :goto_2
 
     .line 739
-    :cond_14
+    :cond_1
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_2
     move-object v0, v1
 
-    :goto_1d
-    if-eqz v0, :cond_23
+    :goto_1
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
 
     move-result-object v1
 
     .line 738
-    :cond_23
-    if-eqz v1, :cond_29
+    :cond_3
+    if-eqz v1, :cond_4
 
     move-object v0, v1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
 
-    goto :goto_33
+    goto :goto_2
 
     .line 740
-    :cond_29
+    :cond_4
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap$Companion;->emptyOf$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
@@ -3475,12 +3475,12 @@
 
     move-result-object v0
 
-    :goto_33
+    :goto_2
     return-object v0
 .end method
 
 .method public static final toPersistentHashSet(Ljava/lang/CharSequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 7
+    .locals 6
     .param p0, "$this$toPersistentHashSet"    # Ljava/lang/CharSequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3540,7 +3540,7 @@
 .end method
 
 .method public static final toPersistentHashSet(Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 3
+    .locals 2
     .param p0, "$this$toPersistentHashSet"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3563,58 +3563,58 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
 
-    goto :goto_33
+    goto :goto_2
 
     .line 685
-    :cond_14
+    :cond_1
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_2
     move-object v0, v1
 
-    :goto_1d
-    if-eqz v0, :cond_23
+    :goto_1
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
     move-result-object v1
 
     .line 684
-    :cond_23
-    if-eqz v1, :cond_29
+    :cond_3
+    if-eqz v1, :cond_4
 
     move-object v0, v1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
 
-    goto :goto_33
+    goto :goto_2
 
     .line 686
-    :cond_29
+    :cond_4
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet$Companion;->emptyOf$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
@@ -3625,12 +3625,12 @@
 
     move-result-object v0
 
-    :goto_33
+    :goto_2
     return-object v0
 .end method
 
 .method public static final toPersistentHashSet(Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 2
+    .locals 1
     .param p0, "$this$toPersistentHashSet"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3661,7 +3661,7 @@
 .end method
 
 .method public static final toPersistentList(Ljava/lang/CharSequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 7
+    .locals 6
     .param p0, "$this$toPersistentList"    # Ljava/lang/CharSequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3721,7 +3721,7 @@
 .end method
 
 .method public static final toPersistentList(Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 3
+    .locals 2
     .param p0, "$this$toPersistentList"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3744,44 +3744,44 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-nez v0, :cond_2c
+    :goto_0
+    if-nez v0, :cond_4
 
     .line 604
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList$Builder;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList$Builder;
 
-    goto :goto_1a
+    goto :goto_1
 
-    :cond_19
+    :cond_1
     move-object v0, v1
 
-    :goto_1a
-    if-eqz v0, :cond_20
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-interface {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList$Builder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
 
     move-result-object v1
 
     .line 603
-    :cond_20
-    if-nez v1, :cond_2b
+    :cond_2
+    if-nez v1, :cond_3
 
     .line 605
     invoke-static {}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/ExtensionsKt;->persistentListOf()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
@@ -3792,20 +3792,20 @@
 
     move-result-object v0
 
-    goto :goto_2c
+    goto :goto_2
 
     .line 603
-    :cond_2b
+    :cond_3
     move-object v0, v1
 
     .line 605
-    :cond_2c
-    :goto_2c
+    :cond_4
+    :goto_2
     return-object v0
 .end method
 
 .method public static final toPersistentList(Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentList;
-    .registers 2
+    .locals 1
     .param p0, "$this$toPersistentList"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3836,7 +3836,7 @@
 .end method
 
 .method public static final toPersistentMap(Ljava/util/Map;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 3
+    .locals 2
     .param p0, "$this$toPersistentMap"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3861,49 +3861,49 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
 
-    goto :goto_31
+    goto :goto_2
 
     .line 726
-    :cond_14
+    :cond_1
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_2
     move-object v0, v1
 
-    :goto_1d
-    if-eqz v0, :cond_23
+    :goto_1
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMapBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
 
     move-result-object v1
 
     .line 725
-    :cond_23
-    if-nez v1, :cond_30
+    :cond_3
+    if-nez v1, :cond_4
 
     .line 727
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedMap/PersistentOrderedMap$Companion;
@@ -3916,19 +3916,19 @@
 
     move-result-object v0
 
-    goto :goto_31
+    goto :goto_2
 
     .line 725
-    :cond_30
+    :cond_4
     move-object v0, v1
 
     .line 727
-    :goto_31
+    :goto_2
     return-object v0
 .end method
 
 .method public static final toPersistentSet(Ljava/lang/CharSequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 7
+    .locals 6
     .param p0, "$this$toPersistentSet"    # Ljava/lang/CharSequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3988,7 +3988,7 @@
 .end method
 
 .method public static final toPersistentSet(Ljava/lang/Iterable;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 3
+    .locals 2
     .param p0, "$this$toPersistentSet"    # Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4011,49 +4011,49 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move-object v0, v1
 
-    :goto_f
-    if-eqz v0, :cond_14
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
 
-    goto :goto_31
+    goto :goto_2
 
     .line 656
-    :cond_14
+    :cond_1
     instance-of v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_2
 
     move-object v0, p0
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;
 
-    goto :goto_1d
+    goto :goto_1
 
-    :cond_1c
+    :cond_2
     move-object v0, v1
 
-    :goto_1d
-    if-eqz v0, :cond_23
+    :goto_1
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
 
     move-result-object v1
 
     .line 655
-    :cond_23
-    if-nez v1, :cond_30
+    :cond_3
+    if-nez v1, :cond_4
 
     .line 657
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSet$Companion;
@@ -4066,19 +4066,19 @@
 
     move-result-object v0
 
-    goto :goto_31
+    goto :goto_2
 
     .line 655
-    :cond_30
+    :cond_4
     move-object v0, v1
 
     .line 657
-    :goto_31
+    :goto_2
     return-object v0
 .end method
 
 .method public static final toPersistentSet(Lkotlin/sequences/Sequence;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 2
+    .locals 1
     .param p0, "$this$toPersistentSet"    # Lkotlin/sequences/Sequence;
     .annotation system Ldalvik/annotation/Signature;
         value = {

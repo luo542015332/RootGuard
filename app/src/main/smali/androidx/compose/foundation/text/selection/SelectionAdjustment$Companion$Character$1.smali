@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 80
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public adjust-ZXO7KMw(Landroidx/compose/ui/text/TextLayoutResult;JIZLandroidx/compose/ui/text/TextRange;)J
-    .registers 11
+    .locals 4
     .param p1, "textLayoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p2, "newRawSelectionRange"    # J
     .param p4, "previousHandleOffset"    # I
@@ -76,10 +76,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 90
-    if-eqz p6, :cond_17
+    if-eqz p6, :cond_0
 
     invoke-virtual {p6}, Landroidx/compose/ui/text/TextRange;->unbox-impl()J
 
@@ -89,14 +89,14 @@
 
     move-result v0
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
     .line 92
     .local v0, "previousHandlesCrossed":Z
-    :goto_18
+    :goto_0
     invoke-virtual {p1}, Landroidx/compose/ui/text/TextLayoutResult;->getLayoutInput()Landroidx/compose/ui/text/TextLayoutInput;
 
     move-result-object v1
@@ -141,13 +141,13 @@
     move-result-wide v0
 
     .end local v0    # "previousHandlesCrossed":Z
-    goto :goto_3e
+    goto :goto_1
 
     .line 99
-    :cond_3d
+    :cond_1
     move-wide v0, p2
 
     .line 88
-    :goto_3e
+    :goto_1
     return-wide v0
 .end method

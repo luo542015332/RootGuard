@@ -52,7 +52,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/ColorFilter$Companion;-><init>()V
 
@@ -69,12 +69,12 @@
 .end method
 
 .method public static synthetic tint-xETnrds$default(Landroidx/compose/ui/graphics/ColorFilter$Companion;JIILjava/lang/Object;)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 6
+    .locals 0
 
     .line 44
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_0
 
     sget-object p3, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
 
@@ -82,7 +82,7 @@
 
     move-result p3
 
-    :cond_a
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/ColorFilter$Companion;->tint-xETnrds(JI)Landroidx/compose/ui/graphics/ColorFilter;
 
     move-result-object p0
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public final colorMatrix-jHG-Opc([F)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 3
+    .locals 1
     .param p1, "colorMatrix"    # [F
 
     const-string/jumbo v0, "colorMatrix"
@@ -109,7 +109,7 @@
 .end method
 
 .method public final lighting--OWjLjI(JJ)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 6
+    .locals 1
     .param p1, "multiply"    # J
     .param p3, "add"    # J
 
@@ -122,7 +122,7 @@
 .end method
 
 .method public final tint-xETnrds(JI)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 5
+    .locals 1
     .param p1, "color"    # J
     .param p3, "blendMode"    # I
 

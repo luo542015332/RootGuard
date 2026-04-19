@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final getRootLookaheadDelegate(Landroidx/compose/ui/node/LookaheadDelegate;)Landroidx/compose/ui/node/LookaheadDelegate;
-    .registers 4
+    .locals 3
     .param p0, "$this$rootLookaheadDelegate"    # Landroidx/compose/ui/node/LookaheadDelegate;
 
     const-string v0, "<this>"
@@ -41,39 +41,39 @@
 
     .line 138
     .local v0, "root":Landroidx/compose/ui/node/LayoutNode;
-    :goto_9
+    :goto_0
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroidx/compose/ui/node/LayoutNode;->getLookaheadRoot$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_15
+    :cond_0
     move-object v1, v2
 
-    :goto_16
-    if-eqz v1, :cond_45
+    :goto_1
+    if-eqz v1, :cond_3
 
     .line 139
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     invoke-virtual {v1}, Landroidx/compose/ui/node/LayoutNode;->getLookaheadRoot$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v2
 
-    :cond_22
+    :cond_1
     invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-object v1, v2
@@ -84,7 +84,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_2
 
     .line 141
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
@@ -95,10 +95,10 @@
 
     move-object v0, v2
 
-    goto :goto_9
+    goto :goto_0
 
     .line 143
-    :cond_35
+    :cond_2
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getParent$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v2
@@ -114,10 +114,10 @@
     move-object v0, v2
 
     .end local v1    # "lookaheadRoot":Landroidx/compose/ui/node/LayoutNode;
-    goto :goto_9
+    goto :goto_0
 
     .line 146
-    :cond_45
+    :cond_3
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getOuterCoordinator$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v1

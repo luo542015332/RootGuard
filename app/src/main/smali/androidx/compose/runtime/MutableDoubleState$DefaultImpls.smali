@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getValue(Landroidx/compose/runtime/MutableDoubleState;)Ljava/lang/Double;
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/runtime/MutableDoubleState;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -44,14 +44,13 @@
 .end method
 
 .method public static setValue(Landroidx/compose/runtime/MutableDoubleState;D)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/MutableDoubleState;
     .param p1, "value"    # D
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 98
-    # invokes: Landroidx/compose/runtime/MutableDoubleState;->setValue(D)V
     invoke-static {p0, p1, p2}, Landroidx/compose/runtime/MutableDoubleState;->access$setValue$jd(Landroidx/compose/runtime/MutableDoubleState;D)V
 
     return-void

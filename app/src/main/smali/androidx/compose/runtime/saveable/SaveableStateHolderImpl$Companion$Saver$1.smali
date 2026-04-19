@@ -66,7 +66,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$Companion$Saver$1;
 
@@ -78,7 +78,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -111,7 +111,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/saveable/SaverScope;Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;)Ljava/util/Map;
-    .registers 4
+    .locals 1
     .param p1, "$this$Saver"    # Landroidx/compose/runtime/saveable/SaverScope;
     .param p2, "it"    # Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;
     .annotation system Ldalvik/annotation/Signature;
@@ -139,7 +139,6 @@
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 137
-    # invokes: Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->saveAll()Ljava/util/Map;
     invoke-static {p2}, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->access$saveAll(Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;)Ljava/util/Map;
 
     move-result-object v0

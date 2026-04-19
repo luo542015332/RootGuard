@@ -59,7 +59,7 @@
 .end method
 
 .method public intermediateLayout(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function4;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 1
     .param p1, "$this$intermediateLayout"    # Landroidx/compose/ui/Modifier;
     .param p2, "measure"    # Lkotlin/jvm/functions/Function4;
     .annotation system Ldalvik/annotation/Signature;
@@ -114,7 +114,7 @@
 .end method
 
 .method public localLookaheadPositionOf-dBAh8RU(Landroidx/compose/ui/layout/LayoutCoordinates;Landroidx/compose/ui/layout/LayoutCoordinates;)J
-    .registers 7
+    .locals 4
     .param p1, "$this$localLookaheadPositionOf_u2ddBAh8RU"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p2, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 

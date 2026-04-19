@@ -43,7 +43,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/RenderEffect;-><init>()V
 
@@ -63,12 +63,12 @@
 
 # virtual methods
 .method public final asAndroidRenderEffect()Landroid/graphics/RenderEffect;
-    .registers 4
+    .locals 3
 
     .line 40
     iget-object v0, p0, Landroidx/compose/ui/graphics/RenderEffect;->internalRenderEffect:Landroid/graphics/RenderEffect;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/RenderEffect;->createRenderEffect()Landroid/graphics/RenderEffect;
 
@@ -86,7 +86,7 @@
 
     .end local v1    # "it":Landroid/graphics/RenderEffect;
     .end local v2    # "$i$a$-also-RenderEffect$asAndroidRenderEffect$1":I
-    :cond_c
+    :cond_0
     return-object v0
 .end method
 
@@ -94,22 +94,22 @@
 .end method
 
 .method public isSupported()Z
-    .registers 3
+    .locals 2
 
     .line 45
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
 
-    if-lt v0, v1, :cond_8
+    if-lt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method

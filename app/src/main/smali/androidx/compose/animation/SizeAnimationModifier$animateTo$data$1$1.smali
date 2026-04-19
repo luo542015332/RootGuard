@@ -73,7 +73,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/SizeAnimationModifier$AnimData;JLandroidx/compose/animation/SizeAnimationModifier;Lkotlin/coroutines/Continuation;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,7 +103,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -136,7 +136,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,7 +179,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
+    .locals 11
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -188,7 +188,7 @@
     .line 123
     iget v1, p0, Landroidx/compose/animation/SizeAnimationModifier$animateTo$data$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_6e
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -198,7 +198,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/animation/SizeAnimationModifier$animateTo$data$1$1;
@@ -209,11 +209,11 @@
 
     move-object v0, p1
 
-    goto :goto_43
+    goto :goto_0
 
     .end local v0    # "this":Landroidx/compose/animation/SizeAnimationModifier$animateTo$data$1$1;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_19
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -259,13 +259,13 @@
 
     move-result-object v2
 
-    if-ne v2, v0, :cond_41
+    if-ne v2, v0, :cond_0
 
     .line 123
     return-object v0
 
     .line 124
-    :cond_41
+    :cond_0
     move-object v0, p1
 
     move-object p1, v2
@@ -273,7 +273,7 @@
     .line 123
     .end local p1    # "$result":Ljava/lang/Object;
     .local v0, "$result":Ljava/lang/Object;
-    :goto_43
+    :goto_0
     check-cast p1, Landroidx/compose/animation/core/AnimationResult;
 
     .line 125
@@ -284,7 +284,7 @@
 
     sget-object v3, Landroidx/compose/animation/core/AnimationEndReason;->Finished:Landroidx/compose/animation/core/AnimationEndReason;
 
-    if-ne v2, v3, :cond_6b
+    if-ne v2, v3, :cond_1
 
     .line 126
     iget-object v2, v1, Landroidx/compose/animation/SizeAnimationModifier$animateTo$data$1$1;->this$0:Landroidx/compose/animation/SizeAnimationModifier;
@@ -293,7 +293,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_6b
+    if-eqz v2, :cond_1
 
     iget-object v3, v1, Landroidx/compose/animation/SizeAnimationModifier$animateTo$data$1$1;->$this_apply:Landroidx/compose/animation/SizeAnimationModifier$AnimData;
 
@@ -319,14 +319,14 @@
 
     .line 128
     .end local p1    # "result":Landroidx/compose/animation/core/AnimationResult;
-    :cond_6b
+    :cond_1
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
-    :pswitch_data_6e
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_19
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

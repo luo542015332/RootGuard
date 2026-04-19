@@ -20,7 +20,7 @@
 
 # direct methods
 .method public static final getValue(Landroidx/compose/runtime/FloatState;Ljava/lang/Object;Lkotlin/reflect/KProperty;)F
-    .registers 4
+    .locals 1
     .param p0, "$this$getValue"    # Landroidx/compose/runtime/FloatState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;
@@ -43,7 +43,7 @@
 .end method
 
 .method public static final mutableFloatStateOf(F)Landroidx/compose/runtime/MutableFloatState;
-    .registers 2
+    .locals 1
     .param p0, "value"    # F
 
     .line 1
@@ -55,7 +55,7 @@
 .end method
 
 .method public static final setValue(Landroidx/compose/runtime/MutableFloatState;Ljava/lang/Object;Lkotlin/reflect/KProperty;F)V
-    .registers 4
+    .locals 0
     .param p0, "$this$setValue"    # Landroidx/compose/runtime/MutableFloatState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;

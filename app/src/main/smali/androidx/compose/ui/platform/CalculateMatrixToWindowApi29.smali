@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1973
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public calculateMatrixToWindow-EL8BTi8(Landroid/view/View;[F)V
-    .registers 12
+    .locals 9
     .param p1, "view"    # Landroid/view/View;
     .param p2, "matrix"    # [F
 
@@ -106,10 +106,10 @@
 
     .line 1984
     .local v1, "root":Landroid/view/View;
-    :goto_1b
+    :goto_0
     instance-of v2, v0, Landroid/view/View;
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_0
 
     .line 1985
     move-object v1, v0
@@ -121,10 +121,10 @@
 
     move-result-object v0
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 1988
-    :cond_27
+    :cond_0
     iget-object v2, p0, Landroidx/compose/ui/platform/CalculateMatrixToWindowApi29;->tmpPosition:[I
 
     invoke-virtual {v1, v2}, Landroid/view/View;->getLocationOnScreen([I)V

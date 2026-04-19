@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/ObserverNodeOwnerScope$Companion$OnObserveReadsChanged$1;
 
@@ -65,7 +65,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 42
@@ -93,7 +93,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/node/ObserverNodeOwnerScope;)V
-    .registers 3
+    .locals 1
     .param p1, "it"    # Landroidx/compose/ui/node/ObserverNodeOwnerScope;
 
     const-string/jumbo v0, "it"
@@ -105,7 +105,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/ui/node/ObserverNodeOwnerScope;->getObserverNode$ui_release()Landroidx/compose/ui/node/ObserverModifierNode;
 
@@ -114,6 +114,6 @@
     invoke-interface {v0}, Landroidx/compose/ui/node/ObserverModifierNode;->onObservedReadsChanged()V
 
     .line 44
-    :cond_13
+    :cond_0
     return-void
 .end method

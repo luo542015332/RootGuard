@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)V
-    .registers 4
+    .locals 1
     .param p1, "inspectorInfo"    # Lkotlin/jvm/functions/Function1;
     .param p2, "factory"    # Lkotlin/jvm/functions/Function3;
     .annotation system Ldalvik/annotation/Signature;
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final getFactory()Lkotlin/jvm/functions/Function3;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

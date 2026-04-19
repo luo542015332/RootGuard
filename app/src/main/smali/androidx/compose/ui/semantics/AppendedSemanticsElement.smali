@@ -85,7 +85,7 @@
 
 # direct methods
 .method public constructor <init>(ZLkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .param p1, "mergeDescendants"    # Z
     .param p2, "properties"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -117,22 +117,22 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/semantics/AppendedSemanticsElement;ZLkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/semantics/AppendedSemanticsElement;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     iget-boolean p1, p0, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->mergeDescendants:Z
 
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_1
 
     iget-object p2, p0, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->properties:Lkotlin/jvm/functions/Function1;
 
-    :cond_c
+    :cond_1
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->copy(ZLkotlin/jvm/functions/Function1;)Landroidx/compose/ui/semantics/AppendedSemanticsElement;
 
     move-result-object p0
@@ -143,7 +143,7 @@
 
 # virtual methods
 .method public final component1()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->mergeDescendants:Z
 
@@ -151,7 +151,7 @@
 .end method
 
 .method public final component2()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -168,7 +168,7 @@
 .end method
 
 .method public final copy(ZLkotlin/jvm/functions/Function1;)Landroidx/compose/ui/semantics/AppendedSemanticsElement;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -193,7 +193,7 @@
 .end method
 
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 120
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->create()Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;
@@ -206,7 +206,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;
-    .registers 5
+    .locals 4
 
     .line 133
     new-instance v0, Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;
@@ -229,24 +229,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/semantics/AppendedSemanticsElement;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/semantics/AppendedSemanticsElement;
@@ -255,11 +255,11 @@
 
     iget-boolean v4, v1, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->mergeDescendants:Z
 
-    if-eq v3, v4, :cond_14
+    if-eq v3, v4, :cond_2
 
     return v2
 
-    :cond_14
+    :cond_2
     iget-object v3, p0, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->properties:Lkotlin/jvm/functions/Function1;
 
     iget-object v1, v1, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->properties:Lkotlin/jvm/functions/Function1;
@@ -268,16 +268,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_3
 
     return v2
 
-    :cond_1f
+    :cond_3
     return v0
 .end method
 
 .method public final getMergeDescendants()Z
-    .registers 2
+    .locals 1
 
     .line 121
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->mergeDescendants:Z
@@ -286,7 +286,7 @@
 .end method
 
 .method public final getProperties()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -304,7 +304,7 @@
 .end method
 
 .method public getSemanticsConfiguration()Landroidx/compose/ui/semantics/SemanticsConfiguration;
-    .registers 5
+    .locals 4
 
     .line 127
     new-instance v0, Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -340,15 +340,15 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->mergeDescendants:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    :cond_5
+    :cond_0
     mul-int/lit8 v1, v0, 0x1f
 
     iget-object v2, p0, Landroidx/compose/ui/semantics/AppendedSemanticsElement;->properties:Lkotlin/jvm/functions/Function1;
@@ -363,7 +363,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 5
+    .locals 3
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -395,7 +395,6 @@
 
     move-result-object v0
 
-    # invokes: Landroidx/compose/ui/semantics/SemanticsModifierKt;->addSemanticsPropertiesFrom(Landroidx/compose/ui/platform/InspectorInfo;Landroidx/compose/ui/semantics/SemanticsConfiguration;)V
     invoke-static {p1, v0}, Landroidx/compose/ui/semantics/SemanticsModifierKt;->access$addSemanticsPropertiesFrom(Landroidx/compose/ui/platform/InspectorInfo;Landroidx/compose/ui/semantics/SemanticsConfiguration;)V
 
     .line 149
@@ -403,7 +402,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -447,7 +446,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 120
@@ -461,7 +460,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/semantics/CoreSemanticsModifierNode;
 
     const-string/jumbo v0, "node"

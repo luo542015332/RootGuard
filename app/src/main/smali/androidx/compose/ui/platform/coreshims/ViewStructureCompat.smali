@@ -17,7 +17,7 @@
 
 # direct methods
 .method private constructor <init>(Landroid/view/ViewStructure;)V
-    .registers 2
+    .locals 0
     .param p1, "viewStructure"    # Landroid/view/ViewStructure;
 
     .line 71
@@ -31,7 +31,7 @@
 .end method
 
 .method public static toViewStructureCompat(Landroid/view/ViewStructure;)Landroidx/compose/ui/platform/coreshims/ViewStructureCompat;
-    .registers 2
+    .locals 1
     .param p0, "contentCaptureSession"    # Landroid/view/ViewStructure;
 
     .line 53
@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public setClassName(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "string"    # Ljava/lang/String;
 
     .line 103
@@ -63,7 +63,7 @@
 .end method
 
 .method public setContentDescription(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
     .param p1, "charSequence"    # Ljava/lang/CharSequence;
 
     .line 119
@@ -81,7 +81,7 @@
 .end method
 
 .method public setDimens(IIIIII)V
-    .registers 15
+    .locals 8
     .param p1, "left"    # I
     .param p2, "top"    # I
     .param p3, "scrollX"    # I
@@ -118,7 +118,7 @@
 .end method
 
 .method public setText(Ljava/lang/CharSequence;)V
-    .registers 3
+    .locals 1
     .param p1, "charSequence"    # Ljava/lang/CharSequence;
 
     .line 87
@@ -136,7 +136,7 @@
 .end method
 
 .method public toViewStructure()Landroid/view/ViewStructure;
-    .registers 2
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/compose/ui/platform/coreshims/ViewStructureCompat;->mWrappedObj:Ljava/lang/Object;

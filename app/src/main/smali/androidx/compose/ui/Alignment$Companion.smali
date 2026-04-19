@@ -120,7 +120,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 4
+    .locals 4
 
     new-instance v0, Landroidx/compose/ui/Alignment$Companion;
 
@@ -273,7 +273,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -282,91 +282,91 @@
 .end method
 
 .method public static synthetic getBottom$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getBottomCenter$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getBottomEnd$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getBottomStart$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCenter$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCenterEnd$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCenterHorizontally$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCenterStart$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getCenterVertically$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getEnd$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getStart$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTop$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTopCenter$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTopEnd$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getTopStart$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -374,7 +374,7 @@
 
 # virtual methods
 .method public final getBottom()Landroidx/compose/ui/Alignment$Vertical;
-    .registers 2
+    .locals 1
 
     .line 105
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->Bottom:Landroidx/compose/ui/Alignment$Vertical;
@@ -383,7 +383,7 @@
 .end method
 
 .method public final getBottomCenter()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 95
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->BottomCenter:Landroidx/compose/ui/Alignment;
@@ -392,7 +392,7 @@
 .end method
 
 .method public final getBottomEnd()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 97
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->BottomEnd:Landroidx/compose/ui/Alignment;
@@ -401,7 +401,7 @@
 .end method
 
 .method public final getBottomStart()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 93
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->BottomStart:Landroidx/compose/ui/Alignment;
@@ -410,7 +410,7 @@
 .end method
 
 .method public final getCenter()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 89
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->Center:Landroidx/compose/ui/Alignment;
@@ -419,7 +419,7 @@
 .end method
 
 .method public final getCenterEnd()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 91
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->CenterEnd:Landroidx/compose/ui/Alignment;
@@ -428,7 +428,7 @@
 .end method
 
 .method public final getCenterHorizontally()Landroidx/compose/ui/Alignment$Horizontal;
-    .registers 2
+    .locals 1
 
     .line 111
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->CenterHorizontally:Landroidx/compose/ui/Alignment$Horizontal;
@@ -437,7 +437,7 @@
 .end method
 
 .method public final getCenterStart()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 87
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->CenterStart:Landroidx/compose/ui/Alignment;
@@ -446,7 +446,7 @@
 .end method
 
 .method public final getCenterVertically()Landroidx/compose/ui/Alignment$Vertical;
-    .registers 2
+    .locals 1
 
     .line 103
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->CenterVertically:Landroidx/compose/ui/Alignment$Vertical;
@@ -455,7 +455,7 @@
 .end method
 
 .method public final getEnd()Landroidx/compose/ui/Alignment$Horizontal;
-    .registers 2
+    .locals 1
 
     .line 113
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->End:Landroidx/compose/ui/Alignment$Horizontal;
@@ -464,7 +464,7 @@
 .end method
 
 .method public final getStart()Landroidx/compose/ui/Alignment$Horizontal;
-    .registers 2
+    .locals 1
 
     .line 109
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->Start:Landroidx/compose/ui/Alignment$Horizontal;
@@ -473,7 +473,7 @@
 .end method
 
 .method public final getTop()Landroidx/compose/ui/Alignment$Vertical;
-    .registers 2
+    .locals 1
 
     .line 101
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->Top:Landroidx/compose/ui/Alignment$Vertical;
@@ -482,7 +482,7 @@
 .end method
 
 .method public final getTopCenter()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 83
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->TopCenter:Landroidx/compose/ui/Alignment;
@@ -491,7 +491,7 @@
 .end method
 
 .method public final getTopEnd()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 85
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->TopEnd:Landroidx/compose/ui/Alignment;
@@ -500,7 +500,7 @@
 .end method
 
 .method public final getTopStart()Landroidx/compose/ui/Alignment;
-    .registers 2
+    .locals 1
 
     .line 81
     sget-object v0, Landroidx/compose/ui/Alignment$Companion;->TopStart:Landroidx/compose/ui/Alignment;

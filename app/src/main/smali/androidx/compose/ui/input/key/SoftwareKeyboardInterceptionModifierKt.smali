@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final onInterceptKeyBeforeSoftKeyboard(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$onInterceptKeyBeforeSoftKeyboard"    # Landroidx/compose/ui/Modifier;
     .param p1, "onInterceptKeyBeforeSoftKeyboard"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -78,7 +78,7 @@
 .end method
 
 .method public static final onPreInterceptKeyBeforeSoftKeyboard(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$onPreInterceptKeyBeforeSoftKeyboard"    # Landroidx/compose/ui/Modifier;
     .param p1, "onPreInterceptKeyBeforeSoftKeyboard"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;

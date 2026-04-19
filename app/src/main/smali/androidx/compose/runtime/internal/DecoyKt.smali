@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final illegalDecoyCallException(Ljava/lang/String;)Ljava/lang/Void;
-    .registers 4
+    .locals 3
     .param p0, "fName"    # Ljava/lang/String;
     .annotation runtime Landroidx/compose/runtime/ComposeCompilerApi;
     .end annotation

@@ -31,7 +31,7 @@
 
 # direct methods
 .method public static final toAndroidRect(Landroidx/compose/ui/geometry/Rect;)Landroid/graphics/Rect;
-    .registers 6
+    .locals 5
     .param p0, "$this$toAndroidRect"    # Landroidx/compose/ui/geometry/Rect;
     .annotation runtime Lkotlin/Deprecated;
         message = "Converting Rect to android.graphics.Rect is lossy, and requires rounding. The behavior of toAndroidRect() truncates to an integral Rect, but you should choose the method of rounding most suitable for your use case."
@@ -83,7 +83,7 @@
 .end method
 
 .method public static final toAndroidRect(Landroidx/compose/ui/unit/IntRect;)Landroid/graphics/Rect;
-    .registers 6
+    .locals 5
     .param p0, "$this$toAndroidRect"    # Landroidx/compose/ui/unit/IntRect;
 
     const-string v0, "<this>"
@@ -115,7 +115,7 @@
 .end method
 
 .method public static final toAndroidRectF(Landroidx/compose/ui/geometry/Rect;)Landroid/graphics/RectF;
-    .registers 6
+    .locals 5
     .param p0, "$this$toAndroidRectF"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string v0, "<this>"
@@ -152,7 +152,7 @@
 .end method
 
 .method public static final toComposeIntRect(Landroid/graphics/Rect;)Landroidx/compose/ui/unit/IntRect;
-    .registers 6
+    .locals 5
     .param p0, "$this$toComposeIntRect"    # Landroid/graphics/Rect;
 
     const-string v0, "<this>"
@@ -176,7 +176,7 @@
 .end method
 
 .method public static final toComposeRect(Landroid/graphics/Rect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 6
+    .locals 5
     .param p0, "$this$toComposeRect"    # Landroid/graphics/Rect;
 
     const-string v0, "<this>"

@@ -43,7 +43,7 @@
 
 # direct methods
 .method public static final Rect-0a9Yr6o(JJ)Landroidx/compose/ui/geometry/Rect;
-    .registers 9
+    .locals 5
     .param p0, "topLeft"    # J
     .param p2, "bottomRight"    # J
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public static final Rect-3MmeM6k(JF)Landroidx/compose/ui/geometry/Rect;
-    .registers 8
+    .locals 5
     .param p0, "center"    # J
     .param p2, "radius"    # F
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public static final Rect-tz77jQw(JJ)Landroidx/compose/ui/geometry/Rect;
-    .registers 10
+    .locals 6
     .param p0, "offset"    # J
     .param p2, "size"    # J
 
@@ -168,7 +168,7 @@
 .end method
 
 .method public static final lerp(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/geometry/Rect;F)Landroidx/compose/ui/geometry/Rect;
-    .registers 9
+    .locals 6
     .param p0, "start"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "stop"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "fraction"    # F

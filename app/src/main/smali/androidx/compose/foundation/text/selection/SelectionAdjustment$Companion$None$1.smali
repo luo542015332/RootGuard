@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public adjust-ZXO7KMw(Landroidx/compose/ui/text/TextLayoutResult;JIZLandroidx/compose/ui/text/TextRange;)J
-    .registers 8
+    .locals 1
     .param p1, "textLayoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p2, "newRawSelectionRange"    # J
     .param p4, "previousHandleOffset"    # I

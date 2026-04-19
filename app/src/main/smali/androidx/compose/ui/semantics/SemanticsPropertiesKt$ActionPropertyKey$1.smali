@@ -63,7 +63,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/semantics/SemanticsPropertiesKt$ActionPropertyKey$1;
 
@@ -75,7 +75,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -87,7 +87,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/semantics/AccessibilityAction;Landroidx/compose/ui/semantics/AccessibilityAction;)Landroidx/compose/ui/semantics/AccessibilityAction;
-    .registers 6
+    .locals 3
     .param p1, "parentValue"    # Landroidx/compose/ui/semantics/AccessibilityAction;
     .param p2, "childValue"    # Landroidx/compose/ui/semantics/AccessibilityAction;
     .annotation system Ldalvik/annotation/Signature;
@@ -110,43 +110,43 @@
     new-instance v0, Landroidx/compose/ui/semantics/AccessibilityAction;
 
     .line 466
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/ui/semantics/AccessibilityAction;->getLabel()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_1
 
-    :cond_10
+    :cond_0
     invoke-virtual {p2}, Landroidx/compose/ui/semantics/AccessibilityAction;->getLabel()Ljava/lang/String;
 
     move-result-object v1
 
     .line 467
-    :cond_14
-    if-eqz p1, :cond_1c
+    :cond_1
+    if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Landroidx/compose/ui/semantics/AccessibilityAction;->getAction()Lkotlin/Function;
 
     move-result-object v2
 
-    if-nez v2, :cond_20
+    if-nez v2, :cond_3
 
-    :cond_1c
+    :cond_2
     invoke-virtual {p2}, Landroidx/compose/ui/semantics/AccessibilityAction;->getAction()Lkotlin/Function;
 
     move-result-object v2
 
     .line 465
-    :cond_20
+    :cond_3
     invoke-direct {v0, v1, v2}, Landroidx/compose/ui/semantics/AccessibilityAction;-><init>(Ljava/lang/String;Lkotlin/Function;)V
 
     return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 

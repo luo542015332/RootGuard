@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/input/key/KeyEventType$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getKeyDown-CS__XNY()I
-    .registers 2
+    .locals 1
 
     .line 133
-    # getter for: Landroidx/compose/ui/input/key/KeyEventType;->KeyDown:I
     invoke-static {}, Landroidx/compose/ui/input/key/KeyEventType;->access$getKeyDown$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getKeyUp-CS__XNY()I
-    .registers 2
+    .locals 1
 
     .line 126
-    # getter for: Landroidx/compose/ui/input/key/KeyEventType;->KeyUp:I
     invoke-static {}, Landroidx/compose/ui/input/key/KeyEventType;->access$getKeyUp$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getUnknown-CS__XNY()I
-    .registers 2
+    .locals 1
 
     .line 119
-    # getter for: Landroidx/compose/ui/input/key/KeyEventType;->Unknown:I
     invoke-static {}, Landroidx/compose/ui/input/key/KeyEventType;->access$getUnknown$cp()I
 
     move-result v0

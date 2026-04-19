@@ -79,7 +79,7 @@
 
 # direct methods
 .method constructor <init>(ZLandroidx/compose/material/AnchoredDraggableState;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,7 +134,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -148,7 +148,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -177,7 +177,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 12
+    .locals 10
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -186,7 +186,7 @@
     .line 65535
     iget v1, p0, Landroidx/compose/material/SwitchKt$Switch$4$1;->label:I
 
-    packed-switch v1, :pswitch_data_48
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -196,18 +196,18 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/material/SwitchKt$Switch$4$1;
     .local p1, "$result":Ljava/lang/Object;
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_44
+    goto :goto_0
 
     .end local v0    # "this":Landroidx/compose/material/SwitchKt$Switch$4$1;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_17
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -229,7 +229,7 @@
 
     move-result v3
 
-    if-eq v2, v3, :cond_45
+    if-eq v2, v3, :cond_1
 
     .line 135
     iget-object v4, v1, Landroidx/compose/material/SwitchKt$Switch$4$1;->$anchoredDraggableState:Landroidx/compose/material/AnchoredDraggableState;
@@ -258,31 +258,31 @@
 
     move-result-object v2
 
-    if-ne v2, v0, :cond_43
+    if-ne v2, v0, :cond_0
 
     .line 65535
     return-object v0
 
     .line 135
-    :cond_43
+    :cond_0
     move-object v0, v1
 
     .line 137
     .end local v1    # "this":Landroidx/compose/material/SwitchKt$Switch$4$1;
     .restart local v0    # "this":Landroidx/compose/material/SwitchKt$Switch$4$1;
-    :goto_44
+    :goto_0
     move-object v1, v0
 
     .end local v0    # "this":Landroidx/compose/material/SwitchKt$Switch$4$1;
     .restart local v1    # "this":Landroidx/compose/material/SwitchKt$Switch$4$1;
-    :cond_45
+    :cond_1
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_17
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

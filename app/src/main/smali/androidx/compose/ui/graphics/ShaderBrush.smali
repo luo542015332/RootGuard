@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 646
     const/4 v0, 0x0
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public final applyTo-Pq9zytI(JLandroidx/compose/ui/graphics/Paint;F)V
-    .registers 10
+    .locals 5
     .param p1, "size"    # J
     .param p3, "p"    # Landroidx/compose/ui/graphics/Paint;
     .param p4, "alpha"    # F
@@ -91,7 +91,7 @@
 
     .line 655
     .local v0, "shader":Landroid/graphics/Shader;
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     iget-wide v1, p0, Landroidx/compose/ui/graphics/ShaderBrush;->createdSize:J
 
@@ -99,15 +99,15 @@
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_2
 
     .line 656
-    :cond_12
+    :cond_0
     invoke-static {p1, p2}, Landroidx/compose/ui/geometry/Size;->isEmpty-impl(J)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_1
 
     .line 657
     const/4 v0, 0x0
@@ -126,10 +126,10 @@
 
     iput-wide v1, p0, Landroidx/compose/ui/graphics/ShaderBrush;->createdSize:J
 
-    goto :goto_30
+    goto :goto_0
 
     .line 661
-    :cond_25
+    :cond_1
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/graphics/ShaderBrush;->createShader-uvyYCjk(J)Landroid/graphics/Shader;
 
     move-result-object v1
@@ -152,8 +152,8 @@
     iput-wide p1, p0, Landroidx/compose/ui/graphics/ShaderBrush;->createdSize:J
 
     .line 665
-    :cond_30
-    :goto_30
+    :cond_2
+    :goto_0
     invoke-interface {p3}, Landroidx/compose/ui/graphics/Paint;->getColor-0d7_KjU()J
 
     move-result-wide v1
@@ -168,7 +168,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_49
+    if-nez v1, :cond_3
 
     sget-object v1, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
 
@@ -179,7 +179,7 @@
     invoke-interface {p3, v1, v2}, Landroidx/compose/ui/graphics/Paint;->setColor-8_81llA(J)V
 
     .line 666
-    :cond_49
+    :cond_3
     invoke-interface {p3}, Landroidx/compose/ui/graphics/Paint;->getShader()Landroid/graphics/Shader;
 
     move-result-object v1
@@ -188,34 +188,34 @@
 
     move-result v1
 
-    if-nez v1, :cond_56
+    if-nez v1, :cond_4
 
     invoke-interface {p3, v0}, Landroidx/compose/ui/graphics/Paint;->setShader(Landroid/graphics/Shader;)V
 
     .line 667
-    :cond_56
+    :cond_4
     invoke-interface {p3}, Landroidx/compose/ui/graphics/Paint;->getAlpha()F
 
     move-result v1
 
     cmpg-float v1, v1, p4
 
-    if-nez v1, :cond_60
+    if-nez v1, :cond_5
 
     const/4 v1, 0x1
 
-    goto :goto_61
+    goto :goto_1
 
-    :cond_60
+    :cond_5
     const/4 v1, 0x0
 
-    :goto_61
-    if-nez v1, :cond_66
+    :goto_1
+    if-nez v1, :cond_6
 
     invoke-interface {p3, p4}, Landroidx/compose/ui/graphics/Paint;->setAlpha(F)V
 
     .line 668
-    :cond_66
+    :cond_6
     return-void
 .end method
 

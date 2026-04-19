@@ -162,7 +162,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 342
     const/4 v0, 0x0
@@ -211,7 +211,7 @@
 .end method
 
 .method private final getWillClipPath()Z
-    .registers 2
+    .locals 1
 
     .line 355
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->clipPathData:Ljava/util/List;
@@ -228,21 +228,21 @@
 .end method
 
 .method private final updateClipPath()V
-    .registers 3
+    .locals 2
 
     .line 370
     invoke-direct {p0}, Landroidx/compose/ui/graphics/vector/GroupComponent;->getWillClipPath()Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 371
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->clipPath:Landroidx/compose/ui/graphics/Path;
 
     .line 372
     .local v0, "targetClip":Landroidx/compose/ui/graphics/Path;
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     .line 373
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
@@ -253,19 +253,19 @@
     iput-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->clipPath:Landroidx/compose/ui/graphics/Path;
 
     .line 378
-    :cond_10
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->clipPathData:Ljava/util/List;
 
     invoke-static {v1, v0}, Landroidx/compose/ui/graphics/vector/PathParserKt;->toPath(Ljava/util/List;Landroidx/compose/ui/graphics/Path;)Landroidx/compose/ui/graphics/Path;
 
     .line 380
     .end local v0    # "targetClip":Landroidx/compose/ui/graphics/Path;
-    :cond_15
+    :cond_1
     return-void
 .end method
 
 .method private final updateMatrix()V
-    .registers 9
+    .locals 8
 
     const/4 v0, 0x0
 
@@ -275,7 +275,7 @@
 
     .line 447
     .local v1, "target":[F
-    if-nez v1, :cond_e
+    if-nez v1, :cond_0
 
     .line 448
     const/4 v2, 0x1
@@ -289,17 +289,17 @@
     .line 449
     iput-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->groupMatrix:[F
 
-    goto :goto_12
+    goto :goto_0
 
     .line 451
-    :cond_e
+    :cond_0
     move-object v0, v1
 
     .line 452
     invoke-static {v0}, Landroidx/compose/ui/graphics/Matrix;->reset-impl([F)V
 
     .line 457
-    :goto_12
+    :goto_0
     iget v2, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->translationX:F
 
     iget v3, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->pivotX:F
@@ -356,7 +356,7 @@
 
 # virtual methods
 .method public draw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 21
+    .locals 19
     .param p1, "$this$draw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     move-object/from16 v0, p0
@@ -372,7 +372,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_0
 
     .line 504
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/graphics/vector/GroupComponent;->updateMatrix()V
@@ -381,10 +381,10 @@
     iput-boolean v3, v0, Landroidx/compose/ui/graphics/vector/GroupComponent;->isMatrixDirty:Z
 
     .line 508
-    :cond_13
+    :cond_0
     iget-boolean v2, v0, Landroidx/compose/ui/graphics/vector/GroupComponent;->isClipPathDirty:Z
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1
 
     .line 509
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/graphics/vector/GroupComponent;->updateClipPath()V
@@ -393,7 +393,7 @@
     iput-boolean v3, v0, Landroidx/compose/ui/graphics/vector/GroupComponent;->isClipPathDirty:Z
 
     .line 513
-    :cond_1c
+    :cond_1
     move-object/from16 v2, p1
 
     .local v2, "$this$withTransform$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
@@ -436,20 +436,20 @@
 
     const/4 v12, 0x0
 
-    if-eqz v11, :cond_49
+    if-eqz v11, :cond_3
 
-    if-eqz v11, :cond_40
+    if-eqz v11, :cond_2
 
     invoke-static {v11}, Landroidx/compose/ui/graphics/Matrix;->box-impl([F)Landroidx/compose/ui/graphics/Matrix;
 
     move-result-object v11
 
-    goto :goto_41
+    goto :goto_0
 
-    :cond_40
+    :cond_2
     move-object v11, v12
 
-    :goto_41
+    :goto_0
     invoke-virtual {v11}, Landroidx/compose/ui/graphics/Matrix;->unbox-impl()[F
 
     move-result-object v11
@@ -465,7 +465,7 @@
     .line 515
     .end local v11    # "it":[F
     .end local v13    # "$i$a$-let-GroupComponent$draw$1$1":I
-    :cond_49
+    :cond_3
     iget-object v11, v0, Landroidx/compose/ui/graphics/vector/GroupComponent;->clipPath:Landroidx/compose/ui/graphics/Path;
 
     .line 516
@@ -474,9 +474,9 @@
 
     move-result v13
 
-    if-eqz v13, :cond_57
+    if-eqz v13, :cond_4
 
-    if-eqz v11, :cond_57
+    if-eqz v11, :cond_4
 
     .line 517
     const/4 v13, 0x2
@@ -484,7 +484,7 @@
     invoke-static {v9, v11, v3, v13, v12}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
 
     .line 519
-    :cond_57
+    :cond_4
     nop
 
     .line 549
@@ -518,8 +518,8 @@
 
     move-result v13
 
-    :goto_64
-    if-ge v12, v13, :cond_81
+    :goto_1
+    if-ge v12, v13, :cond_5
 
     .line 554
     invoke-interface {v10, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -572,11 +572,11 @@
 
     move-object/from16 v0, p0
 
-    goto :goto_64
+    goto :goto_1
 
     .line 557
     .end local v12    # "index$iv":I
-    :cond_81
+    :cond_5
     nop
 
     .line 525
@@ -618,7 +618,7 @@
 .end method
 
 .method public final getClipPathData()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -635,7 +635,7 @@
 .end method
 
 .method public getInvalidateListener$ui_release()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -652,7 +652,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 384
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->name:Ljava/lang/String;
@@ -661,7 +661,7 @@
 .end method
 
 .method public final getNumChildren()I
-    .registers 2
+    .locals 1
 
     .line 440
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->children:Ljava/util/List;
@@ -674,7 +674,7 @@
 .end method
 
 .method public final getPivotX()F
-    .registers 2
+    .locals 1
 
     .line 397
     iget v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->pivotX:F
@@ -683,7 +683,7 @@
 .end method
 
 .method public final getPivotY()F
-    .registers 2
+    .locals 1
 
     .line 404
     iget v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->pivotY:F
@@ -692,7 +692,7 @@
 .end method
 
 .method public final getRotation()F
-    .registers 2
+    .locals 1
 
     .line 390
     iget v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->rotation:F
@@ -701,7 +701,7 @@
 .end method
 
 .method public final getScaleX()F
-    .registers 2
+    .locals 1
 
     .line 411
     iget v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->scaleX:F
@@ -710,7 +710,7 @@
 .end method
 
 .method public final getScaleY()F
-    .registers 2
+    .locals 1
 
     .line 418
     iget v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->scaleY:F
@@ -719,7 +719,7 @@
 .end method
 
 .method public final getTranslationX()F
-    .registers 2
+    .locals 1
 
     .line 425
     iget v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->translationX:F
@@ -728,7 +728,7 @@
 .end method
 
 .method public final getTranslationY()F
-    .registers 2
+    .locals 1
 
     .line 432
     iget v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->translationY:F
@@ -737,7 +737,7 @@
 .end method
 
 .method public final insertAt(ILandroidx/compose/ui/graphics/vector/VNode;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Landroidx/compose/ui/graphics/vector/VNode;
 
@@ -750,23 +750,23 @@
 
     move-result v0
 
-    if-ge p1, v0, :cond_12
+    if-ge p1, v0, :cond_0
 
     .line 465
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->children:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_17
+    goto :goto_0
 
     .line 467
-    :cond_12
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->children:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 469
-    :goto_17
+    :goto_0
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/GroupComponent;->getInvalidateListener$ui_release()Lkotlin/jvm/functions/Function0;
 
     move-result-object v0
@@ -781,7 +781,7 @@
 .end method
 
 .method public final move(III)V
-    .registers 10
+    .locals 6
     .param p1, "from"    # I
     .param p2, "to"    # I
     .param p3, "count"    # I
@@ -789,7 +789,7 @@
     .line 474
     const/4 v0, 0x0
 
-    if-le p1, p2, :cond_22
+    if-le p1, p2, :cond_0
 
     .line 475
     const/4 v1, 0x0
@@ -800,8 +800,8 @@
     .line 476
     nop
 
-    :goto_6
-    if-ge v0, p3, :cond_3f
+    :goto_0
+    if-ge v0, p3, :cond_1
 
     move v2, v0
 
@@ -841,15 +841,15 @@
     .end local v4    # "node":Landroidx/compose/ui/graphics/vector/VNode;
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_6
+    goto :goto_0
 
     .line 483
     .end local v1    # "current":I
-    :cond_22
+    :cond_0
     nop
 
-    :goto_23
-    if-ge v0, p3, :cond_3f
+    :goto_1
+    if-ge v0, p3, :cond_1
 
     move v1, v0
 
@@ -888,10 +888,10 @@
     .end local v3    # "node":Landroidx/compose/ui/graphics/vector/VNode;
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_23
+    goto :goto_1
 
     .line 489
-    :cond_3f
+    :cond_1
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/GroupComponent;->invalidate()V
 
     .line 490
@@ -899,15 +899,15 @@
 .end method
 
 .method public final remove(II)V
-    .registers 8
+    .locals 5
     .param p1, "index"    # I
     .param p2, "count"    # I
 
     .line 493
     const/4 v0, 0x0
 
-    :goto_1
-    if-ge v0, p2, :cond_22
+    :goto_0
+    if-ge v0, p2, :cond_1
 
     move v1, v0
 
@@ -922,7 +922,7 @@
 
     move-result v3
 
-    if-ge p1, v3, :cond_1e
+    if-ge p1, v3, :cond_0
 
     .line 495
     iget-object v3, p0, Landroidx/compose/ui/graphics/vector/GroupComponent;->children:Ljava/util/List;
@@ -943,7 +943,7 @@
     invoke-interface {v3, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     .line 498
-    :cond_1e
+    :cond_0
     nop
 
     .line 493
@@ -951,10 +951,10 @@
     .end local v2    # "$i$a$-repeat-GroupComponent$remove$1":I
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 499
-    :cond_22
+    :cond_1
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/GroupComponent;->invalidate()V
 
     .line 500
@@ -962,7 +962,7 @@
 .end method
 
 .method public final setClipPathData(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -994,7 +994,7 @@
 .end method
 
 .method public setInvalidateListener$ui_release(Lkotlin/jvm/functions/Function0;)V
-    .registers 9
+    .locals 7
     .param p1, "value"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1026,8 +1026,8 @@
 
     move-result v3
 
-    :goto_b
-    if-ge v2, v3, :cond_1d
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 539
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1059,11 +1059,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 542
     .end local v2    # "index$iv":I
-    :cond_1d
+    :cond_0
     nop
 
     .line 367
@@ -1073,7 +1073,7 @@
 .end method
 
 .method public final setName(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/String;
 
     const-string/jumbo v0, "value"
@@ -1091,7 +1091,7 @@
 .end method
 
 .method public final setPivotX(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 399
@@ -1110,7 +1110,7 @@
 .end method
 
 .method public final setPivotY(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 406
@@ -1129,7 +1129,7 @@
 .end method
 
 .method public final setRotation(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 392
@@ -1148,7 +1148,7 @@
 .end method
 
 .method public final setScaleX(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 413
@@ -1167,7 +1167,7 @@
 .end method
 
 .method public final setScaleY(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 420
@@ -1186,7 +1186,7 @@
 .end method
 
 .method public final setTranslationX(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 427
@@ -1205,7 +1205,7 @@
 .end method
 
 .method public final setTranslationY(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 434
@@ -1224,7 +1224,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 11
+    .locals 10
 
     .line 529
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1262,8 +1262,8 @@
 
     move-result v4
 
-    :goto_1b
-    if-ge v3, v4, :cond_3d
+    :goto_0
+    if-ge v3, v4, :cond_0
 
     .line 563
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1311,11 +1311,11 @@
     .end local v5    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1b
+    goto :goto_0
 
     .line 566
     .end local v3    # "index$iv":I
-    :cond_3d
+    :cond_0
     nop
 
     .line 533

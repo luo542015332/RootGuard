@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 3
+    .locals 1
     .param p1, "context"    # Landroid/content/Context;
 
     const-string/jumbo v0, "context"
@@ -49,7 +49,7 @@
 
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 3
+    .locals 1
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     const-string/jumbo v0, "canvas"
@@ -61,7 +61,7 @@
 .end method
 
 .method protected final dispatchGetDisplayList()V
-    .registers 1
+    .locals 0
 
     .line 40
     return-void

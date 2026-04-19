@@ -91,7 +91,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/channels/Channel;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,7 +117,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -142,7 +142,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -156,7 +156,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -185,7 +185,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 14
+    .locals 12
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -194,7 +194,7 @@
     .line 44
     iget v1, p0, Landroidx/compose/ui/platform/GlobalSnapshotManager$ensureStarted$1;->label:I
 
-    packed-switch v1, :pswitch_data_a0
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -204,7 +204,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/ui/platform/GlobalSnapshotManager$ensureStarted$1;
@@ -230,10 +230,10 @@
     check-cast v7, Lkotlinx/coroutines/channels/ReceiveChannel;
 
     .local v7, "$this$consume$iv$iv":Lkotlinx/coroutines/channels/ReceiveChannel;
-    :try_start_1f
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_22
-    .catchall {:try_start_1f .. :try_end_22} :catchall_2c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-object v8, v7
 
@@ -253,14 +253,14 @@
 
     move-object v0, p1
 
-    goto :goto_61
+    goto :goto_1
 
     .line 66
     .end local v4    # "$i$a$-consume-ChannelsKt__Channels_commonKt$consumeEach$2$iv":I
-    :catchall_2c
+    :catchall_0
     move-exception v0
 
-    goto/16 :goto_98
+    goto/16 :goto_2
 
     .line 44
     .end local v1    # "this":Landroidx/compose/ui/platform/GlobalSnapshotManager$ensureStarted$1;
@@ -269,7 +269,7 @@
     .end local v6    # "cause$iv$iv":Ljava/lang/Throwable;
     .end local v7    # "$this$consume$iv$iv":Lkotlinx/coroutines/channels/ReceiveChannel;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_2f
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -311,12 +311,12 @@
 
     .line 63
     .local v5, "$i$a$-consume-ChannelsKt__Channels_commonKt$consumeEach$2$iv":I
-    :try_start_3f
+    :try_start_1
     invoke-interface {v4}, Lkotlinx/coroutines/channels/ReceiveChannel;->iterator()Lkotlinx/coroutines/channels/ChannelIterator;
 
     move-result-object v8
-    :try_end_43
-    .catchall {:try_start_3f .. :try_end_43} :catchall_94
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     move v4, v5
 
@@ -332,8 +332,8 @@
     .local v2, "$i$f$consumeEach":I
     .local v3, "$i$f$consume":I
     .local v4, "$i$a$-consume-ChannelsKt__Channels_commonKt$consumeEach$2$iv":I
-    :goto_48
-    :try_start_48
+    :goto_0
+    :try_start_2
     iput-object v7, v1, Landroidx/compose/ui/platform/GlobalSnapshotManager$ensureStarted$1;->L$0:Ljava/lang/Object;
 
     iput-object v5, v1, Landroidx/compose/ui/platform/GlobalSnapshotManager$ensureStarted$1;->L$1:Ljava/lang/Object;
@@ -345,16 +345,16 @@
     invoke-interface {v5, v1}, Lkotlinx/coroutines/channels/ChannelIterator;->hasNext(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v8
-    :try_end_53
-    .catchall {:try_start_48 .. :try_end_53} :catchall_2c
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    if-ne v8, v0, :cond_56
+    if-ne v8, v0, :cond_0
 
     .line 44
     return-object v0
 
     .line 63
-    :cond_56
+    :cond_0
     move-object v11, v0
 
     move-object v0, p1
@@ -387,15 +387,15 @@
     .restart local v5    # "$i$a$-consume-ChannelsKt__Channels_commonKt$consumeEach$2$iv":I
     .local v7, "cause$iv$iv":Ljava/lang/Throwable;
     .local v8, "$this$consume$iv$iv":Lkotlinx/coroutines/channels/ReceiveChannel;
-    :goto_61
-    :try_start_61
+    :goto_1
+    :try_start_3
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-eqz p1, :cond_81
+    if-eqz p1, :cond_1
 
     invoke-interface {v6}, Lkotlinx/coroutines/channels/ChannelIterator;->next()Ljava/lang/Object;
 
@@ -413,8 +413,8 @@
     sget-object v10, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v10}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->sendApplyNotifications()V
-    :try_end_76
-    .catchall {:try_start_61 .. :try_end_76} :catchall_8a
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 47
     nop
@@ -440,10 +440,10 @@
 
     move-object v7, v8
 
-    goto :goto_48
+    goto :goto_0
 
     .line 64
-    :cond_81
+    :cond_1
     nop
 
     .line 65
@@ -470,7 +470,7 @@
     .restart local v4    # "$i$f$consume":I
     .restart local v7    # "cause$iv$iv":Ljava/lang/Throwable;
     .restart local v8    # "$this$consume$iv$iv":Lkotlinx/coroutines/channels/ReceiveChannel;
-    :catchall_8a
+    :catchall_1
     move-exception p1
 
     move-object v1, v2
@@ -489,7 +489,7 @@
 
     move-object p1, v11
 
-    goto :goto_98
+    goto :goto_2
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local v4    # "$i$f$consume":I
@@ -499,7 +499,7 @@
     .restart local v6    # "cause$iv$iv":Ljava/lang/Throwable;
     .local v7, "$this$consume$iv$iv":Lkotlinx/coroutines/channels/ReceiveChannel;
     .local p1, "$result":Ljava/lang/Object;
-    :catchall_94
+    :catchall_2
     move-exception v0
 
     move v11, v3
@@ -512,7 +512,7 @@
     .local v0, "e$iv$iv":Ljava/lang/Throwable;
     .local v2, "$i$f$consumeEach":I
     .local v3, "$i$f$consume":I
-    :goto_98
+    :goto_2
     move-object v4, v0
 
     .line 68
@@ -526,10 +526,10 @@
     .end local v4    # "cause$iv$iv":Ljava/lang/Throwable;
     .end local v7    # "$this$consume$iv$iv":Lkotlinx/coroutines/channels/ReceiveChannel;
     .end local p1    # "$result":Ljava/lang/Object;
-    :try_start_9a
+    :try_start_4
     throw v0
-    :try_end_9b
-    .catchall {:try_start_9a .. :try_end_9b} :catchall_9b
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
     .line 69
     .end local v0    # "e$iv$iv":Ljava/lang/Throwable;
@@ -539,7 +539,7 @@
     .restart local v4    # "cause$iv$iv":Ljava/lang/Throwable;
     .restart local v7    # "$this$consume$iv$iv":Lkotlinx/coroutines/channels/ReceiveChannel;
     .restart local p1    # "$result":Ljava/lang/Object;
-    :catchall_9b
+    :catchall_3
     move-exception v0
 
     .line 65
@@ -547,9 +547,9 @@
 
     throw v0
 
-    :pswitch_data_a0
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2f
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

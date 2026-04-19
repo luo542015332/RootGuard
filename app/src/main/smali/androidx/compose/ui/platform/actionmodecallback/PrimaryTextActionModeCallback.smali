@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;)V
-    .registers 3
+    .locals 1
     .param p1, "callback"    # Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;
 
     const-string/jumbo v0, "callback"
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .registers 4
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "item"    # Landroid/view/MenuItem;
 
@@ -82,7 +82,7 @@
 .end method
 
 .method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 4
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "menu"    # Landroid/view/Menu;
 
@@ -97,7 +97,7 @@
 .end method
 
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
-    .registers 3
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
 
     .line 39
@@ -110,7 +110,7 @@
 .end method
 
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 4
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "menu"    # Landroid/view/Menu;
 

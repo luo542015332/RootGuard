@@ -56,7 +56,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/Placeable;Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Placeable;)V
-    .registers 5
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/BadgeKt$BadgedBox$2$measure$1;->$badgePlaceable:Landroidx/compose/ui/layout/Placeable;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 92
@@ -90,7 +90,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 13
+    .locals 11
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     const-string v0, "$this$layout"
@@ -116,33 +116,33 @@
 
     mul-int/lit8 v1, v1, 0x2
 
-    if-le v0, v1, :cond_1b
+    if-le v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     .line 106
     .local v0, "hasContent":Z
-    :goto_1c
-    if-eqz v0, :cond_23
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-static {}, Landroidx/compose/material/BadgeKt;->getBadgeWithContentHorizontalOffset()F
 
     move-result v1
 
-    goto :goto_27
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     invoke-static {}, Landroidx/compose/material/BadgeKt;->getBadgeHorizontalOffset()F
 
     move-result v1
 
     .line 105
-    :goto_27
+    :goto_1
     nop
 
     .line 108

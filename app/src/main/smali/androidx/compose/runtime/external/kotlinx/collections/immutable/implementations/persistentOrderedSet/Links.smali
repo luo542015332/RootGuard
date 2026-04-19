@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 15
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;->INSTANCE:Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;
@@ -62,7 +62,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "previous"    # Ljava/lang/Object;
 
     .line 17
@@ -74,7 +74,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 3
+    .locals 0
     .param p1, "previous"    # Ljava/lang/Object;
     .param p2, "next"    # Ljava/lang/Object;
 
@@ -91,49 +91,49 @@
 
 # virtual methods
 .method public final getHasNext()Z
-    .registers 3
+    .locals 2
 
     .line 22
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->next:Ljava/lang/Object;
 
     sget-object v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;->INSTANCE:Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final getHasPrevious()Z
-    .registers 3
+    .locals 2
 
     .line 23
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->previous:Ljava/lang/Object;
 
     sget-object v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;->INSTANCE:Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/EndOfChain;
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final getNext()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 13
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->next:Ljava/lang/Object;
@@ -142,7 +142,7 @@
 .end method
 
 .method public final getPrevious()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 13
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;->previous:Ljava/lang/Object;
@@ -151,7 +151,7 @@
 .end method
 
 .method public final withNext(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;
-    .registers 4
+    .locals 2
     .param p1, "newNext"    # Ljava/lang/Object;
 
     .line 19
@@ -165,7 +165,7 @@
 .end method
 
 .method public final withPrevious(Ljava/lang/Object;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;
-    .registers 4
+    .locals 2
     .param p1, "newPrevious"    # Ljava/lang/Object;
 
     .line 20

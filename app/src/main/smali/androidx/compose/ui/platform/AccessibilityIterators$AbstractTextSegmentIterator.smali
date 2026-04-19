@@ -62,7 +62,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -72,7 +72,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -91,21 +91,21 @@
 
 # virtual methods
 .method protected final getRange(II)[I
-    .registers 5
+    .locals 2
     .param p1, "start"    # I
     .param p2, "end"    # I
 
     .line 59
-    if-ltz p1, :cond_10
+    if-ltz p1, :cond_1
 
-    if-ltz p2, :cond_10
+    if-ltz p2, :cond_1
 
-    if-ne p1, p2, :cond_7
+    if-ne p1, p2, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 62
-    :cond_7
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/AccessibilityIterators$AbstractTextSegmentIterator;->segment:[I
 
     const/4 v1, 0x0
@@ -121,24 +121,24 @@
     return-object v0
 
     .line 60
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method protected final getText()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 50
     iget-object v0, p0, Landroidx/compose/ui/platform/AccessibilityIterators$AbstractTextSegmentIterator;->text:Ljava/lang/String;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     const-string/jumbo v0, "text"
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
@@ -149,7 +149,7 @@
 .end method
 
 .method public initialize(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "text"    # Ljava/lang/String;
 
     const-string/jumbo v0, "text"
@@ -164,7 +164,7 @@
 .end method
 
 .method protected final setText(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/lang/String;
 
     const-string v0, "<set-?>"

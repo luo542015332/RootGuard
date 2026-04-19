@@ -53,7 +53,7 @@
 
 # direct methods
 .method private static final synthetic $values()[Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
-    .registers 2
+    .locals 2
 
     sget-object v0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;->Lsq2:Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
 
@@ -67,7 +67,7 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 147
     new-instance v0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
@@ -101,7 +101,7 @@
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I)V
-    .registers 3
+    .locals 0
     .param p1, "$enum$name"    # Ljava/lang/String;
     .param p2, "$enum$ordinal"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -117,7 +117,7 @@
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
-    .registers 2
+    .locals 1
 
     const-class v0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public static values()[Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;->$VALUES:[Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
 

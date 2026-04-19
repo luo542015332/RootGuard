@@ -69,13 +69,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Lkotlin/Function;)V
-    .registers 3
+    .locals 0
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "action"    # Lkotlin/Function;
     .annotation system Ldalvik/annotation/Signature;
@@ -99,28 +99,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 437
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 438
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/semantics/AccessibilityAction;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 440
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/semantics/AccessibilityAction;->label:Ljava/lang/String;
 
     move-object v3, p1
@@ -133,12 +133,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 441
-    :cond_18
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/semantics/AccessibilityAction;->action:Lkotlin/Function;
 
     move-object v3, p1
@@ -151,17 +151,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 443
-    :cond_26
+    :cond_3
     return v0
 .end method
 
 .method public final getAction()Lkotlin/Function;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -175,7 +175,7 @@
 .end method
 
 .method public final getLabel()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 435
     iget-object v0, p0, Landroidx/compose/ui/semantics/AccessibilityAction;->label:Ljava/lang/String;
@@ -184,38 +184,38 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 447
     iget-object v0, p0, Landroidx/compose/ui/semantics/AccessibilityAction;->label:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v1
 
     .line 448
     .local v0, "result":I
-    :goto_b
+    :goto_0
     mul-int/lit8 v2, v0, 0x1f
 
     iget-object v3, p0, Landroidx/compose/ui/semantics/AccessibilityAction;->action:Lkotlin/Function;
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_1
 
     invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :cond_15
+    :cond_1
     add-int/2addr v2, v1
 
     .line 449
@@ -225,7 +225,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 453
     new-instance v0, Ljava/lang/StringBuilder;

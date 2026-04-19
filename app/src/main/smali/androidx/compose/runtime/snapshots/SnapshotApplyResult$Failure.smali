@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public check()V
-    .registers 3
+    .locals 2
 
     .line 1099
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotApplyResult$Failure;->snapshot:Landroidx/compose/runtime/snapshots/Snapshot;
@@ -101,7 +101,7 @@
 .end method
 
 .method public final getSnapshot()Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 2
+    .locals 1
 
     .line 1093
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotApplyResult$Failure;->snapshot:Landroidx/compose/runtime/snapshots/Snapshot;
@@ -110,7 +110,7 @@
 .end method
 
 .method public getSucceeded()Z
-    .registers 2
+    .locals 1
 
     .line 1103
     const/4 v0, 0x0

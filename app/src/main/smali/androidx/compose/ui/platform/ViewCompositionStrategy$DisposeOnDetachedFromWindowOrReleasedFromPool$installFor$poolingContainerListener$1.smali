@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AbstractComposeView;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/platform/ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$poolingContainerListener$1;->$view:Landroidx/compose/ui/platform/AbstractComposeView;
 
@@ -52,7 +52,7 @@
 
 # virtual methods
 .method public final onRelease()V
-    .registers 2
+    .locals 1
 
     .line 96
     iget-object v0, p0, Landroidx/compose/ui/platform/ViewCompositionStrategy$DisposeOnDetachedFromWindowOrReleasedFromPool$installFor$poolingContainerListener$1;->$view:Landroidx/compose/ui/platform/AbstractComposeView;

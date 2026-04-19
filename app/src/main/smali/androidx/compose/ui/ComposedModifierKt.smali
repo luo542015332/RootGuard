@@ -51,7 +51,7 @@
 
 # direct methods
 .method public static final composed(Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 15
+    .locals 8
     .param p0, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p1, "fullyQualifiedName"    # Ljava/lang/String;
     .param p2, "key1"    # Ljava/lang/Object;
@@ -136,7 +136,7 @@
 .end method
 
 .method public static final composed(Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 13
+    .locals 7
     .param p0, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p1, "fullyQualifiedName"    # Ljava/lang/String;
     .param p2, "key1"    # Ljava/lang/Object;
@@ -217,7 +217,7 @@
 .end method
 
 .method public static final composed(Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 6
+    .locals 1
     .param p0, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p1, "fullyQualifiedName"    # Ljava/lang/String;
     .param p2, "key1"    # Ljava/lang/Object;
@@ -284,7 +284,7 @@
 .end method
 
 .method public static final composed(Landroidx/compose/ui/Modifier;Ljava/lang/String;[Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 6
+    .locals 1
     .param p0, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p1, "fullyQualifiedName"    # Ljava/lang/String;
     .param p2, "keys"    # [Ljava/lang/Object;
@@ -351,7 +351,7 @@
 .end method
 
 .method public static final composed(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 1
     .param p0, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p1, "inspectorInfo"    # Lkotlin/jvm/functions/Function1;
     .param p2, "factory"    # Lkotlin/jvm/functions/Function3;
@@ -405,12 +405,12 @@
 .end method
 
 .method public static synthetic composed$default(Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 16
+    .locals 7
 
     .line 135
     and-int/lit8 p7, p7, 0x10
 
-    if-eqz p7, :cond_a
+    if-eqz p7, :cond_0
 
     .line 140
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
@@ -419,13 +419,13 @@
 
     move-object v5, p5
 
-    goto :goto_b
+    goto :goto_0
 
     .line 135
-    :cond_a
+    :cond_0
     move-object v5, p5
 
-    :goto_b
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -446,12 +446,12 @@
 .end method
 
 .method public static synthetic composed$default(Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 14
+    .locals 6
 
     .line 103
     and-int/lit8 p6, p6, 0x8
 
-    if-eqz p6, :cond_a
+    if-eqz p6, :cond_0
 
     .line 107
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
@@ -460,13 +460,13 @@
 
     move-object v4, p4
 
-    goto :goto_b
+    goto :goto_0
 
     .line 103
-    :cond_a
+    :cond_0
     move-object v4, p4
 
-    :goto_b
+    :goto_0
     move-object v0, p0
 
     move-object v1, p1
@@ -485,12 +485,12 @@
 .end method
 
 .method public static synthetic composed$default(Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 7
+    .locals 0
 
     .line 72
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 75
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
@@ -498,7 +498,7 @@
     move-result-object p3
 
     .line 72
-    :cond_8
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/ComposedModifierKt;->composed(Landroidx/compose/ui/Modifier;Ljava/lang/String;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
 
     move-result-object p0
@@ -507,12 +507,12 @@
 .end method
 
 .method public static synthetic composed$default(Landroidx/compose/ui/Modifier;Ljava/lang/String;[Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 7
+    .locals 0
 
     .line 168
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 171
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
@@ -520,7 +520,7 @@
     move-result-object p3
 
     .line 168
-    :cond_8
+    :cond_0
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/ComposedModifierKt;->composed(Landroidx/compose/ui/Modifier;Ljava/lang/String;[Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
 
     move-result-object p0
@@ -529,12 +529,12 @@
 .end method
 
 .method public static synthetic composed$default(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 0
 
     .line 45
     and-int/lit8 p3, p3, 0x1
 
-    if-eqz p3, :cond_8
+    if-eqz p3, :cond_0
 
     .line 46
     invoke-static {}, Landroidx/compose/ui/platform/InspectableValueKt;->getNoInspectorInfo()Lkotlin/jvm/functions/Function1;
@@ -542,7 +542,7 @@
     move-result-object p1
 
     .line 45
-    :cond_8
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/ComposedModifierKt;->composed(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function3;)Landroidx/compose/ui/Modifier;
 
     move-result-object p0
@@ -551,7 +551,7 @@
 .end method
 
 .method public static final synthetic materialize(Landroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$materializeWithCompositionLocalInjection"    # Landroidx/compose/runtime/Composer;
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
     .annotation runtime Lkotlin/Deprecated;
@@ -580,7 +580,7 @@
 .end method
 
 .method public static final materializeModifier(Landroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$materialize"    # Landroidx/compose/runtime/Composer;
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
 
@@ -601,13 +601,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     .line 254
     return-object p1
 
     .line 263
-    :cond_16
+    :cond_0
     const v0, 0x48ae8da7
 
     invoke-interface {p0, v0}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
@@ -636,7 +636,7 @@
 .end method
 
 .method public static final materializeWithCompositionLocalInjectionInternal(Landroidx/compose/runtime/Composer;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$materializeWithCompositionLocalInjectionInternal"    # Landroidx/compose/runtime/Composer;
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
 
@@ -651,15 +651,15 @@
     .line 337
     sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
-    if-ne p1, v0, :cond_11
+    if-ne p1, v0, :cond_0
 
     .line 338
     move-object v0, p1
 
-    goto :goto_22
+    goto :goto_0
 
     .line 340
-    :cond_11
+    :cond_0
     new-instance v0, Landroidx/compose/ui/CompositionLocalMapInjectionElement;
 
     invoke-interface {p0}, Landroidx/compose/runtime/Composer;->getCurrentCompositionLocalMap()Landroidx/compose/runtime/CompositionLocalMap;
@@ -677,6 +677,6 @@
     move-result-object v0
 
     .line 337
-    :goto_22
+    :goto_0
     return-object v0
 .end method

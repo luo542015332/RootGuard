@@ -46,7 +46,7 @@
 
 # direct methods
 .method public static final getMonotonicFrameClock(Lkotlin/coroutines/CoroutineContext;)Landroidx/compose/runtime/MonotonicFrameClock;
-    .registers 3
+    .locals 2
     .param p0, "$this$monotonicFrameClock"    # Lkotlin/coroutines/CoroutineContext;
 
     const-string v0, "<this>"
@@ -64,13 +64,13 @@
 
     check-cast v0, Landroidx/compose/runtime/MonotonicFrameClock;
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 119
     return-object v0
 
     .line 116
-    :cond_12
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 117
@@ -86,13 +86,13 @@
 .end method
 
 .method public static synthetic getMonotonicFrameClock$annotations(Lkotlin/coroutines/CoroutineContext;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method public static final withFrameMillis(Landroidx/compose/runtime/MonotonicFrameClock;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p0, "$this$withFrameMillis"    # Landroidx/compose/runtime/MonotonicFrameClock;
     .param p1, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -130,7 +130,7 @@
 .end method
 
 .method public static final withFrameMillis(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p0, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -179,7 +179,7 @@
 .end method
 
 .method private static final withFrameMillis$$forInline(Landroidx/compose/runtime/MonotonicFrameClock;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .param p0, "$this$withFrameMillis"    # Landroidx/compose/runtime/MonotonicFrameClock;
     .param p1, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -225,7 +225,7 @@
 .end method
 
 .method public static final withFrameNanos(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p1, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;

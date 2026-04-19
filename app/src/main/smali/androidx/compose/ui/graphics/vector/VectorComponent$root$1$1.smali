@@ -50,7 +50,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/vector/VectorComponent;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/vector/VectorComponent$root$1$1;->this$0:Landroidx/compose/ui/graphics/vector/VectorComponent;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 93
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/VectorComponent$root$1$1;->invoke()V
@@ -75,12 +75,11 @@
 .end method
 
 .method public final invoke()V
-    .registers 2
+    .locals 1
 
     .line 94
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorComponent$root$1$1;->this$0:Landroidx/compose/ui/graphics/vector/VectorComponent;
 
-    # invokes: Landroidx/compose/ui/graphics/vector/VectorComponent;->doInvalidate()V
     invoke-static {v0}, Landroidx/compose/ui/graphics/vector/VectorComponent;->access$doInvalidate(Landroidx/compose/ui/graphics/vector/VectorComponent;)V
 
     .line 95

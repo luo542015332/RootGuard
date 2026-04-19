@@ -45,7 +45,7 @@
 
 # direct methods
 .method public static final actualColorMatrixColorFilter-jHG-Opc([F)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 3
+    .locals 2
     .param p0, "colorMatrix"    # [F
 
     const-string/jumbo v0, "colorMatrix"
@@ -67,7 +67,7 @@
 .end method
 
 .method public static final actualLightingColorFilter--OWjLjI(JJ)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 8
+    .locals 4
     .param p0, "multiply"    # J
     .param p2, "add"    # J
 
@@ -94,7 +94,7 @@
 .end method
 
 .method public static final actualTintColorFilter-xETnrds(JI)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 6
+    .locals 3
     .param p0, "color"    # J
     .param p2, "blendMode"    # I
 
@@ -103,7 +103,7 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     .line 39
     sget-object v0, Landroidx/compose/ui/graphics/BlendModeColorFilterHelper;->INSTANCE:Landroidx/compose/ui/graphics/BlendModeColorFilterHelper;
@@ -114,10 +114,10 @@
 
     check-cast v0, Landroid/graphics/ColorFilter;
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 41
-    :cond_f
+    :cond_0
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/ColorKt;->toArgb-8_81llA(J)I
@@ -133,7 +133,7 @@
     check-cast v0, Landroid/graphics/ColorFilter;
 
     .line 38
-    :goto_1e
+    :goto_0
     nop
 
     .line 43
@@ -146,7 +146,7 @@
 .end method
 
 .method public static final asAndroidColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
-    .registers 2
+    .locals 1
     .param p0, "$this$asAndroidColorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     const-string v0, "<this>"
@@ -162,7 +162,7 @@
 .end method
 
 .method public static final asComposeColorFilter(Landroid/graphics/ColorFilter;)Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 2
+    .locals 1
     .param p0, "$this$asComposeColorFilter"    # Landroid/graphics/ColorFilter;
 
     const-string v0, "<this>"

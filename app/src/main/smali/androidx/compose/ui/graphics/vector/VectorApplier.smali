@@ -58,13 +58,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/graphics/vector/VNode;)V
-    .registers 3
+    .locals 1
     .param p1, "root"    # Landroidx/compose/ui/graphics/vector/VNode;
 
     const-string/jumbo v0, "root"
@@ -78,7 +78,7 @@
 .end method
 
 .method private final asGroup(Landroidx/compose/ui/graphics/vector/VNode;)Landroidx/compose/ui/graphics/vector/GroupComponent;
-    .registers 4
+    .locals 2
     .param p1, "$this$asGroup"    # Landroidx/compose/ui/graphics/vector/VNode;
 
     .line 159
@@ -87,7 +87,7 @@
     .line 160
     instance-of v0, p1, Landroidx/compose/ui/graphics/vector/GroupComponent;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -97,7 +97,7 @@
     return-object v0
 
     .line 160
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 161
@@ -115,7 +115,7 @@
 
 # virtual methods
 .method public insertBottomUp(ILandroidx/compose/ui/graphics/vector/VNode;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Landroidx/compose/ui/graphics/vector/VNode;
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public bridge synthetic insertBottomUp(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Ljava/lang/Object;
 
@@ -143,7 +143,7 @@
 .end method
 
 .method public insertTopDown(ILandroidx/compose/ui/graphics/vector/VNode;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Landroidx/compose/ui/graphics/vector/VNode;
 
@@ -169,7 +169,7 @@
 .end method
 
 .method public bridge synthetic insertTopDown(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Ljava/lang/Object;
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public move(III)V
-    .registers 5
+    .locals 1
     .param p1, "from"    # I
     .param p2, "to"    # I
     .param p3, "count"    # I
@@ -207,7 +207,7 @@
 .end method
 
 .method protected onClear()V
-    .registers 5
+    .locals 4
 
     .line 151
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/vector/VectorApplier;->getRoot()Ljava/lang/Object;
@@ -241,7 +241,7 @@
 .end method
 
 .method public remove(II)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "count"    # I
 

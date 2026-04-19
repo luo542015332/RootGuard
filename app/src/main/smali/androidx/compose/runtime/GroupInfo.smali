@@ -46,7 +46,7 @@
 
 # direct methods
 .method public constructor <init>(III)V
-    .registers 4
+    .locals 0
     .param p1, "slotIndex"    # I
     .param p2, "nodeIndex"    # I
     .param p3, "nodeCount"    # I
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final getNodeCount()I
-    .registers 2
+    .locals 1
 
     .line 57
     iget v0, p0, Landroidx/compose/runtime/GroupInfo;->nodeCount:I
@@ -79,7 +79,7 @@
 .end method
 
 .method public final getNodeIndex()I
-    .registers 2
+    .locals 1
 
     .line 52
     iget v0, p0, Landroidx/compose/runtime/GroupInfo;->nodeIndex:I
@@ -88,7 +88,7 @@
 .end method
 
 .method public final getSlotIndex()I
-    .registers 2
+    .locals 1
 
     .line 46
     iget v0, p0, Landroidx/compose/runtime/GroupInfo;->slotIndex:I
@@ -97,7 +97,7 @@
 .end method
 
 .method public final setNodeCount(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 57
@@ -107,7 +107,7 @@
 .end method
 
 .method public final setNodeIndex(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 52
@@ -117,7 +117,7 @@
 .end method
 
 .method public final setSlotIndex(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 46

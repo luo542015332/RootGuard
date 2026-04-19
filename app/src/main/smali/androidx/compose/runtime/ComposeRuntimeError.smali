@@ -35,7 +35,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "message"    # Ljava/lang/String;
 
     const-string/jumbo v0, "message"
@@ -53,7 +53,7 @@
 
 # virtual methods
 .method public getMessage()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 4545
     iget-object v0, p0, Landroidx/compose/runtime/ComposeRuntimeError;->message:Ljava/lang/String;

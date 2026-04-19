@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 3
+    .locals 0
     .param p1, "$composition"    # Landroidx/compose/runtime/ControlledComposition;
     .param p2, "$reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public invalidate(Landroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)Landroidx/compose/runtime/InvalidationResult;
-    .registers 11
+    .locals 8
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
     .param p2, "instance"    # Ljava/lang/Object;
 
@@ -89,37 +89,37 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/runtime/RecomposeScopeOwner;
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     move-object v0, v2
 
-    :goto_11
-    if-eqz v0, :cond_19
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-interface {v0, p1, p2}, Landroidx/compose/runtime/RecomposeScopeOwner;->invalidate(Landroidx/compose/runtime/RecomposeScopeImpl;Ljava/lang/Object;)Landroidx/compose/runtime/InvalidationResult;
 
     move-result-object v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_2
 
     .line 3756
-    :cond_19
+    :cond_1
     sget-object v0, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
 
     .line 3755
-    :cond_1b
+    :cond_2
     nop
 
     .line 3760
     .local v0, "result":Landroidx/compose/runtime/InvalidationResult;
     sget-object v1, Landroidx/compose/runtime/InvalidationResult;->IGNORED:Landroidx/compose/runtime/InvalidationResult;
 
-    if-ne v0, v1, :cond_45
+    if-ne v0, v1, :cond_4
 
     .line 3761
     iget-object v1, p0, Landroidx/compose/runtime/ComposerImpl$releaseMovableGroupAtCurrent$movableContentRecomposeScopeOwner$1;->$reference:Landroidx/compose/runtime/MovableContentStateReference;
@@ -130,7 +130,7 @@
 
     check-cast v3, Ljava/util/Collection;
 
-    if-eqz p2, :cond_37
+    if-eqz p2, :cond_3
 
     move-object v2, p2
 
@@ -160,7 +160,7 @@
     .end local v7    # "$i$a$-also-ComposerImpl$releaseMovableGroupAtCurrent$movableContentRecomposeScopeOwner$1$invalidate$1$1":I
     move-object v2, v5
 
-    :cond_37
+    :cond_3
     invoke-static {p1, v2}, Lkotlin/TuplesKt;->to(Ljava/lang/Object;Ljava/lang/Object;)Lkotlin/Pair;
 
     move-result-object v2
@@ -177,12 +177,12 @@
     return-object v1
 
     .line 3766
-    :cond_45
+    :cond_4
     return-object v0
 .end method
 
 .method public recomposeScopeReleased(Landroidx/compose/runtime/RecomposeScopeImpl;)V
-    .registers 3
+    .locals 1
     .param p1, "scope"    # Landroidx/compose/runtime/RecomposeScopeImpl;
 
     const-string/jumbo v0, "scope"
@@ -194,7 +194,7 @@
 .end method
 
 .method public recordReadOf(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "value"

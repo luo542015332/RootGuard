@@ -43,7 +43,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     const/4 v0, 0x3
 
@@ -59,7 +59,7 @@
 .end method
 
 .method public constructor <init>(FZ)V
-    .registers 3
+    .locals 0
     .param p1, "value"    # F
     .param p2, "isValid"    # Z
 
@@ -74,23 +74,23 @@
 .end method
 
 .method public synthetic constructor <init>(FZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     .line 29
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     const/high16 p1, 0x7fc00000    # Float.NaN
 
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_1
 
     const/4 p2, 0x0
 
-    :cond_b
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/graphics/vector/FloatResult;-><init>(FZ)V
 
     return-void
@@ -99,7 +99,7 @@
 
 # virtual methods
 .method public final getValue()F
-    .registers 2
+    .locals 1
 
     .line 29
     iget v0, p0, Landroidx/compose/ui/graphics/vector/FloatResult;->value:F
@@ -108,7 +108,7 @@
 .end method
 
 .method public final isValid()Z
-    .registers 2
+    .locals 1
 
     .line 29
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/FloatResult;->isValid:Z
@@ -117,7 +117,7 @@
 .end method
 
 .method public final setValid(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 29
@@ -127,7 +127,7 @@
 .end method
 
 .method public final setValue(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 29

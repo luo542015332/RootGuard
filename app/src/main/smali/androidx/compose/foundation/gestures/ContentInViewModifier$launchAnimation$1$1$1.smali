@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/ContentInViewModifier;Landroidx/compose/foundation/gestures/ScrollScope;Lkotlinx/coroutines/Job;)V
-    .registers 5
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 198
@@ -95,29 +95,28 @@
 .end method
 
 .method public final invoke(F)V
-    .registers 9
+    .locals 7
     .param p1, "delta"    # F
 
     .line 204
     iget-object v0, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
-    # getter for: Landroidx/compose/foundation/gestures/ContentInViewModifier;->reverseDirection:Z
     invoke-static {v0}, Landroidx/compose/foundation/gestures/ContentInViewModifier;->access$getReverseDirection$p(Landroidx/compose/foundation/gestures/ContentInViewModifier;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/high16 v0, -0x40800000    # -1.0f
 
     .line 205
     .local v0, "scrollMultiplier":F
-    :goto_d
+    :goto_0
     mul-float v1, v0, p1
 
     .line 206
@@ -140,7 +139,7 @@
     .line 213
     cmpg-float v3, v2, p1
 
-    if-gez v3, :cond_4a
+    if-gez v3, :cond_1
 
     .line 221
     iget-object v3, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$launchAnimation$1$1$1;->$animationJob:Lkotlinx/coroutines/Job;
@@ -200,6 +199,6 @@
     invoke-static {v3, v4, v6, v5, v6}, Lkotlinx/coroutines/JobKt;->cancel$default(Lkotlinx/coroutines/Job;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
 
     .line 226
-    :cond_4a
+    :cond_1
     return-void
 .end method

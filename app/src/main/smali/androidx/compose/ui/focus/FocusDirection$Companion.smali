@@ -62,7 +62,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -71,7 +71,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/focus/FocusDirection$Companion;-><init>()V
 
@@ -79,19 +79,19 @@
 .end method
 
 .method public static synthetic getEnter-dhqQ-8s$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getExit-dhqQ-8s$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getIn-dhqQ-8s$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         level = .enum Lkotlin/DeprecationLevel;->WARNING:Lkotlin/DeprecationLevel;
         message = "Use FocusDirection.Enter instead."
@@ -107,7 +107,7 @@
 .end method
 
 .method public static synthetic getOut-dhqQ-8s$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         level = .enum Lkotlin/DeprecationLevel;->WARNING:Lkotlin/DeprecationLevel;
         message = "Use FocusDirection.Exit instead."
@@ -125,10 +125,9 @@
 
 # virtual methods
 .method public final getDown-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 93
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Down:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getDown$cp()I
 
     move-result v0
@@ -137,10 +136,9 @@
 .end method
 
 .method public final getEnter-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 102
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Enter:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getEnter$cp()I
 
     move-result v0
@@ -149,10 +147,9 @@
 .end method
 
 .method public final getExit-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 111
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Exit:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getExit$cp()I
 
     move-result v0
@@ -161,10 +158,9 @@
 .end method
 
 .method public final getIn-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 125
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->In:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getIn$cp()I
 
     move-result v0
@@ -173,10 +169,9 @@
 .end method
 
 .method public final getLeft-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 69
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Left:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getLeft$cp()I
 
     move-result v0
@@ -185,10 +180,9 @@
 .end method
 
 .method public final getNext-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 53
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Next:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getNext$cp()I
 
     move-result v0
@@ -197,10 +191,9 @@
 .end method
 
 .method public final getOut-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 139
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Out:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getOut$cp()I
 
     move-result v0
@@ -209,10 +202,9 @@
 .end method
 
 .method public final getPrevious-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 61
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Previous:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getPrevious$cp()I
 
     move-result v0
@@ -221,10 +213,9 @@
 .end method
 
 .method public final getRight-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 77
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Right:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getRight$cp()I
 
     move-result v0
@@ -233,10 +224,9 @@
 .end method
 
 .method public final getUp-dhqQ-8s()I
-    .registers 2
+    .locals 1
 
     .line 85
-    # getter for: Landroidx/compose/ui/focus/FocusDirection;->Up:I
     invoke-static {}, Landroidx/compose/ui/focus/FocusDirection;->access$getUp$cp()I
 
     move-result v0

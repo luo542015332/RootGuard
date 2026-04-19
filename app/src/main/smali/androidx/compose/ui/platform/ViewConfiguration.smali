@@ -50,7 +50,7 @@
 
 # direct methods
 .method public static synthetic access$getMinimumTouchTargetSize-MYxV2XQ$jd(Landroidx/compose/ui/platform/ViewConfiguration;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/platform/ViewConfiguration;
 
     .line 26
@@ -73,7 +73,7 @@
 .end method
 
 .method public getMinimumTouchTargetSize-MYxV2XQ()J
-    .registers 5
+    .locals 4
 
     .line 56
     const/16 v0, 0x30

@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static final getTextFieldSelection-bb3KNj8(Landroidx/compose/ui/text/TextLayoutResult;IILandroidx/compose/ui/text/TextRange;ZLandroidx/compose/foundation/text/selection/SelectionAdjustment;)J
-    .registers 18
+    .locals 12
     .param p0, "textLayoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p1, "rawStartOffset"    # I
     .param p2, "rawEndOffset"    # I
@@ -52,7 +52,7 @@
     invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 42
-    if-eqz p0, :cond_31
+    if-eqz p0, :cond_1
 
     move-object v8, p0
 
@@ -67,7 +67,7 @@
 
     .line 47
     .local v10, "textRange":J
-    if-nez p3, :cond_1f
+    if-nez p3, :cond_0
 
     sget-object v0, Landroidx/compose/foundation/text/selection/SelectionAdjustment;->Companion:Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;
 
@@ -79,13 +79,13 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     .line 48
     return-wide v10
 
     .line 51
-    :cond_1f
+    :cond_0
     nop
 
     .line 52
@@ -124,7 +124,7 @@
     .end local v8    # "it":Landroidx/compose/ui/text/TextLayoutResult;
     .end local v9    # "$i$a$-let-TextFieldSelectionDelegateKt$getTextFieldSelection$1":I
     .end local v10    # "textRange":J
-    :cond_31
+    :cond_1
     const/4 v0, 0x0
 
     invoke-static {v0, v0}, Landroidx/compose/ui/text/TextRangeKt;->TextRange(II)J

@@ -42,7 +42,7 @@
 
 # direct methods
 .method public static synthetic access$mergeRecords$jd(Landroidx/compose/runtime/snapshots/StateObject;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 5
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/snapshots/StateObject;
     .param p1, "previous"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p2, "current"    # Landroidx/compose/runtime/snapshots/StateRecord;
@@ -62,7 +62,7 @@
 .end method
 
 .method public mergeRecords(Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 5
+    .locals 1
     .param p1, "previous"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p2, "current"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p3, "applied"    # Landroidx/compose/runtime/snapshots/StateRecord;

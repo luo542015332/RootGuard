@@ -30,7 +30,7 @@
 
 # direct methods
 .method private static final DistanceAndInLayer(FZ)J
-    .registers 10
+    .locals 8
     .param p0, "distance"    # F
     .param p1, "isInLayer"    # Z
 
@@ -43,18 +43,18 @@
 
     .line 338
     .local v0, "v1":J
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     const-wide/16 v2, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const-wide/16 v2, 0x0
 
     .line 339
     .local v2, "v2":J
-    :goto_c
+    :goto_0
     const/16 v4, 0x20
 
     shl-long v4, v0, v4
@@ -73,7 +73,7 @@
 .end method
 
 .method public static final synthetic access$DistanceAndInLayer(FZ)J
-    .registers 4
+    .locals 2
     .param p0, "distance"    # F
     .param p1, "isInLayer"    # Z
 

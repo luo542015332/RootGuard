@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(JLjava/util/List;Landroid/view/MotionEvent;)V
-    .registers 6
+    .locals 1
     .param p1, "uptime"    # J
     .param p3, "pointers"    # Ljava/util/List;
     .param p4, "motionEvent"    # Landroid/view/MotionEvent;
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public final getMotionEvent()Landroid/view/MotionEvent;
-    .registers 2
+    .locals 1
 
     .line 24
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEvent;->motionEvent:Landroid/view/MotionEvent;
@@ -106,7 +106,7 @@
 .end method
 
 .method public final getPointers()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -123,7 +123,7 @@
 .end method
 
 .method public final getUptime()J
-    .registers 3
+    .locals 2
 
     .line 22
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputEvent;->uptime:J

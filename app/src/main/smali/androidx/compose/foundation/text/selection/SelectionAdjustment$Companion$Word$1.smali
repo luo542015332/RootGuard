@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public adjust-ZXO7KMw(Landroidx/compose/ui/text/TextLayoutResult;JIZLandroidx/compose/ui/text/TextRange;)J
-    .registers 9
+    .locals 2
     .param p1, "textLayoutResult"    # Landroidx/compose/ui/text/TextLayoutResult;
     .param p2, "newRawSelectionRange"    # J
     .param p4, "previousHandleOffset"    # I
@@ -88,7 +88,6 @@
     check-cast v1, Lkotlin/jvm/functions/Function1;
 
     .line 118
-    # invokes: Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;->adjustByBoundary--Dv-ylE(Landroidx/compose/ui/text/TextLayoutResult;JLkotlin/jvm/functions/Function1;)J
     invoke-static {v0, p1, p2, p3, v1}, Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;->access$adjustByBoundary--Dv-ylE(Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;Landroidx/compose/ui/text/TextLayoutResult;JLkotlin/jvm/functions/Function1;)J
 
     move-result-wide v0

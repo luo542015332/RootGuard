@@ -93,7 +93,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;
 
@@ -126,7 +126,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 428
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -137,7 +137,7 @@
 
 # virtual methods
 .method public getAfterContentPadding()I
-    .registers 2
+    .locals 1
 
     .line 437
     sget v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->afterContentPadding:I
@@ -146,7 +146,7 @@
 .end method
 
 .method public getBeforeContentPadding()I
-    .registers 2
+    .locals 1
 
     .line 436
     sget v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->beforeContentPadding:I
@@ -155,7 +155,7 @@
 .end method
 
 .method public getMainAxisItemSpacing()I
-    .registers 2
+    .locals 1
 
     .line 438
     sget v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->mainAxisItemSpacing:I
@@ -164,7 +164,7 @@
 .end method
 
 .method public getOrientation()Landroidx/compose/foundation/gestures/Orientation;
-    .registers 2
+    .locals 1
 
     .line 434
     sget-object v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->orientation:Landroidx/compose/foundation/gestures/Orientation;
@@ -173,7 +173,7 @@
 .end method
 
 .method public getReverseLayout()Z
-    .registers 2
+    .locals 1
 
     .line 435
     sget-boolean v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->reverseLayout:Z
@@ -182,7 +182,7 @@
 .end method
 
 .method public getTotalItemsCount()I
-    .registers 2
+    .locals 1
 
     .line 432
     sget v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->totalItemsCount:I
@@ -191,7 +191,7 @@
 .end method
 
 .method public getViewportEndOffset()I
-    .registers 2
+    .locals 1
 
     .line 431
     sget v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->viewportEndOffset:I
@@ -200,7 +200,7 @@
 .end method
 
 .method public getViewportSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 433
     sget-wide v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->viewportSize:J
@@ -209,7 +209,7 @@
 .end method
 
 .method public getViewportStartOffset()I
-    .registers 2
+    .locals 1
 
     .line 430
     sget v0, Landroidx/compose/foundation/lazy/EmptyLazyListLayoutInfo;->viewportStartOffset:I
@@ -218,7 +218,7 @@
 .end method
 
 .method public getVisibleItemsInfo()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

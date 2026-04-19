@@ -138,13 +138,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private constructor <init>(JJJZFJJZZIJ)V
-    .registers 34
+    .locals 16
     .param p1, "id"    # J
     .param p3, "uptimeMillis"    # J
     .param p5, "position"    # J
@@ -226,14 +226,14 @@
 .end method
 
 .method public synthetic constructor <init>(JJJZFJJZZIJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 41
+    .locals 21
 
     .line 416
     move/from16 v0, p18
 
     and-int/lit16 v1, v0, 0x200
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 426
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
@@ -244,16 +244,16 @@
 
     move/from16 v17, v1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 416
-    :cond_f
+    :cond_0
     move/from16 v17, p15
 
-    :goto_11
+    :goto_0
     and-int/lit16 v0, v0, 0x400
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 427
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -264,13 +264,13 @@
 
     move-wide/from16 v18, v0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 416
-    :cond_1e
+    :cond_1
     move-wide/from16 v18, p16
 
-    :goto_20
+    :goto_1
     const/16 v20, 0x0
 
     move-object/from16 v2, p0
@@ -300,7 +300,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJJZFJJZZIJLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 19
+    .locals 0
 
     invoke-direct/range {p0 .. p17}, Landroidx/compose/ui/input/pointer/PointerInputChange;-><init>(JJJZFJJZZIJ)V
 
@@ -308,7 +308,7 @@
 .end method
 
 .method private constructor <init>(JJJZFJJZZILjava/util/List;J)V
-    .registers 40
+    .locals 21
     .param p1, "id"    # J
     .param p3, "uptimeMillis"    # J
     .param p5, "position"    # J
@@ -413,7 +413,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJJZFJJZZILjava/util/List;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 20
+    .locals 0
 
     invoke-direct/range {p0 .. p18}, Landroidx/compose/ui/input/pointer/PointerInputChange;-><init>(JJJZFJJZZILjava/util/List;J)V
 
@@ -421,7 +421,7 @@
 .end method
 
 .method private constructor <init>(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;I)V
-    .registers 36
+    .locals 21
     .param p1, "id"    # J
     .param p3, "uptimeMillis"    # J
     .param p5, "position"    # J
@@ -470,26 +470,26 @@
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_1
 
     invoke-virtual/range {p13 .. p13}, Landroidx/compose/ui/input/pointer/ConsumedData;->getPositionChange()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_22
+    goto :goto_1
 
-    :cond_21
-    :goto_21
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_22
+    :goto_1
     move/from16 v16, v0
 
     .line 484
@@ -530,14 +530,14 @@
 .end method
 
 .method public synthetic constructor <init>(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 34
+    .locals 17
 
     .line 464
     move/from16 v0, p15
 
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 473
     sget-object v0, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
@@ -548,13 +548,13 @@
 
     move v15, v0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 464
-    :cond_e
+    :cond_0
     move/from16 v15, p14
 
-    :goto_10
+    :goto_0
     const/16 v16, 0x0
 
     move-object/from16 v1, p0
@@ -582,7 +582,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 16
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         level = .enum Lkotlin/DeprecationLevel;->HIDDEN:Lkotlin/DeprecationLevel;
         message = "Use another constructor with `scrollDelta` and without `ConsumedData` instead"
@@ -598,7 +598,7 @@
 .end method
 
 .method private constructor <init>(JJJZJJZZIJ)V
-    .registers 36
+    .locals 19
     .param p1, "id"    # J
     .param p3, "uptimeMillis"    # J
     .param p5, "position"    # J
@@ -676,14 +676,14 @@
 .end method
 
 .method public synthetic constructor <init>(JJJZJJZZIJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 39
+    .locals 20
 
     .line 429
     move/from16 v0, p17
 
     and-int/lit16 v1, v0, 0x100
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 438
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerType;->Companion:Landroidx/compose/ui/input/pointer/PointerType$Companion;
@@ -694,16 +694,16 @@
 
     move/from16 v16, v1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 429
-    :cond_f
+    :cond_0
     move/from16 v16, p14
 
-    :goto_11
+    :goto_0
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 439
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -714,13 +714,13 @@
 
     move-wide/from16 v17, v0
 
-    goto :goto_20
+    goto :goto_1
 
     .line 429
-    :cond_1e
+    :cond_1
     move-wide/from16 v17, p15
 
-    :goto_20
+    :goto_1
     const/16 v19, 0x0
 
     move-object/from16 v2, p0
@@ -748,7 +748,7 @@
 .end method
 
 .method public synthetic constructor <init>(JJJZJJZZIJLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 18
+    .locals 0
 
     invoke-direct/range {p0 .. p16}, Landroidx/compose/ui/input/pointer/PointerInputChange;-><init>(JJJZJJZZIJ)V
 
@@ -756,7 +756,7 @@
 .end method
 
 .method public static synthetic copy-0GkPj7c$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;IJILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 36
+    .locals 17
 
     .line 643
     move-object/from16 v0, p0
@@ -765,119 +765,119 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 644
     iget-wide v2, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->id:J
 
-    goto :goto_d
+    goto :goto_0
 
     .line 643
-    :cond_b
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
     .line 645
     iget-wide v4, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->uptimeMillis:J
 
-    goto :goto_16
+    goto :goto_1
 
     .line 643
-    :cond_14
+    :cond_1
     move-wide/from16 v4, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v6, v1, 0x4
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_2
 
     .line 646
     iget-wide v6, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->position:J
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 643
-    :cond_1d
+    :cond_2
     move-wide/from16 v6, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v8, v1, 0x8
 
-    if-eqz v8, :cond_26
+    if-eqz v8, :cond_3
 
     .line 647
     iget-boolean v8, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressed:Z
 
-    goto :goto_28
+    goto :goto_3
 
     .line 643
-    :cond_26
+    :cond_3
     move/from16 v8, p7
 
-    :goto_28
+    :goto_3
     and-int/lit8 v9, v1, 0x10
 
-    if-eqz v9, :cond_2f
+    if-eqz v9, :cond_4
 
     .line 648
     iget-wide v9, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousUptimeMillis:J
 
-    goto :goto_31
+    goto :goto_4
 
     .line 643
-    :cond_2f
+    :cond_4
     move-wide/from16 v9, p8
 
-    :goto_31
+    :goto_4
     and-int/lit8 v11, v1, 0x20
 
-    if-eqz v11, :cond_38
+    if-eqz v11, :cond_5
 
     .line 649
     iget-wide v11, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPosition:J
 
-    goto :goto_3a
+    goto :goto_5
 
     .line 643
-    :cond_38
+    :cond_5
     move-wide/from16 v11, p10
 
-    :goto_3a
+    :goto_5
     and-int/lit8 v13, v1, 0x40
 
-    if-eqz v13, :cond_41
+    if-eqz v13, :cond_6
 
     .line 650
     iget-boolean v13, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPressed:Z
 
-    goto :goto_43
+    goto :goto_6
 
     .line 643
-    :cond_41
+    :cond_6
     move/from16 v13, p12
 
-    :goto_43
+    :goto_6
     and-int/lit16 v14, v1, 0x100
 
-    if-eqz v14, :cond_4a
+    if-eqz v14, :cond_7
 
     .line 652
     iget v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->type:I
 
-    goto :goto_4c
+    goto :goto_7
 
     .line 643
-    :cond_4a
+    :cond_7
     move/from16 v14, p14
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v1, v1, 0x200
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_8
 
     .line 653
     move/from16 p1, v14
@@ -886,15 +886,15 @@
 
     move-wide v15, v14
 
-    goto :goto_5a
+    goto :goto_8
 
     .line 643
-    :cond_56
+    :cond_8
     move/from16 p1, v14
 
     move-wide/from16 v15, p15
 
-    :goto_5a
+    :goto_8
     move-object/from16 v0, p0
 
     move-wide v1, v2
@@ -923,7 +923,7 @@
 .end method
 
 .method public static synthetic copy-Ezr-O64$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;IILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 32
+    .locals 15
 
     .line 571
     move-object v0, p0
@@ -932,130 +932,130 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_a
+    if-eqz v2, :cond_0
 
     .line 572
     iget-wide v2, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->id:J
 
-    goto :goto_c
+    goto :goto_0
 
     .line 571
-    :cond_a
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_c
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_13
+    if-eqz v4, :cond_1
 
     .line 573
     iget-wide v4, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->uptimeMillis:J
 
-    goto :goto_15
+    goto :goto_1
 
     .line 571
-    :cond_13
+    :cond_1
     move-wide/from16 v4, p3
 
-    :goto_15
+    :goto_1
     and-int/lit8 v6, v1, 0x4
 
-    if-eqz v6, :cond_1c
+    if-eqz v6, :cond_2
 
     .line 574
     iget-wide v6, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->position:J
 
-    goto :goto_1e
+    goto :goto_2
 
     .line 571
-    :cond_1c
+    :cond_2
     move-wide/from16 v6, p5
 
-    :goto_1e
+    :goto_2
     and-int/lit8 v8, v1, 0x8
 
-    if-eqz v8, :cond_25
+    if-eqz v8, :cond_3
 
     .line 575
     iget-boolean v8, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressed:Z
 
-    goto :goto_27
+    goto :goto_3
 
     .line 571
-    :cond_25
+    :cond_3
     move/from16 v8, p7
 
-    :goto_27
+    :goto_3
     and-int/lit8 v9, v1, 0x10
 
-    if-eqz v9, :cond_2e
+    if-eqz v9, :cond_4
 
     .line 576
     iget-wide v9, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousUptimeMillis:J
 
-    goto :goto_30
+    goto :goto_4
 
     .line 571
-    :cond_2e
+    :cond_4
     move-wide/from16 v9, p8
 
-    :goto_30
+    :goto_4
     and-int/lit8 v11, v1, 0x20
 
-    if-eqz v11, :cond_37
+    if-eqz v11, :cond_5
 
     .line 577
     iget-wide v11, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPosition:J
 
-    goto :goto_39
+    goto :goto_5
 
     .line 571
-    :cond_37
+    :cond_5
     move-wide/from16 v11, p10
 
-    :goto_39
+    :goto_5
     and-int/lit8 v13, v1, 0x40
 
-    if-eqz v13, :cond_40
+    if-eqz v13, :cond_6
 
     .line 578
     iget-boolean v13, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPressed:Z
 
-    goto :goto_42
+    goto :goto_6
 
     .line 571
-    :cond_40
+    :cond_6
     move/from16 v13, p12
 
-    :goto_42
+    :goto_6
     and-int/lit16 v14, v1, 0x80
 
-    if-eqz v14, :cond_49
+    if-eqz v14, :cond_7
 
     .line 579
     iget-object v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->consumed:Landroidx/compose/ui/input/pointer/ConsumedData;
 
-    goto :goto_4b
+    goto :goto_7
 
     .line 571
-    :cond_49
+    :cond_7
     move-object/from16 v14, p13
 
-    :goto_4b
+    :goto_7
     and-int/lit16 v1, v1, 0x100
 
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_8
 
     .line 580
     iget v1, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->type:I
 
-    goto :goto_54
+    goto :goto_8
 
     .line 571
-    :cond_52
+    :cond_8
     move/from16 v1, p14
 
-    :goto_54
+    :goto_8
     move-wide/from16 p1, v2
 
     move-wide/from16 p3, v4
@@ -1082,7 +1082,7 @@
 .end method
 
 .method public static synthetic copy-JKmWfYY$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JJJZJJZIJILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 34
+    .locals 16
 
     .line 608
     move-object/from16 v0, p0
@@ -1091,134 +1091,134 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 609
     iget-wide v2, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->id:J
 
-    goto :goto_d
+    goto :goto_0
 
     .line 608
-    :cond_b
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
     .line 610
     iget-wide v4, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->uptimeMillis:J
 
-    goto :goto_16
+    goto :goto_1
 
     .line 608
-    :cond_14
+    :cond_1
     move-wide/from16 v4, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v6, v1, 0x4
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_2
 
     .line 611
     iget-wide v6, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->position:J
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 608
-    :cond_1d
+    :cond_2
     move-wide/from16 v6, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v8, v1, 0x8
 
-    if-eqz v8, :cond_26
+    if-eqz v8, :cond_3
 
     .line 612
     iget-boolean v8, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressed:Z
 
-    goto :goto_28
+    goto :goto_3
 
     .line 608
-    :cond_26
+    :cond_3
     move/from16 v8, p7
 
-    :goto_28
+    :goto_3
     and-int/lit8 v9, v1, 0x10
 
-    if-eqz v9, :cond_2f
+    if-eqz v9, :cond_4
 
     .line 613
     iget-wide v9, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousUptimeMillis:J
 
-    goto :goto_31
+    goto :goto_4
 
     .line 608
-    :cond_2f
+    :cond_4
     move-wide/from16 v9, p8
 
-    :goto_31
+    :goto_4
     and-int/lit8 v11, v1, 0x20
 
-    if-eqz v11, :cond_38
+    if-eqz v11, :cond_5
 
     .line 614
     iget-wide v11, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPosition:J
 
-    goto :goto_3a
+    goto :goto_5
 
     .line 608
-    :cond_38
+    :cond_5
     move-wide/from16 v11, p10
 
-    :goto_3a
+    :goto_5
     and-int/lit8 v13, v1, 0x40
 
-    if-eqz v13, :cond_41
+    if-eqz v13, :cond_6
 
     .line 615
     iget-boolean v13, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPressed:Z
 
-    goto :goto_43
+    goto :goto_6
 
     .line 608
-    :cond_41
+    :cond_6
     move/from16 v13, p12
 
-    :goto_43
+    :goto_6
     and-int/lit16 v14, v1, 0x80
 
-    if-eqz v14, :cond_4a
+    if-eqz v14, :cond_7
 
     .line 616
     iget v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->type:I
 
-    goto :goto_4c
+    goto :goto_7
 
     .line 608
-    :cond_4a
+    :cond_7
     move/from16 v14, p13
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v1, v1, 0x100
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_8
 
     .line 617
     move/from16 p13, v14
 
     iget-wide v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->scrollDelta:J
 
-    goto :goto_59
+    goto :goto_8
 
     .line 608
-    :cond_55
+    :cond_8
     move/from16 p13, v14
 
     move-wide/from16 v14, p14
 
-    :goto_59
+    :goto_8
     move-wide/from16 p1, v2
 
     move-wide/from16 p3, v4
@@ -1243,7 +1243,7 @@
 .end method
 
 .method public static synthetic copy-OHpmEuE$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JJJZJJZILjava/util/List;JILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 36
+    .locals 17
 
     .line 719
     move-object/from16 v0, p0
@@ -1252,119 +1252,119 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 720
     iget-wide v2, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->id:J
 
-    goto :goto_d
+    goto :goto_0
 
     .line 719
-    :cond_b
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
     .line 721
     iget-wide v4, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->uptimeMillis:J
 
-    goto :goto_16
+    goto :goto_1
 
     .line 719
-    :cond_14
+    :cond_1
     move-wide/from16 v4, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v6, v1, 0x4
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_2
 
     .line 722
     iget-wide v6, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->position:J
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 719
-    :cond_1d
+    :cond_2
     move-wide/from16 v6, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v8, v1, 0x8
 
-    if-eqz v8, :cond_26
+    if-eqz v8, :cond_3
 
     .line 723
     iget-boolean v8, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressed:Z
 
-    goto :goto_28
+    goto :goto_3
 
     .line 719
-    :cond_26
+    :cond_3
     move/from16 v8, p7
 
-    :goto_28
+    :goto_3
     and-int/lit8 v9, v1, 0x10
 
-    if-eqz v9, :cond_2f
+    if-eqz v9, :cond_4
 
     .line 724
     iget-wide v9, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousUptimeMillis:J
 
-    goto :goto_31
+    goto :goto_4
 
     .line 719
-    :cond_2f
+    :cond_4
     move-wide/from16 v9, p8
 
-    :goto_31
+    :goto_4
     and-int/lit8 v11, v1, 0x20
 
-    if-eqz v11, :cond_38
+    if-eqz v11, :cond_5
 
     .line 725
     iget-wide v11, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPosition:J
 
-    goto :goto_3a
+    goto :goto_5
 
     .line 719
-    :cond_38
+    :cond_5
     move-wide/from16 v11, p10
 
-    :goto_3a
+    :goto_5
     and-int/lit8 v13, v1, 0x40
 
-    if-eqz v13, :cond_41
+    if-eqz v13, :cond_6
 
     .line 726
     iget-boolean v13, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPressed:Z
 
-    goto :goto_43
+    goto :goto_6
 
     .line 719
-    :cond_41
+    :cond_6
     move/from16 v13, p12
 
-    :goto_43
+    :goto_6
     and-int/lit16 v14, v1, 0x80
 
-    if-eqz v14, :cond_4a
+    if-eqz v14, :cond_7
 
     .line 727
     iget v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->type:I
 
-    goto :goto_4c
+    goto :goto_7
 
     .line 719
-    :cond_4a
+    :cond_7
     move/from16 v14, p13
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v1, v1, 0x200
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_8
 
     .line 729
     move/from16 p1, v14
@@ -1373,15 +1373,15 @@
 
     move-wide v15, v14
 
-    goto :goto_5a
+    goto :goto_8
 
     .line 719
-    :cond_56
+    :cond_8
     move/from16 p1, v14
 
     move-wide/from16 v15, p15
 
-    :goto_5a
+    :goto_8
     move-object/from16 v0, p0
 
     move-wide v1, v2
@@ -1410,7 +1410,7 @@
 .end method
 
 .method public static synthetic copy-Tn9QgHE$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JJJZFJJZIJILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 35
+    .locals 16
 
     .line 681
     move-object/from16 v0, p0
@@ -1419,133 +1419,133 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 682
     iget-wide v2, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->id:J
 
-    goto :goto_d
+    goto :goto_0
 
     .line 681
-    :cond_b
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
     .line 683
     iget-wide v4, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->uptimeMillis:J
 
-    goto :goto_16
+    goto :goto_1
 
     .line 681
-    :cond_14
+    :cond_1
     move-wide/from16 v4, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v6, v1, 0x4
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_2
 
     .line 684
     iget-wide v6, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->position:J
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 681
-    :cond_1d
+    :cond_2
     move-wide/from16 v6, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v8, v1, 0x8
 
-    if-eqz v8, :cond_26
+    if-eqz v8, :cond_3
 
     .line 685
     iget-boolean v8, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressed:Z
 
-    goto :goto_28
+    goto :goto_3
 
     .line 681
-    :cond_26
+    :cond_3
     move/from16 v8, p7
 
-    :goto_28
+    :goto_3
     and-int/lit8 v9, v1, 0x10
 
-    if-eqz v9, :cond_2f
+    if-eqz v9, :cond_4
 
     .line 686
     iget v9, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressure:F
 
-    goto :goto_31
+    goto :goto_4
 
     .line 681
-    :cond_2f
+    :cond_4
     move/from16 v9, p8
 
-    :goto_31
+    :goto_4
     and-int/lit8 v10, v1, 0x20
 
-    if-eqz v10, :cond_38
+    if-eqz v10, :cond_5
 
     .line 687
     iget-wide v10, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousUptimeMillis:J
 
-    goto :goto_3a
+    goto :goto_5
 
     .line 681
-    :cond_38
+    :cond_5
     move-wide/from16 v10, p9
 
-    :goto_3a
+    :goto_5
     and-int/lit8 v12, v1, 0x40
 
-    if-eqz v12, :cond_41
+    if-eqz v12, :cond_6
 
     .line 688
     iget-wide v12, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPosition:J
 
-    goto :goto_43
+    goto :goto_6
 
     .line 681
-    :cond_41
+    :cond_6
     move-wide/from16 v12, p11
 
-    :goto_43
+    :goto_6
     and-int/lit16 v14, v1, 0x80
 
-    if-eqz v14, :cond_4a
+    if-eqz v14, :cond_7
 
     .line 689
     iget-boolean v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPressed:Z
 
-    goto :goto_4c
+    goto :goto_7
 
     .line 681
-    :cond_4a
+    :cond_7
     move/from16 v14, p13
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v15, v1, 0x100
 
-    if-eqz v15, :cond_53
+    if-eqz v15, :cond_8
 
     .line 690
     iget v15, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->type:I
 
-    goto :goto_55
+    goto :goto_8
 
     .line 681
-    :cond_53
+    :cond_8
     move/from16 v15, p14
 
-    :goto_55
+    :goto_8
     and-int/lit16 v1, v1, 0x200
 
-    if-eqz v1, :cond_60
+    if-eqz v1, :cond_9
 
     .line 691
     move/from16 p13, v14
@@ -1554,17 +1554,17 @@
 
     iget-wide v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->scrollDelta:J
 
-    goto :goto_66
+    goto :goto_9
 
     .line 681
-    :cond_60
+    :cond_9
     move/from16 p13, v14
 
     move/from16 p14, v15
 
     move-wide/from16 v14, p15
 
-    :goto_66
+    :goto_9
     move-wide/from16 p1, v2
 
     move-wide/from16 p3, v4
@@ -1589,7 +1589,7 @@
 .end method
 
 .method public static synthetic copy-wbzehF4$default(Landroidx/compose/ui/input/pointer/PointerInputChange;JJJZFJJZILjava/util/List;JILjava/lang/Object;)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 36
+    .locals 16
 
     .line 754
     move-object/from16 v0, p0
@@ -1598,151 +1598,151 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 755
     iget-wide v2, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->id:J
 
-    goto :goto_d
+    goto :goto_0
 
     .line 754
-    :cond_b
+    :cond_0
     move-wide/from16 v2, p1
 
-    :goto_d
+    :goto_0
     and-int/lit8 v4, v1, 0x2
 
-    if-eqz v4, :cond_14
+    if-eqz v4, :cond_1
 
     .line 756
     iget-wide v4, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->uptimeMillis:J
 
-    goto :goto_16
+    goto :goto_1
 
     .line 754
-    :cond_14
+    :cond_1
     move-wide/from16 v4, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 v6, v1, 0x4
 
-    if-eqz v6, :cond_1d
+    if-eqz v6, :cond_2
 
     .line 757
     iget-wide v6, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->position:J
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 754
-    :cond_1d
+    :cond_2
     move-wide/from16 v6, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 v8, v1, 0x8
 
-    if-eqz v8, :cond_26
+    if-eqz v8, :cond_3
 
     .line 758
     iget-boolean v8, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressed:Z
 
-    goto :goto_28
+    goto :goto_3
 
     .line 754
-    :cond_26
+    :cond_3
     move/from16 v8, p7
 
-    :goto_28
+    :goto_3
     and-int/lit8 v9, v1, 0x10
 
-    if-eqz v9, :cond_2f
+    if-eqz v9, :cond_4
 
     .line 759
     iget v9, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressure:F
 
-    goto :goto_31
+    goto :goto_4
 
     .line 754
-    :cond_2f
+    :cond_4
     move/from16 v9, p8
 
-    :goto_31
+    :goto_4
     and-int/lit8 v10, v1, 0x20
 
-    if-eqz v10, :cond_38
+    if-eqz v10, :cond_5
 
     .line 760
     iget-wide v10, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousUptimeMillis:J
 
-    goto :goto_3a
+    goto :goto_5
 
     .line 754
-    :cond_38
+    :cond_5
     move-wide/from16 v10, p9
 
-    :goto_3a
+    :goto_5
     and-int/lit8 v12, v1, 0x40
 
-    if-eqz v12, :cond_41
+    if-eqz v12, :cond_6
 
     .line 761
     iget-wide v12, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPosition:J
 
-    goto :goto_43
+    goto :goto_6
 
     .line 754
-    :cond_41
+    :cond_6
     move-wide/from16 v12, p11
 
-    :goto_43
+    :goto_6
     and-int/lit16 v14, v1, 0x80
 
-    if-eqz v14, :cond_4a
+    if-eqz v14, :cond_7
 
     .line 762
     iget-boolean v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPressed:Z
 
-    goto :goto_4c
+    goto :goto_7
 
     .line 754
-    :cond_4a
+    :cond_7
     move/from16 v14, p13
 
-    :goto_4c
+    :goto_7
     and-int/lit16 v15, v1, 0x100
 
-    if-eqz v15, :cond_53
+    if-eqz v15, :cond_8
 
     .line 763
     iget v15, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->type:I
 
-    goto :goto_55
+    goto :goto_8
 
     .line 754
-    :cond_53
+    :cond_8
     move/from16 v15, p14
 
-    :goto_55
+    :goto_8
     move/from16 p14, v15
 
     and-int/lit16 v15, v1, 0x200
 
-    if-eqz v15, :cond_60
+    if-eqz v15, :cond_9
 
     .line 764
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/input/pointer/PointerInputChange;->getHistorical()Ljava/util/List;
 
     move-result-object v15
 
-    goto :goto_62
+    goto :goto_9
 
     .line 754
-    :cond_60
+    :cond_9
     move-object/from16 v15, p15
 
-    :goto_62
+    :goto_9
     and-int/lit16 v1, v1, 0x400
 
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_a
 
     .line 765
     move/from16 p13, v14
@@ -1751,17 +1751,17 @@
 
     iget-wide v14, v0, Landroidx/compose/ui/input/pointer/PointerInputChange;->scrollDelta:J
 
-    goto :goto_73
+    goto :goto_a
 
     .line 754
-    :cond_6d
+    :cond_a
     move/from16 p13, v14
 
     move-object/from16 p15, v15
 
     move-wide/from16 v14, p16
 
-    :goto_73
+    :goto_a
     move-wide/from16 p1, v2
 
     move-wide/from16 p3, v4
@@ -1786,7 +1786,7 @@
 .end method
 
 .method public static synthetic getConsumed$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "use isConsumed and consume() pair of methods instead"
     .end annotation
@@ -1795,19 +1795,19 @@
 .end method
 
 .method public static synthetic getHistorical$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private static synthetic get_historical$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic isConsumed$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -1815,7 +1815,7 @@
 
 # virtual methods
 .method public final consume()V
-    .registers 3
+    .locals 2
 
     .line 551
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->consumed:Landroidx/compose/ui/input/pointer/ConsumedData;
@@ -1834,7 +1834,7 @@
 .end method
 
 .method public final copy-0GkPj7c(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;IJ)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 40
+    .locals 23
     .param p1, "id"    # J
     .param p3, "currentTime"    # J
     .param p5, "currentPosition"    # J
@@ -1893,26 +1893,26 @@
 
     move-result v3
 
-    if-nez v3, :cond_24
+    if-nez v3, :cond_1
 
     invoke-virtual/range {p13 .. p13}, Landroidx/compose/ui/input/pointer/ConsumedData;->getPositionChange()Z
 
     move-result v3
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 v3, 0x0
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     const/4 v3, 0x1
 
-    :goto_25
+    :goto_1
     move/from16 v17, v3
 
     .line 664
@@ -1972,7 +1972,7 @@
 .end method
 
 .method public final synthetic copy-Ezr-O64(JJJZJJZLandroidx/compose/ui/input/pointer/ConsumedData;I)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 38
+    .locals 23
     .param p1, "id"    # J
     .param p3, "currentTime"    # J
     .param p5, "currentPosition"    # J
@@ -2031,26 +2031,26 @@
 
     move-result v3
 
-    if-nez v3, :cond_24
+    if-nez v3, :cond_1
 
     invoke-virtual/range {p13 .. p13}, Landroidx/compose/ui/input/pointer/ConsumedData;->getPositionChange()Z
 
     move-result v3
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 v3, 0x0
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     const/4 v3, 0x1
 
-    :goto_25
+    :goto_1
     move/from16 v17, v3
 
     .line 591
@@ -2112,7 +2112,7 @@
 .end method
 
 .method public final copy-JKmWfYY(JJJZJJZIJ)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 35
+    .locals 19
     .param p1, "id"    # J
     .param p3, "currentTime"    # J
     .param p5, "currentPosition"    # J
@@ -2195,7 +2195,7 @@
 .end method
 
 .method public final copy-OHpmEuE(JJJZJJZILjava/util/List;J)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 36
+    .locals 19
     .param p1, "id"    # J
     .param p3, "currentTime"    # J
     .param p5, "currentPosition"    # J
@@ -2298,7 +2298,7 @@
 .end method
 
 .method public final copy-Tn9QgHE(JJJZFJJZIJ)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 38
+    .locals 21
     .param p1, "id"    # J
     .param p3, "currentTime"    # J
     .param p5, "currentPosition"    # J
@@ -2403,7 +2403,7 @@
 .end method
 
 .method public final copy-wbzehF4(JJJZFJJZILjava/util/List;J)Landroidx/compose/ui/input/pointer/PointerInputChange;
-    .registers 39
+    .locals 21
     .param p1, "id"    # J
     .param p3, "currentTime"    # J
     .param p5, "currentPosition"    # J
@@ -2526,7 +2526,7 @@
 .end method
 
 .method public final getConsumed()Landroidx/compose/ui/input/pointer/ConsumedData;
-    .registers 2
+    .locals 1
 
     .line 557
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->consumed:Landroidx/compose/ui/input/pointer/ConsumedData;
@@ -2535,7 +2535,7 @@
 .end method
 
 .method public final getHistorical()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2548,18 +2548,18 @@
     .line 529
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->_historical:Ljava/util/List;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    :cond_8
+    :cond_0
     return-object v0
 .end method
 
 .method public final getId-J3iCeTQ()J
-    .registers 3
+    .locals 2
 
     .line 417
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->id:J
@@ -2568,7 +2568,7 @@
 .end method
 
 .method public final getPosition-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 419
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->position:J
@@ -2577,7 +2577,7 @@
 .end method
 
 .method public final getPressed()Z
-    .registers 2
+    .locals 1
 
     .line 420
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressed:Z
@@ -2586,7 +2586,7 @@
 .end method
 
 .method public final getPressure()F
-    .registers 2
+    .locals 1
 
     .line 421
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->pressure:F
@@ -2595,7 +2595,7 @@
 .end method
 
 .method public final getPreviousPosition-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 423
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPosition:J
@@ -2604,7 +2604,7 @@
 .end method
 
 .method public final getPreviousPressed()Z
-    .registers 2
+    .locals 1
 
     .line 424
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousPressed:Z
@@ -2613,7 +2613,7 @@
 .end method
 
 .method public final getPreviousUptimeMillis()J
-    .registers 3
+    .locals 2
 
     .line 422
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->previousUptimeMillis:J
@@ -2622,7 +2622,7 @@
 .end method
 
 .method public final getScrollDelta-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 427
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->scrollDelta:J
@@ -2631,7 +2631,7 @@
 .end method
 
 .method public final getType-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 426
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->type:I
@@ -2640,7 +2640,7 @@
 .end method
 
 .method public final getUptimeMillis()J
-    .registers 3
+    .locals 2
 
     .line 418
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->uptimeMillis:J
@@ -2649,7 +2649,7 @@
 .end method
 
 .method public final isConsumed()Z
-    .registers 2
+    .locals 1
 
     .line 539
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->consumed:Landroidx/compose/ui/input/pointer/ConsumedData;
@@ -2658,7 +2658,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputChange;->consumed:Landroidx/compose/ui/input/pointer/ConsumedData;
 
@@ -2666,25 +2666,25 @@
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_14
+    goto :goto_1
 
-    :cond_13
-    :goto_13
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_14
+    :goto_1
     return v0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 785
     new-instance v0, Ljava/lang/StringBuilder;

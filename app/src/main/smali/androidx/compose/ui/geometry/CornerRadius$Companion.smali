@@ -41,7 +41,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 69
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/geometry/CornerRadius$Companion;-><init>()V
 
@@ -58,7 +58,7 @@
 .end method
 
 .method public static synthetic getZero-kKHJgLs$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -66,10 +66,9 @@
 
 # virtual methods
 .method public final getZero-kKHJgLs()J
-    .registers 3
+    .locals 2
 
     .line 77
-    # getter for: Landroidx/compose/ui/geometry/CornerRadius;->Zero:J
     invoke-static {}, Landroidx/compose/ui/geometry/CornerRadius;->access$getZero$cp()J
 
     move-result-wide v0

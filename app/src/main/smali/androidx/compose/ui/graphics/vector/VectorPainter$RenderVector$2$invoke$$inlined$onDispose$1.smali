@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/Composition;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/graphics/vector/VectorPainter$RenderVector$2$invoke$$inlined$onDispose$1;->$composition$inlined:Landroidx/compose/runtime/Composition;
 
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 3
+    .locals 2
 
     .line 65
     const/4 v0, 0x0

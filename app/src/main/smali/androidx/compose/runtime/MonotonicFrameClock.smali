@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/runtime/MonotonicFrameClock$Key;->$$INSTANCE:Landroidx/compose/runtime/MonotonicFrameClock$Key;
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public static synthetic access$getKey$jd(Landroidx/compose/runtime/MonotonicFrameClock;)Lkotlin/coroutines/CoroutineContext$Key;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/MonotonicFrameClock;
 
     .line 28
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public getKey()Lkotlin/coroutines/CoroutineContext$Key;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

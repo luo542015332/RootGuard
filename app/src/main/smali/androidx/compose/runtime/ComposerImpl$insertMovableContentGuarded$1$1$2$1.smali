@@ -73,7 +73,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/ComposerImpl;Ljava/util/List;Landroidx/compose/runtime/SlotReader;Landroidx/compose/runtime/MovableContentStateReference;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 3064
     invoke-virtual {p0}, Landroidx/compose/runtime/ComposerImpl$insertMovableContentGuarded$1$1$2$1;->invoke()V
@@ -121,7 +121,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 16
+    .locals 15
 
     .line 3065
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$insertMovableContentGuarded$1$1$2$1;->this$0:Landroidx/compose/runtime/ComposerImpl;
@@ -140,7 +140,6 @@
 
     .line 4564
     .local v5, "$i$f$withChanges":I
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->changes:Ljava/util/List;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getChanges$p(Landroidx/compose/runtime/ComposerImpl;)Ljava/util/List;
 
     move-result-object v6
@@ -150,7 +149,7 @@
     nop
 
     .line 4566
-    :try_start_10
+    :try_start_0
     invoke-static {v0, v1}, Landroidx/compose/runtime/ComposerImpl;->access$setChanges$p(Landroidx/compose/runtime/ComposerImpl;Ljava/util/List;)V
 
     .line 4567
@@ -165,14 +164,12 @@
 
     .line 4568
     .local v9, "$i$f$withReader":I
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->reader:Landroidx/compose/runtime/SlotReader;
     invoke-static {v8}, Landroidx/compose/runtime/ComposerImpl;->access$getReader$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/SlotReader;
 
     move-result-object v10
 
     .line 4569
     .local v10, "savedReader$iv":Landroidx/compose/runtime/SlotReader;
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->nodeCountOverrides:[I
     invoke-static {v8}, Landroidx/compose/runtime/ComposerImpl;->access$getNodeCountOverrides$p(Landroidx/compose/runtime/ComposerImpl;)[I
 
     move-result-object v11
@@ -182,14 +179,14 @@
     const/4 v12, 0x0
 
     invoke-static {v8, v12}, Landroidx/compose/runtime/ComposerImpl;->access$setNodeCountOverrides$p(Landroidx/compose/runtime/ComposerImpl;[I)V
-    :try_end_22
-    .catchall {:try_start_10 .. :try_end_22} :catchall_55
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 4571
     nop
 
     .line 4572
-    :try_start_23
+    :try_start_1
     invoke-static {v8, v3}, Landroidx/compose/runtime/ComposerImpl;->access$setReader$p(Landroidx/compose/runtime/ComposerImpl;Landroidx/compose/runtime/SlotReader;)V
 
     .line 4573
@@ -220,7 +217,6 @@
     .line 3067
     const/4 v14, 0x1
 
-    # invokes: Landroidx/compose/runtime/ComposerImpl;->invokeMovableContentLambda(Landroidx/compose/runtime/MovableContent;Landroidx/compose/runtime/PersistentCompositionLocalMap;Ljava/lang/Object;Z)V
     invoke-static {v2, v12, v13, v4, v14}, Landroidx/compose/runtime/ComposerImpl;->access$invokeMovableContentLambda(Landroidx/compose/runtime/ComposerImpl;Landroidx/compose/runtime/MovableContent;Landroidx/compose/runtime/PersistentCompositionLocalMap;Ljava/lang/Object;Z)V
 
     .line 3073
@@ -228,14 +224,14 @@
 
     .end local v3    # "$i$a$-withReader-ComposerImpl$insertMovableContentGuarded$1$1$2$1$1$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_3c
-    .catchall {:try_start_23 .. :try_end_3c} :catchall_4d
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 4573
     nop
 
     .line 4575
-    :try_start_3d
+    :try_start_2
     invoke-static {v8, v10}, Landroidx/compose/runtime/ComposerImpl;->access$setReader$p(Landroidx/compose/runtime/ComposerImpl;Landroidx/compose/runtime/SlotReader;)V
 
     .line 4576
@@ -253,8 +249,8 @@
 
     .end local v7    # "$i$a$-withChanges-ComposerImpl$insertMovableContentGuarded$1$1$2$1$1":I
     sget-object v2, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_47
-    .catchall {:try_start_3d .. :try_end_47} :catchall_55
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 4567
     nop
@@ -282,10 +278,10 @@
     .restart local v9    # "$i$f$withReader":I
     .restart local v10    # "savedReader$iv":Landroidx/compose/runtime/SlotReader;
     .restart local v11    # "savedCountOverrides$iv":[I
-    :catchall_4d
+    :catchall_0
     move-exception v2
 
-    :try_start_4e
+    :try_start_3
     invoke-static {v8, v10}, Landroidx/compose/runtime/ComposerImpl;->access$setReader$p(Landroidx/compose/runtime/ComposerImpl;Landroidx/compose/runtime/SlotReader;)V
 
     .line 4576
@@ -296,8 +292,8 @@
     .end local v5    # "$i$f$withChanges":I
     .end local v6    # "savedChanges$iv":Ljava/util/List;
     throw v2
-    :try_end_55
-    .catchall {:try_start_4e .. :try_end_55} :catchall_55
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 4577
     .end local v7    # "$i$a$-withChanges-ComposerImpl$insertMovableContentGuarded$1$1$2$1$1":I
@@ -309,7 +305,7 @@
     .restart local v1    # "newChanges$iv":Ljava/util/List;
     .restart local v5    # "$i$f$withChanges":I
     .restart local v6    # "savedChanges$iv":Ljava/util/List;
-    :catchall_55
+    :catchall_1
     move-exception v2
 
     invoke-static {v0, v6}, Landroidx/compose/runtime/ComposerImpl;->access$setChanges$p(Landroidx/compose/runtime/ComposerImpl;Ljava/util/List;)V

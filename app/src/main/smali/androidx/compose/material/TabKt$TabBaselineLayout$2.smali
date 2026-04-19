@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public final measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 24
+    .locals 19
     .param p1, "$this$Layout"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -142,7 +142,7 @@
 
     const/4 v3, 0x0
 
-    if-eqz v1, :cond_57
+    if-eqz v1, :cond_2
 
     .local v1, "it":Lkotlin/jvm/functions/Function2;
     const/4 v4, 0x0
@@ -162,12 +162,12 @@
 
     move-result-object v7
 
-    :cond_21
+    :cond_0
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_51
+    if-eqz v8, :cond_1
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -196,7 +196,7 @@
     .line 435
     .end local v9    # "it":Landroidx/compose/ui/layout/Measurable;
     .end local v10    # "$i$a$-first-TabKt$TabBaselineLayout$2$measure$textPlaceable$1$1":I
-    if-eqz v9, :cond_21
+    if-eqz v9, :cond_0
 
     .line 436
     .end local v5    # "$this$first$iv":Ljava/lang/Iterable;
@@ -233,14 +233,14 @@
     .line 317
     .end local v1    # "it":Lkotlin/jvm/functions/Function2;
     .end local v4    # "$i$a$-let-TabKt$TabBaselineLayout$2$measure$textPlaceable$1":I
-    goto :goto_58
+    goto :goto_0
 
     .line 436
     .restart local v1    # "it":Lkotlin/jvm/functions/Function2;
     .restart local v4    # "$i$a$-let-TabKt$TabBaselineLayout$2$measure$textPlaceable$1":I
     .restart local v5    # "$this$first$iv":Ljava/lang/Iterable;
     .restart local v6    # "$i$f$first":I
-    :cond_51
+    :cond_1
     new-instance v3, Ljava/util/NoSuchElementException;
 
     invoke-direct {v3, v2}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
@@ -252,17 +252,17 @@
     .end local v4    # "$i$a$-let-TabKt$TabBaselineLayout$2$measure$textPlaceable$1":I
     .end local v5    # "$this$first$iv":Ljava/lang/Iterable;
     .end local v6    # "$i$f$first":I
-    :cond_57
+    :cond_2
     move-object v1, v3
 
-    :goto_58
+    :goto_0
     move-object v13, v1
 
     .line 325
     .local v13, "textPlaceable":Landroidx/compose/ui/layout/Placeable;
     iget-object v1, v0, Landroidx/compose/material/TabKt$TabBaselineLayout$2;->$icon:Lkotlin/jvm/functions/Function2;
 
-    if-eqz v1, :cond_96
+    if-eqz v1, :cond_5
 
     .restart local v1    # "it":Lkotlin/jvm/functions/Function2;
     const/4 v4, 0x0
@@ -282,12 +282,12 @@
 
     move-result-object v7
 
-    :goto_66
+    :goto_1
     invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v8
 
-    if-eqz v8, :cond_8e
+    if-eqz v8, :cond_4
 
     invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -316,7 +316,7 @@
     .line 437
     .end local v9    # "it":Landroidx/compose/ui/layout/Measurable;
     .end local v10    # "$i$a$-first-TabKt$TabBaselineLayout$2$measure$iconPlaceable$1$1":I
-    if-eqz v9, :cond_8b
+    if-eqz v9, :cond_3
 
     .line 438
     .end local v5    # "$this$first$iv":Ljava/lang/Iterable;
@@ -336,7 +336,7 @@
     .line 325
     .end local v1    # "it":Lkotlin/jvm/functions/Function2;
     .end local v4    # "$i$a$-let-TabKt$TabBaselineLayout$2$measure$iconPlaceable$1":I
-    goto :goto_99
+    goto :goto_2
 
     .line 437
     .restart local v1    # "it":Lkotlin/jvm/functions/Function2;
@@ -344,14 +344,14 @@
     .restart local v5    # "$this$first$iv":Ljava/lang/Iterable;
     .restart local v6    # "$i$f$first":I
     .restart local v8    # "element$iv":Ljava/lang/Object;
-    :cond_8b
+    :cond_3
     move-wide/from16 v11, p3
 
-    goto :goto_66
+    goto :goto_1
 
     .line 438
     .end local v8    # "element$iv":Ljava/lang/Object;
-    :cond_8e
+    :cond_4
     move-wide/from16 v11, p3
 
     new-instance v3, Ljava/util/NoSuchElementException;
@@ -365,37 +365,37 @@
     .end local v4    # "$i$a$-let-TabKt$TabBaselineLayout$2$measure$iconPlaceable$1":I
     .end local v5    # "$this$first$iv":Ljava/lang/Iterable;
     .end local v6    # "$i$f$first":I
-    :cond_96
+    :cond_5
     move-wide/from16 v11, p3
 
     move-object v1, v3
 
-    :goto_99
+    :goto_2
     move-object/from16 v16, v1
 
     .line 329
     .local v16, "iconPlaceable":Landroidx/compose/ui/layout/Placeable;
     const/4 v1, 0x0
 
-    if-eqz v13, :cond_a3
+    if-eqz v13, :cond_6
 
     invoke-virtual {v13}, Landroidx/compose/ui/layout/Placeable;->getWidth()I
 
     move-result v2
 
-    goto :goto_a4
+    goto :goto_3
 
-    :cond_a3
+    :cond_6
     move v2, v1
 
-    :goto_a4
-    if-eqz v16, :cond_aa
+    :goto_3
+    if-eqz v16, :cond_7
 
     invoke-virtual/range {v16 .. v16}, Landroidx/compose/ui/layout/Placeable;->getWidth()I
 
     move-result v1
 
-    :cond_aa
+    :cond_7
     invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v17
@@ -405,27 +405,25 @@
     nop
 
     .line 331
-    if-eqz v13, :cond_b8
+    if-eqz v13, :cond_8
 
-    if-eqz v16, :cond_b8
+    if-eqz v16, :cond_8
 
     .line 332
-    # getter for: Landroidx/compose/material/TabKt;->LargeTabHeight:F
     invoke-static {}, Landroidx/compose/material/TabKt;->access$getLargeTabHeight$p()F
 
     move-result v1
 
-    goto :goto_bc
+    goto :goto_4
 
     .line 334
-    :cond_b8
-    # getter for: Landroidx/compose/material/TabKt;->SmallTabHeight:F
+    :cond_8
     invoke-static {}, Landroidx/compose/material/TabKt;->access$getSmallTabHeight$p()F
 
     move-result v1
 
     .line 335
-    :goto_bc
+    :goto_4
     invoke-interface {v15, v1}, Landroidx/compose/ui/layout/MeasureScope;->roundToPx-0680j_4(F)I
 
     move-result v6
@@ -435,7 +433,7 @@
 
     .line 337
     .local v6, "tabHeight":I
-    if-eqz v13, :cond_d3
+    if-eqz v13, :cond_9
 
     invoke-static {}, Landroidx/compose/ui/layout/AlignmentLineKt;->getFirstBaseline()Landroidx/compose/ui/layout/HorizontalAlignmentLine;
 
@@ -453,15 +451,15 @@
 
     move-object v7, v1
 
-    goto :goto_d4
+    goto :goto_5
 
-    :cond_d3
+    :cond_9
     move-object v7, v3
 
     .line 338
     .local v7, "firstBaseline":Ljava/lang/Integer;
-    :goto_d4
-    if-eqz v13, :cond_e6
+    :goto_5
+    if-eqz v13, :cond_a
 
     invoke-static {}, Landroidx/compose/ui/layout/AlignmentLineKt;->getLastBaseline()Landroidx/compose/ui/layout/HorizontalAlignmentLine;
 
@@ -479,14 +477,14 @@
 
     move-object v8, v1
 
-    goto :goto_e7
+    goto :goto_6
 
-    :cond_e6
+    :cond_a
     move-object v8, v3
 
     .line 340
     .local v8, "lastBaseline":Ljava/lang/Integer;
-    :goto_e7
+    :goto_6
     const/16 v18, 0x0
 
     new-instance v9, Landroidx/compose/material/TabKt$TabBaselineLayout$2$measure$1;

@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "error"    # Ljava/lang/String;
 
     const-string/jumbo v0, "error"
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public bridge synthetic maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -94,7 +94,7 @@
 .end method
 
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)Ljava/lang/Void;
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -133,7 +133,7 @@
 .end method
 
 .method public bridge synthetic maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -153,7 +153,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)Ljava/lang/Void;
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -192,7 +192,7 @@
 .end method
 
 .method public bridge synthetic minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -212,7 +212,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)Ljava/lang/Void;
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -251,7 +251,7 @@
 .end method
 
 .method public bridge synthetic minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 5
+    .locals 1
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -271,7 +271,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)Ljava/lang/Void;
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I

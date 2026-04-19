@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>(I)V
-    .registers 3
+    .locals 1
     .param p1, "initialCapacity"    # I
 
     .line 24
@@ -82,23 +82,23 @@
 .end method
 
 .method public synthetic constructor <init>(IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 24
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     const/16 p1, 0xa
 
-    :cond_6
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/runtime/collection/IntMap;-><init>(I)V
 
     return-void
 .end method
 
 .method private constructor <init>(Landroid/util/SparseArray;)V
-    .registers 2
+    .locals 0
     .param p1, "sparseArray"    # Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -121,7 +121,7 @@
 
 # virtual methods
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/compose/runtime/collection/IntMap;->sparseArray:Landroid/util/SparseArray;
@@ -132,7 +132,7 @@
 .end method
 
 .method public final contains(I)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # I
 
     .line 29
@@ -142,21 +142,21 @@
 
     move-result v0
 
-    if-ltz v0, :cond_a
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public final get(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "key"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -175,7 +175,7 @@
 .end method
 
 .method public final get(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "key"    # I
     .param p2, "valueIfAbsent"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -195,7 +195,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 62
     iget-object v0, p0, Landroidx/compose/runtime/collection/IntMap;->sparseArray:Landroid/util/SparseArray;
@@ -208,7 +208,7 @@
 .end method
 
 .method public final remove(I)V
-    .registers 3
+    .locals 1
     .param p1, "key"    # I
 
     .line 51
@@ -220,7 +220,7 @@
 .end method
 
 .method public final set(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "key"    # I
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

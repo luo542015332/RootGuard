@@ -59,7 +59,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/vector/VectorComposeKt$Group$2$9;
 
@@ -71,7 +71,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -104,7 +104,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/graphics/vector/GroupComponent;Ljava/util/List;)V
-    .registers 4
+    .locals 1
     .param p1, "$this$set"    # Landroidx/compose/ui/graphics/vector/GroupComponent;
     .param p2, "it"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;

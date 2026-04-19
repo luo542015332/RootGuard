@@ -89,7 +89,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/layout/ScaleFactor$Companion;
 
@@ -112,7 +112,7 @@
 .end method
 
 .method private synthetic constructor <init>(J)V
-    .registers 3
+    .locals 0
     .param p1, "packedValue"    # J
 
     .line 38
@@ -124,7 +124,7 @@
 .end method
 
 .method public static final synthetic access$getUnspecified$cp()J
-    .registers 2
+    .locals 2
 
     .line 36
     sget-wide v0, Landroidx/compose/ui/layout/ScaleFactor;->Unspecified:J
@@ -133,7 +133,7 @@
 .end method
 
 .method public static final synthetic box-impl(J)Landroidx/compose/ui/layout/ScaleFactor;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/layout/ScaleFactor;
 
@@ -143,7 +143,7 @@
 .end method
 
 .method public static final component1-impl(J)F
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # J
 
     const/4 v0, 0x0
@@ -158,7 +158,7 @@
 .end method
 
 .method public static final component2-impl(J)F
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # J
 
     const/4 v0, 0x0
@@ -173,13 +173,13 @@
 .end method
 
 .method public static constructor-impl(J)J
-    .registers 2
+    .locals 0
 
     return-wide p0
 .end method
 
 .method public static final copy-8GGzs04(JFF)J
-    .registers 6
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "scaleX"    # F
     .param p3, "scaleY"    # F
@@ -193,27 +193,27 @@
 .end method
 
 .method public static synthetic copy-8GGzs04$default(JFFILjava/lang/Object;)J
-    .registers 6
+    .locals 0
 
     .line 80
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/ScaleFactor;->getScaleX-impl(J)F
 
     move-result p2
 
-    :cond_8
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_10
+    if-eqz p4, :cond_1
 
     invoke-static {p0, p1}, Landroidx/compose/ui/layout/ScaleFactor;->getScaleY-impl(J)F
 
     move-result p3
 
-    :cond_10
+    :cond_1
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/layout/ScaleFactor;->copy-8GGzs04(JFF)J
 
     move-result-wide p0
@@ -222,7 +222,7 @@
 .end method
 
 .method public static final div-44nBxM0(JF)J
-    .registers 5
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "operand"    # F
 
@@ -247,17 +247,17 @@
 .end method
 
 .method public static equals-impl(JLjava/lang/Object;)Z
-    .registers 7
+    .locals 4
 
     instance-of v0, p2, Landroidx/compose/ui/layout/ScaleFactor;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p2
 
     check-cast v0, Landroidx/compose/ui/layout/ScaleFactor;
@@ -268,48 +268,48 @@
 
     cmp-long v0, p0, v2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     return v1
 
-    :cond_12
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(JJ)Z
-    .registers 5
+    .locals 1
 
     cmp-long v0, p0, p2
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic getPackedValue$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getScaleX$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getScaleX-impl(J)F
-    .registers 7
+    .locals 5
     .param p0, "arg0"    # J
 
     .line 48
@@ -317,17 +317,17 @@
 
     cmp-long v0, p0, v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-eqz v0, :cond_19
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 51
     move-wide v0, p0
@@ -355,7 +355,7 @@
     return v3
 
     .line 48
-    :cond_19
+    :cond_1
     const/4 v0, 0x0
 
     .line 49
@@ -378,13 +378,13 @@
 .end method
 
 .method public static synthetic getScaleY$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getScaleY-impl(J)F
-    .registers 7
+    .locals 5
     .param p0, "arg0"    # J
 
     .line 62
@@ -392,17 +392,17 @@
 
     cmp-long v0, p0, v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
-    if-eqz v0, :cond_1b
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 65
     move-wide v0, p0
@@ -430,7 +430,7 @@
     return v3
 
     .line 62
-    :cond_1b
+    :cond_1
     const/4 v0, 0x0
 
     .line 63
@@ -453,7 +453,7 @@
 .end method
 
 .method public static hashCode-impl(J)I
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Ljava/lang/Long;->hashCode(J)I
 
@@ -463,7 +463,7 @@
 .end method
 
 .method public static final times-44nBxM0(JF)J
-    .registers 5
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "operand"    # F
 
@@ -488,7 +488,7 @@
 .end method
 
 .method public static toString-impl(J)Ljava/lang/String;
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # J
 
     .line 98
@@ -506,7 +506,6 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/ui/layout/ScaleFactorKt;->roundToTenths(F)F
     invoke-static {v1}, Landroidx/compose/ui/layout/ScaleFactorKt;->access$roundToTenths(F)F
 
     move-result v1
@@ -525,7 +524,6 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/ui/layout/ScaleFactorKt;->roundToTenths(F)F
     invoke-static {v1}, Landroidx/compose/ui/layout/ScaleFactorKt;->access$roundToTenths(F)F
 
     move-result v1
@@ -550,7 +548,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/layout/ScaleFactor;->packedValue:J
 
@@ -562,7 +560,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/layout/ScaleFactor;->packedValue:J
 
@@ -574,7 +572,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 98
     iget-wide v0, p0, Landroidx/compose/ui/layout/ScaleFactor;->packedValue:J
@@ -587,7 +585,7 @@
 .end method
 
 .method public final synthetic unbox-impl()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/layout/ScaleFactor;->packedValue:J
 

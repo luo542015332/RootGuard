@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     .line 347
     new-instance v0, Landroidx/compose/ui/input/pointer/PointerEvent;
@@ -73,7 +73,7 @@
 .end method
 
 .method public static final SuspendingPointerInputModifierNode(Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNode;
-    .registers 2
+    .locals 1
     .param p0, "pointerInputHandler"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -107,7 +107,7 @@
 .end method
 
 .method public static final synthetic access$getEmptyPointerEvent$p()Landroidx/compose/ui/input/pointer/PointerEvent;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputFilterKt;->EmptyPointerEvent:Landroidx/compose/ui/input/pointer/PointerEvent;
@@ -116,13 +116,13 @@
 .end method
 
 .method private static synthetic getPointerInputModifierNoParamError$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final pointerInput(Landroidx/compose/ui/Modifier;Ljava/lang/Object;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/Modifier;
-    .registers 12
+    .locals 8
     .param p0, "$this$pointerInput"    # Landroidx/compose/ui/Modifier;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "key2"    # Ljava/lang/Object;
@@ -196,7 +196,7 @@
 .end method
 
 .method public static final pointerInput(Landroidx/compose/ui/Modifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/Modifier;
-    .registers 11
+    .locals 8
     .param p0, "$this$pointerInput"    # Landroidx/compose/ui/Modifier;
     .param p1, "key1"    # Ljava/lang/Object;
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
@@ -265,7 +265,7 @@
 .end method
 
 .method public static final pointerInput(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 2
     .param p0, "$this$pointerInput"    # Landroidx/compose/ui/Modifier;
     .param p1, "block"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -314,7 +314,7 @@
 .end method
 
 .method public static final pointerInput(Landroidx/compose/ui/Modifier;[Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/Modifier;
-    .registers 11
+    .locals 8
     .param p0, "$this$pointerInput"    # Landroidx/compose/ui/Modifier;
     .param p1, "keys"    # [Ljava/lang/Object;
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;

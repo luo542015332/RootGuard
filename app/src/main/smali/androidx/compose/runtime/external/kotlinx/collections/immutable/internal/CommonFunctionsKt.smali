@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final assert(Z)V
-    .registers 1
+    .locals 0
     .param p0, "condition"    # Z
 
     .line 8

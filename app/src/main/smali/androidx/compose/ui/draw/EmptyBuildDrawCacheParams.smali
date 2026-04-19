@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/draw/EmptyBuildDrawCacheParams;
 
@@ -87,7 +87,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 269
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public getDensity()Landroidx/compose/ui/unit/Density;
-    .registers 2
+    .locals 1
 
     .line 272
     sget-object v0, Landroidx/compose/ui/draw/EmptyBuildDrawCacheParams;->density:Landroidx/compose/ui/unit/Density;
@@ -107,7 +107,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 271
     sget-object v0, Landroidx/compose/ui/draw/EmptyBuildDrawCacheParams;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
@@ -116,7 +116,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 270
     sget-wide v0, Landroidx/compose/ui/draw/EmptyBuildDrawCacheParams;->size:J

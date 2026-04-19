@@ -154,13 +154,12 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 68
-    # getter for: Landroidx/compose/ui/graphics/AndroidCanvas_androidKt;->EmptyCanvas:Landroid/graphics/Canvas;
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidCanvas_androidKt;->access$getEmptyCanvas$p()Landroid/graphics/Canvas;
 
     move-result-object v0
@@ -186,7 +185,7 @@
 .end method
 
 .method private final drawLines(Ljava/util/List;Landroidx/compose/ui/graphics/Paint;I)V
-    .registers 16
+    .locals 12
     .param p1, "points"    # Ljava/util/List;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
     .param p3, "stepBy"    # I
@@ -208,7 +207,7 @@
 
     const/4 v1, 0x2
 
-    if-lt v0, v1, :cond_43
+    if-lt v0, v1, :cond_0
 
     .line 338
     invoke-interface {p2}, Landroidx/compose/ui/graphics/Paint;->asFrameworkPaint()Landroid/graphics/Paint;
@@ -221,14 +220,14 @@
 
     .line 340
     .local v1, "i":I
-    :goto_c
+    :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
 
     add-int/lit8 v2, v2, -0x1
 
-    if-ge v1, v2, :cond_43
+    if-ge v1, v2, :cond_0
 
     .line 341
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -292,17 +291,17 @@
 
     .end local v8    # "p1":J
     .end local v10    # "p2":J
-    goto :goto_c
+    goto :goto_0
 
     .line 353
     .end local v0    # "frameworkPaint":Landroid/graphics/Paint;
     .end local v1    # "i":I
-    :cond_43
+    :cond_0
     return-void
 .end method
 
 .method private final drawPoints(Ljava/util/List;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 15
+    .locals 12
     .param p1, "points"    # Ljava/util/List;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
     .annotation system Ldalvik/annotation/Signature;
@@ -334,8 +333,8 @@
 
     move-result v3
 
-    :goto_8
-    if-ge v2, v3, :cond_2c
+    :goto_0
+    if-ge v2, v3, :cond_0
 
     .line 444
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -389,11 +388,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_8
+    goto :goto_0
 
     .line 447
     .end local v2    # "index$iv":I
-    :cond_2c
+    :cond_0
     nop
 
     .line 322
@@ -403,7 +402,7 @@
 .end method
 
 .method private final drawRawLines([FLandroidx/compose/ui/graphics/Paint;I)V
-    .registers 16
+    .locals 12
     .param p1, "points"    # [F
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
     .param p3, "stepBy"    # I
@@ -413,13 +412,13 @@
 
     const/4 v1, 0x4
 
-    if-lt v0, v1, :cond_30
+    if-lt v0, v1, :cond_0
 
     array-length v0, p1
 
     rem-int/lit8 v0, v0, 0x2
 
-    if-nez v0, :cond_30
+    if-nez v0, :cond_0
 
     .line 399
     invoke-interface {p2}, Landroidx/compose/ui/graphics/Paint;->asFrameworkPaint()Landroid/graphics/Paint;
@@ -434,12 +433,12 @@
 
     .line 401
     .local v7, "i":I
-    :goto_f
+    :goto_0
     array-length v1, p1
 
     add-int/lit8 v1, v1, -0x3
 
-    if-ge v7, v1, :cond_30
+    if-ge v7, v1, :cond_0
 
     .line 402
     aget v8, p1, v7
@@ -487,17 +486,17 @@
     .end local v9    # "y1":F
     .end local v10    # "x2":F
     .end local v11    # "y2":F
-    goto :goto_f
+    goto :goto_0
 
     .line 410
     .end local v0    # "frameworkPaint":Landroid/graphics/Paint;
     .end local v7    # "i":I
-    :cond_30
+    :cond_0
     return-void
 .end method
 
 .method private final drawRawPoints([FLandroidx/compose/ui/graphics/Paint;I)V
-    .registers 9
+    .locals 5
     .param p1, "points"    # [F
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
     .param p3, "stepBy"    # I
@@ -507,7 +506,7 @@
 
     rem-int/lit8 v0, v0, 0x2
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     .line 371
     invoke-interface {p2}, Landroidx/compose/ui/graphics/Paint;->asFrameworkPaint()Landroid/graphics/Paint;
@@ -520,12 +519,12 @@
 
     .line 373
     .local v1, "i":I
-    :goto_a
+    :goto_0
     array-length v2, p1
 
     add-int/lit8 v2, v2, -0x1
 
-    if-ge v1, v2, :cond_1c
+    if-ge v1, v2, :cond_0
 
     .line 374
     aget v2, p1, v1
@@ -547,17 +546,17 @@
 
     .end local v2    # "x":F
     .end local v3    # "y":F
-    goto :goto_a
+    goto :goto_0
 
     .line 380
     .end local v0    # "frameworkPaint":Landroid/graphics/Paint;
     .end local v1    # "i":I
-    :cond_1c
+    :cond_0
     return-void
 .end method
 
 .method public static synthetic getInternalCanvas$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -565,7 +564,7 @@
 
 # virtual methods
 .method public clipPath-mtrdD-E(Landroidx/compose/ui/graphics/Path;I)V
-    .registers 7
+    .locals 4
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "clipOp"    # I
 
@@ -585,7 +584,7 @@
     .local v2, "$i$f$asAndroidPath":I
     instance-of v3, v1, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_0
 
     .line 433
     move-object v3, v1
@@ -614,7 +613,7 @@
     .line 435
     .restart local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v2    # "$i$f$asAndroidPath":I
-    :cond_1e
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v3, "Unable to obtain android.graphics.Path"
@@ -625,7 +624,7 @@
 .end method
 
 .method public clipRect-N_I0leg(FFFFI)V
-    .registers 12
+    .locals 6
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -654,7 +653,7 @@
 .end method
 
 .method public concat-58bKbWc([F)V
-    .registers 4
+    .locals 2
     .param p1, "matrix"    # [F
 
     const-string/jumbo v0, "matrix"
@@ -666,7 +665,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
     .line 137
     new-instance v0, Landroid/graphics/Matrix;
@@ -684,12 +683,12 @@
 
     .line 141
     .end local v0    # "frameworkMatrix":Landroid/graphics/Matrix;
-    :cond_19
+    :cond_0
     return-void
 .end method
 
 .method public disableZ()V
-    .registers 4
+    .locals 3
 
     .line 311
     sget-object v0, Landroidx/compose/ui/graphics/CanvasUtils;->INSTANCE:Landroidx/compose/ui/graphics/CanvasUtils;
@@ -705,7 +704,7 @@
 .end method
 
 .method public drawArc(FFFFFFZLandroidx/compose/ui/graphics/Paint;)V
-    .registers 20
+    .locals 11
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -774,7 +773,7 @@
 .end method
 
 .method public drawCircle-9KIMszo(JFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 9
+    .locals 4
     .param p1, "center"    # J
     .param p3, "radius"    # F
     .param p4, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -812,7 +811,7 @@
 .end method
 
 .method public drawImage-d-4ec7I(Landroidx/compose/ui/graphics/ImageBitmap;JLandroidx/compose/ui/graphics/Paint;)V
-    .registers 10
+    .locals 5
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "topLeftOffset"    # J
     .param p4, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -856,7 +855,7 @@
 .end method
 
 .method public drawImageRect-HPBpro0(Landroidx/compose/ui/graphics/ImageBitmap;JJJJLandroidx/compose/ui/graphics/Paint;)V
-    .registers 22
+    .locals 11
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
     .param p4, "srcSize"    # J
@@ -1017,7 +1016,7 @@
 .end method
 
 .method public drawLine-Wko1d7g(JJLandroidx/compose/ui/graphics/Paint;)V
-    .registers 13
+    .locals 7
     .param p1, "p1"    # J
     .param p3, "p2"    # J
     .param p5, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -1062,7 +1061,7 @@
 .end method
 
 .method public drawOval(FFFFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 13
+    .locals 7
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -1095,7 +1094,7 @@
 .end method
 
 .method public drawPath(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 7
+    .locals 4
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
 
@@ -1119,7 +1118,7 @@
     .local v2, "$i$f$asAndroidPath":I
     instance-of v3, v1, Landroidx/compose/ui/graphics/AndroidPath;
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_0
 
     .line 438
     move-object v3, v1
@@ -1148,7 +1147,7 @@
     .line 440
     .restart local v1    # "$this$asAndroidPath$iv":Landroidx/compose/ui/graphics/Path;
     .restart local v2    # "$i$f$asAndroidPath":I
-    :cond_24
+    :cond_0
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v3, "Unable to obtain android.graphics.Path"
@@ -1159,7 +1158,7 @@
 .end method
 
 .method public drawPoints-O7TthRY(ILjava/util/List;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 5
+    .locals 1
     .param p1, "pointMode"    # I
     .param p2, "points"    # Ljava/util/List;
     .param p3, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -1196,16 +1195,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
     invoke-direct {p0, p2, p3, v0}, Landroidx/compose/ui/graphics/AndroidCanvas;->drawLines(Ljava/util/List;Landroidx/compose/ui/graphics/Paint;I)V
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 299
-    :cond_1e
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/PointMode;->Companion:Landroidx/compose/ui/graphics/PointMode$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PointMode$Companion;->getPolygon-r_lszbg()I
@@ -1216,16 +1215,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
     invoke-direct {p0, p2, p3, v0}, Landroidx/compose/ui/graphics/AndroidCanvas;->drawLines(Ljava/util/List;Landroidx/compose/ui/graphics/Paint;I)V
 
-    goto :goto_3e
+    goto :goto_0
 
     .line 302
-    :cond_2f
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/PointMode;->Companion:Landroidx/compose/ui/graphics/PointMode$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PointMode$Companion;->getPoints-r_lszbg()I
@@ -1236,18 +1235,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_2
 
     invoke-direct {p0, p2, p3}, Landroidx/compose/ui/graphics/AndroidCanvas;->drawPoints(Ljava/util/List;Landroidx/compose/ui/graphics/Paint;)V
 
     .line 304
-    :cond_3e
-    :goto_3e
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method public drawRawPoints-O7TthRY(I[FLandroidx/compose/ui/graphics/Paint;)V
-    .registers 6
+    .locals 2
     .param p1, "pointMode"    # I
     .param p2, "points"    # [F
     .param p3, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -1267,7 +1266,7 @@
 
     rem-int/2addr v0, v1
 
-    if-nez v0, :cond_43
+    if-nez v0, :cond_3
 
     .line 362
     nop
@@ -1283,14 +1282,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     invoke-direct {p0, p2, p3, v1}, Landroidx/compose/ui/graphics/AndroidCanvas;->drawRawLines([FLandroidx/compose/ui/graphics/Paint;I)V
 
-    goto :goto_42
+    goto :goto_0
 
     .line 364
-    :cond_22
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/PointMode;->Companion:Landroidx/compose/ui/graphics/PointMode$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PointMode$Companion;->getPolygon-r_lszbg()I
@@ -1301,16 +1300,16 @@
 
     move-result v0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_1
 
     const/4 v0, 0x1
 
     invoke-direct {p0, p2, p3, v0}, Landroidx/compose/ui/graphics/AndroidCanvas;->drawRawLines([FLandroidx/compose/ui/graphics/Paint;I)V
 
-    goto :goto_42
+    goto :goto_0
 
     .line 365
-    :cond_33
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/PointMode;->Companion:Landroidx/compose/ui/graphics/PointMode$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/PointMode$Companion;->getPoints-r_lszbg()I
@@ -1321,17 +1320,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_2
 
     invoke-direct {p0, p2, p3, v1}, Landroidx/compose/ui/graphics/AndroidCanvas;->drawRawPoints([FLandroidx/compose/ui/graphics/Paint;I)V
 
     .line 367
-    :cond_42
-    :goto_42
+    :cond_2
+    :goto_0
     return-void
 
     .line 360
-    :cond_43
+    :cond_3
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "points must have an even number of values"
@@ -1342,7 +1341,7 @@
 .end method
 
 .method public drawRect(FFFFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 13
+    .locals 7
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -1375,7 +1374,7 @@
 .end method
 
 .method public drawRoundRect(FFFFFFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 18
+    .locals 10
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -1438,7 +1437,7 @@
 .end method
 
 .method public drawVertices-TPEHhCM(Landroidx/compose/ui/graphics/Vertices;ILandroidx/compose/ui/graphics/Paint;)V
-    .registers 20
+    .locals 16
     .param p1, "vertices"    # Landroidx/compose/ui/graphics/Vertices;
     .param p2, "blendMode"    # I
     .param p3, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -1528,7 +1527,7 @@
 .end method
 
 .method public enableZ()V
-    .registers 4
+    .locals 3
 
     .line 307
     sget-object v0, Landroidx/compose/ui/graphics/CanvasUtils;->INSTANCE:Landroidx/compose/ui/graphics/CanvasUtils;
@@ -1544,7 +1543,7 @@
 .end method
 
 .method public final getInternalCanvas()Landroid/graphics/Canvas;
-    .registers 2
+    .locals 1
 
     .line 68
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidCanvas;->internalCanvas:Landroid/graphics/Canvas;
@@ -1553,7 +1552,7 @@
 .end method
 
 .method public restore()V
-    .registers 2
+    .locals 1
 
     .line 85
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidCanvas;->internalCanvas:Landroid/graphics/Canvas;
@@ -1565,7 +1564,7 @@
 .end method
 
 .method public rotate(F)V
-    .registers 3
+    .locals 1
     .param p1, "degrees"    # F
 
     .line 122
@@ -1578,7 +1577,7 @@
 .end method
 
 .method public save()V
-    .registers 2
+    .locals 1
 
     .line 78
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidCanvas;->internalCanvas:Landroid/graphics/Canvas;
@@ -1590,7 +1589,7 @@
 .end method
 
 .method public saveLayer(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 11
+    .locals 8
     .param p1, "bounds"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
 
@@ -1641,7 +1640,7 @@
 .end method
 
 .method public scale(FF)V
-    .registers 4
+    .locals 1
     .param p1, "sx"    # F
     .param p2, "sy"    # F
 
@@ -1655,7 +1654,7 @@
 .end method
 
 .method public final setInternalCanvas(Landroid/graphics/Canvas;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroid/graphics/Canvas;
 
     const-string v0, "<set-?>"
@@ -1669,7 +1668,7 @@
 .end method
 
 .method public skew(FF)V
-    .registers 4
+    .locals 1
     .param p1, "sx"    # F
     .param p2, "sy"    # F
 
@@ -1683,7 +1682,7 @@
 .end method
 
 .method public final toRegionOp--7u2Bmg(I)Landroid/graphics/Region$Op;
-    .registers 3
+    .locals 1
     .param p1, "$this$toRegionOp_u2d_u2d7u2Bmg"    # I
 
     .line 158
@@ -1700,23 +1699,23 @@
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     sget-object v0, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
-    goto :goto_12
+    goto :goto_0
 
     .line 160
-    :cond_10
+    :cond_0
     sget-object v0, Landroid/graphics/Region$Op;->INTERSECT:Landroid/graphics/Region$Op;
 
     .line 161
-    :goto_12
+    :goto_0
     return-object v0
 .end method
 
 .method public translate(FF)V
-    .registers 4
+    .locals 1
     .param p1, "dx"    # F
     .param p2, "dy"    # F
 

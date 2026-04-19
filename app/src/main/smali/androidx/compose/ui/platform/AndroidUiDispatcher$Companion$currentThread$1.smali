@@ -48,7 +48,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 166
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public bridge synthetic initialValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 166
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidUiDispatcher$Companion$currentThread$1;->initialValue()Lkotlin/coroutines/CoroutineContext;
@@ -70,7 +70,7 @@
 .end method
 
 .method protected initialValue()Lkotlin/coroutines/CoroutineContext;
-    .registers 5
+    .locals 4
 
     .line 167
     new-instance v0, Landroidx/compose/ui/platform/AndroidUiDispatcher;
@@ -89,7 +89,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_0
 
     .line 169
     invoke-static {v2}, Landroidx/core/os/HandlerCompat;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
@@ -129,7 +129,7 @@
     return-object v0
 
     .line 170
-    :cond_2d
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 171

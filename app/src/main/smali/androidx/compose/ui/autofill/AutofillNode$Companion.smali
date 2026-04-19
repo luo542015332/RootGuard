@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/autofill/AutofillNode$Companion;-><init>()V
 
@@ -59,7 +59,7 @@
 .end method
 
 .method public static final synthetic access$generateId(Landroidx/compose/ui/autofill/AutofillNode$Companion;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/autofill/AutofillNode$Companion;
 
     .line 77
@@ -71,7 +71,7 @@
 .end method
 
 .method private final generateId()I
-    .registers 4
+    .locals 3
 
     .line 82
     const/4 v0, 0x0
@@ -84,10 +84,9 @@
 
     .line 82
     .local v1, "$i$a$-synchronized-AutofillNode$Companion$generateId$1":I
-    :try_start_3
+    :try_start_0
     sget-object v2, Landroidx/compose/ui/autofill/AutofillNode;->Companion:Landroidx/compose/ui/autofill/AutofillNode$Companion;
 
-    # getter for: Landroidx/compose/ui/autofill/AutofillNode;->previousId:I
     invoke-static {}, Landroidx/compose/ui/autofill/AutofillNode;->access$getPreviousId$cp()I
 
     move-result v2
@@ -96,12 +95,11 @@
 
     invoke-static {v2}, Landroidx/compose/ui/autofill/AutofillNode;->access$setPreviousId$cp(I)V
 
-    # getter for: Landroidx/compose/ui/autofill/AutofillNode;->previousId:I
     invoke-static {}, Landroidx/compose/ui/autofill/AutofillNode;->access$getPreviousId$cp()I
 
     move-result v2
-    :try_end_12
-    .catchall {:try_start_3 .. :try_end_12} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 105
     .end local v1    # "$i$a$-synchronized-AutofillNode$Companion$generateId$1":I
@@ -113,7 +111,7 @@
 
     .line 105
     .restart local v0    # "$i$f$synchronized":I
-    :catchall_14
+    :catchall_0
     move-exception v1
 
     monitor-exit p0

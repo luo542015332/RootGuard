@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,11 +84,11 @@
 
 # virtual methods
 .method public final invoke(I)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
     .param p1, "it"    # I
 
     .line 37
-    if-ltz p1, :cond_d
+    if-ltz p1, :cond_1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/Vertices$outOfBounds$1;->$positions:Ljava/util/List;
 
@@ -96,20 +96,20 @@
 
     move-result v0
 
-    if-lt p1, v0, :cond_b
+    if-lt p1, v0, :cond_0
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_1
 
-    :cond_d
-    :goto_d
+    :cond_1
+    :goto_0
     const/4 v0, 0x1
 
-    :goto_e
+    :goto_1
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -118,7 +118,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 37

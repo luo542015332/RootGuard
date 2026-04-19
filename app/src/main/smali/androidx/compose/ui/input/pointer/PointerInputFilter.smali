@@ -67,7 +67,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -77,7 +77,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -86,7 +86,7 @@
 .end method
 
 .method public static synthetic getShareWithSiblings$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public getInterceptOutOfBoundsChildEvents()Z
-    .registers 2
+    .locals 1
 
     .line 93
     const/4 v0, 0x0
@@ -103,7 +103,7 @@
 .end method
 
 .method public final getLayoutCoordinates$ui_release()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 2
+    .locals 1
 
     .line 75
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputFilter;->layoutCoordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
@@ -112,7 +112,7 @@
 .end method
 
 .method public getShareWithSiblings()Z
-    .registers 2
+    .locals 1
 
     .line 104
     const/4 v0, 0x0
@@ -121,32 +121,32 @@
 .end method
 
 .method public final getSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 81
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInputFilter;->layoutCoordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/ui/layout/LayoutCoordinates;->getSize-YbymL2g()J
 
     move-result-wide v0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     sget-object v0, Landroidx/compose/ui/unit/IntSize;->Companion:Landroidx/compose/ui/unit/IntSize$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/unit/IntSize$Companion;->getZero-YbymL2g()J
 
     move-result-wide v0
 
-    :goto_f
+    :goto_0
     return-wide v0
 .end method
 
 .method public final isAttached$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 83
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInputFilter;->isAttached:Z
@@ -161,7 +161,7 @@
 .end method
 
 .method public final setAttached$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 83
@@ -171,7 +171,7 @@
 .end method
 
 .method public final setLayoutCoordinates$ui_release(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     .line 75

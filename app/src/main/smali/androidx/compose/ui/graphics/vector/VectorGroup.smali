@@ -122,13 +122,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 14
+    .locals 13
 
     const/4 v1, 0x0
 
@@ -162,7 +162,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;FFFFFFFLjava/util/List;Ljava/util/List;)V
-    .registers 12
+    .locals 1
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "rotation"    # F
     .param p3, "pivotX"    # F
@@ -241,155 +241,155 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/String;FFFFFFFLjava/util/List;Ljava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 23
+    .locals 10
 
     .line 449
     move/from16 v0, p11
 
     and-int/lit8 v1, v0, 0x1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_0
 
     .line 453
     const-string v1, ""
 
-    goto :goto_a
+    goto :goto_0
 
     .line 449
-    :cond_9
+    :cond_0
     move-object v1, p1
 
-    :goto_a
+    :goto_0
     and-int/lit8 v2, v0, 0x2
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_11
+    if-eqz v2, :cond_1
 
     .line 458
     move v2, v3
 
-    goto :goto_12
+    goto :goto_1
 
     .line 449
-    :cond_11
+    :cond_1
     move v2, p2
 
-    :goto_12
+    :goto_1
     and-int/lit8 v4, v0, 0x4
 
-    if-eqz v4, :cond_18
+    if-eqz v4, :cond_2
 
     .line 463
     move v4, v3
 
-    goto :goto_19
+    goto :goto_2
 
     .line 449
-    :cond_18
+    :cond_2
     move v4, p3
 
-    :goto_19
+    :goto_2
     and-int/lit8 v5, v0, 0x8
 
-    if-eqz v5, :cond_1f
+    if-eqz v5, :cond_3
 
     .line 468
     move v5, v3
 
-    goto :goto_20
+    goto :goto_3
 
     .line 449
-    :cond_1f
+    :cond_3
     move v5, p4
 
-    :goto_20
+    :goto_3
     and-int/lit8 v6, v0, 0x10
 
     const/high16 v7, 0x3f800000    # 1.0f
 
-    if-eqz v6, :cond_28
+    if-eqz v6, :cond_4
 
     .line 473
     move v6, v7
 
-    goto :goto_29
+    goto :goto_4
 
     .line 449
-    :cond_28
+    :cond_4
     move v6, p5
 
-    :goto_29
+    :goto_4
     and-int/lit8 v8, v0, 0x20
 
-    if-eqz v8, :cond_2e
+    if-eqz v8, :cond_5
 
     .line 478
-    goto :goto_30
+    goto :goto_5
 
     .line 449
-    :cond_2e
+    :cond_5
     move/from16 v7, p6
 
-    :goto_30
+    :goto_5
     and-int/lit8 v8, v0, 0x40
 
-    if-eqz v8, :cond_36
+    if-eqz v8, :cond_6
 
     .line 483
     move v8, v3
 
-    goto :goto_38
+    goto :goto_6
 
     .line 449
-    :cond_36
+    :cond_6
     move/from16 v8, p7
 
-    :goto_38
+    :goto_6
     and-int/lit16 v9, v0, 0x80
 
-    if-eqz v9, :cond_3d
+    if-eqz v9, :cond_7
 
     .line 488
-    goto :goto_3f
+    goto :goto_7
 
     .line 449
-    :cond_3d
+    :cond_7
     move/from16 v3, p8
 
-    :goto_3f
+    :goto_7
     and-int/lit16 v9, v0, 0x100
 
-    if-eqz v9, :cond_48
+    if-eqz v9, :cond_8
 
     .line 493
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getEmptyPath()Ljava/util/List;
 
     move-result-object v9
 
-    goto :goto_4a
+    goto :goto_8
 
     .line 449
-    :cond_48
+    :cond_8
     move-object/from16 v9, p9
 
-    :goto_4a
+    :goto_8
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_9
 
     .line 499
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    goto :goto_55
+    goto :goto_9
 
     .line 449
-    :cond_53
+    :cond_9
     move-object/from16 v0, p10
 
-    :goto_55
+    :goto_9
     move-object p1, p0
 
     move-object p2, v1
@@ -419,7 +419,7 @@
 .end method
 
 .method public static final synthetic access$getChildren$p(Landroidx/compose/ui/graphics/vector/VectorGroup;)Ljava/util/List;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/vector/VectorGroup;
 
     .line 448
@@ -431,30 +431,30 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 521
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 522
-    :cond_4
+    :cond_0
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_af
+    if-eqz p1, :cond_13
 
     instance-of v2, p1, Landroidx/compose/ui/graphics/vector/VectorGroup;
 
-    if-nez v2, :cond_d
+    if-nez v2, :cond_1
 
-    goto/16 :goto_af
+    goto/16 :goto_7
 
     .line 524
-    :cond_d
+    :cond_1
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->name:Ljava/lang/String;
 
     move-object v3, p1
@@ -467,12 +467,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_1b
+    if-nez v2, :cond_2
 
     return v1
 
     .line 525
-    :cond_1b
+    :cond_2
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->rotation:F
 
     move-object v3, p1
@@ -483,22 +483,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_28
+    if-nez v2, :cond_3
 
     move v2, v0
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_3
     move v2, v1
 
-    :goto_29
-    if-nez v2, :cond_2c
+    :goto_0
+    if-nez v2, :cond_4
 
     return v1
 
     .line 526
-    :cond_2c
+    :cond_4
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->pivotX:F
 
     move-object v3, p1
@@ -509,22 +509,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_39
+    if-nez v2, :cond_5
 
     move v2, v0
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_39
+    :cond_5
     move v2, v1
 
-    :goto_3a
-    if-nez v2, :cond_3d
+    :goto_1
+    if-nez v2, :cond_6
 
     return v1
 
     .line 527
-    :cond_3d
+    :cond_6
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->pivotY:F
 
     move-object v3, p1
@@ -535,22 +535,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_4a
+    if-nez v2, :cond_7
 
     move v2, v0
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_4a
+    :cond_7
     move v2, v1
 
-    :goto_4b
-    if-nez v2, :cond_4e
+    :goto_2
+    if-nez v2, :cond_8
 
     return v1
 
     .line 528
-    :cond_4e
+    :cond_8
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->scaleX:F
 
     move-object v3, p1
@@ -561,22 +561,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_5b
+    if-nez v2, :cond_9
 
     move v2, v0
 
-    goto :goto_5c
+    goto :goto_3
 
-    :cond_5b
+    :cond_9
     move v2, v1
 
-    :goto_5c
-    if-nez v2, :cond_5f
+    :goto_3
+    if-nez v2, :cond_a
 
     return v1
 
     .line 529
-    :cond_5f
+    :cond_a
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->scaleY:F
 
     move-object v3, p1
@@ -587,22 +587,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_6c
+    if-nez v2, :cond_b
 
     move v2, v0
 
-    goto :goto_6d
+    goto :goto_4
 
-    :cond_6c
+    :cond_b
     move v2, v1
 
-    :goto_6d
-    if-nez v2, :cond_70
+    :goto_4
+    if-nez v2, :cond_c
 
     return v1
 
     .line 530
-    :cond_70
+    :cond_c
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->translationX:F
 
     move-object v3, p1
@@ -613,22 +613,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_7d
+    if-nez v2, :cond_d
 
     move v2, v0
 
-    goto :goto_7e
+    goto :goto_5
 
-    :cond_7d
+    :cond_d
     move v2, v1
 
-    :goto_7e
-    if-nez v2, :cond_81
+    :goto_5
+    if-nez v2, :cond_e
 
     return v1
 
     .line 531
-    :cond_81
+    :cond_e
     iget v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->translationY:F
 
     move-object v3, p1
@@ -639,22 +639,22 @@
 
     cmpg-float v2, v2, v3
 
-    if-nez v2, :cond_8e
+    if-nez v2, :cond_f
 
     move v2, v0
 
-    goto :goto_8f
+    goto :goto_6
 
-    :cond_8e
+    :cond_f
     move v2, v1
 
-    :goto_8f
-    if-nez v2, :cond_92
+    :goto_6
+    if-nez v2, :cond_10
 
     return v1
 
     .line 532
-    :cond_92
+    :cond_10
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->clipPathData:Ljava/util/List;
 
     move-object v3, p1
@@ -667,12 +667,12 @@
 
     move-result v2
 
-    if-nez v2, :cond_a0
+    if-nez v2, :cond_11
 
     return v1
 
     .line 533
-    :cond_a0
+    :cond_11
     iget-object v2, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->children:Ljava/util/List;
 
     move-object v3, p1
@@ -685,22 +685,22 @@
 
     move-result v2
 
-    if-nez v2, :cond_ae
+    if-nez v2, :cond_12
 
     return v1
 
     .line 535
-    :cond_ae
+    :cond_12
     return v0
 
     .line 522
-    :cond_af
-    :goto_af
+    :cond_13
+    :goto_7
     return v1
 .end method
 
 .method public final get(I)Landroidx/compose/ui/graphics/vector/VectorNode;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 506
@@ -716,7 +716,7 @@
 .end method
 
 .method public final getClipPathData()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -733,7 +733,7 @@
 .end method
 
 .method public final getName()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 453
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->name:Ljava/lang/String;
@@ -742,7 +742,7 @@
 .end method
 
 .method public final getPivotX()F
-    .registers 2
+    .locals 1
 
     .line 463
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->pivotX:F
@@ -751,7 +751,7 @@
 .end method
 
 .method public final getPivotY()F
-    .registers 2
+    .locals 1
 
     .line 468
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->pivotY:F
@@ -760,7 +760,7 @@
 .end method
 
 .method public final getRotation()F
-    .registers 2
+    .locals 1
 
     .line 458
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->rotation:F
@@ -769,7 +769,7 @@
 .end method
 
 .method public final getScaleX()F
-    .registers 2
+    .locals 1
 
     .line 473
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->scaleX:F
@@ -778,7 +778,7 @@
 .end method
 
 .method public final getScaleY()F
-    .registers 2
+    .locals 1
 
     .line 478
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->scaleY:F
@@ -787,7 +787,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 503
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->children:Ljava/util/List;
@@ -800,7 +800,7 @@
 .end method
 
 .method public final getTranslationX()F
-    .registers 2
+    .locals 1
 
     .line 483
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->translationX:F
@@ -809,7 +809,7 @@
 .end method
 
 .method public final getTranslationY()F
-    .registers 2
+    .locals 1
 
     .line 488
     iget v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->translationY:F
@@ -818,7 +818,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     .line 539
     iget-object v0, p0, Landroidx/compose/ui/graphics/vector/VectorGroup;->name:Ljava/lang/String;
@@ -950,7 +950,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

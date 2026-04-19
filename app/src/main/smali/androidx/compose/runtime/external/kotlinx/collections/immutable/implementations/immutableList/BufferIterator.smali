@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>([Ljava/lang/Object;II)V
-    .registers 5
+    .locals 1
     .param p1, "buffer"    # [Ljava/lang/Object;
     .param p2, "index"    # I
     .param p3, "size"    # I
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public next()Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -95,7 +95,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 17
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/BufferIterator;->buffer:[Ljava/lang/Object;
@@ -113,7 +113,7 @@
     return-object v0
 
     .line 15
-    :cond_14
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -122,7 +122,7 @@
 .end method
 
 .method public previous()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -134,7 +134,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     .line 24
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/BufferIterator;->buffer:[Ljava/lang/Object;
@@ -156,7 +156,7 @@
     return-object v0
 
     .line 22
-    :cond_18
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V

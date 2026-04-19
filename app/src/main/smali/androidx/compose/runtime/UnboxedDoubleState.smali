@@ -52,7 +52,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/State;)V
-    .registers 3
+    .locals 1
     .param p1, "baseState"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public getDoubleValue()D
-    .registers 3
+    .locals 2
 
     .line 115
     iget-object v0, p0, Landroidx/compose/runtime/UnboxedDoubleState;->baseState:Landroidx/compose/runtime/State;
@@ -99,7 +99,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Double;
-    .registers 2
+    .locals 1
 
     .line 118
     iget-object v0, p0, Landroidx/compose/runtime/UnboxedDoubleState;->baseState:Landroidx/compose/runtime/State;
@@ -114,7 +114,7 @@
 .end method
 
 .method public bridge synthetic getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 111
     invoke-virtual {p0}, Landroidx/compose/runtime/UnboxedDoubleState;->getValue()Ljava/lang/Double;
@@ -125,7 +125,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 120
     new-instance v0, Ljava/lang/StringBuilder;

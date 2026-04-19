@@ -120,7 +120,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Map;)V
-    .registers 4
+    .locals 2
     .param p1, "impl"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -185,7 +185,7 @@
 
 # virtual methods
 .method public clear()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -197,7 +197,7 @@
 .end method
 
 .method public compute(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;",
@@ -216,7 +216,7 @@
 .end method
 
 .method public computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;",
@@ -235,7 +235,7 @@
 .end method
 
 .method public computeIfPresent(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;",
@@ -254,7 +254,7 @@
 .end method
 
 .method public containsKey(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->impl:Ljava/util/Map;
 
@@ -266,7 +266,7 @@
 .end method
 
 .method public containsValue(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->impl:Ljava/util/Map;
 
@@ -278,7 +278,7 @@
 .end method
 
 .method public final bridge entrySet()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -297,7 +297,7 @@
 .end method
 
 .method public bridge synthetic entrySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 36
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->entrySet()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
@@ -310,7 +310,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 42
@@ -324,7 +324,7 @@
 .end method
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -343,7 +343,7 @@
 .end method
 
 .method public getEntries()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -360,7 +360,7 @@
 .end method
 
 .method public getKeys()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -376,7 +376,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->impl:Ljava/util/Map;
 
@@ -388,7 +388,7 @@
 .end method
 
 .method public getValues()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableCollection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -404,7 +404,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 43
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->impl:Ljava/util/Map;
@@ -417,7 +417,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->impl:Ljava/util/Map;
 
@@ -429,7 +429,7 @@
 .end method
 
 .method public final bridge keySet()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -447,7 +447,7 @@
 .end method
 
 .method public bridge synthetic keySet()Ljava/util/Set;
-    .registers 2
+    .locals 1
 
     .line 36
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->keySet()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableSet;
@@ -460,7 +460,7 @@
 .end method
 
 .method public merge(Ljava/lang/Object;Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;",
@@ -479,7 +479,7 @@
 .end method
 
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)TV;"
@@ -496,7 +496,7 @@
 .end method
 
 .method public putAll(Ljava/util/Map;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -515,7 +515,7 @@
 .end method
 
 .method public putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)TV;"
@@ -532,7 +532,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -551,7 +551,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 5
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -563,7 +563,7 @@
 .end method
 
 .method public replace(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)TV;"
@@ -580,7 +580,7 @@
 .end method
 
 .method public replace(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
-    .registers 6
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;TV;)Z"
@@ -597,7 +597,7 @@
 .end method
 
 .method public replaceAll(Ljava/util/function/BiFunction;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -616,7 +616,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 36
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->getSize()I
@@ -627,7 +627,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 44
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->impl:Ljava/util/Map;
@@ -640,7 +640,7 @@
 .end method
 
 .method public final bridge values()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableCollection;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -658,7 +658,7 @@
 .end method
 
 .method public bridge synthetic values()Ljava/util/Collection;
-    .registers 2
+    .locals 1
 
     .line 36
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/adapters/ImmutableMapAdapter;->values()Landroidx/compose/runtime/external/kotlinx/collections/immutable/ImmutableCollection;

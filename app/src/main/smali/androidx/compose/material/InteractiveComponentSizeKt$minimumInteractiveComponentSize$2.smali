@@ -58,7 +58,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/material/InteractiveComponentSizeKt$minimumInteractiveComponentSize$2;
 
@@ -70,7 +70,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x3
 
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 9
+    .locals 5
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -103,7 +103,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 56
     const/4 v1, -0x1
@@ -112,7 +112,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_1d
+    :cond_0
     invoke-static {}, Landroidx/compose/material/InteractiveComponentSizeKt;->getLocalMinimumInteractiveComponentEnforcement()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -149,12 +149,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_49
+    if-eqz v0, :cond_1
 
     .line 57
     new-instance v0, Landroidx/compose/material/MinimumInteractiveComponentSizeModifier;
 
-    # getter for: Landroidx/compose/material/InteractiveComponentSizeKt;->minimumInteractiveComponentSize:J
     invoke-static {}, Landroidx/compose/material/InteractiveComponentSizeKt;->access$getMinimumInteractiveComponentSize$p()J
 
     move-result-wide v1
@@ -165,32 +164,32 @@
 
     check-cast v0, Landroidx/compose/ui/Modifier;
 
-    goto :goto_4d
+    goto :goto_0
 
     .line 59
-    :cond_49
+    :cond_1
     sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
     check-cast v0, Landroidx/compose/ui/Modifier;
 
     .line 56
-    :goto_4d
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_56
+    if-eqz v1, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_56
+    :cond_2
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

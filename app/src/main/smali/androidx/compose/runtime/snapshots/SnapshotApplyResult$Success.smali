@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/snapshots/SnapshotApplyResult$Success;
 
@@ -59,7 +59,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1084
     const/4 v0, 0x0
@@ -72,14 +72,14 @@
 
 # virtual methods
 .method public check()V
-    .registers 1
+    .locals 0
 
     .line 1088
     return-void
 .end method
 
 .method public getSucceeded()Z
-    .registers 2
+    .locals 1
 
     .line 1090
     const/4 v0, 0x1

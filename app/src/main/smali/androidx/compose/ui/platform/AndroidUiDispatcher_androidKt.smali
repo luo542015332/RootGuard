@@ -25,7 +25,7 @@
 
 # direct methods
 .method public static final synthetic access$isMainThread()Z
-    .registers 1
+    .locals 1
 
     .line 1
     invoke-static {}, Landroidx/compose/ui/platform/AndroidUiDispatcher_androidKt;->isMainThread()Z
@@ -36,7 +36,7 @@
 .end method
 
 .method private static final isMainThread()Z
-    .registers 2
+    .locals 2
 
     .line 190
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -47,15 +47,15 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_c
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method

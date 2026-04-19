@@ -157,7 +157,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 5
+    .locals 4
 
     .line 225
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -246,7 +246,7 @@
 
 # virtual methods
 .method public getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 228
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->alpha:F
@@ -255,7 +255,7 @@
 .end method
 
 .method public getAmbientShadowColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 232
     iget-wide v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->ambientShadowColor:J
@@ -264,7 +264,7 @@
 .end method
 
 .method public getCameraDistance()F
-    .registers 2
+    .locals 1
 
     .line 237
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->cameraDistance:F
@@ -273,7 +273,7 @@
 .end method
 
 .method public getClip()Z
-    .registers 2
+    .locals 1
 
     .line 240
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->clip:Z
@@ -282,7 +282,7 @@
 .end method
 
 .method public getCompositingStrategy--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 241
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->compositingStrategy:I
@@ -291,7 +291,7 @@
 .end method
 
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     .line 247
     iget-object v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->graphicsDensity:Landroidx/compose/ui/unit/Density;
@@ -304,7 +304,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     .line 250
     iget-object v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->graphicsDensity:Landroidx/compose/ui/unit/Density;
@@ -317,7 +317,7 @@
 .end method
 
 .method public final getGraphicsDensity$ui_release()Landroidx/compose/ui/unit/Density;
-    .registers 2
+    .locals 1
 
     .line 244
     iget-object v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->graphicsDensity:Landroidx/compose/ui/unit/Density;
@@ -326,7 +326,7 @@
 .end method
 
 .method public getRenderEffect()Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     .line 252
     iget-object v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
@@ -335,7 +335,7 @@
 .end method
 
 .method public getRotationX()F
-    .registers 2
+    .locals 1
 
     .line 234
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->rotationX:F
@@ -344,7 +344,7 @@
 .end method
 
 .method public getRotationY()F
-    .registers 2
+    .locals 1
 
     .line 235
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->rotationY:F
@@ -353,7 +353,7 @@
 .end method
 
 .method public getRotationZ()F
-    .registers 2
+    .locals 1
 
     .line 236
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->rotationZ:F
@@ -362,7 +362,7 @@
 .end method
 
 .method public getScaleX()F
-    .registers 2
+    .locals 1
 
     .line 226
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->scaleX:F
@@ -371,7 +371,7 @@
 .end method
 
 .method public getScaleY()F
-    .registers 2
+    .locals 1
 
     .line 227
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->scaleY:F
@@ -380,7 +380,7 @@
 .end method
 
 .method public getShadowElevation()F
-    .registers 2
+    .locals 1
 
     .line 231
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->shadowElevation:F
@@ -389,7 +389,7 @@
 .end method
 
 .method public getShape()Landroidx/compose/ui/graphics/Shape;
-    .registers 2
+    .locals 1
 
     .line 239
     iget-object v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->shape:Landroidx/compose/ui/graphics/Shape;
@@ -398,7 +398,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 242
     iget-wide v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->size:J
@@ -407,7 +407,7 @@
 .end method
 
 .method public getSpotShadowColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 233
     iget-wide v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->spotShadowColor:J
@@ -416,7 +416,7 @@
 .end method
 
 .method public getTransformOrigin-SzJe1aQ()J
-    .registers 3
+    .locals 2
 
     .line 238
     iget-wide v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->transformOrigin:J
@@ -425,7 +425,7 @@
 .end method
 
 .method public getTranslationX()F
-    .registers 2
+    .locals 1
 
     .line 229
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->translationX:F
@@ -434,7 +434,7 @@
 .end method
 
 .method public getTranslationY()F
-    .registers 2
+    .locals 1
 
     .line 230
     iget v0, p0, Landroidx/compose/ui/graphics/ReusableGraphicsLayerScope;->translationY:F
@@ -443,7 +443,7 @@
 .end method
 
 .method public final reset()V
-    .registers 4
+    .locals 3
 
     .line 255
     const/high16 v0, 0x3f800000    # 1.0f
@@ -544,7 +544,7 @@
 .end method
 
 .method public setAlpha(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 228
@@ -554,7 +554,7 @@
 .end method
 
 .method public setAmbientShadowColor-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 232
@@ -564,7 +564,7 @@
 .end method
 
 .method public setCameraDistance(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 237
@@ -574,7 +574,7 @@
 .end method
 
 .method public setClip(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 240
@@ -584,7 +584,7 @@
 .end method
 
 .method public setCompositingStrategy-aDBOjCE(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 241
@@ -594,7 +594,7 @@
 .end method
 
 .method public final setGraphicsDensity$ui_release(Landroidx/compose/ui/unit/Density;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/unit/Density;
 
     const-string v0, "<set-?>"
@@ -608,7 +608,7 @@
 .end method
 
 .method public setRenderEffect(Landroidx/compose/ui/graphics/RenderEffect;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/RenderEffect;
 
     .line 252
@@ -618,7 +618,7 @@
 .end method
 
 .method public setRotationX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 234
@@ -628,7 +628,7 @@
 .end method
 
 .method public setRotationY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 235
@@ -638,7 +638,7 @@
 .end method
 
 .method public setRotationZ(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 236
@@ -648,7 +648,7 @@
 .end method
 
 .method public setScaleX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 226
@@ -658,7 +658,7 @@
 .end method
 
 .method public setScaleY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 227
@@ -668,7 +668,7 @@
 .end method
 
 .method public setShadowElevation(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 231
@@ -678,7 +678,7 @@
 .end method
 
 .method public setShape(Landroidx/compose/ui/graphics/Shape;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/Shape;
 
     const-string v0, "<set-?>"
@@ -692,7 +692,7 @@
 .end method
 
 .method public setSize-uvyYCjk(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 242
@@ -702,7 +702,7 @@
 .end method
 
 .method public setSpotShadowColor-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 233
@@ -712,7 +712,7 @@
 .end method
 
 .method public setTransformOrigin-__ExYCQ(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 238
@@ -722,7 +722,7 @@
 .end method
 
 .method public setTranslationX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 229
@@ -732,7 +732,7 @@
 .end method
 
 .method public setTranslationY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 230

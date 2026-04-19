@@ -115,7 +115,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPaint_androidKt;->makeNativePaint()Landroid/graphics/Paint;
@@ -128,7 +128,7 @@
 .end method
 
 .method public constructor <init>(Landroid/graphics/Paint;)V
-    .registers 3
+    .locals 1
     .param p1, "internalPaint"    # Landroid/graphics/Paint;
 
     const-string/jumbo v0, "internalPaint"
@@ -156,7 +156,7 @@
 
 # virtual methods
 .method public asFrameworkPaint()Landroid/graphics/Paint;
-    .registers 2
+    .locals 1
 
     .line 49
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -165,7 +165,7 @@
 .end method
 
 .method public getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 52
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -178,7 +178,7 @@
 .end method
 
 .method public getBlendMode-0nO6VwU()I
-    .registers 2
+    .locals 1
 
     .line 70
     iget v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->_blendMode:I
@@ -187,7 +187,7 @@
 .end method
 
 .method public getColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 64
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -200,7 +200,7 @@
 .end method
 
 .method public getColorFilter()Landroidx/compose/ui/graphics/ColorFilter;
-    .registers 2
+    .locals 1
 
     .line 123
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalColorFilter:Landroidx/compose/ui/graphics/ColorFilter;
@@ -209,7 +209,7 @@
 .end method
 
 .method public getFilterQuality-f-v9h1I()I
-    .registers 2
+    .locals 1
 
     .line 110
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -222,7 +222,7 @@
 .end method
 
 .method public getPathEffect()Landroidx/compose/ui/graphics/PathEffect;
-    .registers 2
+    .locals 1
 
     .line 129
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->pathEffect:Landroidx/compose/ui/graphics/PathEffect;
@@ -231,7 +231,7 @@
 .end method
 
 .method public getShader()Landroid/graphics/Shader;
-    .registers 2
+    .locals 1
 
     .line 116
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalShader:Landroid/graphics/Shader;
@@ -240,7 +240,7 @@
 .end method
 
 .method public getStrokeCap-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -253,7 +253,7 @@
 .end method
 
 .method public getStrokeJoin-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 97
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -266,7 +266,7 @@
 .end method
 
 .method public getStrokeMiterLimit()F
-    .registers 2
+    .locals 1
 
     .line 103
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -279,7 +279,7 @@
 .end method
 
 .method public getStrokeWidth()F
-    .registers 2
+    .locals 1
 
     .line 85
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -292,7 +292,7 @@
 .end method
 
 .method public getStyle-TiuSbCo()I
-    .registers 2
+    .locals 1
 
     .line 79
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -305,7 +305,7 @@
 .end method
 
 .method public isAntiAlias()Z
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPaint;->internalPaint:Landroid/graphics/Paint;
@@ -318,7 +318,7 @@
 .end method
 
 .method public setAlpha(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 54
@@ -331,7 +331,7 @@
 .end method
 
 .method public setAntiAlias(Z)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Z
 
     .line 60
@@ -344,7 +344,7 @@
 .end method
 
 .method public setBlendMode-s9anfk8(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 72
@@ -354,7 +354,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_f
+    if-nez v0, :cond_0
 
     .line 73
     iput p1, p0, Landroidx/compose/ui/graphics/AndroidPaint;->_blendMode:I
@@ -365,12 +365,12 @@
     invoke-static {v0, p1}, Landroidx/compose/ui/graphics/AndroidPaint_androidKt;->setNativeBlendMode-GB0RdKg(Landroid/graphics/Paint;I)V
 
     .line 76
-    :cond_f
+    :cond_0
     return-void
 .end method
 
 .method public setColor-8_81llA(J)V
-    .registers 4
+    .locals 1
     .param p1, "color"    # J
 
     .line 66
@@ -383,7 +383,7 @@
 .end method
 
 .method public setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 125
@@ -399,7 +399,7 @@
 .end method
 
 .method public setFilterQuality-vDHp3xo(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 112
@@ -412,7 +412,7 @@
 .end method
 
 .method public setPathEffect(Landroidx/compose/ui/graphics/PathEffect;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/ui/graphics/PathEffect;
 
     .line 131
@@ -428,7 +428,7 @@
 .end method
 
 .method public setShader(Landroid/graphics/Shader;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroid/graphics/Shader;
 
     .line 118
@@ -444,7 +444,7 @@
 .end method
 
 .method public setStrokeCap-BeK7IIE(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 93
@@ -457,7 +457,7 @@
 .end method
 
 .method public setStrokeJoin-Ww9F2mQ(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 99
@@ -470,7 +470,7 @@
 .end method
 
 .method public setStrokeMiterLimit(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 105
@@ -483,7 +483,7 @@
 .end method
 
 .method public setStrokeWidth(F)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # F
 
     .line 87
@@ -496,7 +496,7 @@
 .end method
 
 .method public setStyle-k9PVt8s(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 81

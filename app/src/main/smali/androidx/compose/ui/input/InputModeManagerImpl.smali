@@ -64,7 +64,7 @@
 
 # direct methods
 .method private constructor <init>(ILkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 3
     .param p1, "initialInputMode"    # I
     .param p2, "onRequestInputModeChange"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -108,7 +108,7 @@
 .end method
 
 .method public synthetic constructor <init>(ILkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/input/InputModeManagerImpl;-><init>(ILkotlin/jvm/functions/Function1;)V
 
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public getInputMode-aOaMEAU()I
-    .registers 4
+    .locals 3
 
     .line 72
     iget-object v0, p0, Landroidx/compose/ui/input/InputModeManagerImpl;->inputMode$delegate:Landroidx/compose/runtime/MutableState;
@@ -151,7 +151,7 @@
 .end method
 
 .method public requestInputMode-iuPiT84(I)Z
-    .registers 4
+    .locals 2
     .param p1, "inputMode"    # I
 
     .line 75
@@ -175,7 +175,7 @@
 .end method
 
 .method public setInputMode-iuPiT84(I)V
-    .registers 6
+    .locals 4
     .param p1, "<set-?>"    # I
 
     .line 72

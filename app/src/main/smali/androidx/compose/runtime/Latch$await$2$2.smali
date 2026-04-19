@@ -67,7 +67,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/Latch;Lkotlinx/coroutines/CancellableContinuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 83
@@ -109,13 +109,12 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 7
+    .locals 5
     .param p1, "it"    # Ljava/lang/Throwable;
 
     .line 84
     iget-object v0, p0, Landroidx/compose/runtime/Latch$await$2$2;->this$0:Landroidx/compose/runtime/Latch;
 
-    # getter for: Landroidx/compose/runtime/Latch;->lock:Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/runtime/Latch;->access$getLock$p(Landroidx/compose/runtime/Latch;)Ljava/lang/Object;
 
     move-result-object v0
@@ -135,8 +134,7 @@
 
     .line 85
     .local v4, "$i$a$-synchronized-Latch$await$2$2$1":I
-    :try_start_d
-    # getter for: Landroidx/compose/runtime/Latch;->awaiters:Ljava/util/List;
+    :try_start_0
     invoke-static {v1}, Landroidx/compose/runtime/Latch;->access$getAwaiters$p(Landroidx/compose/runtime/Latch;)Ljava/util/List;
 
     move-result-object v1
@@ -148,8 +146,8 @@
 
     .end local v4    # "$i$a$-synchronized-Latch$await$2$2$1":I
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_17
-    .catchall {:try_start_d .. :try_end_17} :catchall_19
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 91
     monitor-exit v0
@@ -162,7 +160,7 @@
     .line 91
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_19
+    :catchall_0
     move-exception v1
 
     monitor-exit v0

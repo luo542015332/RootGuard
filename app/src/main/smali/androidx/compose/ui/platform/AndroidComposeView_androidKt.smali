@@ -49,7 +49,7 @@
 
 # direct methods
 .method public static final synthetic access$layoutDirectionFromInt(I)Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
     .param p0, "layoutDirection"    # I
 
     .line 1
@@ -61,7 +61,7 @@
 .end method
 
 .method public static final synthetic access$preTransform-JiSxe2E([F[F)V
-    .registers 2
+    .locals 0
     .param p0, "$receiver"    # [F
     .param p1, "other"    # [F
 
@@ -72,7 +72,7 @@
 .end method
 
 .method private static final dot-p89u6pk([FI[FI)F
-    .registers 9
+    .locals 5
     .param p0, "m1"    # [F
     .param p1, "row"    # I
     .param p2, "m2"    # [F
@@ -231,7 +231,7 @@
 .end method
 
 .method public static final getLocaleLayoutDirection(Landroid/content/res/Configuration;)Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
     .param p0, "$this$localeLayoutDirection"    # Landroid/content/res/Configuration;
 
     const-string v0, "<this>"
@@ -251,40 +251,40 @@
 .end method
 
 .method private static final layoutDirectionFromInt(I)Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
     .param p0, "layoutDirection"    # I
 
     .line 1864
-    packed-switch p0, :pswitch_data_c
+    packed-switch p0, :pswitch_data_0
 
     .line 1867
     sget-object v0, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
-    goto :goto_b
+    goto :goto_0
 
     .line 1866
-    :pswitch_6
+    :pswitch_0
     sget-object v0, Landroidx/compose/ui/unit/LayoutDirection;->Rtl:Landroidx/compose/ui/unit/LayoutDirection;
 
-    goto :goto_b
+    goto :goto_0
 
     .line 1865
-    :pswitch_9
+    :pswitch_1
     sget-object v0, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
     .line 1868
-    :goto_b
+    :goto_0
     return-object v0
 
-    :pswitch_data_c
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_9
-        :pswitch_6
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method private static final preTransform-JiSxe2E([F[F)V
-    .registers 24
+    .locals 22
     .param p0, "$this$preTransform_u2dJiSxe2E"    # [F
     .param p1, "other"    # [F
 

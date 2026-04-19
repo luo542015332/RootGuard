@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 139
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->clipPath-mtrdD-E$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;Landroidx/compose/ui/graphics/Path;IILjava/lang/Object;)V
@@ -35,7 +35,7 @@
 .end method
 
 .method public static synthetic clipRect-N_I0leg$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFFFIILjava/lang/Object;)V
-    .registers 8
+    .locals 0
 
     .line 124
     invoke-static/range {p0 .. p7}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->clipRect-N_I0leg$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFFFIILjava/lang/Object;)V
@@ -45,13 +45,12 @@
 .end method
 
 .method public static getCenter-F1C5BW0(Landroidx/compose/ui/graphics/drawscope/DrawTransform;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawTransform;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 94
-    # invokes: Landroidx/compose/ui/graphics/drawscope/DrawTransform;->getCenter-F1C5BW0()J
     invoke-static {p0}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->access$getCenter-F1C5BW0$jd(Landroidx/compose/ui/graphics/drawscope/DrawTransform;)J
 
     move-result-wide v0
@@ -60,7 +59,7 @@
 .end method
 
 .method public static synthetic rotate-Uv8p0NA$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FJILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 158
     invoke-static/range {p0 .. p5}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->rotate-Uv8p0NA$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FJILjava/lang/Object;)V
@@ -69,7 +68,7 @@
 .end method
 
 .method public static synthetic scale-0AR0LA0$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFJILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 171
     invoke-static/range {p0 .. p6}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->scale-0AR0LA0$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFJILjava/lang/Object;)V
@@ -78,7 +77,7 @@
 .end method
 
 .method public static synthetic translate$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFILjava/lang/Object;)V
-    .registers 5
+    .locals 0
 
     .line 148
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/drawscope/DrawTransform;->translate$default(Landroidx/compose/ui/graphics/drawscope/DrawTransform;FFILjava/lang/Object;)V

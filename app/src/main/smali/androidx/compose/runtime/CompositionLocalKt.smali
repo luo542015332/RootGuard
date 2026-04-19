@@ -46,7 +46,7 @@
 
 # direct methods
 .method public static final CompositionLocalProvider(Landroidx/compose/runtime/CompositionLocalContext;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
-    .registers 16
+    .locals 12
     .param p0, "context"    # Landroidx/compose/runtime/CompositionLocalContext;
     .param p1, "content"    # Lkotlin/jvm/functions/Function2;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -91,74 +91,74 @@
     .local v1, "$dirty":I
     and-int/lit8 v2, p3, 0xe
 
-    if-nez v2, :cond_27
+    if-nez v2, :cond_1
 
     invoke-interface {p2, p0}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x4
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     const/4 v2, 0x2
 
-    :goto_26
+    :goto_0
     or-int/2addr v1, v2
 
-    :cond_27
+    :cond_1
     and-int/lit8 v2, p3, 0x70
 
-    if-nez v2, :cond_37
+    if-nez v2, :cond_3
 
     invoke-interface {p2, p1}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_2
 
     const/16 v2, 0x20
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_34
+    :cond_2
     const/16 v2, 0x10
 
-    :goto_36
+    :goto_1
     or-int/2addr v1, v2
 
-    :cond_37
+    :cond_3
     and-int/lit8 v2, v1, 0x5b
 
     const/16 v3, 0x12
 
-    if-ne v2, v3, :cond_49
+    if-ne v2, v3, :cond_5
 
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v2
 
-    if-nez v2, :cond_44
+    if-nez v2, :cond_4
 
-    goto :goto_49
+    goto :goto_2
 
     .line 254
-    :cond_44
+    :cond_4
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_c8
+    goto/16 :goto_4
 
     .line 247
-    :cond_49
-    :goto_49
+    :cond_5
+    :goto_2
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_56
+    if-eqz v2, :cond_6
 
     const/4 v2, -0x1
 
@@ -167,7 +167,7 @@
     invoke-static {v0, v1, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 249
-    :cond_56
+    :cond_6
     invoke-virtual {p0}, Landroidx/compose/runtime/CompositionLocalContext;->getCompositionLocals$runtime_release()Landroidx/compose/runtime/PersistentCompositionLocalMap;
 
     move-result-object v0
@@ -208,12 +208,12 @@
 
     move-result-object v6
 
-    :goto_73
+    :goto_3
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v7
 
-    if-eqz v7, :cond_9f
+    if-eqz v7, :cond_7
 
     invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -259,11 +259,11 @@
     .end local v9    # "$i$a$-map-CompositionLocalKt$CompositionLocalProvider$2":I
     invoke-interface {v3, v8}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    goto :goto_73
+    goto :goto_3
 
     .line 259
     .end local v7    # "item$iv$iv":Ljava/util/Map$Entry;
-    :cond_9f
+    :cond_7
     nop
 
     .end local v3    # "destination$iv$iv":Ljava/util/Collection;
@@ -325,22 +325,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c8
+    if-eqz v0, :cond_8
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 254
-    :cond_c8
-    :goto_c8
+    :cond_8
+    :goto_4
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_cf
+    if-nez v0, :cond_9
 
-    goto :goto_d9
+    goto :goto_5
 
-    :cond_cf
+    :cond_9
     new-instance v2, Landroidx/compose/runtime/CompositionLocalKt$CompositionLocalProvider$3;
 
     invoke-direct {v2, p0, p1, p3}, Landroidx/compose/runtime/CompositionLocalKt$CompositionLocalProvider$3;-><init>(Landroidx/compose/runtime/CompositionLocalContext;Lkotlin/jvm/functions/Function2;I)V
@@ -349,12 +349,12 @@
 
     invoke-interface {v0, v2}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_d9
+    :goto_5
     return-void
 .end method
 
 .method public static final CompositionLocalProvider([Landroidx/compose/runtime/ProvidedValue;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
-    .registers 8
+    .locals 4
     .param p0, "values"    # [Landroidx/compose/runtime/ProvidedValue;
     .param p1, "content"    # Lkotlin/jvm/functions/Function2;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -402,7 +402,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_0
 
     const/4 v2, -0x1
 
@@ -411,7 +411,7 @@
     invoke-static {v0, v1, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 227
-    :cond_26
+    :cond_0
     invoke-interface {p2, p0}, Landroidx/compose/runtime/Composer;->startProviders([Landroidx/compose/runtime/ProvidedValue;)V
 
     .line 228
@@ -432,20 +432,20 @@
 
     move-result v0
 
-    if-eqz v0, :cond_40
+    if-eqz v0, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_40
+    :cond_1
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_47
+    if-nez v0, :cond_2
 
-    goto :goto_51
+    goto :goto_0
 
-    :cond_47
+    :cond_2
     new-instance v2, Landroidx/compose/runtime/CompositionLocalKt$CompositionLocalProvider$1;
 
     invoke-direct {v2, p0, p1, p3}, Landroidx/compose/runtime/CompositionLocalKt$CompositionLocalProvider$1;-><init>([Landroidx/compose/runtime/ProvidedValue;Lkotlin/jvm/functions/Function2;I)V
@@ -455,12 +455,12 @@
     invoke-interface {v0, v2}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 230
-    :goto_51
+    :goto_0
     return-void
 .end method
 
 .method public static final compositionLocalOf(Landroidx/compose/runtime/SnapshotMutationPolicy;Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 3
+    .locals 1
     .param p0, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .param p1, "defaultFactory"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -496,12 +496,12 @@
 .end method
 
 .method public static synthetic compositionLocalOf$default(Landroidx/compose/runtime/SnapshotMutationPolicy;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 4
+    .locals 0
 
     .line 164
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_0
 
     .line 166
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->structuralEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
@@ -509,7 +509,7 @@
     move-result-object p0
 
     .line 164
-    :cond_8
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/runtime/CompositionLocalKt;->compositionLocalOf(Landroidx/compose/runtime/SnapshotMutationPolicy;Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object p0
@@ -518,7 +518,7 @@
 .end method
 
 .method public static final staticCompositionLocalOf(Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 2
+    .locals 1
     .param p0, "defaultFactory"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {

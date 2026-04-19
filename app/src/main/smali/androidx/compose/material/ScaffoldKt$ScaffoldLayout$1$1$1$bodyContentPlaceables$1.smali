@@ -70,7 +70,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/SubcomposeMeasureScope;ILkotlin/jvm/functions/Function3;I)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 12
+    .locals 9
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -144,30 +144,30 @@
 
     const/4 v1, 0x2
 
-    if-ne v0, v1, :cond_15
+    if-ne v0, v1, :cond_1
 
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
-    goto :goto_15
+    goto :goto_0
 
     .line 322
-    :cond_11
+    :cond_0
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto :goto_4e
+    goto :goto_1
 
     .line 321
-    :cond_15
-    :goto_15
+    :cond_1
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     const/4 v0, -0x1
 
@@ -177,7 +177,7 @@
 
     invoke-static {v2, p2, v0, v1}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_25
+    :cond_2
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -220,13 +220,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4e
+    if-eqz v1, :cond_3
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 323
     .end local v0    # "innerPadding":Landroidx/compose/foundation/layout/PaddingValues;
-    :cond_4e
-    :goto_4e
+    :cond_3
+    :goto_1
     return-void
 .end method

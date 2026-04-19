@@ -101,7 +101,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;[Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;)V
-    .registers 4
+    .locals 1
     .param p1, "builder"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
     .param p2, "path"    # [Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;
     .annotation system Ldalvik/annotation/Signature;
@@ -144,7 +144,7 @@
 .end method
 
 .method private final checkForComodification()V
-    .registers 3
+    .locals 2
 
     .line 123
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
@@ -155,13 +155,13 @@
 
     iget v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->expectedModCount:I
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     .line 125
     return-void
 
     .line 124
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -170,18 +170,18 @@
 .end method
 
 .method private final checkNextWasInvoked()V
-    .registers 2
+    .locals 1
 
     .line 118
     iget-boolean v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->nextWasInvoked:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 120
     return-void
 
     .line 119
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -190,7 +190,7 @@
 .end method
 
 .method private final resetPath(ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;Ljava/lang/Object;I)V
-    .registers 12
+    .locals 7
     .param p1, "keyHash"    # I
     .param p2, "node"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
     .param p3, "key"    # Ljava/lang/Object;
@@ -210,7 +210,7 @@
     .local v0, "shift":I
     const/16 v1, 0x1e
 
-    if-le v0, v1, :cond_37
+    if-le v0, v1, :cond_1
 
     .line 89
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->getPath()[Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;
@@ -234,7 +234,7 @@
     invoke-virtual {v1, v2, v3, v4}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->reset([Ljava/lang/Object;II)V
 
     .line 90
-    :goto_19
+    :goto_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->getPath()[Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;
 
     move-result-object v1
@@ -249,7 +249,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_0
 
     .line 91
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->getPath()[Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;
@@ -260,17 +260,17 @@
 
     invoke-virtual {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeBaseIterator;->moveToNextKey()V
 
-    goto :goto_19
+    goto :goto_0
 
     .line 93
-    :cond_33
+    :cond_0
     invoke-virtual {p0, p4}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->setPathLastIndex(I)V
 
     .line 94
     return-void
 
     .line 97
-    :cond_37
+    :cond_1
     invoke-static {p1, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNodeKt;->indexSegment(II)I
 
     move-result v1
@@ -285,7 +285,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5f
+    if-eqz v2, :cond_2
 
     .line 100
     invoke-virtual {p2, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->entryKeyIndex$runtime_release(I)I
@@ -320,7 +320,7 @@
 
     .line 111
     .end local v2    # "keyIndex":I
-    :cond_5f
+    :cond_2
     invoke-virtual {p2, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;->nodeIndex$runtime_release(I)I
 
     move-result v2
@@ -363,7 +363,7 @@
 
 # virtual methods
 .method public next()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -394,7 +394,7 @@
 .end method
 
 .method public remove()V
-    .registers 5
+    .locals 4
 
     .line 55
     invoke-direct {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->checkNextWasInvoked()V
@@ -406,7 +406,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 57
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->currentKey()Ljava/lang/Object;
@@ -428,18 +428,18 @@
     invoke-interface {v2, v3}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 60
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     move v2, v1
 
-    :goto_23
+    :goto_0
     iget-object v3, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->getNode$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
@@ -449,10 +449,10 @@
     invoke-direct {p0, v2, v3, v0, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->resetPath(ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;Ljava/lang/Object;I)V
 
     .end local v0    # "currentKey":Ljava/lang/Object;
-    goto :goto_3a
+    goto :goto_1
 
     .line 62
-    :cond_2d
+    :cond_1
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
     check-cast v0, Ljava/util/Map;
@@ -466,7 +466,7 @@
     invoke-interface {v0, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 65
-    :goto_3a
+    :goto_1
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->lastIteratedKey:Ljava/lang/Object;
@@ -488,7 +488,7 @@
 .end method
 
 .method public final setValue(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 7
+    .locals 4
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "newValue"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -504,17 +504,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_0
 
     return-void
 
     .line 73
-    :cond_9
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2
 
     .line 74
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->currentKey()Ljava/lang/Object;
@@ -532,18 +532,18 @@
     .line 77
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_1
     move v2, v1
 
-    :goto_23
+    :goto_0
     iget-object v3, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->getNode$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
@@ -553,10 +553,10 @@
     invoke-direct {p0, v2, v3, v0, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->resetPath(ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;Ljava/lang/Object;I)V
 
     .end local v0    # "currentKey":Ljava/lang/Object;
-    goto :goto_34
+    goto :goto_1
 
     .line 79
-    :cond_2d
+    :cond_2
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
     check-cast v0, Ljava/util/Map;
@@ -564,7 +564,7 @@
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 82
-    :goto_34
+    :goto_1
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilderBaseIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMapBuilder;->getModCount$runtime_release()I

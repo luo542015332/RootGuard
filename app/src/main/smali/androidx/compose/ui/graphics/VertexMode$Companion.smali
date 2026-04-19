@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/VertexMode$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getTriangleFan-c2xauaI()I
-    .registers 2
+    .locals 1
 
     .line 44
-    # getter for: Landroidx/compose/ui/graphics/VertexMode;->TriangleFan:I
     invoke-static {}, Landroidx/compose/ui/graphics/VertexMode;->access$getTriangleFan$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getTriangleStrip-c2xauaI()I
-    .registers 2
+    .locals 1
 
     .line 39
-    # getter for: Landroidx/compose/ui/graphics/VertexMode;->TriangleStrip:I
     invoke-static {}, Landroidx/compose/ui/graphics/VertexMode;->access$getTriangleStrip$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getTriangles-c2xauaI()I
-    .registers 2
+    .locals 1
 
     .line 34
-    # getter for: Landroidx/compose/ui/graphics/VertexMode;->Triangles:I
     invoke-static {}, Landroidx/compose/ui/graphics/VertexMode;->access$getTriangles$cp()I
 
     move-result v0

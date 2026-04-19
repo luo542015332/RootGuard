@@ -95,7 +95,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composition;)V
-    .registers 7
+    .locals 3
     .param p1, "slotId"    # Ljava/lang/Object;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .param p3, "composition"    # Landroidx/compose/runtime/Composition;
@@ -153,18 +153,18 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composition;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 995
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 998
     const/4 p3, 0x0
 
     .line 995
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;-><init>(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composition;)V
 
     .line 1002
@@ -174,7 +174,7 @@
 
 # virtual methods
 .method public final getActive()Z
-    .registers 4
+    .locals 3
 
     .line 1001
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->active$delegate:Landroidx/compose/runtime/MutableState;
@@ -207,7 +207,7 @@
 .end method
 
 .method public final getComposition()Landroidx/compose/runtime/Composition;
-    .registers 2
+    .locals 1
 
     .line 998
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->composition:Landroidx/compose/runtime/Composition;
@@ -216,7 +216,7 @@
 .end method
 
 .method public final getContent()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -235,7 +235,7 @@
 .end method
 
 .method public final getForceRecompose()Z
-    .registers 2
+    .locals 1
 
     .line 1000
     iget-boolean v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->forceRecompose:Z
@@ -244,7 +244,7 @@
 .end method
 
 .method public final getSlotId()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 996
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->slotId:Ljava/lang/Object;
@@ -253,7 +253,7 @@
 .end method
 
 .method public final setActive(Z)V
-    .registers 6
+    .locals 4
     .param p1, "<set-?>"    # Z
 
     .line 1001
@@ -286,7 +286,7 @@
 .end method
 
 .method public final setComposition(Landroidx/compose/runtime/Composition;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/runtime/Composition;
 
     .line 998
@@ -296,7 +296,7 @@
 .end method
 
 .method public final setContent(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -322,7 +322,7 @@
 .end method
 
 .method public final setForceRecompose(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 1000
@@ -332,7 +332,7 @@
 .end method
 
 .method public final setSlotId(Ljava/lang/Object;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     .line 996

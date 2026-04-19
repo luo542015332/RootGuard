@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroidx/compose/runtime/ParcelableSnapshotMutableState;
-    .registers 3
+    .locals 1
     .param p1, "parcel"    # Landroid/os/Parcel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -98,7 +98,7 @@
 .end method
 
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroidx/compose/runtime/ParcelableSnapshotMutableState;
-    .registers 8
+    .locals 5
     .param p1, "parcel"    # Landroid/os/Parcel;
     .param p2, "loader"    # Ljava/lang/ClassLoader;
     .annotation system Ldalvik/annotation/Signature;
@@ -118,7 +118,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 60
-    if-nez p2, :cond_11
+    if-nez p2, :cond_0
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -128,12 +128,12 @@
 
     move-result-object v0
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move-object v0, p2
 
-    :goto_12
+    :goto_0
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     move-result-object v0
@@ -152,7 +152,7 @@
     nop
 
     .line 64
-    packed-switch v1, :pswitch_data_52
+    packed-switch v1, :pswitch_data_0
 
     .line 68
     new-instance v2, Ljava/lang/IllegalStateException;
@@ -188,43 +188,43 @@
     throw v2
 
     .line 67
-    :pswitch_40
+    :pswitch_0
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->referentialEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v3
 
-    goto :goto_4e
+    goto :goto_1
 
     .line 66
-    :pswitch_45
+    :pswitch_1
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->structuralEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v3
 
-    goto :goto_4e
+    goto :goto_1
 
     .line 65
-    :pswitch_4a
+    :pswitch_2
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt;->neverEqualPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v3
 
     .line 62
-    :goto_4e
+    :goto_1
     invoke-direct {v2, v0, v3}, Landroidx/compose/runtime/ParcelableSnapshotMutableState;-><init>(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;)V
 
     return-object v2
 
-    :pswitch_data_52
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4a
-        :pswitch_45
-        :pswitch_40
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p0"    # Landroid/os/Parcel;
 
     .line 55
@@ -236,7 +236,7 @@
 .end method
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "p0"    # Landroid/os/Parcel;
     .param p2, "p1"    # Ljava/lang/ClassLoader;
 
@@ -249,7 +249,7 @@
 .end method
 
 .method public newArray(I)[Landroidx/compose/runtime/ParcelableSnapshotMutableState;
-    .registers 3
+    .locals 1
     .param p1, "size"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -267,7 +267,7 @@
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p0"    # I
 
     .line 55

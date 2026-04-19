@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public contains(Ljava/lang/Comparable;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Comparable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -67,7 +67,7 @@
 
     move-result v0
 
-    if-ltz v0, :cond_1c
+    if-ltz v0, :cond_0
 
     invoke-interface {p0}, Landroidx/compose/ui/platform/OpenEndRange;->getEndExclusive()Ljava/lang/Comparable;
 
@@ -77,16 +77,16 @@
 
     move-result v0
 
-    if-gez v0, :cond_1c
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 3
+    .locals 2
 
     .line 145
     invoke-interface {p0}, Landroidx/compose/ui/platform/OpenEndRange;->getStart()Ljava/lang/Comparable;
@@ -122,15 +122,15 @@
 
     move-result v0
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method

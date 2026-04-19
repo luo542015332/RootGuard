@@ -60,7 +60,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/graphics/painter/Painter;Ljava/lang/String;Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;Landroidx/compose/ui/layout/ContentScale;FLandroidx/compose/ui/graphics/ColorFilter;II)V
-    .registers 11
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/ImageKt$Image$3;->$painter:Landroidx/compose/ui/graphics/painter/Painter;
 
@@ -90,7 +90,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     move-object v0, p1
 
@@ -112,7 +112,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 13
+    .locals 10
 
     iget-object v0, p0, Landroidx/compose/foundation/ImageKt$Image$3;->$painter:Landroidx/compose/ui/graphics/painter/Painter;
 

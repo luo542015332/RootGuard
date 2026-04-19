@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/input/pointer/PointerInteropFilter;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter$pointerInputFilter$1$dispatchToView$2;->this$0:Landroidx/compose/ui/input/pointer/PointerInteropFilter;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 284
@@ -83,7 +83,7 @@
 .end method
 
 .method public final invoke(Landroid/view/MotionEvent;)V
-    .registers 3
+    .locals 1
     .param p1, "motionEvent"    # Landroid/view/MotionEvent;
 
     const-string/jumbo v0, "motionEvent"

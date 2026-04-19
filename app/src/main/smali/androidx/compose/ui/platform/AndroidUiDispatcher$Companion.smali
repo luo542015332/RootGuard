@@ -45,7 +45,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/platform/AndroidUiDispatcher$Companion;-><init>()V
 
@@ -64,25 +64,23 @@
 
 # virtual methods
 .method public final getCurrentThread()Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 2
 
     .line 184
-    # invokes: Landroidx/compose/ui/platform/AndroidUiDispatcher_androidKt;->isMainThread()Z
     invoke-static {}, Landroidx/compose/ui/platform/AndroidUiDispatcher_androidKt;->access$isMainThread()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidUiDispatcher$Companion;->getMain()Lkotlin/coroutines/CoroutineContext;
 
     move-result-object v0
 
-    goto :goto_17
+    goto :goto_0
 
     .line 185
-    :cond_b
-    # getter for: Landroidx/compose/ui/platform/AndroidUiDispatcher;->currentThread:Ljava/lang/ThreadLocal;
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$getCurrentThread$cp()Ljava/lang/ThreadLocal;
 
     move-result-object v0
@@ -93,14 +91,14 @@
 
     check-cast v0, Lkotlin/coroutines/CoroutineContext;
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_1
 
     .line 186
-    :goto_17
+    :goto_0
     return-object v0
 
     .line 185
-    :cond_18
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "no AndroidUiDispatcher for this thread"
@@ -115,10 +113,9 @@
 .end method
 
 .method public final getMain()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 155
-    # getter for: Landroidx/compose/ui/platform/AndroidUiDispatcher;->Main$delegate:Lkotlin/Lazy;
     invoke-static {}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->access$getMain$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0

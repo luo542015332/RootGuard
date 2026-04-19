@@ -80,7 +80,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/node/ComposeUiNode$Companion;->$$INSTANCE:Landroidx/compose/ui/node/ComposeUiNode$Companion;
 
@@ -90,7 +90,7 @@
 .end method
 
 .method public static synthetic getCompositeKeyHash$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method

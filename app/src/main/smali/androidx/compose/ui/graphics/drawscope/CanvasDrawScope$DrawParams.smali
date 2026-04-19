@@ -85,7 +85,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/graphics/Canvas;J)V
-    .registers 7
+    .locals 1
     .param p1, "density"    # Landroidx/compose/ui/unit/Density;
     .param p2, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
     .param p3, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
@@ -123,47 +123,46 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/graphics/Canvas;JILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 15
+    .locals 7
 
     .line 738
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_a
+    if-eqz p7, :cond_0
 
     .line 739
-    # getter for: Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt;->DefaultDensity:Landroidx/compose/ui/unit/Density;
     invoke-static {}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScopeKt;->access$getDefaultDensity$p()Landroidx/compose/ui/unit/Density;
 
     move-result-object p1
 
     move-object v1, p1
 
-    goto :goto_b
+    goto :goto_0
 
     .line 738
-    :cond_a
+    :cond_0
     move-object v1, p1
 
-    :goto_b
+    :goto_0
     and-int/lit8 p1, p6, 0x2
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_1
 
     .line 740
     sget-object p2, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
     move-object v2, p2
 
-    goto :goto_14
+    goto :goto_1
 
     .line 738
-    :cond_13
+    :cond_1
     move-object v2, p2
 
-    :goto_14
+    :goto_1
     and-int/lit8 p1, p6, 0x4
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_2
 
     .line 741
     new-instance p1, Landroidx/compose/ui/graphics/drawscope/EmptyCanvas;
@@ -176,16 +175,16 @@
 
     move-object v3, p3
 
-    goto :goto_23
+    goto :goto_2
 
     .line 738
-    :cond_22
+    :cond_2
     move-object v3, p3
 
-    :goto_23
+    :goto_2
     and-int/lit8 p1, p6, 0x8
 
-    if-eqz p1, :cond_2f
+    if-eqz p1, :cond_3
 
     .line 742
     sget-object p1, Landroidx/compose/ui/geometry/Size;->Companion:Landroidx/compose/ui/geometry/Size$Companion;
@@ -196,13 +195,13 @@
 
     move-wide v4, p4
 
-    goto :goto_30
+    goto :goto_3
 
     .line 738
-    :cond_2f
+    :cond_3
     move-wide v4, p4
 
-    :goto_30
+    :goto_3
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -214,7 +213,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/graphics/Canvas;JLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 7
+    .locals 0
 
     invoke-direct/range {p0 .. p5}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;-><init>(Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/graphics/Canvas;J)V
 
@@ -222,40 +221,40 @@
 .end method
 
 .method public static synthetic copy-Ug5Nnss$default(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/graphics/Canvas;JILjava/lang/Object;)Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
-    .registers 11
+    .locals 3
 
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_6
+    if-eqz p7, :cond_0
 
     iget-object p1, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->density:Landroidx/compose/ui/unit/Density;
 
-    :cond_6
+    :cond_0
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_1
 
     iget-object p2, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
 
-    :cond_c
+    :cond_1
     move-object p7, p2
 
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_2
 
     iget-object p3, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->canvas:Landroidx/compose/ui/graphics/Canvas;
 
-    :cond_13
+    :cond_2
     move-object v0, p3
 
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_3
 
     iget-wide p4, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->size:J
 
-    :cond_1a
+    :cond_3
     move-wide v1, p4
 
     move-object p2, p0
@@ -278,7 +277,7 @@
 
 # virtual methods
 .method public final component1()Landroidx/compose/ui/unit/Density;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->density:Landroidx/compose/ui/unit/Density;
 
@@ -286,7 +285,7 @@
 .end method
 
 .method public final component2()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
 
@@ -294,7 +293,7 @@
 .end method
 
 .method public final component3()Landroidx/compose/ui/graphics/Canvas;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->canvas:Landroidx/compose/ui/graphics/Canvas;
 
@@ -302,7 +301,7 @@
 .end method
 
 .method public final component4-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->size:J
 
@@ -310,7 +309,7 @@
 .end method
 
 .method public final copy-Ug5Nnss(Landroidx/compose/ui/unit/Density;Landroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/graphics/Canvas;J)Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
-    .registers 14
+    .locals 8
 
     const-string/jumbo v0, "density"
 
@@ -344,24 +343,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;
@@ -374,20 +373,20 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget-object v3, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
 
     iget-object v4, v1, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v3, v4, :cond_1f
+    if-eq v3, v4, :cond_3
 
     return v2
 
-    :cond_1f
+    :cond_3
     iget-object v3, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->canvas:Landroidx/compose/ui/graphics/Canvas;
 
     iget-object v4, v1, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->canvas:Landroidx/compose/ui/graphics/Canvas;
@@ -396,11 +395,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_2a
+    if-nez v3, :cond_4
 
     return v2
 
-    :cond_2a
+    :cond_4
     iget-wide v3, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->size:J
 
     iget-wide v5, v1, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->size:J
@@ -409,16 +408,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_35
+    if-nez v1, :cond_5
 
     return v2
 
-    :cond_35
+    :cond_5
     return v0
 .end method
 
 .method public final getCanvas()Landroidx/compose/ui/graphics/Canvas;
-    .registers 2
+    .locals 1
 
     .line 741
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->canvas:Landroidx/compose/ui/graphics/Canvas;
@@ -427,7 +426,7 @@
 .end method
 
 .method public final getDensity()Landroidx/compose/ui/unit/Density;
-    .registers 2
+    .locals 1
 
     .line 739
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->density:Landroidx/compose/ui/unit/Density;
@@ -436,7 +435,7 @@
 .end method
 
 .method public final getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     .line 740
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
@@ -445,7 +444,7 @@
 .end method
 
 .method public final getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 742
     iget-wide v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->size:J
@@ -454,7 +453,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope$DrawParams;->density:Landroidx/compose/ui/unit/Density;
 
@@ -496,7 +495,7 @@
 .end method
 
 .method public final setCanvas(Landroidx/compose/ui/graphics/Canvas;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/Canvas;
 
     const-string v0, "<set-?>"
@@ -510,7 +509,7 @@
 .end method
 
 .method public final setDensity(Landroidx/compose/ui/unit/Density;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/unit/Density;
 
     const-string v0, "<set-?>"
@@ -524,7 +523,7 @@
 .end method
 
 .method public final setLayoutDirection(Landroidx/compose/ui/unit/LayoutDirection;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/unit/LayoutDirection;
 
     const-string v0, "<set-?>"
@@ -538,7 +537,7 @@
 .end method
 
 .method public final setSize-uvyYCjk(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 742
@@ -548,7 +547,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 

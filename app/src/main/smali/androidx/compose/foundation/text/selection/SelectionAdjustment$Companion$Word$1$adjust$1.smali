@@ -39,7 +39,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Object;)V
-    .registers 9
+    .locals 7
 
     const/4 v1, 0x1
 
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 121
@@ -87,7 +87,7 @@
 .end method
 
 .method public final invoke--jx7JFs(I)J
-    .registers 4
+    .locals 2
     .param p1, "p0"    # I
 
     .line 121

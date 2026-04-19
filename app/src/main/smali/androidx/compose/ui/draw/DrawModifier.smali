@@ -37,7 +37,7 @@
 
 # direct methods
 .method public static synthetic access$all$jd(Landroidx/compose/ui/draw/DrawModifier;Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/draw/DrawModifier;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
 
@@ -50,7 +50,7 @@
 .end method
 
 .method public static synthetic access$any$jd(Landroidx/compose/ui/draw/DrawModifier;Lkotlin/jvm/functions/Function1;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/draw/DrawModifier;
     .param p1, "predicate"    # Lkotlin/jvm/functions/Function1;
 
@@ -63,7 +63,7 @@
 .end method
 
 .method public static synthetic access$foldIn$jd(Landroidx/compose/ui/draw/DrawModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/draw/DrawModifier;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -77,7 +77,7 @@
 .end method
 
 .method public static synthetic access$foldOut$jd(Landroidx/compose/ui/draw/DrawModifier;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/draw/DrawModifier;
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
@@ -91,7 +91,7 @@
 .end method
 
 .method public static synthetic access$then$jd(Landroidx/compose/ui/draw/DrawModifier;Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/draw/DrawModifier;
     .param p1, "other"    # Landroidx/compose/ui/Modifier;
 

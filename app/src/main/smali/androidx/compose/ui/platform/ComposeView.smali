@@ -71,7 +71,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -81,7 +81,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 9
+    .locals 7
 
     const-string/jumbo v0, "context"
 
@@ -105,7 +105,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 10
+    .locals 7
 
     const-string/jumbo v0, "context"
 
@@ -129,7 +129,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 6
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "attrs"    # Landroid/util/AttributeSet;
     .param p3, "defStyleAttr"    # I
@@ -157,27 +157,27 @@
 .end method
 
 .method public synthetic constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 414
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     .line 416
     const/4 p2, 0x0
 
     .line 414
-    :cond_5
+    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_a
+    if-eqz p4, :cond_1
 
     .line 417
     const/4 p3, 0x0
 
     .line 414
-    :cond_a
+    :cond_1
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/platform/ComposeView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 447
@@ -185,7 +185,7 @@
 .end method
 
 .method protected static synthetic getShouldCreateCompositionOnAttachedToWindow$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -193,7 +193,7 @@
 
 # virtual methods
 .method public Content(Landroidx/compose/runtime/Composer;I)V
-    .registers 6
+    .locals 3
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
 
@@ -212,7 +212,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -221,7 +221,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 428
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/ComposeView;->content:Landroidx/compose/runtime/MutableState;
 
     invoke-interface {v0}, Landroidx/compose/runtime/MutableState;->getValue()Ljava/lang/Object;
@@ -230,11 +230,11 @@
 
     check-cast v0, Lkotlin/jvm/functions/Function2;
 
-    if-nez v0, :cond_24
+    if-nez v0, :cond_1
 
-    goto :goto_2c
+    goto :goto_0
 
-    :cond_24
+    :cond_1
     const/4 v1, 0x0
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -243,25 +243,25 @@
 
     invoke-interface {v0, p1, v1}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_2c
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_35
+    :cond_2
     invoke-interface {p1}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_3
 
-    goto :goto_46
+    goto :goto_1
 
-    :cond_3c
+    :cond_3
     new-instance v1, Landroidx/compose/ui/platform/ComposeView$Content$1;
 
     invoke-direct {v1, p0, p2}, Landroidx/compose/ui/platform/ComposeView$Content$1;-><init>(Landroidx/compose/ui/platform/ComposeView;I)V
@@ -271,12 +271,12 @@
     invoke-interface {v0, v1}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
     .line 429
-    :goto_46
+    :goto_1
     return-void
 .end method
 
 .method public getAccessibilityClassName()Ljava/lang/CharSequence;
-    .registers 3
+    .locals 2
 
     .line 432
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -297,7 +297,7 @@
 .end method
 
 .method protected getShouldCreateCompositionOnAttachedToWindow()Z
-    .registers 2
+    .locals 1
 
     .line 423
     iget-boolean v0, p0, Landroidx/compose/ui/platform/ComposeView;->shouldCreateCompositionOnAttachedToWindow:Z
@@ -306,7 +306,7 @@
 .end method
 
 .method public final setContent(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .param p1, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -340,12 +340,12 @@
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     .line 444
     invoke-virtual {p0}, Landroidx/compose/ui/platform/ComposeView;->createComposition()V
 
     .line 446
-    :cond_17
+    :cond_0
     return-void
 .end method

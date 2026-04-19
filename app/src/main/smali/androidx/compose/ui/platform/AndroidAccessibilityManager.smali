@@ -70,7 +70,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidAccessibilityManager$Companion;
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
 
     const-string/jumbo v0, "context"
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public calculateRecommendedTimeoutMillis(JZZZ)J
-    .registers 12
+    .locals 6
     .param p1, "originalTimeoutMillis"    # J
     .param p3, "containsIcons"    # Z
     .param p4, "containsText"    # Z
@@ -127,45 +127,45 @@
 
     cmp-long v0, p1, v0
 
-    if-ltz v0, :cond_8
+    if-ltz v0, :cond_0
 
     .line 43
     return-wide p1
 
     .line 45
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
     .line 46
     .local v0, "uiContentFlags":I
-    if-eqz p3, :cond_d
+    if-eqz p3, :cond_1
 
     .line 47
     or-int/lit8 v0, v0, 0x1
 
     .line 49
-    :cond_d
-    if-eqz p4, :cond_11
+    :cond_1
+    if-eqz p4, :cond_2
 
     .line 50
     or-int/lit8 v0, v0, 0x2
 
     .line 52
-    :cond_11
-    if-eqz p5, :cond_15
+    :cond_2
+    if-eqz p5, :cond_3
 
     .line 53
     or-int/lit8 v0, v0, 0x4
 
     .line 55
-    :cond_15
+    :cond_3
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1d
 
     const-wide v3, 0x7fffffffffffffffL
 
-    if-lt v1, v2, :cond_32
+    if-lt v1, v2, :cond_5
 
     .line 56
     sget-object v1, Landroidx/compose/ui/platform/Api29Impl;->INSTANCE:Landroidx/compose/ui/platform/Api29Impl;
@@ -188,21 +188,21 @@
     .local v1, "recommended":I
     const v2, 0x7fffffff
 
-    if-ne v1, v2, :cond_30
+    if-ne v1, v2, :cond_4
 
     .line 62
-    goto :goto_3e
+    goto :goto_0
 
     .line 64
-    :cond_30
+    :cond_4
     int-to-long v3, v1
 
     .end local v1    # "recommended":I
-    goto :goto_3e
+    goto :goto_0
 
     .line 66
-    :cond_32
-    if-eqz p5, :cond_3d
+    :cond_5
+    if-eqz p5, :cond_6
 
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidAccessibilityManager;->accessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
@@ -210,16 +210,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3d
+    if-eqz v1, :cond_6
 
     .line 67
-    goto :goto_3e
+    goto :goto_0
 
     .line 69
-    :cond_3d
+    :cond_6
     move-wide v3, p1
 
     .line 55
-    :goto_3e
+    :goto_0
     return-wide v3
 .end method

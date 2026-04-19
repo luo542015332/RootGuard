@@ -54,7 +54,7 @@
 
 # direct methods
 .method public static final ExposedDropdownMenuBox(ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
-    .registers 45
+    .locals 38
     .param p0, "expanded"    # Z
     .param p1, "onExpandedChange"    # Lkotlin/jvm/functions/Function1;
     .param p2, "modifier"    # Landroidx/compose/ui/Modifier;
@@ -120,80 +120,80 @@
     .local v1, "$dirty":I
     and-int/lit8 v2, p6, 0x1
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_0
 
     or-int/lit8 v1, v1, 0x6
 
-    goto :goto_39
+    goto :goto_1
 
-    :cond_2b
+    :cond_0
     and-int/lit8 v2, v10, 0xe
 
-    if-nez v2, :cond_39
+    if-nez v2, :cond_2
 
     invoke-interface {v11, v7}, Landroidx/compose/runtime/Composer;->changed(Z)Z
 
     move-result v2
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_1
 
     const/4 v2, 0x4
 
-    goto :goto_38
+    goto :goto_0
 
-    :cond_37
+    :cond_1
     const/4 v2, 0x2
 
-    :goto_38
+    :goto_0
     or-int/2addr v1, v2
 
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_1
     and-int/lit8 v2, p6, 0x2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_3
 
     or-int/lit8 v1, v1, 0x30
 
-    goto :goto_50
+    goto :goto_3
 
-    :cond_40
+    :cond_3
     and-int/lit8 v2, v10, 0x70
 
-    if-nez v2, :cond_50
+    if-nez v2, :cond_5
 
     invoke-interface {v11, v8}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_4
 
     const/16 v2, 0x20
 
-    goto :goto_4f
+    goto :goto_2
 
-    :cond_4d
+    :cond_4
     const/16 v2, 0x10
 
-    :goto_4f
+    :goto_2
     or-int/2addr v1, v2
 
-    :cond_50
-    :goto_50
+    :cond_5
+    :goto_3
     and-int/lit8 v2, p6, 0x4
 
-    if-eqz v2, :cond_59
+    if-eqz v2, :cond_6
 
     or-int/lit16 v1, v1, 0x180
 
     move-object/from16 v3, p2
 
-    goto :goto_6e
+    goto :goto_5
 
-    :cond_59
+    :cond_6
     and-int/lit16 v3, v10, 0x380
 
-    if-nez v3, :cond_6c
+    if-nez v3, :cond_8
 
     move-object/from16 v3, p2
 
@@ -201,55 +201,55 @@
 
     move-result v4
 
-    if-eqz v4, :cond_68
+    if-eqz v4, :cond_7
 
     const/16 v4, 0x100
 
-    goto :goto_6a
+    goto :goto_4
 
-    :cond_68
+    :cond_7
     const/16 v4, 0x80
 
-    :goto_6a
+    :goto_4
     or-int/2addr v1, v4
 
-    goto :goto_6e
+    goto :goto_5
 
-    :cond_6c
+    :cond_8
     move-object/from16 v3, p2
 
-    :goto_6e
+    :goto_5
     and-int/lit8 v4, p6, 0x8
 
-    if-eqz v4, :cond_75
+    if-eqz v4, :cond_9
 
     or-int/lit16 v1, v1, 0xc00
 
-    goto :goto_85
+    goto :goto_7
 
-    :cond_75
+    :cond_9
     and-int/lit16 v4, v10, 0x1c00
 
-    if-nez v4, :cond_85
+    if-nez v4, :cond_b
 
     invoke-interface {v11, v9}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_82
+    if-eqz v4, :cond_a
 
     const/16 v4, 0x800
 
-    goto :goto_84
+    goto :goto_6
 
-    :cond_82
+    :cond_a
     const/16 v4, 0x400
 
-    :goto_84
+    :goto_6
     or-int/2addr v1, v4
 
-    :cond_85
-    :goto_85
+    :cond_b
+    :goto_7
     move v12, v1
 
     .end local v1    # "$dirty":I
@@ -258,28 +258,28 @@
 
     const/16 v4, 0x492
 
-    if-ne v1, v4, :cond_9a
+    if-ne v1, v4, :cond_d
 
     invoke-interface {v11}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v1
 
-    if-nez v1, :cond_93
+    if-nez v1, :cond_c
 
-    goto :goto_9a
+    goto :goto_8
 
     .line 155
-    :cond_93
+    :cond_c
     invoke-interface {v11}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
     move-object/from16 v17, v3
 
-    goto/16 :goto_46e
+    goto/16 :goto_17
 
     .line 96
-    :cond_9a
-    :goto_9a
-    if-eqz v2, :cond_a1
+    :cond_d
+    :goto_8
+    if-eqz v2, :cond_e
 
     .line 94
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -288,23 +288,23 @@
 
     .end local p2    # "modifier":Landroidx/compose/ui/Modifier;
     .local v1, "modifier":Landroidx/compose/ui/Modifier;
-    goto :goto_a2
+    goto :goto_9
 
     .line 96
     .end local v1    # "modifier":Landroidx/compose/ui/Modifier;
     .restart local p2    # "modifier":Landroidx/compose/ui/Modifier;
-    :cond_a1
+    :cond_e
     move-object v1, v3
 
     .line 94
     .end local p2    # "modifier":Landroidx/compose/ui/Modifier;
     .restart local v1    # "modifier":Landroidx/compose/ui/Modifier;
-    :goto_a2
+    :goto_9
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_af
+    if-eqz v2, :cond_f
 
     .line 96
     const/4 v2, -0x1
@@ -314,7 +314,7 @@
     invoke-static {v0, v12, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 97
-    :cond_af
+    :cond_f
     invoke-static {}, Landroidx/compose/ui/platform/CompositionLocalsKt;->getLocalDensity()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -425,7 +425,7 @@
 
     move-result-object v3
 
-    if-ne v6, v3, :cond_10b
+    if-ne v6, v3, :cond_10
 
     .line 743
     const/4 v3, 0x0
@@ -450,14 +450,14 @@
     nop
 
     .end local v3    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_10c
+    goto :goto_a
 
     .line 746
-    :cond_10b
+    :cond_10
     move-object v3, v6
 
     .line 742
-    :goto_10c
+    :goto_a
     nop
 
     .line 741
@@ -526,7 +526,7 @@
 
     move-result-object v5
 
-    if-ne v4, v5, :cond_141
+    if-ne v4, v5, :cond_11
 
     .line 750
     const/4 v5, 0x0
@@ -551,14 +551,14 @@
     nop
 
     .end local v5    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_142
+    goto :goto_b
 
     .line 753
-    :cond_141
+    :cond_11
     move-object v5, v4
 
     .line 749
-    :goto_142
+    :goto_b
     nop
 
     .line 748
@@ -644,7 +644,7 @@
 
     move-result-object v10
 
-    if-ne v6, v10, :cond_186
+    if-ne v6, v10, :cond_12
 
     .line 758
     const/4 v10, 0x0
@@ -674,13 +674,13 @@
     nop
 
     .end local v10    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_18c
+    goto :goto_c
 
     .line 761
     .end local v20    # "it$iv$iv":Ljava/lang/Object;
     .local v6, "it$iv$iv":Ljava/lang/Object;
     .restart local v16    # "$this$cache$iv$iv":Landroidx/compose/runtime/Composer;
-    :cond_186
+    :cond_12
     move-object/from16 v20, v6
 
     move-object/from16 v6, v16
@@ -691,7 +691,7 @@
     move-object/from16 v10, v20
 
     .line 757
-    :goto_18c
+    :goto_c
     nop
 
     .line 756
@@ -793,7 +793,7 @@
 
     .line 767
     .local v21, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v15, :cond_1e2
+    if-nez v15, :cond_14
 
     sget-object v22, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -805,28 +805,28 @@
 
     move-result-object v14
 
-    if-ne v10, v14, :cond_1dd
+    if-ne v10, v14, :cond_13
 
-    goto :goto_1e4
+    goto :goto_d
 
     .line 771
-    :cond_1dd
+    :cond_13
     move-object/from16 v22, v10
 
     move-object/from16 v14, v18
 
-    goto :goto_1f3
+    goto :goto_e
 
     .line 767
     .end local v23    # "key3$iv":Ljava/lang/Object;
     .restart local v14    # "key3$iv":Ljava/lang/Object;
-    :cond_1e2
+    :cond_14
     move-object/from16 v23, v14
 
     .line 768
     .end local v14    # "key3$iv":Ljava/lang/Object;
     .restart local v23    # "key3$iv":Ljava/lang/Object;
-    :goto_1e4
+    :goto_d
     const/4 v14, 0x0
 
     .line 105
@@ -856,7 +856,7 @@
 
     .line 767
     .end local v10    # "value$iv$iv":Ljava/lang/Object;
-    :goto_1f3
+    :goto_e
     nop
 
     .line 766
@@ -931,7 +931,7 @@
 
     move-result-object v14
 
-    if-ne v0, v14, :cond_22b
+    if-ne v0, v14, :cond_15
 
     .line 775
     const/4 v14, 0x0
@@ -954,14 +954,14 @@
     nop
 
     .end local v14    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_22c
+    goto :goto_f
 
     .line 778
-    :cond_22b
+    :cond_15
     move-object v14, v0
 
     .line 774
-    :goto_22c
+    :goto_f
     nop
 
     .line 773
@@ -1075,7 +1075,7 @@
 
     .line 782
     .local v23, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v18, :cond_291
+    if-nez v18, :cond_17
 
     sget-object v24, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -1087,28 +1087,28 @@
 
     move-result-object v14
 
-    if-ne v3, v14, :cond_28c
+    if-ne v3, v14, :cond_16
 
-    goto :goto_293
+    goto :goto_10
 
     .line 786
-    :cond_28c
+    :cond_16
     move-object/from16 v24, v3
 
     move-object/from16 v14, v20
 
-    goto :goto_2a4
+    goto :goto_11
 
     .line 782
     .end local v25    # "key2$iv":Ljava/lang/Object;
     .restart local v14    # "key2$iv":Ljava/lang/Object;
-    :cond_291
+    :cond_17
     move-object/from16 v25, v14
 
     .line 783
     .end local v14    # "key2$iv":Ljava/lang/Object;
     .restart local v25    # "key2$iv":Ljava/lang/Object;
-    :goto_293
+    :goto_10
     const/4 v14, 0x0
 
     .line 131
@@ -1140,7 +1140,7 @@
 
     .line 782
     .end local v3    # "value$iv$iv":Ljava/lang/Object;
-    :goto_2a4
+    :goto_11
     nop
 
     .line 781
@@ -1317,12 +1317,12 @@
 
     instance-of v15, v15, Landroidx/compose/runtime/Applier;
 
-    if-nez v15, :cond_328
+    if-nez v15, :cond_18
 
     invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
 
     .line 805
-    :cond_328
+    :cond_18
     invoke-interface {v11}, Landroidx/compose/runtime/Composer;->startReusableNode()V
 
     .line 806
@@ -1330,7 +1330,7 @@
 
     move-result v15
 
-    if-eqz v15, :cond_337
+    if-eqz v15, :cond_19
 
     .line 807
     move-object/from16 v15, v28
@@ -1339,12 +1339,12 @@
     .local v15, "factory$iv$iv$iv":Lkotlin/jvm/functions/Function0;
     invoke-interface {v11, v15}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_33c
+    goto :goto_12
 
     .line 809
     .end local v15    # "factory$iv$iv$iv":Lkotlin/jvm/functions/Function0;
     .restart local v28    # "factory$iv$iv$iv":Lkotlin/jvm/functions/Function0;
-    :cond_337
+    :cond_19
     move-object/from16 v15, v28
 
     .end local v28    # "factory$iv$iv$iv":Lkotlin/jvm/functions/Function0;
@@ -1352,7 +1352,7 @@
     invoke-interface {v11}, Landroidx/compose/runtime/Composer;->useNode()V
 
     .line 811
-    :goto_33c
+    :goto_12
     move-object/from16 v28, v15
 
     .end local v15    # "factory$iv$iv$iv":Lkotlin/jvm/functions/Function0;
@@ -1410,7 +1410,7 @@
 
     move-result v35
 
-    if-nez v35, :cond_380
+    if-nez v35, :cond_1b
 
     move-object/from16 v35, v8
 
@@ -1432,20 +1432,20 @@
 
     move-result v8
 
-    if-nez v8, :cond_37d
+    if-nez v8, :cond_1a
 
-    goto :goto_384
+    goto :goto_13
 
-    :cond_37d
+    :cond_1a
     move-object/from16 v13, v33
 
-    goto :goto_394
+    goto :goto_14
 
     .end local v35    # "localMap$iv$iv":Landroidx/compose/runtime/CompositionLocalMap;
     .end local v36    # "measurePolicy$iv":Landroidx/compose/ui/layout/MeasurePolicy;
     .restart local v8    # "localMap$iv$iv":Landroidx/compose/runtime/CompositionLocalMap;
     .restart local v13    # "measurePolicy$iv":Landroidx/compose/ui/layout/MeasurePolicy;
-    :cond_380
+    :cond_1b
     move-object/from16 v35, v8
 
     move-object/from16 v36, v13
@@ -1455,7 +1455,7 @@
     .end local v13    # "measurePolicy$iv":Landroidx/compose/ui/layout/MeasurePolicy;
     .restart local v35    # "localMap$iv$iv":Landroidx/compose/runtime/CompositionLocalMap;
     .restart local v36    # "measurePolicy$iv":Landroidx/compose/ui/layout/MeasurePolicy;
-    :goto_384
+    :goto_13
     invoke-static/range {v24 .. v24}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
@@ -1474,7 +1474,7 @@
     invoke-interface {v15, v8, v2}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 817
-    :goto_394
+    :goto_14
     nop
 
     .line 812
@@ -1704,7 +1704,7 @@
 
     .line 830
     .local v16, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v1, :cond_43b
+    if-nez v1, :cond_1d
 
     sget-object v18, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -1716,26 +1716,26 @@
 
     move-result-object v1
 
-    if-ne v15, v1, :cond_439
+    if-ne v15, v1, :cond_1c
 
-    goto :goto_43d
+    goto :goto_15
 
     .line 834
-    :cond_439
+    :cond_1c
     move-object v1, v15
 
-    goto :goto_44c
+    goto :goto_16
 
     .line 830
     .end local p2    # "invalid$iv$iv":Z
     .restart local v1    # "invalid$iv$iv":Z
-    :cond_43b
+    :cond_1d
     move/from16 p2, v1
 
     .line 831
     .end local v1    # "invalid$iv$iv":Z
     .restart local p2    # "invalid$iv$iv":Z
-    :goto_43d
+    :goto_15
     const/4 v1, 0x0
 
     .line 138
@@ -1763,7 +1763,7 @@
 
     .line 830
     .end local v1    # "value$iv$iv":Ljava/lang/Object;
-    :goto_44c
+    :goto_16
     nop
 
     .line 829
@@ -1806,7 +1806,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_46e
+    if-eqz v1, :cond_1e
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
@@ -1819,17 +1819,17 @@
     .end local v10    # "scope":Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1;
     .end local v19    # "density":Landroidx/compose/ui/unit/Density;
     .end local v22    # "width$delegate":Landroidx/compose/runtime/MutableIntState;
-    :cond_46e
-    :goto_46e
+    :cond_1e
+    :goto_17
     invoke-interface {v11}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v8
 
-    if-nez v8, :cond_475
+    if-nez v8, :cond_1f
 
-    goto :goto_48c
+    goto :goto_18
 
-    :cond_475
+    :cond_1f
     new-instance v10, Landroidx/compose/material/ExposedDropdownMenuKt$ExposedDropdownMenuBox$6;
 
     move-object v0, v10
@@ -1852,12 +1852,12 @@
 
     invoke-interface {v8, v10}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_48c
+    :goto_18
     return-void
 .end method
 
 .method private static final ExposedDropdownMenuBox$lambda$1(Landroidx/compose/runtime/MutableIntState;)I
-    .registers 5
+    .locals 4
     .param p0, "$width$delegate"    # Landroidx/compose/runtime/MutableIntState;
 
     .line 99
@@ -1889,7 +1889,7 @@
 .end method
 
 .method private static final ExposedDropdownMenuBox$lambda$2(Landroidx/compose/runtime/MutableIntState;I)V
-    .registers 6
+    .locals 4
     .param p0, "$width$delegate"    # Landroidx/compose/runtime/MutableIntState;
     .param p1, "value"    # I
 
@@ -1921,7 +1921,7 @@
 .end method
 
 .method private static final ExposedDropdownMenuBox$lambda$4(Landroidx/compose/runtime/MutableIntState;)I
-    .registers 5
+    .locals 4
     .param p0, "$menuHeight$delegate"    # Landroidx/compose/runtime/MutableIntState;
 
     .line 100
@@ -1953,7 +1953,7 @@
 .end method
 
 .method private static final ExposedDropdownMenuBox$lambda$5(Landroidx/compose/runtime/MutableIntState;I)V
-    .registers 6
+    .locals 4
     .param p0, "$menuHeight$delegate"    # Landroidx/compose/runtime/MutableIntState;
     .param p1, "value"    # I
 
@@ -1985,7 +1985,7 @@
 .end method
 
 .method public static final synthetic access$ExposedDropdownMenuBox$lambda$1(Landroidx/compose/runtime/MutableIntState;)I
-    .registers 2
+    .locals 1
     .param p0, "$width$delegate"    # Landroidx/compose/runtime/MutableIntState;
 
     .line 1
@@ -1997,7 +1997,7 @@
 .end method
 
 .method public static final synthetic access$ExposedDropdownMenuBox$lambda$2(Landroidx/compose/runtime/MutableIntState;I)V
-    .registers 2
+    .locals 0
     .param p0, "$width$delegate"    # Landroidx/compose/runtime/MutableIntState;
     .param p1, "value"    # I
 
@@ -2008,7 +2008,7 @@
 .end method
 
 .method public static final synthetic access$ExposedDropdownMenuBox$lambda$4(Landroidx/compose/runtime/MutableIntState;)I
-    .registers 2
+    .locals 1
     .param p0, "$menuHeight$delegate"    # Landroidx/compose/runtime/MutableIntState;
 
     .line 1
@@ -2020,7 +2020,7 @@
 .end method
 
 .method public static final synthetic access$ExposedDropdownMenuBox$lambda$5(Landroidx/compose/runtime/MutableIntState;I)V
-    .registers 2
+    .locals 0
     .param p0, "$menuHeight$delegate"    # Landroidx/compose/runtime/MutableIntState;
     .param p1, "value"    # I
 
@@ -2031,7 +2031,7 @@
 .end method
 
 .method public static final synthetic access$updateHeight(Landroid/view/View;Landroidx/compose/ui/layout/LayoutCoordinates;ILkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 0
     .param p0, "view"    # Landroid/view/View;
     .param p1, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p2, "verticalMarginInPx"    # I
@@ -2044,7 +2044,7 @@
 .end method
 
 .method private static final expandable(Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function0;Ljava/lang/String;)Landroidx/compose/ui/Modifier;
-    .registers 8
+    .locals 5
     .param p0, "$this$expandable"    # Landroidx/compose/ui/Modifier;
     .param p1, "onExpandedChange"    # Lkotlin/jvm/functions/Function0;
     .param p2, "menuLabel"    # Ljava/lang/String;
@@ -2096,7 +2096,7 @@
 .end method
 
 .method private static final updateHeight(Landroid/view/View;Landroidx/compose/ui/layout/LayoutCoordinates;ILkotlin/jvm/functions/Function1;)V
-    .registers 8
+    .locals 4
     .param p0, "view"    # Landroid/view/View;
     .param p1, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p2, "verticalMarginInPx"    # I
@@ -2116,12 +2116,12 @@
     .end annotation
 
     .line 544
-    if-nez p1, :cond_3
+    if-nez p1, :cond_0
 
     return-void
 
     .line 545
-    :cond_3
+    :cond_0
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V

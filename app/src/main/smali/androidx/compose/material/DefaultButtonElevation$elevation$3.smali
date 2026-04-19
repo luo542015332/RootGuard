@@ -84,7 +84,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/core/Animatable;Landroidx/compose/material/DefaultButtonElevation;FLandroidx/compose/foundation/interaction/Interaction;Lkotlin/coroutines/Continuation;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 10
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -155,7 +155,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -169,7 +169,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -198,7 +198,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 10
+    .locals 8
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -207,7 +207,7 @@
     .line 65535
     iget v1, p0, Landroidx/compose/material/DefaultButtonElevation$elevation$3;->label:I
 
-    packed-switch v1, :pswitch_data_88
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -217,18 +217,18 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/material/DefaultButtonElevation$elevation$3;
     .local p1, "$result":Ljava/lang/Object;
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto/16 :goto_85
+    goto/16 :goto_1
 
     .end local v0    # "this":Landroidx/compose/material/DefaultButtonElevation$elevation$3;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_18
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -251,7 +251,6 @@
     .line 559
     iget-object v3, v1, Landroidx/compose/material/DefaultButtonElevation$elevation$3;->this$0:Landroidx/compose/material/DefaultButtonElevation;
 
-    # getter for: Landroidx/compose/material/DefaultButtonElevation;->pressedElevation:F
     invoke-static {v3}, Landroidx/compose/material/DefaultButtonElevation;->access$getPressedElevation$p(Landroidx/compose/material/DefaultButtonElevation;)F
 
     move-result v3
@@ -262,7 +261,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_44
+    if-eqz v3, :cond_0
 
     new-instance v2, Landroidx/compose/foundation/interaction/PressInteraction$Press;
 
@@ -278,13 +277,12 @@
 
     check-cast v4, Landroidx/compose/foundation/interaction/Interaction;
 
-    goto :goto_6f
+    goto :goto_0
 
     .line 560
-    :cond_44
+    :cond_0
     iget-object v3, v1, Landroidx/compose/material/DefaultButtonElevation$elevation$3;->this$0:Landroidx/compose/material/DefaultButtonElevation;
 
-    # getter for: Landroidx/compose/material/DefaultButtonElevation;->hoveredElevation:F
     invoke-static {v3}, Landroidx/compose/material/DefaultButtonElevation;->access$getHoveredElevation$p(Landroidx/compose/material/DefaultButtonElevation;)F
 
     move-result v3
@@ -293,7 +291,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_59
+    if-eqz v3, :cond_1
 
     new-instance v2, Landroidx/compose/foundation/interaction/HoverInteraction$Enter;
 
@@ -303,13 +301,12 @@
 
     check-cast v4, Landroidx/compose/foundation/interaction/Interaction;
 
-    goto :goto_6f
+    goto :goto_0
 
     .line 561
-    :cond_59
+    :cond_1
     iget-object v3, v1, Landroidx/compose/material/DefaultButtonElevation$elevation$3;->this$0:Landroidx/compose/material/DefaultButtonElevation;
 
-    # getter for: Landroidx/compose/material/DefaultButtonElevation;->focusedElevation:F
     invoke-static {v3}, Landroidx/compose/material/DefaultButtonElevation;->access$getFocusedElevation$p(Landroidx/compose/material/DefaultButtonElevation;)F
 
     move-result v3
@@ -318,7 +315,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_6e
+    if-eqz v2, :cond_2
 
     new-instance v2, Landroidx/compose/foundation/interaction/FocusInteraction$Focus;
 
@@ -328,14 +325,14 @@
 
     check-cast v4, Landroidx/compose/foundation/interaction/Interaction;
 
-    goto :goto_6f
+    goto :goto_0
 
     .line 562
-    :cond_6e
+    :cond_2
     nop
 
     .line 558
-    :goto_6f
+    :goto_0
     move-object v2, v4
 
     .line 564
@@ -365,26 +362,26 @@
 
     move-result-object v2
 
-    if-ne v2, v0, :cond_84
+    if-ne v2, v0, :cond_3
 
     .line 65535
     return-object v0
 
     .line 564
-    :cond_84
+    :cond_3
     move-object v0, v1
 
     .line 569
     .end local v1    # "this":Landroidx/compose/material/DefaultButtonElevation$elevation$3;
     .restart local v0    # "this":Landroidx/compose/material/DefaultButtonElevation$elevation$3;
-    :goto_85
+    :goto_1
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v1
 
-    :pswitch_data_88
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_18
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

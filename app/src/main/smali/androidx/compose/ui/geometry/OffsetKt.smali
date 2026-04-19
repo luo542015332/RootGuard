@@ -56,7 +56,7 @@
 
 # direct methods
 .method public static final Offset(FF)J
-    .registers 11
+    .locals 9
     .param p0, "x"    # F
     .param p1, "y"    # F
 
@@ -103,7 +103,7 @@
 .end method
 
 .method public static final isFinite-k-4lQ0M(J)Z
-    .registers 6
+    .locals 4
     .param p0, "$this$isFinite"    # J
 
     .line 246
@@ -119,23 +119,23 @@
 
     const/4 v3, 0x0
 
-    if-nez v1, :cond_14
+    if-nez v1, :cond_0
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v0, v3
 
-    :goto_15
-    if-eqz v0, :cond_2d
+    :goto_0
+    if-eqz v0, :cond_2
 
     invoke-static {p0, p1}, Landroidx/compose/ui/geometry/Offset;->getY-impl(J)F
 
@@ -145,41 +145,41 @@
 
     move-result v1
 
-    if-nez v1, :cond_29
+    if-nez v1, :cond_1
 
     invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v0
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_2a
+    goto :goto_1
 
-    :cond_29
+    :cond_1
     move v0, v3
 
-    :goto_2a
-    if-eqz v0, :cond_2d
+    :goto_1
+    if-eqz v0, :cond_2
 
-    goto :goto_2e
+    goto :goto_2
 
-    :cond_2d
+    :cond_2
     move v2, v3
 
-    :goto_2e
+    :goto_2
     return v2
 .end method
 
 .method public static synthetic isFinite-k-4lQ0M$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final isSpecified-k-4lQ0M(J)Z
-    .registers 4
+    .locals 2
     .param p0, "$this$isSpecified"    # J
 
     .line 252
@@ -191,27 +191,27 @@
 
     cmp-long v0, p0, v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic isSpecified-k-4lQ0M$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final isUnspecified-k-4lQ0M(J)Z
-    .registers 4
+    .locals 2
     .param p0, "$this$isUnspecified"    # J
 
     .line 258
@@ -223,27 +223,27 @@
 
     cmp-long v0, p0, v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic isUnspecified-k-4lQ0M$annotations(J)V
-    .registers 2
+    .locals 0
 
     return-void
 .end method
 
 .method public static final lerp-Wko1d7g(JJF)J
-    .registers 8
+    .locals 3
     .param p0, "start"    # J
     .param p2, "stop"    # J
     .param p4, "fraction"    # F
@@ -283,7 +283,7 @@
 .end method
 
 .method public static final takeOrElse-3MmeM6k(JLkotlin/jvm/functions/Function0;)J
-    .registers 6
+    .locals 3
     .param p0, "$this$takeOrElse_u2d3MmeM6k"    # J
     .param p2, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -307,13 +307,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     move-wide v1, p0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     invoke-interface {p2}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v1
@@ -324,6 +324,6 @@
 
     move-result-wide v1
 
-    :goto_19
+    :goto_0
     return-wide v1
 .end method

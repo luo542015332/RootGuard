@@ -65,7 +65,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/saveable/Saver;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -88,7 +88,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/runtime/MutableState;)Landroidx/compose/runtime/MutableState;
-    .registers 5
+    .locals 3
     .param p1, "it"    # Landroidx/compose/runtime/MutableState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -108,14 +108,14 @@
     .line 160
     instance-of v0, p1, Landroidx/compose/runtime/snapshots/SnapshotMutableState;
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_1
 
     .line 162
     invoke-interface {p1}, Landroidx/compose/runtime/MutableState;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/runtime/saveable/RememberSaveableKt$mutableStateSaver$1$2;->$this_with:Landroidx/compose/runtime/saveable/Saver;
 
@@ -129,13 +129,13 @@
 
     move-result-object v0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_1e
+    :cond_0
     const/4 v0, 0x0
 
     .line 163
-    :goto_1f
+    :goto_0
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/runtime/snapshots/SnapshotMutableState;
@@ -162,7 +162,7 @@
     return-object v0
 
     .line 160
-    :cond_37
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Failed requirement."
@@ -177,7 +177,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 151

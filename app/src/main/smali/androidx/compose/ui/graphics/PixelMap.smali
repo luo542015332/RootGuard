@@ -58,7 +58,7 @@
 
 # direct methods
 .method public constructor <init>([IIIII)V
-    .registers 7
+    .locals 1
     .param p1, "buffer"    # [I
     .param p2, "width"    # I
     .param p3, "height"    # I
@@ -94,7 +94,7 @@
 
 # virtual methods
 .method public final get-WaAFU9c(II)J
-    .registers 6
+    .locals 3
     .param p1, "x"    # I
     .param p2, "y"    # I
 
@@ -121,7 +121,7 @@
 .end method
 
 .method public final getBuffer()[I
-    .registers 2
+    .locals 1
 
     .line 37
     iget-object v0, p0, Landroidx/compose/ui/graphics/PixelMap;->buffer:[I
@@ -130,7 +130,7 @@
 .end method
 
 .method public final getBufferOffset()I
-    .registers 2
+    .locals 1
 
     .line 40
     iget v0, p0, Landroidx/compose/ui/graphics/PixelMap;->bufferOffset:I
@@ -139,7 +139,7 @@
 .end method
 
 .method public final getHeight()I
-    .registers 2
+    .locals 1
 
     .line 39
     iget v0, p0, Landroidx/compose/ui/graphics/PixelMap;->height:I
@@ -148,7 +148,7 @@
 .end method
 
 .method public final getStride()I
-    .registers 2
+    .locals 1
 
     .line 41
     iget v0, p0, Landroidx/compose/ui/graphics/PixelMap;->stride:I
@@ -157,7 +157,7 @@
 .end method
 
 .method public final getWidth()I
-    .registers 2
+    .locals 1
 
     .line 38
     iget v0, p0, Landroidx/compose/ui/graphics/PixelMap;->width:I

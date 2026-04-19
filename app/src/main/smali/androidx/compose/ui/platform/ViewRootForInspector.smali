@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static synthetic access$getSubCompositionView$jd(Landroidx/compose/ui/platform/ViewRootForInspector;)Landroidx/compose/ui/platform/AbstractComposeView;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/ViewRootForInspector;
 
     .line 27
@@ -51,7 +51,7 @@
 .end method
 
 .method public static synthetic access$getViewRoot$jd(Landroidx/compose/ui/platform/ViewRootForInspector;)Landroid/view/View;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/ViewRootForInspector;
 
     .line 27
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public getSubCompositionView()Landroidx/compose/ui/platform/AbstractComposeView;
-    .registers 2
+    .locals 1
 
     .line 36
     const/4 v0, 0x0
@@ -74,7 +74,7 @@
 .end method
 
 .method public getViewRoot()Landroid/view/View;
-    .registers 2
+    .locals 1
 
     .line 44
     const/4 v0, 0x0

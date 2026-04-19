@@ -37,7 +37,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/input/pointer/CancelTimeoutCancellationException;
 
@@ -49,7 +49,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 768
     invoke-direct {p0}, Ljava/util/concurrent/CancellationException;-><init>()V
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public fillInStackTrace()Ljava/lang/Throwable;
-    .registers 3
+    .locals 2
 
     .line 771
     const/4 v0, 0x0

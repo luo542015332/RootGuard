@@ -105,7 +105,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$Companion;
 
@@ -128,7 +128,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/animation/core/FiniteAnimationSpec;)V
-    .registers 14
+    .locals 12
     .param p1, "placementAnimationSpec"    # Landroidx/compose/animation/core/FiniteAnimationSpec;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -226,7 +226,7 @@
 .end method
 
 .method public static final synthetic access$getNotInitialized$cp()J
-    .registers 2
+    .locals 2
 
     .line 34
     sget-wide v0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->NotInitialized:J
@@ -235,7 +235,7 @@
 .end method
 
 .method public static final synthetic access$getPlacementDeltaAnimation$p(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;)Landroidx/compose/animation/core/Animatable;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
     .line 34
@@ -245,7 +245,7 @@
 .end method
 
 .method public static final synthetic access$setAnimationInProgress(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;Z)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .param p1, "<set-?>"    # Z
 
@@ -256,7 +256,7 @@
 .end method
 
 .method public static final synthetic access$setPlacementDelta--gyyYBs(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;J)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
     .param p1, "<set-?>"    # J
 
@@ -267,7 +267,7 @@
 .end method
 
 .method private final setAnimationInProgress(Z)V
-    .registers 6
+    .locals 4
     .param p1, "<set-?>"    # Z
 
     .line 42
@@ -300,7 +300,7 @@
 .end method
 
 .method private final setPlacementDelta--gyyYBs(J)V
-    .registers 7
+    .locals 4
     .param p1, "<set-?>"    # J
 
     .line 60
@@ -335,7 +335,7 @@
 
 # virtual methods
 .method public final animatePlacementDelta--gyyYBs(J)V
-    .registers 12
+    .locals 9
     .param p1, "delta"    # J
 
     .line 80
@@ -416,14 +416,14 @@
 .end method
 
 .method public final cancelAnimation()V
-    .registers 8
+    .locals 7
 
     .line 67
     invoke-virtual {p0}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->isAnimationInProgress()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 68
     invoke-virtual {p0}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->getCoroutineScope()Lkotlinx/coroutines/CoroutineScope;
@@ -451,12 +451,12 @@
     invoke-static/range {v1 .. v6}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
     .line 74
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method public final getPlacementAnimationSpec()Landroidx/compose/animation/core/FiniteAnimationSpec;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -473,7 +473,7 @@
 .end method
 
 .method public final getPlacementDelta-nOcc-ac()J
-    .registers 4
+    .locals 3
 
     .line 60
     iget-object v0, p0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->placementDelta$delegate:Landroidx/compose/runtime/MutableState;
@@ -506,7 +506,7 @@
 .end method
 
 .method public final getRawOffset-nOcc-ac()J
-    .registers 3
+    .locals 2
 
     .line 52
     iget-wide v0, p0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->rawOffset:J
@@ -515,7 +515,7 @@
 .end method
 
 .method public final isAnimationInProgress()Z
-    .registers 4
+    .locals 3
 
     .line 42
     iget-object v0, p0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->isAnimationInProgress$delegate:Landroidx/compose/runtime/MutableState;
@@ -548,7 +548,7 @@
 .end method
 
 .method public onDetach()V
-    .registers 3
+    .locals 2
 
     .line 117
     sget-object v0, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
@@ -574,7 +574,7 @@
 .end method
 
 .method public final setPlacementAnimationSpec(Landroidx/compose/animation/core/FiniteAnimationSpec;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/animation/core/FiniteAnimationSpec;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -596,7 +596,7 @@
 .end method
 
 .method public final setRawOffset--gyyYBs(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 52

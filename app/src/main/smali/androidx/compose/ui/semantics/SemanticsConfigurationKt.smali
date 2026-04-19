@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final getOrNull(Landroidx/compose/ui/semantics/SemanticsConfiguration;Landroidx/compose/ui/semantics/SemanticsPropertyKey;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$this$getOrNull"    # Landroidx/compose/ui/semantics/SemanticsConfiguration;
     .param p1, "key"    # Landroidx/compose/ui/semantics/SemanticsPropertyKey;
     .annotation system Ldalvik/annotation/Signature;

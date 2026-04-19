@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/unit/Density;Landroidx/compose/runtime/MutableIntState;Landroidx/compose/runtime/MutableIntState;)V
-    .registers 4
+    .locals 0
     .param p1, "$density"    # Landroidx/compose/ui/unit/Density;
     .param p2, "$menuHeight$delegate"    # Landroidx/compose/runtime/MutableIntState;
     .param p3, "$width$delegate"    # Landroidx/compose/runtime/MutableIntState;
@@ -69,7 +69,7 @@
 
 # virtual methods
 .method public exposedDropdownSize(Landroidx/compose/ui/Modifier;Z)Landroidx/compose/ui/Modifier;
-    .registers 10
+    .locals 7
     .param p1, "$this$exposedDropdownSize"    # Landroidx/compose/ui/Modifier;
     .param p2, "matchTextFieldWidth"    # Z
 
@@ -89,7 +89,6 @@
 
     .line 108
     .local v3, "$i$a$-with-ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$exposedDropdownSize$1":I
-    # invokes: Landroidx/compose/material/ExposedDropdownMenuKt;->ExposedDropdownMenuBox$lambda$4(Landroidx/compose/runtime/MutableIntState;)I
     invoke-static {v1}, Landroidx/compose/material/ExposedDropdownMenuKt;->access$ExposedDropdownMenuBox$lambda$4(Landroidx/compose/runtime/MutableIntState;)I
 
     move-result v1
@@ -113,10 +112,9 @@
 
     .line 109
     .local v4, "$i$a$-let-ExposedDropdownMenuKt$ExposedDropdownMenuBox$scope$1$1$exposedDropdownSize$1$1":I
-    if-eqz p2, :cond_2b
+    if-eqz p2, :cond_0
 
     .line 110
-    # invokes: Landroidx/compose/material/ExposedDropdownMenuKt;->ExposedDropdownMenuBox$lambda$1(Landroidx/compose/runtime/MutableIntState;)I
     invoke-static {v2}, Landroidx/compose/material/ExposedDropdownMenuKt;->access$ExposedDropdownMenuBox$lambda$1(Landroidx/compose/runtime/MutableIntState;)I
 
     move-result v2
@@ -129,14 +127,14 @@
 
     move-result-object v2
 
-    goto :goto_2c
+    goto :goto_0
 
     .line 111
-    :cond_2b
+    :cond_0
     move-object v2, v1
 
     .line 109
-    :goto_2c
+    :goto_0
     nop
 
     .line 108

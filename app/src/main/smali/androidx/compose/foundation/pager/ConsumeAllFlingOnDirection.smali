@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/foundation/gestures/Orientation;)V
-    .registers 3
+    .locals 1
     .param p1, "orientation"    # Landroidx/compose/foundation/gestures/Orientation;
 
     const-string/jumbo v0, "orientation"
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public final consumeOnOrientation-8S9VItk(JLandroidx/compose/foundation/gestures/Orientation;)J
-    .registers 12
+    .locals 8
     .param p1, "$this$consumeOnOrientation_u2d8S9VItk"    # J
     .param p3, "orientation"    # Landroidx/compose/foundation/gestures/Orientation;
 
@@ -82,7 +82,7 @@
     .line 817
     sget-object v0, Landroidx/compose/foundation/gestures/Orientation;->Vertical:Landroidx/compose/foundation/gestures/Orientation;
 
-    if-ne p3, v0, :cond_14
+    if-ne p3, v0, :cond_0
 
     .line 818
     const/4 v3, 0x0
@@ -99,10 +99,10 @@
 
     move-result-wide v0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 820
-    :cond_14
+    :cond_0
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -118,12 +118,12 @@
     move-result-wide v0
 
     .line 817
-    :goto_1d
+    :goto_0
     return-wide v0
 .end method
 
 .method public final consumeOnOrientation-QWom1Mo(JLandroidx/compose/foundation/gestures/Orientation;)J
-    .registers 12
+    .locals 8
     .param p1, "$this$consumeOnOrientation_u2dQWom1Mo"    # J
     .param p3, "orientation"    # Landroidx/compose/foundation/gestures/Orientation;
 
@@ -134,7 +134,7 @@
     .line 809
     sget-object v0, Landroidx/compose/foundation/gestures/Orientation;->Vertical:Landroidx/compose/foundation/gestures/Orientation;
 
-    if-ne p3, v0, :cond_14
+    if-ne p3, v0, :cond_0
 
     .line 810
     const/4 v3, 0x0
@@ -151,10 +151,10 @@
 
     move-result-wide v0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 812
-    :cond_14
+    :cond_0
     const/4 v4, 0x0
 
     const/4 v5, 0x0
@@ -170,12 +170,12 @@
     move-result-wide v0
 
     .line 809
-    :goto_1d
+    :goto_0
     return-wide v0
 .end method
 
 .method public final getOrientation()Landroidx/compose/foundation/gestures/Orientation;
-    .registers 2
+    .locals 1
 
     .line 806
     iget-object v0, p0, Landroidx/compose/foundation/pager/ConsumeAllFlingOnDirection;->orientation:Landroidx/compose/foundation/gestures/Orientation;
@@ -184,7 +184,7 @@
 .end method
 
 .method public onPostFling-RZ2iAVY(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 8
+    .locals 2
     .param p1, "consumed"    # J
     .param p3, "available"    # J
     .param p5, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -214,7 +214,7 @@
 .end method
 
 .method public onPostScroll-DzOQY0M(JJI)J
-    .registers 8
+    .locals 2
     .param p1, "consumed"    # J
     .param p3, "available"    # J
     .param p5, "source"    # I
@@ -233,7 +233,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/foundation/pager/ConsumeAllFlingOnDirection;->orientation:Landroidx/compose/foundation/gestures/Orientation;
 
@@ -241,10 +241,10 @@
 
     move-result-wide v0
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 831
-    :cond_14
+    :cond_0
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
@@ -252,6 +252,6 @@
     move-result-wide v0
 
     .line 829
-    :goto_1a
+    :goto_0
     return-wide v0
 .end method

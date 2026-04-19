@@ -39,7 +39,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/WrapperVerificationHelperMethods;
 
@@ -51,7 +51,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 264
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 
 # virtual methods
 .method public final setBlendMode-GB0RdKg(Landroid/graphics/Paint;I)V
-    .registers 4
+    .locals 1
     .param p1, "paint"    # Landroid/graphics/Paint;
     .param p2, "mode"    # I
 

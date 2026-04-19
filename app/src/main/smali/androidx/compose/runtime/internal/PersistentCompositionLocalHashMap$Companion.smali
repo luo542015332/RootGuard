@@ -40,7 +40,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Companion;-><init>()V
 
@@ -57,7 +57,7 @@
 .end method
 
 .method public static synthetic getEmpty$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -65,10 +65,9 @@
 
 # virtual methods
 .method public final getEmpty()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
-    .registers 2
+    .locals 1
 
     .line 62
-    # getter for: Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;->Empty:Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
     invoke-static {}, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;->access$getEmpty$cp()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
 
     move-result-object v0

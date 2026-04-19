@@ -77,7 +77,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -128,7 +128,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -157,7 +157,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
 
@@ -171,7 +171,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -180,7 +180,7 @@
     .line 65535
     iget v1, p0, Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2$pointerInputModifier$1$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_72
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -190,7 +190,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2$pointerInputModifier$1$1$1;
@@ -210,12 +210,12 @@
 
     move-object v0, p1
 
-    goto :goto_3f
+    goto :goto_1
 
     .end local v1    # "this":Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2$pointerInputModifier$1$1$1;
     .end local v2    # "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1f
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -228,7 +228,7 @@
 
     .line 111
     .restart local v2    # "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_27
+    :goto_0
     nop
 
     .line 112
@@ -248,13 +248,13 @@
 
     move-result-object v3
 
-    if-ne v3, v0, :cond_39
+    if-ne v3, v0, :cond_0
 
     .line 65535
     return-object v0
 
     .line 112
-    :cond_39
+    :cond_0
     move-object v6, v0
 
     move-object v0, p1
@@ -273,7 +273,7 @@
     .local v0, "$result":Ljava/lang/Object;
     .local v2, "this":Landroidx/compose/ui/input/pointer/PointerIconKt$pointerHoverIcon$2$pointerInputModifier$1$1$1;
     .local v3, "$this$awaitPointerEventScope":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    :goto_3f
+    :goto_1
     check-cast p1, Landroidx/compose/ui/input/pointer/PointerEvent;
 
     .line 114
@@ -292,7 +292,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_57
+    if-eqz v4, :cond_1
 
     .line 115
     .end local p1    # "event":Landroidx/compose/ui/input/pointer/PointerEvent;
@@ -300,11 +300,11 @@
 
     invoke-virtual {p1}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->enter()V
 
-    goto :goto_6c
+    goto :goto_2
 
     .line 116
     .restart local p1    # "event":Landroidx/compose/ui/input/pointer/PointerEvent;
-    :cond_57
+    :cond_1
     invoke-virtual {p1}, Landroidx/compose/ui/input/pointer/PointerEvent;->getType-7fucELk()I
 
     move-result v4
@@ -319,7 +319,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_6c
+    if-eqz v4, :cond_2
 
     .line 117
     .end local p1    # "event":Landroidx/compose/ui/input/pointer/PointerEvent;
@@ -328,8 +328,8 @@
     invoke-virtual {p1}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->exit()V
 
     .line 111
-    :cond_6c
-    :goto_6c
+    :cond_2
+    :goto_2
     move-object p1, v0
 
     move-object v0, v1
@@ -338,13 +338,13 @@
 
     move-object v2, v3
 
-    goto :goto_27
+    goto :goto_0
 
     nop
 
-    :pswitch_data_72
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1f
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final invalidateLayer(Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 4
+    .locals 3
     .param p0, "$this$invalidateLayer"    # Landroidx/compose/ui/node/LayoutModifierNode;
 
     const-string v0, "<this>"
@@ -68,7 +68,7 @@
 .end method
 
 .method public static final invalidateMeasurement(Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$invalidateMeasurement"    # Landroidx/compose/ui/node/LayoutModifierNode;
 
     const-string v0, "<this>"
@@ -90,7 +90,7 @@
 .end method
 
 .method public static final invalidatePlacement(Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 5
+    .locals 4
     .param p0, "$this$invalidatePlacement"    # Landroidx/compose/ui/node/LayoutModifierNode;
 
     const-string v0, "<this>"
@@ -118,7 +118,7 @@
 .end method
 
 .method public static final remeasureSync(Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 2
+    .locals 1
     .param p0, "$this$remeasureSync"    # Landroidx/compose/ui/node/LayoutModifierNode;
 
     const-string v0, "<this>"
@@ -140,7 +140,7 @@
 .end method
 
 .method public static final requestRemeasure(Landroidx/compose/ui/node/LayoutModifierNode;)V
-    .registers 5
+    .locals 4
     .param p0, "$this$requestRemeasure"    # Landroidx/compose/ui/node/LayoutModifierNode;
 
     const-string v0, "<this>"

@@ -56,7 +56,7 @@
 
 # direct methods
 .method public static synthetic access$getValue$jd(Landroidx/compose/runtime/MutableFloatState;)F
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/MutableFloatState;
 
     .line 87
@@ -72,7 +72,7 @@
 .end method
 
 .method public static synthetic access$setValue$jd(Landroidx/compose/runtime/MutableFloatState;F)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/MutableFloatState;
     .param p1, "value"    # F
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 93
     invoke-interface {p0}, Landroidx/compose/runtime/MutableFloatState;->getFloatValue()F
@@ -103,7 +103,7 @@
 .end method
 
 .method public bridge synthetic getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 87
     invoke-interface {p0}, Landroidx/compose/runtime/MutableFloatState;->getValue()Ljava/lang/Float;
@@ -117,7 +117,7 @@
 .end method
 
 .method public setValue(F)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # F
 
     .line 94
@@ -127,7 +127,7 @@
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     .line 87

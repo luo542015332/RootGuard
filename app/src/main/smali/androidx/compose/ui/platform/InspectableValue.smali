@@ -43,7 +43,7 @@
 
 # direct methods
 .method public static synthetic access$getInspectableElements$jd(Landroidx/compose/ui/platform/InspectableValue;)Lkotlin/sequences/Sequence;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InspectableValue;
 
     .line 35
@@ -55,7 +55,7 @@
 .end method
 
 .method public static synthetic access$getNameFallback$jd(Landroidx/compose/ui/platform/InspectableValue;)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InspectableValue;
 
     .line 35
@@ -67,7 +67,7 @@
 .end method
 
 .method public static synthetic access$getValueOverride$jd(Landroidx/compose/ui/platform/InspectableValue;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InspectableValue;
 
     .line 35
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public getInspectableElements()Lkotlin/sequences/Sequence;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -100,7 +100,7 @@
 .end method
 
 .method public getNameFallback()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 50
     const/4 v0, 0x0
@@ -109,7 +109,7 @@
 .end method
 
 .method public getValueOverride()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 56
     const/4 v0, 0x0

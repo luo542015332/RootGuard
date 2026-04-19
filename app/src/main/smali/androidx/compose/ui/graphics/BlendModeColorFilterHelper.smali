@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/BlendModeColorFilterHelper;
 
@@ -50,7 +50,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method public final BlendModeColorFilter-xETnrds(JI)Landroid/graphics/BlendModeColorFilter;
-    .registers 7
+    .locals 3
     .param p1, "color"    # J
     .param p3, "blendMode"    # I
 

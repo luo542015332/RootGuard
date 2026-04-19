@@ -52,7 +52,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     .line 109
     nop
@@ -645,13 +645,13 @@
 .end method
 
 .method private static synthetic getAndroidAutofillTypes$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getAndroidType(Landroidx/compose/ui/autofill/AutofillType;)Ljava/lang/String;
-    .registers 4
+    .locals 3
     .param p0, "$this$androidType"    # Landroidx/compose/ui/autofill/AutofillType;
 
     const-string v0, "<this>"
@@ -669,13 +669,13 @@
 
     .line 101
     .local v0, "androidAutofillType":Ljava/lang/String;
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 102
     return-object v0
 
     .line 148
-    :cond_10
+    :cond_0
     const/4 v1, 0x0
 
     .line 101
@@ -697,7 +697,7 @@
 .end method
 
 .method public static synthetic getAndroidType$annotations(Landroidx/compose/ui/autofill/AutofillType;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method

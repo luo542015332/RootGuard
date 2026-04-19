@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
-    .registers 10
+    .locals 7
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "id"    # I
 
@@ -100,7 +100,7 @@
 .end method
 
 .method private final clamp(F)F
-    .registers 4
+    .locals 2
     .param p1, "x"    # F
 
     .line 77
@@ -118,7 +118,7 @@
 
 # virtual methods
 .method public fromXyz([F)[F
-    .registers 4
+    .locals 2
     .param p1, "v"    # [F
 
     const-string/jumbo v0, "v"
@@ -163,7 +163,7 @@
 .end method
 
 .method public getMaxValue(I)F
-    .registers 3
+    .locals 1
     .param p1, "component"    # I
 
     .line 41
@@ -173,7 +173,7 @@
 .end method
 
 .method public getMinValue(I)F
-    .registers 3
+    .locals 1
     .param p1, "component"    # I
 
     .line 37
@@ -183,7 +183,7 @@
 .end method
 
 .method public isWideGamut()Z
-    .registers 2
+    .locals 1
 
     .line 34
     const/4 v0, 0x1
@@ -192,7 +192,7 @@
 .end method
 
 .method public toXy$ui_graphics_release(FFF)J
-    .registers 15
+    .locals 11
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -248,7 +248,7 @@
 .end method
 
 .method public toXyz([F)[F
-    .registers 4
+    .locals 2
     .param p1, "v"    # [F
 
     const-string/jumbo v0, "v"
@@ -293,7 +293,7 @@
 .end method
 
 .method public toZ$ui_graphics_release(FFF)F
-    .registers 5
+    .locals 1
     .param p1, "v0"    # F
     .param p2, "v1"    # F
     .param p3, "v2"    # F
@@ -307,7 +307,7 @@
 .end method
 
 .method public xyzaToColor-JlNiLsg$ui_graphics_release(FFFFLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J
-    .registers 9
+    .locals 3
     .param p1, "x"    # F
     .param p2, "y"    # F
     .param p3, "z"    # F

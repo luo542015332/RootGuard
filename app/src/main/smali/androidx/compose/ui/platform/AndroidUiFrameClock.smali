@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/Choreographer;)V
-    .registers 3
+    .locals 1
     .param p1, "choreographer"    # Landroid/view/Choreographer;
 
     const-string/jumbo v0, "choreographer"
@@ -82,7 +82,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/Choreographer;Landroidx/compose/ui/platform/AndroidUiDispatcher;)V
-    .registers 4
+    .locals 1
     .param p1, "choreographer"    # Landroid/view/Choreographer;
     .param p2, "dispatcher"    # Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public fold(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "initial"    # Ljava/lang/Object;
     .param p2, "operation"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -130,7 +130,7 @@
 .end method
 
 .method public get(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext$Element;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -151,7 +151,7 @@
 .end method
 
 .method public final getChoreographer()Landroid/view/Choreographer;
-    .registers 2
+    .locals 1
 
     .line 25
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidUiFrameClock;->choreographer:Landroid/view/Choreographer;
@@ -160,7 +160,7 @@
 .end method
 
 .method public minusKey(Lkotlin/coroutines/CoroutineContext$Key;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Lkotlin/coroutines/CoroutineContext$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -180,7 +180,7 @@
 .end method
 
 .method public plus(Lkotlin/coroutines/CoroutineContext;)Lkotlin/coroutines/CoroutineContext;
-    .registers 3
+    .locals 1
     .param p1, "context"    # Lkotlin/coroutines/CoroutineContext;
 
     .line 24
@@ -192,7 +192,7 @@
 .end method
 
 .method public withFrameNanos(Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 13
+    .locals 10
     .param p1, "onFrame"    # Lkotlin/jvm/functions/Function1;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -213,7 +213,7 @@
     .line 36
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidUiFrameClock;->dispatcher:Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_1
 
     .line 37
     invoke-interface {p2}, Lkotlin/coroutines/Continuation;->getContext()Lkotlin/coroutines/CoroutineContext;
@@ -230,18 +230,18 @@
 
     instance-of v1, v0, Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
     .line 36
-    :cond_18
-    :goto_18
+    :cond_1
+    :goto_0
     nop
 
     .line 38
@@ -289,7 +289,7 @@
 
     .line 51
     .local v7, "callback":Landroid/view/Choreographer$FrameCallback;
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->getChoreographer()Landroid/view/Choreographer;
 
@@ -303,7 +303,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_52
+    if-eqz v8, :cond_2
 
     .line 52
     invoke-virtual {v0, v7}, Landroidx/compose/ui/platform/AndroidUiDispatcher;->postFrameCallback$ui_release(Landroid/view/Choreographer$FrameCallback;)V
@@ -317,10 +317,10 @@
 
     invoke-interface {v5, v8}, Lkotlinx/coroutines/CancellableContinuation;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
 
-    goto :goto_63
+    goto :goto_1
 
     .line 55
-    :cond_52
+    :cond_2
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidUiFrameClock;->getChoreographer()Landroid/view/Choreographer;
 
     move-result-object v8
@@ -337,7 +337,7 @@
     invoke-interface {v5, v8}, Lkotlinx/coroutines/CancellableContinuation;->invokeOnCancellation(Lkotlin/jvm/functions/Function1;)V
 
     .line 58
-    :goto_63
+    :goto_1
     nop
 
     .line 69
@@ -359,12 +359,12 @@
 
     move-result-object v3
 
-    if-ne v2, v3, :cond_72
+    if-ne v2, v3, :cond_3
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
     .line 71
-    :cond_72
+    :cond_3
     nop
 
     .line 38

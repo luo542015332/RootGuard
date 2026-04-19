@@ -173,7 +173,7 @@
 
 # direct methods
 .method private constructor <init>(FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJI)V
-    .registers 37
+    .locals 16
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
     .param p3, "alpha"    # F
@@ -300,14 +300,14 @@
 .end method
 
 .method public synthetic constructor <init>(FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJIILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 46
+    .locals 23
 
     .line 589
     const/high16 v0, 0x10000
 
     and-int v0, p21, v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 606
     sget-object v0, Landroidx/compose/ui/graphics/CompositingStrategy;->Companion:Landroidx/compose/ui/graphics/CompositingStrategy$Companion;
@@ -318,13 +318,13 @@
 
     move/from16 v21, v0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 589
-    :cond_f
+    :cond_0
     move/from16 v21, p20
 
-    :goto_11
+    :goto_0
     const/16 v22, 0x0
 
     move-object/from16 v1, p0
@@ -368,7 +368,7 @@
 .end method
 
 .method public synthetic constructor <init>(FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 22
+    .locals 0
 
     invoke-direct/range {p0 .. p20}, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;-><init>(FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJI)V
 
@@ -376,7 +376,7 @@
 .end method
 
 .method public static final synthetic access$getLayerBlock$p(Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;)Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;
 
     .line 589
@@ -388,7 +388,7 @@
 
 # virtual methods
 .method public final getAlpha()F
-    .registers 2
+    .locals 1
 
     .line 592
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->alpha:F
@@ -397,7 +397,7 @@
 .end method
 
 .method public final getAmbientShadowColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 604
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->ambientShadowColor:J
@@ -406,7 +406,7 @@
 .end method
 
 .method public final getCameraDistance()F
-    .registers 2
+    .locals 1
 
     .line 599
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->cameraDistance:F
@@ -415,7 +415,7 @@
 .end method
 
 .method public final getClip()Z
-    .registers 2
+    .locals 1
 
     .line 602
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->clip:Z
@@ -424,7 +424,7 @@
 .end method
 
 .method public final getCompositingStrategy--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 606
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->compositingStrategy:I
@@ -433,7 +433,7 @@
 .end method
 
 .method public final getRenderEffect()Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
 
     .line 603
     iget-object v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->renderEffect:Landroidx/compose/ui/graphics/RenderEffect;
@@ -442,7 +442,7 @@
 .end method
 
 .method public final getRotationX()F
-    .registers 2
+    .locals 1
 
     .line 596
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->rotationX:F
@@ -451,7 +451,7 @@
 .end method
 
 .method public final getRotationY()F
-    .registers 2
+    .locals 1
 
     .line 597
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->rotationY:F
@@ -460,7 +460,7 @@
 .end method
 
 .method public final getRotationZ()F
-    .registers 2
+    .locals 1
 
     .line 598
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->rotationZ:F
@@ -469,7 +469,7 @@
 .end method
 
 .method public final getScaleX()F
-    .registers 2
+    .locals 1
 
     .line 590
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->scaleX:F
@@ -478,7 +478,7 @@
 .end method
 
 .method public final getScaleY()F
-    .registers 2
+    .locals 1
 
     .line 591
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->scaleY:F
@@ -487,7 +487,7 @@
 .end method
 
 .method public final getShadowElevation()F
-    .registers 2
+    .locals 1
 
     .line 595
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->shadowElevation:F
@@ -496,7 +496,7 @@
 .end method
 
 .method public final getShape()Landroidx/compose/ui/graphics/Shape;
-    .registers 2
+    .locals 1
 
     .line 601
     iget-object v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->shape:Landroidx/compose/ui/graphics/Shape;
@@ -505,7 +505,7 @@
 .end method
 
 .method public getShouldAutoInvalidate()Z
-    .registers 2
+    .locals 1
 
     .line 613
     const/4 v0, 0x0
@@ -514,7 +514,7 @@
 .end method
 
 .method public final getSpotShadowColor-0d7_KjU()J
-    .registers 3
+    .locals 2
 
     .line 605
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->spotShadowColor:J
@@ -523,7 +523,7 @@
 .end method
 
 .method public final getTransformOrigin-SzJe1aQ()J
-    .registers 3
+    .locals 2
 
     .line 600
     iget-wide v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->transformOrigin:J
@@ -532,7 +532,7 @@
 .end method
 
 .method public final getTranslationX()F
-    .registers 2
+    .locals 1
 
     .line 593
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->translationX:F
@@ -541,7 +541,7 @@
 .end method
 
 .method public final getTranslationY()F
-    .registers 2
+    .locals 1
 
     .line 594
     iget v0, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->translationY:F
@@ -550,7 +550,7 @@
 .end method
 
 .method public final invalidateLayerBlock()V
-    .registers 4
+    .locals 3
 
     .line 636
     move-object v0, p0
@@ -577,7 +577,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 637
     iget-object v1, p0, Landroidx/compose/ui/graphics/SimpleGraphicsLayerModifier;->layerBlock:Lkotlin/jvm/functions/Function1;
@@ -591,12 +591,12 @@
     invoke-virtual {v0, v1, v2}, Landroidx/compose/ui/node/NodeCoordinator;->updateLayerBlock(Lkotlin/jvm/functions/Function1;Z)V
 
     .line 640
-    :cond_1a
+    :cond_0
     return-void
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/layout/Measurable;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 13
+    .locals 8
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurable"    # Landroidx/compose/ui/layout/Measurable;
     .param p3, "constraints"    # J
@@ -648,7 +648,7 @@
 .end method
 
 .method public final setAlpha(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 592
@@ -658,7 +658,7 @@
 .end method
 
 .method public final setAmbientShadowColor-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 604
@@ -668,7 +668,7 @@
 .end method
 
 .method public final setCameraDistance(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 599
@@ -678,7 +678,7 @@
 .end method
 
 .method public final setClip(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 602
@@ -688,7 +688,7 @@
 .end method
 
 .method public final setCompositingStrategy-aDBOjCE(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 606
@@ -698,7 +698,7 @@
 .end method
 
 .method public final setRenderEffect(Landroidx/compose/ui/graphics/RenderEffect;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/RenderEffect;
 
     .line 603
@@ -708,7 +708,7 @@
 .end method
 
 .method public final setRotationX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 596
@@ -718,7 +718,7 @@
 .end method
 
 .method public final setRotationY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 597
@@ -728,7 +728,7 @@
 .end method
 
 .method public final setRotationZ(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 598
@@ -738,7 +738,7 @@
 .end method
 
 .method public final setScaleX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 590
@@ -748,7 +748,7 @@
 .end method
 
 .method public final setScaleY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 591
@@ -758,7 +758,7 @@
 .end method
 
 .method public final setShadowElevation(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 595
@@ -768,7 +768,7 @@
 .end method
 
 .method public final setShape(Landroidx/compose/ui/graphics/Shape;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/graphics/Shape;
 
     const-string v0, "<set-?>"
@@ -782,7 +782,7 @@
 .end method
 
 .method public final setSpotShadowColor-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 605
@@ -792,7 +792,7 @@
 .end method
 
 .method public final setTransformOrigin-__ExYCQ(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 600
@@ -802,7 +802,7 @@
 .end method
 
 .method public final setTranslationX(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 593
@@ -812,7 +812,7 @@
 .end method
 
 .method public final setTranslationY(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 594
@@ -822,7 +822,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 5
+    .locals 4
 
     .line 653
     new-instance v0, Ljava/lang/StringBuilder;

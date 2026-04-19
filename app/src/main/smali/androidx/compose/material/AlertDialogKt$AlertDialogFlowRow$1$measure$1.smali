@@ -81,7 +81,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/List;Landroidx/compose/ui/layout/MeasureScope;FILjava/util/List;)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,7 +117,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 259
@@ -133,7 +133,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/Placeable$PlacementScope;)V
-    .registers 34
+    .locals 32
     .param p1, "$this$layout"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     move-object/from16 v0, p0
@@ -174,8 +174,8 @@
 
     .end local v2    # "index$iv":I
     .local v8, "index$iv":I
-    :goto_1b
-    if-ge v8, v15, :cond_dd
+    :goto_0
+    if-ge v8, v15, :cond_4
 
     .line 295
     invoke-interface {v1, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -204,8 +204,8 @@
 
     const/4 v5, 0x0
 
-    :goto_2f
-    if-ge v5, v2, :cond_4e
+    :goto_1
+    if-ge v5, v2, :cond_1
 
     .line 262
     invoke-interface {v7, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -223,19 +223,19 @@
 
     move-result v4
 
-    if-ge v5, v4, :cond_46
+    if-ge v5, v4, :cond_0
 
     invoke-interface {v10, v11}, Landroidx/compose/ui/layout/MeasureScope;->roundToPx-0680j_4(F)I
 
     move-result v4
 
-    goto :goto_47
+    goto :goto_2
 
-    :cond_46
+    :cond_0
     const/4 v4, 0x0
 
     .line 262
-    :goto_47
+    :goto_2
     add-int v18, v18, v4
 
     aput v18, v3, v5
@@ -243,9 +243,9 @@
     add-int/lit8 v5, v5, 0x1
 
     .line 261
-    goto :goto_2f
+    goto :goto_1
 
-    :cond_4e
+    :cond_1
     move-object v5, v3
 
     .line 265
@@ -264,8 +264,8 @@
 
     const/4 v4, 0x0
 
-    :goto_59
-    if-ge v4, v2, :cond_62
+    :goto_3
+    if-ge v4, v2, :cond_2
 
     const/16 v19, 0x0
 
@@ -273,9 +273,9 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_59
+    goto :goto_3
 
-    :cond_62
+    :cond_2
     move-object v4, v3
 
     .line 269
@@ -319,8 +319,8 @@
 
     move-result v3
 
-    :goto_77
-    if-ge v2, v3, :cond_c8
+    :goto_4
+    if-ge v2, v3, :cond_3
 
     .line 299
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -433,7 +433,7 @@
 
     .end local v29    # "index$iv":I
     .restart local v2    # "index$iv":I
-    goto :goto_77
+    goto :goto_4
 
     .end local v24    # "childrenMainAxisSizes":[I
     .end local v25    # "i":I
@@ -445,7 +445,7 @@
     .restart local v6    # "i":I
     .restart local v7    # "placeables":Ljava/util/List;
     .restart local v8    # "index$iv":I
-    :cond_c8
+    :cond_3
     move/from16 v29, v2
 
     move-object/from16 v31, v4
@@ -494,11 +494,11 @@
 
     .end local v27    # "index$iv":I
     .restart local v8    # "index$iv":I
-    goto/16 :goto_1b
+    goto/16 :goto_0
 
     .line 303
     .end local v8    # "index$iv":I
-    :cond_dd
+    :cond_4
     nop
 
     .line 279

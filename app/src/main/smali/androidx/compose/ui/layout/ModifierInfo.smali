@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/layout/LayoutCoordinates;Ljava/lang/Object;)V
-    .registers 5
+    .locals 1
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
     .param p2, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
     .param p3, "extra"    # Ljava/lang/Object;
@@ -91,18 +91,18 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/layout/LayoutCoordinates;Ljava/lang/Object;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 90
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 93
     const/4 p3, 0x0
 
     .line 90
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/layout/ModifierInfo;-><init>(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/layout/LayoutCoordinates;Ljava/lang/Object;)V
 
     .line 98
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final getCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 2
+    .locals 1
 
     .line 92
     iget-object v0, p0, Landroidx/compose/ui/layout/ModifierInfo;->coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
@@ -121,7 +121,7 @@
 .end method
 
 .method public final getExtra()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 93
     iget-object v0, p0, Landroidx/compose/ui/layout/ModifierInfo;->extra:Ljava/lang/Object;
@@ -130,7 +130,7 @@
 .end method
 
 .method public final getModifier()Landroidx/compose/ui/Modifier;
-    .registers 2
+    .locals 1
 
     .line 91
     iget-object v0, p0, Landroidx/compose/ui/layout/ModifierInfo;->modifier:Landroidx/compose/ui/Modifier;
@@ -139,7 +139,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 96
     new-instance v0, Ljava/lang/StringBuilder;

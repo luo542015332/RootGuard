@@ -34,7 +34,7 @@
 
 # direct methods
 .method public static final boundsInParent(Landroidx/compose/ui/layout/LayoutCoordinates;)Landroidx/compose/ui/geometry/Rect;
-    .registers 5
+    .locals 4
     .param p0, "$this$boundsInParent"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     const/4 v1, 0x2
 
@@ -58,10 +58,10 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_2c
+    if-nez v0, :cond_1
 
     .line 170
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/compose/ui/geometry/Rect;
 
     invoke-interface {p0}, Landroidx/compose/ui/layout/LayoutCoordinates;->getSize-YbymL2g()J
@@ -88,12 +88,12 @@
 
     invoke-direct {v0, v3, v3, v1, v2}, Landroidx/compose/ui/geometry/Rect;-><init>(FFFF)V
 
-    :cond_2c
+    :cond_1
     return-object v0
 .end method
 
 .method public static final boundsInRoot(Landroidx/compose/ui/layout/LayoutCoordinates;)Landroidx/compose/ui/geometry/Rect;
-    .registers 5
+    .locals 4
     .param p0, "$this$boundsInRoot"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -119,7 +119,7 @@
 .end method
 
 .method public static final boundsInWindow(Landroidx/compose/ui/layout/LayoutCoordinates;)Landroidx/compose/ui/geometry/Rect;
-    .registers 26
+    .locals 25
     .param p0, "$this$boundsInWindow"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -209,31 +209,31 @@
     .local v6, "boundsBottom":F
     cmpg-float v9, v5, v8
 
-    if-nez v9, :cond_48
+    if-nez v9, :cond_0
 
     const/4 v9, 0x1
 
-    goto :goto_49
+    goto :goto_0
 
-    :cond_48
+    :cond_0
     const/4 v9, 0x0
 
-    :goto_49
-    if-nez v9, :cond_101
+    :goto_0
+    if-nez v9, :cond_3
 
     cmpg-float v9, v7, v6
 
-    if-nez v9, :cond_51
+    if-nez v9, :cond_1
 
     const/4 v9, 0x1
 
-    goto :goto_52
+    goto :goto_1
 
-    :cond_51
+    :cond_1
     const/4 v9, 0x0
 
-    :goto_52
-    if-eqz v9, :cond_5c
+    :goto_1
+    if-eqz v9, :cond_2
 
     move-object/from16 v20, v0
 
@@ -241,10 +241,10 @@
 
     move/from16 v23, v3
 
-    goto/16 :goto_107
+    goto/16 :goto_2
 
     .line 145
-    :cond_5c
+    :cond_2
     invoke-static {v5, v7}, Landroidx/compose/ui/geometry/OffsetKt;->Offset(FF)J
 
     move-result-wide v12
@@ -447,7 +447,7 @@
     .local v0, "root":Landroidx/compose/ui/layout/LayoutCoordinates;
     .local v2, "bounds":Landroidx/compose/ui/geometry/Rect;
     .local v3, "rootWidth":F
-    :cond_101
+    :cond_3
     move-object/from16 v20, v0
 
     move-object/from16 v21, v2
@@ -461,7 +461,7 @@
     .restart local v20    # "root":Landroidx/compose/ui/layout/LayoutCoordinates;
     .restart local v21    # "bounds":Landroidx/compose/ui/geometry/Rect;
     .restart local v23    # "rootWidth":F
-    :goto_107
+    :goto_2
     sget-object v0, Landroidx/compose/ui/geometry/Rect;->Companion:Landroidx/compose/ui/geometry/Rect$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Rect$Companion;->getZero()Landroidx/compose/ui/geometry/Rect;
@@ -472,7 +472,7 @@
 .end method
 
 .method public static final findRootCoordinates(Landroidx/compose/ui/layout/LayoutCoordinates;)Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 6
+    .locals 5
     .param p0, "$this$findRootCoordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -490,8 +490,8 @@
 
     .line 181
     .local v1, "parent":Landroidx/compose/ui/layout/LayoutCoordinates;
-    :goto_a
-    if-eqz v1, :cond_12
+    :goto_0
+    if-eqz v1, :cond_0
 
     .line 182
     move-object v0, v1
@@ -501,39 +501,39 @@
 
     move-result-object v1
 
-    goto :goto_a
+    goto :goto_0
 
     .line 185
-    :cond_12
+    :cond_0
     instance-of v2, v0, Landroidx/compose/ui/node/NodeCoordinator;
 
-    if-eqz v2, :cond_1a
+    if-eqz v2, :cond_1
 
     move-object v2, v0
 
     check-cast v2, Landroidx/compose/ui/node/NodeCoordinator;
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     const/4 v2, 0x0
 
-    :goto_1b
-    if-nez v2, :cond_1e
+    :goto_1
+    if-nez v2, :cond_2
 
     return-object v0
 
     .line 186
     .local v2, "rootCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
-    :cond_1e
+    :cond_2
     invoke-virtual {v2}, Landroidx/compose/ui/node/NodeCoordinator;->getWrappedBy$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v3
 
     .line 187
     .local v3, "parentCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
-    :goto_22
-    if-eqz v3, :cond_2a
+    :goto_2
+    if-eqz v3, :cond_3
 
     .line 188
     move-object v2, v3
@@ -543,10 +543,10 @@
 
     move-result-object v3
 
-    goto :goto_22
+    goto :goto_2
 
     .line 191
-    :cond_2a
+    :cond_3
     move-object v4, v2
 
     check-cast v4, Landroidx/compose/ui/layout/LayoutCoordinates;
@@ -555,7 +555,7 @@
 .end method
 
 .method public static final positionInParent(Landroidx/compose/ui/layout/LayoutCoordinates;)J
-    .registers 4
+    .locals 3
     .param p0, "$this$positionInParent"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -567,7 +567,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_0
 
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
@@ -579,21 +579,21 @@
 
     move-result-wide v0
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
 
     move-result-wide v0
 
-    :goto_1c
+    :goto_0
     return-wide v0
 .end method
 
 .method public static final positionInRoot(Landroidx/compose/ui/layout/LayoutCoordinates;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$positionInRoot"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"
@@ -615,7 +615,7 @@
 .end method
 
 .method public static final positionInWindow(Landroidx/compose/ui/layout/LayoutCoordinates;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$positionInWindow"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string v0, "<this>"

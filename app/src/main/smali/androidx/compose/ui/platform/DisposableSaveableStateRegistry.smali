@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/saveable/SaveableStateRegistry;Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 1
     .param p1, "saveableStateRegistry"    # Landroidx/compose/runtime/saveable/SaveableStateRegistry;
     .param p2, "onDispose"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public canBeSaved(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "value"
 
@@ -114,7 +114,7 @@
 .end method
 
 .method public consumeRestored(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
 
     const-string/jumbo v0, "key"
 
@@ -130,7 +130,7 @@
 .end method
 
 .method public final dispose()V
-    .registers 2
+    .locals 1
 
     .line 109
     iget-object v0, p0, Landroidx/compose/ui/platform/DisposableSaveableStateRegistry;->onDispose:Lkotlin/jvm/functions/Function0;
@@ -142,7 +142,7 @@
 .end method
 
 .method public performSave()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -164,7 +164,7 @@
 .end method
 
 .method public registerProvider(Ljava/lang/String;Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/saveable/SaveableStateRegistry$Entry;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

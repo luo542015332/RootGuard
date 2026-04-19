@@ -69,7 +69,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 80
     sget-object v0, Landroidx/compose/runtime/ActualAndroid_androidKt$DefaultMonotonicFrameClock$2;->INSTANCE:Landroidx/compose/runtime/ActualAndroid_androidKt$DefaultMonotonicFrameClock$2;
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final createSnapshotMutableDoubleState(D)Landroidx/compose/runtime/MutableDoubleState;
-    .registers 3
+    .locals 1
     .param p0, "value"    # D
 
     .line 109
@@ -100,7 +100,7 @@
 .end method
 
 .method public static final createSnapshotMutableFloatState(F)Landroidx/compose/runtime/MutableFloatState;
-    .registers 2
+    .locals 1
     .param p0, "value"    # F
 
     .line 105
@@ -114,7 +114,7 @@
 .end method
 
 .method public static final createSnapshotMutableIntState(I)Landroidx/compose/runtime/MutableIntState;
-    .registers 2
+    .locals 1
     .param p0, "value"    # I
 
     .line 97
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final createSnapshotMutableLongState(J)Landroidx/compose/runtime/MutableLongState;
-    .registers 3
+    .locals 1
     .param p0, "value"    # J
 
     .line 101
@@ -142,7 +142,7 @@
 .end method
 
 .method public static final createSnapshotMutableState(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;)Landroidx/compose/runtime/snapshots/SnapshotMutableState;
-    .registers 3
+    .locals 1
     .param p0, "value"    # Ljava/lang/Object;
     .param p1, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .annotation system Ldalvik/annotation/Signature;
@@ -172,7 +172,7 @@
 .end method
 
 .method public static final getDefaultMonotonicFrameClock()Landroidx/compose/runtime/MonotonicFrameClock;
-    .registers 1
+    .locals 1
 
     .line 80
     sget-object v0, Landroidx/compose/runtime/ActualAndroid_androidKt;->DefaultMonotonicFrameClock$delegate:Lkotlin/Lazy;
@@ -187,7 +187,7 @@
 .end method
 
 .method public static synthetic getDefaultMonotonicFrameClock$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "MonotonicFrameClocks are not globally applicable across platforms. Use an appropriate local clock."
     .end annotation
@@ -196,7 +196,7 @@
 .end method
 
 .method public static final logError(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
     .param p0, "message"    # Ljava/lang/String;
     .param p1, "e"    # Ljava/lang/Throwable;
 

@@ -71,7 +71,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Map;Landroidx/compose/ui/input/pointer/PointerInputEvent;)V
-    .registers 4
+    .locals 1
     .param p1, "changes"    # Ljava/util/Map;
     .param p2, "pointerInputEvent"    # Landroidx/compose/ui/input/pointer/PointerInputEvent;
     .annotation system Ldalvik/annotation/Signature;
@@ -110,7 +110,7 @@
 
 # virtual methods
 .method public final getChanges()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -128,7 +128,7 @@
 .end method
 
 .method public final getMotionEvent()Landroid/view/MotionEvent;
-    .registers 2
+    .locals 1
 
     .line 27
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/InternalPointerEvent;->pointerInputEvent:Landroidx/compose/ui/input/pointer/PointerInputEvent;
@@ -141,7 +141,7 @@
 .end method
 
 .method public final getPointerInputEvent()Landroidx/compose/ui/input/pointer/PointerInputEvent;
-    .registers 2
+    .locals 1
 
     .line 24
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/InternalPointerEvent;->pointerInputEvent:Landroidx/compose/ui/input/pointer/PointerInputEvent;
@@ -150,7 +150,7 @@
 .end method
 
 .method public final getSuppressMovementConsumption()Z
-    .registers 2
+    .locals 1
 
     .line 34
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/InternalPointerEvent;->suppressMovementConsumption:Z
@@ -159,7 +159,7 @@
 .end method
 
 .method public final issuesEnterExitEvent-0FcD4WY(J)Z
-    .registers 16
+    .locals 13
     .param p1, "pointerId"    # J
 
     .line 30
@@ -194,8 +194,8 @@
 
     move-result v5
 
-    :goto_10
-    if-ge v4, v5, :cond_2b
+    :goto_0
+    if-ge v4, v5, :cond_1
 
     .line 40
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -231,25 +231,25 @@
     .line 37
     .end local v9    # "it":Landroidx/compose/ui/input/pointer/PointerInputEventData;
     .end local v10    # "$i$a$-fastFirstOrNull-InternalPointerEvent$issuesEnterExitEvent$1":I
-    if-eqz v9, :cond_27
+    if-eqz v9, :cond_0
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 41
     .end local v7    # "it$iv":Ljava/lang/Object;
     .end local v8    # "$i$a$-fastForEach-ListUtilsKt$fastFirstOrNull$2$iv":I
-    :cond_27
+    :cond_0
     nop
 
     .line 39
     .end local v6    # "item$iv$iv":Ljava/lang/Object;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 43
     .end local v4    # "index$iv$iv":I
-    :cond_2b
+    :cond_1
     nop
 
     .line 44
@@ -260,11 +260,11 @@
     .line 30
     .end local v0    # "$this$fastFirstOrNull$iv":Ljava/util/List;
     .end local v1    # "$i$f$fastFirstOrNull":I
-    :goto_2d
+    :goto_1
     check-cast v7, Landroidx/compose/ui/input/pointer/PointerInputEventData;
 
     .line 32
-    if-eqz v7, :cond_37
+    if-eqz v7, :cond_2
 
     .line 30
     nop
@@ -275,18 +275,18 @@
     move-result v0
 
     .line 30
-    goto :goto_38
+    goto :goto_2
 
     .line 32
-    :cond_37
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_38
+    :goto_2
     return v0
 .end method
 
 .method public final setSuppressMovementConsumption(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 34

@@ -93,7 +93,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/autofill/AutofillNode$Companion;
 
@@ -111,7 +111,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;Landroidx/compose/ui/geometry/Rect;Lkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .param p1, "autofillTypes"    # Ljava/util/List;
     .param p2, "boundingBox"    # Landroidx/compose/ui/geometry/Rect;
     .param p3, "onFill"    # Lkotlin/jvm/functions/Function1;
@@ -150,7 +150,6 @@
     .line 85
     sget-object v0, Landroidx/compose/ui/autofill/AutofillNode;->Companion:Landroidx/compose/ui/autofill/AutofillNode$Companion;
 
-    # invokes: Landroidx/compose/ui/autofill/AutofillNode$Companion;->generateId()I
     invoke-static {v0}, Landroidx/compose/ui/autofill/AutofillNode$Companion;->access$generateId(Landroidx/compose/ui/autofill/AutofillNode$Companion;)I
 
     move-result v0
@@ -162,12 +161,12 @@
 .end method
 
 .method public synthetic constructor <init>(Ljava/util/List;Landroidx/compose/ui/geometry/Rect;Lkotlin/jvm/functions/Function1;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 72
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_0
 
     .line 73
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
@@ -175,16 +174,16 @@
     move-result-object p1
 
     .line 72
-    :cond_8
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_d
+    if-eqz p4, :cond_1
 
     .line 74
     const/4 p2, 0x0
 
     .line 72
-    :cond_d
+    :cond_1
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/autofill/AutofillNode;-><init>(Ljava/util/List;Landroidx/compose/ui/geometry/Rect;Lkotlin/jvm/functions/Function1;)V
 
     .line 104
@@ -192,7 +191,7 @@
 .end method
 
 .method public static final synthetic access$getPreviousId$cp()I
-    .registers 1
+    .locals 1
 
     .line 71
     sget v0, Landroidx/compose/ui/autofill/AutofillNode;->previousId:I
@@ -201,7 +200,7 @@
 .end method
 
 .method public static final synthetic access$setPreviousId$cp(I)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # I
 
     .line 71
@@ -213,28 +212,28 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 88
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 89
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/autofill/AutofillNode;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 91
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/autofill/AutofillNode;->autofillTypes:Ljava/util/List;
 
     move-object v3, p1
@@ -247,12 +246,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 92
-    :cond_18
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/autofill/AutofillNode;->boundingBox:Landroidx/compose/ui/geometry/Rect;
 
     move-object v3, p1
@@ -265,12 +264,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 93
-    :cond_26
+    :cond_3
     iget-object v1, p0, Landroidx/compose/ui/autofill/AutofillNode;->onFill:Lkotlin/jvm/functions/Function1;
 
     move-object v3, p1
@@ -283,17 +282,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_4
 
     return v2
 
     .line 95
-    :cond_34
+    :cond_4
     return v0
 .end method
 
 .method public final getAutofillTypes()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -310,7 +309,7 @@
 .end method
 
 .method public final getBoundingBox()Landroidx/compose/ui/geometry/Rect;
-    .registers 2
+    .locals 1
 
     .line 74
     iget-object v0, p0, Landroidx/compose/ui/autofill/AutofillNode;->boundingBox:Landroidx/compose/ui/geometry/Rect;
@@ -319,7 +318,7 @@
 .end method
 
 .method public final getId()I
-    .registers 2
+    .locals 1
 
     .line 85
     iget v0, p0, Landroidx/compose/ui/autofill/AutofillNode;->id:I
@@ -328,7 +327,7 @@
 .end method
 
 .method public final getOnFill()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -346,7 +345,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 99
     iget-object v0, p0, Landroidx/compose/ui/autofill/AutofillNode;->autofillTypes:Ljava/util/List;
@@ -363,18 +362,18 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
     invoke-virtual {v2}, Landroidx/compose/ui/geometry/Rect;->hashCode()I
 
     move-result v2
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     move v2, v3
 
-    :goto_13
+    :goto_0
     add-int/2addr v1, v2
 
     .line 101
@@ -384,13 +383,13 @@
 
     iget-object v2, p0, Landroidx/compose/ui/autofill/AutofillNode;->onFill:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    :cond_1e
+    :cond_1
     add-int/2addr v0, v3
 
     .line 102
@@ -400,7 +399,7 @@
 .end method
 
 .method public final setBoundingBox(Landroidx/compose/ui/geometry/Rect;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/ui/geometry/Rect;
 
     .line 74

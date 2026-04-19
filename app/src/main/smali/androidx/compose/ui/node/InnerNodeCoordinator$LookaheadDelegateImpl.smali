@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/InnerNodeCoordinator;)V
-    .registers 3
+    .locals 1
     .param p1, "this$0"    # Landroidx/compose/ui/node/InnerNodeCoordinator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public calculateAlignmentLine(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 7
+    .locals 5
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -108,19 +108,19 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    goto :goto_1d
+    goto :goto_0
 
     .line 91
-    :cond_1b
+    :cond_0
     const/high16 v0, -0x80000000
 
-    :goto_1d
+    :goto_0
     move v1, v0
 
     .local v1, "it":I
@@ -151,7 +151,7 @@
 .end method
 
 .method public maxIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 110
@@ -171,7 +171,7 @@
 .end method
 
 .method public maxIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 107
@@ -191,7 +191,7 @@
 .end method
 
 .method public measure-BRTryo0(J)Landroidx/compose/ui/layout/Placeable;
-    .registers 19
+    .locals 16
     .param p1, "constraints"    # J
 
     .line 74
@@ -206,7 +206,6 @@
 
     .line 247
     .local v3, "$i$f$performingMeasure-K40F9xA":I
-    # invokes: Landroidx/compose/ui/node/LookaheadDelegate;->setMeasurementConstraints-BRTryo0(J)V
     invoke-static {v2, v0, v1}, Landroidx/compose/ui/node/LookaheadDelegate;->access$setMeasurementConstraints-BRTryo0(Landroidx/compose/ui/node/LookaheadDelegate;J)V
 
     .line 248
@@ -241,7 +240,7 @@
 
     .line 252
     .local v9, "size$iv$iv":I
-    if-lez v9, :cond_38
+    if-lez v9, :cond_1
 
     .line 253
     const/4 v10, 0x0
@@ -254,7 +253,7 @@
 
     .line 256
     .local v11, "content$iv$iv":[Ljava/lang/Object;
-    :cond_21
+    :cond_0
     aget-object v12, v11, v10
 
     check-cast v12, Landroidx/compose/ui/node/LayoutNode;
@@ -288,12 +287,12 @@
     add-int/lit8 v10, v10, 0x1
 
     .line 258
-    if-lt v10, v9, :cond_21
+    if-lt v10, v9, :cond_0
 
     .line 260
     .end local v10    # "i$iv$iv":I
     .end local v11    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_38
+    :cond_1
     nop
 
     .line 249
@@ -351,7 +350,6 @@
     .line 248
     .end local v4    # "$i$a$-performingMeasure-K40F9xA-InnerNodeCoordinator$LookaheadDelegateImpl$measure$1":I
     .end local v5    # "measureResult":Landroidx/compose/ui/layout/MeasureResult;
-    # invokes: Landroidx/compose/ui/node/LookaheadDelegate;->set_measureResult(Landroidx/compose/ui/layout/MeasureResult;)V
     invoke-static {v2, v5}, Landroidx/compose/ui/node/LookaheadDelegate;->access$set_measureResult(Landroidx/compose/ui/node/LookaheadDelegate;Landroidx/compose/ui/layout/MeasureResult;)V
 
     .line 261
@@ -364,7 +362,7 @@
 .end method
 
 .method public minIntrinsicHeight(I)I
-    .registers 3
+    .locals 1
     .param p1, "width"    # I
 
     .line 104
@@ -384,7 +382,7 @@
 .end method
 
 .method public minIntrinsicWidth(I)I
-    .registers 3
+    .locals 1
     .param p1, "height"    # I
 
     .line 101
@@ -404,7 +402,7 @@
 .end method
 
 .method protected placeChildren()V
-    .registers 2
+    .locals 1
 
     .line 97
     invoke-virtual {p0}, Landroidx/compose/ui/node/InnerNodeCoordinator$LookaheadDelegateImpl;->getLayoutNode()Landroidx/compose/ui/node/LayoutNode;

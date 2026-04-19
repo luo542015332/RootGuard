@@ -73,13 +73,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/CompositionLocal;Ljava/lang/Object;Z)V
-    .registers 5
+    .locals 1
     .param p1, "compositionLocal"    # Landroidx/compose/runtime/CompositionLocal;
     .param p2, "value"    # Ljava/lang/Object;
     .param p3, "canOverride"    # Z
@@ -114,7 +114,7 @@
 
 # virtual methods
 .method public final getCanOverride()Z
-    .registers 2
+    .locals 1
 
     .line 296
     iget-boolean v0, p0, Landroidx/compose/runtime/ProvidedValue;->canOverride:Z
@@ -123,7 +123,7 @@
 .end method
 
 .method public final getCompositionLocal()Landroidx/compose/runtime/CompositionLocal;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -139,7 +139,7 @@
 .end method
 
 .method public final getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"

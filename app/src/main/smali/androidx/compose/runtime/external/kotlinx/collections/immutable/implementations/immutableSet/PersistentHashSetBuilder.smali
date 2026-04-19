@@ -106,7 +106,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;)V
-    .registers 3
+    .locals 1
     .param p1, "set"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -157,7 +157,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -176,18 +176,18 @@
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v3, v2
 
-    :goto_f
+    :goto_0
     invoke-virtual {v1, v3, p1, v2, p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->mutableAdd(ILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
 
     move-result-object v1
@@ -199,16 +199,16 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     const/4 v2, 0x1
 
-    :cond_1c
+    :cond_1
     return v2
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 10
+    .locals 8
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -227,50 +227,50 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object v0, v1
 
-    :goto_10
-    if-nez v0, :cond_23
+    :goto_0
+    if-nez v0, :cond_3
 
     instance-of v0, p1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move-object v0, v1
 
-    :goto_1b
-    if-eqz v0, :cond_22
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
     move-result-object v0
 
-    goto :goto_23
+    goto :goto_2
 
-    :cond_22
+    :cond_2
     move-object v0, v1
 
     .line 49
     .local v0, "set":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
-    :cond_23
-    :goto_23
-    if-eqz v0, :cond_54
+    :cond_3
+    :goto_2
+    if-eqz v0, :cond_6
 
     .line 50
     new-instance v2, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;
@@ -317,7 +317,7 @@
 
     .line 54
     .local v6, "newSize":I
-    if-eq v2, v6, :cond_4c
+    if-eq v2, v6, :cond_4
 
     .line 55
     iput-object v5, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
@@ -326,16 +326,16 @@
     invoke-virtual {p0, v6}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->setSize(I)V
 
     .line 58
-    :cond_4c
+    :cond_4
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->size()I
 
     move-result v7
 
-    if-eq v2, v7, :cond_53
+    if-eq v2, v7, :cond_5
 
     move v3, v4
 
-    :cond_53
+    :cond_5
     return v3
 
     .line 60
@@ -343,7 +343,7 @@
     .end local v2    # "size":I
     .end local v5    # "result":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
     .end local v6    # "newSize":I
-    :cond_54
+    :cond_6
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableSet;->addAll(Ljava/util/Collection;)Z
 
     move-result v1
@@ -352,7 +352,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentCollection;
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
@@ -365,7 +365,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentSet;
-    .registers 2
+    .locals 1
 
     .line 12
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
@@ -378,7 +378,7 @@
 .end method
 
 .method public build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -396,15 +396,15 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 29
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->set:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 31
-    :cond_d
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
 
     invoke-direct {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;-><init>()V
@@ -423,7 +423,7 @@
     invoke-direct {v0, v1, v2}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;-><init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;I)V
 
     .line 28
-    :goto_1f
+    :goto_0
     iput-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->set:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
     .line 34
@@ -431,7 +431,7 @@
 .end method
 
 .method public clear()V
-    .registers 3
+    .locals 2
 
     .line 123
     sget-object v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->Companion:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode$Companion;
@@ -456,7 +456,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 5
+    .locals 3
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 38
@@ -464,18 +464,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v2, v1
 
-    :goto_b
+    :goto_0
     invoke-virtual {v0, v2, p1, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->contains(ILjava/lang/Object;I)Z
 
     move-result v0
@@ -484,7 +484,7 @@
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 5
+    .locals 3
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -505,7 +505,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .line 106
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
@@ -525,10 +525,10 @@
     return v0
 
     .line 108
-    :cond_19
+    :cond_0
     instance-of v0, p1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    if-eqz v0, :cond_29
+    if-eqz v0, :cond_1
 
     .line 109
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->node:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
@@ -546,7 +546,7 @@
     return v0
 
     .line 111
-    :cond_29
+    :cond_1
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableSet;->containsAll(Ljava/util/Collection;)Z
 
     move-result v0
@@ -555,7 +555,7 @@
 .end method
 
 .method public final getModCount$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 17
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->modCount:I
@@ -564,7 +564,7 @@
 .end method
 
 .method public final getNode$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -580,7 +580,7 @@
 .end method
 
 .method public final getOwnership$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
-    .registers 2
+    .locals 1
 
     .line 13
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->ownership:Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
@@ -589,7 +589,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 21
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->size:I
@@ -598,7 +598,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -618,7 +618,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 115
@@ -632,18 +632,18 @@
 
     const/4 v2, 0x0
 
-    if-eqz p1, :cond_e
+    if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     move v3, v2
 
-    :goto_f
+    :goto_0
     invoke-virtual {v1, v3, p1, v2, p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->mutableRemove(ILjava/lang/Object;ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;)Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
 
     move-result-object v1
@@ -655,16 +655,16 @@
 
     move-result v1
 
-    if-eq v0, v1, :cond_1c
+    if-eq v0, v1, :cond_1
 
     const/4 v2, 0x1
 
-    :cond_1c
+    :cond_1
     return v2
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 10
+    .locals 8
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -685,50 +685,50 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object v0, v1
 
-    :goto_10
-    if-nez v0, :cond_23
+    :goto_0
+    if-nez v0, :cond_3
 
     instance-of v0, p1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move-object v0, v1
 
-    :goto_1b
-    if-eqz v0, :cond_22
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
     move-result-object v0
 
-    goto :goto_23
+    goto :goto_2
 
-    :cond_22
+    :cond_2
     move-object v0, v1
 
     .line 85
     .local v0, "set":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
-    :cond_23
-    :goto_23
-    if-eqz v0, :cond_5f
+    :cond_3
+    :goto_2
+    if-eqz v0, :cond_7
 
     .line 86
     new-instance v2, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;
@@ -769,15 +769,15 @@
 
     .line 91
     .local v6, "newSize":I
-    if-nez v6, :cond_47
+    if-nez v6, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->clear()V
 
-    goto :goto_57
+    goto :goto_3
 
     .line 92
-    :cond_47
-    if-eq v6, v2, :cond_57
+    :cond_4
+    if-eq v6, v2, :cond_5
 
     .line 95
     const-string/jumbo v7, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.PersistentHashSetBuilder>"
@@ -795,24 +795,24 @@
 
     .line 99
     .end local v6    # "newSize":I
-    :cond_57
-    :goto_57
+    :cond_5
+    :goto_3
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->size()I
 
     move-result v6
 
-    if-eq v2, v6, :cond_5e
+    if-eq v2, v6, :cond_6
 
     move v3, v4
 
-    :cond_5e
+    :cond_6
     return v3
 
     .line 101
     .end local v1    # "counter":Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;
     .end local v2    # "size":I
     .end local v5    # "result":Ljava/lang/Object;
-    :cond_5f
+    :cond_7
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableSet;->removeAll(Ljava/util/Collection;)Z
 
     move-result v1
@@ -821,7 +821,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 10
+    .locals 8
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -842,50 +842,50 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-object v0, v1
 
-    :goto_10
-    if-nez v0, :cond_23
+    :goto_0
+    if-nez v0, :cond_3
 
     instance-of v0, p1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_1
     move-object v0, v1
 
-    :goto_1b
-    if-eqz v0, :cond_22
+    :goto_1
+    if-eqz v0, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
 
     move-result-object v0
 
-    goto :goto_23
+    goto :goto_2
 
-    :cond_22
+    :cond_2
     move-object v0, v1
 
     .line 65
     .local v0, "set":Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSet;
-    :cond_23
-    :goto_23
-    if-eqz v0, :cond_5d
+    :cond_3
+    :goto_2
+    if-eqz v0, :cond_7
 
     .line 66
     new-instance v2, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;
@@ -924,15 +924,15 @@
 
     .line 70
     .local v6, "newSize":I
-    if-nez v6, :cond_45
+    if-nez v6, :cond_4
 
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->clear()V
 
-    goto :goto_55
+    goto :goto_3
 
     .line 71
-    :cond_45
-    if-eq v6, v2, :cond_55
+    :cond_4
+    if-eq v6, v2, :cond_5
 
     .line 74
     const-string/jumbo v7, "null cannot be cast to non-null type androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of androidx.compose.runtime.external.kotlinx.collections.immutable.implementations.immutableSet.PersistentHashSetBuilder>"
@@ -950,24 +950,24 @@
 
     .line 78
     .end local v6    # "newSize":I
-    :cond_55
-    :goto_55
+    :cond_5
+    :goto_3
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->size()I
 
     move-result v6
 
-    if-eq v2, v6, :cond_5c
+    if-eq v2, v6, :cond_6
 
     move v3, v4
 
-    :cond_5c
+    :cond_6
     return v3
 
     .line 80
     .end local v1    # "deltaCounter":Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/DeltaCounter;
     .end local v2    # "size":I
     .end local v5    # "result":Ljava/lang/Object;
-    :cond_5d
+    :cond_7
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableSet;->retainAll(Ljava/util/Collection;)Z
 
     move-result v1
@@ -976,7 +976,7 @@
 .end method
 
 .method public setSize(I)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # I
 
     .line 23

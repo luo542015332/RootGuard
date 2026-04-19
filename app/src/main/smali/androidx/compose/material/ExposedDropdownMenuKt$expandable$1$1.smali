@@ -86,7 +86,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -139,7 +139,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -168,7 +168,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
 
@@ -182,7 +182,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 11
+    .locals 9
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -191,7 +191,7 @@
     .line 521
     iget v1, p0, Landroidx/compose/material/ExposedDropdownMenuKt$expandable$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_60
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -201,7 +201,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/material/ExposedDropdownMenuKt$expandable$1$1;
@@ -212,11 +212,11 @@
 
     move-object v0, p1
 
-    goto :goto_53
+    goto :goto_1
 
     .end local v0    # "this":Landroidx/compose/material/ExposedDropdownMenuKt$expandable$1$1;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_19
+    :pswitch_1
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/material/ExposedDropdownMenuKt$expandable$1$1;
@@ -228,12 +228,12 @@
     .local v2, "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_3f
+    goto :goto_0
 
     .end local v1    # "this":Landroidx/compose/material/ExposedDropdownMenuKt$expandable$1$1;
     .end local v2    # "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_22
+    :pswitch_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -270,14 +270,14 @@
 
     move-result-object v3
 
-    if-ne v3, v0, :cond_3f
+    if-ne v3, v0, :cond_0
 
     .line 521
     return-object v0
 
     .line 525
-    :cond_3f
-    :goto_3f
+    :cond_0
+    :goto_0
     sget-object v3, Landroidx/compose/ui/input/pointer/PointerEventPass;->Initial:Landroidx/compose/ui/input/pointer/PointerEventPass;
 
     move-object v4, v1
@@ -297,13 +297,13 @@
     move-result-object v2
 
     .end local v2    # "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
-    if-ne v2, v0, :cond_51
+    if-ne v2, v0, :cond_1
 
     .line 521
     return-object v0
 
     .line 525
-    :cond_51
+    :cond_1
     move-object v0, p1
 
     move-object p1, v2
@@ -311,12 +311,12 @@
     .line 521
     .end local p1    # "$result":Ljava/lang/Object;
     .local v0, "$result":Ljava/lang/Object;
-    :goto_53
+    :goto_1
     check-cast p1, Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     .line 526
     .local p1, "upEvent":Landroidx/compose/ui/input/pointer/PointerInputChange;
-    if-eqz p1, :cond_5c
+    if-eqz p1, :cond_2
 
     .line 527
     .end local p1    # "upEvent":Landroidx/compose/ui/input/pointer/PointerInputChange;
@@ -325,17 +325,17 @@
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     .line 529
-    :cond_5c
+    :cond_2
     sget-object p1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p1
 
     nop
 
-    :pswitch_data_60
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_22
-        :pswitch_19
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

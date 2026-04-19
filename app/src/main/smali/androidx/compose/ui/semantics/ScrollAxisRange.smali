@@ -67,13 +67,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Z)V
-    .registers 5
+    .locals 1
     .param p1, "value"    # Lkotlin/jvm/functions/Function0;
     .param p2, "maxValue"    # Lkotlin/jvm/functions/Function0;
     .param p3, "reverseScrolling"    # Z
@@ -114,18 +114,18 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 0
 
     .line 594
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 597
     const/4 p3, 0x0
 
     .line 594
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/semantics/ScrollAxisRange;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Z)V
 
     .line 602
@@ -135,7 +135,7 @@
 
 # virtual methods
 .method public final getMaxValue()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -152,7 +152,7 @@
 .end method
 
 .method public final getReverseScrolling()Z
-    .registers 2
+    .locals 1
 
     .line 597
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/ScrollAxisRange;->reverseScrolling:Z
@@ -161,7 +161,7 @@
 .end method
 
 .method public final getValue()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -178,7 +178,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 600
     new-instance v0, Ljava/lang/StringBuilder;

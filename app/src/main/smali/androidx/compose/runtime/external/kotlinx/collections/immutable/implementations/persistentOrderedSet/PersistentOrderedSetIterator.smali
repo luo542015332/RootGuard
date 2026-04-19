@@ -79,7 +79,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/util/Map;)V
-    .registers 4
+    .locals 1
     .param p1, "nextElement"    # Ljava/lang/Object;
     .param p2, "map"    # Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -110,20 +110,20 @@
 .end method
 
 .method private final checkHasNext()V
-    .registers 2
+    .locals 1
 
     .line 29
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetIterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 31
     return-void
 
     .line 30
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public final getIndex$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 10
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetIterator;->index:I
@@ -143,7 +143,7 @@
 .end method
 
 .method public final getMap$runtime_release()Ljava/util/Map;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -161,7 +161,7 @@
 .end method
 
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 13
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/PersistentOrderedSetIterator;->index:I
@@ -172,21 +172,21 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_c
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 6
+    .locals 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -217,7 +217,7 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_1d
+    if-eqz v1, :cond_0
 
     .line 23
     check-cast v1, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/persistentOrderedSet/Links;
@@ -234,7 +234,7 @@
     return-object v0
 
     .line 22
-    :cond_1d
+    :cond_0
     const/4 v1, 0x0
 
     .line 23
@@ -271,7 +271,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -283,7 +283,7 @@
 .end method
 
 .method public final setIndex$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 10

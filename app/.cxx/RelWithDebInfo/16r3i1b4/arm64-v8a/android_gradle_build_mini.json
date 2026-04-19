@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "D:\\PandaProjects\\PandaTurbo\\app\\src\\main\\cpp\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "C:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "D:\\PandaProjects\\PandaTurbo\\app\\.cxx\\RelWithDebInfo\\16r3i1b4\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "C:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "D:\\PandaProjects\\PandaTurbo\\app\\.cxx\\RelWithDebInfo\\16r3i1b4\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "turbo_nativeloader::@6890427a1f51a3e7e1df": {
+      "artifactName": "turbo_nativeloader",
+      "abi": "arm64-v8a",
+      "output": "D:\\PandaProjects\\PandaTurbo\\app\\build\\intermediates\\cxx\\RelWithDebInfo\\16r3i1b4\\obj\\arm64-v8a\\libturbo_nativeloader.so",
+      "runtimeFiles": []
+    }
+  }
+}

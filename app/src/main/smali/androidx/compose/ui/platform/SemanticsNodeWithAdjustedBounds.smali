@@ -40,7 +40,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/semantics/SemanticsNode;Landroid/graphics/Rect;)V
-    .registers 4
+    .locals 1
     .param p1, "semanticsNode"    # Landroidx/compose/ui/semantics/SemanticsNode;
     .param p2, "adjustedBounds"    # Landroid/graphics/Rect;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final getAdjustedBounds()Landroid/graphics/Rect;
-    .registers 2
+    .locals 1
 
     .line 3362
     iget-object v0, p0, Landroidx/compose/ui/platform/SemanticsNodeWithAdjustedBounds;->adjustedBounds:Landroid/graphics/Rect;
@@ -77,7 +77,7 @@
 .end method
 
 .method public final getSemanticsNode()Landroidx/compose/ui/semantics/SemanticsNode;
-    .registers 2
+    .locals 1
 
     .line 3361
     iget-object v0, p0, Landroidx/compose/ui/platform/SemanticsNodeWithAdjustedBounds;->semanticsNode:Landroidx/compose/ui/semantics/SemanticsNode;

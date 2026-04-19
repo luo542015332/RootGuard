@@ -212,7 +212,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/platform/RenderNodeLayer$Companion;
 
@@ -233,7 +233,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
-    .registers 8
+    .locals 4
     .param p1, "ownerView"    # Landroidx/compose/ui/platform/AndroidComposeView;
     .param p2, "drawBlock"    # Lkotlin/jvm/functions/Function1;
     .param p3, "invalidateParentLayer"    # Lkotlin/jvm/functions/Function0;
@@ -320,7 +320,7 @@
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_4d
+    if-lt v0, v1, :cond_0
 
     .line 88
     new-instance v0, Landroidx/compose/ui/platform/RenderNodeApi29;
@@ -329,10 +329,10 @@
 
     check-cast v0, Landroidx/compose/ui/platform/DeviceRenderNode;
 
-    goto :goto_54
+    goto :goto_0
 
     .line 90
-    :cond_4d
+    :cond_0
     new-instance v0, Landroidx/compose/ui/platform/RenderNodeApi23;
 
     invoke-direct {v0, p1}, Landroidx/compose/ui/platform/RenderNodeApi23;-><init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
@@ -340,7 +340,7 @@
     check-cast v0, Landroidx/compose/ui/platform/DeviceRenderNode;
 
     .line 91
-    :goto_54
+    :goto_0
     nop
 
     .line 383
@@ -364,7 +364,7 @@
 .end method
 
 .method private final clipRenderNode(Landroidx/compose/ui/graphics/Canvas;)V
-    .registers 3
+    .locals 1
     .param p1, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
 
     .line 291
@@ -374,7 +374,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
@@ -382,27 +382,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 292
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/platform/OutlineResolver;->clipToOutline(Landroidx/compose/ui/graphics/Canvas;)V
 
     .line 294
-    :cond_15
+    :cond_1
     return-void
 .end method
 
 .method private final setDirty(Z)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # Z
 
     .line 61
     iget-boolean v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->isDirty:Z
 
-    if-eq p1, v0, :cond_e
+    if-eq p1, v0, :cond_0
 
     .line 62
     iput-boolean p1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->isDirty:Z
@@ -417,12 +417,12 @@
     invoke-virtual {v0, v1, p1}, Landroidx/compose/ui/platform/AndroidComposeView;->notifyLayerIsDirty$ui_release(Landroidx/compose/ui/node/OwnedLayer;Z)V
 
     .line 65
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method private final triggerRepaint()V
-    .registers 3
+    .locals 2
 
     .line 236
     nop
@@ -441,7 +441,7 @@
 
 # virtual methods
 .method public destroy()V
-    .registers 3
+    .locals 2
 
     .line 311
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
@@ -450,7 +450,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 312
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
@@ -458,7 +458,7 @@
     invoke-interface {v0}, Landroidx/compose/ui/platform/DeviceRenderNode;->discardDisplayList()V
 
     .line 314
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->drawBlock:Lkotlin/jvm/functions/Function1;
@@ -495,7 +495,7 @@
 .end method
 
 .method public drawLayer(Landroidx/compose/ui/graphics/Canvas;)V
-    .registers 15
+    .locals 13
     .param p1, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
 
     const-string/jumbo v0, "canvas"
@@ -515,7 +515,7 @@
 
     const/4 v7, 0x0
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_2
 
     .line 246
     invoke-virtual {p0}, Landroidx/compose/ui/platform/RenderNodeLayer;->updateDisplayList()V
@@ -531,21 +531,21 @@
 
     cmpl-float v1, v1, v2
 
-    if-lez v1, :cond_20
+    if-lez v1, :cond_0
 
     const/4 v7, 0x1
 
-    :cond_20
+    :cond_0
     iput-boolean v7, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->drawnWithZ:Z
 
     .line 248
-    if-eqz v7, :cond_27
+    if-eqz v7, :cond_1
 
     .line 249
     invoke-interface {p1}, Landroidx/compose/ui/graphics/Canvas;->enableZ()V
 
     .line 251
-    :cond_27
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
     invoke-interface {v1, v0}, Landroidx/compose/ui/platform/DeviceRenderNode;->drawInto(Landroid/graphics/Canvas;)V
@@ -553,15 +553,15 @@
     .line 252
     iget-boolean v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->drawnWithZ:Z
 
-    if-eqz v1, :cond_a8
+    if-eqz v1, :cond_6
 
     .line 253
     invoke-interface {p1}, Landroidx/compose/ui/graphics/Canvas;->disableZ()V
 
-    goto/16 :goto_a8
+    goto/16 :goto_1
 
     .line 256
-    :cond_35
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
     invoke-interface {v1}, Landroidx/compose/ui/platform/DeviceRenderNode;->getLeft()I
@@ -612,12 +612,12 @@
 
     cmpg-float v1, v1, v2
 
-    if-gez v1, :cond_87
+    if-gez v1, :cond_4
 
     .line 263
     iget-object v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->softwareLayerPaint:Landroidx/compose/ui/graphics/Paint;
 
-    if-nez v1, :cond_69
+    if-nez v1, :cond_3
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPaint_androidKt;->Paint()Landroidx/compose/ui/graphics/Paint;
 
@@ -636,7 +636,7 @@
     .line 264
     .end local v2    # "it":Landroidx/compose/ui/graphics/Paint;
     .end local v3    # "$i$a$-also-RenderNodeLayer$drawLayer$paint$1":I
-    :cond_69
+    :cond_3
     move-object v2, v1
 
     .line 383
@@ -692,15 +692,15 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->saveLayer(FFFFLandroid/graphics/Paint;)I
 
-    goto :goto_8a
+    goto :goto_0
 
     .line 273
     .end local v12    # "paint":Landroidx/compose/ui/graphics/Paint;
-    :cond_87
+    :cond_4
     invoke-interface {p1}, Landroidx/compose/ui/graphics/Canvas;->save()V
 
     .line 277
-    :goto_8a
+    :goto_0
     invoke-interface {p1, v8, v9}, Landroidx/compose/ui/graphics/Canvas;->translate(FF)V
 
     .line 278
@@ -720,12 +720,12 @@
     .line 280
     iget-object v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->drawBlock:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v1, :cond_a2
+    if-eqz v1, :cond_5
 
     invoke-interface {v1, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 281
-    :cond_a2
+    :cond_5
     invoke-interface {p1}, Landroidx/compose/ui/graphics/Canvas;->restore()V
 
     .line 282
@@ -736,13 +736,13 @@
     .end local v9    # "top":F
     .end local v10    # "right":F
     .end local v11    # "bottom":F
-    :cond_a8
-    :goto_a8
+    :cond_6
+    :goto_1
     return-void
 .end method
 
 .method public getLayerId()J
-    .registers 3
+    .locals 2
 
     .line 94
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
@@ -755,7 +755,7 @@
 .end method
 
 .method public final getOwnerView()Landroidx/compose/ui/platform/AndroidComposeView;
-    .registers 2
+    .locals 1
 
     .line 49
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->ownerView:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -764,14 +764,14 @@
 .end method
 
 .method public getOwnerViewId()J
-    .registers 3
+    .locals 2
 
     .line 97
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
-    if-lt v0, v1, :cond_f
+    if-lt v0, v1, :cond_0
 
     .line 98
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->ownerView:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -782,28 +782,28 @@
 
     move-result-wide v0
 
-    goto :goto_11
+    goto :goto_0
 
     .line 100
-    :cond_f
+    :cond_0
     const-wide/16 v0, -0x1
 
     .line 101
-    :goto_11
+    :goto_0
     return-wide v0
 .end method
 
 .method public invalidate()V
-    .registers 2
+    .locals 1
 
     .line 223
     iget-boolean v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->isDirty:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->isDestroyed:Z
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     .line 224
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->ownerView:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -816,12 +816,12 @@
     invoke-direct {p0, v0}, Landroidx/compose/ui/platform/RenderNodeLayer;->setDirty(Z)V
 
     .line 227
-    :cond_11
+    :cond_0
     return-void
 .end method
 
 .method public inverseTransform-58bKbWc([F)V
-    .registers 4
+    .locals 2
     .param p1, "matrix"    # [F
 
     const-string/jumbo v0, "matrix"
@@ -839,18 +839,18 @@
 
     .line 358
     .local v0, "inverse":[F
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 359
     invoke-static {p1, v0}, Landroidx/compose/ui/graphics/Matrix;->timesAssign-58bKbWc([F[F)V
 
     .line 361
-    :cond_13
+    :cond_0
     return-void
 .end method
 
 .method public isInLayer-k-4lQ0M(J)Z
-    .registers 8
+    .locals 5
     .param p1, "position"    # J
 
     .line 173
@@ -874,14 +874,14 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_1
 
     .line 176
     const/4 v2, 0x0
 
     cmpg-float v4, v2, v0
 
-    if-gtz v4, :cond_31
+    if-gtz v4, :cond_0
 
     iget-object v4, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
@@ -893,11 +893,11 @@
 
     cmpg-float v4, v0, v4
 
-    if-gez v4, :cond_31
+    if-gez v4, :cond_0
 
     cmpg-float v2, v2, v1
 
-    if-gtz v2, :cond_31
+    if-gtz v2, :cond_0
 
     iget-object v2, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
@@ -909,25 +909,25 @@
 
     cmpg-float v2, v1, v2
 
-    if-gez v2, :cond_31
+    if-gez v2, :cond_0
 
-    goto :goto_32
+    goto :goto_0
 
-    :cond_31
+    :cond_0
     const/4 v3, 0x0
 
-    :goto_32
+    :goto_0
     return v3
 
     .line 179
-    :cond_33
+    :cond_1
     iget-object v2, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
     invoke-interface {v2}, Landroidx/compose/ui/platform/DeviceRenderNode;->getClipToOutline()Z
 
     move-result v2
 
-    if-eqz v2, :cond_42
+    if-eqz v2, :cond_2
 
     .line 180
     iget-object v2, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
@@ -939,12 +939,12 @@
     return v2
 
     .line 183
-    :cond_42
+    :cond_2
     return v3
 .end method
 
 .method public mapBounds(Landroidx/compose/ui/geometry/MutableRect;Z)V
-    .registers 5
+    .locals 2
     .param p1, "rect"    # Landroidx/compose/ui/geometry/MutableRect;
     .param p2, "inverse"    # Z
 
@@ -953,7 +953,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 331
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_1
 
     .line 332
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->matrixCache:Landroidx/compose/ui/platform/LayerMatrixCache;
@@ -966,24 +966,24 @@
 
     .line 333
     .local v0, "matrix":[F
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     .line 334
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1, v1, v1, v1}, Landroidx/compose/ui/geometry/MutableRect;->set(FFFF)V
 
-    goto :goto_26
+    goto :goto_0
 
     .line 336
-    :cond_17
+    :cond_0
     invoke-static {v0, p1}, Landroidx/compose/ui/graphics/Matrix;->map-impl([FLandroidx/compose/ui/geometry/MutableRect;)V
 
     .end local v0    # "matrix":[F
-    goto :goto_26
+    goto :goto_0
 
     .line 339
-    :cond_1b
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->matrixCache:Landroidx/compose/ui/platform/LayerMatrixCache;
 
     iget-object v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
@@ -995,17 +995,17 @@
     invoke-static {v0, p1}, Landroidx/compose/ui/graphics/Matrix;->map-impl([FLandroidx/compose/ui/geometry/MutableRect;)V
 
     .line 341
-    :goto_26
+    :goto_0
     return-void
 .end method
 
 .method public mapOffset-8S9VItk(JZ)J
-    .registers 6
+    .locals 2
     .param p1, "point"    # J
     .param p3, "inverse"    # Z
 
     .line 323
-    if-eqz p3, :cond_18
+    if-eqz p3, :cond_1
 
     .line 324
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->matrixCache:Landroidx/compose/ui/platform/LayerMatrixCache;
@@ -1016,25 +1016,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     invoke-static {v0, p1, p2}, Landroidx/compose/ui/graphics/Matrix;->map-MK-Hz9U([FJ)J
 
     move-result-wide v0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getInfinite-F1C5BW0()J
 
     move-result-wide v0
 
-    goto :goto_24
+    goto :goto_0
 
     .line 326
-    :cond_18
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->matrixCache:Landroidx/compose/ui/platform/LayerMatrixCache;
 
     iget-object v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
@@ -1048,12 +1048,12 @@
     move-result-wide v0
 
     .line 323
-    :goto_24
+    :goto_0
     return-wide v0
 .end method
 
 .method public move--gyyYBs(J)V
-    .registers 9
+    .locals 6
     .param p1, "position"    # J
 
     .line 206
@@ -1085,13 +1085,13 @@
 
     .line 210
     .local v3, "newTop":I
-    if-ne v0, v2, :cond_18
+    if-ne v0, v2, :cond_0
 
-    if-eq v1, v3, :cond_32
+    if-eq v1, v3, :cond_3
 
     .line 211
-    :cond_18
-    if-eq v0, v2, :cond_21
+    :cond_0
+    if-eq v0, v2, :cond_1
 
     .line 212
     iget-object v4, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
@@ -1101,8 +1101,8 @@
     invoke-interface {v4, v5}, Landroidx/compose/ui/platform/DeviceRenderNode;->offsetLeftAndRight(I)V
 
     .line 214
-    :cond_21
-    if-eq v1, v3, :cond_2a
+    :cond_1
+    if-eq v1, v3, :cond_2
 
     .line 215
     iget-object v4, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
@@ -1112,7 +1112,7 @@
     invoke-interface {v4, v5}, Landroidx/compose/ui/platform/DeviceRenderNode;->offsetTopAndBottom(I)V
 
     .line 217
-    :cond_2a
+    :cond_2
     invoke-direct {p0}, Landroidx/compose/ui/platform/RenderNodeLayer;->triggerRepaint()V
 
     .line 218
@@ -1121,12 +1121,12 @@
     invoke-virtual {v4}, Landroidx/compose/ui/platform/LayerMatrixCache;->invalidate()V
 
     .line 220
-    :cond_32
+    :cond_3
     return-void
 .end method
 
 .method public resize-ozmzZPI(J)V
-    .registers 10
+    .locals 7
     .param p1, "size"    # J
 
     .line 187
@@ -1209,7 +1209,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_60
+    if-eqz v2, :cond_0
 
     .line 198
     iget-object v2, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
@@ -1244,12 +1244,12 @@
     invoke-virtual {v2}, Landroidx/compose/ui/platform/LayerMatrixCache;->invalidate()V
 
     .line 203
-    :cond_60
+    :cond_0
     return-void
 .end method
 
 .method public reuseLayer(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 2
     .param p1, "drawBlock"    # Lkotlin/jvm/functions/Function1;
     .param p2, "invalidateParentLayer"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -1305,7 +1305,7 @@
 .end method
 
 .method public transform-58bKbWc([F)V
-    .registers 4
+    .locals 2
     .param p1, "matrix"    # [F
 
     const-string/jumbo v0, "matrix"
@@ -1328,12 +1328,12 @@
 .end method
 
 .method public updateDisplayList()V
-    .registers 6
+    .locals 5
 
     .line 297
     iget-boolean v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->isDirty:Z
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
@@ -1341,10 +1341,10 @@
 
     move-result v0
 
-    if-nez v0, :cond_37
+    if-nez v0, :cond_2
 
     .line 298
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Landroidx/compose/ui/platform/RenderNodeLayer;->setDirty(Z)V
@@ -1356,7 +1356,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
 
@@ -1364,7 +1364,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_27
+    if-nez v0, :cond_1
 
     .line 300
     iget-object v0, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
@@ -1373,21 +1373,21 @@
 
     move-result-object v0
 
-    goto :goto_28
+    goto :goto_0
 
     .line 302
-    :cond_27
+    :cond_1
     const/4 v0, 0x0
 
     .line 299
-    :goto_28
+    :goto_0
     nop
 
     .line 304
     .local v0, "clipPath":Landroidx/compose/ui/graphics/Path;
     iget-object v1, p0, Landroidx/compose/ui/platform/RenderNodeLayer;->drawBlock:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_2
 
     .local v1, "it":Lkotlin/jvm/functions/Function1;
     const/4 v2, 0x0
@@ -1410,12 +1410,12 @@
 
     .line 308
     .end local v0    # "clipPath":Landroidx/compose/ui/graphics/Path;
-    :cond_37
+    :cond_2
     return-void
 .end method
 
 .method public updateLayerProperties-dDxr-wY(FFFFFFFFFFJLandroidx/compose/ui/graphics/Shape;ZLandroidx/compose/ui/graphics/RenderEffect;JJILandroidx/compose/ui/unit/LayoutDirection;Landroidx/compose/ui/unit/Density;)V
-    .registers 43
+    .locals 20
     .param p1, "scaleX"    # F
     .param p2, "scaleY"    # F
     .param p3, "alpha"    # F
@@ -1468,7 +1468,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_0
 
     iget-object v1, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
 
@@ -1476,16 +1476,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_30
+    if-nez v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_31
+    :goto_0
     move v15, v1
 
     .line 133
@@ -1618,43 +1618,43 @@
     .line 147
     iget-object v1, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
-    if-eqz p14, :cond_b9
+    if-eqz p14, :cond_1
 
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v2
 
-    if-eq v8, v2, :cond_b9
+    if-eq v8, v2, :cond_1
 
     const/4 v2, 0x1
 
-    goto :goto_ba
+    goto :goto_1
 
-    :cond_b9
+    :cond_1
     const/4 v2, 0x0
 
-    :goto_ba
+    :goto_1
     invoke-interface {v1, v2}, Landroidx/compose/ui/platform/DeviceRenderNode;->setClipToOutline(Z)V
 
     .line 148
     iget-object v1, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
-    if-eqz p14, :cond_c9
+    if-eqz p14, :cond_2
 
     invoke-static {}, Landroidx/compose/ui/graphics/RectangleShapeKt;->getRectangleShape()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object v2
 
-    if-ne v8, v2, :cond_c9
+    if-ne v8, v2, :cond_2
 
     const/4 v2, 0x1
 
-    goto :goto_ca
+    goto :goto_2
 
-    :cond_c9
+    :cond_2
     const/4 v2, 0x0
 
-    :goto_ca
+    :goto_2
     invoke-interface {v1, v2}, Landroidx/compose/ui/platform/DeviceRenderNode;->setClipToBounds(Z)V
 
     .line 149
@@ -1740,7 +1740,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_120
+    if-eqz v2, :cond_3
 
     iget-object v2, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
 
@@ -1748,44 +1748,44 @@
 
     move-result v2
 
-    if-nez v2, :cond_120
+    if-nez v2, :cond_3
 
     const/16 v16, 0x1
 
-    goto :goto_122
+    goto :goto_3
 
-    :cond_120
+    :cond_3
     const/16 v16, 0x0
 
-    :goto_122
+    :goto_3
     move/from16 v2, v16
 
     .line 161
     .local v2, "isClippingManually":Z
-    if-ne v15, v2, :cond_12f
+    if-ne v15, v2, :cond_5
 
-    if-eqz v2, :cond_12b
+    if-eqz v2, :cond_4
 
-    if-eqz v1, :cond_12b
+    if-eqz v1, :cond_4
 
-    goto :goto_12f
+    goto :goto_4
 
     .line 164
-    :cond_12b
+    :cond_4
     invoke-direct/range {p0 .. p0}, Landroidx/compose/ui/platform/RenderNodeLayer;->triggerRepaint()V
 
-    goto :goto_132
+    goto :goto_5
 
     .line 162
-    :cond_12f
-    :goto_12f
+    :cond_5
+    :goto_4
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/platform/RenderNodeLayer;->invalidate()V
 
     .line 166
-    :goto_132
+    :goto_5
     iget-boolean v3, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->drawnWithZ:Z
 
-    if-nez v3, :cond_148
+    if-nez v3, :cond_6
 
     iget-object v3, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->renderNode:Landroidx/compose/ui/platform/DeviceRenderNode;
 
@@ -1797,17 +1797,17 @@
 
     cmpl-float v3, v3, v4
 
-    if-lez v3, :cond_148
+    if-lez v3, :cond_6
 
     .line 167
     iget-object v3, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->invalidateParentLayer:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v3, :cond_148
+    if-eqz v3, :cond_6
 
     invoke-interface {v3}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     .line 169
-    :cond_148
+    :cond_6
     iget-object v3, v0, Landroidx/compose/ui/platform/RenderNodeLayer;->matrixCache:Landroidx/compose/ui/platform/LayerMatrixCache;
 
     invoke-virtual {v3}, Landroidx/compose/ui/platform/LayerMatrixCache;->invalidate()V

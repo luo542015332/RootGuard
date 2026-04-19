@@ -38,7 +38,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/CompositionLocalMap;)V
-    .registers 3
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/CompositionLocalMap;
 
     const-string/jumbo v0, "map"
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final getMap()Landroidx/compose/runtime/CompositionLocalMap;
-    .registers 2
+    .locals 1
 
     .line 288
     iget-object v0, p0, Landroidx/compose/ui/CompositionLocalMapInjectionNode;->map:Landroidx/compose/runtime/CompositionLocalMap;
@@ -67,7 +67,7 @@
 .end method
 
 .method public onAttach()V
-    .registers 3
+    .locals 2
 
     .line 294
     move-object v0, p0
@@ -87,7 +87,7 @@
 .end method
 
 .method public final setMap(Landroidx/compose/runtime/CompositionLocalMap;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/CompositionLocalMap;
 
     const-string/jumbo v0, "value"

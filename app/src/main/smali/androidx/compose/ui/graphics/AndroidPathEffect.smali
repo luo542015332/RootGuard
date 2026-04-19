@@ -37,7 +37,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/PathEffect;)V
-    .registers 3
+    .locals 1
     .param p1, "nativePathEffect"    # Landroid/graphics/PathEffect;
 
     const-string/jumbo v0, "nativePathEffect"
@@ -55,7 +55,7 @@
 
 # virtual methods
 .method public final getNativePathEffect()Landroid/graphics/PathEffect;
-    .registers 2
+    .locals 1
 
     .line 24
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidPathEffect;->nativePathEffect:Landroid/graphics/PathEffect;

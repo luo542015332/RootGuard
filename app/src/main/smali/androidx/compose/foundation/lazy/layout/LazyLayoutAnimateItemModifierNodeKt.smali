@@ -38,7 +38,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 5
+    .locals 5
 
     .line 131
     nop
@@ -76,7 +76,7 @@
 .end method
 
 .method public static final synthetic access$getInterruptionSpec$p()Landroidx/compose/animation/core/SpringSpec;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNodeKt;->InterruptionSpec:Landroidx/compose/animation/core/SpringSpec;

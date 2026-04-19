@@ -65,7 +65,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "onGloballyPositioned"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 46
     invoke-virtual {p0}, Landroidx/compose/ui/layout/OnGloballyPositionedElement;->create()Landroidx/compose/ui/layout/OnGloballyPositionedNode;
@@ -108,7 +108,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/layout/OnGloballyPositionedNode;
-    .registers 3
+    .locals 2
 
     .line 51
     new-instance v0, Landroidx/compose/ui/layout/OnGloballyPositionedNode;
@@ -121,28 +121,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 55
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
     .line 56
-    :cond_4
+    :cond_0
     instance-of v0, p1, Landroidx/compose/ui/layout/OnGloballyPositionedElement;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_1
 
     const/4 v0, 0x0
 
     return v0
 
     .line 57
-    :cond_a
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/layout/OnGloballyPositionedElement;->onGloballyPositioned:Lkotlin/jvm/functions/Function1;
 
     move-object v1, p1
@@ -159,7 +159,7 @@
 .end method
 
 .method public final getOnGloballyPositioned()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -177,7 +177,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 61
     iget-object v0, p0, Landroidx/compose/ui/layout/OnGloballyPositionedElement;->onGloballyPositioned:Lkotlin/jvm/functions/Function1;
@@ -190,7 +190,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 5
+    .locals 3
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -216,7 +216,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 46
@@ -230,7 +230,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/layout/OnGloballyPositionedNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/layout/OnGloballyPositionedNode;
 
     const-string/jumbo v0, "node"

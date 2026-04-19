@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .param p1, "consumer"    # Lkotlin/jvm/functions/Function1;
     .param p2, "debugInspectorInfo"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -100,13 +100,13 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 70
     instance-of v0, p1, Landroidx/compose/ui/modifier/ModifierLocalConsumerImpl;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -120,21 +120,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     return v0
 .end method
 
 .method public final getConsumer()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -152,7 +152,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/compose/ui/modifier/ModifierLocalConsumerImpl;->consumer:Lkotlin/jvm/functions/Function1;
@@ -165,7 +165,7 @@
 .end method
 
 .method public onModifierLocalsUpdated(Landroidx/compose/ui/modifier/ModifierLocalReadScope;)V
-    .registers 3
+    .locals 1
     .param p1, "scope"    # Landroidx/compose/ui/modifier/ModifierLocalReadScope;
 
     const-string/jumbo v0, "scope"

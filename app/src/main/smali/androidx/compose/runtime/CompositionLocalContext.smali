@@ -38,13 +38,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/PersistentCompositionLocalMap;)V
-    .registers 3
+    .locals 1
     .param p1, "compositionLocals"    # Landroidx/compose/runtime/PersistentCompositionLocalMap;
 
     const-string/jumbo v0, "compositionLocals"
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final getCompositionLocals$runtime_release()Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 2
+    .locals 1
 
     .line 209
     iget-object v0, p0, Landroidx/compose/runtime/CompositionLocalContext;->compositionLocals:Landroidx/compose/runtime/PersistentCompositionLocalMap;

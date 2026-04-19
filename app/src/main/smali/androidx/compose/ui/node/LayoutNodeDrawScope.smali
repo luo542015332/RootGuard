@@ -198,7 +198,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -210,7 +210,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;)V
-    .registers 3
+    .locals 1
     .param p1, "canvasDrawScope"    # Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
     const-string/jumbo v0, "canvasDrawScope"
@@ -228,12 +228,12 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     .line 34
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_0
 
     .line 35
     new-instance p1, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
@@ -241,7 +241,7 @@
     invoke-direct {p1}, Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;-><init>()V
 
     .line 34
-    :cond_9
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/node/LayoutNodeDrawScope;-><init>(Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;)V
 
     .line 110
@@ -251,7 +251,7 @@
 
 # virtual methods
 .method public final draw-x_KDEd0$ui_release(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/node/NodeCoordinator;Landroidx/compose/ui/Modifier$Node;)V
-    .registers 27
+    .locals 21
     .param p1, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
     .param p2, "size"    # J
     .param p4, "coordinator"    # Landroidx/compose/ui/node/NodeCoordinator;
@@ -314,13 +314,13 @@
     .end local v2    # "node$iv":Ljava/lang/Object;
     .local v12, "stack$iv":Ljava/lang/Object;
     .local v13, "node$iv":Ljava/lang/Object;
-    :goto_26
-    if-eqz v13, :cond_c9
+    :goto_0
+    if-eqz v13, :cond_c
 
     .line 179
     instance-of v1, v13, Landroidx/compose/ui/node/DrawModifierNode;
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_0
 
     .line 180
     move-object v14, v13
@@ -352,10 +352,10 @@
     .end local v15    # "$i$a$-dispatchForKind-6rFNWt0-LayoutNodeDrawScope$draw$1":I
     move/from16 v19, v0
 
-    goto/16 :goto_c1
+    goto/16 :goto_6
 
     .line 181
-    :cond_41
+    :cond_0
     move-object v1, v13
 
     .local v1, "this_$iv$iv":Landroidx/compose/ui/Modifier$Node;
@@ -373,24 +373,24 @@
 
     const/4 v5, 0x1
 
-    if-eqz v3, :cond_4e
+    if-eqz v3, :cond_1
 
     move v1, v5
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_4e
+    :cond_1
     move v1, v4
 
     .line 181
     .end local v1    # "this_$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v2    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_4f
-    if-eqz v1, :cond_bf
+    :goto_1
+    if-eqz v1, :cond_a
 
     instance-of v1, v13, Landroidx/compose/ui/node/DelegatingNode;
 
-    if-eqz v1, :cond_bf
+    if-eqz v1, :cond_a
 
     .line 183
     const/4 v1, 0x0
@@ -412,8 +412,8 @@
 
     .line 186
     .local v6, "node$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_5e
-    if-eqz v6, :cond_b6
+    :goto_2
+    if-eqz v6, :cond_9
 
     .line 187
     move-object v14, v6
@@ -436,37 +436,37 @@
 
     and-int v18, v18, v0
 
-    if-eqz v18, :cond_71
+    if-eqz v18, :cond_2
 
     move/from16 v16, v5
 
-    goto :goto_73
+    goto :goto_3
 
-    :cond_71
+    :cond_2
     move/from16 v16, v4
 
     .line 188
     .end local v16    # "this_$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v17    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_73
-    if-eqz v16, :cond_aa
+    :goto_3
+    if-eqz v16, :cond_8
 
     .line 189
     add-int/lit8 v1, v1, 0x1
 
     .line 190
-    if-ne v1, v5, :cond_7d
+    if-ne v1, v5, :cond_3
 
     .line 191
     move-object v13, v14
 
     move/from16 v19, v0
 
-    goto :goto_ac
+    goto :goto_5
 
     .line 195
-    :cond_7d
-    if-nez v12, :cond_92
+    :cond_3
+    if-nez v12, :cond_4
 
     const/16 v16, 0x0
 
@@ -499,7 +499,7 @@
     .line 196
     .end local v5    # "capacity$iv$iv$iv":I
     .end local v18    # "$i$f$MutableVector":I
-    goto :goto_97
+    goto :goto_4
 
     .line 195
     .end local v16    # "$i$f$mutableVectorOf":I
@@ -507,7 +507,7 @@
     .end local v20    # "count$iv":I
     .restart local v0    # "kind$iv":I
     .restart local v1    # "count$iv":I
-    :cond_92
+    :cond_4
     move/from16 v19, v0
 
     move/from16 v20, v1
@@ -518,7 +518,7 @@
     .restart local v20    # "count$iv":I
     move-object v0, v12
 
-    :goto_97
+    :goto_4
     move-object v12, v0
 
     .line 199
@@ -526,44 +526,44 @@
 
     .line 200
     .local v0, "theNode$iv":Landroidx/compose/ui/Modifier$Node;
-    if-eqz v0, :cond_a2
+    if-eqz v0, :cond_6
 
     .line 201
-    if-eqz v12, :cond_a0
+    if-eqz v12, :cond_5
 
     invoke-virtual {v12, v0}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 202
-    :cond_a0
+    :cond_5
     const/4 v1, 0x0
 
     move-object v13, v1
 
     .line 204
-    :cond_a2
-    if-eqz v12, :cond_a7
+    :cond_6
+    if-eqz v12, :cond_7
 
     invoke-virtual {v12, v14}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 207
     .end local v0    # "theNode$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_a7
+    :cond_7
     move/from16 v1, v20
 
-    goto :goto_ac
+    goto :goto_5
 
     .line 188
     .end local v19    # "kind$iv":I
     .end local v20    # "count$iv":I
     .local v0, "kind$iv":I
     .restart local v1    # "count$iv":I
-    :cond_aa
+    :cond_8
     move/from16 v19, v0
 
     .line 207
     .end local v0    # "kind$iv":I
     .restart local v19    # "kind$iv":I
-    :goto_ac
+    :goto_5
     nop
 
     .line 187
@@ -580,12 +580,12 @@
 
     const/4 v5, 0x1
 
-    goto :goto_5e
+    goto :goto_2
 
     .line 210
     .end local v19    # "kind$iv":I
     .restart local v0    # "kind$iv":I
-    :cond_b6
+    :cond_9
     move/from16 v19, v0
 
     .line 211
@@ -596,38 +596,37 @@
     .restart local v19    # "kind$iv":I
     const/4 v0, 0x1
 
-    if-ne v1, v0, :cond_c1
+    if-ne v1, v0, :cond_b
 
     .line 213
     move/from16 v0, v19
 
-    goto/16 :goto_26
+    goto/16 :goto_0
 
     .line 181
     .end local v1    # "count$iv":I
     .end local v19    # "kind$iv":I
     .restart local v0    # "kind$iv":I
-    :cond_bf
+    :cond_a
     move/from16 v19, v0
 
     .line 216
     .end local v0    # "kind$iv":I
     .restart local v19    # "kind$iv":I
-    :cond_c1
-    :goto_c1
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
+    :cond_b
+    :goto_6
     invoke-static {v12}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v13
 
     move/from16 v0, v19
 
-    goto/16 :goto_26
+    goto/16 :goto_0
 
     .line 218
     .end local v19    # "kind$iv":I
     .restart local v0    # "kind$iv":I
-    :cond_c9
+    :cond_c
     nop
 
     .line 88
@@ -640,7 +639,7 @@
 .end method
 
 .method public drawArc-illE91I(Landroidx/compose/ui/graphics/Brush;FFZJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 29
+    .locals 16
 
     const-string/jumbo v0, "brush"
 
@@ -684,7 +683,7 @@
 .end method
 
 .method public drawArc-yD3GUKo(JFFZJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 30
+    .locals 16
 
     const-string/jumbo v0, "style"
 
@@ -722,7 +721,7 @@
 .end method
 
 .method public drawCircle-V9BoPsw(Landroidx/compose/ui/graphics/Brush;FJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 21
+    .locals 12
 
     const-string/jumbo v0, "brush"
 
@@ -760,7 +759,7 @@
 .end method
 
 .method public drawCircle-VaOC9Bg(JFJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 22
+    .locals 12
 
     const-string/jumbo v0, "style"
 
@@ -792,7 +791,7 @@
 .end method
 
 .method public drawContent()V
-    .registers 25
+    .locals 24
 
     .line 46
     move-object/from16 v0, p0
@@ -829,7 +828,6 @@
 
     check-cast v6, Landroidx/compose/ui/node/DelegatableNode;
 
-    # invokes: Landroidx/compose/ui/node/LayoutNodeDrawScopeKt;->nextDrawNode(Landroidx/compose/ui/node/DelegatableNode;)Landroidx/compose/ui/Modifier$Node;
     invoke-static {v6}, Landroidx/compose/ui/node/LayoutNodeDrawScopeKt;->access$nextDrawNode(Landroidx/compose/ui/node/DelegatableNode;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v6
@@ -838,7 +836,7 @@
     .local v6, "nextDrawNode":Landroidx/compose/ui/Modifier$Node;
     const/4 v7, 0x4
 
-    if-eqz v6, :cond_eb
+    if-eqz v6, :cond_d
 
     .line 54
     const/4 v8, 0x0
@@ -871,13 +869,13 @@
     move-object v11, v8
 
     .line 132
-    :goto_29
-    if-eqz v11, :cond_e6
+    :goto_0
+    if-eqz v11, :cond_c
 
     .line 133
     instance-of v12, v11, Landroidx/compose/ui/node/DrawModifierNode;
 
-    if-eqz v12, :cond_3d
+    if-eqz v12, :cond_0
 
     .line 134
     move-object v12, v11
@@ -901,10 +899,10 @@
 
     move/from16 v23, v2
 
-    goto/16 :goto_da
+    goto/16 :goto_6
 
     .line 135
-    :cond_3d
+    :cond_0
     move-object v12, v11
 
     .local v12, "this_$iv$iv":Landroidx/compose/ui/Modifier$Node;
@@ -920,24 +918,24 @@
 
     const/4 v15, 0x1
 
-    if-eqz v14, :cond_49
+    if-eqz v14, :cond_1
 
     move v12, v15
 
-    goto :goto_4a
+    goto :goto_1
 
-    :cond_49
+    :cond_1
     const/4 v12, 0x0
 
     .line 135
     .end local v12    # "this_$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v13    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_4a
-    if-eqz v12, :cond_d6
+    :goto_1
+    if-eqz v12, :cond_a
 
     instance-of v12, v11, Landroidx/compose/ui/node/DelegatingNode;
 
-    if-eqz v12, :cond_d6
+    if-eqz v12, :cond_a
 
     .line 137
     const/4 v12, 0x0
@@ -959,8 +957,8 @@
 
     .line 140
     .local v16, "node$iv$iv":Landroidx/compose/ui/Modifier$Node;
-    :goto_59
-    if-eqz v16, :cond_c7
+    :goto_2
+    if-eqz v16, :cond_9
 
     .line 141
     move-object/from16 v17, v16
@@ -983,26 +981,26 @@
 
     and-int v21, v21, v7
 
-    if-eqz v21, :cond_6e
+    if-eqz v21, :cond_2
 
     move/from16 v19, v15
 
-    goto :goto_70
+    goto :goto_3
 
-    :cond_6e
+    :cond_2
     const/16 v19, 0x0
 
     .line 142
     .end local v19    # "this_$iv$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v20    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_70
-    if-eqz v19, :cond_b2
+    :goto_3
+    if-eqz v19, :cond_8
 
     .line 143
     add-int/lit8 v12, v12, 0x1
 
     .line 144
-    if-ne v12, v15, :cond_80
+    if-ne v12, v15, :cond_3
 
     .line 145
     move-object/from16 v11, v17
@@ -1015,11 +1013,11 @@
 
     const/4 v2, 0x0
 
-    goto :goto_b9
+    goto :goto_5
 
     .line 149
-    :cond_80
-    if-nez v10, :cond_96
+    :cond_3
+    if-nez v10, :cond_4
 
     const/16 v19, 0x0
 
@@ -1054,7 +1052,7 @@
     .line 150
     .end local v15    # "capacity$iv$iv$iv":I
     .end local v21    # "$i$f$MutableVector":I
-    goto :goto_9c
+    goto :goto_4
 
     .line 149
     .end local v19    # "$i$f$mutableVectorOf":I
@@ -1062,7 +1060,7 @@
     .end local v23    # "$i$f$drawIntoCanvas":I
     .restart local v1    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v2    # "$i$f$drawIntoCanvas":I
-    :cond_96
+    :cond_4
     move-object/from16 v22, v1
 
     move/from16 v23, v2
@@ -1075,7 +1073,7 @@
     .restart local v23    # "$i$f$drawIntoCanvas":I
     move-object v0, v10
 
-    :goto_9c
+    :goto_4
     move-object v10, v0
 
     .line 153
@@ -1083,22 +1081,22 @@
 
     .line 154
     .local v0, "theNode$iv":Landroidx/compose/ui/Modifier$Node;
-    if-eqz v0, :cond_a7
+    if-eqz v0, :cond_6
 
     .line 155
-    if-eqz v10, :cond_a5
+    if-eqz v10, :cond_5
 
     invoke-virtual {v10, v0}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
     .line 156
-    :cond_a5
+    :cond_5
     const/4 v1, 0x0
 
     move-object v11, v1
 
     .line 158
-    :cond_a7
-    if-eqz v10, :cond_af
+    :cond_6
+    if-eqz v10, :cond_7
 
     move-object/from16 v1, v17
 
@@ -1106,16 +1104,16 @@
     .local v1, "next$iv":Landroidx/compose/ui/Modifier$Node;
     invoke-virtual {v10, v1}, Landroidx/compose/runtime/collection/MutableVector;->add(Ljava/lang/Object;)Z
 
-    goto :goto_b9
+    goto :goto_5
 
     .end local v1    # "next$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v17    # "next$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_af
+    :cond_7
     move-object/from16 v1, v17
 
     .end local v17    # "next$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v1    # "next$iv":Landroidx/compose/ui/Modifier$Node;
-    goto :goto_b9
+    goto :goto_5
 
     .line 142
     .end local v0    # "theNode$iv":Landroidx/compose/ui/Modifier$Node;
@@ -1124,7 +1122,7 @@
     .local v1, "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v2    # "$i$f$drawIntoCanvas":I
     .restart local v17    # "next$iv":Landroidx/compose/ui/Modifier$Node;
-    :cond_b2
+    :cond_8
     move-object/from16 v22, v1
 
     move/from16 v23, v2
@@ -1139,7 +1137,7 @@
     .local v1, "next$iv":Landroidx/compose/ui/Modifier$Node;
     .restart local v22    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v23    # "$i$f$drawIntoCanvas":I
-    :goto_b9
+    :goto_5
     nop
 
     .line 141
@@ -1160,14 +1158,14 @@
 
     const/4 v15, 0x1
 
-    goto :goto_59
+    goto :goto_2
 
     .line 164
     .end local v22    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v23    # "$i$f$drawIntoCanvas":I
     .local v1, "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v2    # "$i$f$drawIntoCanvas":I
-    :cond_c7
+    :cond_9
     move-object/from16 v22, v1
 
     move/from16 v23, v2
@@ -1182,7 +1180,7 @@
     .restart local v23    # "$i$f$drawIntoCanvas":I
     const/4 v0, 0x1
 
-    if-ne v12, v0, :cond_da
+    if-ne v12, v0, :cond_b
 
     .line 167
     move-object/from16 v0, p0
@@ -1191,7 +1189,7 @@
 
     move/from16 v2, v23
 
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 135
     .end local v12    # "count$iv":I
@@ -1199,7 +1197,7 @@
     .end local v23    # "$i$f$drawIntoCanvas":I
     .restart local v1    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v2    # "$i$f$drawIntoCanvas":I
-    :cond_d6
+    :cond_a
     move-object/from16 v22, v1
 
     move/from16 v23, v2
@@ -1209,9 +1207,8 @@
     .end local v2    # "$i$f$drawIntoCanvas":I
     .restart local v22    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v23    # "$i$f$drawIntoCanvas":I
-    :cond_da
-    :goto_da
-    # invokes: Landroidx/compose/ui/node/DelegatableNodeKt;->pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
+    :cond_b
+    :goto_6
     invoke-static {v10}, Landroidx/compose/ui/node/DelegatableNodeKt;->access$pop(Landroidx/compose/runtime/collection/MutableVector;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v11
@@ -1222,14 +1219,14 @@
 
     move/from16 v2, v23
 
-    goto/16 :goto_29
+    goto/16 :goto_0
 
     .line 172
     .end local v22    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v23    # "$i$f$drawIntoCanvas":I
     .restart local v1    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v2    # "$i$f$drawIntoCanvas":I
-    :cond_e6
+    :cond_c
     move-object/from16 v22, v1
 
     move/from16 v23, v2
@@ -1243,14 +1240,14 @@
     .end local v11    # "node$iv":Ljava/lang/Object;
     .restart local v22    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v23    # "$i$f$drawIntoCanvas":I
-    goto :goto_112
+    goto :goto_8
 
     .line 61
     .end local v22    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v23    # "$i$f$drawIntoCanvas":I
     .restart local v1    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v2    # "$i$f$drawIntoCanvas":I
-    :cond_eb
+    :cond_d
     move-object/from16 v22, v1
 
     move/from16 v23, v2
@@ -1287,7 +1284,7 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_10d
+    if-ne v1, v2, :cond_e
 
     .line 63
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->getWrapped$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
@@ -1296,14 +1293,14 @@
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    goto :goto_10e
+    goto :goto_7
 
     .line 65
-    :cond_10d
+    :cond_e
     move-object v1, v0
 
     .line 62
-    :goto_10e
+    :goto_7
     nop
 
     .line 66
@@ -1313,7 +1310,7 @@
     .line 68
     .end local v0    # "coordinator":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v1    # "nextCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
-    :goto_112
+    :goto_8
     nop
 
     .line 128
@@ -1330,7 +1327,7 @@
 .end method
 
 .method public final drawDirect-x_KDEd0$ui_release(Landroidx/compose/ui/graphics/Canvas;JLandroidx/compose/ui/node/NodeCoordinator;Landroidx/compose/ui/node/DrawModifierNode;)V
-    .registers 23
+    .locals 17
     .param p1, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
     .param p2, "size"    # J
     .param p4, "coordinator"    # Landroidx/compose/ui/node/NodeCoordinator;
@@ -1531,7 +1528,7 @@
 .end method
 
 .method public synthetic drawImage-9jGpkUE(Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 30
+    .locals 16
     .annotation runtime Lkotlin/Deprecated;
         level = .enum Lkotlin/DeprecationLevel;->HIDDEN:Lkotlin/DeprecationLevel;
         message = "Prefer usage of drawImage that consumes an optional FilterQuality parameter"
@@ -1584,7 +1581,7 @@
 .end method
 
 .method public drawImage-AZ2fEMs(Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
-    .registers 31
+    .locals 16
 
     const-string/jumbo v0, "image"
 
@@ -1628,7 +1625,7 @@
 .end method
 
 .method public drawImage-gbVJVH8(Landroidx/compose/ui/graphics/ImageBitmap;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 19
+    .locals 11
 
     const-string/jumbo v0, "image"
 
@@ -1664,7 +1661,7 @@
 .end method
 
 .method public drawLine-1RTmtNc(Landroidx/compose/ui/graphics/Brush;JJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 26
+    .locals 14
 
     const-string/jumbo v0, "brush"
 
@@ -1700,7 +1697,7 @@
 .end method
 
 .method public drawLine-NGM6Ib0(JJJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 27
+    .locals 14
 
     move-object v0, p0
 
@@ -1730,7 +1727,7 @@
 .end method
 
 .method public drawOval-AsUm42w(Landroidx/compose/ui/graphics/Brush;JJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 23
+    .locals 13
 
     const-string/jumbo v0, "brush"
 
@@ -1768,7 +1765,7 @@
 .end method
 
 .method public drawOval-n-J9OG0(JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 24
+    .locals 13
 
     const-string/jumbo v0, "style"
 
@@ -1800,7 +1797,7 @@
 .end method
 
 .method public drawPath-GBMwjPU(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 15
+    .locals 8
 
     const-string/jumbo v0, "path"
 
@@ -1834,7 +1831,7 @@
 .end method
 
 .method public drawPath-LG529CI(Landroidx/compose/ui/graphics/Path;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 19
+    .locals 11
 
     const-string/jumbo v0, "path"
 
@@ -1870,7 +1867,7 @@
 .end method
 
 .method public drawPoints-F8ZwMP8(Ljava/util/List;IJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 24
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1918,7 +1915,7 @@
 .end method
 
 .method public drawPoints-Gsft0Ws(Ljava/util/List;ILandroidx/compose/ui/graphics/Brush;FILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 23
+    .locals 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1974,7 +1971,7 @@
 .end method
 
 .method public drawRect-AsUm42w(Landroidx/compose/ui/graphics/Brush;JJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 23
+    .locals 13
 
     const-string/jumbo v0, "brush"
 
@@ -2012,7 +2009,7 @@
 .end method
 
 .method public drawRect-n-J9OG0(JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 24
+    .locals 13
 
     const-string/jumbo v0, "style"
 
@@ -2044,7 +2041,7 @@
 .end method
 
 .method public drawRoundRect-ZuiqVtQ(Landroidx/compose/ui/graphics/Brush;JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 27
+    .locals 15
 
     const-string/jumbo v0, "brush"
 
@@ -2084,7 +2081,7 @@
 .end method
 
 .method public drawRoundRect-u-Aw5IA(JJJJLandroidx/compose/ui/graphics/drawscope/DrawStyle;FLandroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 28
+    .locals 15
 
     const-string/jumbo v0, "style"
 
@@ -2118,7 +2115,7 @@
 .end method
 
 .method public getCenter-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2130,7 +2127,7 @@
 .end method
 
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2142,7 +2139,7 @@
 .end method
 
 .method public getDrawContext()Landroidx/compose/ui/graphics/drawscope/DrawContext;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2154,7 +2151,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2166,7 +2163,7 @@
 .end method
 
 .method public getLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2178,7 +2175,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2190,7 +2187,7 @@
 .end method
 
 .method public final performDraw(Landroidx/compose/ui/node/DrawModifierNode;Landroidx/compose/ui/graphics/Canvas;)V
-    .registers 13
+    .locals 10
     .param p1, "$this$performDraw"    # Landroidx/compose/ui/node/DrawModifierNode;
     .param p2, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
 
@@ -2262,7 +2259,7 @@
 .end method
 
 .method public roundToPx--R2X_6o(J)I
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2274,7 +2271,7 @@
 .end method
 
 .method public roundToPx-0680j_4(F)I
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2286,7 +2283,7 @@
 .end method
 
 .method public toDp-GaN1DYA(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2298,7 +2295,7 @@
 .end method
 
 .method public toDp-u2uoSUM(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2310,7 +2307,7 @@
 .end method
 
 .method public toDp-u2uoSUM(I)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2322,7 +2319,7 @@
 .end method
 
 .method public toDpSize-k-rfVVM(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2334,7 +2331,7 @@
 .end method
 
 .method public toPx--R2X_6o(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2346,7 +2343,7 @@
 .end method
 
 .method public toPx-0680j_4(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2358,7 +2355,7 @@
 .end method
 
 .method public toRect(Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
 
     const-string v0, "<this>"
 
@@ -2374,7 +2371,7 @@
 .end method
 
 .method public toSize-XkaWNTQ(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2386,7 +2383,7 @@
 .end method
 
 .method public toSp-0xMU5do(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2398,7 +2395,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 
@@ -2410,7 +2407,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(I)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/node/LayoutNodeDrawScope;->canvasDrawScope:Landroidx/compose/ui/graphics/drawscope/CanvasDrawScope;
 

@@ -55,7 +55,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/CombinedModifier$toString$1;
 
@@ -67,7 +67,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x2
 
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -100,7 +100,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/String;Landroidx/compose/ui/Modifier$Element;)Ljava/lang/String;
-    .registers 5
+    .locals 2
     .param p1, "acc"    # Ljava/lang/String;
     .param p2, "element"    # Landroidx/compose/ui/Modifier$Element;
 
@@ -121,25 +121,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
-    if-eqz v0, :cond_1f
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_36
+    goto :goto_1
 
-    :cond_1f
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -162,6 +162,6 @@
 
     move-result-object v0
 
-    :goto_36
+    :goto_1
     return-object v0
 .end method

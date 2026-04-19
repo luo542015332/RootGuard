@@ -46,7 +46,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 923
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/drawscope/Stroke$Companion;-><init>()V
 
@@ -65,10 +65,9 @@
 
 # virtual methods
 .method public final getDefaultCap-KaPHkGw()I
-    .registers 2
+    .locals 1
 
     .line 938
-    # getter for: Landroidx/compose/ui/graphics/drawscope/Stroke;->DefaultCap:I
     invoke-static {}, Landroidx/compose/ui/graphics/drawscope/Stroke;->access$getDefaultCap$cp()I
 
     move-result v0
@@ -77,10 +76,9 @@
 .end method
 
 .method public final getDefaultJoin-LxFBmk8()I
-    .registers 2
+    .locals 1
 
     .line 943
-    # getter for: Landroidx/compose/ui/graphics/drawscope/Stroke;->DefaultJoin:I
     invoke-static {}, Landroidx/compose/ui/graphics/drawscope/Stroke;->access$getDefaultJoin$cp()I
 
     move-result v0

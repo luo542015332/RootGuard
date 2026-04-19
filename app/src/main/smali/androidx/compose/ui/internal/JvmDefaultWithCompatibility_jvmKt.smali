@@ -25,7 +25,7 @@
 
 # direct methods
 .method public static synthetic JvmDefaultWithCompatibility$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method

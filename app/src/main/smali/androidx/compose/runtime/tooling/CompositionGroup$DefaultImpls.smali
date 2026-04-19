@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static find(Landroidx/compose/runtime/tooling/CompositionGroup;Ljava/lang/Object;)Landroidx/compose/runtime/tooling/CompositionGroup;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
     .param p1, "identityToFind"    # Ljava/lang/Object;
     .annotation runtime Ljava/lang/Deprecated;
@@ -37,7 +37,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 62
-    # invokes: Landroidx/compose/runtime/tooling/CompositionGroup;->find(Ljava/lang/Object;)Landroidx/compose/runtime/tooling/CompositionGroup;
     invoke-static {p0, p1}, Landroidx/compose/runtime/tooling/CompositionGroup;->access$find$jd(Landroidx/compose/runtime/tooling/CompositionGroup;Ljava/lang/Object;)Landroidx/compose/runtime/tooling/CompositionGroup;
 
     move-result-object v0
@@ -47,13 +46,12 @@
 .end method
 
 .method public static getGroupSize(Landroidx/compose/runtime/tooling/CompositionGroup;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 99
-    # invokes: Landroidx/compose/runtime/tooling/CompositionGroup;->getGroupSize()I
     invoke-static {p0}, Landroidx/compose/runtime/tooling/CompositionGroup;->access$getGroupSize$jd(Landroidx/compose/runtime/tooling/CompositionGroup;)I
 
     move-result v0
@@ -62,13 +60,12 @@
 .end method
 
 .method public static getIdentity(Landroidx/compose/runtime/tooling/CompositionGroup;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 94
-    # invokes: Landroidx/compose/runtime/tooling/CompositionGroup;->getIdentity()Ljava/lang/Object;
     invoke-static {p0}, Landroidx/compose/runtime/tooling/CompositionGroup;->access$getIdentity$jd(Landroidx/compose/runtime/tooling/CompositionGroup;)Ljava/lang/Object;
 
     move-result-object v0
@@ -77,13 +74,12 @@
 .end method
 
 .method public static getSlotsSize(Landroidx/compose/runtime/tooling/CompositionGroup;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/tooling/CompositionGroup;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 101
-    # invokes: Landroidx/compose/runtime/tooling/CompositionGroup;->getSlotsSize()I
     invoke-static {p0}, Landroidx/compose/runtime/tooling/CompositionGroup;->access$getSlotsSize$jd(Landroidx/compose/runtime/tooling/CompositionGroup;)I
 
     move-result v0

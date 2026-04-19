@@ -63,7 +63,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/BottomSheetState;Lkotlinx/coroutines/CoroutineScope;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffoldAnchorChangeCallback$1;->$state:Landroidx/compose/material/BottomSheetState;
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public final onAnchorsChanged(Landroidx/compose/material/BottomSheetValue;Ljava/util/Map;Ljava/util/Map;)V
-    .registers 15
+    .locals 11
     .param p1, "prevTarget"    # Landroidx/compose/material/BottomSheetValue;
     .param p2, "prevAnchors"    # Ljava/util/Map;
     .param p3, "newAnchors"    # Ljava/util/Map;
@@ -125,7 +125,7 @@
 
     aget v1, v1, v2
 
-    packed-switch v1, :pswitch_data_82
+    packed-switch v1, :pswitch_data_0
 
     .line 731
     new-instance v1, Lkotlin/NoWhenBranchMatchedException;
@@ -134,30 +134,30 @@
 
     throw v1
 
-    :pswitch_29
+    :pswitch_0
     sget-object v1, Landroidx/compose/material/BottomSheetValue;->Expanded:Landroidx/compose/material/BottomSheetValue;
 
     invoke-interface {p3, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_0
 
     sget-object v1, Landroidx/compose/material/BottomSheetValue;->Expanded:Landroidx/compose/material/BottomSheetValue;
 
-    goto :goto_39
+    goto :goto_0
 
-    :cond_34
+    :cond_0
     sget-object v1, Landroidx/compose/material/BottomSheetValue;->Collapsed:Landroidx/compose/material/BottomSheetValue;
 
-    goto :goto_39
+    goto :goto_0
 
     .line 730
-    :pswitch_37
+    :pswitch_1
     sget-object v1, Landroidx/compose/material/BottomSheetValue;->Collapsed:Landroidx/compose/material/BottomSheetValue;
 
     .line 729
-    :goto_39
+    :goto_0
     nop
 
     .line 733
@@ -178,7 +178,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_81
+    if-nez v3, :cond_2
 
     .line 735
     iget-object v3, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffoldAnchorChangeCallback$1;->$state:Landroidx/compose/material/BottomSheetState;
@@ -189,7 +189,7 @@
 
     const/4 v4, 0x0
 
-    if-eqz v3, :cond_67
+    if-eqz v3, :cond_1
 
     .line 737
     iget-object v5, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffoldAnchorChangeCallback$1;->$scope:Lkotlinx/coroutines/CoroutineScope;
@@ -214,10 +214,10 @@
 
     invoke-static/range {v5 .. v10}, Lkotlinx/coroutines/BuildersKt;->launch$default(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/CoroutineStart;Lkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lkotlinx/coroutines/Job;
 
-    goto :goto_81
+    goto :goto_1
 
     .line 740
-    :cond_67
+    :cond_1
     iget-object v3, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffoldAnchorChangeCallback$1;->$state:Landroidx/compose/material/BottomSheetState;
 
     invoke-virtual {v3, v1}, Landroidx/compose/material/BottomSheetState;->trySnapTo$material_release(Landroidx/compose/material/BottomSheetValue;)Z
@@ -226,7 +226,7 @@
 
     .line 741
     .local v3, "didSnapSynchronously":Z
-    if-nez v3, :cond_81
+    if-nez v3, :cond_2
 
     iget-object v5, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffoldAnchorChangeCallback$1;->$scope:Lkotlinx/coroutines/CoroutineScope;
 
@@ -250,19 +250,19 @@
 
     .line 744
     .end local v3    # "didSnapSynchronously":Z
-    :cond_81
-    :goto_81
+    :cond_2
+    :goto_1
     return-void
 
-    :pswitch_data_82
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_37
-        :pswitch_29
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public bridge synthetic onAnchorsChanged(Ljava/lang/Object;Ljava/util/Map;Ljava/util/Map;)V
-    .registers 5
+    .locals 1
     .param p1, "previousTargetValue"    # Ljava/lang/Object;
     .param p2, "previousAnchors"    # Ljava/util/Map;
     .param p3, "newAnchors"    # Ljava/util/Map;

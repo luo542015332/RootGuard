@@ -51,7 +51,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/BottomSheetScaffoldState;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffold$child$1$3$1;->$scaffoldState:Landroidx/compose/material/BottomSheetScaffoldState;
 
@@ -65,7 +65,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Float;
-    .registers 2
+    .locals 1
 
     .line 494
     iget-object v0, p0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffold$child$1$3$1;->$scaffoldState:Landroidx/compose/material/BottomSheetScaffoldState;
@@ -86,7 +86,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 494
     invoke-virtual {p0}, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffold$child$1$3$1;->invoke()Ljava/lang/Float;

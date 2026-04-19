@@ -137,7 +137,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
@@ -155,7 +155,7 @@
 .end method
 
 .method private constructor <init>(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;)V
-    .registers 4
+    .locals 1
     .param p1, "id"    # I
     .param p2, "invalid"    # Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
@@ -169,7 +169,7 @@
     iput p1, p0, Landroidx/compose/runtime/snapshots/Snapshot;->id:I
 
     .line 190
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/Snapshot;->getInvalid$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
@@ -179,12 +179,12 @@
 
     move-result v0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_13
+    :goto_0
     iput v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->pinningTrackingHandle:I
 
     .line 51
@@ -192,7 +192,7 @@
 .end method
 
 .method public synthetic constructor <init>(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroidx/compose/runtime/snapshots/Snapshot;-><init>(ILandroidx/compose/runtime/snapshots/SnapshotIdSet;)V
 
@@ -200,7 +200,7 @@
 .end method
 
 .method public static final synthetic access$getPinningTrackingHandle$p(Landroidx/compose/runtime/snapshots/Snapshot;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     .line 51
@@ -210,31 +210,31 @@
 .end method
 
 .method private static synthetic getPinningTrackingHandle$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic takeNestedSnapshot$default(Landroidx/compose/runtime/snapshots/Snapshot;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 4
+    .locals 0
 
     .line 102
-    if-nez p3, :cond_c
+    if-nez p3, :cond_1
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_0
 
     const/4 p1, 0x0
 
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/snapshots/Snapshot;->takeNestedSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_c
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: takeNestedSnapshot"
@@ -247,7 +247,7 @@
 
 # virtual methods
 .method public final closeAndReleasePinning$runtime_release()V
-    .registers 5
+    .locals 4
 
     .line 241
     const/4 v0, 0x0
@@ -269,7 +269,7 @@
 
     .line 242
     .local v3, "$i$a$-sync-Snapshot$closeAndReleasePinning$1":I
-    :try_start_8
+    :try_start_0
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/Snapshot;->closeLocked$runtime_release()V
 
     .line 243
@@ -280,8 +280,8 @@
 
     .end local v3    # "$i$a$-sync-Snapshot$closeAndReleasePinning$1":I
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_11
-    .catchall {:try_start_8 .. :try_end_11} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2294
     monitor-exit v1
@@ -299,7 +299,7 @@
     .restart local v0    # "$i$f$sync":I
     .restart local v1    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_14
+    :catchall_0
     move-exception v3
 
     monitor-exit v1
@@ -308,10 +308,9 @@
 .end method
 
 .method public closeLocked$runtime_release()V
-    .registers 3
+    .locals 2
 
     .line 255
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->openSnapshots:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getOpenSnapshots$p()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
     move-result-object v0
@@ -331,7 +330,7 @@
 .end method
 
 .method public dispose()V
-    .registers 5
+    .locals 4
 
     .line 90
     const/4 v0, 0x1
@@ -358,7 +357,7 @@
 
     .line 92
     .local v3, "$i$a$-sync-Snapshot$dispose$1":I
-    :try_start_b
+    :try_start_0
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/Snapshot;->releasePinnedSnapshotLocked$runtime_release()V
 
     .line 93
@@ -366,8 +365,8 @@
 
     .end local v3    # "$i$a$-sync-Snapshot$dispose$1":I
     sget-object v3, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_11
-    .catchall {:try_start_b .. :try_end_11} :catchall_14
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 2292
     monitor-exit v1
@@ -385,7 +384,7 @@
     .restart local v0    # "$i$f$sync":I
     .restart local v1    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_14
+    :catchall_0
     move-exception v3
 
     monitor-exit v1
@@ -394,7 +393,7 @@
 .end method
 
 .method public final enter(Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -425,12 +424,12 @@
     .line 131
     const/4 v2, 0x1
 
-    :try_start_d
+    :try_start_0
     invoke-interface {p1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v3
-    :try_end_11
-    .catchall {:try_start_d .. :try_end_11} :catchall_1b
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
 
@@ -443,7 +442,7 @@
     return-object v3
 
     .line 133
-    :catchall_1b
+    :catchall_0
     move-exception v3
 
     invoke-static {v2}, Lkotlin/jvm/internal/InlineMarker;->finallyStart(I)V
@@ -456,7 +455,7 @@
 .end method
 
 .method public final getDisposed$runtime_release()Z
-    .registers 2
+    .locals 1
 
     .line 183
     iget-boolean v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->disposed:Z
@@ -465,7 +464,7 @@
 .end method
 
 .method public getId()I
-    .registers 2
+    .locals 1
 
     .line 63
     iget v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->id:I
@@ -474,7 +473,7 @@
 .end method
 
 .method public getInvalid$runtime_release()Landroidx/compose/runtime/snapshots/SnapshotIdSet;
-    .registers 2
+    .locals 1
 
     .line 57
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->invalid:Landroidx/compose/runtime/snapshots/SnapshotIdSet;
@@ -512,7 +511,7 @@
 .end method
 
 .method public getWriteCount$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 67
     const/4 v0, 0x0
@@ -536,35 +535,33 @@
 .end method
 
 .method public final isPinned$runtime_release()Z
-    .registers 3
+    .locals 2
 
     const/4 v0, 0x0
 
     .line 192
     .local v0, "$i$f$isPinned$runtime_release":I
-    # getter for: Landroidx/compose/runtime/snapshots/Snapshot;->pinningTrackingHandle:I
     invoke-static {p0}, Landroidx/compose/runtime/snapshots/Snapshot;->access$getPinningTrackingHandle$p(Landroidx/compose/runtime/snapshots/Snapshot;)I
 
     move-result v1
 
-    if-ltz v1, :cond_9
+    if-ltz v1, :cond_0
 
     const/4 v1, 0x1
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_a
+    :goto_0
     return v1
 .end method
 
 .method public makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 3
+    .locals 2
 
     .line 139
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->threadSnapshot:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getThreadSnapshot$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v0
@@ -577,7 +574,6 @@
 
     .line 140
     .local v0, "previous":Landroidx/compose/runtime/snapshots/Snapshot;
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->threadSnapshot:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getThreadSnapshot$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v1
@@ -601,12 +597,12 @@
 .end method
 
 .method public final releasePinnedSnapshotLocked$runtime_release()V
-    .registers 2
+    .locals 1
 
     .line 274
     iget v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->pinningTrackingHandle:I
 
-    if-ltz v0, :cond_a
+    if-ltz v0, :cond_0
 
     .line 275
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotKt;->releasePinningLocked(I)V
@@ -617,12 +613,12 @@
     iput v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->pinningTrackingHandle:I
 
     .line 278
-    :cond_a
+    :cond_0
     return-void
 .end method
 
 .method public releasePinnedSnapshotsForCloseLocked$runtime_release()V
-    .registers 1
+    .locals 0
 
     .line 266
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/Snapshot;->releasePinnedSnapshotLocked$runtime_release()V
@@ -632,11 +628,10 @@
 .end method
 
 .method public restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 3
+    .locals 1
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     .line 146
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->threadSnapshot:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getThreadSnapshot$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v0
@@ -648,7 +643,7 @@
 .end method
 
 .method public final setDisposed$runtime_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 183
@@ -658,7 +653,7 @@
 .end method
 
 .method public setId$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 64
@@ -668,7 +663,7 @@
 .end method
 
 .method public setInvalid$runtime_release(Landroidx/compose/runtime/snapshots/SnapshotIdSet;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/snapshots/SnapshotIdSet;
 
     const-string v0, "<set-?>"
@@ -682,7 +677,7 @@
 .end method
 
 .method public setWriteCount$runtime_release(I)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # I
 
     new-instance v0, Ljava/lang/IllegalStateException;
@@ -713,7 +708,7 @@
 .end method
 
 .method public final takeoverPinnedSnapshot$runtime_release()I
-    .registers 5
+    .locals 4
 
     .line 281
     iget v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->pinningTrackingHandle:I
@@ -736,7 +731,7 @@
 .end method
 
 .method public final unsafeEnter()Landroidx/compose/runtime/snapshots/Snapshot;
-    .registers 2
+    .locals 1
 
     .line 169
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -747,11 +742,10 @@
 .end method
 
 .method public final unsafeLeave(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 5
+    .locals 3
     .param p1, "oldSnapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     .line 177
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotKt;->threadSnapshot:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/snapshots/SnapshotKt;->access$getThreadSnapshot$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v0
@@ -760,17 +754,17 @@
 
     move-result-object v0
 
-    if-ne v0, p0, :cond_c
+    if-ne v0, p0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_d
-    if-eqz v0, :cond_13
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 180
     invoke-virtual {p0, p1}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
@@ -779,7 +773,7 @@
     return-void
 
     .line 177
-    :cond_13
+    :cond_1
     const/4 v0, 0x0
 
     .line 178
@@ -822,20 +816,20 @@
 .end method
 
 .method public final validateNotDisposed$runtime_release()V
-    .registers 3
+    .locals 2
 
     .line 270
     iget-boolean v0, p0, Landroidx/compose/runtime/snapshots/Snapshot;->disposed:Z
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 271
     return-void
 
     .line 2295
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     .line 270

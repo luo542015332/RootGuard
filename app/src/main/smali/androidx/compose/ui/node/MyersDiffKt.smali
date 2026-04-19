@@ -62,7 +62,7 @@
 
 # direct methods
 .method public static final synthetic access$swap([III)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # [I
     .param p1, "i"    # I
     .param p2, "j"    # I
@@ -74,7 +74,7 @@
 .end method
 
 .method private static final applyDiff(Landroidx/compose/ui/node/IntStack;Landroidx/compose/ui/node/DiffCallback;)V
-    .registers 9
+    .locals 7
     .param p0, "diagonals"    # Landroidx/compose/ui/node/IntStack;
     .param p1, "callback"    # Landroidx/compose/ui/node/DiffCallback;
 
@@ -91,12 +91,12 @@
 
     .line 114
     .local v2, "i":I
-    :cond_3
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/node/IntStack;->getSize()I
 
     move-result v3
 
-    if-ge v2, v3, :cond_47
+    if-ge v2, v3, :cond_3
 
     .line 115
     invoke-virtual {p0, v2}, Landroidx/compose/ui/node/IntStack;->get(I)I
@@ -142,8 +142,8 @@
     nop
 
     .line 119
-    :goto_2a
-    if-ge v0, v3, :cond_32
+    :goto_0
+    if-ge v0, v3, :cond_1
 
     .line 120
     invoke-interface {p1, v1, v0}, Landroidx/compose/ui/node/DiffCallback;->remove(II)V
@@ -151,12 +151,12 @@
     .line 121
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_2a
+    goto :goto_0
 
     .line 123
-    :cond_32
-    :goto_32
-    if-ge v1, v4, :cond_3a
+    :cond_1
+    :goto_1
+    if-ge v1, v4, :cond_2
 
     .line 124
     invoke-interface {p1, v1}, Landroidx/compose/ui/node/DiffCallback;->insert(I)V
@@ -164,16 +164,16 @@
     .line 125
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_32
+    goto :goto_1
 
     .line 127
-    :cond_3a
-    :goto_3a
+    :cond_2
+    :goto_2
     add-int/lit8 v6, v5, -0x1
 
     .end local v5    # "len":I
     .local v6, "len":I
-    if-lez v5, :cond_3
+    if-lez v5, :cond_0
 
     .line 128
     invoke-interface {p1, v0, v1}, Landroidx/compose/ui/node/DiffCallback;->same(II)V
@@ -186,18 +186,18 @@
 
     move v5, v6
 
-    goto :goto_3a
+    goto :goto_2
 
     .line 133
     .end local v3    # "startX":I
     .end local v4    # "startY":I
     .end local v6    # "len":I
-    :cond_47
+    :cond_3
     return-void
 .end method
 
 .method private static final backward-4l5_RBY(IIIILandroidx/compose/ui/node/DiffCallback;[I[II[I)Z
-    .registers 29
+    .locals 20
     .param p0, "oldStart"    # I
     .param p1, "oldEnd"    # I
     .param p2, "newStart"    # I
@@ -229,18 +229,18 @@
 
     rem-int/lit8 v6, v6, 0x2
 
-    if-nez v6, :cond_14
+    if-nez v6, :cond_0
 
     const/4 v6, 0x1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     const/4 v6, 0x0
 
     .line 260
     .local v6, "checkForSnake":Z
-    :goto_15
+    :goto_0
     sub-int v9, v4, v5
 
     .line 263
@@ -249,8 +249,8 @@
 
     .line 264
     .local v10, "k":I
-    :goto_18
-    if-gt v10, v3, :cond_9e
+    :goto_1
+    if-gt v10, v3, :cond_9
 
     const/4 v11, 0x0
 
@@ -261,9 +261,9 @@
     .local v12, "x":I
     neg-int v13, v3
 
-    if-eq v10, v13, :cond_39
+    if-eq v10, v13, :cond_2
 
-    if-eq v10, v3, :cond_30
+    if-eq v10, v3, :cond_1
 
     add-int/lit8 v13, v10, 0x1
 
@@ -277,12 +277,12 @@
 
     move-result v14
 
-    if-ge v13, v14, :cond_30
+    if-ge v13, v14, :cond_1
 
-    goto :goto_39
+    goto :goto_2
 
     .line 278
-    :cond_30
+    :cond_1
     add-int/lit8 v13, v10, -0x1
 
     invoke-static {v2, v13}, Landroidx/compose/ui/node/CenteredArray;->get-impl([II)I
@@ -292,11 +292,11 @@
     .line 279
     add-int/lit8 v12, v11, -0x1
 
-    goto :goto_40
+    goto :goto_3
 
     .line 274
-    :cond_39
-    :goto_39
+    :cond_2
+    :goto_2
     add-int/lit8 v13, v10, 0x1
 
     invoke-static {v2, v13}, Landroidx/compose/ui/node/CenteredArray;->get-impl([II)I
@@ -307,7 +307,7 @@
     move v12, v11
 
     .line 281
-    :goto_40
+    :goto_3
     sub-int v13, p1, v12
 
     sub-int/2addr v13, v10
@@ -316,34 +316,34 @@
 
     .line 282
     .local v13, "y":I
-    if-eqz v3, :cond_4f
+    if-eqz v3, :cond_4
 
-    if-eq v12, v11, :cond_4a
+    if-eq v12, v11, :cond_3
 
-    goto :goto_4f
+    goto :goto_4
 
-    :cond_4a
+    :cond_3
     add-int/lit8 v14, v13, 0x1
 
     move/from16 v16, v14
 
-    goto :goto_51
+    goto :goto_5
 
-    :cond_4f
-    :goto_4f
+    :cond_4
+    :goto_4
     move/from16 v16, v13
 
-    :goto_51
+    :goto_5
     move v15, v13
 
     .line 284
     .end local v13    # "y":I
     .local v15, "y":I
     .local v16, "startY":I
-    :goto_52
-    if-le v12, v0, :cond_67
+    :goto_6
+    if-le v12, v0, :cond_5
 
-    if-le v15, v1, :cond_67
+    if-le v15, v1, :cond_5
 
     add-int/lit8 v13, v12, -0x1
 
@@ -355,7 +355,7 @@
 
     move-result v13
 
-    if-eqz v13, :cond_69
+    if-eqz v13, :cond_6
 
     .line 285
     add-int/lit8 v12, v12, -0x1
@@ -363,18 +363,18 @@
     .line 286
     add-int/lit8 v15, v15, -0x1
 
-    goto :goto_52
+    goto :goto_6
 
     .line 284
-    :cond_67
+    :cond_5
     move-object/from16 v7, p4
 
     .line 289
-    :cond_69
+    :cond_6
     invoke-static {v2, v10, v12}, Landroidx/compose/ui/node/CenteredArray;->set-impl([III)V
 
     .line 290
-    if-eqz v6, :cond_96
+    if-eqz v6, :cond_8
 
     .line 293
     sub-int v14, v9, v10
@@ -383,9 +383,9 @@
     .local v14, "forwardsK":I
     neg-int v13, v3
 
-    if-lt v14, v13, :cond_91
+    if-lt v14, v13, :cond_7
 
-    if-gt v14, v3, :cond_91
+    if-gt v14, v3, :cond_7
 
     move-object/from16 v13, p5
 
@@ -393,7 +393,7 @@
 
     move-result v8
 
-    if-lt v8, v12, :cond_91
+    if-lt v8, v12, :cond_7
 
     .line 299
     nop
@@ -442,7 +442,7 @@
     .end local v19    # "y":I
     .restart local v14    # "forwardsK":I
     .restart local v15    # "y":I
-    :cond_91
+    :cond_7
     move v8, v14
 
     move/from16 v19, v15
@@ -453,13 +453,13 @@
     .end local v15    # "y":I
     .restart local v8    # "forwardsK":I
     .restart local v19    # "y":I
-    goto :goto_99
+    goto :goto_7
 
     .line 290
     .end local v8    # "forwardsK":I
     .end local v19    # "y":I
     .restart local v15    # "y":I
-    :cond_96
+    :cond_8
     move/from16 v19, v15
 
     const/4 v13, 0x1
@@ -467,7 +467,7 @@
     .line 306
     .end local v15    # "y":I
     .restart local v19    # "y":I
-    :goto_99
+    :goto_7
     add-int/lit8 v10, v10, 0x2
 
     .line 309
@@ -477,10 +477,10 @@
     .end local v12    # "x":I
     .end local v16    # "startY":I
     .end local v19    # "y":I
-    goto/16 :goto_18
+    goto/16 :goto_1
 
     .line 311
-    :cond_9e
+    :cond_9
     move-object/from16 v7, p4
 
     const/4 v8, 0x0
@@ -489,7 +489,7 @@
 .end method
 
 .method private static final calculateDiff(IILandroidx/compose/ui/node/DiffCallback;)Landroidx/compose/ui/node/IntStack;
-    .registers 22
+    .locals 19
     .param p0, "oldSize"    # I
     .param p1, "newSize"    # I
     .param p2, "cb"    # Landroidx/compose/ui/node/DiffCallback;
@@ -562,12 +562,12 @@
 
     .line 62
     .local v14, "snake":[I
-    :goto_37
+    :goto_0
     invoke-virtual {v4}, Landroidx/compose/ui/node/IntStack;->isNotEmpty()Z
 
     move-result v7
 
-    if-eqz v7, :cond_a8
+    if-eqz v7, :cond_2
 
     .line 63
     invoke-virtual {v4}, Landroidx/compose/ui/node/IntStack;->pop()I
@@ -655,14 +655,14 @@
 
     .line 75
     .local v7, "found":Z
-    if-eqz v7, :cond_9d
+    if-eqz v7, :cond_1
 
     .line 77
     invoke-static/range {v18 .. v18}, Landroidx/compose/ui/node/Snake;->getDiagonalSize-impl([I)I
 
     move-result v8
 
-    if-lez v8, :cond_76
+    if-lez v8, :cond_0
 
     .line 78
     move-object/from16 v8, v18
@@ -671,18 +671,18 @@
     .local v8, "snake":[I
     invoke-static {v8, v3}, Landroidx/compose/ui/node/Snake;->addDiagonalToStack-impl([ILandroidx/compose/ui/node/IntStack;)V
 
-    goto :goto_78
+    goto :goto_1
 
     .line 77
     .end local v8    # "snake":[I
     .restart local v18    # "snake":[I
-    :cond_76
+    :cond_0
     move-object/from16 v8, v18
 
     .line 82
     .end local v18    # "snake":[I
     .restart local v8    # "snake":[I
-    :goto_78
+    :goto_1
     nop
 
     .line 83
@@ -741,7 +741,7 @@
     .end local v5    # "oldStart":I
     .end local v6    # "newEnd":I
     .end local v7    # "found":Z
-    goto :goto_37
+    goto :goto_0
 
     .line 75
     .end local v8    # "snake":[I
@@ -751,7 +751,7 @@
     .restart local v6    # "newEnd":I
     .restart local v7    # "found":Z
     .restart local v18    # "snake":[I
-    :cond_9d
+    :cond_1
     move-object/from16 v8, v18
 
     .end local v18    # "snake":[I
@@ -766,7 +766,7 @@
 
     const/4 v5, 0x0
 
-    goto :goto_37
+    goto :goto_0
 
     .line 99
     .end local v0    # "newStart":I
@@ -778,7 +778,7 @@
     .local v2, "max":I
     .local v6, "forward":[I
     .restart local v14    # "snake":[I
-    :cond_a8
+    :cond_2
     move/from16 v16, v2
 
     .end local v2    # "max":I
@@ -797,7 +797,7 @@
 .end method
 
 .method public static final executeDiff(IILandroidx/compose/ui/node/DiffCallback;)V
-    .registers 4
+    .locals 1
     .param p0, "oldSize"    # I
     .param p1, "newSize"    # I
     .param p2, "callback"    # Landroidx/compose/ui/node/DiffCallback;
@@ -820,7 +820,7 @@
 .end method
 
 .method public static final fillSnake(IIIIZ[I)V
-    .registers 7
+    .locals 1
     .param p0, "startX"    # I
     .param p1, "startY"    # I
     .param p2, "endX"    # I
@@ -862,7 +862,7 @@
 .end method
 
 .method private static final forward-4l5_RBY(IIIILandroidx/compose/ui/node/DiffCallback;[I[II[I)Z
-    .registers 29
+    .locals 20
     .param p0, "oldStart"    # I
     .param p1, "oldEnd"    # I
     .param p2, "newStart"    # I
@@ -900,18 +900,18 @@
 
     const/4 v8, 0x1
 
-    if-ne v6, v8, :cond_19
+    if-ne v6, v8, :cond_0
 
     move v6, v8
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v6, 0x0
 
     .line 196
     .local v6, "checkForSnake":Z
-    :goto_1a
+    :goto_0
     sub-int v9, v4, v5
 
     .line 197
@@ -920,8 +920,8 @@
 
     .line 198
     .local v10, "k":I
-    :goto_1d
-    if-gt v10, v3, :cond_9f
+    :goto_1
+    if-gt v10, v3, :cond_a
 
     const/4 v11, 0x0
 
@@ -935,9 +935,9 @@
     .local v13, "x":I
     neg-int v14, v3
 
-    if-eq v10, v14, :cond_3f
+    if-eq v10, v14, :cond_2
 
-    if-eq v10, v3, :cond_36
+    if-eq v10, v3, :cond_1
 
     add-int/lit8 v14, v10, 0x1
 
@@ -951,12 +951,12 @@
 
     move-result v15
 
-    if-le v14, v15, :cond_36
+    if-le v14, v15, :cond_1
 
-    goto :goto_3f
+    goto :goto_2
 
     .line 211
-    :cond_36
+    :cond_1
     add-int/lit8 v14, v10, -0x1
 
     invoke-static {v2, v14}, Landroidx/compose/ui/node/CenteredArray;->get-impl([II)I
@@ -966,11 +966,11 @@
     .line 212
     add-int/lit8 v13, v11, 0x1
 
-    goto :goto_46
+    goto :goto_3
 
     .line 207
-    :cond_3f
-    :goto_3f
+    :cond_2
+    :goto_2
     add-int/lit8 v14, v10, 0x1
 
     invoke-static {v2, v14}, Landroidx/compose/ui/node/CenteredArray;->get-impl([II)I
@@ -981,7 +981,7 @@
     move v13, v11
 
     .line 214
-    :goto_46
+    :goto_3
     sub-int v14, v13, p0
 
     add-int v14, p2, v14
@@ -990,32 +990,32 @@
 
     .line 215
     .local v14, "y":I
-    if-eqz v3, :cond_53
+    if-eqz v3, :cond_4
 
-    if-eq v13, v11, :cond_50
+    if-eq v13, v11, :cond_3
 
-    goto :goto_53
+    goto :goto_4
 
-    :cond_50
+    :cond_3
     add-int/lit8 v15, v14, -0x1
 
-    goto :goto_54
+    goto :goto_5
 
-    :cond_53
-    :goto_53
+    :cond_4
+    :goto_4
     move v15, v14
 
-    :goto_54
+    :goto_5
     move v12, v14
 
     .line 217
     .end local v14    # "y":I
     .local v12, "y":I
     .local v15, "startY":I
-    :goto_55
-    if-ge v13, v0, :cond_66
+    :goto_6
+    if-ge v13, v0, :cond_5
 
-    if-ge v12, v1, :cond_66
+    if-ge v12, v1, :cond_5
 
     move-object/from16 v14, p4
 
@@ -1023,7 +1023,7 @@
 
     move-result v16
 
-    if-eqz v16, :cond_68
+    if-eqz v16, :cond_6
 
     .line 218
     add-int/lit8 v13, v13, 0x1
@@ -1031,18 +1031,18 @@
     .line 219
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_55
+    goto :goto_6
 
     .line 217
-    :cond_66
+    :cond_5
     move-object/from16 v14, p4
 
     .line 222
-    :cond_68
+    :cond_6
     invoke-static {v2, v10, v13}, Landroidx/compose/ui/node/CenteredArray;->set-impl([III)V
 
     .line 223
-    if-eqz v6, :cond_97
+    if-eqz v6, :cond_9
 
     .line 226
     sub-int v7, v9, v10
@@ -1053,11 +1053,11 @@
 
     add-int/2addr v0, v8
 
-    if-lt v7, v0, :cond_94
+    if-lt v7, v0, :cond_8
 
     add-int/lit8 v0, v3, -0x1
 
-    if-gt v7, v0, :cond_94
+    if-gt v7, v0, :cond_8
 
     move-object/from16 v0, p6
 
@@ -1065,7 +1065,7 @@
 
     move-result v8
 
-    if-gt v8, v13, :cond_92
+    if-gt v8, v13, :cond_7
 
     .line 231
     nop
@@ -1102,23 +1102,23 @@
     return v8
 
     .line 228
-    :cond_92
+    :cond_7
     const/4 v8, 0x1
 
-    goto :goto_99
+    goto :goto_7
 
-    :cond_94
+    :cond_8
     move-object/from16 v0, p6
 
-    goto :goto_99
+    goto :goto_7
 
     .line 223
     .end local v7    # "backwardsK":I
-    :cond_97
+    :cond_9
     move-object/from16 v0, p6
 
     .line 238
-    :goto_99
+    :goto_7
     add-int/lit8 v10, v10, 0x2
 
     .line 241
@@ -1128,10 +1128,10 @@
     .end local v12    # "y":I
     .end local v13    # "x":I
     .end local v15    # "startY":I
-    goto/16 :goto_1d
+    goto/16 :goto_1
 
     .line 243
-    :cond_9f
+    :cond_a
     move-object/from16 v0, p6
 
     const/4 v7, 0x0
@@ -1140,7 +1140,7 @@
 .end method
 
 .method private static final midPoint-q5eDKzI(IIIILandroidx/compose/ui/node/DiffCallback;[I[I[I)Z
-    .registers 26
+    .locals 18
     .param p0, "oldStart"    # I
     .param p1, "oldEnd"    # I
     .param p2, "newStart"    # I
@@ -1167,14 +1167,14 @@
 
     const/4 v14, 0x1
 
-    if-lt v11, v14, :cond_66
+    if-lt v11, v14, :cond_4
 
-    if-ge v12, v14, :cond_f
+    if-ge v12, v14, :cond_0
 
-    goto :goto_66
+    goto :goto_1
 
     .line 158
-    :cond_f
+    :cond_0
     add-int v0, v11, v12
 
     add-int/2addr v0, v14
@@ -1198,8 +1198,8 @@
     move v6, v0
 
     .local v6, "d":I
-    :goto_20
-    if-ge v6, v15, :cond_65
+    :goto_0
+    if-ge v6, v15, :cond_3
 
     .line 163
     nop
@@ -1242,13 +1242,13 @@
 
     .line 167
     .local v17, "found":Z
-    if-eqz v17, :cond_41
+    if-eqz v17, :cond_1
 
     .line 168
     return v14
 
     .line 171
-    :cond_41
+    :cond_1
     nop
 
     .line 172
@@ -1285,7 +1285,7 @@
 
     .line 175
     .local v0, "found2":Z
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_2
 
     .line 176
     return v14
@@ -1293,7 +1293,7 @@
     .line 161
     .end local v0    # "found2":Z
     .end local v17    # "found":Z
-    :cond_5e
+    :cond_2
     add-int/lit8 v6, v16, 0x1
 
     move-object/from16 v8, p5
@@ -1302,22 +1302,22 @@
 
     .end local v16    # "d":I
     .restart local v6    # "d":I
-    goto :goto_20
+    goto :goto_0
 
     .line 179
     .end local v6    # "d":I
-    :cond_65
+    :cond_3
     return v13
 
     .line 156
     .end local v15    # "max":I
-    :cond_66
-    :goto_66
+    :cond_4
+    :goto_1
     return v13
 .end method
 
 .method private static final swap([III)V
-    .registers 5
+    .locals 2
     .param p0, "$this$swap"    # [I
     .param p1, "i"    # I
     .param p2, "j"    # I

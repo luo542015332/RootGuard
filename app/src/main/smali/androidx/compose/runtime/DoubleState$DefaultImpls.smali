@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getValue(Landroidx/compose/runtime/DoubleState;)Ljava/lang/Double;
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/runtime/DoubleState;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation

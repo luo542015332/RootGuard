@@ -72,7 +72,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/semantics/Role$Companion;
 
@@ -149,7 +149,7 @@
 .end method
 
 .method private synthetic constructor <init>(I)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # I
 
     .line 613
@@ -161,7 +161,7 @@
 .end method
 
 .method public static final synthetic access$getButton$cp()I
-    .registers 1
+    .locals 1
 
     .line 611
     sget v0, Landroidx/compose/ui/semantics/Role;->Button:I
@@ -170,7 +170,7 @@
 .end method
 
 .method public static final synthetic access$getCheckbox$cp()I
-    .registers 1
+    .locals 1
 
     .line 611
     sget v0, Landroidx/compose/ui/semantics/Role;->Checkbox:I
@@ -179,7 +179,7 @@
 .end method
 
 .method public static final synthetic access$getDropdownList$cp()I
-    .registers 1
+    .locals 1
 
     .line 611
     sget v0, Landroidx/compose/ui/semantics/Role;->DropdownList:I
@@ -188,7 +188,7 @@
 .end method
 
 .method public static final synthetic access$getImage$cp()I
-    .registers 1
+    .locals 1
 
     .line 611
     sget v0, Landroidx/compose/ui/semantics/Role;->Image:I
@@ -197,7 +197,7 @@
 .end method
 
 .method public static final synthetic access$getRadioButton$cp()I
-    .registers 1
+    .locals 1
 
     .line 611
     sget v0, Landroidx/compose/ui/semantics/Role;->RadioButton:I
@@ -206,7 +206,7 @@
 .end method
 
 .method public static final synthetic access$getSwitch$cp()I
-    .registers 1
+    .locals 1
 
     .line 611
     sget v0, Landroidx/compose/ui/semantics/Role;->Switch:I
@@ -215,7 +215,7 @@
 .end method
 
 .method public static final synthetic access$getTab$cp()I
-    .registers 1
+    .locals 1
 
     .line 611
     sget v0, Landroidx/compose/ui/semantics/Role;->Tab:I
@@ -224,7 +224,7 @@
 .end method
 
 .method public static final synthetic box-impl(I)Landroidx/compose/ui/semantics/Role;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/semantics/Role;
 
@@ -234,23 +234,23 @@
 .end method
 
 .method private static constructor-impl(I)I
-    .registers 1
+    .locals 0
 
     return p0
 .end method
 
 .method public static equals-impl(ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/semantics/Role;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/semantics/Role;
@@ -259,34 +259,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(II)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
@@ -296,7 +296,7 @@
 .end method
 
 .method public static toString-impl(I)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # I
 
     .line 666
@@ -309,109 +309,109 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const-string v0, "Button"
 
-    goto :goto_54
+    goto :goto_0
 
     .line 668
-    :cond_c
+    :cond_0
     sget v0, Landroidx/compose/ui/semantics/Role;->Checkbox:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/semantics/Role;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_1
 
     const-string v0, "Checkbox"
 
-    goto :goto_54
+    goto :goto_0
 
     .line 669
-    :cond_17
+    :cond_1
     sget v0, Landroidx/compose/ui/semantics/Role;->Switch:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/semantics/Role;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_2
 
     const-string/jumbo v0, "Switch"
 
-    goto :goto_54
+    goto :goto_0
 
     .line 670
-    :cond_23
+    :cond_2
     sget v0, Landroidx/compose/ui/semantics/Role;->RadioButton:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/semantics/Role;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_3
 
     const-string/jumbo v0, "RadioButton"
 
-    goto :goto_54
+    goto :goto_0
 
     .line 671
-    :cond_2f
+    :cond_3
     sget v0, Landroidx/compose/ui/semantics/Role;->Tab:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/semantics/Role;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_4
 
     const-string/jumbo v0, "Tab"
 
-    goto :goto_54
+    goto :goto_0
 
     .line 672
-    :cond_3b
+    :cond_4
     sget v0, Landroidx/compose/ui/semantics/Role;->Image:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/semantics/Role;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_5
 
     const-string v0, "Image"
 
-    goto :goto_54
+    goto :goto_0
 
     .line 673
-    :cond_46
+    :cond_5
     sget v0, Landroidx/compose/ui/semantics/Role;->DropdownList:I
 
     invoke-static {p0, v0}, Landroidx/compose/ui/semantics/Role;->equals-impl0(II)Z
 
     move-result v0
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_6
 
     const-string v0, "DropdownList"
 
-    goto :goto_54
+    goto :goto_0
 
     .line 674
-    :cond_51
+    :cond_6
     const-string/jumbo v0, "Unknown"
 
     .line 675
-    :goto_54
+    :goto_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/semantics/Role;->value:I
 
@@ -423,7 +423,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/semantics/Role;->value:I
 
@@ -435,7 +435,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 666
     iget v0, p0, Landroidx/compose/ui/semantics/Role;->value:I
@@ -449,7 +449,7 @@
 .end method
 
 .method public final synthetic unbox-impl()I
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/semantics/Role;->value:I
 

@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public find(Ljava/lang/Object;)Landroidx/compose/runtime/tooling/CompositionGroup;
-    .registers 3
+    .locals 1
     .param p1, "identityToFind"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "identityToFind"

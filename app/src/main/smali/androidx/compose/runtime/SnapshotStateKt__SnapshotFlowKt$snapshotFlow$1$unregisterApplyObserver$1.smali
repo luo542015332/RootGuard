@@ -70,7 +70,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlinx/coroutines/channels/Channel;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -93,7 +93,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -114,7 +114,7 @@
 .end method
 
 .method public final invoke(Ljava/util/Set;Landroidx/compose/runtime/snapshots/Snapshot;)V
-    .registers 4
+    .locals 1
     .param p1, "changed"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {

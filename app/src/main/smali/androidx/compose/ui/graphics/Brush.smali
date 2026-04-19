@@ -57,7 +57,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/Brush$Companion;
 
@@ -71,7 +71,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/Brush;-><init>()V
 
@@ -103,7 +103,7 @@
 .end method
 
 .method public getIntrinsicSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 39
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Brush;->intrinsicSize:J

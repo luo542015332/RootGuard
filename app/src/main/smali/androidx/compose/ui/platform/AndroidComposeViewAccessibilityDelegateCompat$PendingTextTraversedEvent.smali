@@ -67,7 +67,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/semantics/SemanticsNode;IIIIJ)V
-    .registers 9
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/semantics/SemanticsNode;
     .param p2, "action"    # I
     .param p3, "granularity"    # I
@@ -107,7 +107,7 @@
 
 # virtual methods
 .method public final getAction()I
-    .registers 2
+    .locals 1
 
     .line 367
     iget v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;->action:I
@@ -116,7 +116,7 @@
 .end method
 
 .method public final getFromIndex()I
-    .registers 2
+    .locals 1
 
     .line 369
     iget v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;->fromIndex:I
@@ -125,7 +125,7 @@
 .end method
 
 .method public final getGranularity()I
-    .registers 2
+    .locals 1
 
     .line 368
     iget v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;->granularity:I
@@ -134,7 +134,7 @@
 .end method
 
 .method public final getNode()Landroidx/compose/ui/semantics/SemanticsNode;
-    .registers 2
+    .locals 1
 
     .line 366
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;->node:Landroidx/compose/ui/semantics/SemanticsNode;
@@ -143,7 +143,7 @@
 .end method
 
 .method public final getToIndex()I
-    .registers 2
+    .locals 1
 
     .line 370
     iget v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;->toIndex:I
@@ -152,7 +152,7 @@
 .end method
 
 .method public final getTraverseTime()J
-    .registers 3
+    .locals 2
 
     .line 371
     iget-wide v0, p0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$PendingTextTraversedEvent;->traverseTime:J

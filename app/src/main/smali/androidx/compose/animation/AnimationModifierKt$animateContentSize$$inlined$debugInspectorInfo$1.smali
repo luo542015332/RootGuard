@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/animation/core/FiniteAnimationSpec;Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/animation/AnimationModifierKt$animateContentSize$$inlined$debugInspectorInfo$1;->$animationSpec$inlined:Landroidx/compose/animation/core/FiniteAnimationSpec;
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 135
@@ -91,7 +91,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 7
+    .locals 5
     .param p1, "$this$null"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "$this$null"

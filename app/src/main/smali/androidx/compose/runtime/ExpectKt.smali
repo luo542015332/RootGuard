@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final ThreadLocal()Landroidx/compose/runtime/ThreadLocal;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final postIncrement(Landroidx/compose/runtime/AtomicInt;)I
-    .registers 3
+    .locals 2
     .param p0, "$this$postIncrement"    # Landroidx/compose/runtime/AtomicInt;
 
     const-string v0, "<this>"

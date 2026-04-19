@@ -77,7 +77,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/material/BottomSheetState;Lkotlin/jvm/functions/Function1;Landroidx/compose/material/AnchoredDraggableState$AnchorChangedCallback;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 548
@@ -132,7 +132,7 @@
 .end method
 
 .method public final invoke-ozmzZPI(J)V
-    .registers 6
+    .locals 3
     .param p1, "layoutSize"    # J
 
     .line 549

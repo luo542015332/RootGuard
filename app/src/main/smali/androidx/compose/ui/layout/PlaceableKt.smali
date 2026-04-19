@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .locals 7
 
     .line 424
     sget-object v0, Landroidx/compose/ui/layout/PlaceableKt$DefaultLayerBlock$1;->INSTANCE:Landroidx/compose/ui/layout/PlaceableKt$DefaultLayerBlock$1;
@@ -78,7 +78,7 @@
 .end method
 
 .method public static final synthetic access$getDefaultConstraints$p()J
-    .registers 2
+    .locals 2
 
     .line 1
     sget-wide v0, Landroidx/compose/ui/layout/PlaceableKt;->DefaultConstraints:J
@@ -87,7 +87,7 @@
 .end method
 
 .method public static final synthetic access$getDefaultLayerBlock$p()Lkotlin/jvm/functions/Function1;
-    .registers 1
+    .locals 1
 
     .line 1
     sget-object v0, Landroidx/compose/ui/layout/PlaceableKt;->DefaultLayerBlock:Lkotlin/jvm/functions/Function1;

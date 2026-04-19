@@ -69,13 +69,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method private constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
     .param p1, "defaultFactory"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -100,7 +100,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/compose/runtime/CompositionLocal;-><init>(Lkotlin/jvm/functions/Function0;)V
 
@@ -108,13 +108,13 @@
 .end method
 
 .method public static synthetic getCurrent$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getDefaultValueHolder$runtime_release$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -122,7 +122,7 @@
 
 # virtual methods
 .method public final getCurrent(Landroidx/compose/runtime/Composer;I)Ljava/lang/Object;
-    .registers 6
+    .locals 3
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -153,7 +153,7 @@
 .end method
 
 .method public final getDefaultValueHolder$runtime_release()Landroidx/compose/runtime/LazyValueHolder;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

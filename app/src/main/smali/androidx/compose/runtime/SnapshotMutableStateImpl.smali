@@ -106,7 +106,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;)V
-    .registers 4
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .annotation system Ldalvik/annotation/Signature;
@@ -139,13 +139,13 @@
 .end method
 
 .method public static synthetic getDebuggerDisplayValue$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static synthetic getValue$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -153,7 +153,7 @@
 
 # virtual methods
 .method public component1()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -169,7 +169,7 @@
 .end method
 
 .method public component2()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -191,7 +191,7 @@
 .end method
 
 .method public final getDebuggerDisplayValue()Ljava/lang/Object;
-    .registers 5
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -237,7 +237,7 @@
 .end method
 
 .method public getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 2
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableStateImpl$StateStateRecord;
@@ -248,7 +248,7 @@
 .end method
 
 .method public getPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -264,7 +264,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -294,7 +294,7 @@
 .end method
 
 .method public mergeRecords(Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;Landroidx/compose/runtime/snapshots/StateRecord;)Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 12
+    .locals 8
     .param p1, "previous"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p2, "current"    # Landroidx/compose/runtime/snapshots/StateRecord;
     .param p3, "applied"    # Landroidx/compose/runtime/snapshots/StateRecord;
@@ -346,15 +346,15 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2f
+    if-eqz v3, :cond_0
 
     .line 162
     move-object v4, p2
 
-    goto :goto_5a
+    goto :goto_0
 
     .line 164
-    :cond_2f
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/runtime/SnapshotMutableStateImpl;->getPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v3
@@ -381,7 +381,7 @@
 
     .line 169
     .local v3, "merged":Ljava/lang/Object;
-    if-eqz v3, :cond_59
+    if-eqz v3, :cond_1
 
     .line 170
     invoke-virtual {v2}, Landroidx/compose/runtime/SnapshotMutableStateImpl$StateStateRecord;->create()Landroidx/compose/runtime/snapshots/StateRecord;
@@ -411,20 +411,20 @@
     .line 170
     .end local v5    # "it":Landroidx/compose/runtime/snapshots/StateRecord;
     .end local v6    # "$i$a$-also-SnapshotMutableStateImpl$mergeRecords$1":I
-    goto :goto_5a
+    goto :goto_0
 
     .line 174
-    :cond_59
+    :cond_1
     const/4 v4, 0x0
 
     .line 161
     .end local v3    # "merged":Ljava/lang/Object;
-    :goto_5a
+    :goto_0
     return-object v4
 .end method
 
 .method public prependStateRecord(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -443,7 +443,7 @@
 .end method
 
 .method public setValue(Ljava/lang/Object;)V
-    .registers 15
+    .locals 13
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -484,7 +484,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_56
+    if-nez v4, :cond_0
 
     .line 138
     iget-object v4, p0, Landroidx/compose/runtime/SnapshotMutableStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableStateImpl$StateStateRecord;
@@ -523,7 +523,7 @@
 
     .line 313
     .local v10, "$i$a$-sync-SnapshotKt$overwritable$1$iv":I
-    :try_start_2c
+    :try_start_0
     sget-object v11, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v11}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -557,8 +557,8 @@
     .end local v11    # "$this$_set_value__u24lambda_u241_u24lambda_u240":Landroidx/compose/runtime/SnapshotMutableStateImpl$StateStateRecord;
     .end local v12    # "$i$a$-overwritable-SnapshotMutableStateImpl$value$1$1":I
     sget-object v11, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_45
-    .catchall {:try_start_2c .. :try_end_45} :catchall_53
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 314
     nop
@@ -596,13 +596,13 @@
     nop
 
     .line 310
-    goto :goto_56
+    goto :goto_0
 
     .line 312
     .local v7, "$i$f$sync":I
     .local v8, "lock$iv$iv$iv":Ljava/lang/Object;
     .restart local v9    # "$i$f$synchronized":I
-    :catchall_53
+    :catchall_0
     move-exception v10
 
     monitor-exit v8
@@ -616,8 +616,8 @@
     .end local v7    # "$i$f$sync":I
     .end local v8    # "lock$iv$iv$iv":Ljava/lang/Object;
     .end local v9    # "$i$f$synchronized":I
-    :cond_56
-    :goto_56
+    :cond_0
+    :goto_0
     nop
 
     .line 308
@@ -632,7 +632,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 179
     iget-object v0, p0, Landroidx/compose/runtime/SnapshotMutableStateImpl;->next:Landroidx/compose/runtime/SnapshotMutableStateImpl$StateStateRecord;

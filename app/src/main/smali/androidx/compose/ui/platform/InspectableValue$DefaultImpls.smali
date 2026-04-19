@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getInspectableElements(Landroidx/compose/ui/platform/InspectableValue;)Lkotlin/sequences/Sequence;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InspectableValue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -43,7 +43,6 @@
     .end annotation
 
     .line 42
-    # invokes: Landroidx/compose/ui/platform/InspectableValue;->getInspectableElements()Lkotlin/sequences/Sequence;
     invoke-static {p0}, Landroidx/compose/ui/platform/InspectableValue;->access$getInspectableElements$jd(Landroidx/compose/ui/platform/InspectableValue;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
@@ -52,13 +51,12 @@
 .end method
 
 .method public static getNameFallback(Landroidx/compose/ui/platform/InspectableValue;)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InspectableValue;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 50
-    # invokes: Landroidx/compose/ui/platform/InspectableValue;->getNameFallback()Ljava/lang/String;
     invoke-static {p0}, Landroidx/compose/ui/platform/InspectableValue;->access$getNameFallback$jd(Landroidx/compose/ui/platform/InspectableValue;)Ljava/lang/String;
 
     move-result-object v0
@@ -67,13 +65,12 @@
 .end method
 
 .method public static getValueOverride(Landroidx/compose/ui/platform/InspectableValue;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/platform/InspectableValue;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 56
-    # invokes: Landroidx/compose/ui/platform/InspectableValue;->getValueOverride()Ljava/lang/Object;
     invoke-static {p0}, Landroidx/compose/ui/platform/InspectableValue;->access$getValueOverride$jd(Landroidx/compose/ui/platform/InspectableValue;)Ljava/lang/Object;
 
     move-result-object v0

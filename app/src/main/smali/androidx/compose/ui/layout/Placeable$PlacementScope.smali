@@ -98,7 +98,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
 
@@ -117,7 +117,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 140
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -126,7 +126,7 @@
 .end method
 
 .method public static final synthetic access$getLayoutDelegate$cp()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
-    .registers 1
+    .locals 1
 
     .line 140
     sget-object v0, Landroidx/compose/ui/layout/Placeable$PlacementScope;->layoutDelegate:Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
@@ -135,7 +135,7 @@
 .end method
 
 .method public static final synthetic access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     .line 140
@@ -147,7 +147,7 @@
 .end method
 
 .method public static final synthetic access$getParentLayoutDirection$cp()Landroidx/compose/ui/unit/LayoutDirection;
-    .registers 1
+    .locals 1
 
     .line 140
     sget-object v0, Landroidx/compose/ui/layout/Placeable$PlacementScope;->parentLayoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
@@ -156,7 +156,7 @@
 .end method
 
 .method public static final synthetic access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/Placeable$PlacementScope;
 
     .line 140
@@ -168,7 +168,7 @@
 .end method
 
 .method public static final synthetic access$getParentWidth$cp()I
-    .registers 1
+    .locals 1
 
     .line 140
     sget v0, Landroidx/compose/ui/layout/Placeable$PlacementScope;->parentWidth:I
@@ -177,7 +177,7 @@
 .end method
 
 .method public static final synthetic access$get_coordinates$cp()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 1
+    .locals 1
 
     .line 140
     sget-object v0, Landroidx/compose/ui/layout/Placeable$PlacementScope;->_coordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
@@ -186,7 +186,7 @@
 .end method
 
 .method public static final synthetic access$setLayoutDelegate$cp(Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;
 
     .line 140
@@ -196,7 +196,7 @@
 .end method
 
 .method public static final synthetic access$setParentLayoutDirection$cp(Landroidx/compose/ui/unit/LayoutDirection;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Landroidx/compose/ui/unit/LayoutDirection;
 
     .line 140
@@ -206,7 +206,7 @@
 .end method
 
 .method public static final synthetic access$setParentWidth$cp(I)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # I
 
     .line 140
@@ -216,7 +216,7 @@
 .end method
 
 .method public static final synthetic access$set_coordinates$cp(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 1
+    .locals 0
     .param p0, "<set-?>"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     .line 140
@@ -226,23 +226,23 @@
 .end method
 
 .method public static synthetic place$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;IIFILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 213
-    if-nez p6, :cond_b
+    if-nez p6, :cond_1
 
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_0
 
     const/4 p4, 0x0
 
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->place(Landroidx/compose/ui/layout/Placeable;IIF)V
 
     return-void
 
-    :cond_b
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: place"
@@ -253,23 +253,23 @@
 .end method
 
 .method public static synthetic place-70tqf50$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;JFILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 225
-    if-nez p6, :cond_b
+    if-nez p6, :cond_1
 
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_0
 
     const/4 p4, 0x0
 
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->place-70tqf50(Landroidx/compose/ui/layout/Placeable;JF)V
 
     return-void
 
-    :cond_b
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: place-70tqf50"
@@ -280,23 +280,23 @@
 .end method
 
 .method public static synthetic placeRelative$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;IIFILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 201
-    if-nez p6, :cond_b
+    if-nez p6, :cond_1
 
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_0
 
     const/4 p4, 0x0
 
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->placeRelative(Landroidx/compose/ui/layout/Placeable;IIF)V
 
     return-void
 
-    :cond_b
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: placeRelative"
@@ -307,23 +307,23 @@
 .end method
 
 .method public static synthetic placeRelative-70tqf50$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;JFILjava/lang/Object;)V
-    .registers 7
+    .locals 0
 
     .line 185
-    if-nez p6, :cond_b
+    if-nez p6, :cond_1
 
     and-int/lit8 p5, p5, 0x2
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_0
 
     const/4 p4, 0x0
 
-    :cond_7
+    :cond_0
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->placeRelative-70tqf50(Landroidx/compose/ui/layout/Placeable;JF)V
 
     return-void
 
-    :cond_b
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: placeRelative-70tqf50"
@@ -334,46 +334,45 @@
 .end method
 
 .method public static synthetic placeRelativeWithLayer$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;IIFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 14
+    .locals 6
 
     .line 268
-    if-nez p7, :cond_1d
+    if-nez p7, :cond_2
 
     and-int/lit8 p7, p6, 0x4
 
-    if-eqz p7, :cond_9
+    if-eqz p7, :cond_0
 
     .line 271
     const/4 p4, 0x0
 
     move v4, p4
 
-    goto :goto_a
+    goto :goto_0
 
     .line 268
-    :cond_9
+    :cond_0
     move v4, p4
 
-    :goto_a
+    :goto_0
     and-int/lit8 p4, p6, 0x8
 
-    if-eqz p4, :cond_14
+    if-eqz p4, :cond_1
 
     .line 272
-    # getter for: Landroidx/compose/ui/layout/PlaceableKt;->DefaultLayerBlock:Lkotlin/jvm/functions/Function1;
     invoke-static {}, Landroidx/compose/ui/layout/PlaceableKt;->access$getDefaultLayerBlock$p()Lkotlin/jvm/functions/Function1;
 
     move-result-object p5
 
     move-object v5, p5
 
-    goto :goto_15
+    goto :goto_1
 
     .line 268
-    :cond_14
+    :cond_1
     move-object v5, p5
 
-    :goto_15
+    :goto_1
     move-object v0, p0
 
     move-object v1, p1
@@ -386,7 +385,7 @@
 
     return-void
 
-    :cond_1d
+    :cond_2
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: placeRelativeWithLayer"
@@ -397,46 +396,45 @@
 .end method
 
 .method public static synthetic placeRelativeWithLayer-aW-9-wM$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 14
+    .locals 6
 
     .line 245
-    if-nez p7, :cond_1c
+    if-nez p7, :cond_2
 
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_9
+    if-eqz p7, :cond_0
 
     .line 247
     const/4 p4, 0x0
 
     move v4, p4
 
-    goto :goto_a
+    goto :goto_0
 
     .line 245
-    :cond_9
+    :cond_0
     move v4, p4
 
-    :goto_a
+    :goto_0
     and-int/lit8 p4, p6, 0x4
 
-    if-eqz p4, :cond_14
+    if-eqz p4, :cond_1
 
     .line 248
-    # getter for: Landroidx/compose/ui/layout/PlaceableKt;->DefaultLayerBlock:Lkotlin/jvm/functions/Function1;
     invoke-static {}, Landroidx/compose/ui/layout/PlaceableKt;->access$getDefaultLayerBlock$p()Lkotlin/jvm/functions/Function1;
 
     move-result-object p5
 
     move-object v5, p5
 
-    goto :goto_15
+    goto :goto_1
 
     .line 245
-    :cond_14
+    :cond_1
     move-object v5, p5
 
-    :goto_15
+    :goto_1
     move-object v0, p0
 
     move-object v1, p1
@@ -447,7 +445,7 @@
 
     return-void
 
-    :cond_1c
+    :cond_2
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: placeRelativeWithLayer-aW-9-wM"
@@ -458,46 +456,45 @@
 .end method
 
 .method public static synthetic placeWithLayer$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;IIFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 14
+    .locals 6
 
     .line 288
-    if-nez p7, :cond_1d
+    if-nez p7, :cond_2
 
     and-int/lit8 p7, p6, 0x4
 
-    if-eqz p7, :cond_9
+    if-eqz p7, :cond_0
 
     .line 291
     const/4 p4, 0x0
 
     move v4, p4
 
-    goto :goto_a
+    goto :goto_0
 
     .line 288
-    :cond_9
+    :cond_0
     move v4, p4
 
-    :goto_a
+    :goto_0
     and-int/lit8 p4, p6, 0x8
 
-    if-eqz p4, :cond_14
+    if-eqz p4, :cond_1
 
     .line 292
-    # getter for: Landroidx/compose/ui/layout/PlaceableKt;->DefaultLayerBlock:Lkotlin/jvm/functions/Function1;
     invoke-static {}, Landroidx/compose/ui/layout/PlaceableKt;->access$getDefaultLayerBlock$p()Lkotlin/jvm/functions/Function1;
 
     move-result-object p5
 
     move-object v5, p5
 
-    goto :goto_15
+    goto :goto_1
 
     .line 288
-    :cond_14
+    :cond_1
     move-object v5, p5
 
-    :goto_15
+    :goto_1
     move-object v0, p0
 
     move-object v1, p1
@@ -510,7 +507,7 @@
 
     return-void
 
-    :cond_1d
+    :cond_2
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: placeWithLayer"
@@ -521,46 +518,45 @@
 .end method
 
 .method public static synthetic placeWithLayer-aW-9-wM$default(Landroidx/compose/ui/layout/Placeable$PlacementScope;Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
-    .registers 14
+    .locals 6
 
     .line 308
-    if-nez p7, :cond_1c
+    if-nez p7, :cond_2
 
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_9
+    if-eqz p7, :cond_0
 
     .line 310
     const/4 p4, 0x0
 
     move v4, p4
 
-    goto :goto_a
+    goto :goto_0
 
     .line 308
-    :cond_9
+    :cond_0
     move v4, p4
 
-    :goto_a
+    :goto_0
     and-int/lit8 p4, p6, 0x4
 
-    if-eqz p4, :cond_14
+    if-eqz p4, :cond_1
 
     .line 311
-    # getter for: Landroidx/compose/ui/layout/PlaceableKt;->DefaultLayerBlock:Lkotlin/jvm/functions/Function1;
     invoke-static {}, Landroidx/compose/ui/layout/PlaceableKt;->access$getDefaultLayerBlock$p()Lkotlin/jvm/functions/Function1;
 
     move-result-object p5
 
     move-object v5, p5
 
-    goto :goto_15
+    goto :goto_1
 
     .line 308
-    :cond_14
+    :cond_1
     move-object v5, p5
 
-    :goto_15
+    :goto_1
     move-object v0, p0
 
     move-object v1, p1
@@ -571,7 +567,7 @@
 
     return-void
 
-    :cond_1c
+    :cond_2
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: placeWithLayer-aW-9-wM"
@@ -584,7 +580,7 @@
 
 # virtual methods
 .method public getCoordinates()Landroidx/compose/ui/layout/LayoutCoordinates;
-    .registers 2
+    .locals 1
 
     .line 170
     const/4 v0, 0x0
@@ -599,7 +595,7 @@
 .end method
 
 .method public final place(Landroidx/compose/ui/layout/Placeable;IIF)V
-    .registers 18
+    .locals 13
     .param p1, "$this$place"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "x"    # I
     .param p3, "y"    # I
@@ -630,7 +626,6 @@
 
     .line 447
     .local v6, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v7
@@ -669,7 +664,6 @@
     .end local v9    # "$i$f$plus-qkQi6aY":I
     move/from16 v9, p4
 
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v4, v7, v8, v9, v0}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 449
@@ -685,7 +679,7 @@
 .end method
 
 .method public final place-70tqf50(Landroidx/compose/ui/layout/Placeable;JF)V
-    .registers 15
+    .locals 10
     .param p1, "$this$place_u2d70tqf50"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "position"    # J
     .param p4, "zIndex"    # F
@@ -708,7 +702,6 @@
 
     .line 450
     .local v3, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v1}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v4
@@ -745,7 +738,6 @@
     .line 450
     .end local v4    # "other$iv$iv":J
     .end local v6    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v1, v4, v5, p4, v0}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 452
@@ -760,7 +752,7 @@
 .end method
 
 .method public final placeApparentToRealOffset-aW-9-wM$ui_release(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
-    .registers 13
+    .locals 7
     .param p1, "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "position"    # J
     .param p4, "zIndex"    # F
@@ -786,7 +778,6 @@
 
     .line 337
     .local v0, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {p1}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v1
@@ -823,7 +814,6 @@
     .line 337
     .end local v1    # "other$iv":J
     .end local v3    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {p1, v1, v2, p4, p5}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 338
@@ -831,7 +821,7 @@
 .end method
 
 .method public final placeAutoMirrored-aW-9-wM$ui_release(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
-    .registers 21
+    .locals 15
     .param p1, "$this$placeAutoMirrored_u2daW_u2d9_u2dwM"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "position"    # J
     .param p4, "zIndex"    # F
@@ -863,30 +853,27 @@
 
     .line 320
     .local v2, "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {p0}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v4
 
     sget-object v5, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v4, v5, :cond_55
+    if-eq v4, v5, :cond_1
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {p0}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v4
 
-    if-nez v4, :cond_1b
+    if-nez v4, :cond_0
 
-    goto :goto_55
+    goto :goto_0
 
     .line 323
-    :cond_1b
+    :cond_0
     nop
 
     .line 324
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {p0}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v4
@@ -923,7 +910,6 @@
 
     .line 482
     .local v8, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v9
@@ -960,19 +946,18 @@
     .line 482
     .end local v9    # "other$iv$iv":J
     .end local v11    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v6, v9, v10, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 484
-    goto :goto_78
+    goto :goto_1
 
     .line 321
     .end local v4    # "position$iv":J
     .end local v6    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v7    # "this_$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v8    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :cond_55
-    :goto_55
+    :cond_1
+    :goto_0
     move-object/from16 v4, p1
 
     .local v4, "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv":Landroidx/compose/ui/layout/Placeable;
@@ -983,7 +968,6 @@
 
     .line 479
     .local v6, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v7
@@ -1020,7 +1004,6 @@
     .line 479
     .end local v7    # "other$iv$iv":J
     .end local v9    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v4, v7, v8, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 481
@@ -1030,12 +1013,12 @@
     .end local v4    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v5    # "this_$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v6    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :goto_78
+    :goto_1
     return-void
 .end method
 
 .method public final placeRelative(Landroidx/compose/ui/layout/Placeable;IIF)V
-    .registers 24
+    .locals 19
     .param p1, "$this$placeRelative"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "x"    # I
     .param p3, "y"    # I
@@ -1068,32 +1051,29 @@
 
     .line 437
     .local v7, "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v8
 
     sget-object v9, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v8, v9, :cond_61
+    if-eq v8, v9, :cond_1
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v8
 
-    if-nez v8, :cond_24
+    if-nez v8, :cond_0
 
     move/from16 v18, v7
 
-    goto :goto_63
+    goto :goto_0
 
     .line 442
-    :cond_24
+    :cond_0
     nop
 
     .line 443
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v8
@@ -1130,7 +1110,6 @@
 
     .line 444
     .local v12, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v10}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v13
@@ -1171,11 +1150,10 @@
     .line 444
     .end local v13    # "other$iv$iv$iv":J
     .end local v15    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v10, v13, v14, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 445
-    goto :goto_85
+    goto :goto_1
 
     .line 437
     .end local v8    # "position$iv$iv":J
@@ -1184,13 +1162,13 @@
     .end local v12    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
     .end local v18    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
     .restart local v7    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    :cond_61
+    :cond_1
     move/from16 v18, v7
 
     .line 438
     .end local v7    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
     .restart local v18    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    :goto_63
+    :goto_0
     move-object v2, v5
 
     .local v2, "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
@@ -1201,7 +1179,6 @@
 
     .line 439
     .local v8, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v2}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v9
@@ -1238,7 +1215,6 @@
     .line 439
     .end local v9    # "other$iv$iv$iv":J
     .end local v11    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v2, v9, v10, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 441
@@ -1248,7 +1224,7 @@
     .end local v2    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v7    # "this_$iv$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v8    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :goto_85
+    :goto_1
     nop
 
     .line 202
@@ -1261,7 +1237,7 @@
 .end method
 
 .method public final placeRelative-70tqf50(Landroidx/compose/ui/layout/Placeable;JF)V
-    .registers 22
+    .locals 17
     .param p1, "$this$placeRelative_u2d70tqf50"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "position"    # J
     .param p4, "zIndex"    # F
@@ -1288,30 +1264,27 @@
 
     .line 427
     .local v5, "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v6
 
     sget-object v7, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v6, v7, :cond_59
+    if-eq v6, v7, :cond_1
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v6
 
-    if-nez v6, :cond_1e
+    if-nez v6, :cond_0
 
-    goto :goto_59
+    goto :goto_0
 
     .line 432
-    :cond_1e
+    :cond_0
     nop
 
     .line 433
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v6
@@ -1350,7 +1323,6 @@
 
     .line 434
     .local v10, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v9}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v11
@@ -1387,19 +1359,18 @@
     .line 434
     .end local v11    # "other$iv$iv$iv":J
     .end local v13    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v9, v11, v12, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 435
-    goto :goto_7b
+    goto :goto_1
 
     .line 428
     .end local v6    # "position$iv$iv":J
     .end local v8    # "this_$iv$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v9    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v10    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :cond_59
-    :goto_59
+    :cond_1
+    :goto_0
     move-object v6, v3
 
     .local v6, "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
@@ -1410,7 +1381,6 @@
 
     .line 429
     .local v8, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v9
@@ -1447,7 +1417,6 @@
     .line 429
     .end local v9    # "other$iv$iv$iv":J
     .end local v11    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v6, v9, v10, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 431
@@ -1457,7 +1426,7 @@
     .end local v6    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v7    # "this_$iv$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v8    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :goto_7b
+    :goto_1
     nop
 
     .line 186
@@ -1469,7 +1438,7 @@
 .end method
 
 .method public final placeRelativeWithLayer(Landroidx/compose/ui/layout/Placeable;IIFLkotlin/jvm/functions/Function1;)V
-    .registers 25
+    .locals 19
     .param p1, "$this$placeRelativeWithLayer"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "x"    # I
     .param p3, "y"    # I
@@ -1518,32 +1487,29 @@
 
     .line 463
     .local v7, "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {v2}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v8
 
     sget-object v9, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v8, v9, :cond_68
+    if-eq v8, v9, :cond_1
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v2}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v8
 
-    if-nez v8, :cond_2b
+    if-nez v8, :cond_0
 
     move/from16 v18, v7
 
-    goto :goto_6a
+    goto :goto_0
 
     .line 468
-    :cond_2b
+    :cond_0
     nop
 
     .line 469
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v2}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v8
@@ -1580,7 +1546,6 @@
 
     .line 470
     .local v12, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v10}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v13
@@ -1621,11 +1586,10 @@
     .line 470
     .end local v13    # "other$iv$iv$iv":J
     .end local v15    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v10, v13, v14, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 471
-    goto :goto_8c
+    goto :goto_1
 
     .line 463
     .end local v8    # "position$iv$iv":J
@@ -1634,13 +1598,13 @@
     .end local v12    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
     .end local v18    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
     .restart local v7    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    :cond_68
+    :cond_1
     move/from16 v18, v7
 
     .line 464
     .end local v7    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
     .restart local v18    # "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    :goto_6a
+    :goto_0
     move-object v3, v6
 
     .local v3, "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
@@ -1651,7 +1615,6 @@
 
     .line 465
     .local v8, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v3}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v9
@@ -1688,7 +1651,6 @@
     .line 465
     .end local v9    # "other$iv$iv$iv":J
     .end local v11    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v3, v9, v10, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 467
@@ -1698,7 +1660,7 @@
     .end local v3    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v7    # "this_$iv$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v8    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :goto_8c
+    :goto_1
     nop
 
     .line 273
@@ -1710,7 +1672,7 @@
 .end method
 
 .method public final placeRelativeWithLayer-aW-9-wM(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
-    .registers 23
+    .locals 17
     .param p1, "$this$placeRelativeWithLayer_u2daW_u2d9_u2dwM"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "position"    # J
     .param p4, "zIndex"    # F
@@ -1753,30 +1715,27 @@
 
     .line 453
     .local v5, "$i$f$placeAutoMirrored-aW-9-wM$ui_release":I
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentLayoutDirection()Landroidx/compose/ui/unit/LayoutDirection;
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentLayoutDirection(Landroidx/compose/ui/layout/Placeable$PlacementScope;)Landroidx/compose/ui/unit/LayoutDirection;
 
     move-result-object v6
 
     sget-object v7, Landroidx/compose/ui/unit/LayoutDirection;->Ltr:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v6, v7, :cond_60
+    if-eq v6, v7, :cond_1
 
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v6
 
-    if-nez v6, :cond_25
+    if-nez v6, :cond_0
 
-    goto :goto_60
+    goto :goto_0
 
     .line 458
-    :cond_25
+    :cond_0
     nop
 
     .line 459
-    # invokes: Landroidx/compose/ui/layout/Placeable$PlacementScope;->getParentWidth()I
     invoke-static {v4}, Landroidx/compose/ui/layout/Placeable$PlacementScope;->access$getParentWidth(Landroidx/compose/ui/layout/Placeable$PlacementScope;)I
 
     move-result v6
@@ -1815,7 +1774,6 @@
 
     .line 460
     .local v10, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v9}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v11
@@ -1852,19 +1810,18 @@
     .line 460
     .end local v11    # "other$iv$iv$iv":J
     .end local v13    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v9, v11, v12, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 461
-    goto :goto_82
+    goto :goto_1
 
     .line 454
     .end local v6    # "position$iv$iv":J
     .end local v8    # "this_$iv$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v9    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v10    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :cond_60
-    :goto_60
+    :cond_1
+    :goto_0
     move-object v6, v2
 
     .local v6, "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
@@ -1875,7 +1832,6 @@
 
     .line 455
     .local v8, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v6}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v9
@@ -1912,7 +1868,6 @@
     .line 455
     .end local v9    # "other$iv$iv$iv":J
     .end local v11    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v6, v9, v10, v0, v1}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 457
@@ -1922,7 +1877,7 @@
     .end local v6    # "$this$placeApparentToRealOffset_u2daW_u2d9_u2dwM$iv$iv":Landroidx/compose/ui/layout/Placeable;
     .end local v7    # "this_$iv$iv":Landroidx/compose/ui/layout/Placeable$PlacementScope;
     .end local v8    # "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    :goto_82
+    :goto_1
     nop
 
     .line 249
@@ -1933,7 +1888,7 @@
 .end method
 
 .method public final placeWithLayer(Landroidx/compose/ui/layout/Placeable;IIFLkotlin/jvm/functions/Function1;)V
-    .registers 19
+    .locals 13
     .param p1, "$this$placeWithLayer"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "x"    # I
     .param p3, "y"    # I
@@ -1980,7 +1935,6 @@
 
     .line 473
     .local v6, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v5}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v7
@@ -2019,7 +1973,6 @@
     .end local v9    # "$i$f$plus-qkQi6aY":I
     move/from16 v9, p4
 
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v5, v7, v8, v9, v0}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 475
@@ -2034,7 +1987,7 @@
 .end method
 
 .method public final placeWithLayer-aW-9-wM(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
-    .registers 15
+    .locals 9
     .param p1, "$this$placeWithLayer_u2daW_u2d9_u2dwM"    # Landroidx/compose/ui/layout/Placeable;
     .param p2, "position"    # J
     .param p4, "zIndex"    # F
@@ -2071,7 +2024,6 @@
 
     .line 476
     .local v2, "$i$f$placeApparentToRealOffset-aW-9-wM$ui_release":I
-    # getter for: Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
     invoke-static {v0}, Landroidx/compose/ui/layout/Placeable;->access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
 
     move-result-wide v3
@@ -2108,7 +2060,6 @@
     .line 476
     .end local v3    # "other$iv$iv":J
     .end local v5    # "$i$f$plus-qkQi6aY":I
-    # invokes: Landroidx/compose/ui/layout/Placeable;->placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
     invoke-static {v0, v3, v4, p4, p5}, Landroidx/compose/ui/layout/Placeable;->access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 478

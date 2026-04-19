@@ -51,7 +51,7 @@
 
 # direct methods
 .method private static final cornersFit(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$cornersFit"    # Landroidx/compose/ui/geometry/RoundRect;
 
     .line 110
@@ -79,7 +79,7 @@
 
     cmpg-float v0, v0, v1
 
-    if-gtz v0, :cond_66
+    if-gtz v0, :cond_0
 
     .line 111
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomLeftCornerRadius-kKHJgLs()J
@@ -106,7 +106,7 @@
 
     cmpg-float v0, v0, v1
 
-    if-gtz v0, :cond_66
+    if-gtz v0, :cond_0
 
     .line 112
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -133,7 +133,7 @@
 
     cmpg-float v0, v0, v1
 
-    if-gtz v0, :cond_66
+    if-gtz v0, :cond_0
 
     .line 113
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
@@ -160,21 +160,21 @@
 
     cmpg-float v0, v0, v1
 
-    if-gtz v0, :cond_66
+    if-gtz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_67
+    goto :goto_0
 
-    :cond_66
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_67
+    :goto_0
     return v0
 .end method
 
 .method public static final isInOutline(Landroidx/compose/ui/graphics/Outline;FFLandroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;)Z
-    .registers 6
+    .locals 1
     .param p0, "outline"    # Landroidx/compose/ui/graphics/Outline;
     .param p1, "x"    # F
     .param p2, "y"    # F
@@ -191,7 +191,7 @@
     .line 43
     instance-of v0, p0, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     move-object v0, p0
 
@@ -205,13 +205,13 @@
 
     move-result v0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 44
-    :cond_17
+    :cond_0
     instance-of v0, p0, Landroidx/compose/ui/graphics/Outline$Rounded;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_1
 
     move-object v0, p0
 
@@ -221,13 +221,13 @@
 
     move-result v0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 45
-    :cond_23
+    :cond_1
     instance-of v0, p0, Landroidx/compose/ui/graphics/Outline$Generic;
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2
 
     move-object v0, p0
 
@@ -242,11 +242,11 @@
     move-result v0
 
     .line 46
-    :goto_32
+    :goto_0
     return v0
 
     .line 45
-    :cond_33
+    :cond_2
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -255,29 +255,29 @@
 .end method
 
 .method public static synthetic isInOutline$default(Landroidx/compose/ui/graphics/Outline;FFLandroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;ILjava/lang/Object;)Z
-    .registers 8
+    .locals 1
 
     .line 36
     and-int/lit8 p6, p5, 0x8
 
     const/4 v0, 0x0
 
-    if-eqz p6, :cond_6
+    if-eqz p6, :cond_0
 
     .line 40
     move-object p3, v0
 
     .line 36
-    :cond_6
+    :cond_0
     and-int/lit8 p5, p5, 0x10
 
-    if-eqz p5, :cond_b
+    if-eqz p5, :cond_1
 
     .line 41
     move-object p4, v0
 
     .line 36
-    :cond_b
+    :cond_1
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/platform/ShapeContainingUtilKt;->isInOutline(Landroidx/compose/ui/graphics/Outline;FFLandroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;)Z
 
     move-result p0
@@ -286,7 +286,7 @@
 .end method
 
 .method private static final isInPath(Landroidx/compose/ui/graphics/Path;FFLandroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;)Z
-    .registers 10
+    .locals 5
     .param p0, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "x"    # F
     .param p2, "y"    # F
@@ -310,20 +310,20 @@
 
     .line 149
     .local v0, "rect":Landroidx/compose/ui/geometry/Rect;
-    if-nez p3, :cond_16
+    if-nez p3, :cond_0
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
 
     move-result-object v1
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move-object v1, p3
 
     .line 150
     .local v1, "touchPointPath":Landroidx/compose/ui/graphics/Path;
-    :goto_17
+    :goto_0
     nop
 
     .line 151
@@ -333,20 +333,20 @@
     invoke-interface {v1, v0}, Landroidx/compose/ui/graphics/Path;->addRect(Landroidx/compose/ui/geometry/Rect;)V
 
     .line 154
-    if-nez p4, :cond_23
+    if-nez p4, :cond_1
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
 
     move-result-object v2
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     move-object v2, p4
 
     .line 155
     .local v2, "opPath":Landroidx/compose/ui/graphics/Path;
-    :goto_24
+    :goto_1
     sget-object v3, Landroidx/compose/ui/graphics/PathOperation;->Companion:Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     invoke-virtual {v3}, Landroidx/compose/ui/graphics/PathOperation$Companion;->getIntersect-b3I0S0c()I
@@ -374,7 +374,7 @@
 .end method
 
 .method private static final isInRectangle(Landroidx/compose/ui/geometry/Rect;FF)Z
-    .registers 4
+    .locals 1
     .param p0, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p1, "x"    # F
     .param p2, "y"    # F
@@ -386,7 +386,7 @@
 
     cmpg-float v0, v0, p1
 
-    if-gtz v0, :cond_22
+    if-gtz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getRight()F
 
@@ -394,7 +394,7 @@
 
     cmpg-float v0, p1, v0
 
-    if-gez v0, :cond_22
+    if-gez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getTop()F
 
@@ -402,7 +402,7 @@
 
     cmpg-float v0, v0, p2
 
-    if-gtz v0, :cond_22
+    if-gtz v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/Rect;->getBottom()F
 
@@ -410,21 +410,21 @@
 
     cmpg-float v0, p2, v0
 
-    if-gez v0, :cond_22
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_23
+    :goto_0
     return v0
 .end method
 
 .method private static final isInRoundedRect(Landroidx/compose/ui/graphics/Outline$Rounded;FFLandroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;)Z
-    .registers 24
+    .locals 19
     .param p0, "outline"    # Landroidx/compose/ui/graphics/Outline$Rounded;
     .param p1, "x"    # F
     .param p2, "y"    # F
@@ -450,7 +450,7 @@
 
     cmpg-float v0, v6, v0
 
-    if-ltz v0, :cond_119
+    if-ltz v0, :cond_7
 
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getRight()F
 
@@ -458,7 +458,7 @@
 
     cmpl-float v0, v6, v0
 
-    if-gez v0, :cond_119
+    if-gez v0, :cond_7
 
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getTop()F
 
@@ -466,7 +466,7 @@
 
     cmpg-float v0, v7, v0
 
-    if-ltz v0, :cond_119
+    if-ltz v0, :cond_7
 
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getBottom()F
 
@@ -474,35 +474,35 @@
 
     cmpl-float v0, v7, v0
 
-    if-ltz v0, :cond_2e
+    if-ltz v0, :cond_0
 
     move-object/from16 v10, p3
 
-    goto/16 :goto_11b
+    goto/16 :goto_2
 
     .line 71
-    :cond_2e
+    :cond_0
     invoke-static {v9}, Landroidx/compose/ui/platform/ShapeContainingUtilKt;->cornersFit(Landroidx/compose/ui/geometry/RoundRect;)Z
 
     move-result v0
 
-    if-nez v0, :cond_46
+    if-nez v0, :cond_2
 
     .line 72
-    if-nez v8, :cond_3b
+    if-nez v8, :cond_1
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
 
     move-result-object v0
 
-    goto :goto_3c
+    goto :goto_0
 
-    :cond_3b
+    :cond_1
     move-object v0, v8
 
     .line 73
     .local v0, "path":Landroidx/compose/ui/graphics/Path;
-    :goto_3c
+    :goto_0
     invoke-interface {v0, v9}, Landroidx/compose/ui/graphics/Path;->addRoundRect(Landroidx/compose/ui/geometry/RoundRect;)V
 
     .line 74
@@ -516,7 +516,7 @@
 
     .line 77
     .end local v0    # "path":Landroidx/compose/ui/graphics/Path;
-    :cond_46
+    :cond_2
     move-object/from16 v10, p3
 
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getLeft()F
@@ -649,11 +649,11 @@
     .local v18, "bottomLeftY":F
     cmpg-float v0, v6, v11
 
-    if-gez v0, :cond_cf
+    if-gez v0, :cond_3
 
     cmpg-float v0, v7, v12
 
-    if-gez v0, :cond_cf
+    if-gez v0, :cond_3
 
     .line 91
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getTopLeftCornerRadius-kKHJgLs()J
@@ -672,17 +672,17 @@
 
     move-result v0
 
-    goto :goto_118
+    goto :goto_1
 
     .line 92
-    :cond_cf
+    :cond_3
     cmpg-float v0, v6, v18
 
-    if-gez v0, :cond_e8
+    if-gez v0, :cond_4
 
     cmpl-float v0, v7, v17
 
-    if-lez v0, :cond_e8
+    if-lez v0, :cond_4
 
     .line 94
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getBottomLeftCornerRadius-kKHJgLs()J
@@ -701,17 +701,17 @@
 
     move-result v0
 
-    goto :goto_118
+    goto :goto_1
 
     .line 95
-    :cond_e8
+    :cond_4
     cmpl-float v0, v6, v13
 
-    if-lez v0, :cond_ff
+    if-lez v0, :cond_5
 
     cmpg-float v0, v7, v14
 
-    if-gez v0, :cond_ff
+    if-gez v0, :cond_5
 
     .line 97
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
@@ -730,17 +730,17 @@
 
     move-result v0
 
-    goto :goto_118
+    goto :goto_1
 
     .line 98
-    :cond_ff
+    :cond_5
     cmpl-float v0, v6, v15
 
-    if-lez v0, :cond_117
+    if-lez v0, :cond_6
 
     cmpl-float v0, v7, v16
 
-    if-lez v0, :cond_117
+    if-lez v0, :cond_6
 
     .line 100
     invoke-virtual {v9}, Landroidx/compose/ui/geometry/RoundRect;->getBottomRightCornerRadius-kKHJgLs()J
@@ -759,14 +759,14 @@
 
     move-result v0
 
-    goto :goto_118
+    goto :goto_1
 
     .line 102
-    :cond_117
+    :cond_6
     const/4 v0, 0x1
 
     .line 89
-    :goto_118
+    :goto_1
     return v0
 
     .line 64
@@ -778,18 +778,18 @@
     .end local v16    # "bottomRightY":F
     .end local v17    # "bottomLeftX":F
     .end local v18    # "bottomLeftY":F
-    :cond_119
+    :cond_7
     move-object/from16 v10, p3
 
     .line 65
-    :goto_11b
+    :goto_2
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method private static final isWithinEllipse-VE1yxkc(FFJFF)Z
-    .registers 13
+    .locals 7
     .param p0, "x"    # F
     .param p1, "y"    # F
     .param p2, "cornerRadius"    # J
@@ -835,15 +835,15 @@
 
     cmpg-float v4, v4, v5
 
-    if-gtz v4, :cond_1f
+    if-gtz v4, :cond_0
 
     const/4 v4, 0x1
 
-    goto :goto_20
+    goto :goto_0
 
-    :cond_1f
+    :cond_0
     const/4 v4, 0x0
 
-    :goto_20
+    :goto_0
     return v4
 .end method

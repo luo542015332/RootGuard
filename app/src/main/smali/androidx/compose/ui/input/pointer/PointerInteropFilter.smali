@@ -80,7 +80,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final getDisallowIntercept$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 181
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->disallowIntercept:Z
@@ -110,7 +110,7 @@
 .end method
 
 .method public final getOnTouchEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -124,11 +124,11 @@
     .line 173
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->onTouchEvent:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
-    :cond_5
+    :cond_0
     const-string/jumbo v0, "onTouchEvent"
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
@@ -139,7 +139,7 @@
 .end method
 
 .method public getPointerInputFilter()Landroidx/compose/ui/input/pointer/PointerInputFilter;
-    .registers 2
+    .locals 1
 
     .line 203
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->pointerInputFilter:Landroidx/compose/ui/input/pointer/PointerInputFilter;
@@ -148,7 +148,7 @@
 .end method
 
 .method public final getRequestDisallowInterceptTouchEvent()Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;
-    .registers 2
+    .locals 1
 
     .line 175
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->requestDisallowInterceptTouchEvent:Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;
@@ -157,7 +157,7 @@
 .end method
 
 .method public final setDisallowIntercept$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 181
@@ -167,7 +167,7 @@
 .end method
 
 .method public final setOnTouchEvent(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -191,34 +191,34 @@
 .end method
 
 .method public final setRequestDisallowInterceptTouchEvent(Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;)V
-    .registers 4
+    .locals 2
     .param p1, "value"    # Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;
 
     .line 177
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->requestDisallowInterceptTouchEvent:Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;->setPointerInteropFilter$ui_release(Landroidx/compose/ui/input/pointer/PointerInteropFilter;)V
 
     .line 178
-    :goto_9
+    :goto_0
     iput-object p1, p0, Landroidx/compose/ui/input/pointer/PointerInteropFilter;->requestDisallowInterceptTouchEvent:Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;
 
     .line 179
-    if-nez p1, :cond_e
+    if-nez p1, :cond_1
 
-    goto :goto_11
+    goto :goto_1
 
-    :cond_e
+    :cond_1
     invoke-virtual {p1, p0}, Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;->setPointerInteropFilter$ui_release(Landroidx/compose/ui/input/pointer/PointerInteropFilter;)V
 
     .line 180
-    :goto_11
+    :goto_1
     return-void
 .end method

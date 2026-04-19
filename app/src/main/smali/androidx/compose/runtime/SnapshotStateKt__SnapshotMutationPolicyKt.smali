@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final neverEqualPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -53,7 +53,7 @@
 .end method
 
 .method public static final referentialEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -77,7 +77,7 @@
 .end method
 
 .method public static final structuralEqualityPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

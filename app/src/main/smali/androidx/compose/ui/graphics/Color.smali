@@ -129,7 +129,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/Color$Companion;
 
@@ -268,7 +268,7 @@
 .end method
 
 .method private synthetic constructor <init>(J)V
-    .registers 3
+    .locals 0
     .param p1, "value"    # J
 
     .line 115
@@ -280,7 +280,7 @@
 .end method
 
 .method public static final synthetic access$getBlack$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Black:J
@@ -289,7 +289,7 @@
 .end method
 
 .method public static final synthetic access$getBlue$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Blue:J
@@ -298,7 +298,7 @@
 .end method
 
 .method public static final synthetic access$getCyan$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Cyan:J
@@ -307,7 +307,7 @@
 .end method
 
 .method public static final synthetic access$getDarkGray$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->DarkGray:J
@@ -316,7 +316,7 @@
 .end method
 
 .method public static final synthetic access$getGray$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Gray:J
@@ -325,7 +325,7 @@
 .end method
 
 .method public static final synthetic access$getGreen$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Green:J
@@ -334,7 +334,7 @@
 .end method
 
 .method public static final synthetic access$getLightGray$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->LightGray:J
@@ -343,7 +343,7 @@
 .end method
 
 .method public static final synthetic access$getMagenta$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Magenta:J
@@ -352,7 +352,7 @@
 .end method
 
 .method public static final synthetic access$getRed$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Red:J
@@ -361,7 +361,7 @@
 .end method
 
 .method public static final synthetic access$getTransparent$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Transparent:J
@@ -370,7 +370,7 @@
 .end method
 
 .method public static final synthetic access$getUnspecified$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Unspecified:J
@@ -379,7 +379,7 @@
 .end method
 
 .method public static final synthetic access$getWhite$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->White:J
@@ -388,7 +388,7 @@
 .end method
 
 .method public static final synthetic access$getYellow$cp()J
-    .registers 2
+    .locals 2
 
     .line 113
     sget-wide v0, Landroidx/compose/ui/graphics/Color;->Yellow:J
@@ -397,7 +397,7 @@
 .end method
 
 .method public static final synthetic box-impl(J)Landroidx/compose/ui/graphics/Color;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/Color;
 
@@ -407,7 +407,7 @@
 .end method
 
 .method public static final component1-impl(J)F
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # J
 
     .line 230
@@ -419,7 +419,7 @@
 .end method
 
 .method public static final component2-impl(J)F
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # J
 
     .line 233
@@ -431,7 +431,7 @@
 .end method
 
 .method public static final component3-impl(J)F
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # J
 
     .line 236
@@ -443,7 +443,7 @@
 .end method
 
 .method public static final component4-impl(J)F
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # J
 
     .line 239
@@ -455,7 +455,7 @@
 .end method
 
 .method public static final component5-impl(J)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # J
 
     .line 242
@@ -467,13 +467,13 @@
 .end method
 
 .method public static constructor-impl(J)J
-    .registers 2
+    .locals 0
 
     return-wide p0
 .end method
 
 .method public static final convert-vNxB06k(JLandroidx/compose/ui/graphics/colorspace/ColorSpace;)J
-    .registers 9
+    .locals 6
     .param p0, "arg0"    # J
     .param p2, "colorSpace"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
@@ -492,13 +492,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     .line 137
     return-wide p0
 
     .line 139
-    :cond_11
+    :cond_0
     const/4 v1, 0x2
 
     const/4 v2, 0x0
@@ -535,7 +535,7 @@
 .end method
 
 .method public static final copy-wmQWz5c(JFFFF)J
-    .registers 8
+    .locals 2
     .param p0, "arg0"    # J
     .param p2, "alpha"    # F
     .param p3, "red"    # F
@@ -569,12 +569,12 @@
 .end method
 
 .method public static synthetic copy-wmQWz5c$default(JFFFFILjava/lang/Object;)J
-    .registers 14
+    .locals 6
 
     .line 249
     and-int/lit8 p7, p6, 0x1
 
-    if-eqz p7, :cond_a
+    if-eqz p7, :cond_0
 
     .line 250
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/Color;->getAlpha-impl(J)F
@@ -583,16 +583,16 @@
 
     move v2, p2
 
-    goto :goto_b
+    goto :goto_0
 
     .line 249
-    :cond_a
+    :cond_0
     move v2, p2
 
-    :goto_b
+    :goto_0
     and-int/lit8 p2, p6, 0x2
 
-    if-eqz p2, :cond_15
+    if-eqz p2, :cond_1
 
     .line 251
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/Color;->getRed-impl(J)F
@@ -601,16 +601,16 @@
 
     move v3, p3
 
-    goto :goto_16
+    goto :goto_1
 
     .line 249
-    :cond_15
+    :cond_1
     move v3, p3
 
-    :goto_16
+    :goto_1
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_20
+    if-eqz p2, :cond_2
 
     .line 252
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/Color;->getGreen-impl(J)F
@@ -619,16 +619,16 @@
 
     move v4, p4
 
-    goto :goto_21
+    goto :goto_2
 
     .line 249
-    :cond_20
+    :cond_2
     move v4, p4
 
-    :goto_21
+    :goto_2
     and-int/lit8 p2, p6, 0x8
 
-    if-eqz p2, :cond_2b
+    if-eqz p2, :cond_3
 
     .line 253
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/Color;->getBlue-impl(J)F
@@ -637,13 +637,13 @@
 
     move v5, p5
 
-    goto :goto_2c
+    goto :goto_3
 
     .line 249
-    :cond_2b
+    :cond_3
     move v5, p5
 
-    :goto_2c
+    :goto_3
     move-wide v0, p0
 
     invoke-static/range {v0 .. v5}, Landroidx/compose/ui/graphics/Color;->copy-wmQWz5c(JFFFF)J
@@ -654,17 +654,17 @@
 .end method
 
 .method public static equals-impl(JLjava/lang/Object;)Z
-    .registers 7
+    .locals 4
 
     instance-of v0, p2, Landroidx/compose/ui/graphics/Color;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p2
 
     check-cast v0, Landroidx/compose/ui/graphics/Color;
@@ -675,18 +675,18 @@
 
     cmp-long v0, p0, v2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     return v1
 
-    :cond_12
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(JJ)Z
-    .registers 5
+    .locals 1
 
     invoke-static {p0, p1, p2, p3}, Lkotlin/ULong;->equals-impl0(JJ)Z
 
@@ -696,13 +696,13 @@
 .end method
 
 .method public static synthetic getAlpha$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getAlpha-impl(J)F
-    .registers 6
+    .locals 4
     .param p0, "arg0"    # J
 
     .line 222
@@ -718,7 +718,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 223
     const/16 v0, 0x38
@@ -747,10 +747,10 @@
 
     div-float/2addr v0, v1
 
-    goto :goto_3c
+    goto :goto_0
 
     .line 225
-    :cond_25
+    :cond_0
     const/4 v0, 0x6
 
     ushr-long v0, p0, v0
@@ -778,18 +778,18 @@
     div-float/2addr v0, v1
 
     .line 222
-    :goto_3c
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic getBlue$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getBlue-impl(J)F
-    .registers 6
+    .locals 4
     .param p0, "arg0"    # J
 
     .line 204
@@ -805,7 +805,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 205
     const/16 v0, 0x20
@@ -834,10 +834,10 @@
 
     div-float/2addr v0, v1
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 207
-    :cond_25
+    :cond_0
     const/16 v0, 0x10
 
     ushr-long v0, p0, v0
@@ -868,18 +868,18 @@
     move-result v0
 
     .line 204
-    :goto_3f
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic getColorSpace$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getColorSpace-impl(J)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 6
+    .locals 4
     .param p0, "arg0"    # J
 
     .line 123
@@ -915,13 +915,13 @@
 .end method
 
 .method public static synthetic getGreen$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getGreen-impl(J)F
-    .registers 6
+    .locals 4
     .param p0, "arg0"    # J
 
     .line 181
@@ -937,7 +937,7 @@
 
     cmp-long v0, v0, v2
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 182
     const/16 v0, 0x28
@@ -966,10 +966,10 @@
 
     div-float/2addr v0, v1
 
-    goto :goto_3f
+    goto :goto_0
 
     .line 184
-    :cond_25
+    :cond_0
     const/16 v0, 0x20
 
     ushr-long v0, p0, v0
@@ -1000,18 +1000,18 @@
     move-result v0
 
     .line 181
-    :goto_3f
+    :goto_0
     return v0
 .end method
 
 .method public static synthetic getRed$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getRed-impl(J)F
-    .registers 6
+    .locals 4
     .param p0, "arg0"    # J
 
     .line 158
@@ -1029,7 +1029,7 @@
 
     const/16 v1, 0x30
 
-    if-nez v0, :cond_25
+    if-nez v0, :cond_0
 
     .line 159
     ushr-long v0, p0, v1
@@ -1056,10 +1056,10 @@
 
     div-float/2addr v0, v1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 161
-    :cond_25
+    :cond_0
     ushr-long v0, p0, v1
 
     invoke-static {v0, v1}, Lkotlin/ULong;->constructor-impl(J)J
@@ -1088,12 +1088,12 @@
     move-result v0
 
     .line 158
-    :goto_3d
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(J)I
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Lkotlin/ULong;->hashCode-impl(J)I
 
@@ -1103,7 +1103,7 @@
 .end method
 
 .method public static toString-impl(J)Ljava/lang/String;
-    .registers 5
+    .locals 3
     .param p0, "arg0"    # J
 
     .line 276
@@ -1195,7 +1195,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Color;->value:J
 
@@ -1207,7 +1207,7 @@
 .end method
 
 .method public final getValue-s-VKNKU()J
-    .registers 3
+    .locals 2
 
     .line 115
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Color;->value:J
@@ -1216,7 +1216,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Color;->value:J
 
@@ -1228,7 +1228,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 275
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Color;->value:J
@@ -1242,7 +1242,7 @@
 .end method
 
 .method public final synthetic unbox-impl()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/graphics/Color;->value:J
 

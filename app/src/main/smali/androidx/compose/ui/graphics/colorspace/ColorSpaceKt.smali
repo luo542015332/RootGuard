@@ -71,7 +71,7 @@
 
 # direct methods
 .method public static final absRcpResponse(DDDDDD)D
-    .registers 28
+    .locals 16
     .param p0, "x"    # D
     .param p2, "a"    # D
     .param p4, "b"    # D
@@ -86,18 +86,18 @@
 
     cmpg-double v2, v0, v2
 
-    if-gez v2, :cond_b
+    if-gez v2, :cond_0
 
     neg-double v2, v0
 
     move-wide v4, v2
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move-wide v4, v0
 
-    :goto_c
+    :goto_0
     move-wide/from16 v6, p2
 
     move-wide/from16 v8, p4
@@ -120,7 +120,7 @@
 .end method
 
 .method public static final absResponse(DDDDDD)D
-    .registers 28
+    .locals 16
     .param p0, "x"    # D
     .param p2, "a"    # D
     .param p4, "b"    # D
@@ -135,18 +135,18 @@
 
     cmpg-double v2, v0, v2
 
-    if-gez v2, :cond_b
+    if-gez v2, :cond_0
 
     neg-double v2, v0
 
     move-wide v4, v2
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     move-wide v4, v0
 
-    :goto_c
+    :goto_0
     move-wide/from16 v6, p2
 
     move-wide/from16 v8, p4
@@ -169,7 +169,7 @@
 .end method
 
 .method public static final adapt(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/WhitePoint;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 4
+    .locals 2
 
     const-string v0, "<this>"
 
@@ -191,7 +191,7 @@
 .end method
 
 .method public static final adapt(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/Adaptation;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 8
+    .locals 5
     .param p0, "$this$adapt"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .param p1, "whitePoint"    # Landroidx/compose/ui/graphics/colorspace/WhitePoint;
     .param p2, "adaptation"    # Landroidx/compose/ui/graphics/colorspace/Adaptation;
@@ -223,7 +223,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_1
 
     .line 486
     move-object v0, p0
@@ -240,13 +240,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_0
 
     .line 488
     return-object p0
 
     .line 491
-    :cond_2f
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/graphics/colorspace/WhitePoint;->toXyz$ui_graphics_release()[F
 
     move-result-object v1
@@ -306,17 +306,17 @@
     .end local v1    # "xyz":[F
     .end local v2    # "adaptationTransform":[F
     .end local v3    # "transform":[F
-    :cond_56
+    :cond_1
     return-object p0
 .end method
 
 .method public static synthetic adapt$default(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/Adaptation;ILjava/lang/Object;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 5
+    .locals 0
 
     .line 481
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_0
 
     .line 483
     sget-object p2, Landroidx/compose/ui/graphics/colorspace/Adaptation;->Companion:Landroidx/compose/ui/graphics/colorspace/Adaptation$Companion;
@@ -326,7 +326,7 @@
     move-result-object p2
 
     .line 481
-    :cond_a
+    :cond_0
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/colorspace/ColorSpaceKt;->adapt(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/Adaptation;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     move-result-object p0
@@ -335,7 +335,7 @@
 .end method
 
 .method public static final chromaticAdaptation([F[F[F)[F
-    .registers 9
+    .locals 6
     .param p0, "matrix"    # [F
     .param p1, "srcWhitePoint"    # [F
     .param p2, "dstWhitePoint"    # [F
@@ -420,7 +420,7 @@
 .end method
 
 .method public static final compare(Landroidx/compose/ui/graphics/colorspace/TransferParameters;Landroidx/compose/ui/graphics/colorspace/TransferParameters;)Z
-    .registers 8
+    .locals 6
     .param p0, "a"    # Landroidx/compose/ui/graphics/colorspace/TransferParameters;
     .param p1, "b"    # Landroidx/compose/ui/graphics/colorspace/TransferParameters;
 
@@ -429,7 +429,7 @@
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 577
-    if-eqz p1, :cond_8b
+    if-eqz p1, :cond_0
 
     .line 578
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->getA()D
@@ -450,7 +450,7 @@
 
     cmpg-double v0, v0, v2
 
-    if-gez v0, :cond_8b
+    if-gez v0, :cond_0
 
     .line 579
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->getB()D
@@ -469,7 +469,7 @@
 
     cmpg-double v0, v0, v2
 
-    if-gez v0, :cond_8b
+    if-gez v0, :cond_0
 
     .line 580
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->getC()D
@@ -488,7 +488,7 @@
 
     cmpg-double v0, v0, v2
 
-    if-gez v0, :cond_8b
+    if-gez v0, :cond_0
 
     .line 581
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->getD()D
@@ -509,7 +509,7 @@
 
     cmpg-double v0, v0, v4
 
-    if-gez v0, :cond_8b
+    if-gez v0, :cond_0
 
     .line 583
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->getE()D
@@ -528,7 +528,7 @@
 
     cmpg-double v0, v0, v2
 
-    if-gez v0, :cond_8b
+    if-gez v0, :cond_0
 
     .line 584
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->getF()D
@@ -547,7 +547,7 @@
 
     cmpg-double v0, v0, v2
 
-    if-gez v0, :cond_8b
+    if-gez v0, :cond_0
 
     .line 585
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/TransferParameters;->getGamma()D
@@ -566,22 +566,22 @@
 
     cmpg-double v0, v0, v2
 
-    if-gez v0, :cond_8b
+    if-gez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_8c
+    goto :goto_0
 
-    :cond_8b
+    :cond_0
     const/4 v0, 0x0
 
     .line 576
-    :goto_8c
+    :goto_0
     return v0
 .end method
 
 .method public static final compare(Landroidx/compose/ui/graphics/colorspace/WhitePoint;Landroidx/compose/ui/graphics/colorspace/WhitePoint;)Z
-    .registers 6
+    .locals 4
     .param p0, "a"    # Landroidx/compose/ui/graphics/colorspace/WhitePoint;
     .param p1, "b"    # Landroidx/compose/ui/graphics/colorspace/WhitePoint;
 
@@ -596,12 +596,12 @@
     .line 597
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_10
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 598
-    :cond_10
+    :cond_0
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/WhitePoint;->getX()F
 
     move-result v1
@@ -620,7 +620,7 @@
 
     cmpg-float v1, v1, v2
 
-    if-gez v1, :cond_36
+    if-gez v1, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/WhitePoint;->getY()F
 
@@ -638,19 +638,19 @@
 
     cmpg-float v1, v1, v2
 
-    if-gez v1, :cond_36
+    if-gez v1, :cond_1
 
-    goto :goto_37
+    goto :goto_0
 
-    :cond_36
+    :cond_1
     const/4 v0, 0x0
 
-    :goto_37
+    :goto_0
     return v0
 .end method
 
 .method public static final compare([F[F)Z
-    .registers 7
+    .locals 5
     .param p0, "a"    # [F
     .param p1, "b"    # [F
 
@@ -665,19 +665,19 @@
     .line 609
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_10
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 610
-    :cond_10
+    :cond_0
     const/4 v1, 0x0
 
     .local v1, "i":I
     array-length v2, p0
 
-    :goto_12
-    if-ge v1, v2, :cond_33
+    :goto_0
+    if-ge v1, v2, :cond_2
 
     .line 612
     aget v3, p0, v1
@@ -688,7 +688,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_30
+    if-eqz v3, :cond_1
 
     aget v3, p0, v1
 
@@ -704,26 +704,26 @@
 
     cmpl-float v3, v3, v4
 
-    if-lez v3, :cond_30
+    if-lez v3, :cond_1
 
     const/4 v0, 0x0
 
     return v0
 
     .line 610
-    :cond_30
+    :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 614
     .end local v1    # "i":I
-    :cond_33
+    :cond_2
     return v0
 .end method
 
 .method public static final connect-YBCOT_4(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/ColorSpace;I)Landroidx/compose/ui/graphics/colorspace/Connector;
-    .registers 9
+    .locals 6
     .param p0, "$this$connect_u2dYBCOT_4"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .param p1, "destination"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
     .param p2, "intent"    # I
@@ -743,7 +743,7 @@
 
     move-result-object v0
 
-    if-ne p0, v0, :cond_3d
+    if-ne p0, v0, :cond_1
 
     .line 436
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -752,7 +752,7 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_22
+    if-ne p1, v0, :cond_0
 
     .line 437
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Connector;->Companion:Landroidx/compose/ui/graphics/colorspace/Connector$Companion;
@@ -764,14 +764,14 @@
     return-object v0
 
     .line 439
-    :cond_22
+    :cond_0
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getOklab()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_60
+    if-ne p1, v0, :cond_2
 
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Companion:Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;
 
@@ -783,7 +783,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_2
 
     .line 440
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Connector;->Companion:Landroidx/compose/ui/graphics/colorspace/Connector$Companion;
@@ -795,14 +795,14 @@
     return-object v0
 
     .line 442
-    :cond_3d
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->getOklab()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     move-result-object v0
 
-    if-ne p0, v0, :cond_60
+    if-ne p0, v0, :cond_2
 
     .line 443
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -811,7 +811,7 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_60
+    if-ne p1, v0, :cond_2
 
     .line 444
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Companion:Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;
@@ -824,7 +824,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_2
 
     .line 446
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Connector;->Companion:Landroidx/compose/ui/graphics/colorspace/Connector$Companion;
@@ -836,8 +836,8 @@
     return-object v0
 
     .line 448
-    :cond_60
-    if-ne p0, p1, :cond_69
+    :cond_2
+    if-ne p0, p1, :cond_3
 
     .line 449
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Connector;->Companion:Landroidx/compose/ui/graphics/colorspace/Connector$Companion;
@@ -849,7 +849,7 @@
     return-object v0
 
     .line 452
-    :cond_69
+    :cond_3
     invoke-virtual {p0}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->getModel-xdoWZVw()J
 
     move-result-wide v0
@@ -866,7 +866,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_99
+    if-eqz v0, :cond_4
 
     invoke-virtual {p1}, Landroidx/compose/ui/graphics/colorspace/ColorSpace;->getModel-xdoWZVw()J
 
@@ -882,7 +882,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_99
+    if-eqz v0, :cond_4
 
     .line 453
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/Connector$RgbConnector;
@@ -905,26 +905,26 @@
 
     check-cast v0, Landroidx/compose/ui/graphics/colorspace/Connector;
 
-    goto :goto_9e
+    goto :goto_0
 
     .line 459
-    :cond_99
+    :cond_4
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/Connector;
 
     invoke-direct {v0, p0, p1, p2, v1}, Landroidx/compose/ui/graphics/colorspace/Connector;-><init>(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/ColorSpace;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 452
-    :goto_9e
+    :goto_0
     return-object v0
 .end method
 
 .method public static synthetic connect-YBCOT_4$default(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/ColorSpace;IILjava/lang/Object;)Landroidx/compose/ui/graphics/colorspace/Connector;
-    .registers 5
+    .locals 0
 
     .line 431
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_c
+    if-eqz p4, :cond_0
 
     .line 432
     sget-object p1, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -936,10 +936,10 @@
     check-cast p1, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     .line 431
-    :cond_c
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_1
 
     .line 433
     sget-object p2, Landroidx/compose/ui/graphics/colorspace/RenderIntent;->Companion:Landroidx/compose/ui/graphics/colorspace/RenderIntent$Companion;
@@ -949,7 +949,7 @@
     move-result p2
 
     .line 431
-    :cond_16
+    :cond_1
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/colorspace/ColorSpaceKt;->connect-YBCOT_4(Landroidx/compose/ui/graphics/colorspace/ColorSpace;Landroidx/compose/ui/graphics/colorspace/ColorSpace;I)Landroidx/compose/ui/graphics/colorspace/Connector;
 
     move-result-object p0
@@ -958,7 +958,7 @@
 .end method
 
 .method public static final inverse3x3([F)[F
-    .registers 26
+    .locals 25
     .param p0, "m"    # [F
 
     move-object/from16 v0, p0
@@ -1151,7 +1151,7 @@
 .end method
 
 .method public static final mul3x3([F[F)[F
-    .registers 15
+    .locals 13
     .param p0, "lhs"    # [F
     .param p1, "rhs"    # [F
 
@@ -1417,7 +1417,7 @@
 .end method
 
 .method public static final mul3x3Diag([F[F)[F
-    .registers 9
+    .locals 7
     .param p0, "lhs"    # [F
     .param p1, "rhs"    # [F
 
@@ -1553,7 +1553,7 @@
 .end method
 
 .method public static final mul3x3Float3([F[F)[F
-    .registers 10
+    .locals 8
     .param p0, "lhs"    # [F
     .param p1, "rhs"    # [F
 
@@ -1657,7 +1657,7 @@
 .end method
 
 .method public static final mul3x3Float3_0([FFFF)F
-    .registers 6
+    .locals 2
     .param p0, "lhs"    # [F
     .param p1, "r0"    # F
     .param p2, "r1"    # F
@@ -1694,7 +1694,7 @@
 .end method
 
 .method public static final mul3x3Float3_1([FFFF)F
-    .registers 6
+    .locals 2
     .param p0, "lhs"    # [F
     .param p1, "r0"    # F
     .param p2, "r1"    # F
@@ -1731,7 +1731,7 @@
 .end method
 
 .method public static final mul3x3Float3_2([FFFF)F
-    .registers 6
+    .locals 2
     .param p0, "lhs"    # [F
     .param p1, "r0"    # F
     .param p2, "r1"    # F
@@ -1768,7 +1768,7 @@
 .end method
 
 .method public static final rcpResponse(DDDDDD)D
-    .registers 14
+    .locals 2
     .param p0, "x"    # D
     .param p2, "a"    # D
     .param p4, "b"    # D
@@ -1781,7 +1781,7 @@
 
     cmpl-double v0, p0, v0
 
-    if-ltz v0, :cond_10
+    if-ltz v0, :cond_0
 
     const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
@@ -1795,17 +1795,17 @@
 
     div-double/2addr v0, p2
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     div-double v0, p0, p6
 
-    :goto_12
+    :goto_0
     return-wide v0
 .end method
 
 .method public static final rcpResponse(DDDDDDDD)D
-    .registers 20
+    .locals 4
     .param p0, "x"    # D
     .param p2, "a"    # D
     .param p4, "b"    # D
@@ -1820,7 +1820,7 @@
 
     cmpl-double v0, p0, v0
 
-    if-ltz v0, :cond_13
+    if-ltz v0, :cond_0
 
     sub-double v0, p0, p10
 
@@ -1836,19 +1836,19 @@
 
     div-double/2addr v0, p2
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     sub-double v0, p0, p12
 
     div-double/2addr v0, p6
 
-    :goto_16
+    :goto_0
     return-wide v0
 .end method
 
 .method public static final response(DDDDDD)D
-    .registers 14
+    .locals 2
     .param p0, "x"    # D
     .param p2, "a"    # D
     .param p4, "b"    # D
@@ -1859,7 +1859,7 @@
     .line 517
     cmpl-double v0, p0, p8
 
-    if-ltz v0, :cond_c
+    if-ltz v0, :cond_0
 
     mul-double v0, p2, p0
 
@@ -1869,17 +1869,17 @@
 
     move-result-wide v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     mul-double v0, p6, p0
 
-    :goto_e
+    :goto_0
     return-wide v0
 .end method
 
 .method public static final response(DDDDDDDD)D
-    .registers 20
+    .locals 4
     .param p0, "x"    # D
     .param p2, "a"    # D
     .param p4, "b"    # D
@@ -1892,7 +1892,7 @@
     .line 545
     cmpl-double v0, p0, p8
 
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_0
 
     mul-double v0, p2, p0
 
@@ -1906,15 +1906,15 @@
 
     add-double/2addr v0, p10
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     move-wide/from16 v2, p14
 
     mul-double v0, p6, p0
 
     add-double v0, v0, p12
 
-    :goto_15
+    :goto_0
     return-wide v0
 .end method

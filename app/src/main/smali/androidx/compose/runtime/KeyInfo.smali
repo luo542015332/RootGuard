@@ -51,7 +51,7 @@
 
 # direct methods
 .method public constructor <init>(ILjava/lang/Object;III)V
-    .registers 6
+    .locals 0
     .param p1, "key"    # I
     .param p2, "objectKey"    # Ljava/lang/Object;
     .param p3, "location"    # I
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final getIndex()I
-    .registers 2
+    .locals 1
 
     .line 1109
     iget v0, p0, Landroidx/compose/runtime/KeyInfo;->index:I
@@ -92,7 +92,7 @@
 .end method
 
 .method public final getKey()I
-    .registers 2
+    .locals 1
 
     .line 1089
     iget v0, p0, Landroidx/compose/runtime/KeyInfo;->key:I
@@ -101,7 +101,7 @@
 .end method
 
 .method public final getLocation()I
-    .registers 2
+    .locals 1
 
     .line 1099
     iget v0, p0, Landroidx/compose/runtime/KeyInfo;->location:I
@@ -110,7 +110,7 @@
 .end method
 
 .method public final getNodes()I
-    .registers 2
+    .locals 1
 
     .line 1104
     iget v0, p0, Landroidx/compose/runtime/KeyInfo;->nodes:I
@@ -119,7 +119,7 @@
 .end method
 
 .method public final getObjectKey()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 1094
     iget-object v0, p0, Landroidx/compose/runtime/KeyInfo;->objectKey:Ljava/lang/Object;

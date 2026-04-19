@@ -89,7 +89,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -108,7 +108,7 @@
 .end method
 
 .method private final addNode(Landroidx/compose/ui/graphics/vector/PathNode;)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/graphics/vector/PathNode;
 
     .line 110
@@ -123,7 +123,7 @@
 
 # virtual methods
 .method public final arcTo(FFFZZFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 17
+    .locals 9
     .param p1, "horizontalEllipseRadius"    # F
     .param p2, "verticalEllipseRadius"    # F
     .param p3, "theta"    # F
@@ -192,7 +192,7 @@
 .end method
 
 .method public final arcToRelative(FFFZZFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 17
+    .locals 9
     .param p1, "a"    # F
     .param p2, "b"    # F
     .param p3, "theta"    # F
@@ -234,7 +234,7 @@
 .end method
 
 .method public final close()Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 2
+    .locals 1
 
     .line 25
     sget-object v0, Landroidx/compose/ui/graphics/vector/PathNode$Close;->INSTANCE:Landroidx/compose/ui/graphics/vector/PathNode$Close;
@@ -249,7 +249,7 @@
 .end method
 
 .method public final curveTo(FFFFFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 15
+    .locals 8
     .param p1, "x1"    # F
     .param p2, "y1"    # F
     .param p3, "x2"    # F
@@ -286,7 +286,7 @@
 .end method
 
 .method public final curveToRelative(FFFFFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 15
+    .locals 8
     .param p1, "dx1"    # F
     .param p2, "dy1"    # F
     .param p3, "dx2"    # F
@@ -323,7 +323,7 @@
 .end method
 
 .method public final getNodes()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -340,7 +340,7 @@
 .end method
 
 .method public final horizontalLineTo(F)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 3
+    .locals 1
     .param p1, "x"    # F
 
     .line 35
@@ -358,7 +358,7 @@
 .end method
 
 .method public final horizontalLineToRelative(F)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 3
+    .locals 1
     .param p1, "dx"    # F
 
     .line 37
@@ -376,7 +376,7 @@
 .end method
 
 .method public final lineTo(FF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 4
+    .locals 1
     .param p1, "x"    # F
     .param p2, "y"    # F
 
@@ -395,7 +395,7 @@
 .end method
 
 .method public final lineToRelative(FF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 4
+    .locals 1
     .param p1, "dx"    # F
     .param p2, "dy"    # F
 
@@ -414,7 +414,7 @@
 .end method
 
 .method public final moveTo(FF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 4
+    .locals 1
     .param p1, "x"    # F
     .param p2, "y"    # F
 
@@ -433,7 +433,7 @@
 .end method
 
 .method public final moveToRelative(FF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 4
+    .locals 1
     .param p1, "dx"    # F
     .param p2, "dy"    # F
 
@@ -452,7 +452,7 @@
 .end method
 
 .method public final quadTo(FFFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 6
+    .locals 1
     .param p1, "x1"    # F
     .param p2, "y1"    # F
     .param p3, "x2"    # F
@@ -473,7 +473,7 @@
 .end method
 
 .method public final quadToRelative(FFFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 6
+    .locals 1
     .param p1, "dx1"    # F
     .param p2, "dy1"    # F
     .param p3, "dx2"    # F
@@ -494,7 +494,7 @@
 .end method
 
 .method public final reflectiveCurveTo(FFFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 6
+    .locals 1
     .param p1, "x1"    # F
     .param p2, "y1"    # F
     .param p3, "x2"    # F
@@ -515,7 +515,7 @@
 .end method
 
 .method public final reflectiveCurveToRelative(FFFF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 6
+    .locals 1
     .param p1, "dx1"    # F
     .param p2, "dy1"    # F
     .param p3, "dx2"    # F
@@ -536,7 +536,7 @@
 .end method
 
 .method public final reflectiveQuadTo(FF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 4
+    .locals 1
     .param p1, "x1"    # F
     .param p2, "y1"    # F
 
@@ -555,7 +555,7 @@
 .end method
 
 .method public final reflectiveQuadToRelative(FF)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 4
+    .locals 1
     .param p1, "dx1"    # F
     .param p2, "dy1"    # F
 
@@ -574,7 +574,7 @@
 .end method
 
 .method public final verticalLineTo(F)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 3
+    .locals 1
     .param p1, "y"    # F
 
     .line 39
@@ -592,7 +592,7 @@
 .end method
 
 .method public final verticalLineToRelative(F)Landroidx/compose/ui/graphics/vector/PathBuilder;
-    .registers 3
+    .locals 1
     .param p1, "dy"    # F
 
     .line 41

@@ -151,7 +151,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;->$$INSTANCE:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
 
@@ -161,7 +161,7 @@
 .end method
 
 .method public static synthetic access$drawImage-AZ2fEMs$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
-    .registers 15
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
@@ -181,7 +181,7 @@
 .end method
 
 .method public static synthetic access$getCenter-F1C5BW0$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     .line 285
@@ -193,7 +193,7 @@
 .end method
 
 .method public static synthetic access$getSize-NH-jbRc$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     .line 285
@@ -205,7 +205,7 @@
 .end method
 
 .method public static synthetic access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # J
 
@@ -218,7 +218,7 @@
 .end method
 
 .method public static synthetic access$roundToPx-0680j_4$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # F
 
@@ -231,7 +231,7 @@
 .end method
 
 .method public static synthetic access$toDp-GaN1DYA$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # J
 
@@ -244,7 +244,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # F
 
@@ -257,7 +257,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # I
 
@@ -270,7 +270,7 @@
 .end method
 
 .method public static synthetic access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # J
 
@@ -283,7 +283,7 @@
 .end method
 
 .method public static synthetic access$toPx--R2X_6o$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # J
 
@@ -296,7 +296,7 @@
 .end method
 
 .method public static synthetic access$toPx-0680j_4$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # F
 
@@ -309,7 +309,7 @@
 .end method
 
 .method public static synthetic access$toRect$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
 
@@ -322,7 +322,7 @@
 .end method
 
 .method public static synthetic access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # J
 
@@ -335,7 +335,7 @@
 .end method
 
 .method public static synthetic access$toSp-0xMU5do$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # F
 
@@ -348,7 +348,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # F
 
@@ -361,7 +361,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/drawscope/DrawScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "$receiver"    # I
 
@@ -374,16 +374,16 @@
 .end method
 
 .method public static synthetic drawArc-illE91I$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Brush;FFZJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 31
+    .locals 16
 
     .line 713
     move/from16 v0, p13
 
-    if-nez p14, :cond_61
+    if-nez p14, :cond_6
 
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 718
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -394,16 +394,16 @@
 
     move-wide v8, v1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 713
-    :cond_10
+    :cond_0
     move-wide/from16 v8, p5
 
-    :goto_12
+    :goto_0
     and-int/lit8 v1, v0, 0x20
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 719
     invoke-interface/range {p0 .. p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -418,34 +418,34 @@
 
     move-wide v10, v1
 
-    goto :goto_26
+    goto :goto_1
 
     .line 713
-    :cond_22
+    :cond_1
     move-object/from16 v3, p0
 
     move-wide/from16 v10, p7
 
-    :goto_26
+    :goto_1
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     .line 721
     const/high16 v1, 0x3f800000    # 1.0f
 
     move v12, v1
 
-    goto :goto_30
+    goto :goto_2
 
     .line 713
-    :cond_2e
+    :cond_2
     move/from16 v12, p9
 
-    :goto_30
+    :goto_2
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3
 
     .line 722
     sget-object v1, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -454,32 +454,32 @@
 
     move-object v13, v1
 
-    goto :goto_3c
+    goto :goto_3
 
     .line 713
-    :cond_3a
+    :cond_3
     move-object/from16 v13, p10
 
-    :goto_3c
+    :goto_3
     and-int/lit16 v1, v0, 0x100
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_4
 
     .line 723
     const/4 v1, 0x0
 
     move-object v14, v1
 
-    goto :goto_45
+    goto :goto_4
 
     .line 713
-    :cond_43
+    :cond_4
     move-object/from16 v14, p11
 
-    :goto_45
+    :goto_4
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_51
+    if-eqz v0, :cond_5
 
     .line 724
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -490,13 +490,13 @@
 
     move v15, v0
 
-    goto :goto_53
+    goto :goto_5
 
     .line 713
-    :cond_51
+    :cond_5
     move/from16 v15, p12
 
-    :goto_53
+    :goto_5
     move-object/from16 v3, p0
 
     move-object/from16 v4, p1
@@ -511,7 +511,7 @@
 
     return-void
 
-    :cond_61
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawArc-illE91I"
@@ -522,16 +522,16 @@
 .end method
 
 .method public static synthetic drawArc-yD3GUKo$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;JFFZJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 33
+    .locals 17
 
     .line 749
     move/from16 v0, p14
 
-    if-nez p15, :cond_62
+    if-nez p15, :cond_6
 
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 754
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -542,16 +542,16 @@
 
     move-wide v9, v1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 749
-    :cond_10
+    :cond_0
     move-wide/from16 v9, p6
 
-    :goto_12
+    :goto_0
     and-int/lit8 v1, v0, 0x20
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 755
     invoke-interface/range {p0 .. p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -566,34 +566,34 @@
 
     move-wide v11, v1
 
-    goto :goto_26
+    goto :goto_1
 
     .line 749
-    :cond_22
+    :cond_1
     move-object/from16 v3, p0
 
     move-wide/from16 v11, p8
 
-    :goto_26
+    :goto_1
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_2
 
     .line 757
     const/high16 v1, 0x3f800000    # 1.0f
 
     move v13, v1
 
-    goto :goto_30
+    goto :goto_2
 
     .line 749
-    :cond_2e
+    :cond_2
     move/from16 v13, p10
 
-    :goto_30
+    :goto_2
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3
 
     .line 758
     sget-object v1, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -602,32 +602,32 @@
 
     move-object v14, v1
 
-    goto :goto_3c
+    goto :goto_3
 
     .line 749
-    :cond_3a
+    :cond_3
     move-object/from16 v14, p11
 
-    :goto_3c
+    :goto_3
     and-int/lit16 v1, v0, 0x100
 
-    if-eqz v1, :cond_43
+    if-eqz v1, :cond_4
 
     .line 759
     const/4 v1, 0x0
 
     move-object v15, v1
 
-    goto :goto_45
+    goto :goto_4
 
     .line 749
-    :cond_43
+    :cond_4
     move-object/from16 v15, p12
 
-    :goto_45
+    :goto_4
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_5
 
     .line 760
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -638,13 +638,13 @@
 
     move/from16 v16, v0
 
-    goto :goto_54
+    goto :goto_5
 
     .line 749
-    :cond_52
+    :cond_5
     move/from16 v16, p13
 
-    :goto_54
+    :goto_5
     move-object/from16 v3, p0
 
     move-wide/from16 v4, p1
@@ -659,7 +659,7 @@
 
     return-void
 
-    :cond_62
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawArc-yD3GUKo"
@@ -670,14 +670,14 @@
 .end method
 
 .method public static synthetic drawCircle-V9BoPsw$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Brush;FJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 18
+    .locals 7
 
     .line 602
-    if-nez p10, :cond_50
+    if-nez p10, :cond_6
 
     and-int/lit8 v0, p9, 0x2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     .line 604
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -692,76 +692,76 @@
 
     div-float/2addr v0, v1
 
-    goto :goto_13
+    goto :goto_0
 
     .line 602
-    :cond_12
+    :cond_0
     move v0, p2
 
-    :goto_13
+    :goto_0
     and-int/lit8 v1, p9, 0x4
 
-    if-eqz v1, :cond_1c
+    if-eqz v1, :cond_1
 
     .line 605
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getCenter-F1C5BW0()J
 
     move-result-wide v1
 
-    goto :goto_1d
+    goto :goto_1
 
     .line 602
-    :cond_1c
+    :cond_1
     move-wide v1, p3
 
-    :goto_1d
+    :goto_1
     and-int/lit8 v3, p9, 0x8
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_2
 
     .line 607
     const/high16 v3, 0x3f800000    # 1.0f
 
-    goto :goto_25
+    goto :goto_2
 
     .line 602
-    :cond_24
+    :cond_2
     move v3, p5
 
-    :goto_25
+    :goto_2
     and-int/lit8 v4, p9, 0x10
 
-    if-eqz v4, :cond_2e
+    if-eqz v4, :cond_3
 
     .line 608
     sget-object v4, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
 
     check-cast v4, Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
-    goto :goto_2f
+    goto :goto_3
 
     .line 602
-    :cond_2e
+    :cond_3
     move-object v4, p6
 
-    :goto_2f
+    :goto_3
     and-int/lit8 v5, p9, 0x20
 
-    if-eqz v5, :cond_35
+    if-eqz v5, :cond_4
 
     .line 609
     const/4 v5, 0x0
 
-    goto :goto_36
+    goto :goto_4
 
     .line 602
-    :cond_35
+    :cond_4
     move-object v5, p7
 
-    :goto_36
+    :goto_4
     and-int/lit8 v6, p9, 0x40
 
-    if-eqz v6, :cond_41
+    if-eqz v6, :cond_5
 
     .line 610
     sget-object v6, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -770,13 +770,13 @@
 
     move-result v6
 
-    goto :goto_42
+    goto :goto_5
 
     .line 602
-    :cond_41
+    :cond_5
     move v6, p8
 
-    :goto_42
+    :goto_5
     move-object p2, p0
 
     move-object p3, p1
@@ -797,7 +797,7 @@
 
     return-void
 
-    :cond_50
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawCircle-V9BoPsw"
@@ -808,14 +808,14 @@
 .end method
 
 .method public static synthetic drawCircle-VaOC9Bg$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;JFJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 23
+    .locals 11
 
     .line 626
-    if-nez p11, :cond_52
+    if-nez p11, :cond_6
 
     and-int/lit8 v0, p10, 0x2
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .line 628
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -832,16 +832,16 @@
 
     move v4, v0
 
-    goto :goto_14
+    goto :goto_0
 
     .line 626
-    :cond_13
+    :cond_0
     move v4, p3
 
-    :goto_14
+    :goto_0
     and-int/lit8 v0, p10, 0x4
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     .line 629
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getCenter-F1C5BW0()J
@@ -850,32 +850,32 @@
 
     move-wide v5, v0
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 626
-    :cond_1e
+    :cond_1
     move-wide v5, p4
 
-    :goto_1f
+    :goto_1
     and-int/lit8 v0, p10, 0x8
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_2
 
     .line 631
     const/high16 v0, 0x3f800000    # 1.0f
 
     move v7, v0
 
-    goto :goto_29
+    goto :goto_2
 
     .line 626
-    :cond_27
+    :cond_2
     move/from16 v7, p6
 
-    :goto_29
+    :goto_2
     and-int/lit8 v0, p10, 0x10
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_3
 
     .line 632
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -884,32 +884,32 @@
 
     move-object v8, v0
 
-    goto :goto_35
+    goto :goto_3
 
     .line 626
-    :cond_33
+    :cond_3
     move-object/from16 v8, p7
 
-    :goto_35
+    :goto_3
     and-int/lit8 v0, p10, 0x20
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_4
 
     .line 633
     const/4 v0, 0x0
 
     move-object v9, v0
 
-    goto :goto_3e
+    goto :goto_4
 
     .line 626
-    :cond_3c
+    :cond_4
     move-object/from16 v9, p8
 
-    :goto_3e
+    :goto_4
     and-int/lit8 v0, p10, 0x40
 
-    if-eqz v0, :cond_4a
+    if-eqz v0, :cond_5
 
     .line 634
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -920,13 +920,13 @@
 
     move v10, v0
 
-    goto :goto_4c
+    goto :goto_5
 
     .line 626
-    :cond_4a
+    :cond_5
     move/from16 v10, p9
 
-    :goto_4c
+    :goto_5
     move-object v1, p0
 
     move-wide v2, p1
@@ -935,7 +935,7 @@
 
     return-void
 
-    :cond_52
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawCircle-VaOC9Bg"
@@ -946,16 +946,16 @@
 .end method
 
 .method public static synthetic drawImage-9jGpkUE$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 28
+    .locals 12
 
     .line 472
     move/from16 v0, p14
 
-    if-nez p15, :cond_77
+    if-nez p15, :cond_8
 
     and-int/lit8 v1, v0, 0x2
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 474
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
@@ -964,16 +964,16 @@
 
     move-result-wide v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 472
-    :cond_f
+    :cond_0
     move-wide v1, p2
 
-    :goto_10
+    :goto_0
     and-int/lit8 v3, v0, 0x4
 
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_1
 
     .line 475
     invoke-interface {p1}, Landroidx/compose/ui/graphics/ImageBitmap;->getWidth()I
@@ -988,16 +988,16 @@
 
     move-result-wide v3
 
-    goto :goto_23
+    goto :goto_1
 
     .line 472
-    :cond_21
+    :cond_1
     move-wide/from16 v3, p4
 
-    :goto_23
+    :goto_1
     and-int/lit8 v5, v0, 0x8
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_2
 
     .line 476
     sget-object v5, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
@@ -1006,74 +1006,74 @@
 
     move-result-wide v5
 
-    goto :goto_30
+    goto :goto_2
 
     .line 472
-    :cond_2e
+    :cond_2
     move-wide/from16 v5, p6
 
-    :goto_30
+    :goto_2
     and-int/lit8 v7, v0, 0x10
 
-    if-eqz v7, :cond_36
+    if-eqz v7, :cond_3
 
     .line 477
     move-wide v7, v3
 
-    goto :goto_38
+    goto :goto_3
 
     .line 472
-    :cond_36
+    :cond_3
     move-wide/from16 v7, p8
 
-    :goto_38
+    :goto_3
     and-int/lit8 v9, v0, 0x20
 
-    if-eqz v9, :cond_3f
+    if-eqz v9, :cond_4
 
     .line 479
     const/high16 v9, 0x3f800000    # 1.0f
 
-    goto :goto_41
+    goto :goto_4
 
     .line 472
-    :cond_3f
+    :cond_4
     move/from16 v9, p10
 
-    :goto_41
+    :goto_4
     and-int/lit8 v10, v0, 0x40
 
-    if-eqz v10, :cond_4a
+    if-eqz v10, :cond_5
 
     .line 480
     sget-object v10, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
 
     check-cast v10, Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
-    goto :goto_4c
+    goto :goto_5
 
     .line 472
-    :cond_4a
+    :cond_5
     move-object/from16 v10, p11
 
-    :goto_4c
+    :goto_5
     and-int/lit16 v11, v0, 0x80
 
-    if-eqz v11, :cond_52
+    if-eqz v11, :cond_6
 
     .line 481
     const/4 v11, 0x0
 
-    goto :goto_54
+    goto :goto_6
 
     .line 472
-    :cond_52
+    :cond_6
     move-object/from16 v11, p12
 
-    :goto_54
+    :goto_6
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_7
 
     .line 482
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1082,13 +1082,13 @@
 
     move-result v0
 
-    goto :goto_61
+    goto :goto_7
 
     .line 472
-    :cond_5f
+    :cond_7
     move/from16 v0, p13
 
-    :goto_61
+    :goto_7
     move-object p2, p0
 
     move-object p3, p1
@@ -1113,7 +1113,7 @@
 
     return-void
 
-    :cond_77
+    :cond_8
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawImage-9jGpkUE"
@@ -1124,16 +1124,16 @@
 .end method
 
 .method public static synthetic drawImage-AZ2fEMs$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IIILjava/lang/Object;)V
-    .registers 30
+    .locals 13
 
     .line 510
     move/from16 v0, p15
 
-    if-nez p16, :cond_87
+    if-nez p16, :cond_9
 
     and-int/lit8 v1, v0, 0x2
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 512
     sget-object v1, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
@@ -1142,16 +1142,16 @@
 
     move-result-wide v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 510
-    :cond_f
+    :cond_0
     move-wide v1, p2
 
-    :goto_10
+    :goto_0
     and-int/lit8 v3, v0, 0x4
 
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_1
 
     .line 513
     invoke-interface {p1}, Landroidx/compose/ui/graphics/ImageBitmap;->getWidth()I
@@ -1166,16 +1166,16 @@
 
     move-result-wide v3
 
-    goto :goto_23
+    goto :goto_1
 
     .line 510
-    :cond_21
+    :cond_1
     move-wide/from16 v3, p4
 
-    :goto_23
+    :goto_1
     and-int/lit8 v5, v0, 0x8
 
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_2
 
     .line 514
     sget-object v5, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
@@ -1184,74 +1184,74 @@
 
     move-result-wide v5
 
-    goto :goto_30
+    goto :goto_2
 
     .line 510
-    :cond_2e
+    :cond_2
     move-wide/from16 v5, p6
 
-    :goto_30
+    :goto_2
     and-int/lit8 v7, v0, 0x10
 
-    if-eqz v7, :cond_36
+    if-eqz v7, :cond_3
 
     .line 515
     move-wide v7, v3
 
-    goto :goto_38
+    goto :goto_3
 
     .line 510
-    :cond_36
+    :cond_3
     move-wide/from16 v7, p8
 
-    :goto_38
+    :goto_3
     and-int/lit8 v9, v0, 0x20
 
-    if-eqz v9, :cond_3f
+    if-eqz v9, :cond_4
 
     .line 517
     const/high16 v9, 0x3f800000    # 1.0f
 
-    goto :goto_41
+    goto :goto_4
 
     .line 510
-    :cond_3f
+    :cond_4
     move/from16 v9, p10
 
-    :goto_41
+    :goto_4
     and-int/lit8 v10, v0, 0x40
 
-    if-eqz v10, :cond_4a
+    if-eqz v10, :cond_5
 
     .line 518
     sget-object v10, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
 
     check-cast v10, Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
-    goto :goto_4c
+    goto :goto_5
 
     .line 510
-    :cond_4a
+    :cond_5
     move-object/from16 v10, p11
 
-    :goto_4c
+    :goto_5
     and-int/lit16 v11, v0, 0x80
 
-    if-eqz v11, :cond_52
+    if-eqz v11, :cond_6
 
     .line 519
     const/4 v11, 0x0
 
-    goto :goto_54
+    goto :goto_6
 
     .line 510
-    :cond_52
+    :cond_6
     move-object/from16 v11, p12
 
-    :goto_54
+    :goto_6
     and-int/lit16 v12, v0, 0x100
 
-    if-eqz v12, :cond_5f
+    if-eqz v12, :cond_7
 
     .line 520
     sget-object v12, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1260,16 +1260,16 @@
 
     move-result v12
 
-    goto :goto_61
+    goto :goto_7
 
     .line 510
-    :cond_5f
+    :cond_7
     move/from16 v12, p13
 
-    :goto_61
+    :goto_7
     and-int/lit16 v0, v0, 0x200
 
-    if-eqz v0, :cond_6c
+    if-eqz v0, :cond_8
 
     .line 521
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1278,13 +1278,13 @@
 
     move-result v0
 
-    goto :goto_6e
+    goto :goto_8
 
     .line 510
-    :cond_6c
+    :cond_8
     move/from16 v0, p14
 
-    :goto_6e
+    :goto_8
     move-object p2, p0
 
     move-object/from16 p3, p1
@@ -1311,7 +1311,7 @@
 
     return-void
 
-    :cond_87
+    :cond_9
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawImage-AZ2fEMs"
@@ -1322,14 +1322,14 @@
 .end method
 
 .method public static synthetic drawImage-gbVJVH8$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/ImageBitmap;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 16
+    .locals 6
 
     .line 430
-    if-nez p9, :cond_3e
+    if-nez p9, :cond_5
 
     and-int/lit8 v0, p8, 0x2
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 432
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -1338,60 +1338,60 @@
 
     move-result-wide v0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 430
-    :cond_d
+    :cond_0
     move-wide v0, p2
 
-    :goto_e
+    :goto_0
     and-int/lit8 v2, p8, 0x4
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_1
 
     .line 434
     const/high16 v2, 0x3f800000    # 1.0f
 
-    goto :goto_16
+    goto :goto_1
 
     .line 430
-    :cond_15
+    :cond_1
     move v2, p4
 
-    :goto_16
+    :goto_1
     and-int/lit8 v3, p8, 0x8
 
-    if-eqz v3, :cond_1f
+    if-eqz v3, :cond_2
 
     .line 435
     sget-object v3, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
 
     check-cast v3, Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
-    goto :goto_20
+    goto :goto_2
 
     .line 430
-    :cond_1f
+    :cond_2
     move-object v3, p5
 
-    :goto_20
+    :goto_2
     and-int/lit8 v4, p8, 0x10
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_3
 
     .line 436
     const/4 v4, 0x0
 
-    goto :goto_27
+    goto :goto_3
 
     .line 430
-    :cond_26
+    :cond_3
     move-object v4, p6
 
-    :goto_27
+    :goto_3
     and-int/lit8 v5, p8, 0x20
 
-    if-eqz v5, :cond_32
+    if-eqz v5, :cond_4
 
     .line 437
     sget-object v5, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1400,13 +1400,13 @@
 
     move-result v5
 
-    goto :goto_33
+    goto :goto_4
 
     .line 430
-    :cond_32
+    :cond_4
     move v5, p7
 
-    :goto_33
+    :goto_4
     move-object p2, p0
 
     move-object p3, p1
@@ -1425,7 +1425,7 @@
 
     return-void
 
-    :cond_3e
+    :cond_5
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawImage-gbVJVH8"
@@ -1436,32 +1436,32 @@
 .end method
 
 .method public static synthetic drawLine-1RTmtNc$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Brush;JJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 28
+    .locals 14
 
     .line 327
     move/from16 v0, p12
 
-    if-nez p13, :cond_4e
+    if-nez p13, :cond_6
 
     and-int/lit8 v1, v0, 0x8
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 331
     const/4 v1, 0x0
 
     move v8, v1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 327
-    :cond_b
+    :cond_0
     move/from16 v8, p6
 
-    :goto_d
+    :goto_0
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 332
     sget-object v1, Landroidx/compose/ui/graphics/drawscope/Stroke;->Companion:Landroidx/compose/ui/graphics/drawscope/Stroke$Companion;
@@ -1472,62 +1472,62 @@
 
     move v9, v1
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 327
-    :cond_19
+    :cond_1
     move/from16 v9, p7
 
-    :goto_1b
+    :goto_1
     and-int/lit8 v1, v0, 0x20
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 333
     move-object v10, v2
 
-    goto :goto_24
+    goto :goto_2
 
     .line 327
-    :cond_22
+    :cond_2
     move-object/from16 v10, p8
 
-    :goto_24
+    :goto_2
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_3
 
     .line 335
     const/high16 v1, 0x3f800000    # 1.0f
 
     move v11, v1
 
-    goto :goto_2e
+    goto :goto_3
 
     .line 327
-    :cond_2c
+    :cond_3
     move/from16 v11, p9
 
-    :goto_2e
+    :goto_3
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_4
 
     .line 336
     move-object v12, v2
 
-    goto :goto_36
+    goto :goto_4
 
     .line 327
-    :cond_34
+    :cond_4
     move-object/from16 v12, p10
 
-    :goto_36
+    :goto_4
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_5
 
     .line 337
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1538,13 +1538,13 @@
 
     move v13, v0
 
-    goto :goto_44
+    goto :goto_5
 
     .line 327
-    :cond_42
+    :cond_5
     move/from16 v13, p11
 
-    :goto_44
+    :goto_5
     move-object v2, p0
 
     move-object v3, p1
@@ -1557,7 +1557,7 @@
 
     return-void
 
-    :cond_4e
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawLine-1RTmtNc"
@@ -1568,32 +1568,32 @@
 .end method
 
 .method public static synthetic drawLine-NGM6Ib0$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 30
+    .locals 15
 
     .line 355
     move/from16 v0, p13
 
-    if-nez p14, :cond_4f
+    if-nez p14, :cond_6
 
     and-int/lit8 v1, v0, 0x8
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 359
     const/4 v1, 0x0
 
     move v9, v1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 355
-    :cond_b
+    :cond_0
     move/from16 v9, p7
 
-    :goto_d
+    :goto_0
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 360
     sget-object v1, Landroidx/compose/ui/graphics/drawscope/Stroke;->Companion:Landroidx/compose/ui/graphics/drawscope/Stroke$Companion;
@@ -1604,62 +1604,62 @@
 
     move v10, v1
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 355
-    :cond_19
+    :cond_1
     move/from16 v10, p8
 
-    :goto_1b
+    :goto_1
     and-int/lit8 v1, v0, 0x20
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 361
     move-object v11, v2
 
-    goto :goto_24
+    goto :goto_2
 
     .line 355
-    :cond_22
+    :cond_2
     move-object/from16 v11, p9
 
-    :goto_24
+    :goto_2
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_3
 
     .line 363
     const/high16 v1, 0x3f800000    # 1.0f
 
     move v12, v1
 
-    goto :goto_2e
+    goto :goto_3
 
     .line 355
-    :cond_2c
+    :cond_3
     move/from16 v12, p10
 
-    :goto_2e
+    :goto_3
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_4
 
     .line 364
     move-object v13, v2
 
-    goto :goto_36
+    goto :goto_4
 
     .line 355
-    :cond_34
+    :cond_4
     move-object/from16 v13, p11
 
-    :goto_36
+    :goto_4
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_5
 
     .line 365
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1670,13 +1670,13 @@
 
     move v14, v0
 
-    goto :goto_44
+    goto :goto_5
 
     .line 355
-    :cond_42
+    :cond_5
     move/from16 v14, p12
 
-    :goto_44
+    :goto_5
     move-object v2, p0
 
     move-wide/from16 v3, p1
@@ -1689,7 +1689,7 @@
 
     return-void
 
-    :cond_4f
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawLine-NGM6Ib0"
@@ -1700,14 +1700,14 @@
 .end method
 
 .method public static synthetic drawOval-AsUm42w$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Brush;JJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 21
+    .locals 9
 
     .line 653
-    if-nez p11, :cond_56
+    if-nez p11, :cond_6
 
     and-int/lit8 v0, p10, 0x2
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 655
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -1716,16 +1716,16 @@
 
     move-result-wide v0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 653
-    :cond_d
+    :cond_0
     move-wide v0, p2
 
-    :goto_e
+    :goto_0
     and-int/lit8 v2, p10, 0x4
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1
 
     .line 656
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -1738,62 +1738,62 @@
 
     move-result-wide v2
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 653
-    :cond_1c
+    :cond_1
     move-object v4, p0
 
     move-wide v2, p4
 
-    :goto_1e
+    :goto_1
     and-int/lit8 v5, p10, 0x8
 
-    if-eqz v5, :cond_25
+    if-eqz v5, :cond_2
 
     .line 658
     const/high16 v5, 0x3f800000    # 1.0f
 
-    goto :goto_26
+    goto :goto_2
 
     .line 653
-    :cond_25
+    :cond_2
     move v5, p6
 
-    :goto_26
+    :goto_2
     and-int/lit8 v6, p10, 0x10
 
-    if-eqz v6, :cond_2f
+    if-eqz v6, :cond_3
 
     .line 659
     sget-object v6, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
 
     check-cast v6, Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
-    goto :goto_31
+    goto :goto_3
 
     .line 653
-    :cond_2f
+    :cond_3
     move-object/from16 v6, p7
 
-    :goto_31
+    :goto_3
     and-int/lit8 v7, p10, 0x20
 
-    if-eqz v7, :cond_37
+    if-eqz v7, :cond_4
 
     .line 660
     const/4 v7, 0x0
 
-    goto :goto_39
+    goto :goto_4
 
     .line 653
-    :cond_37
+    :cond_4
     move-object/from16 v7, p8
 
-    :goto_39
+    :goto_4
     and-int/lit8 v8, p10, 0x40
 
-    if-eqz v8, :cond_44
+    if-eqz v8, :cond_5
 
     .line 661
     sget-object v8, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1802,13 +1802,13 @@
 
     move-result v8
 
-    goto :goto_46
+    goto :goto_5
 
     .line 653
-    :cond_44
+    :cond_5
     move/from16 v8, p9
 
-    :goto_46
+    :goto_5
     move-object p2, p0
 
     move-object p3, p1
@@ -1829,7 +1829,7 @@
 
     return-void
 
-    :cond_56
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawOval-AsUm42w"
@@ -1840,14 +1840,14 @@
 .end method
 
 .method public static synthetic drawOval-n-J9OG0$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 26
+    .locals 13
 
     .line 680
-    if-nez p12, :cond_55
+    if-nez p12, :cond_6
 
     and-int/lit8 v0, p11, 0x2
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 682
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -1858,16 +1858,16 @@
 
     move-wide v5, v0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 680
-    :cond_e
+    :cond_0
     move-wide/from16 v5, p3
 
-    :goto_10
+    :goto_0
     and-int/lit8 v0, p11, 0x4
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 683
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -1882,34 +1882,34 @@
 
     move-wide v7, v0
 
-    goto :goto_22
+    goto :goto_1
 
     .line 680
-    :cond_1f
+    :cond_1
     move-object v2, p0
 
     move-wide/from16 v7, p5
 
-    :goto_22
+    :goto_1
     and-int/lit8 v0, p11, 0x8
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 685
     const/high16 v0, 0x3f800000    # 1.0f
 
     move v9, v0
 
-    goto :goto_2c
+    goto :goto_2
 
     .line 680
-    :cond_2a
+    :cond_2
     move/from16 v9, p7
 
-    :goto_2c
+    :goto_2
     and-int/lit8 v0, p11, 0x10
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 686
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -1918,32 +1918,32 @@
 
     move-object v10, v0
 
-    goto :goto_38
+    goto :goto_3
 
     .line 680
-    :cond_36
+    :cond_3
     move-object/from16 v10, p8
 
-    :goto_38
+    :goto_3
     and-int/lit8 v0, p11, 0x20
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_4
 
     .line 687
     const/4 v0, 0x0
 
     move-object v11, v0
 
-    goto :goto_41
+    goto :goto_4
 
     .line 680
-    :cond_3f
+    :cond_4
     move-object/from16 v11, p9
 
-    :goto_41
+    :goto_4
     and-int/lit8 v0, p11, 0x40
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_5
 
     .line 688
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1954,13 +1954,13 @@
 
     move v12, v0
 
-    goto :goto_4f
+    goto :goto_5
 
     .line 680
-    :cond_4d
+    :cond_5
     move/from16 v12, p10
 
-    :goto_4f
+    :goto_5
     move-object v2, p0
 
     move-wide v3, p1
@@ -1969,7 +1969,7 @@
 
     return-void
 
-    :cond_55
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawOval-n-J9OG0"
@@ -1980,30 +1980,30 @@
 .end method
 
 .method public static synthetic drawPath-GBMwjPU$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 16
+    .locals 7
 
     .line 800
-    if-nez p8, :cond_33
+    if-nez p8, :cond_4
 
     and-int/lit8 p8, p7, 0x4
 
-    if-eqz p8, :cond_a
+    if-eqz p8, :cond_0
 
     .line 804
     const/high16 p3, 0x3f800000    # 1.0f
 
     move v3, p3
 
-    goto :goto_b
+    goto :goto_0
 
     .line 800
-    :cond_a
+    :cond_0
     move v3, p3
 
-    :goto_b
+    :goto_0
     and-int/lit8 p3, p7, 0x8
 
-    if-eqz p3, :cond_16
+    if-eqz p3, :cond_1
 
     .line 805
     sget-object p3, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -2014,32 +2014,32 @@
 
     move-object v4, p4
 
-    goto :goto_17
+    goto :goto_1
 
     .line 800
-    :cond_16
+    :cond_1
     move-object v4, p4
 
-    :goto_17
+    :goto_1
     and-int/lit8 p3, p7, 0x10
 
-    if-eqz p3, :cond_1e
+    if-eqz p3, :cond_2
 
     .line 806
     const/4 p5, 0x0
 
     move-object v5, p5
 
-    goto :goto_1f
+    goto :goto_2
 
     .line 800
-    :cond_1e
+    :cond_2
     move-object v5, p5
 
-    :goto_1f
+    :goto_2
     and-int/lit8 p3, p7, 0x20
 
-    if-eqz p3, :cond_2b
+    if-eqz p3, :cond_3
 
     .line 807
     sget-object p3, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -2050,13 +2050,13 @@
 
     move v6, p6
 
-    goto :goto_2c
+    goto :goto_3
 
     .line 800
-    :cond_2b
+    :cond_3
     move v6, p6
 
-    :goto_2c
+    :goto_3
     move-object v0, p0
 
     move-object v1, p1
@@ -2067,7 +2067,7 @@
 
     return-void
 
-    :cond_33
+    :cond_4
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: drawPath-GBMwjPU"
@@ -2078,30 +2078,30 @@
 .end method
 
 .method public static synthetic drawPath-LG529CI$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Path;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 19
+    .locals 9
 
     .line 777
-    if-nez p9, :cond_33
+    if-nez p9, :cond_4
 
     and-int/lit8 v0, p8, 0x4
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     .line 781
     const/high16 v0, 0x3f800000    # 1.0f
 
     move v5, v0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 777
-    :cond_a
+    :cond_0
     move v5, p4
 
-    :goto_b
+    :goto_0
     and-int/lit8 v0, p8, 0x8
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 782
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -2110,32 +2110,32 @@
 
     move-object v6, v0
 
-    goto :goto_16
+    goto :goto_1
 
     .line 777
-    :cond_15
+    :cond_1
     move-object v6, p5
 
-    :goto_16
+    :goto_1
     and-int/lit8 v0, p8, 0x10
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_2
 
     .line 783
     const/4 v0, 0x0
 
     move-object v7, v0
 
-    goto :goto_1e
+    goto :goto_2
 
     .line 777
-    :cond_1d
+    :cond_2
     move-object v7, p6
 
-    :goto_1e
+    :goto_2
     and-int/lit8 v0, p8, 0x20
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_3
 
     .line 784
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -2146,13 +2146,13 @@
 
     move v8, v0
 
-    goto :goto_2c
+    goto :goto_3
 
     .line 777
-    :cond_2a
+    :cond_3
     move/from16 v8, p7
 
-    :goto_2c
+    :goto_3
     move-object v1, p0
 
     move-object v2, p1
@@ -2163,7 +2163,7 @@
 
     return-void
 
-    :cond_33
+    :cond_4
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawPath-LG529CI"
@@ -2174,32 +2174,32 @@
 .end method
 
 .method public static synthetic drawPoints-F8ZwMP8$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Ljava/util/List;IJFILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 26
+    .locals 13
 
     .line 826
     move/from16 v0, p11
 
-    if-nez p12, :cond_4d
+    if-nez p12, :cond_6
 
     and-int/lit8 v1, v0, 0x8
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 830
     const/4 v1, 0x0
 
     move v7, v1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 826
-    :cond_b
+    :cond_0
     move/from16 v7, p5
 
-    :goto_d
+    :goto_0
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 831
     sget-object v1, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
@@ -2210,62 +2210,62 @@
 
     move v8, v1
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 826
-    :cond_19
+    :cond_1
     move/from16 v8, p6
 
-    :goto_1b
+    :goto_1
     and-int/lit8 v1, v0, 0x20
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 832
     move-object v9, v2
 
-    goto :goto_24
+    goto :goto_2
 
     .line 826
-    :cond_22
+    :cond_2
     move-object/from16 v9, p7
 
-    :goto_24
+    :goto_2
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_3
 
     .line 834
     const/high16 v1, 0x3f800000    # 1.0f
 
     move v10, v1
 
-    goto :goto_2e
+    goto :goto_3
 
     .line 826
-    :cond_2c
+    :cond_3
     move/from16 v10, p8
 
-    :goto_2e
+    :goto_3
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_4
 
     .line 835
     move-object v11, v2
 
-    goto :goto_36
+    goto :goto_4
 
     .line 826
-    :cond_34
+    :cond_4
     move-object/from16 v11, p9
 
-    :goto_36
+    :goto_4
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_5
 
     .line 836
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -2276,13 +2276,13 @@
 
     move v12, v0
 
-    goto :goto_44
+    goto :goto_5
 
     .line 826
-    :cond_42
+    :cond_5
     move/from16 v12, p10
 
-    :goto_44
+    :goto_5
     move-object v2, p0
 
     move-object v3, p1
@@ -2295,7 +2295,7 @@
 
     return-void
 
-    :cond_4d
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawPoints-F8ZwMP8"
@@ -2306,32 +2306,32 @@
 .end method
 
 .method public static synthetic drawPoints-Gsft0Ws$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Ljava/util/List;ILandroidx/compose/ui/graphics/Brush;FILandroidx/compose/ui/graphics/PathEffect;FLandroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 24
+    .locals 12
 
     .line 855
     move/from16 v0, p10
 
-    if-nez p11, :cond_4c
+    if-nez p11, :cond_6
 
     and-int/lit8 v1, v0, 0x8
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_0
 
     .line 859
     const/4 v1, 0x0
 
     move v6, v1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 855
-    :cond_b
+    :cond_0
     move/from16 v6, p4
 
-    :goto_d
+    :goto_0
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_1
 
     .line 860
     sget-object v1, Landroidx/compose/ui/graphics/StrokeCap;->Companion:Landroidx/compose/ui/graphics/StrokeCap$Companion;
@@ -2342,62 +2342,62 @@
 
     move v7, v1
 
-    goto :goto_1b
+    goto :goto_1
 
     .line 855
-    :cond_19
+    :cond_1
     move/from16 v7, p5
 
-    :goto_1b
+    :goto_1
     and-int/lit8 v1, v0, 0x20
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_2
 
     .line 861
     move-object v8, v2
 
-    goto :goto_24
+    goto :goto_2
 
     .line 855
-    :cond_22
+    :cond_2
     move-object/from16 v8, p6
 
-    :goto_24
+    :goto_2
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_3
 
     .line 863
     const/high16 v1, 0x3f800000    # 1.0f
 
     move v9, v1
 
-    goto :goto_2e
+    goto :goto_3
 
     .line 855
-    :cond_2c
+    :cond_3
     move/from16 v9, p7
 
-    :goto_2e
+    :goto_3
     and-int/lit16 v1, v0, 0x80
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_4
 
     .line 864
     move-object v10, v2
 
-    goto :goto_36
+    goto :goto_4
 
     .line 855
-    :cond_34
+    :cond_4
     move-object/from16 v10, p8
 
-    :goto_36
+    :goto_4
     and-int/lit16 v0, v0, 0x100
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_5
 
     .line 865
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -2408,13 +2408,13 @@
 
     move v11, v0
 
-    goto :goto_44
+    goto :goto_5
 
     .line 855
-    :cond_42
+    :cond_5
     move/from16 v11, p9
 
-    :goto_44
+    :goto_5
     move-object v2, p0
 
     move-object v3, p1
@@ -2427,7 +2427,7 @@
 
     return-void
 
-    :cond_4c
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawPoints-Gsft0Ws"
@@ -2438,14 +2438,14 @@
 .end method
 
 .method public static synthetic drawRect-AsUm42w$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Brush;JJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 21
+    .locals 9
 
     .line 382
-    if-nez p11, :cond_56
+    if-nez p11, :cond_6
 
     and-int/lit8 v0, p10, 0x2
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 384
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -2454,16 +2454,16 @@
 
     move-result-wide v0
 
-    goto :goto_e
+    goto :goto_0
 
     .line 382
-    :cond_d
+    :cond_0
     move-wide v0, p2
 
-    :goto_e
+    :goto_0
     and-int/lit8 v2, p10, 0x4
 
-    if-eqz v2, :cond_1c
+    if-eqz v2, :cond_1
 
     .line 385
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -2476,62 +2476,62 @@
 
     move-result-wide v2
 
-    goto :goto_1e
+    goto :goto_1
 
     .line 382
-    :cond_1c
+    :cond_1
     move-object v4, p0
 
     move-wide v2, p4
 
-    :goto_1e
+    :goto_1
     and-int/lit8 v5, p10, 0x8
 
-    if-eqz v5, :cond_25
+    if-eqz v5, :cond_2
 
     .line 387
     const/high16 v5, 0x3f800000    # 1.0f
 
-    goto :goto_26
+    goto :goto_2
 
     .line 382
-    :cond_25
+    :cond_2
     move v5, p6
 
-    :goto_26
+    :goto_2
     and-int/lit8 v6, p10, 0x10
 
-    if-eqz v6, :cond_2f
+    if-eqz v6, :cond_3
 
     .line 388
     sget-object v6, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
 
     check-cast v6, Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
-    goto :goto_31
+    goto :goto_3
 
     .line 382
-    :cond_2f
+    :cond_3
     move-object/from16 v6, p7
 
-    :goto_31
+    :goto_3
     and-int/lit8 v7, p10, 0x20
 
-    if-eqz v7, :cond_37
+    if-eqz v7, :cond_4
 
     .line 389
     const/4 v7, 0x0
 
-    goto :goto_39
+    goto :goto_4
 
     .line 382
-    :cond_37
+    :cond_4
     move-object/from16 v7, p8
 
-    :goto_39
+    :goto_4
     and-int/lit8 v8, p10, 0x40
 
-    if-eqz v8, :cond_44
+    if-eqz v8, :cond_5
 
     .line 390
     sget-object v8, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -2540,13 +2540,13 @@
 
     move-result v8
 
-    goto :goto_46
+    goto :goto_5
 
     .line 382
-    :cond_44
+    :cond_5
     move/from16 v8, p9
 
-    :goto_46
+    :goto_5
     move-object p2, p0
 
     move-object p3, p1
@@ -2567,7 +2567,7 @@
 
     return-void
 
-    :cond_56
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawRect-AsUm42w"
@@ -2578,14 +2578,14 @@
 .end method
 
 .method public static synthetic drawRect-n-J9OG0$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 26
+    .locals 13
 
     .line 407
-    if-nez p12, :cond_55
+    if-nez p12, :cond_6
 
     and-int/lit8 v0, p11, 0x2
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 409
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -2596,16 +2596,16 @@
 
     move-wide v5, v0
 
-    goto :goto_10
+    goto :goto_0
 
     .line 407
-    :cond_e
+    :cond_0
     move-wide/from16 v5, p3
 
-    :goto_10
+    :goto_0
     and-int/lit8 v0, p11, 0x4
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .line 410
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -2620,34 +2620,34 @@
 
     move-wide v7, v0
 
-    goto :goto_22
+    goto :goto_1
 
     .line 407
-    :cond_1f
+    :cond_1
     move-object v2, p0
 
     move-wide/from16 v7, p5
 
-    :goto_22
+    :goto_1
     and-int/lit8 v0, p11, 0x8
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_2
 
     .line 412
     const/high16 v0, 0x3f800000    # 1.0f
 
     move v9, v0
 
-    goto :goto_2c
+    goto :goto_2
 
     .line 407
-    :cond_2a
+    :cond_2
     move/from16 v9, p7
 
-    :goto_2c
+    :goto_2
     and-int/lit8 v0, p11, 0x10
 
-    if-eqz v0, :cond_36
+    if-eqz v0, :cond_3
 
     .line 413
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -2656,32 +2656,32 @@
 
     move-object v10, v0
 
-    goto :goto_38
+    goto :goto_3
 
     .line 407
-    :cond_36
+    :cond_3
     move-object/from16 v10, p8
 
-    :goto_38
+    :goto_3
     and-int/lit8 v0, p11, 0x20
 
-    if-eqz v0, :cond_3f
+    if-eqz v0, :cond_4
 
     .line 414
     const/4 v0, 0x0
 
     move-object v11, v0
 
-    goto :goto_41
+    goto :goto_4
 
     .line 407
-    :cond_3f
+    :cond_4
     move-object/from16 v11, p9
 
-    :goto_41
+    :goto_4
     and-int/lit8 v0, p11, 0x40
 
-    if-eqz v0, :cond_4d
+    if-eqz v0, :cond_5
 
     .line 415
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -2692,13 +2692,13 @@
 
     move v12, v0
 
-    goto :goto_4f
+    goto :goto_5
 
     .line 407
-    :cond_4d
+    :cond_5
     move/from16 v12, p10
 
-    :goto_4f
+    :goto_5
     move-object v2, p0
 
     move-wide v3, p1
@@ -2707,7 +2707,7 @@
 
     return-void
 
-    :cond_55
+    :cond_6
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawRect-n-J9OG0"
@@ -2718,16 +2718,16 @@
 .end method
 
 .method public static synthetic drawRoundRect-ZuiqVtQ$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Brush;JJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 25
+    .locals 11
 
     .line 551
     move/from16 v0, p12
 
-    if-nez p13, :cond_69
+    if-nez p13, :cond_7
 
     and-int/lit8 v1, v0, 0x2
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
     .line 553
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -2736,16 +2736,16 @@
 
     move-result-wide v1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 551
-    :cond_f
+    :cond_0
     move-wide v1, p2
 
-    :goto_10
+    :goto_0
     and-int/lit8 v3, v0, 0x4
 
-    if-eqz v3, :cond_1e
+    if-eqz v3, :cond_1
 
     .line 554
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -2758,18 +2758,18 @@
 
     move-result-wide v3
 
-    goto :goto_20
+    goto :goto_1
 
     .line 551
-    :cond_1e
+    :cond_1
     move-object v5, p0
 
     move-wide v3, p4
 
-    :goto_20
+    :goto_1
     and-int/lit8 v6, v0, 0x8
 
-    if-eqz v6, :cond_2b
+    if-eqz v6, :cond_2
 
     .line 555
     sget-object v6, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -2778,60 +2778,60 @@
 
     move-result-wide v6
 
-    goto :goto_2d
+    goto :goto_2
 
     .line 551
-    :cond_2b
+    :cond_2
     move-wide/from16 v6, p6
 
-    :goto_2d
+    :goto_2
     and-int/lit8 v8, v0, 0x10
 
-    if-eqz v8, :cond_34
+    if-eqz v8, :cond_3
 
     .line 557
     const/high16 v8, 0x3f800000    # 1.0f
 
-    goto :goto_36
+    goto :goto_3
 
     .line 551
-    :cond_34
+    :cond_3
     move/from16 v8, p8
 
-    :goto_36
+    :goto_3
     and-int/lit8 v9, v0, 0x20
 
-    if-eqz v9, :cond_3f
+    if-eqz v9, :cond_4
 
     .line 558
     sget-object v9, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
 
     check-cast v9, Landroidx/compose/ui/graphics/drawscope/DrawStyle;
 
-    goto :goto_41
+    goto :goto_4
 
     .line 551
-    :cond_3f
+    :cond_4
     move-object/from16 v9, p9
 
-    :goto_41
+    :goto_4
     and-int/lit8 v10, v0, 0x40
 
-    if-eqz v10, :cond_47
+    if-eqz v10, :cond_5
 
     .line 559
     const/4 v10, 0x0
 
-    goto :goto_49
+    goto :goto_5
 
     .line 551
-    :cond_47
+    :cond_5
     move-object/from16 v10, p10
 
-    :goto_49
+    :goto_5
     and-int/lit16 v0, v0, 0x80
 
-    if-eqz v0, :cond_54
+    if-eqz v0, :cond_6
 
     .line 560
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -2840,13 +2840,13 @@
 
     move-result v0
 
-    goto :goto_56
+    goto :goto_6
 
     .line 551
-    :cond_54
+    :cond_6
     move/from16 v0, p11
 
-    :goto_56
+    :goto_6
     move-object p2, p0
 
     move-object p3, p1
@@ -2869,7 +2869,7 @@
 
     return-void
 
-    :cond_69
+    :cond_7
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawRoundRect-ZuiqVtQ"
@@ -2880,16 +2880,16 @@
 .end method
 
 .method public static synthetic drawRoundRect-u-Aw5IA$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;JJJJLandroidx/compose/ui/graphics/drawscope/DrawStyle;FLandroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 31
+    .locals 16
 
     .line 577
     move/from16 v0, p13
 
-    if-nez p14, :cond_69
+    if-nez p14, :cond_7
 
     and-int/lit8 v1, v0, 0x2
 
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_0
 
     .line 579
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -2900,16 +2900,16 @@
 
     move-wide v6, v1
 
-    goto :goto_12
+    goto :goto_0
 
     .line 577
-    :cond_10
+    :cond_0
     move-wide/from16 v6, p3
 
-    :goto_12
+    :goto_0
     and-int/lit8 v1, v0, 0x4
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 580
     invoke-interface/range {p0 .. p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getSize-NH-jbRc()J
@@ -2924,18 +2924,18 @@
 
     move-wide v8, v1
 
-    goto :goto_26
+    goto :goto_1
 
     .line 577
-    :cond_22
+    :cond_1
     move-object/from16 v3, p0
 
     move-wide/from16 v8, p5
 
-    :goto_26
+    :goto_1
     and-int/lit8 v1, v0, 0x8
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_2
 
     .line 581
     sget-object v1, Landroidx/compose/ui/geometry/CornerRadius;->Companion:Landroidx/compose/ui/geometry/CornerRadius$Companion;
@@ -2946,16 +2946,16 @@
 
     move-wide v10, v1
 
-    goto :goto_34
+    goto :goto_2
 
     .line 577
-    :cond_32
+    :cond_2
     move-wide/from16 v10, p7
 
-    :goto_34
+    :goto_2
     and-int/lit8 v1, v0, 0x10
 
-    if-eqz v1, :cond_3e
+    if-eqz v1, :cond_3
 
     .line 582
     sget-object v1, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -2964,48 +2964,48 @@
 
     move-object v12, v1
 
-    goto :goto_40
+    goto :goto_3
 
     .line 577
-    :cond_3e
+    :cond_3
     move-object/from16 v12, p9
 
-    :goto_40
+    :goto_3
     and-int/lit8 v1, v0, 0x20
 
-    if-eqz v1, :cond_48
+    if-eqz v1, :cond_4
 
     .line 584
     const/high16 v1, 0x3f800000    # 1.0f
 
     move v13, v1
 
-    goto :goto_4a
+    goto :goto_4
 
     .line 577
-    :cond_48
+    :cond_4
     move/from16 v13, p10
 
-    :goto_4a
+    :goto_4
     and-int/lit8 v1, v0, 0x40
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_5
 
     .line 585
     const/4 v1, 0x0
 
     move-object v14, v1
 
-    goto :goto_53
+    goto :goto_5
 
     .line 577
-    :cond_51
+    :cond_5
     move-object/from16 v14, p11
 
-    :goto_53
+    :goto_5
     and-int/lit16 v0, v0, 0x80
 
-    if-eqz v0, :cond_5f
+    if-eqz v0, :cond_6
 
     .line 586
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -3016,13 +3016,13 @@
 
     move v15, v0
 
-    goto :goto_61
+    goto :goto_6
 
     .line 577
-    :cond_5f
+    :cond_6
     move/from16 v15, p12
 
-    :goto_61
+    :goto_6
     move-object/from16 v3, p0
 
     move-wide/from16 v4, p1
@@ -3031,7 +3031,7 @@
 
     return-void
 
-    :cond_69
+    :cond_7
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Super calls with default arguments not supported in this target, function: drawRoundRect-u-Aw5IA"
@@ -3042,7 +3042,7 @@
 .end method
 
 .method private offsetSize-PENXr5M(JJ)J
-    .registers 8
+    .locals 3
     .param p1, "$this$offsetSize_u2dPENXr5M"    # J
     .param p3, "offset"    # J
 
@@ -3103,7 +3103,7 @@
 .end method
 
 .method public drawImage-AZ2fEMs(Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
-    .registers 32
+    .locals 17
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
     .param p4, "srcSize"    # J
@@ -3258,7 +3258,7 @@
 .end method
 
 .method public getCenter-F1C5BW0()J
-    .registers 3
+    .locals 2
 
     .line 299
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getDrawContext()Landroidx/compose/ui/graphics/drawscope/DrawContext;
@@ -3283,7 +3283,7 @@
 .end method
 
 .method public getSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 305
     invoke-interface {p0}, Landroidx/compose/ui/graphics/drawscope/DrawScope;->getDrawContext()Landroidx/compose/ui/graphics/drawscope/DrawContext;

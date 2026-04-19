@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final testTag(Landroidx/compose/ui/Modifier;Ljava/lang/String;)Landroidx/compose/ui/Modifier;
-    .registers 6
+    .locals 4
     .param p0, "$this$testTag"    # Landroidx/compose/ui/Modifier;
     .param p1, "tag"    # Ljava/lang/String;
 

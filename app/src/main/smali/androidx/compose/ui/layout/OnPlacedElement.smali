@@ -69,7 +69,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "onPlaced"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -97,15 +97,15 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/layout/OnPlacedElement;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/layout/OnPlacedElement;
-    .registers 4
+    .locals 0
 
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_6
+    if-eqz p2, :cond_0
 
     iget-object p1, p0, Landroidx/compose/ui/layout/OnPlacedElement;->onPlaced:Lkotlin/jvm/functions/Function1;
 
-    :cond_6
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/ui/layout/OnPlacedElement;->copy(Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/OnPlacedElement;
 
     move-result-object p0
@@ -116,7 +116,7 @@
 
 # virtual methods
 .method public final component1()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -133,7 +133,7 @@
 .end method
 
 .method public final copy(Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/OnPlacedElement;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -158,7 +158,7 @@
 .end method
 
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 38
     invoke-virtual {p0}, Landroidx/compose/ui/layout/OnPlacedElement;->create()Landroidx/compose/ui/layout/OnPlacedNode;
@@ -171,7 +171,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/layout/OnPlacedNode;
-    .registers 3
+    .locals 2
 
     .line 41
     new-instance v0, Landroidx/compose/ui/layout/OnPlacedNode;
@@ -184,24 +184,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
+    .locals 4
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/layout/OnPlacedElement;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/layout/OnPlacedElement;
@@ -214,16 +214,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     return v0
 .end method
 
 .method public final getOnPlaced()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -241,7 +241,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/layout/OnPlacedElement;->onPlaced:Lkotlin/jvm/functions/Function1;
 
@@ -253,7 +253,7 @@
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 5
+    .locals 3
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -279,7 +279,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -311,7 +311,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 38
@@ -325,7 +325,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/layout/OnPlacedNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/layout/OnPlacedNode;
 
     const-string/jumbo v0, "node"

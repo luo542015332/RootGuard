@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/StampedPathEffectStyle$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getMorph-Ypspkwk()I
-    .registers 2
+    .locals 1
 
     .line 134
-    # getter for: Landroidx/compose/ui/graphics/StampedPathEffectStyle;->Morph:I
     invoke-static {}, Landroidx/compose/ui/graphics/StampedPathEffectStyle;->access$getMorph$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getRotate-Ypspkwk()I
-    .registers 2
+    .locals 1
 
     .line 124
-    # getter for: Landroidx/compose/ui/graphics/StampedPathEffectStyle;->Rotate:I
     invoke-static {}, Landroidx/compose/ui/graphics/StampedPathEffectStyle;->access$getRotate$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getTranslate-Ypspkwk()I
-    .registers 2
+    .locals 1
 
     .line 114
-    # getter for: Landroidx/compose/ui/graphics/StampedPathEffectStyle;->Translate:I
     invoke-static {}, Landroidx/compose/ui/graphics/StampedPathEffectStyle;->access$getTranslate$cp()I
 
     move-result v0

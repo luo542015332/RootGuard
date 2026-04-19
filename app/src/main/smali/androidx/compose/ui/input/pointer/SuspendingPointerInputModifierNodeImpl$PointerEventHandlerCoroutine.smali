@@ -174,7 +174,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .param p1, "this$0"    # Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
     .param p2, "completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -217,7 +217,7 @@
 .end method
 
 .method public static final synthetic access$getPointerAwaiter$p(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;)Lkotlinx/coroutines/CancellableContinuation;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;
 
     .line 643
@@ -227,7 +227,7 @@
 .end method
 
 .method public static final synthetic access$setAwaitPass$p(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;Landroidx/compose/ui/input/pointer/PointerEventPass;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;
     .param p1, "<set-?>"    # Landroidx/compose/ui/input/pointer/PointerEventPass;
 
@@ -238,7 +238,7 @@
 .end method
 
 .method public static final synthetic access$setPointerAwaiter$p(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;Lkotlinx/coroutines/CancellableContinuation;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;
     .param p1, "<set-?>"    # Lkotlinx/coroutines/CancellableContinuation;
 
@@ -251,7 +251,7 @@
 
 # virtual methods
 .method public awaitPointerEvent(Landroidx/compose/ui/input/pointer/PointerEventPass;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 9
+    .locals 6
     .param p1, "pass"    # Landroidx/compose/ui/input/pointer/PointerEventPass;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -328,12 +328,12 @@
 
     move-result-object v2
 
-    if-ne v1, v2, :cond_29
+    if-ne v1, v2, :cond_0
 
     invoke-static {p2}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineSuspended(Lkotlin/coroutines/Continuation;)V
 
     .line 789
-    :cond_29
+    :cond_0
     nop
 
     .line 692
@@ -342,18 +342,18 @@
 .end method
 
 .method public final cancel(Ljava/lang/Throwable;)V
-    .registers 3
+    .locals 1
     .param p1, "cause"    # Ljava/lang/Throwable;
 
     .line 672
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->pointerAwaiter:Lkotlinx/coroutines/CancellableContinuation;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1}, Lkotlinx/coroutines/CancellableContinuation;->cancel(Ljava/lang/Throwable;)Z
 
     .line 673
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->pointerAwaiter:Lkotlinx/coroutines/CancellableContinuation;
@@ -363,7 +363,7 @@
 .end method
 
 .method public getContext()Lkotlin/coroutines/CoroutineContext;
-    .registers 2
+    .locals 1
 
     .line 677
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->context:Lkotlin/coroutines/CoroutineContext;
@@ -372,12 +372,11 @@
 .end method
 
 .method public getCurrentEvent()Landroidx/compose/ui/input/pointer/PointerEvent;
-    .registers 2
+    .locals 1
 
     .line 653
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->this$0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
-    # getter for: Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->currentEvent:Landroidx/compose/ui/input/pointer/PointerEvent;
     invoke-static {v0}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->access$getCurrentEvent$p(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;)Landroidx/compose/ui/input/pointer/PointerEvent;
 
     move-result-object v0
@@ -386,7 +385,7 @@
 .end method
 
 .method public getDensity()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -398,7 +397,7 @@
 .end method
 
 .method public getExtendedTouchPadding-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 659
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->this$0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
@@ -411,7 +410,7 @@
 .end method
 
 .method public getFontScale()F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -423,12 +422,11 @@
 .end method
 
 .method public getSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 655
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->this$0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
-    # getter for: Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->boundsSize:J
     invoke-static {v0}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->access$getBoundsSize$p(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;)J
 
     move-result-wide v0
@@ -437,7 +435,7 @@
 .end method
 
 .method public getViewConfiguration()Landroidx/compose/ui/platform/ViewConfiguration;
-    .registers 2
+    .locals 1
 
     .line 657
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->this$0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
@@ -450,7 +448,7 @@
 .end method
 
 .method public final offerPointerEvent(Landroidx/compose/ui/input/pointer/PointerEvent;Landroidx/compose/ui/input/pointer/PointerEventPass;)V
-    .registers 7
+    .locals 4
     .param p1, "event"    # Landroidx/compose/ui/input/pointer/PointerEvent;
     .param p2, "pass"    # Landroidx/compose/ui/input/pointer/PointerEventPass;
 
@@ -465,12 +463,12 @@
     .line 662
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->awaitPass:Landroidx/compose/ui/input/pointer/PointerEventPass;
 
-    if-ne p2, v0, :cond_26
+    if-ne p2, v0, :cond_0
 
     .line 663
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->pointerAwaiter:Lkotlinx/coroutines/CancellableContinuation;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_0
 
     .local v0, "$this$offerPointerEvent_u24lambda_u240":Lkotlinx/coroutines/CancellableContinuation;
     const/4 v1, 0x0
@@ -503,18 +501,17 @@
     nop
 
     .line 668
-    :cond_26
+    :cond_0
     return-void
 .end method
 
 .method public resumeWith(Ljava/lang/Object;)V
-    .registers 7
+    .locals 5
     .param p1, "result"    # Ljava/lang/Object;
 
     .line 681
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->this$0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
-    # getter for: Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->pointerHandlers:Landroidx/compose/runtime/collection/MutableVector;
     invoke-static {v0}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->access$getPointerHandlers$p(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v0
@@ -532,8 +529,7 @@
 
     .line 682
     .local v3, "$i$a$-synchronized-SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$resumeWith$1":I
-    :try_start_b
-    # getter for: Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->pointerHandlers:Landroidx/compose/runtime/collection/MutableVector;
+    :try_start_0
     invoke-static {v1}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->access$getPointerHandlers$p(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v1
@@ -555,8 +551,8 @@
 
     .end local v3    # "$i$a$-synchronized-SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$resumeWith$1":I
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_17
-    .catchall {:try_start_b .. :try_end_17} :catchall_1e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 776
     monitor-exit v0
@@ -574,7 +570,7 @@
     .line 776
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_1e
+    :catchall_0
     move-exception v1
 
     monitor-exit v0
@@ -583,7 +579,7 @@
 .end method
 
 .method public roundToPx--R2X_6o(J)I
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -595,7 +591,7 @@
 .end method
 
 .method public roundToPx-0680j_4(F)I
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -607,7 +603,7 @@
 .end method
 
 .method public toDp-GaN1DYA(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -619,7 +615,7 @@
 .end method
 
 .method public toDp-u2uoSUM(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -631,7 +627,7 @@
 .end method
 
 .method public toDp-u2uoSUM(I)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -643,7 +639,7 @@
 .end method
 
 .method public toDpSize-k-rfVVM(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -655,7 +651,7 @@
 .end method
 
 .method public toPx--R2X_6o(J)F
-    .registers 4
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -667,7 +663,7 @@
 .end method
 
 .method public toPx-0680j_4(F)F
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -679,7 +675,7 @@
 .end method
 
 .method public toRect(Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
 
     const-string v0, "<this>"
 
@@ -695,7 +691,7 @@
 .end method
 
 .method public toSize-XkaWNTQ(J)J
-    .registers 5
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -707,7 +703,7 @@
 .end method
 
 .method public toSp-0xMU5do(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -719,7 +715,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(F)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -731,7 +727,7 @@
 .end method
 
 .method public toSp-kPz2Gy4(I)J
-    .registers 4
+    .locals 2
 
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->$$delegate_0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
@@ -743,7 +739,7 @@
 .end method
 
 .method public withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 15
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -765,7 +761,7 @@
 
     instance-of v0, p4, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p4
 
@@ -777,7 +773,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p4, v0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;->label:I
 
@@ -785,14 +781,14 @@
 
     iput p4, v0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;
 
     invoke-direct {v0, p0, p4}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;-><init>(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     move-object p4, v0
 
     .local p4, "$continuation":Lkotlin/coroutines/Continuation;
@@ -806,7 +802,7 @@
     .line 705
     iget v2, p4, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;->label:I
 
-    packed-switch v2, :pswitch_data_94
+    packed-switch v2, :pswitch_data_0
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local p4    # "$continuation":Lkotlin/coroutines/Continuation;
@@ -820,32 +816,32 @@
 
     .restart local v0    # "$result":Ljava/lang/Object;
     .restart local p4    # "$continuation":Lkotlin/coroutines/Continuation;
-    :pswitch_2e
+    :pswitch_0
     iget-object p1, p4, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;->L$0:Ljava/lang/Object;
 
     check-cast p1, Lkotlinx/coroutines/Job;
 
     .local p1, "job":Lkotlinx/coroutines/Job;
-    :try_start_32
+    :try_start_0
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_35
-    .catchall {:try_start_32 .. :try_end_35} :catchall_38
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-object v3, p1
 
     move-object p1, v0
 
-    goto :goto_82
+    goto :goto_1
 
     .line 730
-    :catchall_38
+    :catchall_0
     move-exception p2
 
-    goto :goto_8c
+    goto :goto_2
 
     .line 705
     .end local p1    # "job":Lkotlinx/coroutines/Job;
-    :pswitch_3a
+    :pswitch_1
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v2, p0
@@ -858,12 +854,12 @@
 
     cmp-long v3, p1, v3
 
-    if-gtz v3, :cond_5e
+    if-gtz v3, :cond_1
 
     .line 710
     iget-object v3, v2, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->pointerAwaiter:Lkotlinx/coroutines/CancellableContinuation;
 
-    if-eqz v3, :cond_5e
+    if-eqz v3, :cond_1
 
     check-cast v3, Lkotlin/coroutines/Continuation;
 
@@ -887,7 +883,7 @@
     invoke-interface {v3, v4}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 715
-    :cond_5e
+    :cond_1
     iget-object v3, v2, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->this$0:Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;
 
     invoke-virtual {v3}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl;->getCoroutineScope()Lkotlinx/coroutines/CoroutineScope;
@@ -922,7 +918,7 @@
     nop
 
     .line 728
-    :try_start_76
+    :try_start_1
     iput-object v3, p4, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeout$1;->L$0:Ljava/lang/Object;
 
     const/4 p1, 0x1
@@ -932,19 +928,19 @@
     invoke-interface {p3, v2, p4}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
-    :try_end_7f
-    .catchall {:try_start_76 .. :try_end_7f} :catchall_8a
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .end local v2    # "this":Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;
     .end local p3    # "block":Lkotlin/jvm/functions/Function2;
-    if-ne p1, v1, :cond_82
+    if-ne p1, v1, :cond_2
 
     .line 705
     return-object v1
 
     .line 730
-    :cond_82
-    :goto_82
+    :cond_2
+    :goto_1
     sget-object p2, Landroidx/compose/ui/input/pointer/CancelTimeoutCancellationException;->INSTANCE:Landroidx/compose/ui/input/pointer/CancelTimeoutCancellationException;
 
     check-cast p2, Ljava/util/concurrent/CancellationException;
@@ -957,14 +953,14 @@
 
     .line 730
     .restart local v3    # "job":Lkotlinx/coroutines/Job;
-    :catchall_8a
+    :catchall_1
     move-exception p2
 
     move-object p1, v3
 
     .end local v3    # "job":Lkotlinx/coroutines/Job;
     .local p1, "job":Lkotlinx/coroutines/Job;
-    :goto_8c
+    :goto_2
     sget-object p3, Landroidx/compose/ui/input/pointer/CancelTimeoutCancellationException;->INSTANCE:Landroidx/compose/ui/input/pointer/CancelTimeoutCancellationException;
 
     check-cast p3, Ljava/util/concurrent/CancellationException;
@@ -973,15 +969,15 @@
 
     throw p2
 
-    :pswitch_data_94
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3a
-        :pswitch_2e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public withTimeoutOrNull(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 9
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1003,7 +999,7 @@
 
     instance-of v0, p4, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p4
 
@@ -1015,7 +1011,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p4, v0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1;->label:I
 
@@ -1023,14 +1019,14 @@
 
     iput p4, v0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1;
 
     invoke-direct {v0, p0, p4}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1;-><init>(Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     move-object p4, v0
 
     .local p4, "$continuation":Lkotlin/coroutines/Continuation;
@@ -1044,7 +1040,7 @@
     .line 694
     iget v2, p4, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1;->label:I
 
-    packed-switch v2, :pswitch_data_48
+    packed-switch v2, :pswitch_data_0
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local p4    # "$continuation":Lkotlin/coroutines/Continuation;
@@ -1058,24 +1054,24 @@
 
     .restart local v0    # "$result":Ljava/lang/Object;
     .restart local p4    # "$continuation":Lkotlin/coroutines/Continuation;
-    :pswitch_2e
-    :try_start_2e
+    :pswitch_0
+    :try_start_0
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_31
-    .catch Landroidx/compose/ui/input/pointer/PointerEventTimeoutCancellationException; {:try_start_2e .. :try_end_31} :catch_33
+    :try_end_0
+    .catch Landroidx/compose/ui/input/pointer/PointerEventTimeoutCancellationException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-object v3, v0
 
-    goto :goto_44
+    goto :goto_1
 
     .line 700
-    :catch_33
+    :catch_0
     move-exception p1
 
-    goto :goto_45
+    goto :goto_2
 
     .line 694
-    :pswitch_35
+    :pswitch_1
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v2, p0
@@ -1089,41 +1085,41 @@
     .line 699
     const/4 v3, 0x1
 
-    :try_start_3b
+    :try_start_1
     iput v3, p4, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine$withTimeoutOrNull$1;->label:I
 
     invoke-virtual {v2, p1, p2, p3, p4}, Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;->withTimeout(JLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v3
-    :try_end_41
-    .catch Landroidx/compose/ui/input/pointer/PointerEventTimeoutCancellationException; {:try_start_3b .. :try_end_41} :catch_33
+    :try_end_1
+    .catch Landroidx/compose/ui/input/pointer/PointerEventTimeoutCancellationException; {:try_start_1 .. :try_end_1} :catch_0
 
     .end local v2    # "this":Landroidx/compose/ui/input/pointer/SuspendingPointerInputModifierNodeImpl$PointerEventHandlerCoroutine;
     .end local p1    # "timeMillis":J
     .end local p3    # "block":Lkotlin/jvm/functions/Function2;
-    if-ne v3, v1, :cond_44
+    if-ne v3, v1, :cond_1
 
     .line 694
     return-object v1
 
     .line 699
-    :cond_44
-    :goto_44
-    goto :goto_46
+    :cond_1
+    :goto_1
+    goto :goto_3
 
     .line 701
-    :goto_45
+    :goto_2
     const/4 v3, 0x0
 
     .line 698
-    :goto_46
+    :goto_3
     return-object v3
 
     nop
 
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_35
-        :pswitch_2e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

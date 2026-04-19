@@ -79,7 +79,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/input/pointer/PointerInputScope;Landroidx/compose/foundation/gestures/DraggableNode;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,7 +106,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -135,7 +135,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -149,7 +149,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -178,7 +178,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 13
+    .locals 11
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -187,7 +187,7 @@
     .line 302
     iget v1, p0, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;->label:I
 
-    packed-switch v1, :pswitch_data_66
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -197,7 +197,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;
@@ -207,24 +207,24 @@
     check-cast v1, Lkotlinx/coroutines/CoroutineScope;
 
     .local v1, "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
-    :try_start_17
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_1a
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_17 .. :try_end_1a} :catch_1b
+    :try_end_0
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_56
+    goto :goto_0
 
     .line 360
-    :catch_1b
+    :catch_0
     move-exception v2
 
-    goto :goto_5c
+    goto :goto_1
 
     .line 302
     .end local v0    # "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;
     .end local v1    # "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1d
+    :pswitch_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -265,7 +265,7 @@
     nop
 
     .line 326
-    :try_start_3a
+    :try_start_1
     iget-object v3, v1, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;->$$this$SuspendingPointerInputModifierNode:Landroidx/compose/ui/input/pointer/PointerInputScope;
 
     new-instance v4, Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1$2;
@@ -289,16 +289,16 @@
     invoke-interface {v3, v4, v5}, Landroidx/compose/ui/input/pointer/PointerInputScope;->awaitPointerEventScope(Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v3
-    :try_end_51
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_3a .. :try_end_51} :catch_57
+    :try_end_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_1
 
-    if-ne v3, v0, :cond_54
+    if-ne v3, v0, :cond_0
 
     .line 302
     return-object v0
 
     .line 326
-    :cond_54
+    :cond_0
     move-object v0, v1
 
     move-object v1, v2
@@ -306,14 +306,14 @@
     .end local v2    # "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
     .restart local v0    # "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;
     .local v1, "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
-    :goto_56
-    goto :goto_62
+    :goto_0
+    goto :goto_2
 
     .line 360
     .end local v0    # "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;
     .local v1, "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;
     .restart local v2    # "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
-    :catch_57
+    :catch_1
     move-exception v0
 
     move-object v10, v2
@@ -328,29 +328,29 @@
     .restart local v0    # "this":Landroidx/compose/foundation/gestures/DraggableNode$pointerInputNode$1$1;
     .local v1, "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
     .local v2, "exception":Ljava/util/concurrent/CancellationException;
-    :goto_5c
+    :goto_1
     invoke-static {v1}, Lkotlinx/coroutines/CoroutineScopeKt;->isActive(Lkotlinx/coroutines/CoroutineScope;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_65
+    if-eqz v3, :cond_1
 
     .line 365
     .end local v1    # "$this$coroutineScope":Lkotlinx/coroutines/CoroutineScope;
     .end local v2    # "exception":Ljava/util/concurrent/CancellationException;
-    :goto_62
+    :goto_2
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v1
 
     .line 362
     .restart local v2    # "exception":Ljava/util/concurrent/CancellationException;
-    :cond_65
+    :cond_1
     throw v2
 
-    :pswitch_data_66
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1d
-        :pswitch_12
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

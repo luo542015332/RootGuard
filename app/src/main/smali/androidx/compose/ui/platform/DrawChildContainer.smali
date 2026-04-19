@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .registers 4
+    .locals 2
     .param p1, "context"    # Landroid/content/Context;
 
     const-string/jumbo v0, "context"
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
-    .registers 7
+    .locals 5
     .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     const-string/jumbo v0, "canvas"
@@ -114,8 +114,8 @@
 
     move-result v2
 
-    :goto_c
-    if-ge v1, v2, :cond_25
+    :goto_0
+    if-ge v1, v2, :cond_1
 
     .line 71
     invoke-virtual {p0, v1}, Landroidx/compose/ui/platform/DrawChildContainer;->getChildAt(I)Landroid/view/View;
@@ -134,26 +134,26 @@
 
     move-result v4
 
-    if-eqz v4, :cond_22
+    if-eqz v4, :cond_0
 
     .line 73
     const/4 v0, 0x1
 
     .line 74
-    goto :goto_25
+    goto :goto_1
 
     .line 70
     .end local v3    # "child":Landroidx/compose/ui/platform/ViewLayer;
-    :cond_22
+    :cond_0
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_c
+    goto :goto_0
 
     .line 78
     .end local v1    # "i":I
-    :cond_25
-    :goto_25
-    if-eqz v0, :cond_36
+    :cond_1
+    :goto_1
+    if-eqz v0, :cond_2
 
     .line 79
     const/4 v1, 0x1
@@ -166,19 +166,19 @@
     .line 81
     const/4 v1, 0x0
 
-    :try_start_2c
+    :try_start_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
-    :try_end_2f
-    .catchall {:try_start_2c .. :try_end_2f} :catchall_32
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 83
     iput-boolean v1, p0, Landroidx/compose/ui/platform/DrawChildContainer;->isDrawing:Z
 
     .line 84
-    goto :goto_36
+    goto :goto_2
 
     .line 83
-    :catchall_32
+    :catchall_0
     move-exception v2
 
     iput-boolean v1, p0, Landroidx/compose/ui/platform/DrawChildContainer;->isDrawing:Z
@@ -186,13 +186,13 @@
     throw v2
 
     .line 86
-    :cond_36
-    :goto_36
+    :cond_2
+    :goto_2
     return-void
 .end method
 
 .method public final drawChild$ui_release(Landroidx/compose/ui/graphics/Canvas;Landroid/view/View;J)V
-    .registers 6
+    .locals 1
     .param p1, "canvas"    # Landroidx/compose/ui/graphics/Canvas;
     .param p2, "view"    # Landroid/view/View;
     .param p3, "drawingTime"    # J
@@ -217,28 +217,28 @@
 .end method
 
 .method public getChildCount()I
-    .registers 2
+    .locals 1
 
     .line 92
     iget-boolean v0, p0, Landroidx/compose/ui/platform/DrawChildContainer;->isDrawing:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-super {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return v0
 .end method
 
 .method protected onLayout(ZIIII)V
-    .registers 6
+    .locals 0
     .param p1, "changed"    # Z
     .param p2, "l"    # I
     .param p3, "t"    # I
@@ -250,7 +250,7 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 4
+    .locals 1
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 

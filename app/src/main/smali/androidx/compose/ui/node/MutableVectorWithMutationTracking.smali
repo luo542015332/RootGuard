@@ -87,7 +87,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/collection/MutableVector;Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 1
     .param p1, "vector"    # Landroidx/compose/runtime/collection/MutableVector;
     .param p2, "onVectorMutated"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -125,7 +125,7 @@
 
 # virtual methods
 .method public final add(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -149,7 +149,7 @@
 .end method
 
 .method public final asList()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -169,7 +169,7 @@
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 33
     iget-object v0, p0, Landroidx/compose/ui/node/MutableVectorWithMutationTracking;->vector:Landroidx/compose/runtime/collection/MutableVector;
@@ -186,7 +186,7 @@
 .end method
 
 .method public final forEach(Lkotlin/jvm/functions/Function1;)V
-    .registers 9
+    .locals 7
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -224,7 +224,7 @@
 
     .line 56
     .local v3, "size$iv":I
-    if-lez v3, :cond_21
+    if-lez v3, :cond_1
 
     .line 57
     const/4 v4, 0x0
@@ -237,7 +237,7 @@
 
     .line 60
     .local v5, "content$iv":[Ljava/lang/Object;
-    :cond_18
+    :cond_0
     aget-object v6, v5, v4
 
     invoke-interface {p1, v6}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
@@ -246,12 +246,12 @@
     add-int/lit8 v4, v4, 0x1
 
     .line 62
-    if-lt v4, v3, :cond_18
+    if-lt v4, v3, :cond_0
 
     .line 64
     .end local v4    # "i$iv":I
     .end local v5    # "content$iv":[Ljava/lang/Object;
-    :cond_21
+    :cond_1
     nop
 
     .line 48
@@ -262,7 +262,7 @@
 .end method
 
 .method public final get(I)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -291,7 +291,7 @@
 .end method
 
 .method public final getOnVectorMutated()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -308,7 +308,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 30
     iget-object v0, p0, Landroidx/compose/ui/node/MutableVectorWithMutationTracking;->vector:Landroidx/compose/runtime/collection/MutableVector;
@@ -321,7 +321,7 @@
 .end method
 
 .method public final getVector()Landroidx/compose/runtime/collection/MutableVector;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -337,7 +337,7 @@
 .end method
 
 .method public final removeAt(I)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {

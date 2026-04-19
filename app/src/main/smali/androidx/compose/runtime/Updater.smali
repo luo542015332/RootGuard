@@ -81,7 +81,7 @@
 
 # direct methods
 .method private synthetic constructor <init>(Landroidx/compose/runtime/Composer;)V
-    .registers 2
+    .locals 0
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
 
     .line 4129
@@ -93,7 +93,7 @@
 .end method
 
 .method public static final synthetic box-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Updater;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/runtime/Updater;
 
@@ -103,7 +103,7 @@
 .end method
 
 .method public static constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -123,17 +123,17 @@
 .end method
 
 .method public static equals-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/runtime/Updater;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/Updater;
@@ -146,18 +146,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_14
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(Landroidx/compose/runtime/Composer;Landroidx/compose/runtime/Composer;)Z
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -167,13 +167,13 @@
 .end method
 
 .method public static synthetic getComposer$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static hashCode-impl(Landroidx/compose/runtime/Composer;)I
-    .registers 2
+    .locals 1
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public static final init-impl(Landroidx/compose/runtime/Composer;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # Landroidx/compose/runtime/Composer;
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -206,7 +206,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_0
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -219,12 +219,12 @@
     invoke-interface {p0, v0, v1}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 4228
-    :cond_18
+    :cond_0
     return-void
 .end method
 
 .method public static final reconcile-impl(Landroidx/compose/runtime/Composer;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # Landroidx/compose/runtime/Composer;
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -258,7 +258,7 @@
 .end method
 
 .method public static final set-impl(Landroidx/compose/runtime/Composer;ILkotlin/jvm/functions/Function2;)V
-    .registers 8
+    .locals 5
     .param p0, "arg0"    # Landroidx/compose/runtime/Composer;
     .param p1, "value"    # I
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
@@ -294,7 +294,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_1d
+    if-nez v3, :cond_0
 
     invoke-interface {v1}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
 
@@ -308,10 +308,10 @@
 
     move-result v3
 
-    if-nez v3, :cond_2b
+    if-nez v3, :cond_1
 
     .line 4146
-    :cond_1d
+    :cond_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -326,7 +326,7 @@
     invoke-interface {p0, v3, p2}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 4149
-    :cond_2b
+    :cond_1
     nop
 
     .line 4144
@@ -339,7 +339,7 @@
 .end method
 
 .method public static final set-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
-    .registers 6
+    .locals 3
     .param p0, "arg0"    # Landroidx/compose/runtime/Composer;
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
@@ -373,7 +373,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_18
+    if-nez v2, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
 
@@ -383,17 +383,17 @@
 
     move-result v2
 
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_1
 
     .line 4164
-    :cond_18
+    :cond_0
     invoke-interface {v0, p1}, Landroidx/compose/runtime/Composer;->updateRememberedValue(Ljava/lang/Object;)V
 
     .line 4165
     invoke-interface {p0, p1, p2}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 4167
-    :cond_1e
+    :cond_1
     nop
 
     .line 4162
@@ -406,7 +406,7 @@
 .end method
 
 .method public static toString-impl(Landroidx/compose/runtime/Composer;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -436,7 +436,7 @@
 .end method
 
 .method public static final update-impl(Landroidx/compose/runtime/Composer;ILkotlin/jvm/functions/Function2;)V
-    .registers 9
+    .locals 6
     .param p0, "arg0"    # Landroidx/compose/runtime/Composer;
     .param p1, "value"    # I
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
@@ -474,7 +474,7 @@
 
     .line 4186
     .local v3, "inserting":Z
-    if-nez v3, :cond_1d
+    if-nez v3, :cond_0
 
     invoke-interface {v1}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
 
@@ -488,10 +488,10 @@
 
     move-result v4
 
-    if-nez v4, :cond_2d
+    if-nez v4, :cond_1
 
     .line 4187
-    :cond_1d
+    :cond_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -499,7 +499,7 @@
     invoke-interface {v1, v4}, Landroidx/compose/runtime/Composer;->updateRememberedValue(Ljava/lang/Object;)V
 
     .line 4188
-    if-nez v3, :cond_2d
+    if-nez v3, :cond_1
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -508,7 +508,7 @@
     invoke-interface {v1, v4, p2}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 4190
-    :cond_2d
+    :cond_1
     nop
 
     .line 4184
@@ -522,7 +522,7 @@
 .end method
 
 .method public static final update-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
-    .registers 7
+    .locals 4
     .param p0, "arg0"    # Landroidx/compose/runtime/Composer;
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "block"    # Lkotlin/jvm/functions/Function2;
@@ -558,7 +558,7 @@
 
     .line 4208
     .local v2, "inserting":Z
-    if-nez v2, :cond_18
+    if-nez v2, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
 
@@ -568,19 +568,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_20
+    if-nez v3, :cond_1
 
     .line 4209
-    :cond_18
+    :cond_0
     invoke-interface {v0, p1}, Landroidx/compose/runtime/Composer;->updateRememberedValue(Ljava/lang/Object;)V
 
     .line 4210
-    if-nez v2, :cond_20
+    if-nez v2, :cond_1
 
     invoke-interface {v0, p1, p2}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
 
     .line 4212
-    :cond_20
+    :cond_1
     nop
 
     .line 4206
@@ -596,7 +596,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/Updater;->composer:Landroidx/compose/runtime/Composer;
 
@@ -608,7 +608,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/Updater;->composer:Landroidx/compose/runtime/Composer;
 
@@ -620,7 +620,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/Updater;->composer:Landroidx/compose/runtime/Composer;
 
@@ -632,7 +632,7 @@
 .end method
 
 .method public final synthetic unbox-impl()Landroidx/compose/runtime/Composer;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/runtime/Updater;->composer:Landroidx/compose/runtime/Composer;
 

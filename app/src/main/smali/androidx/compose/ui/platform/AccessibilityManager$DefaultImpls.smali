@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static synthetic calculateRecommendedTimeoutMillis$default(Landroidx/compose/ui/platform/AccessibilityManager;JZZZILjava/lang/Object;)J
-    .registers 8
+    .locals 0
 
     .line 45
     invoke-static/range {p0 .. p7}, Landroidx/compose/ui/platform/AccessibilityManager;->calculateRecommendedTimeoutMillis$default(Landroidx/compose/ui/platform/AccessibilityManager;JZZZILjava/lang/Object;)J

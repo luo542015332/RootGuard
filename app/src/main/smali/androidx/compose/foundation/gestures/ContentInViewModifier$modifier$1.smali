@@ -53,7 +53,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/ContentInViewModifier;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/gestures/ContentInViewModifier$modifier$1;->this$0:Landroidx/compose/foundation/gestures/ContentInViewModifier;
 
@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 110
@@ -83,7 +83,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 3
+    .locals 1
     .param p1, "it"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     .line 111

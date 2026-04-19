@@ -59,7 +59,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/layout/LayoutKt$Layout$$inlined$ReusableComposeNode$1;->$factory:Lkotlin/jvm/functions/Function0;
 
@@ -73,7 +73,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

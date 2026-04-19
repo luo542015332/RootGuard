@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$sendNotifications$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 79
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$sendNotifications$1;->invoke()V
@@ -79,18 +79,17 @@
 .end method
 
 .method public final invoke()V
-    .registers 12
+    .locals 11
 
     .line 80
     nop
 
-    :cond_1
+    :cond_0
     nop
 
     .line 81
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$sendNotifications$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->observedScopeMaps:Landroidx/compose/runtime/collection/MutableVector;
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$getObservedScopeMaps$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v0
@@ -103,20 +102,19 @@
 
     .line 82
     .local v2, "$i$a$-synchronized-SnapshotStateObserver$sendNotifications$1$1":I
-    :try_start_c
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->sendingNotifications:Z
+    :try_start_0
     invoke-static {v1}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$getSendingNotifications$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Z
 
     move-result v3
 
-    if-nez v3, :cond_41
+    if-nez v3, :cond_3
 
     .line 83
     const/4 v3, 0x1
 
     invoke-static {v1, v3}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$setSendingNotifications$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;Z)V
-    :try_end_16
-    .catchall {:try_start_c .. :try_end_16} :catchall_4e
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 84
     nop
@@ -124,8 +122,7 @@
     .line 85
     const/4 v3, 0x0
 
-    :try_start_18
-    # getter for: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->observedScopeMaps:Landroidx/compose/runtime/collection/MutableVector;
+    :try_start_1
     invoke-static {v1}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$getObservedScopeMaps$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Landroidx/compose/runtime/collection/MutableVector;
 
     move-result-object v4
@@ -144,7 +141,7 @@
 
     .line 613
     .local v6, "size$iv":I
-    if-lez v6, :cond_37
+    if-lez v6, :cond_2
 
     .line 614
     const/4 v7, 0x0
@@ -157,7 +154,7 @@
 
     .line 617
     .local v8, "content$iv":[Ljava/lang/Object;
-    :cond_29
+    :cond_1
     aget-object v9, v8, v7
 
     check-cast v9, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;
@@ -168,8 +165,8 @@
     .line 86
     .local v10, "$i$a$-forEach-SnapshotStateObserver$sendNotifications$1$1$1":I
     invoke-virtual {v9}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$ObservedScopeMap;->notifyInvalidatedScopes()V
-    :try_end_31
-    .catchall {:try_start_18 .. :try_end_31} :catchall_3c
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 87
     nop
@@ -183,26 +180,26 @@
     add-int/lit8 v7, v7, 0x1
 
     .line 619
-    if-lt v7, v6, :cond_29
+    if-lt v7, v6, :cond_1
 
     .line 621
     .end local v7    # "i$iv":I
     .end local v8    # "content$iv":[Ljava/lang/Object;
-    :cond_37
+    :cond_2
     nop
 
     .line 89
     .end local v4    # "this_$iv":Landroidx/compose/runtime/collection/MutableVector;
     .end local v5    # "$i$f$forEach":I
     .end local v6    # "size$iv":I
-    :try_start_38
+    :try_start_2
     invoke-static {v1, v3}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$setSendingNotifications$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;Z)V
 
     .line 90
-    goto :goto_41
+    goto :goto_0
 
     .line 89
-    :catchall_3c
+    :catchall_0
     move-exception v4
 
     invoke-static {v1, v3}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$setSendingNotifications$p(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;Z)V
@@ -210,14 +207,14 @@
     throw v4
 
     .line 92
-    :cond_41
-    :goto_41
+    :cond_3
+    :goto_0
     nop
 
     .end local v2    # "$i$a$-synchronized-SnapshotStateObserver$sendNotifications$1$1":I
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_44
-    .catchall {:try_start_38 .. :try_end_44} :catchall_4e
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     .line 81
     monitor-exit v0
@@ -225,18 +222,17 @@
     .line 95
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotStateObserver$sendNotifications$1;->this$0:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
 
-    # invokes: Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->drainChanges()Z
     invoke-static {v0}, Landroidx/compose/runtime/snapshots/SnapshotStateObserver;->access$drainChanges(Landroidx/compose/runtime/snapshots/SnapshotStateObserver;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     .line 97
     return-void
 
     .line 81
-    :catchall_4e
+    :catchall_1
     move-exception v1
 
     monitor-exit v0

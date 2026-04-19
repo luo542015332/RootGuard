@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 77
     invoke-direct {p0}, Landroidx/compose/ui/Modifier$Node;-><init>()V
@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public applySemantics(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 3
+    .locals 1
     .param p1, "$this$applySemantics"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"

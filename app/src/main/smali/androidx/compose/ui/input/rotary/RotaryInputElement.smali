@@ -83,7 +83,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .param p1, "onRotaryScrollEvent"    # Lkotlin/jvm/functions/Function1;
     .param p2, "onPreRotaryScrollEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -116,22 +116,22 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/input/rotary/RotaryInputElement;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/input/rotary/RotaryInputElement;
-    .registers 5
+    .locals 0
 
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     iget-object p1, p0, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
 
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_c
+    if-eqz p3, :cond_1
 
     iget-object p2, p0, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onPreRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
 
-    :cond_c
+    :cond_1
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/input/rotary/RotaryInputElement;->copy(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/input/rotary/RotaryInputElement;
 
     move-result-object p0
@@ -142,7 +142,7 @@
 
 # virtual methods
 .method public final component1()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -159,7 +159,7 @@
 .end method
 
 .method public final component2()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -176,7 +176,7 @@
 .end method
 
 .method public final copy(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/input/rotary/RotaryInputElement;
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -202,7 +202,7 @@
 .end method
 
 .method public bridge synthetic create()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 77
     invoke-virtual {p0}, Landroidx/compose/ui/input/rotary/RotaryInputElement;->create()Landroidx/compose/ui/input/rotary/RotaryInputNode;
@@ -215,7 +215,7 @@
 .end method
 
 .method public create()Landroidx/compose/ui/input/rotary/RotaryInputNode;
-    .registers 4
+    .locals 3
 
     .line 81
     new-instance v0, Landroidx/compose/ui/input/rotary/RotaryInputNode;
@@ -234,24 +234,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/input/rotary/RotaryInputElement;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/input/rotary/RotaryInputElement;
@@ -264,11 +264,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_18
+    if-nez v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget-object v3, p0, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onPreRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
 
     iget-object v1, v1, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onPreRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
@@ -277,16 +277,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_3
 
     return v2
 
-    :cond_23
+    :cond_3
     return v0
 .end method
 
 .method public final getOnPreRotaryScrollEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -304,7 +304,7 @@
 .end method
 
 .method public final getOnRotaryScrollEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -322,45 +322,45 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget-object v0, p0, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_7
+    :cond_0
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_b
+    :goto_0
     mul-int/lit8 v2, v0, 0x1f
 
     iget-object v3, p0, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onPreRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
 
-    if-nez v3, :cond_12
+    if-nez v3, :cond_1
 
-    goto :goto_16
+    goto :goto_1
 
-    :cond_12
+    :cond_1
     invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
-    :goto_16
+    :goto_1
     add-int/2addr v2, v1
 
     return v2
 .end method
 
 .method public inspectableProperties(Landroidx/compose/ui/platform/InspectorInfo;)V
-    .registers 6
+    .locals 4
     .param p1, "$this$inspectableProperties"    # Landroidx/compose/ui/platform/InspectorInfo;
 
     const-string v0, "<this>"
@@ -370,7 +370,7 @@
     .line 92
     iget-object v0, p0, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     .local v0, "it":Lkotlin/jvm/functions/Function1;
     const/4 v1, 0x0
@@ -397,10 +397,10 @@
     nop
 
     .line 96
-    :cond_19
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/input/rotary/RotaryInputElement;->onPreRotaryScrollEvent:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .restart local v0    # "it":Lkotlin/jvm/functions/Function1;
     const/4 v1, 0x0
@@ -427,12 +427,12 @@
     nop
 
     .line 100
-    :cond_2d
+    :cond_1
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -476,7 +476,7 @@
 .end method
 
 .method public bridge synthetic update(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
 
     .line 77
@@ -490,7 +490,7 @@
 .end method
 
 .method public update(Landroidx/compose/ui/input/rotary/RotaryInputNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/input/rotary/RotaryInputNode;
 
     const-string/jumbo v0, "node"

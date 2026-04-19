@@ -95,13 +95,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -132,7 +132,7 @@
 .end method
 
 .method public doneComposing$runtime_release()V
-    .registers 1
+    .locals 0
 
     .line 62
     return-void
@@ -142,10 +142,9 @@
 .end method
 
 .method public getCompositionLocalScope$runtime_release()Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 2
+    .locals 1
 
     .line 60
-    # getter for: Landroidx/compose/runtime/CompositionContextKt;->EmptyPersistentCompositionLocalMap:Landroidx/compose/runtime/PersistentCompositionLocalMap;
     invoke-static {}, Landroidx/compose/runtime/CompositionContextKt;->access$getEmptyPersistentCompositionLocalMap$p()Landroidx/compose/runtime/PersistentCompositionLocalMap;
 
     move-result-object v0
@@ -175,7 +174,7 @@
 .end method
 
 .method public movableContentStateResolve$runtime_release(Landroidx/compose/runtime/MovableContentStateReference;)Landroidx/compose/runtime/MovableContentState;
-    .registers 3
+    .locals 1
     .param p1, "reference"    # Landroidx/compose/runtime/MovableContentStateReference;
 
     const-string/jumbo v0, "reference"
@@ -189,7 +188,7 @@
 .end method
 
 .method public recordInspectionTable$runtime_release(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .param p1, "table"    # Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -209,7 +208,7 @@
 .end method
 
 .method public registerComposer$runtime_release(Landroidx/compose/runtime/Composer;)V
-    .registers 3
+    .locals 1
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
 
     const-string/jumbo v0, "composer"
@@ -227,14 +226,14 @@
 .end method
 
 .method public startComposing$runtime_release()V
-    .registers 1
+    .locals 0
 
     .line 61
     return-void
 .end method
 
 .method public unregisterComposer$runtime_release(Landroidx/compose/runtime/Composer;)V
-    .registers 3
+    .locals 1
     .param p1, "composer"    # Landroidx/compose/runtime/Composer;
 
     const-string/jumbo v0, "composer"

@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/foundation/pager/PagerStateKt$rememberPagerState$3$1$1;
 
@@ -63,7 +63,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Integer;
-    .registers 2
+    .locals 1
 
     .line 122
     const/4 v0, 0x0
@@ -88,7 +88,7 @@
 .end method
 
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 122
     invoke-virtual {p0}, Landroidx/compose/foundation/pager/PagerStateKt$rememberPagerState$3$1$1;->invoke()Ljava/lang/Integer;

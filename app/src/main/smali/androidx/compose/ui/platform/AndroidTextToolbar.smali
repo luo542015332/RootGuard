@@ -60,7 +60,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
-    .registers 12
+    .locals 10
     .param p1, "view"    # Landroid/view/View;
 
     const-string/jumbo v0, "view"
@@ -115,7 +115,7 @@
 .end method
 
 .method public static final synthetic access$setActionMode$p(Landroidx/compose/ui/platform/AndroidTextToolbar;Landroid/view/ActionMode;)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/platform/AndroidTextToolbar;
     .param p1, "<set-?>"    # Landroid/view/ActionMode;
 
@@ -128,7 +128,7 @@
 
 # virtual methods
 .method public getStatus()Landroidx/compose/ui/platform/TextToolbarStatus;
-    .registers 2
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidTextToolbar;->status:Landroidx/compose/ui/platform/TextToolbarStatus;
@@ -137,7 +137,7 @@
 .end method
 
 .method public hide()V
-    .registers 2
+    .locals 1
 
     .line 73
     sget-object v0, Landroidx/compose/ui/platform/TextToolbarStatus;->Hidden:Landroidx/compose/ui/platform/TextToolbarStatus;
@@ -147,12 +147,12 @@
     .line 74
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidTextToolbar;->actionMode:Landroid/view/ActionMode;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/view/ActionMode;->finish()V
 
     .line 75
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/ui/platform/AndroidTextToolbar;->actionMode:Landroid/view/ActionMode;
@@ -162,7 +162,7 @@
 .end method
 
 .method public showMenu(Landroidx/compose/ui/geometry/Rect;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
-    .registers 10
+    .locals 4
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "onCopyRequested"    # Lkotlin/jvm/functions/Function0;
     .param p3, "onPasteRequested"    # Lkotlin/jvm/functions/Function0;
@@ -219,7 +219,7 @@
     .line 54
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidTextToolbar;->actionMode:Landroid/view/ActionMode;
 
-    if-nez v0, :cond_3e
+    if-nez v0, :cond_0
 
     .line 55
     sget-object v0, Landroidx/compose/ui/platform/TextToolbarStatus;->Shown:Landroidx/compose/ui/platform/TextToolbarStatus;
@@ -257,16 +257,16 @@
     .line 56
     iput-object v0, p0, Landroidx/compose/ui/platform/AndroidTextToolbar;->actionMode:Landroid/view/ActionMode;
 
-    goto :goto_43
+    goto :goto_0
 
     .line 68
-    :cond_3e
-    if-eqz v0, :cond_43
+    :cond_0
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/ActionMode;->invalidate()V
 
     .line 70
-    :cond_43
-    :goto_43
+    :cond_1
+    :goto_0
     return-void
 .end method

@@ -66,7 +66,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/layout/SubcomposeLayoutState;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState$setMeasurePolicy$1;->this$0:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
@@ -80,7 +80,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -101,7 +101,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/node/LayoutNode;Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 1
     .param p1, "$this$null"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "it"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -130,7 +130,6 @@
     .line 435
     iget-object v0, p0, Landroidx/compose/ui/layout/SubcomposeLayoutState$setMeasurePolicy$1;->this$0:Landroidx/compose/ui/layout/SubcomposeLayoutState;
 
-    # invokes: Landroidx/compose/ui/layout/SubcomposeLayoutState;->getState()Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     invoke-static {v0}, Landroidx/compose/ui/layout/SubcomposeLayoutState;->access$getState(Landroidx/compose/ui/layout/SubcomposeLayoutState;)Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     move-result-object v0

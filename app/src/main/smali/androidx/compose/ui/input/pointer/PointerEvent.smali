@@ -86,7 +86,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -96,7 +96,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .param p1, "changes"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -120,7 +120,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/List;Landroidx/compose/ui/input/pointer/InternalPointerEvent;)V
-    .registers 5
+    .locals 2
     .param p1, "changes"    # Ljava/util/List;
     .param p2, "internalPointerEvent"    # Landroidx/compose/ui/input/pointer/InternalPointerEvent;
     .annotation system Ldalvik/annotation/Signature;
@@ -154,18 +154,18 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getButtonState()I
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     move v0, v1
 
-    :goto_1a
+    :goto_0
     invoke-static {v0}, Landroidx/compose/ui/input/pointer/PointerButtons;->constructor-impl(I)I
 
     move-result v0
@@ -177,13 +177,13 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getMetaState()I
 
     move-result v1
 
-    :cond_2a
+    :cond_1
     invoke-static {v1}, Landroidx/compose/ui/input/pointer/PointerKeyboardModifiers;->constructor-impl(I)I
 
     move-result v0
@@ -202,7 +202,7 @@
 .end method
 
 .method private final calculatePointerEventType-7fucELk()I
-    .registers 10
+    .locals 9
 
     .line 54
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerEvent;->getMotionEvent$ui_release()Landroid/view/MotionEvent;
@@ -211,77 +211,77 @@
 
     .line 55
     .local v0, "motionEvent":Landroid/view/MotionEvent;
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_0
 
     .line 56
     invoke-virtual {v0}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
 
-    packed-switch v1, :pswitch_data_78
+    packed-switch v1, :pswitch_data_0
 
     .line 67
-    :pswitch_d
+    :pswitch_0
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;->getUnknown-7fucELk()I
 
     move-result v1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 64
-    :pswitch_14
+    :pswitch_1
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;->getExit-7fucELk()I
 
     move-result v1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 63
-    :pswitch_1b
+    :pswitch_2
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;->getEnter-7fucELk()I
 
     move-result v1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 65
-    :pswitch_22
+    :pswitch_3
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;->getScroll-7fucELk()I
 
     move-result v1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 62
-    :pswitch_29
+    :pswitch_4
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;->getMove-7fucELk()I
 
     move-result v1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 60
-    :pswitch_30
+    :pswitch_5
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;->getRelease-7fucELk()I
 
     move-result v1
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 58
-    :pswitch_37
+    :pswitch_6
     sget-object v1, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
 
     invoke-virtual {v1}, Landroidx/compose/ui/input/pointer/PointerEventType$Companion;->getPress-7fucELk()I
@@ -289,11 +289,11 @@
     move-result v1
 
     .line 56
-    :goto_3d
+    :goto_0
     return v1
 
     .line 71
-    :cond_3e
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/PointerEvent;->changes:Ljava/util/List;
 
     .local v1, "$this$fastForEach$iv":Ljava/util/List;
@@ -311,8 +311,8 @@
 
     move-result v4
 
-    :goto_47
-    if-ge v3, v4, :cond_70
+    :goto_1
+    if-ge v3, v4, :cond_3
 
     .line 204
     invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -334,7 +334,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_5e
+    if-eqz v8, :cond_1
 
     .line 73
     sget-object v4, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
@@ -346,12 +346,12 @@
     return v4
 
     .line 75
-    :cond_5e
+    :cond_1
     invoke-static {v6}, Landroidx/compose/ui/input/pointer/PointerEventKt;->changedToDownIgnoreConsumed(Landroidx/compose/ui/input/pointer/PointerInputChange;)Z
 
     move-result v8
 
-    if-eqz v8, :cond_6b
+    if-eqz v8, :cond_2
 
     .line 76
     sget-object v4, Landroidx/compose/ui/input/pointer/PointerEventType;->Companion:Landroidx/compose/ui/input/pointer/PointerEventType$Companion;
@@ -363,7 +363,7 @@
     return v4
 
     .line 78
-    :cond_6b
+    :cond_2
     nop
 
     .line 205
@@ -375,11 +375,11 @@
     .end local v5    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_47
+    goto :goto_1
 
     .line 207
     .end local v3    # "index$iv":I
-    :cond_70
+    :cond_3
     nop
 
     .line 79
@@ -393,26 +393,26 @@
 
     return v1
 
-    :pswitch_data_78
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_37
-        :pswitch_30
-        :pswitch_29
-        :pswitch_d
-        :pswitch_d
-        :pswitch_37
-        :pswitch_30
-        :pswitch_29
-        :pswitch_22
-        :pswitch_1b
-        :pswitch_14
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+        :pswitch_0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
     .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final component1()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -429,7 +429,7 @@
 .end method
 
 .method public final copy(Ljava/util/List;Landroid/view/MotionEvent;)Landroidx/compose/ui/input/pointer/PointerEvent;
-    .registers 36
+    .locals 33
     .param p1, "changes"    # Ljava/util/List;
     .param p2, "motionEvent"    # Landroid/view/MotionEvent;
     .annotation system Ldalvik/annotation/Signature;
@@ -458,7 +458,7 @@
     nop
 
     .line 91
-    if-nez v2, :cond_17
+    if-nez v2, :cond_0
 
     new-instance v3, Landroidx/compose/ui/input/pointer/PointerEvent;
 
@@ -466,10 +466,10 @@
 
     invoke-direct {v3, v1, v4}, Landroidx/compose/ui/input/pointer/PointerEvent;-><init>(Ljava/util/List;Landroidx/compose/ui/input/pointer/InternalPointerEvent;)V
 
-    goto/16 :goto_e2
+    goto/16 :goto_2
 
     .line 92
-    :cond_17
+    :cond_0
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/input/pointer/PointerEvent;->getMotionEvent$ui_release()Landroid/view/MotionEvent;
 
     move-result-object v3
@@ -478,7 +478,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_1
 
     new-instance v3, Landroidx/compose/ui/input/pointer/PointerEvent;
 
@@ -486,10 +486,10 @@
 
     invoke-direct {v3, v1, v4}, Landroidx/compose/ui/input/pointer/PointerEvent;-><init>(Ljava/util/List;Landroidx/compose/ui/input/pointer/InternalPointerEvent;)V
 
-    goto/16 :goto_e2
+    goto/16 :goto_2
 
     .line 94
-    :cond_2a
+    :cond_1
     new-instance v3, Ljava/util/LinkedHashMap;
 
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
@@ -527,8 +527,8 @@
 
     move-result v8
 
-    :goto_45
-    if-ge v7, v8, :cond_c2
+    :goto_0
+    if-ge v7, v8, :cond_4
 
     .line 210
     invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -607,7 +607,7 @@
 
     const/16 v26, 0x0
 
-    if-eqz v13, :cond_94
+    if-eqz v13, :cond_2
 
     move-object/from16 v31, v5
 
@@ -627,15 +627,15 @@
 
     const/4 v6, 0x1
 
-    if-ne v5, v6, :cond_98
+    if-ne v5, v6, :cond_3
 
-    goto :goto_9a
+    goto :goto_1
 
     .end local v31    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v32    # "$i$f$fastForEach":I
     .restart local v5    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
-    :cond_94
+    :cond_2
     move-object/from16 v31, v5
 
     move/from16 v32, v6
@@ -644,11 +644,11 @@
     .end local v6    # "$i$f$fastForEach":I
     .restart local v31    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v32    # "$i$f$fastForEach":I
-    :cond_98
+    :cond_3
     move/from16 v6, v26
 
     .line 98
-    :goto_9a
+    :goto_1
     const/16 v26, 0x0
 
     const-wide/16 v27, 0x0
@@ -697,13 +697,13 @@
 
     move/from16 v6, v32
 
-    goto :goto_45
+    goto :goto_0
 
     .end local v31    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v32    # "$i$f$fastForEach":I
     .restart local v5    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v6    # "$i$f$fastForEach":I
-    :cond_c2
+    :cond_4
     move-object/from16 v31, v5
 
     move/from16 v32, v6
@@ -757,12 +757,12 @@
     .end local v4    # "pointerEventData":Ljava/util/ArrayList;
     .end local v5    # "pointerInputEvent":Landroidx/compose/ui/input/pointer/PointerInputEvent;
     .end local v6    # "event":Landroidx/compose/ui/input/pointer/InternalPointerEvent;
-    :goto_e2
+    :goto_2
     return-object v3
 .end method
 
 .method public final getButtons-ry648PA()I
-    .registers 2
+    .locals 1
 
     .line 46
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerEvent;->buttons:I
@@ -771,7 +771,7 @@
 .end method
 
 .method public final getChanges()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -788,7 +788,7 @@
 .end method
 
 .method public final getInternalPointerEvent$ui_release()Landroidx/compose/ui/input/pointer/InternalPointerEvent;
-    .registers 2
+    .locals 1
 
     .line 36
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerEvent;->internalPointerEvent:Landroidx/compose/ui/input/pointer/InternalPointerEvent;
@@ -797,7 +797,7 @@
 .end method
 
 .method public final getKeyboardModifiers-k7X9c1A()I
-    .registers 2
+    .locals 1
 
     .line 48
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerEvent;->keyboardModifiers:I
@@ -806,28 +806,28 @@
 .end method
 
 .method public final getMotionEvent$ui_release()Landroid/view/MotionEvent;
-    .registers 2
+    .locals 1
 
     .line 39
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerEvent;->internalPointerEvent:Landroidx/compose/ui/input/pointer/InternalPointerEvent;
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/input/pointer/InternalPointerEvent;->getMotionEvent()Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_0
 
-    :cond_9
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_a
+    :goto_0
     return-object v0
 .end method
 
 .method public final getType-7fucELk()I
-    .registers 2
+    .locals 1
 
     .line 50
     iget v0, p0, Landroidx/compose/ui/input/pointer/PointerEvent;->type:I
@@ -836,7 +836,7 @@
 .end method
 
 .method public final setType-EhbLWgg$ui_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 51

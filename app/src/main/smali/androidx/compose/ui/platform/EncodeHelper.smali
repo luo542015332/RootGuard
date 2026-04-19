@@ -75,7 +75,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -98,7 +98,7 @@
 
 # virtual methods
 .method public final encode(B)V
-    .registers 3
+    .locals 1
     .param p1, "byte"    # B
 
     .line 266
@@ -111,7 +111,7 @@
 .end method
 
 .method public final encode(F)V
-    .registers 3
+    .locals 1
     .param p1, "float"    # F
 
     .line 274
@@ -124,7 +124,7 @@
 .end method
 
 .method public final encode(I)V
-    .registers 3
+    .locals 1
     .param p1, "int"    # I
 
     .line 270
@@ -137,7 +137,7 @@
 .end method
 
 .method public final encode(Landroidx/compose/ui/graphics/Shadow;)V
-    .registers 4
+    .locals 2
     .param p1, "shadow"    # Landroidx/compose/ui/graphics/Shadow;
 
     const-string/jumbo v0, "shadow"
@@ -185,7 +185,7 @@
 .end method
 
 .method public final encode(Landroidx/compose/ui/text/SpanStyle;)V
-    .registers 6
+    .locals 4
     .param p1, "spanStyle"    # Landroidx/compose/ui/text/SpanStyle;
 
     const-string/jumbo v0, "spanStyle"
@@ -207,7 +207,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_21
+    if-nez v0, :cond_0
 
     .line 145
     const/4 v0, 0x1
@@ -222,7 +222,7 @@
     invoke-virtual {p0, v0, v1}, Landroidx/compose/ui/platform/EncodeHelper;->encode-8_81llA(J)V
 
     .line 148
-    :cond_21
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getFontSize-XSAIIZE()J
 
     move-result-wide v0
@@ -237,7 +237,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_3c
+    if-nez v0, :cond_1
 
     .line 149
     const/4 v0, 0x2
@@ -252,12 +252,12 @@
     invoke-virtual {p0, v0, v1}, Landroidx/compose/ui/platform/EncodeHelper;->encode--R2X_6o(J)V
 
     .line 152
-    :cond_3c
+    :cond_1
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getFontWeight()Landroidx/compose/ui/text/font/FontWeight;
 
     move-result-object v0
 
-    if-eqz v0, :cond_4c
+    if-eqz v0, :cond_2
 
     .local v0, "it":Landroidx/compose/ui/text/font/FontWeight;
     const/4 v1, 0x0
@@ -280,12 +280,12 @@
     nop
 
     .line 157
-    :cond_4c
+    :cond_2
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getFontStyle-4Lr2A7w()Landroidx/compose/ui/text/font/FontStyle;
 
     move-result-object v0
 
-    if-eqz v0, :cond_60
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontStyle;->unbox-impl()I
 
@@ -312,12 +312,12 @@
     nop
 
     .line 162
-    :cond_60
+    :cond_3
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getFontSynthesis-ZQGJjVo()Landroidx/compose/ui/text/font/FontSynthesis;
 
     move-result-object v0
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontSynthesis;->unbox-impl()I
 
@@ -344,12 +344,12 @@
     nop
 
     .line 167
-    :cond_74
+    :cond_4
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getFontFeatureSettings()Ljava/lang/String;
 
     move-result-object v0
 
-    if-eqz v0, :cond_84
+    if-eqz v0, :cond_5
 
     .local v0, "it":Ljava/lang/String;
     const/4 v1, 0x0
@@ -372,7 +372,7 @@
     nop
 
     .line 172
-    :cond_84
+    :cond_5
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getLetterSpacing-XSAIIZE()J
 
     move-result-wide v0
@@ -387,7 +387,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_9f
+    if-nez v0, :cond_6
 
     .line 173
     const/4 v0, 0x7
@@ -402,12 +402,12 @@
     invoke-virtual {p0, v0, v1}, Landroidx/compose/ui/platform/EncodeHelper;->encode--R2X_6o(J)V
 
     .line 177
-    :cond_9f
+    :cond_6
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getBaselineShift-5SSeXJ0()Landroidx/compose/ui/text/style/BaselineShift;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b4
+    if-eqz v0, :cond_7
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/style/BaselineShift;->unbox-impl()F
 
@@ -434,12 +434,12 @@
     nop
 
     .line 182
-    :cond_b4
+    :cond_7
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getTextGeometricTransform()Landroidx/compose/ui/text/style/TextGeometricTransform;
 
     move-result-object v0
 
-    if-eqz v0, :cond_c5
+    if-eqz v0, :cond_8
 
     .local v0, "it":Landroidx/compose/ui/text/style/TextGeometricTransform;
     const/4 v1, 0x0
@@ -462,7 +462,7 @@
     nop
 
     .line 187
-    :cond_c5
+    :cond_8
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getBackground-0d7_KjU()J
 
     move-result-wide v0
@@ -477,7 +477,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_e1
+    if-nez v0, :cond_9
 
     .line 188
     const/16 v0, 0xa
@@ -492,12 +492,12 @@
     invoke-virtual {p0, v0, v1}, Landroidx/compose/ui/platform/EncodeHelper;->encode-8_81llA(J)V
 
     .line 192
-    :cond_e1
+    :cond_9
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getTextDecoration()Landroidx/compose/ui/text/style/TextDecoration;
 
     move-result-object v0
 
-    if-eqz v0, :cond_f2
+    if-eqz v0, :cond_a
 
     .local v0, "it":Landroidx/compose/ui/text/style/TextDecoration;
     const/4 v1, 0x0
@@ -520,12 +520,12 @@
     nop
 
     .line 197
-    :cond_f2
+    :cond_a
     invoke-virtual {p1}, Landroidx/compose/ui/text/SpanStyle;->getShadow()Landroidx/compose/ui/graphics/Shadow;
 
     move-result-object v0
 
-    if-eqz v0, :cond_103
+    if-eqz v0, :cond_b
 
     .local v0, "it":Landroidx/compose/ui/graphics/Shadow;
     const/4 v1, 0x0
@@ -548,12 +548,12 @@
     nop
 
     .line 201
-    :cond_103
+    :cond_b
     return-void
 .end method
 
 .method public final encode(Landroidx/compose/ui/text/font/FontWeight;)V
-    .registers 3
+    .locals 1
     .param p1, "fontWeight"    # Landroidx/compose/ui/text/font/FontWeight;
 
     const-string/jumbo v0, "fontWeight"
@@ -572,7 +572,7 @@
 .end method
 
 .method public final encode(Landroidx/compose/ui/text/style/TextDecoration;)V
-    .registers 3
+    .locals 1
     .param p1, "textDecoration"    # Landroidx/compose/ui/text/style/TextDecoration;
 
     const-string/jumbo v0, "textDecoration"
@@ -591,7 +591,7 @@
 .end method
 
 .method public final encode(Landroidx/compose/ui/text/style/TextGeometricTransform;)V
-    .registers 3
+    .locals 1
     .param p1, "textGeometricTransform"    # Landroidx/compose/ui/text/style/TextGeometricTransform;
 
     const-string/jumbo v0, "textGeometricTransform"
@@ -617,7 +617,7 @@
 .end method
 
 .method public final encode(Ljava/lang/String;)V
-    .registers 3
+    .locals 1
     .param p1, "string"    # Ljava/lang/String;
 
     const-string/jumbo v0, "string"
@@ -634,7 +634,7 @@
 .end method
 
 .method public final encode--R2X_6o(J)V
-    .registers 9
+    .locals 6
     .param p1, "textUnit"    # J
 
     .line 208
@@ -655,12 +655,12 @@
 
     const/4 v3, 0x0
 
-    if-eqz v2, :cond_12
+    if-eqz v2, :cond_0
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 210
-    :cond_12
+    :cond_0
     sget-object v2, Landroidx/compose/ui/unit/TextUnitType;->Companion:Landroidx/compose/ui/unit/TextUnitType$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/unit/TextUnitType$Companion;->getSp-UIouoOA()J
@@ -671,14 +671,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_1
 
     const/4 v3, 0x1
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 211
-    :cond_20
+    :cond_1
     sget-object v2, Landroidx/compose/ui/unit/TextUnitType;->Companion:Landroidx/compose/ui/unit/TextUnitType$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/unit/TextUnitType$Companion;->getEm-UIouoOA()J
@@ -689,18 +689,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2e
+    if-eqz v0, :cond_2
 
     const/4 v3, 0x2
 
-    goto :goto_2f
+    goto :goto_0
 
     .line 212
-    :cond_2e
+    :cond_2
     nop
 
     .line 208
-    :goto_2f
+    :goto_0
     move v0, v3
 
     .line 214
@@ -722,7 +722,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_4a
+    if-nez v1, :cond_3
 
     .line 216
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/TextUnit;->getValue-impl(J)F
@@ -732,12 +732,12 @@
     invoke-virtual {p0, v1}, Landroidx/compose/ui/platform/EncodeHelper;->encode(F)V
 
     .line 218
-    :cond_4a
+    :cond_3
     return-void
 .end method
 
 .method public final encode-4Dl_Bck(F)V
-    .registers 2
+    .locals 0
     .param p1, "baselineShift"    # F
 
     .line 246
@@ -748,7 +748,7 @@
 .end method
 
 .method public final encode-6p3vJLY(I)V
-    .registers 4
+    .locals 2
     .param p1, "fontSynthesis"    # I
 
     .line 235
@@ -767,12 +767,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 237
-    :cond_f
+    :cond_0
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontSynthesis$Companion;->getAll-GVVA2EU()I
@@ -783,14 +783,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 238
-    :cond_1d
+    :cond_1
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontSynthesis$Companion;->getWeight-GVVA2EU()I
@@ -801,14 +801,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2
 
     const/4 v1, 0x2
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 239
-    :cond_2b
+    :cond_2
     sget-object v0, Landroidx/compose/ui/text/font/FontSynthesis;->Companion:Landroidx/compose/ui/text/font/FontSynthesis$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontSynthesis$Companion;->getStyle-GVVA2EU()I
@@ -819,18 +819,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_39
+    if-eqz v0, :cond_3
 
     const/4 v1, 0x3
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 240
-    :cond_39
+    :cond_3
     nop
 
     .line 235
-    :goto_3a
+    :goto_0
     move v0, v1
 
     .line 242
@@ -842,7 +842,7 @@
 .end method
 
 .method public final encode-8_81llA(J)V
-    .registers 3
+    .locals 0
     .param p1, "color"    # J
 
     .line 204
@@ -853,7 +853,7 @@
 .end method
 
 .method public final encode-VKZWuLQ(J)V
-    .registers 4
+    .locals 1
     .param p1, "uLong"    # J
 
     .line 278
@@ -866,7 +866,7 @@
 .end method
 
 .method public final encode-nzbMABs(I)V
-    .registers 4
+    .locals 2
     .param p1, "fontStyle"    # I
 
     .line 225
@@ -888,12 +888,12 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 228
-    :cond_10
+    :cond_0
     sget-object v0, Landroidx/compose/ui/text/font/FontStyle;->Companion:Landroidx/compose/ui/text/font/FontStyle$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/text/font/FontStyle$Companion;->getItalic-_-LCdwA()I
@@ -904,18 +904,18 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1
 
     const/4 v1, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 229
-    :cond_1e
+    :cond_1
     nop
 
     .line 225
-    :goto_1f
+    :goto_0
     invoke-virtual {p0, v1}, Landroidx/compose/ui/platform/EncodeHelper;->encode(B)V
 
     .line 232
@@ -923,7 +923,7 @@
 .end method
 
 .method public final encodedString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 139
     iget-object v0, p0, Landroidx/compose/ui/platform/EncodeHelper;->parcel:Landroid/os/Parcel;
@@ -948,7 +948,7 @@
 .end method
 
 .method public final reset()V
-    .registers 3
+    .locals 2
 
     .line 134
     iget-object v0, p0, Landroidx/compose/ui/platform/EncodeHelper;->parcel:Landroid/os/Parcel;

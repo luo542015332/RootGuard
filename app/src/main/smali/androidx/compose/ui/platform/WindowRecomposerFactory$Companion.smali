@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/WindowRecomposerFactory$Companion;
 
@@ -65,7 +65,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 153
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -74,7 +74,7 @@
 .end method
 
 .method public static synthetic getLifecycleAware$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public final getLifecycleAware()Landroidx/compose/ui/platform/WindowRecomposerFactory;
-    .registers 2
+    .locals 1
 
     .line 167
     sget-object v0, Landroidx/compose/ui/platform/WindowRecomposerFactory$Companion;->LifecycleAware:Landroidx/compose/ui/platform/WindowRecomposerFactory;

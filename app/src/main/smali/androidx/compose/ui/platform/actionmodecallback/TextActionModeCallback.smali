@@ -122,7 +122,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 10
+    .locals 9
 
     const/4 v1, 0x0
 
@@ -148,7 +148,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/geometry/Rect;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V
-    .registers 8
+    .locals 1
     .param p1, "onActionModeDestroy"    # Lkotlin/jvm/functions/Function0;
     .param p2, "rect"    # Landroidx/compose/ui/geometry/Rect;
     .param p3, "onCopyRequested"    # Lkotlin/jvm/functions/Function0;
@@ -207,28 +207,28 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/geometry/Rect;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 14
+    .locals 5
 
     .line 25
     and-int/lit8 p8, p7, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p8, :cond_7
+    if-eqz p8, :cond_0
 
     .line 26
     move-object p8, v0
 
-    goto :goto_8
+    goto :goto_0
 
     .line 25
-    :cond_7
+    :cond_0
     move-object p8, p1
 
-    :goto_8
+    :goto_0
     and-int/lit8 p1, p7, 0x2
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_1
 
     .line 27
     sget-object p1, Landroidx/compose/ui/geometry/Rect;->Companion:Landroidx/compose/ui/geometry/Rect$Companion;
@@ -239,69 +239,69 @@
 
     move-object v1, p2
 
-    goto :goto_15
+    goto :goto_1
 
     .line 25
-    :cond_14
+    :cond_1
     move-object v1, p2
 
-    :goto_15
+    :goto_1
     and-int/lit8 p1, p7, 0x4
 
-    if-eqz p1, :cond_1b
+    if-eqz p1, :cond_2
 
     .line 28
     move-object v2, v0
 
-    goto :goto_1c
+    goto :goto_2
 
     .line 25
-    :cond_1b
+    :cond_2
     move-object v2, p3
 
-    :goto_1c
+    :goto_2
     and-int/lit8 p1, p7, 0x8
 
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_3
 
     .line 29
     move-object v3, v0
 
-    goto :goto_23
+    goto :goto_3
 
     .line 25
-    :cond_22
+    :cond_3
     move-object v3, p4
 
-    :goto_23
+    :goto_3
     and-int/lit8 p1, p7, 0x10
 
-    if-eqz p1, :cond_29
+    if-eqz p1, :cond_4
 
     .line 30
     move-object v4, v0
 
-    goto :goto_2a
+    goto :goto_4
 
     .line 25
-    :cond_29
+    :cond_4
     move-object v4, p5
 
-    :goto_2a
+    :goto_4
     and-int/lit8 p1, p7, 0x20
 
-    if-eqz p1, :cond_30
+    if-eqz p1, :cond_5
 
     .line 31
     move-object p7, v0
 
-    goto :goto_31
+    goto :goto_5
 
     .line 25
-    :cond_30
+    :cond_5
     move-object p7, p6
 
-    :goto_31
+    :goto_5
     move-object p1, p0
 
     move-object p2, p8
@@ -321,7 +321,7 @@
 .end method
 
 .method private final addOrRemoveMenuItem(Landroid/view/Menu;Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;Lkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 1
     .param p1, "menu"    # Landroid/view/Menu;
     .param p2, "item"    # Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
     .param p3, "callback"    # Lkotlin/jvm/functions/Function0;
@@ -340,7 +340,7 @@
     nop
 
     .line 95
-    if-eqz p3, :cond_11
+    if-eqz p3, :cond_0
 
     invoke-virtual {p2}, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->getId()I
 
@@ -350,15 +350,15 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_11
+    if-nez v0, :cond_0
 
     invoke-virtual {p0, p1, p2}, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->addMenuItem$ui_release(Landroid/view/Menu;Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;)V
 
-    goto :goto_24
+    goto :goto_0
 
     .line 96
-    :cond_11
-    if-nez p3, :cond_24
+    :cond_0
+    if-nez p3, :cond_1
 
     invoke-virtual {p2}, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->getId()I
 
@@ -368,7 +368,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_1
 
     invoke-virtual {p2}, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->getId()I
 
@@ -377,15 +377,15 @@
     invoke-interface {p1, v0}, Landroid/view/Menu;->removeItem(I)V
 
     .line 98
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 
 # virtual methods
 .method public final addMenuItem$ui_release(Landroid/view/Menu;Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;)V
-    .registers 7
+    .locals 4
     .param p1, "menu"    # Landroid/view/Menu;
     .param p2, "item"    # Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
 
@@ -426,7 +426,7 @@
 .end method
 
 .method public final getOnActionModeDestroy()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -443,7 +443,7 @@
 .end method
 
 .method public final getOnCopyRequested()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -460,7 +460,7 @@
 .end method
 
 .method public final getOnCutRequested()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -477,7 +477,7 @@
 .end method
 
 .method public final getOnPasteRequested()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -494,7 +494,7 @@
 .end method
 
 .method public final getOnSelectAllRequested()Lkotlin/jvm/functions/Function0;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -511,7 +511,7 @@
 .end method
 
 .method public final getRect()Landroidx/compose/ui/geometry/Rect;
-    .registers 2
+    .locals 1
 
     .line 27
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->rect:Landroidx/compose/ui/geometry/Rect;
@@ -520,7 +520,7 @@
 .end method
 
 .method public final onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
-    .registers 5
+    .locals 2
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "item"    # Landroid/view/MenuItem;
 
@@ -538,105 +538,105 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_17
+    if-ne v0, v1, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onCopyRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    goto :goto_46
+    goto :goto_0
 
     .line 63
-    :cond_17
+    :cond_0
     sget-object v1, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->Paste:Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
 
     invoke-virtual {v1}, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->getId()I
 
     move-result v1
 
-    if-ne v0, v1, :cond_27
+    if-ne v0, v1, :cond_1
 
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onPasteRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    goto :goto_46
+    goto :goto_0
 
     .line 64
-    :cond_27
+    :cond_1
     sget-object v1, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->Cut:Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
 
     invoke-virtual {v1}, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->getId()I
 
     move-result v1
 
-    if-ne v0, v1, :cond_37
+    if-ne v0, v1, :cond_2
 
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onCutRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
-    goto :goto_46
+    goto :goto_0
 
     .line 65
-    :cond_37
+    :cond_2
     sget-object v1, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->SelectAll:Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;
 
     invoke-virtual {v1}, Landroidx/compose/ui/platform/actionmodecallback/MenuItemOption;->getId()I
 
     move-result v1
 
-    if-ne v0, v1, :cond_4d
+    if-ne v0, v1, :cond_5
 
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onSelectAllRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     .line 68
-    :cond_46
-    :goto_46
-    if-eqz p1, :cond_4b
+    :cond_3
+    :goto_0
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
 
     .line 69
-    :cond_4b
+    :cond_4
     const/4 v0, 0x1
 
     return v0
 
     .line 66
-    :cond_4d
+    :cond_5
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public final onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 6
+    .locals 3
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "menu"    # Landroid/view/Menu;
 
     .line 34
     const-string/jumbo v0, "Required value was null."
 
-    if-eqz p2, :cond_43
+    if-eqz p2, :cond_5
 
     .line 35
-    if-eqz p1, :cond_39
+    if-eqz p1, :cond_4
 
     .line 37
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onCopyRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     .local v0, "it":Lkotlin/jvm/functions/Function0;
     const/4 v1, 0x0
@@ -656,10 +656,10 @@
     nop
 
     .line 40
-    :cond_13
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onPasteRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1
 
     .restart local v0    # "it":Lkotlin/jvm/functions/Function0;
     const/4 v1, 0x0
@@ -679,10 +679,10 @@
     nop
 
     .line 43
-    :cond_1f
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onCutRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_2b
+    if-eqz v0, :cond_2
 
     .restart local v0    # "it":Lkotlin/jvm/functions/Function0;
     const/4 v1, 0x0
@@ -702,10 +702,10 @@
     nop
 
     .line 46
-    :cond_2b
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onSelectAllRequested:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3
 
     .restart local v0    # "it":Lkotlin/jvm/functions/Function0;
     const/4 v1, 0x0
@@ -725,13 +725,13 @@
     nop
 
     .line 49
-    :cond_37
+    :cond_3
     const/4 v0, 0x1
 
     return v0
 
     .line 35
-    :cond_39
+    :cond_4
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -743,7 +743,7 @@
     throw v1
 
     .line 34
-    :cond_43
+    :cond_5
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -756,34 +756,34 @@
 .end method
 
 .method public final onDestroyActionMode()V
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->onActionModeDestroy:Lkotlin/jvm/functions/Function0;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     .line 74
-    :cond_7
+    :cond_0
     return-void
 .end method
 
 .method public final onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
-    .registers 4
+    .locals 1
     .param p1, "mode"    # Landroid/view/ActionMode;
     .param p2, "menu"    # Landroid/view/Menu;
 
     .line 54
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_1
 
-    if-nez p2, :cond_5
+    if-nez p2, :cond_0
 
-    goto :goto_a
+    goto :goto_0
 
     .line 55
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p2}, Landroidx/compose/ui/platform/actionmodecallback/TextActionModeCallback;->updateMenuItems$ui_release(Landroid/view/Menu;)V
 
     .line 57
@@ -792,15 +792,15 @@
     return v0
 
     .line 54
-    :cond_a
-    :goto_a
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public final setOnCopyRequested(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -818,7 +818,7 @@
 .end method
 
 .method public final setOnCutRequested(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -836,7 +836,7 @@
 .end method
 
 .method public final setOnPasteRequested(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -854,7 +854,7 @@
 .end method
 
 .method public final setOnSelectAllRequested(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -872,7 +872,7 @@
 .end method
 
 .method public final setRect(Landroidx/compose/ui/geometry/Rect;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/geometry/Rect;
 
     const-string v0, "<set-?>"
@@ -886,7 +886,7 @@
 .end method
 
 .method public final updateMenuItems$ui_release(Landroid/view/Menu;)V
-    .registers 4
+    .locals 2
     .param p1, "menu"    # Landroid/view/Menu;
 
     const-string/jumbo v0, "menu"

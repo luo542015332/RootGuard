@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
-    .registers 3
+    .locals 1
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     const-string/jumbo v0, "bitmap"
@@ -81,7 +81,7 @@
 
 # virtual methods
 .method public final getBitmap$ui_graphics_release()Landroid/graphics/Bitmap;
-    .registers 2
+    .locals 1
 
     .line 67
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidImageBitmap;->bitmap:Landroid/graphics/Bitmap;
@@ -90,7 +90,7 @@
 .end method
 
 .method public getColorSpace()Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 4
+    .locals 3
 
     .line 79
     nop
@@ -119,7 +119,7 @@
 .end method
 
 .method public getConfig-_sVssgQ()I
-    .registers 3
+    .locals 2
 
     .line 76
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidImageBitmap;->bitmap:Landroid/graphics/Bitmap;
@@ -140,7 +140,7 @@
 .end method
 
 .method public getHasAlpha()Z
-    .registers 2
+    .locals 1
 
     .line 133
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidImageBitmap;->bitmap:Landroid/graphics/Bitmap;
@@ -153,7 +153,7 @@
 .end method
 
 .method public getHeight()I
-    .registers 2
+    .locals 1
 
     .line 73
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidImageBitmap;->bitmap:Landroid/graphics/Bitmap;
@@ -166,7 +166,7 @@
 .end method
 
 .method public getWidth()I
-    .registers 2
+    .locals 1
 
     .line 70
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidImageBitmap;->bitmap:Landroid/graphics/Bitmap;
@@ -179,7 +179,7 @@
 .end method
 
 .method public prepareToDraw()V
-    .registers 2
+    .locals 1
 
     .line 136
     iget-object v0, p0, Landroidx/compose/ui/graphics/AndroidImageBitmap;->bitmap:Landroid/graphics/Bitmap;
@@ -191,7 +191,7 @@
 .end method
 
 .method public readPixels([IIIIIII)V
-    .registers 19
+    .locals 11
     .param p1, "buffer"    # [I
     .param p2, "startX"    # I
     .param p3, "startY"    # I
@@ -230,17 +230,17 @@
 
     sget-object v3, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
-    if-eq v2, v3, :cond_1b
+    if-eq v2, v3, :cond_0
 
     .line 104
     move v10, v1
 
     move-object v1, v0
 
-    goto :goto_25
+    goto :goto_0
 
     .line 108
-    :cond_1b
+    :cond_0
     const/4 v1, 0x1
 
     .line 114
@@ -259,7 +259,7 @@
     .line 101
     .end local v1    # "recycleTarget":Z
     .local v10, "recycleTarget":Z
-    :goto_25
+    :goto_0
     nop
 
     .line 100
@@ -308,12 +308,12 @@
     invoke-virtual/range {v1 .. v8}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
     .line 127
-    if-eqz v10, :cond_41
+    if-eqz v10, :cond_1
 
     .line 128
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
     .line 130
-    :cond_41
+    :cond_1
     return-void
 .end method

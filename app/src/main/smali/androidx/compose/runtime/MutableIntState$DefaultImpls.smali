@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getValue(Landroidx/compose/runtime/MutableIntState;)Ljava/lang/Integer;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/MutableIntState;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -44,14 +44,13 @@
 .end method
 
 .method public static setValue(Landroidx/compose/runtime/MutableIntState;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/MutableIntState;
     .param p1, "value"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 94
-    # invokes: Landroidx/compose/runtime/MutableIntState;->setValue(I)V
     invoke-static {p0, p1}, Landroidx/compose/runtime/MutableIntState;->access$setValue$jd(Landroidx/compose/runtime/MutableIntState;I)V
 
     return-void

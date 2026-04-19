@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/input/InputMode$Companion;-><init>()V
 
@@ -61,10 +61,9 @@
 
 # virtual methods
 .method public final getKeyboard-aOaMEAU()I
-    .registers 2
+    .locals 1
 
     .line 64
-    # getter for: Landroidx/compose/ui/input/InputMode;->Keyboard:I
     invoke-static {}, Landroidx/compose/ui/input/InputMode;->access$getKeyboard$cp()I
 
     move-result v0
@@ -73,10 +72,9 @@
 .end method
 
 .method public final getTouch-aOaMEAU()I
-    .registers 2
+    .locals 1
 
     .line 59
-    # getter for: Landroidx/compose/ui/input/InputMode;->Touch:I
     invoke-static {}, Landroidx/compose/ui/input/InputMode;->access$getTouch$cp()I
 
     move-result v0

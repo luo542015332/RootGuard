@@ -33,7 +33,7 @@
 
 # direct methods
 .method public static final TransformOrigin(FF)J
-    .registers 11
+    .locals 9
     .param p0, "pivotFractionX"    # F
     .param p1, "pivotFractionY"    # F
 

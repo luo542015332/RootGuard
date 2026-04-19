@@ -56,7 +56,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/lazy/grid/LazyGridState;I)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     move-object v0, p1
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 6
+    .locals 3
 
     iget-object v0, p0, Landroidx/compose/foundation/lazy/grid/LazyGridKt$ScrollPositionUpdater$1;->$itemProviderLambda:Lkotlin/jvm/functions/Function0;
 
@@ -121,7 +121,6 @@
 
     move-result v2
 
-    # invokes: Landroidx/compose/foundation/lazy/grid/LazyGridKt;->ScrollPositionUpdater(Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/runtime/Composer;I)V
     invoke-static {v0, v1, p1, v2}, Landroidx/compose/foundation/lazy/grid/LazyGridKt;->access$ScrollPositionUpdater(Lkotlin/jvm/functions/Function0;Landroidx/compose/foundation/lazy/grid/LazyGridState;Landroidx/compose/runtime/Composer;I)V
 
     return-void

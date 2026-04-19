@@ -90,7 +90,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;)V
-    .registers 4
+    .locals 1
     .param p1, "connection"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p2, "dispatcher"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
@@ -108,18 +108,18 @@
     nop
 
     .line 54
-    if-nez p2, :cond_14
+    if-nez p2, :cond_0
 
     new-instance v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
     invoke-direct {v0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;-><init>()V
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move-object v0, p2
 
-    :goto_15
+    :goto_0
     iput-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
     .line 55
@@ -145,7 +145,7 @@
 .end method
 
 .method public static final synthetic access$getNestedCoroutineScope(Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;)Lkotlinx/coroutines/CoroutineScope;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
 
     .line 45
@@ -157,23 +157,23 @@
 .end method
 
 .method private final getNestedCoroutineScope()Lkotlinx/coroutines/CoroutineScope;
-    .registers 3
+    .locals 2
 
     .line 67
     invoke-direct {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->getParentModifierLocal()Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-direct {v0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->getNestedCoroutineScope()Lkotlinx/coroutines/CoroutineScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     .line 68
-    :cond_c
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
     invoke-virtual {v0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;->getScope$ui_release()Lkotlinx/coroutines/CoroutineScope;
@@ -181,14 +181,14 @@
     move-result-object v0
 
     .line 67
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_2
 
     .line 72
-    :cond_14
+    :cond_1
     return-object v0
 
     .line 69
-    :cond_15
+    :cond_2
     new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 70
@@ -203,14 +203,14 @@
 .end method
 
 .method private final getParentConnection()Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
-    .registers 2
+    .locals 1
 
     .line 61
     invoke-virtual {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->isAttached()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-static {}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNodeKt;->getModifierLocalNestedScroll()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
 
@@ -224,24 +224,24 @@
 
     check-cast v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     return-object v0
 .end method
 
 .method private final getParentModifierLocal()Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
-    .registers 2
+    .locals 1
 
     .line 58
     invoke-virtual {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->isAttached()Z
 
     move-result v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_0
 
     invoke-static {}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNodeKt;->getModifierLocalNestedScroll()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
 
@@ -255,17 +255,17 @@
 
     check-cast v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     return-object v0
 .end method
 
 .method private final resetDispatcherFields()V
-    .registers 3
+    .locals 2
 
     .line 155
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
@@ -274,7 +274,7 @@
 
     move-result-object v0
 
-    if-ne v0, p0, :cond_e
+    if-ne v0, p0, :cond_0
 
     .line 156
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
@@ -284,19 +284,19 @@
     invoke-virtual {v0, v1}, Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;->setModifierLocalNode$ui_release(Landroidx/compose/ui/modifier/ModifierLocalModifierNode;)V
 
     .line 157
-    :cond_e
+    :cond_0
     return-void
 .end method
 
 .method private final updateDispatcher(Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;)V
-    .registers 3
+    .locals 1
     .param p1, "newDispatcher"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
     .line 115
     invoke-direct {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resetDispatcherFields()V
 
     .line 118
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     .line 119
     new-instance v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
@@ -305,40 +305,40 @@
 
     iput-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
-    goto :goto_17
+    goto :goto_0
 
     .line 120
-    :cond_d
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 121
     iput-object p1, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 
     .line 125
-    :cond_17
-    :goto_17
+    :cond_1
+    :goto_0
     invoke-virtual {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->isAttached()Z
 
     move-result v0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_2
 
     .line 126
     invoke-direct {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->updateDispatcherFields()V
 
     .line 128
-    :cond_20
+    :cond_2
     return-void
 .end method
 
 .method private final updateDispatcherFields()V
-    .registers 3
+    .locals 2
 
     .line 147
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resolvedDispatcher:Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
@@ -376,7 +376,7 @@
 
 # virtual methods
 .method public final getConnection()Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
-    .registers 2
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->connection:Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
@@ -385,7 +385,7 @@
 .end method
 
 .method public getProvidedValues()Landroidx/compose/ui/modifier/ModifierLocalMap;
-    .registers 2
+    .locals 1
 
     .line 64
     iget-object v0, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->providedValues:Landroidx/compose/ui/modifier/ModifierLocalMap;
@@ -394,7 +394,7 @@
 .end method
 
 .method public onAttach()V
-    .registers 1
+    .locals 0
 
     .line 135
     invoke-direct {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->updateDispatcherFields()V
@@ -404,7 +404,7 @@
 .end method
 
 .method public onDetach()V
-    .registers 1
+    .locals 0
 
     .line 139
     invoke-direct {p0}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->resetDispatcherFields()V
@@ -414,7 +414,7 @@
 .end method
 
 .method public onPostFling-RZ2iAVY(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 21
+    .locals 15
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JJ",
@@ -430,7 +430,7 @@
 
     instance-of v1, v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPostFling$1;
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     move-object v1, v0
 
@@ -442,7 +442,7 @@
 
     and-int/2addr v2, v3
 
-    if-eqz v2, :cond_18
+    if-eqz v2, :cond_0
 
     iget v0, v1, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPostFling$1;->label:I
 
@@ -454,9 +454,9 @@
 
     move-object v2, p0
 
-    goto :goto_1f
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     new-instance v1, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPostFling$1;
 
     move-object v2, p0
@@ -466,7 +466,7 @@
     move-object v0, v1
 
     .local v0, "$continuation":Lkotlin/coroutines/Continuation;
-    :goto_1f
+    :goto_0
     iget-object v1, v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPostFling$1;->result:Ljava/lang/Object;
 
     .local v1, "$result":Ljava/lang/Object;
@@ -477,7 +477,7 @@
     .line 103
     iget v3, v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPostFling$1;->label:I
 
-    packed-switch v3, :pswitch_data_a4
+    packed-switch v3, :pswitch_data_0
 
     .end local v0    # "$continuation":Lkotlin/coroutines/Continuation;
     .end local v1    # "$result":Ljava/lang/Object;
@@ -491,7 +491,7 @@
 
     .restart local v0    # "$continuation":Lkotlin/coroutines/Continuation;
     .restart local v1    # "$result":Ljava/lang/Object;
-    :pswitch_33
+    :pswitch_0
     iget-wide v3, v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPostFling$1;->J$0:J
 
     .local v3, "selfConsumed":J
@@ -501,10 +501,10 @@
 
     move-object v3, v1
 
-    goto :goto_8c
+    goto :goto_2
 
     .end local v3    # "selfConsumed":J
-    :pswitch_3b
+    :pswitch_1
     iget-wide v3, v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPostFling$1;->J$1:J
 
     .local v3, "available":J
@@ -522,12 +522,12 @@
 
     move-object v3, v1
 
-    goto :goto_68
+    goto :goto_1
 
     .end local v3    # "available":J
     .end local v5    # "consumed":J
     .end local v7    # "this":Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
-    :pswitch_49
+    :pswitch_2
     invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v10, p0
@@ -562,13 +562,13 @@
 
     move-result-object v3
 
-    if-ne v3, v9, :cond_66
+    if-ne v3, v9, :cond_1
 
     .line 103
     return-object v9
 
     .line 105
-    :cond_66
+    :cond_1
     move-object v7, v10
 
     move-wide v5, v11
@@ -577,7 +577,7 @@
     .end local v11    # "consumed":J
     .restart local v5    # "consumed":J
     .restart local v7    # "this":Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
-    :goto_68
+    :goto_1
     check-cast v3, Landroidx/compose/ui/unit/Velocity;
 
     invoke-virtual {v3}, Landroidx/compose/ui/unit/Velocity;->unbox-impl()J
@@ -591,7 +591,7 @@
     move-result-object v3
 
     .end local v7    # "this":Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
-    if-eqz v3, :cond_93
+    if-eqz v3, :cond_3
 
     .line 107
     invoke-static {v5, v6, v10, v11}, Landroidx/compose/ui/unit/Velocity;->plus-AH228Gc(JJ)J
@@ -622,24 +622,24 @@
 
     move-result-object v3
 
-    if-ne v3, v9, :cond_8c
+    if-ne v3, v9, :cond_2
 
     .line 103
     return-object v9
 
     .line 106
-    :cond_8c
-    :goto_8c
+    :cond_2
+    :goto_2
     check-cast v3, Landroidx/compose/ui/unit/Velocity;
 
     invoke-virtual {v3}, Landroidx/compose/ui/unit/Velocity;->unbox-impl()J
 
     move-result-wide v3
 
-    goto :goto_99
+    goto :goto_3
 
     .line 109
-    :cond_93
+    :cond_3
     sget-object v3, Landroidx/compose/ui/unit/Velocity;->Companion:Landroidx/compose/ui/unit/Velocity$Companion;
 
     invoke-virtual {v3}, Landroidx/compose/ui/unit/Velocity$Companion;->getZero-9UxMQ8M()J
@@ -647,7 +647,7 @@
     move-result-wide v3
 
     .line 106
-    :goto_99
+    :goto_3
     nop
 
     .line 110
@@ -664,16 +664,16 @@
 
     nop
 
-    :pswitch_data_a4
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_49
-        :pswitch_3b
-        :pswitch_33
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onPostScroll-DzOQY0M(JJI)J
-    .registers 14
+    .locals 8
     .param p1, "consumed"    # J
     .param p3, "available"    # J
     .param p5, "source"    # I
@@ -697,7 +697,7 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_1e
+    if-eqz v2, :cond_0
 
     .line 90
     invoke-static {p1, p2, v0, v1}, Landroidx/compose/ui/geometry/Offset;->plus-MK-Hz9U(JJ)J
@@ -719,10 +719,10 @@
 
     move-result-wide v2
 
-    goto :goto_24
+    goto :goto_0
 
     .line 93
-    :cond_1e
+    :cond_0
     sget-object v2, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v2}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
@@ -730,7 +730,7 @@
     move-result-wide v2
 
     .line 89
-    :goto_24
+    :goto_0
     nop
 
     .line 94
@@ -743,7 +743,7 @@
 .end method
 
 .method public onPreFling-QWom1Mo(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 13
+    .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -757,7 +757,7 @@
 
     instance-of v0, p3, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     move-object v0, p3
 
@@ -769,7 +769,7 @@
 
     and-int/2addr v1, v2
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_0
 
     iget p3, v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;->label:I
 
@@ -777,14 +777,14 @@
 
     iput p3, v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;->label:I
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     new-instance v0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;
 
     invoke-direct {v0, p0, p3}, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;-><init>(Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;Lkotlin/coroutines/Continuation;)V
 
-    :goto_19
+    :goto_0
     move-object p3, v0
 
     .local p3, "$continuation":Lkotlin/coroutines/Continuation;
@@ -798,7 +798,7 @@
     .line 97
     iget v2, p3, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;->label:I
 
-    packed-switch v2, :pswitch_data_8a
+    packed-switch v2, :pswitch_data_0
 
     .end local v0    # "$result":Ljava/lang/Object;
     .end local p3    # "$continuation":Lkotlin/coroutines/Continuation;
@@ -812,7 +812,7 @@
 
     .restart local v0    # "$result":Ljava/lang/Object;
     .restart local p3    # "$continuation":Lkotlin/coroutines/Continuation;
-    :pswitch_2e
+    :pswitch_0
     iget-wide p1, p3, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;->J$0:J
 
     .local p1, "parentPreConsumed":J
@@ -822,10 +822,10 @@
 
     move-object p1, v0
 
-    goto :goto_7b
+    goto :goto_3
 
     .end local p1    # "parentPreConsumed":J
-    :pswitch_36
+    :pswitch_1
     iget-wide p1, p3, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;->J$0:J
 
     .local p1, "available":J
@@ -838,11 +838,11 @@
 
     move-object v3, v0
 
-    goto :goto_59
+    goto :goto_1
 
     .end local v2    # "this":Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
     .end local p1    # "available":J
-    :pswitch_41
+    :pswitch_2
     invoke-static {v0}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v2, p0
@@ -854,7 +854,7 @@
 
     move-result-object v3
 
-    if-eqz v3, :cond_60
+    if-eqz v3, :cond_2
 
     iput-object v2, p3, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode$onPreFling$1;->L$0:Ljava/lang/Object;
 
@@ -868,23 +868,23 @@
 
     move-result-object v3
 
-    if-ne v3, v1, :cond_59
+    if-ne v3, v1, :cond_1
 
     .line 97
     return-object v1
 
     .line 98
-    :cond_59
-    :goto_59
+    :cond_1
+    :goto_1
     check-cast v3, Landroidx/compose/ui/unit/Velocity;
 
     invoke-virtual {v3}, Landroidx/compose/ui/unit/Velocity;->unbox-impl()J
 
     move-result-wide v3
 
-    goto :goto_66
+    goto :goto_2
 
-    :cond_60
+    :cond_2
     sget-object v3, Landroidx/compose/ui/unit/Velocity;->Companion:Landroidx/compose/ui/unit/Velocity$Companion;
 
     invoke-virtual {v3}, Landroidx/compose/ui/unit/Velocity$Companion;->getZero-9UxMQ8M()J
@@ -893,7 +893,7 @@
 
     .line 99
     .local v3, "parentPreConsumed":J
-    :goto_66
+    :goto_2
     iget-object v5, v2, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->connection:Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
 
     invoke-static {p1, p2, v3, v4}, Landroidx/compose/ui/unit/Velocity;->minus-AH228Gc(JJ)J
@@ -916,14 +916,14 @@
 
     .end local v2    # "this":Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;
     .end local p1    # "available":J
-    if-ne p1, v1, :cond_7b
+    if-ne p1, v1, :cond_3
 
     .line 97
     return-object v1
 
     .line 99
-    :cond_7b
-    :goto_7b
+    :cond_3
+    :goto_3
     check-cast p1, Landroidx/compose/ui/unit/Velocity;
 
     invoke-virtual {p1}, Landroidx/compose/ui/unit/Velocity;->unbox-impl()J
@@ -942,16 +942,16 @@
 
     return-object v1
 
-    :pswitch_data_8a
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_41
-        :pswitch_36
-        :pswitch_2e
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public onPreScroll-OzD1aCk(JI)J
-    .registers 10
+    .locals 6
     .param p1, "available"    # J
     .param p3, "source"    # I
 
@@ -960,15 +960,15 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p1, p2, p3}, Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;->onPreScroll-OzD1aCk(JI)J
 
     move-result-wide v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
@@ -977,7 +977,7 @@
 
     .line 79
     .local v0, "parentPreConsumed":J
-    :goto_11
+    :goto_0
     iget-object v2, p0, Landroidx/compose/ui/input/nestedscroll/NestedScrollNode;->connection:Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
 
     invoke-static {p1, p2, v0, v1}, Landroidx/compose/ui/geometry/Offset;->minus-MK-Hz9U(JJ)J
@@ -998,7 +998,7 @@
 .end method
 
 .method public final setConnection(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
 
     const-string v0, "<set-?>"
@@ -1012,7 +1012,7 @@
 .end method
 
 .method public final updateNode$ui_release(Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;)V
-    .registers 4
+    .locals 1
     .param p1, "connection"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     .param p2, "dispatcher"    # Landroidx/compose/ui/input/nestedscroll/NestedScrollDispatcher;
 

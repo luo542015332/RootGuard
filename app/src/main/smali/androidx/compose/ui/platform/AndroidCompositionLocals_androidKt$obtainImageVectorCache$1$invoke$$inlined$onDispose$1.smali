@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$obtainImageVectorCache$callbacks$1$1;)V
-    .registers 3
+    .locals 0
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt$obtainImageVectorCache$1$invoke$$inlined$onDispose$1;->$context$inlined:Landroid/content/Context;
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 4
+    .locals 3
 
     .line 65
     const/4 v0, 0x0

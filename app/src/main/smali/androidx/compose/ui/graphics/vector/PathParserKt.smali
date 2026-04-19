@@ -62,7 +62,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 49
     const/4 v0, 0x0
@@ -75,7 +75,7 @@
 .end method
 
 .method private static final arcToBezier(Landroidx/compose/ui/graphics/Path;DDDDDDDDD)V
-    .registers 85
+    .locals 66
     .param p0, "p"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "cx"    # D
     .param p3, "cy"    # D
@@ -204,8 +204,8 @@
 
     .local v15, "i":I
     .local v25, "cosEta1":D
-    :goto_50
-    if-ge v15, v8, :cond_10f
+    :goto_0
+    if-ge v15, v8, :cond_0
 
     .line 517
     add-double v27, v9, v2
@@ -498,7 +498,7 @@
 
     move-wide/from16 v0, p5
 
-    goto/16 :goto_50
+    goto/16 :goto_0
 
     .line 549
     .end local v0    # "eta1":D
@@ -512,12 +512,12 @@
     .local v8, "numSegments":I
     .restart local v9    # "eta1":D
     .restart local v11    # "cosTheta":D
-    :cond_10f
+    :cond_0
     return-void
 .end method
 
 .method private static final drawArc(Landroidx/compose/ui/graphics/Path;DDDDDDDZZ)V
-    .registers 81
+    .locals 64
     .param p0, "p"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "x0"    # D
     .param p3, "y0"    # D
@@ -652,23 +652,23 @@
 
     cmpg-double v2, v56, v0
 
-    if-nez v2, :cond_58
+    if-nez v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_59
+    goto :goto_0
 
-    :cond_58
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_59
-    if-eqz v2, :cond_5c
+    :goto_0
+    if-eqz v2, :cond_1
 
     .line 424
     return-void
 
     .line 426
-    :cond_5c
+    :cond_1
     const-wide/high16 v5, 0x3ff0000000000000L    # 1.0
 
     div-double v5, v5, v56
@@ -681,7 +681,7 @@
     .local v58, "disc":D
     cmpg-double v2, v58, v0
 
-    if-gez v2, :cond_8f
+    if-gez v2, :cond_2
 
     .line 428
     invoke-static/range {v56 .. v57}, Ljava/lang/Math;->sqrt(D)D
@@ -733,7 +733,7 @@
 
     .line 435
     .end local v17    # "adjust":F
-    :cond_8f
+    :cond_2
     invoke-static/range {v58 .. v59}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v5
@@ -758,7 +758,7 @@
 
     move/from16 v15, p16
 
-    if-ne v2, v15, :cond_a6
+    if-ne v2, v15, :cond_3
 
     .line 441
     sub-double v11, v52, v9
@@ -766,17 +766,17 @@
     .line 442
     add-double v13, v54, v7
 
-    goto :goto_aa
+    goto :goto_1
 
     .line 444
-    :cond_a6
+    :cond_3
     add-double v11, v52, v9
 
     .line 445
     sub-double v13, v54, v7
 
     .line 448
-    :goto_aa
+    :goto_1
     sub-double v3, v42, v13
 
     sub-double v0, v40, v11
@@ -809,37 +809,37 @@
 
     cmpl-double v20, v5, v18
 
-    if-ltz v20, :cond_c6
+    if-ltz v20, :cond_4
 
     const/4 v2, 0x1
 
-    goto :goto_c7
+    goto :goto_2
 
-    :cond_c6
+    :cond_4
     const/4 v2, 0x0
 
-    :goto_c7
-    if-eq v15, v2, :cond_d7
+    :goto_2
+    if-eq v15, v2, :cond_6
 
     .line 454
     cmpl-double v2, v5, v18
 
     const-wide v16, 0x401921fb54442d18L    # 6.283185307179586
 
-    if-lez v2, :cond_d5
+    if-lez v2, :cond_5
 
     .line 455
     sub-double v5, v5, v16
 
-    goto :goto_d7
+    goto :goto_3
 
     .line 457
-    :cond_d5
+    :cond_5
     add-double v5, v5, v16
 
     .line 461
-    :cond_d7
-    :goto_d7
+    :cond_6
+    :goto_3
     mul-double v11, v11, p9
 
     .line 462
@@ -895,7 +895,7 @@
 .end method
 
 .method public static final getEmptyArray()[F
-    .registers 1
+    .locals 1
 
     .line 49
     sget-object v0, Landroidx/compose/ui/graphics/vector/PathParserKt;->EmptyArray:[F
@@ -904,7 +904,7 @@
 .end method
 
 .method public static final toPath(Ljava/util/List;Landroidx/compose/ui/graphics/Path;)Landroidx/compose/ui/graphics/Path;
-    .registers 39
+    .locals 37
     .param p0, "$this$toPath"    # Ljava/util/List;
     .param p1, "target"    # Landroidx/compose/ui/graphics/Path;
     .annotation system Ldalvik/annotation/Signature;
@@ -984,20 +984,20 @@
 
     move-result v10
 
-    if-eqz v10, :cond_2b
+    if-eqz v10, :cond_0
 
     sget-object v10, Landroidx/compose/ui/graphics/vector/PathNode$Close;->INSTANCE:Landroidx/compose/ui/graphics/vector/PathNode$Close;
 
-    goto :goto_30
+    goto :goto_0
 
-    :cond_2b
+    :cond_0
     const/4 v10, 0x0
 
     invoke-interface {v0, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
-    :goto_30
+    :goto_0
     check-cast v10, Landroidx/compose/ui/graphics/vector/PathNode;
 
     move-object v9, v10
@@ -1058,8 +1058,8 @@
     .local v23, "reflectiveCtrlX":F
     .local v24, "reflectiveCtrlY":F
     .local v25, "previousNode":Ljava/lang/Object;
-    :goto_4e
-    if-ge v8, v13, :cond_5bf
+    :goto_1
+    if-ge v8, v13, :cond_18
 
     .line 556
     invoke-interface {v12, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1082,7 +1082,7 @@
     .line 176
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$Close;
 
-    if-eqz v1, :cond_7e
+    if-eqz v1, :cond_1
 
     .line 177
     move/from16 v1, v21
@@ -1128,7 +1128,7 @@
 
     move/from16 v35, v15
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 185
     .end local v1    # "currentX":F
@@ -1139,10 +1139,10 @@
     .restart local v11    # "currentY":F
     .restart local v19    # "ctrlX":F
     .restart local v20    # "ctrlY":F
-    :cond_7e
+    :cond_1
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeMoveTo;
 
-    if-eqz v1, :cond_b4
+    if-eqz v1, :cond_2
 
     .line 186
     move-object v1, v9
@@ -1209,17 +1209,17 @@
 
     .end local v22    # "segmentY":F
     .local v2, "segmentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 193
     .end local v1    # "segmentX":F
     .end local v2    # "segmentY":F
     .restart local v21    # "segmentX":F
     .restart local v22    # "segmentY":F
-    :cond_b4
+    :cond_2
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$MoveTo;
 
-    if-eqz v1, :cond_ea
+    if-eqz v1, :cond_3
 
     .line 194
     move-object v1, v9
@@ -1290,7 +1290,7 @@
 
     .end local v22    # "segmentY":F
     .local v4, "segmentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 201
     .end local v1    # "currentX":F
@@ -1301,10 +1301,10 @@
     .restart local v11    # "currentY":F
     .restart local v21    # "segmentX":F
     .restart local v22    # "segmentY":F
-    :cond_ea
+    :cond_3
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeLineTo;
 
-    if-eqz v1, :cond_11a
+    if-eqz v1, :cond_4
 
     .line 202
     move-object v1, v9
@@ -1357,13 +1357,13 @@
 
     move/from16 v35, v15
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 207
-    :cond_11a
+    :cond_4
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$LineTo;
 
-    if-eqz v1, :cond_14a
+    if-eqz v1, :cond_5
 
     .line 208
     move-object v1, v9
@@ -1420,19 +1420,19 @@
 
     .end local v11    # "currentY":F
     .restart local v2    # "currentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 213
     .end local v1    # "currentX":F
     .end local v2    # "currentY":F
     .restart local v10    # "currentX":F
     .restart local v11    # "currentY":F
-    :cond_14a
+    :cond_5
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeHorizontalTo;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_16c
+    if-eqz v1, :cond_6
 
     .line 214
     move-object v1, v9
@@ -1466,13 +1466,13 @@
 
     move/from16 v35, v15
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 218
-    :cond_16c
+    :cond_6
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$HorizontalTo;
 
-    if-eqz v1, :cond_18d
+    if-eqz v1, :cond_7
 
     .line 219
     move-object v1, v9
@@ -1508,15 +1508,15 @@
 
     .end local v10    # "currentX":F
     .restart local v1    # "currentX":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 223
     .end local v1    # "currentX":F
     .restart local v10    # "currentX":F
-    :cond_18d
+    :cond_7
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeVerticalTo;
 
-    if-eqz v1, :cond_1ae
+    if-eqz v1, :cond_8
 
     .line 224
     move-object v1, v9
@@ -1550,13 +1550,13 @@
 
     move/from16 v35, v15
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 228
-    :cond_1ae
+    :cond_8
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$VerticalTo;
 
-    if-eqz v1, :cond_1cf
+    if-eqz v1, :cond_9
 
     .line 229
     move-object v1, v9
@@ -1592,15 +1592,15 @@
 
     .end local v11    # "currentY":F
     .local v1, "currentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 233
     .end local v1    # "currentY":F
     .restart local v11    # "currentY":F
-    :cond_1cf
+    :cond_9
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeCurveTo;
 
-    if-eqz v1, :cond_232
+    if-eqz v1, :cond_a
 
     .line 234
     nop
@@ -1723,17 +1723,17 @@
 
     move/from16 v35, v15
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 245
     .end local v1    # "ctrlX":F
     .end local v2    # "ctrlY":F
     .restart local v19    # "ctrlX":F
     .restart local v20    # "ctrlY":F
-    :cond_232
+    :cond_a
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$CurveTo;
 
-    if-eqz v1, :cond_293
+    if-eqz v1, :cond_b
 
     .line 246
     nop
@@ -1856,7 +1856,7 @@
 
     .end local v11    # "currentY":F
     .local v4, "currentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 257
     .end local v1    # "ctrlX":F
@@ -1867,17 +1867,17 @@
     .restart local v11    # "currentY":F
     .restart local v19    # "ctrlX":F
     .restart local v20    # "ctrlY":F
-    :cond_293
+    :cond_b
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeReflectiveCurveTo;
 
-    if-eqz v1, :cond_306
+    if-eqz v1, :cond_d
 
     .line 258
     invoke-virtual/range {v25 .. v25}, Landroidx/compose/ui/graphics/vector/PathNode;->isCurve()Z
 
     move-result v1
 
-    if-eqz v1, :cond_2a6
+    if-eqz v1, :cond_c
 
     .line 259
     sub-float v1, v10, v19
@@ -1893,14 +1893,14 @@
 
     .end local v24    # "reflectiveCtrlY":F
     .local v2, "reflectiveCtrlY":F
-    goto :goto_2ac
+    goto :goto_2
 
     .line 262
     .end local v1    # "reflectiveCtrlX":F
     .end local v2    # "reflectiveCtrlY":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_2a6
+    :cond_c
     const/4 v1, 0x0
 
     .line 263
@@ -1917,7 +1917,7 @@
     .end local v24    # "reflectiveCtrlY":F
     .local v16, "reflectiveCtrlX":F
     .local v17, "reflectiveCtrlY":F
-    :goto_2ac
+    :goto_2
     nop
 
     .line 266
@@ -2032,7 +2032,7 @@
 
     move/from16 v24, v17
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 276
     .end local v1    # "ctrlX":F
@@ -2043,19 +2043,19 @@
     .restart local v20    # "ctrlY":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_306
+    :cond_d
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveCurveTo;
 
     const/4 v2, 0x2
 
-    if-eqz v1, :cond_37c
+    if-eqz v1, :cond_f
 
     .line 277
     invoke-virtual/range {v25 .. v25}, Landroidx/compose/ui/graphics/vector/PathNode;->isCurve()Z
 
     move-result v1
 
-    if-eqz v1, :cond_31e
+    if-eqz v1, :cond_e
 
     .line 278
     int-to-float v1, v2
@@ -2077,14 +2077,14 @@
 
     .end local v24    # "reflectiveCtrlY":F
     .local v1, "reflectiveCtrlY":F
-    goto :goto_324
+    goto :goto_3
 
     .line 281
     .end local v1    # "reflectiveCtrlY":F
     .end local v2    # "reflectiveCtrlX":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_31e
+    :cond_e
     move v2, v10
 
     .line 282
@@ -2101,7 +2101,7 @@
     .end local v24    # "reflectiveCtrlY":F
     .local v16, "reflectiveCtrlY":F
     .local v17, "reflectiveCtrlX":F
-    :goto_324
+    :goto_3
     nop
 
     .line 285
@@ -2215,7 +2215,7 @@
 
     .end local v11    # "currentY":F
     .restart local v4    # "currentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 294
     .end local v1    # "ctrlX":F
@@ -2230,10 +2230,10 @@
     .restart local v20    # "ctrlY":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_37c
+    :cond_f
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeQuadTo;
 
-    if-eqz v1, :cond_3ce
+    if-eqz v1, :cond_10
 
     .line 295
     move-object v1, v9
@@ -2332,17 +2332,17 @@
 
     move/from16 v35, v15
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 302
     .end local v1    # "ctrlX":F
     .end local v2    # "ctrlY":F
     .restart local v19    # "ctrlX":F
     .restart local v20    # "ctrlY":F
-    :cond_3ce
+    :cond_10
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$QuadTo;
 
-    if-eqz v1, :cond_41e
+    if-eqz v1, :cond_11
 
     .line 303
     move-object v1, v9
@@ -2441,7 +2441,7 @@
 
     .end local v11    # "currentY":F
     .restart local v4    # "currentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 310
     .end local v1    # "ctrlX":F
@@ -2452,17 +2452,17 @@
     .restart local v11    # "currentY":F
     .restart local v19    # "ctrlX":F
     .restart local v20    # "ctrlY":F
-    :cond_41e
+    :cond_11
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeReflectiveQuadTo;
 
-    if-eqz v1, :cond_469
+    if-eqz v1, :cond_13
 
     .line 311
     invoke-virtual/range {v25 .. v25}, Landroidx/compose/ui/graphics/vector/PathNode;->isQuad()Z
 
     move-result v1
 
-    if-eqz v1, :cond_42d
+    if-eqz v1, :cond_12
 
     .line 312
     sub-float v1, v10, v19
@@ -2474,14 +2474,14 @@
 
     .end local v24    # "reflectiveCtrlY":F
     .local v2, "reflectiveCtrlY":F
-    goto :goto_42f
+    goto :goto_4
 
     .line 315
     .end local v1    # "reflectiveCtrlX":F
     .end local v2    # "reflectiveCtrlY":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_42d
+    :cond_12
     const/4 v1, 0x0
 
     .line 316
@@ -2492,7 +2492,7 @@
     .line 318
     .end local v24    # "reflectiveCtrlY":F
     .restart local v2    # "reflectiveCtrlY":F
-    :goto_42f
+    :goto_4
     nop
 
     .line 319
@@ -2568,7 +2568,7 @@
 
     move/from16 v35, v15
 
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 328
     .end local v1    # "reflectiveCtrlX":F
@@ -2579,17 +2579,17 @@
     .restart local v20    # "ctrlY":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_469
+    :cond_13
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$ReflectiveQuadTo;
 
-    if-eqz v1, :cond_4b6
+    if-eqz v1, :cond_15
 
     .line 329
     invoke-virtual/range {v25 .. v25}, Landroidx/compose/ui/graphics/vector/PathNode;->isQuad()Z
 
     move-result v1
 
-    if-eqz v1, :cond_47c
+    if-eqz v1, :cond_14
 
     .line 330
     int-to-float v1, v2
@@ -2607,14 +2607,14 @@
 
     .end local v24    # "reflectiveCtrlY":F
     .local v1, "reflectiveCtrlY":F
-    goto :goto_47e
+    goto :goto_5
 
     .line 333
     .end local v1    # "reflectiveCtrlY":F
     .end local v2    # "reflectiveCtrlX":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_47c
+    :cond_14
     move v2, v10
 
     .line 334
@@ -2625,7 +2625,7 @@
     .line 336
     .end local v24    # "reflectiveCtrlY":F
     .restart local v1    # "reflectiveCtrlY":F
-    :goto_47e
+    :goto_5
     nop
 
     .line 337
@@ -2705,7 +2705,7 @@
 
     .end local v11    # "currentY":F
     .local v6, "currentY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 346
     .end local v1    # "reflectiveCtrlY":F
@@ -2720,10 +2720,10 @@
     .restart local v20    # "ctrlY":F
     .restart local v23    # "reflectiveCtrlX":F
     .restart local v24    # "reflectiveCtrlY":F
-    :cond_4b6
+    :cond_15
     instance-of v1, v9, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;
 
-    if-eqz v1, :cond_533
+    if-eqz v1, :cond_16
 
     .line 347
     move-object v1, v9
@@ -2925,7 +2925,7 @@
     .end local v29    # "arcStartY":F
     .end local v30    # "arcStartX":F
     .restart local v4    # "ctrlY":F
-    goto/16 :goto_5ad
+    goto/16 :goto_6
 
     .line 367
     .end local v0    # "node":Landroidx/compose/ui/graphics/vector/PathNode;
@@ -2944,7 +2944,7 @@
     .restart local v15    # "fillType":I
     .restart local v19    # "ctrlX":F
     .restart local v20    # "ctrlY":F
-    :cond_533
+    :cond_16
     move/from16 v28, v8
 
     move-object v0, v9
@@ -2973,7 +2973,7 @@
     .restart local v36    # "currentY":F
     instance-of v1, v0, Landroidx/compose/ui/graphics/vector/PathNode$ArcTo;
 
-    if-eqz v1, :cond_5a5
+    if-eqz v1, :cond_17
 
     .line 369
     nop
@@ -3122,7 +3122,7 @@
 
     .end local v20    # "ctrlY":F
     .restart local v4    # "ctrlY":F
-    goto :goto_5ad
+    goto :goto_6
 
     .line 367
     .end local v1    # "currentX":F
@@ -3133,7 +3133,7 @@
     .restart local v20    # "ctrlY":F
     .restart local v31    # "currentX":F
     .restart local v36    # "currentY":F
-    :cond_5a5
+    :cond_17
     move/from16 v30, v31
 
     move/from16 v29, v36
@@ -3151,7 +3151,7 @@
     .end local v30    # "currentX":F
     .restart local v10    # "currentX":F
     .restart local v11    # "currentY":F
-    :goto_5ad
+    :goto_6
     move-object/from16 v25, v0
 
     .line 387
@@ -3178,7 +3178,7 @@
 
     .end local v28    # "index$iv":I
     .restart local v8    # "index$iv":I
-    goto/16 :goto_4e
+    goto/16 :goto_1
 
     .line 559
     .end local v8    # "index$iv":I
@@ -3186,7 +3186,7 @@
     .end local v35    # "fillType":I
     .restart local v12    # "$this$fastForEach$iv":Ljava/util/List;
     .restart local v15    # "fillType":I
-    :cond_5bf
+    :cond_18
     nop
 
     .line 388
@@ -3196,18 +3196,18 @@
 .end method
 
 .method public static synthetic toPath$default(Ljava/util/List;Landroidx/compose/ui/graphics/Path;ILjava/lang/Object;)Landroidx/compose/ui/graphics/Path;
-    .registers 4
+    .locals 0
 
     .line 158
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_0
 
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPath_androidKt;->Path()Landroidx/compose/ui/graphics/Path;
 
     move-result-object p1
 
-    :cond_8
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/vector/PathParserKt;->toPath(Ljava/util/List;Landroidx/compose/ui/graphics/Path;)Landroidx/compose/ui/graphics/Path;
 
     move-result-object p0
@@ -3216,7 +3216,7 @@
 .end method
 
 .method private static final toRadians(D)D
-    .registers 7
+    .locals 5
     .param p0, "$this$toRadians"    # D
 
     const/4 v0, 0x0

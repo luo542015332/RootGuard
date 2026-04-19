@@ -145,7 +145,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -155,7 +155,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/Modifier$Node;ZLandroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/semantics/SemanticsConfiguration;)V
-    .registers 6
+    .locals 1
     .param p1, "outerSemanticsNode"    # Landroidx/compose/ui/Modifier$Node;
     .param p2, "mergingEnabled"    # Z
     .param p3, "layoutNode"    # Landroidx/compose/ui/node/LayoutNode;
@@ -200,7 +200,7 @@
 .end method
 
 .method private final emitFakeNodes(Ljava/util/List;)V
-    .registers 6
+    .locals 4
     .param p1, "unmergedChildren"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -212,14 +212,13 @@
     .end annotation
 
     .line 374
-    # invokes: Landroidx/compose/ui/semantics/SemanticsNodeKt;->getRole(Landroidx/compose/ui/semantics/SemanticsNode;)Landroidx/compose/ui/semantics/Role;
     invoke-static {p0}, Landroidx/compose/ui/semantics/SemanticsNodeKt;->access$getRole(Landroidx/compose/ui/semantics/SemanticsNode;)Landroidx/compose/ui/semantics/Role;
 
     move-result-object v0
 
     .line 375
     .local v0, "nodeRole":Landroidx/compose/ui/semantics/Role;
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_0
 
     iget-object v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
@@ -227,7 +226,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_0
 
     .line 376
     move-object v1, p1
@@ -240,7 +239,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_27
+    if-eqz v1, :cond_0
 
     .line 378
     new-instance v1, Landroidx/compose/ui/semantics/SemanticsNode$emitFakeNodes$fakeNode$1;
@@ -259,7 +258,7 @@
 
     .line 385
     .end local v1    # "fakeNode":Landroidx/compose/ui/semantics/SemanticsNode;
-    :cond_27
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
     sget-object v2, Landroidx/compose/ui/semantics/SemanticsProperties;->INSTANCE:Landroidx/compose/ui/semantics/SemanticsProperties;
@@ -272,7 +271,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_2
 
     .line 386
     move-object v1, p1
@@ -285,7 +284,7 @@
 
     xor-int/lit8 v1, v1, 0x1
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_2
 
     iget-object v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
@@ -293,7 +292,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_2
 
     .line 389
     iget-object v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -312,7 +311,7 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_60
+    if-eqz v1, :cond_1
 
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->firstOrNull(Ljava/util/List;)Ljava/lang/Object;
 
@@ -320,18 +319,18 @@
 
     check-cast v1, Ljava/lang/String;
 
-    goto :goto_61
+    goto :goto_0
 
-    :cond_60
+    :cond_1
     move-object v1, v2
 
     .line 388
-    :goto_61
+    :goto_0
     nop
 
     .line 390
     .local v1, "contentDescription":Ljava/lang/String;
-    if-eqz v1, :cond_73
+    if-eqz v1, :cond_2
 
     .line 391
     new-instance v3, Landroidx/compose/ui/semantics/SemanticsNode$emitFakeNodes$fakeNode$2;
@@ -353,12 +352,12 @@
     .line 397
     .end local v1    # "contentDescription":Ljava/lang/String;
     .end local v2    # "fakeNode":Landroidx/compose/ui/semantics/SemanticsNode;
-    :cond_73
+    :cond_2
     return-void
 .end method
 
 .method private final fakeSemanticsNode-ypyhhiA(Landroidx/compose/ui/semantics/Role;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/semantics/SemanticsNode;
-    .registers 10
+    .locals 7
     .param p1, "role"    # Landroidx/compose/ui/semantics/Role;
     .param p2, "properties"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -425,23 +424,21 @@
     nop
 
     .line 418
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_0
 
-    # invokes: Landroidx/compose/ui/semantics/SemanticsNodeKt;->roleFakeNodeId(Landroidx/compose/ui/semantics/SemanticsNode;)I
     invoke-static {p0}, Landroidx/compose/ui/semantics/SemanticsNodeKt;->access$roleFakeNodeId(Landroidx/compose/ui/semantics/SemanticsNode;)I
 
     move-result v5
 
-    goto :goto_2b
+    goto :goto_0
 
-    :cond_27
-    # invokes: Landroidx/compose/ui/semantics/SemanticsNodeKt;->contentDescriptionFakeNodeId(Landroidx/compose/ui/semantics/SemanticsNode;)I
+    :cond_0
     invoke-static {p0}, Landroidx/compose/ui/semantics/SemanticsNodeKt;->access$contentDescriptionFakeNodeId(Landroidx/compose/ui/semantics/SemanticsNode;)I
 
     move-result v5
 
     .line 415
-    :goto_2b
+    :goto_0
     const/4 v6, 0x1
 
     invoke-direct {v4, v6, v5}, Landroidx/compose/ui/node/LayoutNode;-><init>(ZI)V
@@ -464,7 +461,7 @@
 .end method
 
 .method private final fillOneLayerOfSemanticsWrappers(Landroidx/compose/ui/node/LayoutNode;Ljava/util/List;)V
-    .registers 13
+    .locals 10
     .param p1, "$this$fillOneLayerOfSemanticsWrappers"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "list"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -496,7 +493,7 @@
 
     .line 472
     .local v2, "size$iv":I
-    if-lez v2, :cond_40
+    if-lez v2, :cond_3
 
     .line 473
     const/4 v3, 0x0
@@ -509,7 +506,7 @@
 
     .line 476
     .local v4, "content$iv":[Ljava/lang/Object;
-    :cond_11
+    :cond_0
     aget-object v5, v4, v3
 
     check-cast v5, Landroidx/compose/ui/node/LayoutNode;
@@ -523,7 +520,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_3a
+    if-eqz v7, :cond_2
 
     .line 255
     invoke-virtual {v5}, Landroidx/compose/ui/node/LayoutNode;->getNodes$ui_release()Landroidx/compose/ui/node/NodeChain;
@@ -546,7 +543,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_37
+    if-eqz v7, :cond_1
 
     .line 256
     iget-boolean v7, p0, Landroidx/compose/ui/semantics/SemanticsNode;->mergingEnabled:Z
@@ -557,15 +554,15 @@
 
     invoke-interface {p2, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_3a
+    goto :goto_0
 
     .line 258
-    :cond_37
+    :cond_1
     invoke-direct {p0, v5, p2}, Landroidx/compose/ui/semantics/SemanticsNode;->fillOneLayerOfSemanticsWrappers(Landroidx/compose/ui/node/LayoutNode;Ljava/util/List;)V
 
     .line 261
-    :cond_3a
-    :goto_3a
+    :cond_2
+    :goto_0
     nop
 
     .line 476
@@ -577,12 +574,12 @@
     add-int/lit8 v3, v3, 0x1
 
     .line 479
-    if-lt v3, v2, :cond_11
+    if-lt v3, v2, :cond_0
 
     .line 481
     .end local v3    # "i$iv":I
     .end local v4    # "content$iv":[Ljava/lang/Object;
-    :cond_40
+    :cond_3
     nop
 
     .line 262
@@ -593,7 +590,7 @@
 .end method
 
 .method private final findOneLayerOfMergingSemanticsNodes(Ljava/util/List;)Ljava/util/List;
-    .registers 10
+    .locals 8
     .param p1, "list"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -633,8 +630,8 @@
 
     move-result v3
 
-    :goto_e
-    if-ge v2, v3, :cond_32
+    :goto_0
+    if-ge v2, v3, :cond_2
 
     .line 484
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -656,29 +653,29 @@
 
     move-result v7
 
-    if-eqz v7, :cond_22
+    if-eqz v7, :cond_0
 
     .line 350
     invoke-interface {p1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    goto :goto_2d
+    goto :goto_1
 
     .line 352
-    :cond_22
+    :cond_0
     iget-object v7, v5, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
     invoke-virtual {v7}, Landroidx/compose/ui/semantics/SemanticsConfiguration;->isClearingSemantics()Z
 
     move-result v7
 
-    if-nez v7, :cond_2d
+    if-nez v7, :cond_1
 
     .line 353
     invoke-direct {v5, p1}, Landroidx/compose/ui/semantics/SemanticsNode;->findOneLayerOfMergingSemanticsNodes(Ljava/util/List;)Ljava/util/List;
 
     .line 356
-    :cond_2d
-    :goto_2d
+    :cond_1
+    :goto_1
     nop
 
     .line 485
@@ -690,11 +687,11 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 487
     .end local v2    # "index$iv":I
-    :cond_32
+    :cond_2
     nop
 
     .line 357
@@ -704,12 +701,12 @@
 .end method
 
 .method static synthetic findOneLayerOfMergingSemanticsNodes$default(Landroidx/compose/ui/semantics/SemanticsNode;Ljava/util/List;ILjava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .locals 0
 
     .line 345
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_0
 
     .line 346
     new-instance p1, Ljava/util/ArrayList;
@@ -719,7 +716,7 @@
     check-cast p1, Ljava/util/List;
 
     .line 345
-    :cond_b
+    :cond_0
     invoke-direct {p0, p1}, Landroidx/compose/ui/semantics/SemanticsNode;->findOneLayerOfMergingSemanticsNodes(Ljava/util/List;)Ljava/util/List;
 
     move-result-object p0
@@ -728,7 +725,7 @@
 .end method
 
 .method private final getChildren(ZZ)Ljava/util/List;
-    .registers 5
+    .locals 2
     .param p1, "includeReplacedSemantics"    # Z
     .param p2, "includeFakeNodes"    # Z
     .annotation system Ldalvik/annotation/Signature;
@@ -741,7 +738,7 @@
     .end annotation
 
     .line 304
-    if-nez p1, :cond_f
+    if-nez p1, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
@@ -749,7 +746,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 305
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
@@ -759,12 +756,12 @@
     return-object v0
 
     .line 308
-    :cond_f
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->isMergingSemanticsOfDescendants()Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 312
     const/4 v0, 0x1
@@ -778,7 +775,7 @@
     return-object v0
 
     .line 315
-    :cond_1c
+    :cond_1
     invoke-virtual {p0, p2}, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedChildren$ui_release(Z)Ljava/util/List;
 
     move-result-object v0
@@ -787,12 +784,12 @@
 .end method
 
 .method private final isMergingSemanticsOfDescendants()Z
-    .registers 2
+    .locals 1
 
     .line 227
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->mergingEnabled:Z
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
@@ -800,21 +797,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_f
+    :goto_0
     return v0
 .end method
 
 .method private final mergeConfig(Landroidx/compose/ui/semantics/SemanticsConfiguration;)V
-    .registers 10
+    .locals 8
     .param p1, "mergedConfig"    # Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
     .line 214
@@ -824,7 +821,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_34
+    if-nez v0, :cond_2
 
     .line 215
     const/4 v0, 0x0
@@ -852,8 +849,8 @@
 
     move-result v3
 
-    :goto_16
-    if-ge v2, v3, :cond_33
+    :goto_0
+    if-ge v2, v3, :cond_1
 
     .line 466
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -875,7 +872,7 @@
 
     move-result v7
 
-    if-nez v7, :cond_2e
+    if-nez v7, :cond_0
 
     .line 219
     iget-object v7, v5, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -886,7 +883,7 @@
     invoke-direct {v5, p1}, Landroidx/compose/ui/semantics/SemanticsNode;->mergeConfig(Landroidx/compose/ui/semantics/SemanticsConfiguration;)V
 
     .line 222
-    :cond_2e
+    :cond_0
     nop
 
     .line 467
@@ -898,33 +895,33 @@
     .end local v4    # "item$iv":Ljava/lang/Object;
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
     .line 469
     .end local v2    # "index$iv":I
-    :cond_33
+    :cond_1
     nop
 
     .line 224
     .end local v0    # "$this$fastForEach$iv":Ljava/util/List;
     .end local v1    # "$i$f$fastForEach":I
-    :cond_34
+    :cond_2
     return-void
 .end method
 
 .method public static synthetic unmergedChildren$ui_release$default(Landroidx/compose/ui/semantics/SemanticsNode;ZILjava/lang/Object;)Ljava/util/List;
-    .registers 4
+    .locals 0
 
     .line 229
     and-int/lit8 p2, p2, 0x1
 
-    if-eqz p2, :cond_5
+    if-eqz p2, :cond_0
 
     .line 230
     const/4 p1, 0x0
 
     .line 229
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1}, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedChildren$ui_release(Z)Ljava/util/List;
 
     move-result-object p0
@@ -935,7 +932,7 @@
 
 # virtual methods
 .method public final copyWithMergingEnabled$ui_release()Landroidx/compose/ui/semantics/SemanticsNode;
-    .registers 6
+    .locals 5
 
     .line 428
     new-instance v0, Landroidx/compose/ui/semantics/SemanticsNode;
@@ -961,47 +958,47 @@
 .end method
 
 .method public final findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
-    .registers 4
+    .locals 3
 
     .line 367
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->isFake:Z
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_1
 
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->getParent()Landroidx/compose/ui/semantics/SemanticsNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/semantics/SemanticsNode;->findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return-object v0
 
     .line 368
-    :cond_11
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
 
     invoke-static {v0}, Landroidx/compose/ui/semantics/SemanticsNodeKt;->getOuterMergingSemantics(Landroidx/compose/ui/node/LayoutNode;)Landroidx/compose/ui/node/SemanticsModifierNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_2
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1a
+    :cond_2
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->outerSemanticsNode:Landroidx/compose/ui/Modifier$Node;
 
-    :goto_1c
+    :goto_1
     check-cast v0, Landroidx/compose/ui/node/DelegatableNode;
 
     .line 369
@@ -1026,7 +1023,7 @@
 .end method
 
 .method public final getAlignmentLinePosition(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 3
+    .locals 1
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -1038,30 +1035,30 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0, p1}, Landroidx/compose/ui/node/NodeCoordinator;->get(Landroidx/compose/ui/layout/AlignmentLine;)I
 
     move-result v0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     const/high16 v0, -0x80000000
 
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 .method public final getBoundsInRoot()Landroidx/compose/ui/geometry/Rect;
-    .registers 4
+    .locals 3
 
     .line 151
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     move-object v1, v0
 
@@ -1077,15 +1074,15 @@
 
     .end local v1    # "it":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v2    # "$i$a$-takeIf-SemanticsNode$boundsInRoot$1":I
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
-    if-eqz v0, :cond_1a
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/ui/layout/LayoutCoordinates;
 
@@ -1093,29 +1090,29 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     .line 152
-    :cond_1a
+    :cond_1
     sget-object v0, Landroidx/compose/ui/geometry/Rect;->Companion:Landroidx/compose/ui/geometry/Rect$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Rect$Companion;->getZero()Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v0
 
-    :cond_20
+    :cond_2
     return-object v0
 .end method
 
 .method public final getBoundsInWindow()Landroidx/compose/ui/geometry/Rect;
-    .registers 4
+    .locals 3
 
     .line 167
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     move-object v1, v0
 
@@ -1131,15 +1128,15 @@
 
     .end local v1    # "it":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v2    # "$i$a$-takeIf-SemanticsNode$boundsInWindow$1":I
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
-    if-eqz v0, :cond_1a
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/ui/layout/LayoutCoordinates;
 
@@ -1147,22 +1144,22 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_20
+    if-nez v0, :cond_2
 
     .line 168
-    :cond_1a
+    :cond_1
     sget-object v0, Landroidx/compose/ui/geometry/Rect;->Companion:Landroidx/compose/ui/geometry/Rect$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Rect$Companion;->getZero()Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v0
 
-    :cond_20
+    :cond_2
     return-object v0
 .end method
 
 .method public final getChildren()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1193,14 +1190,14 @@
 .end method
 
 .method public final getConfig()Landroidx/compose/ui/semantics/SemanticsConfiguration;
-    .registers 2
+    .locals 1
 
     .line 204
     invoke-direct {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->isMergingSemanticsOfDescendants()Z
 
     move-result v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     .line 205
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -1218,14 +1215,14 @@
 
     .line 209
     .end local v0    # "mergedConfig":Landroidx/compose/ui/semantics/SemanticsConfiguration;
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
 
     return-object v0
 .end method
 
 .method public final getId()I
-    .registers 2
+    .locals 1
 
     .line 118
     iget v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->id:I
@@ -1234,7 +1231,7 @@
 .end method
 
 .method public final getLayoutInfo()Landroidx/compose/ui/layout/LayoutInfo;
-    .registers 2
+    .locals 1
 
     .line 107
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
@@ -1245,7 +1242,7 @@
 .end method
 
 .method public final getLayoutNode$ui_release()Landroidx/compose/ui/node/LayoutNode;
-    .registers 2
+    .locals 1
 
     .line 89
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
@@ -1254,7 +1251,7 @@
 .end method
 
 .method public final getMergingEnabled()Z
-    .registers 2
+    .locals 1
 
     .line 88
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->mergingEnabled:Z
@@ -1263,7 +1260,7 @@
 .end method
 
 .method public final getOuterSemanticsNode$ui_release()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 87
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->outerSemanticsNode:Landroidx/compose/ui/Modifier$Node;
@@ -1272,24 +1269,24 @@
 .end method
 
 .method public final getParent()Landroidx/compose/ui/semantics/SemanticsNode;
-    .registers 4
+    .locals 3
 
     .line 327
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->fakeNodeParent:Landroidx/compose/ui/semantics/SemanticsNode;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     return-object v0
 
     .line 328
-    :cond_5
+    :cond_0
     const/4 v0, 0x0
 
     .line 329
     .local v0, "node":Landroidx/compose/ui/node/LayoutNode;
     iget-boolean v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->mergingEnabled:Z
 
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_1
 
     .line 330
     iget-object v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
@@ -1303,8 +1300,8 @@
     move-result-object v0
 
     .line 335
-    :cond_14
-    if-nez v0, :cond_20
+    :cond_1
+    if-nez v0, :cond_2
 
     .line 336
     iget-object v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
@@ -1318,8 +1315,8 @@
     move-result-object v0
 
     .line 339
-    :cond_20
-    if-nez v0, :cond_24
+    :cond_2
+    if-nez v0, :cond_3
 
     .line 340
     const/4 v1, 0x0
@@ -1327,7 +1324,7 @@
     return-object v1
 
     .line 342
-    :cond_24
+    :cond_3
     iget-boolean v1, p0, Landroidx/compose/ui/semantics/SemanticsNode;->mergingEnabled:Z
 
     invoke-static {v0, v1}, Landroidx/compose/ui/semantics/SemanticsNodeKt;->SemanticsNode(Landroidx/compose/ui/node/LayoutNode;Z)Landroidx/compose/ui/semantics/SemanticsNode;
@@ -1338,14 +1335,14 @@
 .end method
 
 .method public final getPositionInRoot-F1C5BW0()J
-    .registers 4
+    .locals 3
 
     .line 159
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     move-object v1, v0
 
@@ -1361,15 +1358,15 @@
 
     .end local v1    # "it":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v2    # "$i$a$-takeIf-SemanticsNode$positionInRoot$1":I
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
-    if-eqz v0, :cond_19
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/ui/layout/LayoutCoordinates;
 
@@ -1377,29 +1374,29 @@
 
     move-result-wide v0
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 160
-    :cond_19
+    :cond_1
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
 
     move-result-wide v0
 
-    :goto_1f
+    :goto_1
     return-wide v0
 .end method
 
 .method public final getPositionInWindow-F1C5BW0()J
-    .registers 4
+    .locals 3
 
     .line 174
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_1
 
     move-object v1, v0
 
@@ -1415,15 +1412,15 @@
 
     .end local v1    # "it":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v2    # "$i$a$-takeIf-SemanticsNode$positionInWindow$1":I
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_0
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
-    if-eqz v0, :cond_19
+    :goto_0
+    if-eqz v0, :cond_1
 
     check-cast v0, Landroidx/compose/ui/layout/LayoutCoordinates;
 
@@ -1431,22 +1428,22 @@
 
     move-result-wide v0
 
-    goto :goto_1f
+    goto :goto_1
 
     .line 175
-    :cond_19
+    :cond_1
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/geometry/Offset$Companion;->getZero-F1C5BW0()J
 
     move-result-wide v0
 
-    :goto_1f
+    :goto_1
     return-wide v0
 .end method
 
 .method public final getReplacedChildren$ui_release()Ljava/util/List;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1479,7 +1476,7 @@
 .end method
 
 .method public final getRoot()Landroidx/compose/ui/node/RootForTest;
-    .registers 2
+    .locals 1
 
     .line 112
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
@@ -1488,50 +1485,50 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/ui/node/Owner;->getRootForTest()Landroidx/compose/ui/node/RootForTest;
 
     move-result-object v0
 
-    goto :goto_e
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_e
+    :goto_0
     return-object v0
 .end method
 
 .method public final getSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 143
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->getSize-YbymL2g()J
 
     move-result-wide v0
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     sget-object v0, Landroidx/compose/ui/unit/IntSize;->Companion:Landroidx/compose/ui/unit/IntSize$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/unit/IntSize$Companion;->getZero-YbymL2g()J
 
     move-result-wide v0
 
-    :goto_11
+    :goto_0
     return-wide v0
 .end method
 
 .method public final getTouchBoundsInRoot()Landroidx/compose/ui/geometry/Rect;
-    .registers 4
+    .locals 3
 
     .line 131
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -1540,7 +1537,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_1
 
     .line 132
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
@@ -1549,26 +1546,26 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_0
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->outerSemanticsNode:Landroidx/compose/ui/Modifier$Node;
 
-    :goto_13
+    :goto_0
     check-cast v0, Landroidx/compose/ui/node/DelegatableNode;
 
-    goto :goto_1a
+    goto :goto_1
 
     .line 134
-    :cond_16
+    :cond_1
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->outerSemanticsNode:Landroidx/compose/ui/Modifier$Node;
 
     check-cast v0, Landroidx/compose/ui/node/DelegatableNode;
 
     .line 131
-    :goto_1a
+    :goto_1
     nop
 
     .line 136
@@ -1591,7 +1588,7 @@
 .end method
 
 .method public final getUnmergedConfig$ui_release()Landroidx/compose/ui/semantics/SemanticsConfiguration;
-    .registers 2
+    .locals 1
 
     .line 90
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->unmergedConfig:Landroidx/compose/ui/semantics/SemanticsConfiguration;
@@ -1600,7 +1597,7 @@
 .end method
 
 .method public final isFake$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 95
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->isFake:Z
@@ -1609,56 +1606,56 @@
 .end method
 
 .method public final isRoot()Z
-    .registers 2
+    .locals 1
 
     .line 322
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->getParent()Landroidx/compose/ui/semantics/SemanticsNode;
 
     move-result-object v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final isTransparent$ui_release()Z
-    .registers 2
+    .locals 1
 
     .line 181
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->findCoordinatorToGetBounds$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/NodeCoordinator;->isTransparent()Z
 
     move-result v0
 
-    goto :goto_c
+    goto :goto_0
 
-    :cond_b
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_c
+    :goto_0
     return v0
 .end method
 
 .method public final isUnmergedLeafNode$ui_release()Z
-    .registers 3
+    .locals 2
 
     .line 99
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->isFake:Z
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     invoke-virtual {p0}, Landroidx/compose/ui/semantics/SemanticsNode;->getReplacedChildren$ui_release()Ljava/util/List;
 
@@ -1668,7 +1665,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->layoutNode:Landroidx/compose/ui/node/LayoutNode;
 
@@ -1680,22 +1677,22 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_0
     const/4 v0, 0x0
 
     .line 102
-    :goto_1d
+    :goto_0
     return v0
 .end method
 
 .method public final setFake$ui_release(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 95
@@ -1705,7 +1702,7 @@
 .end method
 
 .method public final unmergedChildren$ui_release(Z)Ljava/util/List;
-    .registers 4
+    .locals 2
     .param p1, "includeFakeNodes"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1719,7 +1716,7 @@
     .line 233
     iget-boolean v0, p0, Landroidx/compose/ui/semantics/SemanticsNode;->isFake:Z
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
@@ -1728,7 +1725,7 @@
     return-object v0
 
     .line 234
-    :cond_9
+    :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1742,12 +1739,12 @@
     invoke-direct {p0, v1, v0}, Landroidx/compose/ui/semantics/SemanticsNode;->fillOneLayerOfSemanticsWrappers(Landroidx/compose/ui/node/LayoutNode;Ljava/util/List;)V
 
     .line 238
-    if-eqz p1, :cond_1a
+    if-eqz p1, :cond_1
 
     .line 239
     invoke-direct {p0, v0}, Landroidx/compose/ui/semantics/SemanticsNode;->emitFakeNodes(Ljava/util/List;)V
 
     .line 242
-    :cond_1a
+    :cond_1
     return-object v0
 .end method

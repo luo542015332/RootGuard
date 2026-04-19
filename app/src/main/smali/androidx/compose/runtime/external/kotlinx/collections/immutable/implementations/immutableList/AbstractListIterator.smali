@@ -68,7 +68,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 3
+    .locals 0
     .param p1, "index"    # I
     .param p2, "size"    # I
 
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public add(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)V"
@@ -102,20 +102,20 @@
 .end method
 
 .method public final checkHasNext$runtime_release()V
-    .registers 2
+    .locals 1
 
     .line 26
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 28
     return-void
 
     .line 27
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -124,20 +124,20 @@
 .end method
 
 .method public final checkHasPrevious$runtime_release()V
-    .registers 2
+    .locals 1
 
     .line 31
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->hasPrevious()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     .line 33
     return-void
 
     .line 32
-    :cond_7
+    :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -146,7 +146,7 @@
 .end method
 
 .method public final getIndex()I
-    .registers 2
+    .locals 1
 
     .line 8
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->index:I
@@ -155,7 +155,7 @@
 .end method
 
 .method public final getSize()I
-    .registers 2
+    .locals 1
 
     .line 8
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->size:I
@@ -164,47 +164,47 @@
 .end method
 
 .method public hasNext()Z
-    .registers 3
+    .locals 2
 
     .line 10
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->index:I
 
     iget v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->size:I
 
-    if-ge v0, v1, :cond_8
+    if-ge v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public hasPrevious()Z
-    .registers 2
+    .locals 1
 
     .line 14
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->index:I
 
-    if-lez v0, :cond_6
+    if-lez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -221,7 +221,7 @@
 .end method
 
 .method public nextIndex()I
-    .registers 2
+    .locals 1
 
     .line 18
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->index:I
@@ -230,7 +230,7 @@
 .end method
 
 .method public previousIndex()I
-    .registers 2
+    .locals 1
 
     .line 22
     iget v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableList/AbstractListIterator;->index:I
@@ -241,7 +241,7 @@
 .end method
 
 .method public remove()V
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -253,7 +253,7 @@
 .end method
 
 .method public set(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)V"
@@ -270,7 +270,7 @@
 .end method
 
 .method public final setIndex(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 8
@@ -280,7 +280,7 @@
 .end method
 
 .method public final setSize(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 8

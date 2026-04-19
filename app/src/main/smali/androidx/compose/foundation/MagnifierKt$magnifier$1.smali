@@ -53,7 +53,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/foundation/MagnifierKt$magnifier$1;
 
@@ -65,7 +65,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 226
@@ -97,7 +97,7 @@
 .end method
 
 .method public final invoke-tuRUvjQ(Landroidx/compose/ui/unit/Density;)J
-    .registers 4
+    .locals 2
     .param p1, "$this$null"    # Landroidx/compose/ui/unit/Density;
 
     const-string v0, "$this$null"

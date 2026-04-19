@@ -72,7 +72,7 @@
 
 # direct methods
 .method constructor <init>(ZLkotlin/jvm/functions/Function0;ZLandroidx/compose/foundation/gestures/TransformableState;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -102,7 +102,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/Modifier;
-    .registers 21
+    .locals 17
     .param p1, "$this$composed"    # Landroidx/compose/ui/Modifier;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -129,7 +129,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_26
+    if-eqz v4, :cond_0
 
     .line 99
     const/4 v4, -0x1
@@ -140,14 +140,14 @@
 
     invoke-static {v2, v6, v4, v5}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_28
+    goto :goto_0
 
     .line 0
-    :cond_26
+    :cond_0
     move/from16 v6, p3
 
     .line 99
-    :goto_28
+    :goto_0
     iget-boolean v2, v0, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3;->$lockRotationOnZoomPan:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -212,7 +212,7 @@
 
     const/4 v4, 0x0
 
-    if-ne v14, v9, :cond_67
+    if-ne v14, v9, :cond_1
 
     .line 224
     const/4 v9, 0x0
@@ -239,14 +239,14 @@
     nop
 
     .end local v3    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_68
+    goto :goto_1
 
     .line 227
-    :cond_67
+    :cond_1
     move-object v3, v14
 
     .line 223
-    :goto_68
+    :goto_1
     nop
 
     .line 222
@@ -277,7 +277,7 @@
     .line 102
     iget-boolean v6, v0, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3;->$enabled:Z
 
-    if-eqz v6, :cond_8e
+    if-eqz v6, :cond_2
 
     .line 103
     iget-object v6, v0, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3;->$state:Landroidx/compose/foundation/gestures/TransformableState;
@@ -294,7 +294,7 @@
 
     invoke-static {v6, v7, v1, v8}, Landroidx/compose/runtime/EffectsKt;->LaunchedEffect(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
 
-    :cond_8e
+    :cond_2
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     .line 122
@@ -336,7 +336,7 @@
 
     move-result-object v13
 
-    if-ne v11, v13, :cond_bb
+    if-ne v11, v13, :cond_3
 
     .line 231
     const/4 v13, 0x0
@@ -361,14 +361,14 @@
     nop
 
     .end local v4    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_bc
+    goto :goto_2
 
     .line 234
-    :cond_bb
+    :cond_3
     move-object v4, v11
 
     .line 230
-    :goto_bc
+    :goto_2
     nop
 
     .line 229
@@ -391,7 +391,7 @@
     .local v4, "block":Lkotlin/jvm/functions/Function2;
     iget-boolean v6, v0, Landroidx/compose/foundation/gestures/TransformableKt$transformable$3;->$enabled:Z
 
-    if-eqz v6, :cond_d0
+    if-eqz v6, :cond_4
 
     sget-object v6, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
@@ -401,30 +401,30 @@
 
     move-result-object v6
 
-    goto :goto_d4
+    goto :goto_3
 
-    :cond_d0
+    :cond_4
     sget-object v6, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
     check-cast v6, Landroidx/compose/ui/Modifier;
 
-    :goto_d4
+    :goto_3
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v7
 
-    if-eqz v7, :cond_dd
+    if-eqz v7, :cond_5
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_dd
+    :cond_5
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v6
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

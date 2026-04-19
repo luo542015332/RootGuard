@@ -70,7 +70,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "info"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -106,12 +106,12 @@
 .end method
 
 .method private final getValues()Landroidx/compose/ui/platform/InspectorInfo;
-    .registers 3
+    .locals 2
 
     .line 109
     iget-object v0, p0, Landroidx/compose/ui/platform/InspectorValueInfo;->_values:Landroidx/compose/ui/platform/InspectorInfo;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_0
 
     new-instance v0, Landroidx/compose/ui/platform/InspectorInfo;
 
@@ -123,7 +123,7 @@
 
     .line 110
     .local v0, "valueInfo":Landroidx/compose/ui/platform/InspectorInfo;
-    :cond_e
+    :cond_0
     iput-object v0, p0, Landroidx/compose/ui/platform/InspectorValueInfo;->_values:Landroidx/compose/ui/platform/InspectorInfo;
 
     .line 111
@@ -133,7 +133,7 @@
 
 # virtual methods
 .method public getInspectableElements()Lkotlin/sequences/Sequence;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -158,7 +158,7 @@
 .end method
 
 .method public getNameFallback()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 115
     invoke-direct {p0}, Landroidx/compose/ui/platform/InspectorValueInfo;->getValues()Landroidx/compose/ui/platform/InspectorInfo;
@@ -173,7 +173,7 @@
 .end method
 
 .method public getValueOverride()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 118
     invoke-direct {p0}, Landroidx/compose/ui/platform/InspectorValueInfo;->getValues()Landroidx/compose/ui/platform/InspectorInfo;

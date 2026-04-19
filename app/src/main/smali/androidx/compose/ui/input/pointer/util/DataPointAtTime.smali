@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(JF)V
-    .registers 4
+    .locals 0
     .param p1, "time"    # J
     .param p3, "dataPoint"    # F
 
@@ -69,22 +69,22 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/input/pointer/util/DataPointAtTime;JFILjava/lang/Object;)Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
-    .registers 6
+    .locals 0
 
     and-int/lit8 p5, p4, 0x1
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     iget-wide p1, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->time:J
 
-    :cond_6
+    :cond_0
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_c
+    if-eqz p4, :cond_1
 
     iget p3, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->dataPoint:F
 
-    :cond_c
+    :cond_1
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->copy(JF)Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
 
     move-result-object p0
@@ -95,7 +95,7 @@
 
 # virtual methods
 .method public final component1()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->time:J
 
@@ -103,7 +103,7 @@
 .end method
 
 .method public final component2()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->dataPoint:F
 
@@ -111,7 +111,7 @@
 .end method
 
 .method public final copy(JF)Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
-    .registers 5
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
 
@@ -121,24 +121,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
@@ -149,11 +149,11 @@
 
     cmp-long v3, v3, v5
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_2
 
     return v2
 
-    :cond_16
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->dataPoint:F
 
     iget v1, v1, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->dataPoint:F
@@ -162,16 +162,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_3
 
     return v2
 
-    :cond_21
+    :cond_3
     return v0
 .end method
 
 .method public final getDataPoint()F
-    .registers 2
+    .locals 1
 
     .line 338
     iget v0, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->dataPoint:F
@@ -180,7 +180,7 @@
 .end method
 
 .method public final getTime()J
-    .registers 3
+    .locals 2
 
     .line 338
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->time:J
@@ -189,7 +189,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .locals 3
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->time:J
 
@@ -211,7 +211,7 @@
 .end method
 
 .method public final setDataPoint(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 338
@@ -221,7 +221,7 @@
 .end method
 
 .method public final setTime(J)V
-    .registers 3
+    .locals 0
     .param p1, "<set-?>"    # J
 
     .line 338
@@ -231,7 +231,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 

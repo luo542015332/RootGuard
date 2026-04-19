@@ -82,7 +82,7 @@
 
 # direct methods
 .method public constructor <init>(FFFZZFF)V
-    .registers 11
+    .locals 3
     .param p1, "horizontalEllipseRadius"    # F
     .param p2, "verticalEllipseRadius"    # F
     .param p3, "theta"    # F
@@ -126,67 +126,67 @@
 .end method
 
 .method public static synthetic copy$default(Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;FFFZZFFILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;
-    .registers 15
+    .locals 5
 
     and-int/lit8 p9, p8, 0x1
 
-    if-eqz p9, :cond_6
+    if-eqz p9, :cond_0
 
     iget p1, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->horizontalEllipseRadius:F
 
-    :cond_6
+    :cond_0
     and-int/lit8 p9, p8, 0x2
 
-    if-eqz p9, :cond_c
+    if-eqz p9, :cond_1
 
     iget p2, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->verticalEllipseRadius:F
 
-    :cond_c
+    :cond_1
     move p9, p2
 
     and-int/lit8 p2, p8, 0x4
 
-    if-eqz p2, :cond_13
+    if-eqz p2, :cond_2
 
     iget p3, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->theta:F
 
-    :cond_13
+    :cond_2
     move v0, p3
 
     and-int/lit8 p2, p8, 0x8
 
-    if-eqz p2, :cond_1a
+    if-eqz p2, :cond_3
 
     iget-boolean p4, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isMoreThanHalf:Z
 
-    :cond_1a
+    :cond_3
     move v1, p4
 
     and-int/lit8 p2, p8, 0x10
 
-    if-eqz p2, :cond_21
+    if-eqz p2, :cond_4
 
     iget-boolean p5, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isPositiveArc:Z
 
-    :cond_21
+    :cond_4
     move v2, p5
 
     and-int/lit8 p2, p8, 0x20
 
-    if-eqz p2, :cond_28
+    if-eqz p2, :cond_5
 
     iget p6, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDx:F
 
-    :cond_28
+    :cond_5
     move v3, p6
 
     and-int/lit8 p2, p8, 0x40
 
-    if-eqz p2, :cond_2f
+    if-eqz p2, :cond_6
 
     iget p7, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDy:F
 
-    :cond_2f
+    :cond_6
     move v4, p7
 
     move-object p2, p0
@@ -215,7 +215,7 @@
 
 # virtual methods
 .method public final component1()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->horizontalEllipseRadius:F
 
@@ -223,7 +223,7 @@
 .end method
 
 .method public final component2()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->verticalEllipseRadius:F
 
@@ -231,7 +231,7 @@
 .end method
 
 .method public final component3()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->theta:F
 
@@ -239,7 +239,7 @@
 .end method
 
 .method public final component4()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isMoreThanHalf:Z
 
@@ -247,7 +247,7 @@
 .end method
 
 .method public final component5()Z
-    .registers 2
+    .locals 1
 
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isPositiveArc:Z
 
@@ -255,7 +255,7 @@
 .end method
 
 .method public final component6()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDx:F
 
@@ -263,7 +263,7 @@
 .end method
 
 .method public final component7()F
-    .registers 2
+    .locals 1
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDy:F
 
@@ -271,7 +271,7 @@
 .end method
 
 .method public final copy(FFFZZFF)Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;
-    .registers 17
+    .locals 9
 
     new-instance v8, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;
 
@@ -297,24 +297,24 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
+    .locals 5
 
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_a
+    :cond_1
     move-object v1, p1
 
     check-cast v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;
@@ -327,11 +327,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_18
+    if-eqz v3, :cond_2
 
     return v2
 
-    :cond_18
+    :cond_2
     iget v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->verticalEllipseRadius:F
 
     iget v4, v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->verticalEllipseRadius:F
@@ -340,11 +340,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_23
+    if-eqz v3, :cond_3
 
     return v2
 
-    :cond_23
+    :cond_3
     iget v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->theta:F
 
     iget v4, v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->theta:F
@@ -353,29 +353,29 @@
 
     move-result v3
 
-    if-eqz v3, :cond_2e
+    if-eqz v3, :cond_4
 
     return v2
 
-    :cond_2e
+    :cond_4
     iget-boolean v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isMoreThanHalf:Z
 
     iget-boolean v4, v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isMoreThanHalf:Z
 
-    if-eq v3, v4, :cond_35
+    if-eq v3, v4, :cond_5
 
     return v2
 
-    :cond_35
+    :cond_5
     iget-boolean v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isPositiveArc:Z
 
     iget-boolean v4, v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isPositiveArc:Z
 
-    if-eq v3, v4, :cond_3c
+    if-eq v3, v4, :cond_6
 
     return v2
 
-    :cond_3c
+    :cond_6
     iget v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDx:F
 
     iget v4, v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDx:F
@@ -384,11 +384,11 @@
 
     move-result v3
 
-    if-eqz v3, :cond_47
+    if-eqz v3, :cond_7
 
     return v2
 
-    :cond_47
+    :cond_7
     iget v3, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDy:F
 
     iget v1, v1, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDy:F
@@ -397,16 +397,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_52
+    if-eqz v1, :cond_8
 
     return v2
 
-    :cond_52
+    :cond_8
     return v0
 .end method
 
 .method public final getArcStartDx()F
-    .registers 2
+    .locals 1
 
     .line 129
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDx:F
@@ -415,7 +415,7 @@
 .end method
 
 .method public final getArcStartDy()F
-    .registers 2
+    .locals 1
 
     .line 130
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->arcStartDy:F
@@ -424,7 +424,7 @@
 .end method
 
 .method public final getHorizontalEllipseRadius()F
-    .registers 2
+    .locals 1
 
     .line 124
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->horizontalEllipseRadius:F
@@ -433,7 +433,7 @@
 .end method
 
 .method public final getTheta()F
-    .registers 2
+    .locals 1
 
     .line 126
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->theta:F
@@ -442,7 +442,7 @@
 .end method
 
 .method public final getVerticalEllipseRadius()F
-    .registers 2
+    .locals 1
 
     .line 125
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->verticalEllipseRadius:F
@@ -451,7 +451,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     iget v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->horizontalEllipseRadius:F
 
@@ -485,25 +485,25 @@
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_20
+    if-eqz v2, :cond_0
 
     move v2, v3
 
-    :cond_20
+    :cond_0
     add-int/2addr v1, v2
 
     mul-int/lit8 v0, v1, 0x1f
 
     iget-boolean v2, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isPositiveArc:Z
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_1
 
-    goto :goto_29
+    goto :goto_0
 
-    :cond_28
+    :cond_1
     move v3, v2
 
-    :goto_29
+    :goto_0
     add-int/2addr v0, v3
 
     mul-int/lit8 v1, v0, 0x1f
@@ -530,7 +530,7 @@
 .end method
 
 .method public final isMoreThanHalf()Z
-    .registers 2
+    .locals 1
 
     .line 127
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isMoreThanHalf:Z
@@ -539,7 +539,7 @@
 .end method
 
 .method public final isPositiveArc()Z
-    .registers 2
+    .locals 1
 
     .line 128
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/PathNode$RelativeArcTo;->isPositiveArc:Z
@@ -548,7 +548,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 

@@ -39,7 +39,7 @@
 
 # direct methods
 .method public static final blur-1fqS-gw(Landroidx/compose/ui/Modifier;FFLandroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
-    .registers 13
+    .locals 9
     .param p0, "$this$blur_u2d1fqS_u2dgw"    # Landroidx/compose/ui/Modifier;
     .param p1, "radiusX"    # F
     .param p2, "radiusY"    # F
@@ -56,7 +56,7 @@
 
     .line 105
     .local v1, "tileMode":I
-    if-eqz p3, :cond_11
+    if-eqz p3, :cond_0
 
     .line 106
     const/4 v0, 0x1
@@ -68,10 +68,10 @@
 
     move-result v1
 
-    goto :goto_18
+    goto :goto_0
 
     .line 109
-    :cond_11
+    :cond_0
     const/4 v0, 0x0
 
     .line 110
@@ -82,7 +82,7 @@
     move-result v1
 
     .line 112
-    :goto_18
+    :goto_0
     const/4 v2, 0x0
 
     .local v2, "$this$dp$iv":I
@@ -103,7 +103,7 @@
 
     move-result v2
 
-    if-lez v2, :cond_32
+    if-lez v2, :cond_1
 
     const/4 v2, 0x0
 
@@ -125,13 +125,13 @@
 
     move-result v2
 
-    if-gtz v2, :cond_34
+    if-gtz v2, :cond_2
 
-    :cond_32
-    if-eqz v0, :cond_46
+    :cond_1
+    if-eqz v0, :cond_3
 
     .line 113
-    :cond_34
+    :cond_2
     new-instance v8, Landroidx/compose/ui/draw/BlurKt$blur$1;
 
     move-object v2, v8
@@ -154,24 +154,24 @@
 
     move-result-object v2
 
-    goto :goto_47
+    goto :goto_1
 
     .line 127
-    :cond_46
+    :cond_3
     move-object v2, p0
 
     .line 112
-    :goto_47
+    :goto_1
     return-object v2
 .end method
 
 .method public static synthetic blur-1fqS-gw$default(Landroidx/compose/ui/Modifier;FFLandroidx/compose/ui/draw/BlurredEdgeTreatment;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 6
+    .locals 0
 
     .line 98
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_e
+    if-eqz p4, :cond_0
 
     .line 101
     sget-object p3, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->Companion:Landroidx/compose/ui/draw/BlurredEdgeTreatment$Companion;
@@ -185,7 +185,7 @@
     move-result-object p3
 
     .line 98
-    :cond_e
+    :cond_0
     invoke-virtual {p3}, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->unbox-impl()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object p3
@@ -198,7 +198,7 @@
 .end method
 
 .method public static final blur-F8QBwvs(Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/Modifier;
-    .registers 4
+    .locals 1
     .param p0, "$this$blur_u2dF8QBwvs"    # Landroidx/compose/ui/Modifier;
     .param p1, "radius"    # F
     .param p2, "edgeTreatment"    # Landroidx/compose/ui/graphics/Shape;
@@ -216,12 +216,12 @@
 .end method
 
 .method public static synthetic blur-F8QBwvs$default(Landroidx/compose/ui/Modifier;FLandroidx/compose/ui/draw/BlurredEdgeTreatment;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 5
+    .locals 0
 
     .line 150
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_e
+    if-eqz p3, :cond_0
 
     .line 152
     sget-object p2, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->Companion:Landroidx/compose/ui/draw/BlurredEdgeTreatment$Companion;
@@ -235,7 +235,7 @@
     move-result-object p2
 
     .line 150
-    :cond_e
+    :cond_0
     invoke-virtual {p2}, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->unbox-impl()Landroidx/compose/ui/graphics/Shape;
 
     move-result-object p2

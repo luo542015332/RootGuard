@@ -40,7 +40,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl$Companion;-><init>()V
 
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final getSaver()Landroidx/compose/runtime/saveable/Saver;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -70,7 +70,6 @@
     .end annotation
 
     .line 136
-    # getter for: Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->Saver:Landroidx/compose/runtime/saveable/Saver;
     invoke-static {}, Landroidx/compose/runtime/saveable/SaveableStateHolderImpl;->access$getSaver$cp()Landroidx/compose/runtime/saveable/Saver;
 
     move-result-object v0

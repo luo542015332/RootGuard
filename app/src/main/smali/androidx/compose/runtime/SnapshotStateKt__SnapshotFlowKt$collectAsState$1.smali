@@ -84,7 +84,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/coroutines/CoroutineContext;Lkotlinx/coroutines/flow/Flow;Lkotlin/coroutines/Continuation;)V
-    .registers 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -112,7 +112,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 6
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -141,7 +141,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/ProduceStateScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -171,7 +171,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/runtime/ProduceStateScope;
 
@@ -185,7 +185,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
+    .locals 7
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -194,7 +194,7 @@
     .line 65535
     iget v1, p0, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;->label:I
 
-    packed-switch v1, :pswitch_data_64
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -204,29 +204,29 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .local p1, "$result":Ljava/lang/Object;
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_60
+    goto :goto_1
 
     .end local v0    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_17
+    :pswitch_1
     move-object v0, p0
 
     .restart local v0    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .restart local p1    # "$result":Ljava/lang/Object;
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    goto :goto_45
+    goto :goto_0
 
     .end local v0    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1c
+    :pswitch_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -247,7 +247,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_46
+    if-eqz v3, :cond_1
 
     .line 64
     iget-object v3, v1, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;->$this_collectAsState:Lkotlinx/coroutines/flow/Flow;
@@ -271,25 +271,25 @@
     move-result-object v2
 
     .end local v2    # "$this$produceState":Landroidx/compose/runtime/ProduceStateScope;
-    if-ne v2, v0, :cond_44
+    if-ne v2, v0, :cond_0
 
     .line 65535
     return-object v0
 
     .line 64
-    :cond_44
+    :cond_0
     move-object v0, v1
 
     .end local v1    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .restart local v0    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
-    :goto_45
-    goto :goto_61
+    :goto_0
+    goto :goto_2
 
     .line 65
     .end local v0    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .restart local v1    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .restart local v2    # "$this$produceState":Landroidx/compose/runtime/ProduceStateScope;
-    :cond_46
+    :cond_1
     iget-object v3, v1, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;->$context:Lkotlin/coroutines/CoroutineContext;
 
     new-instance v4, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1$2;
@@ -315,30 +315,30 @@
     move-result-object v2
 
     .end local v2    # "$this$produceState":Landroidx/compose/runtime/ProduceStateScope;
-    if-ne v2, v0, :cond_5f
+    if-ne v2, v0, :cond_2
 
     .line 65535
     return-object v0
 
     .line 65
-    :cond_5f
+    :cond_2
     move-object v0, v1
 
     .line 68
     .end local v1    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
     .restart local v0    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$collectAsState$1;
-    :goto_60
+    :goto_1
     nop
 
-    :goto_61
+    :goto_2
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v1
 
-    :pswitch_data_64
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c
-        :pswitch_17
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

@@ -197,7 +197,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/Float16$Companion;
 
@@ -330,7 +330,7 @@
 .end method
 
 .method private synthetic constructor <init>(S)V
-    .registers 2
+    .locals 0
     .param p1, "halfValue"    # S
 
     .line 87
@@ -342,7 +342,7 @@
 .end method
 
 .method public static final absoluteValue-slo4al4(S)S
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 312
@@ -358,7 +358,7 @@
 .end method
 
 .method public static final synthetic access$getEpsilon$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->Epsilon:S
@@ -367,7 +367,7 @@
 .end method
 
 .method public static final synthetic access$getLowestValue$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->LowestValue:S
@@ -376,7 +376,7 @@
 .end method
 
 .method public static final synthetic access$getMaxValue$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->MaxValue:S
@@ -385,7 +385,7 @@
 .end method
 
 .method public static final synthetic access$getMinNormal$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->MinNormal:S
@@ -394,7 +394,7 @@
 .end method
 
 .method public static final synthetic access$getMinValue$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->MinValue:S
@@ -403,7 +403,7 @@
 .end method
 
 .method public static final synthetic access$getNaN$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->NaN:S
@@ -412,7 +412,7 @@
 .end method
 
 .method public static final synthetic access$getNegativeInfinity$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->NegativeInfinity:S
@@ -421,7 +421,7 @@
 .end method
 
 .method public static final synthetic access$getNegativeZero$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->NegativeZero:S
@@ -430,7 +430,7 @@
 .end method
 
 .method public static final synthetic access$getPositiveInfinity$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->PositiveInfinity:S
@@ -439,7 +439,7 @@
 .end method
 
 .method public static final synthetic access$getPositiveZero$cp()S
-    .registers 1
+    .locals 1
 
     .line 86
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->PositiveZero:S
@@ -448,7 +448,7 @@
 .end method
 
 .method public static final synthetic box-impl(S)Landroidx/compose/ui/graphics/Float16;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/Float16;
 
@@ -458,7 +458,7 @@
 .end method
 
 .method public static final ceil-slo4al4(S)S
-    .registers 7
+    .locals 6
     .param p0, "arg0"    # S
 
     .line 362
@@ -480,7 +480,7 @@
 
     const/16 v4, 0x3c00
 
-    if-ge v1, v4, :cond_1c
+    if-ge v1, v4, :cond_1
 
     .line 367
     const v5, 0x8000
@@ -492,14 +492,14 @@
 
     not-int v5, v5
 
-    if-eqz v1, :cond_16
+    if-eqz v1, :cond_0
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     const/4 v3, 0x0
 
-    :goto_17
+    :goto_0
     and-int/2addr v3, v5
 
     neg-int v3, v3
@@ -508,13 +508,13 @@
 
     or-int/2addr v2, v3
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 369
-    :cond_1c
+    :cond_1
     const/16 v4, 0x6400
 
-    if-ge v1, v4, :cond_2f
+    if-ge v1, v4, :cond_2
 
     .line 370
     shr-int/lit8 v4, v1, 0xa
@@ -543,8 +543,8 @@
 
     .line 376
     .end local v4    # "mask":I
-    :cond_2f
-    :goto_2f
+    :cond_2
+    :goto_1
     int-to-short v3, v2
 
     invoke-static {v3}, Landroidx/compose/ui/graphics/Float16;->constructor-impl(S)S
@@ -555,7 +555,7 @@
 .end method
 
 .method public static compareTo-41bOqos(SS)I
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # S
     .param p1, "other"    # S
 
@@ -564,7 +564,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
     .line 260
     invoke-static {p1}, Landroidx/compose/ui/graphics/Float16;->isNaN-impl(S)Z
@@ -576,12 +576,12 @@
     return v0
 
     .line 261
-    :cond_d
+    :cond_0
     invoke-static {p1}, Landroidx/compose/ui/graphics/Float16;->isNaN-impl(S)Z
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_1
 
     .line 262
     const/4 v0, -0x1
@@ -589,16 +589,14 @@
     return v0
 
     .line 264
-    :cond_15
+    :cond_1
     sget-object v0, Landroidx/compose/ui/graphics/Float16;->Companion:Landroidx/compose/ui/graphics/Float16$Companion;
 
-    # invokes: Landroidx/compose/ui/graphics/Float16$Companion;->toCompareValue(S)I
     invoke-static {v0, p0}, Landroidx/compose/ui/graphics/Float16$Companion;->access$toCompareValue(Landroidx/compose/ui/graphics/Float16$Companion;S)I
 
     move-result v1
 
     .line 265
-    # invokes: Landroidx/compose/ui/graphics/Float16$Companion;->toCompareValue(S)I
     invoke-static {v0, p1}, Landroidx/compose/ui/graphics/Float16$Companion;->access$toCompareValue(Landroidx/compose/ui/graphics/Float16$Companion;S)I
 
     move-result v0
@@ -612,7 +610,7 @@
 .end method
 
 .method public static constructor-impl(D)S
-    .registers 3
+    .locals 1
     .param p0, "value"    # D
 
     .line 107
@@ -626,7 +624,7 @@
 .end method
 
 .method public static constructor-impl(F)S
-    .registers 2
+    .locals 1
     .param p0, "value"    # F
 
     .line 95
@@ -639,7 +637,6 @@
     nop
 
     .line 96
-    # invokes: Landroidx/compose/ui/graphics/Float16$Companion;->floatToHalf(F)S
     invoke-static {v0, p0}, Landroidx/compose/ui/graphics/Float16$Companion;->access$floatToHalf(Landroidx/compose/ui/graphics/Float16$Companion;F)S
 
     move-result v0
@@ -653,23 +650,23 @@
 .end method
 
 .method public static constructor-impl(S)S
-    .registers 1
+    .locals 0
 
     return p0
 .end method
 
 .method public static equals-impl(SLjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/graphics/Float16;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/graphics/Float16;
@@ -678,34 +675,34 @@
 
     move-result v0
 
-    if-eq p0, v0, :cond_10
+    if-eq p0, v0, :cond_1
 
     return v1
 
-    :cond_10
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(SS)Z
-    .registers 3
+    .locals 1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_5
+    :goto_0
     return v0
 .end method
 
 .method public static final floor-slo4al4(S)S
-    .registers 7
+    .locals 6
     .param p0, "arg0"    # S
 
     .line 394
@@ -725,7 +722,7 @@
     .local v3, "result":I
     const/16 v4, 0x3c00
 
-    if-ge v2, v4, :cond_17
+    if-ge v2, v4, :cond_1
 
     .line 399
     const v5, 0x8000
@@ -733,25 +730,25 @@
     and-int/2addr v3, v5
 
     .line 400
-    if-le v1, v5, :cond_13
+    if-le v1, v5, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_14
+    :goto_0
     and-int/2addr v0, v4
 
     or-int/2addr v3, v0
 
-    goto :goto_2a
+    goto :goto_1
 
     .line 401
-    :cond_17
+    :cond_1
     const/16 v0, 0x6400
 
-    if-ge v2, v0, :cond_2a
+    if-ge v2, v0, :cond_2
 
     .line 402
     shr-int/lit8 v0, v2, 0xa
@@ -782,8 +779,8 @@
 
     .line 408
     .end local v4    # "mask":I
-    :cond_2a
-    :goto_2a
+    :cond_2
+    :goto_1
     int-to-short v0, v3
 
     invoke-static {v0}, Landroidx/compose/ui/graphics/Float16;->constructor-impl(S)S
@@ -794,7 +791,7 @@
 .end method
 
 .method public static final getExponent-impl(S)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 449
@@ -812,7 +809,7 @@
 .end method
 
 .method public static final getSign-slo4al4(S)S
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 280
@@ -820,7 +817,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 281
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->NaN:S
@@ -828,7 +825,7 @@
     return v0
 
     .line 283
-    :cond_9
+    :cond_0
     nop
 
     .line 284
@@ -838,33 +835,33 @@
 
     move-result v0
 
-    if-gez v0, :cond_15
+    if-gez v0, :cond_1
 
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->NegativeOne:S
 
     return v0
 
     .line 285
-    :cond_15
+    :cond_1
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->PositiveZero:S
 
     invoke-static {p0, v0}, Landroidx/compose/ui/graphics/Float16;->compareTo-41bOqos(SS)I
 
     move-result v0
 
-    if-lez v0, :cond_20
+    if-lez v0, :cond_2
 
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->One:S
 
     return v0
 
     .line 286
-    :cond_20
+    :cond_2
     return p0
 .end method
 
 .method public static final getSignificand-impl(S)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 459
@@ -874,7 +871,7 @@
 .end method
 
 .method public static hashCode-impl(S)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Short;->hashCode(S)I
 
@@ -884,7 +881,7 @@
 .end method
 
 .method public static final isFinite-impl(S)Z
-    .registers 3
+    .locals 2
     .param p0, "arg0"    # S
 
     .line 491
@@ -892,21 +889,21 @@
 
     const/16 v1, 0x7c00
 
-    if-eq v0, v1, :cond_8
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public static final isInfinite-impl(S)Z
-    .registers 3
+    .locals 2
     .param p0, "arg0"    # S
 
     .line 480
@@ -914,21 +911,21 @@
 
     const/16 v1, 0x7c00
 
-    if-ne v0, v1, :cond_8
+    if-ne v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public static final isNaN-impl(S)Z
-    .registers 3
+    .locals 2
     .param p0, "arg0"    # S
 
     .line 469
@@ -936,49 +933,49 @@
 
     const/16 v1, 0x7c00
 
-    if-le v0, v1, :cond_8
+    if-le v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public static final isNormalized-impl(S)Z
-    .registers 3
+    .locals 2
     .param p0, "arg0"    # S
 
     .line 504
     and-int/lit16 v0, p0, 0x7c00
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     .line 505
     and-int/lit16 v0, p0, 0x7c00
 
     const/16 v1, 0x7c00
 
-    if-eq v0, v1, :cond_c
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     const/4 v0, 0x0
 
     .line 504
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public static final round-slo4al4(S)S
-    .registers 7
+    .locals 6
     .param p0, "arg0"    # S
 
     .line 330
@@ -998,7 +995,7 @@
     .local v3, "result":I
     const/16 v4, 0x3c00
 
-    if-ge v2, v4, :cond_19
+    if-ge v2, v4, :cond_1
 
     .line 335
     const v5, 0x8000
@@ -1008,25 +1005,25 @@
     .line 336
     const/16 v5, 0x3800
 
-    if-lt v2, v5, :cond_15
+    if-lt v2, v5, :cond_0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_16
+    :goto_0
     and-int/2addr v0, v4
 
     or-int/2addr v3, v0
 
-    goto :goto_2b
+    goto :goto_1
 
     .line 337
-    :cond_19
+    :cond_1
     const/16 v0, 0x6400
 
-    if-ge v2, v0, :cond_2b
+    if-ge v2, v0, :cond_2
 
     .line 338
     shr-int/lit8 v0, v2, 0xa
@@ -1055,8 +1052,8 @@
 
     .line 344
     .end local v4    # "mask":I
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_1
     int-to-short v0, v3
 
     invoke-static {v0}, Landroidx/compose/ui/graphics/Float16;->constructor-impl(S)S
@@ -1067,7 +1064,7 @@
 .end method
 
 .method public static final toBits-impl(S)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 214
@@ -1075,26 +1072,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
     .line 215
     sget-short v0, Landroidx/compose/ui/graphics/Float16;->NaN:S
 
-    goto :goto_d
+    goto :goto_0
 
     .line 217
-    :cond_9
+    :cond_0
     const v0, 0xffff
 
     and-int/2addr v0, p0
 
     .line 214
-    :goto_d
+    :goto_0
     return v0
 .end method
 
 .method public static final toByte-impl(S)B
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 117
@@ -1110,7 +1107,7 @@
 .end method
 
 .method public static final toDouble-impl(S)D
-    .registers 3
+    .locals 2
     .param p0, "arg0"    # S
 
     .line 200
@@ -1124,7 +1121,7 @@
 .end method
 
 .method public static final toFloat-impl(S)F
-    .registers 9
+    .locals 8
     .param p0, "arg0"    # S
 
     .line 161
@@ -1160,10 +1157,10 @@
 
     .line 169
     .local v6, "outM":I
-    if-nez v2, :cond_27
+    if-nez v2, :cond_1
 
     .line 170
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_3
 
     .line 172
     sget-object v3, Lkotlin/jvm/internal/FloatCompanionObject;->INSTANCE:Lkotlin/jvm/internal/FloatCompanionObject;
@@ -1183,48 +1180,48 @@
     sub-float/2addr v3, v7
 
     .line 174
-    if-nez v1, :cond_25
+    if-nez v1, :cond_0
 
     move v7, v3
 
-    goto :goto_26
+    goto :goto_0
 
-    :cond_25
+    :cond_0
     neg-float v7, v3
 
-    :goto_26
+    :goto_0
     return v7
 
     .line 177
     .end local v3    # "o":F
-    :cond_27
+    :cond_1
     shl-int/lit8 v6, v4, 0xd
 
     .line 178
-    if-ne v2, v3, :cond_33
+    if-ne v2, v3, :cond_2
 
     .line 179
     const/16 v5, 0xff
 
     .line 180
-    if-eqz v6, :cond_37
+    if-eqz v6, :cond_3
 
     .line 181
     const/high16 v3, 0x400000
 
     or-int/2addr v6, v3
 
-    goto :goto_37
+    goto :goto_1
 
     .line 184
-    :cond_33
+    :cond_2
     add-int/lit8 v3, v2, -0xf
 
     add-int/lit8 v5, v3, 0x7f
 
     .line 188
-    :cond_37
-    :goto_37
+    :cond_3
+    :goto_1
     shl-int/lit8 v3, v1, 0x10
 
     shl-int/lit8 v7, v5, 0x17
@@ -1245,7 +1242,7 @@
 .end method
 
 .method public static final toHexString-impl(S)Ljava/lang/String;
-    .registers 11
+    .locals 10
     .param p0, "arg0"    # S
 
     .line 534
@@ -1279,42 +1276,42 @@
     .local v5, "m":I
     const/16 v6, 0x2d
 
-    if-ne v3, v4, :cond_2b
+    if-ne v3, v4, :cond_2
 
     .line 542
-    if-nez v5, :cond_24
+    if-nez v5, :cond_1
 
     .line 543
-    if-eqz v2, :cond_1d
+    if-eqz v2, :cond_0
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 544
-    :cond_1d
+    :cond_0
     const-string v4, "Infinity"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto/16 :goto_99
+    goto/16 :goto_0
 
     .line 546
-    :cond_24
+    :cond_1
     const-string/jumbo v4, "NaN"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_99
+    goto :goto_0
 
     .line 549
-    :cond_2b
+    :cond_2
     const/4 v4, 0x1
 
-    if-ne v2, v4, :cond_31
+    if-ne v2, v4, :cond_3
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 550
-    :cond_31
+    :cond_3
     const-string v4, ""
 
     const-string v6, "0{2,}$"
@@ -1323,20 +1320,20 @@
 
     const/16 v8, 0x10
 
-    if-nez v3, :cond_6b
+    if-nez v3, :cond_5
 
     .line 551
-    if-nez v5, :cond_44
+    if-nez v5, :cond_4
 
     .line 552
     const-string v4, "0x0.0p0"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_99
+    goto :goto_0
 
     .line 554
-    :cond_44
+    :cond_4
     const-string v9, "0x0."
 
     invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1375,11 +1372,11 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_99
+    goto :goto_0
 
     .line 560
     .end local v7    # "significand":Ljava/lang/String;
-    :cond_6b
+    :cond_5
     const-string v9, "0x1."
 
     invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1429,7 +1426,7 @@
 
     .line 568
     .end local v7    # "significand":Ljava/lang/String;
-    :goto_99
+    :goto_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -1442,7 +1439,7 @@
 .end method
 
 .method public static final toInt-impl(S)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 139
@@ -1456,7 +1453,7 @@
 .end method
 
 .method public static final toLong-impl(S)J
-    .registers 3
+    .locals 2
     .param p0, "arg0"    # S
 
     .line 150
@@ -1470,7 +1467,7 @@
 .end method
 
 .method public static final toRawBits-impl(S)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 228
@@ -1482,7 +1479,7 @@
 .end method
 
 .method public static final toShort-impl(S)S
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 128
@@ -1498,7 +1495,7 @@
 .end method
 
 .method public static toString-impl(S)Ljava/lang/String;
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # S
 
     .line 238
@@ -1514,7 +1511,7 @@
 .end method
 
 .method public static final trunc-slo4al4(S)S
-    .registers 6
+    .locals 5
     .param p0, "arg0"    # S
 
     .line 425
@@ -1534,20 +1531,20 @@
     .local v2, "result":I
     const/16 v3, 0x3c00
 
-    if-ge v1, v3, :cond_10
+    if-ge v1, v3, :cond_0
 
     .line 430
     const v3, 0x8000
 
     and-int/2addr v2, v3
 
-    goto :goto_1e
+    goto :goto_0
 
     .line 431
-    :cond_10
+    :cond_0
     const/16 v3, 0x6400
 
-    if-ge v1, v3, :cond_1e
+    if-ge v1, v3, :cond_1
 
     .line 432
     shr-int/lit8 v3, v1, 0xa
@@ -1569,8 +1566,8 @@
 
     .line 437
     .end local v4    # "mask":I
-    :cond_1e
-    :goto_1e
+    :cond_1
+    :goto_0
     int-to-short v3, v2
 
     invoke-static {v3}, Landroidx/compose/ui/graphics/Float16;->constructor-impl(S)S
@@ -1581,7 +1578,7 @@
 .end method
 
 .method public static final withSign-qCeQghg(SS)S
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # S
     .param p1, "sign"    # S
 
@@ -1611,7 +1608,7 @@
 
 # virtual methods
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 86
@@ -1631,7 +1628,7 @@
 .end method
 
 .method public compareTo-41bOqos(S)I
-    .registers 3
+    .locals 1
     .param p1, "other"    # S
 
     .line 258
@@ -1646,7 +1643,7 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-short v0, p0, Landroidx/compose/ui/graphics/Float16;->halfValue:S
 
@@ -1658,7 +1655,7 @@
 .end method
 
 .method public final getHalfValue()S
-    .registers 2
+    .locals 1
 
     .line 87
     iget-short v0, p0, Landroidx/compose/ui/graphics/Float16;->halfValue:S
@@ -1667,7 +1664,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-short v0, p0, Landroidx/compose/ui/graphics/Float16;->halfValue:S
 
@@ -1679,7 +1676,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 237
     iget-short v0, p0, Landroidx/compose/ui/graphics/Float16;->halfValue:S
@@ -1693,7 +1690,7 @@
 .end method
 
 .method public final synthetic unbox-impl()S
-    .registers 2
+    .locals 1
 
     iget-short v0, p0, Landroidx/compose/ui/graphics/Float16;->halfValue:S
 

@@ -46,7 +46,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidComposeViewAccessibilityDelegateCompat$Api28Impl;
 
@@ -58,7 +58,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 3240
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,7 +67,7 @@
 .end method
 
 .method public static final setScrollEventDelta(Landroid/view/accessibility/AccessibilityEvent;II)V
-    .registers 4
+    .locals 1
     .param p0, "event"    # Landroid/view/accessibility/AccessibilityEvent;
     .param p1, "deltaX"    # I
     .param p2, "deltaY"    # I

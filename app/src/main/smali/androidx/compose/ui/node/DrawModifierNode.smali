@@ -35,7 +35,7 @@
 .end method
 
 .method public onMeasureResultChanged()V
-    .registers 1
+    .locals 0
 
     .line 32
     return-void

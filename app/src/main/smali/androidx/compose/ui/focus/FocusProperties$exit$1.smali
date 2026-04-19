@@ -54,7 +54,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/focus/FocusProperties$exit$1;
 
@@ -66,7 +66,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x1
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 154
@@ -98,7 +98,7 @@
 .end method
 
 .method public final invoke-3ESFkO8(I)Landroidx/compose/ui/focus/FocusRequester;
-    .registers 3
+    .locals 1
     .param p1, "it"    # I
 
     .line 154

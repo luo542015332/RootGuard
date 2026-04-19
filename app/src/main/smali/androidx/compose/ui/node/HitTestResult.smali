@@ -116,7 +116,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -143,7 +143,7 @@
 .end method
 
 .method public static final synthetic access$getHitDepth$p(Landroidx/compose/ui/node/HitTestResult;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/node/HitTestResult;
 
     .line 34
@@ -153,7 +153,7 @@
 .end method
 
 .method public static final synthetic access$getValues$p(Landroidx/compose/ui/node/HitTestResult;)[Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/node/HitTestResult;
 
     .line 34
@@ -163,7 +163,7 @@
 .end method
 
 .method public static final synthetic access$setHitDepth$p(Landroidx/compose/ui/node/HitTestResult;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/node/HitTestResult;
     .param p1, "<set-?>"    # I
 
@@ -174,7 +174,7 @@
 .end method
 
 .method private final ensureContainerSize()V
-    .registers 4
+    .locals 3
 
     .line 185
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult;->hitDepth:I
@@ -183,7 +183,7 @@
 
     array-length v2, v1
 
-    if-lt v0, v2, :cond_21
+    if-lt v0, v2, :cond_0
 
     .line 186
     array-length v0, v1
@@ -215,19 +215,18 @@
 
     .line 190
     .end local v0    # "newSize":I
-    :cond_21
+    :cond_0
     return-void
 .end method
 
 .method private final findBestHitDistance-ptXAw2c()J
-    .registers 9
+    .locals 8
 
     .line 81
     const/high16 v0, 0x7f800000    # Float.POSITIVE_INFINITY
 
     const/4 v1, 0x0
 
-    # invokes: Landroidx/compose/ui/node/HitTestResultKt;->DistanceAndInLayer(FZ)J
     invoke-static {v0, v1}, Landroidx/compose/ui/node/HitTestResultKt;->access$DistanceAndInLayer(FZ)J
 
     move-result-wide v0
@@ -247,10 +246,10 @@
 
     move-result v3
 
-    if-gt v2, v3, :cond_3b
+    if-gt v2, v3, :cond_2
 
     .line 83
-    :goto_14
+    :goto_0
     iget-object v4, p0, Landroidx/compose/ui/node/HitTestResult;->distanceFromEdgeAndInLayer:[J
 
     aget-wide v5, v4, v2
@@ -265,16 +264,16 @@
 
     move-result v6
 
-    if-gez v6, :cond_24
+    if-gez v6, :cond_0
 
     move-wide v6, v4
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
+    :cond_0
     move-wide v6, v0
 
-    :goto_25
+    :goto_1
     move-wide v0, v6
 
     .line 85
@@ -286,34 +285,34 @@
 
     cmpg-float v6, v6, v7
 
-    if-gez v6, :cond_36
+    if-gez v6, :cond_1
 
     invoke-static {v0, v1}, Landroidx/compose/ui/node/DistanceAndInLayer;->isInLayer-impl(J)Z
 
     move-result v6
 
-    if-eqz v6, :cond_36
+    if-eqz v6, :cond_1
 
     .line 86
     return-wide v0
 
     .line 82
     .end local v4    # "distance":J
-    :cond_36
-    if-eq v2, v3, :cond_3b
+    :cond_1
+    if-eq v2, v3, :cond_2
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_14
+    goto :goto_0
 
     .line 89
     .end local v2    # "i":I
-    :cond_3b
+    :cond_2
     return-wide v0
 .end method
 
 .method private final resizeToHitDepth()V
-    .registers 5
+    .locals 4
 
     .line 61
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult;->hitDepth:I
@@ -329,10 +328,10 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_17
+    if-gt v0, v1, :cond_0
 
     .line 62
-    :goto_d
+    :goto_0
     iget-object v2, p0, Landroidx/compose/ui/node/HitTestResult;->values:[Ljava/lang/Object;
 
     const/4 v3, 0x0
@@ -340,15 +339,15 @@
     aput-object v3, v2, v0
 
     .line 61
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_0
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 64
     .end local v0    # "i":I
-    :cond_17
+    :cond_0
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult;->hitDepth:I
 
     add-int/lit8 v0, v0, 0x1
@@ -362,7 +361,7 @@
 
 # virtual methods
 .method public final acceptHits()V
-    .registers 2
+    .locals 1
 
     .line 57
     invoke-virtual {p0}, Landroidx/compose/ui/node/HitTestResult;->size()I
@@ -378,7 +377,7 @@
 .end method
 
 .method public add(ILandroidx/compose/ui/Modifier$Node;)V
-    .registers 5
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -390,7 +389,7 @@
 .end method
 
 .method public bridge synthetic add(ILjava/lang/Object;)V
-    .registers 5
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -402,7 +401,7 @@
 .end method
 
 .method public add(Landroidx/compose/ui/Modifier$Node;)Z
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -414,7 +413,7 @@
 .end method
 
 .method public bridge synthetic add(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -426,7 +425,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Z
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -447,7 +446,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -468,7 +467,7 @@
 .end method
 
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 239
     const/4 v0, -0x1
@@ -483,7 +482,7 @@
 .end method
 
 .method public contains(Landroidx/compose/ui/Modifier$Node;)Z
-    .registers 4
+    .locals 2
     .param p1, "element"    # Landroidx/compose/ui/Modifier$Node;
 
     const-string/jumbo v0, "element"
@@ -497,33 +496,33 @@
 
     const/4 v1, -0x1
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_10
+    :goto_0
     return v0
 .end method
 
 .method public final bridge contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 34
     instance-of v0, p1, Landroidx/compose/ui/Modifier$Node;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/Modifier$Node;
@@ -536,7 +535,7 @@
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 9
+    .locals 7
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -566,12 +565,12 @@
 
     move-result-object v2
 
-    :goto_e
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_1
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -591,7 +590,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_24
+    if-nez v6, :cond_0
 
     .line 197
     const/4 v2, 0x0
@@ -599,7 +598,7 @@
     return v2
 
     .line 199
-    :cond_24
+    :cond_0
     nop
 
     .line 342
@@ -608,10 +607,10 @@
     nop
 
     .end local v3    # "element$iv":Ljava/lang/Object;
-    goto :goto_e
+    goto :goto_0
 
     .line 343
-    :cond_27
+    :cond_1
     nop
 
     .line 200
@@ -623,7 +622,7 @@
 .end method
 
 .method public get(I)Landroidx/compose/ui/Modifier$Node;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
 
     .line 203
@@ -641,7 +640,7 @@
 .end method
 
 .method public bridge synthetic get(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
 
     .line 34
@@ -653,7 +652,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 40
     iget v0, p0, Landroidx/compose/ui/node/HitTestResult;->size:I
@@ -662,7 +661,7 @@
 .end method
 
 .method public final hasHit()Z
-    .registers 5
+    .locals 4
 
     .line 48
     invoke-direct {p0}, Landroidx/compose/ui/node/HitTestResult;->findBestHitDistance-ptXAw2c()J
@@ -679,27 +678,27 @@
 
     cmpg-float v2, v2, v3
 
-    if-gez v2, :cond_15
+    if-gez v2, :cond_0
 
     invoke-static {v0, v1}, Landroidx/compose/ui/node/DistanceAndInLayer;->isInLayer-impl(J)Z
 
     move-result v2
 
-    if-eqz v2, :cond_15
+    if-eqz v2, :cond_0
 
     const/4 v2, 0x1
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v2, 0x0
 
-    :goto_16
+    :goto_0
     return v2
 .end method
 
 .method public final hit(Landroidx/compose/ui/Modifier$Node;ZLkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
     .param p2, "isInLayer"    # Z
     .param p3, "childHitTest"    # Lkotlin/jvm/functions/Function0;
@@ -732,7 +731,7 @@
 .end method
 
 .method public final hitInMinimumTouchTarget(Landroidx/compose/ui/Modifier$Node;FZLkotlin/jvm/functions/Function0;)V
-    .registers 10
+    .locals 5
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
     .param p2, "distanceFromEdge"    # F
     .param p3, "isInLayer"    # Z
@@ -781,7 +780,6 @@
     iget-object v1, p0, Landroidx/compose/ui/node/HitTestResult;->distanceFromEdgeAndInLayer:[J
 
     .line 115
-    # invokes: Landroidx/compose/ui/node/HitTestResultKt;->DistanceAndInLayer(FZ)J
     invoke-static {p2, p3}, Landroidx/compose/ui/node/HitTestResultKt;->access$DistanceAndInLayer(FZ)J
 
     move-result-wide v3
@@ -802,7 +800,7 @@
 .end method
 
 .method public indexOf(Landroidx/compose/ui/Modifier$Node;)I
-    .registers 5
+    .locals 3
     .param p1, "element"    # Landroidx/compose/ui/Modifier$Node;
 
     const-string/jumbo v0, "element"
@@ -821,10 +819,10 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_20
+    if-gt v0, v1, :cond_1
 
     .line 207
-    :goto_10
+    :goto_0
     iget-object v2, p0, Landroidx/compose/ui/node/HitTestResult;->values:[Ljava/lang/Object;
 
     aget-object v2, v2, v0
@@ -833,41 +831,41 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1b
+    if-eqz v2, :cond_0
 
     .line 208
     return v0
 
     .line 206
-    :cond_1b
-    if-eq v0, v1, :cond_20
+    :cond_0
+    if-eq v0, v1, :cond_1
 
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_10
+    goto :goto_0
 
     .line 211
     .end local v0    # "i":I
-    :cond_20
+    :cond_1
     const/4 v0, -0x1
 
     return v0
 .end method
 
 .method public final bridge indexOf(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 34
     instance-of v0, p1, Landroidx/compose/ui/Modifier$Node;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/Modifier$Node;
@@ -880,28 +878,28 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 214
     invoke-virtual {p0}, Landroidx/compose/ui/node/HitTestResult;->size()I
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method public final isHitInMinimumTouchTargetBetter(FZ)Z
-    .registers 9
+    .locals 6
     .param p1, "distanceFromEdge"    # F
     .param p2, "isInLayer"    # Z
 
@@ -918,14 +916,13 @@
 
     const/4 v2, 0x1
 
-    if-ne v0, v1, :cond_d
+    if-ne v0, v1, :cond_0
 
     .line 73
     return v2
 
     .line 75
-    :cond_d
-    # invokes: Landroidx/compose/ui/node/HitTestResultKt;->DistanceAndInLayer(FZ)J
+    :cond_0
     invoke-static {p1, p2}, Landroidx/compose/ui/node/HitTestResultKt;->access$DistanceAndInLayer(FZ)J
 
     move-result-wide v0
@@ -942,19 +939,19 @@
 
     move-result v5
 
-    if-lez v5, :cond_1c
+    if-lez v5, :cond_1
 
-    goto :goto_1d
+    goto :goto_0
 
-    :cond_1c
+    :cond_1
     const/4 v2, 0x0
 
-    :goto_1d
+    :goto_0
     return v2
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -989,7 +986,7 @@
 .end method
 
 .method public lastIndexOf(Landroidx/compose/ui/Modifier$Node;)I
-    .registers 4
+    .locals 2
     .param p1, "element"    # Landroidx/compose/ui/Modifier$Node;
 
     const-string/jumbo v0, "element"
@@ -1006,10 +1003,10 @@
     move-result v0
 
     .local v0, "i":I
-    :goto_d
+    :goto_0
     const/4 v1, -0x1
 
-    if-ge v1, v0, :cond_1e
+    if-ge v1, v0, :cond_1
 
     .line 220
     iget-object v1, p0, Landroidx/compose/ui/node/HitTestResult;->values:[Ljava/lang/Object;
@@ -1020,37 +1017,37 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     .line 221
     return v0
 
     .line 219
-    :cond_1b
+    :cond_0
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 224
     .end local v0    # "i":I
-    :cond_1e
+    :cond_1
     return v1
 .end method
 
 .method public final bridge lastIndexOf(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 34
     instance-of v0, p1, Landroidx/compose/ui/Modifier$Node;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, -0x1
 
     return v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/Modifier$Node;
@@ -1063,7 +1060,7 @@
 .end method
 
 .method public listIterator()Ljava/util/ListIterator;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1098,7 +1095,7 @@
 .end method
 
 .method public listIterator(I)Ljava/util/ListIterator;
-    .registers 10
+    .locals 8
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1134,7 +1131,7 @@
 .end method
 
 .method public remove(I)Landroidx/compose/ui/Modifier$Node;
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -1146,7 +1143,7 @@
 .end method
 
 .method public bridge synthetic remove(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -1158,7 +1155,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -1170,7 +1167,7 @@
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1191,7 +1188,7 @@
 .end method
 
 .method public replaceAll(Ljava/util/function/UnaryOperator;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1211,7 +1208,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1232,7 +1229,7 @@
 .end method
 
 .method public set(ILandroidx/compose/ui/Modifier$Node;)Landroidx/compose/ui/Modifier$Node;
-    .registers 5
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -1244,7 +1241,7 @@
 .end method
 
 .method public bridge synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -1256,7 +1253,7 @@
 .end method
 
 .method public final siblingHits(Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 2
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1275,7 +1272,6 @@
 
     .line 179
     .local v0, "$i$f$siblingHits":I
-    # getter for: Landroidx/compose/ui/node/HitTestResult;->hitDepth:I
     invoke-static {p0}, Landroidx/compose/ui/node/HitTestResult;->access$getHitDepth$p(Landroidx/compose/ui/node/HitTestResult;)I
 
     move-result v1
@@ -1292,7 +1288,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 34
     invoke-virtual {p0}, Landroidx/compose/ui/node/HitTestResult;->getSize()I
@@ -1303,7 +1299,7 @@
 .end method
 
 .method public sort(Ljava/util/Comparator;)V
-    .registers 4
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1324,7 +1320,7 @@
 .end method
 
 .method public final speculativeHit(Landroidx/compose/ui/Modifier$Node;FZLkotlin/jvm/functions/Function0;)V
-    .registers 12
+    .locals 7
     .param p1, "node"    # Landroidx/compose/ui/Modifier$Node;
     .param p2, "distanceFromEdge"    # F
     .param p3, "isInLayer"    # Z
@@ -1359,7 +1355,7 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_2b
+    if-ne v0, v1, :cond_1
 
     .line 135
     invoke-virtual {p0, p1, p2, p3, p4}, Landroidx/compose/ui/node/HitTestResult;->hitInMinimumTouchTarget(Landroidx/compose/ui/Modifier$Node;FZLkotlin/jvm/functions/Function0;)V
@@ -1377,17 +1373,17 @@
 
     move-result v1
 
-    if-ne v0, v1, :cond_2a
+    if-ne v0, v1, :cond_0
 
     .line 138
     invoke-direct {p0}, Landroidx/compose/ui/node/HitTestResult;->resizeToHitDepth()V
 
     .line 140
-    :cond_2a
+    :cond_0
     return-void
 
     .line 144
-    :cond_2b
+    :cond_1
     invoke-direct {p0}, Landroidx/compose/ui/node/HitTestResult;->findBestHitDistance-ptXAw2c()J
 
     move-result-wide v0
@@ -1424,7 +1420,7 @@
 
     move-result v4
 
-    if-ge v3, v4, :cond_7e
+    if-ge v3, v4, :cond_2
 
     invoke-direct {p0}, Landroidx/compose/ui/node/HitTestResult;->findBestHitDistance-ptXAw2c()J
 
@@ -1434,7 +1430,7 @@
 
     move-result v3
 
-    if-lez v3, :cond_7e
+    if-lez v3, :cond_2
 
     .line 151
     iget v3, p0, Landroidx/compose/ui/node/HitTestResult;->hitDepth:I
@@ -1504,7 +1500,7 @@
     .line 169
     .end local v3    # "fromIndex":I
     .end local v4    # "toIndex":I
-    :cond_7e
+    :cond_2
     invoke-direct {p0}, Landroidx/compose/ui/node/HitTestResult;->resizeToHitDepth()V
 
     .line 170
@@ -1515,7 +1511,7 @@
 .end method
 
 .method public subList(II)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1538,7 +1534,7 @@
 .end method
 
 .method public toArray()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     move-object v0, p0
 
@@ -1552,7 +1548,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

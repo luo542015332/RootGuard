@@ -90,7 +90,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Map;Lkotlin/jvm/functions/Function1;)V
-    .registers 4
+    .locals 1
     .param p1, "restored"    # Ljava/util/Map;
     .param p2, "canBeSaved"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -121,22 +121,22 @@
     iput-object p2, p0, Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->canBeSaved:Lkotlin/jvm/functions/Function1;
 
     .line 99
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_0
 
     invoke-static {p1}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_1
 
-    :cond_13
+    :cond_0
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
     check-cast v0, Ljava/util/Map;
 
-    :cond_1a
+    :cond_1
     iput-object v0, p0, Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->restored:Ljava/util/Map;
 
     .line 100
@@ -153,7 +153,7 @@
 .end method
 
 .method public static final synthetic access$getValueProviders$p(Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;)Ljava/util/Map;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;
 
     .line 93
@@ -165,7 +165,7 @@
 
 # virtual methods
 .method public canBeSaved(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "value"
@@ -189,7 +189,7 @@
 .end method
 
 .method public consumeRestored(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
     .param p1, "key"    # Ljava/lang/String;
 
     const-string/jumbo v0, "key"
@@ -207,7 +207,7 @@
 
     .line 106
     .local v0, "list":Ljava/util/List;
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     move-object v1, v0
 
@@ -221,14 +221,14 @@
 
     xor-int/2addr v1, v2
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_1
 
     .line 107
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    if-le v1, v2, :cond_2e
+    if-le v1, v2, :cond_0
 
     .line 108
     iget-object v1, p0, Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->restored:Ljava/util/Map;
@@ -244,26 +244,26 @@
     invoke-interface {v1, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 110
-    :cond_2e
+    :cond_0
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    goto :goto_35
+    goto :goto_0
 
     .line 112
-    :cond_34
+    :cond_1
     const/4 v1, 0x0
 
     .line 106
-    :goto_35
+    :goto_0
     return-object v1
 .end method
 
 .method public performSave()Ljava/util/Map;
-    .registers 18
+    .locals 17
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -301,12 +301,12 @@
 
     move-result-object v4
 
-    :goto_13
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_98
+    if-eqz v5, :cond_6
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -344,7 +344,7 @@
 
     const/4 v12, 0x1
 
-    if-ne v9, v12, :cond_5e
+    if-ne v9, v12, :cond_1
 
     .line 136
     invoke-interface {v8, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -359,14 +359,14 @@
 
     .line 137
     .local v9, "value":Ljava/lang/Object;
-    if-eqz v9, :cond_94
+    if-eqz v9, :cond_5
 
     .line 138
     invoke-virtual {v0, v9}, Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->canBeSaved(Ljava/lang/Object;)Z
 
     move-result v11
 
-    if-eqz v11, :cond_54
+    if-eqz v11, :cond_0
 
     .line 139
     filled-new-array {v9}, [Ljava/lang/Object;
@@ -379,10 +379,10 @@
 
     invoke-interface {v1, v7, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_94
+    goto :goto_3
 
     .line 138
-    :cond_54
+    :cond_0
     new-instance v4, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -395,7 +395,7 @@
 
     .line 147
     .end local v9    # "value":Ljava/lang/Object;
-    :cond_5e
+    :cond_1
     invoke-interface {v8}, Ljava/util/List;->size()I
 
     move-result v9
@@ -404,8 +404,8 @@
 
     invoke-direct {v12, v9}, Ljava/util/ArrayList;-><init>(I)V
 
-    :goto_67
-    if-ge v11, v9, :cond_8f
+    :goto_1
+    if-ge v11, v9, :cond_4
 
     move v13, v11
 
@@ -426,18 +426,18 @@
 
     .line 149
     .local v15, "value":Ljava/lang/Object;
-    if-eqz v15, :cond_88
+    if-eqz v15, :cond_3
 
     .line 150
     invoke-virtual {v0, v15}, Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->canBeSaved(Ljava/lang/Object;)Z
 
     move-result v16
 
-    if-eqz v16, :cond_7e
+    if-eqz v16, :cond_2
 
-    goto :goto_88
+    goto :goto_2
 
-    :cond_7e
+    :cond_2
     new-instance v4, Ljava/lang/IllegalStateException;
 
     invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -449,8 +449,8 @@
     throw v4
 
     .line 152
-    :cond_88
-    :goto_88
+    :cond_3
+    :goto_2
     nop
 
     .line 147
@@ -461,16 +461,16 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    goto :goto_67
+    goto :goto_1
 
-    :cond_8f
+    :cond_4
     check-cast v12, Ljava/util/List;
 
     invoke-interface {v1, v7, v12}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 155
-    :cond_94
-    :goto_94
+    :cond_5
+    :goto_3
     nop
 
     .line 168
@@ -480,10 +480,10 @@
     nop
 
     .end local v5    # "element$iv":Ljava/util/Map$Entry;
-    goto/16 :goto_13
+    goto/16 :goto_0
 
     .line 169
-    :cond_98
+    :cond_6
     nop
 
     .line 156
@@ -493,7 +493,7 @@
 .end method
 
 .method public registerProvider(Ljava/lang/String;Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/saveable/SaveableStateRegistry$Entry;
-    .registers 8
+    .locals 5
     .param p1, "key"    # Ljava/lang/String;
     .param p2, "valueProvider"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -527,7 +527,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    if-eqz v0, :cond_3d
+    if-eqz v0, :cond_1
 
     .line 119
     iget-object v0, p0, Landroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->valueProviders:Ljava/util/Map;
@@ -543,7 +543,7 @@
 
     .line 162
     .local v2, "value$iv":Ljava/lang/Object;
-    if-nez v2, :cond_2e
+    if-nez v2, :cond_0
 
     .line 163
     const/4 v3, 0x0
@@ -568,14 +568,14 @@
     nop
 
     .end local v3    # "answer$iv":Ljava/lang/Object;
-    goto :goto_2f
+    goto :goto_0
 
     .line 167
-    :cond_2e
+    :cond_0
     move-object v3, v2
 
     .line 162
-    :goto_2f
+    :goto_0
     nop
 
     .end local v0    # "$this$getOrPut$iv":Ljava/util/Map;
@@ -596,7 +596,7 @@
     return-object v0
 
     .line 160
-    :cond_3d
+    :cond_1
     const/4 v0, 0x0
 
     .line 117

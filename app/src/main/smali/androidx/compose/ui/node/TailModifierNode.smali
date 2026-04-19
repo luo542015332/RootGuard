@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 32
     invoke-direct {p0}, Landroidx/compose/ui/Modifier$Node;-><init>()V
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final getAttachHasBeenRun()Z
-    .registers 2
+    .locals 1
 
     .line 42
     iget-boolean v0, p0, Landroidx/compose/ui/node/TailModifierNode;->attachHasBeenRun:Z
@@ -73,7 +73,7 @@
 .end method
 
 .method public onAttach()V
-    .registers 2
+    .locals 1
 
     .line 48
     const/4 v0, 0x1
@@ -85,7 +85,7 @@
 .end method
 
 .method public onDetach()V
-    .registers 2
+    .locals 1
 
     .line 52
     const/4 v0, 0x0
@@ -97,7 +97,7 @@
 .end method
 
 .method public final setAttachHasBeenRun(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 42
@@ -107,7 +107,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 44
     const-string v0, "<tail>"

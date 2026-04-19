@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final toAndroidColorSpace(Landroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroid/graphics/ColorSpace;
-    .registers 3
+    .locals 2
     .param p0, "$this$toAndroidColorSpace"    # Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     const-string v0, "<this>"
@@ -56,7 +56,7 @@
 .end method
 
 .method public static final toComposeColorSpace(Landroid/graphics/ColorSpace;)Landroidx/compose/ui/graphics/colorspace/ColorSpace;
-    .registers 3
+    .locals 2
     .param p0, "$this$toComposeColorSpace"    # Landroid/graphics/ColorSpace;
 
     const-string v0, "<this>"

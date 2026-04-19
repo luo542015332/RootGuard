@@ -85,7 +85,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -114,7 +114,7 @@
 .end method
 
 .method private final configureAlpha(F)V
-    .registers 6
+    .locals 4
     .param p1, "alpha"    # F
 
     .line 117
@@ -126,17 +126,17 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     move v0, v2
 
-    :goto_b
-    if-nez v0, :cond_34
+    :goto_0
+    if-nez v0, :cond_5
 
     .line 118
     invoke-virtual {p0, p1}, Landroidx/compose/ui/graphics/painter/Painter;->applyAlpha(F)Z
@@ -145,43 +145,43 @@
 
     .line 119
     .local v0, "consumed":Z
-    if-nez v0, :cond_32
+    if-nez v0, :cond_4
 
     .line 120
     const/high16 v3, 0x3f800000    # 1.0f
 
     cmpg-float v3, p1, v3
 
-    if-nez v3, :cond_1b
+    if-nez v3, :cond_1
 
     move v3, v1
 
-    goto :goto_1c
+    goto :goto_1
 
-    :cond_1b
+    :cond_1
     move v3, v2
 
-    :goto_1c
-    if-eqz v3, :cond_29
+    :goto_1
+    if-eqz v3, :cond_3
 
     .line 122
     iget-object v1, p0, Landroidx/compose/ui/graphics/painter/Painter;->layerPaint:Landroidx/compose/ui/graphics/Paint;
 
-    if-nez v1, :cond_23
+    if-nez v1, :cond_2
 
-    goto :goto_26
+    goto :goto_2
 
-    :cond_23
+    :cond_2
     invoke-interface {v1, p1}, Landroidx/compose/ui/graphics/Paint;->setAlpha(F)V
 
     .line 123
-    :goto_26
+    :goto_2
     iput-boolean v2, p0, Landroidx/compose/ui/graphics/painter/Painter;->useLayer:Z
 
-    goto :goto_32
+    goto :goto_3
 
     .line 125
-    :cond_29
+    :cond_3
     invoke-direct {p0}, Landroidx/compose/ui/graphics/painter/Painter;->obtainPaint()Landroidx/compose/ui/graphics/Paint;
 
     move-result-object v2
@@ -192,18 +192,18 @@
     iput-boolean v1, p0, Landroidx/compose/ui/graphics/painter/Painter;->useLayer:Z
 
     .line 129
-    :cond_32
-    :goto_32
+    :cond_4
+    :goto_3
     iput p1, p0, Landroidx/compose/ui/graphics/painter/Painter;->alpha:F
 
     .line 131
     .end local v0    # "consumed":Z
-    :cond_34
+    :cond_5
     return-void
 .end method
 
 .method private final configureColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 5
+    .locals 3
     .param p1, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 83
@@ -213,7 +213,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_29
+    if-nez v0, :cond_3
 
     .line 84
     invoke-virtual {p0, p1}, Landroidx/compose/ui/graphics/painter/Painter;->applyColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Z
@@ -222,33 +222,33 @@
 
     .line 85
     .local v0, "consumedColorFilter":Z
-    if-nez v0, :cond_27
+    if-nez v0, :cond_2
 
     .line 86
-    if-nez p1, :cond_1d
+    if-nez p1, :cond_1
 
     .line 87
     iget-object v1, p0, Landroidx/compose/ui/graphics/painter/Painter;->layerPaint:Landroidx/compose/ui/graphics/Paint;
 
-    if-nez v1, :cond_15
+    if-nez v1, :cond_0
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_15
+    :cond_0
     const/4 v2, 0x0
 
     invoke-interface {v1, v2}, Landroidx/compose/ui/graphics/Paint;->setColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)V
 
     .line 88
-    :goto_19
+    :goto_0
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroidx/compose/ui/graphics/painter/Painter;->useLayer:Z
 
-    goto :goto_27
+    goto :goto_1
 
     .line 90
-    :cond_1d
+    :cond_1
     invoke-direct {p0}, Landroidx/compose/ui/graphics/painter/Painter;->obtainPaint()Landroidx/compose/ui/graphics/Paint;
 
     move-result-object v1
@@ -261,24 +261,24 @@
     iput-boolean v1, p0, Landroidx/compose/ui/graphics/painter/Painter;->useLayer:Z
 
     .line 94
-    :cond_27
-    :goto_27
+    :cond_2
+    :goto_1
     iput-object p1, p0, Landroidx/compose/ui/graphics/painter/Painter;->colorFilter:Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 96
     .end local v0    # "consumedColorFilter":Z
-    :cond_29
+    :cond_3
     return-void
 .end method
 
 .method private final configureLayoutDirection(Landroidx/compose/ui/unit/LayoutDirection;)V
-    .registers 3
+    .locals 1
     .param p1, "rtl"    # Landroidx/compose/ui/unit/LayoutDirection;
 
     .line 142
     iget-object v0, p0, Landroidx/compose/ui/graphics/painter/Painter;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
 
-    if-eq v0, p1, :cond_9
+    if-eq v0, p1, :cond_0
 
     .line 143
     invoke-virtual {p0, p1}, Landroidx/compose/ui/graphics/painter/Painter;->applyLayoutDirection(Landroidx/compose/ui/unit/LayoutDirection;)Z
@@ -287,48 +287,48 @@
     iput-object p1, p0, Landroidx/compose/ui/graphics/painter/Painter;->layoutDirection:Landroidx/compose/ui/unit/LayoutDirection;
 
     .line 146
-    :cond_9
+    :cond_0
     return-void
 .end method
 
 .method public static synthetic draw-x_KDEd0$default(Landroidx/compose/ui/graphics/painter/Painter;Landroidx/compose/ui/graphics/drawscope/DrawScope;JFLandroidx/compose/ui/graphics/ColorFilter;ILjava/lang/Object;)V
-    .registers 14
+    .locals 6
 
     .line 185
-    if-nez p7, :cond_1a
+    if-nez p7, :cond_2
 
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_a
+    if-eqz p7, :cond_0
 
     .line 187
     const/high16 p4, 0x3f800000    # 1.0f
 
     move v4, p4
 
-    goto :goto_b
+    goto :goto_0
 
     .line 185
-    :cond_a
+    :cond_0
     move v4, p4
 
-    :goto_b
+    :goto_0
     and-int/lit8 p4, p6, 0x4
 
-    if-eqz p4, :cond_12
+    if-eqz p4, :cond_1
 
     .line 188
     const/4 p5, 0x0
 
     move-object v5, p5
 
-    goto :goto_13
+    goto :goto_1
 
     .line 185
-    :cond_12
+    :cond_1
     move-object v5, p5
 
-    :goto_13
+    :goto_1
     move-object v0, p0
 
     move-object v1, p1
@@ -339,7 +339,7 @@
 
     return-void
 
-    :cond_1a
+    :cond_2
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: draw-x_KDEd0"
@@ -350,14 +350,14 @@
 .end method
 
 .method private final obtainPaint()Landroidx/compose/ui/graphics/Paint;
-    .registers 2
+    .locals 1
 
     .line 53
     iget-object v0, p0, Landroidx/compose/ui/graphics/painter/Painter;->layerPaint:Landroidx/compose/ui/graphics/Paint;
 
     .line 54
     .local v0, "target":Landroidx/compose/ui/graphics/Paint;
-    if-nez v0, :cond_a
+    if-nez v0, :cond_0
 
     .line 55
     invoke-static {}, Landroidx/compose/ui/graphics/AndroidPaint_androidKt;->Paint()Landroidx/compose/ui/graphics/Paint;
@@ -368,14 +368,14 @@
     iput-object v0, p0, Landroidx/compose/ui/graphics/painter/Painter;->layerPaint:Landroidx/compose/ui/graphics/Paint;
 
     .line 58
-    :cond_a
+    :cond_0
     return-object v0
 .end method
 
 
 # virtual methods
 .method protected applyAlpha(F)Z
-    .registers 3
+    .locals 1
     .param p1, "alpha"    # F
 
     .line 171
@@ -385,7 +385,7 @@
 .end method
 
 .method protected applyColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Z
-    .registers 3
+    .locals 1
     .param p1, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 177
@@ -395,7 +395,7 @@
 .end method
 
 .method protected applyLayoutDirection(Landroidx/compose/ui/unit/LayoutDirection;)Z
-    .registers 3
+    .locals 1
     .param p1, "layoutDirection"    # Landroidx/compose/ui/unit/LayoutDirection;
 
     const-string/jumbo v0, "layoutDirection"
@@ -409,7 +409,7 @@
 .end method
 
 .method public final draw-x_KDEd0(Landroidx/compose/ui/graphics/drawscope/DrawScope;JFLandroidx/compose/ui/graphics/ColorFilter;)V
-    .registers 26
+    .locals 20
     .param p1, "$this$draw_u2dx_KDEd0"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p2, "size"    # J
     .param p4, "alpha"    # F
@@ -519,7 +519,7 @@
     .local v13, "$i$a$-inset-Painter$draw$1":I
     cmpl-float v0, v2, v7
 
-    if-lez v0, :cond_ae
+    if-lez v0, :cond_1
 
     invoke-static/range {p2 .. p3}, Landroidx/compose/ui/geometry/Size;->getWidth-impl(J)F
 
@@ -527,7 +527,7 @@
 
     cmpl-float v0, v0, v7
 
-    if-lez v0, :cond_ae
+    if-lez v0, :cond_1
 
     invoke-static/range {p2 .. p3}, Landroidx/compose/ui/geometry/Size;->getHeight-impl(J)F
 
@@ -535,12 +535,12 @@
 
     cmpl-float v0, v0, v7
 
-    if-lez v0, :cond_ae
+    if-lez v0, :cond_1
 
     .line 203
     iget-boolean v0, v1, Landroidx/compose/ui/graphics/painter/Painter;->useLayer:Z
 
-    if-eqz v0, :cond_ab
+    if-eqz v0, :cond_0
 
     .line 204
     sget-object v0, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -617,7 +617,7 @@
     .local v3, "$this$withSaveLayer$iv":Landroidx/compose/ui/graphics/Canvas;
     .local v4, "paint$iv":Landroidx/compose/ui/graphics/Paint;
     .local v19, "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
-    :try_start_95
+    :try_start_0
     invoke-interface {v3, v2, v4}, Landroidx/compose/ui/graphics/Canvas;->saveLayer(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
 
     .line 223
@@ -626,8 +626,8 @@
     .line 208
     .local v0, "$i$a$-withSaveLayer-Painter$draw$1$1$1":I
     invoke-virtual {v1, v12}, Landroidx/compose/ui/graphics/painter/Painter;->onDraw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    :try_end_9c
-    .catchall {:try_start_95 .. :try_end_9c} :catchall_a6
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 209
     nop
@@ -659,7 +659,7 @@
     .end local v2    # "layerRect":Landroidx/compose/ui/geometry/Rect;
     .end local v7    # "$i$f$drawIntoCanvas":I
     .end local v19    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
-    goto :goto_ae
+    goto :goto_0
 
     .line 225
     .restart local v2    # "layerRect":Landroidx/compose/ui/geometry/Rect;
@@ -670,7 +670,7 @@
     .restart local v15    # "$i$a$-drawIntoCanvas-Painter$draw$1$1":I
     .restart local v18    # "$i$f$withSaveLayer":I
     .restart local v19    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
-    :catchall_a6
+    :catchall_0
     move-exception v0
 
     invoke-interface {v3}, Landroidx/compose/ui/graphics/Canvas;->restore()V
@@ -686,12 +686,12 @@
     .end local v15    # "$i$a$-drawIntoCanvas-Painter$draw$1$1":I
     .end local v18    # "$i$f$withSaveLayer":I
     .end local v19    # "$this$drawIntoCanvas$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
-    :cond_ab
+    :cond_0
     invoke-virtual {v1, v12}, Landroidx/compose/ui/graphics/painter/Painter;->onDraw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
 
     .line 215
-    :cond_ae
-    :goto_ae
+    :cond_1
+    :goto_0
     nop
 
     .line 219

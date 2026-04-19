@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static drawImage-AZ2fEMs(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
-    .registers 16
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
@@ -50,7 +50,6 @@
     invoke-static {p11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->drawImage-AZ2fEMs(Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
     invoke-static/range {p0 .. p14}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$drawImage-AZ2fEMs$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/ui/graphics/ImageBitmap;JJJJFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;II)V
 
     .line 31
@@ -58,13 +57,12 @@
 .end method
 
 .method public static getCenter-F1C5BW0(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->getCenter-F1C5BW0()J
     invoke-static {p0}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$getCenter-F1C5BW0$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)J
 
     move-result-wide v0
@@ -74,13 +72,12 @@
 .end method
 
 .method public static getSize-NH-jbRc(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->getSize-NH-jbRc()J
     invoke-static {p0}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$getSize-NH-jbRc$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;)J
 
     move-result-wide v0
@@ -90,14 +87,13 @@
 .end method
 
 .method public static roundToPx--R2X_6o(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->roundToPx--R2X_6o(J)I
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)I
 
     move-result v0
@@ -107,14 +103,13 @@
 .end method
 
 .method public static roundToPx-0680j_4(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->roundToPx-0680j_4(F)I
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$roundToPx-0680j_4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)I
 
     move-result v0
@@ -124,14 +119,13 @@
 .end method
 
 .method public static toDp-GaN1DYA(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toDp-GaN1DYA(J)F
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toDp-GaN1DYA$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)F
 
     move-result v0
@@ -141,14 +135,13 @@
 .end method
 
 .method public static toDp-u2uoSUM(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toDp-u2uoSUM(F)F
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)F
 
     move-result v0
@@ -158,14 +151,13 @@
 .end method
 
 .method public static toDp-u2uoSUM(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toDp-u2uoSUM(I)F
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toDp-u2uoSUM$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;I)F
 
     move-result v0
@@ -175,14 +167,13 @@
 .end method
 
 .method public static toDpSize-k-rfVVM(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toDpSize-k-rfVVM(J)J
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)J
 
     move-result-wide v0
@@ -192,14 +183,13 @@
 .end method
 
 .method public static toPx--R2X_6o(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toPx--R2X_6o(J)F
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toPx--R2X_6o$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)F
 
     move-result v0
@@ -209,14 +199,13 @@
 .end method
 
 .method public static toPx-0680j_4(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toPx-0680j_4(F)F
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toPx-0680j_4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)F
 
     move-result v0
@@ -226,7 +215,7 @@
 .end method
 
 .method public static toRect(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
     .annotation runtime Ljava/lang/Deprecated;
@@ -237,7 +226,6 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toRect(Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toRect$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
 
     move-result-object v0
@@ -247,14 +235,13 @@
 .end method
 
 .method public static toSize-XkaWNTQ(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # J
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toSize-XkaWNTQ(J)J
     invoke-static {p0, p1, p2}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;J)J
 
     move-result-wide v0
@@ -264,14 +251,13 @@
 .end method
 
 .method public static toSp-0xMU5do(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toSp-0xMU5do(F)J
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toSp-0xMU5do$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)J
 
     move-result-wide v0
@@ -281,14 +267,13 @@
 .end method
 
 .method public static toSp-kPz2Gy4(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # F
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toSp-kPz2Gy4(F)J
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;F)J
 
     move-result-wide v0
@@ -298,14 +283,13 @@
 .end method
 
 .method public static toSp-kPz2Gy4(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;
     .param p1, "$receiver"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .line 26
-    # invokes: Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->toSp-kPz2Gy4(I)J
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;->access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/graphics/drawscope/ContentDrawScope;I)J
 
     move-result-wide v0

@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "focusOrderReceiver"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -91,7 +91,7 @@
 
 # virtual methods
 .method public final getFocusOrderReceiver()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -109,7 +109,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 195
@@ -125,7 +125,7 @@
 .end method
 
 .method public invoke(Landroidx/compose/ui/focus/FocusProperties;)V
-    .registers 4
+    .locals 2
     .param p1, "focusProperties"    # Landroidx/compose/ui/focus/FocusProperties;
 
     const-string/jumbo v0, "focusProperties"

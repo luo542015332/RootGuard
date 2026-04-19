@@ -74,7 +74,7 @@
 
 # direct methods
 .method public static final synthetic access$peek(Ljava/util/ArrayList;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/ArrayList;
 
     .line 1
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final synthetic access$pop(Ljava/util/ArrayList;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/ArrayList;
 
     .line 1
@@ -98,7 +98,7 @@
 .end method
 
 .method public static final synthetic access$push(Ljava/util/ArrayList;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # Ljava/util/ArrayList;
     .param p1, "value"    # Ljava/lang/Object;
 
@@ -111,7 +111,7 @@
 .end method
 
 .method public static final group(Landroidx/compose/ui/graphics/vector/ImageVector$Builder;Ljava/lang/String;FFFFFFFLjava/util/List;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 28
+    .locals 17
     .param p0, "$this$group"    # Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "rotate"    # F
@@ -248,7 +248,7 @@
 .end method
 
 .method public static synthetic group$default(Landroidx/compose/ui/graphics/vector/ImageVector$Builder;Ljava/lang/String;FFFFFFFLjava/util/List;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 36
+    .locals 23
     .param p0, "$this$group_u24default"    # Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "rotate"    # F
@@ -270,27 +270,27 @@
 
     and-int/lit8 v3, v2, 0x1
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_0
 
     .line 737
     const-string v3, ""
 
     .end local p1    # "name":Ljava/lang/String;
     .local v3, "name":Ljava/lang/String;
-    goto :goto_f
+    goto :goto_0
 
     .line 736
     .end local v3    # "name":Ljava/lang/String;
     .restart local p1    # "name":Ljava/lang/String;
-    :cond_d
+    :cond_0
     move-object/from16 v3, p1
 
     .end local p1    # "name":Ljava/lang/String;
     .restart local v3    # "name":Ljava/lang/String;
-    :goto_f
+    :goto_0
     and-int/lit8 v4, v2, 0x2
 
-    if-eqz v4, :cond_16
+    if-eqz v4, :cond_1
 
     .line 738
     const/4 v4, 0x0
@@ -299,20 +299,20 @@
 
     .end local p2    # "rotate":F
     .local v4, "rotate":F
-    goto :goto_18
+    goto :goto_1
 
     .line 736
     .end local v4    # "rotate":F
     .restart local p2    # "rotate":F
-    :cond_16
+    :cond_1
     move/from16 v14, p2
 
     .end local p2    # "rotate":F
     .local v14, "rotate":F
-    :goto_18
+    :goto_1
     and-int/lit8 v4, v2, 0x4
 
-    if-eqz v4, :cond_1f
+    if-eqz v4, :cond_2
 
     .line 739
     const/4 v4, 0x0
@@ -321,20 +321,20 @@
 
     .end local p3    # "pivotX":F
     .local v4, "pivotX":F
-    goto :goto_21
+    goto :goto_2
 
     .line 736
     .end local v4    # "pivotX":F
     .restart local p3    # "pivotX":F
-    :cond_1f
+    :cond_2
     move/from16 v15, p3
 
     .end local p3    # "pivotX":F
     .local v15, "pivotX":F
-    :goto_21
+    :goto_2
     and-int/lit8 v4, v2, 0x8
 
-    if-eqz v4, :cond_29
+    if-eqz v4, :cond_3
 
     .line 740
     const/4 v4, 0x0
@@ -343,20 +343,20 @@
 
     .end local p4    # "pivotY":F
     .local v4, "pivotY":F
-    goto :goto_2b
+    goto :goto_3
 
     .line 736
     .end local v4    # "pivotY":F
     .restart local p4    # "pivotY":F
-    :cond_29
+    :cond_3
     move/from16 v16, p4
 
     .end local p4    # "pivotY":F
     .local v16, "pivotY":F
-    :goto_2b
+    :goto_3
     and-int/lit8 v4, v2, 0x10
 
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_4
 
     .line 741
     const/high16 v4, 0x3f800000    # 1.0f
@@ -365,20 +365,20 @@
 
     .end local p5    # "scaleX":F
     .local v4, "scaleX":F
-    goto :goto_36
+    goto :goto_4
 
     .line 736
     .end local v4    # "scaleX":F
     .restart local p5    # "scaleX":F
-    :cond_34
+    :cond_4
     move/from16 v17, p5
 
     .end local p5    # "scaleX":F
     .local v17, "scaleX":F
-    :goto_36
+    :goto_4
     and-int/lit8 v4, v2, 0x20
 
-    if-eqz v4, :cond_3f
+    if-eqz v4, :cond_5
 
     .line 742
     const/high16 v4, 0x3f800000    # 1.0f
@@ -387,20 +387,20 @@
 
     .end local p6    # "scaleY":F
     .local v4, "scaleY":F
-    goto :goto_41
+    goto :goto_5
 
     .line 736
     .end local v4    # "scaleY":F
     .restart local p6    # "scaleY":F
-    :cond_3f
+    :cond_5
     move/from16 v18, p6
 
     .end local p6    # "scaleY":F
     .local v18, "scaleY":F
-    :goto_41
+    :goto_5
     and-int/lit8 v4, v2, 0x40
 
-    if-eqz v4, :cond_49
+    if-eqz v4, :cond_6
 
     .line 743
     const/4 v4, 0x0
@@ -409,20 +409,20 @@
 
     .end local p7    # "translationX":F
     .local v4, "translationX":F
-    goto :goto_4b
+    goto :goto_6
 
     .line 736
     .end local v4    # "translationX":F
     .restart local p7    # "translationX":F
-    :cond_49
+    :cond_6
     move/from16 v19, p7
 
     .end local p7    # "translationX":F
     .local v19, "translationX":F
-    :goto_4b
+    :goto_6
     and-int/lit16 v4, v2, 0x80
 
-    if-eqz v4, :cond_53
+    if-eqz v4, :cond_7
 
     .line 744
     const/4 v4, 0x0
@@ -431,20 +431,20 @@
 
     .end local p8    # "translationY":F
     .local v4, "translationY":F
-    goto :goto_55
+    goto :goto_7
 
     .line 736
     .end local v4    # "translationY":F
     .restart local p8    # "translationY":F
-    :cond_53
+    :cond_7
     move/from16 v20, p8
 
     .end local p8    # "translationY":F
     .local v20, "translationY":F
-    :goto_55
+    :goto_7
     and-int/lit16 v2, v2, 0x100
 
-    if-eqz v2, :cond_5e
+    if-eqz v2, :cond_8
 
     .line 745
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getEmptyPath()Ljava/util/List;
@@ -453,17 +453,17 @@
 
     .end local p9    # "clipPathData":Ljava/util/List;
     .local v2, "clipPathData":Ljava/util/List;
-    goto :goto_60
+    goto :goto_8
 
     .line 736
     .end local v2    # "clipPathData":Ljava/util/List;
     .restart local p9    # "clipPathData":Ljava/util/List;
-    :cond_5e
+    :cond_8
     move-object/from16 v2, p9
 
     .end local p9    # "clipPathData":Ljava/util/List;
     .restart local v2    # "clipPathData":Ljava/util/List;
-    :goto_60
+    :goto_8
     const-string v4, "<this>"
 
     invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
@@ -569,7 +569,7 @@
 .end method
 
 .method public static final path-R_LF-3I(Landroidx/compose/ui/graphics/vector/ImageVector$Builder;Ljava/lang/String;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFILkotlin/jvm/functions/Function1;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 31
+    .locals 19
     .param p0, "$this$path_u2dR_LF_u2d3I"    # Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "fill"    # Landroidx/compose/ui/graphics/Brush;
@@ -728,7 +728,7 @@
 .end method
 
 .method public static synthetic path-R_LF-3I$default(Landroidx/compose/ui/graphics/vector/ImageVector$Builder;Ljava/lang/String;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/Brush;FFIIFILkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
-    .registers 43
+    .locals 29
     .param p0, "$this$path_u2dR_LF_u2d3I_u24default"    # Landroidx/compose/ui/graphics/vector/ImageVector$Builder;
     .param p1, "name"    # Ljava/lang/String;
     .param p2, "fill"    # Landroidx/compose/ui/graphics/Brush;
@@ -749,27 +749,27 @@
 
     and-int/lit8 v2, v1, 0x1
 
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_0
 
     .line 695
     const-string v2, ""
 
     .end local p1    # "name":Ljava/lang/String;
     .local v2, "name":Ljava/lang/String;
-    goto :goto_d
+    goto :goto_0
 
     .line 694
     .end local v2    # "name":Ljava/lang/String;
     .restart local p1    # "name":Ljava/lang/String;
-    :cond_b
+    :cond_0
     move-object/from16 v2, p1
 
     .end local p1    # "name":Ljava/lang/String;
     .restart local v2    # "name":Ljava/lang/String;
-    :goto_d
+    :goto_0
     and-int/lit8 v3, v1, 0x2
 
-    if-eqz v3, :cond_15
+    if-eqz v3, :cond_1
 
     .line 696
     const/4 v3, 0x0
@@ -778,20 +778,20 @@
 
     .end local p2    # "fill":Landroidx/compose/ui/graphics/Brush;
     .local v3, "fill":Landroidx/compose/ui/graphics/Brush;
-    goto :goto_17
+    goto :goto_1
 
     .line 694
     .end local v3    # "fill":Landroidx/compose/ui/graphics/Brush;
     .restart local p2    # "fill":Landroidx/compose/ui/graphics/Brush;
-    :cond_15
+    :cond_1
     move-object/from16 v20, p2
 
     .end local p2    # "fill":Landroidx/compose/ui/graphics/Brush;
     .local v20, "fill":Landroidx/compose/ui/graphics/Brush;
-    :goto_17
+    :goto_1
     and-int/lit8 v3, v1, 0x4
 
-    if-eqz v3, :cond_20
+    if-eqz v3, :cond_2
 
     .line 697
     const/high16 v3, 0x3f800000    # 1.0f
@@ -800,20 +800,20 @@
 
     .end local p3    # "fillAlpha":F
     .local v3, "fillAlpha":F
-    goto :goto_22
+    goto :goto_2
 
     .line 694
     .end local v3    # "fillAlpha":F
     .restart local p3    # "fillAlpha":F
-    :cond_20
+    :cond_2
     move/from16 v21, p3
 
     .end local p3    # "fillAlpha":F
     .local v21, "fillAlpha":F
-    :goto_22
+    :goto_2
     and-int/lit8 v3, v1, 0x8
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_3
 
     .line 698
     const/4 v3, 0x0
@@ -822,20 +822,20 @@
 
     .end local p4    # "stroke":Landroidx/compose/ui/graphics/Brush;
     .local v3, "stroke":Landroidx/compose/ui/graphics/Brush;
-    goto :goto_2c
+    goto :goto_3
 
     .line 694
     .end local v3    # "stroke":Landroidx/compose/ui/graphics/Brush;
     .restart local p4    # "stroke":Landroidx/compose/ui/graphics/Brush;
-    :cond_2a
+    :cond_3
     move-object/from16 v22, p4
 
     .end local p4    # "stroke":Landroidx/compose/ui/graphics/Brush;
     .local v22, "stroke":Landroidx/compose/ui/graphics/Brush;
-    :goto_2c
+    :goto_3
     and-int/lit8 v3, v1, 0x10
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_4
 
     .line 699
     const/high16 v3, 0x3f800000    # 1.0f
@@ -844,20 +844,20 @@
 
     .end local p5    # "strokeAlpha":F
     .local v3, "strokeAlpha":F
-    goto :goto_37
+    goto :goto_4
 
     .line 694
     .end local v3    # "strokeAlpha":F
     .restart local p5    # "strokeAlpha":F
-    :cond_35
+    :cond_4
     move/from16 v23, p5
 
     .end local p5    # "strokeAlpha":F
     .local v23, "strokeAlpha":F
-    :goto_37
+    :goto_4
     and-int/lit8 v3, v1, 0x20
 
-    if-eqz v3, :cond_3f
+    if-eqz v3, :cond_5
 
     .line 700
     const/4 v3, 0x0
@@ -866,20 +866,20 @@
 
     .end local p6    # "strokeLineWidth":F
     .local v3, "strokeLineWidth":F
-    goto :goto_41
+    goto :goto_5
 
     .line 694
     .end local v3    # "strokeLineWidth":F
     .restart local p6    # "strokeLineWidth":F
-    :cond_3f
+    :cond_5
     move/from16 v24, p6
 
     .end local p6    # "strokeLineWidth":F
     .local v24, "strokeLineWidth":F
-    :goto_41
+    :goto_5
     and-int/lit8 v3, v1, 0x40
 
-    if-eqz v3, :cond_4c
+    if-eqz v3, :cond_6
 
     .line 701
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineCap()I
@@ -890,20 +890,20 @@
 
     .end local p7    # "strokeLineCap":I
     .local v3, "strokeLineCap":I
-    goto :goto_4e
+    goto :goto_6
 
     .line 694
     .end local v3    # "strokeLineCap":I
     .restart local p7    # "strokeLineCap":I
-    :cond_4c
+    :cond_6
     move/from16 v25, p7
 
     .end local p7    # "strokeLineCap":I
     .local v25, "strokeLineCap":I
-    :goto_4e
+    :goto_6
     and-int/lit16 v3, v1, 0x80
 
-    if-eqz v3, :cond_59
+    if-eqz v3, :cond_7
 
     .line 702
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultStrokeLineJoin()I
@@ -914,20 +914,20 @@
 
     .end local p8    # "strokeLineJoin":I
     .local v3, "strokeLineJoin":I
-    goto :goto_5b
+    goto :goto_7
 
     .line 694
     .end local v3    # "strokeLineJoin":I
     .restart local p8    # "strokeLineJoin":I
-    :cond_59
+    :cond_7
     move/from16 v26, p8
 
     .end local p8    # "strokeLineJoin":I
     .local v26, "strokeLineJoin":I
-    :goto_5b
+    :goto_7
     and-int/lit16 v3, v1, 0x100
 
-    if-eqz v3, :cond_64
+    if-eqz v3, :cond_8
 
     .line 703
     const/high16 v3, 0x40800000    # 4.0f
@@ -936,20 +936,20 @@
 
     .end local p9    # "strokeLineMiter":F
     .local v3, "strokeLineMiter":F
-    goto :goto_66
+    goto :goto_8
 
     .line 694
     .end local v3    # "strokeLineMiter":F
     .restart local p9    # "strokeLineMiter":F
-    :cond_64
+    :cond_8
     move/from16 v27, p9
 
     .end local p9    # "strokeLineMiter":F
     .local v27, "strokeLineMiter":F
-    :goto_66
+    :goto_8
     and-int/lit16 v1, v1, 0x200
 
-    if-eqz v1, :cond_6f
+    if-eqz v1, :cond_9
 
     .line 704
     invoke-static {}, Landroidx/compose/ui/graphics/vector/VectorKt;->getDefaultFillType()I
@@ -958,17 +958,17 @@
 
     .end local p10    # "pathFillType":I
     .local v1, "pathFillType":I
-    goto :goto_71
+    goto :goto_9
 
     .line 694
     .end local v1    # "pathFillType":I
     .restart local p10    # "pathFillType":I
-    :cond_6f
+    :cond_9
     move/from16 v1, p10
 
     .end local p10    # "pathFillType":I
     .restart local v1    # "pathFillType":I
-    :goto_71
+    :goto_9
     const-string v3, "$this$path"
 
     move-object/from16 v14, p0
@@ -1091,7 +1091,7 @@
 .end method
 
 .method private static final peek(Ljava/util/ArrayList;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this$peek"    # Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1118,7 +1118,7 @@
 .end method
 
 .method private static final pop(Ljava/util/ArrayList;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "$this$pop"    # Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1145,7 +1145,7 @@
 .end method
 
 .method private static final push(Ljava/util/ArrayList;Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p0, "$this$push"    # Ljava/util/ArrayList;
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/snapshots/SnapshotStateList;)V
-    .registers 2
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,7 +79,7 @@
 
 # virtual methods
 .method public final emit(Landroidx/compose/foundation/interaction/Interaction;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "interaction"    # Landroidx/compose/foundation/interaction/Interaction;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -100,20 +100,20 @@
     .line 278
     instance-of v0, p1, Landroidx/compose/foundation/interaction/HoverInteraction$Enter;
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_0
 
     .line 279
     iget-object v0, p0, Landroidx/compose/material/DefaultFloatingActionButtonElevation$elevation$1$1$1;->$interactions:Landroidx/compose/runtime/snapshots/SnapshotStateList;
 
     invoke-virtual {v0, p1}, Landroidx/compose/runtime/snapshots/SnapshotStateList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_62
+    goto :goto_0
 
     .line 281
-    :cond_b
+    :cond_0
     instance-of v0, p1, Landroidx/compose/foundation/interaction/HoverInteraction$Exit;
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 282
     iget-object v0, p0, Landroidx/compose/material/DefaultFloatingActionButtonElevation$elevation$1$1$1;->$interactions:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -128,26 +128,26 @@
 
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/snapshots/SnapshotStateList;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_62
+    goto :goto_0
 
     .line 284
-    :cond_1c
+    :cond_1
     instance-of v0, p1, Landroidx/compose/foundation/interaction/FocusInteraction$Focus;
 
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_2
 
     .line 285
     iget-object v0, p0, Landroidx/compose/material/DefaultFloatingActionButtonElevation$elevation$1$1$1;->$interactions:Landroidx/compose/runtime/snapshots/SnapshotStateList;
 
     invoke-virtual {v0, p1}, Landroidx/compose/runtime/snapshots/SnapshotStateList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_62
+    goto :goto_0
 
     .line 287
-    :cond_26
+    :cond_2
     instance-of v0, p1, Landroidx/compose/foundation/interaction/FocusInteraction$Unfocus;
 
-    if-eqz v0, :cond_37
+    if-eqz v0, :cond_3
 
     .line 288
     iget-object v0, p0, Landroidx/compose/material/DefaultFloatingActionButtonElevation$elevation$1$1$1;->$interactions:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -162,26 +162,26 @@
 
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/snapshots/SnapshotStateList;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_62
+    goto :goto_0
 
     .line 290
-    :cond_37
+    :cond_3
     instance-of v0, p1, Landroidx/compose/foundation/interaction/PressInteraction$Press;
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_4
 
     .line 291
     iget-object v0, p0, Landroidx/compose/material/DefaultFloatingActionButtonElevation$elevation$1$1$1;->$interactions:Landroidx/compose/runtime/snapshots/SnapshotStateList;
 
     invoke-virtual {v0, p1}, Landroidx/compose/runtime/snapshots/SnapshotStateList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_62
+    goto :goto_0
 
     .line 293
-    :cond_41
+    :cond_4
     instance-of v0, p1, Landroidx/compose/foundation/interaction/PressInteraction$Release;
 
-    if-eqz v0, :cond_52
+    if-eqz v0, :cond_5
 
     .line 294
     iget-object v0, p0, Landroidx/compose/material/DefaultFloatingActionButtonElevation$elevation$1$1$1;->$interactions:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -196,13 +196,13 @@
 
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/snapshots/SnapshotStateList;->remove(Ljava/lang/Object;)Z
 
-    goto :goto_62
+    goto :goto_0
 
     .line 296
-    :cond_52
+    :cond_5
     instance-of v0, p1, Landroidx/compose/foundation/interaction/PressInteraction$Cancel;
 
-    if-eqz v0, :cond_62
+    if-eqz v0, :cond_6
 
     .line 297
     iget-object v0, p0, Landroidx/compose/material/DefaultFloatingActionButtonElevation$elevation$1$1$1;->$interactions:Landroidx/compose/runtime/snapshots/SnapshotStateList;
@@ -218,15 +218,15 @@
     invoke-virtual {v0, v1}, Landroidx/compose/runtime/snapshots/SnapshotStateList;->remove(Ljava/lang/Object;)Z
 
     .line 300
-    :cond_62
-    :goto_62
+    :cond_6
+    :goto_0
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v0
 .end method
 
 .method public bridge synthetic emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
 

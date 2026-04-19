@@ -47,7 +47,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/Owner$Companion;
 
@@ -59,7 +59,7 @@
 .end method
 
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
 # virtual methods
 .method public final getEnableExtraAssertions()Z
-    .registers 2
+    .locals 1
 
     .line 301
     sget-boolean v0, Landroidx/compose/ui/node/Owner$Companion;->enableExtraAssertions:Z
@@ -79,7 +79,7 @@
 .end method
 
 .method public final setEnableExtraAssertions(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 301

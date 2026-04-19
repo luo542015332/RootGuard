@@ -65,7 +65,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function1;Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;JF)V
-    .registers 7
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -97,7 +97,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 678
     invoke-virtual {p0}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$MeasurePassDelegate$placeOuterCoordinator$1;->invoke()V
@@ -108,7 +108,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 9
+    .locals 8
 
     .line 681
     sget-object v6, Landroidx/compose/ui/layout/Placeable$PlacementScope;->Companion:Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;
@@ -126,7 +126,7 @@
 
     .line 682
     .local v7, "$i$a$-with-LayoutNodeLayoutDelegate$MeasurePassDelegate$placeOuterCoordinator$1$1":I
-    if-nez v5, :cond_17
+    if-nez v5, :cond_0
 
     .line 683
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;->getOuterCoordinator()Landroidx/compose/ui/node/NodeCoordinator;
@@ -137,10 +137,10 @@
 
     invoke-virtual {v6, v0, v2, v3, v4}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->place-70tqf50(Landroidx/compose/ui/layout/Placeable;JF)V
 
-    goto :goto_22
+    goto :goto_0
 
     .line 685
-    :cond_17
+    :cond_0
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNodeLayoutDelegate;->getOuterCoordinator()Landroidx/compose/ui/node/NodeCoordinator;
 
     move-result-object v0
@@ -154,7 +154,7 @@
     invoke-virtual/range {v0 .. v5}, Landroidx/compose/ui/layout/Placeable$PlacementScope$Companion;->placeWithLayer-aW-9-wM(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
 
     .line 687
-    :goto_22
+    :goto_0
     nop
 
     .line 681

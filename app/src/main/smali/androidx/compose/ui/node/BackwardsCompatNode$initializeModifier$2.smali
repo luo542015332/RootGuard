@@ -47,7 +47,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/node/BackwardsCompatNode;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/ui/node/BackwardsCompatNode;
 
     iput-object p1, p0, Landroidx/compose/ui/node/BackwardsCompatNode$initializeModifier$2;->this$0:Landroidx/compose/ui/node/BackwardsCompatNode;
@@ -61,17 +61,16 @@
 
 # virtual methods
 .method public onLayoutComplete()V
-    .registers 5
+    .locals 4
 
     .line 185
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode$initializeModifier$2;->this$0:Landroidx/compose/ui/node/BackwardsCompatNode;
 
-    # getter for: Landroidx/compose/ui/node/BackwardsCompatNode;->lastOnPlacedCoordinates:Landroidx/compose/ui/layout/LayoutCoordinates;
     invoke-static {v0}, Landroidx/compose/ui/node/BackwardsCompatNode;->access$getLastOnPlacedCoordinates$p(Landroidx/compose/ui/node/BackwardsCompatNode;)Landroidx/compose/ui/layout/LayoutCoordinates;
 
     move-result-object v0
 
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_0
 
     .line 186
     iget-object v0, p0, Landroidx/compose/ui/node/BackwardsCompatNode$initializeModifier$2;->this$0:Landroidx/compose/ui/node/BackwardsCompatNode;
@@ -101,6 +100,6 @@
     invoke-virtual {v0, v1}, Landroidx/compose/ui/node/BackwardsCompatNode;->onPlaced(Landroidx/compose/ui/layout/LayoutCoordinates;)V
 
     .line 188
-    :cond_1d
+    :cond_0
     return-void
 .end method

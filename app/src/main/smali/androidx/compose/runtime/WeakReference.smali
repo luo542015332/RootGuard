@@ -39,7 +39,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "reference"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

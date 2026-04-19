@@ -46,7 +46,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 29
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -55,7 +55,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/FilterQuality$Companion;-><init>()V
 
@@ -65,10 +65,9 @@
 
 # virtual methods
 .method public final getHigh-f-v9h1I()I
-    .registers 2
+    .locals 1
 
     .line 54
-    # getter for: Landroidx/compose/ui/graphics/FilterQuality;->High:I
     invoke-static {}, Landroidx/compose/ui/graphics/FilterQuality;->access$getHigh$cp()I
 
     move-result v0
@@ -77,10 +76,9 @@
 .end method
 
 .method public final getLow-f-v9h1I()I
-    .registers 2
+    .locals 1
 
     .line 40
-    # getter for: Landroidx/compose/ui/graphics/FilterQuality;->Low:I
     invoke-static {}, Landroidx/compose/ui/graphics/FilterQuality;->access$getLow$cp()I
 
     move-result v0
@@ -89,10 +87,9 @@
 .end method
 
 .method public final getMedium-f-v9h1I()I
-    .registers 2
+    .locals 1
 
     .line 48
-    # getter for: Landroidx/compose/ui/graphics/FilterQuality;->Medium:I
     invoke-static {}, Landroidx/compose/ui/graphics/FilterQuality;->access$getMedium$cp()I
 
     move-result v0
@@ -101,10 +98,9 @@
 .end method
 
 .method public final getNone-f-v9h1I()I
-    .registers 2
+    .locals 1
 
     .line 34
-    # getter for: Landroidx/compose/ui/graphics/FilterQuality;->None:I
     invoke-static {}, Landroidx/compose/ui/graphics/FilterQuality;->access$getNone$cp()I
 
     move-result v0

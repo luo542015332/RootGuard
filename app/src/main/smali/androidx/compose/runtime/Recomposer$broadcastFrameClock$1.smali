@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/Recomposer;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/Recomposer$broadcastFrameClock$1;->this$0:Landroidx/compose/runtime/Recomposer;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 137
     invoke-virtual {p0}, Landroidx/compose/runtime/Recomposer$broadcastFrameClock$1;->invoke()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public final invoke()V
-    .registers 10
+    .locals 9
 
     .line 145
     nop
@@ -87,7 +87,6 @@
     .line 138
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$broadcastFrameClock$1;->this$0:Landroidx/compose/runtime/Recomposer;
 
-    # getter for: Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/runtime/Recomposer;->access$getStateLock$p(Landroidx/compose/runtime/Recomposer;)Ljava/lang/Object;
 
     move-result-object v0
@@ -105,8 +104,7 @@
 
     .line 139
     .local v3, "$i$a$-synchronized-Recomposer$broadcastFrameClock$1$1":I
-    :try_start_c
-    # invokes: Landroidx/compose/runtime/Recomposer;->deriveStateLocked()Lkotlinx/coroutines/CancellableContinuation;
+    :try_start_0
     invoke-static {v1}, Landroidx/compose/runtime/Recomposer;->access$deriveStateLocked(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/CancellableContinuation;
 
     move-result-object v4
@@ -118,7 +116,6 @@
 
     .line 140
     .local v6, "$i$a$-also-Recomposer$broadcastFrameClock$1$1$1":I
-    # getter for: Landroidx/compose/runtime/Recomposer;->_state:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {v1}, Landroidx/compose/runtime/Recomposer;->access$get_state$p(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v7
@@ -136,10 +133,10 @@
     invoke-virtual {v7, v8}, Landroidx/compose/runtime/Recomposer$State;->compareTo(Ljava/lang/Enum;)I
 
     move-result v7
-    :try_end_24
-    .catchall {:try_start_c .. :try_end_24} :catchall_46
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-lez v7, :cond_3a
+    if-lez v7, :cond_1
 
     .line 144
     nop
@@ -159,7 +156,7 @@
     nop
 
     .line 145
-    if-eqz v4, :cond_39
+    if-eqz v4, :cond_0
 
     .line 138
     check-cast v4, Lkotlin/coroutines/Continuation;
@@ -176,7 +173,7 @@
     invoke-interface {v4, v0}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
     .line 146
-    :cond_39
+    :cond_0
     return-void
 
     .line 141
@@ -185,12 +182,11 @@
     .restart local v3    # "$i$a$-synchronized-Recomposer$broadcastFrameClock$1$1":I
     .restart local v5    # "it":Lkotlinx/coroutines/CancellableContinuation;
     .restart local v6    # "$i$a$-also-Recomposer$broadcastFrameClock$1$1$1":I
-    :cond_3a
-    :try_start_3a
+    :cond_1
+    :try_start_1
     const-string/jumbo v4, "Recomposer shutdown; frame clock awaiter will never resume"
 
     .line 142
-    # getter for: Landroidx/compose/runtime/Recomposer;->closeCause:Ljava/lang/Throwable;
     invoke-static {v1}, Landroidx/compose/runtime/Recomposer;->access$getCloseCause$p(Landroidx/compose/runtime/Recomposer;)Ljava/lang/Throwable;
 
     move-result-object v1
@@ -203,8 +199,8 @@
     .end local v0    # "lock$iv":Ljava/lang/Object;
     .end local v2    # "$i$f$synchronized":I
     throw v1
-    :try_end_46
-    .catchall {:try_start_3a .. :try_end_46} :catchall_46
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1503
     .end local v3    # "$i$a$-synchronized-Recomposer$broadcastFrameClock$1$1":I
@@ -212,7 +208,7 @@
     .end local v6    # "$i$a$-also-Recomposer$broadcastFrameClock$1$1$1":I
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v2    # "$i$f$synchronized":I
-    :catchall_46
+    :catchall_0
     move-exception v1
 
     monitor-exit v0

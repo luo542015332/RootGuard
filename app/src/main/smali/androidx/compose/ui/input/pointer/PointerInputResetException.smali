@@ -33,7 +33,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 755
     const-string/jumbo v0, "Pointer input was reset"
@@ -46,7 +46,7 @@
 
 # virtual methods
 .method public fillInStackTrace()Ljava/lang/Throwable;
-    .registers 3
+    .locals 2
 
     .line 758
     const/4 v0, 0x0

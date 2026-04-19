@@ -90,7 +90,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -100,7 +100,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -115,7 +115,6 @@
     iput-wide v0, p0, Landroidx/compose/ui/layout/Placeable;->measuredSize:J
 
     .line 111
-    # getter for: Landroidx/compose/ui/layout/PlaceableKt;->DefaultConstraints:J
     invoke-static {}, Landroidx/compose/ui/layout/PlaceableKt;->access$getDefaultConstraints$p()J
 
     move-result-wide v0
@@ -136,7 +135,7 @@
 .end method
 
 .method public static final synthetic access$getApparentToRealOffset-nOcc-ac(Landroidx/compose/ui/layout/Placeable;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/Placeable;
 
     .line 34
@@ -146,7 +145,7 @@
 .end method
 
 .method public static final synthetic access$placeAt-f8xVGno(Landroidx/compose/ui/layout/Placeable;JFLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/layout/Placeable;
     .param p1, "position"    # J
     .param p3, "zIndex"    # F
@@ -159,7 +158,7 @@
 .end method
 
 .method private final onMeasuredSizeChanged()V
-    .registers 5
+    .locals 4
 
     .line 79
     iget-wide v0, p0, Landroidx/compose/ui/layout/Placeable;->measuredSize:J
@@ -259,7 +258,7 @@
 
 # virtual methods
 .method protected final getApparentToRealOffset-nOcc-ac()J
-    .registers 3
+    .locals 2
 
     .line 124
     iget-wide v0, p0, Landroidx/compose/ui/layout/Placeable;->apparentToRealOffset:J
@@ -268,7 +267,7 @@
 .end method
 
 .method public final getHeight()I
-    .registers 2
+    .locals 1
 
     .line 54
     iget v0, p0, Landroidx/compose/ui/layout/Placeable;->height:I
@@ -277,7 +276,7 @@
 .end method
 
 .method public getMeasuredHeight()I
-    .registers 3
+    .locals 2
 
     .line 65
     iget-wide v0, p0, Landroidx/compose/ui/layout/Placeable;->measuredSize:J
@@ -290,7 +289,7 @@
 .end method
 
 .method protected final getMeasuredSize-YbymL2g()J
-    .registers 3
+    .locals 2
 
     .line 70
     iget-wide v0, p0, Landroidx/compose/ui/layout/Placeable;->measuredSize:J
@@ -299,7 +298,7 @@
 .end method
 
 .method public getMeasuredWidth()I
-    .registers 3
+    .locals 2
 
     .line 60
     iget-wide v0, p0, Landroidx/compose/ui/layout/Placeable;->measuredSize:J
@@ -312,7 +311,7 @@
 .end method
 
 .method protected final getMeasurementConstraints-msEJaDk()J
-    .registers 3
+    .locals 2
 
     .line 111
     iget-wide v0, p0, Landroidx/compose/ui/layout/Placeable;->measurementConstraints:J
@@ -321,7 +320,7 @@
 .end method
 
 .method public final getWidth()I
-    .registers 2
+    .locals 1
 
     .line 43
     iget v0, p0, Landroidx/compose/ui/layout/Placeable;->width:I
@@ -343,7 +342,7 @@
 .end method
 
 .method protected final setMeasuredSize-ozmzZPI(J)V
-    .registers 5
+    .locals 2
     .param p1, "value"    # J
 
     .line 72
@@ -353,7 +352,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 73
     iput-wide p1, p0, Landroidx/compose/ui/layout/Placeable;->measuredSize:J
@@ -362,12 +361,12 @@
     invoke-direct {p0}, Landroidx/compose/ui/layout/Placeable;->onMeasuredSizeChanged()V
 
     .line 76
-    :cond_d
+    :cond_0
     return-void
 .end method
 
 .method protected final setMeasurementConstraints-BRTryo0(J)V
-    .registers 5
+    .locals 2
     .param p1, "value"    # J
 
     .line 113
@@ -377,7 +376,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     .line 114
     iput-wide p1, p0, Landroidx/compose/ui/layout/Placeable;->measurementConstraints:J
@@ -386,6 +385,6 @@
     invoke-direct {p0}, Landroidx/compose/ui/layout/Placeable;->onMeasuredSizeChanged()V
 
     .line 117
-    :cond_d
+    :cond_0
     return-void
 .end method

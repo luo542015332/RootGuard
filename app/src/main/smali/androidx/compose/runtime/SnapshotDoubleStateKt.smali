@@ -20,7 +20,7 @@
 
 # direct methods
 .method public static final getValue(Landroidx/compose/runtime/DoubleState;Ljava/lang/Object;Lkotlin/reflect/KProperty;)D
-    .registers 5
+    .locals 2
     .param p0, "$this$getValue"    # Landroidx/compose/runtime/DoubleState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;
@@ -43,7 +43,7 @@
 .end method
 
 .method public static final mutableDoubleStateOf(D)Landroidx/compose/runtime/MutableDoubleState;
-    .registers 3
+    .locals 1
     .param p0, "value"    # D
 
     .line 1
@@ -55,7 +55,7 @@
 .end method
 
 .method public static final setValue(Landroidx/compose/runtime/MutableDoubleState;Ljava/lang/Object;Lkotlin/reflect/KProperty;D)V
-    .registers 5
+    .locals 0
     .param p0, "$this$setValue"    # Landroidx/compose/runtime/MutableDoubleState;
     .param p1, "thisObj"    # Ljava/lang/Object;
     .param p2, "property"    # Lkotlin/reflect/KProperty;

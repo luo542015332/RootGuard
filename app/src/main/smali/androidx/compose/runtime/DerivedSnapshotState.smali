@@ -118,7 +118,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/SnapshotMutationPolicy;)V
-    .registers 4
+    .locals 1
     .param p1, "calculation"    # Lkotlin/jvm/functions/Function0;
     .param p2, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .annotation system Ldalvik/annotation/Signature;
@@ -156,7 +156,7 @@
 .end method
 
 .method private final currentRecord(Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;Landroidx/compose/runtime/snapshots/Snapshot;ZLkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
-    .registers 23
+    .locals 18
     .param p1, "readable"    # Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
     .param p2, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
     .param p3, "forceDependencyReads"    # Z
@@ -194,10 +194,10 @@
 
     const/4 v5, 0x1
 
-    if-eqz v0, :cond_eb
+    if-eqz v0, :cond_a
 
     .line 171
-    if-eqz p3, :cond_ea
+    if-eqz p3, :cond_9
 
     .line 172
     const/4 v6, 0x0
@@ -226,7 +226,7 @@
 
     .line 390
     .local v9, "size$iv$iv":I
-    if-lez v9, :cond_35
+    if-lez v9, :cond_1
 
     .line 391
     const/4 v10, 0x0
@@ -239,7 +239,7 @@
 
     .line 394
     .local v11, "content$iv$iv":[Ljava/lang/Object;
-    :cond_26
+    :cond_0
     aget-object v12, v11, v10
 
     check-cast v12, Landroidx/compose/runtime/DerivedStateObserver;
@@ -264,12 +264,12 @@
     add-int/2addr v10, v5
 
     .line 396
-    if-lt v10, v9, :cond_26
+    if-lt v10, v9, :cond_0
 
     .line 398
     .end local v10    # "i$iv$iv":I
     .end local v11    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_35
+    :cond_1
     nop
 
     .line 399
@@ -283,14 +283,13 @@
 
     .line 173
     .local v0, "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
-    :try_start_38
+    :try_start_0
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->get_dependencies()Landroidx/compose/runtime/collection/IdentityArrayMap;
 
     move-result-object v8
 
     .line 174
     .local v8, "dependencies":Landroidx/compose/runtime/collection/IdentityArrayMap;
-    # getter for: Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v9
@@ -301,7 +300,7 @@
 
     check-cast v9, Ljava/lang/Integer;
 
-    if-eqz v9, :cond_4c
+    if-eqz v9, :cond_2
 
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
@@ -309,8 +308,8 @@
 
     .line 175
     .local v4, "invalidationNestedLevel":I
-    :cond_4c
-    if-eqz v8, :cond_96
+    :cond_2
+    if-eqz v8, :cond_5
 
     move-object v9, v8
 
@@ -326,8 +325,8 @@
 
     move-result v12
 
-    :goto_55
-    if-ge v11, v12, :cond_92
+    :goto_0
+    if-ge v11, v12, :cond_4
 
     .line 403
     invoke-virtual {v9}, Landroidx/compose/runtime/collection/IdentityArrayMap;->getKeys()[Ljava/lang/Object;
@@ -360,7 +359,6 @@
 
     .line 176
     .local v15, "$i$a$-forEach-DerivedSnapshotState$currentRecord$1$1":I
-    # getter for: Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v5
@@ -382,12 +380,12 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8a
+    if-eqz v0, :cond_3
 
     invoke-interface {v0, v13}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 178
-    :cond_8a
+    :cond_3
     nop
 
     .line 403
@@ -403,11 +401,11 @@
 
     const/4 v5, 0x1
 
-    goto :goto_55
+    goto :goto_0
 
     .end local v17    # "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
     .restart local v0    # "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
-    :cond_92
+    :cond_4
     move/from16 v17, v0
 
     .line 405
@@ -418,19 +416,18 @@
 
     .end local v9    # "this_$iv":Landroidx/compose/runtime/collection/IdentityArrayMap;
     .end local v10    # "$i$f$forEach":I
-    goto :goto_98
+    goto :goto_1
 
     .line 175
     .end local v17    # "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
     .restart local v0    # "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
-    :cond_96
+    :cond_5
     move/from16 v17, v0
 
     .line 179
     .end local v0    # "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
     .restart local v17    # "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
-    :goto_98
-    # getter for: Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v0
@@ -448,8 +445,8 @@
     .end local v8    # "dependencies":Landroidx/compose/runtime/collection/IdentityArrayMap;
     .end local v17    # "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$1":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_a6
-    .catchall {:try_start_38 .. :try_end_a6} :catchall_c8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 400
     nop
@@ -471,7 +468,7 @@
 
     .line 390
     .local v5, "size$iv$iv":I
-    if-lez v5, :cond_c5
+    if-lez v5, :cond_7
 
     .line 391
     const/4 v8, 0x0
@@ -484,7 +481,7 @@
 
     .line 394
     .local v9, "content$iv$iv":[Ljava/lang/Object;
-    :cond_b5
+    :cond_6
     aget-object v10, v9, v8
 
     check-cast v10, Landroidx/compose/runtime/DerivedStateObserver;
@@ -511,12 +508,12 @@
     add-int/2addr v8, v10
 
     .line 396
-    if-lt v8, v5, :cond_b5
+    if-lt v8, v5, :cond_6
 
     .line 398
     .end local v8    # "i$iv$iv":I
     .end local v9    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_c5
+    :cond_7
     nop
 
     .line 407
@@ -526,10 +523,10 @@
     nop
 
     .line 399
-    goto :goto_ea
+    goto :goto_3
 
     .line 406
-    :catchall_c8
+    :catchall_0
     move-exception v0
 
     move-object v4, v7
@@ -548,7 +545,7 @@
 
     .line 390
     .local v8, "size$iv$iv":I
-    if-lez v8, :cond_e8
+    if-lez v8, :cond_8
 
     .line 391
     const/4 v9, 0x0
@@ -561,7 +558,7 @@
 
     .line 394
     .local v10, "content$iv$iv":[Ljava/lang/Object;
-    :goto_d7
+    :goto_2
     aget-object v11, v10, v9
 
     check-cast v11, Landroidx/compose/runtime/DerivedStateObserver;
@@ -588,14 +585,14 @@
     add-int/2addr v9, v11
 
     .line 396
-    if-ge v9, v8, :cond_e8
+    if-ge v9, v8, :cond_8
 
-    goto :goto_d7
+    goto :goto_2
 
     .line 398
     .end local v9    # "i$iv$iv":I
     .end local v10    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_e8
+    :cond_8
     nop
 
     .end local v4    # "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
@@ -606,13 +603,12 @@
     .line 182
     .end local v6    # "$i$f$notifyObservers":I
     .end local v7    # "observers$iv":Landroidx/compose/runtime/collection/MutableVector;
-    :cond_ea
-    :goto_ea
+    :cond_9
+    :goto_3
     return-object v2
 
     .line 184
-    :cond_eb
-    # getter for: Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
+    :cond_a
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v0
@@ -623,18 +619,18 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    if-eqz v0, :cond_fc
+    if-eqz v0, :cond_b
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    goto :goto_fd
+    goto :goto_4
 
-    :cond_fc
+    :cond_b
     move v0, v4
 
-    :goto_fd
+    :goto_4
     move v5, v0
 
     .line 186
@@ -677,7 +673,7 @@
 
     .line 412
     .local v11, "size$iv$iv":I
-    if-lez v11, :cond_12c
+    if-lez v11, :cond_d
 
     .line 413
     const/4 v12, 0x0
@@ -690,7 +686,7 @@
 
     .line 416
     .local v13, "content$iv$iv":[Ljava/lang/Object;
-    :goto_119
+    :goto_5
     aget-object v14, v13, v12
 
     check-cast v14, Landroidx/compose/runtime/DerivedStateObserver;
@@ -717,20 +713,20 @@
     add-int/2addr v12, v4
 
     .line 418
-    if-lt v12, v11, :cond_12a
+    if-lt v12, v11, :cond_c
 
-    goto :goto_12c
+    goto :goto_6
 
-    :cond_12a
+    :cond_c
     const/4 v4, 0x0
 
-    goto :goto_119
+    goto :goto_5
 
     .line 420
     .end local v12    # "i$iv$iv":I
     .end local v13    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_12c
-    :goto_12c
+    :cond_d
+    :goto_6
     nop
 
     .line 421
@@ -744,8 +740,7 @@
 
     .line 188
     .local v0, "$i$a$-notifyObservers-DerivedSnapshotState$currentRecord$result$1":I
-    :try_start_12f
-    # getter for: Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
+    :try_start_1
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v4
@@ -766,8 +761,8 @@
     invoke-direct {v10, v1, v7, v5}, Landroidx/compose/runtime/DerivedSnapshotState$currentRecord$result$1$result$1;-><init>(Landroidx/compose/runtime/DerivedSnapshotState;Landroidx/compose/runtime/collection/IdentityArrayMap;I)V
 
     check-cast v10, Lkotlin/jvm/functions/Function1;
-    :try_end_145
-    .catchall {:try_start_12f .. :try_end_145} :catchall_213
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
     .line 202
     nop
@@ -775,14 +770,13 @@
     .line 190
     move-object/from16 v11, p4
 
-    :try_start_148
+    :try_start_2
     invoke-virtual {v4, v10, v6, v11}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->observe(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object v4
 
     .line 205
     .local v4, "result":Ljava/lang/Object;
-    # getter for: Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->calculationBlockNestedLevel:Landroidx/compose/runtime/SnapshotThreadLocal;
     invoke-static {}, Landroidx/compose/runtime/SnapshotStateKt__DerivedStateKt;->access$getCalculationBlockNestedLevel$p()Landroidx/compose/runtime/SnapshotThreadLocal;
 
     move-result-object v6
@@ -792,8 +786,8 @@
     move-result-object v10
 
     invoke-virtual {v6, v10}, Landroidx/compose/runtime/SnapshotThreadLocal;->set(Ljava/lang/Object;)V
-    :try_end_157
-    .catchall {:try_start_148 .. :try_end_157} :catchall_211
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
     .line 206
     nop
@@ -820,7 +814,7 @@
 
     .line 412
     .local v10, "size$iv$iv":I
-    if-lez v10, :cond_17d
+    if-lez v10, :cond_f
 
     .line 413
     const/4 v12, 0x0
@@ -833,7 +827,7 @@
 
     .line 416
     .restart local v13    # "content$iv$iv":[Ljava/lang/Object;
-    :goto_167
+    :goto_7
     aget-object v14, v13, v12
 
     check-cast v14, Landroidx/compose/runtime/DerivedStateObserver;
@@ -864,27 +858,27 @@
     add-int/2addr v12, v14
 
     .line 418
-    if-lt v12, v10, :cond_17a
+    if-lt v12, v10, :cond_e
 
-    goto :goto_17f
+    goto :goto_8
 
-    :cond_17a
+    :cond_e
     move-object/from16 v0, v17
 
-    goto :goto_167
+    goto :goto_7
 
     .line 412
     .end local v12    # "i$iv$iv":I
     .end local v13    # "content$iv$iv":[Ljava/lang/Object;
     .end local v17    # "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v0    # "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
-    :cond_17d
+    :cond_f
     move-object/from16 v17, v0
 
     .line 420
     .end local v0    # "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
     .restart local v17    # "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
-    :goto_17f
+    :goto_8
     nop
 
     .line 425
@@ -922,7 +916,7 @@
 
     .line 210
     .local v0, "$i$a$-sync-DerivedSnapshotState$currentRecord$record$1":I
-    :try_start_18b
+    :try_start_3
     sget-object v10, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v10}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->getCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
@@ -944,14 +938,14 @@
 
     move-result-object v13
 
-    if-eq v12, v13, :cond_1d6
+    if-eq v12, v13, :cond_12
 
     .line 215
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/runtime/DerivedSnapshotState;->getPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v12
 
-    if-eqz v12, :cond_1b5
+    if-eqz v12, :cond_11
 
     invoke-virtual/range {p1 .. p1}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->getResult()Ljava/lang/Object;
 
@@ -963,23 +957,23 @@
 
     const/4 v13, 0x1
 
-    if-ne v12, v13, :cond_1b2
+    if-ne v12, v13, :cond_10
 
     const/16 v16, 0x1
 
-    goto :goto_1b7
+    goto :goto_9
 
-    :cond_1b2
+    :cond_10
     const/16 v16, 0x0
 
-    goto :goto_1b7
+    goto :goto_9
 
     .line 214
-    :cond_1b5
+    :cond_11
     const/16 v16, 0x0
 
-    :goto_1b7
-    if-eqz v16, :cond_1d6
+    :goto_9
+    if-eqz v16, :cond_12
 
     .line 217
     invoke-virtual {v2, v7}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->set_dependencies(Landroidx/compose/runtime/collection/IdentityArrayMap;)V
@@ -1012,10 +1006,10 @@
     .line 221
     move-object v12, v2
 
-    goto :goto_202
+    goto :goto_a
 
     .line 223
-    :cond_1d6
+    :cond_12
     iget-object v12, v1, Landroidx/compose/runtime/DerivedSnapshotState;->first:Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
 
     check-cast v12, Landroidx/compose/runtime/snapshots/StateRecord;
@@ -1061,15 +1055,15 @@
 
     .line 228
     invoke-virtual {v12, v4}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->setResult(Ljava/lang/Object;)V
-    :try_end_201
-    .catchall {:try_start_18b .. :try_end_201} :catchall_20e
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     .line 229
     nop
 
     .line 212
     .end local v12    # "writable":Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
-    :goto_202
+    :goto_a
     nop
 
     .line 427
@@ -1088,7 +1082,7 @@
 
     .line 233
     .local v0, "record":Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
-    if-nez v5, :cond_20d
+    if-nez v5, :cond_13
 
     .line 234
     sget-object v6, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
@@ -1096,7 +1090,7 @@
     invoke-virtual {v6}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->notifyObjectsInitialized()V
 
     .line 237
-    :cond_20d
+    :cond_13
     return-object v0
 
     .line 427
@@ -1104,7 +1098,7 @@
     .restart local v6    # "$i$f$sync":I
     .restart local v8    # "lock$iv$iv":Ljava/lang/Object;
     .restart local v9    # "$i$f$synchronized":I
-    :catchall_20e
+    :catchall_1
     move-exception v0
 
     monitor-exit v8
@@ -1116,17 +1110,17 @@
     .end local v6    # "$i$f$sync":I
     .local v8, "$i$f$notifyObservers":I
     .local v9, "observers$iv":Landroidx/compose/runtime/collection/MutableVector;
-    :catchall_211
+    :catchall_2
     move-exception v0
 
-    goto :goto_216
+    goto :goto_b
 
-    :catchall_213
+    :catchall_3
     move-exception v0
 
     move-object/from16 v11, p4
 
-    :goto_216
+    :goto_b
     move-object v4, v9
 
     .local v4, "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
@@ -1143,7 +1137,7 @@
 
     .line 412
     .local v10, "size$iv$iv":I
-    if-lez v10, :cond_237
+    if-lez v10, :cond_14
 
     .line 413
     const/4 v12, 0x0
@@ -1156,7 +1150,7 @@
 
     .line 416
     .restart local v13    # "content$iv$iv":[Ljava/lang/Object;
-    :goto_224
+    :goto_c
     aget-object v14, v13, v12
 
     check-cast v14, Landroidx/compose/runtime/DerivedStateObserver;
@@ -1183,16 +1177,16 @@
     add-int/2addr v12, v2
 
     .line 418
-    if-ge v12, v10, :cond_237
+    if-ge v12, v10, :cond_14
 
     move-object/from16 v2, p1
 
-    goto :goto_224
+    goto :goto_c
 
     .line 420
     .end local v12    # "i$iv$iv":I
     .end local v13    # "content$iv$iv":[Ljava/lang/Object;
-    :cond_237
+    :cond_14
     nop
 
     .end local v4    # "this_$iv$iv":Landroidx/compose/runtime/collection/MutableVector;
@@ -1202,7 +1196,7 @@
 .end method
 
 .method private final displayValue()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 286
     iget-object v0, p0, Landroidx/compose/runtime/DerivedSnapshotState;->first:Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
@@ -1239,7 +1233,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_24
+    if-eqz v4, :cond_0
 
     .line 288
     invoke-virtual {v2}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->getResult()Ljava/lang/Object;
@@ -1253,14 +1247,14 @@
     return-object v4
 
     .line 290
-    :cond_24
+    :cond_0
     const-string v4, "<Not calculated>"
 
     return-object v4
 .end method
 
 .method public static synthetic getDebuggerDisplayValue$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
@@ -1268,7 +1262,7 @@
 
 # virtual methods
 .method public final current(Landroidx/compose/runtime/snapshots/Snapshot;)Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 5
+    .locals 3
     .param p1, "snapshot"    # Landroidx/compose/runtime/snapshots/Snapshot;
 
     const-string/jumbo v0, "snapshot"
@@ -1300,7 +1294,7 @@
 .end method
 
 .method public getCurrentRecord()Landroidx/compose/runtime/DerivedState$Record;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1358,7 +1352,7 @@
 .end method
 
 .method public final getDebuggerDisplayValue()Ljava/lang/Object;
-    .registers 7
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -1400,21 +1394,21 @@
 
     move-result v4
 
-    if-eqz v4, :cond_20
+    if-eqz v4, :cond_0
 
     .line 281
     invoke-virtual {v2}, Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;->getResult()Ljava/lang/Object;
 
     move-result-object v4
 
-    goto :goto_21
+    goto :goto_0
 
     .line 282
-    :cond_20
+    :cond_0
     const/4 v4, 0x0
 
     .line 280
-    :goto_21
+    :goto_0
     nop
 
     .line 431
@@ -1429,7 +1423,7 @@
 .end method
 
 .method public getFirstStateRecord()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 2
+    .locals 1
 
     .line 240
     iget-object v0, p0, Landroidx/compose/runtime/DerivedSnapshotState;->first:Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
@@ -1440,7 +1434,7 @@
 .end method
 
 .method public getPolicy()Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1456,7 +1450,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .registers 8
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -1474,12 +1468,12 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     invoke-interface {v0, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 255
-    :cond_f
+    :cond_0
     iget-object v0, p0, Landroidx/compose/runtime/DerivedSnapshotState;->first:Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;
 
     check-cast v0, Landroidx/compose/runtime/snapshots/StateRecord;
@@ -1530,7 +1524,7 @@
 .end method
 
 .method public prependStateRecord(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -1549,7 +1543,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 7
+    .locals 6
 
     .line 267
     iget-object v0, p0, Landroidx/compose/runtime/DerivedSnapshotState;->first:Landroidx/compose/runtime/DerivedSnapshotState$ResultRecord;

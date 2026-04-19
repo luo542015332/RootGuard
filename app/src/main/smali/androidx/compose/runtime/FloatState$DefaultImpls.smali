@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getValue(Landroidx/compose/runtime/FloatState;)Ljava/lang/Float;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/FloatState;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation

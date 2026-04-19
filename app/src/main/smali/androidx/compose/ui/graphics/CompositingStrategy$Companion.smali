@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 496
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/graphics/CompositingStrategy$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getAuto--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 509
-    # getter for: Landroidx/compose/ui/graphics/CompositingStrategy;->Auto:I
     invoke-static {}, Landroidx/compose/ui/graphics/CompositingStrategy;->access$getAuto$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getModulateAlpha--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 529
-    # getter for: Landroidx/compose/ui/graphics/CompositingStrategy;->ModulateAlpha:I
     invoke-static {}, Landroidx/compose/ui/graphics/CompositingStrategy;->access$getModulateAlpha$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getOffscreen--NrFUSI()I
-    .registers 2
+    .locals 1
 
     .line 518
-    # getter for: Landroidx/compose/ui/graphics/CompositingStrategy;->Offscreen:I
     invoke-static {}, Landroidx/compose/ui/graphics/CompositingStrategy;->access$getOffscreen$cp()I
 
     move-result v0

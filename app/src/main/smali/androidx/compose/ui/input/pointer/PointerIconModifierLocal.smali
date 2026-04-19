@@ -121,7 +121,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/input/pointer/PointerIcon;ZLkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 2
     .param p1, "icon"    # Landroidx/compose/ui/input/pointer/PointerIcon;
     .param p2, "overrideDescendants"    # Z
     .param p3, "onSetIcon"    # Lkotlin/jvm/functions/Function1;
@@ -170,7 +170,6 @@
     iput-object v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->parentInfo$delegate:Landroidx/compose/runtime/MutableState;
 
     .line 158
-    # getter for: Landroidx/compose/ui/input/pointer/PointerIconKt;->ModifierLocalPointerIcon:Landroidx/compose/ui/modifier/ProvidableModifierLocal;
     invoke-static {}, Landroidx/compose/ui/input/pointer/PointerIconKt;->access$getModifierLocalPointerIcon$p()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
 
     move-result-object v0
@@ -185,16 +184,16 @@
 .end method
 
 .method private final exit(Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;)V
-    .registers 4
+    .locals 2
     .param p1, "parent"    # Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
 
     .line 195
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isHovered:Z
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_1
 
     .line 196
-    if-nez p1, :cond_d
+    if-nez p1, :cond_0
 
     .line 198
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->onSetIcon:Lkotlin/jvm/functions/Function1;
@@ -203,15 +202,15 @@
 
     invoke-interface {v0, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_10
+    goto :goto_0
 
     .line 200
-    :cond_d
+    :cond_0
     invoke-direct {p1}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->reassignIcon()V
 
     .line 203
-    :cond_10
-    :goto_10
+    :cond_1
+    :goto_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isHovered:Z
@@ -221,7 +220,7 @@
 .end method
 
 .method private final getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
-    .registers 4
+    .locals 3
 
     .line 150
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->parentInfo$delegate:Landroidx/compose/runtime/MutableState;
@@ -250,14 +249,14 @@
 .end method
 
 .method private final hasOverride()Z
-    .registers 4
+    .locals 3
 
     .line 179
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->overrideDescendants:Z
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_2
 
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
 
@@ -265,36 +264,36 @@
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     invoke-direct {v0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->hasOverride()Z
 
     move-result v0
 
-    if-ne v0, v1, :cond_14
+    if-ne v0, v1, :cond_0
 
     move v0, v1
 
-    goto :goto_15
+    goto :goto_0
 
-    :cond_14
+    :cond_0
     move v0, v2
 
-    :goto_15
-    if-eqz v0, :cond_18
+    :goto_0
+    if-eqz v0, :cond_1
 
-    goto :goto_19
+    goto :goto_1
 
-    :cond_18
+    :cond_1
     move v1, v2
 
-    :cond_19
-    :goto_19
+    :cond_2
+    :goto_1
     return v1
 .end method
 
 .method private final pause()V
-    .registers 2
+    .locals 1
 
     .line 219
     const/4 v0, 0x1
@@ -306,17 +305,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     invoke-direct {v0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->pause()V
 
     .line 221
-    :cond_c
+    :cond_0
     return-void
 .end method
 
 .method private final reassignIcon()V
-    .registers 3
+    .locals 2
 
     .line 207
     const/4 v0, 0x0
@@ -326,7 +325,7 @@
     .line 208
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isHovered:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 209
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->onSetIcon:Lkotlin/jvm/functions/Function1;
@@ -335,15 +334,15 @@
 
     invoke-interface {v0, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_25
+    goto :goto_0
 
     .line 210
-    :cond_f
+    :cond_0
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
 
     move-result-object v0
 
-    if-nez v0, :cond_1c
+    if-nez v0, :cond_1
 
     .line 212
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->onSetIcon:Lkotlin/jvm/functions/Function1;
@@ -352,26 +351,26 @@
 
     invoke-interface {v0, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_25
+    goto :goto_0
 
     .line 214
-    :cond_1c
+    :cond_1
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
 
     move-result-object v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_2
 
     invoke-direct {v0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->reassignIcon()V
 
     .line 216
-    :cond_25
-    :goto_25
+    :cond_2
+    :goto_0
     return-void
 .end method
 
 .method private final setParentInfo(Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;)V
-    .registers 5
+    .locals 3
     .param p1, "<set-?>"    # Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
 
     .line 150
@@ -400,7 +399,7 @@
 
 # virtual methods
 .method public final enter()V
-    .registers 3
+    .locals 2
 
     .line 183
     const/4 v0, 0x1
@@ -410,19 +409,19 @@
     .line 184
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isPaused:Z
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_1
 
     .line 185
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
 
     move-result-object v0
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_0
 
     invoke-direct {v0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->pause()V
 
     .line 186
-    :cond_10
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->onSetIcon:Lkotlin/jvm/functions/Function1;
 
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->icon:Landroidx/compose/ui/input/pointer/PointerIcon;
@@ -430,12 +429,12 @@
     invoke-interface {v0, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 188
-    :cond_17
+    :cond_1
     return-void
 .end method
 
 .method public final exit()V
-    .registers 2
+    .locals 1
 
     .line 191
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
@@ -449,7 +448,7 @@
 .end method
 
 .method public getKey()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -466,7 +465,7 @@
 .end method
 
 .method public getValue()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
-    .registers 2
+    .locals 1
 
     .line 159
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->value:Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
@@ -475,7 +474,7 @@
 .end method
 
 .method public bridge synthetic getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 143
     invoke-virtual {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getValue()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
@@ -486,7 +485,7 @@
 .end method
 
 .method public final isHovered()Z
-    .registers 2
+    .locals 1
 
     .line 156
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isHovered:Z
@@ -495,7 +494,7 @@
 .end method
 
 .method public final isPaused()Z
-    .registers 2
+    .locals 1
 
     .line 153
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isPaused:Z
@@ -504,7 +503,7 @@
 .end method
 
 .method public onModifierLocalsUpdated(Landroidx/compose/ui/modifier/ModifierLocalReadScope;)V
-    .registers 6
+    .locals 4
     .param p1, "scope"    # Landroidx/compose/ui/modifier/ModifierLocalReadScope;
 
     const-string/jumbo v0, "scope"
@@ -525,7 +524,6 @@
 
     .line 163
     .local v2, "oldParentInfo":Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
-    # getter for: Landroidx/compose/ui/input/pointer/PointerIconKt;->ModifierLocalPointerIcon:Landroidx/compose/ui/modifier/ProvidableModifierLocal;
     invoke-static {}, Landroidx/compose/ui/input/pointer/PointerIconKt;->access$getModifierLocalPointerIcon$p()Landroidx/compose/ui/modifier/ProvidableModifierLocal;
 
     move-result-object v3
@@ -541,13 +539,13 @@
     invoke-direct {p0, v3}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->setParentInfo(Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;)V
 
     .line 164
-    if-eqz v2, :cond_2c
+    if-eqz v2, :cond_0
 
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
 
     move-result-object v3
 
-    if-nez v3, :cond_2c
+    if-nez v3, :cond_0
 
     .line 168
     invoke-direct {p0, v2}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->exit(Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;)V
@@ -560,7 +558,7 @@
     iput-object v3, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->onSetIcon:Lkotlin/jvm/functions/Function1;
 
     .line 171
-    :cond_2c
+    :cond_0
     nop
 
     .line 161
@@ -574,7 +572,7 @@
 .end method
 
 .method public final setHovered(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 156
@@ -584,7 +582,7 @@
 .end method
 
 .method public final setPaused(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 153
@@ -594,7 +592,7 @@
 .end method
 
 .method public final shouldUpdatePointerIcon()Z
-    .registers 3
+    .locals 2
 
     .line 174
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->getParentInfo()Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
@@ -603,31 +601,31 @@
 
     .line 175
     .local v0, "parentPointerInfo":Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_1
 
     invoke-direct {v0}, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->hasOverride()Z
 
     move-result v1
 
-    if-nez v1, :cond_d
+    if-nez v1, :cond_0
 
-    goto :goto_f
+    goto :goto_0
 
-    :cond_d
+    :cond_0
     const/4 v1, 0x0
 
-    goto :goto_10
+    goto :goto_1
 
-    :cond_f
-    :goto_f
+    :cond_1
+    :goto_0
     const/4 v1, 0x1
 
-    :goto_10
+    :goto_1
     return v1
 .end method
 
 .method public final updateValues(Landroidx/compose/ui/input/pointer/PointerIcon;ZLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 1
     .param p1, "icon"    # Landroidx/compose/ui/input/pointer/PointerIcon;
     .param p2, "overrideDescendants"    # Z
     .param p3, "onSetIcon"    # Lkotlin/jvm/functions/Function1;
@@ -659,21 +657,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isHovered:Z
 
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_0
 
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->isPaused:Z
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_0
 
     .line 230
     invoke-interface {p3, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 232
-    :cond_1f
+    :cond_0
     iput-object p1, p0, Landroidx/compose/ui/input/pointer/PointerIconModifierLocal;->icon:Landroidx/compose/ui/input/pointer/PointerIcon;
 
     .line 233

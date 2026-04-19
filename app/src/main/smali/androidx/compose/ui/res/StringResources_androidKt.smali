@@ -38,7 +38,7 @@
 
 # direct methods
 .method public static final pluralStringResource(IILandroidx/compose/runtime/Composer;I)Ljava/lang/String;
-    .registers 7
+    .locals 3
     .param p0, "id"    # I
     .param p1, "count"    # I
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -55,7 +55,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -64,7 +64,7 @@
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 75
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p2, v0}, Landroidx/compose/ui/res/Resources_androidKt;->resources(Landroidx/compose/runtime/Composer;I)Landroid/content/res/Resources;
@@ -85,19 +85,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 74
-    :cond_2d
+    :cond_1
     invoke-static {p2}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v1
 .end method
 
 .method public static final pluralStringResource(II[Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/String;
-    .registers 8
+    .locals 3
     .param p0, "id"    # I
     .param p1, "count"    # I
     .param p2, "formatArgs"    # [Ljava/lang/Object;
@@ -119,7 +119,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -128,7 +128,7 @@
     invoke-static {v0, p4, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 90
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p3, v0}, Landroidx/compose/ui/res/Resources_androidKt;->resources(Landroidx/compose/runtime/Composer;I)Landroid/content/res/Resources;
@@ -155,19 +155,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 89
-    :cond_38
+    :cond_1
     invoke-static {p3}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v1
 .end method
 
 .method public static final stringArrayResource(ILandroidx/compose/runtime/Composer;I)[Ljava/lang/String;
-    .registers 6
+    .locals 3
     .param p0, "id"    # I
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -183,7 +183,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -192,7 +192,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 61
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Landroidx/compose/ui/res/Resources_androidKt;->resources(Landroidx/compose/runtime/Composer;I)Landroid/content/res/Resources;
@@ -213,19 +213,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 60
-    :cond_2d
+    :cond_1
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v1
 .end method
 
 .method public static final stringResource(ILandroidx/compose/runtime/Composer;I)Ljava/lang/String;
-    .registers 6
+    .locals 3
     .param p0, "id"    # I
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -241,7 +241,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -250,7 +250,7 @@
     invoke-static {v0, p2, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 34
-    :cond_15
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Landroidx/compose/ui/res/Resources_androidKt;->resources(Landroidx/compose/runtime/Composer;I)Landroid/content/res/Resources;
@@ -271,19 +271,19 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 33
-    :cond_2d
+    :cond_1
     invoke-static {p1}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v1
 .end method
 
 .method public static final stringResource(I[Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Ljava/lang/String;
-    .registers 7
+    .locals 3
     .param p0, "id"    # I
     .param p1, "formatArgs"    # [Ljava/lang/Object;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -304,7 +304,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1b
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -313,7 +313,7 @@
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 48
-    :cond_1b
+    :cond_0
     const/4 v0, 0x0
 
     invoke-static {p2, v0}, Landroidx/compose/ui/res/Resources_androidKt;->resources(Landroidx/compose/runtime/Composer;I)Landroid/content/res/Resources;
@@ -340,12 +340,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 47
-    :cond_38
+    :cond_1
     invoke-static {p2}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v1

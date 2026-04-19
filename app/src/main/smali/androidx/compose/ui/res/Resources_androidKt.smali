@@ -30,7 +30,7 @@
 
 # direct methods
 .method public static final resources(Landroidx/compose/runtime/Composer;I)Landroid/content/res/Resources;
-    .registers 7
+    .locals 5
     .param p0, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p1, "$changed"    # I
 
@@ -45,7 +45,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_0
 
     const/4 v1, -0x1
 
@@ -54,7 +54,7 @@
     invoke-static {v0, p1, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 32
-    :cond_15
+    :cond_0
     invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalConfiguration()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v0
@@ -123,12 +123,12 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 31
-    :cond_51
+    :cond_1
     invoke-static {p0}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 
     return-object v0

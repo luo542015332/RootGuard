@@ -51,7 +51,7 @@
 
 # direct methods
 .method private synthetic constructor <init>(J)V
-    .registers 3
+    .locals 0
     .param p1, "value"    # J
 
     .line 829
@@ -63,7 +63,7 @@
 .end method
 
 .method public static final synthetic box-impl(J)Landroidx/compose/ui/input/pointer/PointerId;
-    .registers 3
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/input/pointer/PointerId;
 
@@ -73,23 +73,23 @@
 .end method
 
 .method public static constructor-impl(J)J
-    .registers 2
+    .locals 0
 
     return-wide p0
 .end method
 
 .method public static equals-impl(JLjava/lang/Object;)Z
-    .registers 7
+    .locals 4
 
     instance-of v0, p2, Landroidx/compose/ui/input/pointer/PointerId;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p2
 
     check-cast v0, Landroidx/compose/ui/input/pointer/PointerId;
@@ -100,36 +100,36 @@
 
     cmp-long v0, p0, v2
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_1
 
     return v1
 
-    :cond_12
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(JJ)Z
-    .registers 5
+    .locals 1
 
     cmp-long v0, p0, p2
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
-    :cond_6
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_7
+    :goto_0
     return v0
 .end method
 
 .method public static hashCode-impl(J)I
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Ljava/lang/Long;->hashCode(J)I
 
@@ -139,7 +139,7 @@
 .end method
 
 .method public static toString-impl(J)Ljava/lang/String;
-    .registers 4
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -171,7 +171,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerId;->value:J
 
@@ -183,7 +183,7 @@
 .end method
 
 .method public final getValue()J
-    .registers 3
+    .locals 2
 
     .line 829
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerId;->value:J
@@ -192,7 +192,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerId;->value:J
 
@@ -204,7 +204,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerId;->value:J
 
@@ -216,7 +216,7 @@
 .end method
 
 .method public final synthetic unbox-impl()J
-    .registers 3
+    .locals 2
 
     iget-wide v0, p0, Landroidx/compose/ui/input/pointer/PointerId;->value:J
 

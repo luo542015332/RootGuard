@@ -98,7 +98,7 @@
 
 # direct methods
 .method private constructor <init>(ZZ)V
-    .registers 3
+    .locals 0
     .param p1, "isCurve"    # Z
     .param p2, "isQuad"    # Z
 
@@ -114,25 +114,25 @@
 .end method
 
 .method public synthetic constructor <init>(ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 6
+    .locals 1
 
     .line 28
     and-int/lit8 p4, p3, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p4, :cond_6
+    if-eqz p4, :cond_0
 
     move p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_1
 
     move p2, v0
 
-    :cond_b
+    :cond_1
     const/4 p3, 0x0
 
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/vector/PathNode;-><init>(ZZLkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -142,7 +142,7 @@
 .end method
 
 .method public synthetic constructor <init>(ZZLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 4
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/graphics/vector/PathNode;-><init>(ZZ)V
 
@@ -152,7 +152,7 @@
 
 # virtual methods
 .method public final isCurve()Z
-    .registers 2
+    .locals 1
 
     .line 28
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/PathNode;->isCurve:Z
@@ -161,7 +161,7 @@
 .end method
 
 .method public final isQuad()Z
-    .registers 2
+    .locals 1
 
     .line 28
     iget-boolean v0, p0, Landroidx/compose/ui/graphics/vector/PathNode;->isQuad:Z

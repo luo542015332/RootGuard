@@ -56,7 +56,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidUiDispatcher;Landroid/view/Choreographer$FrameCallback;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidUiFrameClock$withFrameNanos$2$1;->$uiDispatcher:Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 53
@@ -88,7 +88,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 2
     .param p1, "it"    # Ljava/lang/Throwable;
 
     .line 53

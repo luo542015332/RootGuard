@@ -63,7 +63,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
-    .registers 6
+    .locals 4
     .param p1, "view"    # Landroid/view/View;
 
     const-string/jumbo v0, "view"
@@ -121,7 +121,7 @@
 .end method
 
 .method private final interruptOngoingScrolls()V
-    .registers 3
+    .locals 2
 
     .line 146
     iget-object v0, p0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->nestedScrollChildHelper:Landroidx/core/view/NestedScrollingChildHelper;
@@ -132,7 +132,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     .line 147
     iget-object v0, p0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->nestedScrollChildHelper:Landroidx/core/view/NestedScrollingChildHelper;
@@ -140,7 +140,7 @@
     invoke-virtual {v0, v1}, Landroidx/core/view/NestedScrollingChildHelper;->stopNestedScroll(I)V
 
     .line 150
-    :cond_e
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->nestedScrollChildHelper:Landroidx/core/view/NestedScrollingChildHelper;
 
     const/4 v1, 0x1
@@ -149,7 +149,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1
 
     .line 151
     iget-object v0, p0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->nestedScrollChildHelper:Landroidx/core/view/NestedScrollingChildHelper;
@@ -157,14 +157,14 @@
     invoke-virtual {v0, v1}, Landroidx/core/view/NestedScrollingChildHelper;->stopNestedScroll(I)V
 
     .line 153
-    :cond_1c
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public onPostFling-RZ2iAVY(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 10
+    .locals 4
     .param p1, "consumed"    # J
     .param p3, "available"    # J
     .param p5, "$completion"    # Lkotlin/coroutines/Continuation;
@@ -187,7 +187,6 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewVelocity(F)F
     invoke-static {v1}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewVelocity(F)F
 
     move-result v1
@@ -197,7 +196,6 @@
 
     move-result v2
 
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewVelocity(F)F
     invoke-static {v2}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewVelocity(F)F
 
     move-result v2
@@ -212,15 +210,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_0
 
     .line 135
     move-wide v0, p3
 
-    goto :goto_22
+    goto :goto_0
 
     .line 137
-    :cond_1c
+    :cond_0
     sget-object v0, Landroidx/compose/ui/unit/Velocity;->Companion:Landroidx/compose/ui/unit/Velocity$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/unit/Velocity$Companion;->getZero-9UxMQ8M()J
@@ -228,7 +226,7 @@
     move-result-wide v0
 
     .line 129
-    :goto_22
+    :goto_0
     nop
 
     .line 140
@@ -244,7 +242,7 @@
 .end method
 
 .method public onPostScroll-DzOQY0M(JJI)J
-    .registers 22
+    .locals 16
     .param p1, "consumed"    # J
     .param p3, "available"    # J
     .param p5, "source"    # I
@@ -255,13 +253,11 @@
     iget-object v1, v0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->nestedScrollChildHelper:Landroidx/core/view/NestedScrollingChildHelper;
 
     .line 89
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->getScrollAxes-k-4lQ0M(J)I
     invoke-static/range {p3 .. p4}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$getScrollAxes-k-4lQ0M(J)I
 
     move-result v2
 
     .line 90
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewType-GyEprt8(I)I
     invoke-static/range {p5 .. p5}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewType-GyEprt8(I)I
 
     move-result v3
@@ -271,7 +267,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_51
+    if-eqz v1, :cond_0
 
     .line 93
     iget-object v2, v0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->consumedScrollCache:[I
@@ -331,7 +327,6 @@
     const/4 v13, 0x0
 
     .line 101
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewType-GyEprt8(I)I
     invoke-static/range {p5 .. p5}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewType-GyEprt8(I)I
 
     move-result v14
@@ -347,7 +342,6 @@
 
     move-wide/from16 v2, p3
 
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toOffset-Uv8p0NA([IJ)J
     invoke-static {v1, v2, v3}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toOffset-Uv8p0NA([IJ)J
 
     move-result-wide v4
@@ -355,7 +349,7 @@
     return-wide v4
 
     .line 108
-    :cond_51
+    :cond_0
     move-wide/from16 v2, p3
 
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;
@@ -368,7 +362,7 @@
 .end method
 
 .method public onPreFling-QWom1Mo(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "available"    # J
     .param p3, "$completion"    # Lkotlin/coroutines/Continuation;
     .annotation system Ldalvik/annotation/Signature;
@@ -390,7 +384,6 @@
 
     move-result v1
 
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewVelocity(F)F
     invoke-static {v1}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewVelocity(F)F
 
     move-result v1
@@ -400,7 +393,6 @@
 
     move-result v2
 
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewVelocity(F)F
     invoke-static {v2}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewVelocity(F)F
 
     move-result v2
@@ -410,15 +402,15 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_0
 
     .line 118
     move-wide v0, p1
 
-    goto :goto_20
+    goto :goto_0
 
     .line 120
-    :cond_1a
+    :cond_0
     sget-object v0, Landroidx/compose/ui/unit/Velocity;->Companion:Landroidx/compose/ui/unit/Velocity$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/unit/Velocity$Companion;->getZero-9UxMQ8M()J
@@ -426,7 +418,7 @@
     move-result-wide v0
 
     .line 113
-    :goto_20
+    :goto_0
     nop
 
     .line 123
@@ -442,7 +434,7 @@
 .end method
 
 .method public onPreScroll-OzD1aCk(JI)J
-    .registers 18
+    .locals 14
     .param p1, "available"    # J
     .param p3, "source"    # I
 
@@ -452,13 +444,11 @@
     iget-object v1, v0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->nestedScrollChildHelper:Landroidx/core/view/NestedScrollingChildHelper;
 
     .line 61
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->getScrollAxes-k-4lQ0M(J)I
     invoke-static/range {p1 .. p2}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$getScrollAxes-k-4lQ0M(J)I
 
     move-result v2
 
     .line 62
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewType-GyEprt8(I)I
     invoke-static/range {p3 .. p3}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewType-GyEprt8(I)I
 
     move-result v3
@@ -468,7 +458,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3f
+    if-eqz v1, :cond_0
 
     .line 66
     iget-object v2, v0, Landroidx/compose/ui/platform/NestedScrollInteropConnection;->consumedScrollCache:[I
@@ -513,7 +503,6 @@
     const/4 v12, 0x0
 
     .line 73
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toViewType-GyEprt8(I)I
     invoke-static/range {p3 .. p3}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toViewType-GyEprt8(I)I
 
     move-result v13
@@ -526,7 +515,6 @@
 
     move-wide v2, p1
 
-    # invokes: Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->toOffset-Uv8p0NA([IJ)J
     invoke-static {v1, v2, v3}, Landroidx/compose/ui/platform/NestedScrollInteropConnectionKt;->access$toOffset-Uv8p0NA([IJ)J
 
     move-result-wide v4
@@ -534,7 +522,7 @@
     return-wide v4
 
     .line 79
-    :cond_3f
+    :cond_0
     move-wide v2, p1
 
     sget-object v1, Landroidx/compose/ui/geometry/Offset;->Companion:Landroidx/compose/ui/geometry/Offset$Companion;

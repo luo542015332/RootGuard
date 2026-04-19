@@ -44,7 +44,7 @@
 
 # virtual methods
 .method public interceptOutOfBoundsChildEvents()Z
-    .registers 2
+    .locals 1
 
     .line 75
     const/4 v0, 0x0
@@ -56,7 +56,7 @@
 .end method
 
 .method public onDensityChange()V
-    .registers 1
+    .locals 0
 
     .line 100
     invoke-interface {p0}, Landroidx/compose/ui/node/PointerInputModifierNode;->onCancelPointerInput()V
@@ -69,7 +69,7 @@
 .end method
 
 .method public onViewConfigurationChange()V
-    .registers 1
+    .locals 0
 
     .line 118
     invoke-interface {p0}, Landroidx/compose/ui/node/PointerInputModifierNode;->onCancelPointerInput()V
@@ -79,7 +79,7 @@
 .end method
 
 .method public sharePointerInputWithSiblings()Z
-    .registers 2
+    .locals 1
 
     .line 84
     const/4 v0, 0x0

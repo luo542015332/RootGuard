@@ -43,7 +43,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/ui/platform/AndroidComposeView;
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -57,7 +57,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 11
+    .locals 10
 
     .line 488
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
@@ -71,14 +71,13 @@
     .line 489
     iget-object v0, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->previousMotionEvent:Landroid/view/MotionEvent;
     invoke-static {v0}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getPreviousMotionEvent$p(Landroidx/compose/ui/platform/AndroidComposeView;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
     .line 490
     .local v0, "lastMotionEvent":Landroid/view/MotionEvent;
-    if-eqz v0, :cond_46
+    if-eqz v0, :cond_3
 
     .line 491
     const/4 v1, 0x0
@@ -91,16 +90,16 @@
 
     const/4 v4, 0x1
 
-    if-ne v2, v3, :cond_1b
+    if-ne v2, v3, :cond_0
 
     move v2, v4
 
-    goto :goto_1c
+    goto :goto_0
 
-    :cond_1b
+    :cond_0
     move v2, v1
 
-    :goto_1c
+    :goto_0
     move v7, v2
 
     .line 492
@@ -111,53 +110,53 @@
 
     .line 493
     .local v8, "action":I
-    if-eqz v7, :cond_2b
+    if-eqz v7, :cond_1
 
     .line 494
     const/16 v2, 0xa
 
-    if-eq v8, v2, :cond_2e
+    if-eq v8, v2, :cond_2
 
-    if-eq v8, v4, :cond_2e
+    if-eq v8, v4, :cond_2
 
     move v1, v4
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 496
-    :cond_2b
-    if-eq v8, v4, :cond_2e
+    :cond_1
+    if-eq v8, v4, :cond_2
 
     move v1, v4
 
     .line 493
-    :cond_2e
-    :goto_2e
+    :cond_2
+    :goto_1
     move v9, v1
 
     .line 498
     .local v9, "resend":Z
-    if-eqz v9, :cond_46
+    if-eqz v9, :cond_3
 
     .line 500
-    packed-switch v8, :pswitch_data_48
+    packed-switch v8, :pswitch_data_0
 
     .line 503
-    :pswitch_34
+    :pswitch_0
     const/4 v1, 0x2
 
     move v3, v1
 
-    goto :goto_39
+    goto :goto_2
 
     .line 501
-    :pswitch_37
+    :pswitch_1
     const/4 v1, 0x7
 
     move v3, v1
 
     .line 500
-    :goto_39
+    :goto_2
     nop
 
     .line 499
@@ -167,7 +166,6 @@
     .local v3, "newAction":I
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView$resendMotionEventRunnable$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
-    # getter for: Landroidx/compose/ui/platform/AndroidComposeView;->relayoutTime:J
     invoke-static {v1}, Landroidx/compose/ui/platform/AndroidComposeView;->access$getRelayoutTime$p(Landroidx/compose/ui/platform/AndroidComposeView;)J
 
     move-result-wide v4
@@ -176,7 +174,6 @@
 
     move-object v2, v0
 
-    # invokes: Landroidx/compose/ui/platform/AndroidComposeView;->sendSimulatedEvent(Landroid/view/MotionEvent;IJZ)V
     invoke-static/range {v1 .. v6}, Landroidx/compose/ui/platform/AndroidComposeView;->access$sendSimulatedEvent(Landroidx/compose/ui/platform/AndroidComposeView;Landroid/view/MotionEvent;IJZ)V
 
     .line 508
@@ -184,15 +181,15 @@
     .end local v7    # "wasMouseEvent":Z
     .end local v8    # "action":I
     .end local v9    # "resend":Z
-    :cond_46
+    :cond_3
     return-void
 
     nop
 
-    :pswitch_data_48
+    :pswitch_data_0
     .packed-switch 0x7
-        :pswitch_37
-        :pswitch_34
-        :pswitch_37
+        :pswitch_1
+        :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method

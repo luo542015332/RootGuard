@@ -54,7 +54,7 @@
 .end method
 
 .method public measureAndLayoutForTest()V
-    .registers 1
+    .locals 0
 
     .line 63
     return-void

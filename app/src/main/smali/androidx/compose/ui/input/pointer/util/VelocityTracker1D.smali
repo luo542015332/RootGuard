@@ -85,7 +85,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 4
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -109,7 +109,7 @@
 .end method
 
 .method public constructor <init>(Z)V
-    .registers 3
+    .locals 1
     .param p1, "isDataDifferential"    # Z
 
     .line 129
@@ -121,7 +121,7 @@
 .end method
 
 .method public constructor <init>(ZLandroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;)V
-    .registers 6
+    .locals 3
     .param p1, "isDataDifferential"    # Z
     .param p2, "strategy"    # Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
 
@@ -142,7 +142,7 @@
     nop
 
     .line 105
-    if-eqz p1, :cond_22
+    if-eqz p1, :cond_1
 
     sget-object v0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;->Lsq2:Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
 
@@ -150,12 +150,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_19
+    if-nez v0, :cond_0
 
-    goto :goto_22
+    goto :goto_0
 
     .line 106
-    :cond_19
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "Lsq2 not (yet) supported for differential axes"
@@ -165,8 +165,8 @@
     throw v0
 
     .line 108
-    :cond_22
-    :goto_22
+    :cond_1
+    :goto_0
     nop
 
     .line 131
@@ -180,7 +180,7 @@
 
     const/4 v1, 0x3
 
-    packed-switch v0, :pswitch_data_4e
+    packed-switch v0, :pswitch_data_0
 
     .line 133
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
@@ -189,17 +189,17 @@
 
     throw v0
 
-    :pswitch_35
+    :pswitch_0
     move v0, v1
 
-    goto :goto_38
+    goto :goto_1
 
     .line 132
-    :pswitch_37
+    :pswitch_1
     const/4 v0, 0x2
 
     .line 131
-    :goto_38
+    :goto_1
     iput v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->minSampleSize:I
 
     .line 156
@@ -229,35 +229,35 @@
 
     nop
 
-    :pswitch_data_4e
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_37
-        :pswitch_35
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public synthetic constructor <init>(ZLandroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 5
+    .locals 0
 
     .line 94
     and-int/lit8 p4, p3, 0x1
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 99
     const/4 p1, 0x0
 
     .line 94
-    :cond_5
+    :cond_0
     and-int/lit8 p3, p3, 0x2
 
-    if-eqz p3, :cond_b
+    if-eqz p3, :cond_1
 
     .line 101
     sget-object p2, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;->Lsq2:Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
 
     .line 94
-    :cond_b
+    :cond_1
     invoke-direct {p0, p1, p2}, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;-><init>(ZLandroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;)V
 
     .line 270
@@ -265,7 +265,7 @@
 .end method
 
 .method private final calculateLeastSquaresVelocity([F[FI)F
-    .registers 6
+    .locals 2
     .param p1, "dataPoints"    # [F
     .param p2, "time"    # [F
     .param p3, "sampleCount"    # I
@@ -286,7 +286,7 @@
     nop
 
     .line 264
-    :try_start_5
+    :try_start_0
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->reusableVelocityCoefficients:[F
 
     .line 259
@@ -300,13 +300,13 @@
     const/4 v1, 0x1
 
     aget v0, v0, v1
-    :try_end_f
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_5 .. :try_end_f} :catch_10
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_13
+    goto :goto_0
 
     .line 266
-    :catch_10
+    :catch_0
     move-exception v0
 
     .line 267
@@ -317,14 +317,14 @@
 
     .line 258
     .end local v0    # "exception":Ljava/lang/IllegalArgumentException;
-    :goto_13
+    :goto_0
     return v0
 .end method
 
 
 # virtual methods
 .method public final addDataPoint(JF)V
-    .registers 6
+    .locals 2
     .param p1, "timeMillis"    # J
     .param p3, "dataPoint"    # F
 
@@ -340,7 +340,6 @@
     .line 179
     iget-object v1, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->samples:[Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
 
-    # invokes: Landroidx/compose/ui/input/pointer/util/VelocityTrackerKt;->set([Landroidx/compose/ui/input/pointer/util/DataPointAtTime;IJF)V
     invoke-static {v1, v0, p1, p2, p3}, Landroidx/compose/ui/input/pointer/util/VelocityTrackerKt;->access$set([Landroidx/compose/ui/input/pointer/util/DataPointAtTime;IJF)V
 
     .line 180
@@ -348,7 +347,7 @@
 .end method
 
 .method public final calculateVelocity()F
-    .registers 14
+    .locals 13
 
     .line 190
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->reusableDataPointsArray:[F
@@ -373,29 +372,29 @@
 
     const/4 v5, 0x0
 
-    if-nez v4, :cond_f
+    if-nez v4, :cond_0
 
     return v5
 
     .line 198
     .local v4, "newestSample":Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
-    :cond_f
+    :cond_0
     move-object v6, v4
 
     .line 203
     .local v6, "previousSample":Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
-    :cond_10
+    :cond_1
     iget-object v7, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->samples:[Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
 
     aget-object v7, v7, v3
 
-    if-nez v7, :cond_17
+    if-nez v7, :cond_2
 
-    goto :goto_57
+    goto :goto_2
 
     .line 205
     .local v7, "sample":Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
-    :cond_17
+    :cond_2
     invoke-virtual {v4}, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->getTime()J
 
     move-result-wide v8
@@ -438,18 +437,18 @@
 
     cmpl-float v10, v8, v10
 
-    if-gtz v10, :cond_56
+    if-gtz v10, :cond_5
 
     const/high16 v10, 0x42200000    # 40.0f
 
     cmpl-float v10, v9, v10
 
-    if-lez v10, :cond_3e
+    if-lez v10, :cond_3
 
-    goto :goto_56
+    goto :goto_1
 
     .line 213
-    :cond_3e
+    :cond_3
     invoke-virtual {v7}, Landroidx/compose/ui/input/pointer/util/DataPointAtTime;->getDataPoint()F
 
     move-result v10
@@ -464,16 +463,16 @@
     .line 215
     const/16 v10, 0x14
 
-    if-nez v3, :cond_4d
+    if-nez v3, :cond_4
 
     move v11, v10
 
-    goto :goto_4e
+    goto :goto_0
 
-    :cond_4d
+    :cond_4
     move v11, v3
 
-    :goto_4e
+    :goto_0
     add-int/lit8 v3, v11, -0x1
 
     add-int/lit8 v2, v2, 0x1
@@ -485,26 +484,26 @@
     .end local v7    # "sample":Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
     .end local v8    # "age":F
     .end local v9    # "delta":F
-    if-lt v2, v10, :cond_10
+    if-lt v2, v10, :cond_1
 
-    goto :goto_57
+    goto :goto_2
 
     .line 210
     .restart local v7    # "sample":Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
     .restart local v8    # "age":F
     .restart local v9    # "delta":F
-    :cond_56
-    :goto_56
+    :cond_5
+    :goto_1
     nop
 
     .line 220
     .end local v7    # "sample":Landroidx/compose/ui/input/pointer/util/DataPointAtTime;
     .end local v8    # "age":F
     .end local v9    # "delta":F
-    :goto_57
+    :goto_2
     iget v7, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->minSampleSize:I
 
-    if-lt v2, v7, :cond_7e
+    if-lt v2, v7, :cond_6
 
     .line 222
     iget-object v5, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->strategy:Landroidx/compose/ui/input/pointer/util/VelocityTracker1D$Strategy;
@@ -517,7 +516,7 @@
 
     aget v5, v7, v5
 
-    packed-switch v5, :pswitch_data_80
+    packed-switch v5, :pswitch_data_0
 
     .line 227
     new-instance v5, Lkotlin/NoWhenBranchMatchedException;
@@ -526,24 +525,23 @@
 
     throw v5
 
-    :pswitch_6e
+    :pswitch_0
     invoke-direct {p0, v0, v1, v2}, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->calculateLeastSquaresVelocity([F[FI)F
 
     move-result v5
 
-    goto :goto_79
+    goto :goto_3
 
     .line 224
-    :pswitch_73
+    :pswitch_1
     iget-boolean v5, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->isDataDifferential:Z
 
-    # invokes: Landroidx/compose/ui/input/pointer/util/VelocityTrackerKt;->calculateImpulseVelocity([F[FIZ)F
     invoke-static {v0, v1, v2, v5}, Landroidx/compose/ui/input/pointer/util/VelocityTrackerKt;->access$calculateImpulseVelocity([F[FIZ)F
 
     move-result v5
 
     .line 229
-    :goto_79
+    :goto_3
     const/16 v7, 0x3e8
 
     int-to-float v7, v7
@@ -554,20 +552,20 @@
     return v5
 
     .line 234
-    :cond_7e
+    :cond_6
     return v5
 
     nop
 
-    :pswitch_data_80
+    :pswitch_data_0
     .packed-switch 0x1
-        :pswitch_73
-        :pswitch_6e
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
 .method public final isDataDifferential()Z
-    .registers 2
+    .locals 1
 
     .line 99
     iget-boolean v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->isDataDifferential:Z
@@ -576,7 +574,7 @@
 .end method
 
 .method public final resetTracking()V
-    .registers 7
+    .locals 6
 
     .line 241
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/util/VelocityTracker1D;->samples:[Landroidx/compose/ui/input/pointer/util/DataPointAtTime;

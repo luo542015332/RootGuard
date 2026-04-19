@@ -90,7 +90,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;)V
-    .registers 3
+    .locals 1
     .param p1, "builder"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -126,7 +126,7 @@
 .end method
 
 .method private final checkForComodification()V
-    .registers 3
+    .locals 2
 
     .line 73
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
@@ -137,13 +137,13 @@
 
     iget v1, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->expectedModCount:I
 
-    if-ne v0, v1, :cond_b
+    if-ne v0, v1, :cond_0
 
     .line 75
     return-void
 
     .line 74
-    :cond_b
+    :cond_0
     new-instance v0, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v0}, Ljava/util/ConcurrentModificationException;-><init>()V
@@ -152,18 +152,18 @@
 .end method
 
 .method private final checkNextWasInvoked()V
-    .registers 2
+    .locals 1
 
     .line 68
     iget-boolean v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->nextWasInvoked:Z
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_0
 
     .line 70
     return-void
 
     .line 69
-    :cond_5
+    :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -172,7 +172,7 @@
 .end method
 
 .method private final isCollision(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;)Z
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -187,21 +187,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_9
+    goto :goto_0
 
-    :cond_8
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_9
+    :goto_0
     return v0
 .end method
 
 .method private final resetPath(ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;Ljava/lang/Object;I)V
-    .registers 10
+    .locals 5
     .param p1, "hashCode"    # I
     .param p2, "node"    # Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
     .param p3, "element"    # Ljava/lang/Object;
@@ -221,7 +221,7 @@
 
     const/4 v1, 0x1
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 42
     invoke-virtual {p2}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;->getBuffer()[Ljava/lang/Object;
@@ -236,14 +236,14 @@
     .local v0, "index":I
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_13
+    if-eq v0, v2, :cond_0
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_14
+    :goto_0
     invoke-static {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 44
@@ -271,7 +271,7 @@
 
     .line 49
     .end local v0    # "index":I
-    :cond_2c
+    :cond_1
     mul-int/lit8 v0, p4, 0x5
 
     invoke-static {p1, v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNodeKt;->indexSegment(II)I
@@ -315,7 +315,7 @@
     .local v2, "cell":Ljava/lang/Object;
     instance-of v3, v2, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
 
-    if-eqz v3, :cond_5c
+    if-eqz v3, :cond_2
 
     .line 56
     move-object v3, v2
@@ -326,21 +326,21 @@
 
     invoke-direct {p0, p1, v3, p3, v4}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->resetPath(ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;Ljava/lang/Object;I)V
 
-    goto :goto_5f
+    goto :goto_1
 
     .line 59
-    :cond_5c
+    :cond_2
     invoke-virtual {p0, p4}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->setPathLastIndex(I)V
 
     .line 61
-    :goto_5f
+    :goto_1
     return-void
 .end method
 
 
 # virtual methods
 .method public next()Ljava/lang/Object;
-    .registers 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -369,7 +369,7 @@
 .end method
 
 .method public remove()V
-    .registers 5
+    .locals 4
 
     .line 25
     invoke-direct {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->checkNextWasInvoked()V
@@ -381,7 +381,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_1
 
     .line 27
     invoke-virtual {p0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->currentElement()Ljava/lang/Object;
@@ -403,18 +403,18 @@
     invoke-interface {v2, v3}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
 
     .line 30
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v2
 
-    goto :goto_23
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     move v2, v1
 
-    :goto_23
+    :goto_0
     iget-object v3, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
     invoke-virtual {v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;->getNode$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;
@@ -424,10 +424,10 @@
     invoke-direct {p0, v2, v3, v0, v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->resetPath(ILandroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNode;Ljava/lang/Object;I)V
 
     .end local v0    # "currentElement":Ljava/lang/Object;
-    goto :goto_3a
+    goto :goto_1
 
     .line 32
-    :cond_2d
+    :cond_1
     iget-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->builder:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetBuilder;
 
     check-cast v0, Ljava/util/Collection;
@@ -441,7 +441,7 @@
     invoke-interface {v0, v2}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
 
     .line 35
-    :goto_3a
+    :goto_1
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/PersistentHashSetMutableIterator;->lastIteratedElement:Ljava/lang/Object;

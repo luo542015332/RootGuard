@@ -66,7 +66,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/draw/BlurredEdgeTreatment$Companion;
 
@@ -98,7 +98,7 @@
 .end method
 
 .method private synthetic constructor <init>(Landroidx/compose/ui/graphics/Shape;)V
-    .registers 2
+    .locals 0
     .param p1, "shape"    # Landroidx/compose/ui/graphics/Shape;
 
     .line 56
@@ -110,7 +110,7 @@
 .end method
 
 .method public static final synthetic access$getRectangle$cp()Landroidx/compose/ui/graphics/Shape;
-    .registers 1
+    .locals 1
 
     .line 54
     sget-object v0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->Rectangle:Landroidx/compose/ui/graphics/Shape;
@@ -119,7 +119,7 @@
 .end method
 
 .method public static final synthetic access$getUnbounded$cp()Landroidx/compose/ui/graphics/Shape;
-    .registers 1
+    .locals 1
 
     .line 54
     sget-object v0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->Unbounded:Landroidx/compose/ui/graphics/Shape;
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final synthetic box-impl(Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/draw/BlurredEdgeTreatment;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;
 
@@ -138,23 +138,23 @@
 .end method
 
 .method public static constructor-impl(Landroidx/compose/ui/graphics/Shape;)Landroidx/compose/ui/graphics/Shape;
-    .registers 1
+    .locals 0
 
     return-object p0
 .end method
 
 .method public static equals-impl(Landroidx/compose/ui/graphics/Shape;Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/draw/BlurredEdgeTreatment;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;
@@ -167,18 +167,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_14
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0(Landroidx/compose/ui/graphics/Shape;Landroidx/compose/ui/graphics/Shape;)Z
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -188,25 +188,25 @@
 .end method
 
 .method public static hashCode-impl(Landroidx/compose/ui/graphics/Shape;)I
-    .registers 2
+    .locals 1
 
-    if-nez p0, :cond_4
+    if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
-    goto :goto_8
+    goto :goto_0
 
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
-    :goto_8
+    :goto_0
     return v0
 .end method
 
 .method public static toString-impl(Landroidx/compose/ui/graphics/Shape;)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -238,7 +238,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->shape:Landroidx/compose/ui/graphics/Shape;
 
@@ -250,7 +250,7 @@
 .end method
 
 .method public final getShape()Landroidx/compose/ui/graphics/Shape;
-    .registers 2
+    .locals 1
 
     .line 56
     iget-object v0, p0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->shape:Landroidx/compose/ui/graphics/Shape;
@@ -259,7 +259,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->shape:Landroidx/compose/ui/graphics/Shape;
 
@@ -271,7 +271,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->shape:Landroidx/compose/ui/graphics/Shape;
 
@@ -283,7 +283,7 @@
 .end method
 
 .method public final synthetic unbox-impl()Landroidx/compose/ui/graphics/Shape;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/draw/BlurredEdgeTreatment;->shape:Landroidx/compose/ui/graphics/Shape;
 

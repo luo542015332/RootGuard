@@ -31,7 +31,7 @@
 
 # direct methods
 .method public static final max-AoSsdG0(SS)S
-    .registers 3
+    .locals 1
     .param p0, "x"    # S
     .param p1, "y"    # S
 
@@ -40,37 +40,37 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_2
 
     invoke-static {p1}, Landroidx/compose/ui/graphics/Float16;->isNaN-impl(S)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_17
+    goto :goto_1
 
     .line 737
-    :cond_d
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/Float16;->compareTo-41bOqos(SS)I
 
     move-result v0
 
-    if-ltz v0, :cond_15
+    if-ltz v0, :cond_1
 
     move v0, p0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     move v0, p1
 
-    :goto_16
+    :goto_0
     return v0
 
     .line 735
-    :cond_17
-    :goto_17
+    :cond_2
+    :goto_1
     sget-object v0, Landroidx/compose/ui/graphics/Float16;->Companion:Landroidx/compose/ui/graphics/Float16$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/Float16$Companion;->getNaN-slo4al4()S
@@ -81,7 +81,7 @@
 .end method
 
 .method public static final min-AoSsdG0(SS)S
-    .registers 3
+    .locals 1
     .param p0, "x"    # S
     .param p1, "y"    # S
 
@@ -90,37 +90,37 @@
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_2
 
     invoke-static {p1}, Landroidx/compose/ui/graphics/Float16;->isNaN-impl(S)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_0
 
-    goto :goto_17
+    goto :goto_1
 
     .line 718
-    :cond_d
+    :cond_0
     invoke-static {p0, p1}, Landroidx/compose/ui/graphics/Float16;->compareTo-41bOqos(SS)I
 
     move-result v0
 
-    if-gtz v0, :cond_15
+    if-gtz v0, :cond_1
 
     move v0, p0
 
-    goto :goto_16
+    goto :goto_0
 
-    :cond_15
+    :cond_1
     move v0, p1
 
-    :goto_16
+    :goto_0
     return v0
 
     .line 715
-    :cond_17
-    :goto_17
+    :cond_2
+    :goto_1
     sget-object v0, Landroidx/compose/ui/graphics/Float16;->Companion:Landroidx/compose/ui/graphics/Float16$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/graphics/Float16$Companion;->getNaN-slo4al4()S

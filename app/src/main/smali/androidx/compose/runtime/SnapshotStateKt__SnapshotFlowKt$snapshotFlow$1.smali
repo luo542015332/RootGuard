@@ -158,7 +158,7 @@
 
 # direct methods
 .method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -183,7 +183,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -210,7 +210,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/flow/FlowCollector;
 
@@ -224,7 +224,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -254,7 +254,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 20
+    .locals 18
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -267,7 +267,7 @@
 
     const/4 v3, 0x1
 
-    packed-switch v2, :pswitch_data_1ae
+    packed-switch v2, :pswitch_data_0
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -277,7 +277,7 @@
 
     throw v0
 
-    :pswitch_15
+    :pswitch_0
     move-object/from16 v2, p0
 
     .local v2, "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
@@ -312,12 +312,12 @@
     check-cast v10, Lkotlinx/coroutines/flow/FlowCollector;
 
     .local v10, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :try_start_2f
+    :try_start_0
     invoke-static {v4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_32
-    .catchall {:try_start_2f .. :try_end_32} :catchall_1a8
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_6
 
-    goto/16 :goto_17c
+    goto/16 :goto_6
 
     .end local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
     .end local v4    # "$result":Ljava/lang/Object;
@@ -327,7 +327,7 @@
     .end local v8    # "readObserver":Lkotlin/jvm/functions/Function1;
     .end local v9    # "readSet":Ljava/util/Set;
     .end local v10    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :pswitch_34
+    :pswitch_1
     move-object/from16 v2, p0
 
     .restart local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
@@ -365,10 +365,10 @@
     check-cast v11, Lkotlinx/coroutines/flow/FlowCollector;
 
     .local v11, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :try_start_50
+    :try_start_1
     invoke-static {v4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_53
-    .catchall {:try_start_50 .. :try_end_53} :catchall_58
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     move-object v12, v11
 
@@ -376,7 +376,7 @@
 
     move-object v5, v4
 
-    goto/16 :goto_10d
+    goto/16 :goto_2
 
     .line 164
     .end local v5    # "found":Z
@@ -385,18 +385,18 @@
     .end local v9    # "readObserver":Lkotlin/jvm/functions/Function1;
     .end local v10    # "readSet":Ljava/util/Set;
     .end local v11    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :catchall_58
+    :catchall_0
     move-exception v0
 
     move-object v6, v7
 
-    goto/16 :goto_1a9
+    goto/16 :goto_7
 
     .line 111
     .end local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
     .end local v4    # "$result":Ljava/lang/Object;
     .end local v7    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
-    :pswitch_5c
+    :pswitch_2
     move-object/from16 v2, p0
 
     .restart local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
@@ -431,12 +431,12 @@
     check-cast v10, Lkotlinx/coroutines/flow/FlowCollector;
 
     .local v10, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :try_start_76
+    :try_start_2
     invoke-static {v4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_79
-    .catchall {:try_start_76 .. :try_end_79} :catchall_1a8
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_6
 
-    goto :goto_e5
+    goto :goto_0
 
     .end local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
     .end local v4    # "$result":Ljava/lang/Object;
@@ -446,7 +446,7 @@
     .end local v8    # "readObserver":Lkotlin/jvm/functions/Function1;
     .end local v9    # "readSet":Ljava/util/Set;
     .end local v10    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :pswitch_7a
+    :pswitch_3
     invoke-static/range {p1 .. p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object/from16 v2, p0
@@ -512,7 +512,7 @@
     nop
 
     .line 126
-    :try_start_ad
+    :try_start_3
     sget-object v5, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
 
     invoke-virtual {v5, v8}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->takeSnapshot(Lkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/snapshots/Snapshot;
@@ -520,8 +520,8 @@
     move-result-object v5
 
     iget-object v11, v2, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;->$block:Lkotlin/jvm/functions/Function0;
-    :try_end_b5
-    .catchall {:try_start_ad .. :try_end_b5} :catchall_1a8
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_6
 
     .local v5, "$this$invokeSuspend_u24lambda_u240":Landroidx/compose/runtime/snapshots/Snapshot;
     const/4 v12, 0x0
@@ -538,30 +538,30 @@
 
     .line 174
     .local v14, "$i$f$enter":I
-    :try_start_b9
+    :try_start_4
     invoke-virtual {v13}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v15
-    :try_end_bd
-    .catchall {:try_start_b9 .. :try_end_bd} :catchall_1a3
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_5
 
     .line 175
     .local v15, "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     nop
 
     .line 176
-    :try_start_be
+    :try_start_5
     invoke-interface {v11}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v11
-    :try_end_c2
-    .catchall {:try_start_be .. :try_end_c2} :catchall_19d
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 178
-    :try_start_c2
+    :try_start_6
     invoke-virtual {v13, v15}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    :try_end_c5
-    .catchall {:try_start_c2 .. :try_end_c5} :catchall_1a3
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_5
 
     .line 176
     .end local v13    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -573,7 +573,7 @@
     nop
 
     .line 130
-    :try_start_c7
+    :try_start_7
     invoke-virtual {v5}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     .line 131
@@ -613,18 +613,18 @@
 
     move-result-object v11
 
-    if-ne v11, v0, :cond_e5
+    if-ne v11, v0, :cond_0
 
     .line 111
     return-object v0
 
     .line 135
-    :cond_e5
-    :goto_e5
+    :cond_0
+    :goto_0
     nop
 
     .line 136
-    :goto_e6
+    :goto_1
     const/4 v11, 0x0
 
     .line 137
@@ -654,16 +654,16 @@
     invoke-interface {v7, v12}, Lkotlinx/coroutines/channels/Channel;->receive(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v12
-    :try_end_ff
-    .catchall {:try_start_c7 .. :try_end_ff} :catchall_1a8
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_6
 
-    if-ne v12, v0, :cond_102
+    if-ne v12, v0, :cond_1
 
     .line 111
     return-object v0
 
     .line 137
-    :cond_102
+    :cond_1
     move-object/from16 v17, v5
 
     move-object v5, v4
@@ -691,39 +691,38 @@
     .local v9, "readObserver":Lkotlin/jvm/functions/Function1;
     .local v10, "readSet":Ljava/util/Set;
     .local v12, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :goto_10d
-    :try_start_10d
+    :goto_2
+    :try_start_8
     check-cast v4, Ljava/util/Set;
 
     .line 141
     .local v4, "changedObjects":Ljava/util/Set;
-    :goto_10f
+    :goto_3
     nop
 
     .line 143
-    if-nez v11, :cond_11b
+    if-nez v11, :cond_3
 
-    # invokes: Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt;->intersects$SnapshotStateKt__SnapshotFlowKt(Ljava/util/Set;Ljava/util/Set;)Z
     invoke-static {v10, v4}, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt;->access$intersects(Ljava/util/Set;Ljava/util/Set;)Z
 
     move-result v13
 
-    if-eqz v13, :cond_119
+    if-eqz v13, :cond_2
 
-    goto :goto_11b
+    goto :goto_4
 
     .end local v4    # "changedObjects":Ljava/util/Set;
     .end local v11    # "found":Z
-    :cond_119
+    :cond_2
     const/4 v4, 0x0
 
-    goto :goto_11c
+    goto :goto_5
 
-    :cond_11b
-    :goto_11b
+    :cond_3
+    :goto_4
     move v4, v3
 
-    :goto_11c
+    :goto_5
     move v11, v4
 
     .line 144
@@ -738,10 +737,10 @@
 
     check-cast v4, Ljava/util/Set;
 
-    if-nez v4, :cond_196
+    if-nez v4, :cond_6
 
     .line 147
-    if-eqz v11, :cond_18c
+    if-eqz v11, :cond_5
 
     .line 148
     .end local v11    # "found":Z
@@ -755,8 +754,8 @@
     move-result-object v4
 
     iget-object v11, v2, Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;->$block:Lkotlin/jvm/functions/Function0;
-    :try_end_136
-    .catchall {:try_start_10d .. :try_end_136} :catchall_199
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
 
     .local v4, "$this$invokeSuspend_u24lambda_u241":Landroidx/compose/runtime/snapshots/Snapshot;
     const/4 v13, 0x0
@@ -773,12 +772,12 @@
 
     .line 179
     .local v15, "$i$f$enter":I
-    :try_start_13a
+    :try_start_9
     invoke-virtual {v14}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v16
-    :try_end_13e
-    .catchall {:try_start_13a .. :try_end_13e} :catchall_187
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
     move-object/from16 p1, v16
 
@@ -787,22 +786,22 @@
     nop
 
     .line 181
-    :try_start_141
+    :try_start_a
     invoke-interface {v11}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     move-result-object v11
-    :try_end_145
-    .catchall {:try_start_141 .. :try_end_145} :catchall_17f
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_1
 
     .line 183
     move-object/from16 v3, p1
 
     .end local p1    # "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .local v3, "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :try_start_147
+    :try_start_b
     invoke-virtual {v14, v3}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    :try_end_14a
-    .catchall {:try_start_147 .. :try_end_14a} :catchall_187
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_2
 
     .line 181
     .end local v3    # "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -814,7 +813,7 @@
     nop
 
     .line 153
-    :try_start_14c
+    :try_start_c
     invoke-virtual {v4}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     .line 154
@@ -836,7 +835,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_18c
+    if-nez v4, :cond_5
 
     .line 158
     move-object v4, v3
@@ -867,17 +866,17 @@
     invoke-interface {v12, v3, v6}, Lkotlinx/coroutines/flow/FlowCollector;->emit(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v6
-    :try_end_16f
-    .catchall {:try_start_14c .. :try_end_16f} :catchall_199
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_3
 
     .end local v3    # "newValue":Ljava/lang/Object;
-    if-ne v6, v0, :cond_172
+    if-ne v6, v0, :cond_4
 
     .line 111
     return-object v0
 
     .line 159
-    :cond_172
+    :cond_4
     move-object v6, v7
 
     move-object v7, v8
@@ -902,10 +901,10 @@
     .local v8, "readObserver":Lkotlin/jvm/functions/Function1;
     .local v9, "readSet":Ljava/util/Set;
     .local v10, "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :goto_17c
+    :goto_6
     const/4 v3, 0x1
 
-    goto/16 :goto_e6
+    goto/16 :goto_1
 
     .line 183
     .end local v6    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
@@ -919,7 +918,7 @@
     .restart local v14    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .restart local v15    # "$i$f$enter":I
     .restart local p1    # "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :catchall_17f
+    :catchall_1
     move-exception v0
 
     move-object/from16 v3, p1
@@ -928,7 +927,7 @@
 
     .end local p1    # "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .local v3, "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :try_start_183
+    :try_start_d
     invoke-virtual {v14, v3}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .end local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
@@ -937,8 +936,8 @@
     .end local v7    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
     .end local v13    # "$i$a$-run-SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$newValue$1":I
     throw v6
-    :try_end_187
-    .catchall {:try_start_183 .. :try_end_187} :catchall_187
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_2
 
     .line 153
     .end local v3    # "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -949,18 +948,18 @@
     .restart local v5    # "$result":Ljava/lang/Object;
     .restart local v7    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
     .restart local v13    # "$i$a$-run-SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$newValue$1":I
-    :catchall_187
+    :catchall_2
     move-exception v0
 
-    :try_start_188
+    :try_start_e
     invoke-virtual {v4}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     .end local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
     .end local v5    # "$result":Ljava/lang/Object;
     .end local v7    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
     throw v0
-    :try_end_18c
-    .catchall {:try_start_188 .. :try_end_18c} :catchall_199
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_3
 
     .line 136
     .end local v4    # "$this$invokeSuspend_u24lambda_u241":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -973,7 +972,7 @@
     .local v9, "readObserver":Lkotlin/jvm/functions/Function1;
     .local v10, "readSet":Ljava/util/Set;
     .restart local v12    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :cond_18c
+    :cond_5
     move-object v4, v5
 
     move-object v5, v6
@@ -990,15 +989,15 @@
 
     const/4 v3, 0x1
 
-    goto/16 :goto_e6
+    goto/16 :goto_1
 
     .line 144
     .restart local v11    # "found":Z
-    :cond_196
+    :cond_6
     const/4 v3, 0x1
 
     .local v4, "changedObjects":Ljava/util/Set;
-    goto/16 :goto_10f
+    goto/16 :goto_3
 
     .line 164
     .end local v4    # "changedObjects":Ljava/util/Set;
@@ -1008,14 +1007,14 @@
     .end local v10    # "readSet":Ljava/util/Set;
     .end local v11    # "found":Z
     .end local v12    # "$this$flow":Lkotlinx/coroutines/flow/FlowCollector;
-    :catchall_199
+    :catchall_3
     move-exception v0
 
     move-object v4, v5
 
     move-object v6, v7
 
-    goto :goto_1a9
+    goto :goto_7
 
     .line 178
     .end local v7    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
@@ -1026,12 +1025,12 @@
     .local v13, "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .local v14, "$i$f$enter":I
     .local v15, "previous$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :catchall_19d
+    :catchall_4
     move-exception v0
 
     move-object v3, v0
 
-    :try_start_19f
+    :try_start_f
     invoke-virtual {v13, v15}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .end local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
@@ -1040,8 +1039,8 @@
     .end local v6    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
     .end local v12    # "$i$a$-run-SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$lastValue$1":I
     throw v3
-    :try_end_1a3
-    .catchall {:try_start_19f .. :try_end_1a3} :catchall_1a3
+    :try_end_f
+    .catchall {:try_start_f .. :try_end_f} :catchall_5
 
     .line 130
     .end local v13    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1052,18 +1051,18 @@
     .restart local v5    # "$this$invokeSuspend_u24lambda_u240":Landroidx/compose/runtime/snapshots/Snapshot;
     .restart local v6    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
     .restart local v12    # "$i$a$-run-SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1$lastValue$1":I
-    :catchall_1a3
+    :catchall_5
     move-exception v0
 
-    :try_start_1a4
+    :try_start_10
     invoke-virtual {v5}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     .end local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
     .end local v4    # "$result":Ljava/lang/Object;
     .end local v6    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
     throw v0
-    :try_end_1a8
-    .catchall {:try_start_1a4 .. :try_end_1a8} :catchall_1a8
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_6
 
     .line 164
     .end local v5    # "$this$invokeSuspend_u24lambda_u240":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1071,21 +1070,21 @@
     .restart local v2    # "this":Landroidx/compose/runtime/SnapshotStateKt__SnapshotFlowKt$snapshotFlow$1;
     .restart local v4    # "$result":Ljava/lang/Object;
     .restart local v6    # "unregisterApplyObserver":Landroidx/compose/runtime/snapshots/ObserverHandle;
-    :catchall_1a8
+    :catchall_6
     move-exception v0
 
-    :goto_1a9
+    :goto_7
     invoke-interface {v6}, Landroidx/compose/runtime/snapshots/ObserverHandle;->dispose()V
 
     throw v0
 
     nop
 
-    :pswitch_data_1ae
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7a
-        :pswitch_5c
-        :pswitch_34
-        :pswitch_15
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

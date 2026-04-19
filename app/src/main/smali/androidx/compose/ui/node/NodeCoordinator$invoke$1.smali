@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/node/NodeCoordinator;Landroidx/compose/ui/graphics/Canvas;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/node/NodeCoordinator$invoke$1;->this$0:Landroidx/compose/ui/node/NodeCoordinator;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 383
     invoke-virtual {p0}, Landroidx/compose/ui/node/NodeCoordinator$invoke$1;->invoke()V
@@ -79,14 +79,13 @@
 .end method
 
 .method public final invoke()V
-    .registers 3
+    .locals 2
 
     .line 384
     iget-object v0, p0, Landroidx/compose/ui/node/NodeCoordinator$invoke$1;->this$0:Landroidx/compose/ui/node/NodeCoordinator;
 
     iget-object v1, p0, Landroidx/compose/ui/node/NodeCoordinator$invoke$1;->$canvas:Landroidx/compose/ui/graphics/Canvas;
 
-    # invokes: Landroidx/compose/ui/node/NodeCoordinator;->drawContainedDrawModifiers(Landroidx/compose/ui/graphics/Canvas;)V
     invoke-static {v0, v1}, Landroidx/compose/ui/node/NodeCoordinator;->access$drawContainedDrawModifiers(Landroidx/compose/ui/node/NodeCoordinator;Landroidx/compose/ui/graphics/Canvas;)V
 
     .line 385

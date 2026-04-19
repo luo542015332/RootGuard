@@ -50,7 +50,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/platform/AndroidUiDispatcher$Companion$Main$2;
 
@@ -62,7 +62,7 @@
 .end method
 
 .method constructor <init>()V
-    .registers 2
+    .locals 1
 
     const/4 v0, 0x0
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 155
     invoke-virtual {p0}, Landroidx/compose/ui/platform/AndroidUiDispatcher$Companion$Main$2;->invoke()Lkotlin/coroutines/CoroutineContext;
@@ -85,29 +85,28 @@
 .end method
 
 .method public final invoke()Lkotlin/coroutines/CoroutineContext;
-    .registers 6
+    .locals 5
 
     .line 156
     new-instance v0, Landroidx/compose/ui/platform/AndroidUiDispatcher;
 
     .line 157
-    # invokes: Landroidx/compose/ui/platform/AndroidUiDispatcher_androidKt;->isMainThread()Z
     invoke-static {}, Landroidx/compose/ui/platform/AndroidUiDispatcher_androidKt;->access$isMainThread()Z
 
     move-result v1
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_e
+    if-eqz v1, :cond_0
 
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
     move-result-object v1
 
-    goto :goto_21
+    goto :goto_0
 
     .line 158
-    :cond_e
+    :cond_0
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getMain()Lkotlinx/coroutines/MainCoroutineDispatcher;
 
     move-result-object v1
@@ -127,7 +126,7 @@
     check-cast v1, Landroid/view/Choreographer;
 
     .line 157
-    :goto_21
+    :goto_0
     const-string/jumbo v3, "if (isMainThread()) Chor\u2026eographer.getInstance() }"
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

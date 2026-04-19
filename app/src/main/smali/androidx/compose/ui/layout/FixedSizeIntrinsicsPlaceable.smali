@@ -44,7 +44,7 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 5
+    .locals 2
     .param p1, "width"    # I
     .param p2, "height"    # I
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public get(Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 3
+    .locals 1
     .param p1, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 
     const-string/jumbo v0, "alignmentLine"
@@ -85,7 +85,7 @@
 .end method
 
 .method protected placeAt-f8xVGno(JFLkotlin/jvm/functions/Function1;)V
-    .registers 5
+    .locals 0
     .param p1, "position"    # J
     .param p3, "zIndex"    # F
     .param p4, "layerBlock"    # Lkotlin/jvm/functions/Function1;

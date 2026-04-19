@@ -97,7 +97,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/MovableContent;Ljava/lang/Object;Landroidx/compose/runtime/ControlledComposition;Landroidx/compose/runtime/SlotTable;Landroidx/compose/runtime/Anchor;Ljava/util/List;Landroidx/compose/runtime/PersistentCompositionLocalMap;)V
-    .registers 9
+    .locals 1
     .param p1, "content"    # Landroidx/compose/runtime/MovableContent;
     .param p2, "parameter"    # Ljava/lang/Object;
     .param p3, "composition"    # Landroidx/compose/runtime/ControlledComposition;
@@ -191,7 +191,7 @@
 
 # virtual methods
 .method public final getAnchor$runtime_release()Landroidx/compose/runtime/Anchor;
-    .registers 2
+    .locals 1
 
     .line 322
     iget-object v0, p0, Landroidx/compose/runtime/MovableContentStateReference;->anchor:Landroidx/compose/runtime/Anchor;
@@ -200,7 +200,7 @@
 .end method
 
 .method public final getComposition$runtime_release()Landroidx/compose/runtime/ControlledComposition;
-    .registers 2
+    .locals 1
 
     .line 320
     iget-object v0, p0, Landroidx/compose/runtime/MovableContentStateReference;->composition:Landroidx/compose/runtime/ControlledComposition;
@@ -209,7 +209,7 @@
 .end method
 
 .method public final getContent$runtime_release()Landroidx/compose/runtime/MovableContent;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -226,7 +226,7 @@
 .end method
 
 .method public final getInvalidations$runtime_release()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -246,7 +246,7 @@
 .end method
 
 .method public final getLocals$runtime_release()Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 2
+    .locals 1
 
     .line 324
     iget-object v0, p0, Landroidx/compose/runtime/MovableContentStateReference;->locals:Landroidx/compose/runtime/PersistentCompositionLocalMap;
@@ -255,7 +255,7 @@
 .end method
 
 .method public final getParameter$runtime_release()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 319
     iget-object v0, p0, Landroidx/compose/runtime/MovableContentStateReference;->parameter:Ljava/lang/Object;
@@ -264,7 +264,7 @@
 .end method
 
 .method public final getSlotTable$runtime_release()Landroidx/compose/runtime/SlotTable;
-    .registers 2
+    .locals 1
 
     .line 321
     iget-object v0, p0, Landroidx/compose/runtime/MovableContentStateReference;->slotTable:Landroidx/compose/runtime/SlotTable;
@@ -273,7 +273,7 @@
 .end method
 
 .method public final setInvalidations$runtime_release(Ljava/util/List;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {

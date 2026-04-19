@@ -84,7 +84,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;JLkotlin/coroutines/Continuation;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -111,7 +111,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -138,7 +138,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Lkotlinx/coroutines/CoroutineScope;
 
@@ -152,7 +152,7 @@
 .end method
 
 .method public final invoke(Lkotlinx/coroutines/CoroutineScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -181,7 +181,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 16
+    .locals 14
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -190,7 +190,7 @@
     .line 83
     iget v1, p0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->label:I
 
-    packed-switch v1, :pswitch_data_de
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -200,28 +200,28 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v0, p0
 
     .local v0, "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
     .local p1, "$result":Ljava/lang/Object;
-    :try_start_13
+    :try_start_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_16
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_13 .. :try_end_16} :catch_18
+    :try_end_0
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_d1
+    goto/16 :goto_2
 
     .line 109
-    :catch_18
+    :catch_0
     move-exception v1
 
-    goto/16 :goto_da
+    goto/16 :goto_3
 
     .line 83
     .end local v0    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_1b
+    :pswitch_1
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
@@ -231,17 +231,17 @@
     check-cast v2, Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     .local v2, "spec":Landroidx/compose/animation/core/FiniteAnimationSpec;
-    :try_start_20
+    :try_start_1
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
-    :try_end_23
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_20 .. :try_end_23} :catch_d8
+    :try_end_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_1
 
-    goto :goto_7b
+    goto :goto_1
 
     .end local v1    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
     .end local v2    # "spec":Landroidx/compose/animation/core/FiniteAnimationSpec;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_24
+    :pswitch_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -252,10 +252,9 @@
     nop
 
     .line 85
-    :try_start_29
+    :try_start_2
     iget-object v2, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->placementDeltaAnimation:Landroidx/compose/animation/core/Animatable;
     invoke-static {v2}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->access$getPlacementDeltaAnimation$p(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;)Landroidx/compose/animation/core/Animatable;
 
     move-result-object v2
@@ -264,7 +263,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_1
 
     .line 87
     iget-object v2, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
@@ -275,7 +274,7 @@
 
     instance-of v2, v2, Landroidx/compose/animation/core/SpringSpec;
 
-    if-eqz v2, :cond_46
+    if-eqz v2, :cond_0
 
     .line 88
     iget-object v2, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
@@ -284,21 +283,20 @@
 
     move-result-object v2
 
-    goto :goto_53
+    goto :goto_0
 
     .line 90
-    :cond_46
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNodeKt;->InterruptionSpec:Landroidx/compose/animation/core/SpringSpec;
+    :cond_0
     invoke-static {}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNodeKt;->access$getInterruptionSpec$p()Landroidx/compose/animation/core/SpringSpec;
 
     move-result-object v2
 
     check-cast v2, Landroidx/compose/animation/core/FiniteAnimationSpec;
 
-    goto :goto_53
+    goto :goto_0
 
     .line 93
-    :cond_4d
+    :cond_1
     iget-object v2, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
     invoke-virtual {v2}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->getPlacementAnimationSpec()Landroidx/compose/animation/core/FiniteAnimationSpec;
@@ -306,14 +304,13 @@
     move-result-object v2
 
     .line 85
-    :goto_53
+    :goto_0
     nop
 
     .line 95
     .restart local v2    # "spec":Landroidx/compose/animation/core/FiniteAnimationSpec;
     iget-object v3, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->placementDeltaAnimation:Landroidx/compose/animation/core/Animatable;
     invoke-static {v3}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->access$getPlacementDeltaAnimation$p(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;)Landroidx/compose/animation/core/Animatable;
 
     move-result-object v3
@@ -322,12 +319,11 @@
 
     move-result v3
 
-    if-nez v3, :cond_7c
+    if-nez v3, :cond_3
 
     .line 97
     iget-object v3, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->placementDeltaAnimation:Landroidx/compose/animation/core/Animatable;
     invoke-static {v3}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->access$getPlacementDeltaAnimation$p(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;)Landroidx/compose/animation/core/Animatable;
 
     move-result-object v3
@@ -352,20 +348,19 @@
 
     move-result-object v3
 
-    if-ne v3, v0, :cond_7b
+    if-ne v3, v0, :cond_2
 
     .line 83
     return-object v0
 
     .line 102
-    :cond_7b
-    :goto_7b
+    :cond_2
+    :goto_1
     nop
 
-    :cond_7c
+    :cond_3
     iget-object v3, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->placementDeltaAnimation:Landroidx/compose/animation/core/Animatable;
     invoke-static {v3}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->access$getPlacementDeltaAnimation$p(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;)Landroidx/compose/animation/core/Animatable;
 
     move-result-object v3
@@ -422,7 +417,6 @@
     .local v3, "animationTarget":J
     iget-object v5, v1, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
-    # getter for: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->placementDeltaAnimation:Landroidx/compose/animation/core/Animatable;
     invoke-static {v5}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->access$getPlacementDeltaAnimation$p(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;)Landroidx/compose/animation/core/Animatable;
 
     move-result-object v6
@@ -466,40 +460,39 @@
     invoke-static/range {v6 .. v13}, Landroidx/compose/animation/core/Animatable;->animateTo$default(Landroidx/compose/animation/core/Animatable;Ljava/lang/Object;Landroidx/compose/animation/core/AnimationSpec;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;ILjava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
-    :try_end_cd
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_29 .. :try_end_cd} :catch_d8
+    :try_end_2
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_2 .. :try_end_2} :catch_1
 
     .end local v2    # "spec":Landroidx/compose/animation/core/FiniteAnimationSpec;
     .end local v3    # "animationTarget":J
-    if-ne v5, v0, :cond_d0
+    if-ne v5, v0, :cond_4
 
     .line 83
     return-object v0
 
     .line 103
-    :cond_d0
+    :cond_4
     move-object v0, v1
 
     .line 108
     .end local v1    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
     .restart local v0    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
-    :goto_d1
-    :try_start_d1
+    :goto_2
+    :try_start_3
     iget-object v1, v0, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;->this$0:Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;
 
     const/4 v2, 0x0
 
-    # invokes: Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->setAnimationInProgress(Z)V
     invoke-static {v1, v2}, Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;->access$setAnimationInProgress(Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode;Z)V
-    :try_end_d7
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_d1 .. :try_end_d7} :catch_18
+    :try_end_3
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_3 .. :try_end_3} :catch_0
 
-    goto :goto_da
+    goto :goto_3
 
     .line 109
     .end local v0    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
     .restart local v1    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
-    :catch_d8
+    :catch_1
     move-exception v0
 
     move-object v0, v1
@@ -507,17 +500,17 @@
     .line 113
     .end local v1    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
     .restart local v0    # "this":Landroidx/compose/foundation/lazy/layout/LazyLayoutAnimateItemModifierNode$animatePlacementDelta$1;
-    :goto_da
+    :goto_3
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v1
 
     nop
 
-    :pswitch_data_de
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_24
-        :pswitch_1b
-        :pswitch_12
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method

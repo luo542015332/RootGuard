@@ -45,7 +45,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/PointerIcon;)V
-    .registers 3
+    .locals 1
     .param p1, "pointerIcon"    # Landroid/view/PointerIcon;
 
     const-string/jumbo v0, "pointerIcon"
@@ -63,46 +63,46 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 4
+    .locals 2
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 49
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     const/4 v0, 0x1
 
     return v0
 
     .line 50
-    :cond_4
+    :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    if-eqz p1, :cond_f
+    if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_f
+    :cond_1
     const/4 v1, 0x0
 
-    :goto_10
+    :goto_0
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_2
 
     const/4 v0, 0x0
 
     return v0
 
     .line 52
-    :cond_18
+    :cond_2
     const-string/jumbo v0, "null cannot be cast to non-null type androidx.compose.ui.input.pointer.AndroidPointerIcon"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
@@ -128,7 +128,7 @@
 .end method
 
 .method public final getPointerIcon()Landroid/view/PointerIcon;
-    .registers 2
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/AndroidPointerIcon;->pointerIcon:Landroid/view/PointerIcon;
@@ -137,7 +137,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     .line 58
     iget-object v0, p0, Landroidx/compose/ui/input/pointer/AndroidPointerIcon;->pointerIcon:Landroid/view/PointerIcon;
@@ -150,7 +150,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     .line 62
     new-instance v0, Ljava/lang/StringBuilder;

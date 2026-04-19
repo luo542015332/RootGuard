@@ -28,7 +28,7 @@
 
 # direct methods
 .method public static final toStringAsFixed(FI)Ljava/lang/String;
-    .registers 9
+    .locals 7
     .param p0, "$this$toStringAsFixed"    # F
     .param p1, "digits"    # I
 
@@ -71,21 +71,21 @@
 
     cmpl-float v4, v3, v4
 
-    if-ltz v4, :cond_1e
+    if-ltz v4, :cond_0
 
     .line 30
     float-to-int v4, v2
 
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_1f
+    goto :goto_0
 
     .line 32
-    :cond_1e
+    :cond_0
     float-to-int v4, v2
 
     .line 29
-    :goto_1f
+    :goto_0
     nop
 
     .line 35
@@ -96,17 +96,17 @@
 
     .line 36
     .local v5, "rounded":F
-    if-lez v0, :cond_29
+    if-lez v0, :cond_1
 
     .line 38
     invoke-static {v5}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
     move-result-object v6
 
-    goto :goto_2e
+    goto :goto_1
 
     .line 42
-    :cond_29
+    :cond_1
     float-to-int v6, v5
 
     invoke-static {v6}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -114,6 +114,6 @@
     move-result-object v6
 
     .line 36
-    :goto_2e
+    :goto_1
     return-object v6
 .end method

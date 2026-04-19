@@ -100,7 +100,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/State;Landroidx/compose/runtime/State;Landroidx/compose/runtime/MutableState;Lkotlin/coroutines/Continuation;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -140,7 +140,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 7
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,7 +179,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
 
     move-object v0, p1
 
@@ -201,7 +201,7 @@
 .end method
 
 .method public final invoke(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -233,14 +233,14 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
+    .locals 4
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     .line 65535
     iget v0, p0, Landroidx/compose/material/SwitchKt$Switch$3$1$2;->label:I
 
-    packed-switch v0, :pswitch_data_42
+    packed-switch v0, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -250,7 +250,7 @@
 
     throw p1
 
-    :pswitch_11
+    :pswitch_0
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v0, p0
@@ -263,36 +263,34 @@
     .local v1, "newValue":Z
     iget-object v2, v0, Landroidx/compose/material/SwitchKt$Switch$3$1$2;->$currentChecked$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/material/SwitchKt;->Switch$lambda$8(Landroidx/compose/runtime/State;)Z
     invoke-static {v2}, Landroidx/compose/material/SwitchKt;->access$Switch$lambda$8(Landroidx/compose/runtime/State;)Z
 
     move-result v2
 
-    if-eq v2, v1, :cond_3f
+    if-eq v2, v1, :cond_2
 
     .line 128
     iget-object v2, v0, Landroidx/compose/material/SwitchKt$Switch$3$1$2;->$currentOnCheckedChange$delegate:Landroidx/compose/runtime/State;
 
-    # invokes: Landroidx/compose/material/SwitchKt;->Switch$lambda$7(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
     invoke-static {v2}, Landroidx/compose/material/SwitchKt;->access$Switch$lambda$7(Landroidx/compose/runtime/State;)Lkotlin/jvm/functions/Function1;
 
     move-result-object v2
 
     const/4 v3, 0x1
 
-    if-eqz v2, :cond_35
+    if-eqz v2, :cond_1
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_0
 
     move v1, v3
 
-    goto :goto_2d
+    goto :goto_0
 
     .end local v1    # "newValue":Z
-    :cond_2c
+    :cond_0
     const/4 v1, 0x0
 
-    :goto_2d
+    :goto_0
     invoke-static {v1}, Lkotlin/coroutines/jvm/internal/Boxing;->boxBoolean(Z)Ljava/lang/Boolean;
 
     move-result-object v1
@@ -302,27 +300,25 @@
     nop
 
     .line 129
-    :cond_35
+    :cond_1
     iget-object v1, v0, Landroidx/compose/material/SwitchKt$Switch$3$1$2;->$forceAnimationCheck$delegate:Landroidx/compose/runtime/MutableState;
 
-    # invokes: Landroidx/compose/material/SwitchKt;->Switch$lambda$3(Landroidx/compose/runtime/MutableState;)Z
     invoke-static {v1}, Landroidx/compose/material/SwitchKt;->access$Switch$lambda$3(Landroidx/compose/runtime/MutableState;)Z
 
     move-result v2
 
     xor-int/2addr v2, v3
 
-    # invokes: Landroidx/compose/material/SwitchKt;->Switch$lambda$4(Landroidx/compose/runtime/MutableState;Z)V
     invoke-static {v1, v2}, Landroidx/compose/material/SwitchKt;->access$Switch$lambda$4(Landroidx/compose/runtime/MutableState;Z)V
 
     .line 131
-    :cond_3f
+    :cond_2
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object v1
 
-    :pswitch_data_42
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_11
+        :pswitch_0
     .end packed-switch
 .end method

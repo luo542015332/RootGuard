@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Z)V
-    .registers 3
+    .locals 1
 
     iput-boolean p1, p0, Landroidx/compose/ui/node/MeasureAndLayoutDelegate$forceMeasureTheSubtree$pending$1;->$affectsLookahead:Z
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/node/LayoutNode;)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
     .param p1, "it"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "it"
@@ -78,22 +78,22 @@
     .line 522
     iget-boolean v0, p0, Landroidx/compose/ui/node/MeasureAndLayoutDelegate$forceMeasureTheSubtree$pending$1;->$affectsLookahead:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_0
 
     .line 523
     invoke-virtual {p1}, Landroidx/compose/ui/node/LayoutNode;->getLookaheadMeasurePending$ui_release()Z
 
     move-result v0
 
-    goto :goto_13
+    goto :goto_0
 
     .line 525
-    :cond_f
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/node/LayoutNode;->getMeasurePending$ui_release()Z
 
     move-result v0
 
-    :goto_13
+    :goto_0
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -103,7 +103,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 521

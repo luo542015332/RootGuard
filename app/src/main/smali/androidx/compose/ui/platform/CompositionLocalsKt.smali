@@ -279,7 +279,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     .line 43
     sget-object v0, Landroidx/compose/ui/platform/CompositionLocalsKt$LocalAccessibilityManager$1;->INSTANCE:Landroidx/compose/ui/platform/CompositionLocalsKt$LocalAccessibilityManager$1;
@@ -483,7 +483,7 @@
 .end method
 
 .method public static final ProvideCommonCompositionLocals(Landroidx/compose/ui/node/Owner;Landroidx/compose/ui/platform/UriHandler;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
-    .registers 12
+    .locals 7
     .param p0, "owner"    # Landroidx/compose/ui/node/Owner;
     .param p1, "uriHandler"    # Landroidx/compose/ui/platform/UriHandler;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
@@ -538,97 +538,97 @@
 
     const/4 v4, 0x2
 
-    if-nez v2, :cond_2f
+    if-nez v2, :cond_1
 
     invoke-interface {p3, p0}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_2d
+    if-eqz v2, :cond_0
 
     move v2, v3
 
-    goto :goto_2e
+    goto :goto_0
 
-    :cond_2d
+    :cond_0
     move v2, v4
 
-    :goto_2e
+    :goto_0
     or-int/2addr v1, v2
 
-    :cond_2f
+    :cond_1
     and-int/lit8 v2, p4, 0x70
 
     const/16 v5, 0x10
 
-    if-nez v2, :cond_40
+    if-nez v2, :cond_3
 
     invoke-interface {p3, p1}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3e
+    if-eqz v2, :cond_2
 
     const/16 v2, 0x20
 
-    goto :goto_3f
+    goto :goto_1
 
-    :cond_3e
+    :cond_2
     move v2, v5
 
-    :goto_3f
+    :goto_1
     or-int/2addr v1, v2
 
-    :cond_40
+    :cond_3
     and-int/lit16 v2, p4, 0x380
 
-    if-nez v2, :cond_50
+    if-nez v2, :cond_5
 
     invoke-interface {p3, p2}, Landroidx/compose/runtime/Composer;->changedInstance(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_4d
+    if-eqz v2, :cond_4
 
     const/16 v2, 0x100
 
-    goto :goto_4f
+    goto :goto_2
 
-    :cond_4d
+    :cond_4
     const/16 v2, 0x80
 
-    :goto_4f
+    :goto_2
     or-int/2addr v1, v2
 
-    :cond_50
+    :cond_5
     and-int/lit16 v2, v1, 0x2db
 
     const/16 v6, 0x92
 
-    if-ne v2, v6, :cond_62
+    if-ne v2, v6, :cond_7
 
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v2
 
-    if-nez v2, :cond_5d
+    if-nez v2, :cond_6
 
-    goto :goto_62
+    goto :goto_3
 
     .line 217
-    :cond_5d
+    :cond_6
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
-    goto/16 :goto_181
+    goto/16 :goto_4
 
     .line 194
-    :cond_62
-    :goto_62
+    :cond_7
+    :goto_3
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_6f
+    if-eqz v2, :cond_8
 
     const/4 v2, -0x1
 
@@ -637,7 +637,7 @@
     invoke-static {v0, v1, v2, v6}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 196
-    :cond_6f
+    :cond_8
     const/16 v0, 0x12
 
     new-array v0, v0, [Landroidx/compose/runtime/ProvidedValue;
@@ -968,22 +968,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_181
+    if-eqz v0, :cond_9
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 217
-    :cond_181
-    :goto_181
+    :cond_9
+    :goto_4
     invoke-interface {p3}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_188
+    if-nez v0, :cond_a
 
-    goto :goto_192
+    goto :goto_5
 
-    :cond_188
+    :cond_a
     new-instance v2, Landroidx/compose/ui/platform/CompositionLocalsKt$ProvideCommonCompositionLocals$1;
 
     invoke-direct {v2, p0, p1, p2, p4}, Landroidx/compose/ui/platform/CompositionLocalsKt$ProvideCommonCompositionLocals$1;-><init>(Landroidx/compose/ui/node/Owner;Landroidx/compose/ui/platform/UriHandler;Lkotlin/jvm/functions/Function2;I)V
@@ -992,12 +992,12 @@
 
     invoke-interface {v0, v2}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_192
+    :goto_5
     return-void
 .end method
 
 .method public static final synthetic access$noLocalProvidedFor(Ljava/lang/String;)Ljava/lang/Void;
-    .registers 2
+    .locals 1
     .param p0, "name"    # Ljava/lang/String;
 
     .line 1
@@ -1009,7 +1009,7 @@
 .end method
 
 .method public static final getLocalAccessibilityManager()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1026,7 +1026,7 @@
 .end method
 
 .method public static final getLocalAutofill()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1043,13 +1043,13 @@
 .end method
 
 .method public static synthetic getLocalAutofill$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getLocalAutofillTree()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1066,13 +1066,13 @@
 .end method
 
 .method public static synthetic getLocalAutofillTree$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getLocalClipboardManager()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1089,7 +1089,7 @@
 .end method
 
 .method public static final getLocalDensity()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1106,7 +1106,7 @@
 .end method
 
 .method public static final getLocalFocusManager()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1123,7 +1123,7 @@
 .end method
 
 .method public static final getLocalFontFamilyResolver()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1140,7 +1140,7 @@
 .end method
 
 .method public static final getLocalFontLoader()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1157,7 +1157,7 @@
 .end method
 
 .method public static synthetic getLocalFontLoader$annotations()V
-    .registers 0
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "LocalFontLoader is replaced with LocalFontFamilyResolver"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -1170,7 +1170,7 @@
 .end method
 
 .method public static final getLocalHapticFeedback()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1187,7 +1187,7 @@
 .end method
 
 .method public static final getLocalInputModeManager()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1204,7 +1204,7 @@
 .end method
 
 .method public static final getLocalLayoutDirection()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1221,7 +1221,7 @@
 .end method
 
 .method public static final getLocalPlatformTextInputPluginRegistry()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1238,13 +1238,13 @@
 .end method
 
 .method public static synthetic getLocalPlatformTextInputPluginRegistry$annotations()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public static final getLocalPointerIconService()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1261,7 +1261,7 @@
 .end method
 
 .method public static final getLocalTextInputService()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1278,7 +1278,7 @@
 .end method
 
 .method public static final getLocalTextToolbar()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1295,7 +1295,7 @@
 .end method
 
 .method public static final getLocalUriHandler()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1312,7 +1312,7 @@
 .end method
 
 .method public static final getLocalViewConfiguration()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1329,7 +1329,7 @@
 .end method
 
 .method public static final getLocalWindowInfo()Landroidx/compose/runtime/ProvidableCompositionLocal;
-    .registers 1
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1346,7 +1346,7 @@
 .end method
 
 .method private static final noLocalProvidedFor(Ljava/lang/String;)Ljava/lang/Void;
-    .registers 4
+    .locals 3
     .param p0, "name"    # Ljava/lang/String;
 
     new-instance v0, Ljava/lang/IllegalStateException;

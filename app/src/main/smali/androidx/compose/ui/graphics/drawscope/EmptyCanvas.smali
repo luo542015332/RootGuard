@@ -123,7 +123,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -134,7 +134,7 @@
 
 # virtual methods
 .method public clipPath-mtrdD-E(Landroidx/compose/ui/graphics/Path;I)V
-    .registers 4
+    .locals 1
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "clipOp"    # I
 
@@ -151,7 +151,7 @@
 .end method
 
 .method public clipRect-N_I0leg(FFFFI)V
-    .registers 7
+    .locals 1
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -167,7 +167,7 @@
 .end method
 
 .method public concat-58bKbWc([F)V
-    .registers 3
+    .locals 1
     .param p1, "matrix"    # [F
 
     const-string/jumbo v0, "matrix"
@@ -183,7 +183,7 @@
 .end method
 
 .method public disableZ()V
-    .registers 2
+    .locals 1
 
     .line 161
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -194,7 +194,7 @@
 .end method
 
 .method public drawArc(FFFFFFZLandroidx/compose/ui/graphics/Paint;)V
-    .registers 10
+    .locals 1
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -217,7 +217,7 @@
 .end method
 
 .method public drawCircle-9KIMszo(JFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 6
+    .locals 1
     .param p1, "center"    # J
     .param p3, "radius"    # F
     .param p4, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -235,7 +235,7 @@
 .end method
 
 .method public drawImage-d-4ec7I(Landroidx/compose/ui/graphics/ImageBitmap;JLandroidx/compose/ui/graphics/Paint;)V
-    .registers 6
+    .locals 1
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "topLeftOffset"    # J
     .param p4, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -257,7 +257,7 @@
 .end method
 
 .method public drawImageRect-HPBpro0(Landroidx/compose/ui/graphics/ImageBitmap;JJJJLandroidx/compose/ui/graphics/Paint;)V
-    .registers 12
+    .locals 1
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
     .param p4, "srcSize"    # J
@@ -282,7 +282,7 @@
 .end method
 
 .method public drawLine-Wko1d7g(JJLandroidx/compose/ui/graphics/Paint;)V
-    .registers 7
+    .locals 1
     .param p1, "p1"    # J
     .param p3, "p2"    # J
     .param p5, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -300,7 +300,7 @@
 .end method
 
 .method public drawOval(FFFFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 7
+    .locals 1
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -320,7 +320,7 @@
 .end method
 
 .method public drawPath(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 4
+    .locals 1
     .param p1, "path"    # Landroidx/compose/ui/graphics/Path;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
 
@@ -341,7 +341,7 @@
 .end method
 
 .method public drawPoints-O7TthRY(ILjava/util/List;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 5
+    .locals 1
     .param p1, "pointMode"    # I
     .param p2, "points"    # Ljava/util/List;
     .param p3, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -373,7 +373,7 @@
 .end method
 
 .method public drawRawPoints-O7TthRY(I[FLandroidx/compose/ui/graphics/Paint;)V
-    .registers 5
+    .locals 1
     .param p1, "pointMode"    # I
     .param p2, "points"    # [F
     .param p3, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -395,7 +395,7 @@
 .end method
 
 .method public drawRect(FFFFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 7
+    .locals 1
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -415,7 +415,7 @@
 .end method
 
 .method public drawRoundRect(FFFFFFLandroidx/compose/ui/graphics/Paint;)V
-    .registers 9
+    .locals 1
     .param p1, "left"    # F
     .param p2, "top"    # F
     .param p3, "right"    # F
@@ -437,7 +437,7 @@
 .end method
 
 .method public drawVertices-TPEHhCM(Landroidx/compose/ui/graphics/Vertices;ILandroidx/compose/ui/graphics/Paint;)V
-    .registers 5
+    .locals 1
     .param p1, "vertices"    # Landroidx/compose/ui/graphics/Vertices;
     .param p2, "blendMode"    # I
     .param p3, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -459,7 +459,7 @@
 .end method
 
 .method public enableZ()V
-    .registers 2
+    .locals 1
 
     .line 157
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -470,7 +470,7 @@
 .end method
 
 .method public restore()V
-    .registers 2
+    .locals 1
 
     .line 49
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -481,7 +481,7 @@
 .end method
 
 .method public rotate(F)V
-    .registers 3
+    .locals 1
     .param p1, "degrees"    # F
 
     .line 65
@@ -493,7 +493,7 @@
 .end method
 
 .method public save()V
-    .registers 2
+    .locals 1
 
     .line 45
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -504,7 +504,7 @@
 .end method
 
 .method public saveLayer(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 4
+    .locals 1
     .param p1, "bounds"    # Landroidx/compose/ui/geometry/Rect;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
 
@@ -525,7 +525,7 @@
 .end method
 
 .method public scale(FF)V
-    .registers 4
+    .locals 1
     .param p1, "sx"    # F
     .param p2, "sy"    # F
 
@@ -538,7 +538,7 @@
 .end method
 
 .method public skew(FF)V
-    .registers 4
+    .locals 1
     .param p1, "sx"    # F
     .param p2, "sy"    # F
 
@@ -551,7 +551,7 @@
 .end method
 
 .method public translate(FF)V
-    .registers 4
+    .locals 1
     .param p1, "dx"    # F
     .param p2, "dy"    # F
 

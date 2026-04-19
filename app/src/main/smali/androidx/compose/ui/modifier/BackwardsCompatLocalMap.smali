@@ -56,7 +56,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/modifier/ModifierLocalProvider;)V
-    .registers 3
+    .locals 1
     .param p1, "element"    # Landroidx/compose/ui/modifier/ModifierLocalProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -85,7 +85,7 @@
 
 # virtual methods
 .method public contains$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -106,21 +106,21 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_10
+    if-ne p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
+    :goto_0
     return v0
 .end method
 
 .method public get$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -143,17 +143,17 @@
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_10
+    if-ne p1, v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
-    :cond_10
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_11
-    if-eqz v0, :cond_1a
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 70
     iget-object v0, p0, Landroidx/compose/ui/modifier/BackwardsCompatLocalMap;->element:Landroidx/compose/ui/modifier/ModifierLocalProvider;
@@ -165,7 +165,7 @@
     return-object v0
 
     .line 68
-    :cond_1a
+    :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Check failed."
@@ -180,7 +180,7 @@
 .end method
 
 .method public final getElement()Landroidx/compose/ui/modifier/ModifierLocalProvider;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -196,7 +196,7 @@
 .end method
 
 .method public set$ui_release(Landroidx/compose/ui/modifier/ModifierLocal;Ljava/lang/Object;)V
-    .registers 5
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/modifier/ModifierLocal;
     .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -228,7 +228,7 @@
 .end method
 
 .method public final setElement(Landroidx/compose/ui/modifier/ModifierLocalProvider;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/modifier/ModifierLocalProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {

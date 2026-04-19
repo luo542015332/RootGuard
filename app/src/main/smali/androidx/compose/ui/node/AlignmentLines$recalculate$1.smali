@@ -57,7 +57,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/node/AlignmentLines;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/node/AlignmentLines$recalculate$1;->this$0:Landroidx/compose/ui/node/AlignmentLines;
 
@@ -71,7 +71,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 155
@@ -87,7 +87,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/node/AlignmentLinesOwner;)V
-    .registers 11
+    .locals 9
     .param p1, "childOwner"    # Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     const-string/jumbo v0, "childOwner"
@@ -99,12 +99,12 @@
 
     move-result v0
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_0
 
     return-void
 
     .line 157
-    :cond_d
+    :cond_0
     invoke-interface {p1}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
     move-result-object v0
@@ -113,18 +113,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v0, :cond_1
 
     .line 160
     invoke-interface {p1}, Landroidx/compose/ui/node/AlignmentLinesOwner;->layoutChildren()V
 
     .line 163
-    :cond_1a
+    :cond_1
     invoke-interface {p1}, Landroidx/compose/ui/node/AlignmentLinesOwner;->getAlignmentLines()Landroidx/compose/ui/node/AlignmentLines;
 
     move-result-object v0
 
-    # getter for: Landroidx/compose/ui/node/AlignmentLines;->alignmentLineMap:Ljava/util/Map;
     invoke-static {v0}, Landroidx/compose/ui/node/AlignmentLines;->access$getAlignmentLineMap$p(Landroidx/compose/ui/node/AlignmentLines;)Ljava/util/Map;
 
     move-result-object v0
@@ -144,12 +143,12 @@
 
     move-result-object v3
 
-    :goto_2d
+    :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_54
+    if-eqz v4, :cond_2
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -185,7 +184,6 @@
 
     move-result-object v8
 
-    # invokes: Landroidx/compose/ui/node/AlignmentLines;->addAlignmentLine(Landroidx/compose/ui/layout/AlignmentLine;ILandroidx/compose/ui/node/NodeCoordinator;)V
     invoke-static {v1, v6, v7, v8}, Landroidx/compose/ui/node/AlignmentLines;->access$addAlignmentLine(Landroidx/compose/ui/node/AlignmentLines;Landroidx/compose/ui/layout/AlignmentLine;ILandroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 165
@@ -198,10 +196,10 @@
     nop
 
     .end local v4    # "element$iv":Ljava/util/Map$Entry;
-    goto :goto_2d
+    goto :goto_0
 
     .line 248
-    :cond_54
+    :cond_2
     nop
 
     .line 168
@@ -223,7 +221,7 @@
     move-object v0, v1
 
     .line 169
-    :goto_62
+    :goto_1
     iget-object v1, p0, Landroidx/compose/ui/node/AlignmentLines$recalculate$1;->this$0:Landroidx/compose/ui/node/AlignmentLines;
 
     invoke-virtual {v1}, Landroidx/compose/ui/node/AlignmentLines;->getAlignmentLinesOwner()Landroidx/compose/ui/node/AlignmentLinesOwner;
@@ -238,7 +236,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_a7
+    if-nez v1, :cond_4
 
     .line 170
     iget-object v1, p0, Landroidx/compose/ui/node/AlignmentLines$recalculate$1;->this$0:Landroidx/compose/ui/node/AlignmentLines;
@@ -264,12 +262,12 @@
 
     move-result-object v4
 
-    :goto_85
+    :goto_2
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_9d
+    if-eqz v5, :cond_3
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -289,7 +287,6 @@
 
     move-result v8
 
-    # invokes: Landroidx/compose/ui/node/AlignmentLines;->addAlignmentLine(Landroidx/compose/ui/layout/AlignmentLine;ILandroidx/compose/ui/node/NodeCoordinator;)V
     invoke-static {v2, v6, v8, v0}, Landroidx/compose/ui/node/AlignmentLines;->access$addAlignmentLine(Landroidx/compose/ui/node/AlignmentLines;Landroidx/compose/ui/layout/AlignmentLine;ILandroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 172
@@ -301,10 +298,10 @@
     nop
 
     .end local v5    # "element$iv":Ljava/lang/Object;
-    goto :goto_85
+    goto :goto_2
 
     .line 250
-    :cond_9d
+    :cond_3
     nop
 
     .line 173
@@ -318,9 +315,9 @@
 
     move-object v0, v1
 
-    goto :goto_62
+    goto :goto_1
 
     .line 175
-    :cond_a7
+    :cond_4
     return-void
 .end method

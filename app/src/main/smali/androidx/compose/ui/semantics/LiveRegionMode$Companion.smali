@@ -42,7 +42,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 686
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/semantics/LiveRegionMode$Companion;-><init>()V
 
@@ -61,10 +61,9 @@
 
 # virtual methods
 .method public final getAssertive-0phEisY()I
-    .registers 2
+    .locals 1
 
     .line 697
-    # getter for: Landroidx/compose/ui/semantics/LiveRegionMode;->Assertive:I
     invoke-static {}, Landroidx/compose/ui/semantics/LiveRegionMode;->access$getAssertive$cp()I
 
     move-result v0
@@ -73,10 +72,9 @@
 .end method
 
 .method public final getPolite-0phEisY()I
-    .registers 2
+    .locals 1
 
     .line 691
-    # getter for: Landroidx/compose/ui/semantics/LiveRegionMode;->Polite:I
     invoke-static {}, Landroidx/compose/ui/semantics/LiveRegionMode;->access$getPolite$cp()I
 
     move-result v0

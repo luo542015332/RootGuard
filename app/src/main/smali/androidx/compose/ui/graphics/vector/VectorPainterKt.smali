@@ -73,7 +73,7 @@
 
 # direct methods
 .method public static final RenderVectorGroup(Landroidx/compose/ui/graphics/vector/VectorGroup;Ljava/util/Map;Landroidx/compose/runtime/Composer;II)V
-    .registers 29
+    .locals 24
     .param p0, "group"    # Landroidx/compose/ui/graphics/vector/VectorGroup;
     .param p1, "configs"    # Ljava/util/Map;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
@@ -124,76 +124,76 @@
 
     const/4 v6, 0x2
 
-    if-eqz v5, :cond_24
+    if-eqz v5, :cond_0
 
     or-int/lit8 v4, v4, 0x6
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_24
+    :cond_0
     and-int/lit8 v5, v1, 0xe
 
-    if-nez v5, :cond_32
+    if-nez v5, :cond_2
 
     invoke-interface {v15, v0}, Landroidx/compose/runtime/Composer;->changed(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_30
+    if-eqz v5, :cond_1
 
     const/4 v5, 0x4
 
-    goto :goto_31
+    goto :goto_0
 
-    :cond_30
+    :cond_1
     move v5, v6
 
-    :goto_31
+    :goto_0
     or-int/2addr v4, v5
 
-    :cond_32
-    :goto_32
+    :cond_2
+    :goto_1
     and-int/lit8 v5, v2, 0x2
 
-    if-eqz v5, :cond_38
+    if-eqz v5, :cond_3
 
     or-int/lit8 v4, v4, 0x10
 
-    :cond_38
+    :cond_3
     move/from16 v22, v4
 
     .end local v4    # "$dirty":I
     .local v22, "$dirty":I
-    if-ne v5, v6, :cond_51
+    if-ne v5, v6, :cond_5
 
     and-int/lit8 v4, v22, 0x5b
 
     const/16 v6, 0x12
 
-    if-ne v4, v6, :cond_51
+    if-ne v4, v6, :cond_5
 
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v4
 
-    if-nez v4, :cond_49
+    if-nez v4, :cond_4
 
-    goto :goto_51
+    goto :goto_2
 
     .line 419
-    :cond_49
+    :cond_4
     invoke-interface {v15}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
     move-object/from16 v2, p1
 
     move-object v3, v15
 
-    goto/16 :goto_313
+    goto/16 :goto_5
 
     .line 331
-    :cond_51
-    :goto_51
-    if-eqz v5, :cond_59
+    :cond_5
+    :goto_2
+    if-eqz v5, :cond_6
 
     .line 330
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
@@ -204,23 +204,23 @@
 
     .end local p1    # "configs":Ljava/util/Map;
     .local v4, "configs":Ljava/util/Map;
-    goto :goto_5b
+    goto :goto_3
 
     .line 331
     .end local v4    # "configs":Ljava/util/Map;
     .restart local p1    # "configs":Ljava/util/Map;
-    :cond_59
+    :cond_6
     move-object/from16 v14, p1
 
     .line 330
     .end local p1    # "configs":Ljava/util/Map;
     .local v14, "configs":Ljava/util/Map;
-    :goto_5b
+    :goto_3
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v4
 
-    if-eqz v4, :cond_68
+    if-eqz v4, :cond_7
 
     .line 331
     const/4 v4, -0x1
@@ -230,17 +230,17 @@
     invoke-static {v3, v1, v4, v5}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 332
-    :cond_68
+    :cond_7
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/graphics/vector/VectorGroup;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    :goto_6c
+    :goto_4
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_308
+    if-eqz v4, :cond_c
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -254,7 +254,7 @@
     .local v13, "vectorNode":Landroidx/compose/ui/graphics/vector/VectorNode;
     instance-of v4, v13, Landroidx/compose/ui/graphics/vector/VectorPath;
 
-    if-eqz v4, :cond_1c6
+    if-eqz v4, :cond_9
 
     const v4, -0x1372b9a7
 
@@ -279,7 +279,7 @@
 
     check-cast v4, Landroidx/compose/ui/graphics/vector/VectorConfig;
 
-    if-nez v4, :cond_9e
+    if-nez v4, :cond_8
 
     new-instance v4, Landroidx/compose/ui/graphics/vector/VectorPainterKt$RenderVectorGroup$config$1;
 
@@ -287,7 +287,7 @@
 
     check-cast v4, Landroidx/compose/ui/graphics/vector/VectorConfig;
 
-    :cond_9e
+    :cond_8
     move-object v12, v4
 
     .line 336
@@ -665,7 +665,7 @@
 
     move-object/from16 v3, p1
 
-    goto/16 :goto_6c
+    goto/16 :goto_4
 
     .line 378
     .end local v1    # "vectorNode":Landroidx/compose/ui/graphics/vector/VectorNode;
@@ -674,7 +674,7 @@
     .restart local v13    # "vectorNode":Landroidx/compose/ui/graphics/vector/VectorNode;
     .restart local v14    # "configs":Ljava/util/Map;
     .restart local v15    # "$composer":Landroidx/compose/runtime/Composer;
-    :cond_1c6
+    :cond_9
     move-object/from16 p1, v3
 
     move-object v1, v13
@@ -691,7 +691,7 @@
     .restart local p2    # "configs":Ljava/util/Map;
     instance-of v0, v1, Landroidx/compose/ui/graphics/vector/VectorGroup;
 
-    if-eqz v0, :cond_2f1
+    if-eqz v0, :cond_b
 
     const v0, -0x1372b265
 
@@ -720,7 +720,7 @@
 
     check-cast v0, Landroidx/compose/ui/graphics/vector/VectorConfig;
 
-    if-nez v0, :cond_1f3
+    if-nez v0, :cond_a
 
     new-instance v0, Landroidx/compose/ui/graphics/vector/VectorPainterKt$RenderVectorGroup$config$2;
 
@@ -730,7 +730,7 @@
 
     .line 381
     .restart local v0    # "config":Landroidx/compose/ui/graphics/vector/VectorConfig;
-    :cond_1f3
+    :cond_a
     move-object v4, v1
 
     check-cast v4, Landroidx/compose/ui/graphics/vector/VectorGroup;
@@ -1054,12 +1054,12 @@
 
     move/from16 v2, p4
 
-    goto/16 :goto_6c
+    goto/16 :goto_4
 
     .line 417
     .end local v2    # "configs":Ljava/util/Map;
     .restart local p2    # "configs":Ljava/util/Map;
-    :cond_2f1
+    :cond_b
     move-object/from16 v2, p2
 
     .end local p2    # "configs":Ljava/util/Map;
@@ -1083,13 +1083,13 @@
     move/from16 v2, p4
 
     .end local v1    # "vectorNode":Landroidx/compose/ui/graphics/vector/VectorNode;
-    goto/16 :goto_6c
+    goto/16 :goto_4
 
     .end local v2    # "configs":Ljava/util/Map;
     .end local v3    # "$composer":Landroidx/compose/runtime/Composer;
     .restart local v14    # "configs":Ljava/util/Map;
     .restart local v15    # "$composer":Landroidx/compose/runtime/Composer;
-    :cond_308
+    :cond_c
     move-object v2, v14
 
     move-object v3, v15
@@ -1102,26 +1102,26 @@
 
     move-result v0
 
-    if-eqz v0, :cond_313
+    if-eqz v0, :cond_d
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 419
-    :cond_313
-    :goto_313
+    :cond_d
+    :goto_5
     invoke-interface {v3}, Landroidx/compose/runtime/Composer;->endRestartGroup()Landroidx/compose/runtime/ScopeUpdateScope;
 
     move-result-object v0
 
-    if-nez v0, :cond_31e
+    if-nez v0, :cond_e
 
     move-object/from16 v4, p0
 
     move/from16 v5, p3
 
-    goto :goto_32e
+    goto :goto_6
 
-    :cond_31e
+    :cond_e
     new-instance v1, Landroidx/compose/ui/graphics/vector/VectorPainterKt$RenderVectorGroup$2;
 
     move-object/from16 v4, p0
@@ -1136,12 +1136,12 @@
 
     invoke-interface {v0, v1}, Landroidx/compose/runtime/ScopeUpdateScope;->updateScope(Lkotlin/jvm/functions/Function2;)V
 
-    :goto_32e
+    :goto_6
     return-void
 .end method
 
 .method private static final mirror(Landroidx/compose/ui/graphics/drawscope/DrawScope;Lkotlin/jvm/functions/Function1;)V
-    .registers 17
+    .locals 15
     .param p0, "$this$mirror"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -1270,7 +1270,7 @@
 .end method
 
 .method public static final rememberVectorPainter(Landroidx/compose/ui/graphics/vector/ImageVector;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/graphics/vector/VectorPainter;
-    .registers 19
+    .locals 16
     .param p0, "image"    # Landroidx/compose/ui/graphics/vector/ImageVector;
     .param p1, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p2, "$changed"    # I
@@ -1295,7 +1295,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_25
+    if-eqz v2, :cond_0
 
     .line 159
     const/4 v2, -0x1
@@ -1306,14 +1306,14 @@
 
     invoke-static {v1, v15, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    goto :goto_27
+    goto :goto_0
 
     .line 0
-    :cond_25
+    :cond_0
     move/from16 v15, p2
 
     .line 160
-    :goto_27
+    :goto_0
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/graphics/vector/ImageVector;->getDefaultWidth-D9Ej5fM()F
 
     move-result v1
@@ -1383,18 +1383,18 @@
 
     move-result v2
 
-    if-eqz v2, :cond_68
+    if-eqz v2, :cond_1
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_68
+    :cond_1
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v1
 .end method
 
 .method public static final rememberVectorPainter-mlNsNFs(FFFFLjava/lang/String;JILkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;II)Landroidx/compose/ui/graphics/vector/VectorPainter;
-    .registers 34
+    .locals 22
     .param p0, "defaultWidth"    # F
     .param p1, "defaultHeight"    # F
     .param p2, "viewportWidth"    # F
@@ -1457,7 +1457,7 @@
 
     and-int/lit8 v1, p11, 0x4
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_0
 
     .line 77
     const/high16 v1, 0x7fc00000    # Float.NaN
@@ -1466,21 +1466,21 @@
 
     .end local p2    # "viewportWidth":F
     .local v1, "viewportWidth":F
-    goto :goto_22
+    goto :goto_0
 
     .line 0
     .end local v1    # "viewportWidth":F
     .restart local p2    # "viewportWidth":F
-    :cond_20
+    :cond_0
     move/from16 v16, p2
 
     .line 77
     .end local p2    # "viewportWidth":F
     .local v16, "viewportWidth":F
-    :goto_22
+    :goto_0
     and-int/lit8 v1, p11, 0x8
 
-    if-eqz v1, :cond_2b
+    if-eqz v1, :cond_1
 
     .line 78
     const/high16 v1, 0x7fc00000    # Float.NaN
@@ -1489,21 +1489,21 @@
 
     .end local p3    # "viewportHeight":F
     .local v1, "viewportHeight":F
-    goto :goto_2d
+    goto :goto_1
 
     .line 77
     .end local v1    # "viewportHeight":F
     .restart local p3    # "viewportHeight":F
-    :cond_2b
+    :cond_1
     move/from16 v17, p3
 
     .line 78
     .end local p3    # "viewportHeight":F
     .local v17, "viewportHeight":F
-    :goto_2d
+    :goto_1
     and-int/lit8 v1, p11, 0x10
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_2
 
     .line 79
     const-string/jumbo v1, "VectorRootGroup"
@@ -1512,21 +1512,21 @@
 
     .end local p4    # "name":Ljava/lang/String;
     .local v1, "name":Ljava/lang/String;
-    goto :goto_39
+    goto :goto_2
 
     .line 78
     .end local v1    # "name":Ljava/lang/String;
     .restart local p4    # "name":Ljava/lang/String;
-    :cond_37
+    :cond_2
     move-object/from16 v18, p4
 
     .line 79
     .end local p4    # "name":Ljava/lang/String;
     .local v18, "name":Ljava/lang/String;
-    :goto_39
+    :goto_2
     and-int/lit8 v1, p11, 0x20
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_3
 
     .line 80
     sget-object v1, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -1539,21 +1539,21 @@
 
     .end local p5    # "tintColor":J
     .local v1, "tintColor":J
-    goto :goto_48
+    goto :goto_3
 
     .line 79
     .end local v1    # "tintColor":J
     .restart local p5    # "tintColor":J
-    :cond_46
+    :cond_3
     move-wide/from16 v19, p5
 
     .line 80
     .end local p5    # "tintColor":J
     .local v19, "tintColor":J
-    :goto_48
+    :goto_3
     and-int/lit8 v1, p11, 0x40
 
-    if-eqz v1, :cond_55
+    if-eqz v1, :cond_4
 
     .line 81
     sget-object v1, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
@@ -1566,23 +1566,23 @@
 
     .end local p7    # "tintBlendMode":I
     .local v1, "tintBlendMode":I
-    goto :goto_57
+    goto :goto_4
 
     .line 80
     .end local v1    # "tintBlendMode":I
     .restart local p7    # "tintBlendMode":I
-    :cond_55
+    :cond_4
     move/from16 v21, p7
 
     .line 81
     .end local p7    # "tintBlendMode":I
     .local v21, "tintBlendMode":I
-    :goto_57
+    :goto_4
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_5
 
     .line 84
     const/4 v1, -0x1
@@ -1592,7 +1592,7 @@
     invoke-static {v0, v14, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 85
-    :cond_64
+    :cond_5
     nop
 
     .line 86
@@ -1690,18 +1690,18 @@
 
     move-result v1
 
-    if-eqz v1, :cond_ae
+    if-eqz v1, :cond_6
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_ae
+    :cond_6
     invoke-interface/range {p9 .. p9}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method public static final rememberVectorPainter-vIP8VLU(FFFFLjava/lang/String;JIZLkotlin/jvm/functions/Function4;Landroidx/compose/runtime/Composer;II)Landroidx/compose/ui/graphics/vector/VectorPainter;
-    .registers 34
+    .locals 21
     .param p0, "defaultWidth"    # F
     .param p1, "defaultHeight"    # F
     .param p2, "viewportWidth"    # F
@@ -1757,70 +1757,70 @@
 
     and-int/lit8 v5, v2, 0x4
 
-    if-eqz v5, :cond_20
+    if-eqz v5, :cond_0
 
     .line 119
     const/high16 v5, 0x7fc00000    # Float.NaN
 
     .end local p2    # "viewportWidth":F
     .local v5, "viewportWidth":F
-    goto :goto_22
+    goto :goto_0
 
     .line 0
     .end local v5    # "viewportWidth":F
     .restart local p2    # "viewportWidth":F
-    :cond_20
+    :cond_0
     move/from16 v5, p2
 
     .line 119
     .end local p2    # "viewportWidth":F
     .restart local v5    # "viewportWidth":F
-    :goto_22
+    :goto_0
     and-int/lit8 v6, v2, 0x8
 
-    if-eqz v6, :cond_29
+    if-eqz v6, :cond_1
 
     .line 120
     const/high16 v6, 0x7fc00000    # Float.NaN
 
     .end local p3    # "viewportHeight":F
     .local v6, "viewportHeight":F
-    goto :goto_2b
+    goto :goto_1
 
     .line 119
     .end local v6    # "viewportHeight":F
     .restart local p3    # "viewportHeight":F
-    :cond_29
+    :cond_1
     move/from16 v6, p3
 
     .line 120
     .end local p3    # "viewportHeight":F
     .restart local v6    # "viewportHeight":F
-    :goto_2b
+    :goto_1
     and-int/lit8 v7, v2, 0x10
 
-    if-eqz v7, :cond_33
+    if-eqz v7, :cond_2
 
     .line 121
     const-string/jumbo v7, "VectorRootGroup"
 
     .end local p4    # "name":Ljava/lang/String;
     .local v7, "name":Ljava/lang/String;
-    goto :goto_35
+    goto :goto_2
 
     .line 120
     .end local v7    # "name":Ljava/lang/String;
     .restart local p4    # "name":Ljava/lang/String;
-    :cond_33
+    :cond_2
     move-object/from16 v7, p4
 
     .line 121
     .end local p4    # "name":Ljava/lang/String;
     .restart local v7    # "name":Ljava/lang/String;
-    :goto_35
+    :goto_2
     and-int/lit8 v8, v2, 0x20
 
-    if-eqz v8, :cond_40
+    if-eqz v8, :cond_3
 
     .line 122
     sget-object v8, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
@@ -1831,21 +1831,21 @@
 
     .end local p5    # "tintColor":J
     .local v8, "tintColor":J
-    goto :goto_42
+    goto :goto_3
 
     .line 121
     .end local v8    # "tintColor":J
     .restart local p5    # "tintColor":J
-    :cond_40
+    :cond_3
     move-wide/from16 v8, p5
 
     .line 122
     .end local p5    # "tintColor":J
     .restart local v8    # "tintColor":J
-    :goto_42
+    :goto_3
     and-int/lit8 v10, v2, 0x40
 
-    if-eqz v10, :cond_4d
+    if-eqz v10, :cond_4
 
     .line 123
     sget-object v10, Landroidx/compose/ui/graphics/BlendMode;->Companion:Landroidx/compose/ui/graphics/BlendMode$Companion;
@@ -1856,44 +1856,44 @@
 
     .end local p7    # "tintBlendMode":I
     .local v10, "tintBlendMode":I
-    goto :goto_4f
+    goto :goto_4
 
     .line 122
     .end local v10    # "tintBlendMode":I
     .restart local p7    # "tintBlendMode":I
-    :cond_4d
+    :cond_4
     move/from16 v10, p7
 
     .line 123
     .end local p7    # "tintBlendMode":I
     .restart local v10    # "tintBlendMode":I
-    :goto_4f
+    :goto_4
     and-int/lit16 v2, v2, 0x80
 
-    if-eqz v2, :cond_55
+    if-eqz v2, :cond_5
 
     .line 124
     const/4 v2, 0x0
 
     .end local p8    # "autoMirror":Z
     .local v2, "autoMirror":Z
-    goto :goto_57
+    goto :goto_5
 
     .line 123
     .end local v2    # "autoMirror":Z
     .restart local p8    # "autoMirror":Z
-    :cond_55
+    :cond_5
     move/from16 v2, p8
 
     .line 124
     .end local p8    # "autoMirror":Z
     .restart local v2    # "autoMirror":Z
-    :goto_57
+    :goto_5
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v11
 
-    if-eqz v11, :cond_64
+    if-eqz v11, :cond_6
 
     .line 126
     const/4 v11, -0x1
@@ -1903,7 +1903,7 @@
     invoke-static {v3, v1, v11, v12}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 127
-    :cond_64
+    :cond_6
     invoke-static {}, Landroidx/compose/ui/platform/CompositionLocalsKt;->getLocalDensity()Landroidx/compose/runtime/ProvidableCompositionLocal;
 
     move-result-object v3
@@ -1978,16 +1978,16 @@
 
     move-result v14
 
-    if-eqz v14, :cond_96
+    if-eqz v14, :cond_7
 
     move v14, v11
 
-    goto :goto_97
+    goto :goto_6
 
-    :cond_96
+    :cond_7
     move v14, v5
 
-    :goto_97
+    :goto_6
     move/from16 p4, v14
 
     .line 132
@@ -1996,16 +1996,16 @@
 
     move-result v14
 
-    if-eqz v14, :cond_a1
+    if-eqz v14, :cond_8
 
     move v14, v12
 
-    goto :goto_a2
+    goto :goto_7
 
-    :cond_a1
+    :cond_8
     move v14, v6
 
-    :goto_a2
+    :goto_7
     move/from16 p5, v14
 
     .local p5, "vpHeight":F
@@ -2089,7 +2089,7 @@
 
     .line 426
     .local v19, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v3, :cond_f5
+    if-nez v3, :cond_a
 
     sget-object v20, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -2101,30 +2101,30 @@
 
     move-result-object v3
 
-    if-ne v4, v3, :cond_ee
+    if-ne v4, v3, :cond_9
 
-    goto :goto_f7
+    goto :goto_8
 
     .line 430
-    :cond_ee
+    :cond_9
     move-object/from16 p7, v4
 
     move-object/from16 v3, p7
 
     move-object/from16 v4, p2
 
-    goto :goto_118
+    goto :goto_a
 
     .line 426
     .end local p6    # "invalid$iv$iv":Z
     .restart local v3    # "invalid$iv$iv":Z
-    :cond_f5
+    :cond_a
     move/from16 p6, v3
 
     .line 427
     .end local v3    # "invalid$iv$iv":Z
     .restart local p6    # "invalid$iv$iv":Z
-    :goto_f7
+    :goto_8
     const/4 v3, 0x0
 
     .line 135
@@ -2147,7 +2147,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_10f
+    if-nez v3, :cond_b
 
     .line 136
     sget-object v3, Landroidx/compose/ui/graphics/ColorFilter;->Companion:Landroidx/compose/ui/graphics/ColorFilter$Companion;
@@ -2156,14 +2156,14 @@
 
     move-result-object v3
 
-    goto :goto_110
+    goto :goto_9
 
     .line 138
-    :cond_10f
+    :cond_b
     const/4 v3, 0x0
 
     .line 135
-    :goto_110
+    :goto_9
     nop
 
     .line 427
@@ -2183,7 +2183,7 @@
 
     .line 426
     .end local v3    # "value$iv$iv":Ljava/lang/Object;
-    :goto_118
+    :goto_a
     nop
 
     .line 425
@@ -2254,7 +2254,7 @@
 
     move-result-object v4
 
-    if-ne v0, v4, :cond_154
+    if-ne v0, v4, :cond_c
 
     .line 434
     const/4 v4, 0x0
@@ -2284,13 +2284,13 @@
     nop
 
     .end local v4    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_15a
+    goto :goto_b
 
     .line 437
     .end local p7    # "it$iv$iv":Ljava/lang/Object;
     .local v0, "it$iv$iv":Ljava/lang/Object;
     .restart local p3    # "$this$cache$iv$iv":Landroidx/compose/runtime/Composer;
-    :cond_154
+    :cond_c
     move-object/from16 p7, v0
 
     move-object/from16 v0, p3
@@ -2301,7 +2301,7 @@
     move-object/from16 v4, p7
 
     .line 433
-    :goto_15a
+    :goto_b
     nop
 
     .line 432
@@ -2386,11 +2386,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_19a
+    if-eqz v0, :cond_d
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_19a
+    :cond_d
     invoke-interface/range {p10 .. p10}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v4

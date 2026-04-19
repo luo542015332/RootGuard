@@ -196,7 +196,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;)V
-    .registers 6
+    .locals 3
     .param p1, "root"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "slotReusePolicy"    # Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
 
@@ -286,7 +286,7 @@
 .end method
 
 .method public static final synthetic access$getCurrentIndex$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -296,7 +296,7 @@
 .end method
 
 .method public static final synthetic access$getIntermediateMeasureScope$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$IntermediateMeasureScopeImpl;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -306,7 +306,7 @@
 .end method
 
 .method public static final synthetic access$getPrecomposeMap$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Ljava/util/Map;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -316,7 +316,7 @@
 .end method
 
 .method public static final synthetic access$getPrecomposedCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -326,7 +326,7 @@
 .end method
 
 .method public static final synthetic access$getReusableCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)I
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -336,7 +336,7 @@
 .end method
 
 .method public static final synthetic access$getRoot$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/node/LayoutNode;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -346,7 +346,7 @@
 .end method
 
 .method public static final synthetic access$getScope$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$Scope;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -356,7 +356,7 @@
 .end method
 
 .method public static final synthetic access$getSlotIdToNode$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;)Ljava/util/Map;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
 
     .line 585
@@ -366,7 +366,7 @@
 .end method
 
 .method public static final synthetic access$move(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;III)V
-    .registers 4
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .param p1, "from"    # I
     .param p2, "to"    # I
@@ -379,7 +379,7 @@
 .end method
 
 .method public static final synthetic access$setCurrentIndex$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .param p1, "<set-?>"    # I
 
@@ -390,7 +390,7 @@
 .end method
 
 .method public static final synthetic access$setPrecomposedCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .param p1, "<set-?>"    # I
 
@@ -401,7 +401,7 @@
 .end method
 
 .method public static final synthetic access$setReusableCount$p(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;I)V
-    .registers 2
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
     .param p1, "<set-?>"    # I
 
@@ -412,7 +412,7 @@
 .end method
 
 .method private final createNodeAt(I)Landroidx/compose/ui/node/LayoutNode;
-    .registers 12
+    .locals 10
     .param p1, "index"    # I
 
     .line 965
@@ -493,7 +493,7 @@
 .end method
 
 .method private final getSlotIdAtIndex(I)Ljava/lang/Object;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
 
     .line 726
@@ -529,7 +529,7 @@
 .end method
 
 .method private final ignoreRemeasureRequests(Lkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 4
     .param p1, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -573,7 +573,7 @@
 .end method
 
 .method private final move(III)V
-    .registers 10
+    .locals 6
     .param p1, "from"    # I
     .param p2, "to"    # I
     .param p3, "count"    # I
@@ -633,23 +633,23 @@
 .end method
 
 .method static synthetic move$default(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;IIIILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 971
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     const/4 p3, 0x1
 
-    :cond_5
+    :cond_0
     invoke-direct {p0, p1, p2, p3}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->move(III)V
 
     return-void
 .end method
 
 .method private final subcompose(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;)V
-    .registers 23
+    .locals 20
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "nodeState"    # Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
 
@@ -684,12 +684,12 @@
 
     .line 1082
     .local v7, "$i$f$enter":I
-    :try_start_f
+    :try_start_0
     invoke-virtual {v6}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v0
-    :try_end_13
-    .catchall {:try_start_f .. :try_end_13} :catchall_96
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_5
 
     move-object v8, v0
 
@@ -709,7 +709,7 @@
 
     .line 1085
     .local v10, "$i$f$ignoreRemeasureRequests":I
-    :try_start_19
+    :try_start_1
     iget-object v11, v9, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
 
     .local v11, "this_$iv$iv":Landroidx/compose/ui/node/LayoutNode;
@@ -748,22 +748,22 @@
     .end local v0    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$subcompose$3":I
     .local v16, "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$subcompose$3":I
     iget-object v0, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->compositionContext:Landroidx/compose/runtime/CompositionContext;
-    :try_end_2f
-    .catchall {:try_start_19 .. :try_end_2f} :catchall_87
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_3
 
-    if-eqz v0, :cond_70
+    if-eqz v0, :cond_0
 
     .line 701
     move-object/from16 v17, v3
 
     .end local v3    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .local v17, "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
-    :try_start_33
+    :try_start_2
     new-instance v3, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$subcompose$3$1$1;
 
     invoke-direct {v3, v2, v15}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$subcompose$3$1$1;-><init>(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;Lkotlin/jvm/functions/Function2;)V
-    :try_end_38
-    .catchall {:try_start_33 .. :try_end_38} :catchall_68
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
     move/from16 v18, v4
 
@@ -777,19 +777,19 @@
 
     .end local v7    # "$i$f$enter":I
     .local v19, "$i$f$enter":I
-    :try_start_40
+    :try_start_3
     invoke-static {v4, v7, v3}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->composableLambdaInstance(IZLjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambda;
 
     move-result-object v3
 
     check-cast v3, Lkotlin/jvm/functions/Function2;
-    :try_end_46
-    .catchall {:try_start_40 .. :try_end_46} :catchall_64
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 694
     move-object/from16 v4, p1
 
-    :try_start_48
+    :try_start_4
     invoke-direct {v1, v13, v4, v0, v3}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->subcomposeInto(Landroidx/compose/runtime/Composition;Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/Composition;
 
     move-result-object v0
@@ -824,17 +824,17 @@
 
     .end local v16    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$subcompose$3":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_5a
-    .catchall {:try_start_48 .. :try_end_5a} :catchall_85
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     .line 1084
     nop
 
     .line 1090
-    :try_start_5b
+    :try_start_5
     invoke-virtual {v6, v8}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    :try_end_5e
-    .catchall {:try_start_5b .. :try_end_5e} :catchall_94
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_4
 
     .line 1084
     nop
@@ -861,18 +861,18 @@
     .restart local v17    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .restart local v18    # "$i$f$withoutReadObservation":I
     .restart local v19    # "$i$f$enter":I
-    :catchall_64
+    :catchall_0
     move-exception v0
 
     move-object/from16 v4, p1
 
-    goto :goto_90
+    goto :goto_0
 
     .end local v18    # "$i$f$withoutReadObservation":I
     .end local v19    # "$i$f$enter":I
     .restart local v4    # "$i$f$withoutReadObservation":I
     .restart local v7    # "$i$f$enter":I
-    :catchall_68
+    :catchall_1
     move-exception v0
 
     move/from16 v18, v4
@@ -885,7 +885,7 @@
     .end local v7    # "$i$f$enter":I
     .restart local v18    # "$i$f$withoutReadObservation":I
     .restart local v19    # "$i$f$enter":I
-    goto :goto_90
+    goto :goto_0
 
     .line 697
     .end local v17    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
@@ -901,7 +901,7 @@
     .restart local v14    # "$i$a$-ignoreRemeasureRequests-LayoutNodeSubcompositionsState$subcompose$3$1":I
     .restart local v15    # "content":Lkotlin/jvm/functions/Function2;
     .restart local v16    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$subcompose$3":I
-    :cond_70
+    :cond_0
     move-object/from16 v17, v3
 
     move/from16 v18, v4
@@ -916,7 +916,7 @@
     .restart local v17    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .restart local v18    # "$i$f$withoutReadObservation":I
     .restart local v19    # "$i$f$enter":I
-    :try_start_78
+    :try_start_6
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v3, "parent composition reference not set"
@@ -936,8 +936,8 @@
     .end local p1    # "node":Landroidx/compose/ui/node/LayoutNode;
     .end local p2    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
     throw v0
-    :try_end_85
-    .catchall {:try_start_78 .. :try_end_85} :catchall_85
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
     .line 1090
     .end local v9    # "this_$iv":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
@@ -955,10 +955,10 @@
     .restart local v19    # "$i$f$enter":I
     .restart local p1    # "node":Landroidx/compose/ui/node/LayoutNode;
     .restart local p2    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
-    :catchall_85
+    :catchall_2
     move-exception v0
 
-    goto :goto_90
+    goto :goto_0
 
     .end local v17    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .end local v18    # "$i$f$withoutReadObservation":I
@@ -966,7 +966,7 @@
     .restart local v3    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .restart local v4    # "$i$f$withoutReadObservation":I
     .restart local v7    # "$i$f$enter":I
-    :catchall_87
+    :catchall_3
     move-exception v0
 
     move-object/from16 v17, v3
@@ -983,8 +983,8 @@
     .restart local v17    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .restart local v18    # "$i$f$withoutReadObservation":I
     .restart local v19    # "$i$f$enter":I
-    :goto_90
-    :try_start_90
+    :goto_0
+    :try_start_7
     invoke-virtual {v6, v8}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .end local v5    # "snapshot$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -993,8 +993,8 @@
     .end local p1    # "node":Landroidx/compose/ui/node/LayoutNode;
     .end local p2    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
     throw v0
-    :try_end_94
-    .catchall {:try_start_90 .. :try_end_94} :catchall_94
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_4
 
     .line 1091
     .end local v6    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1005,16 +1005,16 @@
     .restart local v18    # "$i$f$withoutReadObservation":I
     .restart local p1    # "node":Landroidx/compose/ui/node/LayoutNode;
     .restart local p2    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
-    :catchall_94
+    :catchall_4
     move-exception v0
 
-    goto :goto_9d
+    goto :goto_1
 
     .end local v17    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .end local v18    # "$i$f$withoutReadObservation":I
     .restart local v3    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .restart local v4    # "$i$f$withoutReadObservation":I
-    :catchall_96
+    :catchall_5
     move-exception v0
 
     move-object/from16 v17, v3
@@ -1027,14 +1027,14 @@
     .end local v4    # "$i$f$withoutReadObservation":I
     .restart local v17    # "this_$iv":Landroidx/compose/runtime/snapshots/Snapshot$Companion;
     .restart local v18    # "$i$f$withoutReadObservation":I
-    :goto_9d
+    :goto_1
     invoke-virtual {v5}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     throw v0
 .end method
 
 .method private final subcompose(Landroidx/compose/ui/node/LayoutNode;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
-    .registers 15
+    .locals 11
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "slotId"    # Ljava/lang/Object;
     .param p3, "content"    # Lkotlin/jvm/functions/Function2;
@@ -1067,7 +1067,7 @@
 
     .line 1072
     .local v2, "value$iv":Ljava/lang/Object;
-    if-nez v2, :cond_20
+    if-nez v2, :cond_0
 
     .line 1073
     const/4 v3, 0x0
@@ -1106,14 +1106,14 @@
     nop
 
     .end local v3    # "answer$iv":Ljava/lang/Object;
-    goto :goto_21
+    goto :goto_0
 
     .line 1077
-    :cond_20
+    :cond_0
     move-object v3, v2
 
     .line 1072
-    :goto_21
+    :goto_0
     nop
 
     .line 679
@@ -1130,36 +1130,36 @@
 
     move-result-object v1
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_1
 
     invoke-interface {v1}, Landroidx/compose/runtime/Composition;->getHasInvalidations()Z
 
     move-result v1
 
-    goto :goto_31
+    goto :goto_1
 
-    :cond_30
+    :cond_1
     const/4 v1, 0x1
 
     .line 683
     .local v1, "hasPendingChanges":Z
-    :goto_31
+    :goto_1
     invoke-virtual {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->getContent()Lkotlin/jvm/functions/Function2;
 
     move-result-object v2
 
-    if-ne v2, p3, :cond_3f
+    if-ne v2, p3, :cond_2
 
-    if-nez v1, :cond_3f
+    if-nez v1, :cond_2
 
     invoke-virtual {v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->getForceRecompose()Z
 
     move-result v2
 
-    if-eqz v2, :cond_49
+    if-eqz v2, :cond_3
 
     .line 684
-    :cond_3f
+    :cond_2
     invoke-virtual {v0, p3}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->setContent(Lkotlin/jvm/functions/Function2;)V
 
     .line 685
@@ -1171,12 +1171,12 @@
     invoke-virtual {v0, v2}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->setForceRecompose(Z)V
 
     .line 688
-    :cond_49
+    :cond_3
     return-void
 .end method
 
 .method private final subcomposeInto(Landroidx/compose/runtime/Composition;Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/runtime/CompositionContext;Lkotlin/jvm/functions/Function2;)Landroidx/compose/runtime/Composition;
-    .registers 8
+    .locals 3
     .param p1, "existing"    # Landroidx/compose/runtime/Composition;
     .param p2, "container"    # Landroidx/compose/ui/node/LayoutNode;
     .param p3, "parent"    # Landroidx/compose/runtime/CompositionContext;
@@ -1199,31 +1199,31 @@
     .end annotation
 
     .line 715
-    if-eqz p1, :cond_b
+    if-eqz p1, :cond_1
 
     invoke-interface {p1}, Landroidx/compose/runtime/Composition;->isDisposed()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_0
 
-    goto :goto_b
+    goto :goto_0
 
     .line 718
-    :cond_9
+    :cond_0
     move-object v0, p1
 
-    goto :goto_f
+    goto :goto_1
 
     .line 716
-    :cond_b
-    :goto_b
+    :cond_1
+    :goto_0
     invoke-static {p2, p3}, Landroidx/compose/ui/platform/Wrapper_androidKt;->createSubcomposition(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/runtime/CompositionContext;)Landroidx/compose/runtime/Composition;
 
     move-result-object v0
 
     .line 720
-    :goto_f
+    :goto_1
     move-object v1, v0
 
     .local v1, "$this$subcomposeInto_u24lambda_u246":Landroidx/compose/runtime/Composition;
@@ -1246,7 +1246,7 @@
 .end method
 
 .method private final takeNodeFromReusables(Ljava/lang/Object;)Landroidx/compose/ui/node/LayoutNode;
-    .registers 12
+    .locals 10
     .param p1, "slotId"    # Ljava/lang/Object;
 
     .line 797
@@ -1254,13 +1254,13 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     .line 798
     return-object v1
 
     .line 800
-    :cond_6
+    :cond_0
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
 
     invoke-virtual {v0}, Landroidx/compose/ui/node/LayoutNode;->getFoldedChildren$ui_release()Ljava/util/List;
@@ -1291,8 +1291,8 @@
 
     .line 805
     .local v4, "chosenIndex":I
-    :goto_1a
-    if-lt v3, v2, :cond_2b
+    :goto_0
+    if-lt v3, v2, :cond_2
 
     .line 806
     invoke-direct {p0, v3}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->getSlotIdAtIndex(I)Ljava/lang/Object;
@@ -1303,33 +1303,33 @@
 
     move-result v5
 
-    if-eqz v5, :cond_28
+    if-eqz v5, :cond_1
 
     .line 808
     move v4, v3
 
     .line 809
-    goto :goto_2b
+    goto :goto_1
 
     .line 811
-    :cond_28
+    :cond_1
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_1a
+    goto :goto_0
 
     .line 814
-    :cond_2b
-    :goto_2b
+    :cond_2
+    :goto_1
     const/4 v5, -0x1
 
-    if-ne v4, v5, :cond_5e
+    if-ne v4, v5, :cond_4
 
     .line 816
     add-int/lit8 v3, v0, -0x1
 
     .line 817
-    :goto_30
-    if-lt v3, v2, :cond_5e
+    :goto_2
+    if-lt v3, v2, :cond_4
 
     .line 818
     iget-object v6, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -1368,7 +1368,7 @@
 
     move-result v8
 
-    if-eqz v8, :cond_5a
+    if-eqz v8, :cond_3
 
     .line 821
     invoke-virtual {v7, p1}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->setSlotId(Ljava/lang/Object;)V
@@ -1377,37 +1377,37 @@
     move v4, v3
 
     .line 823
-    goto :goto_5e
+    goto :goto_3
 
     .line 825
-    :cond_5a
+    :cond_3
     nop
 
     .end local v6    # "node":Landroidx/compose/ui/node/LayoutNode;
     .end local v7    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
     add-int/lit8 v3, v3, -0x1
 
-    goto :goto_30
+    goto :goto_2
 
     .line 828
-    :cond_5e
-    :goto_5e
-    if-ne v4, v5, :cond_61
+    :cond_4
+    :goto_3
+    if-ne v4, v5, :cond_5
 
     .line 830
-    goto :goto_8f
+    goto :goto_4
 
     .line 832
-    :cond_61
+    :cond_5
     const/4 v1, 0x1
 
-    if-eq v3, v2, :cond_67
+    if-eq v3, v2, :cond_6
 
     .line 834
     invoke-direct {p0, v3, v2, v1}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->move(III)V
 
     .line 836
-    :cond_67
+    :cond_6
     iget v6, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->reusableCount:I
 
     add-int/2addr v6, v5
@@ -1457,14 +1457,14 @@
     .line 828
     .end local v5    # "node":Landroidx/compose/ui/node/LayoutNode;
     .end local v6    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
-    :goto_8f
+    :goto_4
     return-object v1
 .end method
 
 
 # virtual methods
 .method public final createMeasurePolicy(Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/layout/MeasurePolicy;
-    .registers 4
+    .locals 2
     .param p1, "block"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1503,7 +1503,7 @@
 .end method
 
 .method public final disposeCurrentNodes()V
-    .registers 11
+    .locals 10
 
     .line 981
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -1539,12 +1539,12 @@
 
     move-result-object v5
 
-    :goto_15
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_2f
+    if-eqz v6, :cond_1
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1564,12 +1564,12 @@
 
     move-result-object v9
 
-    if-eqz v9, :cond_2c
+    if-eqz v9, :cond_0
 
     invoke-interface {v9}, Landroidx/compose/runtime/Composition;->dispose()V
 
     .line 984
-    :cond_2c
+    :cond_0
     nop
 
     .line 1131
@@ -1578,10 +1578,10 @@
     nop
 
     .end local v6    # "element$iv":Ljava/lang/Object;
-    goto :goto_15
+    goto :goto_0
 
     .line 1132
-    :cond_2f
+    :cond_1
     nop
 
     .line 985
@@ -1637,7 +1637,7 @@
 .end method
 
 .method public final disposeOrReuseStartingFromIndex(I)V
-    .registers 24
+    .locals 22
     .param p1, "startIndex"    # I
 
     .line 731
@@ -1674,7 +1674,7 @@
 
     .line 734
     .local v5, "needApplyNotification":Z
-    if-gt v2, v3, :cond_108
+    if-gt v2, v3, :cond_6
 
     .line 736
     iget-object v6, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->reusableSlotIdsSet:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;
@@ -1685,10 +1685,10 @@
     move/from16 v6, p1
 
     .local v6, "i":I
-    if-gt v6, v3, :cond_30
+    if-gt v6, v3, :cond_0
 
     .line 738
-    :goto_22
+    :goto_0
     iget-object v7, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->reusableSlotIdsSet:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;
 
     invoke-direct {v1, v6}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->getSlotIdAtIndex(I)Ljava/lang/Object;
@@ -1698,15 +1698,15 @@
     invoke-virtual {v7, v8}, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;->add$ui_release(Ljava/lang/Object;)Z
 
     .line 737
-    if-eq v6, v3, :cond_30
+    if-eq v6, v3, :cond_0
 
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_22
+    goto :goto_0
 
     .line 741
     .end local v6    # "i":I
-    :cond_30
+    :cond_0
     iget-object v6, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->slotReusePolicy:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
 
     iget-object v7, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->reusableSlotIdsSet:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;
@@ -1746,12 +1746,12 @@
 
     .line 1096
     .local v11, "$i$f$enter":I
-    :try_start_44
+    :try_start_0
     invoke-virtual {v10}, Landroidx/compose/runtime/snapshots/Snapshot;->makeCurrent()Landroidx/compose/runtime/snapshots/Snapshot;
 
     move-result-object v12
-    :try_end_48
-    .catchall {:try_start_44 .. :try_end_48} :catchall_101
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
     .line 1097
     .local v12, "previous$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -1762,11 +1762,11 @@
 
     .line 745
     .local v13, "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$disposeOrReuseStartingFromIndex$1":I
-    :goto_4a
-    if-lt v6, v2, :cond_ed
+    :goto_1
+    if-lt v6, v2, :cond_5
 
     .line 746
-    :try_start_4c
+    :try_start_1
     iget-object v14, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
 
     invoke-virtual {v14}, Landroidx/compose/ui/node/LayoutNode;->getFoldedChildren$ui_release()Ljava/util/List;
@@ -1810,13 +1810,13 @@
     invoke-virtual {v0, v4}, Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy$SlotIdsSet;->contains(Ljava/lang/Object;)Z
 
     move-result v0
-    :try_end_71
-    .catchall {:try_start_4c .. :try_end_71} :catchall_e9
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    if-eqz v0, :cond_ab
+    if-eqz v0, :cond_3
 
     .line 750
-    :try_start_73
+    :try_start_2
     invoke-virtual {v14}, Landroidx/compose/ui/node/LayoutNode;->getMeasurePassDelegate$ui_release()Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$MeasurePassDelegate;
 
     move-result-object v0
@@ -1830,7 +1830,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_8b
+    if-eqz v0, :cond_1
 
     .local v0, "it":Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$LookaheadPassDelegate;
     const/4 v2, 0x0
@@ -1851,7 +1851,7 @@
     .line 751
     .end local v0    # "it":Landroidx/compose/ui/node/LayoutNodeLayoutDelegate$LookaheadPassDelegate;
     .end local v17    # "$i$a$-let-LayoutNodeSubcompositionsState$disposeOrReuseStartingFromIndex$1$1":I
-    :cond_8b
+    :cond_1
     nop
 
     .line 754
@@ -1868,14 +1868,14 @@
 
     move-result v0
 
-    if-eqz v0, :cond_a2
+    if-eqz v0, :cond_2
 
     .line 756
     const/4 v0, 0x0
 
     invoke-virtual {v15, v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->setActive(Z)V
-    :try_end_9c
-    .catchall {:try_start_73 .. :try_end_9c} :catchall_a7
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 757
     const/4 v5, 0x1
@@ -1886,36 +1886,36 @@
 
     const/4 v3, 0x1
 
-    goto :goto_db
+    goto :goto_2
 
     .line 755
-    :cond_a2
+    :cond_2
     move/from16 v21, v3
 
     const/4 v0, 0x0
 
     const/4 v3, 0x1
 
-    goto :goto_db
+    goto :goto_2
 
     .line 1104
     .end local v4    # "slotId":Ljava/lang/Object;
     .end local v13    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$disposeOrReuseStartingFromIndex$1":I
     .end local v14    # "node":Landroidx/compose/ui/node/LayoutNode;
     .end local v15    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
-    :catchall_a7
+    :catchall_0
     move-exception v0
 
     move/from16 v21, v3
 
-    goto :goto_fd
+    goto :goto_3
 
     .line 760
     .restart local v4    # "slotId":Ljava/lang/Object;
     .restart local v13    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$disposeOrReuseStartingFromIndex$1":I
     .restart local v14    # "node":Landroidx/compose/ui/node/LayoutNode;
     .restart local v15    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
-    :cond_ab
+    :cond_3
     move-object/from16 v0, p0
 
     .local v0, "this_$iv":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
@@ -1927,7 +1927,7 @@
 
     .end local v2    # "$i$f$ignoreRemeasureRequests":I
     .local v17, "$i$f$ignoreRemeasureRequests":I
-    :try_start_b0
+    :try_start_3
     iget-object v2, v0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
 
     .local v2, "this_$iv$iv":Landroidx/compose/ui/node/LayoutNode;
@@ -1960,22 +1960,22 @@
     invoke-virtual {v15}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;->getComposition()Landroidx/compose/runtime/Composition;
 
     move-result-object v0
-    :try_end_c6
-    .catchall {:try_start_b0 .. :try_end_c6} :catchall_e9
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    if-eqz v0, :cond_cb
+    if-eqz v0, :cond_4
 
-    :try_start_c8
+    :try_start_4
     invoke-interface {v0}, Landroidx/compose/runtime/Composition;->dispose()V
-    :try_end_cb
-    .catchall {:try_start_c8 .. :try_end_cb} :catchall_a7
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 763
-    :cond_cb
-    :try_start_cb
+    :cond_4
+    :try_start_5
     iget-object v0, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
-    :try_end_cd
-    .catchall {:try_start_cb .. :try_end_cd} :catchall_e9
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
     move/from16 v21, v3
 
@@ -1983,7 +1983,7 @@
 
     .end local v3    # "lastReusableIndex":I
     .local v21, "lastReusableIndex":I
-    :try_start_d0
+    :try_start_6
     invoke-virtual {v0, v6, v3}, Landroidx/compose/ui/node/LayoutNode;->removeAt$ui_release(II)V
 
     .line 764
@@ -2009,7 +2009,7 @@
     .line 767
     .end local v17    # "$i$f$ignoreRemeasureRequests":I
     .end local v19    # "this_$iv":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;
-    :goto_db
+    :goto_2
     iget-object v2, v1, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->slotIdToNode:Ljava/util/Map;
 
     invoke-interface {v2, v4}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -2026,43 +2026,43 @@
     .end local v4    # "slotId":Ljava/lang/Object;
     .end local v14    # "node":Landroidx/compose/ui/node/LayoutNode;
     .end local v15    # "nodeState":Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$NodeState;
-    goto/16 :goto_4a
+    goto/16 :goto_1
 
     .line 1104
     .end local v13    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$disposeOrReuseStartingFromIndex$1":I
     .end local v21    # "lastReusableIndex":I
     .restart local v3    # "lastReusableIndex":I
-    :catchall_e9
+    :catchall_1
     move-exception v0
 
     move/from16 v21, v3
 
     .end local v3    # "lastReusableIndex":I
     .restart local v21    # "lastReusableIndex":I
-    goto :goto_fd
+    goto :goto_3
 
     .line 770
     .end local v21    # "lastReusableIndex":I
     .restart local v3    # "lastReusableIndex":I
     .restart local v13    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$disposeOrReuseStartingFromIndex$1":I
-    :cond_ed
+    :cond_5
     move/from16 v21, v3
 
     .end local v3    # "lastReusableIndex":I
     .end local v13    # "$i$a$-withoutReadObservation-LayoutNodeSubcompositionsState$disposeOrReuseStartingFromIndex$1":I
     .restart local v21    # "lastReusableIndex":I
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_f1
-    .catchall {:try_start_d0 .. :try_end_f1} :catchall_fc
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 1098
     nop
 
     .line 1104
-    :try_start_f2
+    :try_start_7
     invoke-virtual {v10, v12}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
-    :try_end_f5
-    .catchall {:try_start_f2 .. :try_end_f5} :catchall_fa
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .line 1098
     nop
@@ -2074,23 +2074,23 @@
     invoke-virtual {v9}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     .line 1095
-    goto :goto_10a
+    goto :goto_5
 
     .line 1105
-    :catchall_fa
+    :catchall_2
     move-exception v0
 
-    goto :goto_104
+    goto :goto_4
 
     .line 1104
     .restart local v10    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .restart local v11    # "$i$f$enter":I
     .restart local v12    # "previous$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
-    :catchall_fc
+    :catchall_3
     move-exception v0
 
-    :goto_fd
-    :try_start_fd
+    :goto_3
+    :try_start_8
     invoke-virtual {v10, v12}, Landroidx/compose/runtime/snapshots/Snapshot;->restoreCurrent(Landroidx/compose/runtime/snapshots/Snapshot;)V
 
     .end local v5    # "needApplyNotification":Z
@@ -2101,8 +2101,8 @@
     .end local v21    # "lastReusableIndex":I
     .end local p1    # "startIndex":I
     throw v0
-    :try_end_101
-    .catchall {:try_start_fd .. :try_end_101} :catchall_fa
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_2
 
     .line 1105
     .end local v10    # "this_$iv$iv":Landroidx/compose/runtime/snapshots/Snapshot;
@@ -2115,14 +2115,14 @@
     .restart local v8    # "$i$f$withoutReadObservation":I
     .restart local v9    # "snapshot$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .restart local p1    # "startIndex":I
-    :catchall_101
+    :catchall_4
     move-exception v0
 
     move/from16 v21, v3
 
     .end local v3    # "lastReusableIndex":I
     .restart local v21    # "lastReusableIndex":I
-    :goto_104
+    :goto_4
     invoke-virtual {v9}, Landroidx/compose/runtime/snapshots/Snapshot;->dispose()V
 
     throw v0
@@ -2134,14 +2134,14 @@
     .end local v9    # "snapshot$iv":Landroidx/compose/runtime/snapshots/Snapshot;
     .end local v21    # "lastReusableIndex":I
     .restart local v3    # "lastReusableIndex":I
-    :cond_108
+    :cond_6
     move/from16 v21, v3
 
     .line 772
     .end local v3    # "lastReusableIndex":I
     .restart local v21    # "lastReusableIndex":I
-    :goto_10a
-    if-eqz v5, :cond_111
+    :goto_5
+    if-eqz v5, :cond_7
 
     .line 773
     sget-object v0, Landroidx/compose/runtime/snapshots/Snapshot;->Companion:Landroidx/compose/runtime/snapshots/Snapshot$Companion;
@@ -2149,7 +2149,7 @@
     invoke-virtual {v0}, Landroidx/compose/runtime/snapshots/Snapshot$Companion;->sendApplyNotifications()V
 
     .line 776
-    :cond_111
+    :cond_7
     invoke-virtual/range {p0 .. p0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->makeSureStateIsConsistent()V
 
     .line 777
@@ -2157,7 +2157,7 @@
 .end method
 
 .method public final forceRecomposeChildren()V
-    .registers 8
+    .locals 7
 
     .line 957
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->nodeToNodeState:Ljava/util/Map;
@@ -2175,12 +2175,12 @@
 
     move-result-object v2
 
-    :goto_b
+    :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_0
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2214,10 +2214,10 @@
     nop
 
     .end local v3    # "element$iv":Ljava/util/Map$Entry;
-    goto :goto_b
+    goto :goto_0
 
     .line 1114
-    :cond_25
+    :cond_0
     nop
 
     .line 960
@@ -2229,7 +2229,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_36
+    if-nez v0, :cond_1
 
     .line 961
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -2243,12 +2243,12 @@
     invoke-static {v0, v3, v3, v1, v2}, Landroidx/compose/ui/node/LayoutNode;->requestRemeasure$ui_release$default(Landroidx/compose/ui/node/LayoutNode;ZZILjava/lang/Object;)V
 
     .line 963
-    :cond_36
+    :cond_1
     return-void
 .end method
 
 .method public final getCompositionContext()Landroidx/compose/runtime/CompositionContext;
-    .registers 2
+    .locals 1
 
     .line 590
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->compositionContext:Landroidx/compose/runtime/CompositionContext;
@@ -2257,7 +2257,7 @@
 .end method
 
 .method public final getIntermediateMeasurePolicy$ui_release()Lkotlin/jvm/functions/Function2;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -2276,7 +2276,7 @@
 .end method
 
 .method public final getSlotReusePolicy()Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
-    .registers 2
+    .locals 1
 
     .line 592
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->slotReusePolicy:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
@@ -2285,7 +2285,7 @@
 .end method
 
 .method public final isInLookaheadScope()Z
-    .registers 2
+    .locals 1
 
     .line 602
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -2294,21 +2294,21 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_b
+    goto :goto_0
 
-    :cond_a
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_b
+    :goto_0
     return v0
 .end method
 
 .method public final makeSureStateIsConsistent()V
-    .registers 5
+    .locals 4
 
     .line 780
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->nodeToNodeState:Ljava/util/Map;
@@ -2331,17 +2331,17 @@
 
     const/4 v3, 0x0
 
-    if-ne v0, v1, :cond_16
+    if-ne v0, v1, :cond_0
 
     move v0, v2
 
-    goto :goto_17
+    goto :goto_0
 
-    :cond_16
+    :cond_0
     move v0, v3
 
-    :goto_17
-    if-eqz v0, :cond_b0
+    :goto_0
+    if-eqz v0, :cond_5
 
     .line 786
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -2362,17 +2362,17 @@
 
     sub-int/2addr v0, v1
 
-    if-ltz v0, :cond_2d
+    if-ltz v0, :cond_1
 
     move v0, v2
 
-    goto :goto_2e
+    goto :goto_1
 
-    :cond_2d
+    :cond_1
     move v0, v3
 
-    :goto_2e
-    if-eqz v0, :cond_6f
+    :goto_1
+    if-eqz v0, :cond_4
 
     .line 790
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposeMap:Ljava/util/Map;
@@ -2383,21 +2383,21 @@
 
     iget v1, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposedCount:I
 
-    if-ne v0, v1, :cond_3b
+    if-ne v0, v1, :cond_2
 
-    goto :goto_3c
+    goto :goto_2
 
-    :cond_3b
+    :cond_2
     move v2, v3
 
-    :goto_3c
-    if-eqz v2, :cond_3f
+    :goto_2
+    if-eqz v2, :cond_3
 
     .line 794
     return-void
 
     .line 790
-    :cond_3f
+    :cond_3
     const/4 v0, 0x0
 
     .line 791
@@ -2453,7 +2453,7 @@
     throw v1
 
     .line 786
-    :cond_6f
+    :cond_4
     const/4 v0, 0x0
 
     .line 787
@@ -2531,7 +2531,7 @@
     throw v1
 
     .line 780
-    :cond_b0
+    :cond_5
     const/4 v0, 0x0
 
     .line 781
@@ -2612,7 +2612,7 @@
 .end method
 
 .method public final precompose(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Landroidx/compose/ui/layout/SubcomposeLayoutState$PrecomposedSlotHandle;
-    .registers 13
+    .locals 10
     .param p1, "slotId"    # Ljava/lang/Object;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -2644,7 +2644,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_66
+    if-nez v0, :cond_2
 
     .line 901
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposeMap:Ljava/util/Map;
@@ -2660,7 +2660,7 @@
 
     .line 1107
     .local v2, "value$iv":Ljava/lang/Object;
-    if-nez v2, :cond_5e
+    if-nez v2, :cond_1
 
     .line 1108
     const/4 v3, 0x0
@@ -2675,7 +2675,7 @@
     .local v4, "reusedNode":Landroidx/compose/ui/node/LayoutNode;
     const/4 v5, 0x1
 
-    if-eqz v4, :cond_40
+    if-eqz v4, :cond_0
 
     .line 905
     iget-object v6, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
@@ -2713,10 +2713,10 @@
     move-object v6, v4
 
     .end local v6    # "nodeIndex":I
-    goto :goto_57
+    goto :goto_0
 
     .line 910
-    :cond_40
+    :cond_0
     iget-object v6, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->root:Landroidx/compose/ui/node/LayoutNode;
 
     invoke-virtual {v6}, Landroidx/compose/ui/node/LayoutNode;->getFoldedChildren$ui_release()Ljava/util/List;
@@ -2753,7 +2753,7 @@
     nop
 
     .line 903
-    :goto_57
+    :goto_0
     nop
 
     .line 1108
@@ -2769,14 +2769,14 @@
     nop
 
     .end local v3    # "answer$iv":Ljava/lang/Object;
-    goto :goto_5f
+    goto :goto_1
 
     .line 1112
-    :cond_5e
+    :cond_1
     move-object v3, v2
 
     .line 1107
-    :goto_5f
+    :goto_1
     nop
 
     .line 901
@@ -2793,7 +2793,7 @@
 
     .line 917
     .end local v0    # "node":Landroidx/compose/ui/node/LayoutNode;
-    :cond_66
+    :cond_2
     new-instance v0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;
 
     invoke-direct {v0, p0, p1}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState$precompose$1;-><init>(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;Ljava/lang/Object;)V
@@ -2804,7 +2804,7 @@
 .end method
 
 .method public final setCompositionContext(Landroidx/compose/runtime/CompositionContext;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/runtime/CompositionContext;
 
     .line 590
@@ -2814,7 +2814,7 @@
 .end method
 
 .method public final setIntermediateMeasurePolicy$ui_release(Lkotlin/jvm/functions/Function2;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2842,7 +2842,7 @@
 .end method
 
 .method public final setSlotReusePolicy(Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
 
     const-string/jumbo v0, "value"
@@ -2852,7 +2852,7 @@
     .line 594
     iget-object v0, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->slotReusePolicy:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
 
-    if-eq v0, p1, :cond_10
+    if-eq v0, p1, :cond_0
 
     .line 595
     iput-object p1, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->slotReusePolicy:Landroidx/compose/ui/layout/SubcomposeSlotReusePolicy;
@@ -2863,12 +2863,12 @@
     invoke-virtual {p0, v0}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->disposeOrReuseStartingFromIndex(I)V
 
     .line 599
-    :cond_10
+    :cond_0
     return-void
 .end method
 
 .method public final subcompose(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;
-    .registers 14
+    .locals 11
     .param p1, "slotId"    # Ljava/lang/Object;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -2910,36 +2910,36 @@
 
     const/4 v3, 0x1
 
-    if-eq v0, v1, :cond_24
+    if-eq v0, v1, :cond_1
 
     sget-object v1, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LayingOut:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
-    if-eq v0, v1, :cond_24
+    if-eq v0, v1, :cond_1
 
     .line 642
     sget-object v1, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LookaheadMeasuring:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
-    if-eq v0, v1, :cond_24
+    if-eq v0, v1, :cond_1
 
     .line 643
     sget-object v1, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LookaheadLayingOut:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
-    if-ne v0, v1, :cond_22
+    if-ne v0, v1, :cond_0
 
-    goto :goto_24
+    goto :goto_0
 
-    :cond_22
+    :cond_0
     move v1, v2
 
-    goto :goto_25
+    goto :goto_1
 
-    :cond_24
-    :goto_24
+    :cond_1
+    :goto_0
     move v1, v3
 
     .line 640
-    :goto_25
-    if-eqz v1, :cond_c8
+    :goto_1
+    if-eqz v1, :cond_c
 
     .line 648
     iget-object v1, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->slotIdToNode:Ljava/util/Map;
@@ -2955,7 +2955,7 @@
 
     .line 1065
     .local v5, "value$iv":Ljava/lang/Object;
-    if-nez v5, :cond_69
+    if-nez v5, :cond_6
 
     .line 1066
     const/4 v6, 0x0
@@ -2972,22 +2972,22 @@
 
     .line 650
     .local v7, "precomposed":Landroidx/compose/ui/node/LayoutNode;
-    if-eqz v7, :cond_56
+    if-eqz v7, :cond_4
 
     .line 651
     iget v8, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->precomposedCount:I
 
-    if-lez v8, :cond_41
+    if-lez v8, :cond_2
 
     move v9, v3
 
-    goto :goto_42
+    goto :goto_2
 
-    :cond_41
+    :cond_2
     move v9, v2
 
-    :goto_42
-    if-eqz v9, :cond_4a
+    :goto_2
+    if-eqz v9, :cond_3
 
     .line 652
     add-int/lit8 v8, v8, -0x1
@@ -2997,10 +2997,10 @@
     .line 653
     move-object v8, v7
 
-    goto :goto_62
+    goto :goto_3
 
     .line 651
-    :cond_4a
+    :cond_3
     new-instance v2, Ljava/lang/IllegalStateException;
 
     const-string v3, "Check failed."
@@ -3014,12 +3014,12 @@
     throw v2
 
     .line 655
-    :cond_56
+    :cond_4
     invoke-direct {p0, p1}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->takeNodeFromReusables(Ljava/lang/Object;)Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v8
 
-    if-nez v8, :cond_62
+    if-nez v8, :cond_5
 
     iget v8, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->currentIndex:I
 
@@ -3028,8 +3028,8 @@
     move-result-object v8
 
     .line 650
-    :cond_62
-    :goto_62
+    :cond_5
+    :goto_3
     nop
 
     .line 1066
@@ -3045,14 +3045,14 @@
     nop
 
     .end local v6    # "answer$iv":Ljava/lang/Object;
-    goto :goto_6a
+    goto :goto_4
 
     .line 1070
-    :cond_69
+    :cond_6
     move-object v6, v5
 
     .line 1065
-    :goto_6a
+    :goto_4
     nop
 
     .line 648
@@ -3079,15 +3079,15 @@
     .local v4, "itemIndex":I
     iget v7, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->currentIndex:I
 
-    if-lt v4, v7, :cond_7d
+    if-lt v4, v7, :cond_7
 
     move v2, v3
 
-    :cond_7d
-    if-eqz v2, :cond_a4
+    :cond_7
+    if-eqz v2, :cond_b
 
     .line 664
-    if-eq v7, v4, :cond_89
+    if-eq v7, v4, :cond_8
 
     .line 665
     const/4 v8, 0x0
@@ -3103,7 +3103,7 @@
     invoke-static/range {v5 .. v10}, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->move$default(Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;IIIILjava/lang/Object;)V
 
     .line 667
-    :cond_89
+    :cond_8
     iget v2, p0, Landroidx/compose/ui/layout/LayoutNodeSubcompositionsState;->currentIndex:I
 
     add-int/2addr v2, v3
@@ -3116,35 +3116,35 @@
     .line 671
     sget-object v2, Landroidx/compose/ui/node/LayoutNode$LayoutState;->Measuring:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
-    if-eq v0, v2, :cond_9f
+    if-eq v0, v2, :cond_a
 
     sget-object v2, Landroidx/compose/ui/node/LayoutNode$LayoutState;->LayingOut:Landroidx/compose/ui/node/LayoutNode$LayoutState;
 
-    if-ne v0, v2, :cond_9a
+    if-ne v0, v2, :cond_9
 
-    goto :goto_9f
+    goto :goto_5
 
     .line 674
-    :cond_9a
+    :cond_9
     invoke-virtual {v1}, Landroidx/compose/ui/node/LayoutNode;->getChildLookaheadMeasurables$ui_release()Ljava/util/List;
 
     move-result-object v2
 
-    goto :goto_a3
+    goto :goto_6
 
     .line 672
-    :cond_9f
-    :goto_9f
+    :cond_a
+    :goto_5
     invoke-virtual {v1}, Landroidx/compose/ui/node/LayoutNode;->getChildMeasurables$ui_release()Ljava/util/List;
 
     move-result-object v2
 
     .line 671
-    :goto_a3
+    :goto_6
     return-object v2
 
     .line 660
-    :cond_a4
+    :cond_b
     const/4 v2, 0x0
 
     .line 661
@@ -3188,7 +3188,7 @@
     .line 640
     .end local v1    # "node":Landroidx/compose/ui/node/LayoutNode;
     .end local v4    # "itemIndex":I
-    :cond_c8
+    :cond_c
     const/4 v1, 0x0
 
     .line 645

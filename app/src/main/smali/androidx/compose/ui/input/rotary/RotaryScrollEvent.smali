@@ -59,13 +59,13 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 0
+    .locals 0
 
     return-void
 .end method
 
 .method public constructor <init>(FFJ)V
-    .registers 5
+    .locals 0
     .param p1, "verticalScrollPixels"    # F
     .param p2, "horizontalScrollPixels"    # F
     .param p3, "uptimeMillis"    # J
@@ -89,7 +89,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 44
@@ -97,7 +97,7 @@
 
     const/4 v1, 0x0
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_2
 
     .line 45
     move-object v0, p1
@@ -112,17 +112,17 @@
 
     const/4 v2, 0x1
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_0
 
     move v0, v2
 
-    goto :goto_14
+    goto :goto_0
 
-    :cond_13
+    :cond_0
     move v0, v1
 
-    :goto_14
-    if-eqz v0, :cond_33
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 46
     move-object v0, p1
@@ -135,17 +135,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_1
 
     move v0, v2
 
-    goto :goto_24
+    goto :goto_1
 
-    :cond_23
+    :cond_1
     move v0, v1
 
-    :goto_24
-    if-eqz v0, :cond_33
+    :goto_1
+    if-eqz v0, :cond_2
 
     .line 47
     move-object v0, p1
@@ -158,21 +158,21 @@
 
     cmp-long v0, v3, v5
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_2
 
     move v1, v2
 
-    goto :goto_34
+    goto :goto_2
 
-    :cond_33
+    :cond_2
     nop
 
-    :goto_34
+    :goto_2
     return v1
 .end method
 
 .method public final getHorizontalScrollPixels()F
-    .registers 2
+    .locals 1
 
     .line 36
     iget v0, p0, Landroidx/compose/ui/input/rotary/RotaryScrollEvent;->horizontalScrollPixels:F
@@ -181,7 +181,7 @@
 .end method
 
 .method public final getUptimeMillis()J
-    .registers 3
+    .locals 2
 
     .line 42
     iget-wide v0, p0, Landroidx/compose/ui/input/rotary/RotaryScrollEvent;->uptimeMillis:J
@@ -190,7 +190,7 @@
 .end method
 
 .method public final getVerticalScrollPixels()F
-    .registers 2
+    .locals 1
 
     .line 30
     iget v0, p0, Landroidx/compose/ui/input/rotary/RotaryScrollEvent;->verticalScrollPixels:F
@@ -199,7 +199,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 6
+    .locals 5
 
     .line 49
     nop
@@ -267,7 +267,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 54
     new-instance v0, Ljava/lang/StringBuilder;

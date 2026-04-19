@@ -19,7 +19,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
-    .registers 4
+    .locals 2
     .param p1, "view"    # Landroid/view/View;
 
     .line 48
@@ -30,7 +30,7 @@
 
     const/16 v1, 0x1e
 
-    if-lt v0, v1, :cond_11
+    if-lt v0, v1, :cond_0
 
     .line 50
     new-instance v0, Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat$Impl30;
@@ -39,10 +39,10 @@
 
     iput-object v0, p0, Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat;->mImpl:Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat$Impl;
 
-    goto :goto_18
+    goto :goto_0
 
     .line 52
-    :cond_11
+    :cond_0
     new-instance v0, Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat$Impl20;
 
     invoke-direct {v0, p1}, Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat$Impl20;-><init>(Landroid/view/View;)V
@@ -50,12 +50,12 @@
     iput-object v0, p0, Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat;->mImpl:Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat$Impl;
 
     .line 54
-    :goto_18
+    :goto_0
     return-void
 .end method
 
 .method constructor <init>(Landroid/view/WindowInsetsController;)V
-    .registers 3
+    .locals 1
     .param p1, "windowInsetsController"    # Landroid/view/WindowInsetsController;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public hide()V
-    .registers 2
+    .locals 1
 
     .line 81
     iget-object v0, p0, Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat;->mImpl:Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat$Impl;
@@ -89,7 +89,7 @@
 .end method
 
 .method public show()V
-    .registers 2
+    .locals 1
 
     .line 71
     iget-object v0, p0, Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat;->mImpl:Landroidx/compose/ui/platform/coreshims/SoftwareKeyboardControllerCompat$Impl;

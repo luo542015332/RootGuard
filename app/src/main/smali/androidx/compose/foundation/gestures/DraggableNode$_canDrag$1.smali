@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/gestures/DraggableNode;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/foundation/gestures/DraggableNode$_canDrag$1;->this$0:Landroidx/compose/foundation/gestures/DraggableNode;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/input/pointer/PointerInputChange;)Ljava/lang/Boolean;
-    .registers 3
+    .locals 1
     .param p1, "it"    # Landroidx/compose/ui/input/pointer/PointerInputChange;
 
     const-string/jumbo v0, "it"
@@ -78,7 +78,6 @@
     .line 295
     iget-object v0, p0, Landroidx/compose/foundation/gestures/DraggableNode$_canDrag$1;->this$0:Landroidx/compose/foundation/gestures/DraggableNode;
 
-    # getter for: Landroidx/compose/foundation/gestures/DraggableNode;->canDrag:Lkotlin/jvm/functions/Function1;
     invoke-static {v0}, Landroidx/compose/foundation/gestures/DraggableNode;->access$getCanDrag$p(Landroidx/compose/foundation/gestures/DraggableNode;)Lkotlin/jvm/functions/Function1;
 
     move-result-object v0
@@ -93,7 +92,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 295

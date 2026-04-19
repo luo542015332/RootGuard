@@ -117,7 +117,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/List;I)V
-    .registers 14
+    .locals 11
     .param p1, "keyInfos"    # Ljava/util/List;
     .param p2, "startIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -146,17 +146,17 @@
     nop
 
     .line 105
-    if-ltz p2, :cond_12
+    if-ltz p2, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_13
+    goto :goto_0
 
-    :cond_12
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_13
-    if-eqz v0, :cond_6a
+    :goto_0
+    if-eqz v0, :cond_2
 
     .line 106
     nop
@@ -199,8 +199,8 @@
 
     move-result v5
 
-    :goto_30
-    if-ge v4, v5, :cond_59
+    :goto_1
+    if-ge v4, v5, :cond_1
 
     .line 113
     iget-object v6, v0, Landroidx/compose/runtime/Pending;->keyInfos:Ljava/util/List;
@@ -246,11 +246,11 @@
     .end local v6    # "keyInfo":Landroidx/compose/runtime/KeyInfo;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_30
+    goto :goto_1
 
     .line 119
     .end local v4    # "index":I
-    :cond_59
+    :cond_1
     nop
 
     .line 109
@@ -277,7 +277,7 @@
     return-void
 
     .line 4564
-    :cond_6a
+    :cond_2
     const/4 v0, 0x0
 
     .line 105
@@ -301,7 +301,7 @@
 
 # virtual methods
 .method public final getGroupIndex()I
-    .registers 2
+    .locals 1
 
     .line 102
     iget v0, p0, Landroidx/compose/runtime/Pending;->groupIndex:I
@@ -310,7 +310,7 @@
 .end method
 
 .method public final getKeyInfos()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -327,7 +327,7 @@
 .end method
 
 .method public final getKeyMap()Ljava/util/HashMap;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -352,12 +352,12 @@
 .end method
 
 .method public final getNext(ILjava/lang/Object;)Landroidx/compose/runtime/KeyInfo;
-    .registers 5
+    .locals 2
     .param p1, "key"    # I
     .param p2, "dataKey"    # Ljava/lang/Object;
 
     .line 140
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_0
 
     new-instance v0, Landroidx/compose/runtime/JoinedKey;
 
@@ -367,21 +367,20 @@
 
     invoke-direct {v0, v1, p2}, Landroidx/compose/runtime/JoinedKey;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    goto :goto_10
+    goto :goto_0
 
-    :cond_c
+    :cond_0
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     .line 141
     .local v0, "joinedKey":Ljava/lang/Object;
-    :goto_10
+    :goto_0
     invoke-virtual {p0}, Landroidx/compose/runtime/Pending;->getKeyMap()Ljava/util/HashMap;
 
     move-result-object v1
 
-    # invokes: Landroidx/compose/runtime/ComposerKt;->pop(Ljava/util/HashMap;Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {v1, v0}, Landroidx/compose/runtime/ComposerKt;->access$pop(Ljava/util/HashMap;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -392,7 +391,7 @@
 .end method
 
 .method public final getStartIndex()I
-    .registers 2
+    .locals 1
 
     .line 100
     iget v0, p0, Landroidx/compose/runtime/Pending;->startIndex:I
@@ -401,7 +400,7 @@
 .end method
 
 .method public final getUsed()Ljava/util/List;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -418,7 +417,7 @@
 .end method
 
 .method public final nodePositionOf(Landroidx/compose/runtime/KeyInfo;)I
-    .registers 4
+    .locals 2
     .param p1, "keyInfo"    # Landroidx/compose/runtime/KeyInfo;
 
     const-string/jumbo v0, "keyInfo"
@@ -442,23 +441,23 @@
 
     check-cast v0, Landroidx/compose/runtime/GroupInfo;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/runtime/GroupInfo;->getNodeIndex()I
 
     move-result v0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_1e
+    :goto_0
     return v0
 .end method
 
 .method public final recordUsed(Landroidx/compose/runtime/KeyInfo;)Z
-    .registers 3
+    .locals 1
     .param p1, "keyInfo"    # Landroidx/compose/runtime/KeyInfo;
 
     const-string/jumbo v0, "keyInfo"
@@ -476,7 +475,7 @@
 .end method
 
 .method public final registerInsert(Landroidx/compose/runtime/KeyInfo;I)V
-    .registers 8
+    .locals 5
     .param p1, "keyInfo"    # Landroidx/compose/runtime/KeyInfo;
     .param p2, "insertIndex"    # I
 
@@ -512,7 +511,7 @@
 .end method
 
 .method public final registerMoveNode(III)V
-    .registers 14
+    .locals 10
     .param p1, "from"    # I
     .param p2, "to"    # I
     .param p3, "count"    # I
@@ -524,7 +523,7 @@
 
     const/4 v2, 0x0
 
-    if-le p1, p2, :cond_4f
+    if-le p1, p2, :cond_5
 
     .line 171
     iget-object v3, p0, Landroidx/compose/runtime/Pending;->groupInfos:Ljava/util/HashMap;
@@ -548,12 +547,12 @@
 
     move-result-object v4
 
-    :goto_18
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_4d
+    if-eqz v5, :cond_4
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -575,21 +574,21 @@
 
     .line 173
     .local v8, "position":I
-    if-gt p1, v8, :cond_32
+    if-gt p1, v8, :cond_0
 
     add-int v9, p1, p3
 
-    if-ge v8, v9, :cond_32
+    if-ge v8, v9, :cond_0
 
     move v9, v1
 
-    goto :goto_33
+    goto :goto_1
 
-    :cond_32
+    :cond_0
     move v9, v2
 
-    :goto_33
-    if-eqz v9, :cond_3c
+    :goto_1
+    if-eqz v9, :cond_1
 
     sub-int v9, v8, p1
 
@@ -597,31 +596,31 @@
 
     invoke-virtual {v6, v9}, Landroidx/compose/runtime/GroupInfo;->setNodeIndex(I)V
 
-    goto :goto_4a
+    goto :goto_3
 
     .line 174
-    :cond_3c
-    if-gt p2, v8, :cond_42
+    :cond_1
+    if-gt p2, v8, :cond_2
 
-    if-ge v8, p1, :cond_42
+    if-ge v8, p1, :cond_2
 
     move v9, v1
 
-    goto :goto_43
+    goto :goto_2
 
-    :cond_42
+    :cond_2
     move v9, v2
 
-    :goto_43
-    if-eqz v9, :cond_4a
+    :goto_2
+    if-eqz v9, :cond_3
 
     add-int v9, v8, p3
 
     invoke-virtual {v6, v9}, Landroidx/compose/runtime/GroupInfo;->setNodeIndex(I)V
 
     .line 175
-    :cond_4a
-    :goto_4a
+    :cond_3
+    :goto_3
     nop
 
     .line 4569
@@ -631,19 +630,19 @@
     nop
 
     .end local v5    # "element$iv":Ljava/lang/Object;
-    goto :goto_18
+    goto :goto_0
 
     .line 4570
-    :cond_4d
+    :cond_4
     nop
 
     .end local v0    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v3    # "$i$f$forEach":I
-    goto :goto_9a
+    goto :goto_8
 
     .line 176
-    :cond_4f
-    if-le p2, p1, :cond_9a
+    :cond_5
+    if-le p2, p1, :cond_b
 
     .line 177
     iget-object v3, p0, Landroidx/compose/runtime/Pending;->groupInfos:Ljava/util/HashMap;
@@ -667,12 +666,12 @@
 
     move-result-object v4
 
-    :goto_62
+    :goto_4
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_99
+    if-eqz v5, :cond_a
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -694,21 +693,21 @@
 
     .line 179
     .restart local v8    # "position":I
-    if-gt p1, v8, :cond_7c
+    if-gt p1, v8, :cond_6
 
     add-int v9, p1, p3
 
-    if-ge v8, v9, :cond_7c
+    if-ge v8, v9, :cond_6
 
     move v9, v1
 
-    goto :goto_7d
+    goto :goto_5
 
-    :cond_7c
+    :cond_6
     move v9, v2
 
-    :goto_7d
-    if-eqz v9, :cond_86
+    :goto_5
+    if-eqz v9, :cond_7
 
     sub-int v9, v8, p1
 
@@ -716,33 +715,33 @@
 
     invoke-virtual {v6, v9}, Landroidx/compose/runtime/GroupInfo;->setNodeIndex(I)V
 
-    goto :goto_96
+    goto :goto_7
 
     .line 180
-    :cond_86
+    :cond_7
     add-int/lit8 v9, p1, 0x1
 
-    if-gt v9, v8, :cond_8e
+    if-gt v9, v8, :cond_8
 
-    if-ge v8, p2, :cond_8e
+    if-ge v8, p2, :cond_8
 
     move v9, v1
 
-    goto :goto_8f
+    goto :goto_6
 
-    :cond_8e
+    :cond_8
     move v9, v2
 
-    :goto_8f
-    if-eqz v9, :cond_96
+    :goto_6
+    if-eqz v9, :cond_9
 
     sub-int v9, v8, p3
 
     invoke-virtual {v6, v9}, Landroidx/compose/runtime/GroupInfo;->setNodeIndex(I)V
 
     .line 181
-    :cond_96
-    :goto_96
+    :cond_9
+    :goto_7
     nop
 
     .line 4571
@@ -752,22 +751,22 @@
     nop
 
     .end local v5    # "element$iv":Ljava/lang/Object;
-    goto :goto_62
+    goto :goto_4
 
     .line 4572
-    :cond_99
+    :cond_a
     nop
 
     .line 183
     .end local v0    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v3    # "$i$f$forEach":I
-    :cond_9a
-    :goto_9a
+    :cond_b
+    :goto_8
     return-void
 .end method
 
 .method public final registerMoveSlot(II)V
-    .registers 13
+    .locals 10
     .param p1, "from"    # I
     .param p2, "to"    # I
 
@@ -778,7 +777,7 @@
 
     const/4 v2, 0x1
 
-    if-le p1, p2, :cond_43
+    if-le p1, p2, :cond_4
 
     .line 155
     iget-object v3, p0, Landroidx/compose/runtime/Pending;->groupInfos:Ljava/util/HashMap;
@@ -802,12 +801,12 @@
 
     move-result-object v4
 
-    :goto_18
+    :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_41
+    if-eqz v5, :cond_3
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -829,35 +828,35 @@
 
     .line 157
     .local v8, "position":I
-    if-ne v8, p1, :cond_30
+    if-ne v8, p1, :cond_0
 
     invoke-virtual {v6, p2}, Landroidx/compose/runtime/GroupInfo;->setSlotIndex(I)V
 
-    goto :goto_3e
+    goto :goto_2
 
     .line 158
-    :cond_30
-    if-gt p2, v8, :cond_36
+    :cond_0
+    if-gt p2, v8, :cond_1
 
-    if-ge v8, p1, :cond_36
+    if-ge v8, p1, :cond_1
 
     move v9, v2
 
-    goto :goto_37
+    goto :goto_1
 
-    :cond_36
+    :cond_1
     move v9, v1
 
-    :goto_37
-    if-eqz v9, :cond_3e
+    :goto_1
+    if-eqz v9, :cond_2
 
     add-int/lit8 v9, v8, 0x1
 
     invoke-virtual {v6, v9}, Landroidx/compose/runtime/GroupInfo;->setSlotIndex(I)V
 
     .line 159
-    :cond_3e
-    :goto_3e
+    :cond_2
+    :goto_2
     nop
 
     .line 4565
@@ -867,19 +866,19 @@
     nop
 
     .end local v5    # "element$iv":Ljava/lang/Object;
-    goto :goto_18
+    goto :goto_0
 
     .line 4566
-    :cond_41
+    :cond_3
     nop
 
     .end local v0    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v3    # "$i$f$forEach":I
-    goto :goto_82
+    goto :goto_6
 
     .line 160
-    :cond_43
-    if-le p2, p1, :cond_82
+    :cond_4
+    if-le p2, p1, :cond_9
 
     .line 161
     iget-object v3, p0, Landroidx/compose/runtime/Pending;->groupInfos:Ljava/util/HashMap;
@@ -903,12 +902,12 @@
 
     move-result-object v4
 
-    :goto_56
+    :goto_3
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
-    if-eqz v5, :cond_81
+    if-eqz v5, :cond_8
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -930,37 +929,37 @@
 
     .line 163
     .restart local v8    # "position":I
-    if-ne v8, p1, :cond_6e
+    if-ne v8, p1, :cond_5
 
     invoke-virtual {v6, p2}, Landroidx/compose/runtime/GroupInfo;->setSlotIndex(I)V
 
-    goto :goto_7e
+    goto :goto_5
 
     .line 164
-    :cond_6e
+    :cond_5
     add-int/lit8 v9, p1, 0x1
 
-    if-gt v9, v8, :cond_76
+    if-gt v9, v8, :cond_6
 
-    if-ge v8, p2, :cond_76
+    if-ge v8, p2, :cond_6
 
     move v9, v2
 
-    goto :goto_77
+    goto :goto_4
 
-    :cond_76
+    :cond_6
     move v9, v1
 
-    :goto_77
-    if-eqz v9, :cond_7e
+    :goto_4
+    if-eqz v9, :cond_7
 
     add-int/lit8 v9, v8, -0x1
 
     invoke-virtual {v6, v9}, Landroidx/compose/runtime/GroupInfo;->setSlotIndex(I)V
 
     .line 165
-    :cond_7e
-    :goto_7e
+    :cond_7
+    :goto_5
     nop
 
     .line 4567
@@ -970,22 +969,22 @@
     nop
 
     .end local v5    # "element$iv":Ljava/lang/Object;
-    goto :goto_56
+    goto :goto_3
 
     .line 4568
-    :cond_81
+    :cond_8
     nop
 
     .line 167
     .end local v0    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v3    # "$i$f$forEach":I
-    :cond_82
-    :goto_82
+    :cond_9
+    :goto_6
     return-void
 .end method
 
 .method public final setGroupIndex(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 102
@@ -995,7 +994,7 @@
 .end method
 
 .method public final slotPositionOf(Landroidx/compose/runtime/KeyInfo;)I
-    .registers 4
+    .locals 2
     .param p1, "keyInfo"    # Landroidx/compose/runtime/KeyInfo;
 
     const-string/jumbo v0, "keyInfo"
@@ -1019,23 +1018,23 @@
 
     check-cast v0, Landroidx/compose/runtime/GroupInfo;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/runtime/GroupInfo;->getSlotIndex()I
 
     move-result v0
 
-    goto :goto_1e
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     const/4 v0, -0x1
 
-    :goto_1e
+    :goto_0
     return v0
 .end method
 
 .method public final updateNodeCount(II)Z
-    .registers 13
+    .locals 10
     .param p1, "group"    # I
     .param p2, "newCount"    # I
 
@@ -1054,7 +1053,7 @@
 
     .line 192
     .local v0, "groupInfo":Landroidx/compose/runtime/GroupInfo;
-    if-eqz v0, :cond_5a
+    if-eqz v0, :cond_3
 
     .line 193
     invoke-virtual {v0}, Landroidx/compose/runtime/GroupInfo;->getNodeIndex()I
@@ -1074,7 +1073,7 @@
     invoke-virtual {v0, p2}, Landroidx/compose/runtime/GroupInfo;->setNodeCount(I)V
 
     .line 196
-    if-eqz v2, :cond_58
+    if-eqz v2, :cond_2
 
     .line 197
     iget-object v3, p0, Landroidx/compose/runtime/Pending;->groupInfos:Ljava/util/HashMap;
@@ -1098,12 +1097,12 @@
 
     move-result-object v5
 
-    :goto_30
+    :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
-    if-eqz v6, :cond_57
+    if-eqz v6, :cond_1
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1123,13 +1122,13 @@
 
     move-result v9
 
-    if-lt v9, v1, :cond_54
+    if-lt v9, v1, :cond_0
 
     invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v9
 
-    if-nez v9, :cond_54
+    if-nez v9, :cond_0
 
     .line 199
     invoke-virtual {v7}, Landroidx/compose/runtime/GroupInfo;->getNodeIndex()I
@@ -1140,14 +1139,14 @@
 
     .line 200
     .local v9, "newIndex":I
-    if-ltz v9, :cond_54
+    if-ltz v9, :cond_0
 
     .line 201
     invoke-virtual {v7, v9}, Landroidx/compose/runtime/GroupInfo;->setNodeIndex(I)V
 
     .line 203
     .end local v9    # "newIndex":I
-    :cond_54
+    :cond_0
     nop
 
     .line 4573
@@ -1156,16 +1155,16 @@
     nop
 
     .end local v6    # "element$iv":Ljava/lang/Object;
-    goto :goto_30
+    goto :goto_0
 
     .line 4574
-    :cond_57
+    :cond_1
     nop
 
     .line 205
     .end local v3    # "$this$forEach$iv":Ljava/lang/Iterable;
     .end local v4    # "$i$f$forEach":I
-    :cond_58
+    :cond_2
     const/4 v3, 0x1
 
     return v3
@@ -1173,14 +1172,14 @@
     .line 207
     .end local v1    # "index":I
     .end local v2    # "difference":I
-    :cond_5a
+    :cond_3
     const/4 v1, 0x0
 
     return v1
 .end method
 
 .method public final updatedNodeCountOf(Landroidx/compose/runtime/KeyInfo;)I
-    .registers 4
+    .locals 2
     .param p1, "keyInfo"    # Landroidx/compose/runtime/KeyInfo;
 
     const-string/jumbo v0, "keyInfo"
@@ -1204,19 +1203,19 @@
 
     check-cast v0, Landroidx/compose/runtime/GroupInfo;
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroidx/compose/runtime/GroupInfo;->getNodeCount()I
 
     move-result v0
 
-    goto :goto_21
+    goto :goto_0
 
-    :cond_1d
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/runtime/KeyInfo;->getNodes()I
 
     move-result v0
 
-    :goto_21
+    :goto_0
     return v0
 .end method

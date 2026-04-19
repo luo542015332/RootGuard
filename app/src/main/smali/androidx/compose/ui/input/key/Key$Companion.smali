@@ -611,7 +611,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -620,7 +620,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/input/key/Key$Companion;-><init>()V
 
@@ -630,10 +630,9 @@
 
 # virtual methods
 .method public final getA-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 238
-    # getter for: Landroidx/compose/ui/input/key/Key;->A:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getA$cp()J
 
     move-result-wide v0
@@ -642,10 +641,9 @@
 .end method
 
 .method public final getAllApps-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1394
-    # getter for: Landroidx/compose/ui/input/key/Key;->AllApps:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAllApps$cp()J
 
     move-result-wide v0
@@ -654,10 +652,9 @@
 .end method
 
 .method public final getAltLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 322
-    # getter for: Landroidx/compose/ui/input/key/Key;->AltLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAltLeft$cp()J
 
     move-result-wide v0
@@ -666,10 +663,9 @@
 .end method
 
 .method public final getAltRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 325
-    # getter for: Landroidx/compose/ui/input/key/Key;->AltRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAltRight$cp()J
 
     move-result-wide v0
@@ -678,10 +674,9 @@
 .end method
 
 .method public final getApostrophe-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 458
-    # getter for: Landroidx/compose/ui/input/key/Key;->Apostrophe:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getApostrophe$cp()J
 
     move-result-wide v0
@@ -690,10 +685,9 @@
 .end method
 
 .method public final getAppSwitch-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1035
-    # getter for: Landroidx/compose/ui/input/key/Key;->AppSwitch:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAppSwitch$cp()J
 
     move-result-wide v0
@@ -702,10 +696,9 @@
 .end method
 
 .method public final getAssist-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1119
-    # getter for: Landroidx/compose/ui/input/key/Key;->Assist:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAssist$cp()J
 
     move-result-wide v0
@@ -714,10 +707,9 @@
 .end method
 
 .method public final getAt-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 461
-    # getter for: Landroidx/compose/ui/input/key/Key;->At:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAt$cp()J
 
     move-result-wide v0
@@ -726,10 +718,9 @@
 .end method
 
 .method public final getAvReceiverInput-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1000
-    # getter for: Landroidx/compose/ui/input/key/Key;->AvReceiverInput:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAvReceiverInput$cp()J
 
     move-result-wide v0
@@ -738,10 +729,9 @@
 .end method
 
 .method public final getAvReceiverPower-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 993
-    # getter for: Landroidx/compose/ui/input/key/Key;->AvReceiverPower:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getAvReceiverPower$cp()J
 
     move-result-wide v0
@@ -750,10 +740,9 @@
 .end method
 
 .method public final getB-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 241
-    # getter for: Landroidx/compose/ui/input/key/Key;->B:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getB$cp()J
 
     move-result-wide v0
@@ -762,10 +751,9 @@
 .end method
 
 .method public final getBack-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 65
-    # getter for: Landroidx/compose/ui/input/key/Key;->Back:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBack$cp()J
 
     move-result-wide v0
@@ -774,10 +762,9 @@
 .end method
 
 .method public final getBackslash-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 452
-    # getter for: Landroidx/compose/ui/input/key/Key;->Backslash:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBackslash$cp()J
 
     move-result-wide v0
@@ -786,10 +773,9 @@
 .end method
 
 .method public final getBackspace-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 368
-    # getter for: Landroidx/compose/ui/input/key/Key;->Backspace:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBackspace$cp()J
 
     move-result-wide v0
@@ -798,10 +784,9 @@
 .end method
 
 .method public final getBookmark-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 944
-    # getter for: Landroidx/compose/ui/input/key/Key;->Bookmark:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBookmark$cp()J
 
     move-result-wide v0
@@ -810,10 +795,9 @@
 .end method
 
 .method public final getBreak-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 405
-    # getter for: Landroidx/compose/ui/input/key/Key;->Break:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBreak$cp()J
 
     move-result-wide v0
@@ -822,10 +806,9 @@
 .end method
 
 .method public final getBrightnessDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1126
-    # getter for: Landroidx/compose/ui/input/key/Key;->BrightnessDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBrightnessDown$cp()J
 
     move-result-wide v0
@@ -834,10 +817,9 @@
 .end method
 
 .method public final getBrightnessUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1133
-    # getter for: Landroidx/compose/ui/input/key/Key;->BrightnessUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBrightnessUp$cp()J
 
     move-result-wide v0
@@ -846,10 +828,9 @@
 .end method
 
 .method public final getBrowser-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 351
-    # getter for: Landroidx/compose/ui/input/key/Key;->Browser:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getBrowser$cp()J
 
     move-result-wide v0
@@ -858,10 +839,9 @@
 .end method
 
 .method public final getButton1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 632
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton1$cp()J
 
     move-result-wide v0
@@ -870,10 +850,9 @@
 .end method
 
 .method public final getButton10-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 659
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button10:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton10$cp()J
 
     move-result-wide v0
@@ -882,10 +861,9 @@
 .end method
 
 .method public final getButton11-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 662
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button11:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton11$cp()J
 
     move-result-wide v0
@@ -894,10 +872,9 @@
 .end method
 
 .method public final getButton12-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 665
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button12:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton12$cp()J
 
     move-result-wide v0
@@ -906,10 +883,9 @@
 .end method
 
 .method public final getButton13-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 668
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button13:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton13$cp()J
 
     move-result-wide v0
@@ -918,10 +894,9 @@
 .end method
 
 .method public final getButton14-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 671
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button14:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton14$cp()J
 
     move-result-wide v0
@@ -930,10 +905,9 @@
 .end method
 
 .method public final getButton15-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 674
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button15:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton15$cp()J
 
     move-result-wide v0
@@ -942,10 +916,9 @@
 .end method
 
 .method public final getButton16-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 677
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button16:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton16$cp()J
 
     move-result-wide v0
@@ -954,10 +927,9 @@
 .end method
 
 .method public final getButton2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 635
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton2$cp()J
 
     move-result-wide v0
@@ -966,10 +938,9 @@
 .end method
 
 .method public final getButton3-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 638
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button3:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton3$cp()J
 
     move-result-wide v0
@@ -978,10 +949,9 @@
 .end method
 
 .method public final getButton4-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 641
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button4:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton4$cp()J
 
     move-result-wide v0
@@ -990,10 +960,9 @@
 .end method
 
 .method public final getButton5-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 644
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button5:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton5$cp()J
 
     move-result-wide v0
@@ -1002,10 +971,9 @@
 .end method
 
 .method public final getButton6-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 647
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button6:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton6$cp()J
 
     move-result-wide v0
@@ -1014,10 +982,9 @@
 .end method
 
 .method public final getButton7-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 650
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button7:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton7$cp()J
 
     move-result-wide v0
@@ -1026,10 +993,9 @@
 .end method
 
 .method public final getButton8-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 653
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button8:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton8$cp()J
 
     move-result-wide v0
@@ -1038,10 +1004,9 @@
 .end method
 
 .method public final getButton9-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 656
-    # getter for: Landroidx/compose/ui/input/key/Key;->Button9:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButton9$cp()J
 
     move-result-wide v0
@@ -1050,10 +1015,9 @@
 .end method
 
 .method public final getButtonA-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 520
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonA:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonA$cp()J
 
     move-result-wide v0
@@ -1062,10 +1026,9 @@
 .end method
 
 .method public final getButtonB-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 528
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonB:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonB$cp()J
 
     move-result-wide v0
@@ -1074,10 +1037,9 @@
 .end method
 
 .method public final getButtonC-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 536
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonC:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonC$cp()J
 
     move-result-wide v0
@@ -1086,10 +1048,9 @@
 .end method
 
 .method public final getButtonL1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 568
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonL1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonL1$cp()J
 
     move-result-wide v0
@@ -1098,10 +1059,9 @@
 .end method
 
 .method public final getButtonL2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 584
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonL2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonL2$cp()J
 
     move-result-wide v0
@@ -1110,10 +1070,9 @@
 .end method
 
 .method public final getButtonMode-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 629
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonMode:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonMode$cp()J
 
     move-result-wide v0
@@ -1122,10 +1081,9 @@
 .end method
 
 .method public final getButtonR1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 576
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonR1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonR1$cp()J
 
     move-result-wide v0
@@ -1134,10 +1092,9 @@
 .end method
 
 .method public final getButtonR2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 592
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonR2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonR2$cp()J
 
     move-result-wide v0
@@ -1146,10 +1103,9 @@
 .end method
 
 .method public final getButtonSelect-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 622
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonSelect:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonSelect$cp()J
 
     move-result-wide v0
@@ -1158,10 +1114,9 @@
 .end method
 
 .method public final getButtonStart-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 615
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonStart:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonStart$cp()J
 
     move-result-wide v0
@@ -1170,10 +1125,9 @@
 .end method
 
 .method public final getButtonThumbLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 600
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonThumbLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonThumbLeft$cp()J
 
     move-result-wide v0
@@ -1182,10 +1136,9 @@
 .end method
 
 .method public final getButtonThumbRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 608
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonThumbRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonThumbRight$cp()J
 
     move-result-wide v0
@@ -1194,10 +1147,9 @@
 .end method
 
 .method public final getButtonX-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 544
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonX:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonX$cp()J
 
     move-result-wide v0
@@ -1206,10 +1158,9 @@
 .end method
 
 .method public final getButtonY-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 552
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonY:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonY$cp()J
 
     move-result-wide v0
@@ -1218,10 +1169,9 @@
 .end method
 
 .method public final getButtonZ-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 560
-    # getter for: Landroidx/compose/ui/input/key/Key;->ButtonZ:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getButtonZ$cp()J
 
     move-result-wide v0
@@ -1230,10 +1180,9 @@
 .end method
 
 .method public final getC-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 244
-    # getter for: Landroidx/compose/ui/input/key/Key;->C:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getC$cp()J
 
     move-result-wide v0
@@ -1242,10 +1191,9 @@
 .end method
 
 .method public final getCalculator-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1088
-    # getter for: Landroidx/compose/ui/input/key/Key;->Calculator:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCalculator$cp()J
 
     move-result-wide v0
@@ -1254,10 +1202,9 @@
 .end method
 
 .method public final getCalendar-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1074
-    # getter for: Landroidx/compose/ui/input/key/Key;->Calendar:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCalendar$cp()J
 
     move-result-wide v0
@@ -1266,10 +1213,9 @@
 .end method
 
 .method public final getCall-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 113
-    # getter for: Landroidx/compose/ui/input/key/Key;->Call:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCall$cp()J
 
     move-result-wide v0
@@ -1278,10 +1224,9 @@
 .end method
 
 .method public final getCamera-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 187
-    # getter for: Landroidx/compose/ui/input/key/Key;->Camera:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCamera$cp()J
 
     move-result-wide v0
@@ -1290,10 +1235,9 @@
 .end method
 
 .method public final getCapsLock-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 387
-    # getter for: Landroidx/compose/ui/input/key/Key;->CapsLock:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCapsLock$cp()J
 
     move-result-wide v0
@@ -1302,10 +1246,9 @@
 .end method
 
 .method public final getCaptions-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 951
-    # getter for: Landroidx/compose/ui/input/key/Key;->Captions:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCaptions$cp()J
 
     move-result-wide v0
@@ -1314,10 +1257,9 @@
 .end method
 
 .method public final getChannelDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 902
-    # getter for: Landroidx/compose/ui/input/key/Key;->ChannelDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getChannelDown$cp()J
 
     move-result-wide v0
@@ -1326,10 +1268,9 @@
 .end method
 
 .method public final getChannelUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 895
-    # getter for: Landroidx/compose/ui/input/key/Key;->ChannelUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getChannelUp$cp()J
 
     move-result-wide v0
@@ -1338,10 +1279,9 @@
 .end method
 
 .method public final getClear-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 190
-    # getter for: Landroidx/compose/ui/input/key/Key;->Clear:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getClear$cp()J
 
     move-result-wide v0
@@ -1350,10 +1290,9 @@
 .end method
 
 .method public final getComma-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 316
-    # getter for: Landroidx/compose/ui/input/key/Key;->Comma:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getComma$cp()J
 
     move-result-wide v0
@@ -1362,10 +1301,9 @@
 .end method
 
 .method public final getContacts-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1067
-    # getter for: Landroidx/compose/ui/input/key/Key;->Contacts:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getContacts$cp()J
 
     move-result-wide v0
@@ -1374,10 +1312,9 @@
 .end method
 
 .method public final getCopy-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 434
-    # getter for: Landroidx/compose/ui/input/key/Key;->Copy:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCopy$cp()J
 
     move-result-wide v0
@@ -1386,10 +1323,9 @@
 .end method
 
 .method public final getCtrlLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 381
-    # getter for: Landroidx/compose/ui/input/key/Key;->CtrlLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCtrlLeft$cp()J
 
     move-result-wide v0
@@ -1398,10 +1334,9 @@
 .end method
 
 .method public final getCtrlRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 384
-    # getter for: Landroidx/compose/ui/input/key/Key;->CtrlRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCtrlRight$cp()J
 
     move-result-wide v0
@@ -1410,10 +1345,9 @@
 .end method
 
 .method public final getCut-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 431
-    # getter for: Landroidx/compose/ui/input/key/Key;->Cut:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getCut$cp()J
 
     move-result-wide v0
@@ -1422,10 +1356,9 @@
 .end method
 
 .method public final getD-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 247
-    # getter for: Landroidx/compose/ui/input/key/Key;->D:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getD$cp()J
 
     move-result-wide v0
@@ -1434,10 +1367,9 @@
 .end method
 
 .method public final getDelete-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 375
-    # getter for: Landroidx/compose/ui/input/key/Key;->Delete:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDelete$cp()J
 
     move-result-wide v0
@@ -1446,10 +1378,9 @@
 .end method
 
 .method public final getDirectionCenter-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 151
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionCenter:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionCenter$cp()J
 
     move-result-wide v0
@@ -1458,10 +1389,9 @@
 .end method
 
 .method public final getDirectionDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 130
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionDown$cp()J
 
     move-result-wide v0
@@ -1470,10 +1400,9 @@
 .end method
 
 .method public final getDirectionDownLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 157
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionDownLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionDownLeft$cp()J
 
     move-result-wide v0
@@ -1482,10 +1411,9 @@
 .end method
 
 .method public final getDirectionDownRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 163
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionDownRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionDownRight$cp()J
 
     move-result-wide v0
@@ -1494,10 +1422,9 @@
 .end method
 
 .method public final getDirectionLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 137
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionLeft$cp()J
 
     move-result-wide v0
@@ -1506,10 +1433,9 @@
 .end method
 
 .method public final getDirectionRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 144
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionRight$cp()J
 
     move-result-wide v0
@@ -1518,10 +1444,9 @@
 .end method
 
 .method public final getDirectionUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 123
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionUp$cp()J
 
     move-result-wide v0
@@ -1530,10 +1455,9 @@
 .end method
 
 .method public final getDirectionUpLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 154
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionUpLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionUpLeft$cp()J
 
     move-result-wide v0
@@ -1542,10 +1466,9 @@
 .end method
 
 .method public final getDirectionUpRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 160
-    # getter for: Landroidx/compose/ui/input/key/Key;->DirectionUpRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDirectionUpRight$cp()J
 
     move-result-wide v0
@@ -1554,10 +1477,9 @@
 .end method
 
 .method public final getDvr-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 937
-    # getter for: Landroidx/compose/ui/input/key/Key;->Dvr:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getDvr$cp()J
 
     move-result-wide v0
@@ -1566,10 +1488,9 @@
 .end method
 
 .method public final getE-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 250
-    # getter for: Landroidx/compose/ui/input/key/Key;->E:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getE$cp()J
 
     move-result-wide v0
@@ -1578,10 +1499,9 @@
 .end method
 
 .method public final getEight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 217
-    # getter for: Landroidx/compose/ui/input/key/Key;->Eight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getEight$cp()J
 
     move-result-wide v0
@@ -1590,10 +1510,9 @@
 .end method
 
 .method public final getEisu-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1094
-    # getter for: Landroidx/compose/ui/input/key/Key;->Eisu:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getEisu$cp()J
 
     move-result-wide v0
@@ -1602,10 +1521,9 @@
 .end method
 
 .method public final getEndCall-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 116
-    # getter for: Landroidx/compose/ui/input/key/Key;->EndCall:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getEndCall$cp()J
 
     move-result-wide v0
@@ -1614,10 +1532,9 @@
 .end method
 
 .method public final getEnter-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 361
-    # getter for: Landroidx/compose/ui/input/key/Key;->Enter:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getEnter$cp()J
 
     move-result-wide v0
@@ -1626,10 +1543,9 @@
 .end method
 
 .method public final getEnvelope-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 358
-    # getter for: Landroidx/compose/ui/input/key/Key;->Envelope:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getEnvelope$cp()J
 
     move-result-wide v0
@@ -1638,10 +1554,9 @@
 .end method
 
 .method public final getEquals-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 232
-    # getter for: Landroidx/compose/ui/input/key/Key;->Equals:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getEquals$cp()J
 
     move-result-wide v0
@@ -1650,10 +1565,9 @@
 .end method
 
 .method public final getEscape-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 378
-    # getter for: Landroidx/compose/ui/input/key/Key;->Escape:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getEscape$cp()J
 
     move-result-wide v0
@@ -1662,10 +1576,9 @@
 .end method
 
 .method public final getF-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 253
-    # getter for: Landroidx/compose/ui/input/key/Key;->F:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF$cp()J
 
     move-result-wide v0
@@ -1674,10 +1587,9 @@
 .end method
 
 .method public final getF1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 687
-    # getter for: Landroidx/compose/ui/input/key/Key;->F1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF1$cp()J
 
     move-result-wide v0
@@ -1686,10 +1598,9 @@
 .end method
 
 .method public final getF10-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 714
-    # getter for: Landroidx/compose/ui/input/key/Key;->F10:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF10$cp()J
 
     move-result-wide v0
@@ -1698,10 +1609,9 @@
 .end method
 
 .method public final getF11-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 717
-    # getter for: Landroidx/compose/ui/input/key/Key;->F11:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF11$cp()J
 
     move-result-wide v0
@@ -1710,10 +1620,9 @@
 .end method
 
 .method public final getF12-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 720
-    # getter for: Landroidx/compose/ui/input/key/Key;->F12:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF12$cp()J
 
     move-result-wide v0
@@ -1722,10 +1631,9 @@
 .end method
 
 .method public final getF2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 690
-    # getter for: Landroidx/compose/ui/input/key/Key;->F2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF2$cp()J
 
     move-result-wide v0
@@ -1734,10 +1642,9 @@
 .end method
 
 .method public final getF3-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 693
-    # getter for: Landroidx/compose/ui/input/key/Key;->F3:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF3$cp()J
 
     move-result-wide v0
@@ -1746,10 +1653,9 @@
 .end method
 
 .method public final getF4-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 696
-    # getter for: Landroidx/compose/ui/input/key/Key;->F4:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF4$cp()J
 
     move-result-wide v0
@@ -1758,10 +1664,9 @@
 .end method
 
 .method public final getF5-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 699
-    # getter for: Landroidx/compose/ui/input/key/Key;->F5:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF5$cp()J
 
     move-result-wide v0
@@ -1770,10 +1675,9 @@
 .end method
 
 .method public final getF6-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 702
-    # getter for: Landroidx/compose/ui/input/key/Key;->F6:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF6$cp()J
 
     move-result-wide v0
@@ -1782,10 +1686,9 @@
 .end method
 
 .method public final getF7-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 705
-    # getter for: Landroidx/compose/ui/input/key/Key;->F7:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF7$cp()J
 
     move-result-wide v0
@@ -1794,10 +1697,9 @@
 .end method
 
 .method public final getF8-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 708
-    # getter for: Landroidx/compose/ui/input/key/Key;->F8:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF8$cp()J
 
     move-result-wide v0
@@ -1806,10 +1708,9 @@
 .end method
 
 .method public final getF9-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 711
-    # getter for: Landroidx/compose/ui/input/key/Key;->F9:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getF9$cp()J
 
     move-result-wide v0
@@ -1818,10 +1719,9 @@
 .end method
 
 .method public final getFive-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 208
-    # getter for: Landroidx/compose/ui/input/key/Key;->Five:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getFive$cp()J
 
     move-result-wide v0
@@ -1830,10 +1730,9 @@
 .end method
 
 .method public final getFocus-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 483
-    # getter for: Landroidx/compose/ui/input/key/Key;->Focus:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getFocus$cp()J
 
     move-result-wide v0
@@ -1842,10 +1741,9 @@
 .end method
 
 .method public final getForward-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 684
-    # getter for: Landroidx/compose/ui/input/key/Key;->Forward:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getForward$cp()J
 
     move-result-wide v0
@@ -1854,10 +1752,9 @@
 .end method
 
 .method public final getFour-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 205
-    # getter for: Landroidx/compose/ui/input/key/Key;->Four:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getFour$cp()J
 
     move-result-wide v0
@@ -1866,10 +1763,9 @@
 .end method
 
 .method public final getFunction-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 399
-    # getter for: Landroidx/compose/ui/input/key/Key;->Function:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getFunction$cp()J
 
     move-result-wide v0
@@ -1878,10 +1774,9 @@
 .end method
 
 .method public final getG-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 256
-    # getter for: Landroidx/compose/ui/input/key/Key;->G:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getG$cp()J
 
     move-result-wide v0
@@ -1890,10 +1785,9 @@
 .end method
 
 .method public final getGrave-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 440
-    # getter for: Landroidx/compose/ui/input/key/Key;->Grave:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getGrave$cp()J
 
     move-result-wide v0
@@ -1902,10 +1796,9 @@
 .end method
 
 .method public final getGuide-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 930
-    # getter for: Landroidx/compose/ui/input/key/Key;->Guide:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getGuide$cp()J
 
     move-result-wide v0
@@ -1914,10 +1807,9 @@
 .end method
 
 .method public final getH-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 259
-    # getter for: Landroidx/compose/ui/input/key/Key;->H:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getH$cp()J
 
     move-result-wide v0
@@ -1926,10 +1818,9 @@
 .end method
 
 .method public final getHeadsetHook-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 476
-    # getter for: Landroidx/compose/ui/input/key/Key;->HeadsetHook:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getHeadsetHook$cp()J
 
     move-result-wide v0
@@ -1938,10 +1829,9 @@
 .end method
 
 .method public final getHelp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 68
-    # getter for: Landroidx/compose/ui/input/key/Key;->Help:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getHelp$cp()J
 
     move-result-wide v0
@@ -1950,10 +1840,9 @@
 .end method
 
 .method public final getHenkan-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1100
-    # getter for: Landroidx/compose/ui/input/key/Key;->Henkan:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getHenkan$cp()J
 
     move-result-wide v0
@@ -1962,10 +1851,9 @@
 .end method
 
 .method public final getHome-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 62
-    # getter for: Landroidx/compose/ui/input/key/Key;->Home:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getHome$cp()J
 
     move-result-wide v0
@@ -1974,10 +1862,9 @@
 .end method
 
 .method public final getI-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 262
-    # getter for: Landroidx/compose/ui/input/key/Key;->I:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getI$cp()J
 
     move-result-wide v0
@@ -1986,10 +1873,9 @@
 .end method
 
 .method public final getInfo-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 888
-    # getter for: Landroidx/compose/ui/input/key/Key;->Info:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getInfo$cp()J
 
     move-result-wide v0
@@ -1998,10 +1884,9 @@
 .end method
 
 .method public final getInsert-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 428
-    # getter for: Landroidx/compose/ui/input/key/Key;->Insert:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getInsert$cp()J
 
     move-result-wide v0
@@ -2010,10 +1895,9 @@
 .end method
 
 .method public final getJ-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 265
-    # getter for: Landroidx/compose/ui/input/key/Key;->J:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getJ$cp()J
 
     move-result-wide v0
@@ -2022,10 +1906,9 @@
 .end method
 
 .method public final getK-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 268
-    # getter for: Landroidx/compose/ui/input/key/Key;->K:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getK$cp()J
 
     move-result-wide v0
@@ -2034,10 +1917,9 @@
 .end method
 
 .method public final getKana-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1112
-    # getter for: Landroidx/compose/ui/input/key/Key;->Kana:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getKana$cp()J
 
     move-result-wide v0
@@ -2046,10 +1928,9 @@
 .end method
 
 .method public final getKatakanaHiragana-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1103
-    # getter for: Landroidx/compose/ui/input/key/Key;->KatakanaHiragana:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getKatakanaHiragana$cp()J
 
     move-result-wide v0
@@ -2058,10 +1939,9 @@
 .end method
 
 .method public final getL-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 271
-    # getter for: Landroidx/compose/ui/input/key/Key;->L:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getL$cp()J
 
     move-result-wide v0
@@ -2070,10 +1950,9 @@
 .end method
 
 .method public final getLanguageSwitch-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1044
-    # getter for: Landroidx/compose/ui/input/key/Key;->LanguageSwitch:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getLanguageSwitch$cp()J
 
     move-result-wide v0
@@ -2082,10 +1961,9 @@
 .end method
 
 .method public final getLastChannel-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1168
-    # getter for: Landroidx/compose/ui/input/key/Key;->LastChannel:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getLastChannel$cp()J
 
     move-result-wide v0
@@ -2094,10 +1972,9 @@
 .end method
 
 .method public final getLeftBracket-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 443
-    # getter for: Landroidx/compose/ui/input/key/Key;->LeftBracket:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getLeftBracket$cp()J
 
     move-result-wide v0
@@ -2106,10 +1983,9 @@
 .end method
 
 .method public final getM-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 274
-    # getter for: Landroidx/compose/ui/input/key/Key;->M:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getM$cp()J
 
     move-result-wide v0
@@ -2118,10 +1994,9 @@
 .end method
 
 .method public final getMannerMode-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1053
-    # getter for: Landroidx/compose/ui/input/key/Key;->MannerMode:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMannerMode$cp()J
 
     move-result-wide v0
@@ -2130,10 +2005,9 @@
 .end method
 
 .method public final getMediaAudioTrack-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 829
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaAudioTrack:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaAudioTrack$cp()J
 
     move-result-wide v0
@@ -2142,10 +2016,9 @@
 .end method
 
 .method public final getMediaClose-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 822
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaClose:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaClose$cp()J
 
     move-result-wide v0
@@ -2154,10 +2027,9 @@
 .end method
 
 .method public final getMediaEject-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 836
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaEject:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaEject$cp()J
 
     move-result-wide v0
@@ -2166,10 +2038,9 @@
 .end method
 
 .method public final getMediaFastForward-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 815
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaFastForward:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaFastForward$cp()J
 
     move-result-wide v0
@@ -2178,10 +2049,9 @@
 .end method
 
 .method public final getMediaNext-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 806
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaNext:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaNext$cp()J
 
     move-result-wide v0
@@ -2190,10 +2060,9 @@
 .end method
 
 .method public final getMediaPause-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 794
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaPause:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaPause$cp()J
 
     move-result-wide v0
@@ -2202,10 +2071,9 @@
 .end method
 
 .method public final getMediaPlay-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 791
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaPlay:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaPlay$cp()J
 
     move-result-wide v0
@@ -2214,10 +2082,9 @@
 .end method
 
 .method public final getMediaPlayPause-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 797
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaPlayPause:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaPlayPause$cp()J
 
     move-result-wide v0
@@ -2226,10 +2093,9 @@
 .end method
 
 .method public final getMediaPrevious-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 809
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaPrevious:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaPrevious$cp()J
 
     move-result-wide v0
@@ -2238,10 +2104,9 @@
 .end method
 
 .method public final getMediaRecord-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 803
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaRecord:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaRecord$cp()J
 
     move-result-wide v0
@@ -2250,10 +2115,9 @@
 .end method
 
 .method public final getMediaRewind-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 812
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaRewind:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaRewind$cp()J
 
     move-result-wide v0
@@ -2262,10 +2126,9 @@
 .end method
 
 .method public final getMediaSkipBackward-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 849
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaSkipBackward:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaSkipBackward$cp()J
 
     move-result-wide v0
@@ -2274,10 +2137,9 @@
 .end method
 
 .method public final getMediaSkipForward-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 846
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaSkipForward:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaSkipForward$cp()J
 
     move-result-wide v0
@@ -2286,10 +2148,9 @@
 .end method
 
 .method public final getMediaStepBackward-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 863
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaStepBackward:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaStepBackward$cp()J
 
     move-result-wide v0
@@ -2298,10 +2159,9 @@
 .end method
 
 .method public final getMediaStepForward-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 856
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaStepForward:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaStepForward$cp()J
 
     move-result-wide v0
@@ -2310,10 +2170,9 @@
 .end method
 
 .method public final getMediaStop-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 800
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaStop:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaStop$cp()J
 
     move-result-wide v0
@@ -2322,10 +2181,9 @@
 .end method
 
 .method public final getMediaTopMenu-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 843
-    # getter for: Landroidx/compose/ui/input/key/Key;->MediaTopMenu:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMediaTopMenu$cp()J
 
     move-result-wide v0
@@ -2334,10 +2192,9 @@
 .end method
 
 .method public final getMenu-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 486
-    # getter for: Landroidx/compose/ui/input/key/Key;->Menu:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMenu$cp()J
 
     move-result-wide v0
@@ -2346,10 +2203,9 @@
 .end method
 
 .method public final getMetaLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 393
-    # getter for: Landroidx/compose/ui/input/key/Key;->MetaLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMetaLeft$cp()J
 
     move-result-wide v0
@@ -2358,10 +2214,9 @@
 .end method
 
 .method public final getMetaRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 396
-    # getter for: Landroidx/compose/ui/input/key/Key;->MetaRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMetaRight$cp()J
 
     move-result-wide v0
@@ -2370,10 +2225,9 @@
 .end method
 
 .method public final getMicrophoneMute-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 870
-    # getter for: Landroidx/compose/ui/input/key/Key;->MicrophoneMute:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMicrophoneMute$cp()J
 
     move-result-wide v0
@@ -2382,10 +2236,9 @@
 .end method
 
 .method public final getMinus-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 226
-    # getter for: Landroidx/compose/ui/input/key/Key;->Minus:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMinus$cp()J
 
     move-result-wide v0
@@ -2394,10 +2247,9 @@
 .end method
 
 .method public final getMoveEnd-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 421
-    # getter for: Landroidx/compose/ui/input/key/Key;->MoveEnd:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMoveEnd$cp()J
 
     move-result-wide v0
@@ -2406,10 +2258,9 @@
 .end method
 
 .method public final getMoveHome-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 413
-    # getter for: Landroidx/compose/ui/input/key/Key;->MoveHome:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMoveHome$cp()J
 
     move-result-wide v0
@@ -2418,10 +2269,9 @@
 .end method
 
 .method public final getMuhenkan-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1097
-    # getter for: Landroidx/compose/ui/input/key/Key;->Muhenkan:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMuhenkan$cp()J
 
     move-result-wide v0
@@ -2430,10 +2280,9 @@
 .end method
 
 .method public final getMultiply-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 229
-    # getter for: Landroidx/compose/ui/input/key/Key;->Multiply:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMultiply$cp()J
 
     move-result-wide v0
@@ -2442,10 +2291,9 @@
 .end method
 
 .method public final getMusic-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1081
-    # getter for: Landroidx/compose/ui/input/key/Key;->Music:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getMusic$cp()J
 
     move-result-wide v0
@@ -2454,10 +2302,9 @@
 .end method
 
 .method public final getN-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 277
-    # getter for: Landroidx/compose/ui/input/key/Key;->N:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getN$cp()J
 
     move-result-wide v0
@@ -2466,10 +2313,9 @@
 .end method
 
 .method public final getNavigateIn-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 90
-    # getter for: Landroidx/compose/ui/input/key/Key;->NavigateIn:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNavigateIn$cp()J
 
     move-result-wide v0
@@ -2478,10 +2324,9 @@
 .end method
 
 .method public final getNavigateNext-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 82
-    # getter for: Landroidx/compose/ui/input/key/Key;->NavigateNext:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNavigateNext$cp()J
 
     move-result-wide v0
@@ -2490,10 +2335,9 @@
 .end method
 
 .method public final getNavigateOut-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 98
-    # getter for: Landroidx/compose/ui/input/key/Key;->NavigateOut:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNavigateOut$cp()J
 
     move-result-wide v0
@@ -2502,10 +2346,9 @@
 .end method
 
 .method public final getNavigatePrevious-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 75
-    # getter for: Landroidx/compose/ui/input/key/Key;->NavigatePrevious:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNavigatePrevious$cp()J
 
     move-result-wide v0
@@ -2514,10 +2357,9 @@
 .end method
 
 .method public final getNine-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 220
-    # getter for: Landroidx/compose/ui/input/key/Key;->Nine:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNine$cp()J
 
     move-result-wide v0
@@ -2526,10 +2368,9 @@
 .end method
 
 .method public final getNotification-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 489
-    # getter for: Landroidx/compose/ui/input/key/Key;->Notification:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNotification$cp()J
 
     move-result-wide v0
@@ -2538,10 +2379,9 @@
 .end method
 
 .method public final getNumLock-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 728
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumLock:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumLock$cp()J
 
     move-result-wide v0
@@ -2550,10 +2390,9 @@
 .end method
 
 .method public final getNumPad0-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 731
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad0:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad0$cp()J
 
     move-result-wide v0
@@ -2562,10 +2401,9 @@
 .end method
 
 .method public final getNumPad1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 734
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad1$cp()J
 
     move-result-wide v0
@@ -2574,10 +2412,9 @@
 .end method
 
 .method public final getNumPad2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 737
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad2$cp()J
 
     move-result-wide v0
@@ -2586,10 +2423,9 @@
 .end method
 
 .method public final getNumPad3-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 740
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad3:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad3$cp()J
 
     move-result-wide v0
@@ -2598,10 +2434,9 @@
 .end method
 
 .method public final getNumPad4-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 743
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad4:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad4$cp()J
 
     move-result-wide v0
@@ -2610,10 +2445,9 @@
 .end method
 
 .method public final getNumPad5-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 746
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad5:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad5$cp()J
 
     move-result-wide v0
@@ -2622,10 +2456,9 @@
 .end method
 
 .method public final getNumPad6-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 749
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad6:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad6$cp()J
 
     move-result-wide v0
@@ -2634,10 +2467,9 @@
 .end method
 
 .method public final getNumPad7-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 752
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad7:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad7$cp()J
 
     move-result-wide v0
@@ -2646,10 +2478,9 @@
 .end method
 
 .method public final getNumPad8-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 755
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad8:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad8$cp()J
 
     move-result-wide v0
@@ -2658,10 +2489,9 @@
 .end method
 
 .method public final getNumPad9-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 758
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPad9:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPad9$cp()J
 
     move-result-wide v0
@@ -2670,10 +2500,9 @@
 .end method
 
 .method public final getNumPadAdd-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 770
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadAdd:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadAdd$cp()J
 
     move-result-wide v0
@@ -2682,10 +2511,9 @@
 .end method
 
 .method public final getNumPadComma-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 776
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadComma:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadComma$cp()J
 
     move-result-wide v0
@@ -2694,10 +2522,9 @@
 .end method
 
 .method public final getNumPadDivide-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 761
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadDivide:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadDivide$cp()J
 
     move-result-wide v0
@@ -2706,10 +2533,9 @@
 .end method
 
 .method public final getNumPadDot-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 773
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadDot:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadDot$cp()J
 
     move-result-wide v0
@@ -2718,10 +2544,9 @@
 .end method
 
 .method public final getNumPadEnter-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 779
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadEnter:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadEnter$cp()J
 
     move-result-wide v0
@@ -2730,10 +2555,9 @@
 .end method
 
 .method public final getNumPadEquals-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 782
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadEquals:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadEquals$cp()J
 
     move-result-wide v0
@@ -2742,10 +2566,9 @@
 .end method
 
 .method public final getNumPadLeftParenthesis-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 785
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadLeftParenthesis:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadLeftParenthesis$cp()J
 
     move-result-wide v0
@@ -2754,10 +2577,9 @@
 .end method
 
 .method public final getNumPadMultiply-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 764
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadMultiply:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadMultiply$cp()J
 
     move-result-wide v0
@@ -2766,10 +2588,9 @@
 .end method
 
 .method public final getNumPadRightParenthesis-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 788
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadRightParenthesis:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadRightParenthesis$cp()J
 
     move-result-wide v0
@@ -2778,10 +2599,9 @@
 .end method
 
 .method public final getNumPadSubtract-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 767
-    # getter for: Landroidx/compose/ui/input/key/Key;->NumPadSubtract:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumPadSubtract$cp()J
 
     move-result-wide v0
@@ -2790,10 +2610,9 @@
 .end method
 
 .method public final getNumber-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 469
-    # getter for: Landroidx/compose/ui/input/key/Key;->Number:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getNumber$cp()J
 
     move-result-wide v0
@@ -2802,10 +2621,9 @@
 .end method
 
 .method public final getO-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 280
-    # getter for: Landroidx/compose/ui/input/key/Key;->O:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getO$cp()J
 
     move-result-wide v0
@@ -2814,10 +2632,9 @@
 .end method
 
 .method public final getOne-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 196
-    # getter for: Landroidx/compose/ui/input/key/Key;->One:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getOne$cp()J
 
     move-result-wide v0
@@ -2826,10 +2643,9 @@
 .end method
 
 .method public final getP-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 283
-    # getter for: Landroidx/compose/ui/input/key/Key;->P:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getP$cp()J
 
     move-result-wide v0
@@ -2838,10 +2654,9 @@
 .end method
 
 .method public final getPageDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 498
-    # getter for: Landroidx/compose/ui/input/key/Key;->PageDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPageDown$cp()J
 
     move-result-wide v0
@@ -2850,10 +2665,9 @@
 .end method
 
 .method public final getPageUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 495
-    # getter for: Landroidx/compose/ui/input/key/Key;->PageUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPageUp$cp()J
 
     move-result-wide v0
@@ -2862,10 +2676,9 @@
 .end method
 
 .method public final getPairing-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1161
-    # getter for: Landroidx/compose/ui/input/key/Key;->Pairing:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPairing$cp()J
 
     move-result-wide v0
@@ -2874,10 +2687,9 @@
 .end method
 
 .method public final getPaste-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 437
-    # getter for: Landroidx/compose/ui/input/key/Key;->Paste:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPaste$cp()J
 
     move-result-wide v0
@@ -2886,10 +2698,9 @@
 .end method
 
 .method public final getPeriod-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 319
-    # getter for: Landroidx/compose/ui/input/key/Key;->Period:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPeriod$cp()J
 
     move-result-wide v0
@@ -2898,10 +2709,9 @@
 .end method
 
 .method public final getPictureSymbols-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 505
-    # getter for: Landroidx/compose/ui/input/key/Key;->PictureSymbols:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPictureSymbols$cp()J
 
     move-result-wide v0
@@ -2910,10 +2720,9 @@
 .end method
 
 .method public final getPlus-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 223
-    # getter for: Landroidx/compose/ui/input/key/Key;->Plus:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPlus$cp()J
 
     move-result-wide v0
@@ -2922,10 +2731,9 @@
 .end method
 
 .method public final getPound-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 235
-    # getter for: Landroidx/compose/ui/input/key/Key;->Pound:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPound$cp()J
 
     move-result-wide v0
@@ -2934,10 +2742,9 @@
 .end method
 
 .method public final getPower-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 180
-    # getter for: Landroidx/compose/ui/input/key/Key;->Power:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPower$cp()J
 
     move-result-wide v0
@@ -2946,10 +2753,9 @@
 .end method
 
 .method public final getPrintScreen-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 402
-    # getter for: Landroidx/compose/ui/input/key/Key;->PrintScreen:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getPrintScreen$cp()J
 
     move-result-wide v0
@@ -2958,10 +2764,9 @@
 .end method
 
 .method public final getProfileSwitch-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1409
-    # getter for: Landroidx/compose/ui/input/key/Key;->ProfileSwitch:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getProfileSwitch$cp()J
 
     move-result-wide v0
@@ -2970,10 +2775,9 @@
 .end method
 
 .method public final getProgramBlue-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1028
-    # getter for: Landroidx/compose/ui/input/key/Key;->ProgramBlue:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getProgramBlue$cp()J
 
     move-result-wide v0
@@ -2982,10 +2786,9 @@
 .end method
 
 .method public final getProgramGreen-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1014
-    # getter for: Landroidx/compose/ui/input/key/Key;->ProgramGreen:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getProgramGreen$cp()J
 
     move-result-wide v0
@@ -2994,10 +2797,9 @@
 .end method
 
 .method public final getProgramRed-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1007
-    # getter for: Landroidx/compose/ui/input/key/Key;->ProgramRed:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getProgramRed$cp()J
 
     move-result-wide v0
@@ -3006,10 +2808,9 @@
 .end method
 
 .method public final getProgramYellow-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1021
-    # getter for: Landroidx/compose/ui/input/key/Key;->ProgramYellow:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getProgramYellow$cp()J
 
     move-result-wide v0
@@ -3018,10 +2819,9 @@
 .end method
 
 .method public final getQ-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 286
-    # getter for: Landroidx/compose/ui/input/key/Key;->Q:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getQ$cp()J
 
     move-result-wide v0
@@ -3030,10 +2830,9 @@
 .end method
 
 .method public final getR-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 289
-    # getter for: Landroidx/compose/ui/input/key/Key;->R:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getR$cp()J
 
     move-result-wide v0
@@ -3042,10 +2841,9 @@
 .end method
 
 .method public final getRefresh-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1397
-    # getter for: Landroidx/compose/ui/input/key/Key;->Refresh:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getRefresh$cp()J
 
     move-result-wide v0
@@ -3054,10 +2852,9 @@
 .end method
 
 .method public final getRightBracket-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 446
-    # getter for: Landroidx/compose/ui/input/key/Key;->RightBracket:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getRightBracket$cp()J
 
     move-result-wide v0
@@ -3066,10 +2863,9 @@
 .end method
 
 .method public final getRo-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1109
-    # getter for: Landroidx/compose/ui/input/key/Key;->Ro:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getRo$cp()J
 
     move-result-wide v0
@@ -3078,10 +2874,9 @@
 .end method
 
 .method public final getS-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 292
-    # getter for: Landroidx/compose/ui/input/key/Key;->S:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getS$cp()J
 
     move-result-wide v0
@@ -3090,10 +2885,9 @@
 .end method
 
 .method public final getScrollLock-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 390
-    # getter for: Landroidx/compose/ui/input/key/Key;->ScrollLock:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getScrollLock$cp()J
 
     move-result-wide v0
@@ -3102,10 +2896,9 @@
 .end method
 
 .method public final getSearch-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 492
-    # getter for: Landroidx/compose/ui/input/key/Key;->Search:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSearch$cp()J
 
     move-result-wide v0
@@ -3114,10 +2907,9 @@
 .end method
 
 .method public final getSemicolon-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 455
-    # getter for: Landroidx/compose/ui/input/key/Key;->Semicolon:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSemicolon$cp()J
 
     move-result-wide v0
@@ -3126,10 +2918,9 @@
 .end method
 
 .method public final getSetTopBoxInput-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 986
-    # getter for: Landroidx/compose/ui/input/key/Key;->SetTopBoxInput:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSetTopBoxInput$cp()J
 
     move-result-wide v0
@@ -3138,10 +2929,9 @@
 .end method
 
 .method public final getSetTopBoxPower-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 979
-    # getter for: Landroidx/compose/ui/input/key/Key;->SetTopBoxPower:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSetTopBoxPower$cp()J
 
     move-result-wide v0
@@ -3150,10 +2940,9 @@
 .end method
 
 .method public final getSettings-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 958
-    # getter for: Landroidx/compose/ui/input/key/Key;->Settings:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSettings$cp()J
 
     move-result-wide v0
@@ -3162,10 +2951,9 @@
 .end method
 
 .method public final getSeven-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 214
-    # getter for: Landroidx/compose/ui/input/key/Key;->Seven:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSeven$cp()J
 
     move-result-wide v0
@@ -3174,10 +2962,9 @@
 .end method
 
 .method public final getShiftLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 328
-    # getter for: Landroidx/compose/ui/input/key/Key;->ShiftLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getShiftLeft$cp()J
 
     move-result-wide v0
@@ -3186,10 +2973,9 @@
 .end method
 
 .method public final getShiftRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 331
-    # getter for: Landroidx/compose/ui/input/key/Key;->ShiftRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getShiftRight$cp()J
 
     move-result-wide v0
@@ -3198,10 +2984,9 @@
 .end method
 
 .method public final getSix-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 211
-    # getter for: Landroidx/compose/ui/input/key/Key;->Six:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSix$cp()J
 
     move-result-wide v0
@@ -3210,10 +2995,9 @@
 .end method
 
 .method public final getSlash-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 449
-    # getter for: Landroidx/compose/ui/input/key/Key;->Slash:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSlash$cp()J
 
     move-result-wide v0
@@ -3222,10 +3006,9 @@
 .end method
 
 .method public final getSleep-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1141
-    # getter for: Landroidx/compose/ui/input/key/Key;->Sleep:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSleep$cp()J
 
     move-result-wide v0
@@ -3234,10 +3017,9 @@
 .end method
 
 .method public final getSoftLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 46
-    # getter for: Landroidx/compose/ui/input/key/Key;->SoftLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSoftLeft$cp()J
 
     move-result-wide v0
@@ -3246,10 +3028,9 @@
 .end method
 
 .method public final getSoftRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 55
-    # getter for: Landroidx/compose/ui/input/key/Key;->SoftRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSoftRight$cp()J
 
     move-result-wide v0
@@ -3258,10 +3039,9 @@
 .end method
 
 .method public final getSoftSleep-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1152
-    # getter for: Landroidx/compose/ui/input/key/Key;->SoftSleep:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSoftSleep$cp()J
 
     move-result-wide v0
@@ -3270,10 +3050,9 @@
 .end method
 
 .method public final getSpacebar-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 337
-    # getter for: Landroidx/compose/ui/input/key/Key;->Spacebar:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSpacebar$cp()J
 
     move-result-wide v0
@@ -3282,10 +3061,9 @@
 .end method
 
 .method public final getStem1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1385
-    # getter for: Landroidx/compose/ui/input/key/Key;->Stem1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getStem1$cp()J
 
     move-result-wide v0
@@ -3294,10 +3072,9 @@
 .end method
 
 .method public final getStem2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1388
-    # getter for: Landroidx/compose/ui/input/key/Key;->Stem2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getStem2$cp()J
 
     move-result-wide v0
@@ -3306,10 +3083,9 @@
 .end method
 
 .method public final getStem3-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1391
-    # getter for: Landroidx/compose/ui/input/key/Key;->Stem3:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getStem3$cp()J
 
     move-result-wide v0
@@ -3318,10 +3094,9 @@
 .end method
 
 .method public final getStemPrimary-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1382
-    # getter for: Landroidx/compose/ui/input/key/Key;->StemPrimary:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getStemPrimary$cp()J
 
     move-result-wide v0
@@ -3330,10 +3105,9 @@
 .end method
 
 .method public final getSwitchCharset-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 512
-    # getter for: Landroidx/compose/ui/input/key/Key;->SwitchCharset:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSwitchCharset$cp()J
 
     move-result-wide v0
@@ -3342,10 +3116,9 @@
 .end method
 
 .method public final getSymbol-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 344
-    # getter for: Landroidx/compose/ui/input/key/Key;->Symbol:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSymbol$cp()J
 
     move-result-wide v0
@@ -3354,10 +3127,9 @@
 .end method
 
 .method public final getSystemNavigationDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 104
-    # getter for: Landroidx/compose/ui/input/key/Key;->SystemNavigationDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSystemNavigationDown$cp()J
 
     move-result-wide v0
@@ -3366,10 +3138,9 @@
 .end method
 
 .method public final getSystemNavigationLeft-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 107
-    # getter for: Landroidx/compose/ui/input/key/Key;->SystemNavigationLeft:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSystemNavigationLeft$cp()J
 
     move-result-wide v0
@@ -3378,10 +3149,9 @@
 .end method
 
 .method public final getSystemNavigationRight-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 110
-    # getter for: Landroidx/compose/ui/input/key/Key;->SystemNavigationRight:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSystemNavigationRight$cp()J
 
     move-result-wide v0
@@ -3390,10 +3160,9 @@
 .end method
 
 .method public final getSystemNavigationUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 101
-    # getter for: Landroidx/compose/ui/input/key/Key;->SystemNavigationUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getSystemNavigationUp$cp()J
 
     move-result-wide v0
@@ -3402,10 +3171,9 @@
 .end method
 
 .method public final getT-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 295
-    # getter for: Landroidx/compose/ui/input/key/Key;->T:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getT$cp()J
 
     move-result-wide v0
@@ -3414,10 +3182,9 @@
 .end method
 
 .method public final getTab-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 334
-    # getter for: Landroidx/compose/ui/input/key/Key;->Tab:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTab$cp()J
 
     move-result-wide v0
@@ -3426,10 +3193,9 @@
 .end method
 
 .method public final getThree-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 202
-    # getter for: Landroidx/compose/ui/input/key/Key;->Three:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getThree$cp()J
 
     move-result-wide v0
@@ -3438,10 +3204,9 @@
 .end method
 
 .method public final getThumbsDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1403
-    # getter for: Landroidx/compose/ui/input/key/Key;->ThumbsDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getThumbsDown$cp()J
 
     move-result-wide v0
@@ -3450,10 +3215,9 @@
 .end method
 
 .method public final getThumbsUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1400
-    # getter for: Landroidx/compose/ui/input/key/Key;->ThumbsUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getThumbsUp$cp()J
 
     move-result-wide v0
@@ -3462,10 +3226,9 @@
 .end method
 
 .method public final getToggle2D3D-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1060
-    # getter for: Landroidx/compose/ui/input/key/Key;->Toggle2D3D:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getToggle2D3D$cp()J
 
     move-result-wide v0
@@ -3474,10 +3237,9 @@
 .end method
 
 .method public final getTv-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 915
-    # getter for: Landroidx/compose/ui/input/key/Key;->Tv:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTv$cp()J
 
     move-result-wide v0
@@ -3486,10 +3248,9 @@
 .end method
 
 .method public final getTvAntennaCable-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1261
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvAntennaCable:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvAntennaCable$cp()J
 
     move-result-wide v0
@@ -3498,10 +3259,9 @@
 .end method
 
 .method public final getTvAudioDescription-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1331
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvAudioDescription:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvAudioDescription$cp()J
 
     move-result-wide v0
@@ -3510,10 +3270,9 @@
 .end method
 
 .method public final getTvAudioDescriptionMixingVolumeDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1345
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvAudioDescriptionMixingVolumeDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvAudioDescriptionMixingVolumeDown$cp()J
 
     move-result-wide v0
@@ -3522,10 +3281,9 @@
 .end method
 
 .method public final getTvAudioDescriptionMixingVolumeUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1338
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvAudioDescriptionMixingVolumeUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvAudioDescriptionMixingVolumeUp$cp()J
 
     move-result-wide v0
@@ -3534,10 +3292,9 @@
 .end method
 
 .method public final getTvContentsMenu-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1359
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvContentsMenu:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvContentsMenu$cp()J
 
     move-result-wide v0
@@ -3546,10 +3303,9 @@
 .end method
 
 .method public final getTvDataService-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1175
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvDataService:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvDataService$cp()J
 
     move-result-wide v0
@@ -3558,10 +3314,9 @@
 .end method
 
 .method public final getTvInput-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 972
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInput:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInput$cp()J
 
     move-result-wide v0
@@ -3570,10 +3325,9 @@
 .end method
 
 .method public final getTvInputComponent1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1310
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputComponent1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputComponent1$cp()J
 
     move-result-wide v0
@@ -3582,10 +3336,9 @@
 .end method
 
 .method public final getTvInputComponent2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1317
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputComponent2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputComponent2$cp()J
 
     move-result-wide v0
@@ -3594,10 +3347,9 @@
 .end method
 
 .method public final getTvInputComposite1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1296
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputComposite1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputComposite1$cp()J
 
     move-result-wide v0
@@ -3606,10 +3358,9 @@
 .end method
 
 .method public final getTvInputComposite2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1303
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputComposite2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputComposite2$cp()J
 
     move-result-wide v0
@@ -3618,10 +3369,9 @@
 .end method
 
 .method public final getTvInputHdmi1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1268
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputHdmi1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputHdmi1$cp()J
 
     move-result-wide v0
@@ -3630,10 +3380,9 @@
 .end method
 
 .method public final getTvInputHdmi2-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1275
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputHdmi2:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputHdmi2$cp()J
 
     move-result-wide v0
@@ -3642,10 +3391,9 @@
 .end method
 
 .method public final getTvInputHdmi3-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1282
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputHdmi3:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputHdmi3$cp()J
 
     move-result-wide v0
@@ -3654,10 +3402,9 @@
 .end method
 
 .method public final getTvInputHdmi4-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1289
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputHdmi4:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputHdmi4$cp()J
 
     move-result-wide v0
@@ -3666,10 +3413,9 @@
 .end method
 
 .method public final getTvInputVga1-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1324
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvInputVga1:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvInputVga1$cp()J
 
     move-result-wide v0
@@ -3678,10 +3424,9 @@
 .end method
 
 .method public final getTvMediaContextMenu-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1367
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvMediaContextMenu:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvMediaContextMenu$cp()J
 
     move-result-wide v0
@@ -3690,10 +3435,9 @@
 .end method
 
 .method public final getTvNetwork-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1254
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvNetwork:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvNetwork$cp()J
 
     move-result-wide v0
@@ -3702,10 +3446,9 @@
 .end method
 
 .method public final getTvNumberEntry-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1205
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvNumberEntry:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvNumberEntry$cp()J
 
     move-result-wide v0
@@ -3714,10 +3457,9 @@
 .end method
 
 .method public final getTvPower-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 965
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvPower:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvPower$cp()J
 
     move-result-wide v0
@@ -3726,10 +3468,9 @@
 .end method
 
 .method public final getTvRadioService-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1189
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvRadioService:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvRadioService$cp()J
 
     move-result-wide v0
@@ -3738,10 +3479,9 @@
 .end method
 
 .method public final getTvSatellite-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1226
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvSatellite:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvSatellite$cp()J
 
     move-result-wide v0
@@ -3750,10 +3490,9 @@
 .end method
 
 .method public final getTvSatelliteBs-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1233
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvSatelliteBs:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvSatelliteBs$cp()J
 
     move-result-wide v0
@@ -3762,10 +3501,9 @@
 .end method
 
 .method public final getTvSatelliteCs-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1240
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvSatelliteCs:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvSatelliteCs$cp()J
 
     move-result-wide v0
@@ -3774,10 +3512,9 @@
 .end method
 
 .method public final getTvSatelliteService-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1247
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvSatelliteService:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvSatelliteService$cp()J
 
     move-result-wide v0
@@ -3786,10 +3523,9 @@
 .end method
 
 .method public final getTvTeletext-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1196
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvTeletext:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvTeletext$cp()J
 
     move-result-wide v0
@@ -3798,10 +3534,9 @@
 .end method
 
 .method public final getTvTerrestrialAnalog-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1212
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvTerrestrialAnalog:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvTerrestrialAnalog$cp()J
 
     move-result-wide v0
@@ -3810,10 +3545,9 @@
 .end method
 
 .method public final getTvTerrestrialDigital-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1219
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvTerrestrialDigital:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvTerrestrialDigital$cp()J
 
     move-result-wide v0
@@ -3822,10 +3556,9 @@
 .end method
 
 .method public final getTvTimerProgramming-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1375
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvTimerProgramming:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvTimerProgramming$cp()J
 
     move-result-wide v0
@@ -3834,10 +3567,9 @@
 .end method
 
 .method public final getTvZoomMode-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1352
-    # getter for: Landroidx/compose/ui/input/key/Key;->TvZoomMode:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTvZoomMode$cp()J
 
     move-result-wide v0
@@ -3846,10 +3578,9 @@
 .end method
 
 .method public final getTwo-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 199
-    # getter for: Landroidx/compose/ui/input/key/Key;->Two:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getTwo$cp()J
 
     move-result-wide v0
@@ -3858,10 +3589,9 @@
 .end method
 
 .method public final getU-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 298
-    # getter for: Landroidx/compose/ui/input/key/Key;->U:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getU$cp()J
 
     move-result-wide v0
@@ -3870,10 +3600,9 @@
 .end method
 
 .method public final getUnknown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 37
-    # getter for: Landroidx/compose/ui/input/key/Key;->Unknown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getUnknown$cp()J
 
     move-result-wide v0
@@ -3882,10 +3611,9 @@
 .end method
 
 .method public final getV-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 301
-    # getter for: Landroidx/compose/ui/input/key/Key;->V:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getV$cp()J
 
     move-result-wide v0
@@ -3894,10 +3622,9 @@
 .end method
 
 .method public final getVoiceAssist-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1182
-    # getter for: Landroidx/compose/ui/input/key/Key;->VoiceAssist:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getVoiceAssist$cp()J
 
     move-result-wide v0
@@ -3906,10 +3633,9 @@
 .end method
 
 .method public final getVolumeDown-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 177
-    # getter for: Landroidx/compose/ui/input/key/Key;->VolumeDown:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getVolumeDown$cp()J
 
     move-result-wide v0
@@ -3918,10 +3644,9 @@
 .end method
 
 .method public final getVolumeMute-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 880
-    # getter for: Landroidx/compose/ui/input/key/Key;->VolumeMute:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getVolumeMute$cp()J
 
     move-result-wide v0
@@ -3930,10 +3655,9 @@
 .end method
 
 .method public final getVolumeUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 170
-    # getter for: Landroidx/compose/ui/input/key/Key;->VolumeUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getVolumeUp$cp()J
 
     move-result-wide v0
@@ -3942,10 +3666,9 @@
 .end method
 
 .method public final getW-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 304
-    # getter for: Landroidx/compose/ui/input/key/Key;->W:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getW$cp()J
 
     move-result-wide v0
@@ -3954,10 +3677,9 @@
 .end method
 
 .method public final getWakeUp-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1149
-    # getter for: Landroidx/compose/ui/input/key/Key;->WakeUp:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getWakeUp$cp()J
 
     move-result-wide v0
@@ -3966,10 +3688,9 @@
 .end method
 
 .method public final getWindow-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 923
-    # getter for: Landroidx/compose/ui/input/key/Key;->Window:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getWindow$cp()J
 
     move-result-wide v0
@@ -3978,10 +3699,9 @@
 .end method
 
 .method public final getX-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 307
-    # getter for: Landroidx/compose/ui/input/key/Key;->X:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getX$cp()J
 
     move-result-wide v0
@@ -3990,10 +3710,9 @@
 .end method
 
 .method public final getY-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 310
-    # getter for: Landroidx/compose/ui/input/key/Key;->Y:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getY$cp()J
 
     move-result-wide v0
@@ -4002,10 +3721,9 @@
 .end method
 
 .method public final getYen-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1106
-    # getter for: Landroidx/compose/ui/input/key/Key;->Yen:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getYen$cp()J
 
     move-result-wide v0
@@ -4014,10 +3732,9 @@
 .end method
 
 .method public final getZ-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 313
-    # getter for: Landroidx/compose/ui/input/key/Key;->Z:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getZ$cp()J
 
     move-result-wide v0
@@ -4026,10 +3743,9 @@
 .end method
 
 .method public final getZenkakuHankaru-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 1091
-    # getter for: Landroidx/compose/ui/input/key/Key;->ZenkakuHankaru:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getZenkakuHankaru$cp()J
 
     move-result-wide v0
@@ -4038,10 +3754,9 @@
 .end method
 
 .method public final getZero-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 193
-    # getter for: Landroidx/compose/ui/input/key/Key;->Zero:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getZero$cp()J
 
     move-result-wide v0
@@ -4050,10 +3765,9 @@
 .end method
 
 .method public final getZoomIn-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 905
-    # getter for: Landroidx/compose/ui/input/key/Key;->ZoomIn:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getZoomIn$cp()J
 
     move-result-wide v0
@@ -4062,10 +3776,9 @@
 .end method
 
 .method public final getZoomOut-EK5gGoQ()J
-    .registers 3
+    .locals 2
 
     .line 908
-    # getter for: Landroidx/compose/ui/input/key/Key;->ZoomOut:J
     invoke-static {}, Landroidx/compose/ui/input/key/Key;->access$getZoomOut$cp()J
 
     move-result-wide v0

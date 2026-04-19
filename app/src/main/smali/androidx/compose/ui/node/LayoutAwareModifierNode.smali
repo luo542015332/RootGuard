@@ -37,7 +37,7 @@
 
 # virtual methods
 .method public onPlaced(Landroidx/compose/ui/layout/LayoutCoordinates;)V
-    .registers 3
+    .locals 1
     .param p1, "coordinates"    # Landroidx/compose/ui/layout/LayoutCoordinates;
 
     const-string/jumbo v0, "coordinates"
@@ -49,7 +49,7 @@
 .end method
 
 .method public onRemeasured-ozmzZPI(J)V
-    .registers 3
+    .locals 0
     .param p1, "size"    # J
 
     .line 49

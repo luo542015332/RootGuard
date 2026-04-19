@@ -89,7 +89,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 3
+    .locals 2
 
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -111,7 +111,7 @@
 .end method
 
 .method private final find(Ljava/lang/Object;I)I
-    .registers 9
+    .locals 6
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "hash"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -131,8 +131,8 @@
 
     .line 162
     .local v1, "high":I
-    :goto_5
-    if-gt v0, v1, :cond_2e
+    :goto_0
+    if-gt v0, v1, :cond_4
 
     .line 163
     add-int v2, v0, v1
@@ -150,46 +150,46 @@
     nop
 
     .line 166
-    if-ge v3, p2, :cond_15
+    if-ge v3, p2, :cond_0
 
     add-int/lit8 v0, v2, 0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 167
-    :cond_15
-    if-le v3, p2, :cond_1a
+    :cond_0
+    if-le v3, p2, :cond_1
 
     add-int/lit8 v1, v2, -0x1
 
-    goto :goto_5
+    goto :goto_0
 
     .line 169
-    :cond_1a
+    :cond_1
     iget-object v4, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->values:[Landroidx/compose/runtime/WeakReference;
 
     aget-object v4, v4, v2
 
-    if-eqz v4, :cond_25
+    if-eqz v4, :cond_2
 
     invoke-virtual {v4}, Landroidx/compose/runtime/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v4
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
+    :cond_2
     const/4 v4, 0x0
 
     .line 170
     .local v4, "midVal":Ljava/lang/Object;
-    :goto_26
-    if-ne p1, v4, :cond_29
+    :goto_1
+    if-ne p1, v4, :cond_3
 
     return v2
 
     .line 171
-    :cond_29
+    :cond_3
     invoke-direct {p0, v2, p1, p2}, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->findExactIndex(ILjava/lang/Object;I)I
 
     move-result v5
@@ -200,7 +200,7 @@
     .end local v2    # "mid":I
     .end local v3    # "midHash":I
     .end local v4    # "midVal":Ljava/lang/Object;
-    :cond_2e
+    :cond_4
     add-int/lit8 v2, v0, 0x1
 
     neg-int v2, v2
@@ -209,7 +209,7 @@
 .end method
 
 .method private final findExactIndex(ILjava/lang/Object;I)I
-    .registers 8
+    .locals 4
     .param p1, "midIndex"    # I
     .param p2, "value"    # Ljava/lang/Object;
     .param p3, "valueHash"    # I
@@ -223,30 +223,30 @@
     add-int/lit8 v0, p1, -0x1
 
     .local v0, "i":I
-    :goto_2
+    :goto_0
     const/4 v1, 0x0
 
     const/4 v2, -0x1
 
-    if-ge v2, v0, :cond_1d
+    if-ge v2, v0, :cond_3
 
     .line 188
     iget-object v2, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->hashes:[I
 
     aget v2, v2, v0
 
-    if-eq v2, p3, :cond_d
+    if-eq v2, p3, :cond_0
 
     .line 189
-    goto :goto_1d
+    goto :goto_1
 
     .line 191
-    :cond_d
+    :cond_0
     iget-object v2, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->values:[Landroidx/compose/runtime/WeakReference;
 
     aget-object v2, v2, v0
 
-    if-eqz v2, :cond_17
+    if-eqz v2, :cond_1
 
     invoke-virtual {v2}, Landroidx/compose/runtime/WeakReference;->get()Ljava/lang/Object;
 
@@ -254,37 +254,37 @@
 
     .line 192
     .local v1, "v":Ljava/lang/Object;
-    :cond_17
-    if-ne v1, p2, :cond_1a
+    :cond_1
+    if-ne v1, p2, :cond_2
 
     .line 193
     return v0
 
     .line 187
     .end local v1    # "v":Ljava/lang/Object;
-    :cond_1a
+    :cond_2
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_2
+    goto :goto_0
 
     .line 197
     .end local v0    # "i":I
-    :cond_1d
-    :goto_1d
+    :cond_3
+    :goto_1
     add-int/lit8 v0, p1, 0x1
 
     .restart local v0    # "i":I
     iget v2, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->size:I
 
-    :goto_21
-    if-ge v0, v2, :cond_3f
+    :goto_2
+    if-ge v0, v2, :cond_7
 
     .line 198
     iget-object v3, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->hashes:[I
 
     aget v3, v3, v0
 
-    if-eq v3, p3, :cond_2d
+    if-eq v3, p3, :cond_4
 
     .line 200
     add-int/lit8 v1, v0, 0x1
@@ -294,40 +294,40 @@
     return v1
 
     .line 202
-    :cond_2d
+    :cond_4
     iget-object v3, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->values:[Landroidx/compose/runtime/WeakReference;
 
     aget-object v3, v3, v0
 
-    if-eqz v3, :cond_38
+    if-eqz v3, :cond_5
 
     invoke-virtual {v3}, Landroidx/compose/runtime/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v3
 
-    goto :goto_39
+    goto :goto_3
 
-    :cond_38
+    :cond_5
     move-object v3, v1
 
     .line 203
     .local v3, "v":Ljava/lang/Object;
-    :goto_39
-    if-ne v3, p2, :cond_3c
+    :goto_3
+    if-ne v3, p2, :cond_6
 
     .line 204
     return v0
 
     .line 197
     .end local v3    # "v":Ljava/lang/Object;
-    :cond_3c
+    :cond_6
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_21
+    goto :goto_2
 
     .line 209
     .end local v0    # "i":I
-    :cond_3f
+    :cond_7
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->size:I
 
     add-int/lit8 v0, v0, 0x1
@@ -340,7 +340,7 @@
 
 # virtual methods
 .method public final add(Ljava/lang/Object;)Z
-    .registers 20
+    .locals 18
     .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -370,7 +370,7 @@
 
     .line 57
     .local v4, "hash":I
-    if-lez v3, :cond_1b
+    if-lez v3, :cond_0
 
     .line 58
     invoke-direct {v0, v1, v4}, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->find(Ljava/lang/Object;I)I
@@ -378,7 +378,7 @@
     move-result v2
 
     .line 60
-    if-ltz v2, :cond_1c
+    if-ltz v2, :cond_1
 
     .line 61
     const/4 v5, 0x0
@@ -386,11 +386,11 @@
     return v5
 
     .line 64
-    :cond_1b
+    :cond_0
     const/4 v2, -0x1
 
     .line 67
-    :cond_1c
+    :cond_1
     add-int/lit8 v5, v2, 0x1
 
     neg-int v5, v5
@@ -403,7 +403,7 @@
 
     .line 69
     .local v13, "capacity":I
-    if-ne v3, v13, :cond_5f
+    if-ne v3, v13, :cond_2
 
     .line 70
     mul-int/lit8 v14, v13, 0x2
@@ -515,12 +515,12 @@
     .end local v2    # "newHashes":[I
     .end local v14    # "newCapacity":I
     .end local v15    # "newValues":[Landroidx/compose/runtime/WeakReference;
-    goto :goto_73
+    goto :goto_0
 
     .line 96
     .end local v17    # "index":I
     .local v2, "index":I
-    :cond_5f
+    :cond_2
     move/from16 v17, v2
 
     .line 97
@@ -559,7 +559,7 @@
     invoke-static {v2, v2, v6, v5, v3}, Lkotlin/collections/ArraysKt;->copyInto([I[IIII)[I
 
     .line 111
-    :goto_73
+    :goto_0
     iget-object v2, v0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->values:[Landroidx/compose/runtime/WeakReference;
 
     new-instance v6, Landroidx/compose/runtime/WeakReference;
@@ -587,7 +587,7 @@
 .end method
 
 .method public final getHashes$runtime_release()[I
-    .registers 2
+    .locals 1
 
     .line 47
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->hashes:[I
@@ -596,7 +596,7 @@
 .end method
 
 .method public final getSize$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 40
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->size:I
@@ -605,7 +605,7 @@
 .end method
 
 .method public final getValues$runtime_release()[Landroidx/compose/runtime/WeakReference;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()[",
@@ -621,7 +621,7 @@
 .end method
 
 .method public final isValid$runtime_release()Z
-    .registers 12
+    .locals 11
 
     .line 214
     iget v0, p0, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->size:I
@@ -642,12 +642,12 @@
     .local v3, "capacity":I
     const/4 v4, 0x0
 
-    if-le v0, v3, :cond_b
+    if-le v0, v3, :cond_0
 
     return v4
 
     .line 224
-    :cond_b
+    :cond_0
     const/high16 v5, -0x80000000
 
     .line 225
@@ -655,47 +655,47 @@
     const/4 v6, 0x0
 
     .local v6, "i":I
-    :goto_e
-    if-ge v6, v0, :cond_2b
+    :goto_0
+    if-ge v6, v0, :cond_4
 
     .line 226
     aget v7, v2, v6
 
     .line 227
     .local v7, "hash":I
-    if-ge v7, v5, :cond_15
+    if-ge v7, v5, :cond_1
 
     return v4
 
     .line 228
-    :cond_15
+    :cond_1
     aget-object v8, v1, v6
 
-    if-nez v8, :cond_1a
+    if-nez v8, :cond_2
 
     return v4
 
     .line 229
     .local v8, "entry":Landroidx/compose/runtime/WeakReference;
-    :cond_1a
+    :cond_2
     invoke-virtual {v8}, Landroidx/compose/runtime/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v9
 
     .line 230
     .local v9, "value":Ljava/lang/Object;
-    if-eqz v9, :cond_27
+    if-eqz v9, :cond_3
 
     invoke-static {v9}, Landroidx/compose/runtime/ActualJvm_jvmKt;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v10
 
-    if-eq v7, v10, :cond_27
+    if-eq v7, v10, :cond_3
 
     return v4
 
     .line 231
-    :cond_27
+    :cond_3
     move v5, v7
 
     .line 225
@@ -704,48 +704,48 @@
     .end local v9    # "value":Ljava/lang/Object;
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_e
+    goto :goto_0
 
     .line 235
     .end local v6    # "i":I
-    :cond_2b
+    :cond_4
     move v6, v0
 
     .restart local v6    # "i":I
-    :goto_2c
-    if-ge v6, v3, :cond_3b
+    :goto_1
+    if-ge v6, v3, :cond_7
 
     .line 236
     aget v7, v2, v6
 
-    if-eqz v7, :cond_33
+    if-eqz v7, :cond_5
 
     return v4
 
     .line 237
-    :cond_33
+    :cond_5
     aget-object v7, v1, v6
 
-    if-eqz v7, :cond_38
+    if-eqz v7, :cond_6
 
     return v4
 
     .line 235
-    :cond_38
+    :cond_6
     add-int/lit8 v6, v6, 0x1
 
-    goto :goto_2c
+    goto :goto_1
 
     .line 240
     .end local v6    # "i":I
-    :cond_3b
+    :cond_7
     const/4 v4, 0x1
 
     return v4
 .end method
 
 .method public final removeIf(Lkotlin/jvm/functions/Function1;)V
-    .registers 10
+    .locals 8
     .param p1, "block"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -778,10 +778,10 @@
     const/4 v3, 0x0
 
     .local v3, "i":I
-    :goto_d
+    :goto_0
     const/4 v4, 0x0
 
-    if-ge v3, v1, :cond_43
+    if-ge v3, v1, :cond_3
 
     .line 130
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->getValues$runtime_release()[Landroidx/compose/runtime/WeakReference;
@@ -792,7 +792,7 @@
 
     .line 131
     .local v5, "entry":Landroidx/compose/runtime/WeakReference;
-    if-eqz v5, :cond_1c
+    if-eqz v5, :cond_0
 
     invoke-virtual {v5}, Landroidx/compose/runtime/WeakReference;->get()Ljava/lang/Object;
 
@@ -800,8 +800,8 @@
 
     .line 132
     .local v4, "value":Ljava/lang/Object;
-    :cond_1c
-    if-eqz v4, :cond_40
+    :cond_0
+    if-eqz v4, :cond_2
 
     invoke-interface {p1, v4}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -813,10 +813,10 @@
 
     move-result v6
 
-    if-nez v6, :cond_40
+    if-nez v6, :cond_2
 
     .line 134
-    if-eq v2, v3, :cond_3e
+    if-eq v2, v3, :cond_1
 
     .line 135
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->getValues$runtime_release()[Landroidx/compose/runtime/WeakReference;
@@ -839,25 +839,25 @@
     aput v7, v6, v2
 
     .line 138
-    :cond_3e
+    :cond_1
     add-int/lit8 v2, v2, 0x1
 
     .line 129
     .end local v4    # "value":Ljava/lang/Object;
     .end local v5    # "entry":Landroidx/compose/runtime/WeakReference;
-    :cond_40
+    :cond_2
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_d
+    goto :goto_0
 
     .line 143
     .end local v3    # "i":I
-    :cond_43
+    :cond_3
     move v3, v2
 
     .restart local v3    # "i":I
-    :goto_44
-    if-ge v3, v1, :cond_56
+    :goto_1
+    if-ge v3, v1, :cond_4
 
     .line 144
     invoke-virtual {p0}, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->getValues$runtime_release()[Landroidx/compose/runtime/WeakReference;
@@ -878,23 +878,23 @@
     .line 143
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_44
+    goto :goto_1
 
     .line 149
     .end local v3    # "i":I
-    :cond_56
-    if-eq v2, v1, :cond_5b
+    :cond_4
+    if-eq v2, v1, :cond_5
 
     .line 150
     invoke-virtual {p0, v2}, Landroidx/compose/runtime/snapshots/SnapshotWeakSet;->setSize$runtime_release(I)V
 
     .line 152
-    :cond_5b
+    :cond_5
     return-void
 .end method
 
 .method public final setHashes$runtime_release([I)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # [I
 
     const-string v0, "<set-?>"
@@ -908,7 +908,7 @@
 .end method
 
 .method public final setSize$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 40
@@ -918,7 +918,7 @@
 .end method
 
 .method public final setValues$runtime_release([Landroidx/compose/runtime/WeakReference;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # [Landroidx/compose/runtime/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {

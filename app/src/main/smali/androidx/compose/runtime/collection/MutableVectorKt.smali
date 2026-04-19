@@ -46,7 +46,7 @@
 
 # direct methods
 .method public static final synthetic MutableVector(I)Landroidx/compose/runtime/collection/MutableVector;
-    .registers 5
+    .locals 4
     .param p0, "capacity"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -78,7 +78,7 @@
 .end method
 
 .method public static final synthetic MutableVector(ILkotlin/jvm/functions/Function1;)Landroidx/compose/runtime/collection/MutableVector;
-    .registers 6
+    .locals 4
     .param p0, "size"    # I
     .param p1, "init"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -114,8 +114,8 @@
 
     new-array v1, p0, [Ljava/lang/Object;
 
-    :goto_11
-    if-ge v2, p0, :cond_20
+    :goto_0
+    if-ge v2, p0, :cond_0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -129,11 +129,11 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 1175
     .local v1, "arr":[Ljava/lang/Object;
-    :cond_20
+    :cond_0
     new-instance v2, Landroidx/compose/runtime/collection/MutableVector;
 
     invoke-direct {v2, v1, p0}, Landroidx/compose/runtime/collection/MutableVector;-><init>([Ljava/lang/Object;I)V
@@ -142,17 +142,17 @@
 .end method
 
 .method public static synthetic MutableVector$default(IILjava/lang/Object;)Landroidx/compose/runtime/collection/MutableVector;
-    .registers 5
+    .locals 2
     .param p0, "capacity"    # I
 
     .line 1161
     and-int/lit8 p1, p1, 0x1
 
-    if-eqz p1, :cond_6
+    if-eqz p1, :cond_0
 
     const/16 p0, 0x10
 
-    :cond_6
+    :cond_0
     const/4 p1, 0x0
 
     .line 1162
@@ -173,7 +173,7 @@
 .end method
 
 .method public static final synthetic access$checkIndex(Ljava/util/List;I)V
-    .registers 2
+    .locals 0
     .param p0, "$receiver"    # Ljava/util/List;
     .param p1, "index"    # I
 
@@ -184,7 +184,7 @@
 .end method
 
 .method public static final synthetic access$checkSubIndex(Ljava/util/List;II)V
-    .registers 3
+    .locals 0
     .param p0, "$receiver"    # Ljava/util/List;
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
@@ -196,7 +196,7 @@
 .end method
 
 .method private static final checkIndex(Ljava/util/List;I)V
-    .registers 6
+    .locals 4
     .param p0, "$this$checkIndex"    # Ljava/util/List;
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -214,15 +214,15 @@
 
     .line 1134
     .local v0, "size":I
-    if-ltz p1, :cond_9
+    if-ltz p1, :cond_0
 
-    if-ge p1, v0, :cond_9
+    if-ge p1, v0, :cond_0
 
     .line 1138
     return-void
 
     .line 1135
-    :cond_9
+    :cond_0
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -273,7 +273,7 @@
 .end method
 
 .method private static final checkSubIndex(Ljava/util/List;II)V
-    .registers 7
+    .locals 4
     .param p0, "$this$checkSubIndex"    # Ljava/util/List;
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
@@ -292,19 +292,19 @@
 
     .line 1142
     .local v0, "size":I
-    if-gt p1, p2, :cond_55
+    if-gt p1, p2, :cond_2
 
     .line 1146
-    if-ltz p1, :cond_35
+    if-ltz p1, :cond_1
 
     .line 1149
-    if-gt p2, v0, :cond_b
+    if-gt p2, v0, :cond_0
 
     .line 1154
     return-void
 
     .line 1150
-    :cond_b
+    :cond_0
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
     .line 1151
@@ -348,7 +348,7 @@
     throw v1
 
     .line 1147
-    :cond_35
+    :cond_1
     new-instance v1, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -380,7 +380,7 @@
     throw v1
 
     .line 1143
-    :cond_55
+    :cond_2
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -431,7 +431,7 @@
 .end method
 
 .method public static final synthetic mutableVectorOf()Landroidx/compose/runtime/collection/MutableVector;
-    .registers 6
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -475,7 +475,7 @@
 .end method
 
 .method public static final varargs synthetic mutableVectorOf([Ljava/lang/Object;)Landroidx/compose/runtime/collection/MutableVector;
-    .registers 4
+    .locals 3
     .param p0, "elements"    # [Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

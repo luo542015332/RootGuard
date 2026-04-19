@@ -73,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 0
     .param p1, "onEvent"    # Lkotlin/jvm/functions/Function1;
     .param p2, "onPreEvent"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
@@ -108,7 +108,7 @@
 
 # virtual methods
 .method public final getOnEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -126,7 +126,7 @@
 .end method
 
 .method public final getOnPreEvent()Lkotlin/jvm/functions/Function1;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -144,7 +144,7 @@
 .end method
 
 .method public onInterceptKeyBeforeSoftKeyboard-ZmokQxo(Landroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 2
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     const-string/jumbo v0, "event"
@@ -154,7 +154,7 @@
     .line 98
     iget-object v0, p0, Landroidx/compose/ui/input/key/InterceptedKeyInputModifierNodeImpl;->onEvent:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     invoke-static {p1}, Landroidx/compose/ui/input/key/KeyEvent;->box-impl(Landroid/view/KeyEvent;)Landroidx/compose/ui/input/key/KeyEvent;
 
@@ -170,17 +170,17 @@
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1a
+    :goto_0
     return v0
 .end method
 
 .method public onPreInterceptKeyBeforeSoftKeyboard-ZmokQxo(Landroid/view/KeyEvent;)Z
-    .registers 4
+    .locals 2
     .param p1, "event"    # Landroid/view/KeyEvent;
 
     const-string/jumbo v0, "event"
@@ -190,7 +190,7 @@
     .line 100
     iget-object v0, p0, Landroidx/compose/ui/input/key/InterceptedKeyInputModifierNodeImpl;->onPreEvent:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_0
 
     invoke-static {p1}, Landroidx/compose/ui/input/key/KeyEvent;->box-impl(Landroid/view/KeyEvent;)Landroidx/compose/ui/input/key/KeyEvent;
 
@@ -206,17 +206,17 @@
 
     move-result v0
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_1a
+    :goto_0
     return v0
 .end method
 
 .method public final setOnEvent(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -236,7 +236,7 @@
 .end method
 
 .method public final setOnPreEvent(Lkotlin/jvm/functions/Function1;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {

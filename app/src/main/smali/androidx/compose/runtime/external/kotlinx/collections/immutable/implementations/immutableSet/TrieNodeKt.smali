@@ -57,7 +57,7 @@
 
 # direct methods
 .method public static final synthetic access$addElementAtIndex([Ljava/lang/Object;ILjava/lang/Object;)[Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p0, "$receiver"    # [Ljava/lang/Object;
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
@@ -71,7 +71,7 @@
 .end method
 
 .method public static final synthetic access$removeCellAtIndex([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p0, "$receiver"    # [Ljava/lang/Object;
     .param p1, "cellIndex"    # I
 
@@ -84,7 +84,7 @@
 .end method
 
 .method private static final addElementAtIndex([Ljava/lang/Object;ILjava/lang/Object;)[Ljava/lang/Object;
-    .registers 11
+    .locals 8
     .param p0, "$this$addElementAtIndex"    # [Ljava/lang/Object;
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
@@ -139,7 +139,7 @@
 .end method
 
 .method private static final filterTo([Ljava/lang/Object;[Ljava/lang/Object;ILkotlin/jvm/functions/Function1;)I
-    .registers 12
+    .locals 8
     .param p0, "$this$filterTo"    # [Ljava/lang/Object;
     .param p1, "newArray"    # [Ljava/lang/Object;
     .param p2, "newArrayOffset"    # I
@@ -170,26 +170,26 @@
 
     .line 56
     .local v2, "j":I
-    :goto_3
+    :goto_0
     array-length v3, p0
 
-    if-ge v1, v3, :cond_34
+    if-ge v1, v3, :cond_3
 
     .line 57
     const/4 v3, 0x0
 
     const/4 v4, 0x1
 
-    if-gt v2, v1, :cond_c
+    if-gt v2, v1, :cond_0
 
     move v5, v4
 
-    goto :goto_d
+    goto :goto_1
 
-    :cond_c
+    :cond_0
     move v5, v3
 
-    :goto_d
+    :goto_1
     invoke-static {v5}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 58
@@ -207,7 +207,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_30
+    if-eqz v6, :cond_2
 
     .line 60
     add-int v6, p2, v2
@@ -226,29 +226,29 @@
 
     array-length v7, p1
 
-    if-gt v6, v7, :cond_2d
+    if-gt v6, v7, :cond_1
 
     move v3, v4
 
-    :cond_2d
+    :cond_1
     invoke-static {v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
-    :cond_30
+    :cond_2
     add-int/lit8 v1, v1, 0x1
 
     .line 64
     nop
 
     .end local v5    # "e":Ljava/lang/Object;
-    goto :goto_3
+    goto :goto_0
 
     .line 66
-    :cond_34
+    :cond_3
     return v2
 .end method
 
 .method static synthetic filterTo$default([Ljava/lang/Object;[Ljava/lang/Object;ILkotlin/jvm/functions/Function1;ILjava/lang/Object;)I
-    .registers 12
+    .locals 6
     .param p0, "$this$filterTo_u24default"    # [Ljava/lang/Object;
     .param p1, "newArray"    # [Ljava/lang/Object;
     .param p2, "newArrayOffset"    # I
@@ -257,16 +257,16 @@
     .line 50
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_0
 
     .line 52
     const/4 p2, 0x0
 
     .line 50
-    :cond_5
+    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_e
+    if-eqz p4, :cond_1
 
     .line 53
     sget-object p4, Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNodeKt$filterTo$1;->INSTANCE:Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableSet/TrieNodeKt$filterTo$1;
@@ -276,7 +276,7 @@
     check-cast p3, Lkotlin/jvm/functions/Function1;
 
     .line 50
-    :cond_e
+    :cond_1
     const/4 p4, 0x0
 
     .line 54
@@ -289,26 +289,26 @@
 
     .line 56
     .local v0, "j":I
-    :goto_11
+    :goto_0
     array-length v1, p0
 
-    if-ge p5, v1, :cond_42
+    if-ge p5, v1, :cond_5
 
     .line 57
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-gt v0, p5, :cond_1a
+    if-gt v0, p5, :cond_2
 
     move v3, v2
 
-    goto :goto_1b
+    goto :goto_1
 
-    :cond_1a
+    :cond_2
     move v3, v1
 
-    :goto_1b
+    :goto_1
     invoke-static {v3}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
     .line 58
@@ -326,7 +326,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_3e
+    if-eqz v4, :cond_4
 
     .line 60
     add-int v4, p2, v0
@@ -345,29 +345,29 @@
 
     array-length v5, p1
 
-    if-gt v4, v5, :cond_3b
+    if-gt v4, v5, :cond_3
 
     move v1, v2
 
-    :cond_3b
+    :cond_3
     invoke-static {v1}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/CommonFunctionsKt;->assert(Z)V
 
-    :cond_3e
+    :cond_4
     add-int/lit8 p5, p5, 0x1
 
     .line 64
     nop
 
     .end local v3    # "e":Ljava/lang/Object;
-    goto :goto_11
+    goto :goto_0
 
     .line 66
-    :cond_42
+    :cond_5
     return v0
 .end method
 
 .method public static final indexSegment(II)I
-    .registers 3
+    .locals 1
     .param p0, "index"    # I
     .param p1, "shift"    # I
 
@@ -380,7 +380,7 @@
 .end method
 
 .method private static final removeCellAtIndex([Ljava/lang/Object;I)[Ljava/lang/Object;
-    .registers 10
+    .locals 8
     .param p0, "$this$removeCellAtIndex"    # [Ljava/lang/Object;
     .param p1, "cellIndex"    # I
 

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final getLayoutId(Landroidx/compose/ui/layout/Measurable;)Ljava/lang/Object;
-    .registers 4
+    .locals 3
     .param p0, "$this$layoutId"    # Landroidx/compose/ui/layout/Measurable;
 
     const-string v0, "<this>"
@@ -45,28 +45,28 @@
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     check-cast v0, Landroidx/compose/ui/layout/LayoutIdParentData;
 
-    goto :goto_12
+    goto :goto_0
 
-    :cond_11
+    :cond_0
     move-object v0, v2
 
-    :goto_12
-    if-eqz v0, :cond_18
+    :goto_0
+    if-eqz v0, :cond_1
 
     invoke-interface {v0}, Landroidx/compose/ui/layout/LayoutIdParentData;->getLayoutId()Ljava/lang/Object;
 
     move-result-object v2
 
-    :cond_18
+    :cond_1
     return-object v2
 .end method
 
 .method public static final layoutId(Landroidx/compose/ui/Modifier;Ljava/lang/Object;)Landroidx/compose/ui/Modifier;
-    .registers 3
+    .locals 1
     .param p0, "$this$layoutId"    # Landroidx/compose/ui/Modifier;
     .param p1, "layoutId"    # Ljava/lang/Object;
 

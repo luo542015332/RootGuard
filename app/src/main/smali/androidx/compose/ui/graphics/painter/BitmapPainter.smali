@@ -81,7 +81,7 @@
 
 # direct methods
 .method private constructor <init>(Landroidx/compose/ui/graphics/ImageBitmap;JJ)V
-    .registers 8
+    .locals 2
     .param p1, "image"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p2, "srcOffset"    # J
     .param p4, "srcSize"    # J
@@ -128,12 +128,12 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/ImageBitmap;JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 15
+    .locals 7
 
     .line 71
     and-int/lit8 p7, p6, 0x2
 
-    if-eqz p7, :cond_c
+    if-eqz p7, :cond_0
 
     .line 73
     sget-object p2, Landroidx/compose/ui/unit/IntOffset;->Companion:Landroidx/compose/ui/unit/IntOffset$Companion;
@@ -144,16 +144,16 @@
 
     move-wide v2, p2
 
-    goto :goto_d
+    goto :goto_0
 
     .line 71
-    :cond_c
+    :cond_0
     move-wide v2, p2
 
-    :goto_d
+    :goto_0
     and-int/lit8 p2, p6, 0x4
 
-    if-eqz p2, :cond_1f
+    if-eqz p2, :cond_1
 
     .line 74
     invoke-interface {p1}, Landroidx/compose/ui/graphics/ImageBitmap;->getWidth()I
@@ -170,13 +170,13 @@
 
     move-wide v4, p4
 
-    goto :goto_20
+    goto :goto_1
 
     .line 71
-    :cond_1f
+    :cond_1
     move-wide v4, p4
 
-    :goto_20
+    :goto_1
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -190,7 +190,7 @@
 .end method
 
 .method public synthetic constructor <init>(Landroidx/compose/ui/graphics/ImageBitmap;JJLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 7
+    .locals 0
 
     invoke-direct/range {p0 .. p5}, Landroidx/compose/ui/graphics/painter/BitmapPainter;-><init>(Landroidx/compose/ui/graphics/ImageBitmap;JJ)V
 
@@ -198,7 +198,7 @@
 .end method
 
 .method private final validateSize-N5eqBDc(JJ)J
-    .registers 7
+    .locals 2
     .param p1, "srcOffset"    # J
     .param p3, "srcSize"    # J
 
@@ -210,28 +210,28 @@
 
     move-result v0
 
-    if-ltz v0, :cond_33
+    if-ltz v0, :cond_0
 
     .line 125
     invoke-static {p1, p2}, Landroidx/compose/ui/unit/IntOffset;->getY-impl(J)I
 
     move-result v0
 
-    if-ltz v0, :cond_33
+    if-ltz v0, :cond_0
 
     .line 126
     invoke-static {p3, p4}, Landroidx/compose/ui/unit/IntSize;->getWidth-impl(J)I
 
     move-result v0
 
-    if-ltz v0, :cond_33
+    if-ltz v0, :cond_0
 
     .line 127
     invoke-static {p3, p4}, Landroidx/compose/ui/unit/IntSize;->getHeight-impl(J)I
 
     move-result v0
 
-    if-ltz v0, :cond_33
+    if-ltz v0, :cond_0
 
     .line 128
     invoke-static {p3, p4}, Landroidx/compose/ui/unit/IntSize;->getWidth-impl(J)I
@@ -244,7 +244,7 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_33
+    if-gt v0, v1, :cond_0
 
     .line 129
     invoke-static {p3, p4}, Landroidx/compose/ui/unit/IntSize;->getHeight-impl(J)I
@@ -257,23 +257,23 @@
 
     move-result v1
 
-    if-gt v0, v1, :cond_33
+    if-gt v0, v1, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_34
+    goto :goto_0
 
-    :cond_33
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_34
-    if-eqz v0, :cond_37
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 131
     return-wide p3
 
     .line 129
-    :cond_37
+    :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Failed requirement."
@@ -290,7 +290,7 @@
 
 # virtual methods
 .method protected applyAlpha(F)Z
-    .registers 3
+    .locals 1
     .param p1, "alpha"    # F
 
     .line 113
@@ -303,7 +303,7 @@
 .end method
 
 .method protected applyColorFilter(Landroidx/compose/ui/graphics/ColorFilter;)Z
-    .registers 3
+    .locals 1
     .param p1, "colorFilter"    # Landroidx/compose/ui/graphics/ColorFilter;
 
     .line 118
@@ -316,28 +316,28 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 9
+    .locals 7
     .param p1, "other"    # Ljava/lang/Object;
 
     .line 135
     const/4 v0, 0x1
 
-    if-ne p0, p1, :cond_4
+    if-ne p0, p1, :cond_0
 
     return v0
 
     .line 136
-    :cond_4
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/painter/BitmapPainter;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_a
+    if-nez v1, :cond_1
 
     return v2
 
     .line 138
-    :cond_a
+    :cond_1
     iget-object v1, p0, Landroidx/compose/ui/graphics/painter/BitmapPainter;->image:Landroidx/compose/ui/graphics/ImageBitmap;
 
     move-object v3, p1
@@ -350,12 +350,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_18
+    if-nez v1, :cond_2
 
     return v2
 
     .line 139
-    :cond_18
+    :cond_2
     iget-wide v3, p0, Landroidx/compose/ui/graphics/painter/BitmapPainter;->srcOffset:J
 
     move-object v1, p1
@@ -368,12 +368,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_26
+    if-nez v1, :cond_3
 
     return v2
 
     .line 140
-    :cond_26
+    :cond_3
     iget-wide v3, p0, Landroidx/compose/ui/graphics/painter/BitmapPainter;->srcSize:J
 
     move-object v1, p1
@@ -386,12 +386,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_34
+    if-nez v1, :cond_4
 
     return v2
 
     .line 141
-    :cond_34
+    :cond_4
     iget v1, p0, Landroidx/compose/ui/graphics/painter/BitmapPainter;->filterQuality:I
 
     move-object v3, p1
@@ -404,17 +404,17 @@
 
     move-result v1
 
-    if-nez v1, :cond_42
+    if-nez v1, :cond_5
 
     return v2
 
     .line 142
-    :cond_42
+    :cond_5
     return v0
 .end method
 
 .method public final getFilterQuality-f-v9h1I$ui_graphics_release()I
-    .registers 2
+    .locals 1
 
     .line 84
     iget v0, p0, Landroidx/compose/ui/graphics/painter/BitmapPainter;->filterQuality:I
@@ -423,7 +423,7 @@
 .end method
 
 .method public getIntrinsicSize-NH-jbRc()J
-    .registers 3
+    .locals 2
 
     .line 110
     iget-wide v0, p0, Landroidx/compose/ui/graphics/painter/BitmapPainter;->size:J
@@ -436,7 +436,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 5
+    .locals 4
 
     .line 146
     iget-object v0, p0, Landroidx/compose/ui/graphics/painter/BitmapPainter;->image:Landroidx/compose/ui/graphics/ImageBitmap;
@@ -490,7 +490,7 @@
 .end method
 
 .method protected onDraw(Landroidx/compose/ui/graphics/drawscope/DrawScope;)V
-    .registers 20
+    .locals 18
     .param p1, "$this$onDraw"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
 
     move-object/from16 v0, p0
@@ -580,7 +580,7 @@
 .end method
 
 .method public final setFilterQuality-vDHp3xo$ui_graphics_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 84
@@ -590,7 +590,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 4
+    .locals 3
 
     .line 154
     new-instance v0, Ljava/lang/StringBuilder;

@@ -54,7 +54,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/platform/AndroidComposeView;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/ui/platform/AndroidComposeView$keyInputModifier$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
@@ -68,7 +68,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 202
@@ -88,7 +88,7 @@
 .end method
 
 .method public final invoke-ZmokQxo(Landroid/view/KeyEvent;)Ljava/lang/Boolean;
-    .registers 5
+    .locals 3
     .param p1, "it"    # Landroid/view/KeyEvent;
 
     const-string/jumbo v0, "it"
@@ -104,7 +104,7 @@
 
     .line 204
     .local v0, "focusDirection":Landroidx/compose/ui/focus/FocusDirection;
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     invoke-static {p1}, Landroidx/compose/ui/input/key/KeyEvent_androidKt;->getType-ZmokQxo(Landroid/view/KeyEvent;)I
 
@@ -120,12 +120,12 @@
 
     move-result v1
 
-    if-nez v1, :cond_1f
+    if-nez v1, :cond_0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 207
-    :cond_1f
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/platform/AndroidComposeView$keyInputModifier$1;->this$0:Landroidx/compose/ui/platform/AndroidComposeView;
 
     invoke-virtual {v1}, Landroidx/compose/ui/platform/AndroidComposeView;->getFocusOwner()Landroidx/compose/ui/focus/FocusOwner;
@@ -147,8 +147,8 @@
     return-object v1
 
     .line 204
-    :cond_32
-    :goto_32
+    :cond_1
+    :goto_0
     const/4 v1, 0x0
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

@@ -85,7 +85,7 @@
 .end method
 
 .method public subcompose(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)Ljava/util/List;
-    .registers 4
+    .locals 1
     .param p1, "slotId"    # Ljava/lang/Object;
     .param p2, "content"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;

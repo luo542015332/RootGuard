@@ -61,7 +61,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/SnapshotMutationPolicy;Lkotlin/jvm/functions/Function0;)V
-    .registers 4
+    .locals 1
     .param p1, "policy"    # Landroidx/compose/runtime/SnapshotMutationPolicy;
     .param p2, "defaultFactory"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -93,7 +93,7 @@
 .end method
 
 .method public static final synthetic access$getPolicy$p(Landroidx/compose/runtime/DynamicProvidableCompositionLocal;)Landroidx/compose/runtime/SnapshotMutationPolicy;
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/runtime/DynamicProvidableCompositionLocal;
 
     .line 120
@@ -105,7 +105,7 @@
 
 # virtual methods
 .method public provided$runtime_release(Ljava/lang/Object;Landroidx/compose/runtime/Composer;I)Landroidx/compose/runtime/State;
-    .registers 13
+    .locals 9
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -131,7 +131,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 126
     const/4 v1, -0x1
@@ -140,7 +140,7 @@
 
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_18
+    :cond_0
     const/4 v0, 0x0
 
     .local v0, "$changed$iv":I
@@ -181,14 +181,13 @@
 
     move-result-object v7
 
-    if-ne v5, v7, :cond_44
+    if-ne v5, v7, :cond_1
 
     .line 259
     const/4 v7, 0x0
 
     .line 126
     .local v7, "$i$a$-remember-DynamicProvidableCompositionLocal$provided$1":I
-    # getter for: Landroidx/compose/runtime/DynamicProvidableCompositionLocal;->policy:Landroidx/compose/runtime/SnapshotMutationPolicy;
     invoke-static {p0}, Landroidx/compose/runtime/DynamicProvidableCompositionLocal;->access$getPolicy$p(Landroidx/compose/runtime/DynamicProvidableCompositionLocal;)Landroidx/compose/runtime/SnapshotMutationPolicy;
 
     move-result-object v8
@@ -209,14 +208,14 @@
     nop
 
     .end local v7    # "value$iv$iv":Ljava/lang/Object;
-    goto :goto_45
+    goto :goto_0
 
     .line 262
-    :cond_44
+    :cond_1
     move-object v7, v5
 
     .line 258
-    :goto_45
+    :goto_0
     nop
 
     .line 257
@@ -256,11 +255,11 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5d
+    if-eqz v0, :cond_2
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_5d
+    :cond_2
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     check-cast v7, Landroidx/compose/runtime/State;

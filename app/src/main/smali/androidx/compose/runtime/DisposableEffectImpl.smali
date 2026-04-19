@@ -54,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "effect"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -85,24 +85,24 @@
 
 # virtual methods
 .method public onAbandoned()V
-    .registers 1
+    .locals 0
 
     .line 92
     return-void
 .end method
 
 .method public onForgotten()V
-    .registers 2
+    .locals 1
 
     .line 86
     iget-object v0, p0, Landroidx/compose/runtime/DisposableEffectImpl;->onDispose:Landroidx/compose/runtime/DisposableEffectResult;
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/runtime/DisposableEffectResult;->dispose()V
 
     .line 87
-    :cond_7
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/runtime/DisposableEffectImpl;->onDispose:Landroidx/compose/runtime/DisposableEffectResult;
@@ -112,12 +112,11 @@
 .end method
 
 .method public onRemembered()V
-    .registers 3
+    .locals 2
 
     .line 82
     iget-object v0, p0, Landroidx/compose/runtime/DisposableEffectImpl;->effect:Lkotlin/jvm/functions/Function1;
 
-    # getter for: Landroidx/compose/runtime/EffectsKt;->InternalDisposableEffectScope:Landroidx/compose/runtime/DisposableEffectScope;
     invoke-static {}, Landroidx/compose/runtime/EffectsKt;->access$getInternalDisposableEffectScope$p()Landroidx/compose/runtime/DisposableEffectScope;
 
     move-result-object v1

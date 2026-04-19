@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final ifDebug(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 1
     .param p0, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {

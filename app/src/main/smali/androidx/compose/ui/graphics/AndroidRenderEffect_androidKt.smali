@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static final asComposeRenderEffect(Landroid/graphics/RenderEffect;)Landroidx/compose/ui/graphics/RenderEffect;
-    .registers 2
+    .locals 1
     .param p0, "$this$asComposeRenderEffect"    # Landroid/graphics/RenderEffect;
 
     const-string v0, "<this>"

@@ -96,7 +96,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/text/selection/MouseSelectionObserver;Lkotlin/coroutines/Continuation;)V
-    .registers 4
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -120,7 +120,7 @@
 
 # virtual methods
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -147,7 +147,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -176,7 +176,7 @@
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
 
     check-cast p1, Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
 
@@ -190,7 +190,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 14
+    .locals 12
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -199,7 +199,7 @@
     .line 86
     iget v1, p0, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;->label:I
 
-    packed-switch v1, :pswitch_data_110
+    packed-switch v1, :pswitch_data_0
 
     new-instance p1, Ljava/lang/IllegalStateException;
 
@@ -209,7 +209,7 @@
 
     throw p1
 
-    :pswitch_12
+    :pswitch_0
     move-object v1, p0
 
     .local v1, "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
@@ -232,13 +232,13 @@
 
     move-object v2, v11
 
-    goto/16 :goto_106
+    goto/16 :goto_4
 
     .end local v1    # "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
     .end local v2    # "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
     .end local v3    # "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_23
+    :pswitch_1
     move-object v1, p0
 
     .restart local v1    # "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
@@ -261,13 +261,13 @@
 
     move-object v2, v11
 
-    goto/16 :goto_b7
+    goto/16 :goto_2
 
     .end local v1    # "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
     .end local v2    # "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
     .end local v3    # "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_34
+    :pswitch_2
     move-object v1, p0
 
     .restart local v1    # "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
@@ -292,13 +292,13 @@
 
     move-object v0, p1
 
-    goto :goto_6f
+    goto :goto_1
 
     .end local v1    # "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
     .end local v2    # "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
     .end local v3    # "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .end local p1    # "$result":Ljava/lang/Object;
-    :pswitch_45
+    :pswitch_3
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     move-object v1, p0
@@ -321,7 +321,7 @@
 
     .line 88
     .local v3, "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
-    :goto_56
+    :goto_0
     nop
 
     .line 89
@@ -337,18 +337,17 @@
 
     iput v5, v1, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;->label:I
 
-    # invokes: Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt;->awaitMouseEventDown(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     invoke-static {v2, v4}, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt;->access$awaitMouseEventDown(Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object v4
 
-    if-ne v4, v0, :cond_68
+    if-ne v4, v0, :cond_0
 
     .line 86
     return-object v0
 
     .line 89
-    :cond_68
+    :cond_0
     move-object v11, v0
 
     move-object v0, p1
@@ -370,7 +369,7 @@
     .local v2, "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
     .local v3, "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .local v4, "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
-    :goto_6f
+    :goto_1
     check-cast p1, Landroidx/compose/ui/input/pointer/PointerEvent;
 
     .line 90
@@ -397,7 +396,7 @@
     move-result v6
 
     .end local p1    # "down":Landroidx/compose/ui/input/pointer/PointerEvent;
-    if-eqz v6, :cond_b8
+    if-eqz v6, :cond_2
 
     .line 93
     iget-object p1, v2, Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;->$observer:Landroidx/compose/foundation/text/selection/MouseSelectionObserver;
@@ -412,7 +411,7 @@
 
     .line 94
     .local p1, "started":Z
-    if-eqz p1, :cond_108
+    if-eqz p1, :cond_4
 
     .line 95
     .end local p1    # "started":Z
@@ -448,13 +447,13 @@
     move-result-object p1
 
     .end local v5    # "downChange":Landroidx/compose/ui/input/pointer/PointerInputChange;
-    if-ne p1, v1, :cond_b2
+    if-ne p1, v1, :cond_1
 
     .line 86
     return-object v1
 
     .line 96
-    :cond_b2
+    :cond_1
     move-object p1, v0
 
     move-object v0, v1
@@ -471,8 +470,8 @@
     .local v2, "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .local v3, "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
     .local p1, "$result":Ljava/lang/Object;
-    :goto_b7
-    goto :goto_56
+    :goto_2
+    goto :goto_0
 
     .line 103
     .end local v1    # "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
@@ -482,12 +481,12 @@
     .local v3, "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .restart local v4    # "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
     .restart local v5    # "downChange":Landroidx/compose/ui/input/pointer/PointerInputChange;
-    :cond_b8
+    :cond_2
     invoke-virtual {v4}, Landroidx/compose/foundation/text/selection/ClicksCounter;->getClicks()I
 
     move-result p1
 
-    packed-switch p1, :pswitch_data_11c
+    packed-switch p1, :pswitch_data_1
 
     .line 106
     sget-object p1, Landroidx/compose/foundation/text/selection/SelectionAdjustment;->Companion:Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;
@@ -496,20 +495,20 @@
 
     move-result-object p1
 
-    goto :goto_d3
+    goto :goto_3
 
     .line 105
-    :pswitch_c6
+    :pswitch_4
     sget-object p1, Landroidx/compose/foundation/text/selection/SelectionAdjustment;->Companion:Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;
 
     invoke-virtual {p1}, Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;->getWord()Landroidx/compose/foundation/text/selection/SelectionAdjustment;
 
     move-result-object p1
 
-    goto :goto_d3
+    goto :goto_3
 
     .line 104
-    :pswitch_cd
+    :pswitch_5
     sget-object p1, Landroidx/compose/foundation/text/selection/SelectionAdjustment;->Companion:Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;
 
     invoke-virtual {p1}, Landroidx/compose/foundation/text/selection/SelectionAdjustment$Companion;->getNone()Landroidx/compose/foundation/text/selection/SelectionAdjustment;
@@ -517,7 +516,7 @@
     move-result-object p1
 
     .line 103
-    :goto_d3
+    :goto_3
     nop
 
     .line 108
@@ -534,7 +533,7 @@
 
     .line 109
     .local v6, "started":Z
-    if-eqz v6, :cond_108
+    if-eqz v6, :cond_4
 
     .line 110
     .end local v6    # "started":Z
@@ -571,13 +570,13 @@
 
     .end local v5    # "downChange":Landroidx/compose/ui/input/pointer/PointerInputChange;
     .end local p1    # "selectionMode":Landroidx/compose/foundation/text/selection/SelectionAdjustment;
-    if-ne p1, v1, :cond_101
+    if-ne p1, v1, :cond_3
 
     .line 86
     return-object v1
 
     .line 111
-    :cond_101
+    :cond_3
     move-object p1, v0
 
     move-object v0, v1
@@ -594,8 +593,8 @@
     .local v2, "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .local v3, "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
     .local p1, "$result":Ljava/lang/Object;
-    :goto_106
-    goto/16 :goto_56
+    :goto_4
+    goto/16 :goto_0
 
     .line 88
     .end local v1    # "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
@@ -604,7 +603,7 @@
     .local v2, "this":Landroidx/compose/foundation/text/selection/TextSelectionMouseDetectorKt$mouseSelectionDetector$2;
     .local v3, "$this$awaitEachGesture":Landroidx/compose/ui/input/pointer/AwaitPointerEventScope;
     .restart local v4    # "clicksCounter":Landroidx/compose/foundation/text/selection/ClicksCounter;
-    :cond_108
+    :cond_4
     move-object p1, v0
 
     move-object v0, v1
@@ -615,21 +614,21 @@
 
     move-object v3, v4
 
-    goto/16 :goto_56
+    goto/16 :goto_0
 
     nop
 
-    :pswitch_data_110
+    :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_45
-        :pswitch_34
-        :pswitch_23
-        :pswitch_12
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
     .end packed-switch
 
-    :pswitch_data_11c
+    :pswitch_data_1
     .packed-switch 0x1
-        :pswitch_cd
-        :pswitch_c6
+        :pswitch_5
+        :pswitch_4
     .end packed-switch
 .end method

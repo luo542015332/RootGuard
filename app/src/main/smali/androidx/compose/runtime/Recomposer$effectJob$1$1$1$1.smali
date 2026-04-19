@@ -59,7 +59,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/Recomposer;Ljava/lang/Throwable;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/Recomposer$effectJob$1$1$1$1;->this$0:Landroidx/compose/runtime/Recomposer;
 
@@ -75,7 +75,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 250
@@ -91,13 +91,12 @@
 .end method
 
 .method public final invoke(Ljava/lang/Throwable;)V
-    .registers 13
+    .locals 11
     .param p1, "runnerJobCause"    # Ljava/lang/Throwable;
 
     .line 251
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$effectJob$1$1$1$1;->this$0:Landroidx/compose/runtime/Recomposer;
 
-    # getter for: Landroidx/compose/runtime/Recomposer;->stateLock:Ljava/lang/Object;
     invoke-static {v0}, Landroidx/compose/runtime/Recomposer;->access$getStateLock$p(Landroidx/compose/runtime/Recomposer;)Ljava/lang/Object;
 
     move-result-object v0
@@ -119,7 +118,7 @@
     .local v4, "$i$a$-synchronized-Recomposer$effectJob$1$1$1$1$1":I
     const/4 v5, 0x0
 
-    if-eqz v2, :cond_2a
+    if-eqz v2, :cond_2
 
     move-object v6, v2
 
@@ -128,7 +127,7 @@
 
     .line 254
     .local v7, "$i$a$-apply-Recomposer$effectJob$1$1$1$1$1$1":I
-    if-eqz p1, :cond_27
+    if-eqz p1, :cond_1
 
     .line 253
     nop
@@ -142,20 +141,20 @@
 
     .line 254
     .local v9, "$i$a$-takeIf-Recomposer$effectJob$1$1$1$1$1$1$1":I
-    :try_start_17
+    :try_start_0
     instance-of v10, v8, Ljava/util/concurrent/CancellationException;
 
     .end local v8    # "it":Ljava/lang/Throwable;
     .end local v9    # "$i$a$-takeIf-Recomposer$effectJob$1$1$1$1$1$1$1":I
     xor-int/lit8 v8, v10, 0x1
 
-    if-eqz v8, :cond_1e
+    if-eqz v8, :cond_0
 
     move-object v5, p1
 
     .line 255
-    :cond_1e
-    if-eqz v5, :cond_27
+    :cond_0
+    if-eqz v5, :cond_1
 
     .line 254
     nop
@@ -173,29 +172,28 @@
 
     .end local v5    # "it":Ljava/lang/Throwable;
     .end local v8    # "$i$a$-let-Recomposer$effectJob$1$1$1$1$1$1$2":I
-    goto :goto_28
+    goto :goto_0
 
     .line 254
-    :cond_27
+    :cond_1
     nop
 
     .line 256
-    :goto_28
+    :goto_0
     nop
 
     .line 252
     .end local v6    # "$this$invoke_u24lambda_u243_u24lambda_u242":Ljava/lang/Throwable;
     .end local v7    # "$i$a$-apply-Recomposer$effectJob$1$1$1$1$1$1":I
-    goto :goto_2b
+    goto :goto_1
 
-    :cond_2a
+    :cond_2
     move-object v2, v5
 
-    :goto_2b
+    :goto_1
     invoke-static {v1, v2}, Landroidx/compose/runtime/Recomposer;->access$setCloseCause$p(Landroidx/compose/runtime/Recomposer;Ljava/lang/Throwable;)V
 
     .line 257
-    # getter for: Landroidx/compose/runtime/Recomposer;->_state:Lkotlinx/coroutines/flow/MutableStateFlow;
     invoke-static {v1}, Landroidx/compose/runtime/Recomposer;->access$get_state$p(Landroidx/compose/runtime/Recomposer;)Lkotlinx/coroutines/flow/MutableStateFlow;
 
     move-result-object v1
@@ -209,8 +207,8 @@
 
     .end local v4    # "$i$a$-synchronized-Recomposer$effectJob$1$1$1$1$1":I
     sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-    :try_end_3a
-    .catchall {:try_start_17 .. :try_end_3a} :catchall_3c
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 1503
     monitor-exit v0
@@ -223,7 +221,7 @@
     .line 1503
     .restart local v0    # "lock$iv":Ljava/lang/Object;
     .restart local v3    # "$i$f$synchronized":I
-    :catchall_3c
+    :catchall_0
     move-exception v1
 
     monitor-exit v0

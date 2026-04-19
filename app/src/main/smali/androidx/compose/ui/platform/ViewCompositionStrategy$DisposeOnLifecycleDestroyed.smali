@@ -56,7 +56,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -66,7 +66,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/lifecycle/Lifecycle;)V
-    .registers 3
+    .locals 1
     .param p1, "lifecycle"    # Landroidx/lifecycle/Lifecycle;
 
     const-string/jumbo v0, "lifecycle"
@@ -84,7 +84,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/lifecycle/LifecycleOwner;)V
-    .registers 3
+    .locals 1
     .param p1, "lifecycleOwner"    # Landroidx/lifecycle/LifecycleOwner;
 
     const-string/jumbo v0, "lifecycleOwner"
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public installFor(Landroidx/compose/ui/platform/AbstractComposeView;)Lkotlin/jvm/functions/Function0;
-    .registers 3
+    .locals 1
     .param p1, "view"    # Landroidx/compose/ui/platform/AbstractComposeView;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -124,7 +124,6 @@
     .line 141
     iget-object v0, p0, Landroidx/compose/ui/platform/ViewCompositionStrategy$DisposeOnLifecycleDestroyed;->lifecycle:Landroidx/lifecycle/Lifecycle;
 
-    # invokes: Landroidx/compose/ui/platform/ViewCompositionStrategy_androidKt;->installForLifecycle(Landroidx/compose/ui/platform/AbstractComposeView;Landroidx/lifecycle/Lifecycle;)Lkotlin/jvm/functions/Function0;
     invoke-static {p1, v0}, Landroidx/compose/ui/platform/ViewCompositionStrategy_androidKt;->access$installForLifecycle(Landroidx/compose/ui/platform/AbstractComposeView;Landroidx/lifecycle/Lifecycle;)Lkotlin/jvm/functions/Function0;
 
     move-result-object v0

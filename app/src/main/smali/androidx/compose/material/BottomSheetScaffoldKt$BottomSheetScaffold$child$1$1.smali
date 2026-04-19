@@ -91,7 +91,7 @@
 
 # direct methods
 .method constructor <init>(ZLandroidx/compose/material/BottomSheetScaffoldState;FFLandroidx/compose/ui/graphics/Shape;FJJLkotlin/jvm/functions/Function3;II)V
-    .registers 15
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z",
@@ -143,7 +143,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;
@@ -177,7 +177,7 @@
 .end method
 
 .method public final invoke(ILandroidx/compose/runtime/Composer;I)V
-    .registers 24
+    .locals 20
     .param p1, "layoutHeight"    # I
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -197,25 +197,25 @@
     .local v2, "$dirty":I
     and-int/lit8 v3, p3, 0xe
 
-    if-nez v3, :cond_1b
+    if-nez v3, :cond_1
 
     invoke-interface {v15, v1}, Landroidx/compose/runtime/Composer;->changed(I)Z
 
     move-result v3
 
-    if-eqz v3, :cond_19
+    if-eqz v3, :cond_0
 
     const/4 v3, 0x4
 
-    goto :goto_1a
+    goto :goto_0
 
-    :cond_19
+    :cond_0
     const/4 v3, 0x2
 
-    :goto_1a
+    :goto_0
     or-int/2addr v2, v3
 
-    :cond_1b
+    :cond_1
     move v14, v2
 
     .line 454
@@ -225,32 +225,32 @@
 
     const/16 v3, 0x12
 
-    if-ne v2, v3, :cond_30
+    if-ne v2, v3, :cond_3
 
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->getSkipping()Z
 
     move-result v2
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_2
 
-    goto :goto_30
+    goto :goto_1
 
     .line 488
-    :cond_29
+    :cond_2
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->skipToGroupEnd()V
 
     move/from16 v16, v14
 
-    goto/16 :goto_16a
+    goto/16 :goto_7
 
     .line 454
-    :cond_30
-    :goto_30
+    :cond_3
+    :goto_1
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v2
 
-    if-eqz v2, :cond_40
+    if-eqz v2, :cond_4
 
     const/4 v2, -0x1
 
@@ -260,7 +260,7 @@
 
     invoke-static {v5, v14, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    :cond_40
+    :cond_4
     const v2, -0x30b029ae
 
     invoke-interface {v15, v2}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
@@ -271,7 +271,7 @@
 
     iget-boolean v2, v0, Landroidx/compose/material/BottomSheetScaffoldKt$BottomSheetScaffold$child$1$1;->$sheetGesturesEnabled:Z
 
-    if-eqz v2, :cond_a7
+    if-eqz v2, :cond_7
 
     .line 455
     sget-object v2, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
@@ -328,7 +328,7 @@
 
     .line 751
     .local v13, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v9, :cond_85
+    if-nez v9, :cond_6
 
     sget-object v16, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -336,19 +336,19 @@
 
     move-result-object v3
 
-    if-ne v12, v3, :cond_83
+    if-ne v12, v3, :cond_5
 
-    goto :goto_85
+    goto :goto_2
 
     .line 755
-    :cond_83
+    :cond_5
     move-object v3, v12
 
-    goto :goto_99
+    goto :goto_3
 
     .line 752
-    :cond_85
-    :goto_85
+    :cond_6
+    :goto_2
     const/4 v3, 0x0
 
     .line 459
@@ -365,7 +365,6 @@
     sget-object v4, Landroidx/compose/foundation/gestures/Orientation;->Vertical:Landroidx/compose/foundation/gestures/Orientation;
 
     .line 458
-    # invokes: Landroidx/compose/material/BottomSheetScaffoldKt;->ConsumeSwipeWithinBottomSheetBoundsNestedScrollConnection(Landroidx/compose/material/AnchoredDraggableState;Landroidx/compose/foundation/gestures/Orientation;)Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
     invoke-static {v6, v4}, Landroidx/compose/material/BottomSheetScaffoldKt;->access$ConsumeSwipeWithinBottomSheetBoundsNestedScrollConnection(Landroidx/compose/material/AnchoredDraggableState;Landroidx/compose/foundation/gestures/Orientation;)Landroidx/compose/ui/input/nestedscroll/NestedScrollConnection;
 
     move-result-object v3
@@ -383,7 +382,7 @@
 
     .line 751
     .end local v3    # "value$iv$iv":Ljava/lang/Object;
-    :goto_99
+    :goto_3
     nop
 
     .line 750
@@ -411,16 +410,16 @@
 
     move-result-object v2
 
-    goto :goto_ab
+    goto :goto_4
 
     .line 464
-    :cond_a7
+    :cond_7
     sget-object v2, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
     check-cast v2, Landroidx/compose/ui/Modifier;
 
     .line 454
-    :goto_ab
+    :goto_4
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     move-object v13, v2
@@ -526,7 +525,7 @@
 
     .line 759
     .local v17, "$i$a$-let-ComposerKt$cache$1$iv$iv":I
-    if-nez v9, :cond_106
+    if-nez v9, :cond_9
 
     sget-object v18, Landroidx/compose/runtime/Composer;->Companion:Landroidx/compose/runtime/Composer$Companion;
 
@@ -538,26 +537,26 @@
 
     move-result-object v5
 
-    if-ne v4, v5, :cond_103
+    if-ne v4, v5, :cond_8
 
-    goto :goto_108
+    goto :goto_5
 
     .line 763
-    :cond_103
+    :cond_8
     move-object/from16 v18, v4
 
-    goto :goto_117
+    goto :goto_6
 
     .line 759
     .end local v19    # "key2$iv":Ljava/lang/Object;
     .restart local v5    # "key2$iv":Ljava/lang/Object;
-    :cond_106
+    :cond_9
     move-object/from16 v19, v5
 
     .line 760
     .end local v5    # "key2$iv":Ljava/lang/Object;
     .restart local v19    # "key2$iv":Ljava/lang/Object;
-    :goto_108
+    :goto_5
     const/4 v5, 0x0
 
     .line 470
@@ -585,7 +584,7 @@
 
     .line 759
     .end local v4    # "value$iv$iv":Ljava/lang/Object;
-    :goto_117
+    :goto_6
     nop
 
     .line 758
@@ -684,20 +683,19 @@
 
     move v15, v1
 
-    # invokes: Landroidx/compose/material/BottomSheetScaffoldKt;->BottomSheet-0cLKjW4(Landroidx/compose/material/BottomSheetState;ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/graphics/Shape;FJJLandroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
     invoke-static/range {v2 .. v15}, Landroidx/compose/material/BottomSheetScaffoldKt;->access$BottomSheet-0cLKjW4(Landroidx/compose/material/BottomSheetState;ZLkotlin/jvm/functions/Function1;Landroidx/compose/ui/graphics/Shape;FJJLandroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_16a
+    if-eqz v1, :cond_a
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
     .line 489
     .end local v17    # "nestedScroll":Landroidx/compose/ui/Modifier;
-    :cond_16a
-    :goto_16a
+    :cond_a
+    :goto_7
     return-void
 .end method

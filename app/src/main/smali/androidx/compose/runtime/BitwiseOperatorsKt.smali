@@ -27,7 +27,7 @@
 
 # direct methods
 .method public static final rol(II)I
-    .registers 4
+    .locals 2
     .param p0, "$this$rol"    # I
     .param p1, "other"    # I
 
@@ -43,7 +43,7 @@
 .end method
 
 .method public static final ror(II)I
-    .registers 4
+    .locals 2
     .param p0, "$this$ror"    # I
     .param p1, "other"    # I
 

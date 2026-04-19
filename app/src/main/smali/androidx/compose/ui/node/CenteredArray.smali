@@ -60,7 +60,7 @@
 
 # direct methods
 .method private synthetic constructor <init>([I)V
-    .registers 2
+    .locals 0
     .param p1, "data"    # [I
 
     .line 400
@@ -72,7 +72,7 @@
 .end method
 
 .method public static final synthetic box-impl([I)Landroidx/compose/ui/node/CenteredArray;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/node/CenteredArray;
 
@@ -82,7 +82,7 @@
 .end method
 
 .method public static constructor-impl([I)[I
-    .registers 2
+    .locals 1
 
     const-string/jumbo v0, "data"
 
@@ -92,17 +92,17 @@
 .end method
 
 .method public static equals-impl([ILjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/node/CenteredArray;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/node/CenteredArray;
@@ -115,18 +115,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_14
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0([I[I)Z
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -136,7 +136,7 @@
 .end method
 
 .method public static final get-impl([II)I
-    .registers 3
+    .locals 1
     .param p0, "arg0"    # [I
     .param p1, "index"    # I
 
@@ -153,7 +153,7 @@
 .end method
 
 .method private static final getMid-impl([I)I
-    .registers 2
+    .locals 1
     .param p0, "arg0"    # [I
 
     .line 402
@@ -165,7 +165,7 @@
 .end method
 
 .method public static hashCode-impl([I)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([I)I
 
@@ -175,7 +175,7 @@
 .end method
 
 .method public static final set-impl([III)V
-    .registers 4
+    .locals 1
     .param p0, "arg0"    # [I
     .param p1, "index"    # I
     .param p2, "value"    # I
@@ -194,7 +194,7 @@
 .end method
 
 .method public static toString-impl([I)Ljava/lang/String;
-    .registers 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -230,7 +230,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/CenteredArray;->data:[I
 
@@ -242,7 +242,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/CenteredArray;->data:[I
 
@@ -254,7 +254,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/CenteredArray;->data:[I
 
@@ -266,7 +266,7 @@
 .end method
 
 .method public final synthetic unbox-impl()[I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/node/CenteredArray;->data:[I
 

@@ -29,7 +29,7 @@
 
 # direct methods
 .method public static final ProcessResult(ZZ)I
-    .registers 5
+    .locals 3
     .param p0, "dispatchedToAPointerInputModifier"    # Z
     .param p1, "anyMovementConsumed"    # Z
 
@@ -38,18 +38,18 @@
 
     .line 232
     .local v0, "val1":I
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_0
 
     const/4 v1, 0x2
 
-    goto :goto_6
+    goto :goto_0
 
-    :cond_5
+    :cond_0
     const/4 v1, 0x0
 
     .line 233
     .local v1, "val2":I
-    :goto_6
+    :goto_0
     or-int v2, v0, v1
 
     invoke-static {v2}, Landroidx/compose/ui/input/pointer/ProcessResult;->constructor-impl(I)I

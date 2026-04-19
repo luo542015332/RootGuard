@@ -56,7 +56,7 @@
 
 # direct methods
 .method public static synthetic access$getValue$jd(Landroidx/compose/runtime/MutableLongState;)J
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/runtime/MutableLongState;
 
     .line 88
@@ -72,7 +72,7 @@
 .end method
 
 .method public static synthetic access$setValue$jd(Landroidx/compose/runtime/MutableLongState;J)V
-    .registers 3
+    .locals 0
     .param p0, "$this"    # Landroidx/compose/runtime/MutableLongState;
     .param p1, "value"    # J
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Long;
-    .registers 3
+    .locals 2
 
     .line 94
     invoke-interface {p0}, Landroidx/compose/runtime/MutableLongState;->getLongValue()J
@@ -103,7 +103,7 @@
 .end method
 
 .method public bridge synthetic getValue()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 88
     invoke-interface {p0}, Landroidx/compose/runtime/MutableLongState;->getValue()Ljava/lang/Long;
@@ -117,7 +117,7 @@
 .end method
 
 .method public setValue(J)V
-    .registers 3
+    .locals 0
     .param p1, "value"    # J
 
     .line 95
@@ -127,7 +127,7 @@
 .end method
 
 .method public bridge synthetic setValue(Ljava/lang/Object;)V
-    .registers 4
+    .locals 2
     .param p1, "<set-?>"    # Ljava/lang/Object;
 
     .line 88

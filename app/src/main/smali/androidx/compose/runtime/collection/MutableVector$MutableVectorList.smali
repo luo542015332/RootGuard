@@ -105,7 +105,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/runtime/collection/MutableVector;)V
-    .registers 3
+    .locals 1
     .param p1, "vector"    # Landroidx/compose/runtime/collection/MutableVector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -130,7 +130,7 @@
 
 # virtual methods
 .method public add(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -148,7 +148,7 @@
 .end method
 
 .method public add(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -167,7 +167,7 @@
 .end method
 
 .method public addAll(ILjava/util/Collection;)Z
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
@@ -193,7 +193,7 @@
 .end method
 
 .method public addAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -218,7 +218,7 @@
 .end method
 
 .method public clear()V
-    .registers 2
+    .locals 1
 
     .line 961
     iget-object v0, p0, Landroidx/compose/runtime/collection/MutableVector$MutableVectorList;->vector:Landroidx/compose/runtime/collection/MutableVector;
@@ -229,7 +229,7 @@
 .end method
 
 .method public contains(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 935
@@ -243,7 +243,7 @@
 .end method
 
 .method public containsAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -270,7 +270,7 @@
 .end method
 
 .method public get(I)Ljava/lang/Object;
-    .registers 5
+    .locals 3
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -283,7 +283,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkIndex(Ljava/util/List;I)V
     invoke-static {v0, p1}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkIndex(Ljava/util/List;I)V
 
     .line 941
@@ -307,7 +306,7 @@
 .end method
 
 .method public getSize()I
-    .registers 2
+    .locals 1
 
     .line 933
     iget-object v0, p0, Landroidx/compose/runtime/collection/MutableVector$MutableVectorList;->vector:Landroidx/compose/runtime/collection/MutableVector;
@@ -320,7 +319,7 @@
 .end method
 
 .method public indexOf(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 944
@@ -334,7 +333,7 @@
 .end method
 
 .method public isEmpty()Z
-    .registers 2
+    .locals 1
 
     .line 946
     iget-object v0, p0, Landroidx/compose/runtime/collection/MutableVector$MutableVectorList;->vector:Landroidx/compose/runtime/collection/MutableVector;
@@ -347,7 +346,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -373,7 +372,7 @@
 .end method
 
 .method public lastIndexOf(Ljava/lang/Object;)I
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 950
@@ -387,7 +386,7 @@
 .end method
 
 .method public listIterator()Ljava/util/ListIterator;
-    .registers 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -413,7 +412,7 @@
 .end method
 
 .method public listIterator(I)Ljava/util/ListIterator;
-    .registers 4
+    .locals 2
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -438,7 +437,7 @@
 .end method
 
 .method public final bridge remove(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -455,7 +454,7 @@
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "element"    # Ljava/lang/Object;
 
     .line 968
@@ -469,7 +468,7 @@
 .end method
 
 .method public removeAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -496,7 +495,7 @@
 .end method
 
 .method public removeAt(I)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -509,7 +508,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkIndex(Ljava/util/List;I)V
     invoke-static {v0, p1}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkIndex(Ljava/util/List;I)V
 
     .line 974
@@ -523,7 +521,7 @@
 .end method
 
 .method public retainAll(Ljava/util/Collection;)Z
-    .registers 3
+    .locals 1
     .param p1, "elements"    # Ljava/util/Collection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -550,7 +548,7 @@
 .end method
 
 .method public set(ILjava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "element"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
@@ -564,7 +562,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkIndex(Ljava/util/List;I)V
     invoke-static {v0, p1}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkIndex(Ljava/util/List;I)V
 
     .line 981
@@ -578,7 +575,7 @@
 .end method
 
 .method public final bridge size()I
-    .registers 2
+    .locals 1
 
     .line 931
     invoke-virtual {p0}, Landroidx/compose/runtime/collection/MutableVector$MutableVectorList;->getSize()I
@@ -589,7 +586,7 @@
 .end method
 
 .method public subList(II)Ljava/util/List;
-    .registers 5
+    .locals 2
     .param p1, "fromIndex"    # I
     .param p2, "toIndex"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -605,7 +602,6 @@
 
     check-cast v0, Ljava/util/List;
 
-    # invokes: Landroidx/compose/runtime/collection/MutableVectorKt;->checkSubIndex(Ljava/util/List;II)V
     invoke-static {v0, p1, p2}, Landroidx/compose/runtime/collection/MutableVectorKt;->access$checkSubIndex(Ljava/util/List;II)V
 
     .line 986
@@ -623,7 +619,7 @@
 .end method
 
 .method public toArray()[Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     move-object v0, p0
 
@@ -637,7 +633,7 @@
 .end method
 
 .method public toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

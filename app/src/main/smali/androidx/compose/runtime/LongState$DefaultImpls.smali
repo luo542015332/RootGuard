@@ -26,7 +26,7 @@
 
 # direct methods
 .method public static getValue(Landroidx/compose/runtime/LongState;)Ljava/lang/Long;
-    .registers 3
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/runtime/LongState;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation

@@ -47,7 +47,7 @@
 
 # direct methods
 .method public constructor <init>(F)V
-    .registers 2
+    .locals 0
     .param p1, "value"    # F
 
     .line 174
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public assign(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     const-string/jumbo v0, "value"
@@ -84,7 +84,7 @@
 .end method
 
 .method public create()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 3
+    .locals 2
 
     .line 179
     new-instance v0, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$FloatStateStateRecord;
@@ -99,7 +99,7 @@
 .end method
 
 .method public final getValue()F
-    .registers 2
+    .locals 1
 
     .line 173
     iget v0, p0, Landroidx/compose/runtime/SnapshotMutableFloatStateImpl$FloatStateStateRecord;->value:F
@@ -108,7 +108,7 @@
 .end method
 
 .method public final setValue(F)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # F
 
     .line 173

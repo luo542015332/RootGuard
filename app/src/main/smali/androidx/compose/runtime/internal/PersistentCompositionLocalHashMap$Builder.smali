@@ -70,7 +70,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -80,7 +80,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;)V
-    .registers 3
+    .locals 1
     .param p1, "map"    # Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
 
     const-string/jumbo v0, "map"
@@ -104,7 +104,7 @@
 
 # virtual methods
 .method public bridge synthetic build()Landroidx/compose/runtime/PersistentCompositionLocalMap;
-    .registers 2
+    .locals 1
 
     .line 45
     invoke-virtual {p0}, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Builder;->build()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
@@ -117,7 +117,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/PersistentMap;
-    .registers 2
+    .locals 1
 
     .line 45
     invoke-virtual {p0}, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Builder;->build()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
@@ -130,7 +130,7 @@
 .end method
 
 .method public bridge synthetic build()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/PersistentHashMap;
-    .registers 2
+    .locals 1
 
     .line 45
     invoke-virtual {p0}, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Builder;->build()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
@@ -143,7 +143,7 @@
 .end method
 
 .method public build()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
-    .registers 4
+    .locals 3
 
     .line 50
     invoke-virtual {p0}, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Builder;->getNode$runtime_release()Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;
@@ -156,15 +156,15 @@
 
     move-result-object v1
 
-    if-ne v0, v1, :cond_f
+    if-ne v0, v1, :cond_0
 
     .line 51
     iget-object v0, p0, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Builder;->map:Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
 
-    goto :goto_24
+    goto :goto_0
 
     .line 53
-    :cond_f
+    :cond_0
     new-instance v0, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;
 
     invoke-direct {v0}, Landroidx/compose/runtime/external/kotlinx/collections/immutable/internal/MutabilityOwnership;-><init>()V
@@ -185,7 +185,7 @@
     invoke-direct {v0, v1, v2}, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;-><init>(Landroidx/compose/runtime/external/kotlinx/collections/immutable/implementations/immutableMap/TrieNode;I)V
 
     .line 50
-    :goto_24
+    :goto_0
     iput-object v0, p0, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Builder;->map:Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
 
     .line 56
@@ -193,7 +193,7 @@
 .end method
 
 .method public bridge containsKey(Landroidx/compose/runtime/CompositionLocal;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/runtime/CompositionLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -213,19 +213,19 @@
 .end method
 
 .method public final bridge containsKey(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
 
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/CompositionLocal;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -238,7 +238,7 @@
 .end method
 
 .method public bridge containsValue(Landroidx/compose/runtime/State;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -259,19 +259,19 @@
 .end method
 
 .method public final bridge containsValue(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
     .param p1, "value"    # Ljava/lang/Object;
 
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/State;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/State;
@@ -284,7 +284,7 @@
 .end method
 
 .method public bridge get(Landroidx/compose/runtime/CompositionLocal;)Landroidx/compose/runtime/State;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/runtime/CompositionLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -309,7 +309,7 @@
 .end method
 
 .method public final bridge get(Ljava/lang/Object;)Landroidx/compose/runtime/State;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -325,13 +325,13 @@
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/CompositionLocal;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -344,19 +344,19 @@
 .end method
 
 .method public final bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
 
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/CompositionLocal;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -369,7 +369,7 @@
 .end method
 
 .method public final getMap$runtime_release()Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
-    .registers 2
+    .locals 1
 
     .line 46
     iget-object v0, p0, Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap$Builder;->map:Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
@@ -378,7 +378,7 @@
 .end method
 
 .method public bridge getOrDefault(Landroidx/compose/runtime/CompositionLocal;Landroidx/compose/runtime/State;)Landroidx/compose/runtime/State;
-    .registers 4
+    .locals 1
     .param p1, "key"    # Landroidx/compose/runtime/CompositionLocal;
     .param p2, "defaultValue"    # Landroidx/compose/runtime/State;
     .annotation system Ldalvik/annotation/Signature;
@@ -408,18 +408,18 @@
 .end method
 
 .method public final bridge getOrDefault(Ljava/lang/Object;Landroidx/compose/runtime/State;)Landroidx/compose/runtime/State;
-    .registers 4
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "defaultValue"    # Landroidx/compose/runtime/State;
 
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/CompositionLocal;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-object p2
 
-    :cond_5
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -432,18 +432,18 @@
 .end method
 
 .method public final bridge synthetic getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "key"    # Ljava/lang/Object;
     .param p2, "defaultValue"    # Ljava/lang/Object;
 
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/CompositionLocal;
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_0
 
     return-object p2
 
-    :cond_5
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -460,7 +460,7 @@
 .end method
 
 .method public bridge remove(Landroidx/compose/runtime/CompositionLocal;)Landroidx/compose/runtime/State;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/runtime/CompositionLocal;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -485,7 +485,7 @@
 .end method
 
 .method public final bridge remove(Ljava/lang/Object;)Landroidx/compose/runtime/State;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -501,13 +501,13 @@
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/CompositionLocal;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -520,19 +520,19 @@
 .end method
 
 .method public final bridge synthetic remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Ljava/lang/Object;
 
     .line 45
     instance-of v0, p1, Landroidx/compose/runtime/CompositionLocal;
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/runtime/CompositionLocal;
@@ -545,7 +545,7 @@
 .end method
 
 .method public final setMap$runtime_release(Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/internal/PersistentCompositionLocalHashMap;
 
     const-string v0, "<set-?>"

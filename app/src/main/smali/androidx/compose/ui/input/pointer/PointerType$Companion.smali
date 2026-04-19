@@ -48,7 +48,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 281
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/input/pointer/PointerType$Companion;-><init>()V
 
@@ -67,10 +67,9 @@
 
 # virtual methods
 .method public final getEraser-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 305
-    # getter for: Landroidx/compose/ui/input/pointer/PointerType;->Eraser:I
     invoke-static {}, Landroidx/compose/ui/input/pointer/PointerType;->access$getEraser$cp()I
 
     move-result v0
@@ -79,10 +78,9 @@
 .end method
 
 .method public final getMouse-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 295
-    # getter for: Landroidx/compose/ui/input/pointer/PointerType;->Mouse:I
     invoke-static {}, Landroidx/compose/ui/input/pointer/PointerType;->access$getMouse$cp()I
 
     move-result v0
@@ -91,10 +89,9 @@
 .end method
 
 .method public final getStylus-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 300
-    # getter for: Landroidx/compose/ui/input/pointer/PointerType;->Stylus:I
     invoke-static {}, Landroidx/compose/ui/input/pointer/PointerType;->access$getStylus$cp()I
 
     move-result v0
@@ -103,10 +100,9 @@
 .end method
 
 .method public final getTouch-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 290
-    # getter for: Landroidx/compose/ui/input/pointer/PointerType;->Touch:I
     invoke-static {}, Landroidx/compose/ui/input/pointer/PointerType;->access$getTouch$cp()I
 
     move-result v0
@@ -115,10 +111,9 @@
 .end method
 
 .method public final getUnknown-T8wyACA()I
-    .registers 2
+    .locals 1
 
     .line 285
-    # getter for: Landroidx/compose/ui/input/pointer/PointerType;->Unknown:I
     invoke-static {}, Landroidx/compose/ui/input/pointer/PointerType;->access$getUnknown$cp()I
 
     move-result v0

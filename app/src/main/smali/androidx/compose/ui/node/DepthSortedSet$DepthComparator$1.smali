@@ -52,7 +52,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -63,7 +63,7 @@
 
 # virtual methods
 .method public compare(Landroidx/compose/ui/node/LayoutNode;Landroidx/compose/ui/node/LayoutNode;)I
-    .registers 6
+    .locals 3
     .param p1, "l1"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "l2"    # Landroidx/compose/ui/node/LayoutNode;
 
@@ -90,13 +90,13 @@
 
     .line 41
     .local v0, "depthDiff":I
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     .line 42
     return v0
 
     .line 44
-    :cond_1b
+    :cond_0
     invoke-virtual {p1}, Landroidx/compose/ui/node/LayoutNode;->hashCode()I
 
     move-result v1
@@ -113,7 +113,7 @@
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 5
+    .locals 2
     .param p1, "p0"    # Ljava/lang/Object;
     .param p2, "p1"    # Ljava/lang/Object;
 

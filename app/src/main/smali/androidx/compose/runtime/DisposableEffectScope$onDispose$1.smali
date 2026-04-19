@@ -55,7 +55,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
-    .registers 2
+    .locals 0
     .param p1, "$onDisposeEffect"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public dispose()V
-    .registers 2
+    .locals 1
 
     .line 65
     iget-object v0, p0, Landroidx/compose/runtime/DisposableEffectScope$onDispose$1;->$onDisposeEffect:Lkotlin/jvm/functions/Function0;

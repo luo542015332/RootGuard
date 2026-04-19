@@ -53,7 +53,7 @@
 
 # direct methods
 .method public constructor <init>(ZLjava/lang/Exception;)V
-    .registers 4
+    .locals 1
     .param p1, "recoverable"    # Z
     .param p2, "cause"    # Ljava/lang/Exception;
 
@@ -77,7 +77,7 @@
 
 # virtual methods
 .method public getCause()Ljava/lang/Exception;
-    .registers 2
+    .locals 1
 
     .line 409
     iget-object v0, p0, Landroidx/compose/runtime/Recomposer$RecomposerErrorState;->cause:Ljava/lang/Exception;
@@ -86,7 +86,7 @@
 .end method
 
 .method public getRecoverable()Z
-    .registers 2
+    .locals 1
 
     .line 408
     iget-boolean v0, p0, Landroidx/compose/runtime/Recomposer$RecomposerErrorState;->recoverable:Z

@@ -42,7 +42,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/AlignmentLinesOwner;)V
-    .registers 3
+    .locals 1
     .param p1, "alignmentLinesOwner"    # Landroidx/compose/ui/node/AlignmentLinesOwner;
 
     const-string/jumbo v0, "alignmentLinesOwner"
@@ -61,7 +61,7 @@
 
 # virtual methods
 .method protected calculatePositionInParent-R5De75A(Landroidx/compose/ui/node/NodeCoordinator;J)J
-    .registers 6
+    .locals 2
     .param p1, "$this$calculatePositionInParent_u2dR5De75A"    # Landroidx/compose/ui/node/NodeCoordinator;
     .param p2, "position"    # J
 
@@ -78,7 +78,7 @@
 .end method
 
 .method protected getAlignmentLinesMap(Landroidx/compose/ui/node/NodeCoordinator;)Ljava/util/Map;
-    .registers 3
+    .locals 1
     .param p1, "$this$alignmentLinesMap"    # Landroidx/compose/ui/node/NodeCoordinator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -109,7 +109,7 @@
 .end method
 
 .method protected getPositionFor(Landroidx/compose/ui/node/NodeCoordinator;Landroidx/compose/ui/layout/AlignmentLine;)I
-    .registers 4
+    .locals 1
     .param p1, "$this$getPositionFor"    # Landroidx/compose/ui/node/NodeCoordinator;
     .param p2, "alignmentLine"    # Landroidx/compose/ui/layout/AlignmentLine;
 

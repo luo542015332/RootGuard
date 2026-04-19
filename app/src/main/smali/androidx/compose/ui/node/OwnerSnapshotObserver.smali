@@ -151,7 +151,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/jvm/functions/Function1;)V
-    .registers 3
+    .locals 1
     .param p1, "onChangedExecutor"    # Lkotlin/jvm/functions/Function1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -234,54 +234,54 @@
 .end method
 
 .method public static synthetic observeLayoutModifierSnapshotReads$ui_release$default(Landroidx/compose/ui/node/OwnerSnapshotObserver;Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 90
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 92
     const/4 p2, 0x1
 
     .line 90
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeLayoutModifierSnapshotReads$ui_release(Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static synthetic observeLayoutSnapshotReads$ui_release$default(Landroidx/compose/ui/node/OwnerSnapshotObserver;Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 75
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 77
     const/4 p2, 0x1
 
     .line 75
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeLayoutSnapshotReads$ui_release(Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;)V
 
     return-void
 .end method
 
 .method public static synthetic observeMeasureSnapshotReads$ui_release$default(Landroidx/compose/ui/node/OwnerSnapshotObserver;Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;ILjava/lang/Object;)V
-    .registers 6
+    .locals 0
 
     .line 105
     and-int/lit8 p4, p4, 0x2
 
-    if-eqz p4, :cond_5
+    if-eqz p4, :cond_0
 
     .line 107
     const/4 p2, 0x1
 
     .line 105
-    :cond_5
+    :cond_0
     invoke-virtual {p0, p1, p2, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeMeasureSnapshotReads$ui_release(Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;)V
 
     return-void
@@ -290,7 +290,7 @@
 
 # virtual methods
 .method public final clear$ui_release(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "target"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "target"
@@ -307,7 +307,7 @@
 .end method
 
 .method public final clearInvalidObservations$ui_release()V
-    .registers 3
+    .locals 2
 
     .line 137
     iget-object v0, p0, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observer:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
@@ -323,7 +323,7 @@
 .end method
 
 .method public final observeLayoutModifierSnapshotReads$ui_release(Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
@@ -347,13 +347,13 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 95
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/ui/node/LayoutNode;->getLookaheadRoot$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 96
     move-object v0, p1
@@ -364,10 +364,10 @@
 
     invoke-virtual {p0, v0, v1, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_25
+    goto :goto_0
 
     .line 98
-    :cond_1d
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/node/OwnerScope;
@@ -377,12 +377,12 @@
     invoke-virtual {p0, v0, v1, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
     .line 100
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method public final observeLayoutSnapshotReads$ui_release(Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
@@ -406,13 +406,13 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 80
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/ui/node/LayoutNode;->getLookaheadRoot$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 81
     move-object v0, p1
@@ -423,10 +423,10 @@
 
     invoke-virtual {p0, v0, v1, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_25
+    goto :goto_0
 
     .line 83
-    :cond_1d
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/node/OwnerScope;
@@ -436,12 +436,12 @@
     invoke-virtual {p0, v0, v1, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
     .line 85
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method public final observeMeasureSnapshotReads$ui_release(Landroidx/compose/ui/node/LayoutNode;ZLkotlin/jvm/functions/Function0;)V
-    .registers 6
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "affectsLookahead"    # Z
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
@@ -465,13 +465,13 @@
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 110
-    if-eqz p2, :cond_1d
+    if-eqz p2, :cond_0
 
     invoke-virtual {p1}, Landroidx/compose/ui/node/LayoutNode;->getLookaheadRoot$ui_release()Landroidx/compose/ui/node/LayoutNode;
 
     move-result-object v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_0
 
     .line 111
     move-object v0, p1
@@ -482,10 +482,10 @@
 
     invoke-virtual {p0, v0, v1, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
-    goto :goto_25
+    goto :goto_0
 
     .line 113
-    :cond_1d
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/node/OwnerScope;
@@ -495,12 +495,12 @@
     invoke-virtual {p0, v0, v1, p3}, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
 
     .line 115
-    :goto_25
+    :goto_0
     return-void
 .end method
 
 .method public final observeReads$ui_release(Landroidx/compose/ui/node/OwnerScope;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 1
     .param p1, "target"    # Landroidx/compose/ui/node/OwnerScope;
     .param p2, "onChanged"    # Lkotlin/jvm/functions/Function1;
     .param p3, "block"    # Lkotlin/jvm/functions/Function0;
@@ -541,7 +541,7 @@
 .end method
 
 .method public final observeSemanticsReads$ui_release(Landroidx/compose/ui/node/LayoutNode;Lkotlin/jvm/functions/Function0;)V
-    .registers 5
+    .locals 2
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
     .param p2, "block"    # Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
@@ -576,7 +576,7 @@
 .end method
 
 .method public final startObserving$ui_release()V
-    .registers 2
+    .locals 1
 
     .line 145
     iget-object v0, p0, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observer:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;
@@ -588,7 +588,7 @@
 .end method
 
 .method public final stopObserving$ui_release()V
-    .registers 2
+    .locals 1
 
     .line 149
     iget-object v0, p0, Landroidx/compose/ui/node/OwnerSnapshotObserver;->observer:Landroidx/compose/runtime/snapshots/SnapshotStateObserver;

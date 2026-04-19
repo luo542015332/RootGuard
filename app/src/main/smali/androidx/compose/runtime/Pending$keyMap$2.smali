@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/Pending;)V
-    .registers 3
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/Pending$keyMap$2;->this$0:Landroidx/compose/runtime/Pending;
 
@@ -72,7 +72,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 2
+    .locals 1
 
     .line 126
     invoke-virtual {p0}, Landroidx/compose/runtime/Pending$keyMap$2;->invoke()Ljava/util/HashMap;
@@ -83,7 +83,7 @@
 .end method
 
 .method public final invoke()Ljava/util/HashMap;
-    .registers 9
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -96,7 +96,6 @@
     .end annotation
 
     .line 127
-    # invokes: Landroidx/compose/runtime/ComposerKt;->multiMap()Ljava/util/HashMap;
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->access$multiMap()Ljava/util/HashMap;
 
     move-result-object v0
@@ -121,8 +120,8 @@
 
     move-result v5
 
-    :goto_11
-    if-ge v4, v5, :cond_27
+    :goto_0
+    if-ge v4, v5, :cond_0
 
     .line 129
     invoke-virtual {v1}, Landroidx/compose/runtime/Pending;->getKeyInfos()Ljava/util/List;
@@ -137,23 +136,21 @@
 
     .line 131
     .local v6, "keyInfo":Landroidx/compose/runtime/KeyInfo;
-    # invokes: Landroidx/compose/runtime/ComposerKt;->getJoinedKey(Landroidx/compose/runtime/KeyInfo;)Ljava/lang/Object;
     invoke-static {v6}, Landroidx/compose/runtime/ComposerKt;->access$getJoinedKey(Landroidx/compose/runtime/KeyInfo;)Ljava/lang/Object;
 
     move-result-object v7
 
-    # invokes: Landroidx/compose/runtime/ComposerKt;->put(Ljava/util/HashMap;Ljava/lang/Object;Ljava/lang/Object;)Z
     invoke-static {v2, v7, v6}, Landroidx/compose/runtime/ComposerKt;->access$put(Ljava/util/HashMap;Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 128
     .end local v6    # "keyInfo":Landroidx/compose/runtime/KeyInfo;
     add-int/lit8 v4, v4, 0x1
 
-    goto :goto_11
+    goto :goto_0
 
     .line 133
     .end local v4    # "index":I
-    :cond_27
+    :cond_0
     nop
 
     .line 127

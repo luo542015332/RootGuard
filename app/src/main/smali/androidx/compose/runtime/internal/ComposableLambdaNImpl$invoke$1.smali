@@ -64,7 +64,7 @@
 
 # direct methods
 .method constructor <init>([Ljava/lang/Object;ILandroidx/compose/runtime/internal/ComposableLambdaNImpl;)V
-    .registers 5
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl$invoke$1;->$args:[Ljava/lang/Object;
 
@@ -82,7 +82,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 5
+    .locals 2
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -107,7 +107,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/runtime/Composer;I)V
-    .registers 10
+    .locals 7
     .param p1, "nc"    # Landroidx/compose/runtime/Composer;
 
     const-string/jumbo p2, "nc"
@@ -190,8 +190,8 @@
 
     new-array v4, v3, [Ljava/lang/Object;
 
-    :goto_40
-    if-ge v1, v3, :cond_61
+    :goto_0
+    if-ge v1, v3, :cond_0
 
     .line 126
     iget-object v5, p0, Landroidx/compose/runtime/internal/ComposableLambdaNImpl$invoke$1;->$args:[Ljava/lang/Object;
@@ -225,9 +225,9 @@
     add-int/lit8 v1, v1, 0x1
 
     .line 125
-    goto :goto_40
+    goto :goto_0
 
-    :cond_61
+    :cond_0
     move-object v1, v4
 
     .line 128

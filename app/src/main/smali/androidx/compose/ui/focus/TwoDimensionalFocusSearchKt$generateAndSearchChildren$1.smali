@@ -68,7 +68,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)V
-    .registers 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -101,7 +101,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/ui/layout/BeyondBoundsLayout$BeyondBoundsScope;)Ljava/lang/Boolean;
-    .registers 6
+    .locals 4
     .param p1, "$this$searchBeyondBounds"    # Landroidx/compose/ui/layout/BeyondBoundsLayout$BeyondBoundsScope;
 
     const-string v0, "$this$searchBeyondBounds"
@@ -117,7 +117,6 @@
 
     iget-object v3, p0, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt$generateAndSearchChildren$1;->$onFound:Lkotlin/jvm/functions/Function1;
 
-    # invokes: Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->searchChildren-4C6V_qg(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
     invoke-static {v0, v1, v2, v3}, Landroidx/compose/ui/focus/TwoDimensionalFocusSearchKt;->access$searchChildren-4C6V_qg(Landroidx/compose/ui/focus/FocusTargetNode;Landroidx/compose/ui/focus/FocusTargetNode;ILkotlin/jvm/functions/Function1;)Z
 
     move-result v0
@@ -135,42 +134,42 @@
 
     .line 150
     .local v2, "$i$a$-takeIf-TwoDimensionalFocusSearchKt$generateAndSearchChildren$1$1":I
-    if-nez v1, :cond_25
+    if-nez v1, :cond_1
 
     invoke-interface {p1}, Landroidx/compose/ui/layout/BeyondBoundsLayout$BeyondBoundsScope;->getHasMoreContent()Z
 
     move-result v3
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_0
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_23
+    :cond_0
     const/4 v3, 0x0
 
-    goto :goto_26
+    goto :goto_1
 
-    :cond_25
-    :goto_25
+    :cond_1
+    :goto_0
     const/4 v3, 0x1
 
     .line 148
     .end local v1    # "found":Z
     .end local v2    # "$i$a$-takeIf-TwoDimensionalFocusSearchKt$generateAndSearchChildren$1$1":I
-    :goto_26
-    if-eqz v3, :cond_29
+    :goto_1
+    if-eqz v3, :cond_2
 
-    goto :goto_2a
+    goto :goto_2
 
-    :cond_29
+    :cond_2
     const/4 v0, 0x0
 
-    :goto_2a
+    :goto_2
     return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 146

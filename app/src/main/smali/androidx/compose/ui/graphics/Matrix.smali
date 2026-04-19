@@ -138,7 +138,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .locals 2
 
     new-instance v0, Landroidx/compose/ui/graphics/Matrix$Companion;
 
@@ -152,7 +152,7 @@
 .end method
 
 .method private synthetic constructor <init>([F)V
-    .registers 2
+    .locals 0
     .param p1, "values"    # [F
 
     .line 31
@@ -164,7 +164,7 @@
 .end method
 
 .method public static final synthetic box-impl([F)Landroidx/compose/ui/graphics/Matrix;
-    .registers 2
+    .locals 1
 
     new-instance v0, Landroidx/compose/ui/graphics/Matrix;
 
@@ -174,7 +174,7 @@
 .end method
 
 .method public static constructor-impl([F)[F
-    .registers 2
+    .locals 1
 
     const-string/jumbo v0, "values"
 
@@ -184,19 +184,19 @@
 .end method
 
 .method public static synthetic constructor-impl$default([FILkotlin/jvm/internal/DefaultConstructorMarker;)[F
-    .registers 3
+    .locals 0
 
     .line 31
     and-int/lit8 p1, p1, 0x1
 
-    if-eqz p1, :cond_23
+    if-eqz p1, :cond_0
 
     .line 33
     const/16 p0, 0x10
 
     new-array p0, p0, [F
 
-    fill-array-data p0, :array_28
+    fill-array-data p0, :array_0
 
     .line 34
     nop
@@ -271,14 +271,14 @@
     nop
 
     .line 31
-    :cond_23
+    :cond_0
     invoke-static {p0}, Landroidx/compose/ui/graphics/Matrix;->constructor-impl([F)[F
 
     move-result-object p0
 
     return-object p0
 
-    :array_28
+    :array_0
     .array-data 4
         0x3f800000    # 1.0f
         0x0
@@ -300,17 +300,17 @@
 .end method
 
 .method public static equals-impl([FLjava/lang/Object;)Z
-    .registers 4
+    .locals 2
 
     instance-of v0, p1, Landroidx/compose/ui/graphics/Matrix;
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_0
 
     return v1
 
-    :cond_6
+    :cond_0
     move-object v0, p1
 
     check-cast v0, Landroidx/compose/ui/graphics/Matrix;
@@ -323,18 +323,18 @@
 
     move-result v0
 
-    if-nez v0, :cond_14
+    if-nez v0, :cond_1
 
     return v1
 
-    :cond_14
+    :cond_1
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public static final equals-impl0([F[F)Z
-    .registers 3
+    .locals 1
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -344,7 +344,7 @@
 .end method
 
 .method public static final get-impl([FII)F
-    .registers 5
+    .locals 2
     .param p0, "arg0"    # [F
     .param p1, "row"    # I
     .param p2, "column"    # I
@@ -363,7 +363,7 @@
 .end method
 
 .method public static hashCode-impl([F)I
-    .registers 2
+    .locals 1
 
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([F)I
 
@@ -373,7 +373,7 @@
 .end method
 
 .method public static final invert-impl([F)V
-    .registers 36
+    .locals 35
     .param p0, "arg0"    # [F
 
     .line 143
@@ -888,23 +888,23 @@
 
     cmpg-float v29, v28, v29
 
-    if-nez v29, :cond_fe
+    if-nez v29, :cond_0
 
     const/16 v29, 0x1
 
-    goto :goto_100
+    goto :goto_0
 
-    :cond_fe
+    :cond_0
     const/16 v29, 0x0
 
-    :goto_100
-    if-eqz v29, :cond_103
+    :goto_0
+    if-eqz v29, :cond_1
 
     .line 174
     return-void
 
     .line 176
-    :cond_103
+    :cond_1
     const/high16 v29, 0x3f800000    # 1.0f
 
     div-float v29, v29, v28
@@ -1535,7 +1535,7 @@
 .end method
 
 .method public static final map-MK-Hz9U([FJ)J
-    .registers 14
+    .locals 11
     .param p0, "arg0"    # [F
     .param p1, "point"    # J
 
@@ -1634,32 +1634,32 @@
 
     move-result v5
 
-    if-nez v5, :cond_34
+    if-nez v5, :cond_0
 
     invoke-static {v4}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v5
 
-    if-nez v5, :cond_34
+    if-nez v5, :cond_0
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_34
+    :cond_0
     const/4 v3, 0x0
 
-    :goto_35
-    if-eqz v3, :cond_39
+    :goto_0
+    if-eqz v3, :cond_1
 
     move v3, v4
 
-    goto :goto_3a
+    goto :goto_1
 
-    :cond_39
+    :cond_1
     const/4 v3, 0x0
 
     .line 56
     .local v3, "pZ":F
-    :goto_3a
+    :goto_1
     const/4 v5, 0x0
 
     .local v5, "row$iv":I
@@ -1810,7 +1810,7 @@
 .end method
 
 .method public static final map-impl([FLandroidx/compose/ui/geometry/Rect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 16
+    .locals 14
     .param p0, "arg0"    # [F
     .param p1, "rect"    # Landroidx/compose/ui/geometry/Rect;
 
@@ -2019,7 +2019,7 @@
 .end method
 
 .method public static final map-impl([FLandroidx/compose/ui/geometry/MutableRect;)V
-    .registers 13
+    .locals 11
     .param p0, "arg0"    # [F
     .param p1, "rect"    # Landroidx/compose/ui/geometry/MutableRect;
 
@@ -2228,37 +2228,37 @@
 .end method
 
 .method public static final reset-impl([F)V
-    .registers 7
+    .locals 6
     .param p0, "arg0"    # [F
 
     .line 199
     const/4 v0, 0x0
 
     .local v0, "c":I
-    :goto_1
+    :goto_0
     const/4 v1, 0x4
 
-    if-ge v0, v1, :cond_1a
+    if-ge v0, v1, :cond_2
 
     .line 200
     const/4 v2, 0x0
 
     .local v2, "r":I
-    :goto_5
-    if-ge v2, v1, :cond_17
+    :goto_1
+    if-ge v2, v1, :cond_1
 
     .line 201
-    if-ne v0, v2, :cond_c
+    if-ne v0, v2, :cond_0
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    goto :goto_d
+    goto :goto_2
 
-    :cond_c
+    :cond_0
     const/4 v3, 0x0
 
     .local v3, "v$iv":F
-    :goto_d
+    :goto_2
     const/4 v4, 0x0
 
     .line 528
@@ -2277,23 +2277,23 @@
     .end local v4    # "$i$f$set-impl":I
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_5
+    goto :goto_1
 
     .line 199
     .end local v2    # "r":I
-    :cond_17
+    :cond_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     .line 204
     .end local v0    # "c":I
-    :cond_1a
+    :cond_2
     return-void
 .end method
 
 .method public static final rotateX-impl([FF)V
-    .registers 25
+    .locals 23
     .param p0, "arg0"    # [F
     .param p1, "degrees"    # F
 
@@ -2776,7 +2776,7 @@
 .end method
 
 .method public static final rotateY-impl([FF)V
-    .registers 24
+    .locals 22
     .param p0, "arg0"    # [F
     .param p1, "degrees"    # F
 
@@ -3267,7 +3267,7 @@
 .end method
 
 .method public static final rotateZ-impl([FF)V
-    .registers 24
+    .locals 22
     .param p0, "arg0"    # [F
     .param p1, "degrees"    # F
 
@@ -3758,7 +3758,7 @@
 .end method
 
 .method public static final scale-impl([FFFF)V
-    .registers 13
+    .locals 9
     .param p0, "arg0"    # [F
     .param p1, "x"    # F
     .param p2, "y"    # F
@@ -4339,39 +4339,39 @@
 .end method
 
 .method public static synthetic scale-impl$default([FFFFILjava/lang/Object;)V
-    .registers 7
+    .locals 1
 
     .line 325
     and-int/lit8 p5, p4, 0x1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_0
 
     move p1, v0
 
-    :cond_7
+    :cond_0
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_c
+    if-eqz p5, :cond_1
 
     move p2, v0
 
-    :cond_c
+    :cond_1
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_11
+    if-eqz p4, :cond_2
 
     move p3, v0
 
-    :cond_11
+    :cond_2
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/Matrix;->scale-impl([FFFF)V
 
     return-void
 .end method
 
 .method public static final set-impl([FIIF)V
-    .registers 6
+    .locals 2
     .param p0, "arg0"    # [F
     .param p1, "row"    # I
     .param p2, "column"    # I
@@ -4392,7 +4392,7 @@
 .end method
 
 .method public static final setFrom-58bKbWc([F[F)V
-    .registers 4
+    .locals 2
     .param p0, "arg0"    # [F
     .param p1, "matrix"    # [F
 
@@ -4404,10 +4404,10 @@
     const/4 v0, 0x0
 
     .local v0, "i":I
-    :goto_7
+    :goto_0
     const/16 v1, 0x10
 
-    if-ge v0, v1, :cond_12
+    if-ge v0, v1, :cond_0
 
     .line 209
     aget v1, p1, v0
@@ -4417,16 +4417,16 @@
     .line 208
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_7
+    goto :goto_0
 
     .line 211
     .end local v0    # "i":I
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public static final timesAssign-58bKbWc([F[F)V
-    .registers 24
+    .locals 22
     .param p0, "arg0"    # [F
     .param p1, "m"    # [F
 
@@ -4441,7 +4441,6 @@
     .line 96
     const/4 v2, 0x0
 
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v2, v1, v2}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v3
@@ -4450,7 +4449,6 @@
     .local v3, "v00":F
     const/4 v4, 0x1
 
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v2, v1, v4}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v5
@@ -4459,7 +4457,6 @@
     .local v5, "v01":F
     const/4 v6, 0x2
 
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v2, v1, v6}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v7
@@ -4468,91 +4465,78 @@
     .local v7, "v02":F
     const/4 v8, 0x3
 
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v2, v1, v8}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v9
 
     .line 100
     .local v9, "v03":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v4, v1, v2}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v10
 
     .line 101
     .local v10, "v10":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v4, v1, v4}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v11
 
     .line 102
     .local v11, "v11":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v4, v1, v6}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v12
 
     .line 103
     .local v12, "v12":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v4, v1, v8}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v13
 
     .line 104
     .local v13, "v13":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v6, v1, v2}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v14
 
     .line 105
     .local v14, "v20":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v6, v1, v4}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v15
 
     .line 106
     .local v15, "v21":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v6, v1, v6}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v16
 
     .line 107
     .local v16, "v22":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v6, v1, v8}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v17
 
     .line 108
     .local v17, "v23":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v8, v1, v2}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v2
 
     .line 109
     .local v2, "v30":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v8, v1, v4}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v4
 
     .line 110
     .local v4, "v31":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v8, v1, v6}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v6
 
     .line 111
     .local v6, "v32":F
-    # invokes: Landroidx/compose/ui/graphics/MatrixKt;->dot-p89u6pk([FI[FI)F
     invoke-static {v0, v8, v1, v8}, Landroidx/compose/ui/graphics/MatrixKt;->access$dot-p89u6pk([FI[FI)F
 
     move-result v8
@@ -4931,7 +4915,7 @@
 .end method
 
 .method public static toString-impl([F)Ljava/lang/String;
-    .registers 9
+    .locals 8
     .param p0, "arg0"    # [F
 
     .line 131
@@ -5441,7 +5425,7 @@
 .end method
 
 .method public static final translate-impl([FFFF)V
-    .registers 12
+    .locals 8
     .param p0, "arg0"    # [F
     .param p1, "x"    # F
     .param p2, "y"    # F
@@ -5940,32 +5924,32 @@
 .end method
 
 .method public static synthetic translate-impl$default([FFFFILjava/lang/Object;)V
-    .registers 7
+    .locals 1
 
     .line 341
     and-int/lit8 p5, p4, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_0
 
     move p1, v0
 
-    :cond_6
+    :cond_0
     and-int/lit8 p5, p4, 0x2
 
-    if-eqz p5, :cond_b
+    if-eqz p5, :cond_1
 
     move p2, v0
 
-    :cond_b
+    :cond_1
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_10
+    if-eqz p4, :cond_2
 
     move p3, v0
 
-    :cond_10
+    :cond_2
     invoke-static {p0, p1, p2, p3}, Landroidx/compose/ui/graphics/Matrix;->translate-impl([FFFF)V
 
     return-void
@@ -5974,7 +5958,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 3
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/Matrix;->values:[F
 
@@ -5986,7 +5970,7 @@
 .end method
 
 .method public final getValues()[F
-    .registers 2
+    .locals 1
 
     .line 32
     iget-object v0, p0, Landroidx/compose/ui/graphics/Matrix;->values:[F
@@ -5995,7 +5979,7 @@
 .end method
 
 .method public hashCode()I
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/Matrix;->values:[F
 
@@ -6007,7 +5991,7 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 2
+    .locals 1
 
     .line 130
     iget-object v0, p0, Landroidx/compose/ui/graphics/Matrix;->values:[F
@@ -6021,7 +6005,7 @@
 .end method
 
 .method public final synthetic unbox-impl()[F
-    .registers 2
+    .locals 1
 
     iget-object v0, p0, Landroidx/compose/ui/graphics/Matrix;->values:[F
 

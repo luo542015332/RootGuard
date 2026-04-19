@@ -74,7 +74,7 @@
 
 # direct methods
 .method public static final synthetic access$hasSameCornerRadius(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 2
+    .locals 1
     .param p0, "$receiver"    # Landroidx/compose/ui/geometry/RoundRect;
 
     .line 1
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final addOutline(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Outline;)V
-    .registers 9
+    .locals 7
     .param p0, "$this$addOutline"    # Landroidx/compose/ui/graphics/Path;
     .param p1, "outline"    # Landroidx/compose/ui/graphics/Outline;
 
@@ -104,7 +104,7 @@
     .line 131
     instance-of v0, p1, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -116,13 +116,13 @@
 
     invoke-interface {p0, v0}, Landroidx/compose/ui/graphics/Path;->addRect(Landroidx/compose/ui/geometry/Rect;)V
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 132
-    :cond_1b
+    :cond_0
     instance-of v0, p1, Landroidx/compose/ui/graphics/Outline$Rounded;
 
-    if-eqz v0, :cond_2a
+    if-eqz v0, :cond_1
 
     move-object v0, p1
 
@@ -134,13 +134,13 @@
 
     invoke-interface {p0, v0}, Landroidx/compose/ui/graphics/Path;->addRoundRect(Landroidx/compose/ui/geometry/RoundRect;)V
 
-    goto :goto_3d
+    goto :goto_0
 
     .line 133
-    :cond_2a
+    :cond_1
     instance-of v0, p1, Landroidx/compose/ui/graphics/Outline$Generic;
 
-    if-eqz v0, :cond_3e
+    if-eqz v0, :cond_2
 
     move-object v0, p1
 
@@ -161,11 +161,11 @@
     invoke-static/range {v1 .. v6}, Landroidx/compose/ui/graphics/Path;->addPath-Uv8p0NA$default(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Path;JILjava/lang/Object;)V
 
     .line 134
-    :goto_3d
+    :goto_0
     return-void
 
     .line 133
-    :cond_3e
+    :cond_2
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -174,7 +174,7 @@
 .end method
 
 .method public static final drawOutline(Landroidx/compose/ui/graphics/Canvas;Landroidx/compose/ui/graphics/Outline;Landroidx/compose/ui/graphics/Paint;)V
-    .registers 13
+    .locals 10
     .param p0, "$this$drawOutline"    # Landroidx/compose/ui/graphics/Canvas;
     .param p1, "outline"    # Landroidx/compose/ui/graphics/Outline;
     .param p2, "paint"    # Landroidx/compose/ui/graphics/Paint;
@@ -197,7 +197,7 @@
     .line 269
     instance-of v0, p1, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
-    if-eqz v0, :cond_21
+    if-eqz v0, :cond_0
 
     move-object v0, p1
 
@@ -209,13 +209,13 @@
 
     invoke-interface {p0, v0, p2}, Landroidx/compose/ui/graphics/Canvas;->drawRect(Landroidx/compose/ui/geometry/Rect;Landroidx/compose/ui/graphics/Paint;)V
 
-    goto :goto_92
+    goto :goto_0
 
     .line 270
-    :cond_21
+    :cond_0
     instance-of v0, p1, Landroidx/compose/ui/graphics/Outline$Rounded;
 
-    if-eqz v0, :cond_84
+    if-eqz v0, :cond_2
 
     .line 271
     move-object v0, p1
@@ -228,15 +228,15 @@
 
     .line 276
     .local v0, "path":Landroidx/compose/ui/graphics/Path;
-    if-eqz v0, :cond_32
+    if-eqz v0, :cond_1
 
     .line 277
     invoke-interface {p0, v0, p2}, Landroidx/compose/ui/graphics/Canvas;->drawPath(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Paint;)V
 
-    goto :goto_92
+    goto :goto_0
 
     .line 279
-    :cond_32
+    :cond_1
     nop
 
     .line 280
@@ -336,13 +336,13 @@
     invoke-interface/range {v2 .. v9}, Landroidx/compose/ui/graphics/Canvas;->drawRoundRect(FFFFFFLandroidx/compose/ui/graphics/Paint;)V
 
     .end local v0    # "path":Landroidx/compose/ui/graphics/Path;
-    goto :goto_92
+    goto :goto_0
 
     .line 290
-    :cond_84
+    :cond_2
     instance-of v0, p1, Landroidx/compose/ui/graphics/Outline$Generic;
 
-    if-eqz v0, :cond_93
+    if-eqz v0, :cond_3
 
     move-object v0, p1
 
@@ -355,11 +355,11 @@
     invoke-interface {p0, v0, p2}, Landroidx/compose/ui/graphics/Canvas;->drawPath(Landroidx/compose/ui/graphics/Path;Landroidx/compose/ui/graphics/Paint;)V
 
     .line 291
-    :goto_92
+    :goto_0
     return-void
 
     .line 290
-    :cond_93
+    :cond_3
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -368,7 +368,7 @@
 .end method
 
 .method public static final drawOutline-hn5TExg(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Outline;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 28
+    .locals 21
     .param p0, "$this$drawOutline_u2dhn5TExg"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "outline"    # Landroidx/compose/ui/graphics/Outline;
     .param p2, "brush"    # Landroidx/compose/ui/graphics/Brush;
@@ -414,7 +414,7 @@
     .line 325
     instance-of v3, v0, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
-    if-eqz v3, :cond_4a
+    if-eqz v3, :cond_0
 
     move-object v3, v0
 
@@ -459,13 +459,13 @@
     .end local v3    # "$this$drawOutline_hn5TExg_u24lambda_u243":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v13    # "rect":Landroidx/compose/ui/geometry/Rect;
     .end local v17    # "$i$a$-drawOutlineHelper-OutlineKt$drawOutline$4":I
-    goto/16 :goto_be
+    goto/16 :goto_0
 
     .line 326
-    :cond_4a
+    :cond_0
     instance-of v3, v0, Landroidx/compose/ui/graphics/Outline$Rounded;
 
-    if-eqz v3, :cond_a2
+    if-eqz v3, :cond_2
 
     .line 327
     move-object v3, v0
@@ -478,7 +478,7 @@
 
     .line 332
     .local v17, "path$iv":Landroidx/compose/ui/graphics/Path;
-    if-eqz v17, :cond_69
+    if-eqz v17, :cond_1
 
     .line 333
     move-object v3, v1
@@ -507,10 +507,10 @@
     .end local v3    # "$this$drawOutline_hn5TExg_u24lambda_u245":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v4    # "path":Landroidx/compose/ui/graphics/Path;
     .end local v10    # "$i$a$-drawOutlineHelper-OutlineKt$drawOutline$6":I
-    goto :goto_be
+    goto :goto_0
 
     .line 335
-    :cond_69
+    :cond_1
     move-object v3, v0
 
     check-cast v3, Landroidx/compose/ui/graphics/Outline$Rounded;
@@ -603,13 +603,13 @@
     nop
 
     .end local v17    # "path$iv":Landroidx/compose/ui/graphics/Path;
-    goto :goto_be
+    goto :goto_0
 
     .line 338
-    :cond_a2
+    :cond_2
     instance-of v3, v0, Landroidx/compose/ui/graphics/Outline$Generic;
 
-    if-eqz v3, :cond_c0
+    if-eqz v3, :cond_3
 
     move-object v3, v0
 
@@ -648,7 +648,7 @@
     nop
 
     .line 339
-    :goto_be
+    :goto_0
     nop
 
     .line 214
@@ -659,7 +659,7 @@
     .line 338
     .restart local v1    # "$this$drawOutlineHelper$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v16    # "$i$f$drawOutlineHelper":I
-    :cond_c0
+    :cond_3
     new-instance v3, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v3}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -668,28 +668,28 @@
 .end method
 
 .method public static synthetic drawOutline-hn5TExg$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Outline;Landroidx/compose/ui/graphics/Brush;FLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 16
+    .locals 7
 
     .line 187
     and-int/lit8 p8, p7, 0x4
 
-    if-eqz p8, :cond_8
+    if-eqz p8, :cond_0
 
     .line 191
     const/high16 p3, 0x3f800000    # 1.0f
 
     move v3, p3
 
-    goto :goto_9
+    goto :goto_0
 
     .line 187
-    :cond_8
+    :cond_0
     move v3, p3
 
-    :goto_9
+    :goto_0
     and-int/lit8 p3, p7, 0x8
 
-    if-eqz p3, :cond_14
+    if-eqz p3, :cond_1
 
     .line 192
     sget-object p3, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -700,32 +700,32 @@
 
     move-object v4, p4
 
-    goto :goto_15
+    goto :goto_1
 
     .line 187
-    :cond_14
+    :cond_1
     move-object v4, p4
 
-    :goto_15
+    :goto_1
     and-int/lit8 p3, p7, 0x10
 
-    if-eqz p3, :cond_1c
+    if-eqz p3, :cond_2
 
     .line 193
     const/4 p5, 0x0
 
     move-object v5, p5
 
-    goto :goto_1d
+    goto :goto_2
 
     .line 187
-    :cond_1c
+    :cond_2
     move-object v5, p5
 
-    :goto_1d
+    :goto_2
     and-int/lit8 p3, p7, 0x20
 
-    if-eqz p3, :cond_29
+    if-eqz p3, :cond_3
 
     .line 194
     sget-object p3, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -736,13 +736,13 @@
 
     move v6, p6
 
-    goto :goto_2a
+    goto :goto_3
 
     .line 187
-    :cond_29
+    :cond_3
     move v6, p6
 
-    :goto_2a
+    :goto_3
     move-object v0, p0
 
     move-object v1, p1
@@ -755,7 +755,7 @@
 .end method
 
 .method public static final drawOutline-wDX37Ww(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Outline;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;I)V
-    .registers 29
+    .locals 21
     .param p0, "$this$drawOutline_u2dwDX37Ww"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "outline"    # Landroidx/compose/ui/graphics/Outline;
     .param p2, "color"    # J
@@ -795,7 +795,7 @@
     .line 309
     instance-of v3, v0, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
-    if-eqz v3, :cond_42
+    if-eqz v3, :cond_0
 
     move-object v3, v0
 
@@ -840,13 +840,13 @@
     .end local v3    # "$this$drawOutline_wDX37Ww_u24lambda_u240":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v14    # "rect":Landroidx/compose/ui/geometry/Rect;
     .end local v17    # "$i$a$-drawOutlineHelper-OutlineKt$drawOutline$1":I
-    goto/16 :goto_b9
+    goto/16 :goto_0
 
     .line 310
-    :cond_42
+    :cond_0
     instance-of v3, v0, Landroidx/compose/ui/graphics/Outline$Rounded;
 
-    if-eqz v3, :cond_9d
+    if-eqz v3, :cond_2
 
     .line 311
     move-object v3, v0
@@ -859,7 +859,7 @@
 
     .line 316
     .local v17, "path$iv":Landroidx/compose/ui/graphics/Path;
-    if-eqz v17, :cond_61
+    if-eqz v17, :cond_1
 
     .line 317
     move-object v3, v1
@@ -888,10 +888,10 @@
     .end local v3    # "$this$drawOutline_wDX37Ww_u24lambda_u242":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .end local v4    # "path":Landroidx/compose/ui/graphics/Path;
     .end local v11    # "$i$a$-drawOutlineHelper-OutlineKt$drawOutline$3":I
-    goto :goto_b9
+    goto :goto_0
 
     .line 319
-    :cond_61
+    :cond_1
     move-object v3, v0
 
     check-cast v3, Landroidx/compose/ui/graphics/Outline$Rounded;
@@ -993,13 +993,13 @@
     nop
 
     .end local v17    # "path$iv":Landroidx/compose/ui/graphics/Path;
-    goto :goto_b9
+    goto :goto_0
 
     .line 322
-    :cond_9d
+    :cond_2
     instance-of v3, v0, Landroidx/compose/ui/graphics/Outline$Generic;
 
-    if-eqz v3, :cond_bb
+    if-eqz v3, :cond_3
 
     move-object v3, v0
 
@@ -1038,7 +1038,7 @@
     nop
 
     .line 323
-    :goto_b9
+    :goto_0
     nop
 
     .line 174
@@ -1049,7 +1049,7 @@
     .line 322
     .restart local v1    # "$this$drawOutlineHelper$iv":Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .restart local v16    # "$i$f$drawOutlineHelper":I
-    :cond_bb
+    :cond_3
     new-instance v3, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v3}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -1058,28 +1058,28 @@
 .end method
 
 .method public static synthetic drawOutline-wDX37Ww$default(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Outline;JFLandroidx/compose/ui/graphics/drawscope/DrawStyle;Landroidx/compose/ui/graphics/ColorFilter;IILjava/lang/Object;)V
-    .registers 19
+    .locals 9
 
     .line 147
     and-int/lit8 v0, p8, 0x4
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_0
 
     .line 151
     const/high16 v0, 0x3f800000    # 1.0f
 
     move v5, v0
 
-    goto :goto_9
+    goto :goto_0
 
     .line 147
-    :cond_8
+    :cond_0
     move v5, p4
 
-    :goto_9
+    :goto_0
     and-int/lit8 v0, p8, 0x8
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_1
 
     .line 152
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/Fill;->INSTANCE:Landroidx/compose/ui/graphics/drawscope/Fill;
@@ -1088,32 +1088,32 @@
 
     move-object v6, v0
 
-    goto :goto_14
+    goto :goto_1
 
     .line 147
-    :cond_13
+    :cond_1
     move-object v6, p5
 
-    :goto_14
+    :goto_1
     and-int/lit8 v0, p8, 0x10
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_2
 
     .line 153
     const/4 v0, 0x0
 
     move-object v7, v0
 
-    goto :goto_1c
+    goto :goto_2
 
     .line 147
-    :cond_1b
+    :cond_2
     move-object v7, p6
 
-    :goto_1c
+    :goto_2
     and-int/lit8 v0, p8, 0x20
 
-    if-eqz v0, :cond_28
+    if-eqz v0, :cond_3
 
     .line 154
     sget-object v0, Landroidx/compose/ui/graphics/drawscope/DrawScope;->Companion:Landroidx/compose/ui/graphics/drawscope/DrawScope$Companion;
@@ -1124,13 +1124,13 @@
 
     move v8, v0
 
-    goto :goto_2a
+    goto :goto_3
 
     .line 147
-    :cond_28
+    :cond_3
     move/from16 v8, p7
 
-    :goto_2a
+    :goto_3
     move-object v1, p0
 
     move-object v2, p1
@@ -1143,7 +1143,7 @@
 .end method
 
 .method private static final drawOutlineHelper(Landroidx/compose/ui/graphics/drawscope/DrawScope;Landroidx/compose/ui/graphics/Outline;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;)V
-    .registers 8
+    .locals 3
     .param p0, "$this$drawOutlineHelper"    # Landroidx/compose/ui/graphics/drawscope/DrawScope;
     .param p1, "outline"    # Landroidx/compose/ui/graphics/Outline;
     .param p2, "drawRectBlock"    # Lkotlin/jvm/functions/Function2;
@@ -1187,7 +1187,7 @@
     .line 246
     instance-of v1, p1, Landroidx/compose/ui/graphics/Outline$Rectangle;
 
-    if-eqz v1, :cond_11
+    if-eqz v1, :cond_0
 
     move-object v1, p1
 
@@ -1199,13 +1199,13 @@
 
     invoke-interface {p2, p0, v1}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 247
-    :cond_11
+    :cond_0
     instance-of v1, p1, Landroidx/compose/ui/graphics/Outline$Rounded;
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2
 
     .line 248
     move-object v1, p1
@@ -1218,15 +1218,15 @@
 
     .line 253
     .local v1, "path":Landroidx/compose/ui/graphics/Path;
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_1
 
     .line 254
     invoke-interface {p4, p0, v1}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 256
-    :cond_22
+    :cond_1
     move-object v2, p1
 
     check-cast v2, Landroidx/compose/ui/graphics/Outline$Rounded;
@@ -1237,14 +1237,14 @@
 
     invoke-interface {p3, p0, v2}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_3b
+    goto :goto_0
 
     .line 259
     .end local v1    # "path":Landroidx/compose/ui/graphics/Path;
-    :cond_2d
+    :cond_2
     instance-of v1, p1, Landroidx/compose/ui/graphics/Outline$Generic;
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3
 
     move-object v1, p1
 
@@ -1257,11 +1257,11 @@
     invoke-interface {p4, p0, v1}, Lkotlin/jvm/functions/Function2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 260
-    :goto_3b
+    :goto_0
     return-void
 
     .line 259
-    :cond_3c
+    :cond_3
     new-instance v1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -1270,7 +1270,7 @@
 .end method
 
 .method private static final hasSameCornerRadius(Landroidx/compose/ui/geometry/RoundRect;)Z
-    .registers 7
+    .locals 6
     .param p0, "$this$hasSameCornerRadius"    # Landroidx/compose/ui/geometry/RoundRect;
 
     .line 299
@@ -1296,17 +1296,17 @@
 
     const/4 v2, 0x0
 
-    if-nez v0, :cond_18
+    if-nez v0, :cond_0
 
     move v0, v1
 
-    goto :goto_19
+    goto :goto_0
 
-    :cond_18
+    :cond_0
     move v0, v2
 
-    :goto_19
-    if-eqz v0, :cond_4f
+    :goto_0
+    if-eqz v0, :cond_3
 
     .line 300
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomRightCornerRadius-kKHJgLs()J
@@ -1327,17 +1327,17 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_31
+    if-nez v0, :cond_1
 
     move v0, v1
 
-    goto :goto_32
+    goto :goto_1
 
-    :cond_31
+    :cond_1
     move v0, v2
 
-    :goto_32
-    if-eqz v0, :cond_4f
+    :goto_1
+    if-eqz v0, :cond_3
 
     .line 301
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
@@ -1358,27 +1358,27 @@
 
     cmpg-float v0, v0, v3
 
-    if-nez v0, :cond_4a
+    if-nez v0, :cond_2
 
     move v0, v1
 
-    goto :goto_4b
+    goto :goto_2
 
-    :cond_4a
+    :cond_2
     move v0, v2
 
-    :goto_4b
-    if-eqz v0, :cond_4f
+    :goto_2
+    if-eqz v0, :cond_3
 
     move v0, v1
 
-    goto :goto_50
+    goto :goto_3
 
-    :cond_4f
+    :cond_3
     move v0, v2
 
     .line 299
-    :goto_50
+    :goto_3
     nop
 
     .line 302
@@ -1401,17 +1401,17 @@
 
     cmpg-float v3, v3, v4
 
-    if-nez v3, :cond_67
+    if-nez v3, :cond_4
 
     move v3, v1
 
-    goto :goto_68
+    goto :goto_4
 
-    :cond_67
+    :cond_4
     move v3, v2
 
-    :goto_68
-    if-eqz v3, :cond_9e
+    :goto_4
+    if-eqz v3, :cond_7
 
     .line 303
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getBottomRightCornerRadius-kKHJgLs()J
@@ -1432,17 +1432,17 @@
 
     cmpg-float v3, v3, v4
 
-    if-nez v3, :cond_80
+    if-nez v3, :cond_5
 
     move v3, v1
 
-    goto :goto_81
+    goto :goto_5
 
-    :cond_80
+    :cond_5
     move v3, v2
 
-    :goto_81
-    if-eqz v3, :cond_9e
+    :goto_5
+    if-eqz v3, :cond_7
 
     .line 304
     invoke-virtual {p0}, Landroidx/compose/ui/geometry/RoundRect;->getTopRightCornerRadius-kKHJgLs()J
@@ -1463,46 +1463,46 @@
 
     cmpg-float v3, v3, v4
 
-    if-nez v3, :cond_99
+    if-nez v3, :cond_6
 
     move v3, v1
 
-    goto :goto_9a
+    goto :goto_6
 
-    :cond_99
+    :cond_6
     move v3, v2
 
-    :goto_9a
-    if-eqz v3, :cond_9e
+    :goto_6
+    if-eqz v3, :cond_7
 
     move v3, v1
 
-    goto :goto_9f
+    goto :goto_7
 
-    :cond_9e
+    :cond_7
     move v3, v2
 
     .line 302
-    :goto_9f
+    :goto_7
     nop
 
     .line 305
     .local v3, "sameRadiusY":Z
-    if-eqz v0, :cond_a5
+    if-eqz v0, :cond_8
 
-    if-eqz v3, :cond_a5
+    if-eqz v3, :cond_8
 
-    goto :goto_a6
+    goto :goto_8
 
-    :cond_a5
+    :cond_8
     move v1, v2
 
-    :goto_a6
+    :goto_8
     return v1
 .end method
 
 .method private static final size(Landroidx/compose/ui/geometry/Rect;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$size"    # Landroidx/compose/ui/geometry/Rect;
 
     .line 224
@@ -1522,7 +1522,7 @@
 .end method
 
 .method private static final size(Landroidx/compose/ui/geometry/RoundRect;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$size"    # Landroidx/compose/ui/geometry/RoundRect;
 
     .line 234
@@ -1542,7 +1542,7 @@
 .end method
 
 .method private static final topLeft(Landroidx/compose/ui/geometry/Rect;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$topLeft"    # Landroidx/compose/ui/geometry/Rect;
 
     .line 219
@@ -1562,7 +1562,7 @@
 .end method
 
 .method private static final topLeft(Landroidx/compose/ui/geometry/RoundRect;)J
-    .registers 3
+    .locals 2
     .param p0, "$this$topLeft"    # Landroidx/compose/ui/geometry/RoundRect;
 
     .line 229

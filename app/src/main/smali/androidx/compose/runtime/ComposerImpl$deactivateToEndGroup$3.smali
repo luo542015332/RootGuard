@@ -58,7 +58,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/ComposerImpl;I)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/runtime/ComposerImpl$deactivateToEndGroup$3;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 4
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
 
@@ -95,7 +95,7 @@
 .end method
 
 .method public final invoke(ILjava/lang/Object;)V
-    .registers 8
+    .locals 5
     .param p1, "index"    # I
     .param p2, "data"    # Ljava/lang/Object;
 
@@ -111,12 +111,11 @@
 
     const/4 v3, 0x0
 
-    if-eqz v0, :cond_20
+    if-eqz v0, :cond_0
 
     .line 2788
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$deactivateToEndGroup$3;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->reader:Landroidx/compose/runtime/SlotReader;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getReader$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/SlotReader;
 
     move-result-object v0
@@ -136,13 +135,13 @@
 
     invoke-static {v0, v3, v4, v2, v1}, Landroidx/compose/runtime/ComposerImpl;->recordSlotTableOperation$default(Landroidx/compose/runtime/ComposerImpl;ZLkotlin/jvm/functions/Function3;ILjava/lang/Object;)V
 
-    goto :goto_41
+    goto :goto_0
 
     .line 2797
-    :cond_20
+    :cond_0
     instance-of v0, p2, Landroidx/compose/runtime/RecomposeScopeImpl;
 
-    if-eqz v0, :cond_41
+    if-eqz v0, :cond_1
 
     .line 2798
     move-object v0, p2
@@ -154,7 +153,6 @@
     .line 2799
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$deactivateToEndGroup$3;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->reader:Landroidx/compose/runtime/SlotReader;
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getReader$p(Landroidx/compose/runtime/ComposerImpl;)Landroidx/compose/runtime/SlotReader;
 
     move-result-object v0
@@ -175,7 +173,7 @@
     invoke-static {v0, v3, v4, v2, v1}, Landroidx/compose/runtime/ComposerImpl;->recordSlotTableOperation$default(Landroidx/compose/runtime/ComposerImpl;ZLkotlin/jvm/functions/Function3;ILjava/lang/Object;)V
 
     .line 2808
-    :cond_41
-    :goto_41
+    :cond_1
+    :goto_0
     return-void
 .end method

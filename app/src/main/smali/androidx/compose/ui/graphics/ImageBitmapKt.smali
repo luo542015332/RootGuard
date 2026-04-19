@@ -44,7 +44,7 @@
 
 # direct methods
 .method public static final ImageBitmap-x__-hDU(IIIZLandroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroidx/compose/ui/graphics/ImageBitmap;
-    .registers 6
+    .locals 1
     .param p0, "width"    # I
     .param p1, "height"    # I
     .param p2, "config"    # I
@@ -80,12 +80,12 @@
 .end method
 
 .method public static synthetic ImageBitmap-x__-hDU$default(IIIZLandroidx/compose/ui/graphics/colorspace/ColorSpace;ILjava/lang/Object;)Landroidx/compose/ui/graphics/ImageBitmap;
-    .registers 7
+    .locals 0
 
     .line 249
     and-int/lit8 p6, p5, 0x4
 
-    if-eqz p6, :cond_a
+    if-eqz p6, :cond_0
 
     .line 252
     sget-object p2, Landroidx/compose/ui/graphics/ImageBitmapConfig;->Companion:Landroidx/compose/ui/graphics/ImageBitmapConfig$Companion;
@@ -95,19 +95,19 @@
     move-result p2
 
     .line 249
-    :cond_a
+    :cond_0
     and-int/lit8 p6, p5, 0x8
 
-    if-eqz p6, :cond_f
+    if-eqz p6, :cond_1
 
     .line 253
     const/4 p3, 0x1
 
     .line 249
-    :cond_f
+    :cond_1
     and-int/lit8 p5, p5, 0x10
 
-    if-eqz p5, :cond_1b
+    if-eqz p5, :cond_2
 
     .line 254
     sget-object p4, Landroidx/compose/ui/graphics/colorspace/ColorSpaces;->INSTANCE:Landroidx/compose/ui/graphics/colorspace/ColorSpaces;
@@ -119,7 +119,7 @@
     check-cast p4, Landroidx/compose/ui/graphics/colorspace/ColorSpace;
 
     .line 249
-    :cond_1b
+    :cond_2
     invoke-static {p0, p1, p2, p3, p4}, Landroidx/compose/ui/graphics/ImageBitmapKt;->ImageBitmap-x__-hDU(IIIZLandroidx/compose/ui/graphics/colorspace/ColorSpace;)Landroidx/compose/ui/graphics/ImageBitmap;
 
     move-result-object p0
@@ -128,7 +128,7 @@
 .end method
 
 .method public static final toPixelMap(Landroidx/compose/ui/graphics/ImageBitmap;IIII[III)Landroidx/compose/ui/graphics/PixelMap;
-    .registers 16
+    .locals 8
     .param p0, "$this$toPixelMap"    # Landroidx/compose/ui/graphics/ImageBitmap;
     .param p1, "startX"    # I
     .param p2, "startY"    # I
@@ -210,32 +210,32 @@
 .end method
 
 .method public static synthetic toPixelMap$default(Landroidx/compose/ui/graphics/ImageBitmap;IIII[IIIILjava/lang/Object;)Landroidx/compose/ui/graphics/PixelMap;
-    .registers 11
+    .locals 1
 
     .line 120
     and-int/lit8 p9, p8, 0x1
 
     const/4 v0, 0x0
 
-    if-eqz p9, :cond_6
+    if-eqz p9, :cond_0
 
     .line 121
     move p1, v0
 
     .line 120
-    :cond_6
+    :cond_0
     and-int/lit8 p9, p8, 0x2
 
-    if-eqz p9, :cond_b
+    if-eqz p9, :cond_1
 
     .line 122
     move p2, v0
 
     .line 120
-    :cond_b
+    :cond_1
     and-int/lit8 p9, p8, 0x4
 
-    if-eqz p9, :cond_13
+    if-eqz p9, :cond_2
 
     .line 123
     invoke-interface {p0}, Landroidx/compose/ui/graphics/ImageBitmap;->getWidth()I
@@ -243,10 +243,10 @@
     move-result p3
 
     .line 120
-    :cond_13
+    :cond_2
     and-int/lit8 p9, p8, 0x8
 
-    if-eqz p9, :cond_1b
+    if-eqz p9, :cond_3
 
     .line 124
     invoke-interface {p0}, Landroidx/compose/ui/graphics/ImageBitmap;->getHeight()I
@@ -254,10 +254,10 @@
     move-result p4
 
     .line 120
-    :cond_1b
+    :cond_3
     and-int/lit8 p9, p8, 0x10
 
-    if-eqz p9, :cond_23
+    if-eqz p9, :cond_4
 
     .line 125
     mul-int p5, p3, p4
@@ -265,25 +265,25 @@
     new-array p5, p5, [I
 
     .line 120
-    :cond_23
+    :cond_4
     and-int/lit8 p9, p8, 0x20
 
-    if-eqz p9, :cond_28
+    if-eqz p9, :cond_5
 
     .line 126
     move p6, v0
 
     .line 120
-    :cond_28
+    :cond_5
     and-int/lit8 p8, p8, 0x40
 
-    if-eqz p8, :cond_2d
+    if-eqz p8, :cond_6
 
     .line 127
     move p7, p3
 
     .line 120
-    :cond_2d
+    :cond_6
     invoke-static/range {p0 .. p7}, Landroidx/compose/ui/graphics/ImageBitmapKt;->toPixelMap(Landroidx/compose/ui/graphics/ImageBitmap;IIII[III)Landroidx/compose/ui/graphics/PixelMap;
 
     move-result-object p0

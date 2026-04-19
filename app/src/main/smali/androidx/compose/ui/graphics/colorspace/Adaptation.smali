@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 3
+    .locals 3
 
     new-instance v0, Landroidx/compose/ui/graphics/colorspace/Adaptation$Companion;
 
@@ -69,7 +69,7 @@
 
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_5c
+    fill-array-data v1, :array_0
 
     .line 54
     nop
@@ -122,7 +122,7 @@
     .line 66
     new-array v1, v0, [F
 
-    fill-array-data v1, :array_72
+    fill-array-data v1, :array_1
 
     .line 67
     nop
@@ -175,7 +175,7 @@
     .line 80
     new-array v0, v0, [F
 
-    fill-array-data v0, :array_88
+    fill-array-data v0, :array_2
 
     .line 81
     nop
@@ -224,7 +224,7 @@
 
     return-void
 
-    :array_5c
+    :array_0
     .array-data 4
         0x3f652546    # 0.8951f
         -0x40bff2e5    # -0.7502f
@@ -237,7 +237,7 @@
         0x3f83c9ef    # 1.0296f
     .end array-data
 
-    :array_72
+    :array_1
     .array-data 4
         0x3eccec42    # 0.40024f
         -0x419844d0    # -0.2263f
@@ -250,7 +250,7 @@
         0x3f6b1077
     .end array-data
 
-    :array_88
+    :array_2
     .array-data 4
         0x3f3b98c8    # 0.7328f
         -0x40cbe0df    # -0.7036f
@@ -265,7 +265,7 @@
 .end method
 
 .method private constructor <init>([F)V
-    .registers 2
+    .locals 0
     .param p1, "transform"    # [F
 
     .line 45
@@ -277,7 +277,7 @@
 .end method
 
 .method public synthetic constructor <init>([FLkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 3
+    .locals 0
 
     invoke-direct {p0, p1}, Landroidx/compose/ui/graphics/colorspace/Adaptation;-><init>([F)V
 
@@ -285,7 +285,7 @@
 .end method
 
 .method public static final synthetic access$getBradford$cp()Landroidx/compose/ui/graphics/colorspace/Adaptation;
-    .registers 1
+    .locals 1
 
     .line 45
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Adaptation;->Bradford:Landroidx/compose/ui/graphics/colorspace/Adaptation;
@@ -294,7 +294,7 @@
 .end method
 
 .method public static final synthetic access$getCiecat02$cp()Landroidx/compose/ui/graphics/colorspace/Adaptation;
-    .registers 1
+    .locals 1
 
     .line 45
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Adaptation;->Ciecat02:Landroidx/compose/ui/graphics/colorspace/Adaptation;
@@ -303,7 +303,7 @@
 .end method
 
 .method public static final synthetic access$getVonKries$cp()Landroidx/compose/ui/graphics/colorspace/Adaptation;
-    .registers 1
+    .locals 1
 
     .line 45
     sget-object v0, Landroidx/compose/ui/graphics/colorspace/Adaptation;->VonKries:Landroidx/compose/ui/graphics/colorspace/Adaptation;
@@ -314,7 +314,7 @@
 
 # virtual methods
 .method public final getTransform$ui_graphics_release()[F
-    .registers 2
+    .locals 1
 
     .line 45
     iget-object v0, p0, Landroidx/compose/ui/graphics/colorspace/Adaptation;->transform:[F

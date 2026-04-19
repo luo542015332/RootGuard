@@ -56,7 +56,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 1189
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -65,7 +65,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/ui/node/NodeCoordinator$Companion;-><init>()V
 
@@ -75,10 +75,9 @@
 
 # virtual methods
 .method public final getPointerInputSource()Landroidx/compose/ui/node/NodeCoordinator$HitTestSource;
-    .registers 2
+    .locals 1
 
     .line 1232
-    # getter for: Landroidx/compose/ui/node/NodeCoordinator;->PointerInputSource:Landroidx/compose/ui/node/NodeCoordinator$HitTestSource;
     invoke-static {}, Landroidx/compose/ui/node/NodeCoordinator;->access$getPointerInputSource$cp()Landroidx/compose/ui/node/NodeCoordinator$HitTestSource;
 
     move-result-object v0
@@ -87,10 +86,9 @@
 .end method
 
 .method public final getSemanticsSource()Landroidx/compose/ui/node/NodeCoordinator$HitTestSource;
-    .registers 2
+    .locals 1
 
     .line 1257
-    # getter for: Landroidx/compose/ui/node/NodeCoordinator;->SemanticsSource:Landroidx/compose/ui/node/NodeCoordinator$HitTestSource;
     invoke-static {}, Landroidx/compose/ui/node/NodeCoordinator;->access$getSemanticsSource$cp()Landroidx/compose/ui/node/NodeCoordinator$HitTestSource;
 
     move-result-object v0

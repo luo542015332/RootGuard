@@ -46,7 +46,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/runtime/ComposerImpl;)V
-    .registers 2
+    .locals 0
     .param p1, "$receiver"    # Landroidx/compose/runtime/ComposerImpl;
 
     iput-object p1, p0, Landroidx/compose/runtime/ComposerImpl$derivedStateObserver$1;->this$0:Landroidx/compose/runtime/ComposerImpl;
@@ -60,7 +60,7 @@
 
 # virtual methods
 .method public done(Landroidx/compose/runtime/DerivedState;)V
-    .registers 4
+    .locals 2
     .param p1, "derivedState"    # Landroidx/compose/runtime/DerivedState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -77,7 +77,6 @@
     .line 1269
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$derivedStateObserver$1;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->childrenComposing:I
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getChildrenComposing$p(Landroidx/compose/runtime/ComposerImpl;)I
 
     move-result v1
@@ -91,7 +90,7 @@
 .end method
 
 .method public start(Landroidx/compose/runtime/DerivedState;)V
-    .registers 4
+    .locals 2
     .param p1, "derivedState"    # Landroidx/compose/runtime/DerivedState;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -108,7 +107,6 @@
     .line 1265
     iget-object v0, p0, Landroidx/compose/runtime/ComposerImpl$derivedStateObserver$1;->this$0:Landroidx/compose/runtime/ComposerImpl;
 
-    # getter for: Landroidx/compose/runtime/ComposerImpl;->childrenComposing:I
     invoke-static {v0}, Landroidx/compose/runtime/ComposerImpl;->access$getChildrenComposing$p(Landroidx/compose/runtime/ComposerImpl;)I
 
     move-result v1

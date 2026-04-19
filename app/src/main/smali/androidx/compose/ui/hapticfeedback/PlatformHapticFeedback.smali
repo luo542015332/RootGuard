@@ -41,7 +41,7 @@
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
-    .registers 3
+    .locals 1
     .param p1, "view"    # Landroid/view/View;
 
     const-string/jumbo v0, "view"
@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public performHapticFeedback-CdsT49E(I)V
-    .registers 4
+    .locals 2
     .param p1, "hapticFeedbackType"    # I
 
     .line 31
@@ -76,7 +76,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_14
+    if-eqz v0, :cond_0
 
     .line 33
     iget-object v0, p0, Landroidx/compose/ui/hapticfeedback/PlatformHapticFeedback;->view:Landroid/view/View;
@@ -85,10 +85,10 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->performHapticFeedback(I)Z
 
-    goto :goto_27
+    goto :goto_0
 
     .line 34
-    :cond_14
+    :cond_0
     sget-object v0, Landroidx/compose/ui/hapticfeedback/HapticFeedbackType;->Companion:Landroidx/compose/ui/hapticfeedback/HapticFeedbackType$Companion;
 
     invoke-virtual {v0}, Landroidx/compose/ui/hapticfeedback/HapticFeedbackType$Companion;->getTextHandleMove-5zf0vsI()I
@@ -99,7 +99,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_27
+    if-eqz v0, :cond_1
 
     .line 35
     iget-object v0, p0, Landroidx/compose/ui/hapticfeedback/PlatformHapticFeedback;->view:Landroid/view/View;
@@ -109,7 +109,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->performHapticFeedback(I)Z
 
     .line 37
-    :cond_27
-    :goto_27
+    :cond_1
+    :goto_0
     return-void
 .end method

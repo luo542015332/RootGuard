@@ -44,7 +44,7 @@
 
 # direct methods
 .method private constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 4481
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
 .end method
 
 .method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .registers 2
+    .locals 0
 
     invoke-direct {p0}, Landroidx/compose/runtime/GroupKind$Companion;-><init>()V
 
@@ -63,10 +63,9 @@
 
 # virtual methods
 .method public final getGroup-ULZAiWs()I
-    .registers 2
+    .locals 1
 
     .line 4482
-    # getter for: Landroidx/compose/runtime/GroupKind;->Group:I
     invoke-static {}, Landroidx/compose/runtime/GroupKind;->access$getGroup$cp()I
 
     move-result v0
@@ -75,10 +74,9 @@
 .end method
 
 .method public final getNode-ULZAiWs()I
-    .registers 2
+    .locals 1
 
     .line 4483
-    # getter for: Landroidx/compose/runtime/GroupKind;->Node:I
     invoke-static {}, Landroidx/compose/runtime/GroupKind;->access$getNode$cp()I
 
     move-result v0
@@ -87,10 +85,9 @@
 .end method
 
 .method public final getReusableNode-ULZAiWs()I
-    .registers 2
+    .locals 1
 
     .line 4484
-    # getter for: Landroidx/compose/runtime/GroupKind;->ReusableNode:I
     invoke-static {}, Landroidx/compose/runtime/GroupKind;->access$getReusableNode$cp()I
 
     move-result v0

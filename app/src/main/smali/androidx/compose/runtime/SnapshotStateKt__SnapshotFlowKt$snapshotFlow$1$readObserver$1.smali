@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Ljava/util/Set;)V
-    .registers 3
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,7 +84,7 @@
 
 # virtual methods
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
+    .locals 1
     .param p1, "p1"    # Ljava/lang/Object;
 
     .line 114
@@ -96,7 +96,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/Object;)V
-    .registers 3
+    .locals 1
     .param p1, "it"    # Ljava/lang/Object;
 
     const-string/jumbo v0, "it"

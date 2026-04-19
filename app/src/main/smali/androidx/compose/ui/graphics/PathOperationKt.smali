@@ -42,7 +42,7 @@
 
 # direct methods
 .method public static final getDifference(Landroidx/compose/ui/graphics/PathOperation$Companion;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$difference"    # Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     const-string v0, "<this>"
@@ -58,7 +58,7 @@
 .end method
 
 .method public static synthetic getDifference$annotations(Landroidx/compose/ui/graphics/PathOperation$Companion;)V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use PathOperation.Difference instead"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -73,7 +73,7 @@
 .end method
 
 .method public static final getIntersect(Landroidx/compose/ui/graphics/PathOperation$Companion;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$intersect"    # Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     const-string v0, "<this>"
@@ -89,7 +89,7 @@
 .end method
 
 .method public static synthetic getIntersect$annotations(Landroidx/compose/ui/graphics/PathOperation$Companion;)V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use PathOperation.Intersect instead"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -104,7 +104,7 @@
 .end method
 
 .method public static final getReverseDifference(Landroidx/compose/ui/graphics/PathOperation$Companion;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$reverseDifference"    # Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     const-string v0, "<this>"
@@ -120,7 +120,7 @@
 .end method
 
 .method public static synthetic getReverseDifference$annotations(Landroidx/compose/ui/graphics/PathOperation$Companion;)V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use PathOperation.ReverseDifference instead"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -135,7 +135,7 @@
 .end method
 
 .method public static final getUnion(Landroidx/compose/ui/graphics/PathOperation$Companion;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$union"    # Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     const-string v0, "<this>"
@@ -151,7 +151,7 @@
 .end method
 
 .method public static synthetic getUnion$annotations(Landroidx/compose/ui/graphics/PathOperation$Companion;)V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use PathOperation.Union instead"
         replaceWith = .subannotation Lkotlin/ReplaceWith;
@@ -166,7 +166,7 @@
 .end method
 
 .method public static final getXor(Landroidx/compose/ui/graphics/PathOperation$Companion;)I
-    .registers 2
+    .locals 1
     .param p0, "$this$xor"    # Landroidx/compose/ui/graphics/PathOperation$Companion;
 
     const-string v0, "<this>"
@@ -182,7 +182,7 @@
 .end method
 
 .method public static synthetic getXor$annotations(Landroidx/compose/ui/graphics/PathOperation$Companion;)V
-    .registers 1
+    .locals 0
     .annotation runtime Lkotlin/Deprecated;
         message = "Use PathOperation.Xor instead"
         replaceWith = .subannotation Lkotlin/ReplaceWith;

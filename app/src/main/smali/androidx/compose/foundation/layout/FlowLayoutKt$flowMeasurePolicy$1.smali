@@ -175,7 +175,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/foundation/layout/LayoutOrientation;Lkotlin/jvm/functions/Function5;FLandroidx/compose/foundation/layout/SizeMode;Landroidx/compose/foundation/layout/CrossAxisAlignment;IFLkotlin/jvm/functions/Function5;)V
-    .registers 10
+    .locals 1
     .param p1, "$orientation"    # Landroidx/compose/foundation/layout/LayoutOrientation;
     .param p2, "$mainAxisArrangement"    # Lkotlin/jvm/functions/Function5;
     .param p3, "$mainAxisArrangementSpacing"    # F
@@ -236,85 +236,85 @@
     .line 403
     sget-object v0, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne p1, v0, :cond_1c
+    if-ne p1, v0, :cond_0
 
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxMainAxisIntrinsicItemSize$1;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxMainAxisIntrinsicItemSize$1;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
-    goto :goto_20
+    goto :goto_0
 
     .line 406
-    :cond_1c
+    :cond_0
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxMainAxisIntrinsicItemSize$2;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxMainAxisIntrinsicItemSize$2;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
     .line 403
-    :goto_20
+    :goto_0
     iput-object v0, p0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1;->maxMainAxisIntrinsicItemSize:Lkotlin/jvm/functions/Function3;
 
     .line 411
     sget-object v0, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne p1, v0, :cond_2b
+    if-ne p1, v0, :cond_1
 
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxCrossAxisIntrinsicItemSize$1;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxCrossAxisIntrinsicItemSize$1;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
-    goto :goto_2f
+    goto :goto_1
 
     .line 414
-    :cond_2b
+    :cond_1
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxCrossAxisIntrinsicItemSize$2;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$maxCrossAxisIntrinsicItemSize$2;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
     .line 411
-    :goto_2f
+    :goto_1
     iput-object v0, p0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1;->maxCrossAxisIntrinsicItemSize:Lkotlin/jvm/functions/Function3;
 
     .line 419
     sget-object v0, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne p1, v0, :cond_3a
+    if-ne p1, v0, :cond_2
 
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minCrossAxisIntrinsicItemSize$1;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minCrossAxisIntrinsicItemSize$1;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
-    goto :goto_3e
+    goto :goto_2
 
     .line 422
-    :cond_3a
+    :cond_2
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minCrossAxisIntrinsicItemSize$2;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minCrossAxisIntrinsicItemSize$2;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
     .line 419
-    :goto_3e
+    :goto_2
     iput-object v0, p0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1;->minCrossAxisIntrinsicItemSize:Lkotlin/jvm/functions/Function3;
 
     .line 427
     sget-object v0, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne p1, v0, :cond_49
+    if-ne p1, v0, :cond_3
 
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minMainAxisIntrinsicItemSize$1;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minMainAxisIntrinsicItemSize$1;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
-    goto :goto_4d
+    goto :goto_3
 
     .line 430
-    :cond_49
+    :cond_3
     sget-object v0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minMainAxisIntrinsicItemSize$2;->INSTANCE:Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1$minMainAxisIntrinsicItemSize$2;
 
     check-cast v0, Lkotlin/jvm/functions/Function3;
 
     .line 427
-    :goto_4d
+    :goto_3
     iput-object v0, p0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1;->minMainAxisIntrinsicItemSize:Lkotlin/jvm/functions/Function3;
 
     .line 218
@@ -324,7 +324,7 @@
 
 # virtual methods
 .method public final getMaxCrossAxisIntrinsicItemSize()Lkotlin/jvm/functions/Function3;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -344,7 +344,7 @@
 .end method
 
 .method public final getMaxMainAxisIntrinsicItemSize()Lkotlin/jvm/functions/Function3;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -364,7 +364,7 @@
 .end method
 
 .method public final getMinCrossAxisIntrinsicItemSize()Lkotlin/jvm/functions/Function3;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -384,7 +384,7 @@
 .end method
 
 .method public final getMinMainAxisIntrinsicItemSize()Lkotlin/jvm/functions/Function3;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -404,7 +404,7 @@
 .end method
 
 .method public final intrinsicCrossAxisSize(Ljava/util/List;III)I
-    .registers 13
+    .locals 8
     .param p1, "measurables"    # Ljava/util/List;
     .param p2, "mainAxisAvailable"    # I
     .param p3, "mainAxisSpacing"    # I
@@ -453,7 +453,6 @@
 
     move v6, p4
 
-    # invokes: Landroidx/compose/foundation/layout/FlowLayoutKt;->intrinsicCrossAxisSize(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIII)I
     invoke-static/range {v1 .. v7}, Landroidx/compose/foundation/layout/FlowLayoutKt;->access$intrinsicCrossAxisSize(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIII)I
 
     move-result v0
@@ -463,7 +462,7 @@
 .end method
 
 .method public maxIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -491,7 +490,7 @@
 
     sget-object v1, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_0
 
     .line 328
     nop
@@ -521,10 +520,10 @@
 
     move-result v0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 335
-    :cond_25
+    :cond_0
     nop
 
     .line 336
@@ -546,12 +545,12 @@
     move-result v0
 
     .line 340
-    :goto_32
+    :goto_0
     return v0
 .end method
 
 .method public final maxIntrinsicMainAxisSize(Ljava/util/List;II)I
-    .registers 6
+    .locals 2
     .param p1, "measurables"    # Ljava/util/List;
     .param p2, "height"    # I
     .param p3, "arrangementSpacing"    # I
@@ -585,7 +584,6 @@
     iget v1, p0, Landroidx/compose/foundation/layout/FlowLayoutKt$flowMeasurePolicy$1;->$maxItemsInMainAxis:I
 
     .line 379
-    # invokes: Landroidx/compose/foundation/layout/FlowLayoutKt;->maxIntrinsicMainAxisSize(Ljava/util/List;Lkotlin/jvm/functions/Function3;III)I
     invoke-static {p1, v0, p2, p3, v1}, Landroidx/compose/foundation/layout/FlowLayoutKt;->access$maxIntrinsicMainAxisSize(Ljava/util/List;Lkotlin/jvm/functions/Function3;III)I
 
     move-result v0
@@ -595,7 +593,7 @@
 .end method
 
 .method public maxIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$maxIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -623,7 +621,7 @@
 
     sget-object v1, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne v0, v1, :cond_1f
+    if-ne v0, v1, :cond_0
 
     .line 346
     nop
@@ -646,10 +644,10 @@
 
     move-result v0
 
-    goto :goto_32
+    goto :goto_0
 
     .line 352
-    :cond_1f
+    :cond_0
     nop
 
     .line 353
@@ -678,12 +676,12 @@
     move-result v0
 
     .line 358
-    :goto_32
+    :goto_0
     return v0
 .end method
 
 .method public measure-3p2s80s(Landroidx/compose/ui/layout/MeasureScope;Ljava/util/List;J)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 29
+    .locals 24
     .param p1, "$this$measure_u2d3p2s80s"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "constraints"    # J
@@ -720,7 +718,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_0
 
     const/4 v2, 0x0
 
@@ -747,7 +745,7 @@
     return-object v1
 
     .line 225
-    :cond_2a
+    :cond_0
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
     move-result v1
@@ -842,8 +840,8 @@
 
     const/4 v7, 0x0
 
-    :goto_66
-    if-ge v7, v3, :cond_7b
+    :goto_0
+    if-ge v7, v3, :cond_1
 
     .line 245
     move-object v8, v2
@@ -873,9 +871,9 @@
     add-int/lit8 v7, v7, 0x1
 
     .line 244
-    goto :goto_66
+    goto :goto_0
 
-    :cond_7b
+    :cond_1
     move-object v3, v6
 
     .line 248
@@ -971,7 +969,7 @@
 
     sget-object v9, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne v8, v9, :cond_bf
+    if-ne v8, v9, :cond_2
 
     .line 264
     invoke-virtual {v1}, Landroidx/compose/foundation/layout/FlowResult;->getMainAxisTotalSize()I
@@ -981,10 +979,10 @@
     .line 265
     move/from16 v7, v17
 
-    goto :goto_c5
+    goto :goto_1
 
     .line 267
-    :cond_bf
+    :cond_2
     move/from16 v6, v17
 
     .line 268
@@ -993,7 +991,7 @@
     move-result v7
 
     .line 270
-    :goto_c5
+    :goto_1
     invoke-static {v14, v15, v6}, Landroidx/compose/ui/unit/ConstraintsKt;->constrainWidth-K40F9xA(JI)I
 
     move-result v20
@@ -1052,7 +1050,7 @@
 .end method
 
 .method public minIntrinsicHeight(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicHeight"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "width"    # I
@@ -1080,7 +1078,7 @@
 
     sget-object v1, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_0
 
     .line 309
     nop
@@ -1110,10 +1108,10 @@
 
     move-result v0
 
-    goto :goto_38
+    goto :goto_0
 
     .line 316
-    :cond_25
+    :cond_0
     nop
 
     .line 317
@@ -1142,12 +1140,12 @@
     move-result v0
 
     .line 322
-    :goto_38
+    :goto_0
     return v0
 .end method
 
 .method public final minIntrinsicMainAxisSize(Ljava/util/List;III)I
-    .registers 13
+    .locals 8
     .param p1, "measurables"    # Ljava/util/List;
     .param p2, "crossAxisAvailable"    # I
     .param p3, "mainAxisSpacing"    # I
@@ -1196,7 +1194,6 @@
 
     move v6, p4
 
-    # invokes: Landroidx/compose/foundation/layout/FlowLayoutKt;->minIntrinsicMainAxisSize(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIII)I
     invoke-static/range {v1 .. v7}, Landroidx/compose/foundation/layout/FlowLayoutKt;->access$minIntrinsicMainAxisSize(Ljava/util/List;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;IIII)I
 
     move-result v0
@@ -1206,7 +1203,7 @@
 .end method
 
 .method public minIntrinsicWidth(Landroidx/compose/ui/layout/IntrinsicMeasureScope;Ljava/util/List;I)I
-    .registers 6
+    .locals 2
     .param p1, "$this$minIntrinsicWidth"    # Landroidx/compose/ui/layout/IntrinsicMeasureScope;
     .param p2, "measurables"    # Ljava/util/List;
     .param p3, "height"    # I
@@ -1234,7 +1231,7 @@
 
     sget-object v1, Landroidx/compose/foundation/layout/LayoutOrientation;->Horizontal:Landroidx/compose/foundation/layout/LayoutOrientation;
 
-    if-ne v0, v1, :cond_25
+    if-ne v0, v1, :cond_0
 
     .line 290
     nop
@@ -1264,10 +1261,10 @@
 
     move-result v0
 
-    goto :goto_38
+    goto :goto_0
 
     .line 297
-    :cond_25
+    :cond_0
     nop
 
     .line 298
@@ -1296,6 +1293,6 @@
     move-result v0
 
     .line 303
-    :goto_38
+    :goto_0
     return v0
 .end method

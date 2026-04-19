@@ -45,7 +45,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -55,7 +55,7 @@
 .end method
 
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 3
+    .locals 1
     .param p1, "node"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "node"
@@ -74,7 +74,7 @@
 
 # virtual methods
 .method public final updateModifier(Landroidx/compose/ui/Modifier;)V
-    .registers 3
+    .locals 1
     .param p1, "modifier"    # Landroidx/compose/ui/Modifier;
 
     const-string/jumbo v0, "modifier"

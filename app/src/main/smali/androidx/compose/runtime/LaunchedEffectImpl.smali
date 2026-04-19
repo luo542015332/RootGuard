@@ -66,7 +66,7 @@
 
 # direct methods
 .method public constructor <init>(Lkotlin/coroutines/CoroutineContext;Lkotlin/jvm/functions/Function2;)V
-    .registers 4
+    .locals 1
     .param p1, "parentCoroutineContext"    # Lkotlin/coroutines/CoroutineContext;
     .param p2, "task"    # Lkotlin/jvm/functions/Function2;
     .annotation system Ldalvik/annotation/Signature;
@@ -114,12 +114,12 @@
 
 # virtual methods
 .method public onAbandoned()V
-    .registers 3
+    .locals 2
 
     .line 299
     iget-object v0, p0, Landroidx/compose/runtime/LaunchedEffectImpl;->job:Lkotlinx/coroutines/Job;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     new-instance v1, Landroidx/compose/runtime/LeftCompositionCancellationException;
 
@@ -130,7 +130,7 @@
     invoke-interface {v0, v1}, Lkotlinx/coroutines/Job;->cancel(Ljava/util/concurrent/CancellationException;)V
 
     .line 300
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/runtime/LaunchedEffectImpl;->job:Lkotlinx/coroutines/Job;
@@ -140,12 +140,12 @@
 .end method
 
 .method public onForgotten()V
-    .registers 3
+    .locals 2
 
     .line 294
     iget-object v0, p0, Landroidx/compose/runtime/LaunchedEffectImpl;->job:Lkotlinx/coroutines/Job;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_0
 
     new-instance v1, Landroidx/compose/runtime/LeftCompositionCancellationException;
 
@@ -156,7 +156,7 @@
     invoke-interface {v0, v1}, Lkotlinx/coroutines/Job;->cancel(Ljava/util/concurrent/CancellationException;)V
 
     .line 295
-    :cond_e
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroidx/compose/runtime/LaunchedEffectImpl;->job:Lkotlinx/coroutines/Job;
@@ -166,12 +166,12 @@
 .end method
 
 .method public onRemembered()V
-    .registers 11
+    .locals 10
 
     .line 289
     iget-object v0, p0, Landroidx/compose/runtime/LaunchedEffectImpl;->job:Lkotlinx/coroutines/Job;
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_0
 
     const-string/jumbo v1, "Old job was still running!"
 
@@ -182,7 +182,7 @@
     invoke-static {v0, v1, v3, v2, v3}, Lkotlinx/coroutines/JobKt;->cancel$default(Lkotlinx/coroutines/Job;Ljava/lang/String;Ljava/lang/Throwable;ILjava/lang/Object;)V
 
     .line 290
-    :cond_c
+    :cond_0
     iget-object v4, p0, Landroidx/compose/runtime/LaunchedEffectImpl;->scope:Lkotlinx/coroutines/CoroutineScope;
 
     const/4 v5, 0x0

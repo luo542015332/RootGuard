@@ -47,7 +47,7 @@
 
 # direct methods
 .method public static synthetic access$isLookingAhead$jd(Landroidx/compose/ui/layout/MeasureScope;)Z
-    .registers 2
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
 
     .line 26
@@ -59,7 +59,7 @@
 .end method
 
 .method public static synthetic access$layout$jd(Landroidx/compose/ui/layout/MeasureScope;IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 6
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "width"    # I
     .param p2, "height"    # I
@@ -75,7 +75,7 @@
 .end method
 
 .method public static synthetic access$roundToPx--R2X_6o$jd(Landroidx/compose/ui/layout/MeasureScope;J)I
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public static synthetic access$roundToPx-0680j_4$jd(Landroidx/compose/ui/layout/MeasureScope;F)I
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
 
@@ -101,7 +101,7 @@
 .end method
 
 .method public static synthetic access$toDp-GaN1DYA$jd(Landroidx/compose/ui/layout/MeasureScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
 
@@ -114,7 +114,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/layout/MeasureScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
 
@@ -127,7 +127,7 @@
 .end method
 
 .method public static synthetic access$toDp-u2uoSUM$jd(Landroidx/compose/ui/layout/MeasureScope;I)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # I
 
@@ -140,7 +140,7 @@
 .end method
 
 .method public static synthetic access$toDpSize-k-rfVVM$jd(Landroidx/compose/ui/layout/MeasureScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
 
@@ -153,7 +153,7 @@
 .end method
 
 .method public static synthetic access$toPx--R2X_6o$jd(Landroidx/compose/ui/layout/MeasureScope;J)F
-    .registers 4
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
 
@@ -166,7 +166,7 @@
 .end method
 
 .method public static synthetic access$toPx-0680j_4$jd(Landroidx/compose/ui/layout/MeasureScope;F)F
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
 
@@ -179,7 +179,7 @@
 .end method
 
 .method public static synthetic access$toRect$jd(Landroidx/compose/ui/layout/MeasureScope;Landroidx/compose/ui/unit/DpRect;)Landroidx/compose/ui/geometry/Rect;
-    .registers 3
+    .locals 1
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # Landroidx/compose/ui/unit/DpRect;
 
@@ -192,7 +192,7 @@
 .end method
 
 .method public static synthetic access$toSize-XkaWNTQ$jd(Landroidx/compose/ui/layout/MeasureScope;J)J
-    .registers 5
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # J
 
@@ -205,7 +205,7 @@
 .end method
 
 .method public static synthetic access$toSp-0xMU5do$jd(Landroidx/compose/ui/layout/MeasureScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
 
@@ -218,7 +218,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/layout/MeasureScope;F)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # F
 
@@ -231,7 +231,7 @@
 .end method
 
 .method public static synthetic access$toSp-kPz2Gy4$jd(Landroidx/compose/ui/layout/MeasureScope;I)J
-    .registers 4
+    .locals 2
     .param p0, "$this"    # Landroidx/compose/ui/layout/MeasureScope;
     .param p1, "$receiver"    # I
 
@@ -244,14 +244,14 @@
 .end method
 
 .method public static synthetic layout$default(Landroidx/compose/ui/layout/MeasureScope;IILjava/util/Map;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 7
+    .locals 0
 
     .line 42
-    if-nez p6, :cond_f
+    if-nez p6, :cond_1
 
     and-int/lit8 p5, p5, 0x4
 
-    if-eqz p5, :cond_a
+    if-eqz p5, :cond_0
 
     .line 45
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
@@ -259,14 +259,14 @@
     move-result-object p3
 
     .line 42
-    :cond_a
+    :cond_0
     invoke-interface {p0, p1, p2, p3, p4}, Landroidx/compose/ui/layout/MeasureScope;->layout(IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
 
     move-result-object p0
 
     return-object p0
 
-    :cond_f
+    :cond_1
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo p1, "Super calls with default arguments not supported in this target, function: layout"
@@ -279,7 +279,7 @@
 
 # virtual methods
 .method public layout(IILjava/util/Map;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/layout/MeasureResult;
-    .registers 12
+    .locals 7
     .param p1, "width"    # I
     .param p2, "height"    # I
     .param p3, "alignmentLines"    # Ljava/util/Map;

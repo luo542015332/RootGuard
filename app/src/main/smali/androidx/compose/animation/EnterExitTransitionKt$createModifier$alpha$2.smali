@@ -62,7 +62,7 @@
 
 # direct methods
 .method constructor <init>(Landroidx/compose/animation/EnterTransition;Landroidx/compose/animation/ExitTransition;)V
-    .registers 4
+    .locals 1
 
     iput-object p1, p0, Landroidx/compose/animation/EnterExitTransitionKt$createModifier$alpha$2;->$enter:Landroidx/compose/animation/EnterTransition;
 
@@ -78,7 +78,7 @@
 
 # virtual methods
 .method public final invoke(Landroidx/compose/animation/core/Transition$Segment;Landroidx/compose/runtime/Composer;I)Landroidx/compose/animation/core/FiniteAnimationSpec;
-    .registers 7
+    .locals 3
     .param p1, "$this$animateFloat"    # Landroidx/compose/animation/core/Transition$Segment;
     .param p2, "$composer"    # Landroidx/compose/runtime/Composer;
     .param p3, "$changed"    # I
@@ -108,7 +108,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_18
+    if-eqz v1, :cond_0
 
     .line 862
     const/4 v1, -0x1
@@ -118,7 +118,7 @@
     invoke-static {v0, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     .line 863
-    :cond_18
+    :cond_0
     sget-object v0, Landroidx/compose/animation/EnterExitState;->PreEnter:Landroidx/compose/animation/EnterExitState;
 
     sget-object v1, Landroidx/compose/animation/EnterExitState;->Visible:Landroidx/compose/animation/EnterExitState;
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3b
+    if-eqz v0, :cond_2
 
     .line 864
     iget-object v0, p0, Landroidx/compose/animation/EnterExitTransitionKt$createModifier$alpha$2;->$enter:Landroidx/compose/animation/EnterTransition;
@@ -140,26 +140,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_34
+    if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroidx/compose/animation/Fade;->getAnimationSpec()Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     move-result-object v0
 
-    if-nez v0, :cond_64
+    if-nez v0, :cond_5
 
-    :cond_34
-    # getter for: Landroidx/compose/animation/EnterExitTransitionKt;->DefaultAlphaAndScaleSpring:Landroidx/compose/animation/core/SpringSpec;
+    :cond_1
     invoke-static {}, Landroidx/compose/animation/EnterExitTransitionKt;->access$getDefaultAlphaAndScaleSpring$p()Landroidx/compose/animation/core/SpringSpec;
 
     move-result-object v0
 
     check-cast v0, Landroidx/compose/animation/core/FiniteAnimationSpec;
 
-    goto :goto_64
+    goto :goto_0
 
     .line 865
-    :cond_3b
+    :cond_2
     sget-object v0, Landroidx/compose/animation/EnterExitState;->Visible:Landroidx/compose/animation/EnterExitState;
 
     sget-object v1, Landroidx/compose/animation/EnterExitState;->PostExit:Landroidx/compose/animation/EnterExitState;
@@ -168,7 +167,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5e
+    if-eqz v0, :cond_4
 
     .line 866
     iget-object v0, p0, Landroidx/compose/animation/EnterExitTransitionKt$createModifier$alpha$2;->$exit:Landroidx/compose/animation/ExitTransition;
@@ -181,27 +180,25 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_57
+    if-eqz v0, :cond_3
 
     invoke-virtual {v0}, Landroidx/compose/animation/Fade;->getAnimationSpec()Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     move-result-object v0
 
-    if-nez v0, :cond_64
+    if-nez v0, :cond_5
 
-    :cond_57
-    # getter for: Landroidx/compose/animation/EnterExitTransitionKt;->DefaultAlphaAndScaleSpring:Landroidx/compose/animation/core/SpringSpec;
+    :cond_3
     invoke-static {}, Landroidx/compose/animation/EnterExitTransitionKt;->access$getDefaultAlphaAndScaleSpring$p()Landroidx/compose/animation/core/SpringSpec;
 
     move-result-object v0
 
     check-cast v0, Landroidx/compose/animation/core/FiniteAnimationSpec;
 
-    goto :goto_64
+    goto :goto_0
 
     .line 867
-    :cond_5e
-    # getter for: Landroidx/compose/animation/EnterExitTransitionKt;->DefaultAlphaAndScaleSpring:Landroidx/compose/animation/core/SpringSpec;
+    :cond_4
     invoke-static {}, Landroidx/compose/animation/EnterExitTransitionKt;->access$getDefaultAlphaAndScaleSpring$p()Landroidx/compose/animation/core/SpringSpec;
 
     move-result-object v0
@@ -209,24 +206,24 @@
     check-cast v0, Landroidx/compose/animation/core/FiniteAnimationSpec;
 
     .line 862
-    :cond_64
-    :goto_64
+    :cond_5
+    :goto_0
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v1
 
-    if-eqz v1, :cond_6d
+    if-eqz v1, :cond_6
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->traceEventEnd()V
 
-    :cond_6d
+    :cond_6
     invoke-interface {p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     return-object v0
 .end method
 
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 7
+    .locals 3
     .param p1, "p1"    # Ljava/lang/Object;
     .param p2, "p2"    # Ljava/lang/Object;
     .param p3, "p3"    # Ljava/lang/Object;

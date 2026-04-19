@@ -48,7 +48,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .locals 6
 
     const/4 v0, 0x1
 
@@ -86,7 +86,7 @@
 .end method
 
 .method public static final getTestTagsAsResourceId(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Z
-    .registers 4
+    .locals 3
     .param p0, "$this$testTagsAsResourceId"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     const-string v0, "<this>"
@@ -125,13 +125,13 @@
 .end method
 
 .method public static synthetic getTestTagsAsResourceId$annotations(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)V
-    .registers 1
+    .locals 0
 
     return-void
 .end method
 
 .method private static getTestTagsAsResourceId$delegate(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;)Ljava/lang/Object;
-    .registers 2
+    .locals 1
     .param p0, "<this>"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
 
     .line 55
@@ -145,7 +145,7 @@
 .end method
 
 .method public static final setTestTagsAsResourceId(Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;Z)V
-    .registers 5
+    .locals 3
     .param p0, "$this$testTagsAsResourceId"    # Landroidx/compose/ui/semantics/SemanticsPropertyReceiver;
     .param p1, "<set-?>"    # Z
 

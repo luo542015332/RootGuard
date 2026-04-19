@@ -64,7 +64,7 @@
 
 # direct methods
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 109
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -83,7 +83,7 @@
 
 # virtual methods
 .method public final clear()V
-    .registers 2
+    .locals 1
 
     .line 151
     iget-object v0, p0, Landroidx/compose/ui/res/ImageVectorCache;->map:Ljava/util/HashMap;
@@ -95,7 +95,7 @@
 .end method
 
 .method public final get(Landroidx/compose/ui/res/ImageVectorCache$Key;)Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
-    .registers 3
+    .locals 1
     .param p1, "key"    # Landroidx/compose/ui/res/ImageVectorCache$Key;
 
     const-string/jumbo v0, "key"
@@ -111,7 +111,7 @@
 
     check-cast v0, Ljava/lang/ref/WeakReference;
 
-    if-eqz v0, :cond_17
+    if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -119,17 +119,17 @@
 
     check-cast v0, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
 
-    goto :goto_18
+    goto :goto_0
 
-    :cond_17
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_18
+    :goto_0
     return-object v0
 .end method
 
 .method public final prune(I)V
-    .registers 6
+    .locals 4
     .param p1, "configChanges"    # I
 
     .line 134
@@ -145,13 +145,13 @@
 
     .line 135
     .local v0, "it":Ljava/util/Iterator;
-    :cond_a
-    :goto_a
+    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_2
 
     .line 136
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -180,7 +180,7 @@
 
     .line 138
     .local v2, "imageVectorEntry":Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
-    if-eqz v2, :cond_34
+    if-eqz v2, :cond_1
 
     .line 139
     invoke-virtual {v2}, Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;->getConfigFlags()I
@@ -191,23 +191,23 @@
 
     move-result v3
 
-    if-eqz v3, :cond_a
+    if-eqz v3, :cond_0
 
     .line 141
-    :cond_34
+    :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
     .end local v1    # "entry":Ljava/util/Map$Entry;
     .end local v2    # "imageVectorEntry":Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
-    goto :goto_a
+    goto :goto_0
 
     .line 144
-    :cond_38
+    :cond_2
     return-void
 .end method
 
 .method public final set(Landroidx/compose/ui/res/ImageVectorCache$Key;Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;)V
-    .registers 5
+    .locals 2
     .param p1, "key"    # Landroidx/compose/ui/res/ImageVectorCache$Key;
     .param p2, "imageVectorEntry"    # Landroidx/compose/ui/res/ImageVectorCache$ImageVectorEntry;
 

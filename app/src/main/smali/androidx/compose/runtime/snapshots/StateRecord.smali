@@ -51,7 +51,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 1
+    .locals 1
 
     const/16 v0, 0x8
 
@@ -61,7 +61,7 @@
 .end method
 
 .method public constructor <init>()V
-    .registers 2
+    .locals 1
 
     .line 1137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -90,7 +90,7 @@
 .end method
 
 .method public final getNext$runtime_release()Landroidx/compose/runtime/snapshots/StateRecord;
-    .registers 2
+    .locals 1
 
     .line 1157
     iget-object v0, p0, Landroidx/compose/runtime/snapshots/StateRecord;->next:Landroidx/compose/runtime/snapshots/StateRecord;
@@ -99,7 +99,7 @@
 .end method
 
 .method public final getSnapshotId$runtime_release()I
-    .registers 2
+    .locals 1
 
     .line 1141
     iget v0, p0, Landroidx/compose/runtime/snapshots/StateRecord;->snapshotId:I
@@ -108,7 +108,7 @@
 .end method
 
 .method public final setNext$runtime_release(Landroidx/compose/runtime/snapshots/StateRecord;)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Landroidx/compose/runtime/snapshots/StateRecord;
 
     .line 1157
@@ -118,7 +118,7 @@
 .end method
 
 .method public final setSnapshotId$runtime_release(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 1141

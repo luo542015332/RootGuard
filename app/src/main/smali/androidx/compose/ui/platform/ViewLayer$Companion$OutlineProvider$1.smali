@@ -40,7 +40,7 @@
 
 # direct methods
 .method constructor <init>()V
-    .registers 1
+    .locals 0
 
     .line 399
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
@@ -51,7 +51,7 @@
 
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .registers 4
+    .locals 1
     .param p1, "view"    # Landroid/view/View;
     .param p2, "outline"    # Landroid/graphics/Outline;
 
@@ -73,7 +73,6 @@
 
     check-cast v0, Landroidx/compose/ui/platform/ViewLayer;
 
-    # getter for: Landroidx/compose/ui/platform/ViewLayer;->outlineResolver:Landroidx/compose/ui/platform/OutlineResolver;
     invoke-static {v0}, Landroidx/compose/ui/platform/ViewLayer;->access$getOutlineResolver$p(Landroidx/compose/ui/platform/ViewLayer;)Landroidx/compose/ui/platform/OutlineResolver;
 
     move-result-object v0

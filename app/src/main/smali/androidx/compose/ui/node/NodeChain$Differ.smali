@@ -108,7 +108,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Node;ILandroidx/compose/runtime/collection/MutableVector;Landroidx/compose/runtime/collection/MutableVector;Z)V
-    .registers 8
+    .locals 1
     .param p1, "this$0"    # Landroidx/compose/ui/node/NodeChain;
     .param p2, "node"    # Landroidx/compose/ui/Modifier$Node;
     .param p3, "offset"    # I
@@ -168,7 +168,7 @@
 
 # virtual methods
 .method public areItemsTheSame(II)Z
-    .registers 8
+    .locals 5
     .param p1, "oldIndex"    # I
     .param p2, "newIndex"    # I
 
@@ -225,21 +225,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_24
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    goto :goto_25
+    goto :goto_0
 
-    :cond_24
+    :cond_0
     const/4 v0, 0x0
 
-    :goto_25
+    :goto_0
     return v0
 .end method
 
 .method public final getAfter()Landroidx/compose/runtime/collection/MutableVector;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -256,7 +256,7 @@
 .end method
 
 .method public final getBefore()Landroidx/compose/runtime/collection/MutableVector;
-    .registers 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -273,7 +273,7 @@
 .end method
 
 .method public final getNode()Landroidx/compose/ui/Modifier$Node;
-    .registers 2
+    .locals 1
 
     .line 412
     iget-object v0, p0, Landroidx/compose/ui/node/NodeChain$Differ;->node:Landroidx/compose/ui/Modifier$Node;
@@ -282,7 +282,7 @@
 .end method
 
 .method public final getOffset()I
-    .registers 2
+    .locals 1
 
     .line 413
     iget v0, p0, Landroidx/compose/ui/node/NodeChain$Differ;->offset:I
@@ -291,7 +291,7 @@
 .end method
 
 .method public final getShouldAttachOnInsert()Z
-    .registers 2
+    .locals 1
 
     .line 416
     iget-boolean v0, p0, Landroidx/compose/ui/node/NodeChain$Differ;->shouldAttachOnInsert:Z
@@ -300,7 +300,7 @@
 .end method
 
 .method public insert(I)V
-    .registers 10
+    .locals 8
     .param p1, "newIndex"    # I
 
     .line 426
@@ -334,7 +334,6 @@
     check-cast v2, Landroidx/compose/ui/Modifier$Element;
 
     .line 428
-    # invokes: Landroidx/compose/ui/node/NodeChain;->createAndInsertNodeAsChild(Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;)Landroidx/compose/ui/Modifier$Node;
     invoke-static {v1, v2, v7}, Landroidx/compose/ui/node/NodeChain;->access$createAndInsertNodeAsChild(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v1
@@ -344,12 +343,11 @@
     .line 429
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->this$0:Landroidx/compose/ui/node/NodeChain;
 
-    # getter for: Landroidx/compose/ui/node/NodeChain;->logger:Landroidx/compose/ui/node/NodeChain$Logger;
     invoke-static {v1}, Landroidx/compose/ui/node/NodeChain;->access$getLogger$p(Landroidx/compose/ui/node/NodeChain;)Landroidx/compose/ui/node/NodeChain$Logger;
 
     move-result-object v1
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_0
 
     iget-object v2, p0, Landroidx/compose/ui/node/NodeChain$Differ;->after:Landroidx/compose/runtime/collection/MutableVector;
 
@@ -382,10 +380,10 @@
     invoke-interface/range {v1 .. v6}, Landroidx/compose/ui/node/NodeChain$Logger;->nodeInserted(IILandroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;Landroidx/compose/ui/Modifier$Node;)V
 
     .line 431
-    :cond_34
+    :cond_0
     iget-boolean v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->shouldAttachOnInsert:Z
 
-    if-eqz v1, :cond_93
+    if-eqz v1, :cond_2
 
     .line 432
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->node:Landroidx/compose/ui/Modifier$Node;
@@ -412,7 +410,7 @@
 
     .line 434
     .local v2, "layoutmod":Landroidx/compose/ui/node/LayoutModifierNode;
-    if-eqz v2, :cond_7e
+    if-eqz v2, :cond_1
 
     .line 435
     new-instance v3, Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;
@@ -444,7 +442,6 @@
 
     check-cast v6, Landroidx/compose/ui/node/NodeCoordinator;
 
-    # invokes: Landroidx/compose/ui/node/NodeChain;->propagateCoordinator(Landroidx/compose/ui/Modifier$Node;Landroidx/compose/ui/node/NodeCoordinator;)V
     invoke-static {v4, v5, v6}, Landroidx/compose/ui/node/NodeChain;->access$propagateCoordinator(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Node;Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 438
@@ -465,16 +462,16 @@
     invoke-virtual {v1, v4}, Landroidx/compose/ui/node/NodeCoordinator;->setWrappedBy$ui_release(Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .end local v3    # "thisCoordinator":Landroidx/compose/ui/node/LayoutModifierNodeCoordinator;
-    goto :goto_83
+    goto :goto_0
 
     .line 442
-    :cond_7e
+    :cond_1
     iget-object v3, p0, Landroidx/compose/ui/node/NodeChain$Differ;->node:Landroidx/compose/ui/Modifier$Node;
 
     invoke-virtual {v3, v1}, Landroidx/compose/ui/Modifier$Node;->updateCoordinator$ui_release(Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 444
-    :goto_83
+    :goto_0
     iget-object v3, p0, Landroidx/compose/ui/node/NodeChain$Differ;->node:Landroidx/compose/ui/Modifier$Node;
 
     invoke-virtual {v3}, Landroidx/compose/ui/Modifier$Node;->markAsAttached$ui_release()V
@@ -491,10 +488,10 @@
 
     .end local v1    # "childCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v2    # "layoutmod":Landroidx/compose/ui/node/LayoutModifierNode;
-    goto :goto_99
+    goto :goto_1
 
     .line 448
-    :cond_93
+    :cond_2
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->node:Landroidx/compose/ui/Modifier$Node;
 
     const/4 v2, 0x1
@@ -502,12 +499,12 @@
     invoke-virtual {v1, v2}, Landroidx/compose/ui/Modifier$Node;->setInsertedNodeAwaitingAttachForInvalidation$ui_release(Z)V
 
     .line 450
-    :goto_99
+    :goto_1
     return-void
 .end method
 
 .method public remove(II)V
-    .registers 9
+    .locals 6
     .param p1, "atIndex"    # I
     .param p2, "oldIndex"    # I
 
@@ -524,12 +521,11 @@
     .local v0, "toRemove":Landroidx/compose/ui/Modifier$Node;
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->this$0:Landroidx/compose/ui/node/NodeChain;
 
-    # getter for: Landroidx/compose/ui/node/NodeChain;->logger:Landroidx/compose/ui/node/NodeChain$Logger;
     invoke-static {v1}, Landroidx/compose/ui/node/NodeChain;->access$getLogger$p(Landroidx/compose/ui/node/NodeChain;)Landroidx/compose/ui/node/NodeChain$Logger;
 
     move-result-object v1
 
-    if-eqz v1, :cond_22
+    if-eqz v1, :cond_0
 
     iget-object v2, p0, Landroidx/compose/ui/node/NodeChain$Differ;->before:Landroidx/compose/runtime/collection/MutableVector;
 
@@ -558,7 +554,7 @@
     invoke-interface {v1, p2, v2, v0}, Landroidx/compose/ui/node/NodeChain$Logger;->nodeRemoved(ILandroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;)V
 
     .line 455
-    :cond_22
+    :cond_0
     const/4 v1, 0x0
 
     .line 864
@@ -587,21 +583,21 @@
 
     and-int/2addr v4, v1
 
-    if-eqz v4, :cond_34
+    if-eqz v4, :cond_1
 
     const/4 v4, 0x1
 
-    goto :goto_35
+    goto :goto_0
 
-    :cond_34
+    :cond_1
     const/4 v4, 0x0
 
     .line 455
     .end local v1    # "kind$iv":I
     .end local v2    # "this_$iv":Landroidx/compose/ui/Modifier$Node;
     .end local v3    # "$i$f$isKind-H91voCI$ui_release":I
-    :goto_35
-    if-eqz v4, :cond_59
+    :goto_0
+    if-eqz v4, :cond_3
 
     .line 456
     invoke-virtual {v0}, Landroidx/compose/ui/Modifier$Node;->getCoordinator$ui_release()Landroidx/compose/ui/node/NodeCoordinator;
@@ -626,15 +622,15 @@
 
     .line 461
     .local v3, "childCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
-    if-nez v2, :cond_4c
+    if-nez v2, :cond_2
 
-    goto :goto_4f
+    goto :goto_1
 
-    :cond_4c
+    :cond_2
     invoke-virtual {v2, v3}, Landroidx/compose/ui/node/NodeCoordinator;->setWrapped$ui_release(Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 462
-    :goto_4f
+    :goto_1
     invoke-virtual {v3, v2}, Landroidx/compose/ui/node/NodeCoordinator;->setWrappedBy$ui_release(Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 463
@@ -642,17 +638,15 @@
 
     iget-object v5, p0, Landroidx/compose/ui/node/NodeChain$Differ;->node:Landroidx/compose/ui/Modifier$Node;
 
-    # invokes: Landroidx/compose/ui/node/NodeChain;->propagateCoordinator(Landroidx/compose/ui/Modifier$Node;Landroidx/compose/ui/node/NodeCoordinator;)V
     invoke-static {v4, v5, v3}, Landroidx/compose/ui/node/NodeChain;->access$propagateCoordinator(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Node;Landroidx/compose/ui/node/NodeCoordinator;)V
 
     .line 465
     .end local v1    # "removedCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v2    # "parentCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
     .end local v3    # "childCoordinator":Landroidx/compose/ui/node/NodeCoordinator;
-    :cond_59
+    :cond_3
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->this$0:Landroidx/compose/ui/node/NodeChain;
 
-    # invokes: Landroidx/compose/ui/node/NodeChain;->detachAndRemoveNode(Landroidx/compose/ui/Modifier$Node;)Landroidx/compose/ui/Modifier$Node;
     invoke-static {v1, v0}, Landroidx/compose/ui/node/NodeChain;->access$detachAndRemoveNode(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Node;)Landroidx/compose/ui/Modifier$Node;
 
     move-result-object v1
@@ -664,7 +658,7 @@
 .end method
 
 .method public same(II)V
-    .registers 11
+    .locals 8
     .param p1, "oldIndex"    # I
     .param p2, "newIndex"    # I
 
@@ -738,25 +732,23 @@
 
     move-result v1
 
-    if-nez v1, :cond_4d
+    if-nez v1, :cond_0
 
     .line 473
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->this$0:Landroidx/compose/ui/node/NodeChain;
 
     iget-object v2, p0, Landroidx/compose/ui/node/NodeChain$Differ;->node:Landroidx/compose/ui/Modifier$Node;
 
-    # invokes: Landroidx/compose/ui/node/NodeChain;->updateNode(Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;)V
     invoke-static {v1, v0, v7, v2}, Landroidx/compose/ui/node/NodeChain;->access$updateNode(Landroidx/compose/ui/node/NodeChain;Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;)V
 
     .line 474
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->this$0:Landroidx/compose/ui/node/NodeChain;
 
-    # getter for: Landroidx/compose/ui/node/NodeChain;->logger:Landroidx/compose/ui/node/NodeChain$Logger;
     invoke-static {v1}, Landroidx/compose/ui/node/NodeChain;->access$getLogger$p(Landroidx/compose/ui/node/NodeChain;)Landroidx/compose/ui/node/NodeChain$Logger;
 
     move-result-object v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_1
 
     iget v2, p0, Landroidx/compose/ui/node/NodeChain$Differ;->offset:I
 
@@ -776,18 +768,17 @@
 
     invoke-interface/range {v1 .. v6}, Landroidx/compose/ui/node/NodeChain$Logger;->nodeUpdated(IILandroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;)V
 
-    goto :goto_64
+    goto :goto_0
 
     .line 476
-    :cond_4d
+    :cond_0
     iget-object v1, p0, Landroidx/compose/ui/node/NodeChain$Differ;->this$0:Landroidx/compose/ui/node/NodeChain;
 
-    # getter for: Landroidx/compose/ui/node/NodeChain;->logger:Landroidx/compose/ui/node/NodeChain$Logger;
     invoke-static {v1}, Landroidx/compose/ui/node/NodeChain;->access$getLogger$p(Landroidx/compose/ui/node/NodeChain;)Landroidx/compose/ui/node/NodeChain$Logger;
 
     move-result-object v1
 
-    if-eqz v1, :cond_64
+    if-eqz v1, :cond_1
 
     iget v2, p0, Landroidx/compose/ui/node/NodeChain$Differ;->offset:I
 
@@ -808,13 +799,13 @@
     invoke-interface/range {v1 .. v6}, Landroidx/compose/ui/node/NodeChain$Logger;->nodeReused(IILandroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Element;Landroidx/compose/ui/Modifier$Node;)V
 
     .line 478
-    :cond_64
-    :goto_64
+    :cond_1
+    :goto_0
     return-void
 .end method
 
 .method public final setAfter(Landroidx/compose/runtime/collection/MutableVector;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/collection/MutableVector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -836,7 +827,7 @@
 .end method
 
 .method public final setBefore(Landroidx/compose/runtime/collection/MutableVector;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/runtime/collection/MutableVector;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -858,7 +849,7 @@
 .end method
 
 .method public final setNode(Landroidx/compose/ui/Modifier$Node;)V
-    .registers 3
+    .locals 1
     .param p1, "<set-?>"    # Landroidx/compose/ui/Modifier$Node;
 
     const-string v0, "<set-?>"
@@ -872,7 +863,7 @@
 .end method
 
 .method public final setOffset(I)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # I
 
     .line 413
@@ -882,7 +873,7 @@
 .end method
 
 .method public final setShouldAttachOnInsert(Z)V
-    .registers 2
+    .locals 0
     .param p1, "<set-?>"    # Z
 
     .line 416

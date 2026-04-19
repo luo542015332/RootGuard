@@ -49,7 +49,7 @@
 
 # direct methods
 .method public constructor <init>(Landroidx/compose/ui/node/LayoutNode;)V
-    .registers 3
+    .locals 1
     .param p1, "root"    # Landroidx/compose/ui/node/LayoutNode;
 
     const-string/jumbo v0, "root"
@@ -66,7 +66,7 @@
 
 # virtual methods
 .method public insertBottomUp(ILandroidx/compose/ui/node/LayoutNode;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Landroidx/compose/ui/node/LayoutNode;
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public bridge synthetic insertBottomUp(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Ljava/lang/Object;
 
@@ -103,7 +103,7 @@
 .end method
 
 .method public insertTopDown(ILandroidx/compose/ui/node/LayoutNode;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Landroidx/compose/ui/node/LayoutNode;
 
@@ -116,7 +116,7 @@
 .end method
 
 .method public bridge synthetic insertTopDown(ILjava/lang/Object;)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "instance"    # Ljava/lang/Object;
 
@@ -131,7 +131,7 @@
 .end method
 
 .method public move(III)V
-    .registers 5
+    .locals 1
     .param p1, "from"    # I
     .param p2, "to"    # I
     .param p3, "count"    # I
@@ -150,7 +150,7 @@
 .end method
 
 .method protected onClear()V
-    .registers 2
+    .locals 1
 
     .line 43
     invoke-virtual {p0}, Landroidx/compose/ui/node/UiApplier;->getRoot()Ljava/lang/Object;
@@ -166,7 +166,7 @@
 .end method
 
 .method public onEndChanges()V
-    .registers 2
+    .locals 1
 
     .line 47
     invoke-super {p0}, Landroidx/compose/runtime/AbstractApplier;->onEndChanges()V
@@ -182,17 +182,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_0
 
     invoke-interface {v0}, Landroidx/compose/ui/node/Owner;->onEndApplyChanges()V
 
     .line 49
-    :cond_12
+    :cond_0
     return-void
 .end method
 
 .method public remove(II)V
-    .registers 4
+    .locals 1
     .param p1, "index"    # I
     .param p2, "count"    # I
 
